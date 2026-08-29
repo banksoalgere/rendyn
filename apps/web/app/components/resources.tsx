@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const resources = [
   {
     slug: 'choose-ui-components-by-product-intent',
@@ -8,12 +10,13 @@ const resources = [
     readTime: '7 min read',
   },
   {
-    slug: 'give-ai-built-interfaces-a-point-of-view',
+    slug: 'vibe-coding-design',
     category: 'AI interface design',
-    title: 'How to give AI-built interfaces a stronger point of view',
-    description: 'A practical approach to product context, component selection and more distinctive first drafts.',
+    title: 'Vibe Coding Design: How to Make Your App Look Good',
+    description: 'A practical workflow for hierarchy, design systems, better prompts and a more polished vibe coding UI.',
     accent: 'generic',
-    readTime: '8 min read',
+    readTime: '12 min read',
+    href: '/guides/vibe-coding-design',
   },
   {
     slug: 'what-coding-agents-need-from-component-libraries',
@@ -65,11 +68,11 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> Article library coming soon</span>
+            <span><i aria-hidden="true" /> New editorial guide available</span>
           </div>
         </div>
 
-        <div className="resources-grid" aria-label="Planned DesignMCP articles">
+        <div className="resources-grid" aria-label="DesignMCP articles">
           {resources.map((resource) => (
             <article
               className={`resource-card resource-card--${resource.accent}`}
@@ -80,9 +83,12 @@ export function Resources() {
                 <ResourceVisual accent={resource.accent} />
               </div>
               <div className="resource-meta"><span>{resource.category}</span><span>{resource.readTime}</span></div>
-              <h3>{resource.title}</h3>
+              <h3>{resource.href ? <Link href={resource.href}>{resource.title}</Link> : resource.title}</h3>
               <p>{resource.description}</p>
-              <div className="resource-status"><span>Planned article</span><i aria-hidden="true">Soon</i></div>
+              <div className="resource-status">
+                <span>{resource.href ? 'Read the guide' : 'Planned article'}</span>
+                <i aria-hidden="true">{resource.href ? '↗' : 'Soon'}</i>
+              </div>
             </article>
           ))}
         </div>
