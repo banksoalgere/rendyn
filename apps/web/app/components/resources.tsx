@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 const resources = [
   {
     slug: 'vibe-coding-templates',
@@ -86,7 +84,7 @@ export function Resources() {
               <h3>{resource.title}</h3>
               <p>{resource.description}</p>
               {'href' in resource ? (
-                <Link className="resource-status" href={resource.href}><span>Read guide</span><i aria-hidden="true">↗</i></Link>
+                <a className="resource-status" href={resource.href}><span>Read guide</span><i aria-hidden="true">↗</i></a>
               ) : (
                 <div className="resource-status"><span>Planned article</span><i aria-hidden="true">Soon</i></div>
               )}

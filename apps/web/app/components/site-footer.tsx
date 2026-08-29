@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import { Brand } from './brand';
 
 const footerGroups = [
@@ -49,7 +47,7 @@ export function SiteFooter() {
           <div key={group.title}>
             <span>{group.title}</span>
             {group.links.map(([label, href]) => (
-              <Link href={href} key={label}>{label}</Link>
+              <a href={href} key={label}>{label}</a>
             ))}
           </div>
         ))}

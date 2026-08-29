@@ -1,4 +1,4 @@
-import Link from 'next/link';
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim breaks client hydration. */
 
 import { Brand } from './brand';
 
@@ -15,15 +15,15 @@ export function SiteHeader() {
       <Brand />
       <nav className="desktop-nav" aria-label="Primary navigation">
         {navigation.map((item) => (
-          <Link href={item.href} key={item.href}>{item.label}</Link>
+          <a href={item.href} key={item.href}>{item.label}</a>
         ))}
       </nav>
       <div className="header-actions">
-        <Link className="text-link" href="/#docs">View docs</Link>
-        <Link className="button button--small" href="/#early-access">
+        <a className="text-link" href="/#docs">View docs</a>
+        <a className="button button--small" href="/#early-access">
           <span className="desktop-label">Early access</span>
           <span className="mobile-label">Join</span>
-        </Link>
+        </a>
       </div>
     </header>
   );

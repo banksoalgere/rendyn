@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim breaks client hydration. */
 import type { Metadata } from 'next';
-import Link from 'next/link';
 
 import { SiteFooter } from '../../components/site-footer';
 import { SiteHeader } from '../../components/site-header';
@@ -182,7 +182,7 @@ export default function VibeCodingTemplatesPage() {
       <article aria-labelledby="guide-title">
         <header className="editorial-hero grid-field">
           <div className="editorial-hero-copy">
-            <p className="editorial-breadcrumb"><Link href="/#resources">Guides</Link><span>/</span>Template strategy</p>
+            <p className="editorial-breadcrumb"><a href="/#resources">Guides</a><span>/</span>Template strategy</p>
             <div className="editorial-byline">
               <span className="editorial-author-mark" aria-hidden="true">D</span>
               <p><strong>By DesignMCP Editorial</strong><span>Researched from primary product sources</span></p>
@@ -222,7 +222,7 @@ export default function VibeCodingTemplatesPage() {
             <div className="editorial-side-cta">
               <span>Need a smaller starting point?</span>
               <strong>Give your coding agent a curated component catalogue.</strong>
-              <Link href="/#catalogue">Explore DesignMCP <span aria-hidden="true">↗</span></Link>
+              <a href="/#catalogue">Explore DesignMCP <span aria-hidden="true">↗</span></a>
             </div>
           </aside>
 
@@ -346,7 +346,7 @@ export default function VibeCodingTemplatesPage() {
                   compare focused options, and retrieve complete source with dependencies and install
                   steps. It is designed for the moment your architecture already exists but the right UI does not.
                 </p>
-                <Link className="button" href="/#how-it-works">See what your agent gets <span aria-hidden="true">↗</span></Link>
+                <a className="button" href="/#how-it-works">See what your agent gets <span aria-hidden="true">↗</span></a>
               </div>
               <div className="inline-cta-visual" aria-hidden="true">
                 <span>Search by intent</span>
@@ -411,7 +411,7 @@ export default function VibeCodingTemplatesPage() {
                 <article><span>Component strategy</span><h3>How to choose UI components by product intent</h3><p>Move from a product outcome to a focused, defensible component choice.</p><i>Coming soon</i></article>
                 <article><span>MCP workflows</span><h3>What coding agents need from component libraries</h3><p>Understand the previews, context, and source files that make agent decisions more reliable.</p><i>Coming soon</i></article>
               </div>
-              <Link href="/#resources">Browse the resource library <span aria-hidden="true">↗</span></Link>
+              <a href="/#resources">Browse the resource library <span aria-hidden="true">↗</span></a>
             </section>
 
             <section className="editorial-sources" aria-labelledby="sources-title">
@@ -427,7 +427,7 @@ export default function VibeCodingTemplatesPage() {
               <p className="eyebrow">Start with stronger ingredients</p>
               <h2>Your coding agent can move fast without designing from zero.</h2>
               <p>Give it focused visual options, product context, and complete source it can safely adapt inside the codebase you already trust.</p>
-              <div><Link className="button" href="/#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></Link><Link className="button button--ghost" href="/#early-access">Join early access</Link></div>
+              <div><a className="button" href="/#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></a><a className="button button--ghost" href="/#early-access">Join early access</a></div>
             </section>
           </div>
         </div>
