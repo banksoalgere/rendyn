@@ -15,6 +15,7 @@ const footerGroups = [
     links: [
       ['ChatGPT app design', '/blog/how-to-design-an-app-with-chatgpt'],
       ['Cursor website design', '/guides/how-to-build-a-good-looking-website-with-cursor'],
+      ['Cursor design workflow', '/guides/cursor-design'],
       ['Cursor templates', '/blog/best-cursor-templates'],
       ['Claude Code design', '/guides/how-to-make-claude-code-better-at-design'],
       ['Claude Code website design', '/guides/how-to-design-a-website-with-claude-code'],

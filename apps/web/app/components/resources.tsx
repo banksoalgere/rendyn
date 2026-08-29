@@ -80,6 +80,16 @@ const resources: Resource[] = [
     readTime: '12 min read',
     status: 'Read the guide',
   },
+  {
+    slug: 'cursor-design',
+    href: '/guides/cursor-design',
+    category: 'Cursor design',
+    title: 'How to make Cursor better at design',
+    description: 'A practical workflow for giving Cursor stronger visual context, component choices, prompts, and browser QA.',
+    accent: 'generic',
+    readTime: '12 min read',
+    status: 'Read the guide',
+  },
 ];
 
 function ResourceVisual({ accent }: { accent: string }) {
@@ -156,7 +166,7 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> Seven field guides available</span>
+            <span><i aria-hidden="true" /> Eight field guides available</span>
           </div>
         </div>
 
