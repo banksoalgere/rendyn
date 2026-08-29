@@ -279,9 +279,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="trust-strip trust-strip--lower page-width" aria-label="DesignMCP compatibility">
-        <p>Complete source for modern product teams</p>
-        <div>{['React', 'TypeScript', 'Tailwind', 'MCP', 'Cloudflare'].map((tool) => <span key={tool}><i aria-hidden="true" />{tool}</span>)}</div>
+      <section className="trust-strip trust-strip--lower page-width" aria-label="What every unlocked component includes">
+        <p>Every unlocked component includes</p>
+        <div>
+          {['Complete source', 'Every state', 'Dependencies', 'Install steps', 'Editable code'].map((item) => (
+            <span key={item}><i aria-hidden="true">✓</i>{item}</span>
+          ))}
+        </div>
       </section>
 
       <section className="closing-section section-grid" id="get-started">
