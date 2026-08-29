@@ -70,6 +70,16 @@ const resources: Resource[] = [
     readTime: '15 min read',
     status: 'Read the guide',
   },
+  {
+    slug: 'how-to-make-codex-better-at-design',
+    href: '/guides/how-to-make-codex-better-at-design',
+    category: 'Codex design',
+    title: 'How to make Codex better at design',
+    description: 'A practical workflow for giving Codex stronger context, visual direction, interface ingredients, and browser QA.',
+    accent: 'intent',
+    readTime: '12 min read',
+    status: 'Read the guide',
+  },
 ];
 
 function ResourceVisual({ accent }: { accent: string }) {
@@ -146,7 +156,7 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> Six field guides available</span>
+            <span><i aria-hidden="true" /> Seven field guides available</span>
           </div>
         </div>
 

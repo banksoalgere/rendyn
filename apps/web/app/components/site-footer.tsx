@@ -19,6 +19,7 @@ const footerGroups = [
       ['Claude Code design', '/guides/how-to-make-claude-code-better-at-design'],
       ['Claude Code website design', '/guides/how-to-design-a-website-with-claude-code'],
       ['Claude Code templates', '/blog/best-claude-code-templates'],
+      ['Codex design', '/guides/how-to-make-codex-better-at-design'],
     ],
   },
   {
