@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 type Resource = {
   slug: string;
   href?: string;
@@ -33,13 +31,14 @@ const resources: Resource[] = [
     status: 'Read the guide',
   },
   {
-    slug: 'what-coding-agents-need-from-component-libraries',
-    category: 'MCP workflows',
-    title: 'The component library built for coding agents',
-    description: 'A guide to the previews, context and source files agents use to make reliable product decisions.',
+    slug: 'best-claude-code-templates',
+    href: '/blog/best-claude-code-templates',
+    category: 'Claude Code templates',
+    title: 'Best Claude Code templates for skills, agents and websites',
+    description: 'Six useful starting points compared by scope, safety, maintainability and speed to first value.',
     accent: 'delivery',
-    readTime: '6 min read',
-    status: 'Planned article',
+    readTime: '12 min read',
+    status: 'Read the guide',
   },
 ];
 
@@ -86,7 +85,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
   const className = `resource-card resource-card--${resource.accent}${resource.href ? ' resource-card--live' : ''}`;
 
   if (resource.href) {
-    return <Link className={className} data-resource-slug={resource.slug} href={resource.href}>{content}</Link>;
+    return <a className={className} data-resource-slug={resource.slug} href={resource.href}>{content}</a>;
   }
 
   return <article className={className} data-resource-slug={resource.slug}>{content}</article>;
@@ -104,11 +103,11 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> Two Claude Code field guides available</span>
+            <span><i aria-hidden="true" /> Three Claude Code field guides available</span>
           </div>
         </div>
 
-        <div className="resources-grid" aria-label="DesignMCP guides and planned articles">
+        <div className="resources-grid" aria-label="DesignMCP guides">
           {resources.map((resource) => (
             <ResourceCard key={resource.slug} resource={resource} />
           ))}
