@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     images: [],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'How to Make Claude Code Better at Design',
     description: 'A practical workflow for stronger Claude Code UI, from design context to browser verification.',
     images: [],
