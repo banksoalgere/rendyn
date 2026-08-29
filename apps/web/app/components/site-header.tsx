@@ -7,18 +7,23 @@ const navigation = [
   { href: '#resources', label: 'Resources' },
 ];
 
-export function SiteHeader() {
+interface SiteHeaderProps {
+  homeHref?: string;
+  navPrefix?: string;
+}
+
+export function SiteHeader({ homeHref = '#top', navPrefix = '' }: SiteHeaderProps) {
   return (
     <header className="site-header">
-      <Brand />
+      <Brand href={homeHref} />
       <nav className="desktop-nav" aria-label="Primary navigation">
         {navigation.map((item) => (
-          <a href={item.href} key={item.href}>{item.label}</a>
+          <a href={`${navPrefix}${item.href}`} key={item.href}>{item.label}</a>
         ))}
       </nav>
       <div className="header-actions">
-        <a className="text-link" href="#docs">View docs</a>
-        <a className="button button--small" href="#early-access">
+        <a className="text-link" href={`${navPrefix}#docs`}>View docs</a>
+        <a className="button button--small" href={`${navPrefix}#early-access`}>
           <span className="desktop-label">Early access</span>
           <span className="mobile-label">Join</span>
         </a>

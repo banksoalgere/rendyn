@@ -8,12 +8,13 @@ const resources = [
     readTime: '7 min read',
   },
   {
-    slug: 'give-ai-built-interfaces-a-point-of-view',
+    slug: 'how-to-design-a-website-with-chatgpt',
     category: 'AI interface design',
-    title: 'How to give AI-built interfaces a stronger point of view',
-    description: 'A practical approach to product context, component selection and more distinctive first drafts.',
+    title: 'How to design a website with ChatGPT',
+    description: 'A complete design-led workflow for sharper briefs, distinctive visual direction, production code and real browser QA.',
     accent: 'generic',
-    readTime: '8 min read',
+    readTime: '13 min read',
+    href: '/guides/how-to-design-a-website-with-chatgpt',
   },
   {
     slug: 'what-coding-agents-need-from-component-libraries',
@@ -65,11 +66,11 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> Article library coming soon</span>
+            <span><i aria-hidden="true" /> One guide available · more planned</span>
           </div>
         </div>
 
-        <div className="resources-grid" aria-label="Planned DesignMCP articles">
+        <div className="resources-grid" aria-label="DesignMCP guides and planned articles">
           {resources.map((resource) => (
             <article
               className={`resource-card resource-card--${resource.accent}`}
@@ -82,7 +83,13 @@ export function Resources() {
               <div className="resource-meta"><span>{resource.category}</span><span>{resource.readTime}</span></div>
               <h3>{resource.title}</h3>
               <p>{resource.description}</p>
-              <div className="resource-status"><span>Planned article</span><i aria-hidden="true">Soon</i></div>
+              {resource.href ? (
+                <a className="resource-status resource-status--link" href={resource.href}>
+                  <span>Read the guide</span><i aria-hidden="true">↗</i>
+                </a>
+              ) : (
+                <div className="resource-status"><span>Planned article</span><i aria-hidden="true">Soon</i></div>
+              )}
             </article>
           ))}
         </div>

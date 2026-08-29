@@ -35,11 +35,15 @@ export function FinalCallToAction() {
   );
 }
 
-export function SiteFooter() {
+interface SiteFooterProps {
+  linkPrefix?: string;
+}
+
+export function SiteFooter({ linkPrefix = '' }: SiteFooterProps) {
   return (
     <footer className="site-footer">
       <div className="footer-top">
-        <Brand label="Back to DesignMCP home" />
+        <Brand href={linkPrefix || '#top'} label="Back to DesignMCP home" />
         <p>A curated component catalogue for the coding agents you already use.</p>
       </div>
       <div className="footer-links">
@@ -47,7 +51,7 @@ export function SiteFooter() {
           <div key={group.title}>
             <span>{group.title}</span>
             {group.links.map(([label, href]) => (
-              <a href={href} key={label}>{label}</a>
+              <a href={`${linkPrefix}${href}`} key={label}>{label}</a>
             ))}
           </div>
         ))}
