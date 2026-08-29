@@ -11,6 +11,16 @@ type Resource = {
 
 const resources: Resource[] = [
   {
+    slug: 'how-to-build-a-good-looking-website-with-cursor',
+    href: '/guides/how-to-build-a-good-looking-website-with-cursor',
+    category: 'Cursor website design',
+    title: 'How to build a good-looking website with Cursor',
+    description: 'A practical, design-system-first workflow for turning a functional Cursor build into a polished, distinctive website.',
+    accent: 'cursor',
+    readTime: '12 min read',
+    status: 'Read the guide',
+  },
+  {
     slug: 'how-to-make-claude-code-better-at-design',
     href: '/guides/how-to-make-claude-code-better-at-design',
     category: 'Claude Code design',
@@ -43,6 +53,19 @@ const resources: Resource[] = [
 ];
 
 function ResourceVisual({ accent }: { accent: string }) {
+  if (accent === 'cursor') {
+    return (
+      <div className="cursor-article-visual">
+        <div className="cursor-visual-bar"><i /><i /><i /><span>localhost:3000</span></div>
+        <div className="cursor-visual-canvas">
+          <span>From generic</span>
+          <strong>to intentional.</strong>
+          <div><i /><i /><i /></div>
+        </div>
+        <p>Design direction applied <span>✓</span></p>
+      </div>
+    );
+  }
   if (accent === 'intent') {
     return (
       <div className="intent-map">
@@ -103,7 +126,7 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> Three Claude Code field guides available</span>
+            <span><i aria-hidden="true" /> Four field guides available</span>
           </div>
         </div>
 
