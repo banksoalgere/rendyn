@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
 import { Brand } from './brand';
 
 const footerGroups = [
@@ -11,7 +12,12 @@ const footerGroups = [
   },
   {
     title: 'Resources',
-    links: [['Articles', '/#resources'], ['Guides', '/#resources'], ['Component strategy', '/#resources']],
+    links: [
+      ['Cursor website design', '/guides/how-to-build-a-good-looking-website-with-cursor'],
+      ['Claude Code design', '/guides/how-to-make-claude-code-better-at-design'],
+      ['Claude Code website design', '/guides/how-to-design-a-website-with-claude-code'],
+      ['Claude Code templates', '/blog/best-claude-code-templates'],
+    ],
   },
   {
     title: 'Company',
@@ -27,8 +33,8 @@ export function FinalCallToAction() {
         <h2>Build your best<br />interface yet.</h2>
         <p>Connect DesignMCP and give every feature polished components, complete code and the context to choose well.</p>
         <div>
-          <a className="button" href="#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></a>
-          <a className="button button--cream" href="#docs">Connect DesignMCP</a>
+          <a className="button" href="/#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></a>
+          <a className="button button--cream" href="/#docs">Connect DesignMCP</a>
         </div>
       </div>
     </section>
