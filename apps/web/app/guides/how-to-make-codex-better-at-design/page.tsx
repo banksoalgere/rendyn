@@ -133,7 +133,7 @@ function ArrowIcon() {
 
 export default function CodexDesignGuide() {
   return (
-    <main className="article-page">
+    <main className="codex-design-page article-page">
       <a className="article-skip-link" href="#article-content">Skip to article</a>
       <SiteHeader />
 
