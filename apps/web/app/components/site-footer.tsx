@@ -1,21 +1,22 @@
+import Link from 'next/link';
 import { Brand } from './brand';
 
 const footerGroups = [
   {
     title: 'Product',
-    links: [['Product', '#product'], ['Components', '#catalogue'], ['What you get', '#how-it-works']],
+    links: [['Product', '/#product'], ['Components', '/#catalogue'], ['What you get', '/#how-it-works']],
   },
   {
     title: 'Developers',
-    links: [['Documentation', '#docs'], ['MCP connection', '#docs'], ['Component format', '#docs']],
+    links: [['Documentation', '/#docs'], ['MCP connection', '/#docs'], ['Component format', '/#docs']],
   },
   {
     title: 'Resources',
-    links: [['Articles', '#resources'], ['Guides', '#resources'], ['Component strategy', '#resources']],
+    links: [['Best Cursor templates', '/blog/best-cursor-templates'], ['Articles', '/#resources'], ['Guides', '/#resources']],
   },
   {
     title: 'Company',
-    links: [['About', '#top'], ['Early access', '#early-access'], ['Contact', '#top']],
+    links: [['About', '/#top'], ['Early access', '/#early-access'], ['Contact', '/#top']],
   },
 ];
 
@@ -47,7 +48,7 @@ export function SiteFooter() {
           <div key={group.title}>
             <span>{group.title}</span>
             {group.links.map(([label, href]) => (
-              <a href={href} key={label}>{label}</a>
+              <Link href={href} key={label}>{label}</Link>
             ))}
           </div>
         ))}
