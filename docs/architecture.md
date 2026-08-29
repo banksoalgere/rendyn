@@ -25,11 +25,24 @@ The repository keeps orchestration thin and puts behavior behind explicit module
 
 - `packages/catalog` owns catalog types, runtime schemas, safe path resolution, indexed lookup, pagination, and search. Every catalog or embedding JSON file is validated before use.
 - `apps/api/src/routes` owns HTTP transport only. Shared catalog response shaping lives in `catalog-presenter.ts`, so HTTP and MCP return the same public representation.
+- `apps/api/src/mcp.ts` only creates the MCP server. Each tool lives under `apps/api/src/mcp-tools`, grouped into search, source retrieval, and catalogue navigation.
 - `apps/api/src/entitlements.ts` owns Supabase quota claims and validates complete RPC responses before returning them to a route or MCP tool.
 - `scripts/import-beui.ts` coordinates imports. Fetch limits, URL/path policy, external schemas, metadata extraction, concurrency, pinned-repository handling, and component assembly live in focused modules under `scripts/lib/catalog-import`.
-- `apps/web/app/page.tsx` composes independent landing-page sections from `apps/web/app/components`. The Site is its own nested source repository because Sites publishes that application independently from the API monorepo.
+- `apps/web/app/page.tsx` composes independent landing-page sections from `apps/web/app/components`. It stays an independent deployable package while its source is versioned with the rest of the monorepo.
 
 Imported files under `catalog/components` and `apps/preview/vendor-root` are generated from the pinned upstream revision. Refactor the importer or preview shell, not the vendored implementation, unless the source revision is deliberately updated.
+
+## Suggested reading order
+
+Start with these files when tracing a request:
+
+1. `apps/api/src/server.ts` creates the services and connects the HTTP and MCP transports.
+2. `apps/api/src/routes` or `apps/api/src/mcp-tools` validates the incoming request.
+3. `apps/api/src/catalog-service.ts` chooses semantic search or its lexical fallback.
+4. `packages/catalog/src/search.ts` is the ranking pipeline. Its `search/scoring.ts` and `search/diversity.ts` modules own scoring and result variety; `packages/catalog/src/store.ts` reads validated catalogue data.
+5. `apps/api/src/entitlements.ts` claims access before complete source is returned.
+
+For catalogue updates, start at `scripts/import-beui.ts`. It reads as the import workflow; `component-source.ts` verifies pinned input, `component-manifest.ts` builds catalogue records, and the remaining modules implement the other import steps.
 
 ## Why catalogue files, not Postgres/pgvector
 

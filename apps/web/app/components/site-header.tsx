@@ -1,4 +1,4 @@
-import Link from 'next/link';
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
 import { Brand } from './brand';
 
 const navigation = [
@@ -12,30 +12,29 @@ type NavigationId = (typeof navigation)[number]['id'];
 
 interface SiteHeaderProps {
   activeSection?: NavigationId;
-  homeHref?: string;
 }
 
-export function SiteHeader({ activeSection, homeHref = '#top' }: SiteHeaderProps = {}) {
+export function SiteHeader({ activeSection }: SiteHeaderProps = {}) {
   return (
     <header className={`site-header${activeSection ? ' editorial-header' : ''}`}>
-      <Brand href={homeHref} />
+      <Brand />
       <nav className="desktop-nav" aria-label="Primary navigation">
         {navigation.map((item) => (
-          <Link
+          <a
             aria-current={activeSection === item.id ? 'page' : undefined}
             href={item.href}
             key={item.href}
           >
             {item.label}
-          </Link>
+          </a>
         ))}
       </nav>
       <div className="header-actions">
-        <Link className="text-link" href="/#docs">View docs</Link>
-        <Link className="button button--small" href="/#early-access">
+        <a className="text-link" href="/#docs">View docs</a>
+        <a className="button button--small" href="/#early-access">
           <span className="desktop-label">Early access</span>
           <span className="mobile-label">Join</span>
-        </Link>
+        </a>
       </div>
     </header>
   );

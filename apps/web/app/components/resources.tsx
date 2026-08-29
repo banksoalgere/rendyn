@@ -1,30 +1,44 @@
-import Link from 'next/link';
+type Resource = {
+  slug: string;
+  href?: string;
+  category: string;
+  title: string;
+  description: string;
+  accent: string;
+  readTime: string;
+  status: string;
+};
 
-const resources = [
+const resources: Resource[] = [
   {
-    slug: 'best-claude-code-templates',
-    category: 'Claude Code',
-    title: 'Best Claude Code templates for skills, agents and websites',
-    description: 'Six useful starting points compared by scope, safety, maintainability and speed to first value.',
+    slug: 'how-to-make-claude-code-better-at-design',
+    href: '/guides/how-to-make-claude-code-better-at-design',
+    category: 'Claude Code design',
+    title: 'How to make Claude Code better at design',
+    description: 'A practical workflow for giving Claude visual direction, reusable design context and a real browser feedback loop.',
     accent: 'intent',
     readTime: '12 min read',
-    href: '/blog/best-claude-code-templates',
+    status: 'Read the guide',
   },
   {
-    slug: 'give-ai-built-interfaces-a-point-of-view',
-    category: 'AI interface design',
-    title: 'How to give AI-built interfaces a stronger point of view',
-    description: 'A practical approach to product context, component selection and more distinctive first drafts.',
+    slug: 'how-to-design-a-website-with-claude-code',
+    href: '/guides/how-to-design-a-website-with-claude-code',
+    category: 'Claude Code frontend',
+    title: 'How to design a website with Claude Code',
+    description: 'A practical workflow for briefing, building, testing and refining a distinctive website with Claude Code.',
     accent: 'generic',
-    readTime: '8 min read',
+    readTime: '12 min read',
+    status: 'Read the guide',
   },
   {
-    slug: 'what-coding-agents-need-from-component-libraries',
-    category: 'MCP workflows',
-    title: 'The component library built for coding agents',
-    description: 'A guide to the previews, context and source files agents use to make reliable product decisions.',
+    slug: 'best-claude-code-templates',
+    href: '/blog/best-claude-code-templates',
+    category: 'Claude Code templates',
+    title: 'Best Claude Code templates for skills, agents and websites',
+    description: 'Six useful starting points compared by scope, safety, maintainability and speed to first value.',
     accent: 'delivery',
-    readTime: '6 min read',
+    readTime: '12 min read',
+    status: 'Read the guide',
   },
 ];
 
@@ -56,6 +70,27 @@ function ResourceVisual({ accent }: { accent: string }) {
   );
 }
 
+function ResourceCard({ resource }: { resource: Resource }) {
+  const content = (
+    <>
+      <div className="resource-visual" aria-hidden="true">
+        <ResourceVisual accent={resource.accent} />
+      </div>
+      <div className="resource-meta"><span>{resource.category}</span><span>{resource.readTime}</span></div>
+      <h3>{resource.title}</h3>
+      <p>{resource.description}</p>
+      <div className="resource-status"><span>{resource.status}</span><i aria-hidden="true">{resource.href ? 'Read ↗' : 'Soon'}</i></div>
+    </>
+  );
+  const className = `resource-card resource-card--${resource.accent}${resource.href ? ' resource-card--live' : ''}`;
+
+  if (resource.href) {
+    return <a className={className} data-resource-slug={resource.slug} href={resource.href}>{content}</a>;
+  }
+
+  return <article className={className} data-resource-slug={resource.slug}>{content}</article>;
+}
+
 export function Resources() {
   return (
     <section className="resources-section" id="resources">
@@ -68,28 +103,13 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> New guide now live</span>
+            <span><i aria-hidden="true" /> Three Claude Code field guides available</span>
           </div>
         </div>
 
-        <div className="resources-grid" aria-label="DesignMCP articles">
+        <div className="resources-grid" aria-label="DesignMCP guides">
           {resources.map((resource) => (
-            <article
-              className={`resource-card resource-card--${resource.accent}`}
-              data-resource-slug={resource.slug}
-              key={resource.slug}
-            >
-              <div className="resource-visual" aria-hidden="true">
-                <ResourceVisual accent={resource.accent} />
-              </div>
-              <div className="resource-meta"><span>{resource.category}</span><span>{resource.readTime}</span></div>
-              <h3>{resource.title}</h3>
-              <p>{resource.description}</p>
-              <div className="resource-status">
-                {resource.href ? <Link href={resource.href}>Read the guide</Link> : <span>Planned article</span>}
-                <i aria-hidden="true">{resource.href ? 'Open ↗' : 'Soon'}</i>
-              </div>
-            </article>
+            <ResourceCard key={resource.slug} resource={resource} />
           ))}
         </div>
       </div>
