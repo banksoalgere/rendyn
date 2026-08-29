@@ -1,11 +1,14 @@
+import Link from 'next/link';
+
 const resources = [
   {
-    slug: 'choose-ui-components-by-product-intent',
-    category: 'Component strategy',
-    title: 'How to choose UI components by product intent',
-    description: 'A practical framework for moving from a product outcome to a focused, defensible component choice.',
+    slug: 'how-to-make-codex-better-at-design',
+    category: 'Codex design',
+    title: 'How to make Codex better at design',
+    description: 'A practical workflow for giving Codex stronger context, visual direction, interface ingredients, and browser QA.',
     accent: 'intent',
-    readTime: '7 min read',
+    readTime: '12 min read',
+    href: '/guides/how-to-make-codex-better-at-design',
   },
   {
     slug: 'give-ai-built-interfaces-a-point-of-view',
@@ -14,6 +17,7 @@ const resources = [
     description: 'A practical approach to product context, component selection and more distinctive first drafts.',
     accent: 'generic',
     readTime: '8 min read',
+    href: null,
   },
   {
     slug: 'what-coding-agents-need-from-component-libraries',
@@ -22,6 +26,7 @@ const resources = [
     description: 'A guide to the previews, context and source files agents use to make reliable product decisions.',
     accent: 'delivery',
     readTime: '6 min read',
+    href: null,
   },
 ];
 
@@ -69,7 +74,7 @@ export function Resources() {
           </div>
         </div>
 
-        <div className="resources-grid" aria-label="Planned DesignMCP articles">
+        <div className="resources-grid" aria-label="DesignMCP articles">
           {resources.map((resource) => (
             <article
               className={`resource-card resource-card--${resource.accent}`}
@@ -82,7 +87,13 @@ export function Resources() {
               <div className="resource-meta"><span>{resource.category}</span><span>{resource.readTime}</span></div>
               <h3>{resource.title}</h3>
               <p>{resource.description}</p>
-              <div className="resource-status"><span>Planned article</span><i aria-hidden="true">Soon</i></div>
+              <div className="resource-status">
+                {resource.href ? (
+                  <Link aria-label={`Read ${resource.title}`} href={resource.href}>Read guide <i aria-hidden="true">↗</i></Link>
+                ) : (
+                  <><span>Planned article</span><i aria-hidden="true">Soon</i></>
+                )}
+              </div>
             </article>
           ))}
         </div>
