@@ -11,6 +11,16 @@ type Resource = {
 
 const resources: Resource[] = [
   {
+    slug: 'how-to-design-an-app-with-chatgpt',
+    href: '/blog/how-to-design-an-app-with-chatgpt',
+    category: 'ChatGPT app design',
+    title: 'How to design an app with ChatGPT',
+    description: 'A practical workflow from product brief and user flows to an intentional, browser-tested prototype.',
+    accent: 'intent',
+    readTime: '12 min read',
+    status: 'Read the guide',
+  },
+  {
     slug: 'how-to-build-a-good-looking-website-with-cursor',
     href: '/guides/how-to-build-a-good-looking-website-with-cursor',
     category: 'Cursor website design',
@@ -136,7 +146,7 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> Five field guides available</span>
+            <span><i aria-hidden="true" /> Six field guides available</span>
           </div>
         </div>
 
