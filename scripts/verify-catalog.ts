@@ -1,0 +1,29 @@
+import { createHash } from "node:crypto";
+import { resolve } from "node:path";
+import { CatalogStore } from "@designmcp/catalog";
+
+const catalogRoot = resolve(import.meta.dirname, "../catalog");
+const store = await CatalogStore.load(catalogRoot);
+
+if (store.index.components.length !== 80) {
+  throw new Error(`Expected 80 components, found ${store.index.components.length}`);
+}
+
+for (const summary of store.index.components) {
+  const manifest = await store.get(summary.slug);
+  if (!manifest) throw new Error(`Missing component manifest: ${summary.slug}`);
+  for (const file of manifest.files) {
+    const hash = createHash("sha256").update(file.content).digest("hex");
+    if (hash !== file.sha256) {
+      throw new Error(`File integrity mismatch: ${summary.slug}/${file.path}`);
+    }
+  }
+}
+
+const firstComponent = await store.get(store.index.components[0].slug);
+if (!firstComponent) throw new Error("Catalogue is missing its first component manifest");
+await store.readLicenseText(firstComponent);
+process.stdout.write(
+  `Verified ${store.index.components.length} MIT components across ` +
+    `${store.index.categories.length} categories.\n`,
+);

@@ -1,0 +1,84 @@
+---
+title: "Bounce Sidebar"
+description: "A vertical sidebar whose active dot jumps between destinations on a curved, spring-loaded path."
+category: "Components"
+publishedAt: "2026-07-22"
+updatedAt: "2026-07-22"
+documentation: "https://beui.dev/components/motion/bounce-sidebar"
+markdown: "https://beui.dev/components/motion/bounce-sidebar.md"
+license: "MIT"
+---
+
+# Bounce Sidebar
+
+> A vertical sidebar whose active dot jumps between destinations on a curved, spring-loaded path.
+
+## Install
+
+```bash
+npx shadcn@latest add @beui/bounce-sidebar
+```
+
+## Dependencies
+
+- `clsx`
+- `motion`
+- `react`
+- `tailwind-merge`
+
+## Usage
+
+```tsx
+"use client";
+
+import { useState } from "react";
+import { BounceSidebar } from "@/components/motion/bounce-sidebar";
+
+const destinations = [
+  { id: "overview", label: "Overview" },
+  { id: "components", label: "Components" },
+  { id: "motion", label: "Motion" },
+  { id: "templates", label: "Templates" },
+  { id: "changelog", label: "Changelog" },
+];
+
+export function BounceSidebarPreview() {
+  const [active, setActive] = useState("components");
+
+  return (
+    <div className="flex min-h-[360px] w-full items-center justify-center">
+      <BounceSidebar
+        items={destinations}
+        value={active}
+        onValueChange={setActive}
+        ariaLabel="beUI sections"
+        className="w-52"
+        listClassName="w-full"
+        itemClassName="text-base"
+      />
+    </div>
+  );
+}
+```
+
+## API Reference
+
+### BounceSidebar
+
+| Prop | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `items` | `BounceSidebarItem[]` | — | Yes | — |
+| `value` | `string` | — | No | — |
+| `defaultValue` | `string` | — | No | — |
+| `onValueChange` | `((value: string) => void)` | — | No | — |
+| `ariaLabel` | `string` | `Sidebar navigation` | No | — |
+| `className` | `string` | — | No | — |
+| `listClassName` | `string` | — | No | — |
+| `itemClassName` | `string` | — | No | — |
+| `indicatorClassName` | `string` | — | No | — |
+
+## Source
+
+- Registry detail: https://beui.dev/r/bounce-sidebar
+- Raw source: https://beui.dev/r/bounce-sidebar/raw
+- GitHub: https://github.com/starc007/ui-components

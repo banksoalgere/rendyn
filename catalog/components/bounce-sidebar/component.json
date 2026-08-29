@@ -1,0 +1,97 @@
+{
+  "id": "beui:bounce-sidebar",
+  "slug": "bounce-sidebar",
+  "name": "Bounce Sidebar",
+  "description": "A vertical sidebar whose active dot jumps between destinations on a curved, spring-loaded path.",
+  "category": "motion",
+  "publishedAt": "2026-07-22",
+  "updatedAt": "2026-07-22",
+  "dependencies": [
+    "clsx",
+    "motion",
+    "react",
+    "tailwind-merge"
+  ],
+  "internalDependencies": [
+    "@/components/motion/bounce-sidebar",
+    "@/lib/utils"
+  ],
+  "metadata": {
+    "kind": "component",
+    "family": "sidebar",
+    "tags": [
+      "list",
+      "navigation",
+      "sidebar",
+      "spring"
+    ],
+    "aliases": [
+      "bounce sidebar",
+      "sidebar"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A vertical sidebar whose active dot jumps between destinations on a curved, spring-loaded path."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "sidebar:list:navigation:spring:type",
+    "searchText": "Bounce Sidebar\nbounce sidebar\nA vertical sidebar whose active dot jumps between destinations on a curved, spring-loaded path.\nsidebar\nlist\nnavigation\nspring\ntype\ntitle: \"Bounce Sidebar\" description: \"A vertical sidebar whose active dot jumps between destinations on a curved, spring loaded path.\" category: \"Components\" publishedAt: \"2026 07 22\" updatedAt: \"2026 07 22\" documentation: \"https://beui.dev/components/motion/bounce sidebar\" markdown: \"https://beui.dev/components/motion/bounce sidebar.md\" license: \"MIT\" Bounce Sidebar A vertical sidebar whose active dot jumps between destinations on a curved, spring loaded path. Install Dependencies clsx motion react tailwind merge Usage API Reference BounceSidebar Prop Type Default Required Description items BounceSidebarItem[] — Yes — value string — No — defaultValue string — No — onValueChange ((value: string) = void) — No — ariaLabel string Sidebar navigation No — className string — No — listClassName string — No — itemClassName string — No — indicatorClassName string — No — Source Registry detail: https://beui.dev/r/bounce sidebar Raw source: https://beui.dev/r/bounce sidebar/raw GitHub: https://github.com/starc007/ui components"
+  },
+  "previewPath": "/preview/motion/bounce-sidebar",
+  "manifestPath": "components/bounce-sidebar/component.json",
+  "integrity": "sha256:012da891569a119f852a35043b0ed21626a30049a8c8a7f212a28db700244241",
+  "source": {
+    "id": "beui",
+    "name": "beUI",
+    "repository": "https://github.com/starc007/ui-components",
+    "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
+    "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
+    "importedAt": "2026-08-29T20:21:07.407Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2026 Saurabh Chauhan",
+      "textPath": "source/beui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/motion/bounce-sidebar.tsx",
+      "type": "component",
+      "content": "\"use client\";\n// beui.dev/components/motion/bounce-sidebar\n\nimport { animate, motion, useMotionValue, useReducedMotion } from \"motion/react\";\nimport {\n  type ReactNode,\n  useCallback,\n  useLayoutEffect,\n  useRef,\n  useState,\n} from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface BounceSidebarItem {\n  id: string;\n  label: ReactNode;\n  href?: string;\n  icon?: ReactNode;\n  disabled?: boolean;\n  target?: \"_blank\" | \"_self\" | \"_parent\" | \"_top\";\n  rel?: string;\n}\n\nexport interface BounceSidebarProps {\n  items: BounceSidebarItem[];\n  value?: string;\n  defaultValue?: string;\n  onValueChange?: (value: string) => void;\n  ariaLabel?: string;\n  className?: string;\n  listClassName?: string;\n  itemClassName?: string;\n  indicatorClassName?: string;\n}\n\nconst DOT_SIZE = 6;\n\n// A compact, lightly underdamped spring gives the dot a quick landing without\n// turning the sidebar into a playful toy. The sideways arc carries the bounce.\nconst BOUNCE_SPRING = {\n  type: \"spring\",\n  stiffness: 280,\n  damping: 18,\n  mass: 0.3,\n} as const;\n\nfunction quadraticBezier(start: number, control: number, end: number, progress: number) {\n  const remaining = 1 - progress;\n  return (\n    remaining * remaining * start +\n    2 * remaining * progress * control +\n    progress * progress * end\n  );\n}\n\nexport function BounceSidebar({\n  items,\n  value,\n  defaultValue,\n  onValueChange,\n  ariaLabel = \"Sidebar navigation\",\n  className,\n  listClassName,\n  itemClassName,\n  indicatorClassName,\n}: BounceSidebarProps) {\n  const reduce = useReducedMotion();\n  const [internalValue, setInternalValue] = useState(\n    defaultValue ?? items[0]?.id ?? \"\",\n  );\n  const requestedValue = value ?? internalValue;\n  const selectedValue = items.some((item) => item.id === requestedValue)\n    ? requestedValue\n    : (items[0]?.id ?? \"\");\n  const selectedIndex = items.findIndex((item) => item.id === selectedValue);\n  const listRef = useRef<HTMLUListElement>(null);\n  const itemRefs = useRef(new Map<string, HTMLLIElement>());\n  const selectedValueRef = useRef(selectedValue);\n  const previousIndexRef = useRef(selectedIndex);\n  const hasPositionRef = useRef(false);\n  const animationRef = useRef<ReturnType<typeof animate> | null>(null);\n  const x = useMotionValue(0);\n  const y = useMotionValue(0);\n  selectedValueRef.current = selectedValue;\n\n  const snapIndicator = useCallback(() => {\n    const selectedItem = itemRefs.current.get(selectedValueRef.current);\n    if (!selectedItem) return;\n\n    animationRef.current?.stop();\n    x.set(0);\n    y.set(\n      selectedItem.offsetTop + (selectedItem.offsetHeight - DOT_SIZE) / 2,\n    );\n    hasPositionRef.current = true;\n  }, [x, y]);\n\n  const positionIndicator = useCallback(\n    (shouldAnimate: boolean) => {\n      const selectedItem = itemRefs.current.get(selectedValue);\n      if (!selectedItem) return;\n\n      const destinationY =\n        selectedItem.offsetTop + (selectedItem.offsetHeight - DOT_SIZE) / 2;\n\n      animationRef.current?.stop();\n\n      if (!hasPositionRef.current || reduce || !shouldAnimate) {\n        x.set(0);\n        y.set(destinationY);\n        hasPositionRef.current = true;\n        previousIndexRef.current = selectedIndex;\n        return;\n      }\n\n      const startY = y.get();\n      const distance = destinationY - startY;\n      const travel = Math.abs(distance);\n      const longJumpProgress = Math.min(1, Math.max(0, (travel - 48) / 120));\n      const controlX = -Math.min(40, Math.max(8, travel * 0.25));\n      const midpointY = (startY + destinationY) / 2;\n      const controlY =\n        destinationY + (midpointY - destinationY) * longJumpProgress;\n\n      animationRef.current = animate(0, 1, {\n        ...BOUNCE_SPRING,\n        stiffness:\n          BOUNCE_SPRING.stiffness - 60 * longJumpProgress,\n        damping: BOUNCE_SPRING.damping + longJumpProgress,\n        mass: BOUNCE_SPRING.mass + 0.15 * longJumpProgress,\n        onUpdate: (progress) => {\n          x.set(quadraticBezier(0, controlX, 0, progress));\n          y.set(quadraticBezier(startY, controlY, destinationY, progress));\n        },\n        onComplete: () => {\n          x.set(0);\n          y.set(destinationY);\n        },\n      });\n\n      previousIndexRef.current = selectedIndex;\n    },\n    [reduce, selectedIndex, selectedValue, x, y],\n  );\n\n  useLayoutEffect(() => {\n    const shouldAnimate =\n      hasPositionRef.current && previousIndexRef.current !== selectedIndex;\n    positionIndicator(shouldAnimate);\n  }, [positionIndicator, selectedIndex]);\n\n  useLayoutEffect(() => {\n    const list = listRef.current;\n    if (!list || typeof ResizeObserver === \"undefined\") return;\n\n    const observer = new ResizeObserver(snapIndicator);\n    observer.observe(list);\n    return () => observer.disconnect();\n  }, [snapIndicator]);\n\n  useLayoutEffect(\n    () => () => {\n      animationRef.current?.stop();\n    },\n    [],\n  );\n\n  const selectItem = (id: string) => {\n    if (value === undefined) setInternalValue(id);\n    onValueChange?.(id);\n  };\n\n  return (\n    <nav aria-label={ariaLabel} className={cn(\"relative\", className)}>\n      <ul\n        ref={listRef}\n        className={cn(\"relative flex list-none flex-col gap-1.5 pl-6\", listClassName)}\n      >\n        {selectedIndex >= 0 ? (\n          <li\n            aria-hidden=\"true\"\n            role=\"presentation\"\n            className=\"pointer-events-none absolute inset-0\"\n          >\n            <motion.span\n              style={{ x, y }}\n              className={cn(\n                \"absolute top-0 left-3 h-1.5 w-1.5 rounded-full bg-primary\",\n                indicatorClassName,\n              )}\n            />\n          </li>\n        ) : null}\n\n        {items.map((item) => {\n          const active = item.id === selectedValue;\n          const content = (\n            <>\n              {item.icon ? (\n                <span aria-hidden=\"true\" className=\"shrink-0\">\n                  {item.icon}\n                </span>\n              ) : null}\n              <span>{item.label}</span>\n            </>\n          );\n          const interactiveClasses = cn(\n            \"flex min-h-9 w-full items-center gap-2 rounded-lg px-2 text-left text-sm font-medium outline-none transition-colors\",\n            \"focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background\",\n            active\n              ? \"text-foreground\"\n              : \"text-muted-foreground hover:text-foreground\",\n            item.disabled ? \"cursor-not-allowed opacity-40\" : undefined,\n            itemClassName,\n          );\n\n          return (\n            <li\n              key={item.id}\n              ref={(node) => {\n                if (node) itemRefs.current.set(item.id, node);\n                else itemRefs.current.delete(item.id);\n              }}\n              className=\"relative\"\n            >\n              {item.href ? (\n                <a\n                  href={item.href}\n                  target={item.target}\n                  rel={\n                    item.rel ??\n                    (item.target === \"_blank\" ? \"noreferrer noopener\" : undefined)\n                  }\n                  aria-current={active ? \"page\" : undefined}\n                  aria-disabled={item.disabled || undefined}\n                  data-active={active || undefined}\n                  tabIndex={item.disabled ? -1 : undefined}\n                  onClick={(event) => {\n                    if (item.disabled) {\n                      event.preventDefault();\n                      return;\n                    }\n                    selectItem(item.id);\n                  }}\n                  className={interactiveClasses}\n                >\n                  {content}\n                </a>\n              ) : (\n                <button\n                  type=\"button\"\n                  disabled={item.disabled}\n                  aria-current={active ? \"page\" : undefined}\n                  data-active={active || undefined}\n                  onClick={() => selectItem(item.id)}\n                  className={interactiveClasses}\n                >\n                  {content}\n                </button>\n              )}\n            </li>\n          );\n        })}\n      </ul>\n    </nav>\n  );\n}\n",
+      "sha256": "a07d8f1c188404c5fa4c946f02cfb6efbd71d5fe16a5da85432d8159d61514b6"
+    },
+    {
+      "path": "lib/utils.ts",
+      "type": "util",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "sha256": "7c8c3dfc0cdd370d44932828eb067ef771c8fe7996693221d5d4b90af6d54f2d"
+    },
+    {
+      "path": "components/previews/motion/bounce-sidebar.preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { BounceSidebar } from \"@/components/motion/bounce-sidebar\";\n\nconst destinations = [\n  { id: \"overview\", label: \"Overview\" },\n  { id: \"components\", label: \"Components\" },\n  { id: \"motion\", label: \"Motion\" },\n  { id: \"templates\", label: \"Templates\" },\n  { id: \"changelog\", label: \"Changelog\" },\n];\n\nexport function BounceSidebarPreview() {\n  const [active, setActive] = useState(\"components\");\n\n  return (\n    <div className=\"flex min-h-[360px] w-full items-center justify-center\">\n      <BounceSidebar\n        items={destinations}\n        value={active}\n        onValueChange={setActive}\n        ariaLabel=\"beUI sections\"\n        className=\"w-52\"\n        listClassName=\"w-full\"\n        itemClassName=\"text-base\"\n      />\n    </div>\n  );\n}\n",
+      "sha256": "532b9fa164745af224ff75f0b2aee65f265665f8d47fe3f5c3c838dfe5599eaf"
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add clsx motion react tailwind-merge",
+    "instructions": [
+      "Install external packages: pnpm add clsx motion react tailwind-merge",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "bounce-sidebar",
+    "upstreamPageUrl": "https://beui.dev/components/motion/bounce-sidebar",
+    "upstreamDetailUrl": "https://beui.dev/r/bounce-sidebar",
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/bounce-sidebar.md"
+  },
+  "documentation": "---\ntitle: \"Bounce Sidebar\"\ndescription: \"A vertical sidebar whose active dot jumps between destinations on a curved, spring-loaded path.\"\ncategory: \"Components\"\npublishedAt: \"2026-07-22\"\nupdatedAt: \"2026-07-22\"\ndocumentation: \"https://beui.dev/components/motion/bounce-sidebar\"\nmarkdown: \"https://beui.dev/components/motion/bounce-sidebar.md\"\nlicense: \"MIT\"\n---\n\n# Bounce Sidebar\n\n> A vertical sidebar whose active dot jumps between destinations on a curved, spring-loaded path.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/bounce-sidebar\n```\n\n## Dependencies\n\n- `clsx`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { useState } from \"react\";\nimport { BounceSidebar } from \"@/components/motion/bounce-sidebar\";\n\nconst destinations = [\n  { id: \"overview\", label: \"Overview\" },\n  { id: \"components\", label: \"Components\" },\n  { id: \"motion\", label: \"Motion\" },\n  { id: \"templates\", label: \"Templates\" },\n  { id: \"changelog\", label: \"Changelog\" },\n];\n\nexport function BounceSidebarPreview() {\n  const [active, setActive] = useState(\"components\");\n\n  return (\n    <div className=\"flex min-h-[360px] w-full items-center justify-center\">\n      <BounceSidebar\n        items={destinations}\n        value={active}\n        onValueChange={setActive}\n        ariaLabel=\"beUI sections\"\n        className=\"w-52\"\n        listClassName=\"w-full\"\n        itemClassName=\"text-base\"\n      />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### BounceSidebar\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `items` | `BounceSidebarItem[]` | — | Yes | — |\n| `value` | `string` | — | No | — |\n| `defaultValue` | `string` | — | No | — |\n| `onValueChange` | `((value: string) => void)` | — | No | — |\n| `ariaLabel` | `string` | `Sidebar navigation` | No | — |\n| `className` | `string` | — | No | — |\n| `listClassName` | `string` | — | No | — |\n| `itemClassName` | `string` | — | No | — |\n| `indicatorClassName` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/bounce-sidebar\n- Raw source: https://beui.dev/r/bounce-sidebar/raw\n- GitHub: https://github.com/starc007/ui-components\n"
+}
