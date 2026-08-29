@@ -3,7 +3,7 @@ interface BrandProps {
   label?: string;
 }
 
-export function Brand({ href = '#top', label = 'DesignMCP home' }: BrandProps) {
+export function Brand({ href = '/', label = 'DesignMCP home' }: BrandProps) {
   return (
     <a className="brand" href={href} aria-label={label}>
       <span className="brand-mark" aria-hidden="true">D</span>

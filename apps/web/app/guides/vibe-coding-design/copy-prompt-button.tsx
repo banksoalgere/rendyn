@@ -23,7 +23,7 @@ export function CopyPromptButton({ text }: CopyPromptButtonProps) {
   const label = copyState === 'copied' ? 'Copied' : copyState === 'failed' ? 'Copy failed' : 'Copy prompt';
 
   return (
-    <button className="guide-copy-button" type="button" onClick={copyPrompt}>
+    <button className="vcd-copy-button" type="button" onClick={copyPrompt}>
       <span aria-live="polite">{label}</span>
       <span aria-hidden="true">{copyState === 'copied' ? '✓' : copyState === 'failed' ? '!' : '↗'}</span>
     </button>
