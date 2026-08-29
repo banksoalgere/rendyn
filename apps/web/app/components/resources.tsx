@@ -21,6 +21,16 @@ const resources: Resource[] = [
     status: 'Read the guide',
   },
   {
+    slug: 'vibe-coding-design',
+    href: '/guides/vibe-coding-design',
+    category: 'AI interface design',
+    title: 'Vibe Coding Design: How to Make Your App Look Good',
+    description: 'A practical workflow for hierarchy, design systems, better prompts and a more polished vibe coding UI.',
+    accent: 'generic',
+    readTime: '12 min read',
+    status: 'Read the guide',
+  },
+  {
     slug: 'how-to-build-a-good-looking-website-with-cursor',
     href: '/guides/how-to-build-a-good-looking-website-with-cursor',
     category: 'Cursor website design',
@@ -166,7 +176,7 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> Eight field guides available</span>
+            <span><i aria-hidden="true" /> Nine field guides available</span>
           </div>
         </div>
 
