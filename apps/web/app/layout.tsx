@@ -13,17 +13,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'DesignMCP | Ship UI that feels designed, not generated',
-  description: 'Give coding agents ranked component choices and complete implementation-ready code, so you ship stronger UI with fewer revisions.',
+  title: 'DesignMCP | Give your coding agent great taste',
+  description: 'A curated catalogue of polished interface components, visual previews and complete code for coding agents.',
   openGraph: {
-    title: 'DesignMCP | Ship UI that feels designed, not generated',
-    description: 'Better first drafts, faster decisions and complete component code for AI-built products.',
+    title: 'DesignMCP | Give your coding agent great taste',
+    description: 'Polished interface components, visual previews and complete code for coding agents.',
     images: ['http://localhost:3001/og.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DesignMCP | Ship UI that feels designed, not generated',
-    description: 'Better first drafts, faster decisions and complete component code for AI-built products.',
+    title: 'DesignMCP | Give your coding agent great taste',
+    description: 'Polished interface components, visual previews and complete code for coding agents.',
     images: ['http://localhost:3001/og.png'],
   },
 };

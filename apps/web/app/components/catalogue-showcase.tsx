@@ -12,12 +12,12 @@ const categories = [
 export function CatalogueShowcase() {
   return (
     <section className="catalogue-section section-shell" id="catalogue">
-      <div className="section-kicker"><span>01</span><p>The catalogue</p></div>
+      <div className="section-kicker"><span>01</span><p>The collection</p></div>
       <div className="catalogue-heading">
-        <h2>Stop starting every screen<br />from zero.</h2>
+        <h2>Meet your agent&apos;s<br />new design library.</h2>
         <p>
-          Give every feature a stronger first draft. Your agent can draw from proven
-          actions, flows and interaction patterns instead of inventing another generic default.
+          Actions, navigation, commerce, onboarding, data display and motion, ready for
+          real products. Every component includes polished states, source files and setup details.
         </p>
       </div>
 
@@ -43,7 +43,7 @@ export function CatalogueShowcase() {
           <div className="tile-top"><span>Data filter</span><i>04</i></div>
           <div className="filter-demo"><button type="button" tabIndex={-1}>All components <span>84</span></button><button type="button" tabIndex={-1}>Accessible <span>61</span></button><button type="button" tabIndex={-1}>Low motion <span>38</span></button></div>
         </article>
-        <div className="board-note board-note--one">Curated<br />with intent <span>↗</span></div>
+        <div className="board-note board-note--one">Made for<br />real products <span>↗</span></div>
         <div className="board-note board-note--two">React / TS / Tailwind</div>
       </div>
 

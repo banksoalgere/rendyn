@@ -10,15 +10,15 @@ const includedResults = [
 ];
 
 const outcomes = [
-  ['Decide faster', 'Three ranked fits instead of an endless gallery.'],
-  ['Revise less', 'Trade-offs are clear before the code lands.'],
-  ['Keep control', 'The finished implementation lives in your product.'],
+  ['Find the fit', 'Three options ranked for your product.'],
+  ['Choose confidently', 'Visual previews and clear fit notes.'],
+  ['Ship the whole thing', 'Source, states, dependencies and setup included.'],
 ];
 
 export function ResultIncludesStrip() {
   return (
     <section className="category-strip" aria-label="What every DesignMCP result includes">
-      <p>Every search gives you</p>
+      <p>Inside every result</p>
       <div>
         {includedResults.map((item, index) => (
           <Fragment key={item}>
@@ -36,15 +36,15 @@ export function ValueProposition() {
     <section className="problem-section section-shell" id="how-it-works">
       <div className="section-kicker"><span>02</span><p>What you get</p></div>
       <div className="problem-grid">
-        <h2>A product that looks considered.<br />Without you designing every screen.</h2>
+        <h2>Everything your agent needs<br />to build a polished interface.</h2>
         <div className="problem-copy">
           <p className="problem-lede">
-            Stronger UI choices on the first pass, so you spend less time correcting
-            generic layouts and more time shipping the product.
+            One search delivers a focused shortlist, visual previews, fit reasoning,
+            complete source files and install steps.
           </p>
           <p>
-            DesignMCP turns one product brief into a few relevant options, then turns the
-            selected option into complete, editable code inside your repository.
+            Choose a component, add it to your repository and keep building with editable
+            code that belongs to your product.
           </p>
           <div className="outcome-points">
             {outcomes.map(([title, description]) => (

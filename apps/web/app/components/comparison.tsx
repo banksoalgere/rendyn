@@ -1,8 +1,8 @@
 const outcomes = [
-  ['Better first drafts', 'Choices matched to the product'],
-  ['Faster component decisions', 'Three ranked options, not hundreds'],
-  ['Complete implementations', 'No missing states, files or dependencies'],
-  ['A more coherent product', 'One shared language across every screen'],
+  ['Polished first drafts', 'Product-aware component choices'],
+  ['Clear decisions', 'Three ranked options with fit notes'],
+  ['Complete delivery', 'Source, states, dependencies and install steps'],
+  ['A cohesive product', 'One visual language across every screen'],
 ];
 
 export function Comparison() {
@@ -10,8 +10,8 @@ export function Comparison() {
     <section className="comparison-section">
       <div className="section-shell comparison-grid">
         <div className="comparison-copy">
-          <p className="eyebrow">What changes after you connect</p>
-          <h2>Less correction.<br /><span>More intentional UI.</span></h2>
+          <p className="eyebrow">The DesignMCP effect</p>
+          <h2>Better ingredients<br /><span>for every interface.</span></h2>
         </div>
         <div className="comparison-list">
           {outcomes.map(([result, detail], index) => (

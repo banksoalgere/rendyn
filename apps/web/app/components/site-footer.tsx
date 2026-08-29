@@ -3,7 +3,7 @@ import { Brand } from './brand';
 const footerGroups = [
   {
     title: 'Product',
-    links: [['Search', '#product'], ['Components', '#catalogue'], ['How it works', '#how-it-works']],
+    links: [['Product', '#product'], ['Components', '#catalogue'], ['What you get', '#how-it-works']],
   },
   {
     title: 'Developers',
@@ -23,12 +23,12 @@ export function FinalCallToAction() {
   return (
     <section className="final-cta grid-field" id="early-access">
       <div className="final-cta-card">
-        <p className="eyebrow">Get closer on the first pass</p>
-        <h2>Ship the product<br />you pictured.</h2>
-        <p>Give your agent the component choices and implementation detail it needs to build with intention.</p>
+        <p className="eyebrow">Your agent&apos;s design upgrade</p>
+        <h2>Build your best<br />interface yet.</h2>
+        <p>Connect DesignMCP and give every feature polished components, complete code and the context to choose well.</p>
         <div>
-          <a className="button" href="#product">Explore DesignMCP <span aria-hidden="true">↗</span></a>
-          <a className="button button--cream" href="#docs">Connect your agent</a>
+          <a className="button" href="#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></a>
+          <a className="button button--cream" href="#docs">Connect DesignMCP</a>
         </div>
       </div>
     </section>
@@ -40,7 +40,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-top">
         <Brand label="Back to DesignMCP home" />
-        <p>Ship more intentional interfaces with the agents you already use.</p>
+        <p>A curated component catalogue for the coding agents you already use.</p>
       </div>
       <div className="footer-links">
         {footerGroups.map((group) => (

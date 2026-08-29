@@ -8,13 +8,13 @@ export function AgentIntegration() {
   return (
     <section className="agent-section section-shell" id="docs">
       <div className="agent-copy">
-        <p className="eyebrow">Improve the output of every coding agent</p>
-        <h2>Connect once.<br />Get stronger UI on every build.</h2>
+        <p className="eyebrow">Works with the agents you already use</p>
+        <h2>One connection.<br />A design upgrade for every build.</h2>
         <p>
-          Your agent keeps its normal workflow. DesignMCP simply gives it better choices,
-          clearer reasoning and complete code whenever the product needs a new interface.
+          DesignMCP joins your agent&apos;s existing workflow and supplies component choices,
+          product-aware reasoning and complete implementation code.
         </p>
-        <a className="button button--light" href="#early-access">Read the connection guide <span aria-hidden="true">↗</span></a>
+        <a className="button button--light" href="#early-access">Connect DesignMCP <span aria-hidden="true">↗</span></a>
       </div>
 
       <div className="agent-console" aria-label="Example DesignMCP tool response">
@@ -28,7 +28,7 @@ export function AgentIntegration() {
           <p className="indent">accessible: <span className="code-orange">true</span></p>
           <p>{'})'}</p>
           <div className="console-result">
-            <div><span className="result-check">✓</span><p><strong>3 strong matches found</strong><small>Ranked for the current product</small></p></div>
+            <div><span className="result-check">✓</span><p><strong>3 product-ready matches</strong><small>Ranked for your interface</small></p></div>
             {matches.map(([number, name, fit]) => (
               <div className="result-row" key={number}>
                 <span>{number}</span><p>{name}</p><i>{fit}</i>

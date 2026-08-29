@@ -2,16 +2,16 @@ export function Hero() {
   return (
     <section className="hero grid-field" id="top">
       <div className="hero-copy">
-        <h1>Ship a product that feels<br />designed, not generated.</h1>
+        <h1>Give your coding agent<br />great taste.</h1>
         <p className="hero-deck">
-          Give your coding agent a catalogue of polished interface patterns. Start with
-          stronger components and ship a product customers can feel.
+          DesignMCP is a curated catalogue of polished interface components. Your agent
+          gets visual options, product context and complete code for every screen.
         </p>
         <div className="hero-actions">
-          <a className="button" href="#catalogue">Explore the components <span aria-hidden="true">↓</span></a>
-          <a className="button button--ghost" href="#docs">Connect your agent</a>
+          <a className="button" href="#catalogue">Browse components <span aria-hidden="true">↓</span></a>
+          <a className="button button--ghost" href="#docs">Connect DesignMCP</a>
         </div>
-        <p className="stack-note">Complete interfaces <span>·</span> Refined interaction <span>·</span> Production-ready code</p>
+        <p className="stack-note">Ranked choices <span>·</span> Complete source code <span>·</span> Agent-ready delivery</p>
       </div>
 
       <div className="component-stage" id="product" aria-label="A finance product composed with DesignMCP components">
