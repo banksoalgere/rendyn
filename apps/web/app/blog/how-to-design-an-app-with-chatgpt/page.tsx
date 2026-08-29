@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { Brand } from '../../components/brand';
 import { SiteFooter } from '../../components/site-footer';
 import { CopyPromptButton } from './copy-prompt-button';
@@ -193,28 +193,28 @@ const faqs = [
 
 function ArticleHeader() {
   return (
-    <header className="article-header">
+    <header className="chatgpt-app-header">
       <Brand href="/" label="DesignMCP home" />
-      <nav className="article-header-nav" aria-label="Article navigation">
+      <nav className="chatgpt-app-header-nav" aria-label="Article navigation">
         <a href="#workflow">Workflow</a>
         <a href="#prompt">Prompt</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <Link className="button button--small" href="/#early-access">Connect DesignMCP</Link>
+      <a className="button button--small" href="/#early-access">Connect DesignMCP</a>
     </header>
   );
 }
 
 function HeroVisual() {
   return (
-    <div className="article-hero-frame section-shell" aria-hidden="true">
-      <div className="article-hero-board grid-field">
-        <div className="article-hero-copy">
+    <div className="chatgpt-app-hero-frame section-shell" aria-hidden="true">
+      <div className="chatgpt-app-hero-board grid-field">
+        <div className="chatgpt-app-hero-copy">
           <span>Design the outcome first</span>
-          <p className="article-hero-visual-title">From loose idea to testable app.</p>
+          <p className="chatgpt-app-hero-visual-title">From loose idea to testable app.</p>
           <p>Brief → flows → interface → prototype → evidence</p>
         </div>
-        <div className="article-flow-preview">
+        <div className="chatgpt-app-flow-preview">
           <div><span>01</span><strong>Brief</strong><i>Who, why, constraint</i></div>
           <div><span>02</span><strong>Flow</strong><i>One critical journey</i></div>
           <div className="is-active"><span>03</span><strong>Prototype</strong><i>Real states, real copy</i></div>
@@ -227,13 +227,13 @@ function HeroVisual() {
 
 export default function ChatGPTAppDesignArticle() {
   return (
-    <div className="article-page" id="top">
+    <div className="chatgpt-app-page" id="top">
       <ArticleHeader />
 
       <main>
         <article>
-          <header className="article-hero section-shell">
-            <div className="article-meta">
+          <header className="chatgpt-app-hero section-shell">
+            <div className="chatgpt-app-meta">
               <span>Design workflow</span>
               <span aria-hidden="true">•</span>
               <span>By DesignMCP Editorial</span>
@@ -252,33 +252,33 @@ export default function ChatGPTAppDesignArticle() {
 
           <HeroVisual />
 
-          <div className="article-layout section-shell">
-            <aside className="article-sidebar">
+          <div className="chatgpt-app-layout section-shell">
+            <aside className="chatgpt-app-sidebar">
               <nav aria-label="On this page">
                 <p>On this page</p>
                 {sections.map(([href, label]) => (
                   <a href={`#${href}`} key={href}>{label}</a>
                 ))}
               </nav>
-              <div className="article-side-cta">
+              <div className="chatgpt-app-side-cta">
                 <span>Building in code?</span>
                 <strong>Give your agent stronger interface choices.</strong>
-                <Link href="/#catalogue">Explore DesignMCP <i aria-hidden="true">↗</i></Link>
+                <a href="/#catalogue">Explore DesignMCP <i aria-hidden="true">↗</i></a>
               </div>
             </aside>
 
-            <div className="article-content">
+            <div className="chatgpt-app-content">
             <section id="answer">
-              <p className="article-kicker">The short answer</p>
+              <p className="chatgpt-app-kicker">The short answer</p>
               <h2>Use ChatGPT to sharpen decisions—not to skip the design process.</h2>
-              <p className="article-lede">
+              <p className="chatgpt-app-lede">
                 A useful <strong>ChatGPT app design</strong> process moves through five
                 things in order: a precise product brief, one critical user journey, real
                 interface content, a coherent visual system, and a prototype tested with
                 real interactions. ChatGPT can accelerate each step, but it should make
                 assumptions visible rather than quietly inventing them.
               </p>
-              <div className="answer-card">
+              <div className="chatgpt-app-answer-card">
                 <span>In one sentence</span>
                 <p>
                   Give ChatGPT the product outcome and constraints, ask it to expose gaps,
@@ -295,7 +295,7 @@ export default function ChatGPTAppDesignArticle() {
             </section>
 
             <section id="brief">
-              <p className="article-kicker">Before the first mock-up</p>
+              <p className="chatgpt-app-kicker">Before the first mock-up</p>
               <h2>A better input creates a better interface.</h2>
               <p>
                 Do not begin by asking for “a clean, modern app.” Begin with decisions.
@@ -303,7 +303,7 @@ export default function ChatGPTAppDesignArticle() {
                 specific situation, the job they are trying to finish, and what the product
                 must protect along the way.
               </p>
-              <div className="brief-grid">
+              <div className="chatgpt-app-brief-grid">
                 <div><span>01</span><strong>User</strong><p>Who is doing the task, and what do they already know?</p></div>
                 <div><span>02</span><strong>Trigger</strong><p>What happened immediately before they opened the app?</p></div>
                 <div><span>03</span><strong>Outcome</strong><p>What changes for them when the task is complete?</p></div>
@@ -318,7 +318,7 @@ export default function ChatGPTAppDesignArticle() {
             </section>
 
             <section id="workflow">
-              <p className="article-kicker">The end-to-end method</p>
+              <p className="chatgpt-app-kicker">The end-to-end method</p>
               <h2>A ChatGPT app design workflow that holds up after the first prompt.</h2>
               <p>
                 Current official OpenAI guidance describes a similar loop: use Codex and
@@ -326,7 +326,7 @@ export default function ChatGPTAppDesignArticle() {
                 and verify it in a real browser. The steps below turn that loop into a
                 repeatable product-design process.
               </p>
-              <div className="design-steps">
+              <div className="chatgpt-app-design-steps">
                 {designSteps.map((step) => (
                   <article key={step.number}>
                     <span>{step.number}</span>
@@ -341,27 +341,27 @@ export default function ChatGPTAppDesignArticle() {
             </section>
 
             <section id="prompt">
-              <p className="article-kicker">A reusable starting point</p>
+              <p className="chatgpt-app-kicker">A reusable starting point</p>
               <h2>Prompt ChatGPT like a product team, not a mood board.</h2>
               <p>
                 This prompt makes scope, states, and validation part of the request. Adapt
                 the bracketed fields and attach source material whenever you have it.
               </p>
-              <div className="prompt-card">
-                <div className="prompt-card-bar">
+              <div className="chatgpt-app-prompt-card">
+                <div className="chatgpt-app-prompt-card-bar">
                   <span>chatgpt-app-design-prompt.txt</span>
                   <CopyPromptButton text={prompt} />
                 </div>
                 <pre><code>{prompt}</code></pre>
               </div>
-              <div className="prompt-notes">
+              <div className="chatgpt-app-prompt-notes">
                 <div><span>Keep</span><p>Specific users, real constraints, reference images, existing code conventions, and a measurable success condition.</p></div>
                 <div><span>Avoid</span><p>“Best practice” without context, fabricated research, vague style words, or a request to build every feature in one pass.</p></div>
               </div>
             </section>
 
             <section id="build">
-              <p className="article-kicker">From design to working software</p>
+              <p className="chatgpt-app-kicker">From design to working software</p>
               <h2>Can ChatGPT build the app too?</h2>
               <p>
                 Yes—with Codex and within a clear scope. If you typed{' '}
@@ -370,7 +370,7 @@ export default function ChatGPTAppDesignArticle() {
                 you test the idea honestly and what engineering work remains after the
                 prototype.
               </p>
-              <div className="build-paths">
+              <div className="chatgpt-app-build-paths">
                 {buildPaths.map((path, index) => (
                   <article key={path.label}>
                     <div><span>0{index + 1}</span><i>{path.label}</i></div>
@@ -380,7 +380,7 @@ export default function ChatGPTAppDesignArticle() {
                   </article>
                 ))}
               </div>
-              <div className="separation-callout">
+              <div className="chatgpt-app-separation-callout">
                 <div>
                   <span>Design with ChatGPT</span>
                   <p>Your product runs on the web, mobile, or desktop. ChatGPT helps frame and critique it; Codex can help implement and test it.</p>
@@ -393,18 +393,18 @@ export default function ChatGPTAppDesignArticle() {
               </div>
             </section>
 
-            <aside className="article-product-demo" aria-labelledby="product-demo-heading">
-              <div className="article-product-demo-copy">
-                <p className="article-kicker">DesignMCP in the workflow</p>
+            <aside className="chatgpt-app-product-demo" aria-labelledby="product-demo-heading">
+              <div className="chatgpt-app-product-demo-copy">
+                <p className="chatgpt-app-kicker">DesignMCP in the workflow</p>
                 <h2 id="product-demo-heading">Give the agent product context before it chooses the component.</h2>
                 <p>
                   Once the journey and states are clear, DesignMCP can help a coding agent
                   compare polished interface options by product intent, then deliver the
                   chosen source and setup details into the build.
                 </p>
-                <Link href="/#how-it-works">How agent-ready delivery works <span aria-hidden="true">↗</span></Link>
+                <a href="/#how-it-works">How agent-ready delivery works <span aria-hidden="true">↗</span></a>
               </div>
-              <div className="article-product-console" aria-hidden="true">
+              <div className="chatgpt-app-product-console" aria-hidden="true">
                 <div><span>designmcp / component search</span><i>Live catalogue</i></div>
                 <p><strong>Request</strong> “A calm confirmation action for a high-trust account change.”</p>
                 <ol>
@@ -412,19 +412,19 @@ export default function ChatGPTAppDesignArticle() {
                   <li><span>02</span><div><strong>Stateful button</strong><p>Built-in progress · compact feedback</p></div><i>Option</i></li>
                   <li><span>03</span><div><strong>Hold action</strong><p>Intentional friction · destructive flows</p></div><i>Option</i></li>
                 </ol>
-                <div className="article-product-files"><span>TSX</span><span>CSS</span><span>States</span><span>Install</span></div>
+                <div className="chatgpt-app-product-files"><span>TSX</span><span>CSS</span><span>States</span><span>Install</span></div>
               </div>
             </aside>
 
             <section id="test">
-              <p className="article-kicker">The quality gate</p>
+              <p className="chatgpt-app-kicker">The quality gate</p>
               <h2>Test the experience, not the screenshot.</h2>
               <p>
                 Ask ChatGPT to help form the checklist, but perform the critical journey in
                 the real interface. A high-quality frame can still hide a broken focus
                 order, missing error recovery, clipped content, or a failed request.
               </p>
-              <dl className="test-table" aria-label="App design test checklist">
+              <dl className="chatgpt-app-test-table" aria-label="App design test checklist">
                 {testGroups.map(([group, checkOne, checkTwo]) => (
                   <div key={group}>
                     <dt>{group}</dt>
@@ -433,7 +433,7 @@ export default function ChatGPTAppDesignArticle() {
                   </div>
                 ))}
               </dl>
-              <div className="evidence-strip">
+              <div className="chatgpt-app-evidence-strip">
                 <span>Useful evidence</span>
                 <div><i>01</i>Exact route and viewport</div>
                 <div><i>02</i>Actions and observed result</div>
@@ -443,9 +443,9 @@ export default function ChatGPTAppDesignArticle() {
             </section>
 
             <section id="mistakes">
-              <p className="article-kicker">Where AI-assisted design goes wrong</p>
+              <p className="chatgpt-app-kicker">Where AI-assisted design goes wrong</p>
               <h2>Six shortcuts that make the result look finished before it is useful.</h2>
-              <div className="mistake-list">
+              <div className="chatgpt-app-mistake-list">
                 {mistakes.map(([name, explanation], index) => (
                   <article key={name}>
                     <span>0{index + 1}</span>
@@ -456,8 +456,8 @@ export default function ChatGPTAppDesignArticle() {
               </div>
             </section>
 
-            <section className="source-section" aria-labelledby="source-heading">
-              <p className="article-kicker">Current capability notes</p>
+            <section className="chatgpt-app-source-section" aria-labelledby="source-heading">
+              <p className="chatgpt-app-kicker">Current capability notes</p>
               <h2 id="source-heading">What official OpenAI guidance supports today.</h2>
               <p>
                 OpenAI&apos;s current use cases document concept-to-prototype work with
@@ -465,7 +465,7 @@ export default function ChatGPTAppDesignArticle() {
                 Figma-to-code workflows with visual checks, React Native development with
                 Expo, and the separate process for building apps that run in ChatGPT.
               </p>
-              <ul className="source-links">
+              <ul className="chatgpt-app-source-links">
                 <li><a href="https://learn.chatgpt.com/use-cases/idea-to-proof-of-concept">Idea to proof of concept <span aria-hidden="true">↗</span></a></li>
                 <li><a href="https://learn.chatgpt.com/use-cases/frontend-designs">Responsive front-end designs <span aria-hidden="true">↗</span></a></li>
                 <li><a href="https://learn.chatgpt.com/use-cases/figma-designs-to-code">Figma designs to code <span aria-hidden="true">↗</span></a></li>
@@ -475,9 +475,9 @@ export default function ChatGPTAppDesignArticle() {
             </section>
 
             <section id="faq">
-              <p className="article-kicker">Frequently asked questions</p>
+              <p className="chatgpt-app-kicker">Frequently asked questions</p>
               <h2>ChatGPT app design, answered.</h2>
-              <div className="faq-list">
+              <div className="chatgpt-app-faq-list">
                 {faqs.map((item) => (
                   <details key={item.question}>
                     <summary>{item.question}<span aria-hidden="true">+</span></summary>
@@ -487,38 +487,38 @@ export default function ChatGPTAppDesignArticle() {
               </div>
             </section>
 
-            <section className="related-guides" aria-labelledby="related-guides-heading">
-              <p className="article-kicker">Continue exploring</p>
-              <h2 id="related-guides-heading">Related DesignMCP resources.</h2>
+            <section className="chatgpt-app-related-guides" aria-labelledby="chatgpt-app-related-guides-heading">
+              <p className="chatgpt-app-kicker">Continue exploring</p>
+              <h2 id="chatgpt-app-related-guides-heading">Related DesignMCP resources.</h2>
               <div>
-                <Link href="/#product">
+                <a href="/#product">
                   <span>Product overview</span>
                   <strong>See how DesignMCP improves an agent&apos;s interface choices</strong>
                   <i aria-hidden="true">↗</i>
-                </Link>
-                <Link href="/#catalogue">
+                </a>
+                <a href="/#catalogue">
                   <span>Component catalogue</span>
                   <strong>Explore components organised around product intent</strong>
                   <i aria-hidden="true">↗</i>
-                </Link>
-                <Link href="/#how-it-works">
+                </a>
+                <a href="/#how-it-works">
                   <span>Agent delivery</span>
                   <strong>Learn what the agent receives after a component is chosen</strong>
                   <i aria-hidden="true">↗</i>
-                </Link>
+                </a>
               </div>
             </section>
 
-            <section className="article-end-cta grid-field">
-              <p className="article-kicker">Build with better ingredients</p>
+            <section className="chatgpt-app-end-cta grid-field">
+              <p className="chatgpt-app-kicker">Build with better ingredients</p>
               <h2>Give the prototype a point of view.</h2>
               <p>
                 DesignMCP helps coding agents choose polished interface components with
                 visual previews, product context, complete source, and install guidance.
               </p>
               <div>
-                <Link className="button" href="/#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></Link>
-                <Link className="button button--ghost" href="/#how-it-works">See what agents get</Link>
+                <a className="button" href="/#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></a>
+                <a className="button button--ghost" href="/#how-it-works">See what agents get</a>
               </div>
             </section>
             </div>

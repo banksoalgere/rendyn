@@ -1,4 +1,7 @@
-import type { CatalogMetadata } from "../../../packages/catalog/src/types.js";
+import type {
+  CatalogCategorySlug,
+  CatalogMetadata,
+} from "../../../packages/catalog/src/types.js";
 import type { RegistryDetail } from "./schemas.js";
 
 const TAG_VOCABULARY = [
@@ -20,6 +23,24 @@ const FAMILY_TERMS = [
   "menu", "message", "modal", "notification", "picker", "popover", "radio", "search", "select",
   "sidebar", "slider", "table", "tabs", "toast", "toggle", "tooltip", "upload",
 ];
+
+const KIND_BY_CATEGORY: Record<CatalogCategorySlug, CatalogMetadata["kind"]> = {
+  agents: "agent-ui",
+  blocks: "block",
+  motion: "component",
+};
+
+const NOT_IDEAL_BY_CATEGORY: Record<CatalogCategorySlug, string> = {
+  agents: "The interface does not communicate model, assistant, or agent activity.",
+  blocks: "You need only a low-level primitive rather than a composed product pattern.",
+  motion: "Motion would distract from a dense or deliberately static information task.",
+};
+
+const ALIASES_BY_FAMILY: Record<string, string[]> = {
+  button: ["cta", "action control"],
+  modal: ["dialog", "overlay"],
+  select: ["dropdown", "picker"],
+};
 
 export function unique(values: string[]): string[] {
   return [...new Set(values.map((value) => value.trim()).filter(Boolean))];
@@ -43,55 +64,67 @@ export function addRegistrySignature(
   pageUrl: string,
 ): string {
   if (!/\.(?:tsx?|jsx?|css|mjs|cjs)$/.test(filePath)) return content;
-  const url = pageUrl.replace(/^https?:\/\//, "");
-  const banner = filePath.endsWith(".css") ? `/* ${url} */` : `// ${url}`;
+
+  const sourceLabel = pageUrl.replace(/^https?:\/\//, "");
+  const banner = filePath.endsWith(".css") ? `/* ${sourceLabel} */` : `// ${sourceLabel}`;
   const directive = content.match(/^\s*(["']use (?:client|server)["'];?[^\n]*\n)/);
   if (!directive) return `${banner}\n${content}`;
-  const end = directive[0].length;
-  return `${content.slice(0, end)}${banner}\n${content.slice(end)}`;
+
+  const directiveEnd = directive[0].length;
+  return `${content.slice(0, directiveEnd)}${banner}\n${content.slice(directiveEnd)}`;
+}
+
+function containsTerm(text: string, term: string): boolean {
+  return new RegExp(`\\b${term}s?\\b`).test(text);
+}
+
+function detectFamily(detail: RegistryDetail): string {
+  const identity = `${detail.name} ${detail.slug.replaceAll("-", " ")}`.toLowerCase();
+  return FAMILY_TERMS.find((term) => containsTerm(identity, term))
+    ?? FAMILY_TERMS.find((term) => containsTerm(detail.description.toLowerCase(), term))
+    ?? detail.slug;
+}
+
+function buildAliases(detail: RegistryDetail, family: string): string[] {
+  const categoryAliases = detail.category === "agents"
+    ? ["ai interface", "llm interface"]
+    : [];
+
+  return unique([
+    detail.slug.replaceAll("-", " "),
+    detail.name.toLowerCase(),
+    family,
+    ...(ALIASES_BY_FAMILY[family] ?? []),
+    ...categoryAliases,
+  ]);
 }
 
 export function buildMetadata(detail: RegistryDetail, markdown: string): CatalogMetadata {
   const plainDocumentation = stripMarkdown(markdown).slice(0, 12_000);
-  const haystack = `${detail.name} ${detail.slug} ${detail.description} ${plainDocumentation}`.toLowerCase();
-  const tags = TAG_VOCABULARY.filter((tag) => haystack.includes(tag));
-  const interactions = INTERACTION_VOCABULARY.filter((term) => haystack.includes(term));
-  const identityText = `${detail.name} ${detail.slug.replaceAll("-", " ")}`.toLowerCase();
-  const family =
-    FAMILY_TERMS.find((term) => new RegExp(`\\b${term}s?\\b`).test(identityText)) ??
-    FAMILY_TERMS.find((term) =>
-      new RegExp(`\\b${term}s?\\b`).test(detail.description.toLowerCase()),
-    ) ??
-    detail.slug;
-  const aliases = unique([
-    detail.slug.replaceAll("-", " "),
-    detail.name.toLowerCase(),
-    family,
-    ...(family === "button" ? ["cta", "action control"] : []),
-    ...(family === "modal" ? ["dialog", "overlay"] : []),
-    ...(family === "select" ? ["dropdown", "picker"] : []),
-    ...(detail.category === "agents" ? ["ai interface", "llm interface"] : []),
-  ]);
-  const kind = detail.category === "agents"
-    ? "agent-ui"
-    : detail.category === "blocks"
-      ? "block"
-      : "component";
-  const notIdealWhen = detail.category === "blocks"
-    ? ["You need only a low-level primitive rather than a composed product pattern."]
-    : detail.category === "agents"
-      ? ["The interface does not communicate model, assistant, or agent activity."]
-      : ["Motion would distract from a dense or deliberately static information task."];
+  const searchableText = [
+    detail.name,
+    detail.slug,
+    detail.description,
+    plainDocumentation,
+  ].join(" ").toLowerCase();
+  const tags = TAG_VOCABULARY.filter((tag) => searchableText.includes(tag));
+  const interactions = INTERACTION_VOCABULARY.filter((term) => searchableText.includes(term));
+  const family = detectFamily(detail);
+  const aliases = buildAliases(detail, family);
 
   return {
-    kind,
+    kind: KIND_BY_CATEGORY[detail.category],
     family,
     tags: unique(tags),
     aliases,
     interactions: unique(interactions),
     useWhen: [detail.description],
-    notIdealWhen,
-    visualSignature: unique([family, ...tags.slice(0, 5), ...interactions.slice(0, 2)]).join(":"),
+    notIdealWhen: [NOT_IDEAL_BY_CATEGORY[detail.category]],
+    visualSignature: unique([
+      family,
+      ...tags.slice(0, 5),
+      ...interactions.slice(0, 2),
+    ]).join(":"),
     searchText: unique([
       detail.name,
       detail.slug.replaceAll("-", " "),
