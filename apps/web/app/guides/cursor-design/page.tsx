@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
 import type { Metadata } from 'next';
 import { Brand } from '../../components/brand';
 import styles from './page.module.css';
