@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Brand } from './brand';
 
 const footerGroups = [
@@ -11,7 +12,11 @@ const footerGroups = [
   },
   {
     title: 'Resources',
-    links: [['Articles', '/#resources'], ['Guides', '/guides/how-to-make-claude-code-better-at-design'], ['Component strategy', '/#resources']],
+    links: [
+      ['Claude Code design', '/guides/how-to-make-claude-code-better-at-design'],
+      ['Claude Code website design', '/guides/how-to-design-a-website-with-claude-code'],
+      ['Component strategy', '/#resources'],
+    ],
   },
   {
     title: 'Company',
@@ -27,8 +32,8 @@ export function FinalCallToAction() {
         <h2>Build your best<br />interface yet.</h2>
         <p>Connect DesignMCP and give every feature polished components, complete code and the context to choose well.</p>
         <div>
-          <a className="button" href="#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></a>
-          <a className="button button--cream" href="#docs">Connect DesignMCP</a>
+          <Link className="button" href="#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></Link>
+          <Link className="button button--cream" href="#docs">Connect DesignMCP</Link>
         </div>
       </div>
     </section>
@@ -47,7 +52,7 @@ export function SiteFooter() {
           <div key={group.title}>
             <span>{group.title}</span>
             {group.links.map(([label, href]) => (
-              <a href={href} key={label}>{label}</a>
+              <Link href={href} key={label}>{label}</Link>
             ))}
           </div>
         ))}
