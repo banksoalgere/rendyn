@@ -14,6 +14,7 @@ const footerGroups = [
     title: 'Resources',
     links: [
       ['Cursor website design', '/guides/how-to-build-a-good-looking-website-with-cursor'],
+      ['Cursor templates', '/blog/best-cursor-templates'],
       ['Claude Code design', '/guides/how-to-make-claude-code-better-at-design'],
       ['Claude Code website design', '/guides/how-to-design-a-website-with-claude-code'],
       ['Claude Code templates', '/blog/best-claude-code-templates'],

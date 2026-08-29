@@ -50,6 +50,16 @@ const resources: Resource[] = [
     readTime: '12 min read',
     status: 'Read the guide',
   },
+  {
+    slug: 'best-cursor-templates',
+    href: '/blog/best-cursor-templates',
+    category: 'Cursor templates',
+    title: 'The 7 best Cursor templates for building better websites',
+    description: 'A researched comparison of source-code starters, visual systems and practical ways to make any template work better in Cursor.',
+    accent: 'delivery',
+    readTime: '15 min read',
+    status: 'Read the guide',
+  },
 ];
 
 function ResourceVisual({ accent }: { accent: string }) {
@@ -126,7 +136,7 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> Four field guides available</span>
+            <span><i aria-hidden="true" /> Five field guides available</span>
           </div>
         </div>
 
