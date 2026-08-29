@@ -1,4 +1,13 @@
-const toolNames = ['Codex', 'Claude Code', 'Cursor', 'Cline', 'VS Code'];
+const codingAgents = [
+  { name: 'Codex', logo: '/agent-logos/codex.svg' },
+  { name: 'Claude Code', logo: '/agent-logos/claude-code.svg' },
+  { name: 'Cursor', logo: '/agent-logos/cursor.svg' },
+  { name: 'Cline', logo: '/agent-logos/cline.svg' },
+  { name: 'Windsurf', logo: '/agent-logos/windsurf.svg' },
+  { name: 'GitHub Copilot', logo: '/agent-logos/github-copilot.svg' },
+  { name: 'Gemini CLI', logo: '/agent-logos/gemini-cli.svg' },
+  { name: 'OpenCode', logo: '/agent-logos/opencode.svg' },
+];
 
 const extras = [
   ['01', 'Ranked shortlists'],
@@ -116,7 +125,11 @@ export default function Home() {
 
       <section className="trust-strip page-width" aria-label="Compatible coding tools">
         <p>Built for the agents you already use</p>
-        <div>{toolNames.map((tool) => <span key={tool}><i aria-hidden="true" />{tool}</span>)}</div>
+        <div>
+          {codingAgents.slice(0, 5).map((agent) => (
+            <span key={agent.name}><img src={agent.logo} alt="" />{agent.name}</span>
+          ))}
+        </div>
       </section>
 
       <section className="steps-section section-grid" id="how-it-works">
@@ -215,8 +228,13 @@ export default function Home() {
             <p>DesignMCP joins the workflow you already use.</p>
             <a className="button button--secondary" href="#get-started">Connect DesignMCP <span>→</span></a>
           </div>
-          <div className="tool-grid" aria-label="Supported coding agent examples">
-            {['CX', 'CC', 'CU', 'CL', 'VS', 'WP', 'ZN', 'RB'].map((tool, index) => <span key={tool} className={`tool-icon tool-icon--${index + 1}`}>{tool}</span>)}
+          <div className="tool-grid" aria-label="MCP-compatible coding agents">
+            {codingAgents.map((agent) => (
+              <div className="tool-logo" key={agent.name}>
+                <span><img src={agent.logo} alt="" /></span>
+                <small>{agent.name}</small>
+              </div>
+            ))}
           </div>
         </div>
       </section>
