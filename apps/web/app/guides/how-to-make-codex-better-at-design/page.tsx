@@ -133,22 +133,22 @@ function ArrowIcon() {
 
 export default function CodexDesignGuide() {
   return (
-    <main className="codex-design-page article-page">
-      <a className="article-skip-link" href="#article-content">Skip to article</a>
+    <main className="codex-design-page codex-article-page">
+      <a className="codex-article-skip-link" href="#article-content">Skip to article</a>
       <SiteHeader />
 
       <article>
-        <header className="article-masthead grid-field" id="article-top">
-          <div className="article-shell">
-            <nav className="article-breadcrumb" aria-label="Breadcrumb">
+        <header className="codex-article-masthead grid-field" id="article-top">
+          <div className="codex-article-shell">
+            <nav className="codex-article-breadcrumb" aria-label="Breadcrumb">
               <Link href="/#resources">Guides</Link>
               <span aria-hidden="true">/</span>
               <span>Codex design</span>
             </nav>
 
-            <div className="article-title-block">
-              <div className="article-byline">
-                <span className="article-avatar" aria-hidden="true">DM</span>
+            <div className="codex-article-title-block">
+              <div className="codex-article-byline">
+                <span className="codex-article-avatar" aria-hidden="true">DM</span>
                 <span>DesignMCP editorial</span>
                 <i aria-hidden="true" />
                 <time dateTime="2026-08-29">29 August 2026</time>
@@ -163,19 +163,19 @@ export default function CodexDesignGuide() {
               </p>
             </div>
 
-            <div className="article-hero-frame" aria-label="A practical Codex design brief">
-              <div className="brief-window">
-                <div className="brief-toolbar">
+            <div className="codex-article-hero-frame" aria-label="A practical Codex design brief">
+              <div className="codex-brief-window">
+                <div className="codex-brief-toolbar">
                   <div><span /><span /><span /></div>
                   <p>codex-design.md</p>
                   <i>Ready</i>
                 </div>
-                <div className="brief-content">
-                  <div className="brief-heading">
+                <div className="codex-brief-content">
+                  <div className="codex-brief-heading">
                     <span>Design brief / 01</span>
                     <strong>Give the agent{' '}<br />a direction it can test.</strong>
                   </div>
-                  <div className="brief-lines">
+                  <div className="codex-brief-lines">
                     <p><span>01</span><strong>Outcome</strong><i>Help a new user reach value in under two minutes.</i></p>
                     <p><span>02</span><strong>Direction</strong><i>Editorial confidence, quiet surfaces, precise motion.</i></p>
                     <p><span>03</span><strong>Reuse</strong><i>Existing tokens, field patterns, and navigation shell.</i></p>
@@ -184,9 +184,9 @@ export default function CodexDesignGuide() {
                 </div>
               </div>
 
-              <aside className="hero-principle">
-                <div className="hero-principle-mark" aria-hidden="true">D</div>
-                <p className="hero-principle-label">The core principle</p>
+              <aside className="codex-hero-principle">
+                <div className="codex-hero-principle-mark" aria-hidden="true">D</div>
+                <p className="codex-hero-principle-label">The core principle</p>
                 <h2>Make good decisions easier to retrieve.</h2>
                 <p>
                   Codex can implement quickly. Your job is to make product intent,
@@ -198,8 +198,8 @@ export default function CodexDesignGuide() {
           </div>
         </header>
 
-        <div className="article-layout article-shell" id="article-content" tabIndex={-1}>
-          <aside className="article-rail">
+        <div className="codex-article-layout codex-article-shell" id="article-content" tabIndex={-1}>
+          <aside className="codex-article-rail">
             <nav aria-label="On this page">
               <p>On this page</p>
               <a href="#short-answer">The short answer</a>
@@ -211,7 +211,7 @@ export default function CodexDesignGuide() {
               <a href="#qa-checklist">QA checklist</a>
             </nav>
 
-            <div className="rail-cta">
+            <div className="codex-rail-cta">
               <span>DesignMCP</span>
               <strong>Give Codex better interface ingredients.</strong>
               <p>Curated components, visual previews, fit notes, and complete source.</p>
@@ -219,11 +219,11 @@ export default function CodexDesignGuide() {
             </div>
           </aside>
 
-          <div className="article-body">
+          <div className="codex-article-body">
             <section id="short-answer">
-              <p className="article-section-label">The short answer</p>
+              <p className="codex-article-section-label">The short answer</p>
               <h2>Codex needs a design environment, not a magic prompt.</h2>
-              <p className="article-lede">
+              <p className="codex-article-lede">
                 A strong Codex website starts before the first component is written.
                 The agent needs to understand what the product is, who the interface is
                 for, which system it belongs to, what good looks like, and how the final
@@ -234,7 +234,7 @@ export default function CodexDesignGuide() {
                 implementation, using images and skills, and working across the app, IDE,
                 CLI, web, and cloud, as documented in{' '}
                 <a
-                  className="article-citation"
+                  className="codex-article-citation"
                   href="https://openai.com/index/introducing-the-codex-app/"
                 >
                   OpenAI&apos;s Codex app overview
@@ -242,7 +242,7 @@ export default function CodexDesignGuide() {
                 . OpenAI also describes a round-trip workflow with Figma through MCP in
                 its{' '}
                 <a
-                  className="article-citation"
+                  className="codex-article-citation"
                   href="https://openai.com/index/figma-partnership/"
                 >
                   Codex and Figma announcement
@@ -251,7 +251,7 @@ export default function CodexDesignGuide() {
                 product decisions in an underspecified request.
               </p>
 
-              <div className="answer-card">
+              <div className="codex-answer-card">
                 <span>In one sentence</span>
                 <p>
                   To make Codex better at design, reduce the number of important visual
@@ -262,7 +262,7 @@ export default function CodexDesignGuide() {
             </section>
 
             <section id="context-gap">
-              <p className="article-section-label">01 / Context before code</p>
+              <p className="codex-article-section-label">01 / Context before code</p>
               <h2>Close the gap between “works” and “belongs.”</h2>
               <p>
                 Most disappointing AI interfaces are not broken. They are context-poor.
@@ -273,7 +273,7 @@ export default function CodexDesignGuide() {
               <p>
                 OpenAI&apos;s{' '}
                 <a
-                  className="article-citation"
+                  className="codex-article-citation"
                   href="https://openai.com/index/harness-engineering/"
                 >
                   agent-first engineering report
@@ -283,7 +283,7 @@ export default function CodexDesignGuide() {
                 work, that means exposing three kinds of evidence together.
               </p>
 
-              <div className="context-cards">
+              <div className="codex-context-cards">
                 <article>
                   <span>01</span>
                   <h3>Product evidence</h3>
@@ -303,7 +303,7 @@ export default function CodexDesignGuide() {
             </section>
 
             <section id="workflow">
-              <p className="article-section-label">02 / The workflow</p>
+              <p className="codex-article-section-label">02 / The workflow</p>
               <h2>A seven-step Codex design workflow.</h2>
               <p>
                 Use this sequence for a new page, a redesign, or a focused product flow.
@@ -311,7 +311,7 @@ export default function CodexDesignGuide() {
                 a small repository with only a few shared styles.
               </p>
 
-              <div className="workflow-list">
+              <div className="codex-workflow-list">
                 {workflowSteps.map((step) => (
                   <article key={step.number}>
                     <span>{step.number}</span>
@@ -325,7 +325,7 @@ export default function CodexDesignGuide() {
             </section>
 
             <section id="brief-template">
-              <p className="article-section-label">03 / A reusable input</p>
+              <p className="codex-article-section-label">03 / A reusable input</p>
               <h2>Use a design brief Codex can execute.</h2>
               <p>
                 The best brief is concise enough to stay in working context and specific
@@ -335,8 +335,8 @@ export default function CodexDesignGuide() {
                 as a skill rather than pasting a giant instruction block into every task.
               </p>
 
-              <div className="template-card">
-                <div className="template-card-bar">
+              <div className="codex-template-card">
+                <div className="codex-template-card-bar">
                   <span>Design task template</span>
                   <i>Copy into your Codex task</i>
                 </div>
@@ -367,7 +367,7 @@ Definition of done
 - Preserve existing conventions and report evidence`}</code></pre>
               </div>
 
-              <div className="editorial-note">
+              <div className="codex-editorial-note">
                 <span aria-hidden="true">✦</span>
                 <p>
                   <strong>Write references as reasons.</strong> “Use this page for its
@@ -378,14 +378,14 @@ Definition of done
             </section>
 
             <section id="codex-app">
-              <p className="article-section-label">04 / Pick the right surface</p>
+              <p className="codex-article-section-label">04 / Pick the right surface</p>
               <h2>Use the Codex app when the feedback is visual.</h2>
               <p>
                 The Codex app is especially useful for interface work because the task,
                 local project, changes, and visual review can stay in one continuous
                 loop. According to{' '}
                 <a
-                  className="article-citation"
+                  className="codex-article-citation"
                   href="https://openai.com/index/introducing-the-codex-app/"
                 >
                   OpenAI&apos;s Codex app overview
@@ -393,7 +393,7 @@ Definition of done
                 , the app supports parallel threads, worktrees, diff review, and skills.
                 An{' '}
                 <a
-                  className="article-citation"
+                  className="codex-article-citation"
                   href="https://academy.openai.com/en/public/clubs/champions-ecqup/videos/design-context-and-iteration-with-codex-2026-07-09"
                 >
                   OpenAI Academy lesson
@@ -409,28 +409,28 @@ Definition of done
                 inspect the rendered state and receive precise feedback there.
               </p>
 
-              <div className="surface-table" role="table" aria-label="Codex surfaces for design work">
-                <div className="surface-row surface-row--head" role="row">
+              <div className="codex-surface-table" role="table" aria-label="Codex surfaces for design work">
+                <div className="codex-surface-row codex-surface-row--head" role="row">
                   <span role="columnheader">Surface</span>
                   <span role="columnheader">Best design use</span>
                   <span role="columnheader">Visual loop</span>
                 </div>
-                <div className="surface-row" role="row">
+                <div className="codex-surface-row" role="row">
                   <strong role="cell">Codex app</strong>
                   <span role="cell">Longer UI work, local routes, review, and iteration</span>
                   <i role="cell">Integrated</i>
                 </div>
-                <div className="surface-row" role="row">
+                <div className="codex-surface-row" role="row">
                   <strong role="cell">IDE extension</strong>
                   <span role="cell">Focused changes close to existing code and images</span>
                   <i role="cell">Editor-led</i>
                 </div>
-                <div className="surface-row" role="row">
+                <div className="codex-surface-row" role="row">
                   <strong role="cell">CLI</strong>
                   <span role="cell">Terminal-first work inside an established development flow</span>
                   <i role="cell">External</i>
                 </div>
-                <div className="surface-row" role="row">
+                <div className="codex-surface-row" role="row">
                   <strong role="cell">Cloud</strong>
                   <span role="cell">Configured, isolated tasks in a cloud environment</span>
                   <i role="cell">Environment-led</i>
@@ -439,9 +439,9 @@ Definition of done
             </section>
 
             <section id="failure-modes">
-              <p className="article-section-label">05 / What weakens the result</p>
+              <p className="codex-article-section-label">05 / What weakens the result</p>
               <h2>Common Codex website design failure modes.</h2>
-              <div className="failure-grid">
+              <div className="codex-failure-grid">
                 {failureModes.map((failure, index) => (
                   <article key={failure.title}>
                     <span>0{index + 1}</span>
@@ -454,13 +454,13 @@ Definition of done
             </section>
 
             <section id="qa-checklist">
-              <p className="article-section-label">06 / Definition of done</p>
+              <p className="codex-article-section-label">06 / Definition of done</p>
               <h2>The design QA checklist.</h2>
               <p>
                 “Looks good” is not a test. Use a small, repeatable checklist so the Codex
                 design loop ends with evidence rather than optimism.
               </p>
-              <div className="qa-list">
+              <div className="codex-qa-list">
                 {qaChecks.map((check, index) => (
                   <div key={check}>
                     <span aria-hidden="true">✓</span>
@@ -471,9 +471,9 @@ Definition of done
               </div>
             </section>
 
-            <section className="designmcp-section" id="designmcp">
+            <section className="codex-designmcp-section" id="designmcp">
               <div>
-                <p className="article-section-label">Where DesignMCP fits</p>
+                <p className="codex-article-section-label">Where DesignMCP fits</p>
                 <h2>Better output starts with better ingredients.</h2>
                 <p>
                   DesignMCP gives coding agents a curated catalogue of polished React,
@@ -486,12 +486,12 @@ Definition of done
                   implementation layer more legible—so the agent spends less time
                   inventing generic UI and more time composing a coherent product.
                 </p>
-                <div className="designmcp-actions">
+                <div className="codex-designmcp-actions">
                   <Link className="button" href="/#catalogue">Browse components <ArrowIcon /></Link>
                   <Link className="button button--ghost" href="/#docs">Connect DesignMCP</Link>
                 </div>
               </div>
-              <div className="ingredient-stack" aria-label="What DesignMCP gives a coding agent">
+              <div className="codex-ingredient-stack" aria-label="What DesignMCP gives a coding agent">
                 <div><span>01</span><strong>Intent-ranked options</strong><i>Choose</i></div>
                 <div><span>02</span><strong>Rendered previews</strong><i>Inspect</i></div>
                 <div><span>03</span><strong>Fit reasoning</strong><i>Decide</i></div>
@@ -499,10 +499,10 @@ Definition of done
               </div>
             </section>
 
-            <section className="faq-section">
-              <p className="article-section-label">Frequently asked</p>
+            <section className="codex-faq-section">
+              <p className="codex-article-section-label">Frequently asked</p>
               <h2>Codex design questions, answered.</h2>
-              <div className="faq-list">
+              <div className="codex-faq-list">
                 <details>
                   <summary>Can Codex design a complete website?</summary>
                   <p>Yes. Codex can implement a complete website or app in a compatible repository. The quality improves when the task includes product context, a chosen visual direction, approved components and assets, responsive requirements, and a real rendered review loop.</p>
@@ -522,10 +522,10 @@ Definition of done
               </div>
             </section>
 
-            <section className="sources-section" aria-labelledby="sources-title">
-              <p className="article-section-label">Primary research</p>
+            <section className="codex-sources-section" aria-labelledby="sources-title">
+              <p className="codex-article-section-label">Primary research</p>
               <h2 id="sources-title">Official sources and further reading.</h2>
-              <div className="source-list">
+              <div className="codex-source-list">
                 {sources.map((source, index) => (
                   <a
                     aria-label={`${source.label} (opens in a new tab)`}
@@ -540,16 +540,16 @@ Definition of done
                   </a>
                 ))}
               </div>
-              <p className="source-note">
+              <p className="codex-source-note">
                 Product capabilities were checked against OpenAI sources on 29 August
                 2026. This guide is independent editorial content by DesignMCP.
               </p>
             </section>
 
-            <section className="related-section" aria-labelledby="related-title">
-              <p className="article-section-label">Continue the workflow</p>
+            <section className="codex-related-section" aria-labelledby="related-title">
+              <p className="codex-article-section-label">Continue the workflow</p>
               <h2 id="related-title">Put the guide into practice.</h2>
-              <div className="related-grid">
+              <div className="codex-related-grid">
                 <Link href="/#catalogue">
                   <span>Component catalogue</span>
                   <h3>Explore components by product intent</h3>
@@ -567,8 +567,8 @@ Definition of done
           </div>
         </div>
 
-        <section className="article-final-cta grid-field" aria-labelledby="article-cta-title">
-          <div className="article-final-cta-card">
+        <section className="codex-article-final-cta grid-field" aria-labelledby="article-cta-title">
+          <div className="codex-article-final-cta-card">
             <p className="eyebrow">The next Codex design task</p>
             <h2 id="article-cta-title">Give the agent{' '}<br />better ingredients.</h2>
             <p>Pair a clear design brief with curated components, visual previews, fit reasoning, and complete source code.</p>
@@ -579,7 +579,7 @@ Definition of done
           </div>
         </section>
 
-        <footer className="article-end article-shell">
+        <footer className="codex-article-end codex-article-shell">
           <span>Design better systems, not longer prompts.</span>
           <a href="#article-top" aria-label="Back to the top of this article">Back to top ↑</a>
         </footer>
