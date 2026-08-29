@@ -12,7 +12,7 @@ const categories = [
 export function CatalogueShowcase() {
   return (
     <section className="catalogue-section section-shell" id="catalogue">
-      <div className="section-kicker"><span>02</span><p>The catalogue</p></div>
+      <div className="section-kicker"><span>01</span><p>The catalogue</p></div>
       <div className="catalogue-heading">
         <h2>Stop starting every screen<br />from zero.</h2>
         <p>

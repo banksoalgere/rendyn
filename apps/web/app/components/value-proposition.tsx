@@ -34,7 +34,7 @@ export function ResultIncludesStrip() {
 export function ValueProposition() {
   return (
     <section className="problem-section section-shell" id="how-it-works">
-      <div className="section-kicker"><span>01</span><p>What you get</p></div>
+      <div className="section-kicker"><span>02</span><p>What you get</p></div>
       <div className="problem-grid">
         <h2>A product that looks considered.<br />Without you designing every screen.</h2>
         <div className="problem-copy">

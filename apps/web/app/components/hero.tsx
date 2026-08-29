@@ -1,95 +1,59 @@
-const suggestions = [
-  {
-    name: 'Quiet action',
-    fit: '92% match',
-    tone: 'Restrained',
-    action: 'Continue',
-    className: 'suggestion-card suggestion-card--quiet',
-  },
-  {
-    name: 'Signal button',
-    fit: 'Best match',
-    tone: 'Subtle motion',
-    action: 'Deploy changes',
-    className: 'suggestion-card suggestion-card--selected',
-  },
-  {
-    name: 'Split action',
-    fit: '86% match',
-    tone: 'High intent',
-    action: 'Create project',
-    className: 'suggestion-card suggestion-card--split',
-  },
-];
-
 export function Hero() {
   return (
     <section className="hero grid-field" id="top">
       <div className="hero-copy">
         <h1>Ship a product that feels<br />designed, not generated.</h1>
         <p className="hero-deck">
-          Give your coding agent the right component for every moment. Get a ranked
-          shortlist, complete implementation-ready code, and fewer design revisions.
+          Give your coding agent a catalogue of polished interface patterns. Start with
+          stronger components and ship a product customers can feel.
         </p>
         <div className="hero-actions">
-          <a className="button" href="#how-it-works">See what you get <span aria-hidden="true">↓</span></a>
+          <a className="button" href="#catalogue">Explore the components <span aria-hidden="true">↓</span></a>
           <a className="button button--ghost" href="#docs">Connect your agent</a>
         </div>
-        <p className="stack-note">Matched options <span>·</span> Complete code <span>·</span> No missing dependencies</p>
+        <p className="stack-note">Complete interfaces <span>·</span> Refined interaction <span>·</span> Production-ready code</p>
       </div>
 
-      <div className="product-stage" id="product" aria-label="DesignMCP component search example">
-        <div className="window-bar">
-          <div className="window-dots" aria-hidden="true"><i /><i /><i /></div>
-          <span>designmcp / search</span>
-          <span className="live-pill"><i /> Connected</span>
-        </div>
-
-        <div className="query-panel">
-          <div className="query-heading">
-            <span className="query-icon" aria-hidden="true">✦</span>
-            <div>
-              <p>Ask DesignMCP</p>
-              <span>Describe the interface, intent and constraints.</span>
-            </div>
+      <div className="component-stage" id="product" aria-label="A finance product composed with DesignMCP components">
+        <div className="showcase-toolbar">
+          <div className="showcase-product">
+            <span className="showcase-product-mark" aria-hidden="true">O</span>
+            <div><strong>Orbit</strong><span>Finance workspace</span></div>
           </div>
-          <blockquote>
-            “I need a restrained primary CTA for a dark finance dashboard. Subtle
-            motion, accessible loading feedback, no extra UI framework.”
-          </blockquote>
-          <div className="query-tags">
-            <span>Primary action</span><span>Dark UI</span><span>Accessible</span><span>Low motion</span>
+          <div className="showcase-tabs" aria-hidden="true">
+            <span className="is-active">Overview</span>
+            <span>Markets</span>
+            <span>Activity</span>
           </div>
+          <span className="showcase-avatar" aria-label="Signed in as JB">JB</span>
         </div>
 
-        <div className="results-heading">
-          <div><span>03</span><p>Ready-to-use options</p></div>
-          <p>Already ranked for this product</p>
+        <div className="showcase-heading">
+          <div><span>Portfolio overview</span><h2>Good morning, Jordan.</h2></div>
+          <div className="showcase-actions" aria-hidden="true"><span>Export</span><span className="is-primary">Add funds <i>↗</i></span></div>
         </div>
 
-        <div className="suggestion-grid" aria-hidden="true">
-          {suggestions.map((item, index) => (
-            <article className={item.className} key={item.name}>
-              <div className="suggestion-meta">
-                <span>{item.fit}</span><span>0{index + 1}</span>
-              </div>
-              <div className="component-preview">
-                <button type="button" tabIndex={-1}>
-                  <span>{item.action}</span>
-                  <i aria-hidden="true">{index === 1 ? '↗' : '→'}</i>
-                </button>
-              </div>
-              <div className="suggestion-copy">
-                <div><h2>{item.name}</h2><p>{item.tone}</p></div>
-                <span className="card-arrow" aria-hidden="true">↗</span>
-              </div>
+        <div className="showcase-grid">
+          <article className="showcase-panel showcase-panel--table">
+            <div className="showcase-panel-head"><div><span>Portfolio</span><strong>Recent positions</strong></div><i>Live data</i></div>
+            <div className="showcase-image showcase-image--table"><img src="/beui-showcase/table.png" alt="Refined data table with status badges and account values" /></div>
+          </article>
+
+          <div className="showcase-side">
+            <article className="showcase-panel showcase-panel--wallet">
+              <div className="showcase-panel-head"><div><span>Balance</span><strong>Wallet overview</strong></div><i>Interactive</i></div>
+              <div className="showcase-image showcase-image--wallet"><img src="/beui-showcase/wallet-card.png" alt="Wallet component with balance, account controls, and transaction actions" /></div>
             </article>
-          ))}
+            <article className="showcase-panel showcase-panel--market">
+              <div className="showcase-panel-head"><div><span>Trade</span><strong>Market order</strong></div><i>Ready to use</i></div>
+              <div className="showcase-image showcase-image--market"><img src="/beui-showcase/prediction-market.png" alt="Market trading component with outcome prices and an order ticket" /></div>
+            </article>
+          </div>
         </div>
 
-        <div className="stage-footer">
-          <p><span aria-hidden="true">✓</span> Selected component arrives complete and ready to add</p>
-          <span className="stage-link">Get the implementation <span aria-hidden="true">→</span></span>
+        <div className="showcase-footer">
+          <p><span aria-hidden="true">✓</span> Real components shown inside a finished product</p>
+          <span>Built from the DesignMCP catalogue</span>
         </div>
       </div>
     </section>

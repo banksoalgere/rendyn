@@ -7,7 +7,6 @@ import { Resources } from './components/resources';
 import { FinalCallToAction, SiteFooter } from './components/site-footer';
 import { SiteHeader } from './components/site-header';
 import { ResultIncludesStrip, ValueProposition } from './components/value-proposition';
-import { Workflow } from './components/workflow';
 
 export default function Home() {
   return (
@@ -15,10 +14,9 @@ export default function Home() {
       <SiteHeader />
       <Hero />
       <ResultIncludesStrip />
+      <CatalogueShowcase />
       <ValueProposition />
       <FeatureShowcase />
-      <CatalogueShowcase />
-      <Workflow />
       <AgentIntegration />
       <Comparison />
       <Resources />
