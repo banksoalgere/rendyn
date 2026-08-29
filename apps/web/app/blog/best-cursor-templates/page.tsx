@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { SiteFooter } from '../../components/site-footer';
 import { SiteHeader } from '../../components/site-header';
 
@@ -268,7 +268,7 @@ const contents = [
   ['adapt-template', 'Make a template Cursor-ready'],
   ['avoid', 'What to avoid'],
   ['faq', 'Frequently asked questions'],
-  ['related-reading', 'Related reading'],
+  ['cursor-templates-related', 'Related reading'],
 ];
 
 function ExternalArrow() {
@@ -277,40 +277,40 @@ function ExternalArrow() {
 
 function TemplateHero() {
   return (
-    <div className="template-hero-frame" aria-hidden="true">
-      <div className="template-hero-toolbar">
+    <div className="cursor-templates-hero-frame" aria-hidden="true">
+      <div className="cursor-templates-hero-toolbar">
         <span><i aria-hidden="true" /> Template review</span>
         <span>7 sources · 6 criteria</span>
       </div>
-      <div className="template-hero-stage">
-        <div className="template-hero-copy">
-          <span className="template-hero-label">Start with the job</span>
+      <div className="cursor-templates-hero-stage">
+        <div className="cursor-templates-hero-copy">
+          <span className="cursor-templates-hero-label">Start with the job</span>
           <strong>Choose a foundation<br />your agent can understand.</strong>
           <p>Working source, clear ownership, current dependencies, and a visual system worth keeping.</p>
-          <div className="template-hero-score">
+          <div className="cursor-templates-hero-score">
             <span>Selection rule</span>
             <b>Fit before feature count</b>
           </div>
         </div>
-        <div className="template-hero-picks">
-          <div className="template-pick-card is-featured">
+        <div className="cursor-templates-hero-picks">
+          <div className="cursor-templates-pick-card is-featured">
             <span>01 · Overall</span>
             <strong>Vercel Templates</strong>
             <small>Broad, inspectable starters</small>
           </div>
-          <div className="template-pick-card">
+          <div className="cursor-templates-pick-card">
             <span>02 · Full stack</span>
             <strong>Supabase + Next.js</strong>
             <small>Auth and data foundation</small>
           </div>
-          <div className="template-pick-card">
+          <div className="cursor-templates-pick-card">
             <span>03 · Visual system</span>
             <strong>shadcn/ui Blocks</strong>
             <small>Own the source you add</small>
           </div>
         </div>
       </div>
-      <div className="template-hero-footer">
+      <div className="cursor-templates-hero-footer">
         <span>Editorial field guide · August 2026</span>
         <span>Independent selection · No affiliate links</span>
       </div>
@@ -320,7 +320,7 @@ function TemplateHero() {
 
 export default function BestCursorTemplatesPage() {
   return (
-    <div className="article-page" id="top">
+    <div className="cursor-templates-page" id="top">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema).replace(/</g, '\\u003c') }}
@@ -328,15 +328,15 @@ export default function BestCursorTemplatesPage() {
       <SiteHeader />
       <main>
         <article>
-          <header className="article-hero grid-field">
-            <div className="article-hero-inner">
-              <nav className="article-breadcrumb" aria-label="Breadcrumb">
-                <Link href="/#resources">Resources</Link>
+          <header className="cursor-templates-hero grid-field">
+            <div className="cursor-templates-hero-inner">
+              <nav className="cursor-templates-breadcrumb" aria-label="Breadcrumb">
+                <a href="/#resources">Resources</a>
                 <span aria-hidden="true">/</span>
                 <span>Field guide</span>
               </nav>
-              <div className="article-byline">
-                <span className="article-avatar" aria-hidden="true">D</span>
+              <div className="cursor-templates-byline">
+                <span className="cursor-templates-avatar" aria-hidden="true">D</span>
                 <span>By DesignMCP editorial</span>
                 <i aria-hidden="true">•</i>
                 <time dateTime="2026-08-29">August 29, 2026</time>
@@ -344,16 +344,16 @@ export default function BestCursorTemplatesPage() {
                 <span>15 min read</span>
               </div>
               <h1>7 Best Cursor Templates for Websites in 2026</h1>
-              <p className="article-deck">
+              <p className="cursor-templates-deck">
                 The most useful Cursor website templates are maintainable source code—not screenshots or oversized boilerplates. We compared seven practical starting points for SaaS, content, full-stack apps, and polished interface work.
               </p>
               <TemplateHero />
             </div>
           </header>
 
-          <div className="article-layout">
-            <aside className="article-sidebar" aria-label="Article navigation">
-              <nav className="article-toc">
+          <div className="cursor-templates-layout">
+            <aside className="cursor-templates-sidebar" aria-label="Article navigation">
+              <nav className="cursor-templates-toc">
                 <p>In this guide</p>
                 <ol>
                   {contents.map(([id, label]) => (
@@ -361,20 +361,20 @@ export default function BestCursorTemplatesPage() {
                   ))}
                 </ol>
               </nav>
-              <div className="sidebar-cta">
+              <div className="cursor-templates-sidebar-cta">
                 <span>DesignMCP</span>
                 <strong>Give Cursor a stronger visual vocabulary.</strong>
                 <p>Browse polished, source-available interface components by product intent.</p>
-                <Link href="/#catalogue">Explore the catalogue <ExternalArrow /></Link>
+                <a href="/#catalogue">Explore the catalogue <ExternalArrow /></a>
               </div>
             </aside>
 
-            <div className="article-body">
+            <div className="cursor-templates-body">
               <section id="quick-answer">
-                <p className="article-lede">
+                <p className="cursor-templates-lede">
                   <strong>Our quick answer:</strong> Vercel Templates is the best overall place to start because it offers inspectable repositories across the widest range of website jobs. Choose the Next.js SaaS Starter for a working application foundation, Supabase&apos;s official Next.js template for auth and data, and shadcn/ui Blocks when you already have a codebase and only need a well-formed page pattern.
                 </p>
-                <div className="editorial-note">
+                <div className="cursor-templates-note">
                   <span>Important distinction</span>
                   <p>
                     Cursor&apos;s official Marketplace distributes plugins—rules, skills, agents, commands, MCP servers, and hooks. It is not a catalogue of ready-made websites. For a website, you typically open or clone a normal source repository in Cursor and then add project guidance.
@@ -384,12 +384,12 @@ export default function BestCursorTemplatesPage() {
               </section>
 
               <section id="what-counts">
-                <span className="article-section-number">01 · Scope</span>
+                <span className="cursor-templates-section-number">01 · Scope</span>
                 <h2>What counts as a Cursor template?</h2>
                 <p>
                   There is no special website file format that only Cursor can understand. In practice, the phrase covers three different starting points. Knowing which one you need prevents a lot of template debt.
                 </p>
-                <div className="definition-grid">
+                <div className="cursor-templates-definition-grid">
                   <article>
                     <span>01</span>
                     <h3>Project starter</h3>
@@ -409,16 +409,16 @@ export default function BestCursorTemplatesPage() {
                 <p>
                   The strongest setup usually combines all three: a small starter that matches your runtime, a visual system with enough character to guide future work, and concise repository instructions. Cursor&apos;s current documentation places project rules in <code>.cursor/rules</code> as <code>.mdc</code> files and also supports <code>AGENTS.md</code> for plain-language instructions.
                 </p>
-                <a className="article-source-link" href="https://prod.cursor.com/docs/rules" rel="external">See current Cursor Rules guidance <ExternalArrow /></a>
+                <a className="cursor-templates-source-link" href="https://prod.cursor.com/docs/rules" rel="external">See current Cursor Rules guidance <ExternalArrow /></a>
               </section>
 
               <section id="how-we-chose">
-                <span className="article-section-number">02 · Method</span>
+                <span className="cursor-templates-section-number">02 · Method</span>
                 <h2>How we chose the best options</h2>
                 <p>
                   We reviewed the live source pages and documentation on August 29, 2026. We did not rank by the number of features or by whether a resource used “AI” in its marketing. Each option had to offer real code, a credible path to local development, and a clear reason to exist.
                 </p>
-                <div className="criteria-list">
+                <div className="cursor-templates-criteria-list">
                   <div><span>01</span><p><strong>Source ownership</strong>Can you inspect and safely change the code?</p></div>
                   <div><span>02</span><p><strong>Stack clarity</strong>Are the framework, services, and requirements explicit?</p></div>
                   <div><span>03</span><p><strong>Visual leverage</strong>Does it contain design decisions worth preserving?</p></div>
@@ -429,14 +429,14 @@ export default function BestCursorTemplatesPage() {
               </section>
 
               <section id="comparison">
-                <span className="article-section-number">03 · Compare</span>
+                <span className="cursor-templates-section-number">03 · Compare</span>
                 <h2>The best Cursor templates at a glance</h2>
                 <p>
                   “Best” depends on what you are building. This comparison favors the smallest credible foundation for the job, because every unnecessary subsystem creates more code for you and Cursor to reason about.
                 </p>
-                <div className="comparison-table-wrap" tabIndex={0} aria-label="Scrollable comparison table">
-                  <table className="article-comparison-table">
-                    <caption className="sr-only">Comparison of seven Cursor website template resources</caption>
+                <div className="cursor-templates-comparison-wrap" tabIndex={0} aria-label="Scrollable comparison table">
+                  <table className="cursor-templates-comparison-table">
+                    <caption className="cursor-templates-sr-only">Comparison of seven Cursor website template resources</caption>
                     <thead>
                       <tr><th>Template</th><th>Best for</th><th>Format</th><th>Access</th><th>Watch for</th></tr>
                     </thead>
@@ -456,15 +456,15 @@ export default function BestCursorTemplatesPage() {
               </section>
 
               <section id="reviews">
-                <span className="article-section-number">04 · Reviews</span>
+                <span className="cursor-templates-section-number">04 · Reviews</span>
                 <h2>The 7 best Cursor templates and starter resources</h2>
                 <p>
                   These are not interchangeable products. The verdict on each one explains when it earns its place—and when a smaller or more specialized option would be better.
                 </p>
-                <div className="template-review-list">
+                <div className="cursor-templates-review-list">
                   {picks.map((pick, index) => (
-                    <article className={`template-review template-review--${pick.accent}`} id={pick.id} key={pick.id}>
-                      <div className="template-review-heading">
+                    <article className={`cursor-templates-review cursor-templates-review--${pick.accent}`} id={pick.id} key={pick.id}>
+                      <div className="cursor-templates-review-heading">
                         <span>{String(index + 1).padStart(2, '0')}</span>
                         <div>
                           <p>{pick.bestFor}</p>
@@ -472,15 +472,15 @@ export default function BestCursorTemplatesPage() {
                         </div>
                         <a href={pick.url} rel="external" aria-label={`Visit ${pick.name}`}>Visit <ExternalArrow /></a>
                       </div>
-                      <p className="template-review-summary">{pick.summary}</p>
-                      <div className="template-facts">
+                      <p className="cursor-templates-review-summary">{pick.summary}</p>
+                      <div className="cursor-templates-facts">
                         <div><span>Format</span><strong>{pick.format}</strong></div>
                         <div><span>Access</span><strong>{pick.access}</strong></div>
                         <div><span>Watch for</span><strong>{pick.watchFor}</strong></div>
                       </div>
                       <h4>Why it ranks here</h4>
                       <p>{pick.why}</p>
-                      <div className="pros-cons">
+                      <div className="cursor-templates-pros-cons">
                         <div>
                           <h4>Strengths</h4>
                           <ul>{pick.strengths.map((item) => <li key={item}>{item}</li>)}</ul>
@@ -490,7 +490,7 @@ export default function BestCursorTemplatesPage() {
                           <ul>{pick.tradeoffs.map((item) => <li key={item}>{item}</li>)}</ul>
                         </div>
                       </div>
-                      <div className="prompt-card">
+                      <div className="cursor-templates-prompt-card">
                         <span>A useful first prompt</span>
                         <p>{pick.prompt}</p>
                       </div>
@@ -500,31 +500,31 @@ export default function BestCursorTemplatesPage() {
               </section>
 
               <section id="adapt-template">
-                <span className="article-section-number">05 · Workflow</span>
+                <span className="cursor-templates-section-number">05 · Workflow</span>
                 <h2>How to make any template work better in Cursor</h2>
                 <p>
                   A template is a starting state, not a product strategy. Give Cursor an explicit evaluation job before asking it to redesign anything. That first pass should reduce risk and establish the boundaries future prompts must respect.
                 </p>
-                <ol className="workflow-list">
+                <ol className="cursor-templates-workflow-list">
                   <li><span>01</span><div><h3>Run it unchanged</h3><p>Install from the documented lockfile, start the project, and verify the original route before editing.</p></div></li>
                   <li><span>02</span><div><h3>Ask for a system map</h3><p>Have Cursor identify routes, data boundaries, environment variables, tests, external services, and the primary design tokens.</p></div></li>
                   <li><span>03</span><div><h3>Remove what the product does not need</h3><p>Delete demo integrations and sample features deliberately. Never weaken validation just to make a borrowed flow pass.</p></div></li>
                   <li><span>04</span><div><h3>Document the decisions</h3><p>Add focused <code>.cursor/rules/*.mdc</code> files or an <code>AGENTS.md</code> that describes the real architecture, visual constraints, and verification commands.</p></div></li>
                   <li><span>05</span><div><h3>Adapt one complete flow</h3><p>Finish a real user journey at desktop and mobile widths before multiplying the pattern across the site.</p></div></li>
                 </ol>
-                <div className="article-inline-cta">
+                <div className="cursor-templates-inline-cta">
                   <div>
                     <span>Better inputs, better interface work</span>
                     <strong>Give your agent components with real interaction and source context.</strong>
                   </div>
-                  <Link className="button" href="/#catalogue">Browse DesignMCP <ExternalArrow /></Link>
+                  <a className="button" href="/#catalogue">Browse DesignMCP <ExternalArrow /></a>
                 </div>
               </section>
 
               <section id="avoid">
-                <span className="article-section-number">06 · Guardrails</span>
+                <span className="cursor-templates-section-number">06 · Guardrails</span>
                 <h2>What to avoid in a Cursor website template</h2>
-                <div className="avoid-grid">
+                <div className="cursor-templates-avoid-grid">
                   <article><span aria-hidden="true">×</span><div><h3>Screenshot-only “templates”</h3><p>They supply style inspiration but no component, responsive, or accessibility decisions for Cursor to preserve.</p></div></article>
                   <article><span aria-hidden="true">×</span><div><h3>Boilerplates larger than the product</h3><p>Unused billing, CMS, roles, queues, and analytics increase the surface area for bugs and security mistakes.</p></div></article>
                   <article><span aria-hidden="true">×</span><div><h3>Unreviewed agent rules</h3><p>Generic instructions can conflict with the repository and encourage broad, unsafe changes. Read them before they enter context.</p></div></article>
@@ -535,9 +535,9 @@ export default function BestCursorTemplatesPage() {
               </section>
 
               <section id="faq">
-                <span className="article-section-number">07 · FAQ</span>
+                <span className="cursor-templates-section-number">07 · FAQ</span>
                 <h2>Frequently asked questions</h2>
-                <div className="faq-list">
+                <div className="cursor-templates-faq-list">
                   <details>
                     <summary>Does Cursor have official website templates?<span aria-hidden="true">+</span></summary>
                     <p>Cursor has an official Marketplace for plugins and tooling, but its current documentation does not present a first-party website-template catalogue. The practical route is to clone a normal source repository, open it in Cursor, and add focused project guidance.</p>
@@ -561,34 +561,34 @@ export default function BestCursorTemplatesPage() {
                 </div>
               </section>
 
-              <section className="article-product-demo" aria-labelledby="product-demo-heading">
-                <span className="article-section-number">In practice · DesignMCP</span>
+              <section className="cursor-templates-product-demo" aria-labelledby="product-demo-heading">
+                <span className="cursor-templates-section-number">In practice · DesignMCP</span>
                 <h2 id="product-demo-heading">A template gives Cursor structure. Context helps it choose well.</h2>
                 <p>
                   Once the starter is stable, the next problem is usually specificity: which component suits this product, this interaction, and this visual system? DesignMCP lets an agent search by intent, compare a short list, inspect interactive previews, and retrieve the chosen source without treating the whole catalogue as prompt context.
                 </p>
-                <div className="product-demo-panel">
-                  <div className="product-demo-bar" aria-hidden="true">
+                <div className="cursor-templates-product-panel">
+                  <div className="cursor-templates-product-bar" aria-hidden="true">
                     <span><i aria-hidden="true">D</i> DesignMCP search</span>
                     <span>Intent-aware · 3 results</span>
                   </div>
-                  <div className="product-demo-query" aria-hidden="true">
+                  <div className="cursor-templates-product-query" aria-hidden="true">
                     <span>Product request</span>
                     <p>“A compact command palette for a technical dashboard with clear keyboard states.”</p>
                   </div>
-                  <div className="product-demo-results" aria-hidden="true">
-                    <div className="is-selected"><span>01</span><p><strong>Command palette</strong><small>Best fit · keyboard-first navigation</small></p><i>Preview</i></div>
+                  <div className="cursor-templates-product-results" aria-hidden="true">
+                    <div className="cursor-templates-selected"><span>01</span><p><strong>Command palette</strong><small>Best fit · keyboard-first navigation</small></p><i>Preview</i></div>
                     <div><span>02</span><p><strong>Morphing search</strong><small>Alternative · compact discovery</small></p><i>Compare</i></div>
                     <div><span>03</span><p><strong>Expandable action bar</strong><small>Alternative · persistent actions</small></p><i>Compare</i></div>
                   </div>
-                  <div className="product-demo-footer"><span aria-hidden="true">Source + dependencies + usage context</span><Link href="/#catalogue">Explore the catalogue <ExternalArrow /></Link></div>
+                  <div className="cursor-templates-product-footer"><span aria-hidden="true">Source + dependencies + usage context</span><a href="/#catalogue">Explore the catalogue <ExternalArrow /></a></div>
                 </div>
               </section>
 
-              <section id="related-reading" className="related-reading" aria-labelledby="related-reading-heading">
-                <span className="article-section-number">Continue reading</span>
-                <h2 id="related-reading-heading">Related guides and references</h2>
-                <div className="related-reading-grid">
+              <section id="cursor-templates-related" className="cursor-templates-related" aria-labelledby="cursor-templates-related-heading">
+                <span className="cursor-templates-section-number">Continue reading</span>
+                <h2 id="cursor-templates-related-heading">Related guides and references</h2>
+                <div className="cursor-templates-related-grid">
                   <a href="https://prod.cursor.com/docs/rules" rel="external">
                     <span>Cursor documentation</span>
                     <strong>Set up scoped project rules and AGENTS.md</strong>
@@ -607,8 +607,8 @@ export default function BestCursorTemplatesPage() {
                 </div>
               </section>
 
-              <section className="sources-section" aria-labelledby="sources-heading">
-                <span className="article-section-number">Sources</span>
+              <section className="cursor-templates-sources" aria-labelledby="sources-heading">
+                <span className="cursor-templates-section-number">Sources</span>
                 <h2 id="sources-heading">Primary sources checked</h2>
                 <p>Feature and format claims were verified against official product documentation or the resource&apos;s own live catalogue. No placement in this guide was paid.</p>
                 <ul>
@@ -627,14 +627,14 @@ export default function BestCursorTemplatesPage() {
           </div>
         </article>
 
-        <section className="article-final-cta grid-field" aria-labelledby="article-cta-title">
+        <section className="cursor-templates-final-cta grid-field" aria-labelledby="article-cta-title">
           <div>
             <p>From template to product</p>
             <h2 id="article-cta-title">Your starter has structure.<br />Give it better taste.</h2>
             <span>DesignMCP helps coding agents find and implement polished components with the source and context to use them well.</span>
             <div>
-              <Link className="button" href="/#catalogue">Browse components <ExternalArrow /></Link>
-              <Link className="button button--ghost" href="/#product">See how it works</Link>
+              <a className="button" href="/#catalogue">Browse components <ExternalArrow /></a>
+              <a className="button button--ghost" href="/#product">See how it works</a>
             </div>
           </div>
         </section>
