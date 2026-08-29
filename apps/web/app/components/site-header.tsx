@@ -1,10 +1,11 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext shared server navigation uses native links. */
 import { Brand } from './brand';
 
 const navigation = [
-  { href: '#product', label: 'Product' },
-  { href: '#catalogue', label: 'Components' },
-  { href: '#how-it-works', label: 'What you get' },
-  { href: '#resources', label: 'Resources' },
+  { href: '/#product', label: 'Product' },
+  { href: '/#catalogue', label: 'Components' },
+  { href: '/#how-it-works', label: 'What you get' },
+  { href: '/#resources', label: 'Resources' },
 ];
 
 export function SiteHeader() {
@@ -17,8 +18,8 @@ export function SiteHeader() {
         ))}
       </nav>
       <div className="header-actions">
-        <a className="text-link" href="#docs">View docs</a>
-        <a className="button button--small" href="#early-access">
+        <a className="text-link" href="/#docs">View docs</a>
+        <a className="button button--small" href="/#early-access">
           <span className="desktop-label">Early access</span>
           <span className="mobile-label">Join</span>
         </a>
