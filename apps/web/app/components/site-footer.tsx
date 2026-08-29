@@ -1,21 +1,22 @@
+import Link from 'next/link';
 import { Brand } from './brand';
 
 const footerGroups = [
   {
     title: 'Product',
-    links: [['Product', '#product'], ['Components', '#catalogue'], ['What you get', '#how-it-works']],
+    links: [['Product', '/#product'], ['Components', '/#catalogue'], ['What you get', '/#how-it-works']],
   },
   {
     title: 'Developers',
-    links: [['Documentation', '#docs'], ['MCP connection', '#docs'], ['Component format', '#docs']],
+    links: [['Documentation', '/#docs'], ['MCP connection', '/#docs'], ['Component format', '/#docs']],
   },
   {
     title: 'Resources',
-    links: [['Articles', '#resources'], ['Guides', '#resources'], ['Component strategy', '#resources']],
+    links: [['Articles', '/#resources'], ['Guides', '/#resources'], ['ChatGPT app design', '/blog/how-to-design-an-app-with-chatgpt']],
   },
   {
     title: 'Company',
-    links: [['About', '#top'], ['Early access', '#early-access'], ['Contact', '#top']],
+    links: [['About', '/#top'], ['Early access', '/#early-access'], ['Contact', '/#top']],
   },
 ];
 
@@ -39,7 +40,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="footer-top">
-        <Brand label="Back to DesignMCP home" />
+        <Brand href="/" label="Back to DesignMCP home" />
         <p>A curated component catalogue for the coding agents you already use.</p>
       </div>
       <div className="footer-links">
@@ -47,7 +48,7 @@ export function SiteFooter() {
           <div key={group.title}>
             <span>{group.title}</span>
             {group.links.map(([label, href]) => (
-              <a href={href} key={label}>{label}</a>
+              <Link href={href} key={label}>{label}</Link>
             ))}
           </div>
         ))}
