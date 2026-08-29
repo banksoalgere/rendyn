@@ -1,4 +1,16 @@
-const resources = [
+import Link from 'next/link';
+
+interface Resource {
+  slug: string;
+  category: string;
+  title: string;
+  description: string;
+  accent: string;
+  readTime: string;
+  href?: string;
+}
+
+const resources: Resource[] = [
   {
     slug: 'choose-ui-components-by-product-intent',
     category: 'Component strategy',
@@ -8,12 +20,13 @@ const resources = [
     readTime: '7 min read',
   },
   {
-    slug: 'give-ai-built-interfaces-a-point-of-view',
-    category: 'AI interface design',
-    title: 'How to give AI-built interfaces a stronger point of view',
-    description: 'A practical approach to product context, component selection and more distinctive first drafts.',
+    slug: 'how-to-design-a-website-with-claude-code',
+    category: 'Claude Code frontend',
+    title: 'How to design a website with Claude Code',
+    description: 'A practical workflow for briefing, building, testing and refining a distinctive website with Claude Code.',
     accent: 'generic',
-    readTime: '8 min read',
+    readTime: '12 min read',
+    href: '/guides/how-to-design-a-website-with-claude-code',
   },
   {
     slug: 'what-coding-agents-need-from-component-libraries',
@@ -65,14 +78,14 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> Article library coming soon</span>
+            <span><i aria-hidden="true" /> New Claude Code guide available</span>
           </div>
         </div>
 
-        <div className="resources-grid" aria-label="Planned DesignMCP articles">
+        <div className="resources-grid" aria-label="DesignMCP guides and planned articles">
           {resources.map((resource) => (
             <article
-              className={`resource-card resource-card--${resource.accent}`}
+              className={`resource-card resource-card--${resource.accent}${resource.href ? ' resource-card--live' : ''}`}
               data-resource-slug={resource.slug}
               key={resource.slug}
             >
@@ -80,9 +93,13 @@ export function Resources() {
                 <ResourceVisual accent={resource.accent} />
               </div>
               <div className="resource-meta"><span>{resource.category}</span><span>{resource.readTime}</span></div>
-              <h3>{resource.title}</h3>
+              <h3>{resource.href ? <Link href={resource.href}>{resource.title}</Link> : resource.title}</h3>
               <p>{resource.description}</p>
-              <div className="resource-status"><span>Planned article</span><i aria-hidden="true">Soon</i></div>
+              {resource.href ? (
+                <Link className="resource-status" href={resource.href}><span>Read the guide</span><i aria-hidden="true">→</i></Link>
+              ) : (
+                <div className="resource-status"><span>Planned article</span><i aria-hidden="true">Soon</i></div>
+              )}
             </article>
           ))}
         </div>
