@@ -1,11 +1,14 @@
+import Link from 'next/link';
+
 const resources = [
   {
-    slug: 'choose-ui-components-by-product-intent',
-    category: 'Component strategy',
-    title: 'How to choose UI components by product intent',
-    description: 'A practical framework for moving from a product outcome to a focused, defensible component choice.',
+    slug: 'best-claude-code-templates',
+    category: 'Claude Code',
+    title: 'Best Claude Code templates for skills, agents and websites',
+    description: 'Six useful starting points compared by scope, safety, maintainability and speed to first value.',
     accent: 'intent',
-    readTime: '7 min read',
+    readTime: '12 min read',
+    href: '/blog/best-claude-code-templates',
   },
   {
     slug: 'give-ai-built-interfaces-a-point-of-view',
@@ -65,11 +68,11 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> Article library coming soon</span>
+            <span><i aria-hidden="true" /> New guide now live</span>
           </div>
         </div>
 
-        <div className="resources-grid" aria-label="Planned DesignMCP articles">
+        <div className="resources-grid" aria-label="DesignMCP articles">
           {resources.map((resource) => (
             <article
               className={`resource-card resource-card--${resource.accent}`}
@@ -82,7 +85,10 @@ export function Resources() {
               <div className="resource-meta"><span>{resource.category}</span><span>{resource.readTime}</span></div>
               <h3>{resource.title}</h3>
               <p>{resource.description}</p>
-              <div className="resource-status"><span>Planned article</span><i aria-hidden="true">Soon</i></div>
+              <div className="resource-status">
+                {resource.href ? <Link href={resource.href}>Read the guide</Link> : <span>Planned article</span>}
+                <i aria-hidden="true">{resource.href ? 'Open ↗' : 'Soon'}</i>
+              </div>
             </article>
           ))}
         </div>
