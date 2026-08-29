@@ -3,19 +3,19 @@ import { Brand } from './brand';
 const footerGroups = [
   {
     title: 'Product',
-    links: [['Product', '#product'], ['Components', '#catalogue'], ['What you get', '#how-it-works']],
+    links: [['Product', '/#product'], ['Components', '/#catalogue'], ['What you get', '/#how-it-works']],
   },
   {
     title: 'Developers',
-    links: [['Documentation', '#docs'], ['MCP connection', '#docs'], ['Component format', '#docs']],
+    links: [['Documentation', '/#docs'], ['MCP connection', '/#docs'], ['Component format', '/#docs']],
   },
   {
     title: 'Resources',
-    links: [['Articles', '#resources'], ['Guides', '#resources'], ['Component strategy', '#resources']],
+    links: [['Articles', '/#resources'], ['Guides', '/guides/how-to-make-claude-code-better-at-design'], ['Component strategy', '/#resources']],
   },
   {
     title: 'Company',
-    links: [['About', '#top'], ['Early access', '#early-access'], ['Contact', '#top']],
+    links: [['About', '/#top'], ['Early access', '/#early-access'], ['Contact', '/#top']],
   },
 ];
 
