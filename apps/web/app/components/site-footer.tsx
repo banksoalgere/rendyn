@@ -1,21 +1,22 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim breaks client hydration. */
 import { Brand } from './brand';
 
 const footerGroups = [
   {
     title: 'Product',
-    links: [['Product', '#product'], ['Components', '#catalogue'], ['What you get', '#how-it-works']],
+    links: [['Product', '/#product'], ['Components', '/#catalogue'], ['What you get', '/#how-it-works']],
   },
   {
     title: 'Developers',
-    links: [['Documentation', '#docs'], ['MCP connection', '#docs'], ['Component format', '#docs']],
+    links: [['Documentation', '/#docs'], ['MCP connection', '/#docs'], ['Component format', '/#docs']],
   },
   {
     title: 'Resources',
-    links: [['Articles', '#resources'], ['Guides', '#resources'], ['Component strategy', '#resources']],
+    links: [['Articles', '/#resources'], ['Guides', '/#resources'], ['Component strategy', '/#resources']],
   },
   {
     title: 'Company',
-    links: [['About', '#top'], ['Early access', '#early-access'], ['Contact', '#top']],
+    links: [['About', '/#top'], ['Early access', '/#early-access'], ['Contact', '/#top']],
   },
 ];
 
@@ -27,8 +28,8 @@ export function FinalCallToAction() {
         <h2>Build your best<br />interface yet.</h2>
         <p>Connect DesignMCP and give every feature polished components, complete code and the context to choose well.</p>
         <div>
-          <a className="button" href="#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></a>
-          <a className="button button--cream" href="#docs">Connect DesignMCP</a>
+          <a className="button" href="/#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></a>
+          <a className="button button--cream" href="/#docs">Connect DesignMCP</a>
         </div>
       </div>
     </section>

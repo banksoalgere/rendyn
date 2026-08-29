@@ -1,11 +1,12 @@
 const resources = [
   {
-    slug: 'choose-ui-components-by-product-intent',
-    category: 'Component strategy',
-    title: 'How to choose UI components by product intent',
-    description: 'A practical framework for moving from a product outcome to a focused, defensible component choice.',
-    accent: 'intent',
-    readTime: '7 min read',
+    slug: 'how-to-build-a-website-with-vibe-coding',
+    category: 'Vibe coding',
+    title: 'How to Build a Website With Vibe Coding',
+    description: 'A practical brief, prompt template, testing loop and launch checklist for a website that feels designed.',
+    accent: 'vibe',
+    readTime: '8 min read',
+    href: '/guides/how-to-build-a-website-with-vibe-coding',
   },
   {
     slug: 'give-ai-built-interfaces-a-point-of-view',
@@ -26,6 +27,16 @@ const resources = [
 ];
 
 function ResourceVisual({ accent }: { accent: string }) {
+  if (accent === 'vibe') {
+    return (
+      <div className="vibe-blueprint">
+        <span>Brief → build → test</span>
+        <div><i>01</i><p>State the outcome</p><b>Intent</b></div>
+        <div><i>02</i><p>Ship one path</p><b>Draft</b></div>
+        <div><i>03</i><p>Use the result</p><b>Proof</b></div>
+      </div>
+    );
+  }
   if (accent === 'intent') {
     return (
       <div className="intent-map">
@@ -65,11 +76,11 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> Article library coming soon</span>
+            <span><i aria-hidden="true" /> New guide available</span>
           </div>
         </div>
 
-        <div className="resources-grid" aria-label="Planned DesignMCP articles">
+        <div className="resources-grid" aria-label="DesignMCP articles and guides">
           {resources.map((resource) => (
             <article
               className={`resource-card resource-card--${resource.accent}`}
@@ -82,7 +93,11 @@ export function Resources() {
               <div className="resource-meta"><span>{resource.category}</span><span>{resource.readTime}</span></div>
               <h3>{resource.title}</h3>
               <p>{resource.description}</p>
-              <div className="resource-status"><span>Planned article</span><i aria-hidden="true">Soon</i></div>
+              {'href' in resource && resource.href ? (
+                <a className="resource-status" href={resource.href}><span>Read the guide</span><i aria-hidden="true">↗</i></a>
+              ) : (
+                <div className="resource-status"><span>Planned article</span><i aria-hidden="true">Soon</i></div>
+              )}
             </article>
           ))}
         </div>
