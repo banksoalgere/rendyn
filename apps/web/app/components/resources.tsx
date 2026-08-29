@@ -8,12 +8,13 @@ const resources = [
     readTime: '7 min read',
   },
   {
-    slug: 'give-ai-built-interfaces-a-point-of-view',
-    category: 'AI interface design',
-    title: 'How to give AI-built interfaces a stronger point of view',
-    description: 'A practical approach to product context, component selection and more distinctive first drafts.',
+    slug: 'cursor-design',
+    category: 'Cursor design',
+    title: 'How to Make Cursor Better at Design',
+    description: 'A practical workflow for giving Cursor stronger visual context, component choices, prompts, and browser QA.',
     accent: 'generic',
-    readTime: '8 min read',
+    readTime: '12 min read',
+    href: '/guides/cursor-design',
   },
   {
     slug: 'what-coding-agents-need-from-component-libraries',
@@ -80,9 +81,12 @@ export function Resources() {
                 <ResourceVisual accent={resource.accent} />
               </div>
               <div className="resource-meta"><span>{resource.category}</span><span>{resource.readTime}</span></div>
-              <h3>{resource.title}</h3>
+              <h3>{'href' in resource ? <a href={resource.href}>{resource.title}</a> : resource.title}</h3>
               <p>{resource.description}</p>
-              <div className="resource-status"><span>Planned article</span><i aria-hidden="true">Soon</i></div>
+              <div className="resource-status">
+                {'href' in resource ? <a href={resource.href}>Read guide</a> : <span>Planned article</span>}
+                <i aria-hidden="true">{'href' in resource ? '↗' : 'Soon'}</i>
+              </div>
             </article>
           ))}
         </div>
