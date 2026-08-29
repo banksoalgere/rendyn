@@ -4,7 +4,7 @@ export function FeatureShowcase() {
       <div className="section-shell">
         <div className="section-heading section-heading--center">
           <p className="eyebrow">The complete component</p>
-          <h2>One search.<br /><span>Ready-to-ship UI.</span></h2>
+          <h2>One prompt.<br />Ready-to-ship UI.</h2>
           <p>A clear choice, a polished preview and every file your agent needs to add it to the product.</p>
         </div>
 

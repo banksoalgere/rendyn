@@ -1,32 +1,36 @@
 import Link from 'next/link';
 
-interface Resource {
+type Resource = {
   slug: string;
+  href?: string;
   category: string;
   title: string;
   description: string;
   accent: string;
   readTime: string;
-  href?: string;
-}
+  status: string;
+};
 
 const resources: Resource[] = [
   {
-    slug: 'choose-ui-components-by-product-intent',
-    category: 'Component strategy',
-    title: 'How to choose UI components by product intent',
-    description: 'A practical framework for moving from a product outcome to a focused, defensible component choice.',
+    slug: 'how-to-make-claude-code-better-at-design',
+    href: '/guides/how-to-make-claude-code-better-at-design',
+    category: 'Claude Code design',
+    title: 'How to make Claude Code better at design',
+    description: 'A practical workflow for giving Claude visual direction, reusable design context and a real browser feedback loop.',
     accent: 'intent',
-    readTime: '7 min read',
+    readTime: '12 min read',
+    status: 'Read the guide',
   },
   {
     slug: 'how-to-design-a-website-with-claude-code',
+    href: '/guides/how-to-design-a-website-with-claude-code',
     category: 'Claude Code frontend',
     title: 'How to design a website with Claude Code',
     description: 'A practical workflow for briefing, building, testing and refining a distinctive website with Claude Code.',
     accent: 'generic',
     readTime: '12 min read',
-    href: '/guides/how-to-design-a-website-with-claude-code',
+    status: 'Read the guide',
   },
   {
     slug: 'what-coding-agents-need-from-component-libraries',
@@ -35,6 +39,7 @@ const resources: Resource[] = [
     description: 'A guide to the previews, context and source files agents use to make reliable product decisions.',
     accent: 'delivery',
     readTime: '6 min read',
+    status: 'Planned article',
   },
 ];
 
@@ -66,6 +71,27 @@ function ResourceVisual({ accent }: { accent: string }) {
   );
 }
 
+function ResourceCard({ resource }: { resource: Resource }) {
+  const content = (
+    <>
+      <div className="resource-visual" aria-hidden="true">
+        <ResourceVisual accent={resource.accent} />
+      </div>
+      <div className="resource-meta"><span>{resource.category}</span><span>{resource.readTime}</span></div>
+      <h3>{resource.title}</h3>
+      <p>{resource.description}</p>
+      <div className="resource-status"><span>{resource.status}</span><i aria-hidden="true">{resource.href ? 'Read ↗' : 'Soon'}</i></div>
+    </>
+  );
+  const className = `resource-card resource-card--${resource.accent}${resource.href ? ' resource-card--live' : ''}`;
+
+  if (resource.href) {
+    return <Link className={className} data-resource-slug={resource.slug} href={resource.href}>{content}</Link>;
+  }
+
+  return <article className={className} data-resource-slug={resource.slug}>{content}</article>;
+}
+
 export function Resources() {
   return (
     <section className="resources-section" id="resources">
@@ -78,29 +104,13 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> New Claude Code guide available</span>
+            <span><i aria-hidden="true" /> Two Claude Code field guides available</span>
           </div>
         </div>
 
         <div className="resources-grid" aria-label="DesignMCP guides and planned articles">
           {resources.map((resource) => (
-            <article
-              className={`resource-card resource-card--${resource.accent}${resource.href ? ' resource-card--live' : ''}`}
-              data-resource-slug={resource.slug}
-              key={resource.slug}
-            >
-              <div className="resource-visual" aria-hidden="true">
-                <ResourceVisual accent={resource.accent} />
-              </div>
-              <div className="resource-meta"><span>{resource.category}</span><span>{resource.readTime}</span></div>
-              <h3>{resource.href ? <Link href={resource.href}>{resource.title}</Link> : resource.title}</h3>
-              <p>{resource.description}</p>
-              {resource.href ? (
-                <Link className="resource-status" href={resource.href}><span>Read the guide</span><i aria-hidden="true">→</i></Link>
-              ) : (
-                <div className="resource-status"><span>Planned article</span><i aria-hidden="true">Soon</i></div>
-              )}
-            </article>
+            <ResourceCard key={resource.slug} resource={resource} />
           ))}
         </div>
       </div>

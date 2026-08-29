@@ -12,7 +12,11 @@ const footerGroups = [
   },
   {
     title: 'Resources',
-    links: [['Articles', '/#resources'], ['Guides', '/#resources'], ['Claude Code website design', '/guides/how-to-design-a-website-with-claude-code']],
+    links: [
+      ['Claude Code design', '/guides/how-to-make-claude-code-better-at-design'],
+      ['Claude Code website design', '/guides/how-to-design-a-website-with-claude-code'],
+      ['Component strategy', '/#resources'],
+    ],
   },
   {
     title: 'Company',
