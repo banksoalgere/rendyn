@@ -11,6 +11,16 @@ type Resource = {
 
 const resources: Resource[] = [
   {
+    slug: 'how-to-build-a-website-with-vibe-coding',
+    href: '/guides/how-to-build-a-website-with-vibe-coding',
+    category: 'Vibe coding',
+    title: 'How to Build a Website With Vibe Coding',
+    description: 'A practical brief, prompt template, testing loop and launch checklist for a website that feels designed.',
+    accent: 'vibe-website',
+    readTime: '8 min read',
+    status: 'Read the guide',
+  },
+  {
     slug: 'how-to-design-an-app-with-chatgpt',
     href: '/blog/how-to-design-an-app-with-chatgpt',
     category: 'ChatGPT app design',
@@ -103,6 +113,16 @@ const resources: Resource[] = [
 ];
 
 function ResourceVisual({ accent }: { accent: string }) {
+  if (accent === 'vibe-website') {
+    return (
+      <div className="vibe-website-blueprint">
+        <span>Brief → build → test</span>
+        <div><i>01</i><p>State the outcome</p><b>Intent</b></div>
+        <div><i>02</i><p>Ship one path</p><b>Draft</b></div>
+        <div><i>03</i><p>Use the result</p><b>Proof</b></div>
+      </div>
+    );
+  }
   if (accent === 'cursor') {
     return (
       <div className="cursor-article-visual">
@@ -176,7 +196,7 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> Nine field guides available</span>
+            <span><i aria-hidden="true" /> Ten field guides available</span>
           </div>
         </div>
 
