@@ -177,7 +177,7 @@ function TableOfContents() {
 
 export default function VibeCodingTemplatesPage() {
   return (
-    <main className="editorial-page" id="top">
+    <main className="vct-page" id="top">
       <SiteHeader />
       <article aria-labelledby="guide-title">
         <header className="editorial-hero grid-field">
