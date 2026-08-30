@@ -11,6 +11,16 @@ type Resource = {
 
 const resources: Resource[] = [
   {
+    slug: 'vibe-coding-templates',
+    href: '/guides/vibe-coding-templates',
+    category: 'Template strategy',
+    title: 'Best templates for vibe coding',
+    description: 'A researched comparison of public remixes, code-first UI blocks, premium starters, and reusable team foundations.',
+    accent: 'intent',
+    readTime: '12 min read',
+    status: 'Read the guide',
+  },
+  {
     slug: 'how-to-build-a-website-with-vibe-coding',
     href: '/guides/how-to-build-a-website-with-vibe-coding',
     category: 'Vibe coding',
@@ -206,7 +216,7 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> Eleven field guides available</span>
+            <span><i aria-hidden="true" /> Twelve field guides available</span>
           </div>
         </div>
 
