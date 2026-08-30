@@ -1,20 +1,32 @@
-/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim breaks client hydration. */
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
 import { Brand } from './brand';
 
 const navigation = [
-  { href: '/#product', label: 'Product' },
-  { href: '/#catalogue', label: 'Components' },
-  { href: '/#how-it-works', label: 'What you get' },
-  { href: '/#resources', label: 'Resources' },
+  { href: '/#product', id: 'product', label: 'Product' },
+  { href: '/#catalogue', id: 'catalogue', label: 'Components' },
+  { href: '/#how-it-works', id: 'how-it-works', label: 'What you get' },
+  { href: '/#resources', id: 'resources', label: 'Resources' },
 ];
 
-export function SiteHeader() {
+type NavigationId = (typeof navigation)[number]['id'];
+
+interface SiteHeaderProps {
+  activeSection?: NavigationId;
+}
+
+export function SiteHeader({ activeSection }: SiteHeaderProps = {}) {
   return (
-    <header className="site-header">
+    <header className={`site-header${activeSection ? ' editorial-header' : ''}`}>
       <Brand />
       <nav className="desktop-nav" aria-label="Primary navigation">
         {navigation.map((item) => (
-          <a href={item.href} key={item.href}>{item.label}</a>
+          <a
+            aria-current={activeSection === item.id ? 'page' : undefined}
+            href={item.href}
+            key={item.href}
+          >
+            {item.label}
+          </a>
         ))}
       </nav>
       <div className="header-actions">

@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim breaks client hydration. */
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
 import { Brand } from './brand';
 
 const footerGroups = [
@@ -12,7 +12,18 @@ const footerGroups = [
   },
   {
     title: 'Resources',
-    links: [['Articles', '/#resources'], ['Guides', '/#resources'], ['Component strategy', '/#resources']],
+    links: [
+      ['ChatGPT app design', '/blog/how-to-design-an-app-with-chatgpt'],
+      ['Cursor website design', '/guides/how-to-build-a-good-looking-website-with-cursor'],
+      ['Cursor design workflow', '/guides/cursor-design'],
+      ['Cursor templates', '/blog/best-cursor-templates'],
+      ['Claude Code design', '/guides/how-to-make-claude-code-better-at-design'],
+      ['Claude Code website design', '/guides/how-to-design-a-website-with-claude-code'],
+      ['Claude Code templates', '/blog/best-claude-code-templates'],
+      ['Codex design', '/guides/how-to-make-codex-better-at-design'],
+      ['Vibe coding design', '/guides/vibe-coding-design'],
+      ['Vibe coding website', '/guides/how-to-build-a-website-with-vibe-coding'],
+    ],
   },
   {
     title: 'Company',

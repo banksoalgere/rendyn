@@ -22,7 +22,7 @@ export function CopyPromptButton({ text, compact = false }: CopyPromptButtonProp
   }
 
   return (
-    <button className={compact ? 'article-copy article-copy--compact' : 'article-copy'} type="button" onClick={copyPrompt}>
+    <button className={compact ? 'vibe-website-copy vibe-website-copy--compact' : 'vibe-website-copy'} type="button" onClick={copyPrompt}>
       <span aria-live="polite">{label}</span>
       <i aria-hidden="true">{label === 'Copied' ? '✓' : '↗'}</i>
     </button>
