@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SiteFooter } from '../../components/site-footer';
 import { SiteHeader } from '../../components/site-header';
 import { CopyPrompt } from './copy-prompt';
+import './page.css';
 
 const title = 'How to Design a Website With ChatGPT | DesignMCP';
 const description =
@@ -61,19 +62,19 @@ export const metadata: Metadata = {
 };
 
 function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return <a href={href} target="_blank" rel="noopener noreferrer">{children}<span className="external-mark" aria-hidden="true"> ↗</span><span className="sr-only"> (opens in a new tab)</span></a>;
+  return <a href={href} target="_blank" rel="noopener noreferrer">{children}<span className="chatgpt-website-external-mark" aria-hidden="true"> ↗</span><span className="chatgpt-website-sr-only"> (opens in a new tab)</span></a>;
 }
 
 export default function ChatGPTWebsiteDesignGuide() {
   return (
-    <main className="article-page" id="top">
-      <SiteHeader homeHref="/" navPrefix="/" />
+    <main className="chatgpt-website-page" id="top">
+      <SiteHeader activeSection="resources" />
 
-      <header className="article-hero">
-        <nav className="article-breadcrumbs" aria-label="Breadcrumb">
+      <header className="chatgpt-website-hero">
+        <nav className="chatgpt-website-breadcrumbs" aria-label="Breadcrumb">
           <a href="/">Home</a><span aria-hidden="true">/</span><a href="/#resources">Resources</a><span aria-hidden="true">/</span><span aria-current="page">Website design</span>
         </nav>
-        <div className="article-hero__meta">
+        <div className="chatgpt-website-hero__meta">
           <span>Field guide</span>
           <span>13 min read</span>
           <time dateTime="2026-08-29">Updated Aug 29, 2026</time>
@@ -83,46 +84,46 @@ export default function ChatGPTWebsiteDesignGuide() {
           A practical, design-led workflow for turning a precise brief into a
           responsive website people can actually use—not another generic AI template.
         </p>
-        <div className="article-author">
-          <span className="article-author__mark" aria-hidden="true">D</span>
+        <div className="chatgpt-website-author">
+          <span className="chatgpt-website-author__mark" aria-hidden="true">D</span>
           <span>By DesignMCP Editorial</span>
           <i aria-hidden="true" />
           <span>Planning, prompting, production, and QA</span>
         </div>
       </header>
 
-      <section className="article-frame" aria-label="ChatGPT website design guide">
-        <div className="article-cover grid-field">
-          <div className="article-cover__copy">
+      <section className="chatgpt-website-frame" aria-label="ChatGPT website design guide">
+        <div className="chatgpt-website-cover grid-field">
+          <div className="chatgpt-website-cover__copy">
             <span>01 / Brief before build</span>
-            <p className="article-cover__title">Give the model a point of view.</p>
+            <p className="chatgpt-website-cover__title">Give the model a point of view.</p>
             <p>Audience, outcome, content, visual rules, constraints, and proof.</p>
           </div>
-          <div className="article-cover__preview" aria-hidden="true">
-            <div className="mini-browser-bar"><i /><i /><i /><span>northstar.studio</span></div>
-            <div className="mini-site-copy">
+          <div className="chatgpt-website-cover__preview" aria-hidden="true">
+            <div className="chatgpt-website-mini-browser-bar"><i /><i /><i /><span>northstar.studio</span></div>
+            <div className="chatgpt-website-mini-site-copy">
               <span>Independent design practice</span>
               <strong>Make useful things feel inevitable.</strong>
               <i>Start a project&nbsp; ↗</i>
             </div>
-            <div className="mini-prompt-card">
+            <div className="chatgpt-website-mini-prompt-card">
               <span>Direction</span>
               <p>Editorial, assured, tactile. No stock gradients.</p>
             </div>
           </div>
         </div>
 
-        <aside className="article-frame__aside">
-          <span className="article-aside__mark" aria-hidden="true">D</span>
-          <p className="article-aside__eyebrow">DesignMCP</p>
-          <p className="article-aside__title">Build with better ingredients.</p>
+        <aside className="chatgpt-website-frame__aside">
+          <span className="chatgpt-website-aside__mark" aria-hidden="true">D</span>
+          <p className="chatgpt-website-aside__eyebrow">DesignMCP</p>
+          <p className="chatgpt-website-aside__title">Build with better ingredients.</p>
           <p>Give your coding agent polished components, complete source, and the context to choose well.</p>
           <a className="button" href="/#catalogue">Browse components <span aria-hidden="true">↗</span></a>
-          <a className="article-aside__link" href="/#how-it-works">See how it works <span aria-hidden="true">→</span></a>
+          <a className="chatgpt-website-aside__link" href="/#how-it-works">See how it works <span aria-hidden="true">→</span></a>
         </aside>
 
-        <article className="article-body">
-          <p className="article-lede">
+        <article className="chatgpt-website-body">
+          <p className="chatgpt-website-lede">
             If you want ChatGPT to build a website, use it as a design and engineering
             collaborator—not a one-click substitute for judgment. A strong ChatGPT website
             design process can accelerate research, information architecture, copy, visual
@@ -130,7 +131,7 @@ export default function ChatGPTWebsiteDesignGuide() {
             and decide what is ready to ship.
           </p>
 
-          <section className="article-answer" id="what-chatgpt-can-do" aria-labelledby="what-chatgpt-can-do-heading">
+          <section className="chatgpt-website-answer" id="what-chatgpt-can-do" aria-labelledby="what-chatgpt-can-do-heading">
             <span>Short answer</span>
             <h2 id="what-chatgpt-can-do-heading">Can ChatGPT build a website?</h2>
             <p>
@@ -141,15 +142,15 @@ export default function ChatGPTWebsiteDesignGuide() {
             </p>
           </section>
 
-          <section className="article-section" aria-labelledby="choose-path">
-            <p className="article-step">01 · Choose the working mode</p>
+          <section className="chatgpt-website-section" aria-labelledby="choose-path">
+            <p className="chatgpt-website-step">01 · Choose the working mode</p>
             <h2 id="choose-path">Decide how ChatGPT should help before you prompt it.</h2>
             <p>
               Search results often collapse planning, visual design, code generation, and hosting
               into one promise. They are separate jobs. Pick the lane that matches the outcome.
             </p>
 
-            <div className="path-grid">
+            <div className="chatgpt-website-path-grid">
               <div>
                 <span>Fastest start</span>
                 <h3>ChatGPT Sites</h3>
@@ -182,7 +183,7 @@ export default function ChatGPTWebsiteDesignGuide() {
               </div>
             </div>
 
-            <div className="source-note">
+            <div className="chatgpt-website-source-note">
               <span aria-hidden="true">↗</span>
               <p>
                 Current capability note: OpenAI describes Sites as a public-beta workflow for
@@ -194,8 +195,8 @@ export default function ChatGPTWebsiteDesignGuide() {
             </div>
           </section>
 
-          <section className="article-section" aria-labelledby="write-brief">
-            <p className="article-step">02 · Write the brief</p>
+          <section className="chatgpt-website-section" aria-labelledby="write-brief">
+            <p className="chatgpt-website-step">02 · Write the brief</p>
             <h2 id="write-brief">Start with decisions, not adjectives.</h2>
             <p>
               “Modern, clean, and professional” describes almost every generic template. A useful
@@ -203,7 +204,7 @@ export default function ChatGPTWebsiteDesignGuide() {
               and which constraints cannot move.
             </p>
 
-            <div className="brief-anatomy" aria-label="Six parts of a useful website brief">
+            <div className="chatgpt-website-brief-anatomy" aria-label="Six parts of a useful website brief">
               <div><span>01</span><strong>Audience</strong><p>Who arrives, what they know, and what is making them hesitate.</p></div>
               <div><span>02</span><strong>Outcome</strong><p>The single action or understanding the page should create.</p></div>
               <div><span>03</span><strong>Content</strong><p>Real claims, proof, offers, objections, and required information.</p></div>
@@ -213,13 +214,13 @@ export default function ChatGPTWebsiteDesignGuide() {
             </div>
 
             <CopyPrompt label="Website strategy prompt">{briefPrompt}</CopyPrompt>
-            <p className="article-caption">
+            <p className="chatgpt-website-caption">
               Ask for questions first. It is cheaper to correct an assumption in the brief than in a finished interface.
             </p>
           </section>
 
-          <section className="article-section" aria-labelledby="shape-structure">
-            <p className="article-step">03 · Shape the page</p>
+          <section className="chatgpt-website-section" aria-labelledby="shape-structure">
+            <p className="chatgpt-website-step">03 · Shape the page</p>
             <h2 id="shape-structure">Turn the visitor&apos;s decision into a content hierarchy.</h2>
             <p>
               Do not begin with a list of fashionable sections. Begin with the questions a visitor
@@ -227,7 +228,7 @@ export default function ChatGPTWebsiteDesignGuide() {
               mechanism, prove the claim, reduce risk, and make the next step obvious.
             </p>
 
-            <div className="decision-flow" aria-label="Recommended landing page decision flow">
+            <div className="chatgpt-website-decision-flow" aria-label="Recommended landing page decision flow">
               <div><span>01</span><p><strong>Relevance</strong> Is this for me?</p></div>
               <i aria-hidden="true">→</i>
               <div><span>02</span><p><strong>Value</strong> Why should I care?</p></div>
@@ -245,8 +246,8 @@ export default function ChatGPTWebsiteDesignGuide() {
             </p>
           </section>
 
-          <section className="article-section" aria-labelledby="visual-direction">
-            <p className="article-step">04 · Direct the visual system</p>
+          <section className="chatgpt-website-section" aria-labelledby="visual-direction">
+            <p className="chatgpt-website-step">04 · Direct the visual system</p>
             <h2 id="visual-direction">Describe relationships, not just colours.</h2>
             <p>
               ChatGPT responds better when visual references come with an explanation. “Use this site”
@@ -255,12 +256,12 @@ export default function ChatGPTWebsiteDesignGuide() {
               principles without copying someone else&apos;s work.
             </p>
 
-            <div className="direction-pair">
-              <div className="direction-card direction-card--weak">
+            <div className="chatgpt-website-direction-pair">
+              <div className="chatgpt-website-direction-card chatgpt-website-direction-card--weak">
                 <span>Too vague</span>
                 <p>“Make it sleek, premium, and futuristic with a purple gradient.”</p>
               </div>
-              <div className="direction-card direction-card--strong">
+              <div className="chatgpt-website-direction-card chatgpt-website-direction-card--strong">
                 <span>Useful direction</span>
                 <p>“Editorial confidence, warm paper tones, compact mono labels, oversized type, visible grid logic, and motion only where it clarifies state.”</p>
               </div>
@@ -275,8 +276,8 @@ export default function ChatGPTWebsiteDesignGuide() {
             </p>
           </section>
 
-          <section className="article-section" aria-labelledby="build-stages">
-            <p className="article-step">05 · Build in stages</p>
+          <section className="chatgpt-website-section" aria-labelledby="build-stages">
+            <p className="chatgpt-website-step">05 · Build in stages</p>
             <h2 id="build-stages">Ask for a coherent first slice, then iterate with evidence.</h2>
             <p>
               A one-shot request can produce a complete-looking page while hiding wrong assumptions,
@@ -285,7 +286,7 @@ export default function ChatGPTWebsiteDesignGuide() {
               and breakpoints.
             </p>
 
-            <ol className="build-sequence">
+            <ol className="chatgpt-website-build-sequence">
               <li><span>01</span><div><strong>Inspect</strong><p>Find the correct route, shared components, tokens, metadata pattern, and established checks.</p></div></li>
               <li><span>02</span><div><strong>Implement the slice</strong><p>Build the header, hero, primary action, and one representative content treatment.</p></div></li>
               <li><span>03</span><div><strong>Review the direction</strong><p>Check actual content, hierarchy, spacing, contrast, and behavior in the rendered page.</p></div></li>
@@ -295,28 +296,28 @@ export default function ChatGPTWebsiteDesignGuide() {
             <CopyPrompt label="Production build prompt">{buildPrompt}</CopyPrompt>
           </section>
 
-          <section className="article-section" aria-labelledby="review-output">
-            <p className="article-step">06 · Review the output</p>
+          <section className="chatgpt-website-section" aria-labelledby="review-output">
+            <p className="chatgpt-website-step">06 · Review the output</p>
             <h2 id="review-output">Critique the website like a designer and test it like a developer.</h2>
             <p>
               “Looks good” is not a test. Review the page at the level where visitors experience it,
               and ask ChatGPT to fix the underlying rule rather than patching one screenshot.
             </p>
 
-            <div className="review-grid">
+            <div className="chatgpt-website-review-grid">
               <div><span aria-hidden="true">A</span><h3>Content</h3><ul><li>Claims are sourced and current</li><li>Headings form a useful outline</li><li>Labels say what actions do</li><li>No placeholders or invented proof</li></ul></div>
               <div><span aria-hidden="true">B</span><h3>Visual system</h3><ul><li>Hierarchy is clear without decoration</li><li>Spacing follows a repeatable rhythm</li><li>Type and colour fit the brand</li><li>Mobile is composed, not compressed</li></ul></div>
               <div><span aria-hidden="true">C</span><h3>Interaction</h3><ul><li>Keyboard focus is visible</li><li>Controls have usable names</li><li>Motion explains state and can reduce</li><li>Touch targets have breathing room</li></ul></div>
               <div><span aria-hidden="true">D</span><h3>Engineering</h3><ul><li>Links and forms really work</li><li>Console and network are clean</li><li>Images do not shift the layout</li><li>Inputs and trust boundaries validate</li></ul></div>
             </div>
 
-            <div className="article-quote">
+            <div className="chatgpt-website-quote">
               <p>Do not prompt “make mobile better.” Say what failed: “At 360px the CTA wraps under the navigation and the headline leaves one orphaned word. Preserve the hierarchy, reduce the type scale smoothly, and keep both actions reachable.”</p>
             </div>
           </section>
 
-          <section className="article-section" aria-labelledby="launch-checklist">
-            <p className="article-step">07 · Launch deliberately</p>
+          <section className="chatgpt-website-section" aria-labelledby="launch-checklist">
+            <p className="chatgpt-website-step">07 · Launch deliberately</p>
             <h2 id="launch-checklist">A ChatGPT-built website still needs human approval.</h2>
             <p>
               Generated output is not proof that a claim is true, a photograph is licensed, a
@@ -324,7 +325,7 @@ export default function ChatGPTWebsiteDesignGuide() {
               generation as a capable draft and the launch as your responsibility.
             </p>
 
-            <div className="launch-list">
+            <div className="chatgpt-website-launch-list">
               <div><span>✓</span><p><strong>Content</strong> Fact-check names, prices, dates, policies, testimonials, and contact details.</p></div>
               <div><span>✓</span><p><strong>SEO</strong> Confirm one descriptive H1, a useful title and meta description, indexable content, canonical URLs, and share previews where supported.</p></div>
               <div><span>✓</span><p><strong>Accessibility</strong> Test keyboard flow, focus, landmarks, labels, contrast, zoom, reduced motion, and meaningful image alternatives.</p></div>
@@ -333,7 +334,7 @@ export default function ChatGPTWebsiteDesignGuide() {
               <div><span>✓</span><p><strong>Performance and privacy</strong> Compress assets, remove unnecessary scripts, protect secrets, disclose data collection, and use the narrowest permissions.</p></div>
             </div>
 
-            <div className="warning-card">
+            <div className="chatgpt-website-warning-card">
               <span>Know the boundary</span>
               <h3>Do not turn a prototype into a high-risk product by accident.</h3>
               <p>
@@ -345,8 +346,8 @@ export default function ChatGPTWebsiteDesignGuide() {
             </div>
           </section>
 
-          <section className="article-section article-faq" aria-labelledby="faq">
-            <p className="article-step">08 · Common questions</p>
+          <section className="chatgpt-website-section chatgpt-website-faq" aria-labelledby="faq">
+            <p className="chatgpt-website-step">08 · Common questions</p>
             <h2 id="faq">ChatGPT website design FAQ</h2>
             <details>
               <summary>Can ChatGPT build a complete website?</summary>
@@ -370,10 +371,10 @@ export default function ChatGPTWebsiteDesignGuide() {
             </details>
           </section>
 
-          <section className="article-related" aria-labelledby="keep-exploring">
-            <p className="article-step">Continue designing</p>
+          <section className="chatgpt-website-related" aria-labelledby="keep-exploring">
+            <p className="chatgpt-website-step">Continue designing</p>
             <h2 id="keep-exploring">Keep exploring DesignMCP</h2>
-            <div className="article-related__grid">
+            <div className="chatgpt-website-related__grid">
               <a href="/#catalogue">
                 <span>Component catalogue</span>
                 <h3>Browse interface patterns by product intent</h3>
@@ -385,8 +386,8 @@ export default function ChatGPTWebsiteDesignGuide() {
             </div>
           </section>
 
-          <section className="article-conclusion">
-            <p className="article-step">The principle to keep</p>
+          <section className="chatgpt-website-conclusion">
+            <p className="chatgpt-website-step">The principle to keep</p>
             <h2>Use ChatGPT for range and speed. Keep judgment in the loop.</h2>
             <p>
               The durable advantage is not a magic prompt. It is a clear sequence: understand the
@@ -395,13 +396,13 @@ export default function ChatGPTWebsiteDesignGuide() {
             </p>
             <div>
               <a className="button" href="/#catalogue">Explore the component catalogue <span aria-hidden="true">↗</span></a>
-              <a className="article-text-button" href="/#how-it-works">How DesignMCP works <span aria-hidden="true">→</span></a>
+              <a className="chatgpt-website-text-button" href="/#how-it-works">How DesignMCP works <span aria-hidden="true">→</span></a>
             </div>
           </section>
         </article>
 
-        <aside className="article-rail" aria-label="On this page">
-          <div className="article-rail__inner">
+        <aside className="chatgpt-website-rail" aria-label="On this page">
+          <div className="chatgpt-website-rail__inner">
             <p>On this page</p>
             <nav>
               <a href="#what-chatgpt-can-do">What ChatGPT can do</a>
@@ -414,7 +415,7 @@ export default function ChatGPTWebsiteDesignGuide() {
               <a href="#launch-checklist">Launch checklist</a>
               <a href="#faq">FAQ</a>
             </nav>
-            <div className="article-rail__note">
+            <div className="chatgpt-website-rail__note">
               <span>Better inputs, better interface</span>
               <p>Search by product intent. Give your agent the component source and context to finish the job.</p>
               <a href="/#catalogue">Browse DesignMCP <span aria-hidden="true">↗</span></a>
@@ -423,7 +424,7 @@ export default function ChatGPTWebsiteDesignGuide() {
         </aside>
       </section>
 
-      <SiteFooter linkPrefix="/" />
+      <SiteFooter />
     </main>
   );
 }

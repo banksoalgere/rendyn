@@ -36,8 +36,8 @@ export function CopyPrompt({ children, label }: CopyPromptProps) {
       : '';
 
   return (
-    <div className="prompt-block">
-      <div className="prompt-block__bar">
+    <div className="chatgpt-website-prompt-block">
+      <div className="chatgpt-website-prompt-block__bar">
         <span>{label}</span>
         <button type="button" onClick={copyPrompt} aria-label={`${buttonLabel}: ${label.toLowerCase()}`}>
           {buttonLabel}
@@ -45,9 +45,9 @@ export function CopyPrompt({ children, label }: CopyPromptProps) {
       </div>
       <pre><code>{children}</code></pre>
       {status === 'error' ? (
-        <p className="prompt-block__error">Couldn&apos;t copy automatically. Select the prompt text to copy it manually.</p>
+        <p className="chatgpt-website-prompt-block__error">Couldn&apos;t copy automatically. Select the prompt text to copy it manually.</p>
       ) : null}
-      <span className="sr-only" aria-live="polite">{announcement}</span>
+      <span className="chatgpt-website-sr-only" aria-live="polite">{announcement}</span>
     </div>
   );
 }
