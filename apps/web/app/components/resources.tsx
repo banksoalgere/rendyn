@@ -31,6 +31,16 @@ const resources: Resource[] = [
     status: 'Read the guide',
   },
   {
+    slug: 'how-to-design-a-website-with-chatgpt',
+    href: '/guides/how-to-design-a-website-with-chatgpt',
+    category: 'ChatGPT website design',
+    title: 'How to design a website with ChatGPT',
+    description: 'A complete design-led workflow for sharper briefs, distinctive visual direction, production code and real browser QA.',
+    accent: 'generic',
+    readTime: '13 min read',
+    status: 'Read the guide',
+  },
+  {
     slug: 'vibe-coding-design',
     href: '/guides/vibe-coding-design',
     category: 'AI interface design',
@@ -196,7 +206,7 @@ export function Resources() {
           </div>
           <div className="resources-intro">
             <p>Practical thinking on component decisions, agent workflows, and producing interface work that feels intentional.</p>
-            <span><i aria-hidden="true" /> Ten field guides available</span>
+            <span><i aria-hidden="true" /> Eleven field guides available</span>
           </div>
         </div>
 

@@ -14,6 +14,7 @@ const footerGroups = [
     title: 'Resources',
     links: [
       ['ChatGPT app design', '/blog/how-to-design-an-app-with-chatgpt'],
+      ['ChatGPT website design', '/guides/how-to-design-a-website-with-chatgpt'],
       ['Cursor website design', '/guides/how-to-build-a-good-looking-website-with-cursor'],
       ['Cursor design workflow', '/guides/cursor-design'],
       ['Cursor templates', '/blog/best-cursor-templates'],
