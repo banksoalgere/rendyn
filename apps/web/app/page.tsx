@@ -88,7 +88,6 @@ export default function Home() {
             <a className="button button--wide" href="#components">Browse components <span>→</span></a>
             <a className="button button--secondary button--wide" href="#docs">Connect to your agent</a>
           </div>
-          <small className="hero-note">4 free component unlocks · No card required</small>
         </div>
 
         <div className="hero-product" aria-label="DesignMCP component search example">
