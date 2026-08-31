@@ -8,7 +8,7 @@ import styles from './components.module.css';
 
 export const metadata: Metadata = {
   title: 'Live component catalogue | DesignMCP',
-  description: 'Explore 189 interactive React components in a live preview workspace, with fit guidance and complete editable source.',
+  description: 'Browse 189 interactive React component examples, each with a dedicated live preview, usage guidance, and complete editable source.',
 };
 
 const featuredComponents = [
@@ -23,18 +23,7 @@ const featuredComponents = [
   'morphing-modal',
 ];
 
-const catalogueComponents: CatalogueComponent[] = catalogueEntries.map((component) => ({
-  category: component.category as CatalogueComponent['category'],
-  dependencies: component.dependencies,
-  description: component.description,
-  name: component.name,
-  notIdealWhen: component.metadata.notIdealWhen[0] ?? 'A simpler static pattern would communicate the outcome more clearly.',
-  previewId: component.previewId,
-  publicSlug: component.publicSlug,
-  slug: component.slug,
-  tags: component.metadata.tags,
-  useWhen: component.metadata.useWhen[0] ?? component.description,
-})).sort((left, right) => {
+const catalogueComponents: CatalogueComponent[] = [...catalogueEntries].sort((left, right) => {
   const leftPriority = featuredComponents.indexOf(left.slug);
   const rightPriority = featuredComponents.indexOf(right.slug);
   if (leftPriority >= 0 || rightPriority >= 0) {
@@ -43,7 +32,13 @@ const catalogueComponents: CatalogueComponent[] = catalogueEntries.map((componen
     return leftPriority - rightPriority;
   }
   return left.name.localeCompare(right.name);
-});
+}).map((component) => ({
+  category: component.category as CatalogueComponent['category'],
+  description: component.description,
+  name: component.name,
+  publicSlug: component.publicSlug,
+  tags: component.metadata.tags,
+}));
 
 interface ComponentsPageProps {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
@@ -52,11 +47,7 @@ interface ComponentsPageProps {
 export default async function ComponentsPage({ searchParams }: ComponentsPageProps) {
   const parameters = await searchParams;
   const requestedCategory = typeof parameters.category === 'string' ? parameters.category : 'all';
-  const requestedComponent = typeof parameters.component === 'string' ? parameters.component : null;
   const initialCategory = ['motion', 'agents', 'blocks'].includes(requestedCategory) ? requestedCategory : 'all';
-  const initialSelectedSlug = catalogueComponents.some(({ slug }) => slug === requestedComponent)
-    ? requestedComponent
-    : null;
 
   return (
     <main className={styles.page}>
@@ -67,20 +58,18 @@ export default async function ComponentsPage({ searchParams }: ComponentsPagePro
           <p className={styles.eyebrow}>The component catalogue</p>
           <h1>Don&apos;t imagine it.<br />Try it.</h1>
           <p>
-            Search by intent, choose a component, then use it in the live canvas. Every hover,
-            press, drag and state change is here before your agent writes a line of product code.
+            Search by intent, then open any component to try the complete live example.
           </p>
         </div>
         <div className={styles.heroNote}>
           <span>01</span>
-          <p><strong>Rendered, not represented</strong>The catalogue runs the real React component inside an isolated interactive canvas.</p>
+          <p><strong>One page per component</strong>Every example has its own searchable URL, guidance, and implementation details.</p>
         </div>
       </section>
 
       <ComponentExplorer
         components={catalogueComponents}
         initialCategory={initialCategory}
-        initialSelectedSlug={initialSelectedSlug}
       />
 
       <section className={styles.catalogueCta}>

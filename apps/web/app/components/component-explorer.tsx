@@ -1,27 +1,19 @@
 'use client';
 
-/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
-
 import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './components.module.css';
 
 export interface CatalogueComponent {
   category: 'motion' | 'agents' | 'blocks';
-  dependencies: string[];
   description: string;
   name: string;
-  notIdealWhen: string;
-  previewId: string;
   publicSlug: string;
-  slug: string;
   tags: string[];
-  useWhen: string;
 }
 
 interface ComponentExplorerProps {
   components: CatalogueComponent[];
   initialCategory: string;
-  initialSelectedSlug: string | null;
 }
 
 const categoryLabels = {
@@ -45,11 +37,9 @@ function matchesSearch(component: CatalogueComponent, query: string) {
 export function ComponentExplorer({
   components,
   initialCategory,
-  initialSelectedSlug,
 }: ComponentExplorerProps) {
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState(initialCategory);
-  const [selectedSlug, setSelectedSlug] = useState(initialSelectedSlug ?? components[0]?.slug ?? null);
   const searchInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -72,18 +62,8 @@ export function ComponentExplorer({
     [category, components, query],
   );
 
-  const activeComponent = filteredComponents.find(({ slug }) => slug === selectedSlug)
-    ?? filteredComponents[0]
-    ?? null;
-
-  const selectComponent = (component: CatalogueComponent) => {
-    setSelectedSlug(component.slug);
-  };
-
   const setCategoryFilter = (value: string) => {
     setCategory(value);
-    const firstMatch = components.find((component) => value === 'all' || component.category === value);
-    setSelectedSlug(firstMatch?.slug ?? null);
   };
 
   return (
@@ -120,111 +100,46 @@ export function ComponentExplorer({
         </div>
       </div>
 
-      <div className={styles.workspace}>
-        <aside className={styles.resultRail} aria-label="Component results">
-          <div className={styles.resultRailHeading} aria-live="polite">
+      <div className={styles.results}>
+        <div className={styles.resultsHeading} aria-live="polite">
+          <div>
             <span>{String(filteredComponents.length).padStart(3, '0')}</span>
-            <p>Components</p>
-            <small>Select one to render it live</small>
+            <p>component pages</p>
           </div>
-
-          <div className={styles.resultList}>
-            {filteredComponents.map((component, index) => {
-              const active = activeComponent?.slug === component.slug;
-              return (
-                <div
-                  aria-current={active ? 'true' : undefined}
-                  className={styles.resultItem}
-                  key={component.slug}
-                >
-                  <button
-                    className={styles.resultSelect}
-                    onClick={() => selectComponent(component)}
-                    type="button"
-                  >
-                    <span>{String(index + 1).padStart(2, '0')}</span>
-                    <span>
-                      <strong>{component.name}</strong>
-                      <small>{categoryLabels[component.category]}</small>
-                    </span>
-                  </button>
-                  <a
-                    aria-label={`Open ${component.name} component page`}
-                    href={`/components/${component.publicSlug}`}
-                    title={`${component.name} component page`}
-                  >
-                    {active ? '●' : '↗'}
-                  </a>
-                </div>
-              );
-            })}
-          </div>
-
-          {filteredComponents.length === 0 && (
-            <div className={styles.emptyState}>
-              <span>00</span>
-              <strong>No matches</strong>
-              <p>Try “navigation”, “data” or “motion”.</p>
-              <button onClick={() => { setQuery(''); setCategoryFilter('all'); }} type="button">Clear search</button>
-            </div>
-          )}
-        </aside>
-
-        <div className={styles.liveStage}>
-          {activeComponent ? (
-            <>
-              <div className={styles.stageBar}>
-                <span className={styles.liveStatus}><i /> Live component</span>
-                <span>{categoryLabels[activeComponent.category]}</span>
-                <a
-                  href={`/components/${activeComponent.publicSlug}`}
-                >
-                  Component page <b aria-hidden="true">↗</b>
-                </a>
-              </div>
-
-              <div className={styles.stageFrame}>
-                <iframe
-                  key={activeComponent.slug}
-                  loading="eager"
-                  sandbox="allow-forms allow-modals allow-popups allow-same-origin allow-scripts"
-                  src={`/component-preview/${activeComponent.previewId}`}
-                  title={`${activeComponent.name} live component example`}
-                />
-              </div>
-
-              <div className={styles.componentDetails}>
-                <div className={styles.componentTitle}>
-                  <span>Selected component</span>
-                  <h2>{activeComponent.name}</h2>
-                  <p>{activeComponent.description}</p>
-                </div>
-
-                <dl className={styles.detailGrid}>
-                  <div><dt>Best for</dt><dd>{activeComponent.useWhen}</dd></div>
-                  <div><dt>Think twice when</dt><dd>{activeComponent.notIdealWhen}</dd></div>
-                  <div><dt>Dependencies</dt><dd>{activeComponent.dependencies.length > 0 ? activeComponent.dependencies.join(' · ') : 'No external packages'}</dd></div>
-                  <div><dt>Licence</dt><dd>MIT licensed · complete editable source</dd></div>
-                </dl>
-
-                <div className={styles.detailFooter}>
-                  <div className={styles.tags} aria-label="Component tags">
-                    {activeComponent.tags.slice(0, 6).map((tag) => <span key={tag}>{tag}</span>)}
-                  </div>
-                  <a className="button" href="/#docs">Use with DesignMCP <span aria-hidden="true">→</span></a>
-                  <a className={styles.detailLink} href={`/components/${activeComponent.publicSlug}`}>
-                    View docs <span aria-hidden="true">→</span>
-                  </a>
-                </div>
-              </div>
-            </>
-          ) : (
-            <div className={styles.blankStage}>
-              <span>⌕</span>
-              <p>Choose a component to render it here.</p>
-            </div>
-          )}
+          <small>Open one to see and use the full live example</small>
         </div>
+
+        <div className={styles.componentGrid} aria-label="Component results">
+          {filteredComponents.map((component, index) => (
+            <a
+              className={styles.componentLink}
+              href={`/components/${component.publicSlug}`}
+              key={component.publicSlug}
+            >
+              <div className={styles.componentLinkMeta}>
+                <span>{String(index + 1).padStart(3, '0')}</span>
+                <span>{categoryLabels[component.category]}</span>
+              </div>
+              <h2>{component.name}</h2>
+              <p>{component.description}</p>
+              <div className={styles.componentLinkFooter}>
+                <div aria-label="Component tags">
+                  {component.tags.slice(0, 3).map((tag) => <span key={tag}>{tag}</span>)}
+                </div>
+                <b aria-hidden="true">↗</b>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        {filteredComponents.length === 0 && (
+          <div className={styles.emptyState}>
+            <span>00</span>
+            <strong>No matches</strong>
+            <p>Try “navigation”, “data” or “motion”.</p>
+            <button onClick={() => { setQuery(''); setCategoryFilter('all'); }} type="button">Clear search</button>
+          </div>
+        )}
       </div>
     </section>
   );

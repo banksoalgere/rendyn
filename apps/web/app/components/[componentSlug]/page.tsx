@@ -158,20 +158,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
             <CopyPrompt prompt={prompt} />
           </header>
 
-          <nav aria-label="On-page sections" className={styles.sectionTabs}>
-            <a href="#preview">Preview</a>
-            <a href="#usage">Usage</a>
-            <a href="#install">Install</a>
-            <a href="#implementation">Implementation</a>
-          </nav>
-
-          <section className={styles.previewSection} id="preview">
-            <div className={styles.previewTopbar}>
-              <span><i /> Live preview</span>
-              <a href={`/component-preview/${component.previewId}`} rel="noreferrer" target="_blank">
-                Open isolated canvas <span aria-hidden="true">↗</span>
-              </a>
-            </div>
+          <section aria-label={`${component.name} live example`} className={styles.previewSection} id="preview">
             <div className={styles.previewCanvas}>
               <iframe
                 loading="eager"
@@ -197,11 +184,6 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
                 <p>{component.metadata.notIdealWhen[0] ?? 'A simpler interface would communicate the outcome more clearly.'}</p>
               </article>
             </div>
-            <p className={styles.longCopy}>
-              This live example is designed to help you judge the real interaction before adding it to a product.
-              Test it with a pointer and keyboard, then ask your coding agent to adapt the spacing, content, colour,
-              responsive behaviour, and motion to your existing design system.
-            </p>
           </section>
 
           <section className={styles.contentSection} id="install">
@@ -209,10 +191,6 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
               <span>02</span>
               <div><p>Agent install</p><h2>Add the complete component</h2></div>
             </div>
-            <p className={styles.longCopy}>
-              Connect DesignMCP to Claude Code, Codex, Cursor, or another MCP-compatible coding agent, then paste this prompt.
-              Your agent can retrieve the editable source, dependency list, and implementation guidance together.
-            </p>
             <div className={styles.promptBox}>
               <div><span>Agent prompt</span><CopyPrompt prompt={prompt} /></div>
               <pre><code>{prompt}</code></pre>
@@ -258,22 +236,6 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
           </footer>
         </article>
 
-        <aside className={styles.pageToc}>
-          <p>On this page</p>
-          <strong>{component.name}</strong>
-          <nav aria-label="Table of contents">
-            <a href="#preview">Preview</a>
-            <a href="#usage">Usage</a>
-            <a href="#install">Install</a>
-            <a href="#implementation">Implementation</a>
-            <a href="#related">Related components</a>
-          </nav>
-          <div>
-            <span>MIT licensed</span>
-            <p>Complete source for your coding agent.</p>
-            <a href="/#docs">Connect now <span aria-hidden="true">↗</span></a>
-          </div>
-        </aside>
       </div>
     </main>
   );
