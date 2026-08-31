@@ -2,6 +2,7 @@
 
 import { ProductMenu } from './components/product-menu';
 import { MobileMenu } from './components/mobile-menu';
+import { CatalogueFeatureGrid } from './components/catalogue-feature-grid';
 
 const codingAgents = [
   { name: 'Codex', logo: '/agent-logos/codex.svg' },
@@ -169,35 +170,7 @@ export default function Home() {
             title={<>Your all-purpose<br />interface source.</>}
             copy="Polished components, understood in context and delivered whole."
           />
-          <div className="feature-grid">
-            <article className="feature-card">
-              <div className="feature-copy"><span>Search by intent</span><h3>Ask for the outcome, not a component name.</h3><p>DesignMCP reads product context, interaction needs and constraints.</p></div>
-              <div className="search-demo">
-                <div><span>⌕</span><p>Keyboard-first command menu for a dense admin tool</p><kbd>↵</kbd></div>
-                <small><i>high density</i><i>keyboard</i><i>admin</i></small>
-              </div>
-            </article>
-            <article className="feature-card">
-              <div className="feature-copy"><span>Choose confidently</span><h3>See the strongest options, already ranked.</h3><p>Useful fit notes replace endless catalogue browsing.</p></div>
-              <div className="rank-demo">
-                <div><span>01</span><strong>Best fit</strong><p>Command palette</p><i>96%</i></div>
-                <div><span>02</span><strong>Strong fit</strong><p>Morphing search</p><i>89%</i></div>
-                <div><span>03</span><strong>Good fit</strong><p>Combobox</p><i>82%</i></div>
-              </div>
-            </article>
-            <article className="feature-card feature-card--preview">
-              <div className="feature-copy"><span>Preview the real thing</span><h3>Inspect a working component before choosing.</h3><p>See the interaction, states and finish—not a vague thumbnail.</p></div>
-              <div className="preview-demo"><img src="/beui-showcase/table.png" alt="Preview of a refined data table component" /></div>
-            </article>
-            <article className="feature-card">
-              <div className="feature-copy"><span>Own the result</span><h3>Complete implementation, ready to adapt.</h3><p>Source, dependencies, assets and exact setup arrive together.</p></div>
-              <div className="delivery-demo">
-                <div><span className="file-type file-type--tsx">TS</span><p><b>component.tsx</b><small>Complete source</small></p><i>2.4 KB</i></div>
-                <div><span className="file-type file-type--css">CSS</span><p><b>styles.css</b><small>Every state</small></p><i>1.2 KB</i></div>
-                <div><span className="file-type file-type--doc">DOC</span><p><b>install.md</b><small>Exact steps</small></p><i>0.8 KB</i></div>
-              </div>
-            </article>
-          </div>
+          <CatalogueFeatureGrid />
 
           <div className="more-section">
             <h2>...and so much more.</h2>
