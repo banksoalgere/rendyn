@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
+
 import { ProductMenu } from './components/product-menu';
 import { MobileMenu } from './components/mobile-menu';
 
@@ -297,7 +299,7 @@ export default function Home() {
           <span className="pill pill--section">Ready when your agent is</span>
           <h2>Smarter, simpler<br />interface building.</h2>
           <a className="button" href="/components">Browse components <span>→</span></a>
-          <p><span>189</span> curated components <i>·</i> <span>3</span> MIT libraries <i>·</i> complete code you own</p>
+          <p><span>189</span> live components <i>·</i> MIT licensed <i>·</i> complete code you own</p>
         </div>
       </section>
 

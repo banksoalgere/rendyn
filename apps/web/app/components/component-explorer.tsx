@@ -1,6 +1,6 @@
 'use client';
 
-/* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element -- Vinext's next/link shim can hydrate from a second React context, and these generated local previews do not need the Next image service. */
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './components.module.css';
@@ -11,9 +11,9 @@ export interface CatalogueComponent {
   description: string;
   name: string;
   notIdealWhen: string;
+  previewId: string;
+  publicSlug: string;
   slug: string;
-  sourceId: string;
-  sourceName: string;
   tags: string[];
   useWhen: string;
 }
@@ -22,21 +22,13 @@ interface ComponentExplorerProps {
   components: CatalogueComponent[];
   initialCategory: string;
   initialSelectedSlug: string | null;
-  initialSource: string;
-  sourceCounts: Record<string, number>;
 }
 
 const categoryLabels = {
-  motion: 'Motion',
+  motion: 'Interaction',
   agents: 'Agent UI',
   blocks: 'Product blocks',
 } as const;
-
-const sourceLabels: Record<string, string> = {
-  beui: 'beUI',
-  magicui: 'Magic UI',
-  kibo: 'Kibo UI',
-};
 
 function matchesSearch(component: CatalogueComponent, query: string) {
   const normalizedQuery = query.trim().toLowerCase();
@@ -45,230 +37,195 @@ function matchesSearch(component: CatalogueComponent, query: string) {
   return [
     component.name,
     component.description,
-    component.sourceName,
     component.category,
     ...component.tags,
   ].some((value) => value.toLowerCase().includes(normalizedQuery));
-}
-
-function withQuery(component?: string, category?: string, source?: string) {
-  const parameters = new URLSearchParams();
-  if (component) parameters.set('component', component);
-  if (category && category !== 'all') parameters.set('category', category);
-  if (source && source !== 'all') parameters.set('source', source);
-  const query = parameters.toString();
-  return query ? `/components?${query}` : '/components';
 }
 
 export function ComponentExplorer({
   components,
   initialCategory,
   initialSelectedSlug,
-  initialSource,
-  sourceCounts,
 }: ComponentExplorerProps) {
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState(initialCategory);
-  const [source, setSource] = useState(initialSource);
-  const [selectedSlug, setSelectedSlug] = useState<string | null>(initialSelectedSlug);
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
-
-  const selectedComponent = components.find(({ slug }) => slug === selectedSlug) ?? null;
+  const [selectedSlug, setSelectedSlug] = useState(initialSelectedSlug ?? components[0]?.slug ?? null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (!selectedComponent) return undefined;
-
-    const previousOverflow = document.body.style.overflow;
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setSelectedSlug(null);
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        searchInputRef.current?.focus();
+      }
     };
 
-    document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', handleKeyDown);
-    closeButtonRef.current?.focus();
-
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [selectedComponent]);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const filteredComponents = useMemo(
     () => components.filter((component) => (
       (category === 'all' || component.category === category)
-      && (source === 'all' || component.sourceId === source)
       && matchesSearch(component, query)
     )),
-    [category, components, query, source],
+    [category, components, query],
   );
 
-  const openPreview = (slug: string) => {
-    setSelectedSlug(slug);
-    window.history.replaceState(null, '', withQuery(slug, category, source));
-  };
+  const activeComponent = filteredComponents.find(({ slug }) => slug === selectedSlug)
+    ?? filteredComponents[0]
+    ?? null;
 
-  const closePreview = () => {
-    setSelectedSlug(null);
-    window.history.replaceState(null, '', withQuery(undefined, category, source));
+  const selectComponent = (component: CatalogueComponent) => {
+    setSelectedSlug(component.slug);
   };
 
   const setCategoryFilter = (value: string) => {
     setCategory(value);
-    window.history.replaceState(null, '', withQuery(undefined, value, source));
-  };
-
-  const setSourceFilter = (value: string) => {
-    setSource(value);
-    window.history.replaceState(null, '', withQuery(undefined, category, value));
+    const firstMatch = components.find((component) => value === 'all' || component.category === value);
+    setSelectedSlug(firstMatch?.slug ?? null);
   };
 
   return (
-    <>
-      <section className={styles.explorer} aria-label="Component catalogue">
-        <div className={styles.toolbar}>
-          <label className={styles.search}>
-            <span aria-hidden="true">⌕</span>
-            <span className={styles.visuallyHidden}>Search components</span>
-            <input
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="Search by name, use case or interaction..."
-              type="search"
-              value={query}
-            />
-            <kbd>⌘ K</kbd>
-          </label>
+    <section className={styles.explorer} aria-label="Interactive component catalogue">
+      <div className={styles.controlBar}>
+        <label className={styles.search}>
+          <span aria-hidden="true">⌕</span>
+          <span className={styles.visuallyHidden}>Search components</span>
+          <input
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Search by outcome, interaction or component..."
+            ref={searchInputRef}
+            type="search"
+            value={query}
+          />
+          <kbd>⌘ K</kbd>
+        </label>
 
-          <div className={styles.filterRow}>
-            <div aria-label="Filter by source" className={styles.filters} role="group">
-              <button aria-pressed={source === 'all'} onClick={() => setSourceFilter('all')} type="button">
-                All sources <b>{components.length}</b>
-              </button>
-              {Object.entries(sourceCounts).map(([sourceId, count]) => (
-                <button
-                  aria-pressed={source === sourceId}
-                  key={sourceId}
-                  onClick={() => setSourceFilter(sourceId)}
-                  type="button"
-                >
-                  {sourceLabels[sourceId] ?? sourceId} <b>{count}</b>
-                </button>
-              ))}
-            </div>
-
-            <div aria-label="Filter by category" className={styles.categoryFilters} role="group">
-              <button aria-pressed={category === 'all'} onClick={() => setCategoryFilter('all')} type="button">Everything</button>
-              {Object.entries(categoryLabels).map(([value, label]) => (
-                <button
-                  aria-pressed={category === value}
-                  key={value}
-                  onClick={() => setCategoryFilter(value)}
-                  type="button"
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-          </div>
+        <div aria-label="Filter by category" className={styles.categoryDock} role="group">
+          <button aria-pressed={category === 'all'} onClick={() => setCategoryFilter('all')} type="button">
+            <span>All</span><b>{components.length}</b>
+          </button>
+          {Object.entries(categoryLabels).map(([value, label]) => (
+            <button
+              aria-pressed={category === value}
+              key={value}
+              onClick={() => setCategoryFilter(value)}
+              type="button"
+            >
+              <span>{label}</span>
+              <b>{components.filter((component) => component.category === value).length}</b>
+            </button>
+          ))}
         </div>
+      </div>
 
-        <div className={styles.resultsHeading} aria-live="polite">
-          <p><strong>{filteredComponents.length}</strong> examples</p>
-          <span>Open a card for the full preview and implementation context.</span>
-        </div>
-
-        {filteredComponents.length > 0 ? (
-          <div className={styles.grid}>
-            {filteredComponents.map((component, index) => (
-              <button
-                className={styles.card}
-                key={component.slug}
-                onClick={() => openPreview(component.slug)}
-                type="button"
-              >
-                <span className={styles.previewFrame}>
-                  <img
-                    alt={`${component.name} component example`}
-                    decoding="async"
-                    loading={index < 6 ? 'eager' : 'lazy'}
-                    src={`/component-previews/${component.slug}.png`}
-                  />
-                  <span className={styles.openHint}>View example <b aria-hidden="true">↗</b></span>
-                </span>
-                <span className={styles.cardBody}>
-                  <span className={styles.cardMeta}>
-                    <i data-source={component.sourceId}>{component.sourceName}</i>
-                    <small>{categoryLabels[component.category]}</small>
-                  </span>
-                  <strong>{component.name}</strong>
-                  <span>{component.description}</span>
-                </span>
-              </button>
-            ))}
+      <div className={styles.workspace}>
+        <aside className={styles.resultRail} aria-label="Component results">
+          <div className={styles.resultRailHeading} aria-live="polite">
+            <span>{String(filteredComponents.length).padStart(3, '0')}</span>
+            <p>Components</p>
+            <small>Select one to render it live</small>
           </div>
-        ) : (
-          <div className={styles.emptyState}>
-            <span>00</span>
-            <h2>No components match that search.</h2>
-            <p>Try a broader outcome such as “navigation”, “data” or “motion”.</p>
-            <button onClick={() => { setQuery(''); setCategoryFilter('all'); setSourceFilter('all'); }} type="button">Clear filters</button>
-          </div>
-        )}
-      </section>
 
-      {selectedComponent && (
-        <div className={styles.modalBackdrop} onMouseDown={(event) => {
-          if (event.currentTarget === event.target) closePreview();
-        }}>
-          <section
-            aria-labelledby="component-preview-title"
-            aria-modal="true"
-            className={styles.modal}
-            role="dialog"
-          >
-            <div className={styles.modalTopbar}>
-              <span><i>{selectedComponent.sourceName}</i> / {categoryLabels[selectedComponent.category]}</span>
-              <button aria-label="Close component preview" onClick={closePreview} ref={closeButtonRef} type="button">Close <b aria-hidden="true">×</b></button>
-            </div>
-            <div className={styles.modalLayout}>
-              <div className={styles.modalPreview}>
-                <div>
-                  <span>Captured example</span>
-                  <small>From the verified component route</small>
+          <div className={styles.resultList}>
+            {filteredComponents.map((component, index) => {
+              const active = activeComponent?.slug === component.slug;
+              return (
+                <div
+                  aria-current={active ? 'true' : undefined}
+                  className={styles.resultItem}
+                  key={component.slug}
+                >
+                  <button
+                    className={styles.resultSelect}
+                    onClick={() => selectComponent(component)}
+                    type="button"
+                  >
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                    <span>
+                      <strong>{component.name}</strong>
+                      <small>{categoryLabels[component.category]}</small>
+                    </span>
+                  </button>
+                  <a
+                    aria-label={`Open ${component.name} component page`}
+                    href={`/components/${component.publicSlug}`}
+                    title={`${component.name} component page`}
+                  >
+                    {active ? '●' : '↗'}
+                  </a>
                 </div>
-                <img
-                  alt={`${selectedComponent.name} component example at full size`}
-                  src={`/component-previews/${selectedComponent.slug}.png`}
+              );
+            })}
+          </div>
+
+          {filteredComponents.length === 0 && (
+            <div className={styles.emptyState}>
+              <span>00</span>
+              <strong>No matches</strong>
+              <p>Try “navigation”, “data” or “motion”.</p>
+              <button onClick={() => { setQuery(''); setCategoryFilter('all'); }} type="button">Clear search</button>
+            </div>
+          )}
+        </aside>
+
+        <div className={styles.liveStage}>
+          {activeComponent ? (
+            <>
+              <div className={styles.stageBar}>
+                <span className={styles.liveStatus}><i /> Live component</span>
+                <span>{categoryLabels[activeComponent.category]}</span>
+                <a
+                  href={`/components/${activeComponent.publicSlug}`}
+                >
+                  Component page <b aria-hidden="true">↗</b>
+                </a>
+              </div>
+
+              <div className={styles.stageFrame}>
+                <iframe
+                  key={activeComponent.slug}
+                  loading="eager"
+                  sandbox="allow-forms allow-modals allow-popups allow-same-origin allow-scripts"
+                  src={`/component-preview/${activeComponent.previewId}`}
+                  title={`${activeComponent.name} live component example`}
                 />
               </div>
-              <aside className={styles.modalDetails}>
-                <div>
-                  <span className={styles.modalEyebrow}>Component example</span>
-                  <h2 id="component-preview-title">{selectedComponent.name}</h2>
-                  <p>{selectedComponent.description}</p>
+
+              <div className={styles.componentDetails}>
+                <div className={styles.componentTitle}>
+                  <span>Selected component</span>
+                  <h2>{activeComponent.name}</h2>
+                  <p>{activeComponent.description}</p>
                 </div>
 
-                <dl className={styles.detailList}>
-                  <div><dt>Best for</dt><dd>{selectedComponent.useWhen}</dd></div>
-                  <div><dt>Not ideal when</dt><dd>{selectedComponent.notIdealWhen}</dd></div>
-                  <div><dt>Dependencies</dt><dd>{selectedComponent.dependencies.length > 0 ? selectedComponent.dependencies.join(' · ') : 'No external packages'}</dd></div>
-                  <div><dt>Licence</dt><dd>MIT · source retained from {selectedComponent.sourceName}</dd></div>
+                <dl className={styles.detailGrid}>
+                  <div><dt>Best for</dt><dd>{activeComponent.useWhen}</dd></div>
+                  <div><dt>Think twice when</dt><dd>{activeComponent.notIdealWhen}</dd></div>
+                  <div><dt>Dependencies</dt><dd>{activeComponent.dependencies.length > 0 ? activeComponent.dependencies.join(' · ') : 'No external packages'}</dd></div>
+                  <div><dt>Licence</dt><dd>MIT licensed · complete editable source</dd></div>
                 </dl>
 
-                {selectedComponent.tags.length > 0 && (
+                <div className={styles.detailFooter}>
                   <div className={styles.tags} aria-label="Component tags">
-                    {selectedComponent.tags.slice(0, 6).map((tag) => <span key={tag}>{tag}</span>)}
+                    {activeComponent.tags.slice(0, 6).map((tag) => <span key={tag}>{tag}</span>)}
                   </div>
-                )}
-
-                <div className={styles.modalActions}>
                   <a className="button" href="/#docs">Use with DesignMCP <span aria-hidden="true">→</span></a>
-                  <button onClick={() => navigator.clipboard.writeText(`Find the ${selectedComponent.name} component in DesignMCP and return its complete source and install steps.`)} type="button">Copy agent prompt</button>
+                  <a className={styles.detailLink} href={`/components/${activeComponent.publicSlug}`}>
+                    View docs <span aria-hidden="true">→</span>
+                  </a>
                 </div>
-              </aside>
+              </div>
+            </>
+          ) : (
+            <div className={styles.blankStage}>
+              <span>⌕</span>
+              <p>Choose a component to render it here.</p>
             </div>
-          </section>
+          )}
         </div>
-      )}
-    </>
+      </div>
+    </section>
   );
 }

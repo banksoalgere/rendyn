@@ -1,8 +1,10 @@
 'use client';
 
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
+
 import { useState } from 'react';
 import { Drawer } from '@/components/motion/drawer';
-import { componentGroups } from './product-menu';
+import { componentGroups, getPublicComponentSlug } from './product-menu';
 
 const primaryLinks = [
   { href: '/components', label: 'Browse components', number: '01' },
@@ -87,7 +89,7 @@ export function MobileMenu() {
             </div>
             <div className="mobile-menu__components">
               {activeGroup.components.map(([slug, name], index) => (
-                <a href={`/components?component=${slug}`} key={slug} onClick={closeMenu}>
+                <a href={`/components/${getPublicComponentSlug(name)}`} key={slug} onClick={closeMenu}>
                   <span>{String(index + 1).padStart(2, '0')}</span>
                   <strong>{name}</strong>
                   <b aria-hidden="true">↗</b>

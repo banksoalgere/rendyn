@@ -1,5 +1,7 @@
 import { sites } from '@openai/sites-vite-plugin';
 import tailwindcss from '@tailwindcss/postcss';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import vinext from 'vinext';
 import { defineConfig } from 'vite';
 import hostingConfig from './.openai/hosting.json';
@@ -8,6 +10,25 @@ const SITE_CREATOR_PLACEHOLDER_DATABASE_ID =
   '00000000-0000-4000-8000-000000000000';
 
 const { d1, r2 } = hostingConfig;
+const webDirectory = dirname(fileURLToPath(import.meta.url));
+const previewDirectory = resolve(webDirectory, '../preview');
+const previewVendorRoot = resolve(previewDirectory, 'vendor-root');
+
+function previewAlias() {
+  return {
+    name: 'designmcp-preview-alias',
+    enforce: 'pre' as const,
+    transform(code: string, id: string) {
+      const modulePath = id.split('?')[0];
+      if (!modulePath.startsWith(previewDirectory) || !code.includes('@/')) return null;
+
+      return {
+        code: code.replace(/(["'])@\//g, '$1@preview/'),
+        map: null,
+      };
+    },
+  };
+}
 
 // macOS Seatbelt blocks FSEvents, so Codex previews need polling for HMR.
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === 'seatbelt';
@@ -46,10 +67,15 @@ export default defineConfig(async () => {
 
   return {
     css: { postcss: { plugins: [tailwindcss()] } },
+    resolve: {
+      alias: { '@preview': previewVendorRoot },
+      dedupe: ['react', 'react-dom'],
+    },
     server: isCodexSeatbeltSandbox
       ? { watch: { useFsEvents: false, usePolling: true } }
       : undefined,
     plugins: [
+      previewAlias(),
       vinext(),
       sites(),
       cloudflare({

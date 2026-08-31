@@ -1,5 +1,7 @@
 'use client';
 
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
+
 import { useState } from 'react';
 import {
   MorphPopover,
@@ -117,6 +119,14 @@ export const componentGroups = [
   },
 ] as const;
 
+export function getPublicComponentSlug(name: string) {
+  return name
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 export function ProductMenu() {
   const [open, setOpen] = useState(false);
   const [activeGroupId, setActiveGroupId] = useState<(typeof componentGroups)[number]['id']>('motion');
@@ -167,7 +177,7 @@ export function ProductMenu() {
               </div>
               <div className="product-menu__grid">
                 {group.components.map(([slug, name], index) => (
-                  <a href={`/components?component=${slug}`} key={slug} onClick={() => setOpen(false)}>
+                  <a href={`/components/${getPublicComponentSlug(name)}`} key={slug} onClick={() => setOpen(false)}>
                     <span>{String(index + 1).padStart(2, '0')}</span>
                     <strong>{name}</strong>
                     <b aria-hidden="true">↗</b>

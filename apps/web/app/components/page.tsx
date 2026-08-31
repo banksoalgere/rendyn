@@ -1,14 +1,14 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
 import type { Metadata } from 'next';
-import catalog from '../../../../catalog/index.json';
+import { catalogueEntries } from '../../lib/catalogue';
 import { SiteFooter } from '../components/site-footer';
 import { SiteHeader } from '../components/site-header';
 import { ComponentExplorer, type CatalogueComponent } from './component-explorer';
 import styles from './components.module.css';
 
 export const metadata: Metadata = {
-  title: 'Component examples | DesignMCP',
-  description: 'Browse 189 visual React component examples from beUI, Magic UI and Kibo UI, with fit guidance and MIT licence context.',
+  title: 'Live component catalogue | DesignMCP',
+  description: 'Explore 189 interactive React components in a live preview workspace, with fit guidance and complete editable source.',
 };
 
 const featuredComponents = [
@@ -23,17 +23,15 @@ const featuredComponents = [
   'morphing-modal',
 ];
 
-const sourceById = new Map(catalog.sources.map((source) => [source.id, source]));
-
-const catalogueComponents: CatalogueComponent[] = catalog.components.map((component) => ({
+const catalogueComponents: CatalogueComponent[] = catalogueEntries.map((component) => ({
   category: component.category as CatalogueComponent['category'],
   dependencies: component.dependencies,
   description: component.description,
   name: component.name,
   notIdealWhen: component.metadata.notIdealWhen[0] ?? 'A simpler static pattern would communicate the outcome more clearly.',
+  previewId: component.previewId,
+  publicSlug: component.publicSlug,
   slug: component.slug,
-  sourceId: component.sourceId,
-  sourceName: sourceById.get(component.sourceId)?.name ?? component.sourceId,
   tags: component.metadata.tags,
   useWhen: component.metadata.useWhen[0] ?? component.description,
 })).sort((left, right) => {
@@ -47,13 +45,6 @@ const catalogueComponents: CatalogueComponent[] = catalog.components.map((compon
   return left.name.localeCompare(right.name);
 });
 
-const sourceCounts = Object.fromEntries(
-  catalog.sources.map((source) => [
-    source.id,
-    catalogueComponents.filter((component) => component.sourceId === source.id).length,
-  ]),
-);
-
 interface ComponentsPageProps {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
@@ -61,10 +52,8 @@ interface ComponentsPageProps {
 export default async function ComponentsPage({ searchParams }: ComponentsPageProps) {
   const parameters = await searchParams;
   const requestedCategory = typeof parameters.category === 'string' ? parameters.category : 'all';
-  const requestedSource = typeof parameters.source === 'string' ? parameters.source : 'all';
   const requestedComponent = typeof parameters.component === 'string' ? parameters.component : null;
   const initialCategory = ['motion', 'agents', 'blocks'].includes(requestedCategory) ? requestedCategory : 'all';
-  const initialSource = requestedSource in sourceCounts ? requestedSource : 'all';
   const initialSelectedSlug = catalogueComponents.some(({ slug }) => slug === requestedComponent)
     ? requestedComponent
     : null;
@@ -73,18 +62,18 @@ export default async function ComponentsPage({ searchParams }: ComponentsPagePro
     <main className={styles.page}>
       <div className={styles.headerShell}><SiteHeader activeSection="catalogue" /></div>
       <section className={styles.hero}>
-        <div className={styles.heroIndex}><span>189</span><small>verified examples</small></div>
+        <div className={styles.heroIndex}><span>189</span><small>live components</small></div>
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>The component catalogue</p>
-          <h1>See the interface<br />before you ship it.</h1>
+          <h1>Don&apos;t imagine it.<br />Try it.</h1>
           <p>
-            Browse every captured example from beUI, Magic UI and Kibo UI. Search by intent,
-            compare the visual result, then open a component for its fit, dependencies and source context.
+            Search by intent, choose a component, then use it in the live canvas. Every hover,
+            press, drag and state change is here before your agent writes a line of product code.
           </p>
         </div>
         <div className={styles.heroNote}>
           <span>01</span>
-          <p><strong>Real component routes</strong>Each image is captured from the verified preview runtime at a pinned MIT source revision.</p>
+          <p><strong>Rendered, not represented</strong>The catalogue runs the real React component inside an isolated interactive canvas.</p>
         </div>
       </section>
 
@@ -92,8 +81,6 @@ export default async function ComponentsPage({ searchParams }: ComponentsPagePro
         components={catalogueComponents}
         initialCategory={initialCategory}
         initialSelectedSlug={initialSelectedSlug}
-        initialSource={initialSource}
-        sourceCounts={sourceCounts}
       />
 
       <section className={styles.catalogueCta}>
