@@ -61,12 +61,12 @@ Updating beUI is intentionally manual: review the new upstream commit and regist
 
 ## Remaining integration work
 
-The backend seams are ready, but these intentionally belong to the separate human-facing application task:
+These remain before the complete production product is ready:
 
-- Supabase login and OAuth consent pages
+- Google provider, redirect URL and OAuth Server configuration in Supabase, followed by a real hosted authentication check
 - pricing/checkout and the billing webhook that writes `subscriptions`
 - the public landing page and component gallery
-- production hosting, edge rate limits, analytics, and alerts
+- production hosting on the chosen application host, edge rate limits, analytics, and alerts
 
 Do not expose `SUPABASE_SERVICE_ROLE_KEY` to either browser application.
 

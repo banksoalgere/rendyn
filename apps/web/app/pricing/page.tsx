@@ -154,7 +154,7 @@ export default function PricingPage() {
         </a>
         <div className={styles.topActions}>
           <button type="button" aria-label="Search"><span aria-hidden="true">⌕</span></button>
-          <a href="#compare">Log in</a>
+          <a href="/login?next=%2Faccount">Log in</a>
         </div>
       </header>
 

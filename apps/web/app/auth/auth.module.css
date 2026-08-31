@@ -1,0 +1,221 @@
+.page {
+  align-items: center;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(rgba(29, 29, 27, .045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 29, 27, .045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 96px 24px 48px;
+  position: relative;
+}
+
+.topbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: 24px 28px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.brand {
+  align-items: center;
+  display: inline-flex;
+  font-size: 18px;
+  font-weight: 760;
+  gap: 8px;
+  letter-spacing: -.045em;
+}
+
+.brandMark {
+  align-items: center;
+  background: var(--ink);
+  border-radius: 5px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 10px;
+  height: 25px;
+  justify-content: center;
+  transform: rotate(-3deg);
+  width: 25px;
+}
+
+.backLink {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 560;
+}
+
+.card {
+  background: rgba(255, 255, 255, .97);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 28px 70px rgba(29, 29, 27, .09);
+  max-width: 470px;
+  padding: clamp(30px, 5vw, 48px);
+  width: 100%;
+}
+
+.consentCard { max-width: 620px; }
+
+.eyebrow {
+  color: #858580;
+  font: 9px var(--font-geist-mono), monospace;
+  letter-spacing: .08em;
+  margin: 0 0 18px;
+  text-transform: uppercase;
+}
+
+.card h1 {
+  font-size: clamp(35px, 5vw, 48px);
+  font-weight: 580;
+  letter-spacing: -.058em;
+  line-height: 1;
+  margin: 0;
+}
+
+.intro {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 18px 0 28px;
+}
+
+.notice,
+.error {
+  border: 1px solid #dfdfda;
+  border-radius: 7px;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0 0 18px;
+  padding: 11px 13px;
+}
+
+.notice { background: #f3f3f0; color: #64645f; }
+.error { background: #fff1ef; border-color: #f0d0ca; color: #8a3f34; }
+
+.googleButton,
+.primaryButton,
+.secondaryButton,
+.signOutButton {
+  align-items: center;
+  border-radius: 7px;
+  cursor: pointer;
+  display: inline-flex;
+  font: 680 13px var(--font-archivo), Arial, sans-serif;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+}
+
+.googleButton,
+.primaryButton {
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  color: #fff;
+  width: 100%;
+}
+
+.googleButton:disabled,
+.primaryButton:disabled { cursor: not-allowed; opacity: .55; }
+
+.secondaryButton,
+.signOutButton {
+  background: #f1f1ee;
+  border: 1px solid #d9d9d4;
+  color: var(--ink);
+}
+
+.googleButton:focus-visible,
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible,
+.signOutButton:focus-visible {
+  outline: 3px solid rgba(29, 29, 27, .22);
+  outline-offset: 3px;
+}
+
+.finePrint {
+  color: #8a8a85;
+  font-size: 10px;
+  line-height: 1.55;
+  margin: 18px 0 0;
+  text-align: center;
+}
+
+.accountSummary,
+.clientSummary {
+  background: #f4f4f1;
+  border: 1px solid #e1e1dc;
+  border-radius: 8px;
+  display: grid;
+  gap: 7px;
+  margin: 26px 0;
+  padding: 18px;
+}
+
+.accountSummary span,
+.clientSummary span {
+  color: #858580;
+  font: 9px var(--font-geist-mono), monospace;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.accountSummary strong,
+.clientSummary strong {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.clientSummary small { color: var(--muted); font-size: 11px; }
+
+.scopeList {
+  border-bottom: 1px solid #e4e4df;
+  border-top: 1px solid #e4e4df;
+  display: grid;
+  list-style: none;
+  margin: 28px 0;
+  padding: 6px 0;
+}
+
+.scopeList li {
+  display: grid;
+  font-size: 12px;
+  gap: 4px;
+  grid-template-columns: 20px 1fr;
+  line-height: 1.45;
+  padding: 11px 4px;
+}
+
+.scopeList li::before { color: #4c8b61; content: '✓'; font-weight: 700; }
+.scopeList strong { font-size: 12px; }
+.scopeList small { color: var(--muted); font-size: 11px; grid-column: 2; }
+
+.actions { display: grid; gap: 8px; grid-template-columns: 1fr 1fr; }
+.actions form { margin: 0; }
+.actions button { width: 100%; }
+
+.accountActions { align-items: center; display: flex; gap: 10px; }
+.securityNote { color: #7d7d78; font-size: 10px; line-height: 1.55; margin: 22px 0 0; }
+
+@media (max-width: 540px) {
+  .page { align-items: flex-start; background-size: 48px 48px; padding: 92px 12px 24px; }
+  .topbar { padding: 20px 16px; }
+  .backLink { font-size: 11px; }
+  .card { padding: 28px 22px; }
+  .actions { grid-template-columns: 1fr; }
+  .accountActions { align-items: stretch; flex-direction: column; }
+  .accountActions a, .accountActions form, .accountActions button { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .googleButton,
+  .primaryButton,
+  .secondaryButton,
+  .signOutButton { transition: none; }
+}

@@ -12,4 +12,4 @@ Supabase Auth is the authorization server; DesignMCP is the protected resource s
 
 Dynamic registration is useful for MCP interoperability but expands the set of clients that can ask users for consent. Keep explicit consent enabled, show the client name/redirect URI/scopes, monitor registrations, and rate-limit both discovery and authorization flows at the edge.
 
-The current repository does not include the consent UI because the public website is being built separately. Until that page and Supabase project settings exist, public search/previews work but production MCP login is intentionally incomplete.
+The website now includes Google sign-in, the PKCE callback, cookie session refresh, account sign-out, and the explicit MCP consent UI. Production MCP login remains unavailable until the Google provider, website redirect URLs, OAuth Server settings, asymmetric signing key, and hosted public Supabase environment values are configured. See [Google login setup](google-auth-setup.md).

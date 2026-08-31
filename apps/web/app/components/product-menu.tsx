@@ -6,8 +6,14 @@ import {
   MorphPopoverContent,
   MorphPopoverTrigger,
 } from '@/components/motion/popover-morph';
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from '@/components/motion/tabs';
 
-const componentGroups = [
+export const componentGroups = [
   {
     id: 'motion',
     label: 'Motion',
@@ -130,50 +136,47 @@ export function ProductMenu() {
           <p>Explore all 80 components by category.</p>
         </div>
 
-        <div className="product-menu__body">
-          <div className="product-menu__filters" role="tablist" aria-label="Component categories">
+        <Tabs
+          className="product-menu__tabs"
+          onValueChange={(value) => setActiveGroupId(value as (typeof componentGroups)[number]['id'])}
+          value={activeGroup.id}
+          variant="segment"
+        >
+          <TabsList className="product-menu__tabs-list">
             {componentGroups.map((group) => {
               const active = group.id === activeGroup.id;
               return (
-                <button
-                  aria-controls={`product-menu-panel-${group.id}`}
-                  aria-selected={active}
-                  data-active={active ? 'true' : 'false'}
-                  id={`product-menu-tab-${group.id}`}
+                <TabsTrigger
+                  className="product-menu__tab"
+                  indicatorClassName="product-menu__tab-indicator"
                   key={group.id}
-                  onClick={() => setActiveGroupId(group.id)}
-                  role="tab"
-                  tabIndex={active ? 0 : -1}
-                  type="button"
+                  value={group.id}
                 >
-                  <span><strong>{group.label}</strong><small>{group.detail}</small></span>
-                  <b>{group.components.length}</b>
-                </button>
+                  <span>{group.label}</span>
+                  <b data-active={active ? 'true' : 'false'}>{group.components.length}</b>
+                </TabsTrigger>
               );
             })}
-          </div>
+          </TabsList>
 
-          <section
-            aria-labelledby={`product-menu-tab-${activeGroup.id}`}
-            className="product-menu__results"
-            id={`product-menu-panel-${activeGroup.id}`}
-            role="tabpanel"
-          >
-            <div className="product-menu__results-heading">
-              <div><strong>{activeGroup.label}</strong><span>{activeGroup.components.length} components</span></div>
-              <small>React · TypeScript · Tailwind</small>
-            </div>
-            <div className="product-menu__grid">
-              {activeGroup.components.map(([slug, name], index) => (
-                <a href="#components" key={slug} onClick={() => setOpen(false)}>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                  <strong>{name}</strong>
-                  <b aria-hidden="true">↗</b>
-                </a>
-              ))}
-            </div>
-          </section>
-        </div>
+          {componentGroups.map((group) => (
+            <TabsContent className="product-menu__results" key={group.id} value={group.id}>
+              <div className="product-menu__results-heading">
+                <div><strong>{group.label}</strong><span>{group.detail}</span></div>
+                <small>{group.components.length} components · React · TypeScript · Tailwind</small>
+              </div>
+              <div className="product-menu__grid">
+                {group.components.map(([slug, name], index) => (
+                  <a href="#components" key={slug} onClick={() => setOpen(false)}>
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                    <strong>{name}</strong>
+                    <b aria-hidden="true">↗</b>
+                  </a>
+                ))}
+              </div>
+            </TabsContent>
+          ))}
+        </Tabs>
 
         <a className="product-menu__footer" href="#components" onClick={() => setOpen(false)}>
           <span><strong>Browse the complete catalogue</strong><small>Preview components and find the right fit</small></span>

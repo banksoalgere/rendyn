@@ -1,4 +1,5 @@
 import { ProductMenu } from './components/product-menu';
+import { MobileMenu } from './components/mobile-menu';
 
 const codingAgents = [
   { name: 'Codex', logo: '/agent-logos/codex.svg' },
@@ -74,8 +75,9 @@ export default function Home() {
           <a href="#docs">Resources</a>
         </nav>
         <div className="header-actions">
-          <a className="text-link" href="#docs">Sign in</a>
+          <a className="text-link" href="/login?next=%2Faccount">Sign in</a>
           <a className="button button--small" href="#get-started">Get started</a>
+          <MobileMenu />
         </div>
       </header>
 
