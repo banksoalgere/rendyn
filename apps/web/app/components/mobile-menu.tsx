@@ -14,6 +14,8 @@ const primaryLinks = [
   { href: '#docs', label: 'Resources', number: '05' },
 ] as const;
 
+const SIGN_UP_HREF = '/login?next=%2Fcomponents';
+
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
   const [activeGroupId, setActiveGroupId] = useState<(typeof componentGroups)[number]['id']>('motion');
@@ -104,7 +106,7 @@ export function MobileMenu() {
 
           <div className="mobile-menu__actions">
             <a href="/login?next=%2Faccount" onClick={closeMenu}>Sign in</a>
-            <a className="button" href="#get-started" onClick={closeMenu}>Get started</a>
+            <a className="button" href={SIGN_UP_HREF} onClick={closeMenu}>Get started</a>
           </div>
         </div>
       </Drawer>

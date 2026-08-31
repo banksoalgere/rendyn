@@ -45,6 +45,8 @@ const footerGroups = [
   ['Company', ['About', 'Contact', 'Privacy', 'Terms']],
 ];
 
+const SIGN_UP_HREF = '/login?next=%2Fcomponents';
+
 function Brand({ footer = false }: { footer?: boolean }) {
   return (
     <a className="brand" href="#top" aria-label="DesignMCP home">
@@ -79,7 +81,7 @@ export default function Home() {
         </nav>
         <div className="header-actions">
           <a className="text-link" href="/login?next=%2Faccount">Sign in</a>
-          <a className="button button--small" href="#get-started">Get started</a>
+          <a className="button button--small" href={SIGN_UP_HREF}>Get started</a>
           <MobileMenu />
         </div>
       </header>
@@ -93,8 +95,8 @@ export default function Home() {
             complete source and the context to ship it well.
           </p>
           <div className="hero-actions">
-            <a className="button button--wide" href="/components">Browse components <span>→</span></a>
-            <a className="button button--secondary button--wide" href="#docs">Connect to your agent</a>
+            <a className="button button--wide" href={SIGN_UP_HREF}>Continue with Google <span>→</span></a>
+            <a className="button button--secondary button--wide" href="#how-it-works">See how it works</a>
           </div>
         </div>
 
@@ -203,9 +205,9 @@ export default function Home() {
         <div className="connect-card content-width">
           <div className="connect-copy">
             <span className="pill pill--section">One connection</span>
-            <h2>Connect to your favourite coding agent.</h2>
-            <p>DesignMCP joins the workflow you already use.</p>
-            <a className="button button--secondary" href="#get-started">Connect DesignMCP <span>→</span></a>
+            <h2>Works where you already build.</h2>
+            <p>DesignMCP brings better component choices to the coding agents you already use.</p>
+            <a className="button button--secondary" href={SIGN_UP_HREF}>Continue with Google <span>→</span></a>
           </div>
           <div className="tool-grid" aria-label="MCP-compatible coding agents">
             {codingAgents.map((agent) => (
@@ -224,7 +226,7 @@ export default function Home() {
             <span className="pill pill--section">For teams</span>
             <h2>One visual standard. Every agent.</h2>
             <p>Give the whole team the same curated source and the same quality bar—without adding another design tool.</p>
-            <a className="button" href="#get-started">Get started <span>→</span></a>
+            <a className="button" href={SIGN_UP_HREF}>Get started <span>→</span></a>
           </div>
           <div className="team-console" aria-label="Example DesignMCP tool response">
             <div className="console-top"><span>designmcp / search</span><i /><i /><i /></div>
@@ -271,7 +273,7 @@ export default function Home() {
         <div className="closing-card content-width grid-surface">
           <span className="pill pill--section">Ready when your agent is</span>
           <h2>Smarter, simpler<br />interface building.</h2>
-          <a className="button" href="/components">Browse components <span>→</span></a>
+          <a className="button" href={SIGN_UP_HREF}>Continue with Google <span>→</span></a>
           <p><span>189</span> live components <i>·</i> MIT licensed <i>·</i> complete code you own</p>
         </div>
       </section>
