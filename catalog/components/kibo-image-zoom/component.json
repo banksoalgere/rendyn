@@ -1,0 +1,90 @@
+{
+  "id": "kibo:image-zoom",
+  "sourceId": "kibo",
+  "slug": "kibo-image-zoom",
+  "name": "Image Zoom",
+  "description": "Image zoom is a component that allows you to zoom in on an image.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [
+    "react-medium-image-zoom"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "image-zoom",
+    "tags": [
+      "button",
+      "navigation",
+      "touch"
+    ],
+    "aliases": [
+      "image zoom",
+      "image-zoom"
+    ],
+    "interactions": [
+      "click",
+      "keyboard",
+      "touch"
+    ],
+    "useWhen": [
+      "Image zoom is a component that allows you to zoom in on an image."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "image-zoom:button:navigation:touch:click:keyboard",
+    "searchText": "Image Zoom\nimage zoom\nImage zoom is a component that allows you to zoom in on an image.\nimage-zoom\nbutton\nnavigation\ntouch\nclick\nkeyboard\ntitle: Image Zoom description: Image zoom is a component that allows you to zoom in on an image. icon: ImageUpscale dependencies: https://rpearce.github.io/react medium image zoom/ installer: image zoom Features Zoom in on images with a click or tap Customizable zoom button appearance and position Smooth transitions for zooming in and out Customizable backdrop with blur effect Support for both controlled and uncontrolled zoom states Accessible keyboard navigation Touch friendly for mobile devices Customizable styling through className props Reduced motion support for animations Works with any image, SVG, or element with role=\"img\" Examples Custom backdrop Custom margin"
+  },
+  "previewPath": "/preview/blocks/kibo-image-zoom",
+  "manifestPath": "components/kibo-image-zoom/component.json",
+  "integrity": "sha256:e278e5cb146cd6b0f1733c7487461f0b91adcee17860f524effc654ff5d79ac0",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/image-zoom/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Zoom, {\n  type ControlledProps,\n  type UncontrolledProps,\n} from \"react-medium-image-zoom\";\nimport { cn } from \"@/lib/utils\";\n\nexport type ImageZoomProps = UncontrolledProps & {\n  isZoomed?: ControlledProps[\"isZoomed\"];\n  onZoomChange?: ControlledProps[\"onZoomChange\"];\n  className?: string;\n  backdropClassName?: string;\n};\n\nexport const ImageZoom = ({\n  className,\n  backdropClassName,\n  ...props\n}: ImageZoomProps) => (\n  <div\n    className={cn(\n      \"relative\",\n      \"[&_[data-rmiz-ghost]]:pointer-events-none [&_[data-rmiz-ghost]]:absolute\",\n      \"[&_[data-rmiz-btn-zoom]]:m-0 [&_[data-rmiz-btn-zoom]]:size-10 [&_[data-rmiz-btn-zoom]]:touch-manipulation [&_[data-rmiz-btn-zoom]]:appearance-none [&_[data-rmiz-btn-zoom]]:rounded-[50%] [&_[data-rmiz-btn-zoom]]:border-none [&_[data-rmiz-btn-zoom]]:bg-foreground/70 [&_[data-rmiz-btn-zoom]]:p-2 [&_[data-rmiz-btn-zoom]]:text-background [&_[data-rmiz-btn-zoom]]:outline-offset-2\",\n      \"[&_[data-rmiz-btn-unzoom]]:m-0 [&_[data-rmiz-btn-unzoom]]:size-10 [&_[data-rmiz-btn-unzoom]]:touch-manipulation [&_[data-rmiz-btn-unzoom]]:appearance-none [&_[data-rmiz-btn-unzoom]]:rounded-[50%] [&_[data-rmiz-btn-unzoom]]:border-none [&_[data-rmiz-btn-unzoom]]:bg-foreground/70 [&_[data-rmiz-btn-unzoom]]:p-2 [&_[data-rmiz-btn-unzoom]]:text-background [&_[data-rmiz-btn-unzoom]]:outline-offset-2\",\n      \"[&_[data-rmiz-btn-zoom]:not(:focus):not(:active)]:pointer-events-none [&_[data-rmiz-btn-zoom]:not(:focus):not(:active)]:absolute [&_[data-rmiz-btn-zoom]:not(:focus):not(:active)]:size-px [&_[data-rmiz-btn-zoom]:not(:focus):not(:active)]:overflow-hidden [&_[data-rmiz-btn-zoom]:not(:focus):not(:active)]:whitespace-nowrap [&_[data-rmiz-btn-zoom]:not(:focus):not(:active)]:[clip-path:inset(50%)] [&_[data-rmiz-btn-zoom]:not(:focus):not(:active)]:[clip:rect(0_0_0_0)]\",\n      \"[&_[data-rmiz-btn-zoom]]:absolute [&_[data-rmiz-btn-zoom]]:top-2.5 [&_[data-rmiz-btn-zoom]]:right-2.5 [&_[data-rmiz-btn-zoom]]:bottom-auto [&_[data-rmiz-btn-zoom]]:left-auto [&_[data-rmiz-btn-zoom]]:cursor-zoom-in\",\n      \"[&_[data-rmiz-btn-unzoom]]:absolute [&_[data-rmiz-btn-unzoom]]:top-5 [&_[data-rmiz-btn-unzoom]]:right-5 [&_[data-rmiz-btn-unzoom]]:bottom-auto [&_[data-rmiz-btn-unzoom]]:left-auto [&_[data-rmiz-btn-unzoom]]:z-[1] [&_[data-rmiz-btn-unzoom]]:cursor-zoom-out\",\n      '[&_[data-rmiz-content=\"found\"]_img]:cursor-zoom-in',\n      '[&_[data-rmiz-content=\"found\"]_svg]:cursor-zoom-in',\n      '[&_[data-rmiz-content=\"found\"]_[role=\"img\"]]:cursor-zoom-in',\n      '[&_[data-rmiz-content=\"found\"]_[data-zoom]]:cursor-zoom-in',\n      className\n    )}\n  >\n    <Zoom\n      classDialog={cn(\n        \"[&::backdrop]:hidden\",\n        \"[&[open]]:fixed [&[open]]:m-0 [&[open]]:h-dvh [&[open]]:max-h-none [&[open]]:w-dvw [&[open]]:max-w-none [&[open]]:overflow-hidden [&[open]]:border-0 [&[open]]:bg-transparent [&[open]]:p-0\",\n        \"[&_[data-rmiz-modal-overlay]]:absolute [&_[data-rmiz-modal-overlay]]:inset-0 [&_[data-rmiz-modal-overlay]]:transition-all\",\n        '[&_[data-rmiz-modal-overlay=\"hidden\"]]:bg-transparent',\n        '[&_[data-rmiz-modal-overlay=\"visible\"]]:bg-background/80 [&_[data-rmiz-modal-overlay=\"visible\"]]:backdrop-blur-md',\n        \"[&_[data-rmiz-modal-content]]:relative [&_[data-rmiz-modal-content]]:size-full\",\n        \"[&_[data-rmiz-modal-img]]:absolute [&_[data-rmiz-modal-img]]:origin-top-left [&_[data-rmiz-modal-img]]:cursor-zoom-out [&_[data-rmiz-modal-img]]:transition-transform\",\n        \"motion-reduce:[&_[data-rmiz-modal-img]]:transition-none motion-reduce:[&_[data-rmiz-modal-overlay]]:transition-none\",\n        backdropClassName\n      )}\n      {...props}\n    />\n  </div>\n);\n",
+      "sha256": "e8cb594ba839d8239426ba3d69d4940faa3f2fa083f5a6632665452610278924",
+      "upstreamPath": "packages/image-zoom/index.tsx",
+      "upstreamSha256": "e8cb594ba839d8239426ba3d69d4940faa3f2fa083f5a6632665452610278924",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add react-medium-image-zoom",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add react-medium-image-zoom",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "image-zoom",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/image-zoom",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/image-zoom.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Image Zoom\ndescription: Image zoom is a component that allows you to zoom in on an image.\nicon: ImageUpscale\ndependencies:\n  - https://rpearce.github.io/react-medium-image-zoom/\ninstaller: image-zoom\n---\n\n## Features\n\n- Zoom in on images with a click or tap\n- Customizable zoom button appearance and position\n- Smooth transitions for zooming in and out\n- Customizable backdrop with blur effect\n- Support for both controlled and uncontrolled zoom states\n- Accessible keyboard navigation\n- Touch-friendly for mobile devices\n- Customizable styling through className props\n- Reduced motion support for animations\n- Works with any image, SVG, or element with role=\"img\"\n\n## Examples\n\n### Custom backdrop\n\n<Preview path=\"image-zoom-background\" />\n\n### Custom margin\n\n<Preview path=\"image-zoom-margin\" />\n"
+}

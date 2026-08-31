@@ -5,8 +5,12 @@ import { CatalogStore } from "@designmcp/catalog";
 const catalogRoot = resolve(import.meta.dirname, "../catalog");
 const store = await CatalogStore.load(catalogRoot);
 
-if (store.index.components.length !== 80) {
-  throw new Error(`Expected 80 components, found ${store.index.components.length}`);
+if (store.index.components.length !== 189) {
+  throw new Error(`Expected 189 components, found ${store.index.components.length}`);
+}
+
+if (store.index.sources.map((source) => source.id).join(",") !== "beui,magicui,kibo") {
+  throw new Error("Catalogue sources do not match the reviewed import set");
 }
 
 for (const summary of store.index.components) {

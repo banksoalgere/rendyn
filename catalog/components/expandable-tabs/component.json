@@ -1,5 +1,6 @@
 {
   "id": "beui:expandable-tabs",
+  "sourceId": "beui",
   "slug": "expandable-tabs",
   "name": "Expandable Tabs",
   "description": "Icon tab bar where the active tab expands to a labelled pill, with a panel above that morphs height and slides content direction-aware on switch.",
@@ -49,7 +50,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -85,6 +86,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -96,7 +99,8 @@
     "upstreamSlug": "expandable-tabs",
     "upstreamPageUrl": "https://beui.dev/components/blocks/expandable-tabs",
     "upstreamDetailUrl": "https://beui.dev/r/expandable-tabs",
-    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/expandable-tabs.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/expandable-tabs.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Expandable Tabs\"\ndescription: \"Icon tab bar where the active tab expands to a labelled pill, with a panel above that morphs height and slides content direction-aware on switch.\"\ncategory: \"Blocks\"\npublishedAt: \"2026-06-14\"\nupdatedAt: \"2026-06-28\"\ndocumentation: \"https://beui.dev/components/blocks/expandable-tabs\"\nmarkdown: \"https://beui.dev/components/blocks/expandable-tabs.md\"\nlicense: \"MIT\"\n---\n\n# Expandable Tabs\n\n> Icon tab bar where the active tab expands to a labelled pill, with a panel above that morphs height and slides content direction-aware on switch.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/expandable-tabs\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport {\n  BadgeCheck,\n  Brush,\n  CalendarClock,\n  ChartSpline,\n  ChevronRight,\n  ClipboardCheck,\n  CloudUpload,\n  FileText,\n  Gauge,\n  GitBranch,\n  Images,\n  Inbox,\n  type LucideIcon,\n  Megaphone,\n  MessageCircle,\n  PackageOpen,\n  RefreshCw,\n  Rocket,\n  Siren,\n  SwatchBook,\n  UploadCloud,\n  Users,\n  Webhook,\n  Workflow,\n} from \"lucide-react\";\nimport { ExpandableTabs } from \"@/components/motion/expandable-tabs\";\n\nfunction Row({ icon: Icon, label }: { icon: LucideIcon; label: string }) {\n  return (\n    <button\n      type=\"button\"\n      className=\"flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-medium text-foreground transition-colors hover:bg-muted\"\n    >\n      <Icon className=\"h-4 w-4 text-muted-foreground\" />\n      <span className=\"flex-1\">{label}</span>\n      <ChevronRight className=\"h-4 w-4 text-muted-foreground\" />\n    </button>\n  );\n}\n\nfunction Menu({ rows }: { rows: { icon: LucideIcon; label: string }[] }) {\n  return (\n    <div className=\"flex w-[17.125rem] flex-col gap-0.5\">\n      {rows.map((r) => (\n        <Row key={r.label} icon={r.icon} label={r.label} />\n      ))}\n    </div>\n  );\n}\n\nexport function ExpandableTabsPreview() {\n  return (\n    <div className=\"flex min-h-88 w-full items-end justify-center\">\n      <ExpandableTabs\n        items={[\n          {\n            id: \"launch\",\n            label: \"Launch\",\n            icon: <Rocket className=\"h-4 w-4\" />,\n            content: (\n              <Menu\n                rows={[\n                  { icon: FileText, label: \"Release Brief\" },\n                  { icon: ClipboardCheck, label: \"Launch Checklist\" },\n                  { icon: Megaphone, label: \"Campaign Notes\" },\n                  { icon: CalendarClock, label: \"Rollout Calendar\" },\n                  { icon: CloudUpload, label: \"Ship Build\" },\n                ]}\n              />\n            ),\n          },\n          {\n            id: \"inbox\",\n            label: \"Inbox\",\n            icon: <Inbox className=\"h-4 w-4\" />,\n            content: (\n              <Menu\n                rows={[\n                  { icon: MessageCircle, label: \"Client Feedback\" },\n                  { icon: Users, label: \"Team Requests\" },\n                  { icon: BadgeCheck, label: \"Approval Notes\" },\n                ]}\n              />\n            ),\n          },\n          {\n            id: \"flows\",\n            label: \"Flows\",\n            icon: <Workflow className=\"h-4 w-4\" />,\n            content: (\n              <Menu\n                rows={[\n                  { icon: GitBranch, label: \"Trigger Map\" },\n                  { icon: Webhook, label: \"Webhook Runs\" },\n                  { icon: RefreshCw, label: \"Retry Queue\" },\n                ]}\n              />\n            ),\n          },\n          {\n            id: \"assets\",\n            label: \"Assets\",\n            icon: <PackageOpen className=\"h-4 w-4\" />,\n            content: (\n              <Menu\n                rows={[\n                  { icon: SwatchBook, label: \"Brand Kit\" },\n                  { icon: Images, label: \"Mockup Library\" },\n                  { icon: Brush, label: \"Design Tokens\" },\n                  { icon: UploadCloud, label: \"Export Queue\" },\n                ]}\n              />\n            ),\n          },\n          {\n            id: \"status\",\n            label: \"Status\",\n            icon: <ChartSpline className=\"h-4 w-4\" />,\n            content: (\n              <Menu\n                rows={[\n                  { icon: Gauge, label: \"Activation\" },\n                  { icon: ChartSpline, label: \"Conversion\" },\n                  { icon: Siren, label: \"Incidents\" },\n                ]}\n              />\n            ),\n          },\n        ]}\n      />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### ExpandableTabs\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `items` | `ExpandableTabsItem[]` | — | Yes | — |\n| `value` | `string \\| null` | — | No | Active tab id, or null/undefined for the closed (bar-only) state. |\n| `defaultValue` | `string \\| null` | `null` | No | — |\n| `onValueChange` | `((id: string \\| null) => void)` | — | No | — |\n| `className` | `string` | — | No | — |\n| `classNames` | `ExpandableTabsClassNames` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/expandable-tabs\n- Raw source: https://beui.dev/r/expandable-tabs/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

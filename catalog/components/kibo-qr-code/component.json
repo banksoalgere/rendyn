@@ -1,0 +1,97 @@
+{
+  "id": "kibo:qr-code",
+  "sourceId": "kibo",
+  "slug": "kibo-qr-code",
+  "name": "Qr Code",
+  "description": "QR Code is a component that generates a QR code from a string.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [
+    "culori",
+    "qrcode"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "qr-code",
+    "tags": [
+      "code",
+      "data",
+      "error",
+      "responsive"
+    ],
+    "aliases": [
+      "qr code",
+      "qr-code"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "QR Code is a component that generates a QR code from a string."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "qr-code:code:data:error:responsive",
+    "searchText": "Qr Code\nqr code\nQR Code is a component that generates a QR code from a string.\nqr-code\ncode\ndata\nerror\nresponsive\ntitle: QR Code description: QR Code is a component that generates a QR code from a string. icon: QrCode dependencies: https://github.com/soldair/node qrcode https://culorijs.org/ installer: qr code Features Generates QR codes from any string data Uses shadcn/ui CSS variables foreground and background Supports custom foreground and background colors Renders as SVG for crisp display at any size Fully responsive with automatic sizing Examples Styling The QR code is wrapped in a div so you can pass in a custom class name to style it. Robustness You can change the robustness of the QR code by passing the robustness prop. Higher levels offer a better error resistance but reduce the symbol's capacity. Server Component You can also use the QRCode component as a React Server Component, however you'll need to pass in the foreground and background prop manually as hex values."
+  },
+  "previewPath": "/preview/blocks/kibo-qr-code",
+  "manifestPath": "components/kibo-qr-code/component.json",
+  "integrity": "sha256:f2dc8e3b6d8e1f2cd5fb7958aedd38ed5695b10ec601f589fb7d7b358dbc06dd",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/qr-code/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { formatHex, oklch } from \"culori\";\nimport QR from \"qrcode\";\nimport { type HTMLAttributes, useEffect, useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type QRCodeProps = HTMLAttributes<HTMLDivElement> & {\n  data: string;\n  foreground?: string;\n  background?: string;\n  robustness?: \"L\" | \"M\" | \"Q\" | \"H\";\n};\n\nconst oklchRegex = /oklch\\(([0-9.]+)\\s+([0-9.]+)\\s+([0-9.]+)\\)/;\n\nconst getOklch = (color: string, fallback: [number, number, number]) => {\n  const oklchMatch = color.match(oklchRegex);\n\n  if (!oklchMatch) {\n    return { l: fallback[0], c: fallback[1], h: fallback[2] };\n  }\n\n  return {\n    l: Number.parseFloat(oklchMatch[1]),\n    c: Number.parseFloat(oklchMatch[2]),\n    h: Number.parseFloat(oklchMatch[3]),\n  };\n};\n\nexport const QRCode = ({\n  data,\n  foreground,\n  background,\n  robustness = \"M\",\n  className,\n  ...props\n}: QRCodeProps) => {\n  const [svg, setSVG] = useState<string | null>(null);\n\n  useEffect(() => {\n    const generateQR = async () => {\n      try {\n        const styles = getComputedStyle(document.documentElement);\n        const foregroundColor =\n          foreground ?? styles.getPropertyValue(\"--foreground\");\n        const backgroundColor =\n          background ?? styles.getPropertyValue(\"--background\");\n\n        const foregroundOklch = getOklch(\n          foregroundColor,\n          [0.21, 0.006, 285.885]\n        );\n        const backgroundOklch = getOklch(backgroundColor, [0.985, 0, 0]);\n\n        const newSvg = await QR.toString(data, {\n          type: \"svg\",\n          color: {\n            dark: formatHex(oklch({ mode: \"oklch\", ...foregroundOklch })),\n            light: formatHex(oklch({ mode: \"oklch\", ...backgroundOklch })),\n          },\n          width: 200,\n          errorCorrectionLevel: robustness,\n          margin: 0,\n        });\n\n        setSVG(newSvg);\n      } catch (err) {\n        console.error(err);\n      }\n    };\n\n    generateQR();\n  }, [data, foreground, background, robustness]);\n\n  if (!svg) {\n    return null;\n  }\n\n  return (\n    <div\n      className={cn(\"size-full\", \"[&_svg]:size-full\", className)}\n      // biome-ignore lint/security/noDangerouslySetInnerHtml: \"Required for SVG\"\n      dangerouslySetInnerHTML={{ __html: svg }}\n      {...props}\n    />\n  );\n};\n",
+      "sha256": "457ff60279903676499271a15ac51f3305ae6286d31408786f19ce12acefd1a6",
+      "upstreamPath": "packages/qr-code/index.tsx",
+      "upstreamSha256": "457ff60279903676499271a15ac51f3305ae6286d31408786f19ce12acefd1a6",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    },
+    {
+      "path": "components/kibo-ui/qr-code/server.tsx",
+      "type": "component",
+      "content": "import QR from \"qrcode\";\nimport type { HTMLAttributes } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type QRCodeProps = HTMLAttributes<HTMLDivElement> & {\n  data: string;\n  foreground: string;\n  background: string;\n  robustness?: \"L\" | \"M\" | \"Q\" | \"H\";\n};\n\nexport const QRCode = async ({\n  data,\n  foreground,\n  background,\n  robustness = \"M\",\n  className,\n  ...props\n}: QRCodeProps) => {\n  const svg = await QR.toString(data, {\n    type: \"svg\",\n    color: {\n      dark: foreground,\n      light: background,\n    },\n    width: 200,\n    errorCorrectionLevel: robustness,\n  });\n\n  if (!svg) {\n    throw new Error(\"Failed to generate QR code\");\n  }\n\n  return (\n    <div\n      className={cn(\"size-full\", \"[&_svg]:size-full\", className)}\n      // biome-ignore lint/security/noDangerouslySetInnerHtml: \"Required for SVG\"\n      dangerouslySetInnerHTML={{ __html: svg }}\n      {...props}\n    />\n  );\n};\n",
+      "sha256": "bfd86fba5ca902aae8d2893fbe0749b07425fd09e548e69e1d047121e32086dc",
+      "upstreamPath": "packages/qr-code/server.tsx",
+      "upstreamSha256": "bfd86fba5ca902aae8d2893fbe0749b07425fd09e548e69e1d047121e32086dc",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add culori qrcode",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add culori qrcode",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "qr-code",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/qr-code",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/qr-code.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: QR Code\ndescription: QR Code is a component that generates a QR code from a string.\nicon: QrCode\ndependencies:\n  - https://github.com/soldair/node-qrcode\n  - https://culorijs.org/\ninstaller: qr-code\n---\n\n## Features\n\n- Generates QR codes from any string data\n- Uses shadcn/ui CSS variables `--foreground` and `--background`\n- Supports custom foreground and background colors\n- Renders as SVG for crisp display at any size\n- Fully responsive with automatic sizing\n\n## Examples\n\n### Styling\n\nThe QR code is wrapped in a `div` so you can pass in a custom class name to style it.\n\n<Preview path=\"qr-code-styling\" />\n\n### Robustness\n\nYou can change the robustness of the QR code by passing the `robustness` prop. Higher levels offer a better error resistance but reduce the symbol's capacity.\n\n<Preview path=\"qr-code-robust\" />\n\n### Server Component\n\nYou can also use the `QRCode` component as a React Server Component, however you'll need to pass in the `foreground` and `background` prop manually as hex values.\n\n<Preview path=\"qr-code-server\" />\n"
+}

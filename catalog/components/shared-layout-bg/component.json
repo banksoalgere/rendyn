@@ -1,5 +1,6 @@
 {
   "id": "beui:shared-layout-bg",
+  "sourceId": "beui",
   "slug": "shared-layout-bg",
   "name": "Shared Layout Background",
   "description": "A pill that glides between hovered items via motion's shared layout, with blur enter/exit.",
@@ -53,7 +54,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -89,6 +90,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -100,7 +103,8 @@
     "upstreamSlug": "shared-layout-bg",
     "upstreamPageUrl": "https://beui.dev/components/motion/shared-layout-bg",
     "upstreamDetailUrl": "https://beui.dev/r/shared-layout-bg",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/shared-layout-bg.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/shared-layout-bg.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Shared Layout Background\"\ndescription: \"A pill that glides between hovered items via motion's shared layout, with blur enter/exit.\"\ncategory: \"Components\"\npublishedAt: \"2026-05-17\"\nupdatedAt: \"2026-07-29\"\ndocumentation: \"https://beui.dev/components/motion/shared-layout-bg\"\nmarkdown: \"https://beui.dev/components/motion/shared-layout-bg.md\"\nlicense: \"MIT\"\n---\n\n# Shared Layout Background\n\n> A pill that glides between hovered items via motion's shared layout, with blur enter/exit.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/shared-layout-bg\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { ArrowUpRight } from \"lucide-react\";\nimport { SharedLayoutBg } from \"@/components/motion/shared-layout-bg\";\n\nconst items = [\n  { title: \"Inbox\", body: \"12 unread threads, 3 mentions today.\" },\n  { title: \"Drafts\", body: \"4 posts waiting for a final pass.\" },\n  { title: \"Releases\", body: \"Last shipped 2 days ago, v0.4.1.\" },\n  { title: \"Billing\", body: \"Plan renews on the 1st of next month.\" },\n];\n\nexport function SharedLayoutBgPreview() {\n  return (\n    <div className=\"w-full max-w-lg px-2\">\n      <SharedLayoutBg>\n        {items.map((it) => (\n          <button\n            type=\"button\"\n            key={it.title}\n            className=\"group flex flex-col gap-1 px-2 py-3 text-left\"\n          >\n            <div className=\"flex items-center justify-between gap-3\">\n              <span className=\"text-sm font-medium text-foreground\">{it.title}</span>\n              <ArrowUpRight className=\"h-3.5 w-3.5 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5\" />\n            </div>\n            <p className=\"text-sm text-muted-foreground\">{it.body}</p>\n          </button>\n        ))}\n      </SharedLayoutBg>\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### SharedLayoutBg\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `as` | `\"div\" \\| \"ul\"` | `div` | No | Semantic container used for the children. |\n| `pillClassName` | `string` | — | No | Tailwind class applied to the moving pill. Defaults to a subtle foreground tint. |\n| `inset` | `number` | `20` | No | Horizontal inset of the pill relative to each row (px). Default 20. |\n| `pillContainerClassName` | `string` | — | No | Optional positioning override for the pill wrapper inside each item. |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/shared-layout-bg\n- Raw source: https://beui.dev/r/shared-layout-bg/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

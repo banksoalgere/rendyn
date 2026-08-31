@@ -1,5 +1,6 @@
 {
   "id": "beui:feedback-widget",
+  "sourceId": "beui",
   "slug": "feedback-widget",
   "name": "Feedback Widget",
   "description": "Corner trigger that morphs open into a feedback popup with message entry and animated sending, success and retry states.",
@@ -59,7 +60,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -137,6 +138,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -148,7 +151,8 @@
     "upstreamSlug": "feedback-widget",
     "upstreamPageUrl": "https://beui.dev/components/blocks/feedback-widget",
     "upstreamDetailUrl": "https://beui.dev/r/feedback-widget",
-    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/feedback-widget.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/feedback-widget.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Feedback Widget\"\ndescription: \"Corner trigger that morphs open into a feedback popup with message entry and animated sending, success and retry states.\"\ncategory: \"Blocks\"\npublishedAt: \"2026-06-29\"\nupdatedAt: \"2026-07-13\"\ndocumentation: \"https://beui.dev/components/blocks/feedback-widget\"\nmarkdown: \"https://beui.dev/components/blocks/feedback-widget.md\"\nlicense: \"MIT\"\n---\n\n# Feedback Widget\n\n> Corner trigger that morphs open into a feedback popup with message entry and animated sending, success and retry states.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/feedback-widget\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { useRef } from \"react\";\nimport { FeedbackWidget } from \"@/components/motion/feedback-widget\";\n\nexport function FeedbackWidgetPreview() {\n  const attempts = useRef(0);\n\n  const submitFeedback = async () => {\n    await new Promise((resolve) => setTimeout(resolve, 900));\n    attempts.current += 1;\n\n    if (attempts.current === 1) {\n      throw new Error(\"Preview submission failed\");\n    }\n  };\n\n  return (\n    <div className=\"relative h-80 w-full max-w-md overflow-hidden rounded-2xl border border-border bg-background\">\n      {/* Faux app surface so the corner trigger has something to sit on. */}\n      <div className=\"border-b border-border px-5 py-3\">\n        <div className=\"h-2.5 w-24 rounded-full bg-muted-foreground/20\" />\n      </div>\n      <div className=\"flex flex-col gap-3 p-5\">\n        <div className=\"h-2.5 w-3/4 rounded-full bg-muted-foreground/15\" />\n        <div className=\"h-2.5 w-1/2 rounded-full bg-muted-foreground/15\" />\n        <div className=\"h-24 w-full rounded-xl bg-muted-foreground/[0.06]\" />\n        <div className=\"h-2.5 w-2/3 rounded-full bg-muted-foreground/15\" />\n      </div>\n\n      <FeedbackWidget onSubmit={submitFeedback} />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### FeedbackWidget\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `onSubmit` | `((data: FeedbackData) => void \\| Promise<void>)` | — | No | Called on submit. May be async; the button shows a sending state until it resolves. |\n| `position` | `\"bottom-left\" \\| \"bottom-right\"` | `bottom-right` | No | — |\n| `title` | `string` | `Help us improve` | No | — |\n| `placeholder` | `string` | `Share an idea or report a bug` | No | — |\n| `icon` | `ReactNode` | — | No | — |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/feedback-widget\n- Raw source: https://beui.dev/r/feedback-widget/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

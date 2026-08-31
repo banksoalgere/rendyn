@@ -1,5 +1,6 @@
 {
   "id": "beui:command-palette",
+  "sourceId": "beui",
   "slug": "command-palette",
   "name": "Command Palette",
   "description": "⌘K palette with fuzzy filter, spring-animated active row and glass surface.",
@@ -58,7 +59,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -118,6 +119,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react react-dom tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react react-dom tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -129,7 +132,8 @@
     "upstreamSlug": "command-palette",
     "upstreamPageUrl": "https://beui.dev/components/blocks/command-palette",
     "upstreamDetailUrl": "https://beui.dev/r/command-palette",
-    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/command-palette.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/command-palette.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Command Palette\"\ndescription: \"⌘K palette with fuzzy filter, spring-animated active row and glass surface.\"\ncategory: \"Blocks\"\npublishedAt: \"2026-05-17\"\nupdatedAt: \"2026-08-22\"\ndocumentation: \"https://beui.dev/components/blocks/command-palette\"\nmarkdown: \"https://beui.dev/components/blocks/command-palette.md\"\nlicense: \"MIT\"\n---\n\n# Command Palette\n\n> ⌘K palette with fuzzy filter, spring-animated active row and glass surface.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/command-palette\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `react-dom`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { FileText, Home, Plus, Settings, User } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { CommandPalette } from \"@/components/motion/command-palette\";\n\nexport function CommandPalettePreview() {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <div className=\"flex flex-col items-start gap-3\">\n      <button\n        type=\"button\"\n        onClick={() => setOpen(true)}\n        className=\"inline-flex h-10 items-center rounded-full border border-border bg-card px-5 text-sm font-medium text-foreground press hover:border-(--color-border-strong)\"\n      >\n        Open command palette\n      </button>\n      <p className=\"text-sm text-muted-foreground\">\n        Press{\" \"}\n        <kbd className=\"rounded border border-border bg-card px-1.5 py-0.5 text-xs text-foreground\">\n          ⌘ J\n        </kbd>{\" \"}\n        (or <kbd className=\"rounded border border-border bg-card px-1.5 py-0.5 text-xs text-foreground\">Ctrl J</kbd>) to open.\n      </p>\n      <CommandPalette\n        open={open}\n        onOpenChange={setOpen}\n        shortcut=\"j\"\n        items={[\n          { id: \"home\", label: \"Go to Home\", group: \"Navigation\", icon: Home, hint: \"G H\", onSelect: () => {} },\n          { id: \"profile\", label: \"Open profile\", group: \"Navigation\", icon: User, hint: \"G P\", onSelect: () => {} },\n          { id: \"settings\", label: \"Settings\", group: \"Navigation\", icon: Settings, onSelect: () => {} },\n          { id: \"new-doc\", label: \"Create document\", group: \"Actions\", icon: FileText, hint: \"⌘ N\", onSelect: () => {} },\n          { id: \"new-project\", label: \"New project\", group: \"Actions\", icon: Plus, hint: \"⌘ ⇧ N\", onSelect: () => {} },\n        ]}\n      />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### CommandPalette\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `items` | `CommandItem[]` | — | Yes | — |\n| `shortcut` | `string` | `k` | No | Opens with Cmd/Ctrl + this key. Default: \"k\" |\n| `placeholder` | `string` | `Type a command or search…` | No | — |\n| `emptyMessage` | `string` | `No results found.` | No | — |\n| `open` | `boolean` | — | No | — |\n| `onOpenChange` | `((open: boolean) => void)` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/command-palette\n- Raw source: https://beui.dev/r/command-palette/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

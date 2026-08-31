@@ -1,5 +1,6 @@
 {
   "id": "beui:center-morph-modal",
+  "sourceId": "beui",
   "slug": "center-morph-modal",
   "name": "Center Morph Modal",
   "description": "A composable modal whose full-size surface unfolds from its exact center toward every edge, then folds back the same way with an inset close control.",
@@ -55,7 +56,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -97,6 +98,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react react-dom tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react react-dom tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -108,7 +111,8 @@
     "upstreamSlug": "center-morph-modal",
     "upstreamPageUrl": "https://beui.dev/components/motion/center-morph-modal",
     "upstreamDetailUrl": "https://beui.dev/r/center-morph-modal",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/center-morph-modal.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/center-morph-modal.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Center Morph Modal\"\ndescription: \"A composable modal whose full-size surface unfolds from its exact center toward every edge, then folds back the same way with an inset close control.\"\ncategory: \"Components\"\npublishedAt: \"2026-07-21\"\nupdatedAt: \"2026-08-20\"\ndocumentation: \"https://beui.dev/components/motion/center-morph-modal\"\nmarkdown: \"https://beui.dev/components/motion/center-morph-modal.md\"\nlicense: \"MIT\"\n---\n\n# Center Morph Modal\n\n> A composable modal whose full-size surface unfolds from its exact center toward every edge, then folds back the same way with an inset close control.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/center-morph-modal\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `react-dom`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { ArrowUpRight, Check } from \"lucide-react\";\nimport {\n  CenterMorphModal,\n  CenterMorphModalContent,\n  CenterMorphModalTrigger,\n} from \"@/components/motion/center-morph-modal\";\n\nexport function CenterMorphModalPreview() {\n  return (\n    <div className=\"flex min-h-[420px] w-full items-center justify-center\">\n      <CenterMorphModal>\n        <CenterMorphModalTrigger>\n          <button\n            type=\"button\"\n            className=\"inline-flex h-10 items-center justify-center rounded-full bg-foreground px-5 text-sm font-medium text-background press focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background\"\n          >\n            Open modal\n          </button>\n        </CenterMorphModalTrigger>\n\n        <CenterMorphModalContent\n          ariaLabel=\"beUI Pro\"\n          ariaDescribedBy=\"center-morph-pro-description\"\n        >\n          <div className=\"p-7 sm:p-8\">\n            <p className=\"text-sm font-medium text-muted-foreground\">\n              beUI Pro\n            </p>\n            <h2 className=\"mt-5 max-w-xs pr-8 text-2xl font-medium tracking-tight text-foreground\">\n              Ship the whole experience.\n            </h2>\n            <p\n              id=\"center-morph-pro-description\"\n              className=\"mt-3 text-sm leading-relaxed text-muted-foreground\"\n            >\n              Go beyond individual components with premium animated sections\n              and complete Next.js templates.\n            </p>\n\n            <div className=\"mt-7 space-y-3 border-y border-border py-5\">\n              {[\n                \"Premium animated sections\",\n                \"Complete Next.js templates\",\n                \"Editable source and private registry\",\n              ].map((feature) => (\n                <div\n                  key={feature}\n                  className=\"flex items-center gap-3 text-sm text-foreground\"\n                >\n                  <Check\n                    className=\"h-4 w-4 text-muted-foreground\"\n                    aria-hidden=\"true\"\n                  />\n                  <span>{feature}</span>\n                </div>\n              ))}\n            </div>\n\n            <a\n              href=\"https://pro.beui.dev/?utm_source=beui&utm_medium=component_preview&utm_campaign=center_morph_modal\"\n              target=\"_blank\"\n              rel=\"noreferrer\"\n              className=\"mt-7 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-sm font-medium text-background press focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background\"\n            >\n              Explore beUI Pro\n              <ArrowUpRight className=\"h-4 w-4\" aria-hidden=\"true\" />\n            </a>\n          </div>\n        </CenterMorphModalContent>\n      </CenterMorphModal>\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### CenterMorphModal\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `open` | `boolean` | — | No | Controlled open state. |\n| `defaultOpen` | `boolean` | `false` | No | Initial state when used uncontrolled. |\n| `onOpenChange` | `((open: boolean) => void)` | — | No | — |\n\n### CenterMorphModalContent\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `ariaLabel` | `string` | — | Yes | Accessible name announced by screen readers. |\n| `ariaDescribedBy` | `string` | — | No | Optional id of descriptive content inside the modal. |\n| `dismissible` | `boolean` | `true` | No | Close on Escape or backdrop press. Default true. |\n| `showCloseButton` | `boolean` | `true` | No | Render the close control inside the panel's top-right corner. Default true. |\n| `closeButtonLabel` | `string` | `Close modal` | No | — |\n| `className` | `string` | — | No | — |\n| `backdropClassName` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/center-morph-modal\n- Raw source: https://beui.dev/r/center-morph-modal/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

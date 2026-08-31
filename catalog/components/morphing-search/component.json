@@ -1,5 +1,6 @@
 {
   "id": "beui:morphing-search",
+  "sourceId": "beui",
   "slug": "morphing-search",
   "name": "Morphing Search",
   "description": "Search field or compact icon that morphs into a glass results surface, whether opened by click or keyboard shortcut.",
@@ -56,7 +57,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -104,6 +105,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react react-dom tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react react-dom tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -115,7 +118,8 @@
     "upstreamSlug": "morphing-search",
     "upstreamPageUrl": "https://beui.dev/components/blocks/morphing-search",
     "upstreamDetailUrl": "https://beui.dev/r/morphing-search",
-    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/morphing-search.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/morphing-search.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Morphing Search\"\ndescription: \"Search field or compact icon that morphs into a glass results surface, whether opened by click or keyboard shortcut.\"\ncategory: \"Blocks\"\npublishedAt: \"2026-08-18\"\nupdatedAt: \"2026-08-22\"\ndocumentation: \"https://beui.dev/components/blocks/morphing-search\"\nmarkdown: \"https://beui.dev/components/blocks/morphing-search.md\"\nlicense: \"MIT\"\n---\n\n# Morphing Search\n\n> Search field or compact icon that morphs into a glass results surface, whether opened by click or keyboard shortcut.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/morphing-search\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `react-dom`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { Blocks, BookOpen, Bot, FolderOpen, Palette } from \"lucide-react\";\nimport {\n  MorphingSearch,\n  type MorphingSearchItem,\n} from \"@/components/motion/morphing-search\";\n\nconst ITEMS: MorphingSearchItem[] = [\n  {\n    id: \"project-folder\",\n    title: \"Project Folder\",\n    description: \"Block · Files and previews\",\n    keywords: [\"files\", \"overlay\"],\n    icon: FolderOpen,\n  },\n  {\n    id: \"motion-components\",\n    title: \"Motion components\",\n    description: \"Collection · Interaction primitives\",\n    keywords: [\"animation\", \"components\"],\n    icon: Blocks,\n  },\n  {\n    id: \"agent-interfaces\",\n    title: \"Agent interfaces\",\n    description: \"Collection · AI building blocks\",\n    keywords: [\"ai\", \"chat\"],\n    icon: Bot,\n  },\n  {\n    id: \"installation\",\n    title: \"Installation guide\",\n    description: \"Documentation · Add your first component\",\n    keywords: [\"setup\", \"shadcn\"],\n    icon: BookOpen,\n  },\n  {\n    id: \"design-tokens\",\n    title: \"Design tokens\",\n    description: \"Documentation · Color, type, and motion\",\n    keywords: [\"theme\", \"styles\"],\n    icon: Palette,\n  },\n];\n\nexport function MorphingSearchPreview() {\n  return (\n    <div className=\"flex w-full max-w-[22rem] items-center gap-3\">\n      <MorphingSearch items={ITEMS} placeholder=\"Find components\" />\n      <MorphingSearch\n        items={ITEMS}\n        placeholder=\"Find components\"\n        shortcut=\"\"\n        iconOnly\n      />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### MorphingSearch\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `items` | `MorphingSearchItem[]` | — | Yes | — |\n| `placeholder` | `string` | `Search` | No | — |\n| `shortcut` | `string` | `f` | No | — |\n| `iconOnly` | `boolean` | `false` | No | Render the closed trigger as a compact search icon. |\n| `emptyMessage` | `string` | `No results found.` | No | — |\n| `open` | `boolean` | — | No | — |\n| `defaultOpen` | `boolean` | `false` | No | — |\n| `onOpenChange` | `((open: boolean) => void)` | — | No | — |\n| `onQueryChange` | `((query: string) => void)` | — | No | — |\n| `onSelect` | `((item: MorphingSearchItem) => void)` | — | No | — |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/morphing-search\n- Raw source: https://beui.dev/r/morphing-search/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

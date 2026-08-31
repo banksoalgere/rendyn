@@ -4,7 +4,7 @@ import { Brand } from './brand';
 const footerGroups = [
   {
     title: 'Product',
-    links: [['Product', '/#product'], ['Components', '/#catalogue'], ['What you get', '/#how-it-works']],
+    links: [['Product', '/#product'], ['Components', '/components'], ['What you get', '/#how-it-works']],
   },
   {
     title: 'Developers',
@@ -41,7 +41,7 @@ export function FinalCallToAction() {
         <h2>Build your best<br />interface yet.</h2>
         <p>Connect DesignMCP and give every feature polished components, complete code and the context to choose well.</p>
         <div>
-          <a className="button" href="/#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></a>
+          <a className="button" href="/components">Browse the catalogue <span aria-hidden="true">↗</span></a>
           <a className="button button--cream" href="/#docs">Connect DesignMCP</a>
         </div>
       </div>

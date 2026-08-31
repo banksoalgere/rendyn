@@ -27,7 +27,7 @@ The repository keeps orchestration thin and puts behavior behind explicit module
 - `apps/api/src/routes` owns HTTP transport only. Shared catalog response shaping lives in `catalog-presenter.ts`, so HTTP and MCP return the same public representation.
 - `apps/api/src/mcp.ts` only creates the MCP server. Each tool lives under `apps/api/src/mcp-tools`, grouped into search, source retrieval, and catalogue navigation.
 - `apps/api/src/entitlements.ts` owns Supabase quota claims and validates complete RPC responses before returning them to a route or MCP tool.
-- `scripts/import-beui.ts` coordinates imports. Fetch limits, URL/path policy, external schemas, metadata extraction, concurrency, pinned-repository handling, and component assembly live in focused modules under `scripts/lib/catalog-import`.
+- `scripts/import-catalog.ts` coordinates the beUI base import and the Magic UI/Kibo UI adapters. Fetch limits, URL/path policy, external schemas, metadata extraction, concurrency, pinned-repository handling, licence checks, and component assembly live in focused import modules.
 - `apps/web/app/page.tsx` composes independent landing-page sections from `apps/web/app/components`. It stays an independent deployable package while its source is versioned with the rest of the monorepo.
 
 Imported files under `catalog/components` and `apps/preview/vendor-root` are generated from the pinned upstream revision. Refactor the importer or preview shell, not the vendored implementation, unless the source revision is deliberately updated.
@@ -42,11 +42,11 @@ Start with these files when tracing a request:
 4. `packages/catalog/src/search.ts` is the ranking pipeline. Its `search/scoring.ts` and `search/diversity.ts` modules own scoring and result variety; `packages/catalog/src/store.ts` reads validated catalogue data.
 5. `apps/api/src/entitlements.ts` claims access before complete source is returned.
 
-For catalogue updates, start at `scripts/import-beui.ts`. It reads as the import workflow; `component-source.ts` verifies pinned input, `component-manifest.ts` builds catalogue records, and the remaining modules implement the other import steps.
+For catalogue updates, start at `scripts/import-catalog.ts`. `import-beui.ts` rebuilds the base snapshot; `import-external-sources.ts` applies the reviewed Magic UI and Kibo UI adapters; `component-source.ts` verifies beUI input; and `component-manifest.ts` builds shared catalogue records.
 
 ## Why catalogue files, not Postgres/pgvector
 
-The first catalogue has 80 items. An exact scan of 80 vectors is negligible, while a database search layer adds migrations, network latency, operational state, and a second copy of the catalogue. Keeping the source, metadata, hashes, embeddings, and preview cache together makes each release atomic and reviewable.
+The catalogue has 189 items. An exact scan of 189 vectors is negligible, while a database search layer adds migrations, network latency, operational state, and a second copy of the catalogue. Keeping the source, metadata, hashes, embeddings, and preview cache together makes each release atomic and reviewable.
 
 This changes when the data actually demands it. A move to pgvector or a hosted search service becomes sensible when the index grows into many thousands of items, multiple catalogue workers must update it independently, or per-user/private catalogue data appears. None is true for this MVP.
 
@@ -88,7 +88,7 @@ Preview code is executable UI, while the API handles secrets and entitlements. K
 - source/API deployments are not coupled to Next.js rendering;
 - the human-facing site can embed the same internal preview URLs later.
 
-The importer copies only the pinned component runtime, preview modules, shared libraries, CSS, and public assets. It excludes beUI's marketing pages, docs app, tests, build files, and MCP server.
+The importer copies only the pinned component runtime, selected preview modules, shared libraries, CSS, and required public assets. It excludes marketing pages, documentation applications, tests, build files, MCP servers, and any registry item without source at the pinned commit.
 
 ## Commercial access model
 

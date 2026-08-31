@@ -1,5 +1,6 @@
 {
   "id": "beui:switch",
+  "sourceId": "beui",
   "slug": "switch",
   "name": "Switch",
   "description": "Toggle with a spring-driven thumb and press feedback.",
@@ -49,7 +50,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -79,6 +80,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -90,7 +93,8 @@
     "upstreamSlug": "switch",
     "upstreamPageUrl": "https://beui.dev/components/motion/switch",
     "upstreamDetailUrl": "https://beui.dev/r/switch",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/switch.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/switch.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Switch\"\ndescription: \"Toggle with a spring-driven thumb and press feedback.\"\ncategory: \"Components\"\npublishedAt: \"2026-05-17\"\nupdatedAt: \"2026-06-10\"\ndocumentation: \"https://beui.dev/components/motion/switch\"\nmarkdown: \"https://beui.dev/components/motion/switch.md\"\nlicense: \"MIT\"\n---\n\n# Switch\n\n> Toggle with a spring-driven thumb and press feedback.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/switch\n```\n\n## Dependencies\n\n- `clsx`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { useState } from \"react\";\nimport { Switch } from \"@/components/motion/switch\";\n\nexport function SwitchPreview() {\n  const [on, setOn] = useState(true);\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <Switch checked={on} onCheckedChange={setOn} label=\"Enable notifications\" />\n      <Switch checked={false} onCheckedChange={() => {}} label=\"Off\" />\n      <Switch checked disabled onCheckedChange={() => {}} label=\"Disabled\" />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### Switch\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `checked` | `boolean` | — | Yes | — |\n| `onCheckedChange` | `(checked: boolean) => void` | — | Yes | — |\n| `disabled` | `boolean` | — | No | — |\n| `label` | `string` | — | No | — |\n| `ariaLabel` | `string` | — | No | — |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/switch\n- Raw source: https://beui.dev/r/switch/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

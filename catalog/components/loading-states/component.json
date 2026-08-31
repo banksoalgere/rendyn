@@ -1,5 +1,6 @@
 {
   "id": "beui:loading-states",
+  "sourceId": "beui",
   "slug": "loading-states",
   "name": "Agent Loading States",
   "description": "Three thoughtful loading states for AI interfaces: shimmering status text, live agent progress, and cycling reasoning phrases.",
@@ -66,7 +67,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -138,6 +139,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -149,7 +152,8 @@
     "upstreamSlug": "loading-states",
     "upstreamPageUrl": "https://beui.dev/components/agents/loading-states",
     "upstreamDetailUrl": "https://beui.dev/r/loading-states",
-    "upstreamMarkdownUrl": "https://beui.dev/components/agents/loading-states.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/agents/loading-states.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Agent Loading States\"\ndescription: \"Three thoughtful loading states for AI interfaces: shimmering status text, live agent progress, and cycling reasoning phrases.\"\ncategory: \"AI Agents\"\npublishedAt: \"2026-07-30\"\nupdatedAt: \"2026-08-19\"\ndocumentation: \"https://beui.dev/components/agents/loading-states\"\nmarkdown: \"https://beui.dev/components/agents/loading-states.md\"\nlicense: \"MIT\"\n---\n\n# Agent Loading States\n\n> Three thoughtful loading states for AI interfaces: shimmering status text, live agent progress, and cycling reasoning phrases.\n\n## Install\n\n### Reasoning Text\n\nShimmering reasoning copy with an ASCII loader and cascade, phrase-swap, or per-letter scramble transitions.\n\n```bash\nnpx shadcn@latest add @beui/reasoning-text\n```\n\n### Thinking Shimmer\n\nA quiet shimmer that keeps the agent's current status readable while work continues.\n\n```bash\nnpx shadcn@latest add @beui/thinking-shimmer\n```\n\n### Agent Progress\n\nA compact activity glyph, action verb, and live tabular timer for longer-running agent work.\n\n```bash\nnpx shadcn@latest add @beui/agent-progress\n```\n\n## Dependencies\n\n- `clsx`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n### Reasoning Text usage\n\nShimmering reasoning copy with an ASCII loader and cascade, phrase-swap, or per-letter scramble transitions.\n\n```tsx\n\"use client\";\n\nimport {\n  ReasoningText,\n  type ReasoningTextVariant,\n} from \"@/components/agents/loading-states/reasoning-text\";\n\nconst EXAMPLES: {\n  label: string;\n  variant: ReasoningTextVariant;\n  phrases: string[];\n}[] = [\n  {\n    label: \"Cascade\",\n    variant: \"cascade\",\n    phrases: [\n      \"Thinking\",\n      \"Reading the request\",\n      \"Working through the details\",\n      \"Preparing the answer\",\n    ],\n  },\n  {\n    label: \"Swap\",\n    variant: \"swap\",\n    phrases: [\n      \"Thinking\",\n      \"Reading the request\",\n      \"Working through the details\",\n      \"Preparing the answer\",\n    ],\n  },\n  {\n    label: \"Scramble\",\n    variant: \"scramble\",\n    phrases: [\"Thinking\", \"Searching\", \"Reasoning\", \"Composing\"],\n  },\n];\n\nexport function ReasoningTextPreview() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-7\">\n      {EXAMPLES.map(({ label, variant, phrases }) => (\n        <div key={variant} className=\"grid gap-2\">\n          <span className=\"text-[11px] font-medium uppercase tracking-wider text-muted-foreground/60\">\n            {label}\n          </span>\n          <ReasoningText\n            variant={variant}\n            phrases={phrases}\n            className=\"text-base\"\n          />\n        </div>\n      ))}\n    </div>\n  );\n}\n```\n\n### Thinking Shimmer usage\n\nA quiet shimmer that keeps the agent's current status readable while work continues.\n\n```tsx\n\"use client\";\n\nimport { ThinkingShimmer } from \"@/components/agents/loading-states/thinking-shimmer\";\n\nexport function ThinkingShimmerPreview() {\n  return (\n    <ThinkingShimmer className=\"text-lg\" duration={1.8}>\n      Thinking…\n    </ThinkingShimmer>\n  );\n}\n```\n\n### Agent Progress usage\n\nA compact activity glyph, action verb, and live tabular timer for longer-running agent work.\n\n```tsx\n\"use client\";\n\nimport { AgentProgress } from \"@/components/agents/loading-states/agent-progress\";\n\nexport function AgentProgressPreview() {\n  return (\n    <AgentProgress\n      label=\"Churning\"\n      initialSeconds={151.6}\n      className=\"text-base\"\n    />\n  );\n}\n```\n\n## API Reference\n\n### ReasoningText\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `phrases` | `string[]` | `[ \"Thinking\", \"Reading the context\", \"Connecting the details\", \"Forming a response\", ]` | No | Phrases cycled through while the agent works. |\n| `variant` | `\"scramble\" \\| \"cascade\" \\| \"swap\"` | `cascade` | No | Animation used when the active phrase changes. |\n| `interval` | `number` | `1800` | No | Milliseconds each phrase remains visible. |\n| `shimmerDuration` | `number` | `2.2` | No | Seconds taken for one shimmer pass. |\n| `indicator` | `ReactNode` | — | No | Optional leading visual. Defaults to a terminal-style ASCII loader. |\n| `className` | `string` | — | No | — |\n\n### ThinkingShimmer\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `children` | `ReactNode` | `Thinking…` | No | Loading message shown to the user. |\n| `duration` | `number` | `1.8` | No | Seconds taken for one shimmer pass. |\n| `className` | `string` | — | No | — |\n\n### AgentProgress\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `label` | `string` | `Churning` | No | Verb describing the agent's current activity. |\n| `elapsedSeconds` | `number` | — | No | Controlled elapsed time in seconds. |\n| `initialSeconds` | `number` | `0` | No | Starting time for the internal timer, in seconds. |\n| `running` | `boolean` | `true` | No | Whether the internal timer should advance. Ignored when elapsedSeconds is provided. |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/loading-states\n- Raw source: https://beui.dev/r/loading-states/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

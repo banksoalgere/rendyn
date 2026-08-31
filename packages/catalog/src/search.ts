@@ -31,6 +31,7 @@ function toSearchResult(candidate: Candidate, rank: number): SearchResult {
   return {
     rank,
     id: candidate.component.id,
+    sourceId: candidate.component.sourceId,
     slug: candidate.component.slug,
     name: candidate.component.name,
     description: candidate.component.description,

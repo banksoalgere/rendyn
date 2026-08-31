@@ -1,0 +1,87 @@
+{
+  "id": "magicui:number-ticker",
+  "sourceId": "magicui",
+  "slug": "magicui-number-ticker",
+  "name": "Number Ticker",
+  "description": "Animate numbers to count up or down to a target number",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "number-ticker",
+    "tags": [
+      "code",
+      "number"
+    ],
+    "aliases": [
+      "number ticker",
+      "number-ticker"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "Animate numbers to count up or down to a target number"
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "number-ticker:code:number:type",
+    "searchText": "Number Ticker\nnumber ticker\nAnimate numbers to count up or down to a target number\nnumber-ticker\ncode\nnumber\ntype\ntitle: Number Ticker date: 2023 11 18 description: Animate numbers to count up or down to a target number author: dillionverma published: true video: https://cdn.magicui.design/number ticker.mp4 Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Example Decimal Start Value Usage Props Prop Type Default Description value int 0 The value to count to direction up \\ down \"up\" The direction to count in delay number 0 The delay before counting decimalPlaces number 0 The number of decimal places to show startValue number 0 The value to start counting from"
+  },
+  "previewPath": "/preview/motion/magicui-number-ticker",
+  "manifestPath": "components/magicui-number-ticker/component.json",
+  "integrity": "sha256:91e6af9032b085b1391f30f1b2a9c8253c1d593105c76504c887d593bdc98697",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/number-ticker.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport { useEffect, useRef, type ComponentPropsWithoutRef } from \"react\"\nimport { useInView, useMotionValue, useSpring } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface NumberTickerProps extends ComponentPropsWithoutRef<\"span\"> {\n  value: number\n  startValue?: number\n  direction?: \"up\" | \"down\"\n  delay?: number\n  decimalPlaces?: number\n}\n\nexport function NumberTicker({\n  value,\n  startValue = 0,\n  direction = \"up\",\n  delay = 0,\n  className,\n  decimalPlaces = 0,\n  ...props\n}: NumberTickerProps) {\n  const ref = useRef<HTMLSpanElement>(null)\n  const motionValue = useMotionValue(direction === \"down\" ? value : startValue)\n  const springValue = useSpring(motionValue, {\n    damping: 60,\n    stiffness: 100,\n  })\n  const isInView = useInView(ref, { once: true, margin: \"0px\" })\n\n  useEffect(() => {\n    let timer: ReturnType<typeof setTimeout> | null = null\n\n    if (isInView) {\n      timer = setTimeout(() => {\n        motionValue.set(direction === \"down\" ? startValue : value)\n      }, delay * 1000)\n    }\n\n    return () => {\n      if (timer !== null) {\n        clearTimeout(timer)\n      }\n    }\n  }, [motionValue, isInView, delay, value, direction, startValue])\n\n  useEffect(\n    () =>\n      springValue.on(\"change\", (latest) => {\n        if (ref.current) {\n          ref.current.textContent = Intl.NumberFormat(\"en-US\", {\n            minimumFractionDigits: decimalPlaces,\n            maximumFractionDigits: decimalPlaces,\n          }).format(Number(latest.toFixed(decimalPlaces)))\n        }\n      }),\n    [springValue, decimalPlaces]\n  )\n\n  return (\n    <span\n      ref={ref}\n      className={cn(\n        \"inline-block tracking-wider text-black tabular-nums dark:text-white\",\n        className\n      )}\n      {...props}\n    >\n      {startValue}\n    </span>\n  )\n}\n",
+      "sha256": "0f7dcbc6a1962615a877590304e846f33d390002a51f2226f544938577c220f4",
+      "upstreamPath": "apps/www/registry/magicui/number-ticker.tsx",
+      "upstreamSha256": "0f7dcbc6a1962615a877590304e846f33d390002a51f2226f544938577c220f4",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "number-ticker",
+    "upstreamPageUrl": "https://magicui.design/docs/components/number-ticker",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/number-ticker.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Number Ticker\ndate: 2023-11-18\ndescription: Animate numbers to count up or down to a target number\nauthor: dillionverma\npublished: true\nvideo: https://cdn.magicui.design/number-ticker.mp4\n---\n\n<ComponentPreview name=\"number-ticker-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/number-ticker\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"number-ticker\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Example\n\n### Decimal\n\n<ComponentPreview name=\"number-ticker-decimal-demo\" />\n\n### Start Value\n\n<ComponentPreview name=\"number-ticker-demo-2\" />\n\n### Usage\n\n```tsx showLineNumbers\nimport { NumberTicker } from \"@/components/ui/number-ticker\"\n```\n\n```tsx showLineNumbers\n<NumberTicker value={100} />\n```\n\n## Props\n\n| Prop            | Type         | Default | Description                          |\n| --------------- | ------------ | ------- | ------------------------------------ |\n| `value`         | `int`        | `0`     | The value to count to                |\n| `direction`     | `up \\| down` | `\"up\"`  | The direction to count in            |\n| `delay`         | `number`     | `0`     | The delay before counting            |\n| `decimalPlaces` | `number`     | `0`     | The number of decimal places to show |\n| `startValue`    | `number`     | `0`     | The value to start counting from     |\n"
+}

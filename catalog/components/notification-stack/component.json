@@ -1,5 +1,6 @@
 {
   "id": "beui:notification-stack",
+  "sourceId": "beui",
   "slug": "notification-stack",
   "name": "Notification Stack",
   "description": "Compact notification cards that spring from a stacked summary into a readable list on hover, focus or tap.",
@@ -61,7 +62,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -127,6 +128,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -138,7 +141,8 @@
     "upstreamSlug": "notification-stack",
     "upstreamPageUrl": "https://beui.dev/components/blocks/notification-stack",
     "upstreamDetailUrl": "https://beui.dev/r/notification-stack",
-    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/notification-stack.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/notification-stack.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Notification Stack\"\ndescription: \"Compact notification cards that spring from a stacked summary into a readable list on hover, focus or tap.\"\ncategory: \"Blocks\"\npublishedAt: \"2026-07-14\"\nupdatedAt: \"2026-07-14\"\ndocumentation: \"https://beui.dev/components/blocks/notification-stack\"\nmarkdown: \"https://beui.dev/components/blocks/notification-stack.md\"\nlicense: \"MIT\"\n---\n\n# Notification Stack\n\n> Compact notification cards that spring from a stacked summary into a readable list on hover, focus or tap.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/notification-stack\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { RotateCw } from \"lucide-react\";\nimport {\n  NotificationStack,\n  type NotificationStackItem,\n} from \"@/components/motion/notification-stack\";\n\nconst notifications: NotificationStackItem[] = [\n  {\n    id: \"import-failed\",\n    title: \"Orders import failed\",\n    description: \"42s · TimeoutError at Step 2\",\n    trailing: (\n      <span className=\"inline-flex items-center gap-1 text-amber-500 dark:text-amber-400\">\n        <RotateCw className=\"h-3.5 w-3.5\" aria-hidden=\"true\" />\n        2\n      </span>\n    ),\n  },\n  {\n    id: \"sla-breach\",\n    title: \"SLA breach\",\n    description: \"2m 11s · Data enrichment\",\n  },\n  {\n    id: \"sync-fixed\",\n    title: \"Product sync auto-fixed\",\n    description: \"5m · 404 on GET /products\",\n  },\n];\n\nexport function NotificationStackPreview() {\n  return (\n    <div className=\"flex w-full items-center justify-center pt-52 pb-6\">\n      <NotificationStack items={notifications} />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### NotificationStack\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `items` | `NotificationStackItem[]` | — | Yes | — |\n| `expanded` | `boolean` | — | No | — |\n| `defaultExpanded` | `boolean` | `false` | No | — |\n| `onExpandedChange` | `((expanded: boolean) => void)` | — | No | — |\n| `onViewAll` | `(() => void)` | — | No | — |\n| `maxVisible` | `number` | `3` | No | — |\n| `collapsedLabel` | `string` | `Notifications` | No | — |\n| `expandedLabel` | `string` | `View all` | No | — |\n| `emptyLabel` | `string` | `All caught up` | No | — |\n| `className` | `string` | — | No | — |\n| `classNames` | `NotificationStackClassNames` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/notification-stack\n- Raw source: https://beui.dev/r/notification-stack/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

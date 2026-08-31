@@ -1,0 +1,95 @@
+{
+  "id": "kibo:comparison",
+  "sourceId": "kibo",
+  "slug": "kibo-comparison",
+  "name": "Comparison",
+  "description": "A slider-based component for comparing two items in an overlay.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "slider",
+    "tags": [
+      "context",
+      "drag",
+      "hover",
+      "responsive",
+      "slider",
+      "text",
+      "touch"
+    ],
+    "aliases": [
+      "comparison",
+      "slider"
+    ],
+    "interactions": [
+      "drag",
+      "hover",
+      "touch"
+    ],
+    "useWhen": [
+      "A slider-based component for comparing two items in an overlay."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "slider:context:drag:hover:responsive",
+    "searchText": "Comparison\ncomparison\nA slider-based component for comparing two items in an overlay.\nslider\ncontext\ndrag\nhover\nresponsive\ntext\ntouch\ntitle: Comparison description: A slider based component for comparing two items in an overlay. icon: Columns2 dependencies: https://motion.dev/ https://lucide.dev/ installer: comparison Features Compare two items side by side with a draggable slider Support for both hover and drag modes Smooth animations Touch and mouse event support Customizable slider appearance Responsive design that works with any content Context provider for accessing comparison state Examples Hover mode With event handlers"
+  },
+  "previewPath": "/preview/blocks/kibo-comparison",
+  "manifestPath": "components/kibo-comparison/component.json",
+  "integrity": "sha256:8a20d5048dc1665b2f2754f75551085a30d7346dfff4cf3efed6f73380e132b4",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/comparison/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { GripVerticalIcon } from \"lucide-react\";\nimport {\n  type MotionValue,\n  motion,\n  useMotionValue,\n  useSpring,\n  useTransform,\n} from \"motion/react\";\nimport {\n  type ComponentProps,\n  createContext,\n  type HTMLAttributes,\n  type MouseEventHandler,\n  type ReactNode,\n  type TouchEventHandler,\n  useContext,\n  useState,\n} from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ntype ImageComparisonContextType = {\n  sliderPosition: number;\n  setSliderPosition: (pos: number) => void;\n  motionSliderPosition: MotionValue<number>;\n  mode: \"hover\" | \"drag\";\n};\n\nconst ImageComparisonContext = createContext<\n  ImageComparisonContextType | undefined\n>(undefined);\n\nconst useImageComparisonContext = () => {\n  const context = useContext(ImageComparisonContext);\n\n  if (!context) {\n    throw new Error(\n      \"useImageComparisonContext must be used within a ImageComparison\"\n    );\n  }\n\n  return context;\n};\n\nexport type ComparisonProps = HTMLAttributes<HTMLDivElement> & {\n  mode?: \"hover\" | \"drag\";\n  onDragStart?: () => void;\n  onDragEnd?: () => void;\n};\n\nexport const Comparison = ({\n  className,\n  mode = \"drag\",\n  onDragStart,\n  onDragEnd,\n  ...props\n}: ComparisonProps) => {\n  const [isDragging, setIsDragging] = useState(false);\n  const motionValue = useMotionValue(50);\n  const motionSliderPosition = useSpring(motionValue, {\n    bounce: 0,\n    duration: 0,\n  });\n  const [sliderPosition, setSliderPosition] = useState(50);\n\n  const handleDrag = (domRect: DOMRect, clientX: number) => {\n    if (!isDragging && mode === \"drag\") {\n      return;\n    }\n\n    const x = clientX - domRect.left;\n    const percentage = Math.min(Math.max((x / domRect.width) * 100, 0), 100);\n    motionValue.set(percentage);\n    setSliderPosition(percentage);\n  };\n\n  const handleMouseDrag: MouseEventHandler<HTMLDivElement> = (event) => {\n    if (!event) {\n      return;\n    }\n\n    const containerRect = event.currentTarget.getBoundingClientRect();\n\n    handleDrag(containerRect, event.clientX);\n  };\n\n  const handleTouchDrag: TouchEventHandler<HTMLDivElement> = (event) => {\n    if (!event) {\n      return;\n    }\n\n    const containerRect = event.currentTarget.getBoundingClientRect();\n    const touches = Array.from(event.touches);\n\n    handleDrag(containerRect, touches.at(0)?.clientX ?? 0);\n  };\n\n  const handleDragStart = () => {\n    if (mode === \"drag\") {\n      setIsDragging(true);\n      onDragStart?.();\n    }\n  };\n\n  const handleDragEnd = () => {\n    if (mode === \"drag\") {\n      setIsDragging(false);\n      onDragEnd?.();\n    }\n  };\n\n  return (\n    <ImageComparisonContext.Provider\n      value={{ sliderPosition, setSliderPosition, motionSliderPosition, mode }}\n    >\n      <div\n        aria-label=\"Comparison slider\"\n        aria-valuemax={100}\n        aria-valuemin={0}\n        aria-valuenow={sliderPosition}\n        className={cn(\n          \"relative isolate w-full select-none overflow-hidden\",\n          className\n        )}\n        onMouseDown={handleDragStart}\n        onMouseLeave={handleDragEnd}\n        onMouseMove={handleMouseDrag}\n        onMouseUp={handleDragEnd}\n        onTouchEnd={handleDragEnd}\n        onTouchMove={handleTouchDrag}\n        onTouchStart={handleDragStart}\n        role=\"slider\"\n        tabIndex={0}\n        {...props}\n      />\n    </ImageComparisonContext.Provider>\n  );\n};\n\nexport type ComparisonItemProps = ComponentProps<typeof motion.div> & {\n  position: \"left\" | \"right\";\n};\n\nexport const ComparisonItem = ({\n  className,\n  position,\n  ...props\n}: ComparisonItemProps) => {\n  const { motionSliderPosition } = useImageComparisonContext();\n  const leftClipPath = useTransform(\n    motionSliderPosition,\n    (value) => `inset(0 0 0 ${value}%)`\n  );\n  const rightClipPath = useTransform(\n    motionSliderPosition,\n    (value) => `inset(0 ${100 - value}% 0 0)`\n  );\n\n  return (\n    <motion.div\n      aria-hidden=\"true\"\n      className={cn(\"absolute inset-0 h-full w-full object-cover\", className)}\n      role=\"img\"\n      style={{\n        clipPath: position === \"left\" ? leftClipPath : rightClipPath,\n      }}\n      {...props}\n    />\n  );\n};\n\nexport type ComparisonHandleProps = ComponentProps<typeof motion.div> & {\n  children?: ReactNode;\n};\n\nexport const ComparisonHandle = ({\n  className,\n  children,\n  ...props\n}: ComparisonHandleProps) => {\n  const { motionSliderPosition, mode } = useImageComparisonContext();\n  const left = useTransform(motionSliderPosition, (value) => `${value}%`);\n\n  return (\n    <motion.div\n      aria-hidden=\"true\"\n      className={cn(\n        \"-translate-x-1/2 absolute top-0 z-50 flex h-full w-10 items-center justify-center\",\n        mode === \"drag\" && \"cursor-grab active:cursor-grabbing\",\n        className\n      )}\n      role=\"presentation\"\n      style={{ left }}\n      {...props}\n    >\n      {children ?? (\n        <>\n          <div className=\"-translate-x-1/2 absolute left-1/2 h-full w-1 bg-background\" />\n          {mode === \"drag\" && (\n            <div className=\"z-50 flex items-center justify-center rounded-sm bg-background px-0.5 py-1\">\n              <GripVerticalIcon className=\"h-4 w-4 select-none text-muted-foreground\" />\n            </div>\n          )}\n        </>\n      )}\n    </motion.div>\n  );\n};\n",
+      "sha256": "6136ee133cffcca85f79174c5ebd8ca0a66f78f67d5f8c0a4df06b7d671bbb0a",
+      "upstreamPath": "packages/comparison/index.tsx",
+      "upstreamSha256": "6136ee133cffcca85f79174c5ebd8ca0a66f78f67d5f8c0a4df06b7d671bbb0a",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add lucide-react motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add lucide-react motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comparison",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/comparison",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/comparison.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Comparison\ndescription: A slider-based component for comparing two items in an overlay.\nicon: Columns2\ndependencies:\n  - https://motion.dev/\n  - https://lucide.dev/\ninstaller: comparison\n---\n\n## Features\n\n- Compare two items side by side with a draggable slider\n- Support for both hover and drag modes\n- Smooth animations\n- Touch and mouse event support\n- Customizable slider appearance\n- Responsive design that works with any content\n- Context provider for accessing comparison state\n\n## Examples\n\n### Hover mode\n\n<Preview path=\"comparison-hover\" />\n\n### With event handlers\n\n<Preview path=\"comparison-event-handlers\" />\n"
+}

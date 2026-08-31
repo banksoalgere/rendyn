@@ -1,0 +1,96 @@
+{
+  "id": "magicui:aurora-text",
+  "sourceId": "magicui",
+  "slug": "magicui-aurora-text",
+  "name": "Aurora Text",
+  "description": "A beautiful aurora text effect",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "aurora-text",
+    "tags": [
+      "code",
+      "file",
+      "number",
+      "text"
+    ],
+    "aliases": [
+      "aurora text",
+      "aurora-text"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A beautiful aurora text effect"
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "aurora-text:code:file:number:text:type",
+    "searchText": "Aurora Text\naurora text\nA beautiful aurora text effect\naurora-text\ncode\nfile\nnumber\ntext\ntype\ntitle: Aurora Text date: 2025 01 12 description: A beautiful aurora text effect author: Dillon published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Add the required CSS animations Add the following animations to your global CSS file. Usage Props Prop Type Default Description className string \"\" The class name to be applied to the component children ReactNode Children elements colors string[] [\" FF0080\", \" 7928CA\", \" 0070F3\", \" 38bdf8\"] Array of colors used for the aurora effect speed number 1 Animation speed multiplier (1 is default, 2 is twice as fast)"
+  },
+  "previewPath": "/preview/motion/magicui-aurora-text",
+  "manifestPath": "components/magicui-aurora-text/component.json",
+  "integrity": "sha256:d2806276a0934874bc0bddc7c837fe9b29cdbd93b0495925aa5e46d7a3253f59",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/aurora-text.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport React, { memo } from \"react\"\n\ninterface AuroraTextProps {\n  children: React.ReactNode\n  className?: string\n  colors?: string[]\n  speed?: number\n}\n\nexport const AuroraText = memo(\n  ({\n    children,\n    className = \"\",\n    colors = [\"#FF0080\", \"#7928CA\", \"#0070F3\", \"#38bdf8\"],\n    speed = 1,\n  }: AuroraTextProps) => {\n    const gradientStyle = {\n      backgroundImage: `linear-gradient(135deg, ${colors.join(\", \")}, ${\n        colors[0]\n      })`,\n      WebkitBackgroundClip: \"text\",\n      WebkitTextFillColor: \"transparent\",\n      animationDuration: `${10 / speed}s`,\n    }\n\n    return (\n      <span className={`relative inline-block ${className}`}>\n        <span className=\"sr-only\">{children}</span>\n        <span\n          className=\"animate-aurora relative bg-size-[200%_auto] bg-clip-text text-transparent\"\n          style={gradientStyle}\n          aria-hidden=\"true\"\n        >\n          {children}\n        </span>\n      </span>\n    )\n  }\n)\n\nAuroraText.displayName = \"AuroraText\"\n",
+      "sha256": "c7bd0b72a093084a881416975249c507ddd715249ac5832a9161538eeef29927",
+      "upstreamPath": "apps/www/registry/magicui/aurora-text.tsx",
+      "upstreamSha256": "c7bd0b72a093084a881416975249c507ddd715249ac5832a9161538eeef29927",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    },
+    {
+      "path": "components/magicui/aurora-text.css",
+      "type": "style",
+      "content": "@theme inline {\n  --animate-aurora: aurora 8s ease-in-out infinite alternate;\n}\n\n@keyframes aurora {\n  0% {\n    background-position: 0% 50%;\n    transform: rotate(-5deg) scale(0.9);\n  }\n  25% {\n    background-position: 50% 100%;\n    transform: rotate(5deg) scale(1.1);\n  }\n  50% {\n    background-position: 100% 50%;\n    transform: rotate(-3deg) scale(0.95);\n  }\n  75% {\n    background-position: 50% 0%;\n    transform: rotate(3deg) scale(1.05);\n  }\n  100% {\n    background-position: 0% 50%;\n    transform: rotate(-5deg) scale(0.9);\n  }\n}\n",
+      "sha256": "2dc26ca8bbba5667a335ede9f307b9a01ffe3ac0c95935a0b9ebe50a202966c1",
+      "transformation": "Materialize registry CSS and theme variables as a component stylesheet when present."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/magicui/aurora-text.css"
+    ],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Include the returned styles: components/magicui/aurora-text.css"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "aurora-text",
+    "upstreamPageUrl": "https://magicui.design/docs/components/aurora-text",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/aurora-text.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Aurora Text\ndate: 2025-01-12\ndescription: A beautiful aurora text effect\nauthor: Dillon\npublished: true\n---\n\n<ComponentPreview name=\"aurora-text-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/aurora-text\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"aurora-text\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n<Step>Add the required CSS animations</Step>\n\nAdd the following animations to your global CSS file.\n\n```css title=\"app/globals.css\" showLineNumbers {2, 4-25}\n@theme inline {\n  --animate-aurora: aurora 8s ease-in-out infinite alternate;\n\n  @keyframes aurora {\n    0% {\n      background-position: 0% 50%;\n      transform: rotate(-5deg) scale(0.9);\n    }\n    25% {\n      background-position: 50% 100%;\n      transform: rotate(5deg) scale(1.1);\n    }\n    50% {\n      background-position: 100% 50%;\n      transform: rotate(-3deg) scale(0.95);\n    }\n    75% {\n      background-position: 50% 0%;\n      transform: rotate(3deg) scale(1.05);\n    }\n    100% {\n      background-position: 0% 50%;\n      transform: rotate(-5deg) scale(0.9);\n    }\n  }\n}\n```\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { AuroraText } from \"@/components/ui/aurora-text\"\n```\n\n```tsx showLineNumbers\n<AuroraText>Aurora Text</AuroraText>\n```\n\n## Props\n\n| Prop        | Type        | Default                                         | Description                                                   |\n| ----------- | ----------- | ----------------------------------------------- | ------------------------------------------------------------- |\n| `className` | `string`    | `\"\"`                                            | The class name to be applied to the component                 |\n| `children`  | `ReactNode` | `-`                                             | Children elements                                             |\n| `colors`    | `string[]`  | ` [\"#FF0080\", \"#7928CA\", \"#0070F3\", \"#38bdf8\"]` | Array of colors used for the aurora effect                    |\n| `speed`     | `number`    | `1`                                             | Animation speed multiplier (1 is default, 2 is twice as fast) |\n"
+}

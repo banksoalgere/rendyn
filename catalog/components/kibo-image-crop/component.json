@@ -1,0 +1,101 @@
+{
+  "id": "kibo:image-crop",
+  "sourceId": "kibo",
+  "slug": "kibo-image-crop",
+  "name": "Image Crop",
+  "description": "Helps you crop images to a specific size or aspect ratio.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [
+    "lucide-react",
+    "radix-ui",
+    "react-image-crop"
+  ],
+  "internalDependencies": [
+    "button"
+  ],
+  "metadata": {
+    "kind": "block",
+    "family": "image-crop",
+    "tags": [
+      "button",
+      "data",
+      "drag",
+      "file",
+      "form",
+      "navigation",
+      "responsive",
+      "upload"
+    ],
+    "aliases": [
+      "image crop",
+      "image-crop"
+    ],
+    "interactions": [
+      "drag",
+      "keyboard",
+      "press",
+      "type"
+    ],
+    "useWhen": [
+      "Helps you crop images to a specific size or aspect ratio."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "image-crop:button:data:drag:file:form:keyboard",
+    "searchText": "Image Crop\nimage crop\nHelps you crop images to a specific size or aspect ratio.\nimage-crop\nbutton\ndata\ndrag\nfile\nform\nnavigation\nresponsive\nupload\nkeyboard\npress\ntype\ntitle: Image Crop description: A component that allows users to crop images with customizable aspect ratios and circular cropping options. icon: Crop dependencies: https://github.com/DominicTobias/react image crop installer: image crop Features Interactive image cropping with drag and resize functionality Support for custom aspect ratios or free form cropping Circular crop mode for profile pictures and avatars Automatic image scaling and compression based on maximum file size Returns cropped image as PNG data URL for easy upload or display shadcn/ui variables for styling Responsive design that adapts to container size Built in checkered background pattern for transparency preview TypeScript support with comprehensive type definitions Accessible controls and keyboard navigation support Examples Custom buttons Circular crop"
+  },
+  "previewPath": "/preview/blocks/kibo-image-crop",
+  "manifestPath": "components/kibo-image-crop/component.json",
+  "integrity": "sha256:bf769f8ba1ac830f60dd9ca19a7fbbd216d172293e15fc4165edd627d4cee650",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/image-crop/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { CropIcon, RotateCcwIcon } from \"lucide-react\";\nimport { Slot } from \"radix-ui\";\nimport {\n  type ComponentProps,\n  type CSSProperties,\n  createContext,\n  type MouseEvent,\n  type ReactNode,\n  type RefObject,\n  type SyntheticEvent,\n  useCallback,\n  useContext,\n  useEffect,\n  useRef,\n  useState,\n} from \"react\";\nimport ReactCrop, {\n  centerCrop,\n  makeAspectCrop,\n  type PercentCrop,\n  type PixelCrop,\n  type ReactCropProps,\n} from \"react-image-crop\";\nimport { cn } from \"@/lib/utils\";\n\nimport \"react-image-crop/dist/ReactCrop.css\";\n\nconst centerAspectCrop = (\n  mediaWidth: number,\n  mediaHeight: number,\n  aspect: number | undefined\n): PercentCrop =>\n  centerCrop(\n    aspect\n      ? makeAspectCrop(\n          {\n            unit: \"%\",\n            width: 90,\n          },\n          aspect,\n          mediaWidth,\n          mediaHeight\n        )\n      : { x: 0, y: 0, width: 90, height: 90, unit: \"%\" },\n    mediaWidth,\n    mediaHeight\n  );\n\nconst getCroppedPngImage = async (\n  imageSrc: HTMLImageElement,\n  scaleFactor: number,\n  pixelCrop: PixelCrop,\n  maxImageSize: number\n): Promise<string> => {\n  const canvas = document.createElement(\"canvas\");\n  const ctx = canvas.getContext(\"2d\");\n\n  if (!ctx) {\n    throw new Error(\"Context is null, this should never happen.\");\n  }\n\n  const scaleX = imageSrc.naturalWidth / imageSrc.width;\n  const scaleY = imageSrc.naturalHeight / imageSrc.height;\n\n  ctx.imageSmoothingEnabled = false;\n  canvas.width = pixelCrop.width;\n  canvas.height = pixelCrop.height;\n\n  ctx.drawImage(\n    imageSrc,\n    pixelCrop.x * scaleX,\n    pixelCrop.y * scaleY,\n    pixelCrop.width * scaleX,\n    pixelCrop.height * scaleY,\n    0,\n    0,\n    canvas.width,\n    canvas.height\n  );\n\n  const croppedImageUrl = canvas.toDataURL(\"image/png\");\n  const response = await fetch(croppedImageUrl);\n  const blob = await response.blob();\n\n  if (blob.size > maxImageSize) {\n    return await getCroppedPngImage(\n      imageSrc,\n      scaleFactor * 0.9,\n      pixelCrop,\n      maxImageSize\n    );\n  }\n\n  return croppedImageUrl;\n};\n\ntype ImageCropContextType = {\n  file: File;\n  maxImageSize: number;\n  imgSrc: string;\n  crop: PercentCrop | undefined;\n  completedCrop: PixelCrop | null;\n  imgRef: RefObject<HTMLImageElement | null>;\n  onCrop?: (croppedImage: string) => void;\n  reactCropProps: Omit<ReactCropProps, \"onChange\" | \"onComplete\" | \"children\">;\n  handleChange: (pixelCrop: PixelCrop, percentCrop: PercentCrop) => void;\n  handleComplete: (\n    pixelCrop: PixelCrop,\n    percentCrop: PercentCrop\n  ) => Promise<void>;\n  onImageLoad: (e: SyntheticEvent<HTMLImageElement>) => void;\n  applyCrop: () => Promise<void>;\n  resetCrop: () => void;\n};\n\nconst ImageCropContext = createContext<ImageCropContextType | null>(null);\n\nconst useImageCrop = () => {\n  const context = useContext(ImageCropContext);\n  if (!context) {\n    throw new Error(\"ImageCrop components must be used within ImageCrop\");\n  }\n  return context;\n};\n\nexport type ImageCropProps = {\n  file: File;\n  maxImageSize?: number;\n  onCrop?: (croppedImage: string) => void;\n  children: ReactNode;\n  onChange?: ReactCropProps[\"onChange\"];\n  onComplete?: ReactCropProps[\"onComplete\"];\n} & Omit<ReactCropProps, \"onChange\" | \"onComplete\" | \"children\">;\n\nexport const ImageCrop = ({\n  file,\n  maxImageSize = 1024 * 1024 * 5,\n  onCrop,\n  children,\n  onChange,\n  onComplete,\n  ...reactCropProps\n}: ImageCropProps) => {\n  const imgRef = useRef<HTMLImageElement | null>(null);\n  const [imgSrc, setImgSrc] = useState<string>(\"\");\n  const [crop, setCrop] = useState<PercentCrop>();\n  const [completedCrop, setCompletedCrop] = useState<PixelCrop | null>(null);\n  const [initialCrop, setInitialCrop] = useState<PercentCrop>();\n\n  useEffect(() => {\n    const reader = new FileReader();\n    reader.addEventListener(\"load\", () =>\n      setImgSrc(reader.result?.toString() || \"\")\n    );\n    reader.readAsDataURL(file);\n  }, [file]);\n\n  const onImageLoad = useCallback(\n    (e: SyntheticEvent<HTMLImageElement>) => {\n      const { width, height } = e.currentTarget;\n      const newCrop = centerAspectCrop(width, height, reactCropProps.aspect);\n      setCrop(newCrop);\n      setInitialCrop(newCrop);\n    },\n    [reactCropProps.aspect]\n  );\n\n  const handleChange = (pixelCrop: PixelCrop, percentCrop: PercentCrop) => {\n    setCrop(percentCrop);\n    onChange?.(pixelCrop, percentCrop);\n  };\n\n  // biome-ignore lint/suspicious/useAwait: \"onComplete is async\"\n  const handleComplete = async (\n    pixelCrop: PixelCrop,\n    percentCrop: PercentCrop\n  ) => {\n    setCompletedCrop(pixelCrop);\n    onComplete?.(pixelCrop, percentCrop);\n  };\n\n  const applyCrop = async () => {\n    if (!(imgRef.current && completedCrop)) {\n      return;\n    }\n\n    const croppedImage = await getCroppedPngImage(\n      imgRef.current,\n      1,\n      completedCrop,\n      maxImageSize\n    );\n\n    onCrop?.(croppedImage);\n  };\n\n  const resetCrop = () => {\n    if (initialCrop) {\n      setCrop(initialCrop);\n      setCompletedCrop(null);\n    }\n  };\n\n  const contextValue: ImageCropContextType = {\n    file,\n    maxImageSize,\n    imgSrc,\n    crop,\n    completedCrop,\n    imgRef,\n    onCrop,\n    reactCropProps,\n    handleChange,\n    handleComplete,\n    onImageLoad,\n    applyCrop,\n    resetCrop,\n  };\n\n  return (\n    <ImageCropContext.Provider value={contextValue}>\n      {children}\n    </ImageCropContext.Provider>\n  );\n};\n\nexport type ImageCropContentProps = {\n  style?: CSSProperties;\n  className?: string;\n};\n\nexport const ImageCropContent = ({\n  style,\n  className,\n}: ImageCropContentProps) => {\n  const {\n    imgSrc,\n    crop,\n    handleChange,\n    handleComplete,\n    onImageLoad,\n    imgRef,\n    reactCropProps,\n  } = useImageCrop();\n\n  const shadcnStyle = {\n    \"--rc-border-color\": \"var(--color-border)\",\n    \"--rc-focus-color\": \"var(--color-primary)\",\n  } as CSSProperties;\n\n  return (\n    <ReactCrop\n      className={cn(\"max-h-[277px] max-w-full\", className)}\n      crop={crop}\n      onChange={handleChange}\n      onComplete={handleComplete}\n      style={{ ...shadcnStyle, ...style }}\n      {...reactCropProps}\n    >\n      {imgSrc && (\n        <img\n          alt=\"crop\"\n          className=\"size-full\"\n          onLoad={onImageLoad}\n          ref={imgRef}\n          src={imgSrc}\n        />\n      )}\n    </ReactCrop>\n  );\n};\n\nexport type ImageCropApplyProps = ComponentProps<\"button\"> & {\n  asChild?: boolean;\n};\n\nexport const ImageCropApply = ({\n  asChild = false,\n  children,\n  onClick,\n  ...props\n}: ImageCropApplyProps) => {\n  const { applyCrop } = useImageCrop();\n\n  const handleClick = async (e: MouseEvent<HTMLButtonElement>) => {\n    await applyCrop();\n    onClick?.(e);\n  };\n\n  if (asChild) {\n    return (\n      <Slot.Root onClick={handleClick} {...props}>\n        {children}\n      </Slot.Root>\n    );\n  }\n\n  return (\n    <Button onClick={handleClick} size=\"icon\" variant=\"ghost\" {...props}>\n      {children ?? <CropIcon className=\"size-4\" />}\n    </Button>\n  );\n};\n\nexport type ImageCropResetProps = ComponentProps<\"button\"> & {\n  asChild?: boolean;\n};\n\nexport const ImageCropReset = ({\n  asChild = false,\n  children,\n  onClick,\n  ...props\n}: ImageCropResetProps) => {\n  const { resetCrop } = useImageCrop();\n\n  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {\n    resetCrop();\n    onClick?.(e);\n  };\n\n  if (asChild) {\n    return (\n      <Slot.Root onClick={handleClick} {...props}>\n        {children}\n      </Slot.Root>\n    );\n  }\n\n  return (\n    <Button onClick={handleClick} size=\"icon\" variant=\"ghost\" {...props}>\n      {children ?? <RotateCcwIcon className=\"size-4\" />}\n    </Button>\n  );\n};\n\n// Keep the original Cropper component for backward compatibility\nexport type CropperProps = Omit<ReactCropProps, \"onChange\"> & {\n  file: File;\n  maxImageSize?: number;\n  onCrop?: (croppedImage: string) => void;\n  onChange?: ReactCropProps[\"onChange\"];\n};\n\nexport const Cropper = ({\n  onChange,\n  onComplete,\n  onCrop,\n  style,\n  className,\n  file,\n  maxImageSize,\n  ...props\n}: CropperProps) => (\n  <ImageCrop\n    file={file}\n    maxImageSize={maxImageSize}\n    onChange={onChange}\n    onComplete={onComplete}\n    onCrop={onCrop}\n    {...props}\n  >\n    <ImageCropContent className={className} style={style} />\n  </ImageCrop>\n);\n",
+      "sha256": "a0eeb5c69b85ef53bd850cc7ed572920c0d9ccc9b1d83ceec881132695391b8a",
+      "upstreamPath": "packages/image-crop/index.tsx",
+      "upstreamSha256": "0efb8c4ccf255b58a3635679c32c559e715ff9e52dcff1438afe21677a740f21",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add lucide-react radix-ui react-image-crop",
+    "registryDependencyCommand": "pnpm dlx shadcn@latest add button",
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add lucide-react radix-ui react-image-crop",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Install the required shadcn primitives: pnpm dlx shadcn@latest add button"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "image-crop",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/image-crop",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/image-crop.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Image Crop\ndescription: A component that allows users to crop images with customizable aspect ratios and circular cropping options.\nicon: Crop\ndependencies:\n  - https://github.com/DominicTobias/react-image-crop\ninstaller: image-crop\n---\n\n## Features\n\n- Interactive image cropping with drag-and-resize functionality\n- Support for custom aspect ratios or free-form cropping\n- Circular crop mode for profile pictures and avatars\n- Automatic image scaling and compression based on maximum file size\n- Returns cropped image as PNG data URL for easy upload or display\n- shadcn/ui variables for styling\n- Responsive design that adapts to container size\n- Built-in checkered background pattern for transparency preview\n- TypeScript support with comprehensive type definitions\n- Accessible controls and keyboard navigation support\n\n## Examples\n\n### Custom buttons\n\n<Preview path=\"image-crop-custom\" />\n\n### Circular crop\n\n<Preview path=\"image-crop-circular\" />"
+}

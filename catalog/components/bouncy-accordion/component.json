@@ -1,5 +1,6 @@
 {
   "id": "beui:bouncy-accordion",
+  "sourceId": "beui",
   "slug": "bouncy-accordion",
   "name": "Bouncy Accordion",
   "description": "Single-open accordion with weighted spring layout, icon rows and reduced-motion-safe content reveals.",
@@ -51,7 +52,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -87,6 +88,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -98,7 +101,8 @@
     "upstreamSlug": "bouncy-accordion",
     "upstreamPageUrl": "https://beui.dev/components/motion/bouncy-accordion",
     "upstreamDetailUrl": "https://beui.dev/r/bouncy-accordion",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/bouncy-accordion.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/bouncy-accordion.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Bouncy Accordion\"\ndescription: \"Single-open accordion with weighted spring layout, icon rows and reduced-motion-safe content reveals.\"\ncategory: \"Components\"\npublishedAt: \"2026-06-16\"\nupdatedAt: \"2026-07-13\"\ndocumentation: \"https://beui.dev/components/motion/bouncy-accordion\"\nmarkdown: \"https://beui.dev/components/motion/bouncy-accordion.md\"\nlicense: \"MIT\"\n---\n\n# Bouncy Accordion\n\n> Single-open accordion with weighted spring layout, icon rows and reduced-motion-safe content reveals.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/bouncy-accordion\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport {\n  CalendarClock,\n  FileText,\n  FolderKanban,\n  PackageCheck,\n  RadioTower,\n  ShieldCheck,\n} from \"lucide-react\";\nimport { BouncyAccordion } from \"@/components/motion/bouncy-accordion\";\n\nconst items = [\n  {\n    id: \"brief\",\n    title: \"Release Brief\",\n    description:\n      \"Collect launch notes, owners, and risks in one compact handoff before the release window opens.\",\n    icon: <FileText className=\"h-4 w-4\" />,\n  },\n  {\n    id: \"launch\",\n    title: \"Launch Checklist\",\n    description:\n      \"Verify copy, links, analytics, rollback steps, and final approvals without leaving the queue.\",\n    icon: <ShieldCheck className=\"h-4 w-4\" />,\n  },\n  {\n    id: \"campaign\",\n    title: \"Campaign Notes\",\n    description:\n      \"Keep channel-specific notes close to the task while preserving a calm collapsed list.\",\n    icon: <RadioTower className=\"h-4 w-4\" />,\n  },\n  {\n    id: \"calendar\",\n    title: \"Rollout Calendar\",\n    description:\n      \"Plan announcements, staging checks, reminders, and quiet periods around the same timeline.\",\n    icon: <CalendarClock className=\"h-4 w-4\" />,\n  },\n  {\n    id: \"ship\",\n    title: \"Ship Build\",\n    description:\n      \"Track the current artifact, deploy status, and final sign-off before marking the release complete.\",\n    icon: <PackageCheck className=\"h-4 w-4\" />,\n  },\n  {\n    id: \"archive\",\n    title: \"Archive Assets\",\n    description:\n      \"Move final copy, images, and source files into the campaign folder once the rollout is done.\",\n    icon: <FolderKanban className=\"h-4 w-4\" />,\n  },\n];\n\nexport function BouncyAccordionPreview() {\n  return (\n    <div className=\"flex min-h-96 w-full items-center justify-center\">\n      <div className=\"w-full max-w-sm h-[480px]\">\n        <BouncyAccordion items={items} defaultValue=\"calendar\" />\n      </div>\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### BouncyAccordion\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `items` | `BouncyAccordionItem[]` | — | Yes | — |\n| `value` | `string \\| null` | — | No | — |\n| `defaultValue` | `string \\| null` | `null` | No | — |\n| `onValueChange` | `((value: string \\| null) => void)` | — | No | — |\n| `collapsible` | `boolean` | `true` | No | — |\n| `className` | `string` | — | No | — |\n| `classNames` | `BouncyAccordionClassNames` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/bouncy-accordion\n- Raw source: https://beui.dev/r/bouncy-accordion/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

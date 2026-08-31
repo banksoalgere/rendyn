@@ -1,0 +1,89 @@
+{
+  "id": "magicui:border-beam",
+  "sourceId": "magicui",
+  "slug": "magicui-border-beam",
+  "name": "Border Beam",
+  "description": "An animated beam of light which travels along the border of its container.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "border-beam",
+    "tags": [
+      "animated",
+      "code",
+      "number",
+      "spring"
+    ],
+    "aliases": [
+      "border beam",
+      "border-beam"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "An animated beam of light which travels along the border of its container."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "border-beam:animated:code:number:spring:type",
+    "searchText": "Border Beam\nborder beam\nAn animated beam of light which travels along the border of its container.\nborder-beam\nanimated\ncode\nnumber\nspring\ntype\ntitle: Border Beam date: 2024 02 06 description: An animated beam of light which travels along the border of its container. author: dillionverma published: true video: https://cdn.magicui.design/border beam.mp4 Installation CLI Manual Copy and paste the following code into your project. Examples 2 Border Beams Reverse Spring Animation Usage Props Border Beam Prop Type Default Description className string Custom class to apply to the component size number 50 Size of the beam duration number 6 Duration of the animation in seconds delay number 0 Delay before the animation starts colorFrom string ffaa40 Start color of the beam gradient colorTo string 9c40ff End color of the beam gradient transition Transition Custom motion transition configuration style React.CSSProperties Custom CSS styles to apply reverse boolean false Whether to reverse animation direction initialOffset number 0 Initial offset position (0 100) borderWidth number 1 Border width of the beam"
+  },
+  "previewPath": "/preview/motion/magicui-border-beam",
+  "manifestPath": "components/magicui-border-beam/component.json",
+  "integrity": "sha256:191b9cdff0948bc966b48d195d78411944ee4bd340e5cc7d782780f6f1b7a62f",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/border-beam.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport { motion, type MotionStyle, type Transition } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface BorderBeamProps {\n  /**\n   * The size of the border beam.\n   */\n  size?: number\n  /**\n   * The duration of the border beam.\n   */\n  duration?: number\n  /**\n   * The delay of the border beam.\n   */\n  delay?: number\n  /**\n   * The color of the border beam from.\n   */\n  colorFrom?: string\n  /**\n   * The color of the border beam to.\n   */\n  colorTo?: string\n  /**\n   * The motion transition of the border beam.\n   */\n  transition?: Transition\n  /**\n   * The class name of the border beam.\n   */\n  className?: string\n  /**\n   * The style of the border beam.\n   */\n  style?: React.CSSProperties\n  /**\n   * Whether to reverse the animation direction.\n   */\n  reverse?: boolean\n  /**\n   * The initial offset position (0-100).\n   */\n  initialOffset?: number\n  /**\n   * The border width of the beam.\n   */\n  borderWidth?: number\n}\n\nexport const BorderBeam = ({\n  className,\n  size = 50,\n  delay = 0,\n  duration = 6,\n  colorFrom = \"#ffaa40\",\n  colorTo = \"#9c40ff\",\n  transition,\n  style,\n  reverse = false,\n  initialOffset = 0,\n  borderWidth = 1,\n}: BorderBeamProps) => {\n  return (\n    <div\n      className=\"pointer-events-none absolute inset-0 rounded-[inherit] border-(length:--border-beam-width) border-transparent mask-[linear-gradient(transparent,transparent),linear-gradient(#000,#000)] mask-intersect [mask-clip:padding-box,border-box]\"\n      style={\n        {\n          \"--border-beam-width\": `${borderWidth}px`,\n        } as React.CSSProperties\n      }\n    >\n      <motion.div\n        className={cn(\n          \"absolute aspect-square\",\n          \"bg-linear-to-l from-(--color-from) via-(--color-to) to-transparent\",\n          className\n        )}\n        style={\n          {\n            width: size,\n            offsetPath: `rect(0 auto auto 0 round ${size}px)`,\n            \"--color-from\": colorFrom,\n            \"--color-to\": colorTo,\n            ...style,\n          } as MotionStyle\n        }\n        initial={{ offsetDistance: `${initialOffset}%` }}\n        animate={{\n          offsetDistance: reverse\n            ? [`${100 - initialOffset}%`, `${-initialOffset}%`]\n            : [`${initialOffset}%`, `${100 + initialOffset}%`],\n        }}\n        transition={{\n          repeat: Infinity,\n          ease: \"linear\",\n          duration,\n          delay: -delay,\n          ...transition,\n        }}\n      />\n    </div>\n  )\n}\n",
+      "sha256": "ccdfb52cb8f2089e7823a9edfe9c3a52e52ab6759ed5b91d184b1e2bb80cf414",
+      "upstreamPath": "apps/www/registry/magicui/border-beam.tsx",
+      "upstreamSha256": "ccdfb52cb8f2089e7823a9edfe9c3a52e52ab6759ed5b91d184b1e2bb80cf414",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "border-beam",
+    "upstreamPageUrl": "https://magicui.design/docs/components/border-beam",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/border-beam.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Border Beam\ndate: 2024-02-06\ndescription: An animated beam of light which travels along the border of its container.\nauthor: dillionverma\npublished: true\nvideo: https://cdn.magicui.design/border-beam.mp4\n---\n\n<ComponentPreview name=\"border-beam-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/border-beam\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"border-beam\" />\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Examples\n\n### 2 Border Beams\n\n<ComponentPreview name=\"border-beam-demo-2\" />\n\n### Reverse\n\n<ComponentPreview name=\"border-beam-demo-3\" />\n\n### Spring Animation\n\n<ComponentPreview name=\"border-beam-demo-4\" />\n\n## Usage\n\n```tsx showLineNumbers\nimport { BorderBeam } from \"@/components/ui/border-beam\"\n```\n\n```tsx showLineNumbers\n<div className=\"relative h-[500px] w-full overflow-hidden\">\n  <BorderBeam />\n</div>\n```\n\n## Props\n\n### Border Beam\n\n| Prop            | Type                  | Default   | Description                            |\n| --------------- | --------------------- | --------- | -------------------------------------- |\n| `className`     | `string`              | `-`       | Custom class to apply to the component |\n| `size`          | `number`              | `50`      | Size of the beam                       |\n| `duration`      | `number`              | `6`       | Duration of the animation in seconds   |\n| `delay`         | `number`              | `0`       | Delay before the animation starts      |\n| `colorFrom`     | `string`              | `#ffaa40` | Start color of the beam gradient       |\n| `colorTo`       | `string`              | `#9c40ff` | End color of the beam gradient         |\n| `transition`    | `Transition`          | `-`       | Custom motion transition configuration |\n| `style`         | `React.CSSProperties` | `-`       | Custom CSS styles to apply             |\n| `reverse`       | `boolean`             | `false`   | Whether to reverse animation direction |\n| `initialOffset` | `number`              | `0`       | Initial offset position (0-100)        |\n| `borderWidth`   | `number`              | `1`       | Border width of the beam               |\n"
+}

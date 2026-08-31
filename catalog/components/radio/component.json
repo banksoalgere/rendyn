@@ -1,5 +1,6 @@
 {
   "id": "beui:radio",
+  "sourceId": "beui",
   "slug": "radio",
   "name": "Radio Group",
   "description": "Single-select choice control with a gliding layoutId indicator dot and spring press feedback.",
@@ -52,7 +53,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -88,6 +89,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -99,7 +102,8 @@
     "upstreamSlug": "radio",
     "upstreamPageUrl": "https://beui.dev/components/motion/radio",
     "upstreamDetailUrl": "https://beui.dev/r/radio",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/radio.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/radio.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Radio Group\"\ndescription: \"Single-select choice control with a gliding layoutId indicator dot and spring press feedback.\"\ncategory: \"Components\"\npublishedAt: \"2026-06-23\"\nupdatedAt: \"2026-07-13\"\ndocumentation: \"https://beui.dev/components/motion/radio\"\nmarkdown: \"https://beui.dev/components/motion/radio.md\"\nlicense: \"MIT\"\n---\n\n# Radio Group\n\n> Single-select choice control with a gliding layoutId indicator dot and spring press feedback.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/radio\n```\n\n## Dependencies\n\n- `clsx`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { useState } from \"react\";\nimport { RadioGroup, RadioGroupItem } from \"@/components/motion/radio\";\n\nexport function RadioPreview() {\n  const [plan, setPlan] = useState(\"pro\");\n\n  return (\n    <RadioGroup value={plan} onValueChange={setPlan} className=\"min-w-48\">\n      <RadioGroupItem value=\"starter\" label=\"Starter — free\" />\n      <RadioGroupItem value=\"pro\" label=\"Pro — $12/mo\" />\n      <RadioGroupItem value=\"team\" label=\"Team — $29/mo\" />\n      <RadioGroupItem value=\"legacy\" label=\"Legacy plan\" disabled />\n    </RadioGroup>\n  );\n}\n```\n\n## API Reference\n\n### RadioGroup\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `value` | `string` | — | No | — |\n| `defaultValue` | `string` | — | No | — |\n| `onValueChange` | `((value: string) => void)` | — | No | — |\n| `className` | `string` | — | No | — |\n| `orientation` | `\"horizontal\" \\| \"vertical\"` | `vertical` | No | — |\n\n### RadioGroupItem\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `value` | `string` | — | Yes | — |\n| `label` | `string` | — | No | — |\n| `disabled` | `boolean` | — | No | — |\n| `className` | `string` | — | No | — |\n| `id` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/radio\n- Raw source: https://beui.dev/r/radio/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

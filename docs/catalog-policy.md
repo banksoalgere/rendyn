@@ -10,7 +10,9 @@ Copy-paste source may be added only when the project has explicit redistribution
 - registry/index and file integrity hashes;
 - import timestamp and original component identity.
 
-This first source is MIT. The importer fails closed if the expected notice, registry hash, component count, safe paths, or pinned source comparison changes.
+The accepted sources are beUI, Magic UI, and Kibo UI under their separately pinned MIT notices. The importer fails closed if an expected notice or permission grant, registry hash, component count, safe path, excluded-item set, or pinned source comparison changes.
+
+Animate UI is not an accepted source. Its reviewed `LICENSE.md` is MIT plus Commons Clause and explicitly restricts selling or redistributing the components themselves or in substantially unchanged form. The rejection evidence is stored in `sources/rejected/animate-ui.json`; do not move it into the import set without a new licence or written redistribution permission.
 
 ## Paid or proprietary source
 

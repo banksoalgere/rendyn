@@ -38,10 +38,14 @@ export interface CatalogFile {
   type: string;
   content: string;
   sha256: string;
+  upstreamPath?: string;
+  upstreamSha256?: string;
+  transformation?: string;
 }
 
 export interface CatalogComponentSummary {
   id: string;
+  sourceId: string;
   slug: string;
   name: string;
   description: string;
@@ -62,6 +66,8 @@ export interface CatalogComponent extends CatalogComponentSummary {
   install: {
     packageManager: "pnpm";
     dependencyCommand: string | null;
+    registryDependencyCommand: string | null;
+    stylePaths: string[];
     instructions: string[];
   };
   provenance: {
@@ -69,14 +75,15 @@ export interface CatalogComponent extends CatalogComponentSummary {
     upstreamPageUrl: string;
     upstreamDetailUrl: string;
     upstreamMarkdownUrl: string;
+    transformations: string[];
   };
   documentation: string;
 }
 
 export interface CatalogIndex {
-  schemaVersion: 1;
+  schemaVersion: 2;
   generatedAt: string;
-  source: CatalogSource;
+  sources: CatalogSource[];
   categories: CatalogCategory[];
   components: CatalogComponentSummary[];
 }
@@ -93,6 +100,7 @@ export interface EmbeddingIndex {
 export interface SearchResult {
   rank: number;
   id: string;
+  sourceId: string;
   slug: string;
   name: string;
   description: string;

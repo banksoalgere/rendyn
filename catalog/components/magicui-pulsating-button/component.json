@@ -1,0 +1,98 @@
+{
+  "id": "magicui:pulsating-button",
+  "sourceId": "magicui",
+  "slug": "magicui-pulsating-button",
+  "name": "Pulsating Button",
+  "description": "An animated pulsating button useful for capturing attention of users.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "button",
+    "tags": [
+      "animated",
+      "button",
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "pulsating button",
+      "button",
+      "cta",
+      "action control"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "An animated pulsating button useful for capturing attention of users."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "button:animated:code:file:type",
+    "searchText": "Pulsating Button\npulsating button\nAn animated pulsating button useful for capturing attention of users.\nbutton\ncta\naction control\nanimated\ncode\nfile\ntype\ntitle: Pulsating Button date: 2024 07 23 description: An animated pulsating button useful for capturing attention of users. author: shikhap04 published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Add the required CSS animations Add the following animations to your global CSS file. Usage Examples Ripple Variant Props Prop Type Default Description children React.ReactNode The content of the button. className string Additional class names for the button. pulseColor string Derived from button background Any valid CSS color for the pulsing waves. duration string 1.5s The duration of one pulse. distance string 8px How far the pulse expands from the button. variant \"pulse\" \\ \"ripple\" pulse The pulse animation style. Credits Credit to @shikhap04 & @abdmjd1"
+  },
+  "previewPath": "/preview/motion/magicui-pulsating-button",
+  "manifestPath": "components/magicui-pulsating-button/component.json",
+  "integrity": "sha256:83773e82302012096249b5e6382020303029cfb03f06f68fc02072a792568f16",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/pulsating-button.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport React, { useImperativeHandle, useLayoutEffect, useRef } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface PulsatingButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n  pulseColor?: string\n  duration?: string\n  distance?: string\n  variant?: \"pulse\" | \"ripple\"\n}\n\nexport const PulsatingButton = React.forwardRef<\n  HTMLButtonElement,\n  PulsatingButtonProps\n>(\n  (\n    {\n      className,\n      children,\n      pulseColor,\n      duration = \"1.5s\",\n      distance = \"8px\",\n      variant = \"pulse\",\n      ...props\n    },\n    ref\n  ) => {\n    const innerRef = useRef<HTMLButtonElement>(null)\n    useImperativeHandle(ref, () => innerRef.current!)\n\n    useLayoutEffect(() => {\n      const button = innerRef.current\n      if (!button) return\n\n      if (pulseColor) {\n        button.style.removeProperty(\"--bg\")\n        return\n      }\n\n      let animationFrameId = 0\n      let currentBg = \"\"\n\n      const updateBg = () => {\n        animationFrameId = 0\n\n        const nextBg = getComputedStyle(button).backgroundColor\n        if (nextBg === currentBg) return\n\n        currentBg = nextBg\n        button.style.setProperty(\"--bg\", nextBg)\n      }\n\n      const scheduleBgUpdate = () => {\n        if (animationFrameId) return\n        animationFrameId = window.requestAnimationFrame(updateBg)\n      }\n\n      updateBg()\n\n      const themeObserver = new MutationObserver(scheduleBgUpdate)\n      themeObserver.observe(document.documentElement, {\n        attributes: true,\n        attributeFilter: [\"class\"],\n      })\n\n      const buttonObserver = new MutationObserver(scheduleBgUpdate)\n      buttonObserver.observe(button, {\n        attributes: true,\n      })\n\n      const syncEvents = [\n        \"blur\",\n        \"focus\",\n        \"pointerenter\",\n        \"pointerleave\",\n      ] as const\n\n      for (const eventName of syncEvents) {\n        button.addEventListener(eventName, scheduleBgUpdate)\n      }\n\n      return () => {\n        if (animationFrameId) {\n          window.cancelAnimationFrame(animationFrameId)\n        }\n\n        themeObserver.disconnect()\n        buttonObserver.disconnect()\n\n        for (const eventName of syncEvents) {\n          button.removeEventListener(eventName, scheduleBgUpdate)\n        }\n      }\n    }, [pulseColor])\n\n    return (\n      <button\n        ref={innerRef}\n        className={cn(\n          \"bg-primary text-primary-foreground relative flex cursor-pointer items-center justify-center rounded-lg px-4 py-2 text-center\",\n          className\n        )}\n        style={\n          {\n            ...(pulseColor && { \"--pulse-color\": pulseColor }),\n            \"--duration\": duration,\n            \"--distance\": distance,\n          } as React.CSSProperties\n        }\n        {...props}\n      >\n        <span className=\"relative z-10\">{children}</span>\n        <span\n          aria-hidden=\"true\"\n          className={cn(\n            \"pointer-events-none absolute inset-0 rounded-[inherit] bg-inherit\",\n            variant === \"pulse\" ? \"animate-pulse\" : \"animate-pulse-ripple\"\n          )}\n        />\n      </button>\n    )\n  }\n)\n\nPulsatingButton.displayName = \"PulsatingButton\"\n",
+      "sha256": "f73dd2d7da811ea0202b5bab7d441562f48772a55459b26316c8dc836ee852ca",
+      "upstreamPath": "apps/www/registry/magicui/pulsating-button.tsx",
+      "upstreamSha256": "f73dd2d7da811ea0202b5bab7d441562f48772a55459b26316c8dc836ee852ca",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    },
+    {
+      "path": "components/magicui/pulsating-button.css",
+      "type": "style",
+      "content": "@theme inline {\n  --animate-pulse: pulse var(--duration) ease-out infinite;\n}\n\n@keyframes pulse {\n  0%, 100% {\n    boxShadow: 0 0 0 0 var(--pulse-color);\n  }\n  50% {\n    boxShadow: 0 0 0 8px var(--pulse-color);\n  }\n}\n",
+      "sha256": "89b0c227b79900e9e13c06fd813e79258bef4937949397b36d93b30a9b000b07",
+      "transformation": "Materialize registry CSS and theme variables as a component stylesheet when present."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/magicui/pulsating-button.css"
+    ],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Include the returned styles: components/magicui/pulsating-button.css"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "pulsating-button",
+    "upstreamPageUrl": "https://magicui.design/docs/components/pulsating-button",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/pulsating-button.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Pulsating Button\ndate: 2024-07-23\ndescription: An animated pulsating button useful for capturing attention of users.\nauthor: shikhap04\npublished: true\n---\n\n<ComponentPreview name=\"pulsating-button-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/pulsating-button\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"pulsating-button\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n<Step>Add the required CSS animations</Step>\n\nAdd the following animations to your global CSS file.\n\n```css title=\"app/globals.css\" showLineNumbers {2, 4-12}\n@theme inline {\n  --animate-pulse: pulse var(--duration) ease-out infinite;\n  --animate-pulse-ripple: pulse-ripple var(--duration)\n    cubic-bezier(0.16, 1, 0.3, 1) infinite;\n\n  @keyframes pulse {\n    0%,\n    100% {\n      box-shadow: 0 0 0 0 var(--pulse-color, oklch(from var(--bg) l c h / 0.5));\n    }\n    50% {\n      box-shadow: 0 0 0 var(--distance)\n        var(--pulse-color, oklch(from var(--bg) l c h / 0.5));\n    }\n  }\n\n  @keyframes pulse-ripple {\n    0% {\n      box-shadow: 0 0 0 0 oklch(from var(--pulse-color, var(--bg)) l c h / 1);\n    }\n    100% {\n      box-shadow: 0 0 0 var(--distance)\n        oklch(from var(--pulse-color, var(--bg)) l c h / 0);\n    }\n  }\n}\n```\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { PulsatingButton } from \"@/components/ui/pulsating-button\"\n```\n\n```tsx showLineNumbers\n<PulsatingButton>Pulsating Button</PulsatingButton>\n```\n\n## Examples\n\n### Ripple Variant\n\n<ComponentPreview name=\"pulsating-button-demo-2\" />\n\n## Props\n\n| Prop         | Type                  | Default                          | Description                                |\n| ------------ | --------------------- | -------------------------------- | ------------------------------------------ |\n| `children`   | `React.ReactNode`     | `-`                              | The content of the button.                 |\n| `className`  | `string`              | `-`                              | Additional class names for the button.     |\n| `pulseColor` | `string`              | `Derived from button background` | Any valid CSS color for the pulsing waves. |\n| `duration`   | `string`              | `1.5s`                           | The duration of one pulse.                 |\n| `distance`   | `string`              | `8px`                            | How far the pulse expands from the button. |\n| `variant`    | `\"pulse\" \\| \"ripple\"` | `pulse`                          | The pulse animation style.                 |\n\n## Credits\n\n- Credit to [@shikhap04](https://github.com/shikhap04) & [@abdmjd1](https://github.com/abdmjd1)\n"
+}

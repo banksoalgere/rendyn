@@ -1,0 +1,87 @@
+{
+  "id": "kibo:list",
+  "sourceId": "kibo",
+  "slug": "kibo-list",
+  "name": "List",
+  "description": "List views are a great way to show a list of tasks grouped by status and ranked by priority.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [
+    "@dnd-kit/core",
+    "@dnd-kit/modifiers"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "list",
+    "tags": [
+      "drag",
+      "list"
+    ],
+    "aliases": [
+      "list"
+    ],
+    "interactions": [
+      "drag"
+    ],
+    "useWhen": [
+      "List views are a great way to show a list of tasks grouped by status and ranked by priority."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "list:drag",
+    "searchText": "List\nlist\nList views are a great way to show a list of tasks grouped by status and ranked by priority.\ndrag\ntitle: List description: List views are a great way to show a list of tasks grouped by status and ranked by priority. icon: List dependencies: https://dndkit.com/ https://lucide.dev/ installer: list Features Drag and drop items between groups Customize the item contents Examples Simple version"
+  },
+  "previewPath": "/preview/blocks/kibo-list",
+  "manifestPath": "components/kibo-list/component.json",
+  "integrity": "sha256:2804beecb3c18a06d8b424996c149099f6255c184cf3e03e7333060e4ef8e812",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/list/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  DndContext,\n  type DragEndEvent,\n  rectIntersection,\n  useDraggable,\n  useDroppable,\n} from \"@dnd-kit/core\";\nimport { restrictToVerticalAxis } from \"@dnd-kit/modifiers\";\nimport type { ReactNode } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type { DragEndEvent } from \"@dnd-kit/core\";\n\ntype Status = {\n  id: string;\n  name: string;\n  color: string;\n};\n\ntype Feature = {\n  id: string;\n  name: string;\n  startAt: Date;\n  endAt: Date;\n  status: Status;\n};\n\nexport type ListItemsProps = {\n  children: ReactNode;\n  className?: string;\n};\n\nexport const ListItems = ({ children, className }: ListItemsProps) => (\n  <div className={cn(\"flex flex-1 flex-col gap-2 p-3\", className)}>\n    {children}\n  </div>\n);\n\nexport type ListHeaderProps =\n  | {\n      children: ReactNode;\n    }\n  | {\n      name: Status[\"name\"];\n      color: Status[\"color\"];\n      className?: string;\n    };\n\nexport const ListHeader = (props: ListHeaderProps) =>\n  \"children\" in props ? (\n    props.children\n  ) : (\n    <div\n      className={cn(\n        \"flex shrink-0 items-center gap-2 bg-foreground/5 p-3\",\n        props.className\n      )}\n    >\n      <div\n        className=\"h-2 w-2 rounded-full\"\n        style={{ backgroundColor: props.color }}\n      />\n      <p className=\"m-0 font-semibold text-sm\">{props.name}</p>\n    </div>\n  );\n\nexport type ListGroupProps = {\n  id: Status[\"id\"];\n  children: ReactNode;\n  className?: string;\n};\n\nexport const ListGroup = ({ id, children, className }: ListGroupProps) => {\n  const { setNodeRef, isOver } = useDroppable({ id });\n\n  return (\n    <div\n      className={cn(\n        \"bg-secondary transition-colors\",\n        isOver && \"bg-foreground/10\",\n        className\n      )}\n      ref={setNodeRef}\n    >\n      {children}\n    </div>\n  );\n};\n\nexport type ListItemProps = Pick<Feature, \"id\" | \"name\"> & {\n  readonly index: number;\n  readonly parent: string;\n  readonly children?: ReactNode;\n  readonly className?: string;\n};\n\nexport const ListItem = ({\n  id,\n  name,\n  index,\n  parent,\n  children,\n  className,\n}: ListItemProps) => {\n  const { attributes, listeners, setNodeRef, transform, isDragging } =\n    useDraggable({\n      id,\n      data: { index, parent },\n    });\n\n  return (\n    <div\n      className={cn(\n        \"flex cursor-grab items-center gap-2 rounded-md border bg-background p-2 shadow-sm\",\n        isDragging && \"cursor-grabbing\",\n        className\n      )}\n      style={{\n        transform: transform\n          ? `translateX(${transform.x}px) translateY(${transform.y}px)`\n          : \"none\",\n      }}\n      {...listeners}\n      {...attributes}\n      ref={setNodeRef}\n    >\n      {children ?? <p className=\"m-0 font-medium text-sm\">{name}</p>}\n    </div>\n  );\n};\n\nexport type ListProviderProps = {\n  children: ReactNode;\n  onDragEnd: (event: DragEndEvent) => void;\n  className?: string;\n};\n\nexport const ListProvider = ({\n  children,\n  onDragEnd,\n  className,\n}: ListProviderProps) => (\n  <DndContext\n    collisionDetection={rectIntersection}\n    modifiers={[restrictToVerticalAxis]}\n    onDragEnd={onDragEnd}\n  >\n    <div className={cn(\"flex size-full flex-col\", className)}>{children}</div>\n  </DndContext>\n);\n",
+      "sha256": "b248fa198ffab14c7302a733dff7e2893119c0aa8c8ab10640c48d2ee7533789",
+      "upstreamPath": "packages/list/index.tsx",
+      "upstreamSha256": "b248fa198ffab14c7302a733dff7e2893119c0aa8c8ab10640c48d2ee7533789",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @dnd-kit/core @dnd-kit/modifiers",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @dnd-kit/core @dnd-kit/modifiers",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "list",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/list",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/list.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: List\ndescription: List views are a great way to show a list of tasks grouped by status and ranked by priority.\nicon: List\ndependencies:\n  - https://dndkit.com/\n  - https://lucide.dev/\ninstaller: list\n---\n\n## Features\n\n- Drag and drop items between groups\n- Customize the item contents\n\n## Examples\n\n### Simple version\n\n<Preview path=\"list-simple\" />\n"
+}

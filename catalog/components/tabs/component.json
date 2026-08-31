@@ -1,5 +1,6 @@
 {
   "id": "beui:tabs",
+  "sourceId": "beui",
   "slug": "tabs",
   "name": "Tabs",
   "description": "Pill, segment or underline tabs with a spring layoutId indicator.",
@@ -50,7 +51,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -86,6 +87,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -97,7 +100,8 @@
     "upstreamSlug": "tabs",
     "upstreamPageUrl": "https://beui.dev/components/motion/tabs",
     "upstreamDetailUrl": "https://beui.dev/r/tabs",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/tabs.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/tabs.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Tabs\"\ndescription: \"Pill, segment or underline tabs with a spring layoutId indicator.\"\ncategory: \"Components\"\npublishedAt: \"2026-05-17\"\nupdatedAt: \"2026-07-13\"\ndocumentation: \"https://beui.dev/components/motion/tabs\"\nmarkdown: \"https://beui.dev/components/motion/tabs.md\"\nlicense: \"MIT\"\n---\n\n# Tabs\n\n> Pill, segment or underline tabs with a spring layoutId indicator.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/tabs\n```\n\n## Dependencies\n\n- `clsx`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/motion/tabs\";\n\nexport function TabsPreview() {\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-8\">\n      <Section title=\"Pill\">\n        <Tabs defaultValue=\"overview\" variant=\"pill\">\n          <TabsList>\n            <TabsTrigger value=\"overview\">Overview</TabsTrigger>\n            <TabsTrigger value=\"activity\">Activity</TabsTrigger>\n            <TabsTrigger value=\"settings\">Settings</TabsTrigger>\n          </TabsList>\n          <TabsContent value=\"overview\" className=\"text-sm text-muted-foreground\">High-level summary.</TabsContent>\n          <TabsContent value=\"activity\" className=\"text-sm text-muted-foreground\">Recent events.</TabsContent>\n          <TabsContent value=\"settings\" className=\"text-sm text-muted-foreground\">Preferences.</TabsContent>\n        </Tabs>\n      </Section>\n      <Section title=\"Segment\">\n        <Tabs defaultValue=\"day\" variant=\"segment\">\n          <TabsList>\n            <TabsTrigger value=\"day\">Day</TabsTrigger>\n            <TabsTrigger value=\"week\">Week</TabsTrigger>\n            <TabsTrigger value=\"month\">Month</TabsTrigger>\n          </TabsList>\n        </Tabs>\n      </Section>\n      <Section title=\"Underline\">\n        <Tabs defaultValue=\"all\" variant=\"underline\">\n          <TabsList>\n            <TabsTrigger value=\"all\">All</TabsTrigger>\n            <TabsTrigger value=\"open\">Open</TabsTrigger>\n            <TabsTrigger value=\"closed\">Closed</TabsTrigger>\n          </TabsList>\n        </Tabs>\n      </Section>\n    </div>\n  );\n}\n\nfunction Section({ title, children }: { title: string; children: React.ReactNode }) {\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <span className=\"text-[10px] font-semibold uppercase tracking-wider text-muted-foreground\">{title}</span>\n      {children}\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### Tabs\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `defaultValue` | `string` | — | No | — |\n| `value` | `string` | — | No | — |\n| `onValueChange` | `((v: string) => void)` | — | No | — |\n| `variant` | `\"pill\" \\| \"underline\" \\| \"segment\"` | `pill` | No | — |\n| `className` | `string` | — | No | — |\n\n### TabsList\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `className` | `string` | — | No | — |\n\n### TabsTrigger\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `value` | `string` | — | Yes | — |\n| `className` | `string` | — | No | — |\n| `indicatorClassName` | `string` | — | No | — |\n\n### TabsContent\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `value` | `string` | — | Yes | — |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/tabs\n- Raw source: https://beui.dev/r/tabs/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

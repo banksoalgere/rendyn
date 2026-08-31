@@ -1,0 +1,83 @@
+{
+  "id": "kibo:status",
+  "sourceId": "kibo",
+  "slug": "kibo-status",
+  "name": "Status",
+  "description": "Status components are used to display the uptime of a service.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [],
+  "internalDependencies": [
+    "badge"
+  ],
+  "metadata": {
+    "kind": "block",
+    "family": "status",
+    "tags": [
+      "radio"
+    ],
+    "aliases": [
+      "status"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "Status components are used to display the uptime of a service."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "status:radio",
+    "searchText": "Status\nstatus\nStatus components are used to display the uptime of a service.\nradio\ntitle: Status description: Status components are used to display the uptime of a service. icon: Radio installer: status Features Displays the status of a service Automatic colors based on the status Customizable colors and labels Ping animation for the indicator Examples Custom styles"
+  },
+  "previewPath": "/preview/blocks/kibo-status",
+  "manifestPath": "components/kibo-status/component.json",
+  "integrity": "sha256:e5b04a8614808915df26bd7f1cd9e72e82456d2b320810a81e464cfcfd94b8bb",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/status/index.tsx",
+      "type": "component",
+      "content": "import type { ComponentProps, HTMLAttributes } from \"react\";\nimport { Badge } from \"@/components/ui/badge\";\nimport { cn } from \"@/lib/utils\";\n\nexport type StatusProps = ComponentProps<typeof Badge> & {\n  status: \"online\" | \"offline\" | \"maintenance\" | \"degraded\";\n};\n\nexport const Status = ({ className, status, ...props }: StatusProps) => (\n  <Badge\n    className={cn(\"flex items-center gap-2\", \"group\", status, className)}\n    variant=\"secondary\"\n    {...props}\n  />\n);\n\nexport type StatusIndicatorProps = HTMLAttributes<HTMLSpanElement>;\n\nexport const StatusIndicator = ({\n  className,\n  ...props\n}: StatusIndicatorProps) => (\n  <span className=\"relative flex h-2 w-2\" {...props}>\n    <span\n      className={cn(\n        \"absolute inline-flex h-full w-full animate-ping rounded-full opacity-75\",\n        \"group-[.online]:bg-emerald-500\",\n        \"group-[.offline]:bg-red-500\",\n        \"group-[.maintenance]:bg-blue-500\",\n        \"group-[.degraded]:bg-amber-500\"\n      )}\n    />\n    <span\n      className={cn(\n        \"relative inline-flex h-2 w-2 rounded-full\",\n        \"group-[.online]:bg-emerald-500\",\n        \"group-[.offline]:bg-red-500\",\n        \"group-[.maintenance]:bg-blue-500\",\n        \"group-[.degraded]:bg-amber-500\"\n      )}\n    />\n  </span>\n);\n\nexport type StatusLabelProps = HTMLAttributes<HTMLSpanElement>;\n\nexport const StatusLabel = ({\n  className,\n  children,\n  ...props\n}: StatusLabelProps) => (\n  <span className={cn(\"text-muted-foreground\", className)} {...props}>\n    {children ?? (\n      <>\n        <span className=\"hidden group-[.online]:block\">Online</span>\n        <span className=\"hidden group-[.offline]:block\">Offline</span>\n        <span className=\"hidden group-[.maintenance]:block\">Maintenance</span>\n        <span className=\"hidden group-[.degraded]:block\">Degraded</span>\n      </>\n    )}\n  </span>\n);\n",
+      "sha256": "6794dcc818f3b8902429cf80ba4ff8983e69df5d09ebbf81560b28043ff64916",
+      "upstreamPath": "packages/status/index.tsx",
+      "upstreamSha256": "6794dcc818f3b8902429cf80ba4ff8983e69df5d09ebbf81560b28043ff64916",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": "pnpm dlx shadcn@latest add badge",
+    "stylePaths": [],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Install the required shadcn primitives: pnpm dlx shadcn@latest add badge"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "status",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/status",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/status.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Status\ndescription: Status components are used to display the uptime of a service.\nicon: Radio\ninstaller: status\n---\n\n## Features\n\n- Displays the status of a service\n- Automatic colors based on the status\n- Customizable colors and labels\n- Ping animation for the indicator\n\n## Examples\n\n### Custom styles\n\n<Preview path=\"status-custom\" />\n"
+}

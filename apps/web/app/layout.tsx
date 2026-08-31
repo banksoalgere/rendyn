@@ -13,18 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://designmcp.jneilbaker.chatgpt.site'),
   title: 'DesignMCP | Give your coding agent great taste',
   description: 'A curated catalogue of polished interface components, visual previews and complete code for coding agents.',
   openGraph: {
     title: 'DesignMCP | Give your coding agent great taste',
     description: 'Polished interface components, visual previews and complete code for coding agents.',
-    images: ['http://localhost:3001/og.png'],
+    images: ['/og.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'DesignMCP | Give your coding agent great taste',
     description: 'Polished interface components, visual previews and complete code for coding agents.',
-    images: ['http://localhost:3001/og.png'],
+    images: ['/og.png'],
   },
 };
 

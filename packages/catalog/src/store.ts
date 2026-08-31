@@ -13,6 +13,7 @@ import type {
 } from "./types.js";
 
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const COMPONENT_ID_PATTERN = /^[a-z0-9]+:[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const DEFAULT_PAGE_SIZE = 20;
 const MAX_PAGE_SIZE = 50;
 
@@ -34,6 +35,18 @@ function validateIndexConsistency(index: CatalogIndex): void {
   const componentSlugs = index.components.map((component) => component.slug);
   if (new Set(componentSlugs).size !== componentSlugs.length) {
     throw new Error("Catalogue index contains duplicate component slugs");
+  }
+
+  const sourceIds = index.sources.map((source) => source.id);
+  if (new Set(sourceIds).size !== sourceIds.length) {
+    throw new Error("Catalogue index contains duplicate sources");
+  }
+  const knownSourceIds = new Set(sourceIds);
+  const unknownSource = index.components.find(
+    (component) => !knownSourceIds.has(component.sourceId),
+  );
+  if (unknownSource) {
+    throw new Error(`Catalogue component references an unknown source: ${unknownSource.slug}`);
   }
 
   const categorySlugs = index.categories.map((category) => category.slug);
@@ -119,6 +132,7 @@ export class CatalogStore {
   readonly index: CatalogIndex;
   readonly embeddings: EmbeddingIndex | null;
   private readonly summariesBySlug: Map<string, CatalogComponentSummary>;
+  private readonly summariesById: Map<string, CatalogComponentSummary>;
   private readonly summariesByCategory: Map<CatalogCategorySlug, CatalogComponentSummary[]>;
 
   private constructor(root: string, index: CatalogIndex, embeddings: EmbeddingIndex | null) {
@@ -127,6 +141,9 @@ export class CatalogStore {
     this.embeddings = embeddings;
     this.summariesBySlug = new Map(
       index.components.map((component) => [component.slug, component]),
+    );
+    this.summariesById = new Map(
+      index.components.map((component) => [component.id, component]),
     );
     this.summariesByCategory = indexByCategory(index);
   }
@@ -142,34 +159,37 @@ export class CatalogStore {
     return new CatalogStore(root, index, embeddings);
   }
 
-  has(slug: string): boolean {
-    return SLUG_PATTERN.test(slug) && this.summariesBySlug.has(slug);
+  has(identifier: string): boolean {
+    return this.find(identifier) !== null;
   }
 
   hasCategory(category: string): category is CatalogCategorySlug {
     return this.summariesByCategory.has(category as CatalogCategorySlug);
   }
 
-  find(slug: string): CatalogComponentSummary | null {
-    if (!SLUG_PATTERN.test(slug)) return null;
-    return this.summariesBySlug.get(slug) ?? null;
+  find(identifier: string): CatalogComponentSummary | null {
+    if (SLUG_PATTERN.test(identifier)) return this.summariesBySlug.get(identifier) ?? null;
+    if (COMPONENT_ID_PATTERN.test(identifier)) return this.summariesById.get(identifier) ?? null;
+    return null;
   }
 
-  async get(slug: string): Promise<CatalogComponent | null> {
-    const summary = this.find(slug);
+  async get(identifier: string): Promise<CatalogComponent | null> {
+    const summary = this.find(identifier);
     if (!summary) return null;
 
     const manifestPath = resolveCatalogPath(this.root, summary.manifestPath);
     const manifestFile = await readJsonFile(manifestPath);
     const component = parseCatalogComponent(manifestFile.value);
+    const indexedSource = this.index.sources.find((source) => source.id === summary.sourceId);
 
     const matchesIndex =
       component.slug === summary.slug &&
       component.id === summary.id &&
+      component.sourceId === summary.sourceId &&
       component.integrity === summary.integrity &&
-      component.source.commit === this.index.source.commit;
+      indexedSource?.commit === component.source.commit;
     if (!matchesIndex) {
-      throw new Error(`Catalogue manifest does not match its index entry: ${slug}`);
+      throw new Error(`Catalogue manifest does not match its index entry: ${identifier}`);
     }
 
     return component;

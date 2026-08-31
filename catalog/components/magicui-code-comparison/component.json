@@ -1,0 +1,90 @@
+{
+  "id": "magicui:code-comparison",
+  "sourceId": "magicui",
+  "slug": "magicui-code-comparison",
+  "name": "Code Comparison",
+  "description": "A component which compares two code snippets.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "next-themes",
+    "shiki"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "code-comparison",
+    "tags": [
+      "code",
+      "dark",
+      "file",
+      "theme"
+    ],
+    "aliases": [
+      "code comparison",
+      "code-comparison"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A component which compares two code snippets."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "code-comparison:code:dark:file:theme:type",
+    "searchText": "Code Comparison\ncode comparison\nA component which compares two code snippets.\ncode-comparison\ncode\ndark\nfile\ntheme\ntype\ntitle: Code Comparison date: 2024 10 02 description: A component which compares two code snippets. author: dillionverma published: true Installation CLI Manual Copy and paste the following code into your project. Usage Props Prop Type Default Description className string The class name to be applied to the component beforeCode string The code snippet to display in the \"before\" section afterCode string The code snippet to display in the \"after\" section language string The language of the code snippets (e.g., \"typescript\") filename string The filename to display for the code snippets lightTheme string github light The theme to use for light mode darkTheme string github dark The theme to use for dark mode highlightColor string rgba(101, 117, 133, 0.16) The color to use for highlighting the code snippets"
+  },
+  "previewPath": "/preview/motion/magicui-code-comparison",
+  "manifestPath": "components/magicui-code-comparison/component.json",
+  "integrity": "sha256:b3c30cfb1fa9fb5dfc672273eb6fe063f19e431f5ca84ee760e250d7dc3990ef",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/code-comparison.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport { useEffect, useMemo, useState } from \"react\"\nimport {\n  transformerNotationDiff,\n  transformerNotationFocus,\n} from \"@shikijs/transformers\"\nimport { FileIcon } from \"lucide-react\"\nimport { useTheme } from \"next-themes\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface CodeComparisonProps {\n  beforeCode: string\n  afterCode: string\n  language: string\n  filename: string\n  lightTheme: string\n  darkTheme: string\n  highlightColor?: string\n}\n\nexport function CodeComparison({\n  beforeCode,\n  afterCode,\n  language,\n  filename,\n  lightTheme,\n  darkTheme,\n  highlightColor = \"#ff3333\",\n}: CodeComparisonProps) {\n  const { theme, systemTheme } = useTheme()\n  const [highlightedBefore, setHighlightedBefore] = useState(\"\")\n  const [highlightedAfter, setHighlightedAfter] = useState(\"\")\n  const [hasLeftFocus, setHasLeftFocus] = useState(false)\n  const [hasRightFocus, setHasRightFocus] = useState(false)\n\n  const selectedTheme = useMemo(() => {\n    const currentTheme = theme === \"system\" ? systemTheme : theme\n    return currentTheme === \"dark\" ? darkTheme : lightTheme\n  }, [theme, systemTheme, darkTheme, lightTheme])\n\n  useEffect(() => {\n    if (highlightedBefore || highlightedAfter) {\n      setHasLeftFocus(highlightedBefore.includes('class=\"line focused\"'))\n      setHasRightFocus(highlightedAfter.includes('class=\"line focused\"'))\n    }\n  }, [highlightedBefore, highlightedAfter])\n\n  useEffect(() => {\n    async function highlightCode() {\n      try {\n        const { codeToHtml } = await import(\"shiki\")\n        const { transformerNotationHighlight } =\n          await import(\"@shikijs/transformers\")\n\n        const before = await codeToHtml(beforeCode, {\n          lang: language,\n          theme: selectedTheme,\n          transformers: [\n            transformerNotationHighlight({ matchAlgorithm: \"v3\" }),\n            transformerNotationDiff({ matchAlgorithm: \"v3\" }),\n            transformerNotationFocus({ matchAlgorithm: \"v3\" }),\n          ],\n        })\n        const after = await codeToHtml(afterCode, {\n          lang: language,\n          theme: selectedTheme,\n          transformers: [\n            transformerNotationHighlight({ matchAlgorithm: \"v3\" }),\n            transformerNotationDiff({ matchAlgorithm: \"v3\" }),\n            transformerNotationFocus({ matchAlgorithm: \"v3\" }),\n          ],\n        })\n        setHighlightedBefore(before)\n        setHighlightedAfter(after)\n      } catch (error) {\n        console.error(\"Error highlighting code:\", error)\n        setHighlightedBefore(`<pre>${beforeCode}</pre>`)\n        setHighlightedAfter(`<pre>${afterCode}</pre>`)\n      }\n    }\n    highlightCode()\n  }, [beforeCode, afterCode, language, selectedTheme])\n\n  const renderCode = (code: string, highlighted: string) => {\n    if (highlighted) {\n      return (\n        <div\n          style={{ \"--highlight-color\": highlightColor } as React.CSSProperties}\n          className={cn(\n            \"bg-background h-full w-full overflow-auto font-mono text-xs\",\n            \"[&>pre]:h-full [&>pre]:w-screen! [&>pre]:py-2\",\n            \"[&>pre>code]:inline-block! [&>pre>code]:w-full!\",\n            \"[&>pre>code>span]:inline-block! [&>pre>code>span]:w-full [&>pre>code>span]:px-4 [&>pre>code>span]:py-0.5\",\n            \"[&>pre>code>.highlighted]:inline-block [&>pre>code>.highlighted]:w-full [&>pre>code>.highlighted]:bg-(--highlight-color)!\",\n            \"group-hover/left:[&>pre>code>:not(.focused)]:opacity-100! group-hover/left:[&>pre>code>:not(.focused)]:blur-none!\",\n            \"group-hover/right:[&>pre>code>:not(.focused)]:opacity-100! group-hover/right:[&>pre>code>:not(.focused)]:blur-none!\",\n            \"[&>pre>code>.add]:bg-[rgba(16,185,129,.16)] [&>pre>code>.remove]:bg-[rgba(244,63,94,.16)]\",\n            \"group-hover/left:[&>pre>code>:not(.focused)]:transition-all group-hover/left:[&>pre>code>:not(.focused)]:duration-300\",\n            \"group-hover/right:[&>pre>code>:not(.focused)]:transition-all group-hover/right:[&>pre>code>:not(.focused)]:duration-300\"\n          )}\n          dangerouslySetInnerHTML={{ __html: highlighted }}\n        />\n      )\n    } else {\n      return (\n        <pre className=\"bg-background text-foreground h-full overflow-auto p-4 font-mono text-xs break-all\">\n          {code}\n        </pre>\n      )\n    }\n  }\n\n  return (\n    <div className=\"mx-auto w-full max-w-5xl\">\n      <div className=\"group border-border relative w-full overflow-hidden rounded-md border\">\n        <div className=\"relative grid md:grid-cols-2\">\n          <div\n            className={cn(\n              \"leftside group/left border-primary/20 md:border-r\",\n              hasLeftFocus &&\n                \"[&>div>pre>code>:not(.focused)]:opacity-50! [&>div>pre>code>:not(.focused)]:blur-[0.095rem]!\",\n              \"[&>div>pre>code>:not(.focused)]:transition-all [&>div>pre>code>:not(.focused)]:duration-300\"\n            )}\n          >\n            <div className=\"border-primary/20 bg-accent text-foreground flex items-center border-b p-2 text-sm\">\n              <FileIcon className=\"mr-2 h-4 w-4\" />\n              {filename}\n              <span className=\"ml-auto hidden md:block\">before</span>\n            </div>\n            {renderCode(beforeCode, highlightedBefore)}\n          </div>\n          <div\n            className={cn(\n              \"rightside group/right border-primary/20 border-t md:border-t-0\",\n              hasRightFocus &&\n                \"[&>div>pre>code>:not(.focused)]:opacity-50! [&>div>pre>code>:not(.focused)]:blur-[0.095rem]!\",\n              \"[&>div>pre>code>:not(.focused)]:transition-all [&>div>pre>code>:not(.focused)]:duration-300\"\n            )}\n          >\n            <div className=\"border-primary/20 bg-accent text-foreground flex items-center border-b p-2 text-sm\">\n              <FileIcon className=\"mr-2 h-4 w-4\" />\n              {filename}\n              <span className=\"ml-auto hidden md:block\">after</span>\n            </div>\n            {renderCode(afterCode, highlightedAfter)}\n          </div>\n        </div>\n        <div className=\"border-primary/20 bg-accent text-foreground absolute top-1/2 left-1/2 hidden h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-md border text-xs md:flex\">\n          VS\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "sha256": "a06698296a219ac0d7ffa098f6d5d2bbf38c3f825af5a8b01786fddf16b969ac",
+      "upstreamPath": "apps/www/registry/magicui/code-comparison.tsx",
+      "upstreamSha256": "a06698296a219ac0d7ffa098f6d5d2bbf38c3f825af5a8b01786fddf16b969ac",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add next-themes shiki",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add next-themes shiki",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "code-comparison",
+    "upstreamPageUrl": "https://magicui.design/docs/components/code-comparison",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/code-comparison.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Code Comparison\ndate: 2024-10-02\ndescription: A component which compares two code snippets.\nauthor: dillionverma\npublished: true\n---\n\n<ComponentPreview name=\"code-comparison-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/code-comparison\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"code-comparison\" />\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { CodeComparison } from \"@/components/ui/code-comparison\"\n```\n\n```tsx showLineNumbers\n<CodeComparison beforeCode={beforeCode} afterCode={afterCode} />\n```\n\n## Props\n\n| Prop             | Type     | Default                     | Description                                            |\n| ---------------- | -------- | --------------------------- | ------------------------------------------------------ |\n| `className`      | `string` | `-`                         | The class name to be applied to the component          |\n| `beforeCode`     | `string` | `-`                         | The code snippet to display in the \"before\" section    |\n| `afterCode`      | `string` | `-`                         | The code snippet to display in the \"after\" section     |\n| `language`       | `string` | `-`                         | The language of the code snippets (e.g., \"typescript\") |\n| `filename`       | `string` | `-`                         | The filename to display for the code snippets          |\n| `lightTheme`     | `string` | `github-light`              | The theme to use for light mode                        |\n| `darkTheme`      | `string` | `github-dark`               | The theme to use for dark mode                         |\n| `highlightColor` | `string` | `rgba(101, 117, 133, 0.16)` | The color to use for highlighting the code snippets    |\n"
+}

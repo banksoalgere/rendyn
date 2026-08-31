@@ -1,5 +1,6 @@
 {
   "id": "beui:marquee",
+  "sourceId": "beui",
   "slug": "marquee",
   "name": "Marquee",
   "description": "Infinite horizontal or vertical scroll with pause-on-hover.",
@@ -49,7 +50,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -79,6 +80,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -90,7 +93,8 @@
     "upstreamSlug": "marquee",
     "upstreamPageUrl": "https://beui.dev/components/motion/marquee",
     "upstreamDetailUrl": "https://beui.dev/r/marquee",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/marquee.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/marquee.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Marquee\"\ndescription: \"Infinite horizontal or vertical scroll with pause-on-hover.\"\ncategory: \"Components\"\npublishedAt: \"2026-05-17\"\nupdatedAt: \"2026-07-04\"\ndocumentation: \"https://beui.dev/components/motion/marquee\"\nmarkdown: \"https://beui.dev/components/motion/marquee.md\"\nlicense: \"MIT\"\n---\n\n# Marquee\n\n> Infinite horizontal or vertical scroll with pause-on-hover.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/marquee\n```\n\n## Dependencies\n\n- `clsx`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { Marquee } from \"@/components/motion/marquee\";\n\nconst logos = [\"Vercel\", \"Linear\", \"Stripe\", \"Figma\", \"GitHub\", \"Notion\", \"Loom\", \"Raycast\"];\n\nexport function MarqueePreview() {\n  return (\n    <div className=\"w-full\">\n      <Marquee speed={25}>\n        {logos.map((l) => (\n          <div\n            key={l}\n            className=\"mx-4 flex h-12 items-center justify-center rounded-lg border border-border bg-card px-6 text-sm font-medium text-foreground\"\n          >\n            {l}\n          </div>\n        ))}\n      </Marquee>\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### Marquee\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `direction` | `\"left\" \\| \"right\" \\| \"up\" \\| \"down\"` | `left` | No | — |\n| `speed` | `number` | `30` | No | — |\n| `pauseOnHover` | `boolean` | `true` | No | — |\n| `gap` | `string` | `1rem` | No | — |\n| `className` | `string` | — | No | — |\n| `fade` | `boolean` | `true` | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/marquee\n- Raw source: https://beui.dev/r/marquee/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

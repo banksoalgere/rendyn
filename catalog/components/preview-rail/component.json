@@ -1,5 +1,6 @@
 {
   "id": "beui:preview-rail",
+  "sourceId": "beui",
   "slug": "preview-rail",
   "name": "Preview Rail",
   "description": "Codex app-inspired navigation rail with compact ticks that form a hover pyramid and reveal a floating destination preview.",
@@ -58,7 +59,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -118,6 +119,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -129,7 +132,8 @@
     "upstreamSlug": "preview-rail",
     "upstreamPageUrl": "https://beui.dev/components/motion/preview-rail",
     "upstreamDetailUrl": "https://beui.dev/r/preview-rail",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/preview-rail.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/preview-rail.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Preview Rail\"\ndescription: \"Codex app-inspired navigation rail with compact ticks that form a hover pyramid and reveal a floating destination preview.\"\ncategory: \"Components\"\npublishedAt: \"2026-07-11\"\nupdatedAt: \"2026-07-11\"\ndocumentation: \"https://beui.dev/components/motion/preview-rail\"\nmarkdown: \"https://beui.dev/components/motion/preview-rail.md\"\nlicense: \"MIT\"\n---\n\n# Preview Rail\n\n> Codex app-inspired navigation rail with compact ticks that form a hover pyramid and reveal a floating destination preview.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/preview-rail\n```\n\n## Dependencies\n\n- `clsx`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { PreviewRail } from \"@/components/motion/preview-rail\";\n\nexport const previewRailItems = [\n  {\n    id: \"dashboard\",\n    label: \"Dashboard\",\n    description: \"Return to your workspace overview and recent activity.\",\n    href: \"#dashboard\",\n  },\n  {\n    id: \"components\",\n    label: \"Components\",\n    description: \"Browse motion primitives for React and Next.js.\",\n    href: \"#components\",\n  },\n  {\n    id: \"blocks\",\n    label: \"Blocks\",\n    description: \"Explore composed, product-ready interface blocks.\",\n    href: \"#blocks\",\n  },\n  {\n    id: \"playground\",\n    label: \"Playground\",\n    description: \"Tune motion values and preview behavior live.\",\n    href: \"#playground\",\n  },\n  {\n    id: \"docs\",\n    label: \"Documentation\",\n    description: \"Read installation, usage, and API reference notes.\",\n    href: \"#docs\",\n  },\n  {\n    id: \"changelog\",\n    label: \"Changelog\",\n    description: \"Review newly launched components and improvements.\",\n    href: \"#changelog\",\n  },\n  {\n    id: \"sponsors\",\n    label: \"Sponsors\",\n    description: \"Support continued development of the open-source library.\",\n    href: \"#sponsors\",\n  },\n  {\n    id: \"pro\",\n    label: \"beUI Pro\",\n    description: \"Get premium components and lifetime access.\",\n    href: \"#pro\",\n  },\n  {\n    id: \"examples\",\n    label: \"Examples\",\n    description: \"See components composed in practical interface patterns.\",\n    href: \"#examples\",\n  },\n  {\n    id: \"templates\",\n    label: \"Templates\",\n    description: \"Start from polished layouts built with beUI components.\",\n    href: \"#templates\",\n  },\n  {\n    id: \"guides\",\n    label: \"Guides\",\n    description: \"Learn how to combine motion primitives effectively.\",\n    href: \"#guides\",\n  },\n  {\n    id: \"community\",\n    label: \"Community\",\n    description: \"Discover what other builders are creating with beUI.\",\n    href: \"#community\",\n  },\n  {\n    id: \"github\",\n    label: \"GitHub\",\n    description: \"View the source, report issues, and contribute improvements.\",\n    href: \"#github\",\n  },\n  {\n    id: \"about\",\n    label: \"About\",\n    description: \"Learn more about the ideas and people behind beUI.\",\n    href: \"#about\",\n  },\n];\n\nexport function PreviewRailPreview() {\n  return (\n    <div className=\"flex w-full flex-col gap-8\">\n      <PreviewRail\n        items={previewRailItems}\n        defaultActiveId=\"docs\"\n        className=\"mx-auto h-[360px] w-full max-w-2xl\"\n      />\n      <PreviewRail\n        items={previewRailItems}\n        orientation=\"horizontal\"\n        defaultActiveId=\"docs\"\n        className=\"mx-auto h-[280px] w-full max-w-2xl\"\n      />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### PreviewRail\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `items` | `PreviewRailItem[]` | — | Yes | — |\n| `label` | `string` | `Section navigation` | No | — |\n| `orientation` | `\"horizontal\" \\| \"vertical\"` | `vertical` | No | — |\n| `activeId` | `string` | — | No | — |\n| `defaultActiveId` | `string` | — | No | — |\n| `onActiveChange` | `((id: string) => void)` | — | No | — |\n| `onItemSelect` | `((item: PreviewRailItem) => void)` | — | No | — |\n| `renderPreview` | `((item: PreviewRailItem) => ReactNode)` | — | No | — |\n| `showPreview` | `boolean` | `true` | No | — |\n| `previewSide` | `\"before\" \\| \"after\"` | `after` | No | — |\n| `highlightActive` | `boolean` | `false` | No | — |\n| `itemSize` | `number` | `24` | No | — |\n| `className` | `string` | — | No | — |\n| `railClassName` | `string` | — | No | — |\n| `previewContainerClassName` | `string` | — | No | — |\n| `previewClassName` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/preview-rail\n- Raw source: https://beui.dev/r/preview-rail/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

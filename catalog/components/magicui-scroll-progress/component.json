@@ -1,0 +1,89 @@
+{
+  "id": "magicui:scroll-progress",
+  "sourceId": "magicui",
+  "slug": "magicui-scroll-progress",
+  "name": "Scroll Progress",
+  "description": "Animated Scroll Progress for your pages",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "scroll-progress",
+    "tags": [
+      "animated",
+      "code",
+      "progress"
+    ],
+    "aliases": [
+      "scroll progress",
+      "scroll-progress"
+    ],
+    "interactions": [
+      "scroll",
+      "type"
+    ],
+    "useWhen": [
+      "Animated Scroll Progress for your pages"
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "scroll-progress:animated:code:progress:scroll:type",
+    "searchText": "Scroll Progress\nscroll progress\nAnimated Scroll Progress for your pages\nscroll-progress\nanimated\ncode\nprogress\nscroll\ntype\ntitle: Scroll Progress date: 2024 12 19 description: Animated Scroll Progress for your pages author: dipesh the dev published: true Installation CLI Manual Copy and paste the following code into your project. Usage Props Prop Type Default Description className string The class name to be applied to the component The ScrollProgress component also accepts all properties of the HTMLDivElement type. Credits Credit to dipesh the dev"
+  },
+  "previewPath": "/preview/motion/magicui-scroll-progress",
+  "manifestPath": "components/magicui-scroll-progress/component.json",
+  "integrity": "sha256:8eeca1b3cac5d3719e91bc6f16b662ca927193741ea0077b6340638744cf4938",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/scroll-progress.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport { motion, useScroll, type MotionProps } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface ScrollProgressProps extends Omit<\n  React.HTMLAttributes<HTMLElement>,\n  keyof MotionProps\n> {\n  ref?: React.Ref<HTMLDivElement>\n}\n\nexport function ScrollProgress({\n  className,\n  ref,\n  ...props\n}: ScrollProgressProps) {\n  const { scrollYProgress } = useScroll()\n\n  return (\n    <motion.div\n      ref={ref}\n      className={cn(\n        \"fixed inset-x-0 top-0 z-50 h-px origin-left bg-linear-to-r from-[#A97CF8] via-[#F38CB8] to-[#FDCC92]\",\n        className\n      )}\n      style={{\n        scaleX: scrollYProgress,\n      }}\n      {...props}\n    />\n  )\n}\n",
+      "sha256": "4d79d33956520a69ff3c74509deaee7be6036125b0e0fb54078eba7eeefe894a",
+      "upstreamPath": "apps/www/registry/magicui/scroll-progress.tsx",
+      "upstreamSha256": "4d79d33956520a69ff3c74509deaee7be6036125b0e0fb54078eba7eeefe894a",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "scroll-progress",
+    "upstreamPageUrl": "https://magicui.design/docs/components/scroll-progress",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/scroll-progress.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Scroll Progress\ndate: 2024-12-19\ndescription: Animated Scroll Progress for your pages\nauthor: dipesh_the_dev\npublished: true\n---\n\n<ComponentPreview name=\"scroll-progress-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n<TabsList>\n    <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n    <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/scroll-progress\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"scroll-progress\" />\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { ScrollProgress } from \"@/components/ui/scroll-progress\"\n```\n\n```tsx showLineNumbers\n<ScrollProgress />\n```\n\n## Props\n\n| Prop        | Type     | Default | Description                                   |\n| ----------- | -------- | ------- | --------------------------------------------- |\n| `className` | `string` | `-`     | The class name to be applied to the component |\n\nThe `ScrollProgress` component also accepts all properties of the `HTMLDivElement` type.\n\n## Credits\n\n- Credit to [dipesh_the_dev](https://twitter.com/dipesh_the_dev)\n"
+}

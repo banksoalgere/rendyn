@@ -90,7 +90,7 @@ export default function Home() {
             complete source and the context to ship it well.
           </p>
           <div className="hero-actions">
-            <a className="button button--wide" href="#components">Browse components <span>→</span></a>
+            <a className="button button--wide" href="/components">Browse components <span>→</span></a>
             <a className="button button--secondary button--wide" href="#docs">Connect to your agent</a>
           </div>
         </div>
@@ -216,10 +216,10 @@ export default function Home() {
             copy="A focused library, not an unfiltered component dump."
           />
           <div className="proof-grid">
-            <article><span>80</span><p>interactive components</p><small>Every entry has an internal preview and complete source.</small></article>
-            <article><span>41</span><p>motion components</p><small>Interaction patterns with the details agents usually miss.</small></article>
+            <article><span>189</span><p>component examples</p><small>Every entry has a verified preview and complete source.</small></article>
+            <article><span>109</span><p>interaction components</p><small>Motion-rich patterns with the details agents usually miss.</small></article>
             <article><span>17</span><p>agent interfaces</p><small>Purpose-built patterns for tools, approvals and streaming.</small></article>
-            <article><span>22</span><p>product blocks</p><small>Useful foundations for real product screens.</small></article>
+            <article><span>63</span><p>product blocks</p><small>Useful foundations for real product screens.</small></article>
           </div>
         </div>
       </section>
@@ -276,7 +276,7 @@ export default function Home() {
               <article key={title}>
                 <div><span className={`scenario-avatar avatar-${index + 1}`}>{title.charAt(0)}</span><p><b>{title}</b><small>{tag}</small></p></div>
                 <p>{copy}</p>
-                <a href="#components">Explore the fit <span>↗</span></a>
+                <a href="/components">Explore the fit <span>↗</span></a>
               </article>
             ))}
           </div>
@@ -296,8 +296,8 @@ export default function Home() {
         <div className="closing-card content-width grid-surface">
           <span className="pill pill--section">Ready when your agent is</span>
           <h2>Smarter, simpler<br />interface building.</h2>
-          <a className="button" href="#components">Browse components <span>→</span></a>
-          <p><span>80</span> curated components <i>·</i> <span>4</span> free unlocks <i>·</i> complete code you own</p>
+          <a className="button" href="/components">Browse components <span>→</span></a>
+          <p><span>189</span> curated components <i>·</i> <span>3</span> MIT libraries <i>·</i> complete code you own</p>
         </div>
       </section>
 
@@ -309,7 +309,7 @@ export default function Home() {
         </div>
         <div className="footer-nav">
           {footerGroups.map(([title, links]) => (
-            <div key={title as string}><strong>{title}</strong>{(links as string[]).map((link) => <a href={link === 'Pricing' ? '/pricing' : '#top'} key={link}>{link}</a>)}</div>
+            <div key={title as string}><strong>{title}</strong>{(links as string[]).map((link) => <a href={link === 'Pricing' ? '/pricing' : link === 'Components' ? '/components' : '#top'} key={link}>{link}</a>)}</div>
           ))}
         </div>
         <div className="footer-bottom"><span>© 2026 DesignMCP</span><span>Built for better product decisions.</span></div>

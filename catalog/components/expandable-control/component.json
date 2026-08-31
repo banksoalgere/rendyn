@@ -1,5 +1,6 @@
 {
   "id": "beui:expandable-control",
+  "sourceId": "beui",
   "slug": "expandable-control",
   "name": "Expandable Control",
   "description": "Click-to-expand button and chip controls that reveal a label or trailing action through spring layout continuity.",
@@ -54,7 +55,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -84,6 +85,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -95,7 +98,8 @@
     "upstreamSlug": "expandable-control",
     "upstreamPageUrl": "https://beui.dev/components/motion/expandable-control",
     "upstreamDetailUrl": "https://beui.dev/r/expandable-control",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/expandable-control.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/expandable-control.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Expandable Control\"\ndescription: \"Click-to-expand button and chip controls that reveal a label or trailing action through spring layout continuity.\"\ncategory: \"Components\"\npublishedAt: \"2026-08-22\"\nupdatedAt: \"2026-08-22\"\ndocumentation: \"https://beui.dev/components/motion/expandable-control\"\nmarkdown: \"https://beui.dev/components/motion/expandable-control.md\"\nlicense: \"MIT\"\n---\n\n# Expandable Control\n\n> Click-to-expand button and chip controls that reveal a label or trailing action through spring layout continuity.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/expandable-control\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { Bell, X } from \"lucide-react\";\nimport {\n  ExpandableButton,\n  ExpandableChip,\n} from \"@/components/motion/expandable-control\";\n\nexport function ExpandableControlPreview() {\n  return (\n    <div className=\"flex flex-col items-center gap-6\">\n      <div className=\"flex items-center gap-2\">\n        <ExpandableButton\n          icon={<Bell className=\"size-4\" />}\n          label=\"Notifications\"\n        />\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <ExpandableChip\n          label=\"React\"\n          actionIcon={<X className=\"size-3.5\" />}\n          actionLabel=\"Remove React\"\n        />\n      </div>\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### ExpandableButton\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `icon` | `ReactNode` | — | Yes | — |\n| `label` | `ReactNode` | — | Yes | — |\n| `className` | `string` | — | No | — |\n\n### ExpandableChip\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `label` | `ReactNode` | — | Yes | — |\n| `actionIcon` | `ReactNode` | — | Yes | — |\n| `actionLabel` | `string` | — | Yes | — |\n| `onAction` | `(() => void)` | — | No | — |\n| `collapseOnAction` | `boolean` | `true` | No | — |\n| `disabled` | `boolean` | — | No | — |\n| `className` | `string` | — | No | — |\n| `labelClassName` | `string` | — | No | — |\n| `actionClassName` | `string` | — | No | — |\n| `expanded` | `boolean` | — | No | — |\n| `defaultExpanded` | `boolean` | — | No | — |\n| `onExpandedChange` | `((expanded: boolean) => void)` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/expandable-control\n- Raw source: https://beui.dev/r/expandable-control/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

@@ -8,7 +8,7 @@ import {
 } from '@/components/motion/popover-morph';
 
 const resources = [
-  { href: '#components', label: 'Component guide', detail: 'Browse the catalogue' },
+  { href: '/components', label: 'Component guide', detail: 'Browse the catalogue' },
   { href: '#how-it-works', label: 'Agent workflows', detail: 'How DesignMCP fits your flow' },
   { href: '#docs', label: 'Documentation', detail: 'Connect your coding agent' },
 ];

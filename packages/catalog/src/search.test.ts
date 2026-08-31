@@ -11,6 +11,7 @@ function component(
 ): CatalogComponentSummary {
   return {
     id: `beui:${slug}`,
+    sourceId: "beui",
     slug,
     name,
     description,
@@ -37,9 +38,9 @@ function component(
 }
 
 const index: CatalogIndex = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   generatedAt: "2026-01-01T00:00:00.000Z",
-  source: {
+  sources: [{
     id: "beui",
     name: "beUI",
     repository: "https://example.com",
@@ -47,7 +48,7 @@ const index: CatalogIndex = {
     registrySha256: "abc",
     importedAt: "2026-01-01T00:00:00.000Z",
     license: { spdx: "MIT", copyright: "Example", textPath: "LICENSE" },
-  },
+  }],
   categories: [],
   components: [
     component("bouncy-accordion", "Bouncy Accordion", "Spring disclosure rows", ["accordion", "spring"]),

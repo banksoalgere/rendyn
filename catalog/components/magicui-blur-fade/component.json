@@ -1,0 +1,88 @@
+{
+  "id": "magicui:blur-fade",
+  "sourceId": "magicui",
+  "slug": "magicui-blur-fade",
+  "name": "Blur Fade",
+  "description": "Blur fade in and out animation. Used to smoothly fade in and out content.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "blur-fade",
+    "tags": [
+      "animated",
+      "code",
+      "number"
+    ],
+    "aliases": [
+      "blur fade",
+      "blur-fade"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "Blur fade in and out animation. Used to smoothly fade in and out content."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "blur-fade:animated:code:number:type",
+    "searchText": "Blur Fade\nblur fade\nBlur fade in and out animation. Used to smoothly fade in and out content.\nblur-fade\nanimated\ncode\nnumber\ntype\ntitle: Blur Fade date: 2024 07 07 description: Blur fade in and out animation. Used to smoothly fade in and out content. author: dillionverma published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Examples Usage Props Prop Type Default Description children React.ReactNode The content to be animated className string The class name to be applied to the component variant object Custom animation variants for motion component duration number 0.4 Duration (seconds) for the animation delay number 0 Delay (seconds) before the animation starts offset number 6 Offset for the animation direction string \"down\" Direction for the animation (up, down, left, right) inView boolean false Whether to trigger animation when component is in view inViewMargin MarginType \" 50px\" Margin for triggering the in view animation blur string \"6px\" Amount of blur to apply during the animation"
+  },
+  "previewPath": "/preview/motion/magicui-blur-fade",
+  "manifestPath": "components/magicui-blur-fade/component.json",
+  "integrity": "sha256:31e0c1aba6eab139228a5229b34a0dfcfdaf9d3c54d895dddf5ba6f95cff7cee",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/blur-fade.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport { useRef } from \"react\"\nimport {\n  AnimatePresence,\n  motion,\n  useInView,\n  type MotionProps,\n  type UseInViewOptions,\n  type Variants,\n} from \"motion/react\"\n\ntype MarginType = UseInViewOptions[\"margin\"]\n\ninterface BlurFadeProps extends MotionProps {\n  children: React.ReactNode\n  className?: string\n  variant?: {\n    hidden: { y: number }\n    visible: { y: number }\n  }\n  duration?: number\n  delay?: number\n  offset?: number\n  direction?: \"up\" | \"down\" | \"left\" | \"right\"\n  inView?: boolean\n  inViewMargin?: MarginType\n  blur?: string\n}\n\nconst getFilter = (v: Variants[string]) =>\n  typeof v === \"function\" ? undefined : v.filter\n\nexport function BlurFade({\n  children,\n  className,\n  variant,\n  duration = 0.4,\n  delay = 0,\n  offset = 6,\n  direction = \"down\",\n  inView = false,\n  inViewMargin = \"-50px\",\n  blur = \"6px\",\n  ...props\n}: BlurFadeProps) {\n  const ref = useRef(null)\n  const inViewResult = useInView(ref, { once: true, margin: inViewMargin })\n  const isInView = !inView || inViewResult\n  const defaultVariants: Variants = {\n    hidden: {\n      [direction === \"left\" || direction === \"right\" ? \"x\" : \"y\"]:\n        direction === \"right\" || direction === \"down\" ? -offset : offset,\n      opacity: 0,\n      filter: `blur(${blur})`,\n    },\n    visible: {\n      [direction === \"left\" || direction === \"right\" ? \"x\" : \"y\"]: 0,\n      opacity: 1,\n      filter: `blur(0px)`,\n    },\n  }\n  const combinedVariants = variant ?? defaultVariants\n\n  const hiddenFilter = getFilter(combinedVariants.hidden)\n  const visibleFilter = getFilter(combinedVariants.visible)\n\n  const shouldTransitionFilter =\n    hiddenFilter != null &&\n    visibleFilter != null &&\n    hiddenFilter !== visibleFilter\n\n  return (\n    <AnimatePresence>\n      <motion.div\n        ref={ref}\n        initial=\"hidden\"\n        animate={isInView ? \"visible\" : \"hidden\"}\n        exit=\"hidden\"\n        variants={combinedVariants}\n        transition={{\n          delay: 0.04 + delay,\n          duration,\n          ease: \"easeOut\",\n          ...(shouldTransitionFilter ? { filter: { duration } } : {}),\n        }}\n        className={className}\n        {...props}\n      >\n        {children}\n      </motion.div>\n    </AnimatePresence>\n  )\n}\n",
+      "sha256": "99a8e83aa8817f48e26d921e959ff9abefb5c2f1f0b72b166ed95e88e015949f",
+      "upstreamPath": "apps/www/registry/magicui/blur-fade.tsx",
+      "upstreamSha256": "99a8e83aa8817f48e26d921e959ff9abefb5c2f1f0b72b166ed95e88e015949f",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "blur-fade",
+    "upstreamPageUrl": "https://magicui.design/docs/components/blur-fade",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/blur-fade.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Blur Fade\ndate: 2024-07-07\ndescription: Blur fade in and out animation. Used to smoothly fade in and out content.\nauthor: dillionverma\npublished: true\n---\n\n<ComponentPreview name=\"blur-fade-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/blur-fade\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"blur-fade\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Examples\n\n<ComponentPreview name=\"blur-fade-text-demo\" />\n\n## Usage\n\n```tsx showLineNumbers\nimport { BlurFade } from \"@/components/ui/blur-fade\"\n```\n\n```tsx showLineNumbers\n<BlurFade>\n  <img src=\"https://picsum.photos/300/200?random=1\" alt=\"Sample 1\" />\n  <img src=\"https://picsum.photos/300/200?random=2\" alt=\"Sample 2\" />\n  <img src=\"https://picsum.photos/300/200?random=3\" alt=\"Sample 3\" />\n</BlurFade>\n```\n\n## Props\n\n| Prop           | Type              | Default   | Description                                                 |\n| -------------- | ----------------- | --------- | ----------------------------------------------------------- |\n| `children`     | `React.ReactNode` | `-`       | The content to be animated                                  |\n| `className`    | `string`          | `-`       | The class name to be applied to the component               |\n| `variant`      | `object`          | `-`       | Custom animation variants for motion component              |\n| `duration`     | `number`          | `0.4`     | Duration (seconds) for the animation                        |\n| `delay`        | `number`          | `0`       | Delay (seconds) before the animation starts                 |\n| `offset`       | `number`          | `6`       | Offset for the animation                                    |\n| `direction`    | `string`          | `\"down\"`  | Direction for the animation (`up`, `down`, `left`, `right`) |\n| `inView`       | `boolean`         | `false`   | Whether to trigger animation when component is in view      |\n| `inViewMargin` | `MarginType`      | `\"-50px\"` | Margin for triggering the in-view animation                 |\n| `blur`         | `string`          | `\"6px\"`   | Amount of blur to apply during the animation                |\n"
+}

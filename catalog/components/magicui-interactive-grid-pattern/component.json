@@ -1,0 +1,84 @@
+{
+  "id": "magicui:interactive-grid-pattern",
+  "sourceId": "magicui",
+  "slug": "magicui-interactive-grid-pattern",
+  "name": "Interactive Grid Pattern",
+  "description": "A interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "interactive-grid-pattern",
+    "tags": [
+      "code",
+      "number"
+    ],
+    "aliases": [
+      "interactive grid pattern",
+      "interactive-grid-pattern"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "interactive-grid-pattern:code:number:type",
+    "searchText": "Interactive Grid Pattern\ninteractive grid pattern\nA interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS.\ninteractive-grid-pattern\ncode\nnumber\ntype\ntitle: Interactive Grid Pattern date: 2024 12 31 description: A interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS. author: h3rmel published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Examples Colorful Usage Props Prop Type Default Description width number 40 Width of each square in the grid height number 40 Height of each square in the grid squares [number, number] [24,24] Number of squares in the grid. First number is horizontal squares, second is vertical squares className string Class name applied to the grid container squaresClassName string Class name applied to individual squares in the grid"
+  },
+  "previewPath": "/preview/motion/magicui-interactive-grid-pattern",
+  "manifestPath": "components/magicui-interactive-grid-pattern/component.json",
+  "integrity": "sha256:509def6d27816b4934362786e89345fa92312defb6f55ac0c085c7384dacbf4d",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/interactive-grid-pattern.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport React, { useState } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\n/**\n * InteractiveGridPattern is a component that renders a grid pattern with interactive squares.\n *\n * @param width - The width of each square.\n * @param height - The height of each square.\n * @param squares - The number of squares in the grid. The first element is the number of horizontal squares, and the second element is the number of vertical squares.\n * @param className - The class name of the grid.\n * @param squaresClassName - The class name of the squares.\n */\ninterface InteractiveGridPatternProps extends React.SVGProps<SVGSVGElement> {\n  width?: number\n  height?: number\n  squares?: [number, number] // [horizontal, vertical]\n  className?: string\n  squaresClassName?: string\n}\n\n/**\n * The InteractiveGridPattern component.\n *\n * @see InteractiveGridPatternProps for the props interface.\n * @returns A React component.\n */\nexport function InteractiveGridPattern({\n  width = 40,\n  height = 40,\n  squares = [24, 24],\n  className,\n  squaresClassName,\n  ...props\n}: InteractiveGridPatternProps) {\n  const [horizontal, vertical] = squares\n  const [hoveredSquare, setHoveredSquare] = useState<number | null>(null)\n\n  return (\n    <svg\n      width={width * horizontal}\n      height={height * vertical}\n      className={cn(\n        \"absolute inset-0 h-full w-full border border-gray-400/30\",\n        className\n      )}\n      {...props}\n    >\n      {Array.from({ length: horizontal * vertical }).map((_, index) => {\n        const x = (index % horizontal) * width\n        const y = Math.floor(index / horizontal) * height\n        return (\n          <rect\n            key={index}\n            x={x}\n            y={y}\n            width={width}\n            height={height}\n            className={cn(\n              \"stroke-gray-400/30 transition-all duration-100 ease-in-out not-[&:hover]:duration-1000\",\n              hoveredSquare === index ? \"fill-gray-300/30\" : \"fill-transparent\",\n              squaresClassName\n            )}\n            onMouseEnter={() => setHoveredSquare(index)}\n            onMouseLeave={() => setHoveredSquare(null)}\n          />\n        )\n      })}\n    </svg>\n  )\n}\n",
+      "sha256": "953385a7fae475dac73f5a88de878cfd8dab1ea5b83a95638ef06bbb10f0a6e2",
+      "upstreamPath": "apps/www/registry/magicui/interactive-grid-pattern.tsx",
+      "upstreamSha256": "953385a7fae475dac73f5a88de878cfd8dab1ea5b83a95638ef06bbb10f0a6e2",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "interactive-grid-pattern",
+    "upstreamPageUrl": "https://magicui.design/docs/components/interactive-grid-pattern",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/interactive-grid-pattern.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Interactive Grid Pattern\ndate: 2024-12-31\ndescription: A interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS.\nauthor: h3rmel\npublished: true\n---\n\n<ComponentPreview name=\"interactive-grid-pattern-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/interactive-grid-pattern\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"interactive-grid-pattern\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Examples\n\n### Colorful\n\n<ComponentPreview name=\"interactive-grid-pattern-demo-2\" />\n\n### Usage\n\n```tsx showLineNumbers\nimport { InteractiveGridPattern } from \"@/components/ui/interactive-grid-pattern\"\n```\n\n```tsx showLineNumbers\n<div className=\"relative h-[500px] w-full overflow-hidden\">\n  <InteractiveGridPattern />\n</div>\n```\n\n## Props\n\n| Prop               | Type               | Default   | Description                                                                                   |\n| ------------------ | ------------------ | --------- | --------------------------------------------------------------------------------------------- |\n| `width`            | `number`           | `40`      | Width of each square in the grid                                                              |\n| `height`           | `number`           | `40`      | Height of each square in the grid                                                             |\n| `squares`          | `[number, number]` | `[24,24]` | Number of squares in the grid. First number is horizontal squares, second is vertical squares |\n| `className`        | `string`           | `-`       | Class name applied to the grid container                                                      |\n| `squaresClassName` | `string`           | `-`       | Class name applied to individual squares in the grid                                          |\n"
+}

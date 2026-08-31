@@ -1,5 +1,6 @@
 {
   "id": "beui:prediction-market",
+  "sourceId": "beui",
   "slug": "prediction-market",
   "name": "Prediction Market",
   "description": "Prediction market trade ticket with buy/sell modes, outcome prices, rolling amount entry, quick add chips and trade states.",
@@ -54,7 +55,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -120,6 +121,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -131,7 +134,8 @@
     "upstreamSlug": "prediction-market",
     "upstreamPageUrl": "https://beui.dev/components/blocks/prediction-market",
     "upstreamDetailUrl": "https://beui.dev/r/prediction-market",
-    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/prediction-market.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/prediction-market.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Prediction Market\"\ndescription: \"Prediction market trade ticket with buy/sell modes, outcome prices, rolling amount entry, quick add chips and trade states.\"\ncategory: \"Blocks\"\npublishedAt: \"2026-06-18\"\nupdatedAt: \"2026-06-21\"\ndocumentation: \"https://beui.dev/components/blocks/prediction-market\"\nmarkdown: \"https://beui.dev/components/blocks/prediction-market.md\"\nlicense: \"MIT\"\n---\n\n# Prediction Market\n\n> Prediction market trade ticket with buy/sell modes, outcome prices, rolling amount entry, quick add chips and trade states.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/prediction-market\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  PredictionMarket,\n  type PredictionMarketOrderValue,\n} from \"@/components/motion/prediction-market\";\n\nconst outcomes = [\n  {\n    id: \"yes\",\n    label: \"Yes\",\n    price: 0.167,\n  },\n  {\n    id: \"no\",\n    label: \"No\",\n    price: 0.834,\n  },\n];\n\nexport function PredictionMarketPreview() {\n  const [order, setOrder] = useState<PredictionMarketOrderValue>({\n    mode: \"buy\",\n    outcomeId: \"yes\",\n    amount: \"115\",\n  });\n\n  return (\n    <div className=\"flex w-full items-center justify-center\">\n      <PredictionMarket\n        outcomes={outcomes}\n        value={order}\n        onValueChange={setOrder}\n        balance={500}\n        positions={{ yes: 125, no: 48 }}\n        quickAmounts={[1, 5, 10, 100]}\n      />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### PredictionMarket\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `outcomes` | `PredictionMarketOutcome[]` | `[ { id: \"up\", label: \"Up\", price: 0.09 }, { id: \"down\", label: \"Down\", price: 0.91 }, ]` | No | — |\n| `value` | `PredictionMarketOrderValue` | — | No | — |\n| `defaultValue` | `Partial<PredictionMarketOrderValue>` | — | No | — |\n| `onValueChange` | `((value: PredictionMarketOrderValue) => void)` | — | No | — |\n| `onTrade` | `((order: PredictionMarketOrderValue, quote: PredictionMarketQuote) => void)` | — | No | — |\n| `onSignIn` | `(() => void)` | — | No | — |\n| `authenticated` | `boolean` | `true` | No | — |\n| `orderTypeLabel` | `string` | `Market` | No | — |\n| `balance` | `number` | `500` | No | — |\n| `positions` | `Record<string, number>` | `{ up: 24, down: 16 }` | No | — |\n| `quickAmounts` | `number[]` | `[10, 50, 100, 500]` | No | — |\n| `minTrade` | `number` | `1` | No | — |\n| `className` | `string` | — | No | — |\n| `classNames` | `PredictionMarketClassNames` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/prediction-market\n- Raw source: https://beui.dev/r/prediction-market/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

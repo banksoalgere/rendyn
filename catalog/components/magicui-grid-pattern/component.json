@@ -1,0 +1,84 @@
+{
+  "id": "magicui:grid-pattern",
+  "sourceId": "magicui",
+  "slug": "magicui-grid-pattern",
+  "name": "Grid Pattern",
+  "description": "A background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "grid-pattern",
+    "tags": [
+      "code",
+      "number"
+    ],
+    "aliases": [
+      "grid pattern",
+      "grid-pattern"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A background grid pattern made with SVGs, fully customizable using Tailwind CSS."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "grid-pattern:code:number:type",
+    "searchText": "Grid Pattern\ngrid pattern\nA background grid pattern made with SVGs, fully customizable using Tailwind CSS.\ngrid-pattern\ncode\nnumber\ntype\ntitle: Grid Pattern date: 2023 07 18 description: A background grid pattern made with SVGs, fully customizable using Tailwind CSS. author: dillionverma published: true video: https://cdn.magicui.design/grid pattern.mp4 Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Examples Linear Gradient Dashed Stroke Usage Props GridPattern Prop Type Default Description width number 40 Width of the pattern height number 40 Height of the pattern x number 1 X offset of the pattern y number 1 Y offset of the pattern squares number [] X Y coordinates of filled squares as 2D array strokeDasharray string 0 Stroke dash array for the pattern"
+  },
+  "previewPath": "/preview/motion/magicui-grid-pattern",
+  "manifestPath": "components/magicui-grid-pattern/component.json",
+  "integrity": "sha256:4e20d8fe089cdb251c75d22a35a54d2427cfa2e3caba61a942f6a2bd91516e5a",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/grid-pattern.tsx",
+      "type": "component",
+      "content": "import { useId } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface GridPatternProps extends React.SVGProps<SVGSVGElement> {\n  width?: number\n  height?: number\n  x?: number\n  y?: number\n  squares?: Array<[x: number, y: number]>\n  strokeDasharray?: string\n  className?: string\n  [key: string]: unknown\n}\n\nexport function GridPattern({\n  width = 40,\n  height = 40,\n  x = -1,\n  y = -1,\n  strokeDasharray = \"0\",\n  squares,\n  className,\n  ...props\n}: GridPatternProps) {\n  const id = useId()\n\n  return (\n    <svg\n      aria-hidden=\"true\"\n      className={cn(\n        \"pointer-events-none absolute inset-0 h-full w-full fill-gray-400/30 stroke-gray-400/30\",\n        className\n      )}\n      {...props}\n    >\n      <defs>\n        <pattern\n          id={id}\n          width={width}\n          height={height}\n          patternUnits=\"userSpaceOnUse\"\n          x={x}\n          y={y}\n        >\n          <path\n            d={`M.5 ${height}V.5H${width}`}\n            fill=\"none\"\n            strokeDasharray={strokeDasharray}\n          />\n        </pattern>\n      </defs>\n      <rect width=\"100%\" height=\"100%\" strokeWidth={0} fill={`url(#${id})`} />\n      {squares && (\n        <svg x={x} y={y} className=\"overflow-visible\">\n          {squares.map(([x, y]) => (\n            <rect\n              strokeWidth=\"0\"\n              key={`${x}-${y}`}\n              width={width - 1}\n              height={height - 1}\n              x={x * width + 1}\n              y={y * height + 1}\n            />\n          ))}\n        </svg>\n      )}\n    </svg>\n  )\n}\n",
+      "sha256": "1d1caaf01de0a1ebfdffea1163535f8fbfdfbee33cd0a640e09388815d1823df",
+      "upstreamPath": "apps/www/registry/magicui/grid-pattern.tsx",
+      "upstreamSha256": "1d1caaf01de0a1ebfdffea1163535f8fbfdfbee33cd0a640e09388815d1823df",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "grid-pattern",
+    "upstreamPageUrl": "https://magicui.design/docs/components/grid-pattern",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/grid-pattern.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Grid Pattern\ndate: 2023-07-18\ndescription: A background grid pattern made with SVGs, fully customizable using Tailwind CSS.\nauthor: dillionverma\npublished: true\nvideo: https://cdn.magicui.design/grid-pattern.mp4\n---\n\n<ComponentPreview name=\"grid-pattern-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/grid-pattern\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"grid-pattern\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Examples\n\n### Linear Gradient\n\n<ComponentPreview name=\"grid-pattern-linear-gradient\" />\n\n### Dashed Stroke\n\n<ComponentPreview name=\"grid-pattern-dashed\" />\n\n### Usage\n\n```tsx showLineNumbers\nimport { GridPattern } from \"@/components/ui/grid-pattern\"\n```\n\n```tsx showLineNumbers\n<div className=\"relative h-[500px] w-full overflow-hidden\">\n  <GridPattern />\n</div>\n```\n\n## Props\n\n### GridPattern\n\n| Prop              | Type     | Default | Description                                   |\n| ----------------- | -------- | ------- | --------------------------------------------- |\n| `width`           | `number` | `40`    | Width of the pattern                          |\n| `height`          | `number` | `40`    | Height of the pattern                         |\n| `x`               | `number` | `-1`    | X offset of the pattern                       |\n| `y`               | `number` | `-1`    | Y offset of the pattern                       |\n| `squares`         | `number` | `[]`    | X Y coordinates of filled squares as 2D array |\n| `strokeDasharray` | `string` | `0`     | Stroke dash array for the pattern             |\n"
+}

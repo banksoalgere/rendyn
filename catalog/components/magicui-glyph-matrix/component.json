@@ -1,0 +1,87 @@
+{
+  "id": "magicui:glyph-matrix",
+  "sourceId": "magicui",
+  "slug": "magicui-glyph-matrix",
+  "name": "Glyph Matrix",
+  "description": "An animated grid of subtly shifting glyphs with fade effect and theme support.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "glyph-matrix",
+    "tags": [
+      "animated",
+      "code",
+      "dark",
+      "number",
+      "theme"
+    ],
+    "aliases": [
+      "glyph matrix",
+      "glyph-matrix"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "An animated grid of subtly shifting glyphs with fade effect and theme support."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "glyph-matrix:animated:code:dark:number:theme:type",
+    "searchText": "Glyph Matrix\nglyph matrix\nAn animated grid of subtly shifting glyphs with fade effect and theme support.\nglyph-matrix\nanimated\ncode\ndark\nnumber\ntheme\ntype\ntitle: Glyph Matrix date: 2026 06 12 description: An animated grid of subtly shifting glyphs on a canvas, with a theme aware color driven by the consumer. author: magicui published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Usage Props Prop Type Default Description glyphs string \"01·•+ /\\\\< =\" Characters to randomly pick from. cellSize number 14 Cell size in pixels and font size. mutationRate number 0.04 Probability a cell mutates each tick. interval number 90 Tick interval in milliseconds. className string Classes applied to the canvas element. fadeBottom number 0.6 Fade strength toward the bottom of the grid. color string \" 6B7280\" Glyph color (any CSS color). Notes The component draws with the color prop, which accepts any CSS color (hex, rgb(), hsl(), oklch(), ...) and is normalized through canvas before drawing. For light/dark support, drive color from the consumer — e.g. with next themes as shown in the demo above."
+  },
+  "previewPath": "/preview/motion/magicui-glyph-matrix",
+  "manifestPath": "components/magicui-glyph-matrix/component.json",
+  "integrity": "sha256:dea07553e67157abedfb0ba1781c39627a5b07f14492915f3089881291a6396b",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/glyph-matrix.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport { useEffect, useRef } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface GlyphMatrixProps extends React.HTMLAttributes<HTMLCanvasElement> {\n  /** Characters to randomly pick from */\n  glyphs?: string\n  /** Cell size in px (also font size) */\n  cellSize?: number\n  /** Probability (0-1) a cell mutates each tick */\n  mutationRate?: number\n  /** Tick interval in ms */\n  interval?: number\n  /** Fade out toward bottom (0 = no fade) */\n  fadeBottom?: number\n  /** Glyph color (any CSS color). Pass a theme-aware value from the consumer. */\n  color?: string\n}\n\n/**\n * GlyphMatrix — an animated grid of subtly shifting glyphs.\n * Pass a `color` prop (e.g. driven by next-themes) to adapt it to\n * light and dark modes.\n */\nexport function GlyphMatrix({\n  glyphs = \"01·•+*/\\\\<>=\",\n  cellSize = 14,\n  mutationRate = 0.04,\n  interval = 90,\n  className,\n  fadeBottom = 0.6,\n  color = \"#6B7280\",\n  style,\n  ...props\n}: GlyphMatrixProps) {\n  const canvasRef = useRef<HTMLCanvasElement | null>(null)\n  // Current glyph color as RGBA (a in 0-1). Kept in a ref so a color change\n  // (e.g. theme toggle) recolors the next frame without restarting the\n  // animation. Defaults to #6B7280.\n  const rgbaRef = useRef({ r: 107, g: 114, b: 128, a: 1 })\n\n  // Resolve the CSS color string to RGBA (handles hex, rgb, hsl, oklch, ...).\n  useEffect(() => {\n    const probe = document.createElement(\"canvas\")\n    probe.width = 1\n    probe.height = 1\n    const probeCtx = probe.getContext(\"2d\")\n    if (!probeCtx) return\n    // Seed with the default so an invalid color falls back to it: the 2d\n    // context keeps the previous fillStyle when assigned an invalid value\n    // instead of silently turning black.\n    probeCtx.fillStyle = \"#6B7280\"\n    probeCtx.fillStyle = color\n    probeCtx.fillRect(0, 0, 1, 1)\n    const [r, g, b, a] = probeCtx.getImageData(0, 0, 1, 1).data\n    rgbaRef.current = { r, g, b, a: a / 255 }\n  }, [color])\n\n  useEffect(() => {\n    const canvas = canvasRef.current\n    if (!canvas) return\n\n    const ctx = canvas.getContext(\"2d\")\n    if (!ctx) return\n\n    let cols = 0\n    let rows = 0\n    let cells: string[] = []\n    let alphas: number[] = []\n    let raf = 0\n    let last = 0\n    let stopped = false\n\n    const resize = () => {\n      const dpr = window.devicePixelRatio || 1\n      const { clientWidth: w, clientHeight: h } = canvas\n\n      canvas.width = w * dpr\n      canvas.height = h * dpr\n      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)\n\n      cols = Math.ceil(w / cellSize)\n      rows = Math.ceil(h / cellSize)\n\n      cells = new Array(cols * rows)\n        .fill(0)\n        .map(() => glyphs[Math.floor(Math.random() * glyphs.length)])\n      alphas = new Array(cols * rows)\n        .fill(0)\n        .map(() => 0.05 + Math.random() * 0.35)\n    }\n\n    const draw = () => {\n      const { clientWidth: w, clientHeight: h } = canvas\n      ctx.clearRect(0, 0, w, h)\n\n      ctx.font = `${cellSize - 2}px ui-monospace, SFMono-Regular, Menlo, monospace`\n      ctx.textBaseline = \"top\"\n\n      const { r, g, b, a: colorAlpha } = rgbaRef.current\n      for (let y = 0; y < rows; y++) {\n        const fade = fadeBottom > 0 ? 1 - (y / rows) * fadeBottom : 1\n        for (let x = 0; x < cols; x++) {\n          const i = y * cols + x\n          const a = alphas[i] * fade * colorAlpha\n          ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`\n          ctx.fillText(cells[i], x * cellSize, y * cellSize)\n        }\n      }\n    }\n\n    const tick = (t: number) => {\n      if (stopped) return\n\n      if (t - last >= interval) {\n        last = t\n\n        const total = cols * rows\n        const mutations = Math.max(1, Math.floor(total * mutationRate))\n\n        for (let n = 0; n < mutations; n++) {\n          const i = Math.floor(Math.random() * total)\n          cells[i] = glyphs[Math.floor(Math.random() * glyphs.length)]\n          alphas[i] = 0.05 + Math.random() * 0.45\n        }\n\n        draw()\n      }\n\n      raf = requestAnimationFrame(tick)\n    }\n\n    resize()\n    draw()\n    raf = requestAnimationFrame(tick)\n\n    const ro = new ResizeObserver(() => {\n      resize()\n      draw()\n    })\n    ro.observe(canvas)\n\n    return () => {\n      stopped = true\n      cancelAnimationFrame(raf)\n      ro.disconnect()\n    }\n  }, [glyphs, cellSize, mutationRate, interval, fadeBottom])\n\n  return (\n    <canvas\n      ref={canvasRef}\n      className={cn(\"pointer-events-none\", className)}\n      style={{ width: \"100%\", height: \"100%\", display: \"block\", ...style }}\n      aria-hidden=\"true\"\n      {...props}\n    />\n  )\n}\n",
+      "sha256": "0c4c11f8a81dab493b0adbf9ed3dd7342c64fd8957926a4e39b31294b1853633",
+      "upstreamPath": "apps/www/registry/magicui/glyph-matrix.tsx",
+      "upstreamSha256": "0c4c11f8a81dab493b0adbf9ed3dd7342c64fd8957926a4e39b31294b1853633",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "glyph-matrix",
+    "upstreamPageUrl": "https://magicui.design/docs/components/glyph-matrix",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/glyph-matrix.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Glyph Matrix\ndate: 2026-06-12\ndescription: An animated grid of subtly shifting glyphs on a canvas, with a theme-aware color driven by the consumer.\nauthor: magicui\npublished: true\n---\n\n<ComponentPreview name=\"glyph-matrix-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/glyph-matrix\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"glyph-matrix\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { GlyphMatrix } from \"@/registry/magicui/glyph-matrix\"\n```\n\n```tsx showLineNumbers\n<div className=\"border-border bg-background h-[400px] w-full overflow-hidden rounded-lg border\">\n  <GlyphMatrix />\n</div>\n```\n\n## Props\n\n| Prop           | Type     | Default          | Description                                  |\n| -------------- | -------- | ---------------- | -------------------------------------------- |\n| `glyphs`       | `string` | `\"01·•+*/\\\\<>=\"` | Characters to randomly pick from.            |\n| `cellSize`     | `number` | `14`             | Cell size in pixels and font size.           |\n| `mutationRate` | `number` | `0.04`           | Probability a cell mutates each tick.        |\n| `interval`     | `number` | `90`             | Tick interval in milliseconds.               |\n| `className`    | `string` | `-`              | Classes applied to the canvas element.       |\n| `fadeBottom`   | `number` | `0.6`            | Fade strength toward the bottom of the grid. |\n| `color`        | `string` | `\"#6B7280\"`      | Glyph color (any CSS color).                 |\n\n## Notes\n\nThe component draws with the `color` prop, which accepts any CSS color (hex, `rgb()`, `hsl()`, `oklch()`, ...) and is normalized through canvas before drawing. For light/dark support, drive `color` from the consumer — e.g. with `next-themes` as shown in the demo above.\n"
+}

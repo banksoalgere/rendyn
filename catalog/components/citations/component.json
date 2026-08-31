@@ -1,5 +1,6 @@
 {
   "id": "beui:citations",
+  "sourceId": "beui",
   "slug": "citations",
   "name": "Citations",
   "description": "Inline citation markers paired with a collapsible, progressively rendered reference collection for grounded agent responses.",
@@ -56,7 +57,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -110,6 +111,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -121,7 +124,8 @@
     "upstreamSlug": "citations",
     "upstreamPageUrl": "https://beui.dev/components/agents/citations",
     "upstreamDetailUrl": "https://beui.dev/r/citations",
-    "upstreamMarkdownUrl": "https://beui.dev/components/agents/citations.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/agents/citations.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Citations\"\ndescription: \"Inline citation markers paired with a collapsible, progressively rendered reference collection for grounded agent responses.\"\ncategory: \"AI Agents\"\npublishedAt: \"2026-08-01\"\nupdatedAt: \"2026-08-02\"\ndocumentation: \"https://beui.dev/components/agents/citations\"\nmarkdown: \"https://beui.dev/components/agents/citations.md\"\nlicense: \"MIT\"\n---\n\n# Citations\n\n> Inline citation markers paired with a collapsible, progressively rendered reference collection for grounded agent responses.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/citations\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { RotateCcw } from \"lucide-react\";\nimport { useReducedMotion } from \"motion/react\";\nimport { useEffect, useState } from \"react\";\nimport {\n  Citation,\n  Citations,\n  type CitationItem,\n} from \"@/components/agents/citations\";\n\nconst CITATION_ITEMS: CitationItem[] = [\n  {\n    id: \"motion\",\n    title: \"Motion documentation\",\n    domain: \"motion.dev\",\n    url: \"https://motion.dev/docs/react\",\n  },\n  {\n    id: \"wai\",\n    title: \"WAI accessibility patterns\",\n    domain: \"w3.org\",\n    url: \"https://www.w3.org/WAI/ARIA/apg/\",\n  },\n  {\n    id: \"react\",\n    title: \"React documentation\",\n    domain: \"react.dev\",\n    url: \"https://react.dev/learn\",\n  },\n];\n\nfunction CitationsDemo() {\n  const reduce = useReducedMotion() ?? false;\n  const [visible, setVisible] = useState(reduce ? CITATION_ITEMS.length : 0);\n\n  useEffect(() => {\n    if (reduce) return;\n    const timers = CITATION_ITEMS.map((_, index) =>\n      window.setTimeout(() => setVisible(index + 1), 500 + index * 700),\n    );\n    return () => timers.forEach(window.clearTimeout);\n  }, [reduce]);\n\n  return (\n    <div className=\"space-y-4\">\n      <p className=\"text-sm leading-6 text-foreground/90\">\n        Use layout-aware motion for newly appended results{\" \"}\n        <Citation citationId=\"motion\" index={1} idPrefix=\"preview-source\" /> and preserve accessible\n        disclosure behavior <Citation citationId=\"wai\" index={2} idPrefix=\"preview-source\" /> as the list\n        grows.\n      </p>\n      <Citations\n        idPrefix=\"preview-source\"\n        citations={CITATION_ITEMS.slice(0, visible)}\n        defaultOpen\n      />\n    </div>\n  );\n}\n\nexport function CitationsPreview() {\n  const [run, setRun] = useState(0);\n\n  return (\n    <div className=\"relative h-[410px] w-full max-w-lg\">\n      <CitationsDemo key={run} />\n      <button\n        type=\"button\"\n        onClick={() => setRun((value) => value + 1)}\n        className=\"absolute bottom-0 left-0 inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-muted-foreground outline-none transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring\"\n      >\n        <RotateCcw className=\"size-3\" />\n        Replay\n      </button>\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### Citation\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `citationId` | `string` | — | Yes | — |\n| `index` | `number` | — | Yes | — |\n| `idPrefix` | `string` | — | Yes | Must match the related Citations idPrefix. |\n| `className` | `string` | — | No | — |\n\n### CitationFavicon\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `url` | `string` | — | No | — |\n| `className` | `string` | — | No | — |\n\n### CitationStack\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `citations` | `CitationItem[]` | — | Yes | — |\n| `limit` | `number` | `3` | No | — |\n| `className` | `string` | — | No | — |\n\n### CitationList\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `citations` | `CitationItem[]` | — | Yes | — |\n| `idPrefix` | `string` | — | No | — |\n| `className` | `string` | — | No | — |\n\n### Citations\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `citations` | `CitationItem[]` | — | Yes | — |\n| `title` | `ReactNode` | `Sources` | No | — |\n| `open` | `boolean` | — | No | — |\n| `defaultOpen` | `boolean` | `false` | No | — |\n| `onOpenChange` | `((open: boolean) => void)` | — | No | — |\n| `idPrefix` | `string` | — | No | — |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/citations\n- Raw source: https://beui.dev/r/citations/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

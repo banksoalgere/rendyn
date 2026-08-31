@@ -1,0 +1,90 @@
+{
+  "id": "magicui:shiny-button",
+  "sourceId": "magicui",
+  "slug": "magicui-shiny-button",
+  "name": "Shiny Button",
+  "description": "A shiny button component with dynamic styles in the dark mode or light mode.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "button",
+    "tags": [
+      "button",
+      "code",
+      "dark"
+    ],
+    "aliases": [
+      "shiny button",
+      "button",
+      "cta",
+      "action control"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A shiny button component with dynamic styles in the dark mode or light mode."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "button:code:dark:type",
+    "searchText": "Shiny Button\nshiny button\nA shiny button component with dynamic styles in the dark mode or light mode.\nbutton\ncta\naction control\ncode\ndark\ntype\ntitle: Shiny Button date: 2024 05 24 description: A shiny button component with dynamic styles in the dark mode or light mode. author: luis codex published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Usage Props Prop Type Default Description className string The class name to be applied to the component children React.ReactNode The content to be displayed inside the button Credits Credit to @luis code"
+  },
+  "previewPath": "/preview/motion/magicui-shiny-button",
+  "manifestPath": "components/magicui-shiny-button/component.json",
+  "integrity": "sha256:6e26b0eadebe85282e8f94c46162c3429373b2ac344c650d15f661c7ec14e8b8",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/shiny-button.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport React from \"react\"\nimport { motion, type MotionProps } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst animationProps: MotionProps = {\n  initial: { \"--x\": \"100%\", scale: 0.8 },\n  animate: { \"--x\": \"-100%\", scale: 1 },\n  whileTap: { scale: 0.95 },\n  transition: {\n    repeat: Infinity,\n    repeatType: \"loop\",\n    repeatDelay: 1,\n    type: \"spring\",\n    stiffness: 20,\n    damping: 15,\n    mass: 2,\n    scale: {\n      type: \"spring\",\n      stiffness: 200,\n      damping: 5,\n      mass: 0.5,\n    },\n  },\n}\n\ninterface ShinyButtonProps\n  extends\n    Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps>,\n    MotionProps {\n  children: React.ReactNode\n  className?: string\n}\n\nexport const ShinyButton = React.forwardRef<\n  HTMLButtonElement,\n  ShinyButtonProps\n>(({ children, className, ...props }, ref) => {\n  return (\n    <motion.button\n      ref={ref}\n      className={cn(\n        \"relative cursor-pointer rounded-lg border px-6 py-2 font-medium backdrop-blur-xl transition-shadow duration-300 ease-in-out hover:shadow dark:bg-[radial-gradient(circle_at_50%_0%,var(--primary)/10%_0%,transparent_60%)] dark:hover:shadow-[0_0_20px_var(--primary)/10%]\",\n        className\n      )}\n      {...animationProps}\n      {...props}\n    >\n      <span\n        className=\"relative block size-full text-sm tracking-wide text-[rgb(0,0,0,65%)] uppercase dark:font-light dark:text-[rgb(255,255,255,90%)]\"\n        style={{\n          maskImage:\n            \"linear-gradient(-75deg,var(--primary) calc(var(--x) + 20%),transparent calc(var(--x) + 30%),var(--primary) calc(var(--x) + 100%))\",\n        }}\n      >\n        {children}\n      </span>\n      <span\n        style={{\n          mask: \"linear-gradient(rgb(0,0,0), rgb(0,0,0)) content-box exclude,linear-gradient(rgb(0,0,0), rgb(0,0,0))\",\n          WebkitMask:\n            \"linear-gradient(rgb(0,0,0), rgb(0,0,0)) content-box exclude,linear-gradient(rgb(0,0,0), rgb(0,0,0))\",\n          backgroundImage:\n            \"linear-gradient(-75deg,var(--primary)/10% calc(var(--x)+20%),var(--primary)/50% calc(var(--x)+25%),var(--primary)/10% calc(var(--x)+100%))\",\n        }}\n        className=\"absolute inset-0 z-10 block rounded-[inherit] p-px\"\n      />\n    </motion.button>\n  )\n})\n\nShinyButton.displayName = \"ShinyButton\"\n",
+      "sha256": "916c8b8ffe1a018b560dff80aed78cdfaeded889bcbec70e3fe34618d5073abf",
+      "upstreamPath": "apps/www/registry/magicui/shiny-button.tsx",
+      "upstreamSha256": "916c8b8ffe1a018b560dff80aed78cdfaeded889bcbec70e3fe34618d5073abf",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "shiny-button",
+    "upstreamPageUrl": "https://magicui.design/docs/components/shiny-button",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/shiny-button.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Shiny Button\ndate: 2024-05-24\ndescription: A shiny button component with dynamic styles in the dark mode or light mode.\nauthor: luis-codex\npublished: true\n---\n\n<ComponentPreview name=\"shiny-button-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/shiny-button\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"shiny-button\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { ShinyButton } from \"@/components/ui/shiny-button\"\n```\n\n```tsx showLineNumbers\n<ShinyButton>Shiny Button</ShinyButton>\n```\n\n## Props\n\n| Prop        | Type              | Default | Description                                   |\n| ----------- | ----------------- | ------- | --------------------------------------------- |\n| `className` | `string`          | `-`     | The class name to be applied to the component |\n| `children`  | `React.ReactNode` | `-`     | The content to be displayed inside the button |\n\n## Credits\n\n- Credit to [@luis-code](https://luis-code.vercel.app/)\n"
+}

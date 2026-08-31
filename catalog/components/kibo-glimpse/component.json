@@ -1,0 +1,100 @@
+{
+  "id": "kibo:glimpse",
+  "sourceId": "kibo",
+  "slug": "kibo-glimpse",
+  "name": "Glimpse",
+  "description": "A component that shows a preview of a URL when hovering over a link.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [],
+  "internalDependencies": [
+    "hover-card"
+  ],
+  "metadata": {
+    "kind": "block",
+    "family": "glimpse",
+    "tags": [
+      "card",
+      "data",
+      "hover",
+      "navigation",
+      "touch"
+    ],
+    "aliases": [
+      "glimpse"
+    ],
+    "interactions": [
+      "hover",
+      "keyboard",
+      "touch"
+    ],
+    "useWhen": [
+      "A component that shows a preview of a URL when hovering over a link."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "glimpse:card:data:hover:navigation:touch:keyboard",
+    "searchText": "Glimpse\nglimpse\nA component that shows a preview of a URL when hovering over a link.\ncard\ndata\nhover\nnavigation\ntouch\nkeyboard\ntitle: Glimpse description: A component that shows a preview of a URL when hovering over a link. icon: Fullscreen installer: glimpse Features Fetches data from a URL in a React Server Component Preview a URL when hovering over a link Show title, description, and image Customizable hover card appearance Smooth transitions for hover state Accessible keyboard navigation Touch friendly for mobile devices Customizable styling through className props Reduced motion support for animations Works with any link or element with role=\"link\" Examples Custom styling"
+  },
+  "previewPath": "/preview/blocks/kibo-glimpse",
+  "manifestPath": "components/kibo-glimpse/component.json",
+  "integrity": "sha256:f5f61926be3dacb4643b597edb433ad53f9a6c08f2976a61aeb2b941bbffd310",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/glimpse/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport type { ComponentProps } from \"react\";\nimport {\n  HoverCard,\n  HoverCardContent,\n  HoverCardTrigger,\n} from \"@/components/ui/hover-card\";\n\nexport type GlimpseProps = ComponentProps<typeof HoverCard>;\n\nexport const Glimpse = (props: GlimpseProps) => {\n  return <HoverCard {...props} />;\n};\n\nexport type GlimpseContentProps = ComponentProps<typeof HoverCardContent>;\n\nexport const GlimpseContent = (props: GlimpseContentProps) => (\n  <HoverCardContent {...props} />\n);\n\nexport type GlimpseTriggerProps = ComponentProps<typeof HoverCardTrigger>;\n\nexport const GlimpseTrigger = (props: GlimpseTriggerProps) => (\n  <HoverCardTrigger {...props} />\n);\n\nexport type GlimpseTitleProps = ComponentProps<\"p\">;\n\nexport const GlimpseTitle = ({ className, ...props }: GlimpseTitleProps) => {\n  return (\n    <p className={cn(\"truncate font-semibold text-sm\", className)} {...props} />\n  );\n};\n\nexport type GlimpseDescriptionProps = ComponentProps<\"p\">;\n\nexport const GlimpseDescription = ({\n  className,\n  ...props\n}: GlimpseDescriptionProps) => {\n  return (\n    <p\n      className={cn(\"line-clamp-2 text-muted-foreground text-sm\", className)}\n      {...props}\n    />\n  );\n};\n\nexport type GlimpseImageProps = ComponentProps<\"img\">;\n\nexport const GlimpseImage = ({\n  className,\n  alt,\n  ...props\n}: GlimpseImageProps) => (\n  // biome-ignore lint/performance/noImgElement: \"Kibo UI is framework agnostic\"\n  <img\n    alt={alt ?? \"\"}\n    className={cn(\n      \"mb-4 aspect-[120/63] w-full rounded-md border object-cover\",\n      className\n    )}\n    {...props}\n  />\n);\n",
+      "sha256": "bfde2d92e7798d03f451d814a6ab21052ad13adf6e39b9175938e48cd8256f6a",
+      "upstreamPath": "packages/glimpse/index.tsx",
+      "upstreamSha256": "551d29b40b0a741f73e6676502dd659b851c57464aa921c136f822500b34e240",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    },
+    {
+      "path": "components/kibo-ui/glimpse/server.tsx",
+      "type": "component",
+      "content": "const TITLE_REGEX = /<title[^>]*>([^<]+)<\\/title>/;\nconst OG_TITLE_REGEX = /<meta[^>]*property=\"og:title\"[^>]*content=\"([^\"]+)\"/;\nconst DESCRIPTION_REGEX = /<meta[^>]*name=\"description\"[^>]*content=\"([^\"]+)\"/;\nconst OG_DESCRIPTION_REGEX =\n  /<meta[^>]*property=\"og:description\"[^>]*content=\"([^\"]+)\"/;\nconst OG_IMAGE_REGEX = /<meta[^>]*property=\"og:image\"[^>]*content=\"([^\"]+)\"/;\n\nexport const glimpse = async (url: string) => {\n  const response = await fetch(url);\n  const data = await response.text();\n  const titleMatch = data.match(TITLE_REGEX) || data.match(OG_TITLE_REGEX);\n  const descriptionMatch =\n    data.match(DESCRIPTION_REGEX) || data.match(OG_DESCRIPTION_REGEX);\n  const imageMatch = data.match(OG_IMAGE_REGEX);\n\n  return {\n    title: titleMatch?.at(1) ?? null,\n    description: descriptionMatch?.at(1) ?? null,\n    image: imageMatch?.at(1) ?? null,\n  };\n};\n",
+      "sha256": "f577d536796b2ad0872d452805020531b0453617118f880be70c198bd247a4a5",
+      "upstreamPath": "packages/glimpse/server.tsx",
+      "upstreamSha256": "f577d536796b2ad0872d452805020531b0453617118f880be70c198bd247a4a5",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": "pnpm dlx shadcn@latest add hover-card",
+    "stylePaths": [],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Install the required shadcn primitives: pnpm dlx shadcn@latest add hover-card"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "glimpse",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/glimpse",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/glimpse.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Glimpse\ndescription: A component that shows a preview of a URL when hovering over a link.\nicon: Fullscreen\ninstaller: glimpse\n---\n\n## Features\n\n- Fetches data from a URL in a React Server Component\n- Preview a URL when hovering over a link\n- Show title, description, and image\n- Customizable hover card appearance\n- Smooth transitions for hover state\n- Accessible keyboard navigation\n- Touch-friendly for mobile devices\n- Customizable styling through className props\n- Reduced motion support for animations\n- Works with any link or element with role=\"link\"\n\n## Examples\n\n### Custom styling\n\n<Preview path=\"glimpse-custom\" />\n"
+}

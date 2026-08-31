@@ -1,0 +1,95 @@
+{
+  "id": "magicui:ripple",
+  "sourceId": "magicui",
+  "slug": "magicui-ripple",
+  "name": "Ripple",
+  "description": "An animated ripple effect typically used behind elements to emphasize them.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "ripple",
+    "tags": [
+      "animated",
+      "code",
+      "file",
+      "number"
+    ],
+    "aliases": [
+      "ripple"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "An animated ripple effect typically used behind elements to emphasize them."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "ripple:animated:code:file:number:type",
+    "searchText": "Ripple\nripple\nAn animated ripple effect typically used behind elements to emphasize them.\nanimated\ncode\nfile\nnumber\ntype\ntitle: Ripple date: 2023 11 18 description: An animated ripple effect typically used behind elements to emphasize them. author: dillionverma published: true video: https://cdn.magicui.design/ripple.mp4 Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Add the required CSS animations Add the following animations to your global CSS file. Usage Props Prop Type Default Description mainCircleSize number 210 The size of the main circle in pixels mainCircleOpacity number 0.24 The opacity of the main circle numCircles number 8 The number of ripple circles to render"
+  },
+  "previewPath": "/preview/motion/magicui-ripple",
+  "manifestPath": "components/magicui-ripple/component.json",
+  "integrity": "sha256:e2f93ed1c8437dfd42d37de97c3762123068aea85459a98f47a9e7345a547694",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/ripple.tsx",
+      "type": "component",
+      "content": "import React, { type ComponentPropsWithoutRef, type CSSProperties } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface RippleProps extends ComponentPropsWithoutRef<\"div\"> {\n  mainCircleSize?: number\n  mainCircleOpacity?: number\n  numCircles?: number\n}\n\nexport const Ripple = React.memo(function Ripple({\n  mainCircleSize = 210,\n  mainCircleOpacity = 0.24,\n  numCircles = 8,\n  className,\n  ...props\n}: RippleProps) {\n  return (\n    <div\n      className={cn(\n        \"pointer-events-none absolute inset-0 mask-[linear-gradient(to_bottom,white,transparent)] select-none\",\n        className\n      )}\n      {...props}\n    >\n      {Array.from({ length: numCircles }, (_, i) => {\n        const size = mainCircleSize + i * 70\n        const opacity = mainCircleOpacity - i * 0.03\n        const animationDelay = `${i * 0.06}s`\n        const borderStyle = \"solid\"\n\n        return (\n          <div\n            key={i}\n            className={`animate-ripple bg-foreground/25 absolute rounded-full border shadow-xl`}\n            style={\n              {\n                \"--i\": i,\n                width: `${size}px`,\n                height: `${size}px`,\n                opacity,\n                animationDelay,\n                borderStyle,\n                borderWidth: \"1px\",\n                borderColor: `var(--foreground)`,\n                top: \"50%\",\n                left: \"50%\",\n                transform: \"translate(-50%, -50%) scale(1)\",\n              } as CSSProperties\n            }\n          />\n        )\n      })}\n    </div>\n  )\n})\n\nRipple.displayName = \"Ripple\"\n",
+      "sha256": "1ac207017c0f4e993f83a1ead8b8a1b4a92286ef1595a297aba79782b2616eaf",
+      "upstreamPath": "apps/www/registry/magicui/ripple.tsx",
+      "upstreamSha256": "1ac207017c0f4e993f83a1ead8b8a1b4a92286ef1595a297aba79782b2616eaf",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    },
+    {
+      "path": "components/magicui/ripple.css",
+      "type": "style",
+      "content": "@theme inline {\n  --animate-ripple: ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite;\n}\n\n@keyframes ripple {\n  0%, 100% {\n    transform: translate(-50%, -50%) scale(1);\n  }\n  50% {\n    transform: translate(-50%, -50%) scale(0.9);\n  }\n}\n",
+      "sha256": "73c51951ff53f0d696901a8bed35ac7959b22eb50a2e6132e74c67407d868126",
+      "transformation": "Materialize registry CSS and theme variables as a component stylesheet when present."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/magicui/ripple.css"
+    ],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Include the returned styles: components/magicui/ripple.css"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "ripple",
+    "upstreamPageUrl": "https://magicui.design/docs/components/ripple",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/ripple.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Ripple\ndate: 2023-11-18\ndescription: An animated ripple effect typically used behind elements to emphasize them.\nauthor: dillionverma\npublished: true\nvideo: https://cdn.magicui.design/ripple.mp4\n---\n\n<ComponentPreview name=\"ripple-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/ripple\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"ripple\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n<Step>Add the required CSS animations</Step>\n\nAdd the following animations to your global CSS file.\n\n```css title=\"app/globals.css\" showLineNumbers {2-3, 5-13}\n@theme inline {\n  --animate-ripple: ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s)\n    infinite;\n\n  @keyframes ripple {\n    0%,\n    100% {\n      transform: translate(-50%, -50%) scale(1);\n    }\n    50% {\n      transform: translate(-50%, -50%) scale(0.9);\n    }\n  }\n}\n```\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { Ripple } from \"@/components/ui/ripple\"\n```\n\n```tsx showLineNumbers\n<div className=\"relative h-[500px] w-full overflow-hidden\">\n  <Ripple />\n</div>\n```\n\n## Props\n\n| Prop                | Type     | Default | Description                            |\n| ------------------- | -------- | ------- | -------------------------------------- |\n| `mainCircleSize`    | `number` | `210`   | The size of the main circle in pixels  |\n| `mainCircleOpacity` | `number` | `0.24`  | The opacity of the main circle         |\n| `numCircles`        | `number` | `8`     | The number of ripple circles to render |\n"
+}

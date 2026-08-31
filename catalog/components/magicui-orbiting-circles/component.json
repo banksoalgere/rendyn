@@ -1,0 +1,95 @@
+{
+  "id": "magicui:orbiting-circles",
+  "sourceId": "magicui",
+  "slug": "magicui-orbiting-circles",
+  "name": "Orbiting Circles",
+  "description": "A collection of circles which move in orbit along a circular path",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "orbiting-circles",
+    "tags": [
+      "code",
+      "file",
+      "number"
+    ],
+    "aliases": [
+      "orbiting circles",
+      "orbiting-circles"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A collection of circles which move in orbit along a circular path"
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "orbiting-circles:code:file:number:type",
+    "searchText": "Orbiting Circles\norbiting circles\nA collection of circles which move in orbit along a circular path\norbiting-circles\ncode\nfile\nnumber\ntype\ntitle: Orbiting Circles date: 2024 04 24 description: A collection of circles which move in orbit along a circular path author: dillionverma published: true video: https://cdn.magicui.design/orbiting circles.mp4 Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Add the required CSS animations Add the following animations to your global CSS file. Usage Props Prop Type Default Description className string The class name for the component children React.ReactNode The children nodes of the component reverse boolean false If true, the animation plays in reverse duration number 20 The duration of the animation in seconds delay number 10 The delay before the animation starts in seconds radius number 160 The radius of the orbit in pixels path boolean true If true, a path is displayed for the orbit iconSize number 30 The size of the icon in pixels speed number 1 The speed of the animation"
+  },
+  "previewPath": "/preview/motion/magicui-orbiting-circles",
+  "manifestPath": "components/magicui-orbiting-circles/component.json",
+  "integrity": "sha256:8e8aaae3f16a89a53ab7e2d21d52368c5425afd2dfdca9d500eed0e0435a2c9d",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/orbiting-circles.tsx",
+      "type": "component",
+      "content": "import React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface OrbitingCirclesProps extends React.HTMLAttributes<HTMLDivElement> {\n  className?: string\n  children?: React.ReactNode\n  reverse?: boolean\n  duration?: number\n  delay?: number\n  radius?: number\n  path?: boolean\n  iconSize?: number\n  speed?: number\n}\n\nexport function OrbitingCircles({\n  className,\n  children,\n  reverse,\n  duration = 20,\n  radius = 160,\n  path = true,\n  iconSize = 30,\n  speed = 1,\n  ...props\n}: OrbitingCirclesProps) {\n  const calculatedDuration = duration / speed\n  return (\n    <>\n      {path && (\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          version=\"1.1\"\n          className=\"pointer-events-none absolute inset-0 size-full\"\n        >\n          <circle\n            className=\"stroke-black/10 stroke-1 dark:stroke-white/10\"\n            cx=\"50%\"\n            cy=\"50%\"\n            r={radius}\n            fill=\"none\"\n          />\n        </svg>\n      )}\n      {React.Children.map(children, (child, index) => {\n        const angle = (360 / React.Children.count(children)) * index\n        return (\n          <div\n            style={\n              {\n                \"--duration\": calculatedDuration,\n                \"--radius\": radius,\n                \"--angle\": angle,\n                \"--icon-size\": `${iconSize}px`,\n              } as React.CSSProperties\n            }\n            className={cn(\n              `animate-orbit absolute flex size-(--icon-size) transform-gpu items-center justify-center rounded-full`,\n              { \"[animation-direction:reverse]\": reverse },\n              className\n            )}\n            {...props}\n          >\n            {child}\n          </div>\n        )\n      })}\n    </>\n  )\n}\n",
+      "sha256": "859b88b6c22144e5cd4bf04ab49d339090eea13b422d3085a80584e6b9d4da68",
+      "upstreamPath": "apps/www/registry/magicui/orbiting-circles.tsx",
+      "upstreamSha256": "859b88b6c22144e5cd4bf04ab49d339090eea13b422d3085a80584e6b9d4da68",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    },
+    {
+      "path": "components/magicui/orbiting-circles.css",
+      "type": "style",
+      "content": "@theme inline {\n  --animate-orbit: orbit calc(var(--duration)*1s) linear infinite;\n}\n\n@keyframes orbit {\n  0% {\n    transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));\n  }\n  100% {\n    transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));\n  }\n}\n",
+      "sha256": "27f8e116a412791ddd0a4d938b3c07c68fcd8ed49508a899dc32c0d21cab9ffc",
+      "transformation": "Materialize registry CSS and theme variables as a component stylesheet when present."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/magicui/orbiting-circles.css"
+    ],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Include the returned styles: components/magicui/orbiting-circles.css"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "orbiting-circles",
+    "upstreamPageUrl": "https://magicui.design/docs/components/orbiting-circles",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/orbiting-circles.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Orbiting Circles\ndate: 2024-04-24\ndescription: A collection of circles which move in orbit along a circular path\nauthor: dillionverma\npublished: true\nvideo: https://cdn.magicui.design/orbiting-circles.mp4\n---\n\n<ComponentPreview name=\"orbiting-circles-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/orbiting-circles\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"orbiting-circles\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n<Step>Add the required CSS animations</Step>\n\nAdd the following animations to your global CSS file.\n\n```css title=\"app/globals.css\" showLineNumbers {2, 4-14}\n@theme inline {\n  --animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;\n\n  @keyframes orbit {\n    0% {\n      transform: rotate(calc(var(--angle) * 1deg))\n        translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));\n    }\n    100% {\n      transform: rotate(calc(var(--angle) * 1deg + 360deg))\n        translateY(calc(var(--radius) * 1px))\n        rotate(calc((var(--angle) * -1deg) - 360deg));\n    }\n  }\n}\n```\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { File, Search, Settings } from \"lucide-react\"\n\nimport { OrbitingCircles } from \"@/components/ui/orbiting-circles\"\n```\n\n```tsx showLineNumbers\n<div className=\"relative h-[500px] w-full overflow-hidden\">\n  <OrbitingCircles>\n    <File />\n    <Settings />\n    <File />\n  </OrbitingCircles>\n  <OrbitingCircles radius={100} reverse>\n    <File />\n    <Settings />\n    <File />\n    <Search />\n  </OrbitingCircles>\n</div>\n```\n\n## Props\n\n| Prop        | Type              | Default | Description                                      |\n| ----------- | ----------------- | ------- | ------------------------------------------------ |\n| `className` | `string`          | `-`     | The class name for the component                 |\n| `children`  | `React.ReactNode` | `-`     | The children nodes of the component              |\n| `reverse`   | `boolean`         | `false` | If true, the animation plays in reverse          |\n| `duration`  | `number`          | `20`    | The duration of the animation in seconds         |\n| `delay`     | `number`          | `10`    | The delay before the animation starts in seconds |\n| `radius`    | `number`          | `160`   | The radius of the orbit in pixels                |\n| `path`      | `boolean`         | `true`  | If true, a path is displayed for the orbit       |\n| `iconSize`  | `number`          | `30`    | The size of the icon in pixels                   |\n| `speed`     | `number`          | `1`     | The speed of the animation                       |\n"
+}

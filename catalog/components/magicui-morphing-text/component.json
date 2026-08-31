@@ -1,0 +1,84 @@
+{
+  "id": "magicui:morphing-text",
+  "sourceId": "magicui",
+  "slug": "magicui-morphing-text",
+  "name": "Morphing Text",
+  "description": "A dynamic text morphing component for Magic UI.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "morphing-text",
+    "tags": [
+      "code",
+      "text"
+    ],
+    "aliases": [
+      "morphing text",
+      "morphing-text"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A dynamic text morphing component for Magic UI."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "morphing-text:code:text:type",
+    "searchText": "Morphing Text\nmorphing text\nA dynamic text morphing component for Magic UI.\nmorphing-text\ncode\ntext\ntype\ntitle: Morphing Text date: 2024 09 02 description: A dynamic text morphing component for Magic UI. author: magicui published: true Installation CLI Manual Copy and paste the following code into your project. Usage Props Prop Type Default Description texts string[] [] Array of texts to morph between className string? \"\" Additional classes for the container This MorphingText component dynamically transitions between an array of text strings, creating a smooth, engaging visual effect. Credits Credit to @luis code"
+  },
+  "previewPath": "/preview/motion/magicui-morphing-text",
+  "manifestPath": "components/magicui-morphing-text/component.json",
+  "integrity": "sha256:26d3de5ab8dea4c56602f5df7aa02b2c173591bac74752d0bab3e25333e26181",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/morphing-text.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport { useCallback, useEffect, useRef } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst morphTime = 1.5\nconst cooldownTime = 0.5\n\nconst useMorphingText = (texts: string[]) => {\n  const textIndexRef = useRef(0)\n  const morphRef = useRef(0)\n  const cooldownRef = useRef(0)\n  const timeRef = useRef(new Date())\n\n  const text1Ref = useRef<HTMLSpanElement>(null)\n  const text2Ref = useRef<HTMLSpanElement>(null)\n\n  const setStyles = useCallback(\n    (fraction: number) => {\n      const [current1, current2] = [text1Ref.current, text2Ref.current]\n      if (!current1 || !current2) return\n\n      current2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`\n      current2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`\n\n      const invertedFraction = 1 - fraction\n      current1.style.filter = `blur(${Math.min(\n        8 / invertedFraction - 8,\n        100\n      )}px)`\n      current1.style.opacity = `${Math.pow(invertedFraction, 0.4) * 100}%`\n\n      current1.textContent = texts[textIndexRef.current % texts.length]\n      current2.textContent = texts[(textIndexRef.current + 1) % texts.length]\n    },\n    [texts]\n  )\n\n  const doMorph = useCallback(() => {\n    morphRef.current -= cooldownRef.current\n    cooldownRef.current = 0\n\n    let fraction = morphRef.current / morphTime\n\n    if (fraction > 1) {\n      cooldownRef.current = cooldownTime\n      fraction = 1\n    }\n\n    setStyles(fraction)\n\n    if (fraction === 1) {\n      textIndexRef.current++\n    }\n  }, [setStyles])\n\n  const doCooldown = useCallback(() => {\n    morphRef.current = 0\n    const [current1, current2] = [text1Ref.current, text2Ref.current]\n    if (current1 && current2) {\n      current2.style.filter = \"none\"\n      current2.style.opacity = \"100%\"\n      current1.style.filter = \"none\"\n      current1.style.opacity = \"0%\"\n    }\n  }, [])\n\n  useEffect(() => {\n    let animationFrameId: number\n\n    const animate = () => {\n      animationFrameId = requestAnimationFrame(animate)\n\n      const newTime = new Date()\n      const dt = (newTime.getTime() - timeRef.current.getTime()) / 1000\n      timeRef.current = newTime\n\n      cooldownRef.current -= dt\n\n      if (cooldownRef.current <= 0) doMorph()\n      else doCooldown()\n    }\n\n    animate()\n    return () => {\n      cancelAnimationFrame(animationFrameId)\n    }\n  }, [doMorph, doCooldown])\n\n  return { text1Ref, text2Ref }\n}\n\ninterface MorphingTextProps {\n  className?: string\n  texts: string[]\n}\n\nconst Texts: React.FC<Pick<MorphingTextProps, \"texts\">> = ({ texts }) => {\n  const { text1Ref, text2Ref } = useMorphingText(texts)\n  return (\n    <>\n      <span\n        className=\"absolute inset-x-0 top-0 m-auto inline-block w-full\"\n        ref={text1Ref}\n      />\n      <span\n        className=\"absolute inset-x-0 top-0 m-auto inline-block w-full\"\n        ref={text2Ref}\n      />\n    </>\n  )\n}\n\nconst SvgFilters: React.FC = () => (\n  <svg\n    id=\"filters\"\n    className=\"fixed h-0 w-0\"\n    preserveAspectRatio=\"xMidYMid slice\"\n  >\n    <defs>\n      <filter id=\"threshold\">\n        <feColorMatrix\n          in=\"SourceGraphic\"\n          type=\"matrix\"\n          values=\"1 0 0 0 0\n                  0 1 0 0 0\n                  0 0 1 0 0\n                  0 0 0 255 -140\"\n        />\n      </filter>\n    </defs>\n  </svg>\n)\n\nexport const MorphingText: React.FC<MorphingTextProps> = ({\n  texts,\n  className,\n}) => (\n  <div\n    className={cn(\n      \"relative mx-auto h-16 w-full max-w-3xl text-center font-sans text-[40pt] leading-none font-bold filter-[url(#threshold)_blur(0.6px)] md:h-24 lg:text-[6rem]\",\n      className\n    )}\n  >\n    <Texts texts={texts} />\n    <SvgFilters />\n  </div>\n)\n",
+      "sha256": "8475ec9beae637a2af6183ed1f91227d0e048f93051352faa0e8d921b2c53d62",
+      "upstreamPath": "apps/www/registry/magicui/morphing-text.tsx",
+      "upstreamSha256": "8475ec9beae637a2af6183ed1f91227d0e048f93051352faa0e8d921b2c53d62",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "morphing-text",
+    "upstreamPageUrl": "https://magicui.design/docs/components/morphing-text",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/morphing-text.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Morphing Text\ndate: 2024-09-02\ndescription: A dynamic text morphing component for Magic UI.\nauthor: magicui\npublished: true\n---\n\n<ComponentPreview name=\"morphing-text-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/morphing-text\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"morphing-text\" />\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { MorphingText } from \"@/components/ui/morphing-text\"\n```\n\n```tsx showLineNumbers\n<MorphingText texts={[\"Hello\", \"World\"]} />\n```\n\n## Props\n\n| Prop        | Type       | Default | Description                          |\n| ----------- | ---------- | ------- | ------------------------------------ |\n| `texts`     | `string[]` | `[]`    | Array of texts to morph between      |\n| `className` | `string?`  | `\"\"`    | Additional classes for the container |\n\nThis `MorphingText` component dynamically transitions between an array of text strings, creating a smooth, engaging visual effect.\n\n## Credits\n\n- Credit to [@luis-code](https://luis-code.vercel.app/)\n"
+}

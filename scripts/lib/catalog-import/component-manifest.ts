@@ -21,6 +21,7 @@ export function createComponentSummary(
 ): CatalogComponentSummary {
   return {
     id: `${config.id}:${detail.slug}`,
+    sourceId: config.id,
     slug: detail.slug,
     name: detail.name,
     description: detail.description,
@@ -57,6 +58,8 @@ export function createComponentManifest(
     install: {
       packageManager: "pnpm",
       dependencyCommand,
+      registryDependencyCommand: null,
+      stylePaths: [],
       instructions: [
         ...installDependencies,
         "Copy every returned file to its stated project-relative path.",
@@ -69,6 +72,7 @@ export function createComponentManifest(
       upstreamPageUrl: detail.page_url,
       upstreamDetailUrl: detail.detail_url,
       upstreamMarkdownUrl: detail.markdown_url,
+      transformations: [],
     },
     documentation: markdown,
   };

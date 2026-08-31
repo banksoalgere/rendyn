@@ -1,0 +1,96 @@
+{
+  "id": "kibo:mini-calendar",
+  "sourceId": "kibo",
+  "slug": "kibo-mini-calendar",
+  "name": "Mini Calendar",
+  "description": "A composable mini calendar component for picking dates close to today.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [
+    "@radix-ui/react-use-controllable-state",
+    "date-fns",
+    "lucide-react",
+    "radix-ui"
+  ],
+  "internalDependencies": [
+    "button"
+  ],
+  "metadata": {
+    "kind": "block",
+    "family": "mini-calendar",
+    "tags": [
+      "button",
+      "context",
+      "layout",
+      "navigation",
+      "number",
+      "select",
+      "text"
+    ],
+    "aliases": [
+      "mini calendar",
+      "mini-calendar"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "A composable mini calendar component for picking dates close to today."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "mini-calendar:button:context:layout:navigation:number",
+    "searchText": "Mini Calendar\nmini calendar\nA composable mini calendar component for picking dates close to today.\nmini-calendar\nbutton\ncontext\nlayout\nnavigation\nnumber\nselect\ntext\ntitle: Mini Calendar description: A composable mini calendar component for picking dates close to today. icon: Calendar dependencies: https://lucide.dev/ https://date fns.org/ installer: mini calendar Features Displays a configurable number of consecutive days (default: 5) in a compact horizontal layout Navigation with chevron buttons to move between date ranges by the configured number of days Fully composable with separate components for navigation, days container, and individual days Supports both controlled and uncontrolled usage with value/defaultValue and onValueChange props Highlights today's date with accent background and selected date with default button variant Built with accessibility in mind using semantic HTML and ARIA attributes Customizable styling through className props on all components Context based state management between components using React Context Supports custom start dates with startDate/defaultStartDate and onStartDateChange props Examples Basic Usage Controlled Custom Layout Custom Days"
+  },
+  "previewPath": "/preview/blocks/kibo-mini-calendar",
+  "manifestPath": "components/kibo-mini-calendar/component.json",
+  "integrity": "sha256:fbb60df6b93a48d3a054cbec8b76d5cff50f526da92926ce1655fe318c7af5f0",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/mini-calendar/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useControllableState } from \"@radix-ui/react-use-controllable-state\";\nimport { addDays, format, isSameDay, isToday } from \"date-fns\";\nimport { ChevronLeftIcon, ChevronRightIcon } from \"lucide-react\";\nimport { Slot } from \"radix-ui\";\nimport {\n  type ButtonHTMLAttributes,\n  type ComponentProps,\n  createContext,\n  type HTMLAttributes,\n  type MouseEventHandler,\n  type ReactNode,\n  useContext,\n} from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\n\n// Context for sharing state between components\ntype MiniCalendarContextType = {\n  selectedDate: Date | null | undefined;\n  onDateSelect: (date: Date) => void;\n  startDate: Date;\n  onNavigate: (direction: \"prev\" | \"next\") => void;\n  days: number;\n};\n\nconst MiniCalendarContext = createContext<MiniCalendarContextType | null>(null);\n\nconst useMiniCalendar = () => {\n  const context = useContext(MiniCalendarContext);\n\n  if (!context) {\n    throw new Error(\"MiniCalendar components must be used within MiniCalendar\");\n  }\n\n  return context;\n};\n\n// Helper function to get array of consecutive dates\nconst getDays = (startDate: Date, count: number): Date[] => {\n  const days: Date[] = [];\n  for (let i = 0; i < count; i++) {\n    days.push(addDays(startDate, i));\n  }\n  return days;\n};\n\n// Helper function to format date\nconst formatDate = (date: Date) => {\n  const month = format(date, \"MMM\");\n  const day = format(date, \"d\");\n\n  return { month, day };\n};\n\nexport type MiniCalendarProps = HTMLAttributes<HTMLDivElement> & {\n  value?: Date;\n  defaultValue?: Date;\n  onValueChange?: (date: Date | undefined) => void;\n  startDate?: Date;\n  defaultStartDate?: Date;\n  onStartDateChange?: (date: Date | undefined) => void;\n  days?: number;\n};\n\nexport const MiniCalendar = ({\n  value,\n  defaultValue,\n  onValueChange,\n  startDate,\n  defaultStartDate = new Date(),\n  onStartDateChange,\n  days = 5,\n  className,\n  children,\n  ...props\n}: MiniCalendarProps) => {\n  const [selectedDate, setSelectedDate] = useControllableState<\n    Date | undefined\n  >({\n    prop: value,\n    defaultProp: defaultValue,\n    onChange: onValueChange,\n  });\n\n  const [currentStartDate, setCurrentStartDate] = useControllableState({\n    prop: startDate,\n    defaultProp: defaultStartDate,\n    onChange: onStartDateChange,\n  });\n\n  const handleDateSelect = (date: Date) => {\n    setSelectedDate(date);\n  };\n\n  const handleNavigate = (direction: \"prev\" | \"next\") => {\n    const newStartDate = addDays(\n      currentStartDate || new Date(),\n      direction === \"next\" ? days : -days\n    );\n    setCurrentStartDate(newStartDate);\n  };\n\n  const contextValue: MiniCalendarContextType = {\n    selectedDate: selectedDate || null,\n    onDateSelect: handleDateSelect,\n    startDate: currentStartDate || new Date(),\n    onNavigate: handleNavigate,\n    days,\n  };\n\n  return (\n    <MiniCalendarContext.Provider value={contextValue}>\n      <div\n        className={cn(\n          \"flex items-center gap-2 rounded-lg border bg-background p-2\",\n          className\n        )}\n        {...props}\n      >\n        {children}\n      </div>\n    </MiniCalendarContext.Provider>\n  );\n};\n\nexport type MiniCalendarNavigationProps =\n  ButtonHTMLAttributes<HTMLButtonElement> & {\n    direction: \"prev\" | \"next\";\n    asChild?: boolean;\n  };\n\nexport const MiniCalendarNavigation = ({\n  direction,\n  asChild = false,\n  children,\n  onClick,\n  ...props\n}: MiniCalendarNavigationProps) => {\n  const { onNavigate } = useMiniCalendar();\n  const Icon = direction === \"prev\" ? ChevronLeftIcon : ChevronRightIcon;\n\n  const handleClick: MouseEventHandler<HTMLButtonElement> = (event) => {\n    onNavigate(direction);\n    onClick?.(event);\n  };\n\n  if (asChild) {\n    return (\n      <Slot.Root onClick={handleClick} {...props}>\n        {children}\n      </Slot.Root>\n    );\n  }\n\n  return (\n    <Button\n      onClick={handleClick}\n      size={asChild ? undefined : \"icon\"}\n      type=\"button\"\n      variant={asChild ? undefined : \"ghost\"}\n      {...props}\n    >\n      {children ?? <Icon className=\"size-4\" />}\n    </Button>\n  );\n};\n\nexport type MiniCalendarDaysProps = Omit<\n  HTMLAttributes<HTMLDivElement>,\n  \"children\"\n> & {\n  children: (date: Date) => ReactNode;\n};\n\nexport const MiniCalendarDays = ({\n  className,\n  children,\n  ...props\n}: MiniCalendarDaysProps) => {\n  const { startDate, days: dayCount } = useMiniCalendar();\n  const days = getDays(startDate, dayCount);\n\n  return (\n    <div className={cn(\"flex items-center gap-1\", className)} {...props}>\n      {days.map((date) => children(date))}\n    </div>\n  );\n};\n\nexport type MiniCalendarDayProps = ComponentProps<typeof Button> & {\n  date: Date;\n};\n\nexport const MiniCalendarDay = ({\n  date,\n  className,\n  ...props\n}: MiniCalendarDayProps) => {\n  const { selectedDate, onDateSelect } = useMiniCalendar();\n  const { month, day } = formatDate(date);\n  const isSelected = selectedDate && isSameDay(date, selectedDate);\n  const isTodayDate = isToday(date);\n\n  return (\n    <Button\n      className={cn(\n        \"h-auto min-w-[3rem] flex-col gap-0 p-2 text-xs\",\n        isTodayDate && !isSelected && \"bg-accent\",\n        className\n      )}\n      onClick={() => onDateSelect(date)}\n      size=\"sm\"\n      type=\"button\"\n      variant={isSelected ? \"default\" : \"ghost\"}\n      {...props}\n    >\n      <span\n        className={cn(\n          \"font-medium text-[10px] text-muted-foreground\",\n          isSelected && \"text-primary-foreground/70\"\n        )}\n      >\n        {month}\n      </span>\n      <span className=\"font-semibold text-sm\">{day}</span>\n    </Button>\n  );\n};\n",
+      "sha256": "ba9ec08c947aaa9e7d375e3ef6c82352effd2fcd17aa3ada463260355a5ec7f2",
+      "upstreamPath": "packages/mini-calendar/index.tsx",
+      "upstreamSha256": "ba9ec08c947aaa9e7d375e3ef6c82352effd2fcd17aa3ada463260355a5ec7f2",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @radix-ui/react-use-controllable-state date-fns lucide-react radix-ui",
+    "registryDependencyCommand": "pnpm dlx shadcn@latest add button",
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @radix-ui/react-use-controllable-state date-fns lucide-react radix-ui",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Install the required shadcn primitives: pnpm dlx shadcn@latest add button"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "mini-calendar",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/mini-calendar",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/mini-calendar.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Mini Calendar\ndescription: A composable mini calendar component for picking dates close to today.\nicon: Calendar\ndependencies:\n  - https://lucide.dev/\n  - https://date-fns.org/\ninstaller: mini-calendar\n---\n\n## Features\n\n- Displays a configurable number of consecutive days (default: 5) in a compact horizontal layout\n- Navigation with chevron buttons to move between date ranges by the configured number of days\n- Fully composable with separate components for navigation, days container, and individual days\n- Supports both controlled and uncontrolled usage with value/defaultValue and onValueChange props\n- Highlights today's date with accent background and selected date with default button variant\n- Built with accessibility in mind using semantic HTML and ARIA attributes\n- Customizable styling through className props on all components\n- Context-based state management between components using React Context\n- Supports custom start dates with startDate/defaultStartDate and onStartDateChange props\n\n## Examples\n\n### Basic Usage\n\n<Preview path=\"mini-calendar\" />\n\n### Controlled\n\n<Preview path=\"mini-calendar-controlled\" />\n\n### Custom Layout\n\n<Preview path=\"mini-calendar-custom\" />\n\n### Custom Days\n\n<Preview path=\"mini-calendar-days\" />"
+}

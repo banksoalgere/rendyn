@@ -40,6 +40,7 @@ export function presentComponentSummary(
 ) {
   return {
     id: component.id,
+    source_id: component.sourceId,
     slug: component.slug,
     name: component.name,
     description: component.description,
@@ -55,6 +56,7 @@ export function presentComponentMetadata(
 ) {
   return {
     id: component.id,
+    source_id: component.sourceId,
     slug: component.slug,
     name: component.name,
     description: component.description,

@@ -1,5 +1,6 @@
 {
   "id": "beui:message-scroller",
+  "sourceId": "beui",
   "slug": "message-scroller",
   "name": "Message Scroller",
   "description": "A reader-aware conversation viewport that follows streamed output at the live edge and releases control when the reader moves away.",
@@ -81,7 +82,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -267,6 +268,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react react-dom tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react react-dom tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -278,7 +281,8 @@
     "upstreamSlug": "message-scroller",
     "upstreamPageUrl": "https://beui.dev/components/agents/message-scroller",
     "upstreamDetailUrl": "https://beui.dev/r/message-scroller",
-    "upstreamMarkdownUrl": "https://beui.dev/components/agents/message-scroller.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/agents/message-scroller.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Message Scroller\"\ndescription: \"A reader-aware conversation viewport that follows streamed output at the live edge and releases control when the reader moves away.\"\ncategory: \"AI Agents\"\npublishedAt: \"2026-08-02\"\nupdatedAt: \"2026-08-02\"\ndocumentation: \"https://beui.dev/components/agents/message-scroller\"\nmarkdown: \"https://beui.dev/components/agents/message-scroller.md\"\nlicense: \"MIT\"\n---\n\n# Message Scroller\n\n> A reader-aware conversation viewport that follows streamed output at the live edge and releases control when the reader moves away.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/message-scroller\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `react-dom`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport {\n  ChatPreview,\n  type ChatPreviewMessage,\n} from \"@/components/previews/agents/chat-preview\";\n\nconst MESSAGES: ChatPreviewMessage[] = [\n  {\n    id: \"scope-question\",\n    from: \"user\",\n    content: \"What should the first release include?\",\n  },\n  {\n    id: \"scope-answer\",\n    from: \"assistant\",\n    content: \"Start with the smallest workflow that still feels complete.\",\n  },\n  {\n    id: \"states-question\",\n    from: \"user\",\n    content: \"Include streaming and recovery states too.\",\n  },\n  {\n    id: \"states-answer\",\n    from: \"assistant\",\n    content: \"Yes. Those states make the first version feel dependable.\",\n  },\n  {\n    id: \"evidence-question\",\n    from: \"user\",\n    content: \"How should we present tool results?\",\n  },\n  {\n    id: \"evidence-answer\",\n    from: \"assistant\",\n    content: \"Keep results close to the action that produced them.\",\n  },\n  {\n    id: \"approval-question\",\n    from: \"user\",\n    content: \"What about actions that need confirmation?\",\n  },\n  {\n    id: \"approval-answer\",\n    from: \"assistant\",\n    content: \"Pause the run, explain the impact, and ask before continuing.\",\n  },\n  {\n    id: \"summary-question\",\n    from: \"user\",\n    content: \"Can the transcript stay easy to navigate?\",\n  },\n  {\n    id: \"summary-answer\",\n    from: \"assistant\",\n    content: \"Use the rail to jump between turns without losing your place.\",\n  },\n];\n\nexport function MessageScrollerPreview() {\n  return (\n    <ChatPreview\n      initialMessages={MESSAGES}\n      showRail\n      reply=\"The viewport follows while you stay at the live edge. Scroll upward while this response streams and it will leave your reading position alone.\"\n      placeholder=\"Send another message…\"\n    />\n  );\n}\n```\n\n## API Reference\n\n### MessageScroller\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `followOutput` | `boolean` | `true` | No | Keep streamed output pinned while the reader remains near the end. |\n| `followThreshold` | `number` | `56` | No | Distance from the end that still counts as following the output. |\n| `smooth` | `boolean` | `true` | No | Smoothly follow growing content. |\n| `onFollowChange` | `((following: boolean) => void)` | — | No | Reports when the reader leaves or returns to the live edge. |\n| `label` | `string` | `Conversation` | No | Accessible label for the scrollable transcript. |\n| `busy` | `boolean` | — | No | Marks the transcript as waiting for more streamed content. |\n| `navigation` | `\"rail\"` | — | No | Adds a compact rail for navigating between rendered Message rows. |\n| `navigationLabel` | `string` | `Message navigation` | No | Accessible label for the optional message navigation rail. |\n| `viewportClassName` | `string` | — | No | — |\n| `contentClassName` | `string` | — | No | — |\n| `railClassName` | `string` | — | No | — |\n| `viewportRef` | `Ref<HTMLElement>` | — | No | — |\n| `viewportProps` | `Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, \"ref\" \\| \"className\" \\| \"children\">` | — | No | — |\n| `contentProps` | `Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, \"ref\" \\| \"className\" \\| \"children\">` | — | No | — |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/message-scroller\n- Raw source: https://beui.dev/r/message-scroller/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

@@ -1,0 +1,97 @@
+{
+  "id": "magicui:animated-shiny-text",
+  "sourceId": "magicui",
+  "slug": "magicui-animated-shiny-text",
+  "name": "Animated Shiny Text",
+  "description": "A light glare effect which pans across text making it appear as if it is shimmering.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "animated-shiny-text",
+    "tags": [
+      "animated",
+      "code",
+      "file",
+      "number",
+      "text"
+    ],
+    "aliases": [
+      "animated shiny text",
+      "animated-shiny-text"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A light glare effect which pans across text making it appear as if it is shimmering."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "animated-shiny-text:animated:code:file:number:text:type",
+    "searchText": "Animated Shiny Text\nanimated shiny text\nA light glare effect which pans across text making it appear as if it is shimmering.\nanimated-shiny-text\nanimated\ncode\nfile\nnumber\ntext\ntype\ntitle: Animated Shiny Text date: 2024 01 16 description: A light glare effect which pans across text making it appear as if it is shimmering. author: dillionverma published: true video: https://cdn.magicui.design/animated shiny text.mp4 Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Add the required CSS animations Add the following animations to your global CSS file. Usage Props Prop Type Default Description children node The text to be shimmered. className string The class name to be applied to the shimmer. shimmerWidth number 100 The width of the shimmer in pixels."
+  },
+  "previewPath": "/preview/motion/magicui-animated-shiny-text",
+  "manifestPath": "components/magicui-animated-shiny-text/component.json",
+  "integrity": "sha256:d90665597a93ce731beda7a0fef759e4c40575978c2a1e68ad62582f60e39d48",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/animated-shiny-text.tsx",
+      "type": "component",
+      "content": "import {\n  type ComponentPropsWithoutRef,\n  type CSSProperties,\n  type FC,\n} from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface AnimatedShinyTextProps extends ComponentPropsWithoutRef<\"span\"> {\n  shimmerWidth?: number\n}\n\nexport const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({\n  children,\n  className,\n  shimmerWidth = 100,\n  ...props\n}) => {\n  return (\n    <span\n      style={\n        {\n          \"--shiny-width\": `${shimmerWidth}px`,\n        } as CSSProperties\n      }\n      className={cn(\n        \"mx-auto max-w-md text-neutral-600/70 dark:text-neutral-400/70\",\n\n        // Shine effect\n        \"animate-shiny-text bg-size-[var(--shiny-width)_100%] bg-clip-text bg-position-[0_0] bg-no-repeat [transition:background-position_1s_cubic-bezier(.6,.6,0,1)_infinite]\",\n\n        // Shine gradient\n        \"bg-linear-to-r from-transparent via-black/80 via-50% to-transparent dark:via-white/80\",\n\n        className\n      )}\n      {...props}\n    >\n      {children}\n    </span>\n  )\n}\n",
+      "sha256": "3743a0a0b4894840a96bacd839e493872bac484a940684f91fd23a1784c00fbb",
+      "upstreamPath": "apps/www/registry/magicui/animated-shiny-text.tsx",
+      "upstreamSha256": "3743a0a0b4894840a96bacd839e493872bac484a940684f91fd23a1784c00fbb",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    },
+    {
+      "path": "components/magicui/animated-shiny-text.css",
+      "type": "style",
+      "content": "@theme inline {\n  --animate-shiny-text: shiny-text 8s infinite;\n}\n\n@keyframes shiny-text {\n  0%, 90%, 100% {\n    background-position: calc(-100% - var(--shiny-width)) 0;\n  }\n  30%, 60% {\n    background-position: calc(100% + var(--shiny-width)) 0;\n  }\n}\n",
+      "sha256": "4c633447997c0bf9a20dfc86f1adeb0d06c7bbe9cd0fd18d349e67ec2205248c",
+      "transformation": "Materialize registry CSS and theme variables as a component stylesheet when present."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/magicui/animated-shiny-text.css"
+    ],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Include the returned styles: components/magicui/animated-shiny-text.css"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "animated-shiny-text",
+    "upstreamPageUrl": "https://magicui.design/docs/components/animated-shiny-text",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/animated-shiny-text.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Animated Shiny Text\ndate: 2024-01-16\ndescription: A light glare effect which pans across text making it appear as if it is shimmering.\nauthor: dillionverma\npublished: true\nvideo: https://cdn.magicui.design/animated-shiny-text.mp4\n---\n\n<ComponentPreview name=\"animated-shiny-text-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/animated-shiny-text\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"animated-shiny-text\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n<Step>Add the required CSS animations</Step>\n\nAdd the following animations to your global CSS file.\n\n```css title=\"app/globals.css\" showLineNumbers {2, 4-14}\n@theme inline {\n  --animate-shiny-text: shiny-text 8s infinite;\n\n  @keyframes shiny-text {\n    0%,\n    90%,\n    100% {\n      background-position: calc(-100% - var(--shiny-width)) 0;\n    }\n    30%,\n    60% {\n      background-position: calc(100% + var(--shiny-width)) 0;\n    }\n  }\n}\n```\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { AnimatedShinyText } from \"@/components/ui/animated-shiny-text\"\n```\n\n```tsx showLineNumbers\n<AnimatedShinyText>Hello</AnimatedShinyText>\n```\n\n## Props\n\n| Prop           | Type     | Default | Description                                  |\n| -------------- | -------- | ------- | -------------------------------------------- |\n| `children`     | `node`   | `-`     | The text to be shimmered.                    |\n| `className`    | `string` | `-`     | The class name to be applied to the shimmer. |\n| `shimmerWidth` | `number` | `100`   | The width of the shimmer in pixels.          |\n"
+}

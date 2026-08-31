@@ -1,5 +1,6 @@
 {
   "id": "beui:overflow-actions",
+  "sourceId": "beui",
   "slug": "overflow-actions",
   "name": "Overflow Actions",
   "description": "Connected pill rail for primary actions that springs open to reveal extra controls.",
@@ -51,7 +52,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -93,6 +94,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -104,7 +107,8 @@
     "upstreamSlug": "overflow-actions",
     "upstreamPageUrl": "https://beui.dev/components/blocks/overflow-actions",
     "upstreamDetailUrl": "https://beui.dev/r/overflow-actions",
-    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/overflow-actions.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/overflow-actions.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Overflow Actions\"\ndescription: \"Connected pill rail for primary actions that springs open to reveal extra controls.\"\ncategory: \"Blocks\"\npublishedAt: \"2026-06-19\"\nupdatedAt: \"2026-06-28\"\ndocumentation: \"https://beui.dev/components/blocks/overflow-actions\"\nmarkdown: \"https://beui.dev/components/blocks/overflow-actions.md\"\nlicense: \"MIT\"\n---\n\n# Overflow Actions\n\n> Connected pill rail for primary actions that springs open to reveal extra controls.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/overflow-actions\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { CalendarClock, Eye, GitBranch, Pin } from \"lucide-react\";\nimport { useState } from \"react\";\nimport {\n  type OverflowActionItem,\n  OverflowActions,\n} from \"@/components/motion/overflow-actions\";\n\nconst primaryActions: OverflowActionItem[] = [\n  {\n    id: \"preview\",\n    label: \"Preview\",\n    icon: <Eye className=\"h-4 w-4\" />,\n  },\n  {\n    id: \"pin\",\n    label: \"Pin\",\n    icon: <Pin className=\"h-4 w-4\" />,\n  },\n];\n\nconst overflowActions: OverflowActionItem[] = [\n  {\n    id: \"branch\",\n    label: \"Branch\",\n    icon: <GitBranch className=\"h-4 w-4\" />,\n  },\n  {\n    id: \"schedule\",\n    label: \"Schedule\",\n    icon: <CalendarClock className=\"h-4 w-4\" />,\n  },\n];\n\nexport function OverflowActionsPreview() {\n  const [expanded, setExpanded] = useState(false);\n\n  return (\n    <div className=\"flex w-full items-center justify-center\">\n      <OverflowActions\n        primaryActions={primaryActions}\n        overflowActions={overflowActions}\n        expanded={expanded}\n        onExpandedChange={setExpanded}\n        openLabel=\"Open action rail\"\n        closeLabel=\"Collapse action rail\"\n      />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### OverflowActions\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `primaryActions` | `OverflowActionItem[]` | — | Yes | — |\n| `overflowActions` | `OverflowActionItem[]` | — | Yes | — |\n| `expanded` | `boolean` | — | No | — |\n| `defaultExpanded` | `boolean` | `false` | No | — |\n| `onExpandedChange` | `((expanded: boolean) => void)` | — | No | — |\n| `onAction` | `((item: OverflowActionItem) => void)` | — | No | — |\n| `collapseOnAction` | `boolean` | `false` | No | — |\n| `size` | `\"sm\" \\| \"md\"` | `md` | No | — |\n| `openLabel` | `string` | `Show extra actions` | No | — |\n| `closeLabel` | `string` | `Hide extra actions` | No | — |\n| `className` | `string` | — | No | — |\n| `classNames` | `OverflowActionsClassNames` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/overflow-actions\n- Raw source: https://beui.dev/r/overflow-actions/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

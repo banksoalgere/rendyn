@@ -1,0 +1,89 @@
+{
+  "id": "magicui:highlighter",
+  "sourceId": "magicui",
+  "slug": "magicui-highlighter",
+  "name": "Highlighter",
+  "description": "A text highlighter that mimics the effect of a human-drawn marker stroke.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "rough-notation"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "highlighter",
+    "tags": [
+      "action",
+      "code",
+      "number",
+      "table",
+      "text"
+    ],
+    "aliases": [
+      "highlighter"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A text highlighter that mimics the effect of a human-drawn marker stroke."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "highlighter:action:code:number:table:text:type",
+    "searchText": "Highlighter\nhighlighter\nA text highlighter that mimics the effect of a human-drawn marker stroke.\naction\ncode\nnumber\ntable\ntext\ntype\ntitle: Text Highlighter date: 2025 02 11 description: A text highlighter that mimics the effect of a human drawn marker stroke. author: pratiyank published: true Installation CLI Manual Install the following dependencies: Copy and paste the following code into your project. Usage Props Here's the updated props table with units specified for the numerical values: Prop Type Default Description children React.ReactNode Required The content to be highlighted/annotated. color string \" ffd1dc\" The color of the highlight. action \"highlight\" \\ \"circle\" \\ \"box\" \\ \"bracket\" \\ \"crossed off\" \\ \"strike through\" \\ \"underline\" \"highlight\" The type of annotation effect to apply. strokeWidth number 1.5px The width of the annotation stroke. animationDuration number 500ms Duration of the animation in milliseconds. iterations number 2 Number of times to draw the annotation (adds a sketchy effect when 1). padding number 2px Padding between the element and the annotation. multiline boolean true Whether to annotate across multiple lines or treat content as a single line. isView boolean false Controls whether the animation starts only when the element enters viewport. Credits Credit to @pratiyank for this component!"
+  },
+  "previewPath": "/preview/motion/magicui-highlighter",
+  "manifestPath": "components/magicui-highlighter/component.json",
+  "integrity": "sha256:9b03045ed1ee2d74f04ac6ff9fd94bd50069b17de2a8f59f6a6f321338d359a5",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/highlighter.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport { useLayoutEffect, useRef } from \"react\"\nimport type React from \"react\"\nimport { useInView } from \"motion/react\"\nimport { annotate } from \"rough-notation\"\nimport { type RoughAnnotation } from \"rough-notation/lib/model\"\n\ntype AnnotationAction =\n  | \"highlight\"\n  | \"underline\"\n  | \"box\"\n  | \"circle\"\n  | \"strike-through\"\n  | \"crossed-off\"\n  | \"bracket\"\n\ninterface HighlighterProps {\n  children: React.ReactNode\n  action?: AnnotationAction\n  color?: string\n  strokeWidth?: number\n  animationDuration?: number\n  iterations?: number\n  padding?: number\n  multiline?: boolean\n  isView?: boolean\n}\n\nexport function Highlighter({\n  children,\n  action = \"highlight\",\n  color = \"#ffd1dc\",\n  strokeWidth = 1.5,\n  animationDuration = 600,\n  iterations = 2,\n  padding = 2,\n  multiline = true,\n  isView = false,\n}: HighlighterProps) {\n  const elementRef = useRef<HTMLSpanElement>(null)\n\n  const isInView = useInView(elementRef, {\n    once: true,\n    margin: \"-10%\",\n  })\n\n  // If isView is false, always show. If isView is true, wait for inView\n  const shouldShow = !isView || isInView\n\n  useLayoutEffect(() => {\n    const element = elementRef.current\n    let annotation: RoughAnnotation | null = null\n    let resizeObserver: ResizeObserver | null = null\n\n    if (shouldShow && element) {\n      const annotationConfig = {\n        type: action,\n        color,\n        strokeWidth,\n        animationDuration,\n        iterations,\n        padding,\n        multiline,\n      }\n\n      const currentAnnotation = annotate(element, annotationConfig)\n      annotation = currentAnnotation\n      currentAnnotation.show()\n\n      resizeObserver = new ResizeObserver(() => {\n        currentAnnotation.hide()\n        currentAnnotation.show()\n      })\n\n      resizeObserver.observe(element)\n      resizeObserver.observe(document.body)\n    }\n\n    return () => {\n      annotation?.remove()\n      if (resizeObserver) {\n        resizeObserver.disconnect()\n      }\n    }\n  }, [\n    shouldShow,\n    action,\n    color,\n    strokeWidth,\n    animationDuration,\n    iterations,\n    padding,\n    multiline,\n  ])\n\n  return (\n    <span ref={elementRef} className=\"relative inline-block bg-transparent\">\n      {children}\n    </span>\n  )\n}\n",
+      "sha256": "521c876ac04938ae747126a5277c14c6eb19114a9a09c3567249a7d2ee2af5b2",
+      "upstreamPath": "apps/www/registry/magicui/highlighter.tsx",
+      "upstreamSha256": "521c876ac04938ae747126a5277c14c6eb19114a9a09c3567249a7d2ee2af5b2",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add rough-notation",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add rough-notation",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "highlighter",
+    "upstreamPageUrl": "https://magicui.design/docs/components/highlighter",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/highlighter.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Text Highlighter\ndate: 2025-02-11\ndescription: A text highlighter that mimics the effect of a human-drawn marker stroke.\nauthor: pratiyank\npublished: true\n---\n\n<ComponentPreview name=\"highlighter-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/highlighter\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Install the following dependencies:</Step>\n\n```bash\npnpm add motion rough-notation\n```\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"highlighter\" />\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { Highlighter } from \"@/components/ui/highlighter\"\n```\n\n```tsx showLineNumbers\n<p>\n  The{\" \"}\n  <Highlighter action=\"underline\" color=\"#FF9800\">\n    Magic UI Highlighter\n  </Highlighter>{\" \"}\n  makes important{\" \"}\n  <Highlighter action=\"highlight\" color=\"#87CEFA\">\n    text stand out\n  </Highlighter>{\" \"}\n  effortlessly.\n</p>\n```\n\n## Props\n\nHere's the updated props table with units specified for the numerical values:\n\n| Prop                | Type                                                                                                | Default       | Description                                                                  |\n| ------------------- | --------------------------------------------------------------------------------------------------- | ------------- | ---------------------------------------------------------------------------- |\n| `children`          | `React.ReactNode`                                                                                   | Required      | The content to be highlighted/annotated.                                     |\n| `color`             | `string`                                                                                            | `\"#ffd1dc\"`   | The color of the highlight.                                                  |\n| `action`            | `\"highlight\" \\| \"circle\" \\| \"box\" \\| \"bracket\" \\| \"crossed-off\" \\| \"strike-through\" \\| \"underline\"` | `\"highlight\"` | The type of annotation effect to apply.                                      |\n| `strokeWidth`       | `number`                                                                                            | `1.5px`       | The width of the annotation stroke.                                          |\n| `animationDuration` | `number`                                                                                            | `500ms`       | Duration of the animation in milliseconds.                                   |\n| `iterations`        | `number`                                                                                            | `2`           | Number of times to draw the annotation (adds a sketchy effect when > 1).     |\n| `padding`           | `number`                                                                                            | `2px`         | Padding between the element and the annotation.                              |\n| `multiline`         | `boolean`                                                                                           | `true`        | Whether to annotate across multiple lines or treat content as a single line. |\n| `isView`            | `boolean`                                                                                           | `false`       | Controls whether the animation starts only when the element enters viewport. |\n\n## Credits\n\n- Credit to [@pratiyank](https://github.com/Pratiyankkumar) for this component!\n"
+}

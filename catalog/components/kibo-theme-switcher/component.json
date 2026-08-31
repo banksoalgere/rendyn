@@ -1,0 +1,87 @@
+{
+  "id": "kibo:theme-switcher",
+  "sourceId": "kibo",
+  "slug": "kibo-theme-switcher",
+  "name": "Theme Switcher",
+  "description": "A component to switch between light, dark and system theme.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [
+    "@radix-ui/react-use-controllable-state",
+    "lucide-react",
+    "motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "theme-switcher",
+    "tags": [
+      "dark",
+      "theme"
+    ],
+    "aliases": [
+      "theme switcher",
+      "theme-switcher"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "A component to switch between light, dark and system theme."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "theme-switcher:dark:theme",
+    "searchText": "Theme Switcher\ntheme switcher\nA component to switch between light, dark and system theme.\ntheme-switcher\ndark\ntheme\ntitle: Theme Switcher description: A component to switch between light, dark and system theme. icon: Moon dependencies: https://motion.dev/ https://lucide.dev/ installer: theme switcher Features Switch between light, dark and system theme Controlled and uncontrolled mode Examples Uncontrolled mode Check the console for the onChange event."
+  },
+  "previewPath": "/preview/blocks/kibo-theme-switcher",
+  "manifestPath": "components/kibo-theme-switcher/component.json",
+  "integrity": "sha256:232f35941f7867204ad8f98ac586b662b41ce0e01c24c61c939ccb2c9c1dfc00",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/theme-switcher/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useControllableState } from \"@radix-ui/react-use-controllable-state\";\nimport { Monitor, Moon, Sun } from \"lucide-react\";\nimport { motion } from \"motion/react\";\nimport { useCallback, useEffect, useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nconst themes = [\n  {\n    key: \"system\",\n    icon: Monitor,\n    label: \"System theme\",\n  },\n  {\n    key: \"light\",\n    icon: Sun,\n    label: \"Light theme\",\n  },\n  {\n    key: \"dark\",\n    icon: Moon,\n    label: \"Dark theme\",\n  },\n];\n\nexport type ThemeSwitcherProps = {\n  value?: \"light\" | \"dark\" | \"system\";\n  onChange?: (theme: \"light\" | \"dark\" | \"system\") => void;\n  defaultValue?: \"light\" | \"dark\" | \"system\";\n  className?: string;\n};\n\nexport const ThemeSwitcher = ({\n  value,\n  onChange,\n  defaultValue = \"system\",\n  className,\n}: ThemeSwitcherProps) => {\n  const [theme, setTheme] = useControllableState({\n    defaultProp: defaultValue,\n    prop: value,\n    onChange,\n  });\n  const [mounted, setMounted] = useState(false);\n\n  const handleThemeClick = useCallback(\n    (themeKey: \"light\" | \"dark\" | \"system\") => {\n      setTheme(themeKey);\n    },\n    [setTheme]\n  );\n\n  // Prevent hydration mismatch\n  useEffect(() => {\n    setMounted(true);\n  }, []);\n\n  if (!mounted) {\n    return null;\n  }\n\n  return (\n    <div\n      className={cn(\n        \"relative isolate flex h-8 rounded-full bg-background p-1 ring-1 ring-border\",\n        className\n      )}\n    >\n      {themes.map(({ key, icon: Icon, label }) => {\n        const isActive = theme === key;\n\n        return (\n          <button\n            aria-label={label}\n            className=\"relative h-6 w-6 rounded-full\"\n            key={key}\n            onClick={() => handleThemeClick(key as \"light\" | \"dark\" | \"system\")}\n            type=\"button\"\n          >\n            {isActive && (\n              <motion.div\n                className=\"absolute inset-0 rounded-full bg-secondary\"\n                layoutId=\"activeTheme\"\n                transition={{ type: \"spring\", duration: 0.5 }}\n              />\n            )}\n            <Icon\n              className={cn(\n                \"relative z-10 m-auto h-4 w-4\",\n                isActive ? \"text-foreground\" : \"text-muted-foreground\"\n              )}\n            />\n          </button>\n        );\n      })}\n    </div>\n  );\n};\n",
+      "sha256": "435c5ba0416e808dc4258353c26e34cd34c5c807bd13f2354db9bd144aac4017",
+      "upstreamPath": "packages/theme-switcher/index.tsx",
+      "upstreamSha256": "435c5ba0416e808dc4258353c26e34cd34c5c807bd13f2354db9bd144aac4017",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @radix-ui/react-use-controllable-state lucide-react motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @radix-ui/react-use-controllable-state lucide-react motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "theme-switcher",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/theme-switcher",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/theme-switcher.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Theme Switcher\ndescription: A component to switch between light, dark and system theme.\nicon: Moon\ndependencies:\n  - https://motion.dev/\n  - https://lucide.dev/\ninstaller: theme-switcher\n---\n\n## Features\n\n- Switch between light, dark and system theme\n- Controlled and uncontrolled mode\n\n## Examples\n\n### Uncontrolled mode\n\nCheck the console for the onChange event.\n\n<Preview path=\"theme-switcher-uncontrolled\" />\n"
+}

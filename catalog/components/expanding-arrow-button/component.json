@@ -1,5 +1,6 @@
 {
   "id": "beui:expanding-arrow-button",
+  "sourceId": "beui",
   "slug": "expanding-arrow-button",
   "name": "Animated CTA Buttons",
   "description": "Expressive call-to-action buttons with expanding, hold, and slide interactions.",
@@ -63,7 +64,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -123,6 +124,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -134,7 +137,8 @@
     "upstreamSlug": "expanding-arrow-button",
     "upstreamPageUrl": "https://beui.dev/components/motion/expanding-arrow-button",
     "upstreamDetailUrl": "https://beui.dev/r/expanding-arrow-button",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/expanding-arrow-button.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/expanding-arrow-button.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Animated CTA Buttons\"\ndescription: \"Expressive call-to-action buttons with expanding, hold, and slide interactions.\"\ncategory: \"Components\"\npublishedAt: \"2026-07-16\"\nupdatedAt: \"2026-07-16\"\ndocumentation: \"https://beui.dev/components/motion/expanding-arrow-button\"\nmarkdown: \"https://beui.dev/components/motion/expanding-arrow-button.md\"\nlicense: \"MIT\"\n---\n\n# Animated CTA Buttons\n\n> Expressive call-to-action buttons with expanding, hold, and slide interactions.\n\n## Install\n\n### Expanding Arrow Button\n\nAn accent tile that expands into a dotted-arrow trail on hover or focus.\n\n```bash\nnpx shadcn@latest add @beui/expanding-arrow-button\n```\n\n### Hold Action Button\n\nHold to complete with a vertical or horizontal liquid fill; release early to cancel.\n\n```bash\nnpx shadcn@latest add @beui/hold-action-button\n```\n\n### Slide Action Button\n\nDrag the thumb to the end to confirm an action; release early to spring back.\n\n```bash\nnpx shadcn@latest add @beui/slide-action-button\n```\n\n## Dependencies\n\n- `clsx`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n### Expanding Arrow Button usage\n\nAn accent tile that expands into a dotted-arrow trail on hover or focus.\n\n```tsx\n\"use client\";\n\nimport { ExpandingArrowButton } from \"@/components/motion/expanding-arrow-button\";\n\nexport function ExpandingArrowButtonPreview() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <ExpandingArrowButton>Book a demo</ExpandingArrowButton>\n    </div>\n  );\n}\n```\n\n### Hold Action Button usage\n\nHold to complete with a vertical or horizontal liquid fill; release early to cancel.\n\n```tsx\n\"use client\";\n\nimport { useState } from \"react\";\nimport { HoldActionButton } from \"@/components/motion/hold-action-button\";\n\nexport function HoldActionButtonPreview() {\n  const [confirmed, setConfirmed] = useState(false);\n\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-3\">\n      <HoldActionButton\n        onHoldComplete={() => {\n          setConfirmed(true);\n          window.setTimeout(() => setConfirmed(false), 1800);\n        }}\n      >\n        Hold for vertical fill\n      </HoldActionButton>\n      <HoldActionButton\n        type=\"horizontal\"\n        onHoldComplete={() => {\n          setConfirmed(true);\n          window.setTimeout(() => setConfirmed(false), 1800);\n        }}\n      >\n        Hold for horizontal fill\n      </HoldActionButton>\n      <p className=\"h-4 text-xs text-muted-foreground\" aria-live=\"polite\">\n        {confirmed ? \"Action confirmed\" : \"Release early to cancel\"}\n      </p>\n    </div>\n  );\n}\n```\n\n### Slide Action Button usage\n\nDrag the thumb to the end to confirm an action; release early to spring back.\n\n```tsx\n\"use client\";\n\nimport { useState } from \"react\";\nimport { SlideActionButton } from \"@/components/motion/slide-action-button\";\n\nexport function SlideActionButtonPreview() {\n  const [continued, setContinued] = useState(false);\n\n  return (\n    <div className=\"flex flex-col items-center gap-3\">\n      <SlideActionButton\n        completeLabel=\"Ready\"\n        onComplete={() => {\n          setContinued(true);\n          window.setTimeout(() => setContinued(false), 1800);\n        }}\n      >\n        Slide to continue\n      </SlideActionButton>\n      <p className=\"h-4 text-xs text-muted-foreground\" aria-live=\"polite\">\n        {continued ? \"Action completed\" : \"Drag the arrow to the end\"}\n      </p>\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### ExpandingArrowButton\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `className` | `string` | — | No | — |\n| `accentClassName` | `string` | — | No | — |\n| `labelClassName` | `string` | — | No | — |\n\n### HoldActionButton\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `type` | `\"horizontal\" \\| \"vertical\"` | `vertical` | No | — |\n| `className` | `string` | — | No | — |\n| `labelClassName` | `string` | — | No | — |\n| `holdingLabel` | `ReactNode` | `Keep holding` | No | — |\n| `completeLabel` | `ReactNode` | `Done` | No | — |\n| `holdDuration` | `number` | `1600` | No | — |\n| `onHoldComplete` | `(() => void)` | — | No | — |\n| `fillClassName` | `string` | — | No | — |\n\n### SlideActionButton\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `completeLabel` | `ReactNode` | `Complete` | No | — |\n| `threshold` | `number` | `0.82` | No | — |\n| `resetDelay` | `number` | `1200` | No | — |\n| `onComplete` | `(() => void)` | — | No | — |\n| `thumbClassName` | `string` | — | No | — |\n| `fillClassName` | `string` | — | No | — |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/expanding-arrow-button\n- Raw source: https://beui.dev/r/expanding-arrow-button/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

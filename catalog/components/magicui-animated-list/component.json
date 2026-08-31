@@ -1,0 +1,90 @@
+{
+  "id": "magicui:animated-list",
+  "sourceId": "magicui",
+  "slug": "magicui-animated-list",
+  "name": "Animated List",
+  "description": "A list that animates each item in sequence with a delay. Used to showcase notifications or events on your landing page.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "list",
+    "tags": [
+      "animated",
+      "code",
+      "list",
+      "notification",
+      "number"
+    ],
+    "aliases": [
+      "animated list",
+      "list"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A list that animates each item in sequence with a delay. Used to showcase notifications or events on your landing page."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "list:animated:code:notification:number:type",
+    "searchText": "Animated List\nanimated list\nA list that animates each item in sequence with a delay. Used to showcase notifications or events on your landing page.\nlist\nanimated\ncode\nnotification\nnumber\ntype\ntitle: Animated List date: 2023 12 12 description: A list that animates each item in sequence with a delay. Used to showcase notifications or events on your landing page. author: dillionverma published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Usage Props Animated List Prop Type Default Description className string The class name for the component delay number 1000 The delay between each item in ms"
+  },
+  "previewPath": "/preview/motion/magicui-animated-list",
+  "manifestPath": "components/magicui-animated-list/component.json",
+  "integrity": "sha256:e06d298fc73b75daff4dcb63b2084e8c09ae755e0152ba06d4a9693da499e9b9",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/animated-list.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport React, {\n  useEffect,\n  useMemo,\n  useState,\n  type ComponentPropsWithoutRef,\n} from \"react\"\nimport { AnimatePresence, motion, type MotionProps } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport function AnimatedListItem({ children }: { children: React.ReactNode }) {\n  const animations: MotionProps = {\n    initial: { scale: 0, opacity: 0 },\n    animate: { scale: 1, opacity: 1, originY: 0 },\n    exit: { scale: 0, opacity: 0 },\n    transition: { type: \"spring\", stiffness: 350, damping: 40 },\n  }\n\n  return (\n    <motion.div {...animations} layout className=\"mx-auto w-full\">\n      {children}\n    </motion.div>\n  )\n}\n\nexport interface AnimatedListProps extends ComponentPropsWithoutRef<\"div\"> {\n  children: React.ReactNode\n  delay?: number\n}\n\nexport const AnimatedList = React.memo(\n  ({ children, className, delay = 1000, ...props }: AnimatedListProps) => {\n    const [index, setIndex] = useState(0)\n    const childrenArray = useMemo(\n      () => React.Children.toArray(children),\n      [children]\n    )\n\n    useEffect(() => {\n      let timeout: ReturnType<typeof setTimeout> | null = null\n\n      if (index < childrenArray.length - 1) {\n        timeout = setTimeout(() => {\n          setIndex((prevIndex) => (prevIndex + 1) % childrenArray.length)\n        }, delay)\n      }\n\n      return () => {\n        if (timeout !== null) {\n          clearTimeout(timeout)\n        }\n      }\n    }, [index, delay, childrenArray.length])\n\n    const itemsToShow = useMemo(() => {\n      const result = childrenArray.slice(0, index + 1).reverse()\n      return result\n    }, [index, childrenArray])\n\n    return (\n      <div\n        className={cn(`flex flex-col items-center gap-4`, className)}\n        {...props}\n      >\n        <AnimatePresence>\n          {itemsToShow.map((item) => (\n            <AnimatedListItem key={(item as React.ReactElement).key}>\n              {item}\n            </AnimatedListItem>\n          ))}\n        </AnimatePresence>\n      </div>\n    )\n  }\n)\n\nAnimatedList.displayName = \"AnimatedList\"\n",
+      "sha256": "9363c5afa61d7aab1919b4500f7325cc8871b35103d5dd60a2a1625fe5e7dc58",
+      "upstreamPath": "apps/www/registry/magicui/animated-list.tsx",
+      "upstreamSha256": "9363c5afa61d7aab1919b4500f7325cc8871b35103d5dd60a2a1625fe5e7dc58",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "animated-list",
+    "upstreamPageUrl": "https://magicui.design/docs/components/animated-list",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/animated-list.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Animated List\ndate: 2023-12-12\ndescription: A list that animates each item in sequence with a delay. Used to showcase notifications or events on your landing page.\nauthor: dillionverma\npublished: true\n---\n\n<ComponentPreview name=\"animated-list-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/animated-list\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"animated-list\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { AnimatedList } from \"@/components/ui/animated-list\"\n```\n\n```tsx showLineNumbers\n<AnimatedList>\n  <p>Item 1</p>\n  <p>Item 2</p>\n  <p>Item 3</p>\n</AnimatedList>\n```\n\n## Props\n\n### Animated List\n\n| Prop        | Type     | Default | Description                       |\n| ----------- | -------- | ------- | --------------------------------- |\n| `className` | `string` | `-`     | The class name for the component  |\n| `delay`     | `number` | `1000`  | The delay between each item in ms |\n"
+}

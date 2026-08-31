@@ -1,0 +1,92 @@
+{
+  "id": "kibo:rating",
+  "sourceId": "kibo",
+  "slug": "kibo-rating",
+  "name": "Rating",
+  "description": "A star rating component with keyboard navigation and hover effects.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [
+    "@radix-ui/react-use-controllable-state",
+    "lucide-react"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "rating",
+    "tags": [
+      "form",
+      "hover",
+      "input",
+      "navigation",
+      "number"
+    ],
+    "aliases": [
+      "rating"
+    ],
+    "interactions": [
+      "focus",
+      "hover",
+      "keyboard"
+    ],
+    "useWhen": [
+      "A star rating component with keyboard navigation and hover effects."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "rating:form:hover:input:navigation:number:focus",
+    "searchText": "Rating\nrating\nA star rating component with keyboard navigation and hover effects.\nform\nhover\ninput\nnavigation\nnumber\nfocus\nkeyboard\ntitle: Rating description: A star rating component with keyboard navigation and hover effects. icon: Star dependencies: https://lucide.dev/ installer: rating Features Customizable number of stars and size Support for keyboard navigation Hover and focus states Accessible ARIA attributes Read only mode Hidden input support for forms Examples Custom colors Custom size Custom icon Controlled"
+  },
+  "previewPath": "/preview/blocks/kibo-rating",
+  "manifestPath": "components/kibo-rating/component.json",
+  "integrity": "sha256:453ebe63f8e684ab737d20f720d24ee31a6127557042ccb6f2df3fcc9e0fff85",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/rating/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useControllableState } from \"@radix-ui/react-use-controllable-state\";\nimport { type LucideProps, StarIcon } from \"lucide-react\";\nimport type { KeyboardEvent, MouseEvent, ReactElement, ReactNode } from \"react\";\nimport {\n  Children,\n  cloneElement,\n  createContext,\n  useCallback,\n  useContext,\n  useEffect,\n  useRef,\n  useState,\n} from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ntype RatingContextValue = {\n  value: number;\n  readOnly: boolean;\n  hoverValue: number | null;\n  focusedStar: number | null;\n  handleValueChange: (\n    event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>,\n    value: number\n  ) => void;\n  handleKeyDown: (event: KeyboardEvent<HTMLButtonElement>) => void;\n  setHoverValue: (value: number | null) => void;\n  setFocusedStar: (value: number | null) => void;\n};\n\nconst RatingContext = createContext<RatingContextValue | null>(null);\n\nconst useRating = () => {\n  const context = useContext(RatingContext);\n  if (!context) {\n    throw new Error(\"useRating must be used within a Rating component\");\n  }\n  return context;\n};\n\nexport type RatingButtonProps = LucideProps & {\n  index?: number;\n  icon?: ReactElement<LucideProps>;\n};\n\nexport const RatingButton = ({\n  index: providedIndex,\n  size = 20,\n  className,\n  icon = <StarIcon />,\n}: RatingButtonProps) => {\n  const {\n    value,\n    readOnly,\n    hoverValue,\n    focusedStar,\n    handleValueChange,\n    handleKeyDown,\n    setHoverValue,\n    setFocusedStar,\n  } = useRating();\n\n  const index = providedIndex ?? 0;\n  const isActive = index < (hoverValue ?? focusedStar ?? value ?? 0);\n  let tabIndex = -1;\n\n  if (!readOnly) {\n    tabIndex = value === index + 1 ? 0 : -1;\n  }\n\n  const handleClick = useCallback(\n    (event: MouseEvent<HTMLButtonElement>) => {\n      handleValueChange(event, index + 1);\n    },\n    [handleValueChange, index]\n  );\n\n  const handleMouseEnter = useCallback(() => {\n    if (!readOnly) {\n      setHoverValue(index + 1);\n    }\n  }, [readOnly, setHoverValue, index]);\n\n  const handleFocus = useCallback(() => {\n    setFocusedStar(index + 1);\n  }, [setFocusedStar, index]);\n\n  const handleBlur = useCallback(() => {\n    setFocusedStar(null);\n  }, [setFocusedStar]);\n\n  return (\n    <button\n      className={cn(\n        \"rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\",\n        \"p-0.5\",\n        readOnly && \"cursor-default\",\n        className\n      )}\n      disabled={readOnly}\n      onBlur={handleBlur}\n      onClick={handleClick}\n      onFocus={handleFocus}\n      onKeyDown={handleKeyDown}\n      onMouseEnter={handleMouseEnter}\n      tabIndex={tabIndex}\n      type=\"button\"\n    >\n      {cloneElement(icon, {\n        size,\n        className: cn(\n          \"transition-colors duration-200\",\n          isActive && \"fill-current\",\n          !readOnly && \"cursor-pointer\"\n        ),\n        \"aria-hidden\": \"true\",\n      })}\n    </button>\n  );\n};\n\nexport type RatingProps = {\n  defaultValue?: number;\n  value?: number;\n  onChange?: (\n    event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>,\n    value: number\n  ) => void;\n  onValueChange?: (value: number) => void;\n  readOnly?: boolean;\n  className?: string;\n  children?: ReactNode;\n};\n\nexport const Rating = ({\n  value: controlledValue,\n  onValueChange: controlledOnValueChange,\n  defaultValue = 0,\n  onChange,\n  readOnly = false,\n  className,\n  children,\n  ...props\n}: RatingProps) => {\n  const [hoverValue, setHoverValue] = useState<number | null>(null);\n  const [focusedStar, setFocusedStar] = useState<number | null>(null);\n  const containerRef = useRef<HTMLDivElement>(null);\n  const [value, onValueChange] = useControllableState({\n    defaultProp: defaultValue,\n    prop: controlledValue,\n    onChange: controlledOnValueChange,\n  });\n\n  const handleValueChange = useCallback(\n    (\n      event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>,\n      newValue: number\n    ) => {\n      if (!readOnly) {\n        onChange?.(event, newValue);\n        onValueChange?.(newValue);\n      }\n    },\n    [readOnly, onChange, onValueChange]\n  );\n\n  const handleKeyDown = useCallback(\n    (event: KeyboardEvent<HTMLButtonElement>) => {\n      if (readOnly) {\n        return;\n      }\n\n      const total = Children.count(children);\n      let newValue = focusedStar !== null ? focusedStar : (value ?? 0);\n\n      switch (event.key) {\n        case \"ArrowRight\":\n          if (event.shiftKey || event.metaKey) {\n            newValue = total;\n          } else {\n            newValue = Math.min(total, newValue + 1);\n          }\n          break;\n        case \"ArrowLeft\":\n          if (event.shiftKey || event.metaKey) {\n            newValue = 1;\n          } else {\n            newValue = Math.max(1, newValue - 1);\n          }\n          break;\n        default:\n          return;\n      }\n\n      event.preventDefault();\n      setFocusedStar(newValue);\n      handleValueChange(event, newValue);\n    },\n    [focusedStar, value, children, readOnly, handleValueChange]\n  );\n\n  useEffect(() => {\n    if (focusedStar !== null && containerRef.current) {\n      const buttons = containerRef.current.querySelectorAll(\"button\");\n      buttons[focusedStar - 1]?.focus();\n    }\n  }, [focusedStar]);\n\n  const contextValue: RatingContextValue = {\n    value: value ?? 0,\n    readOnly,\n    hoverValue,\n    focusedStar,\n    handleValueChange,\n    handleKeyDown,\n    setHoverValue,\n    setFocusedStar,\n  };\n\n  return (\n    <RatingContext.Provider value={contextValue}>\n      <div\n        aria-label=\"Rating\"\n        className={cn(\"inline-flex items-center gap-0.5\", className)}\n        onMouseLeave={() => setHoverValue(null)}\n        ref={containerRef}\n        role=\"radiogroup\"\n        {...props}\n      >\n        {Children.map(children, (child, index) => {\n          if (!child) {\n            return null;\n          }\n\n          return cloneElement(child as ReactElement<RatingButtonProps>, {\n            index,\n          });\n        })}\n      </div>\n    </RatingContext.Provider>\n  );\n};\n",
+      "sha256": "a8f5323b63a9139abc7f94374dfe25136a0d2dd69daa0f2caad9251cb5f2819a",
+      "upstreamPath": "packages/rating/index.tsx",
+      "upstreamSha256": "a8f5323b63a9139abc7f94374dfe25136a0d2dd69daa0f2caad9251cb5f2819a",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @radix-ui/react-use-controllable-state lucide-react",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @radix-ui/react-use-controllable-state lucide-react",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "rating",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/rating",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/rating.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Rating\ndescription: A star rating component with keyboard navigation and hover effects.\nicon: Star\ndependencies:\n  - https://lucide.dev/\ninstaller: rating\n---\n\n## Features\n\n- Customizable number of stars and size\n- Support for keyboard navigation\n- Hover and focus states\n- Accessible ARIA attributes\n- Read-only mode\n- Hidden input support for forms\n\n## Examples\n\n### Custom colors\n\n<Preview path=\"rating-colors\" />\n\n### Custom size\n\n<Preview path=\"rating-size\" />\n\n### Custom icon\n\n<Preview path=\"rating-icon\" />\n\n### Controlled\n\n<Preview path=\"rating-controlled\" />\n"
+}

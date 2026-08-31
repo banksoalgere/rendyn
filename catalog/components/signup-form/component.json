@@ -1,5 +1,6 @@
 {
   "id": "beui:signup-form",
+  "sourceId": "beui",
   "slug": "signup-form",
   "name": "Sign Up Form",
   "description": "Composed sign-up form that flags a field only once it is left, then clears the moment it is fixed, with a length-weighted strength meter, password reveal and an animated submit lifecycle.",
@@ -65,7 +66,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -155,6 +156,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -166,7 +169,8 @@
     "upstreamSlug": "signup-form",
     "upstreamPageUrl": "https://beui.dev/components/blocks/signup-form",
     "upstreamDetailUrl": "https://beui.dev/r/signup-form",
-    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/signup-form.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/signup-form.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Sign Up Form\"\ndescription: \"Composed sign-up form that flags a field only once it is left, then clears the moment it is fixed, with a length-weighted strength meter, password reveal and an animated submit lifecycle.\"\ncategory: \"Blocks\"\npublishedAt: \"2026-08-08\"\nupdatedAt: \"2026-08-28\"\ndocumentation: \"https://beui.dev/components/blocks/signup-form\"\nmarkdown: \"https://beui.dev/components/blocks/signup-form.md\"\nlicense: \"MIT\"\n---\n\n# Sign Up Form\n\n> Composed sign-up form that flags a field only once it is left, then clears the moment it is fixed, with a length-weighted strength meter, password reveal and an animated submit lifecycle.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/signup-form\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { useState } from \"react\";\nimport { SignUpForm } from \"@/components/motion/signup-form\";\n\nexport function SignUpFormPreview() {\n  const [formError, setFormError] = useState<string>();\n\n  return (\n    <div className=\"flex w-full justify-center py-4\">\n      <SignUpForm\n        description=\"Sign up with taken@example.com to see the failure state.\"\n        errorMessage={formError}\n        onSubmit={async (values) => {\n          setFormError(undefined);\n          await new Promise((resolve) => setTimeout(resolve, 1200));\n          if (values.email.toLowerCase().startsWith(\"taken@\")) {\n            setFormError(\"That email is already registered.\");\n            throw new Error(\"Email already registered\");\n          }\n        }}\n        footer={\n          <>\n            Already have an account?{\" \"}\n            <button\n              type=\"button\"\n              className=\"font-medium text-foreground underline underline-offset-4\"\n            >\n              Sign in\n            </button>\n          </>\n        }\n      />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### SignUpForm\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `values` | `SignUpValues` | — | No | Controlled values. Omit for uncontrolled. |\n| `defaultValues` | `Partial<SignUpValues>` | — | No | — |\n| `onValuesChange` | `((values: SignUpValues) => void)` | — | No | — |\n| `onSubmit` | `((values: SignUpValues) => void \\| Promise<void>)` | — | No | Called with valid values only. Return a promise to drive the button state. |\n| `validate` | `((values: SignUpValues) => Partial<Record<keyof SignUpValues, string>>)` | — | No | Replace the built-in rules — return a message per invalid field. |\n| `status` | `\"error\" \\| \"success\" \\| \"loading\" \\| \"idle\"` | — | No | Controlled submit state. Omit to let the form track it. |\n| `errorMessage` | `string` | — | No | Form-level failure message, shown above the submit button. |\n| `title` | `ReactNode` | `Create your account` | No | — |\n| `description` | `ReactNode` | `Start building in under a minute.` | No | — |\n| `submitLabel` | `string` | `Create account` | No | — |\n| `footer` | `ReactNode` | — | No | — |\n| `strengthMeter` | `boolean` | `true` | No | Show the password strength meter. |\n| `className` | `string` | — | No | — |\n| `classNames` | `SignUpFormClassNames` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/signup-form\n- Raw source: https://beui.dev/r/signup-form/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

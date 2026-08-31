@@ -1,0 +1,98 @@
+{
+  "id": "kibo:tags",
+  "sourceId": "kibo",
+  "slug": "kibo-tags",
+  "name": "Tags",
+  "description": "Tags are a way to apply multiple labels to an item.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "internalDependencies": [
+    "badge",
+    "button",
+    "command",
+    "popover"
+  ],
+  "metadata": {
+    "kind": "block",
+    "family": "tags",
+    "tags": [
+      "button",
+      "command",
+      "context",
+      "input",
+      "navigation",
+      "search",
+      "select",
+      "text"
+    ],
+    "aliases": [
+      "tags"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "Tags are a way to apply multiple labels to an item."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "tags:button:command:context:input:navigation:keyboard",
+    "searchText": "Tags\ntags\nTags are a way to apply multiple labels to an item.\nbutton\ncommand\ncontext\ninput\nnavigation\nsearch\nselect\ntext\nkeyboard\ntitle: Tags description: Tags are a way to apply multiple labels to an item. icon: Tags installer: tags Features Built in search input to filter through tags Supports both controlled and uncontrolled usage Fully customizable through className props Automatically adjusts width based on parent container Optional remove button for selected tags Full keyboard navigation support through Command component Shared state management through TagsContext Examples Create a tag Filter available tags"
+  },
+  "previewPath": "/preview/blocks/kibo-tags",
+  "manifestPath": "components/kibo-tags/component.json",
+  "integrity": "sha256:788ea27a6f6ad6afe5c9fde0c582cfd5b8581907e384a2f1e7f1f509e2c7e671",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/tags/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { XIcon } from \"lucide-react\";\nimport {\n  type ComponentProps,\n  createContext,\n  type MouseEventHandler,\n  type ReactNode,\n  useContext,\n  useEffect,\n  useRef,\n  useState,\n} from \"react\";\nimport { Badge } from \"@/components/ui/badge\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Command,\n  CommandEmpty,\n  CommandGroup,\n  CommandInput,\n  CommandItem,\n  CommandList,\n} from \"@/components/ui/command\";\nimport {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/components/ui/popover\";\nimport { cn } from \"@/lib/utils\";\n\ntype TagsContextType = {\n  value?: string;\n  setValue?: (value: string) => void;\n  open: boolean;\n  onOpenChange: (open: boolean) => void;\n  width?: number;\n  setWidth?: (width: number) => void;\n};\n\nconst TagsContext = createContext<TagsContextType>({\n  value: undefined,\n  setValue: undefined,\n  open: false,\n  onOpenChange: () => {},\n  width: undefined,\n  setWidth: undefined,\n});\n\nconst useTagsContext = () => {\n  const context = useContext(TagsContext);\n\n  if (!context) {\n    throw new Error(\"useTagsContext must be used within a TagsProvider\");\n  }\n\n  return context;\n};\n\nexport type TagsProps = {\n  value?: string;\n  setValue?: (value: string) => void;\n  open?: boolean;\n  onOpenChange?: (open: boolean) => void;\n  children?: ReactNode;\n  className?: string;\n};\n\nexport const Tags = ({\n  value,\n  setValue,\n  open: controlledOpen,\n  onOpenChange: controlledOnOpenChange,\n  children,\n  className,\n}: TagsProps) => {\n  const [uncontrolledOpen, setUncontrolledOpen] = useState(false);\n  const [width, setWidth] = useState<number>();\n  const ref = useRef<HTMLDivElement>(null);\n\n  const open = controlledOpen ?? uncontrolledOpen;\n  const onOpenChange = controlledOnOpenChange ?? setUncontrolledOpen;\n\n  useEffect(() => {\n    if (!ref.current) {\n      return;\n    }\n\n    const resizeObserver = new ResizeObserver((entries) => {\n      setWidth(entries[0].contentRect.width);\n    });\n\n    resizeObserver.observe(ref.current);\n\n    return () => {\n      resizeObserver.disconnect();\n    };\n  }, []);\n\n  return (\n    <TagsContext.Provider\n      value={{ value, setValue, open, onOpenChange, width, setWidth }}\n    >\n      <Popover onOpenChange={onOpenChange} open={open}>\n        <div className={cn(\"relative w-full\", className)} ref={ref}>\n          {children}\n        </div>\n      </Popover>\n    </TagsContext.Provider>\n  );\n};\n\nexport type TagsTriggerProps = ComponentProps<typeof Button>;\n\nexport const TagsTrigger = ({\n  className,\n  children,\n  ...props\n}: TagsTriggerProps) => (\n  <PopoverTrigger asChild>\n    <Button\n      className={cn(\"h-auto w-full justify-between p-2\", className)}\n      // biome-ignore lint/a11y/useSemanticElements: \"Required\"\n      role=\"combobox\"\n      variant=\"outline\"\n      {...props}\n    >\n      <div className=\"flex flex-wrap items-center gap-1\">\n        {children}\n        <span className=\"px-2 py-px text-muted-foreground\">\n          Select a tag...\n        </span>\n      </div>\n    </Button>\n  </PopoverTrigger>\n);\n\nexport type TagsValueProps = ComponentProps<typeof Badge>;\n\nexport const TagsValue = ({\n  className,\n  children,\n  onRemove,\n  ...props\n}: TagsValueProps & { onRemove?: () => void }) => {\n  const handleRemove: MouseEventHandler<HTMLDivElement> = (event) => {\n    event.preventDefault();\n    event.stopPropagation();\n    onRemove?.();\n  };\n\n  return (\n    <Badge className={cn(\"flex items-center gap-2\", className)} {...props}>\n      {children}\n      {onRemove && (\n        // biome-ignore lint/a11y/noStaticElementInteractions: \"This is a clickable badge\"\n        // biome-ignore lint/a11y/useKeyWithClickEvents: \"This is a clickable badge\"\n        <div\n          className=\"size-auto cursor-pointer hover:text-muted-foreground\"\n          onClick={handleRemove}\n        >\n          <XIcon size={12} />\n        </div>\n      )}\n    </Badge>\n  );\n};\n\nexport type TagsContentProps = ComponentProps<typeof PopoverContent>;\n\nexport const TagsContent = ({\n  className,\n  children,\n  ...props\n}: TagsContentProps) => {\n  const { width } = useTagsContext();\n\n  return (\n    <PopoverContent\n      className={cn(\"p-0\", className)}\n      style={{ width }}\n      {...props}\n    >\n      <Command>{children}</Command>\n    </PopoverContent>\n  );\n};\n\nexport type TagsInputProps = ComponentProps<typeof CommandInput>;\n\nexport const TagsInput = ({ className, ...props }: TagsInputProps) => (\n  <CommandInput className={cn(\"h-9\", className)} {...props} />\n);\n\nexport type TagsListProps = ComponentProps<typeof CommandList>;\n\nexport const TagsList = ({ className, ...props }: TagsListProps) => (\n  <CommandList className={cn(\"max-h-[200px]\", className)} {...props} />\n);\n\nexport type TagsEmptyProps = ComponentProps<typeof CommandEmpty>;\n\nexport const TagsEmpty = ({\n  children,\n  className,\n  ...props\n}: TagsEmptyProps) => (\n  <CommandEmpty {...props}>{children ?? \"No tags found.\"}</CommandEmpty>\n);\n\nexport type TagsGroupProps = ComponentProps<typeof CommandGroup>;\n\nexport const TagsGroup = CommandGroup;\n\nexport type TagsItemProps = ComponentProps<typeof CommandItem>;\n\nexport const TagsItem = ({ className, ...props }: TagsItemProps) => (\n  <CommandItem\n    className={cn(\"cursor-pointer items-center justify-between\", className)}\n    {...props}\n  />\n);\n",
+      "sha256": "19443b2c142d595f87c87640d0bbd86497014426f8e16d06843eee9ec9e453ba",
+      "upstreamPath": "packages/tags/index.tsx",
+      "upstreamSha256": "19443b2c142d595f87c87640d0bbd86497014426f8e16d06843eee9ec9e453ba",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add lucide-react",
+    "registryDependencyCommand": "pnpm dlx shadcn@latest add badge button command popover",
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add lucide-react",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Install the required shadcn primitives: pnpm dlx shadcn@latest add badge button command popover"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "tags",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/tags",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/tags.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Tags\ndescription: Tags are a way to apply multiple labels to an item.\nicon: Tags\ninstaller: tags\n---\n\n## Features\n\n- Built-in search input to filter through tags\n- Supports both controlled and uncontrolled usage\n- Fully customizable through className props\n- Automatically adjusts width based on parent container\n- Optional remove button for selected tags\n- Full keyboard navigation support through Command component\n- Shared state management through TagsContext\n\n## Examples\n\n### Create a tag\n\n<Preview path=\"tags-create\" />\n\n### Filter available tags\n\n<Preview path=\"tags-filter\" />\n"
+}

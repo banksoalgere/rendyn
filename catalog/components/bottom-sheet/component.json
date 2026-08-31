@@ -1,5 +1,6 @@
 {
   "id": "beui:bottom-sheet",
+  "sourceId": "beui",
   "slug": "bottom-sheet",
   "name": "Bottom Sheet",
   "description": "Vaul-inspired draggable bottom sheet with snap points, inertia and glass surface.",
@@ -54,7 +55,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -102,6 +103,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx motion react react-dom tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx motion react react-dom tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -113,7 +116,8 @@
     "upstreamSlug": "bottom-sheet",
     "upstreamPageUrl": "https://beui.dev/components/motion/bottom-sheet",
     "upstreamDetailUrl": "https://beui.dev/r/bottom-sheet",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/bottom-sheet.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/bottom-sheet.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Bottom Sheet\"\ndescription: \"Vaul-inspired draggable bottom sheet with snap points, inertia and glass surface.\"\ncategory: \"Components\"\npublishedAt: \"2026-05-17\"\nupdatedAt: \"2026-08-20\"\ndocumentation: \"https://beui.dev/components/motion/bottom-sheet\"\nmarkdown: \"https://beui.dev/components/motion/bottom-sheet.md\"\nlicense: \"MIT\"\n---\n\n# Bottom Sheet\n\n> Vaul-inspired draggable bottom sheet with snap points, inertia and glass surface.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/bottom-sheet\n```\n\n## Dependencies\n\n- `clsx`\n- `motion`\n- `react`\n- `react-dom`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { useState } from \"react\";\nimport { BottomSheet } from \"@/components/motion/bottom-sheet\";\n\nexport function BottomSheetPreview() {\n  const [open, setOpen] = useState(false);\n  return (\n    <>\n      <button\n        type=\"button\"\n        onClick={() => setOpen(true)}\n        className=\"inline-flex h-10 items-center rounded-full border border-border bg-card px-5 text-sm font-medium text-foreground press hover:border-(--color-border-strong)\"\n      >\n        Open bottom sheet\n      </button>\n      <BottomSheet\n        open={open}\n        onOpenChange={setOpen}\n        snapPoints={[0.4, 0.85]}\n        title=\"Quick actions\"\n        description=\"Drag the handle, fling, or swipe down to dismiss.\"\n      >\n        <ul className=\"divide-y divide-border\">\n          {[\"Share\", \"Duplicate\", \"Move to folder\", \"Rename\", \"Archive\", \"Delete\"].map((item) => (\n            <li key={item} className=\"py-3 text-sm text-foreground\">{item}</li>\n          ))}\n        </ul>\n        <div className=\"py-12 text-center text-xs text-muted-foreground\">\n          Fling up to expand, fling down to dismiss.\n        </div>\n      </BottomSheet>\n    </>\n  );\n}\n```\n\n## API Reference\n\n### BottomSheet\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `open` | `boolean` | — | Yes | — |\n| `onOpenChange` | `(open: boolean) => void` | — | Yes | — |\n| `snapPoints` | `(number \\| \"auto\")[]` | `[0.5, 0.92]` | No | Heights (0-1 = fraction of viewport, or \"auto\"). First entry is default. |\n| `defaultSnap` | `number` | `0` | No | — |\n| `title` | `string` | — | No | — |\n| `description` | `string` | — | No | — |\n| `className` | `string` | — | No | — |\n| `dismissThreshold` | `number` | `120` | No | Min drag distance (px) past current snap to dismiss. |\n\n## Source\n\n- Registry detail: https://beui.dev/r/bottom-sheet\n- Raw source: https://beui.dev/r/bottom-sheet/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

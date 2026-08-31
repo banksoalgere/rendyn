@@ -12,7 +12,7 @@
 | `GET /api/previews/contact-sheet?ids=a,b,c` | Numbered PNG for up to five cached previews |
 | `GET /api/components/:slug/source` | Anonymous-cookie or bearer-token quota claim and source |
 
-Source responses use `Cache-Control: private, no-store`. Search responses never expose beUI preview/page URLs; returned previews are hosted by `PREVIEW_BASE_URL`.
+Source responses use `Cache-Control: private, no-store`. Search responses never expose upstream preview/page URLs; returned previews are hosted by `PREVIEW_BASE_URL`.
 
 ## MCP
 

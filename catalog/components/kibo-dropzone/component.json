@@ -1,0 +1,97 @@
+{
+  "id": "kibo:dropzone",
+  "sourceId": "kibo",
+  "slug": "kibo-dropzone",
+  "name": "Dropzone",
+  "description": "Allows users to drag-and-drop files into a container to upload or process them.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [
+    "lucide-react",
+    "react-dropzone"
+  ],
+  "internalDependencies": [
+    "button"
+  ],
+  "metadata": {
+    "kind": "block",
+    "family": "upload",
+    "tags": [
+      "context",
+      "drag",
+      "error",
+      "file",
+      "form",
+      "text",
+      "upload"
+    ],
+    "aliases": [
+      "dropzone",
+      "upload"
+    ],
+    "interactions": [
+      "drag",
+      "type"
+    ],
+    "useWhen": [
+      "Allows users to drag-and-drop files into a container to upload or process them."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "upload:context:drag:error:file:form:type",
+    "searchText": "Dropzone\ndropzone\nAllows users to drag-and-drop files into a container to upload or process them.\nupload\ncontext\ndrag\nerror\nfile\nform\ntext\ntype\ntitle: Dropzone description: Allows users to drag and drop files into a container to upload or process them. icon: ImageUp dependencies: https://react dropzone.js.org/ https://lucide.dev/ installer: dropzone Features Drag and drop files to upload Customize the empty state and content Intelligently handle file types, sizes, and counts Show file names and sizes in a human readable format Handle errors and reject files Disable the dropzone when needed Customize the appearance with className Show file previews for images Replace existing files by dragging new ones Context provider for accessing dropzone state Examples With min and max sizes Multiple files Images only With custom empty state Showing an image preview"
+  },
+  "previewPath": "/preview/blocks/kibo-dropzone",
+  "manifestPath": "components/kibo-dropzone/component.json",
+  "integrity": "sha256:99ffdbfb70b90d01f7cc669e1861622859565f5af809333269a96e224467c40e",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/dropzone/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { UploadIcon } from \"lucide-react\";\nimport type { ReactNode } from \"react\";\nimport { createContext, useContext } from \"react\";\nimport type { DropEvent, DropzoneOptions, FileRejection } from \"react-dropzone\";\nimport { useDropzone } from \"react-dropzone\";\nimport { Button } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\n\ntype DropzoneContextType = {\n  src?: File[];\n  accept?: DropzoneOptions[\"accept\"];\n  maxSize?: DropzoneOptions[\"maxSize\"];\n  minSize?: DropzoneOptions[\"minSize\"];\n  maxFiles?: DropzoneOptions[\"maxFiles\"];\n};\n\nconst renderBytes = (bytes: number) => {\n  const units = [\"B\", \"KB\", \"MB\", \"GB\", \"TB\", \"PB\"];\n  let size = bytes;\n  let unitIndex = 0;\n\n  while (size >= 1024 && unitIndex < units.length - 1) {\n    size /= 1024;\n    unitIndex++;\n  }\n\n  return `${size.toFixed(2)}${units[unitIndex]}`;\n};\n\nconst DropzoneContext = createContext<DropzoneContextType | undefined>(\n  undefined\n);\n\nexport type DropzoneProps = Omit<DropzoneOptions, \"onDrop\"> & {\n  src?: File[];\n  className?: string;\n  onDrop?: (\n    acceptedFiles: File[],\n    fileRejections: FileRejection[],\n    event: DropEvent\n  ) => void;\n  children?: ReactNode;\n};\n\nexport const Dropzone = ({\n  accept,\n  maxFiles = 1,\n  maxSize,\n  minSize,\n  onDrop,\n  onError,\n  disabled,\n  src,\n  className,\n  children,\n  ...props\n}: DropzoneProps) => {\n  const { getRootProps, getInputProps, isDragActive } = useDropzone({\n    accept,\n    maxFiles,\n    maxSize,\n    minSize,\n    onError,\n    disabled,\n    onDrop: (acceptedFiles, fileRejections, event) => {\n      if (fileRejections.length > 0) {\n        const message = fileRejections.at(0)?.errors.at(0)?.message;\n        onError?.(new Error(message));\n        return;\n      }\n\n      onDrop?.(acceptedFiles, fileRejections, event);\n    },\n    ...props,\n  });\n\n  return (\n    <DropzoneContext.Provider\n      key={JSON.stringify(src)}\n      value={{ src, accept, maxSize, minSize, maxFiles }}\n    >\n      <Button\n        className={cn(\n          \"relative h-auto w-full flex-col overflow-hidden p-8\",\n          isDragActive && \"outline-none ring-1 ring-ring\",\n          className\n        )}\n        disabled={disabled}\n        type=\"button\"\n        variant=\"outline\"\n        {...getRootProps()}\n      >\n        <input {...getInputProps()} disabled={disabled} />\n        {children}\n      </Button>\n    </DropzoneContext.Provider>\n  );\n};\n\nconst useDropzoneContext = () => {\n  const context = useContext(DropzoneContext);\n\n  if (!context) {\n    throw new Error(\"useDropzoneContext must be used within a Dropzone\");\n  }\n\n  return context;\n};\n\nexport type DropzoneContentProps = {\n  children?: ReactNode;\n  className?: string;\n};\n\nconst maxLabelItems = 3;\n\nexport const DropzoneContent = ({\n  children,\n  className,\n}: DropzoneContentProps) => {\n  const { src } = useDropzoneContext();\n\n  if (!src) {\n    return null;\n  }\n\n  if (children) {\n    return children;\n  }\n\n  return (\n    <div className={cn(\"flex flex-col items-center justify-center\", className)}>\n      <div className=\"flex size-8 items-center justify-center rounded-md bg-muted text-muted-foreground\">\n        <UploadIcon size={16} />\n      </div>\n      <p className=\"my-2 w-full truncate font-medium text-sm\">\n        {src.length > maxLabelItems\n          ? `${new Intl.ListFormat(\"en\").format(\n              src.slice(0, maxLabelItems).map((file) => file.name)\n            )} and ${src.length - maxLabelItems} more`\n          : new Intl.ListFormat(\"en\").format(src.map((file) => file.name))}\n      </p>\n      <p className=\"w-full text-wrap text-muted-foreground text-xs\">\n        Drag and drop or click to replace\n      </p>\n    </div>\n  );\n};\n\nexport type DropzoneEmptyStateProps = {\n  children?: ReactNode;\n  className?: string;\n};\n\nexport const DropzoneEmptyState = ({\n  children,\n  className,\n}: DropzoneEmptyStateProps) => {\n  const { src, accept, maxSize, minSize, maxFiles } = useDropzoneContext();\n\n  if (src) {\n    return null;\n  }\n\n  if (children) {\n    return children;\n  }\n\n  let caption = \"\";\n\n  if (accept) {\n    caption += \"Accepts \";\n    caption += new Intl.ListFormat(\"en\").format(Object.keys(accept));\n  }\n\n  if (minSize && maxSize) {\n    caption += ` between ${renderBytes(minSize)} and ${renderBytes(maxSize)}`;\n  } else if (minSize) {\n    caption += ` at least ${renderBytes(minSize)}`;\n  } else if (maxSize) {\n    caption += ` less than ${renderBytes(maxSize)}`;\n  }\n\n  return (\n    <div className={cn(\"flex flex-col items-center justify-center\", className)}>\n      <div className=\"flex size-8 items-center justify-center rounded-md bg-muted text-muted-foreground\">\n        <UploadIcon size={16} />\n      </div>\n      <p className=\"my-2 w-full truncate text-wrap font-medium text-sm\">\n        Upload {maxFiles === 1 ? \"a file\" : \"files\"}\n      </p>\n      <p className=\"w-full truncate text-wrap text-muted-foreground text-xs\">\n        Drag and drop or click to upload\n      </p>\n      {caption && (\n        <p className=\"text-wrap text-muted-foreground text-xs\">{caption}.</p>\n      )}\n    </div>\n  );\n};\n",
+      "sha256": "87bcb4740b9789243cae072c60bb4fa38b968040be6817635f6410694f22d5a3",
+      "upstreamPath": "packages/dropzone/index.tsx",
+      "upstreamSha256": "87bcb4740b9789243cae072c60bb4fa38b968040be6817635f6410694f22d5a3",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add lucide-react react-dropzone",
+    "registryDependencyCommand": "pnpm dlx shadcn@latest add button",
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add lucide-react react-dropzone",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Install the required shadcn primitives: pnpm dlx shadcn@latest add button"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "dropzone",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/dropzone",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/dropzone.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Dropzone\ndescription: Allows users to drag-and-drop files into a container to upload or process them.\nicon: ImageUp\ndependencies:\n  - https://react-dropzone.js.org/\n  - https://lucide.dev/\ninstaller: dropzone\n---\n\n## Features\n\n- Drag and drop files to upload\n- Customize the empty state and content\n- Intelligently handle file types, sizes, and counts\n- Show file names and sizes in a human readable format\n- Handle errors and reject files\n- Disable the dropzone when needed\n- Customize the appearance with className\n- Show file previews for images\n- Replace existing files by dragging new ones\n- Context provider for accessing dropzone state\n\n## Examples\n\n### With min and max sizes\n\n<Preview path=\"dropzone-min-max\" />\n\n### Multiple files\n\n<Preview path=\"dropzone-multiple\" />\n\n### Images only\n\n<Preview path=\"dropzone-accept\" />\n\n### With custom empty state\n\n<Preview path=\"dropzone-custom-empty-state\" />\n\n### Showing an image preview\n\n<Preview path=\"dropzone-image-preview\" />\n"
+}

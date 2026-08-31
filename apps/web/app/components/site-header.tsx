@@ -3,7 +3,7 @@ import { Brand } from './brand';
 
 const navigation = [
   { href: '/#product', id: 'product', label: 'Product' },
-  { href: '/#catalogue', id: 'catalogue', label: 'Components' },
+  { href: '/components', id: 'catalogue', label: 'Components' },
   { href: '/#how-it-works', id: 'how-it-works', label: 'What you get' },
   { href: '/#resources', id: 'resources', label: 'Resources' },
 ];

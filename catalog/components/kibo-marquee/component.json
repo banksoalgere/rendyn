@@ -1,0 +1,89 @@
+{
+  "id": "kibo:marquee",
+  "sourceId": "kibo",
+  "slug": "kibo-marquee",
+  "name": "Marquee",
+  "description": "Marquees are a great way to show a list of items in a horizontal scrolling motion.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [
+    "react-fast-marquee"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "list",
+    "tags": [
+      "drag",
+      "list",
+      "marquee"
+    ],
+    "aliases": [
+      "marquee",
+      "list"
+    ],
+    "interactions": [
+      "drag",
+      "scroll"
+    ],
+    "useWhen": [
+      "Marquees are a great way to show a list of items in a horizontal scrolling motion."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "list:drag:marquee:scroll",
+    "searchText": "Marquee\nmarquee\nMarquees are a great way to show a list of items in a horizontal scrolling motion.\nlist\ndrag\nscroll\ntitle: Marquee description: Marquees are a great way to show a list of items in a horizontal scrolling motion. icon: GalleryHorizontalEnd dependencies: https://www.react fast marquee.com/ https://usehooks.com/ installer: marquee Features Drag and drop items between groups Customize the item contents Examples Without fading Without pre defined options Custom spacing"
+  },
+  "previewPath": "/preview/blocks/kibo-marquee",
+  "manifestPath": "components/kibo-marquee/component.json",
+  "integrity": "sha256:adfeef0ee1d99f16271e4995237c09e10f25ff09d585b5f13bf202d78f1322db",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/marquee/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { HTMLAttributes } from \"react\";\nimport type { MarqueeProps as FastMarqueeProps } from \"react-fast-marquee\";\nimport FastMarquee from \"react-fast-marquee\";\nimport { cn } from \"@/lib/utils\";\n\nexport type MarqueeProps = HTMLAttributes<HTMLDivElement>;\n\nexport const Marquee = ({ className, ...props }: MarqueeProps) => (\n  <div\n    className={cn(\"relative w-full overflow-hidden\", className)}\n    {...props}\n  />\n);\n\nexport type MarqueeContentProps = FastMarqueeProps;\n\nexport const MarqueeContent = ({\n  loop = 0,\n  autoFill = true,\n  pauseOnHover = true,\n  ...props\n}: MarqueeContentProps) => (\n  <FastMarquee\n    autoFill={autoFill}\n    loop={loop}\n    pauseOnHover={pauseOnHover}\n    {...props}\n  />\n);\n\nexport type MarqueeFadeProps = HTMLAttributes<HTMLDivElement> & {\n  side: \"left\" | \"right\";\n};\n\nexport const MarqueeFade = ({\n  className,\n  side,\n  ...props\n}: MarqueeFadeProps) => (\n  <div\n    className={cn(\n      \"absolute top-0 bottom-0 z-10 h-full w-24 from-background to-transparent\",\n      side === \"left\" ? \"left-0 bg-gradient-to-r\" : \"right-0 bg-gradient-to-l\",\n      className\n    )}\n    {...props}\n  />\n);\n\nexport type MarqueeItemProps = HTMLAttributes<HTMLDivElement>;\n\nexport const MarqueeItem = ({ className, ...props }: MarqueeItemProps) => (\n  <div\n    className={cn(\"mx-2 flex-shrink-0 object-contain\", className)}\n    {...props}\n  />\n);\n",
+      "sha256": "8cb49686ee8dda1d9e29a813f6643abcf46f39a405f400a5c452ba8b8f45eab7",
+      "upstreamPath": "packages/marquee/index.tsx",
+      "upstreamSha256": "8cb49686ee8dda1d9e29a813f6643abcf46f39a405f400a5c452ba8b8f45eab7",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add react-fast-marquee",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add react-fast-marquee",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "marquee",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/marquee",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/marquee.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Marquee\ndescription: Marquees are a great way to show a list of items in a horizontal scrolling motion.\nicon: GalleryHorizontalEnd\ndependencies:\n  - https://www.react-fast-marquee.com/\n  - https://usehooks.com/\ninstaller: marquee\n---\n\n## Features\n\n- Drag and drop items between groups\n- Customize the item contents\n\n## Examples\n\n### Without fading\n\n<Preview path=\"marquee-no-fade\" />\n\n### Without pre-defined options\n\n<Preview path=\"marquee-raw\" />\n\n### Custom spacing\n\n<Preview path=\"marquee-spacing\" />\n"
+}

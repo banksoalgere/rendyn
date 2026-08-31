@@ -1,0 +1,90 @@
+{
+  "id": "kibo:announcement",
+  "sourceId": "kibo",
+  "slug": "kibo-announcement",
+  "name": "Announcement",
+  "description": "A compound badge designed to display an announcement.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [],
+  "internalDependencies": [
+    "badge"
+  ],
+  "metadata": {
+    "kind": "block",
+    "family": "announcement",
+    "tags": [
+      "badge",
+      "context",
+      "hover",
+      "layout",
+      "text",
+      "theme"
+    ],
+    "aliases": [
+      "announcement"
+    ],
+    "interactions": [
+      "hover"
+    ],
+    "useWhen": [
+      "A compound badge designed to display an announcement."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "announcement:badge:context:hover:layout:text",
+    "searchText": "Announcement\nannouncement\nA compound badge designed to display an announcement.\nbadge\ncontext\nhover\nlayout\ntext\ntheme\ntitle: Announcement description: A compound badge designed to display an announcement. icon: Megaphone dependencies: https://lucide.dev/ installer: announcement Features Compound component with Badge based styling and rounded full appearance Customizable themed mode for different visual styles Built in tag and title components for consistent layout Supports hover effects with shadow transitions Flexible styling through className props Context based theming that affects child components Examples Themes Without Tag"
+  },
+  "previewPath": "/preview/blocks/kibo-announcement",
+  "manifestPath": "components/kibo-announcement/component.json",
+  "integrity": "sha256:71536fbc486b40fd402bcb2cf7b2c284dde79121e5d4e45f3b4b53ea6336d2c8",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/announcement/index.tsx",
+      "type": "component",
+      "content": "import type { ComponentProps, HTMLAttributes } from \"react\";\nimport { Badge } from \"@/components/ui/badge\";\nimport { cn } from \"@/lib/utils\";\n\nexport type AnnouncementProps = ComponentProps<typeof Badge> & {\n  themed?: boolean;\n};\n\nexport const Announcement = ({\n  variant = \"outline\",\n  themed = false,\n  className,\n  ...props\n}: AnnouncementProps) => (\n  <Badge\n    className={cn(\n      \"group max-w-full gap-2 rounded-full bg-background px-3 py-0.5 font-medium shadow-sm transition-all\",\n      \"hover:shadow-md\",\n      themed && \"announcement-themed border-foreground/5\",\n      className\n    )}\n    variant={variant}\n    {...props}\n  />\n);\n\nexport type AnnouncementTagProps = HTMLAttributes<HTMLDivElement>;\n\nexport const AnnouncementTag = ({\n  className,\n  ...props\n}: AnnouncementTagProps) => (\n  <div\n    className={cn(\n      \"-ml-2.5 shrink-0 truncate rounded-full bg-foreground/5 px-2.5 py-1 text-xs\",\n      \"group-[.announcement-themed]:bg-background/60\",\n      className\n    )}\n    {...props}\n  />\n);\n\nexport type AnnouncementTitleProps = HTMLAttributes<HTMLDivElement>;\n\nexport const AnnouncementTitle = ({\n  className,\n  ...props\n}: AnnouncementTitleProps) => (\n  <div\n    className={cn(\"flex items-center gap-1 truncate py-1\", className)}\n    {...props}\n  />\n);\n",
+      "sha256": "9c947617e73e8369e7b4cc5b4e11cd16c8e2278d14701b687999de657782d405",
+      "upstreamPath": "packages/announcement/index.tsx",
+      "upstreamSha256": "9c947617e73e8369e7b4cc5b4e11cd16c8e2278d14701b687999de657782d405",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": "pnpm dlx shadcn@latest add badge",
+    "stylePaths": [],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Install the required shadcn primitives: pnpm dlx shadcn@latest add badge"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "announcement",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/announcement",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/announcement.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Announcement\ndescription: A compound badge designed to display an announcement.\nicon: Megaphone\ndependencies:\n  - https://lucide.dev/\ninstaller: announcement\n---\n\n## Features\n\n- Compound component with Badge-based styling and rounded full appearance\n- Customizable `themed` mode for different visual styles\n- Built-in tag and title components for consistent layout\n- Supports hover effects with shadow transitions\n- Flexible styling through className props\n- Context-based theming that affects child components\n\n## Examples\n\n### Themes\n\n<Preview path=\"announcement-themes\" />\n\n### Without Tag\n\n<Preview path=\"announcement-tagless\" />\n"
+}

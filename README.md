@@ -2,12 +2,17 @@
 
 DesignMCP is a commercial, agent-first catalogue of high-quality React, TypeScript, and Tailwind UI source. Agents search by intent, inspect internally hosted previews, and unlock complete copy-paste implementations without reading or modifying the user's repository.
 
-The current snapshot contains every one of beUI's 80 free MIT registry entries at commit `afba7fa055ddc589823d658f300a3b2b9fa7b305`:
+The current snapshot contains 189 verified MIT components from three immutable sources:
 
-- 41 motion components
+- 80 beUI entries at `afba7fa055ddc589823d658f300a3b2b9fa7b305`
+- 68 source-backed Magic UI entries at `2d671cc6c0e0f40e28682c9cbddd16694dcfe627`
+- 41 Kibo UI packages at `3d63cdb15b79d972e3dc38a10997987672f9b263`
+- 109 motion components
 - 17 agent-interface components
-- 22 product blocks
-- 80 interactive internal preview routes and cached preview images
+- 63 product blocks
+- 189 internal preview routes and cached preview images
+
+Seven Magic UI registry records are deliberately excluded because their files are absent from the pinned commit. Animate UI was reviewed but not imported: its pinned licence adds the Commons Clause and prohibits the source redistribution this product performs. Both decisions are recorded under `sources/` and fail closed if upstream state changes.
 
 ## What is built
 
@@ -18,11 +23,11 @@ The current snapshot contains every one of beUI's 80 free MIT registry entries a
 - Public search, category browsing, component metadata, interactive previews, and numbered PNG contact sheets.
 - Complete source retrieval with dependencies, install instructions, content hashes, source revision, and the full MIT notice.
 - Transaction-safe quota claims: four anonymous lifetime unlocks, four account signup unlocks, then four unique components per calendar month starting the next month. Existing unlocks remain accessible. Active paid subscriptions are unrestricted.
-- A pinned importer that rejects registry drift, non-MIT input, unsafe paths, and source that does not match the exact Git revision plus beUI's own provenance-banner transform.
+- A pinned multi-source importer that rejects registry drift, modified MIT grants, Commons Clause input, unsafe paths, missing source, and unreviewed transformations.
 
 ## Why this backend
 
-The catalogue is versioned data in Git, not a database table. With roughly 100 items, loading the index in memory and calculating exact cosine similarity is faster, simpler, and easier to audit than operating a vector database. Supabase is used where a database is genuinely useful: OAuth identities, subscription state, and atomic entitlement accounting. Hono and the official MCP TypeScript SDK provide the remote HTTP service; Next.js hosts the internal interactive previews.
+The catalogue is versioned data in Git, not a database table. With 189 items, loading the index in memory and calculating exact cosine similarity is faster, simpler, and easier to audit than operating a vector database. Supabase is used where a database is genuinely useful: OAuth identities, subscription state, and atomic entitlement accounting. Hono and the official MCP TypeScript SDK provide the remote HTTP service; Next.js hosts the internal interactive previews.
 
 See [Architecture](docs/architecture.md) for the full decision record.
 
@@ -57,7 +62,7 @@ pnpm catalog:screenshots  # refresh all internal preview PNGs
 pnpm test
 ```
 
-Updating beUI is intentionally manual: review the new upstream commit and registry, update [sources/beui.json](sources/beui.json), then run the import, verification, preview capture, and tests. The importer never silently follows `main`.
+Updating any source is intentionally manual: review its new commit, registry or package inventory, licence, missing-file set, and transformations; update the matching file under `sources/`; then run import, verification, preview capture, and tests. The importer never silently follows a default branch.
 
 ## Remaining integration work
 
@@ -72,4 +77,4 @@ Do not expose `SUPABASE_SERVICE_ROLE_KEY` to either browser application.
 
 ## Licence
 
-DesignMCP's own code has not yet been assigned a distribution licence. Imported beUI files retain the upstream MIT notice in [catalog/source/beui/LICENSE](catalog/source/beui/LICENSE). See [Catalogue policy](docs/catalog-policy.md) before adding another source.
+DesignMCP's own code has not yet been assigned a distribution licence. Imported files retain the separate beUI, Magic UI, and Kibo UI notices under `catalog/source/`. See [Catalogue policy](docs/catalog-policy.md) before adding another source.

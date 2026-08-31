@@ -16,7 +16,7 @@ describe("HTTP API", () => {
     expect(response.status).toBe(200);
     await expect(response.json()).resolves.toMatchObject({
       status: "ok",
-      catalog_components: 80,
+      catalog_components: 189,
     });
   });
 

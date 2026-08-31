@@ -1,0 +1,102 @@
+{
+  "id": "kibo:combobox",
+  "sourceId": "kibo",
+  "slug": "kibo-combobox",
+  "name": "Combobox",
+  "description": "Autocomplete input and command palette with a list of suggestions.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [
+    "@radix-ui/react-use-controllable-state",
+    "lucide-react"
+  ],
+  "internalDependencies": [
+    "button",
+    "command",
+    "popover"
+  ],
+  "metadata": {
+    "kind": "block",
+    "family": "input",
+    "tags": [
+      "button",
+      "command",
+      "context",
+      "dropdown",
+      "input",
+      "list",
+      "navigation",
+      "responsive",
+      "search",
+      "text"
+    ],
+    "aliases": [
+      "combobox",
+      "input"
+    ],
+    "interactions": [
+      "keyboard",
+      "type"
+    ],
+    "useWhen": [
+      "Autocomplete input and command palette with a list of suggestions."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "input:button:command:context:dropdown:keyboard:type",
+    "searchText": "Combobox\ncombobox\nAutocomplete input and command palette with a list of suggestions.\ninput\nbutton\ncommand\ncontext\ndropdown\nlist\nnavigation\nresponsive\nsearch\ntext\nkeyboard\ntype\ntitle: Combobox description: Autocomplete input and command palette with a list of suggestions. icon: ChevronsUpDown installer: combobox Features Autocomplete input with dropdown list of suggestions Controlled and uncontrolled modes Customizable trigger button Search functionality Empty state handling Responsive width that matches the trigger Keyboard navigation support Grouping of items Context based type labeling Native \"create new\" functionality Examples Controlled version Fixed width Create new items"
+  },
+  "previewPath": "/preview/blocks/kibo-combobox",
+  "manifestPath": "components/kibo-combobox/component.json",
+  "integrity": "sha256:09824db9642c251e2b23be1b9d534bdeb99c1ff998288fb624d994dbce78f6d6",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/combobox/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useControllableState } from \"@radix-ui/react-use-controllable-state\";\nimport { ChevronsUpDownIcon, PlusIcon } from \"lucide-react\";\nimport {\n  type ComponentProps,\n  createContext,\n  type ReactNode,\n  useContext,\n  useEffect,\n  useRef,\n  useState,\n} from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Command,\n  CommandEmpty,\n  CommandGroup,\n  CommandInput,\n  CommandItem,\n  CommandList,\n  CommandSeparator,\n} from \"@/components/ui/command\";\nimport {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/components/ui/popover\";\nimport { cn } from \"@/lib/utils\";\n\ntype ComboboxData = {\n  label: string;\n  value: string;\n};\n\ntype ComboboxContextType = {\n  data: ComboboxData[];\n  type: string;\n  value: string;\n  onValueChange: (value: string) => void;\n  open: boolean;\n  onOpenChange: (open: boolean) => void;\n  width: number;\n  setWidth: (width: number) => void;\n  inputValue: string;\n  setInputValue: (value: string) => void;\n};\n\nconst ComboboxContext = createContext<ComboboxContextType>({\n  data: [],\n  type: \"item\",\n  value: \"\",\n  onValueChange: () => {},\n  open: false,\n  onOpenChange: () => {},\n  width: 200,\n  setWidth: () => {},\n  inputValue: \"\",\n  setInputValue: () => {},\n});\n\nexport type ComboboxProps = ComponentProps<typeof Popover> & {\n  data: ComboboxData[];\n  type: string;\n  defaultValue?: string;\n  value?: string;\n  onValueChange?: (value: string) => void;\n  open?: boolean;\n  onOpenChange?: (open: boolean) => void;\n};\n\nexport const Combobox = ({\n  data,\n  type,\n  defaultValue,\n  value: controlledValue,\n  onValueChange: controlledOnValueChange,\n  defaultOpen = false,\n  open: controlledOpen,\n  onOpenChange: controlledOnOpenChange,\n  ...props\n}: ComboboxProps) => {\n  const [value, onValueChange] = useControllableState({\n    defaultProp: defaultValue ?? \"\",\n    prop: controlledValue,\n    onChange: controlledOnValueChange,\n  });\n  const [open, onOpenChange] = useControllableState({\n    defaultProp: defaultOpen,\n    prop: controlledOpen,\n    onChange: controlledOnOpenChange,\n  });\n  const [width, setWidth] = useState(200);\n  const [inputValue, setInputValue] = useState(\"\");\n\n  return (\n    <ComboboxContext.Provider\n      value={{\n        type,\n        value,\n        onValueChange,\n        open,\n        onOpenChange,\n        data,\n        width,\n        setWidth,\n        inputValue,\n        setInputValue,\n      }}\n    >\n      <Popover {...props} onOpenChange={onOpenChange} open={open} />\n    </ComboboxContext.Provider>\n  );\n};\n\nexport type ComboboxTriggerProps = ComponentProps<typeof Button>;\n\nexport const ComboboxTrigger = ({\n  children,\n  ...props\n}: ComboboxTriggerProps) => {\n  const { value, data, type, setWidth } = useContext(ComboboxContext);\n  const ref = useRef<HTMLButtonElement>(null);\n\n  useEffect(() => {\n    // Create a ResizeObserver to detect width changes\n    const resizeObserver = new ResizeObserver((entries) => {\n      for (const entry of entries) {\n        const newWidth = (entry.target as HTMLElement).offsetWidth;\n        if (newWidth) {\n          setWidth?.(newWidth);\n        }\n      }\n    });\n\n    if (ref.current) {\n      resizeObserver.observe(ref.current);\n    }\n\n    // Clean up the observer when component unmounts\n    return () => {\n      resizeObserver.disconnect();\n    };\n  }, [setWidth]);\n\n  return (\n    <PopoverTrigger asChild>\n      <Button variant=\"outline\" {...props} ref={ref}>\n        {children ?? (\n          <span className=\"flex w-full items-center justify-between gap-2\">\n            {value\n              ? data.find((item) => item.value === value)?.label\n              : `Select ${type}...`}\n            <ChevronsUpDownIcon\n              className=\"shrink-0 text-muted-foreground\"\n              size={16}\n            />\n          </span>\n        )}\n      </Button>\n    </PopoverTrigger>\n  );\n};\n\nexport type ComboboxContentProps = ComponentProps<typeof Command> & {\n  popoverOptions?: ComponentProps<typeof PopoverContent>;\n};\n\nexport const ComboboxContent = ({\n  className,\n  popoverOptions,\n  ...props\n}: ComboboxContentProps) => {\n  const { width } = useContext(ComboboxContext);\n\n  return (\n    <PopoverContent\n      className={cn(\"p-0\", className)}\n      style={{ width }}\n      {...popoverOptions}\n    >\n      <Command {...props} />\n    </PopoverContent>\n  );\n};\n\nexport type ComboboxInputProps = ComponentProps<typeof CommandInput> & {\n  value?: string;\n  defaultValue?: string;\n  onValueChange?: (value: string) => void;\n};\n\nexport const ComboboxInput = ({\n  value: controlledValue,\n  defaultValue,\n  onValueChange: controlledOnValueChange,\n  ...props\n}: ComboboxInputProps) => {\n  const { type, inputValue, setInputValue } = useContext(ComboboxContext);\n\n  const [value, onValueChange] = useControllableState({\n    defaultProp: defaultValue ?? inputValue,\n    prop: controlledValue,\n    onChange: (newValue) => {\n      // Sync with context state\n      setInputValue(newValue);\n      // Call external onChange if provided\n      controlledOnValueChange?.(newValue);\n    },\n  });\n\n  return (\n    <CommandInput\n      onValueChange={onValueChange}\n      placeholder={`Search ${type}...`}\n      value={value}\n      {...props}\n    />\n  );\n};\n\nexport type ComboboxListProps = ComponentProps<typeof CommandList>;\n\nexport const ComboboxList = (props: ComboboxListProps) => (\n  <CommandList {...props} />\n);\n\nexport type ComboboxEmptyProps = ComponentProps<typeof CommandEmpty>;\n\nexport const ComboboxEmpty = ({ children, ...props }: ComboboxEmptyProps) => {\n  const { type } = useContext(ComboboxContext);\n\n  return (\n    <CommandEmpty {...props}>{children ?? `No ${type} found.`}</CommandEmpty>\n  );\n};\n\nexport type ComboboxGroupProps = ComponentProps<typeof CommandGroup>;\n\nexport const ComboboxGroup = (props: ComboboxGroupProps) => (\n  <CommandGroup {...props} />\n);\n\nexport type ComboboxItemProps = ComponentProps<typeof CommandItem>;\n\nexport const ComboboxItem = (props: ComboboxItemProps) => {\n  const { onValueChange, onOpenChange } = useContext(ComboboxContext);\n\n  return (\n    <CommandItem\n      onSelect={(currentValue) => {\n        onValueChange(currentValue);\n        onOpenChange(false);\n      }}\n      {...props}\n    />\n  );\n};\n\nexport type ComboboxSeparatorProps = ComponentProps<typeof CommandSeparator>;\n\nexport const ComboboxSeparator = (props: ComboboxSeparatorProps) => (\n  <CommandSeparator {...props} />\n);\n\nexport type ComboboxCreateNewProps = {\n  onCreateNew: (value: string) => void;\n  children?: (inputValue: string) => ReactNode;\n  className?: string;\n};\n\nexport const ComboboxCreateNew = ({\n  onCreateNew,\n  children,\n  className,\n}: ComboboxCreateNewProps) => {\n  const { inputValue, type, onValueChange, onOpenChange } =\n    useContext(ComboboxContext);\n\n  if (!inputValue.trim()) {\n    return null;\n  }\n\n  const handleCreateNew = () => {\n    onCreateNew(inputValue.trim());\n    onValueChange(inputValue.trim());\n    onOpenChange(false);\n  };\n\n  return (\n    <button\n      className={cn(\n        \"relative flex w-full cursor-pointer select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50\",\n        className\n      )}\n      onClick={handleCreateNew}\n      type=\"button\"\n    >\n      {children ? (\n        children(inputValue)\n      ) : (\n        <>\n          <PlusIcon className=\"h-4 w-4 text-muted-foreground\" />\n          <span>{`Create new ${type}: \"${inputValue}\"`}</span>\n        </>\n      )}\n    </button>\n  );\n};\n",
+      "sha256": "ad7e6aeeb6e7a6505878cdfe701e169a82c592101ee06f2c833362aa0eee68b8",
+      "upstreamPath": "packages/combobox/index.tsx",
+      "upstreamSha256": "ad7e6aeeb6e7a6505878cdfe701e169a82c592101ee06f2c833362aa0eee68b8",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @radix-ui/react-use-controllable-state lucide-react",
+    "registryDependencyCommand": "pnpm dlx shadcn@latest add button command popover",
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @radix-ui/react-use-controllable-state lucide-react",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Install the required shadcn primitives: pnpm dlx shadcn@latest add button command popover"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "combobox",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/combobox",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/combobox.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Combobox\ndescription: Autocomplete input and command palette with a list of suggestions.\nicon: ChevronsUpDown\ninstaller: combobox\n---\n\n## Features\n\n- Autocomplete input with dropdown list of suggestions\n- Controlled and uncontrolled modes\n- Customizable trigger button\n- Search functionality\n- Empty state handling\n- Responsive width that matches the trigger\n- Keyboard navigation support\n- Grouping of items\n- Context-based type labeling\n- Native \"create new\" functionality\n\n## Examples\n\n### Controlled version\n\n<Preview path=\"combobox-controlled\" />\n\n### Fixed width\n\n<Preview path=\"combobox-fixed-width\" />\n\n### Create new items\n\n<Preview path=\"combobox-create-new\" />\n"
+}

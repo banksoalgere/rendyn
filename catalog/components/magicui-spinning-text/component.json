@@ -1,0 +1,89 @@
+{
+  "id": "magicui:spinning-text",
+  "sourceId": "magicui",
+  "slug": "magicui-spinning-text",
+  "name": "Spinning Text",
+  "description": "The Spinning Text component animates text in a circular motion with customizable speed, direction, color, and transitions for dynamic and engaging effects.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "spinning-text",
+    "tags": [
+      "animated",
+      "code",
+      "number",
+      "text"
+    ],
+    "aliases": [
+      "spinning text",
+      "spinning-text"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "The Spinning Text component animates text in a circular motion with customizable speed, direction, color, and transitions for dynamic and engaging effects."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "spinning-text:animated:code:number:text:type",
+    "searchText": "Spinning Text\nspinning text\nThe Spinning Text component animates text in a circular motion with customizable speed, direction, color, and transitions for dynamic and engaging effects.\nspinning-text\nanimated\ncode\nnumber\ntext\ntype\ntitle: Spinning Text date: 2025 02 09 description: The Spinning Text component animates text in a circular motion with customizable speed, direction, color, and transitions for dynamic and engaging effects. author: aayushbharti published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Examples Reverse Usage Props Prop Type Default Description children ReactElement The text content to be animated in a circular motion. style CSSProperties {} Custom styles for the text container. duration number 10 The duration of the full circular rotation animation. className string A custom class name for the text container. reverse boolean false Determines if the animation should rotate in reverse. radius number 5 The radius of the circular path for the text animation. transition Transition Custom transition effects for the animation. variants { container?: Variants; item?: Variants; } Variants for container and item animations. Credits Credit to @AayushBharti"
+  },
+  "previewPath": "/preview/motion/magicui-spinning-text",
+  "manifestPath": "components/magicui-spinning-text/component.json",
+  "integrity": "sha256:349024cab42a2ea6b24a5421176fd01b8a996bbf4f3933680c893133ee34bbae",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/spinning-text.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport React, { type ComponentPropsWithoutRef } from \"react\"\nimport { motion, type Transition, type Variants } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface SpinningTextProps extends ComponentPropsWithoutRef<\"div\"> {\n  children: string | string[]\n  duration?: number\n  reverse?: boolean\n  radius?: number\n  transition?: Transition\n  variants?: {\n    container?: Variants\n    item?: Variants\n  }\n}\n\nconst BASE_TRANSITION: Transition = {\n  repeat: Infinity,\n  ease: \"linear\",\n}\n\nconst BASE_ITEM_VARIANTS: Variants = {\n  hidden: {\n    opacity: 1,\n  },\n  visible: {\n    opacity: 1,\n  },\n}\n\nexport function SpinningText({\n  children,\n  duration = 10,\n  reverse = false,\n  radius = 5,\n  transition,\n  variants,\n  className,\n  style,\n}: SpinningTextProps) {\n  if (typeof children !== \"string\" && !Array.isArray(children)) {\n    throw new Error(\"children must be a string or an array of strings\")\n  }\n\n  if (Array.isArray(children)) {\n    // Validate all elements are strings\n    if (!children.every((child) => typeof child === \"string\")) {\n      throw new Error(\"all elements in children array must be strings\")\n    }\n    children = children.join(\"\")\n  }\n\n  const letters = children.split(\"\")\n  letters.push(\" \")\n\n  const finalTransition: Transition = {\n    ...BASE_TRANSITION,\n    ...transition,\n    duration: (transition as { duration?: number })?.duration ?? duration,\n  }\n\n  const containerVariants: Variants = {\n    visible: { rotate: reverse ? -360 : 360 },\n    ...variants?.container,\n  }\n\n  const itemVariants: Variants = {\n    ...BASE_ITEM_VARIANTS,\n    ...variants?.item,\n  }\n\n  return (\n    <motion.div\n      className={cn(\"relative\", className)}\n      style={{\n        ...style,\n      }}\n      initial=\"hidden\"\n      animate=\"visible\"\n      variants={containerVariants}\n      transition={finalTransition}\n    >\n      {letters.map((letter, index) => (\n        <motion.span\n          aria-hidden=\"true\"\n          key={`${index}-${letter}`}\n          variants={itemVariants}\n          className=\"absolute top-1/2 left-1/2 inline-block\"\n          style={\n            {\n              \"--index\": index,\n              \"--total\": letters.length,\n              \"--radius\": radius,\n              transform: `\n                  translate(-50%, -50%)\n                  rotate(calc(360deg / var(--total) * var(--index)))\n                  translateY(calc(var(--radius, 5) * -1ch))\n                `,\n              transformOrigin: \"center\",\n            } as React.CSSProperties\n          }\n        >\n          {letter}\n        </motion.span>\n      ))}\n      <span className=\"sr-only\">{children}</span>\n    </motion.div>\n  )\n}\n",
+      "sha256": "55726f972d09705b0cd10e8739e74afe8d11b7164537554f99905267e456dafa",
+      "upstreamPath": "apps/www/registry/magicui/spinning-text.tsx",
+      "upstreamSha256": "55726f972d09705b0cd10e8739e74afe8d11b7164537554f99905267e456dafa",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "spinning-text",
+    "upstreamPageUrl": "https://magicui.design/docs/components/spinning-text",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/spinning-text.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Spinning Text\ndate: 2025-02-09\ndescription: The Spinning Text component animates text in a circular motion with customizable speed, direction, color, and transitions for dynamic and engaging effects.\nauthor: aayushbharti\npublished: true\n---\n\n<ComponentPreview name=\"spinning-text-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/spinning-text\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"spinning-text\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Examples\n\n### Reverse\n\n<ComponentPreview name=\"spinning-text-demo-2\" />\n\n### Usage\n\n```tsx showLineNumbers\nimport { SpinningText } from \"@/components/ui/spinning-text\"\n```\n\n```tsx showLineNumbers\n<SpinningText>learn more • earn more • grow more •</SpinningText>\n```\n\n## Props\n\n| Prop         | Type                                         | Default | Description                                             |\n| ------------ | -------------------------------------------- | ------- | ------------------------------------------------------- |\n| `children`   | `ReactElement`                               |         | The text content to be animated in a circular motion.   |\n| `style`      | `CSSProperties`                              | `{}`    | Custom styles for the text container.                   |\n| `duration`   | `number`                                     | `10`    | The duration of the full circular rotation animation.   |\n| `className`  | `string`                                     |         | A custom class name for the text container.             |\n| `reverse`    | `boolean`                                    | `false` | Determines if the animation should rotate in reverse.   |\n| `radius`     | `number`                                     | `5`     | The radius of the circular path for the text animation. |\n| `transition` | `Transition`                                 |         | Custom transition effects for the animation.            |\n| `variants`   | `{ container?: Variants; item?: Variants; }` |         | Variants for container and item animations.             |\n\n## Credits\n\n- Credit to [@AayushBharti](https://github.com/AayushBharti)\n"
+}

@@ -1,0 +1,89 @@
+{
+  "id": "kibo:banner",
+  "sourceId": "kibo",
+  "slug": "kibo-banner",
+  "name": "Banner",
+  "description": "A banner is a full-width component that can be used to show a message and action to the user.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [
+    "@radix-ui/react-use-controllable-state",
+    "lucide-react"
+  ],
+  "internalDependencies": [
+    "button"
+  ],
+  "metadata": {
+    "kind": "block",
+    "family": "message",
+    "tags": [
+      "action",
+      "message"
+    ],
+    "aliases": [
+      "banner",
+      "message"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "A banner is a full-width component that can be used to show a message and action to the user."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "message:action",
+    "searchText": "Banner\nbanner\nA banner is a full-width component that can be used to show a message and action to the user.\nmessage\naction\ntitle: Banner description: A banner is a full width component that can be used to show a message and action to the user. icon: CircleAlert dependencies: https://lucide.dev/ installer: banner Features Controlled and uncontrolled visibility state Customizable close handler Optional inset variant with rounded corners Composable API with Icon, Title, Action and Close components Customizable via className prop Adapts to primary color tokens Examples Inset Different primary colors"
+  },
+  "previewPath": "/preview/blocks/kibo-banner",
+  "manifestPath": "components/kibo-banner/component.json",
+  "integrity": "sha256:4db1b0e2e9aff929ec08ff1710375a2fcc4afc7aa8498ad6840b0f67c8db6018",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/banner/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useControllableState } from \"@radix-ui/react-use-controllable-state\";\nimport { type LucideIcon, XIcon } from \"lucide-react\";\nimport {\n  type ComponentProps,\n  createContext,\n  type HTMLAttributes,\n  type MouseEventHandler,\n  useContext,\n} from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\n\ntype BannerContextProps = {\n  show: boolean;\n  setShow: (show: boolean) => void;\n};\n\nexport const BannerContext = createContext<BannerContextProps>({\n  show: true,\n  setShow: () => {},\n});\n\nexport type BannerProps = HTMLAttributes<HTMLDivElement> & {\n  visible?: boolean;\n  defaultVisible?: boolean;\n  onClose?: () => void;\n  inset?: boolean;\n};\n\nexport const Banner = ({\n  children,\n  visible,\n  defaultVisible = true,\n  onClose,\n  className,\n  inset = false,\n  ...props\n}: BannerProps) => {\n  const [show, setShow] = useControllableState({\n    defaultProp: defaultVisible,\n    prop: visible,\n    onChange: onClose,\n  });\n\n  if (!show) {\n    return null;\n  }\n\n  return (\n    <BannerContext.Provider value={{ show, setShow }}>\n      <div\n        className={cn(\n          \"flex w-full items-center justify-between gap-2 bg-primary px-4 py-2 text-primary-foreground\",\n          inset && \"rounded-lg\",\n          className\n        )}\n        {...props}\n      >\n        {children}\n      </div>\n    </BannerContext.Provider>\n  );\n};\n\nexport type BannerIconProps = HTMLAttributes<HTMLDivElement> & {\n  icon: LucideIcon;\n};\n\nexport const BannerIcon = ({\n  icon: Icon,\n  className,\n  ...props\n}: BannerIconProps) => (\n  <div\n    className={cn(\n      \"rounded-full border border-background/20 bg-background/10 p-1 shadow-sm\",\n      className\n    )}\n    {...props}\n  >\n    <Icon size={16} />\n  </div>\n);\n\nexport type BannerTitleProps = HTMLAttributes<HTMLParagraphElement>;\n\nexport const BannerTitle = ({ className, ...props }: BannerTitleProps) => (\n  <p className={cn(\"flex-1 text-sm\", className)} {...props} />\n);\n\nexport type BannerActionProps = ComponentProps<typeof Button>;\n\nexport const BannerAction = ({\n  variant = \"outline\",\n  size = \"sm\",\n  className,\n  ...props\n}: BannerActionProps) => (\n  <Button\n    className={cn(\n      \"shrink-0 bg-transparent hover:bg-background/10 hover:text-background\",\n      className\n    )}\n    size={size}\n    variant={variant}\n    {...props}\n  />\n);\n\nexport type BannerCloseProps = ComponentProps<typeof Button>;\n\nexport const BannerClose = ({\n  variant = \"ghost\",\n  size = \"icon\",\n  onClick,\n  className,\n  ...props\n}: BannerCloseProps) => {\n  const { setShow } = useContext(BannerContext);\n\n  const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {\n    setShow(false);\n    onClick?.(e);\n  };\n\n  return (\n    <Button\n      className={cn(\n        \"shrink-0 bg-transparent hover:bg-background/10 hover:text-background\",\n        className\n      )}\n      onClick={handleClick}\n      size={size}\n      variant={variant}\n      {...props}\n    >\n      <XIcon size={18} />\n    </Button>\n  );\n};\n",
+      "sha256": "36f49256459e45ae6816730b1619878253656d9e98221b6b106323681ed5f26b",
+      "upstreamPath": "packages/banner/index.tsx",
+      "upstreamSha256": "36f49256459e45ae6816730b1619878253656d9e98221b6b106323681ed5f26b",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @radix-ui/react-use-controllable-state lucide-react",
+    "registryDependencyCommand": "pnpm dlx shadcn@latest add button",
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @radix-ui/react-use-controllable-state lucide-react",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Install the required shadcn primitives: pnpm dlx shadcn@latest add button"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "banner",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/banner",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/banner.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Banner\ndescription: A banner is a full-width component that can be used to show a message and action to the user.\nicon: CircleAlert\ndependencies:\n  - https://lucide.dev/\ninstaller: banner\n---\n\n## Features\n\n- Controlled and uncontrolled visibility state\n- Customizable close handler\n- Optional inset variant with rounded corners\n- Composable API with Icon, Title, Action and Close components\n- Customizable via className prop\n- Adapts to primary color tokens\n## Examples\n\n### Inset\n\n<Preview path=\"banner-inset\" />\n\n### Different primary colors\n\n<Preview path=\"banner-themes\" />\n"
+}

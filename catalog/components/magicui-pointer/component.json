@@ -1,0 +1,86 @@
+{
+  "id": "magicui:pointer",
+  "sourceId": "magicui",
+  "slug": "magicui-pointer",
+  "name": "Pointer",
+  "description": "A component that displays a pointer when hovering over an element",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "pointer",
+    "tags": [
+      "code",
+      "hover"
+    ],
+    "aliases": [
+      "pointer"
+    ],
+    "interactions": [
+      "hover"
+    ],
+    "useWhen": [
+      "A component that displays a pointer when hovering over an element"
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "pointer:code:hover",
+    "searchText": "Pointer\npointer\nA component that displays a pointer when hovering over an element\ncode\nhover\ntitle: Pointer date: 2025 02 17 description: A component that displays a pointer when hovering over an element author: h3rmel published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Usage"
+  },
+  "previewPath": "/preview/motion/magicui-pointer",
+  "manifestPath": "components/magicui-pointer/component.json",
+  "integrity": "sha256:e00bc372c0283fb83965b7b976f7e28049729e305918cd5a5744bcebcda34f94",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/pointer.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport { useEffect, useRef, useState } from \"react\"\nimport {\n  AnimatePresence,\n  motion,\n  useMotionValue,\n  type HTMLMotionProps,\n} from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\n/**\n * A custom pointer component that displays an animated cursor.\n * Add this as a child to any component to enable a custom pointer when hovering.\n * You can pass custom children to render as the pointer.\n *\n * @component\n * @param {HTMLMotionProps<\"div\">} props - The component props\n */\nexport function Pointer({\n  className,\n  style,\n  children,\n  ...props\n}: HTMLMotionProps<\"div\">): React.ReactNode {\n  const x = useMotionValue(0)\n  const y = useMotionValue(0)\n  const [isActive, setIsActive] = useState<boolean>(false)\n  const containerRef = useRef<HTMLDivElement>(null)\n\n  useEffect(() => {\n    const parentElement =\n      typeof window !== \"undefined\"\n        ? (containerRef.current?.parentElement ?? null)\n        : null\n\n    const handleMouseMove = (e: MouseEvent) => {\n      x.set(e.clientX)\n      y.set(e.clientY)\n      setIsActive(true)\n    }\n\n    const handleMouseEnter = (e: MouseEvent) => {\n      x.set(e.clientX)\n      y.set(e.clientY)\n      setIsActive(true)\n    }\n\n    const handleMouseLeave = () => {\n      setIsActive(false)\n    }\n\n    if (parentElement) {\n      parentElement.style.cursor = \"none\"\n      parentElement.addEventListener(\"mousemove\", handleMouseMove)\n      parentElement.addEventListener(\"mouseenter\", handleMouseEnter)\n      parentElement.addEventListener(\"mouseleave\", handleMouseLeave)\n    }\n\n    return () => {\n      if (parentElement) {\n        parentElement.style.cursor = \"\"\n        parentElement.removeEventListener(\"mousemove\", handleMouseMove)\n        parentElement.removeEventListener(\"mouseenter\", handleMouseEnter)\n        parentElement.removeEventListener(\"mouseleave\", handleMouseLeave)\n      }\n    }\n  }, [x, y])\n\n  return (\n    <>\n      <div ref={containerRef} />\n      <AnimatePresence>\n        {isActive && (\n          <motion.div\n            className=\"pointer-events-none fixed z-50 transform-[translate(-50%,-50%)]\"\n            style={{\n              top: y,\n              left: x,\n              ...style,\n            }}\n            initial={{\n              scale: 0,\n              opacity: 0,\n            }}\n            animate={{\n              scale: 1,\n              opacity: 1,\n            }}\n            exit={{\n              scale: 0,\n              opacity: 0,\n            }}\n            {...props}\n          >\n            {children || (\n              <svg\n                stroke=\"currentColor\"\n                fill=\"currentColor\"\n                strokeWidth=\"1\"\n                viewBox=\"0 0 16 16\"\n                height=\"24\"\n                width=\"24\"\n                xmlns=\"http://www.w3.org/2000/svg\"\n                className={cn(\n                  \"rotate-[-70deg] stroke-white text-black\",\n                  className\n                )}\n              >\n                <path d=\"M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z\" />\n              </svg>\n            )}\n          </motion.div>\n        )}\n      </AnimatePresence>\n    </>\n  )\n}\n",
+      "sha256": "f46b0109767ca079e5bc87ccbaac0091216ad84c3da09b15b7c176664aff9e6f",
+      "upstreamPath": "apps/www/registry/magicui/pointer.tsx",
+      "upstreamSha256": "f46b0109767ca079e5bc87ccbaac0091216ad84c3da09b15b7c176664aff9e6f",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "pointer",
+    "upstreamPageUrl": "https://magicui.design/docs/components/pointer",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/pointer.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Pointer\ndate: 2025-02-17\ndescription: A component that displays a pointer when hovering over an element\nauthor: h3rmel\npublished: true\n---\n\n<ComponentPreview name=\"pointer-demo-1\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/pointer\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"pointer\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { Pointer } from \"@/components/ui/pointer\"\n```\n\n```tsx showLineNumbers\n<Pointer />\n```\n"
+}

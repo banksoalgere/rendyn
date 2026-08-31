@@ -1,5 +1,6 @@
 {
   "id": "beui:morphing-tabs",
+  "sourceId": "beui",
   "slug": "morphing-tabs",
   "name": "Morphing Tabs",
   "description": "Reorderable tabs whose selected item grows into a white content surface, with the active shape gliding as tabs move and a shared morph between rooms.",
@@ -55,7 +56,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -97,6 +98,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react react-dom tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react react-dom tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -108,7 +111,8 @@
     "upstreamSlug": "morphing-tabs",
     "upstreamPageUrl": "https://beui.dev/components/blocks/morphing-tabs",
     "upstreamDetailUrl": "https://beui.dev/r/morphing-tabs",
-    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/morphing-tabs.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/morphing-tabs.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Morphing Tabs\"\ndescription: \"Reorderable tabs whose selected item grows into a white content surface, with the active shape gliding as tabs move and a shared morph between rooms.\"\ncategory: \"Blocks\"\npublishedAt: \"2026-08-06\"\nupdatedAt: \"2026-08-06\"\ndocumentation: \"https://beui.dev/components/blocks/morphing-tabs\"\nmarkdown: \"https://beui.dev/components/blocks/morphing-tabs.md\"\nlicense: \"MIT\"\n---\n\n# Morphing Tabs\n\n> Reorderable tabs whose selected item grows into a white content surface, with the active shape gliding as tabs move and a shared morph between rooms.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/morphing-tabs\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `react-dom`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { useMemo, useState } from \"react\";\nimport { MorphingTabs, type MorphingTabsItem } from \"@/components/motion/morphing-tabs\";\n\nconst ROOM_CONTENT: Record<string, { eyebrow: string; title: string; detail: string; accent: string }> = {\n  \"room-2\": {\n    eyebrow: \"quiet focus\",\n    title: \"Room 2\",\n    detail: \"A small space for the work that needs a little more air around it.\",\n    accent: \"#db5b2f\",\n  },\n  general: {\n    eyebrow: \"shared space\",\n    title: \"General\",\n    detail: \"The common room for notes, links and the ideas that are still finding their shape.\",\n    accent: \"#1bb273\",\n  },\n  archive: {\n    eyebrow: \"kept close\",\n    title: \"Archive\",\n    detail: \"Past rooms stay available without competing with the conversations in motion.\",\n    accent: \"#7a6de2\",\n  },\n};\n\nfunction RoomPanel({ id }: { id: string }) {\n  const room = ROOM_CONTENT[id];\n\n  return (\n    <div className=\"relative min-h-64 overflow-hidden bg-[radial-gradient(circle_at_1px_1px,#dfe2e3_1px,transparent_1.5px)] bg-[size:4.8rem_4.8rem] px-7 py-8 md:px-12 md:py-10\">\n      <div className=\"relative max-w-xl\">\n        <p className=\"text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-black/40\">\n          {room.eyebrow}\n        </p>\n        <h3 className=\"mt-3 text-3xl font-light tracking-[-0.055em] text-[#151515] md:text-5xl\">\n          {room.title}\n        </h3>\n        <p className=\"mt-4 max-w-md text-sm leading-6 text-black/55 md:text-base\">\n          {room.detail}\n        </p>\n        <div className=\"mt-8 flex items-center gap-3 text-xs font-medium text-black/50\">\n          <span className=\"size-2 rounded-full\" style={{ backgroundColor: room.accent }} />\n          drag any room to reorder\n        </div>\n      </div>\n    </div>\n  );\n}\n\nexport function MorphingTabsPreview() {\n  const initialItems = useMemo<MorphingTabsItem[]>(\n    () =>\n      Object.keys(ROOM_CONTENT).map((id) => ({\n        id,\n        label: ROOM_CONTENT[id].title,\n        content: <RoomPanel id={id} />,\n      })),\n    [],\n  );\n  const [items, setItems] = useState(initialItems);\n  const [value, setValue] = useState<string | null>(\"room-2\");\n\n  return (\n    <div className=\"flex w-full min-w-0 items-center justify-center bg-[#242424] p-3 md:p-8\">\n      <MorphingTabs\n        items={items}\n        value={value}\n        onValueChange={setValue}\n        onOrderChange={(ids) => {\n          setItems((current) => {\n            const byId = new Map(current.map((item) => [item.id, item]));\n            return ids.flatMap((id) => {\n              const item = byId.get(id);\n              return item ? [item] : [];\n            });\n          });\n        }}\n        onClose={(id) => {\n          setItems((current) => {\n            const next = current.filter((item) => item.id !== id);\n            if (id === value) setValue(next[0]?.id ?? null);\n            return next;\n          });\n        }}\n        ariaLabel=\"Rooms\"\n        className=\"w-full max-w-5xl\"\n      />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### MorphingTabs\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `items` | `MorphingTabsItem[]` | — | Yes | — |\n| `value` | `string \\| null` | — | No | — |\n| `defaultValue` | `string \\| null` | — | No | — |\n| `onValueChange` | `((id: string \\| null) => void)` | — | No | — |\n| `onOrderChange` | `((ids: string[]) => void)` | — | No | Called once after a pointer drag or keyboard reorder completes. |\n| `onClose` | `((id: string) => void)` | — | No | Enables the close affordance on every tab when provided. |\n| `ariaLabel` | `string` | `Tabs` | No | — |\n| `className` | `string` | — | No | — |\n| `classNames` | `MorphingTabsClassNames` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/morphing-tabs\n- Raw source: https://beui.dev/r/morphing-tabs/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

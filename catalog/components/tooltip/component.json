@@ -1,5 +1,6 @@
 {
   "id": "beui:tooltip",
+  "sourceId": "beui",
   "slug": "tooltip",
   "name": "Tooltip",
   "description": "Hover or focus tooltip with blur enter/exit and spring spawn.",
@@ -58,7 +59,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -118,6 +119,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react react-dom tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react react-dom tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -129,7 +132,8 @@
     "upstreamSlug": "tooltip",
     "upstreamPageUrl": "https://beui.dev/components/motion/tooltip",
     "upstreamDetailUrl": "https://beui.dev/r/tooltip",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/tooltip.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/tooltip.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Tooltip\"\ndescription: \"Hover or focus tooltip with blur enter/exit and spring spawn.\"\ncategory: \"Components\"\npublishedAt: \"2026-05-17\"\nupdatedAt: \"2026-07-13\"\ndocumentation: \"https://beui.dev/components/motion/tooltip\"\nmarkdown: \"https://beui.dev/components/motion/tooltip.md\"\nlicense: \"MIT\"\n---\n\n# Tooltip\n\n> Hover or focus tooltip with blur enter/exit and spring spawn.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/tooltip\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `react-dom`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { Heart, Settings, Share, Trash2 } from \"lucide-react\";\nimport { Tooltip } from \"@/components/motion/tooltip\";\n\nexport function TooltipPreview() {\n  return (\n    <div className=\"flex flex-col items-center gap-12\">\n      <div className=\"flex flex-wrap items-center justify-center gap-4\">\n        <Tooltip content=\"Like this post\" side=\"top\">\n          <button type=\"button\" aria-label=\"Like this post\" className=\"inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground press\">\n            <Heart className=\"h-4 w-4\" />\n          </button>\n        </Tooltip>\n        <Tooltip content=\"Share\" side=\"bottom\">\n          <button type=\"button\" aria-label=\"Share\" className=\"inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground press\">\n            <Share className=\"h-4 w-4\" />\n          </button>\n        </Tooltip>\n        <Tooltip content=\"Open settings\" side=\"left\">\n          <button type=\"button\" aria-label=\"Open settings\" className=\"inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground press\">\n            <Settings className=\"h-4 w-4\" />\n          </button>\n        </Tooltip>\n        <Tooltip content=\"Move to trash\" side=\"right\">\n          <button type=\"button\" aria-label=\"Move to trash\" className=\"inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground press\">\n            <Trash2 className=\"h-4 w-4\" />\n          </button>\n        </Tooltip>\n      </div>\n      <p className=\"text-xs text-muted-foreground\">Hover or focus each button. Content fades and un-blurs in.</p>\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### Tooltip\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `content` | `ReactNode` | — | Yes | — |\n| `side` | `\"top\" \\| \"bottom\" \\| \"left\" \\| \"right\"` | `top` | No | — |\n| `delay` | `number` | `120` | No | Delay before showing (ms). Default 120. |\n| `className` | `string` | — | No | — |\n| `wrapperClassName` | `string` | — | No | Classes for the outer wrapper span. Use to fix baseline / fill parent. |\n\n## Source\n\n- Registry detail: https://beui.dev/r/tooltip\n- Raw source: https://beui.dev/r/tooltip/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

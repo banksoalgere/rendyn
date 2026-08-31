@@ -1,0 +1,84 @@
+{
+  "id": "kibo:cursor",
+  "sourceId": "kibo",
+  "slug": "kibo-cursor",
+  "name": "Cursor",
+  "description": "A cursor component, great for realtime interactive applications.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "cursor",
+    "tags": [
+      "form",
+      "message",
+      "responsive",
+      "text",
+      "tooltip"
+    ],
+    "aliases": [
+      "cursor"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "A cursor component, great for realtime interactive applications."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "cursor:form:message:responsive:text:tooltip",
+    "searchText": "Cursor\ncursor\nA cursor component, great for realtime interactive applications.\nform\nmessage\nresponsive\ntext\ntooltip\ntitle: Cursor description: A cursor component, great for realtime interactive applications. icon: MousePointer2 installer: cursor Features Customizable cursor color with automatic text color contrast adjustment Optional name label display Optional message display Smooth cursor pointer with tooltip style appearance Fully accessible with ARIA attributes Responsive and performant with optimized rendering Examples Cursor only Cursor with name Cursor with message Cursor with name and message Cursor with custom color"
+  },
+  "previewPath": "/preview/blocks/kibo-cursor",
+  "manifestPath": "components/kibo-cursor/component.json",
+  "integrity": "sha256:30e591c52574b2fa8a64fc622dcf0b3aef9ed9bc653b607de663420c40d80775",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/cursor/index.tsx",
+      "type": "component",
+      "content": "import { Children, type HTMLAttributes, type SVGProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type CursorProps = HTMLAttributes<HTMLSpanElement>;\n\nexport const Cursor = ({ className, children, ...props }: CursorProps) => (\n  <span\n    className={cn(\"pointer-events-none relative select-none\", className)}\n    {...props}\n  >\n    {children}\n  </span>\n);\n\nexport type CursorPointerProps = SVGProps<SVGSVGElement>;\n\nexport const CursorPointer = ({ className, ...props }: CursorPointerProps) => (\n  <svg\n    aria-hidden=\"true\"\n    className={cn(\"size-3.5\", className)}\n    fill=\"none\"\n    focusable=\"false\"\n    height=\"20\"\n    viewBox=\"0 0 20 20\"\n    width=\"20\"\n    xmlns=\"http://www.w3.org/2000/svg\"\n    {...props}\n  >\n    <path\n      d=\"M19.438 6.716 1.115.05A.832.832 0 0 0 .05 1.116L6.712 19.45a.834.834 0 0 0 1.557.025l3.198-8 7.995-3.2a.833.833 0 0 0 0-1.559h-.024Z\"\n      fill=\"currentColor\"\n    />\n  </svg>\n);\n\nexport type CursorBodyProps = HTMLAttributes<HTMLSpanElement>;\n\nexport const CursorBody = ({\n  children,\n  className,\n  ...props\n}: CursorBodyProps) => (\n  <span\n    className={cn(\n      \"relative ml-3.5 flex flex-col whitespace-nowrap rounded-xl py-1 pr-3 pl-2.5 text-xs\",\n      Children.count(children) > 1 && \"rounded-tl [&>:first-child]:opacity-70\",\n      \"bg-secondary text-foreground\",\n      className\n    )}\n    {...props}\n  >\n    {children}\n  </span>\n);\n\nexport type CursorNameProps = HTMLAttributes<HTMLSpanElement>;\n\nexport const CursorName = (props: CursorNameProps) => <span {...props} />;\n\nexport type CursorMessageProps = HTMLAttributes<HTMLSpanElement>;\n\nexport const CursorMessage = (props: CursorMessageProps) => <span {...props} />;\n",
+      "sha256": "9d7f0e233bc595c54ced7a3aba9c87f27a536453de3359df8f1cbf3fe313e574",
+      "upstreamPath": "packages/cursor/index.tsx",
+      "upstreamSha256": "9d7f0e233bc595c54ced7a3aba9c87f27a536453de3359df8f1cbf3fe313e574",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "cursor",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/cursor",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/cursor.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Cursor\ndescription: A cursor component, great for realtime interactive applications.\nicon: MousePointer2\ninstaller: cursor\n---\n\n## Features\n\n- Customizable cursor color with automatic text color contrast adjustment\n- Optional name label display\n- Optional message display\n- Smooth cursor pointer with tooltip-style appearance\n- Fully accessible with ARIA attributes\n- Responsive and performant with optimized rendering\n\n## Examples\n\n### Cursor only\n\n<Preview path=\"cursor-only\" />\n\n### Cursor with name\n\n<Preview path=\"cursor-name\" />\n\n### Cursor with message\n\n<Preview path=\"cursor-message\" />\n\n### Cursor with name and message\n\n<Preview path=\"cursor-name-message\" />\n\n### Cursor with custom color\n\n<Preview path=\"cursor-color\" />\n\n"
+}

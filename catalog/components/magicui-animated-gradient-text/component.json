@@ -1,0 +1,97 @@
+{
+  "id": "magicui:animated-gradient-text",
+  "sourceId": "magicui",
+  "slug": "magicui-animated-gradient-text",
+  "name": "Animated Gradient Text",
+  "description": "An animated gradient background which transitions between colors for text.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "animated-gradient-text",
+    "tags": [
+      "animated",
+      "code",
+      "file",
+      "number",
+      "text"
+    ],
+    "aliases": [
+      "animated gradient text",
+      "animated-gradient-text"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "An animated gradient background which transitions between colors for text."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "animated-gradient-text:animated:code:file:number:text:type",
+    "searchText": "Animated Gradient Text\nanimated gradient text\nAn animated gradient background which transitions between colors for text.\nanimated-gradient-text\nanimated\ncode\nfile\nnumber\ntext\ntype\ntitle: Animated Gradient Text date: 2024 04 09 description: An animated gradient background which transitions between colors for text. author: dillionverma published: true video: https://cdn.magicui.design/animated gradient text.mp4 Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Add the required CSS animations Add the following animations to your global CSS file. Examples Custom Speed Usage Props Prop Type Default Description children node The children passed into the component className string The class name to be applied speed number 1 The speed of the gradient animation colorFrom string \" ffaa40\" The starting color of the gradient colorTo string \" 9c40ff\" The ending color of the gradient"
+  },
+  "previewPath": "/preview/motion/magicui-animated-gradient-text",
+  "manifestPath": "components/magicui-animated-gradient-text/component.json",
+  "integrity": "sha256:d2742c4fc4a2197aae2506e8a19939364acb29d174fae7a57c710ac3df13cdc6",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/animated-gradient-text.tsx",
+      "type": "component",
+      "content": "import { type ComponentPropsWithoutRef } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface AnimatedGradientTextProps extends ComponentPropsWithoutRef<\"div\"> {\n  speed?: number\n  colorFrom?: string\n  colorTo?: string\n}\n\nexport function AnimatedGradientText({\n  children,\n  className,\n  speed = 1,\n  colorFrom = \"#ffaa40\",\n  colorTo = \"#9c40ff\",\n  ...props\n}: AnimatedGradientTextProps) {\n  return (\n    <span\n      style={\n        {\n          \"--bg-size\": `${speed * 300}%`,\n          \"--color-from\": colorFrom,\n          \"--color-to\": colorTo,\n        } as React.CSSProperties\n      }\n      className={cn(\n        `animate-gradient inline bg-linear-to-r from-(--color-from) via-(--color-to) to-(--color-from) bg-size-[var(--bg-size)_100%] bg-clip-text text-transparent`,\n        className\n      )}\n      {...props}\n    >\n      {children}\n    </span>\n  )\n}\n",
+      "sha256": "e5f0b81be1a9dc707199c2fd10c588bde872c72a02e2eb6d195d080112a34692",
+      "upstreamPath": "apps/www/registry/magicui/animated-gradient-text.tsx",
+      "upstreamSha256": "e5f0b81be1a9dc707199c2fd10c588bde872c72a02e2eb6d195d080112a34692",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    },
+    {
+      "path": "components/magicui/animated-gradient-text.css",
+      "type": "style",
+      "content": "@theme inline {\n  --animate-gradient: gradient 8s linear infinite;\n}\n\n@keyframes gradient {\n  to {\n    background-position: var(--bg-size, 300%) 0;\n  }\n}\n",
+      "sha256": "095707cc8d79d7fb77cde25351c57919323ec1078b720ad7350f38159c3bb7f1",
+      "transformation": "Materialize registry CSS and theme variables as a component stylesheet when present."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/magicui/animated-gradient-text.css"
+    ],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Include the returned styles: components/magicui/animated-gradient-text.css"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "animated-gradient-text",
+    "upstreamPageUrl": "https://magicui.design/docs/components/animated-gradient-text",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/animated-gradient-text.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Animated Gradient Text\ndate: 2024-04-09\ndescription: An animated gradient background which transitions between colors for text.\nauthor: dillionverma\npublished: true\nvideo: https://cdn.magicui.design/animated-gradient-text.mp4\n---\n\n<ComponentPreview name=\"animated-gradient-text-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/animated-gradient-text\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"animated-gradient-text\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n<Step>Add the required CSS animations</Step>\n\nAdd the following animations to your global CSS file.\n\n```css title=\"app/globals.css\" showLineNumbers {2, 4-8}\n@theme inline {\n  --animate-gradient: gradient 8s linear infinite;\n\n  @keyframes gradient {\n    to {\n      background-position: var(--bg-size, 300%) 0;\n    }\n  }\n}\n```\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Examples\n\n### Custom Speed\n\n<ComponentPreview name=\"animated-gradient-text-demo-2\" />\n\n### Usage\n\n```tsx showLineNumbers\nimport { AnimatedGradientText } from \"@/components/ui/animated-gradient-text\"\n```\n\n```tsx showLineNumbers\n<AnimatedGradientText>Animated Gradient Text</AnimatedGradientText>\n```\n\n## Props\n\n| Prop        | Type     | Default     | Description                            |\n| ----------- | -------- | ----------- | -------------------------------------- |\n| `children`  | `node`   | `-`         | The children passed into the component |\n| `className` | `string` | `-`         | The class name to be applied           |\n| `speed`     | `number` | `1`         | The speed of the gradient animation    |\n| `colorFrom` | `string` | `\"#ffaa40\"` | The starting color of the gradient     |\n| `colorTo`   | `string` | `\"#9c40ff\"` | The ending color of the gradient       |\n"
+}

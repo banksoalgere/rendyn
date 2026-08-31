@@ -1,0 +1,86 @@
+{
+  "id": "kibo:relative-time",
+  "sourceId": "kibo",
+  "slug": "kibo-relative-time",
+  "name": "Relative Time",
+  "description": "A component that displays time in various timezones.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [
+    "@radix-ui/react-use-controllable-state"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "relative-time",
+    "tags": [
+      "form",
+      "layout",
+      "responsive"
+    ],
+    "aliases": [
+      "relative time",
+      "relative-time"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "A component that displays time in various timezones."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "relative-time:form:layout:responsive",
+    "searchText": "Relative Time\nrelative time\nA component that displays time in various timezones.\nrelative-time\nform\nlayout\nresponsive\ntitle: Relative Time description: A component that displays time in various timezones. icon: Clock installer: relative time Features Displays multiple timezones simultaneously Supports both controlled and uncontrolled time states Auto updates every second when no time is provided Customizable date and time format options Clean, minimal UI with timezone labels and formatted times Responsive layout with flex positioning Examples Custom date format Custom time format Controlled time"
+  },
+  "previewPath": "/preview/blocks/kibo-relative-time",
+  "manifestPath": "components/kibo-relative-time/component.json",
+  "integrity": "sha256:84da376f02e8fad76e645618f54eb8410ac6c6cedab29e17cf65c03475a1ab70",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/relative-time/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useControllableState } from \"@radix-ui/react-use-controllable-state\";\nimport {\n  createContext,\n  type HTMLAttributes,\n  useContext,\n  useEffect,\n} from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nconst formatDate = (\n  date: Date,\n  timeZone: string,\n  options?: Intl.DateTimeFormatOptions\n) =>\n  new Intl.DateTimeFormat(\n    \"en-US\",\n    options ?? {\n      dateStyle: \"long\",\n      timeZone,\n    }\n  ).format(date);\n\nconst formatTime = (\n  date: Date,\n  timeZone: string,\n  options?: Intl.DateTimeFormatOptions\n) =>\n  new Intl.DateTimeFormat(\n    \"en-US\",\n    options ?? {\n      hour: \"2-digit\",\n      minute: \"2-digit\",\n      second: \"2-digit\",\n      timeZone,\n    }\n  ).format(date);\n\ntype RelativeTimeContextType = {\n  time: Date;\n  dateFormatOptions?: Intl.DateTimeFormatOptions;\n  timeFormatOptions?: Intl.DateTimeFormatOptions;\n};\n\nconst RelativeTimeContext = createContext<RelativeTimeContextType>({\n  time: new Date(),\n  dateFormatOptions: {\n    dateStyle: \"long\",\n  },\n  timeFormatOptions: {\n    hour: \"2-digit\",\n    minute: \"2-digit\",\n  },\n});\n\nexport type RelativeTimeProps = HTMLAttributes<HTMLDivElement> & {\n  time?: Date;\n  defaultTime?: Date;\n  onTimeChange?: (time: Date) => void;\n  dateFormatOptions?: Intl.DateTimeFormatOptions;\n  timeFormatOptions?: Intl.DateTimeFormatOptions;\n};\n\nexport const RelativeTime = ({\n  time: controlledTime,\n  defaultTime = new Date(),\n  onTimeChange,\n  dateFormatOptions,\n  timeFormatOptions,\n  className,\n  ...props\n}: RelativeTimeProps) => {\n  const [time, setTime] = useControllableState<Date>({\n    defaultProp: defaultTime,\n    prop: controlledTime,\n    onChange: onTimeChange,\n  });\n\n  useEffect(() => {\n    if (controlledTime) {\n      return;\n    }\n\n    const interval = setInterval(() => {\n      setTime(new Date());\n    }, 1000);\n\n    return () => clearInterval(interval);\n  }, [setTime, controlledTime]);\n\n  return (\n    <RelativeTimeContext.Provider\n      value={{\n        time: time ?? defaultTime,\n        dateFormatOptions,\n        timeFormatOptions,\n      }}\n    >\n      <div className={cn(\"grid gap-2\", className)} {...props} />\n    </RelativeTimeContext.Provider>\n  );\n};\n\nexport type RelativeTimeZoneProps = HTMLAttributes<HTMLDivElement> & {\n  zone: string;\n  dateFormatOptions?: Intl.DateTimeFormatOptions;\n  timeFormatOptions?: Intl.DateTimeFormatOptions;\n};\n\nexport type RelativeTimeZoneContextType = {\n  zone: string;\n};\n\nconst RelativeTimeZoneContext = createContext<RelativeTimeZoneContextType>({\n  zone: \"UTC\",\n});\n\nexport const RelativeTimeZone = ({\n  zone,\n  className,\n  ...props\n}: RelativeTimeZoneProps) => (\n  <RelativeTimeZoneContext.Provider value={{ zone }}>\n    <div\n      className={cn(\n        \"flex items-center justify-between gap-1.5 text-xs\",\n        className\n      )}\n      {...props}\n    />\n  </RelativeTimeZoneContext.Provider>\n);\n\nexport type RelativeTimeZoneDisplayProps = HTMLAttributes<HTMLDivElement>;\n\nexport const RelativeTimeZoneDisplay = ({\n  className,\n  ...props\n}: RelativeTimeZoneDisplayProps) => {\n  const { time, timeFormatOptions } = useContext(RelativeTimeContext);\n  const { zone } = useContext(RelativeTimeZoneContext);\n  const display = formatTime(time, zone, timeFormatOptions);\n\n  return (\n    <div\n      className={cn(\"pl-8 text-muted-foreground tabular-nums\", className)}\n      {...props}\n    >\n      {display}\n    </div>\n  );\n};\n\nexport type RelativeTimeZoneDateProps = HTMLAttributes<HTMLDivElement>;\n\nexport const RelativeTimeZoneDate = ({\n  className,\n  ...props\n}: RelativeTimeZoneDateProps) => {\n  const { time, dateFormatOptions } = useContext(RelativeTimeContext);\n  const { zone } = useContext(RelativeTimeZoneContext);\n  const display = formatDate(time, zone, dateFormatOptions);\n\n  return <div {...props}>{display}</div>;\n};\n\nexport type RelativeTimeZoneLabelProps = HTMLAttributes<HTMLDivElement>;\n\nexport const RelativeTimeZoneLabel = ({\n  className,\n  ...props\n}: RelativeTimeZoneLabelProps) => (\n  <div\n    className={cn(\n      \"flex h-4 items-center justify-center rounded-xs bg-secondary px-1.5 font-mono\",\n      className\n    )}\n    {...props}\n  />\n);\n",
+      "sha256": "97de2ca519b61e7088f5062f13eb8b01f5aeafcb9ce6b81b142f0d0b9c854597",
+      "upstreamPath": "packages/relative-time/index.tsx",
+      "upstreamSha256": "97de2ca519b61e7088f5062f13eb8b01f5aeafcb9ce6b81b142f0d0b9c854597",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @radix-ui/react-use-controllable-state",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @radix-ui/react-use-controllable-state",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "relative-time",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/relative-time",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/relative-time.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Relative Time\ndescription: A component that displays time in various timezones.\nicon: Clock\ninstaller: relative-time\n---\n\n## Features\n\n- Displays multiple timezones simultaneously\n- Supports both controlled and uncontrolled time states\n- Auto-updates every second when no time is provided\n- Customizable date and time format options\n- Clean, minimal UI with timezone labels and formatted times\n- Responsive layout with flex positioning\n\n## Examples\n\n### Custom date format\n\n<Preview path=\"relative-time-format-date\" />\n\n### Custom time format\n\n<Preview path=\"relative-time-format-time\" />\n\n### Controlled time\n\n<Preview path=\"relative-time-controlled\" />\n"
+}

@@ -1,0 +1,84 @@
+{
+  "id": "magicui:avatar-circles",
+  "sourceId": "magicui",
+  "slug": "magicui-avatar-circles",
+  "name": "Avatar Circles",
+  "description": "Overlapping circles of avatars.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "avatar-circles",
+    "tags": [
+      "code",
+      "number"
+    ],
+    "aliases": [
+      "avatar circles",
+      "avatar-circles"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "Overlapping circles of avatars."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "avatar-circles:code:number:type",
+    "searchText": "Avatar Circles\navatar circles\nOverlapping circles of avatars.\navatar-circles\ncode\nnumber\ntype\ntitle: Avatar Circles date: 2024 05 22 description: Overlapping circles of avatars. author: tomonarifeehan published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Usage Props Prop Type Default Description className string The class name to be applied to the component numPeople number 99 The number appearing in the last circle"
+  },
+  "previewPath": "/preview/motion/magicui-avatar-circles",
+  "manifestPath": "components/magicui-avatar-circles/component.json",
+  "integrity": "sha256:12f5c32987ac49fbfc49bb257097d58170912db67c9d296d1dad103ba802c72a",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/avatar-circles.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface Avatar {\n  imageUrl: string\n  profileUrl: string\n}\ninterface AvatarCirclesProps {\n  className?: string\n  numPeople?: number\n  avatarUrls: Avatar[]\n}\n\nexport const AvatarCircles = ({\n  numPeople,\n  className,\n  avatarUrls,\n}: AvatarCirclesProps) => {\n  return (\n    <div className={cn(\"z-10 flex -space-x-4 rtl:space-x-reverse\", className)}>\n      {avatarUrls.map((url, index) => (\n        <a\n          key={index}\n          href={url.profileUrl}\n          target=\"_blank\"\n          rel=\"noopener noreferrer\"\n        >\n          <img\n            key={index}\n            className=\"h-10 w-10 rounded-full border-2 border-white dark:border-gray-800\"\n            src={url.imageUrl}\n            width={40}\n            height={40}\n            alt={`Avatar ${index + 1}`}\n          />\n        </a>\n      ))}\n      {(numPeople ?? 0) > 0 && (\n        <a\n          className=\"flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-black text-center text-xs font-medium text-white hover:bg-gray-600 dark:border-gray-800 dark:bg-white dark:text-black\"\n          href=\"\"\n        >\n          +{numPeople}\n        </a>\n      )}\n    </div>\n  )\n}\n",
+      "sha256": "e0900fa87df8042ad4f98d1ec8168b1504b207eb0211ed19b1ba079d1f9741dd",
+      "upstreamPath": "apps/www/registry/magicui/avatar-circles.tsx",
+      "upstreamSha256": "e0900fa87df8042ad4f98d1ec8168b1504b207eb0211ed19b1ba079d1f9741dd",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "avatar-circles",
+    "upstreamPageUrl": "https://magicui.design/docs/components/avatar-circles",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/avatar-circles.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Avatar Circles\ndate: 2024-05-22\ndescription: Overlapping circles of avatars.\nauthor: tomonarifeehan\npublished: true\n---\n\n<ComponentPreview name=\"avatar-circles-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/avatar-circles\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"avatar-circles\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { AvatarCircles } from \"@/components/ui/avatar-circles\"\n```\n\n```tsx showLineNumbers\n<AvatarCircles\n  numPeople={99}\n  avatarUrls={[\n    {\n      imageUrl: \"https://avatars.githubusercontent.com/u/16860528\",\n      profileUrl: \"https://github.com/dillionverma\",\n    },\n  ]}\n/>\n```\n\n## Props\n\n| Prop        | Type     | Default | Description                                   |\n| ----------- | -------- | ------- | --------------------------------------------- |\n| `className` | `string` | `-`     | The class name to be applied to the component |\n| `numPeople` | `number` | `99`    | The number appearing in the last circle       |\n"
+}

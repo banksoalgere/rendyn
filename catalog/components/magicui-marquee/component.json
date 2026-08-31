@@ -1,0 +1,99 @@
+{
+  "id": "magicui:marquee",
+  "sourceId": "magicui",
+  "slug": "magicui-marquee",
+  "name": "Marquee",
+  "description": "An infinite scrolling component that can be used to display text, images, or videos.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "marquee",
+    "tags": [
+      "code",
+      "file",
+      "hover",
+      "marquee",
+      "number",
+      "text"
+    ],
+    "aliases": [
+      "marquee"
+    ],
+    "interactions": [
+      "hover",
+      "scroll",
+      "type"
+    ],
+    "useWhen": [
+      "An infinite scrolling component that can be used to display text, images, or videos."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "marquee:code:file:hover:number:scroll",
+    "searchText": "Marquee\nmarquee\nAn infinite scrolling component that can be used to display text, images, or videos.\ncode\nfile\nhover\nnumber\ntext\nscroll\ntype\ntitle: Marquee date: 2023 07 26 description: An infinite scrolling component that can be used to display text, images, or videos. author: dillionverma published: true video: https://cdn.magicui.design/marquee.mp4 Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Add the required CSS animations Add the following animations to your global CSS file. Examples Vertical 3D Usage Props Prop Type Default Description className string The class name to apply to the component. reverse boolean false Whether or not to reverse the direction of the marquee. pauseOnHover boolean false Whether or not to pause the marquee when the user hovers over the component. vertical boolean false Whether or not to display the marquee vertically. children node The content to display in the marquee. repeat number 4 The number of times to repeat the content."
+  },
+  "previewPath": "/preview/motion/magicui-marquee",
+  "manifestPath": "components/magicui-marquee/component.json",
+  "integrity": "sha256:88e6fc7cdbcb5816ee6dfb9de1445b37a6b747a161f81c8ba78ed9ccba7c5b2a",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/marquee.tsx",
+      "type": "component",
+      "content": "import { type ComponentPropsWithoutRef } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface MarqueeProps extends ComponentPropsWithoutRef<\"div\"> {\n  /**\n   * Optional CSS class name to apply custom styles\n   */\n  className?: string\n  /**\n   * Whether to reverse the animation direction\n   * @default false\n   */\n  reverse?: boolean\n  /**\n   * Whether to pause the animation on hover\n   * @default false\n   */\n  pauseOnHover?: boolean\n  /**\n   * Content to be displayed in the marquee\n   */\n  children: React.ReactNode\n  /**\n   * Whether to animate vertically instead of horizontally\n   * @default false\n   */\n  vertical?: boolean\n  /**\n   * Number of times to repeat the content\n   * @default 4\n   */\n  repeat?: number\n}\n\nexport function Marquee({\n  className,\n  reverse = false,\n  pauseOnHover = false,\n  children,\n  vertical = false,\n  repeat = 4,\n  ...props\n}: MarqueeProps) {\n  return (\n    <div\n      {...props}\n      className={cn(\n        \"group flex gap-(--gap) overflow-hidden p-2 [--duration:40s] [--gap:1rem]\",\n        {\n          \"flex-row\": !vertical,\n          \"flex-col\": vertical,\n        },\n        className\n      )}\n    >\n      {Array(repeat)\n        .fill(0)\n        .map((_, i) => (\n          <div\n            key={i}\n            className={cn(\"flex shrink-0 justify-around gap-(--gap)\", {\n              \"animate-marquee flex-row\": !vertical,\n              \"animate-marquee-vertical flex-col\": vertical,\n              \"group-hover:[animation-play-state:paused]\": pauseOnHover,\n              \"[animation-direction:reverse]\": reverse,\n            })}\n          >\n            {children}\n          </div>\n        ))}\n    </div>\n  )\n}\n",
+      "sha256": "779f360a107409bfa35cda13bcef7d54cd620a15ab4a0ee50412442a4dd6b9c7",
+      "upstreamPath": "apps/www/registry/magicui/marquee.tsx",
+      "upstreamSha256": "779f360a107409bfa35cda13bcef7d54cd620a15ab4a0ee50412442a4dd6b9c7",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    },
+    {
+      "path": "components/magicui/marquee.css",
+      "type": "style",
+      "content": "@theme inline {\n  --animate-marquee: marquee var(--duration) infinite linear;\n  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;\n}\n\n@keyframes marquee {\n  from {\n    transform: translateX(0);\n  }\n  to {\n    transform: translateX(calc(-100% - var(--gap)));\n  }\n}\n\n@keyframes marquee-vertical {\n  from {\n    transform: translateY(0);\n  }\n  to {\n    transform: translateY(calc(-100% - var(--gap)));\n  }\n}\n",
+      "sha256": "a734732bb5334cd250ad86fea1657df9b7c592214c4f5b43bbe113b7c51b7e55",
+      "transformation": "Materialize registry CSS and theme variables as a component stylesheet when present."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/magicui/marquee.css"
+    ],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Include the returned styles: components/magicui/marquee.css"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "marquee",
+    "upstreamPageUrl": "https://magicui.design/docs/components/marquee",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/marquee.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Marquee\ndate: 2023-07-26\ndescription: An infinite scrolling component that can be used to display text, images, or videos.\nauthor: dillionverma\npublished: true\nvideo: https://cdn.magicui.design/marquee.mp4\n---\n\n<ComponentPreview name=\"marquee-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/marquee\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"marquee\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n<Step>Add the required CSS animations</Step>\n\nAdd the following animations to your global CSS file.\n\n```css title=\"app/globals.css\" showLineNumbers {2-3, 4-20}\n@theme inline {\n  --animate-marquee: marquee var(--duration) infinite linear;\n  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;\n\n  @keyframes marquee {\n    from {\n      transform: translateX(0);\n    }\n    to {\n      transform: translateX(calc(-100% - var(--gap)));\n    }\n  }\n  @keyframes marquee-vertical {\n    from {\n      transform: translateY(0);\n    }\n    to {\n      transform: translateY(calc(-100% - var(--gap)));\n    }\n  }\n}\n```\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Examples\n\n### Vertical\n\n<ComponentPreview name=\"marquee-demo-vertical\" />\n\n### 3D\n\n<ComponentPreview name=\"marquee-3d\" />\n\n## Usage\n\n```tsx showLineNumbers\nimport { Marquee } from \"@/components/ui/marquee\"\n```\n\n```tsx showLineNumbers\n<Marquee>\n  <span>Next.js</span>\n  <span>React</span>\n  <span>TypeScript</span>\n  <span>Tailwind CSS</span>\n</Marquee>\n```\n\n## Props\n\n| Prop           | Type      | Default | Description                                                                  |\n| -------------- | --------- | ------- | ---------------------------------------------------------------------------- |\n| `className`    | `string`  | `-`     | The class name to apply to the component.                                    |\n| `reverse`      | `boolean` | `false` | Whether or not to reverse the direction of the marquee.                      |\n| `pauseOnHover` | `boolean` | `false` | Whether or not to pause the marquee when the user hovers over the component. |\n| `vertical`     | `boolean` | `false` | Whether or not to display the marquee vertically.                            |\n| `children`     | `node`    | `-`     | The content to display in the marquee.                                       |\n| `repeat`       | `number`  | `4`     | The number of times to repeat the content.                                   |\n"
+}

@@ -1,0 +1,92 @@
+{
+  "id": "kibo:pill",
+  "sourceId": "kibo",
+  "slug": "kibo-pill",
+  "name": "Pill",
+  "description": "A flexible badge component designed for a variety of use cases.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "internalDependencies": [
+    "avatar",
+    "badge",
+    "button"
+  ],
+  "metadata": {
+    "kind": "block",
+    "family": "pill",
+    "tags": [
+      "badge",
+      "button",
+      "error",
+      "text",
+      "theme"
+    ],
+    "aliases": [
+      "pill"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "A flexible badge component designed for a variety of use cases."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "pill:badge:button:error:text:theme",
+    "searchText": "Pill\npill\nA flexible badge component designed for a variety of use cases.\nbadge\nbutton\nerror\ntext\ntheme\ntitle: Pill description: A flexible badge component designed for a variety of use cases. icon: Pill dependencies: https://lucide.dev/ installer: pill Features Customizable badge like component with rounded corners and consistent padding Support for avatars with fallback options Built in status indicators with variants (success, error, warning, info) and pulse animation Delta indicators for showing changes (increase/decrease) Icon support with consistent styling Avatar groups with overlapping effect Ghost button integration Themeable variants Examples Avatar A simple pill with an avatar and text. Status A pill with a status indicator and text. Button A pill with a button for dismissal. Indicator Pills with different indicator states. Delta Pills showing different delta states. Icon A pill with an icon and text. Avatar Group A pill with multiple avatars grouped together."
+  },
+  "previewPath": "/preview/blocks/kibo-pill",
+  "manifestPath": "components/kibo-pill/component.json",
+  "integrity": "sha256:f511289dbe13d036e4803c09a788b34ba3d85222b79795bbce912106c415f1ad",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/pill/index.tsx",
+      "type": "component",
+      "content": "import { ChevronDownIcon, ChevronUpIcon, MinusIcon } from \"lucide-react\";\nimport type { ComponentProps, ReactNode } from \"react\";\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\nimport { Badge } from \"@/components/ui/badge\";\nimport { Button } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\n\nexport type PillProps = ComponentProps<typeof Badge> & {\n  themed?: boolean;\n};\n\nexport const Pill = ({\n  variant = \"secondary\",\n  themed = false,\n  className,\n  ...props\n}: PillProps) => (\n  <Badge\n    className={cn(\"gap-2 rounded-full px-3 py-1.5 font-normal\", className)}\n    variant={variant}\n    {...props}\n  />\n);\n\nexport type PillAvatarProps = ComponentProps<typeof AvatarImage> & {\n  fallback?: string;\n};\n\nexport const PillAvatar = ({\n  fallback,\n  className,\n  ...props\n}: PillAvatarProps) => (\n  <Avatar className={cn(\"-ml-1 h-4 w-4\", className)}>\n    <AvatarImage {...props} />\n    <AvatarFallback>{fallback}</AvatarFallback>\n  </Avatar>\n);\n\nexport type PillButtonProps = ComponentProps<typeof Button>;\n\nexport const PillButton = ({ className, ...props }: PillButtonProps) => (\n  <Button\n    className={cn(\n      \"-my-2 -mr-2 size-6 rounded-full p-0.5 hover:bg-foreground/5\",\n      className\n    )}\n    size=\"icon\"\n    variant=\"ghost\"\n    {...props}\n  />\n);\n\nexport type PillStatusProps = {\n  children: ReactNode;\n  className?: string;\n};\n\nexport const PillStatus = ({\n  children,\n  className,\n  ...props\n}: PillStatusProps) => (\n  <div\n    className={cn(\n      \"flex items-center gap-2 border-r pr-2 font-medium\",\n      className\n    )}\n    {...props}\n  >\n    {children}\n  </div>\n);\n\nexport type PillIndicatorProps = {\n  variant?: \"success\" | \"error\" | \"warning\" | \"info\";\n  pulse?: boolean;\n};\n\nexport const PillIndicator = ({\n  variant = \"success\",\n  pulse = false,\n}: PillIndicatorProps) => (\n  <span className=\"relative flex size-2\">\n    {pulse && (\n      <span\n        className={cn(\n          \"absolute inline-flex h-full w-full animate-ping rounded-full opacity-75\",\n          variant === \"success\" && \"bg-emerald-400\",\n          variant === \"error\" && \"bg-rose-400\",\n          variant === \"warning\" && \"bg-amber-400\",\n          variant === \"info\" && \"bg-sky-400\"\n        )}\n      />\n    )}\n    <span\n      className={cn(\n        \"relative inline-flex size-2 rounded-full\",\n        variant === \"success\" && \"bg-emerald-500\",\n        variant === \"error\" && \"bg-rose-500\",\n        variant === \"warning\" && \"bg-amber-500\",\n        variant === \"info\" && \"bg-sky-500\"\n      )}\n    />\n  </span>\n);\n\nexport type PillDeltaProps = {\n  className?: string;\n  delta: number;\n};\n\nexport const PillDelta = ({ className, delta }: PillDeltaProps) => {\n  if (!delta) {\n    return (\n      <MinusIcon className={cn(\"size-3 text-muted-foreground\", className)} />\n    );\n  }\n\n  if (delta > 0) {\n    return (\n      <ChevronUpIcon className={cn(\"size-3 text-emerald-500\", className)} />\n    );\n  }\n\n  return <ChevronDownIcon className={cn(\"size-3 text-rose-500\", className)} />;\n};\n\nexport type PillIconProps = {\n  icon: typeof ChevronUpIcon;\n  className?: string;\n};\n\nexport const PillIcon = ({\n  icon: Icon,\n  className,\n  ...props\n}: PillIconProps) => (\n  <Icon\n    className={cn(\"size-3 text-muted-foreground\", className)}\n    size={12}\n    {...props}\n  />\n);\n\nexport type PillAvatarGroupProps = {\n  children: ReactNode;\n  className?: string;\n};\n\nexport const PillAvatarGroup = ({\n  children,\n  className,\n  ...props\n}: PillAvatarGroupProps) => (\n  <div\n    className={cn(\n      \"-space-x-1 flex items-center\",\n      \"[&>*:not(:first-of-type)]:[mask-image:radial-gradient(circle_9px_at_-4px_50%,transparent_99%,white_100%)]\",\n      className\n    )}\n    {...props}\n  >\n    {children}\n  </div>\n);\n",
+      "sha256": "47ab8c4460d2c394fcd31ca9e7d7045dfa7143f1cf741e121e8a691adb160f5c",
+      "upstreamPath": "packages/pill/index.tsx",
+      "upstreamSha256": "47ab8c4460d2c394fcd31ca9e7d7045dfa7143f1cf741e121e8a691adb160f5c",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add lucide-react",
+    "registryDependencyCommand": "pnpm dlx shadcn@latest add avatar badge button",
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add lucide-react",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Install the required shadcn primitives: pnpm dlx shadcn@latest add avatar badge button"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "pill",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/pill",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/pill.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Pill\ndescription: A flexible badge component designed for a variety of use cases.\nicon: Pill\ndependencies:\n  - https://lucide.dev/\ninstaller: pill\n---\n\n## Features\n\n- Customizable badge-like component with rounded corners and consistent padding\n- Support for avatars with fallback options\n- Built-in status indicators with variants (success, error, warning, info) and pulse animation\n- Delta indicators for showing changes (increase/decrease)\n- Icon support with consistent styling\n- Avatar groups with overlapping effect\n- Ghost button integration\n- Themeable variants\n\n## Examples\n\n### Avatar\n\nA simple pill with an avatar and text.\n\n<Preview path=\"pill-avatar\" />\n\n### Status\n\nA pill with a status indicator and text.\n\n<Preview path=\"pill-status\" />\n\n### Button\n\nA pill with a button for dismissal.\n\n<Preview path=\"pill-button\" />\n\n### Indicator\n\nPills with different indicator states.\n\n<Preview path=\"pill-indicator\" />\n\n### Delta\n\nPills showing different delta states.\n\n<Preview path=\"pill-delta\" />\n\n### Icon\n\nA pill with an icon and text.\n\n<Preview path=\"pill-icon\" />\n\n### Avatar Group\n\nA pill with multiple avatars grouped together.\n\n<Preview path=\"pill-avatar-group\" />\n"
+}

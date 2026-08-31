@@ -1,0 +1,93 @@
+{
+  "id": "magicui:confetti",
+  "sourceId": "magicui",
+  "slug": "magicui-confetti",
+  "name": "Confetti",
+  "description": "Confetti animations are best used to delight your users when something special happens",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "@types/canvas-confetti",
+    "canvas-confetti"
+  ],
+  "internalDependencies": [
+    "button"
+  ],
+  "metadata": {
+    "kind": "component",
+    "family": "confetti",
+    "tags": [
+      "button",
+      "code",
+      "number",
+      "text"
+    ],
+    "aliases": [
+      "confetti"
+    ],
+    "interactions": [
+      "click",
+      "type"
+    ],
+    "useWhen": [
+      "Confetti animations are best used to delight your users when something special happens"
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "confetti:button:code:number:text:click:type",
+    "searchText": "Confetti\nconfetti\nConfetti animations are best used to delight your users when something special happens\nbutton\ncode\nnumber\ntext\nclick\ntype\ntitle: Confetti date: 2024 05 26 description: Confetti animations are best used to delight your users when something special happens author: Bankkroll published: true Installation CLI Manual Install the following dependencies: Copy and paste the following code into your project. Update the import paths to match your project setup. Examples Basic Random Direction Fireworks Side Cannons Stars Custom Shapes Emoji Usage Props Confetti Prop Type Default Description ref React.Ref null Ref exposing imperative fire(options?: ConfettiOptions) method options ConfettiOptions {} Default options for automatic or imperative confetti triggers globalOptions ConfettiGlobalOptions { resize: true, useWorker: true } Global options passed to canvas confetti.create() manualstart Boolean false Prevents automatic confetti firing on component mount className String undefined Custom CSS classes applied to the canvas element ConfettiRef Method Parameters Return Type Description fire options?: ConfettiOptions Promise \\ void Imperatively triggers a confetti burst on the canvas instance ConfettiOptions Field Type Default Description particleCount Integer 50 Number of confetti particles to launch angle Number 90 Launch angle in degrees spread Number 45 Spread angle in degrees startVelocity Number 45 Initial particle velocity decay Number 0.9 Velocity decay rate gravity Number 1 Gravity applied to particles drift Number 0 Horizontal drift factor flat Boolean false Renders flat 2D shapes ticks Number 200 Number of animation frames confetti lasts origin { x: number, y: number } { x: 0.5, y: 0.5 } Normalized viewport origin coordinates (0.0 to 1.0) colors Array of Strings HEX array Custom HEX color palette shapes Array of Strings ['square', 'circle', 'star'] Particle shapes or custom text shapes zIndex Integer 9999 Z index of the confetti burst scalar Number 1 Scaling factor for particle dimensions ConfettiButton Prop Type Default Description options ConfettiOptions & ConfettiGlobalOptions {} Options for the confetti launched on button click children React.ReactNode null Button label and child elements ref React.Ref null Forwarded DOM reference to the underlying button Credits Credit to Bankk Inspired by canvas confetti"
+  },
+  "previewPath": "/preview/motion/magicui-confetti",
+  "manifestPath": "components/magicui-confetti/component.json",
+  "integrity": "sha256:9bb47279b47df16379daf07e6f9e8f80c72539317fdbe7b98c8fd8ec10b7c5cb",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/confetti.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport type { ReactNode } from \"react\"\nimport React, {\n  createContext,\n  forwardRef,\n  useCallback,\n  useEffect,\n  useImperativeHandle,\n  useMemo,\n  useRef,\n} from \"react\"\nimport type {\n  GlobalOptions as ConfettiGlobalOptions,\n  CreateTypes as ConfettiInstance,\n  Options as ConfettiOptions,\n} from \"canvas-confetti\"\nimport confetti from \"canvas-confetti\"\n\nimport { Button } from \"@/components/ui/button\"\n\nexport type ConfettiRef = {\n  fire: (options?: ConfettiOptions) => Promise<void> | void\n}\n\ntype Props = React.ComponentPropsWithRef<\"canvas\"> & {\n  options?: ConfettiOptions\n  globalOptions?: ConfettiGlobalOptions\n  manualstart?: boolean\n  children?: ReactNode\n}\n\nconst ConfettiContext = createContext<ConfettiRef | null>(null)\n\nconst ConfettiComponent = forwardRef<ConfettiRef, Props>((props, ref) => {\n  const {\n    options,\n    globalOptions = { resize: true, useWorker: true },\n    manualstart = false,\n    children,\n    className,\n    ...rest\n  } = props\n\n  const canvasNodeRef = useRef<HTMLCanvasElement | null>(null)\n  const instanceRef = useRef<ConfettiInstance | null>(null)\n  const optionsRef = useRef(options)\n  const globalOptionsRef = useRef(globalOptions)\n\n  useEffect(() => {\n    optionsRef.current = options\n  }, [options])\n\n  useEffect(() => {\n    globalOptionsRef.current = globalOptions\n  }, [globalOptions])\n\n  useEffect(() => {\n    if (canvasNodeRef.current && !instanceRef.current) {\n      instanceRef.current = confetti.create(canvasNodeRef.current, {\n        resize: true,\n        useWorker: true,\n        ...globalOptionsRef.current,\n      })\n    }\n\n    return () => {\n      instanceRef.current?.reset()\n      instanceRef.current = null\n    }\n  }, [])\n\n  const fire = useCallback(async (opts: ConfettiOptions = {}) => {\n    try {\n      await instanceRef.current?.({\n        ...optionsRef.current,\n        ...opts,\n      })\n    } catch (error) {\n      console.error(\"Confetti error:\", error)\n    }\n  }, [])\n\n  const api = useMemo<ConfettiRef>(() => ({ fire }), [fire])\n\n  useImperativeHandle(ref, () => api, [api])\n\n  useEffect(() => {\n    if (!manualstart) {\n      void fire()\n    }\n  }, [manualstart, fire])\n\n  return (\n    <ConfettiContext.Provider value={api}>\n      <canvas ref={canvasNodeRef} className={className} {...rest} />\n      {children}\n    </ConfettiContext.Provider>\n  )\n})\n\nConfettiComponent.displayName = \"Confetti\"\n\nexport const Confetti = ConfettiComponent\n\nexport interface ConfettiButtonProps extends React.ComponentPropsWithoutRef<\n  typeof Button\n> {\n  options?: ConfettiOptions &\n    ConfettiGlobalOptions & { canvas?: HTMLCanvasElement }\n}\n\nexport const ConfettiButton = forwardRef<\n  HTMLButtonElement,\n  ConfettiButtonProps\n>(({ options, children, onClick, ...props }, ref) => {\n  const handleClick: ConfettiButtonProps[\"onClick\"] = async (event) => {\n    try {\n      onClick?.(event)\n      if (event?.defaultPrevented) return\n\n      const target = event?.currentTarget\n      if (target && \"getBoundingClientRect\" in target) {\n        const rect = target.getBoundingClientRect()\n        const origin = {\n          x: (rect.left + rect.width / 2) / window.innerWidth,\n          y: (rect.top + rect.height / 2) / window.innerHeight,\n        }\n\n        await confetti({\n          zIndex: 9999,\n          ...options,\n          origin,\n        })\n      }\n    } catch (error) {\n      console.error(\"Confetti button error:\", error)\n    }\n  }\n\n  return (\n    <Button ref={ref} type=\"button\" onClick={handleClick} {...props}>\n      {children}\n    </Button>\n  )\n})\n\nConfettiButton.displayName = \"ConfettiButton\"\n",
+      "sha256": "c2a713b9a768d0f62f2c67837c441586de02a744b528c91548d043d8cb3fc8a6",
+      "upstreamPath": "apps/www/registry/magicui/confetti.tsx",
+      "upstreamSha256": "c2a713b9a768d0f62f2c67837c441586de02a744b528c91548d043d8cb3fc8a6",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @types/canvas-confetti canvas-confetti",
+    "registryDependencyCommand": "pnpm dlx shadcn@latest add button",
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @types/canvas-confetti canvas-confetti",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Install the required shadcn primitives: pnpm dlx shadcn@latest add button"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "confetti",
+    "upstreamPageUrl": "https://magicui.design/docs/components/confetti",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/confetti.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Confetti\ndate: 2024-05-26\ndescription: Confetti animations are best used to delight your users when something special happens\nauthor: Bankkroll\npublished: true\n---\n\n<ComponentPreview name=\"confetti-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/confetti\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Install the following dependencies:</Step>\n\n```bash\nnpm install canvas-confetti\n```\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"confetti\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Examples\n\n### Basic\n\n<ComponentPreview name=\"confetti-basic-cannon\" />\n\n### Random Direction\n\n<ComponentPreview name=\"confetti-random-direction\" />\n\n### Fireworks\n\n<ComponentPreview name=\"confetti-fireworks\" />\n\n### Side Cannons\n\n<ComponentPreview name=\"confetti-side-cannons\" />\n\n### Stars\n\n<ComponentPreview name=\"confetti-stars\" />\n\n### Custom Shapes\n\n<ComponentPreview name=\"confetti-custom-shapes\" />\n\n### Emoji\n\n<ComponentPreview name=\"confetti-emoji\" />\n\n### Usage\n\n```tsx showLineNumbers\nimport { useRef } from \"react\"\n\nimport { Confetti, type ConfettiRef } from \"@/components/ui/confetti\"\n\nexport function ConfettiDemo() {\n  const confettiRef = useRef<ConfettiRef>(null)\n\n  return (\n    <div>\n      <Confetti ref={confettiRef} manualstart />\n      <button onClick={() => confettiRef.current?.fire()}>\n        Trigger Confetti\n      </button>\n    </div>\n  )\n}\n```\n\n## Props\n\n### Confetti\n\n| Prop            | Type                     | Default                             | Description                                                      |\n| --------------- | ------------------------ | ----------------------------------- | ---------------------------------------------------------------- |\n| `ref`           | `React.Ref<ConfettiRef>` | `null`                              | Ref exposing imperative `fire(options?: ConfettiOptions)` method |\n| `options`       | `ConfettiOptions`        | `{}`                                | Default options for automatic or imperative confetti triggers    |\n| `globalOptions` | `ConfettiGlobalOptions`  | `{ resize: true, useWorker: true }` | Global options passed to `canvas-confetti.create()`              |\n| `manualstart`   | `Boolean`                | `false`                             | Prevents automatic confetti firing on component mount            |\n| `className`     | `String`                 | `undefined`                         | Custom CSS classes applied to the canvas element                 |\n\n### ConfettiRef\n\n| Method | Parameters                  | Return Type             | Description                                                   |\n| ------ | --------------------------- | ----------------------- | ------------------------------------------------------------- |\n| `fire` | `options?: ConfettiOptions` | `Promise<void> \\| void` | Imperatively triggers a confetti burst on the canvas instance |\n\n### ConfettiOptions\n\n| Field           | Type                       | Default                        | Description                                             |\n| --------------- | -------------------------- | ------------------------------ | ------------------------------------------------------- |\n| `particleCount` | `Integer`                  | `50`                           | Number of confetti particles to launch                  |\n| `angle`         | `Number`                   | `90`                           | Launch angle in degrees                                 |\n| `spread`        | `Number`                   | `45`                           | Spread angle in degrees                                 |\n| `startVelocity` | `Number`                   | `45`                           | Initial particle velocity                               |\n| `decay`         | `Number`                   | `0.9`                          | Velocity decay rate                                     |\n| `gravity`       | `Number`                   | `1`                            | Gravity applied to particles                            |\n| `drift`         | `Number`                   | `0`                            | Horizontal drift factor                                 |\n| `flat`          | `Boolean`                  | `false`                        | Renders flat 2D shapes                                  |\n| `ticks`         | `Number`                   | `200`                          | Number of animation frames confetti lasts               |\n| `origin`        | `{ x: number, y: number }` | `{ x: 0.5, y: 0.5 }`           | Normalized viewport origin coordinates (`0.0` to `1.0`) |\n| `colors`        | `Array of Strings`         | `HEX array`                    | Custom HEX color palette                                |\n| `shapes`        | `Array of Strings`         | `['square', 'circle', 'star']` | Particle shapes or custom text shapes                   |\n| `zIndex`        | `Integer`                  | `9999`                         | Z-index of the confetti burst                           |\n| `scalar`        | `Number`                   | `1`                            | Scaling factor for particle dimensions                  |\n\n### ConfettiButton\n\n| Prop       | Type                                      | Default | Description                                       |\n| ---------- | ----------------------------------------- | ------- | ------------------------------------------------- |\n| `options`  | `ConfettiOptions & ConfettiGlobalOptions` | `{}`    | Options for the confetti launched on button click |\n| `children` | `React.ReactNode`                         | `null`  | Button label and child elements                   |\n| `ref`      | `React.Ref<HTMLButtonElement>`            | `null`  | Forwarded DOM reference to the underlying button  |\n\n## Credits\n\n- Credit to [Bankk](https://www.x.com/bankkroll_eth)\n- Inspired by [canvas-confetti](https://www.npmjs.com/package/canvas-confetti)\n"
+}

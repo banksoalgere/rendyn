@@ -5,10 +5,11 @@ import { Drawer } from '@/components/motion/drawer';
 import { componentGroups } from './product-menu';
 
 const primaryLinks = [
-  { href: '#how-it-works', label: 'How it works', number: '01' },
-  { href: '/pricing', label: 'Pricing', number: '02' },
-  { href: '#for-teams', label: 'For teams', number: '03' },
-  { href: '#docs', label: 'Resources', number: '04' },
+  { href: '/components', label: 'Browse components', number: '01' },
+  { href: '#how-it-works', label: 'How it works', number: '02' },
+  { href: '/pricing', label: 'Pricing', number: '03' },
+  { href: '#for-teams', label: 'For teams', number: '04' },
+  { href: '#docs', label: 'Resources', number: '05' },
 ] as const;
 
 export function MobileMenu() {
@@ -63,7 +64,7 @@ export function MobileMenu() {
           <section aria-labelledby="mobile-catalogue-title" className="mobile-menu__catalogue">
             <div className="mobile-menu__catalogue-heading">
               <span><b>Product</b><strong id="mobile-catalogue-title">Component catalogue</strong></span>
-              <small>80 components</small>
+              <small>189 components</small>
             </div>
 
             <div aria-label="Filter components by category" className="mobile-menu__filters">
@@ -86,14 +87,14 @@ export function MobileMenu() {
             </div>
             <div className="mobile-menu__components">
               {activeGroup.components.map(([slug, name], index) => (
-                <a href="#components" key={slug} onClick={closeMenu}>
+                <a href={`/components?component=${slug}`} key={slug} onClick={closeMenu}>
                   <span>{String(index + 1).padStart(2, '0')}</span>
                   <strong>{name}</strong>
                   <b aria-hidden="true">↗</b>
                 </a>
               ))}
             </div>
-            <a className="mobile-menu__catalogue-footer" href="#components" onClick={closeMenu}>
+            <a className="mobile-menu__catalogue-footer" href="/components" onClick={closeMenu}>
               <span><strong>Browse complete catalogue</strong><small>Preview every component</small></span>
               <b aria-hidden="true">→</b>
             </a>

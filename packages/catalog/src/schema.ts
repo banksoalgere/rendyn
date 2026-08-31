@@ -41,6 +41,7 @@ const catalogMetadataSchema = z.object({
 
 const catalogComponentSummaryShape = {
   id: z.string().regex(/^[a-z0-9]+:[a-z0-9]+(?:-[a-z0-9]+)*$/),
+  sourceId: slugSchema,
   slug: slugSchema,
   name: z.string().trim().min(1).max(200),
   description: z.string().trim().min(1).max(2_000),
@@ -56,9 +57,9 @@ const catalogComponentSummaryShape = {
 };
 
 export const catalogIndexSchema = z.object({
-  schemaVersion: z.literal(1),
+  schemaVersion: z.literal(2),
   generatedAt: z.iso.datetime(),
-  source: catalogSourceSchema,
+  sources: z.array(catalogSourceSchema).min(1).max(100),
   categories: z.array(z.object({
     slug: categorySlugSchema,
     name: z.string().trim().min(1).max(200),
@@ -76,10 +77,15 @@ export const catalogComponentSchema = z.object({
     type: z.string().trim().min(1).max(100),
     content: z.string().max(2_000_000),
     sha256: sha256Schema,
+    upstreamPath: relativePathSchema.optional(),
+    upstreamSha256: sha256Schema.optional(),
+    transformation: z.string().trim().min(1).max(2_000).optional(),
   }).strict()).min(1).max(1_000),
   install: z.object({
     packageManager: z.literal("pnpm"),
     dependencyCommand: z.string().max(10_000).nullable(),
+    registryDependencyCommand: z.string().max(10_000).nullable(),
+    stylePaths: z.array(relativePathSchema).max(100),
     instructions: z.array(z.string().trim().min(1).max(10_000)).max(100),
   }).strict(),
   provenance: z.object({
@@ -87,6 +93,7 @@ export const catalogComponentSchema = z.object({
     upstreamPageUrl: z.url(),
     upstreamDetailUrl: z.url(),
     upstreamMarkdownUrl: z.url(),
+    transformations: z.array(z.string().trim().min(1).max(2_000)).max(100),
   }).strict(),
   documentation: z.string().max(1_000_000),
 }).strict();

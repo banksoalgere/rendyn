@@ -133,7 +133,7 @@ export function ProductMenu() {
       <MorphPopoverContent align="start" radius={12} className="product-menu__content">
         <div className="product-menu__heading">
           <span>Component catalogue</span>
-          <p>Explore all 80 components by category.</p>
+          <p>Explore all 189 components by category.</p>
         </div>
 
         <Tabs
@@ -167,7 +167,7 @@ export function ProductMenu() {
               </div>
               <div className="product-menu__grid">
                 {group.components.map(([slug, name], index) => (
-                  <a href="#components" key={slug} onClick={() => setOpen(false)}>
+                  <a href={`/components?component=${slug}`} key={slug} onClick={() => setOpen(false)}>
                     <span>{String(index + 1).padStart(2, '0')}</span>
                     <strong>{name}</strong>
                     <b aria-hidden="true">↗</b>
@@ -178,7 +178,7 @@ export function ProductMenu() {
           ))}
         </Tabs>
 
-        <a className="product-menu__footer" href="#components" onClick={() => setOpen(false)}>
+        <a className="product-menu__footer" href="/components" onClick={() => setOpen(false)}>
           <span><strong>Browse the complete catalogue</strong><small>Preview components and find the right fit</small></span>
           <b aria-hidden="true">→</b>
         </a>

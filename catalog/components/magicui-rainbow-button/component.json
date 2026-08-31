@@ -1,0 +1,98 @@
+{
+  "id": "magicui:rainbow-button",
+  "sourceId": "magicui",
+  "slug": "magicui-rainbow-button",
+  "name": "Rainbow Button",
+  "description": "An animated button with a rainbow effect.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "button",
+    "tags": [
+      "animated",
+      "button",
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "rainbow button",
+      "button",
+      "cta",
+      "action control"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "An animated button with a rainbow effect."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "button:animated:code:file:type",
+    "searchText": "Rainbow Button\nrainbow button\nAn animated button with a rainbow effect.\nbutton\ncta\naction control\nanimated\ncode\nfile\ntype\ntitle: Rainbow Button date: 2024 09 19 description: An animated button with a rainbow effect. author: dillionverma published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Update globals.css Add the following to your globals.css file: Add the required CSS animations Add the following animations to your global CSS file. Examples Outline Variant Usage Props Prop Type Default Description children React.ReactNode The content to be displayed inside the button. className string Additional CSS classes to be applied to the button. variant \"default\" \\ \"outline\" \"default\" The variant of the button. size \"default\" \\ \"sm\" \\ \"lg\" \\ \"icon\" \"default\" The size of the button."
+  },
+  "previewPath": "/preview/motion/magicui-rainbow-button",
+  "manifestPath": "components/magicui-rainbow-button/component.json",
+  "integrity": "sha256:cd5397758d4c2b9efa7a56f26a695cde26f994925d4bb3acfb67f742bbb400fd",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/rainbow-button.tsx",
+      "type": "component",
+      "content": "import React from \"react\"\nimport { Slot } from \"@radix-ui/react-slot\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst rainbowButtonVariants = cva(\n  cn(\n    \"relative cursor-pointer group transition-all animate-rainbow\",\n    \"inline-flex items-center justify-center gap-2 shrink-0\",\n    \"rounded-sm outline-none focus-visible:ring-[3px] aria-invalid:border-destructive\",\n    \"text-sm font-medium whitespace-nowrap\",\n    \"disabled:pointer-events-none disabled:opacity-50\",\n    \"[&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0\"\n  ),\n  {\n    variants: {\n      variant: {\n        default:\n          \"border-0 bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] bg-[length:200%] text-primary-foreground [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.125rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] before:bg-[length:200%] before:[filter:blur(0.75rem)] dark:bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))]\",\n        outline:\n          \"border border-input border-b-transparent bg-[linear-gradient(#ffffff,#ffffff),linear-gradient(#ffffff_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] bg-[length:200%] text-accent-foreground [background-clip:padding-box,border-box,border-box] [background-origin:border-box] before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] before:bg-[length:200%] before:[filter:blur(0.75rem)] dark:bg-[linear-gradient(#0a0a0a,#0a0a0a),linear-gradient(#0a0a0a_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))]\",\n      },\n      size: {\n        default: \"h-9 px-4 py-2\",\n        sm: \"h-8 rounded-xl px-3 text-xs\",\n        lg: \"h-11 rounded-xl px-8\",\n        icon: \"size-9\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n)\n\ninterface RainbowButtonProps\n  extends\n    React.ButtonHTMLAttributes<HTMLButtonElement>,\n    VariantProps<typeof rainbowButtonVariants> {\n  asChild?: boolean\n}\n\nconst RainbowButton = React.forwardRef<HTMLButtonElement, RainbowButtonProps>(\n  ({ className, variant, size, asChild = false, ...props }, ref) => {\n    const Comp = asChild ? Slot : \"button\"\n    return (\n      <Comp\n        data-slot=\"button\"\n        className={cn(rainbowButtonVariants({ variant, size, className }))}\n        ref={ref}\n        {...props}\n      />\n    )\n  }\n)\n\nRainbowButton.displayName = \"RainbowButton\"\n\nexport { RainbowButton, rainbowButtonVariants, type RainbowButtonProps }\n",
+      "sha256": "cda40de677181acd8690cd24bad7f734753fec3b2d921206e733f7d6a4e36ea0",
+      "upstreamPath": "apps/www/registry/magicui/rainbow-button.tsx",
+      "upstreamSha256": "cda40de677181acd8690cd24bad7f734753fec3b2d921206e733f7d6a4e36ea0",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    },
+    {
+      "path": "components/magicui/rainbow-button.css",
+      "type": "style",
+      "content": "@theme inline {\n  --animate-rainbow: rainbow var(--speed, 2s) infinite linear;\n}\n\n@keyframes rainbow {\n  0% {\n    background-position: 0%;\n  }\n  100% {\n    background-position: 200%;\n  }\n}\n",
+      "sha256": "6abf8541b32edf53c6a75e3092def152bb7b28a07a1b449b55710a65541bae04",
+      "transformation": "Materialize registry CSS and theme variables as a component stylesheet when present."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/magicui/rainbow-button.css"
+    ],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Include the returned styles: components/magicui/rainbow-button.css"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "rainbow-button",
+    "upstreamPageUrl": "https://magicui.design/docs/components/rainbow-button",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/rainbow-button.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Rainbow Button\ndate: 2024-09-19\ndescription: An animated button with a rainbow effect.\nauthor: dillionverma\npublished: true\n---\n\n<ComponentPreview name=\"rainbow-button-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/rainbow-button\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"rainbow-button\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n<Step>Update `globals.css`</Step>\n\nAdd the following to your `globals.css` file:\n\n```css title=\"app/globals.css\" showLineNumbers {2-6}\n:root {\n  --color-1: 0 100% 63%;\n  --color-2: 270 100% 63%;\n  --color-3: 210 100% 63%;\n  --color-4: 195 100% 63%;\n  --color-5: 90 100% 63%;\n}\n```\n\n<Step>Add the required CSS animations</Step>\n\nAdd the following animations to your global CSS file.\n\n```css title=\"app/globals.css\" showLineNumbers {2, 4-11}\n@theme inline {\n  --animate-rainbow: rainbow var(--speed, 2s) infinite linear;\n\n  @keyframes rainbow {\n    0% {\n      background-position: 0%;\n    }\n    100% {\n      background-position: 200%;\n    }\n  }\n}\n```\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Examples\n\n### Outline Variant\n\n<ComponentPreview name=\"rainbow-button-demo-2\" />\n\n## Usage\n\n```tsx showLineNumbers\nimport { RainbowButton } from \"@/components/ui/rainbow-button\"\n```\n\n```tsx showLineNumbers\n<RainbowButton>Rainbow Button</RainbowButton>\n```\n\n## Props\n\n| Prop        | Type                                  | Default     | Description                                         |\n| ----------- | ------------------------------------- | ----------- | --------------------------------------------------- |\n| `children`  | `React.ReactNode`                     | `-`         | The content to be displayed inside the button.      |\n| `className` | `string`                              | `-`         | Additional CSS classes to be applied to the button. |\n| `variant`   | `\"default\" \\| \"outline\"`              | `\"default\"` | The variant of the button.                          |\n| `size`      | `\"default\" \\| \"sm\" \\| \"lg\" \\| \"icon\"` | `\"default\"` | The size of the button.                             |\n"
+}

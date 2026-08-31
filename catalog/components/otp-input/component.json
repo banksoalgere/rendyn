@@ -1,5 +1,6 @@
 {
   "id": "beui:otp-input",
+  "sourceId": "beui",
   "slug": "otp-input",
   "name": "OTP Input",
   "description": "One-time-code input with a gliding focus ring, digits that roll in per slot, error shake and a success check draw.",
@@ -55,7 +56,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -91,6 +92,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -102,7 +105,8 @@
     "upstreamSlug": "otp-input",
     "upstreamPageUrl": "https://beui.dev/components/blocks/otp-input",
     "upstreamDetailUrl": "https://beui.dev/r/otp-input",
-    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/otp-input.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/otp-input.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"OTP Input\"\ndescription: \"One-time-code input with a gliding focus ring, digits that roll in per slot, error shake and a success check draw.\"\ncategory: \"Blocks\"\npublishedAt: \"2026-06-13\"\nupdatedAt: \"2026-07-13\"\ndocumentation: \"https://beui.dev/components/blocks/otp-input\"\nmarkdown: \"https://beui.dev/components/blocks/otp-input.md\"\nlicense: \"MIT\"\n---\n\n# OTP Input\n\n> One-time-code input with a gliding focus ring, digits that roll in per slot, error shake and a success check draw.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/otp-input\n```\n\n## Dependencies\n\n- `clsx`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { useState } from \"react\";\nimport { OTPInput, type OTPStatus } from \"@/components/motion/otp-input\";\n\nconst CODE = \"123456\";\n\nexport function OTPInputPreview() {\n  const [value, setValue] = useState(\"\");\n  const [status, setStatus] = useState<OTPStatus>(\"idle\");\n\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <OTPInput\n        label=\"Verification code\"\n        hint={`Enter ${CODE} to verify.`}\n        successMessage=\"Verified.\"\n        errorMessage=\"Wrong code, try again.\"\n        value={value}\n        status={status}\n        onChange={(v) => {\n          setValue(v);\n          if (status !== \"idle\") setStatus(\"idle\");\n        }}\n        onComplete={(v) => setStatus(v === CODE ? \"success\" : \"error\")}\n      />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### OTPInput\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `length` | `number` | `6` | No | Number of slots. Default 6. |\n| `value` | `string` | — | No | — |\n| `defaultValue` | `string` | — | No | — |\n| `onChange` | `((value: string) => void)` | — | No | — |\n| `onComplete` | `((value: string) => void)` | — | No | Fires once every slot is filled. |\n| `label` | `string` | — | No | Optional label rendered above the slots. |\n| `hint` | `string` | — | No | Helper text shown below the slots while idle. |\n| `successMessage` | `string` | — | No | Message shown below the slots when status is \"success\". |\n| `errorMessage` | `string` | — | No | Message shown below the slots when status is \"error\". |\n| `status` | `\"error\" \\| \"success\" \\| \"idle\"` | `idle` | No | External validation feedback. \"error\" shakes, \"success\" draws a check. |\n| `mask` | `boolean` | `false` | No | Render dots instead of the typed digits. |\n| `disabled` | `boolean` | `false` | No | — |\n| `autoFocus` | `boolean` | `false` | No | — |\n| `aria-label` | `string` | `One-time passcode` | No | Accessible label for the underlying input. |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/otp-input\n- Raw source: https://beui.dev/r/otp-input/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

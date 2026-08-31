@@ -1,0 +1,96 @@
+{
+  "id": "magicui:neon-gradient-card",
+  "sourceId": "magicui",
+  "slug": "magicui-neon-gradient-card",
+  "name": "Neon Gradient Card",
+  "description": "A beautiful neon card effect",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "card",
+    "tags": [
+      "card",
+      "code",
+      "file",
+      "number"
+    ],
+    "aliases": [
+      "neon gradient card",
+      "card"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A beautiful neon card effect"
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "card:code:file:number:type",
+    "searchText": "Neon Gradient Card\nneon gradient card\nA beautiful neon card effect\ncard\ncode\nfile\nnumber\ntype\ntitle: Neon Gradient Card date: 2024 05 26 description: A beautiful neon card effect author: Draxx0 published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Add the required CSS animations Add the following animations to your global CSS file . Usage Props Prop Type Default Description className string The class name to be applied to the component children ReactNode Children elements borderSize number 5 The size of the border borderRadius number 20 The size of the radius neonColors object { firstColor: \" ff00aa\", secondColor: \" 00FFF1\" } The colors of the neon gradient Credits Credit to @Unleashed Design"
+  },
+  "previewPath": "/preview/motion/magicui-neon-gradient-card",
+  "manifestPath": "components/magicui-neon-gradient-card/component.json",
+  "integrity": "sha256:77af4dda71bb3c3b3c72791ae571ddf0507fbef8cabfc5778cf103db1be849d2",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/neon-gradient-card.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport {\n  useEffect,\n  useRef,\n  useState,\n  type CSSProperties,\n  type ReactElement,\n  type ReactNode,\n} from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface NeonColorsProps {\n  firstColor: string\n  secondColor: string\n}\n\ninterface NeonGradientCardProps extends React.HTMLAttributes<HTMLDivElement> {\n  /**\n   * @default <div />\n   * @type ReactElement\n   * @description\n   * The component to be rendered as the card\n   * */\n  as?: ReactElement\n  /**\n   * @default \"\"\n   * @type string\n   * @description\n   * The className of the card\n   */\n  className?: string\n\n  /**\n   * @default \"\"\n   * @type ReactNode\n   * @description\n   * The children of the card\n   * */\n  children?: ReactNode\n\n  /**\n   * @default 5\n   * @type number\n   * @description\n   * The size of the border in pixels\n   * */\n  borderSize?: number\n\n  /**\n   * @default 20\n   * @type number\n   * @description\n   * The size of the radius in pixels\n   * */\n  borderRadius?: number\n\n  /**\n   * @default \"{ firstColor: '#ff00aa', secondColor: '#00FFF1' }\"\n   * @type string\n   * @description\n   * The colors of the neon gradient\n   * */\n  neonColors?: NeonColorsProps\n}\n\nexport const NeonGradientCard: React.FC<NeonGradientCardProps> = ({\n  className,\n  children,\n  borderSize = 2,\n  borderRadius = 20,\n  neonColors = {\n    firstColor: \"#ff00aa\",\n    secondColor: \"#00FFF1\",\n  },\n  ...props\n}) => {\n  const containerRef = useRef<HTMLDivElement>(null)\n  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })\n\n  useEffect(() => {\n    const updateDimensions = () => {\n      if (containerRef.current) {\n        const { offsetWidth, offsetHeight } = containerRef.current\n        setDimensions({ width: offsetWidth, height: offsetHeight })\n      }\n    }\n\n    updateDimensions()\n    window.addEventListener(\"resize\", updateDimensions)\n\n    return () => {\n      window.removeEventListener(\"resize\", updateDimensions)\n    }\n  }, [])\n\n  useEffect(() => {\n    if (containerRef.current) {\n      const { offsetWidth, offsetHeight } = containerRef.current\n      setDimensions({ width: offsetWidth, height: offsetHeight })\n    }\n  }, [children])\n\n  return (\n    <div\n      ref={containerRef}\n      style={\n        {\n          \"--border-size\": `${borderSize}px`,\n          \"--border-radius\": `${borderRadius}px`,\n          \"--neon-first-color\": neonColors.firstColor,\n          \"--neon-second-color\": neonColors.secondColor,\n          \"--card-width\": `${dimensions.width}px`,\n          \"--card-height\": `${dimensions.height}px`,\n          \"--card-content-radius\": `${borderRadius - borderSize}px`,\n          \"--pseudo-element-background-image\": `linear-gradient(0deg, ${neonColors.firstColor}, ${neonColors.secondColor})`,\n          \"--pseudo-element-width\": `${dimensions.width + borderSize * 2}px`,\n          \"--pseudo-element-height\": `${dimensions.height + borderSize * 2}px`,\n          \"--after-blur\": `${dimensions.width / 3}px`,\n        } as CSSProperties\n      }\n      className={cn(\n        \"relative z-10 size-full rounded-(--border-radius)\",\n        className\n      )}\n      {...props}\n    >\n      <div\n        className={cn(\n          \"relative size-full min-h-[inherit] rounded-(--card-content-radius) bg-gray-100 p-6\",\n          \"before:absolute before:-top-(--border-size) before:-left-(--border-size) before:-z-10 before:block\",\n          \"before:h-(--pseudo-element-height) before:w-(--pseudo-element-width) before:rounded-(--border-radius) before:content-['']\",\n          \"before:bg-[linear-gradient(0deg,var(--neon-first-color),var(--neon-second-color))] before:bg-size-[100%_200%]\",\n          \"before:animate-background-position-spin\",\n          \"after:absolute after:-top-(--border-size) after:-left-(--border-size) after:-z-10 after:block\",\n          \"after:h-(--pseudo-element-height) after:w-(--pseudo-element-width) after:rounded-(--border-radius) after:blur-(--after-blur) after:content-['']\",\n          \"after:bg-[linear-gradient(0deg,var(--neon-first-color),var(--neon-second-color))] after:bg-size-[100%_200%] after:opacity-80\",\n          \"after:animate-background-position-spin\",\n          \"dark:bg-neutral-900\",\n          \"wrap-break-word\"\n        )}\n      >\n        {children}\n      </div>\n    </div>\n  )\n}\n",
+      "sha256": "bd96e18be176f3f2365cf27d686bf31d6f062c0abb707ca21e88079ab28f76ed",
+      "upstreamPath": "apps/www/registry/magicui/neon-gradient-card.tsx",
+      "upstreamSha256": "bd96e18be176f3f2365cf27d686bf31d6f062c0abb707ca21e88079ab28f76ed",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    },
+    {
+      "path": "components/magicui/neon-gradient-card.css",
+      "type": "style",
+      "content": "@theme inline {\n  --animate-background-position-spin: background-position-spin 3000ms infinite alternate;\n}\n\n@keyframes background-position-spin {\n  0% {\n    background-position: top center;\n  }\n  100% {\n    background-position: bottom center;\n  }\n}\n",
+      "sha256": "cd678b74b3bd0576a3b2ee90cbfb7b12a1d583ce0ee180af8153cc4715f55ac6",
+      "transformation": "Materialize registry CSS and theme variables as a component stylesheet when present."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/magicui/neon-gradient-card.css"
+    ],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Include the returned styles: components/magicui/neon-gradient-card.css"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "neon-gradient-card",
+    "upstreamPageUrl": "https://magicui.design/docs/components/neon-gradient-card",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/neon-gradient-card.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Neon Gradient Card\ndate: 2024-05-26\ndescription: A beautiful neon card effect\nauthor: Draxx0\npublished: true\n---\n\n<ComponentPreview name=\"neon-gradient-card-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/neon-gradient-card\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"neon-gradient-card\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n<Step>Add the required CSS animations</Step>\n\nAdd the following animations to your global CSS file .\n\n```css title=\"app/globals.css\" showLineNumbers {2-3, 5-12}\n@theme inline {\n  --animate-background-position-spin: background-position-spin 3000ms infinite\n    alternate;\n\n  @keyframes background-position-spin {\n    0% {\n      background-position: top center;\n    }\n    100% {\n      background-position: bottom center;\n    }\n  }\n}\n```\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { NeonGradientCard } from \"@/components/ui/neon-gradient-card\"\n```\n\n```tsx showLineNumbers\n<NeonGradientCard>\n  <div className=\"p-4\">\n    <p>Hello</p>\n    <span>Hover me</span>\n  </div>\n</NeonGradientCard>\n```\n\n## Props\n\n| Prop           | Type        | Default                                             | Description                                   |\n| -------------- | ----------- | --------------------------------------------------- | --------------------------------------------- |\n| `className`    | `string`    | `-`                                                 | The class name to be applied to the component |\n| `children`     | `ReactNode` | `-`                                                 | Children elements                             |\n| `borderSize`   | `number`    | `5`                                                 | The size of the border                        |\n| `borderRadius` | `number`    | `20`                                                | The size of the radius                        |\n| `neonColors`   | `object`    | `{ firstColor: \"#ff00aa\", secondColor: \"#00FFF1\" }` | The colors of the neon gradient               |\n\n## Credits\n\n- Credit to [@Unleashed-Design](https://unleashed-design.de/)\n"
+}

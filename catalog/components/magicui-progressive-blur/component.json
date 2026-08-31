@@ -1,0 +1,86 @@
+{
+  "id": "magicui:progressive-blur",
+  "sourceId": "magicui",
+  "slug": "magicui-progressive-blur",
+  "name": "Progressive Blur",
+  "description": "The Progressive Blur component adds a smooth blur gradient effect to scrollable content, indicating more content below or above.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "progressive-blur",
+    "tags": [
+      "code",
+      "number",
+      "progress"
+    ],
+    "aliases": [
+      "progressive blur",
+      "progressive-blur"
+    ],
+    "interactions": [
+      "scroll",
+      "type"
+    ],
+    "useWhen": [
+      "The Progressive Blur component adds a smooth blur gradient effect to scrollable content, indicating more content below or above."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "progressive-blur:code:number:progress:scroll:type",
+    "searchText": "Progressive Blur\nprogressive blur\nThe Progressive Blur component adds a smooth blur gradient effect to scrollable content, indicating more content below or above.\nprogressive-blur\ncode\nnumber\nprogress\nscroll\ntype\ntitle: Progressive Blur date: 2024 06 01 description: Add a progressive blur effect to scrollable content author: magicui published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Usage Props ProgressiveBlur Prop Type Default Description className string Additional classes to apply to the blur container. height string \"30%\" Height of the blur effect container. position \"top\" \\ \"bottom\" \\ \"both\" \"bottom\" Position of the blur effect. blurLevels number[] [0.5, 1, 2, 4, 8, 16, 32, 64] Array of blur values (in px) for progressive effect. children React.ReactNode Optional content to render within the blur container."
+  },
+  "previewPath": "/preview/motion/magicui-progressive-blur",
+  "manifestPath": "components/magicui-progressive-blur/component.json",
+  "integrity": "sha256:06664cc157a5a1cb1c27312018682dd2379ba2fcb882c0956222864b81e257e3",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/progressive-blur.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface ProgressiveBlurProps {\n  className?: string\n  height?: string\n  position?: \"top\" | \"bottom\" | \"both\"\n  blurLevels?: number[]\n  children?: React.ReactNode\n}\n\nexport function ProgressiveBlur({\n  className,\n  height = \"30%\",\n  position = \"bottom\",\n  blurLevels = [0.5, 1, 2, 4, 8, 16, 32, 64],\n}: ProgressiveBlurProps) {\n  // Create array with length equal to blurLevels.length - 2 (for before/after pseudo elements)\n  const divElements = Array(blurLevels.length - 2).fill(null)\n\n  return (\n    <div\n      className={cn(\n        \"gradient-blur pointer-events-none absolute inset-x-0 z-10\",\n        className,\n        position === \"top\"\n          ? \"top-0\"\n          : position === \"bottom\"\n            ? \"bottom-0\"\n            : \"inset-y-0\"\n      )}\n      style={{\n        height: position === \"both\" ? \"100%\" : height,\n      }}\n    >\n      {/* First blur layer (pseudo element) */}\n      <div\n        className=\"absolute inset-0\"\n        style={{\n          zIndex: 1,\n          backdropFilter: `blur(${blurLevels[0]}px)`,\n          WebkitBackdropFilter: `blur(${blurLevels[0]}px)`,\n          maskImage:\n            position === \"bottom\"\n              ? `linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 12.5%, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 37.5%)`\n              : position === \"top\"\n                ? `linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 12.5%, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 37.5%)`\n                : `linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, rgba(0,0,0,0) 100%)`,\n          WebkitMaskImage:\n            position === \"bottom\"\n              ? `linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 12.5%, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 37.5%)`\n              : position === \"top\"\n                ? `linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 12.5%, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 37.5%)`\n                : `linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, rgba(0,0,0,0) 100%)`,\n        }}\n      />\n\n      {/* Middle blur layers */}\n      {divElements.map((_, index) => {\n        const blurIndex = index + 1\n        const startPercent = blurIndex * 12.5\n        const midPercent = (blurIndex + 1) * 12.5\n        const endPercent = (blurIndex + 2) * 12.5\n\n        const maskGradient =\n          position === \"bottom\"\n            ? `linear-gradient(to bottom, rgba(0,0,0,0) ${startPercent}%, rgba(0,0,0,1) ${midPercent}%, rgba(0,0,0,1) ${endPercent}%, rgba(0,0,0,0) ${endPercent + 12.5}%)`\n            : position === \"top\"\n              ? `linear-gradient(to top, rgba(0,0,0,0) ${startPercent}%, rgba(0,0,0,1) ${midPercent}%, rgba(0,0,0,1) ${endPercent}%, rgba(0,0,0,0) ${endPercent + 12.5}%)`\n              : `linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, rgba(0,0,0,0) 100%)`\n\n        return (\n          <div\n            key={`blur-${index}`}\n            className=\"absolute inset-0\"\n            style={{\n              zIndex: index + 2,\n              backdropFilter: `blur(${blurLevels[blurIndex]}px)`,\n              WebkitBackdropFilter: `blur(${blurLevels[blurIndex]}px)`,\n              maskImage: maskGradient,\n              WebkitMaskImage: maskGradient,\n            }}\n          />\n        )\n      })}\n\n      {/* Last blur layer (pseudo element) */}\n      <div\n        className=\"absolute inset-0\"\n        style={{\n          zIndex: blurLevels.length,\n          backdropFilter: `blur(${blurLevels[blurLevels.length - 1]}px)`,\n          WebkitBackdropFilter: `blur(${blurLevels[blurLevels.length - 1]}px)`,\n          maskImage:\n            position === \"bottom\"\n              ? `linear-gradient(to bottom, rgba(0,0,0,0) 87.5%, rgba(0,0,0,1) 100%)`\n              : position === \"top\"\n                ? `linear-gradient(to top, rgba(0,0,0,0) 87.5%, rgba(0,0,0,1) 100%)`\n                : `linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, rgba(0,0,0,0) 100%)`,\n          WebkitMaskImage:\n            position === \"bottom\"\n              ? `linear-gradient(to bottom, rgba(0,0,0,0) 87.5%, rgba(0,0,0,1) 100%)`\n              : position === \"top\"\n                ? `linear-gradient(to top, rgba(0,0,0,0) 87.5%, rgba(0,0,0,1) 100%)`\n                : `linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, rgba(0,0,0,0) 100%)`,\n        }}\n      />\n    </div>\n  )\n}\n",
+      "sha256": "2d1a95b26a66b707cd786c626e3fe7819330d7ec585618afb301e6cd776d811b",
+      "upstreamPath": "apps/www/registry/magicui/progressive-blur.tsx",
+      "upstreamSha256": "2d1a95b26a66b707cd786c626e3fe7819330d7ec585618afb301e6cd776d811b",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "progressive-blur",
+    "upstreamPageUrl": "https://magicui.design/docs/components/progressive-blur",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/progressive-blur.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Progressive Blur\ndate: 2024-06-01\ndescription: Add a progressive blur effect to scrollable content\nauthor: magicui\npublished: true\n---\n\n<ComponentPreview name=\"progressive-blur-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/progressive-blur\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"progressive-blur\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { ProgressiveBlur } from \"@/components/ui/progressive-blur\"\n```\n\n```tsx showLineNumbers\n<div className=\"relative h-[400px] w-full overflow-auto\">\n  {/* Your scrollable content */}\n  <div className=\"space-y-4 p-4\">{/* Content items */}</div>\n\n  <ProgressiveBlur height=\"50%\" position=\"bottom\" />\n</div>\n```\n\n## Props\n\n### ProgressiveBlur\n\n| Prop         | Type                          | Default                         | Description                                           |\n| ------------ | ----------------------------- | ------------------------------- | ----------------------------------------------------- |\n| `className`  | `string`                      | `-`                             | Additional classes to apply to the blur container.    |\n| `height`     | `string`                      | `\"30%\"`                         | Height of the blur effect container.                  |\n| `position`   | `\"top\" \\| \"bottom\" \\| \"both\"` | `\"bottom\"`                      | Position of the blur effect.                          |\n| `blurLevels` | `number[]`                    | `[0.5, 1, 2, 4, 8, 16, 32, 64]` | Array of blur values (in px) for progressive effect.  |\n| `children`   | `React.ReactNode`             | `-`                             | Optional content to render within the blur container. |\n"
+}

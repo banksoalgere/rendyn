@@ -4,7 +4,7 @@ import { componentPayload } from "../component-payload.js";
 import type { McpDependencies } from "../mcp.js";
 import { textContent } from "./response.js";
 
-const COMPONENT_ID_PATTERN = /^(?:beui:)?[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const COMPONENT_ID_PATTERN = /^(?:[a-z0-9]+:)?[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 export function registerGetComponentTool(
   server: McpServer,
@@ -20,12 +20,11 @@ export function registerGetComponentTool(
       }),
     },
     async ({ id }, context) => {
-      const slug = id.startsWith("beui:") ? id.slice(5) : id;
-      const component = await catalog.store.get(slug);
+      const component = await catalog.store.get(id);
       if (!component) {
         return {
           isError: true,
-          content: [textContent({ error: "component_not_found", slug })],
+          content: [textContent({ error: "component_not_found", id })],
         };
       }
 
@@ -37,7 +36,7 @@ export function registerGetComponentTool(
         };
       }
 
-      const entitlement = await entitlements.claimUser(token, slug);
+      const entitlement = await entitlements.claimUser(token, component.slug);
       if (!entitlement.allowed) {
         return {
           isError: true,

@@ -1,5 +1,6 @@
 {
   "id": "beui:number",
+  "sourceId": "beui",
   "slug": "number",
   "name": "Number Animation",
   "description": "Animated number primitives for count-up values and rolling digit tickers.",
@@ -52,7 +53,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -94,6 +95,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -105,7 +108,8 @@
     "upstreamSlug": "number",
     "upstreamPageUrl": "https://beui.dev/components/motion/number",
     "upstreamDetailUrl": "https://beui.dev/r/number",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/number.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/number.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Number Animation\"\ndescription: \"Animated number primitives for count-up values and rolling digit tickers.\"\ncategory: \"Components\"\npublishedAt: \"2026-05-17\"\nupdatedAt: \"2026-06-28\"\ndocumentation: \"https://beui.dev/components/motion/number\"\nmarkdown: \"https://beui.dev/components/motion/number.md\"\nlicense: \"MIT\"\n---\n\n# Number Animation\n\n> Animated number primitives for count-up values and rolling digit tickers.\n\n## Install\n\n### Number Ticker\n\nSlot-machine rolling digits with staggered entry.\n\n```bash\nnpx shadcn@latest add @beui/number-ticker\n```\n\n### Animated Number\n\nSpring-driven count-up triggered when in view.\n\n```bash\nnpx shadcn@latest add @beui/animated-number\n```\n\n## Dependencies\n\n- `clsx`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n### Number Ticker usage\n\nSlot-machine rolling digits with staggered entry.\n\n```tsx\n\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { NumberTicker } from \"@/components/motion/number-ticker\";\n\nexport function NumberTickerPreview() {\n  const [value, setValue] = useState(48273);\n  useEffect(() => {\n    const id = setInterval(() => setValue((v) => v + Math.floor(Math.random() * 50)), 2500);\n    return () => clearInterval(id);\n  }, []);\n  return (\n    <div className=\"flex flex-col items-center gap-3\">\n      <p className=\"text-xs text-muted-foreground\">Active users</p>\n      <NumberTicker\n        value={value}\n        prefix=\"\"\n        className=\"text-4xl font-semibold tracking-tight text-foreground tabular-nums\"\n        format={(n) => n.toLocaleString()}\n      />\n      <p className=\"text-xs text-muted-foreground\">live · updates every 2.5s</p>\n    </div>\n  );\n}\n```\n\n### Animated Number usage\n\nSpring-driven count-up triggered when in view.\n\n```tsx\n\"use client\";\n\nimport { AnimatedNumber } from \"@/components/motion/animated-number\";\n\nexport function AnimatedNumberPreview() {\n  return (\n    <div className=\"flex flex-col items-center gap-3\">\n      <p className=\"text-xs text-muted-foreground\">Monthly recurring revenue</p>\n      <div className=\"text-4xl font-semibold tracking-tight text-foreground tabular-nums\">\n        <AnimatedNumber value={129480} format={(n) => `$${Math.round(n).toLocaleString()}`} />\n      </div>\n      <p className=\"text-xs text-(--color-success)\">+12.4% vs last month</p>\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### NumberTicker\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `value` | `number` | — | Yes | — |\n| `pad` | `number` | — | No | Digits to pad to (left). |\n| `duration` | `number` | `0.9` | No | Per-digit roll duration in seconds. |\n| `stagger` | `number` | `0.04` | No | Stagger between digits. |\n| `startOnView` | `boolean` | `true` | No | Render only after the element enters the viewport. |\n| `prefix` | `string` | — | No | — |\n| `suffix` | `string` | — | No | — |\n| `blur` | `boolean` | `false` | No | Add a small blur during digit rolls. |\n| `className` | `string` | — | No | — |\n| `digitClassName` | `string` | — | No | — |\n| `locale` | `boolean` | — | No | Insert locale group separators (commas). Server-component safe. |\n| `format` | `((value: number) => string)` | — | No | Custom formatter. Client-only — server components must use `locale` instead. |\n\n### AnimatedNumber\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `value` | `number` | — | Yes | — |\n| `duration` | `number` | `1.2` | No | — |\n| `format` | `((n: number) => string)` | `(n) => Math.round(n).toLocaleString()` | No | — |\n| `className` | `string` | — | No | — |\n| `startOnView` | `boolean` | `true` | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/number\n- Raw source: https://beui.dev/r/number/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

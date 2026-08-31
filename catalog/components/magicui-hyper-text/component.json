@@ -1,0 +1,90 @@
+{
+  "id": "magicui:hyper-text",
+  "sourceId": "magicui",
+  "slug": "magicui-hyper-text",
+  "name": "Hyper Text",
+  "description": "A text animation that scrambles letters before revealing the final text.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "hyper-text",
+    "tags": [
+      "code",
+      "hover",
+      "number",
+      "text"
+    ],
+    "aliases": [
+      "hyper text",
+      "hyper-text"
+    ],
+    "interactions": [
+      "hover",
+      "type"
+    ],
+    "useWhen": [
+      "A text animation that scrambles letters before revealing the final text."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "hyper-text:code:hover:number:text:type",
+    "searchText": "Hyper Text\nhyper text\nA text animation that scrambles letters before revealing the final text.\nhyper-text\ncode\nhover\nnumber\ntext\ntype\ntitle: Hyper Text date: 2024 08 03 description: A text animation that scrambles letters before revealing the final text. author: SwayambhuPrasad published: true Installation CLI Manual Install the following dependencies: Copy and paste the following code into your project. Update the import paths to match your project setup. Usage Props Prop Type Default Description children string Text content to animate className string The class name to be applied to the component duration number 800 Duration of the animation in milliseconds delay number 0 Delay before animation starts (in ms) as \"article\" \\ \"div\" \\ \"h1\" \\ \"h2\" \\ \"h3\" \\ \"h4\" \\ \"h5\" \\ \"h6\" \\ \"li\" \\ \"p\" \\ \"section\" \\ \"span\" \"div\" Component to render as startOnView boolean false Start animation when component is in view animateOnHover boolean true Enable hover animation characterSet string[] A Z Custom character set for scramble effect"
+  },
+  "previewPath": "/preview/motion/magicui-hyper-text",
+  "manifestPath": "components/magicui-hyper-text/component.json",
+  "integrity": "sha256:24bd30c0b74e2e27ad2e302540012f1aef95550fc5ff8167245af00cfb2a0b44",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/hyper-text.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport {\n  useEffect,\n  useRef,\n  useState,\n  type ComponentType,\n  type RefAttributes,\n} from \"react\"\nimport {\n  AnimatePresence,\n  motion,\n  type DOMMotionComponents,\n  type HTMLMotionProps,\n  type MotionProps,\n} from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\ntype CharacterSet = string[] | readonly string[]\n\nconst motionElements = {\n  article: motion.article,\n  div: motion.div,\n  h1: motion.h1,\n  h2: motion.h2,\n  h3: motion.h3,\n  h4: motion.h4,\n  h5: motion.h5,\n  h6: motion.h6,\n  li: motion.li,\n  p: motion.p,\n  section: motion.section,\n  span: motion.span,\n} as const\n\ntype MotionElementType = Extract<\n  keyof DOMMotionComponents,\n  keyof typeof motionElements\n>\ntype HyperTextMotionComponent = ComponentType<\n  Omit<HTMLMotionProps<\"div\">, \"ref\"> & RefAttributes<HTMLElement>\n>\n\ninterface HyperTextProps extends Omit<MotionProps, \"children\"> {\n  /** The text content to be animated */\n  children: string\n  /** Optional className for styling */\n  className?: string\n  /** Duration of the animation in milliseconds */\n  duration?: number\n  /** Delay before animation starts in milliseconds */\n  delay?: number\n  /** Component to render as - defaults to div */\n  as?: MotionElementType\n  /** Whether to start animation when element comes into view */\n  startOnView?: boolean\n  /** Whether to trigger animation on hover */\n  animateOnHover?: boolean\n  /** Custom character set for scramble effect. Defaults to uppercase alphabet */\n  characterSet?: CharacterSet\n}\n\nconst DEFAULT_CHARACTER_SET = Object.freeze(\n  \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\".split(\"\")\n) as readonly string[]\n\nconst getRandomInt = (max: number): number => Math.floor(Math.random() * max)\n\nexport function HyperText({\n  children,\n  className,\n  duration = 800,\n  delay = 0,\n  as: Component = \"div\",\n  startOnView = false,\n  animateOnHover = true,\n  characterSet = DEFAULT_CHARACTER_SET,\n  ...props\n}: HyperTextProps) {\n  const MotionComponent = motionElements[Component] as HyperTextMotionComponent\n\n  const [displayText, setDisplayText] = useState<string[]>(() =>\n    children.split(\"\")\n  )\n  const [isAnimating, setIsAnimating] = useState(false)\n  const iterationCount = useRef(0)\n  const elementRef = useRef<HTMLElement | null>(null)\n\n  const handleAnimationTrigger = () => {\n    if (animateOnHover && !isAnimating) {\n      iterationCount.current = 0\n      setIsAnimating(true)\n    }\n  }\n\n  // Handle animation start based on view or delay\n  useEffect(() => {\n    if (!startOnView) {\n      const startTimeout = setTimeout(() => {\n        setIsAnimating(true)\n      }, delay)\n      return () => clearTimeout(startTimeout)\n    }\n\n    const observer = new IntersectionObserver(\n      ([entry]) => {\n        if (entry.isIntersecting) {\n          setTimeout(() => {\n            setIsAnimating(true)\n          }, delay)\n          observer.disconnect()\n        }\n      },\n      { threshold: 0.1, rootMargin: \"-30% 0px -30% 0px\" }\n    )\n\n    if (elementRef.current) {\n      observer.observe(elementRef.current)\n    }\n\n    return () => observer.disconnect()\n  }, [delay, startOnView])\n\n  // Handle scramble animation\n  useEffect(() => {\n    let animationFrameId: number | null = null\n\n    if (isAnimating) {\n      const maxIterations = children.length\n      const startTime = performance.now()\n\n      const animate = (currentTime: number) => {\n        const elapsed = currentTime - startTime\n        const progress = Math.min(elapsed / duration, 1)\n\n        iterationCount.current = progress * maxIterations\n\n        setDisplayText((currentText) =>\n          currentText.map((letter, index) =>\n            letter === \" \"\n              ? letter\n              : index <= iterationCount.current\n                ? children[index]\n                : characterSet[getRandomInt(characterSet.length)]\n          )\n        )\n\n        if (progress < 1) {\n          animationFrameId = requestAnimationFrame(animate)\n        } else {\n          setIsAnimating(false)\n        }\n      }\n\n      animationFrameId = requestAnimationFrame(animate)\n    }\n\n    return () => {\n      if (animationFrameId !== null) {\n        cancelAnimationFrame(animationFrameId)\n      }\n    }\n  }, [children, duration, isAnimating, characterSet])\n\n  return (\n    <MotionComponent\n      ref={elementRef}\n      className={cn(\"overflow-hidden py-2 text-4xl font-bold\", className)}\n      onMouseEnter={handleAnimationTrigger}\n      {...props}\n    >\n      <AnimatePresence>\n        {displayText.map((letter, index) => (\n          <motion.span\n            key={index}\n            className={cn(\"font-mono\", letter === \" \" ? \"w-3\" : \"\")}\n          >\n            {letter.toUpperCase()}\n          </motion.span>\n        ))}\n      </AnimatePresence>\n    </MotionComponent>\n  )\n}\n",
+      "sha256": "12a2f5aa5d53e20ccbe611bde8057083451bda69a31318db166f758289cb93e8",
+      "upstreamPath": "apps/www/registry/magicui/hyper-text.tsx",
+      "upstreamSha256": "12a2f5aa5d53e20ccbe611bde8057083451bda69a31318db166f758289cb93e8",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "hyper-text",
+    "upstreamPageUrl": "https://magicui.design/docs/components/hyper-text",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/hyper-text.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Hyper Text\ndate: 2024-08-03\ndescription: A text animation that scrambles letters before revealing the final text.\nauthor: SwayambhuPrasad\npublished: true\n---\n\n<ComponentPreview name=\"hyper-text-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/hyper-text\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Install the following dependencies:</Step>\n\n```bash\nnpm install motion\n```\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"hyper-text\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { HyperText } from \"@/components/ui/hyper-text\"\n```\n\n```tsx showLineNumbers\n<HyperText>Hover me</HyperText>\n```\n\n## Props\n\n| Prop             | Type                                                                                                       | Default | Description                                   |\n| ---------------- | ---------------------------------------------------------------------------------------------------------- | ------- | --------------------------------------------- |\n| `children`       | `string`                                                                                                   | `-`     | Text content to animate                       |\n| `className`      | `string`                                                                                                   | `-`     | The class name to be applied to the component |\n| `duration`       | `number`                                                                                                   | `800`   | Duration of the animation in milliseconds     |\n| `delay`          | `number`                                                                                                   | `0`     | Delay before animation starts (in ms)         |\n| `as`             | `\"article\" \\| \"div\" \\| \"h1\" \\| \"h2\" \\| \"h3\" \\| \"h4\" \\| \"h5\" \\| \"h6\" \\| \"li\" \\| \"p\" \\| \"section\" \\| \"span\"` | `\"div\"` | Component to render as                        |\n| `startOnView`    | `boolean`                                                                                                  | `false` | Start animation when component is in view     |\n| `animateOnHover` | `boolean`                                                                                                  | `true`  | Enable hover animation                        |\n| `characterSet`   | `string[]`                                                                                                 | `A-Z`   | Custom character set for scramble effect      |\n"
+}

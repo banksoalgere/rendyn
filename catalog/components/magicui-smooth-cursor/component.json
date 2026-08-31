@@ -1,0 +1,96 @@
+{
+  "id": "magicui:smooth-cursor",
+  "sourceId": "magicui",
+  "slug": "magicui-smooth-cursor",
+  "name": "Smooth Cursor",
+  "description": "A customizable, physics-based smooth cursor animation component with spring animations and rotation effects",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "smooth-cursor",
+    "tags": [
+      "code",
+      "form",
+      "hover",
+      "input",
+      "layout",
+      "spring",
+      "text",
+      "touch"
+    ],
+    "aliases": [
+      "smooth cursor",
+      "smooth-cursor"
+    ],
+    "interactions": [
+      "hover",
+      "keyboard",
+      "touch",
+      "type"
+    ],
+    "useWhen": [
+      "A customizable, physics-based smooth cursor animation component with spring animations and rotation effects"
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "smooth-cursor:code:form:hover:input:layout:keyboard",
+    "searchText": "Smooth Cursor\nsmooth cursor\nA customizable, physics-based smooth cursor animation component with spring animations and rotation effects\nsmooth-cursor\ncode\nform\nhover\ninput\nlayout\nspring\ntext\ntouch\nkeyboard\ntype\ntitle: Smooth Cursor date: 2024 04 17 description: A customizable, physics based smooth cursor animation component for React applications. author: magicui published: true Features 🎯 Smooth physics based cursor animations 🔄 Rotation effects based on movement direction ⚡ Performance optimized with RAF 🎨 Fully customizable cursor design 📦 Lightweight and easy to implement Installation CLI Manual Copy and paste the following code into your project. Add the component to your page or layout. Usage Hiding Default Browser Cursor To prevent the default browser cursor from overlapping with the custom cursor, add the following CSS globally: Optional: Keep text cursor for inputs 💡 If you're using Tailwind CSS, you can add cursor none to your layout wrapper: Props Prop Type Default Description cursor React.ReactNode Custom cursor component to replace the default cursor springConfig SpringConfig See below Configuration object for the spring animation behavior SpringConfig Type Default Spring Configuration Browser Support Compatible with all modern browsers that support: requestAnimationFrame CSS transforms Pointer events Hover capable fine pointers (mouse or trackpad) Touch first devices are ignored automatically to prevent the custom cursor from appearing after taps. Accessibility When using this component, consider that: Users navigating via keyboard will not see the custom cursor You may want to provide alternative visual cues for interactive elements Some users may have motion sensitivity, so consider providing a way to disable the animation Credits Credit to @Code Parth for the original concept and implementation"
+  },
+  "previewPath": "/preview/motion/magicui-smooth-cursor",
+  "manifestPath": "components/magicui-smooth-cursor/component.json",
+  "integrity": "sha256:033a96912c8f9222b113a001b5979adb152fc95214f8fa4342d2618bd26bed61",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/smooth-cursor.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport { useEffect, useRef, useState, type FC } from \"react\"\nimport { motion, useSpring } from \"motion/react\"\n\ninterface Position {\n  x: number\n  y: number\n}\n\nexport interface SmoothCursorProps {\n  cursor?: React.ReactNode\n  springConfig?: {\n    damping: number\n    stiffness: number\n    mass: number\n    restDelta: number\n  }\n}\n\nconst DESKTOP_POINTER_QUERY = \"(any-hover: hover) and (any-pointer: fine)\"\n\nfunction isTrackablePointer(pointerType: string) {\n  return pointerType !== \"touch\"\n}\n\nconst DefaultCursorSVG: FC = () => {\n  return (\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width={50}\n      height={54}\n      viewBox=\"0 0 50 54\"\n      fill=\"none\"\n      style={{ scale: 0.5 }}\n    >\n      <g filter=\"url(#filter0_d_91_7928)\">\n        <path\n          d=\"M42.6817 41.1495L27.5103 6.79925C26.7269 5.02557 24.2082 5.02558 23.3927 6.79925L7.59814 41.1495C6.75833 42.9759 8.52712 44.8902 10.4125 44.1954L24.3757 39.0496C24.8829 38.8627 25.4385 38.8627 25.9422 39.0496L39.8121 44.1954C41.6849 44.8902 43.4884 42.9759 42.6817 41.1495Z\"\n          fill=\"black\"\n        />\n        <path\n          d=\"M43.7146 40.6933L28.5431 6.34306C27.3556 3.65428 23.5772 3.69516 22.3668 6.32755L6.57226 40.6778C5.3134 43.4156 7.97238 46.298 10.803 45.2549L24.7662 40.109C25.0221 40.0147 25.2999 40.0156 25.5494 40.1082L39.4193 45.254C42.2261 46.2953 44.9254 43.4347 43.7146 40.6933Z\"\n          stroke=\"white\"\n          strokeWidth={2.25825}\n        />\n      </g>\n      <defs>\n        <filter\n          id=\"filter0_d_91_7928\"\n          x={0.602397}\n          y={0.952444}\n          width={49.0584}\n          height={52.428}\n          filterUnits=\"userSpaceOnUse\"\n          colorInterpolationFilters=\"sRGB\"\n        >\n          <feFlood floodOpacity={0} result=\"BackgroundImageFix\" />\n          <feColorMatrix\n            in=\"SourceAlpha\"\n            type=\"matrix\"\n            values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\"\n            result=\"hardAlpha\"\n          />\n          <feOffset dy={2.25825} />\n          <feGaussianBlur stdDeviation={2.25825} />\n          <feComposite in2=\"hardAlpha\" operator=\"out\" />\n          <feColorMatrix\n            type=\"matrix\"\n            values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0\"\n          />\n          <feBlend\n            mode=\"normal\"\n            in2=\"BackgroundImageFix\"\n            result=\"effect1_dropShadow_91_7928\"\n          />\n          <feBlend\n            mode=\"normal\"\n            in=\"SourceGraphic\"\n            in2=\"effect1_dropShadow_91_7928\"\n            result=\"shape\"\n          />\n        </filter>\n      </defs>\n    </svg>\n  )\n}\n\nexport function SmoothCursor({\n  cursor = <DefaultCursorSVG />,\n  springConfig = {\n    damping: 45,\n    stiffness: 400,\n    mass: 1,\n    restDelta: 0.001,\n  },\n}: SmoothCursorProps) {\n  const lastMousePos = useRef<Position>({ x: 0, y: 0 })\n  const velocity = useRef<Position>({ x: 0, y: 0 })\n  const lastUpdateTime = useRef(Date.now())\n  const previousAngle = useRef(0)\n  const accumulatedRotation = useRef(0)\n  const [isEnabled, setIsEnabled] = useState(false)\n  const [isVisible, setIsVisible] = useState(false)\n\n  const cursorX = useSpring(0, springConfig)\n  const cursorY = useSpring(0, springConfig)\n  const rotation = useSpring(0, {\n    ...springConfig,\n    damping: 60,\n    stiffness: 300,\n  })\n  const scale = useSpring(1, {\n    ...springConfig,\n    stiffness: 500,\n    damping: 35,\n  })\n\n  useEffect(() => {\n    const mediaQuery = window.matchMedia(DESKTOP_POINTER_QUERY)\n\n    const updateEnabled = () => {\n      const nextIsEnabled = mediaQuery.matches\n      setIsEnabled(nextIsEnabled)\n\n      if (!nextIsEnabled) {\n        setIsVisible(false)\n      }\n    }\n\n    updateEnabled()\n    mediaQuery.addEventListener(\"change\", updateEnabled)\n\n    return () => {\n      mediaQuery.removeEventListener(\"change\", updateEnabled)\n    }\n  }, [])\n\n  useEffect(() => {\n    if (!isEnabled) {\n      return\n    }\n\n    let timeout: ReturnType<typeof setTimeout> | null = null\n\n    const updateVelocity = (currentPos: Position) => {\n      const currentTime = Date.now()\n      const deltaTime = currentTime - lastUpdateTime.current\n\n      if (deltaTime > 0) {\n        velocity.current = {\n          x: (currentPos.x - lastMousePos.current.x) / deltaTime,\n          y: (currentPos.y - lastMousePos.current.y) / deltaTime,\n        }\n      }\n\n      lastUpdateTime.current = currentTime\n      lastMousePos.current = currentPos\n    }\n\n    const smoothPointerMove = (e: PointerEvent) => {\n      if (!isTrackablePointer(e.pointerType)) {\n        return\n      }\n\n      setIsVisible(true)\n\n      const currentPos = { x: e.clientX, y: e.clientY }\n      updateVelocity(currentPos)\n\n      const speed = Math.sqrt(\n        Math.pow(velocity.current.x, 2) + Math.pow(velocity.current.y, 2)\n      )\n\n      cursorX.set(currentPos.x)\n      cursorY.set(currentPos.y)\n\n      if (speed > 0.1) {\n        const currentAngle =\n          Math.atan2(velocity.current.y, velocity.current.x) * (180 / Math.PI) +\n          90\n\n        let angleDiff = currentAngle - previousAngle.current\n        if (angleDiff > 180) angleDiff -= 360\n        if (angleDiff < -180) angleDiff += 360\n        accumulatedRotation.current += angleDiff\n        rotation.set(accumulatedRotation.current)\n        previousAngle.current = currentAngle\n\n        scale.set(0.95)\n\n        if (timeout !== null) {\n          clearTimeout(timeout)\n        }\n\n        timeout = setTimeout(() => {\n          scale.set(1)\n        }, 150)\n      }\n    }\n\n    let rafId = 0\n    const throttledPointerMove = (e: PointerEvent) => {\n      if (!isTrackablePointer(e.pointerType)) {\n        return\n      }\n\n      if (rafId) return\n\n      rafId = requestAnimationFrame(() => {\n        smoothPointerMove(e)\n        rafId = 0\n      })\n    }\n\n    document.body.style.cursor = \"none\"\n    window.addEventListener(\"pointermove\", throttledPointerMove, {\n      passive: true,\n    })\n\n    return () => {\n      window.removeEventListener(\"pointermove\", throttledPointerMove)\n      document.body.style.cursor = \"auto\"\n      if (rafId) cancelAnimationFrame(rafId)\n      if (timeout !== null) {\n        clearTimeout(timeout)\n      }\n    }\n  }, [cursorX, cursorY, rotation, scale, isEnabled])\n\n  if (!isEnabled) {\n    return null\n  }\n\n  return (\n    <motion.div\n      style={{\n        position: \"fixed\",\n        left: cursorX,\n        top: cursorY,\n        translateX: \"-50%\",\n        translateY: \"-50%\",\n        rotate: rotation,\n        scale: scale,\n        zIndex: 100,\n        pointerEvents: \"none\",\n        willChange: \"transform\",\n        opacity: isVisible ? 1 : 0,\n      }}\n      initial={false}\n      animate={{ opacity: isVisible ? 1 : 0 }}\n      transition={{\n        duration: 0.15,\n      }}\n    >\n      {cursor}\n    </motion.div>\n  )\n}\n",
+      "sha256": "bbcb3812f29fe0c128066bb83f810849a6eeb951569109d5b46bcd0f16a83c0c",
+      "upstreamPath": "apps/www/registry/magicui/smooth-cursor.tsx",
+      "upstreamSha256": "bbcb3812f29fe0c128066bb83f810849a6eeb951569109d5b46bcd0f16a83c0c",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add framer-motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add framer-motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "smooth-cursor",
+    "upstreamPageUrl": "https://magicui.design/docs/components/smooth-cursor",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/smooth-cursor.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Smooth Cursor\ndate: 2024-04-17\ndescription: A customizable, physics-based smooth cursor animation component for React applications.\nauthor: magicui\npublished: true\n---\n\n<ComponentPreview name=\"smooth-cursor-demo\" />\n\n## Features\n\n- 🎯 Smooth physics-based cursor animations\n- 🔄 Rotation effects based on movement direction\n- ⚡ Performance optimized with RAF\n- 🎨 Fully customizable cursor design\n- 📦 Lightweight and easy to implement\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/smooth-cursor\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"smooth-cursor\" />\n\n<Step>Add the component to your page or layout.</Step>\n\n```tsx showLineNumbers\nimport { SmoothCursor } from \"@/components/ui/smooth-cursor\"\n\nexport default function Page() {\n  return (\n    <>\n      <SmoothCursor />\n      {/* Your page content */}\n    </>\n  )\n}\n```\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { SmoothCursor } from \"@/components/ui/smooth-cursor\"\n```\n\n```tsx showLineNumbers\n<SmoothCursor />\n```\n\n## Hiding Default Browser Cursor\n\nTo prevent the default browser cursor from overlapping with the custom cursor, add the following CSS globally:\n\n```css showLineNumbers\n* {\n  cursor: none !important;\n}\n```\n\n### Optional: Keep text cursor for inputs\n\n```css showLineNumbers\ninput,\ntextarea,\nselect {\n  cursor: text !important;\n}\n```\n\n💡 If you're using Tailwind CSS, you can add cursor-none to your layout wrapper:\n\n```tsx showLineNumbers\n<div className=\"cursor-none\">\n  <SmoothCursor />\n  {/* your app */}\n</div>\n```\n\n## Props\n\n| Prop           | Type              | Default                | Description                                            |\n| -------------- | ----------------- | ---------------------- | ------------------------------------------------------ |\n| `cursor`       | `React.ReactNode` | `<DefaultCursorSVG />` | Custom cursor component to replace the default cursor  |\n| `springConfig` | `SpringConfig`    | See below              | Configuration object for the spring animation behavior |\n\n### SpringConfig Type\n\n```typescript showLineNumbers\ninterface SpringConfig {\n  damping: number // Controls how quickly the animation settles\n  stiffness: number // Controls the spring stiffness\n  mass: number // Controls the virtual mass of the animated object\n  restDelta: number // Controls the threshold at which animation is considered complete\n}\n```\n\n### Default Spring Configuration\n\n```typescript showLineNumbers\nconst defaultSpringConfig = {\n  damping: 45,\n  stiffness: 400,\n  mass: 1,\n  restDelta: 0.001,\n}\n```\n\n## Browser Support\n\nCompatible with all modern browsers that support:\n\n- `requestAnimationFrame`\n- CSS transforms\n- Pointer events\n- Hover-capable fine pointers (mouse or trackpad)\n\nTouch-first devices are ignored automatically to prevent the custom cursor from appearing after taps.\n\n## Accessibility\n\nWhen using this component, consider that:\n\n- Users navigating via keyboard will not see the custom cursor\n- You may want to provide alternative visual cues for interactive elements\n- Some users may have motion sensitivity, so consider providing a way to disable the animation\n\n## Credits\n\n- Credit to [@Code_Parth](https://twitter.com/Code_Parth) for the original concept and implementation\n"
+}

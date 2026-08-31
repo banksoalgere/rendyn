@@ -29,7 +29,9 @@ export function registerPublicRoutes(
     context.json({
       status: "ok",
       catalog_components: store.index.components.length,
-      source_commit: store.index.source.commit,
+      source_commits: Object.fromEntries(
+        store.index.sources.map((source) => [source.id, source.commit]),
+      ),
       semantic_index: Boolean(store.embeddings),
       oauth_configured: config.supabaseConfigured,
     }),

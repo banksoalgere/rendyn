@@ -1,0 +1,64 @@
+"use client";
+
+import { faker } from "@faker-js/faker";
+
+faker.seed(42);
+import {
+  CalendarBody,
+  CalendarDate,
+  CalendarDatePagination,
+  CalendarDatePicker,
+  CalendarHeader,
+  CalendarItem,
+  CalendarMonthPicker,
+  CalendarProvider,
+  CalendarYearPicker,
+} from "@/components/kibo-ui/calendar";
+
+const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
+
+const statuses = [
+  { id: faker.string.uuid(), name: "Planned", color: "#6B7280" },
+  { id: faker.string.uuid(), name: "In Progress", color: "#F59E0B" },
+  { id: faker.string.uuid(), name: "Done", color: "#10B981" },
+];
+
+const exampleFeatures = Array.from({ length: 20 })
+  .fill(null)
+  .map(() => ({
+    id: faker.string.uuid(),
+    name: capitalize(faker.company.buzzPhrase()),
+    startAt: new Date("2026-02-01T00:00:00.000Z"),
+    endAt: new Date("2026-05-01T00:00:00.000Z"),
+    status: faker.helpers.arrayElement(statuses),
+  }));
+
+const earliestYear =
+  exampleFeatures
+    .map((feature) => feature.startAt.getFullYear())
+    .sort()
+    .at(0) ?? new Date().getFullYear();
+
+const latestYear =
+  exampleFeatures
+    .map((feature) => feature.endAt.getFullYear())
+    .sort()
+    .at(-1) ?? new Date().getFullYear();
+
+const Example = () => (
+  <CalendarProvider>
+    <CalendarDate>
+      <CalendarDatePicker>
+        <CalendarMonthPicker />
+        <CalendarYearPicker end={latestYear} start={earliestYear} />
+      </CalendarDatePicker>
+      <CalendarDatePagination />
+    </CalendarDate>
+    <CalendarHeader />
+    <CalendarBody features={exampleFeatures}>
+      {({ feature }) => <CalendarItem feature={feature} key={feature.id} />}
+    </CalendarBody>
+  </CalendarProvider>
+);
+
+export default Example;

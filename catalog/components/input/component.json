@@ -1,5 +1,6 @@
 {
   "id": "beui:input",
+  "sourceId": "beui",
   "slug": "input",
   "name": "Input",
   "description": "Text input with label, left/right icons, optional stable error row, error shake and success check draw.",
@@ -51,7 +52,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -81,6 +82,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -92,7 +95,8 @@
     "upstreamSlug": "input",
     "upstreamPageUrl": "https://beui.dev/components/motion/input",
     "upstreamDetailUrl": "https://beui.dev/r/input",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/input.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/input.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Input\"\ndescription: \"Text input with label, left/right icons, optional stable error row, error shake and success check draw.\"\ncategory: \"Components\"\npublishedAt: \"2026-06-29\"\nupdatedAt: \"2026-08-28\"\ndocumentation: \"https://beui.dev/components/motion/input\"\nmarkdown: \"https://beui.dev/components/motion/input.md\"\nlicense: \"MIT\"\n---\n\n# Input\n\n> Text input with label, left/right icons, optional stable error row, error shake and success check draw.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/input\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { Eye, EyeOff, Mail, Search } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Input } from \"@/components/motion/input\";\n\nexport function InputPreview() {\n  const [email, setEmail] = useState(\"\");\n  const [pass, setPass] = useState(\"hunter2\");\n  const [query, setQuery] = useState(\"Ada\");\n  const [show, setShow] = useState(false);\n\n  const emailError =\n    email.length > 0 && !email.includes(\"@\") ? \"Enter a valid email address.\" : undefined;\n\n  return (\n    <div className=\"flex w-full max-w-xs flex-col gap-1\">\n      <Input\n        label=\"Email\"\n        type=\"email\"\n        placeholder=\"you@example.com\"\n        leftIcon={<Mail />}\n        value={email}\n        onChange={setEmail}\n        error={emailError}\n        reserveErrorLine\n      />\n      <Input\n        label=\"Password\"\n        type={show ? \"text\" : \"password\"}\n        value={pass}\n        onChange={setPass}\n        rightIcon={\n          <button\n            type=\"button\"\n            onClick={() => setShow((s) => !s)}\n            aria-label={show ? \"Hide password\" : \"Show password\"}\n            className=\"pointer-events-auto\"\n          >\n            {show ? <EyeOff /> : <Eye />}\n          </button>\n        }\n        reserveErrorLine\n      />\n      <Input\n        label=\"Search\"\n        leftIcon={<Search />}\n        value={query}\n        onChange={setQuery}\n        success={query.length > 1}\n        reserveErrorLine\n      />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### Input\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `label` | `string` | — | No | — |\n| `value` | `string` | — | No | — |\n| `defaultValue` | `string` | — | No | — |\n| `onChange` | `((value: string) => void)` | — | No | — |\n| `error` | `string \\| boolean` | — | No | Truthy error triggers a shake, red border and (if a string) a message. |\n| `reserveErrorLine` | `boolean` | `false` | No | Reserve one message line so validation does not shift nearby content. |\n| `success` | `boolean` | — | No | — |\n| `leftIcon` | `ReactNode` | — | No | — |\n| `rightIcon` | `ReactNode` | — | No | — |\n| `className` | `string` | — | No | — |\n| `classNames` | `InputClassNames` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/input\n- Raw source: https://beui.dev/r/input/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

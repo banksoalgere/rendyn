@@ -1,5 +1,6 @@
 {
   "id": "beui:file-diff",
+  "sourceId": "beui",
   "slug": "file-diff",
   "name": "File Diff",
   "description": "A syntax-highlighted file change disclosure with progressive rows, line numbers, live change counts, smooth following, and completion collapse.",
@@ -63,7 +64,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -135,6 +136,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react shiki tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react shiki tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -146,7 +149,8 @@
     "upstreamSlug": "file-diff",
     "upstreamPageUrl": "https://beui.dev/components/agents/file-diff",
     "upstreamDetailUrl": "https://beui.dev/r/file-diff",
-    "upstreamMarkdownUrl": "https://beui.dev/components/agents/file-diff.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/agents/file-diff.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"File Diff\"\ndescription: \"A syntax-highlighted file change disclosure with progressive rows, line numbers, live change counts, smooth following, and completion collapse.\"\ncategory: \"AI Agents\"\npublishedAt: \"2026-08-01\"\nupdatedAt: \"2026-08-02\"\ndocumentation: \"https://beui.dev/components/agents/file-diff\"\nmarkdown: \"https://beui.dev/components/agents/file-diff.md\"\nlicense: \"MIT\"\n---\n\n# File Diff\n\n> A syntax-highlighted file change disclosure with progressive rows, line numbers, live change counts, smooth following, and completion collapse.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/file-diff\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `shiki`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { RotateCcw } from \"lucide-react\";\nimport { useState } from \"react\";\nimport {\n  FileDiff,\n  type FileDiffLine,\n} from \"@/components/agents/file-diff\";\nimport { useToolResultDemo } from \"./use-tool-result-demo\";\n\nconst DIFF_LINES: FileDiffLine[] = [\n  { id: \"1\", oldLine: 18, newLine: 18, content: \"export async function runTask() {\" },\n  {\n    id: \"2\",\n    type: \"removed\",\n    oldLine: 19,\n    content: \"  return execute(task);\",\n  },\n  {\n    id: \"3\",\n    type: \"added\",\n    newLine: 19,\n    content: \"  const result = await execute(task);\",\n  },\n  {\n    id: \"4\",\n    type: \"added\",\n    newLine: 20,\n    content: \"  return normalize(result);\",\n  },\n  { id: \"5\", oldLine: 20, newLine: 21, content: \"}\" },\n];\n\nfunction FileRun() {\n  const { visible, status } = useToolResultDemo(DIFF_LINES.length, 360);\n\n  return (\n    <FileDiff\n      file=\"src/runner.ts\"\n      lines={DIFF_LINES.slice(0, visible)}\n      status={status === \"success\" ? \"complete\" : \"streaming\"}\n      copyText={DIFF_LINES.map((line) => line.content).join(\"\\n\")}\n      maxHeight={150}\n    />\n  );\n}\n\nexport function FileDiffPreview() {\n  const [run, setRun] = useState(0);\n\n  return (\n    <div className=\"relative h-[300px] w-full max-w-lg\">\n      <FileRun key={run} />\n      <button\n        type=\"button\"\n        onClick={() => setRun((value) => value + 1)}\n        className=\"absolute bottom-0 left-0 inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-muted-foreground outline-none transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring\"\n      >\n        <RotateCcw className=\"size-3\" />\n        Replay\n      </button>\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### FileDiff\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `file` | `ReactNode` | — | Yes | — |\n| `lines` | `FileDiffLine[]` | — | Yes | — |\n| `status` | `\"complete\" \\| \"streaming\"` | `streaming` | No | — |\n| `open` | `boolean` | — | No | — |\n| `defaultOpen` | `boolean` | `true` | No | — |\n| `onOpenChange` | `((open: boolean) => void)` | — | No | — |\n| `collapseOnComplete` | `boolean` | `true` | No | — |\n| `maxHeight` | `number` | `220` | No | — |\n| `language` | `\"text\" \\| \"bash\" \\| \"diff\" \\| \"json\" \\| \"tsx\" \\| \"typescript\"` | `typescript` | No | — |\n| `copyText` | `string` | — | No | — |\n| `onCopy` | `(() => void \\| Promise<void>)` | — | No | — |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/file-diff\n- Raw source: https://beui.dev/r/file-diff/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

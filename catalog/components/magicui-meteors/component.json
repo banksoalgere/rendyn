@@ -1,0 +1,94 @@
+{
+  "id": "magicui:meteors",
+  "sourceId": "magicui",
+  "slug": "magicui-meteors",
+  "name": "Meteors",
+  "description": "A meteor shower effect.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "meteors",
+    "tags": [
+      "code",
+      "file",
+      "number"
+    ],
+    "aliases": [
+      "meteors"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A meteor shower effect."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "meteors:code:file:number:type",
+    "searchText": "Meteors\nmeteors\nA meteor shower effect.\ncode\nfile\nnumber\ntype\ntitle: Meteors date: 2023 07 13 description: A meteor shower effect. author: dillionverma published: true video: https://cdn.magicui.design/meteors.mp4 Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Add the required CSS animations Add the following animations to your global CSS file. Usage Props Meteors Prop Type Default Description number number 20 Number of meteors minDelay number 0.2 Minimum delay in seconds before meteor animation starts maxDelay number 1.2 Maximum delay in seconds before meteor animation starts minDuration number 2 Minimum duration in seconds for meteor animation maxDuration number 10 Maximum duration in seconds for meteor animation angle number 215 Angle in degrees for meteor trajectory className string Optional additional CSS classes"
+  },
+  "previewPath": "/preview/motion/magicui-meteors",
+  "manifestPath": "components/magicui-meteors/component.json",
+  "integrity": "sha256:c882e704680eda636d80d965b672248b64bbab6421c730ca6c93553280c7dfe8",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/meteors.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport React, { useEffect, useState } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface MeteorsProps {\n  number?: number\n  minDelay?: number\n  maxDelay?: number\n  minDuration?: number\n  maxDuration?: number\n  angle?: number\n  className?: string\n}\n\nexport const Meteors = ({\n  number = 20,\n  minDelay = 0.2,\n  maxDelay = 1.2,\n  minDuration = 2,\n  maxDuration = 10,\n  angle = 215,\n  className,\n}: MeteorsProps) => {\n  const [meteorStyles, setMeteorStyles] = useState<Array<React.CSSProperties>>(\n    []\n  )\n\n  useEffect(() => {\n    const styles = [...new Array(number)].map(() => ({\n      \"--angle\": -angle + \"deg\",\n      top: \"-5%\",\n      left: `calc(0% + ${Math.floor(Math.random() * window.innerWidth)}px)`,\n      animationDelay: Math.random() * (maxDelay - minDelay) + minDelay + \"s\",\n      animationDuration:\n        Math.floor(Math.random() * (maxDuration - minDuration) + minDuration) +\n        \"s\",\n    }))\n    setMeteorStyles(styles)\n  }, [number, minDelay, maxDelay, minDuration, maxDuration, angle])\n\n  return (\n    <>\n      {[...meteorStyles].map((style, idx) => (\n        // Meteor Head\n        <span\n          key={idx}\n          style={{ ...style }}\n          className={cn(\n            \"animate-meteor pointer-events-none absolute size-0.5 rotate-(--angle) rounded-full bg-zinc-500 shadow-[0_0_0_1px_#ffffff10]\",\n            className\n          )}\n        >\n          {/* Meteor Tail */}\n          <div className=\"pointer-events-none absolute top-1/2 -z-10 h-px w-12.5 -translate-y-1/2 bg-linear-to-r from-zinc-500 to-transparent\" />\n        </span>\n      ))}\n    </>\n  )\n}\n",
+      "sha256": "0730d0d6449fb3fb098a5e9edc80d066bdf06ebbb1d1e598b8fb6a10ff4a5ff9",
+      "upstreamPath": "apps/www/registry/magicui/meteors.tsx",
+      "upstreamSha256": "0730d0d6449fb3fb098a5e9edc80d066bdf06ebbb1d1e598b8fb6a10ff4a5ff9",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    },
+    {
+      "path": "components/magicui/meteors.css",
+      "type": "style",
+      "content": "@theme inline {\n  --animate-meteor: meteor 5s linear infinite;\n}\n\n@keyframes meteor {\n  0% {\n    transform: rotate(var(--angle)) translateX(0);\n    opacity: 1;\n  }\n  70% {\n    opacity: 1;\n  }\n  100% {\n    transform: rotate(var(--angle)) translateX(-500px);\n    opacity: 0;\n  }\n}\n",
+      "sha256": "30d0ca8439efbacc02291216954b20bf2f5b5cdee0ab3497511c0c1a63dd7168",
+      "transformation": "Materialize registry CSS and theme variables as a component stylesheet when present."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/magicui/meteors.css"
+    ],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Include the returned styles: components/magicui/meteors.css"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "meteors",
+    "upstreamPageUrl": "https://magicui.design/docs/components/meteors",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/meteors.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Meteors\ndate: 2023-07-13\ndescription: A meteor shower effect.\nauthor: dillionverma\npublished: true\nvideo: https://cdn.magicui.design/meteors.mp4\n---\n\n<ComponentPreview name=\"meteors-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/meteors\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"meteors\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n<Step>Add the required CSS animations</Step>\n\nAdd the following animations to your global CSS file.\n\n```css title=\"app/globals.css\" showLineNumbers {2, 4-15}\n@theme inline {\n  --animate-meteor: meteor 5s linear infinite;\n\n  @keyframes meteor {\n    0% {\n      transform: rotate(var(--angle)) translateX(0);\n      opacity: 1;\n    }\n    70% {\n      opacity: 1;\n    }\n    100% {\n      transform: rotate(var(--angle)) translateX(-500px);\n      opacity: 0;\n    }\n  }\n}\n```\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { Meteors } from \"@/components/ui/meteors\"\n```\n\n```tsx showLineNumbers\n<div className=\"relative h-[500px] w-full overflow-hidden\">\n  <Meteors />\n</div>\n```\n\n## Props\n\n### Meteors\n\n| Prop          | Type     | Default | Description                                             |\n| ------------- | -------- | ------- | ------------------------------------------------------- |\n| `number`      | `number` | `20`    | Number of meteors                                       |\n| `minDelay`    | `number` | `0.2`   | Minimum delay in seconds before meteor animation starts |\n| `maxDelay`    | `number` | `1.2`   | Maximum delay in seconds before meteor animation starts |\n| `minDuration` | `number` | `2`     | Minimum duration in seconds for meteor animation        |\n| `maxDuration` | `number` | `10`    | Maximum duration in seconds for meteor animation        |\n| `angle`       | `number` | `215`   | Angle in degrees for meteor trajectory                  |\n| `className`   | `string` | -       | Optional additional CSS classes                         |\n"
+}

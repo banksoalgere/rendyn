@@ -1,5 +1,6 @@
 {
   "id": "beui:project-folder",
+  "sourceId": "beui",
   "slug": "project-folder",
   "name": "Project Folder",
   "description": "An interactive project folder that opens its file fan on hover or focus, expands into a focus-managed overlay, then retraces the complete path when closed.",
@@ -56,7 +57,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -98,6 +99,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react react-dom tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react react-dom tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -109,7 +112,8 @@
     "upstreamSlug": "project-folder",
     "upstreamPageUrl": "https://beui.dev/components/blocks/project-folder",
     "upstreamDetailUrl": "https://beui.dev/r/project-folder",
-    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/project-folder.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/project-folder.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Project Folder\"\ndescription: \"An interactive project folder that opens its file fan on hover or focus, expands into a focus-managed overlay, then retraces the complete path when closed.\"\ncategory: \"Blocks\"\npublishedAt: \"2026-08-15\"\nupdatedAt: \"2026-08-20\"\ndocumentation: \"https://beui.dev/components/blocks/project-folder\"\nmarkdown: \"https://beui.dev/components/blocks/project-folder.md\"\nlicense: \"MIT\"\n---\n\n# Project Folder\n\n> An interactive project folder that opens its file fan on hover or focus, expands into a focus-managed overlay, then retraces the complete path when closed.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/project-folder\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `react-dom`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { ProjectFolder } from \"@/components/motion/project-folder\";\n\nconst previews = [\n  { id: \"moss\", color: \"bg-emerald-200\", mark: \"A\" },\n  { id: \"clay\", color: \"bg-orange-200\", mark: \"B\" },\n  { id: \"sky\", color: \"bg-sky-200\", mark: \"C\" },\n  { id: \"lilac\", color: \"bg-violet-200\", mark: \"D\" },\n  { id: \"sand\", color: \"bg-amber-100\", mark: \"E\" },\n].map((preview) => ({\n  id: preview.id,\n  content: (\n    <span className={cn(\"relative block h-full w-full\", preview.color)}>\n      <span className=\"absolute left-3 top-3 h-2 w-8 rounded-full bg-black/15\" />\n      <span className=\"absolute inset-x-3 top-8 h-px bg-black/10\" />\n      <span className=\"absolute inset-x-3 top-11 h-px bg-black/10\" />\n      <span className=\"absolute bottom-3 right-3 text-sm font-medium text-black/50\">\n        {preview.mark}\n      </span>\n    </span>\n  ),\n}));\n\nfunction cn(...classes: string[]) {\n  return classes.filter(Boolean).join(\" \");\n}\n\nexport function ProjectFolderPreview() {\n  return (\n    <div className=\"flex min-h-80 w-full items-center justify-center px-6 py-10\">\n      <ProjectFolder\n        title=\"Brand direction\"\n        description=\"Updated recently\"\n        count={5}\n        previews={previews}\n        onClick={() => {}}\n      />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### ProjectFolder\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `title` | `string` | — | Yes | — |\n| `description` | `string` | `Updated recently` | No | — |\n| `previews` | `ProjectFolderPreview[]` | `[]` | No | — |\n| `count` | `number` | `previews.length` | No | — |\n| `itemLabel` | `string` | `file` | No | — |\n| `open` | `boolean` | — | No | — |\n| `defaultOpen` | `boolean` | `false` | No | — |\n| `onOpenChange` | `((open: boolean) => void)` | — | No | — |\n| `expanded` | `boolean` | — | No | — |\n| `defaultExpanded` | `boolean` | `false` | No | — |\n| `onExpandedChange` | `((expanded: boolean) => void)` | — | No | — |\n| `onClick` | `(() => void)` | — | No | — |\n| `disabled` | `boolean` | `false` | No | — |\n| `ariaLabel` | `string` | — | No | — |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/project-folder\n- Raw source: https://beui.dev/r/project-folder/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

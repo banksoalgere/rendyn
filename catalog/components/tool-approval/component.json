@@ -1,5 +1,6 @@
 {
   "id": "beui:tool-approval",
+  "sourceId": "beui",
   "slug": "tool-approval",
   "name": "Tool Approval",
   "description": "A human-in-the-loop permission card for reviewing tool details, allowing once, remembering access, or denying execution.",
@@ -59,7 +60,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -107,6 +108,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react shiki tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react shiki tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -118,7 +121,8 @@
     "upstreamSlug": "tool-approval",
     "upstreamPageUrl": "https://beui.dev/components/agents/tool-approval",
     "upstreamDetailUrl": "https://beui.dev/r/tool-approval",
-    "upstreamMarkdownUrl": "https://beui.dev/components/agents/tool-approval.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/agents/tool-approval.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Tool Approval\"\ndescription: \"A human-in-the-loop permission card for reviewing tool details, allowing once, remembering access, or denying execution.\"\ncategory: \"AI Agents\"\npublishedAt: \"2026-08-01\"\nupdatedAt: \"2026-08-02\"\ndocumentation: \"https://beui.dev/components/agents/tool-approval\"\nmarkdown: \"https://beui.dev/components/agents/tool-approval.md\"\nlicense: \"MIT\"\n---\n\n# Tool Approval\n\n> A human-in-the-loop permission card for reviewing tool details, allowing once, remembering access, or denying execution.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/tool-approval\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `shiki`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { RotateCcw } from \"lucide-react\";\nimport { useCallback, useEffect, useRef, useState } from \"react\";\nimport {\n  ToolApproval,\n  ToolApprovalCode,\n  type ToolApprovalStatus,\n} from \"@/components/agents/tool-approval\";\n\nexport function ToolApprovalPreview() {\n  const [status, setStatus] = useState<ToolApprovalStatus>(\"pending\");\n  const [detailsOpen, setDetailsOpen] = useState(true);\n  const timers = useRef<number[]>([]);\n\n  const clearTimers = useCallback(() => {\n    timers.current.forEach(window.clearTimeout);\n    timers.current = [];\n  }, []);\n\n  useEffect(() => () => clearTimers(), [clearTimers]);\n\n  const finish = (next: ToolApprovalStatus) => {\n    clearTimers();\n    setStatus(next);\n  };\n\n  const approve = () => {\n    clearTimers();\n    setStatus(\"approving\");\n    timers.current = [\n      window.setTimeout(() => setStatus(\"approved\"), 600),\n      window.setTimeout(() => setStatus(\"running\"), 1150),\n      window.setTimeout(() => setStatus(\"complete\"), 2200),\n    ];\n  };\n\n  const replay = () => {\n    clearTimers();\n    setStatus(\"pending\");\n    setDetailsOpen(true);\n  };\n\n  return (\n    <div className=\"relative h-[360px] w-full max-w-lg\">\n      <ToolApproval\n        tool=\"terminal.run\"\n        title={status === \"pending\" ? \"Allow this tool to run?\" : \"Terminal access\"}\n        description=\"The agent wants to run the project test suite in the current workspace.\"\n        status={status}\n        open={detailsOpen}\n        onOpenChange={setDetailsOpen}\n        parameters={[\n          {\n            id: \"command\",\n            label: \"Command\",\n            value: (\n              <ToolApprovalCode\n                code=\"bun test tests/a11y.test.tsx\"\n                language=\"bash\"\n              />\n            ),\n          },\n          { id: \"directory\", label: \"Directory\", value: \"ui-components\" },\n        ]}\n        onApprove={approve}\n        onAlwaysAllow={approve}\n        onDeny={() => finish(\"denied\")}\n      />\n      <button\n        type=\"button\"\n        onClick={replay}\n        className=\"absolute bottom-0 left-0 inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-muted-foreground outline-none transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring\"\n      >\n        <RotateCcw className=\"size-3\" />\n        Replay\n      </button>\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### ToolApprovalCode\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `code` | `string` | — | Yes | — |\n| `language` | `\"text\" \\| \"bash\" \\| \"diff\" \\| \"json\" \\| \"tsx\" \\| \"typescript\"` | `bash` | No | — |\n| `className` | `string` | — | No | — |\n\n### ToolApproval\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `tool` | `ReactNode` | — | Yes | — |\n| `title` | `ReactNode` | `Allow this tool to run?` | No | — |\n| `description` | `ReactNode` | — | No | — |\n| `parameters` | `ToolApprovalParameter[]` | `[]` | No | — |\n| `status` | `\"error\" \\| \"complete\" \\| \"running\" \\| \"pending\" \\| \"approving\" \\| \"approved\" \\| \"denied\"` | `pending` | No | — |\n| `open` | `boolean` | — | No | — |\n| `defaultOpen` | `boolean` | `false` | No | — |\n| `onOpenChange` | `((open: boolean) => void)` | — | No | — |\n| `onApprove` | `(() => void)` | — | No | — |\n| `onAlwaysAllow` | `(() => void)` | — | No | — |\n| `onDeny` | `(() => void)` | — | No | — |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/tool-approval\n- Raw source: https://beui.dev/r/tool-approval/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

@@ -1,0 +1,99 @@
+{
+  "id": "magicui:ripple-button",
+  "sourceId": "magicui",
+  "slug": "magicui-ripple-button",
+  "name": "Ripple Button",
+  "description": "An animated button with ripple useful for user engagement.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "button",
+    "tags": [
+      "animated",
+      "button",
+      "code",
+      "file",
+      "number"
+    ],
+    "aliases": [
+      "ripple button",
+      "button",
+      "cta",
+      "action control"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "An animated button with ripple useful for user engagement."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "button:animated:code:file:number:type",
+    "searchText": "Ripple Button\nripple button\nAn animated button with ripple useful for user engagement.\nbutton\ncta\naction control\nanimated\ncode\nfile\nnumber\ntype\ntitle: Ripple Button date: 2024 11 17 description: An animated button with ripple useful for user engagement. author: Sidd5arth published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Add the required CSS animations Add the following animations to your global CSS file. Usage Props Prop Type Default Description children React.ReactNode The content of the button. className string Additional class names for the button. rippleColor string The rbg numbers only for the color of the rippling waves. duration string The time span of one ripple. Credits Credit to @Sidd5arth"
+  },
+  "previewPath": "/preview/motion/magicui-ripple-button",
+  "manifestPath": "components/magicui-ripple-button/component.json",
+  "integrity": "sha256:0d6e5f110917d9223f4668aeb2bbe07c19d249e770a7b56542d5bc4e82a12d38",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/ripple-button.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport React, { useEffect, useState, type MouseEvent } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface RippleButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n  rippleColor?: string\n  duration?: string\n}\n\nexport const RippleButton = React.forwardRef<\n  HTMLButtonElement,\n  RippleButtonProps\n>(\n  (\n    {\n      className,\n      children,\n      rippleColor = \"#ffffff\",\n      duration = \"600ms\",\n      onClick,\n      ...props\n    },\n    ref\n  ) => {\n    const [buttonRipples, setButtonRipples] = useState<\n      Array<{ x: number; y: number; size: number; key: number }>\n    >([])\n\n    const handleClick = (event: MouseEvent<HTMLButtonElement>) => {\n      createRipple(event)\n      onClick?.(event)\n    }\n\n    const createRipple = (event: MouseEvent<HTMLButtonElement>) => {\n      const button = event.currentTarget\n      const rect = button.getBoundingClientRect()\n      const size = Math.max(rect.width, rect.height)\n      const x = event.clientX - rect.left - size / 2\n      const y = event.clientY - rect.top - size / 2\n\n      const newRipple = { x, y, size, key: Date.now() }\n      setButtonRipples((prevRipples) => [...prevRipples, newRipple])\n    }\n\n    useEffect(() => {\n      let timeout: ReturnType<typeof setTimeout> | null = null\n\n      if (buttonRipples.length > 0) {\n        const lastRipple = buttonRipples[buttonRipples.length - 1]\n        timeout = setTimeout(() => {\n          setButtonRipples((prevRipples) =>\n            prevRipples.filter((ripple) => ripple.key !== lastRipple.key)\n          )\n        }, parseInt(duration))\n      }\n\n      return () => {\n        if (timeout !== null) {\n          clearTimeout(timeout)\n        }\n      }\n    }, [buttonRipples, duration])\n\n    return (\n      <button\n        className={cn(\n          \"bg-background text-primary relative flex cursor-pointer items-center justify-center overflow-hidden rounded-lg border-2 px-4 py-2 text-center\",\n          className\n        )}\n        onClick={handleClick}\n        ref={ref}\n        {...props}\n      >\n        <div className=\"relative z-10\">{children}</div>\n        <span className=\"pointer-events-none absolute inset-0\">\n          {buttonRipples.map((ripple) => (\n            <span\n              className=\"animate-rippling bg-background absolute rounded-full opacity-30\"\n              key={ripple.key}\n              style={\n                {\n                  width: `${ripple.size}px`,\n                  height: `${ripple.size}px`,\n                  top: `${ripple.y}px`,\n                  left: `${ripple.x}px`,\n                  backgroundColor: rippleColor,\n                  transform: `scale(0)`,\n                  \"--duration\": duration,\n                } as React.CSSProperties\n              }\n            />\n          ))}\n        </span>\n      </button>\n    )\n  }\n)\n\nRippleButton.displayName = \"RippleButton\"\n",
+      "sha256": "828d7883953843761cb80fd6f59b6115e72d8db6bc83471e7ee8abf049ab6863",
+      "upstreamPath": "apps/www/registry/magicui/ripple-button.tsx",
+      "upstreamSha256": "828d7883953843761cb80fd6f59b6115e72d8db6bc83471e7ee8abf049ab6863",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    },
+    {
+      "path": "components/magicui/ripple-button.css",
+      "type": "style",
+      "content": "@theme inline {\n  --animate-rippling: rippling var(--duration) ease-out;\n}\n\n@keyframes rippling {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    transform: scale(2);\n    opacity: 0;\n  }\n}\n",
+      "sha256": "85a1d5dcd9db7f202d2138d3409758cce43e7cce6f45eee601ef37fcdda76005",
+      "transformation": "Materialize registry CSS and theme variables as a component stylesheet when present."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/magicui/ripple-button.css"
+    ],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Include the returned styles: components/magicui/ripple-button.css"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "ripple-button",
+    "upstreamPageUrl": "https://magicui.design/docs/components/ripple-button",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/ripple-button.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Ripple Button\ndate: 2024-11-17\ndescription: An animated button with ripple useful for user engagement.\nauthor: Sidd5arth\npublished: true\n---\n\n<ComponentPreview name=\"ripple-button-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/ripple-button\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"ripple-button\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n<Step>Add the required CSS animations</Step>\n\nAdd the following animations to your global CSS file.\n\n```css title=\"app/globals.css\" showLineNumbers {2, 4-12}\n@theme inline {\n  --animate-rippling: rippling var(--duration) ease-out;\n\n  @keyframes rippling {\n    0% {\n      opacity: 1;\n    }\n    100% {\n      transform: scale(2);\n      opacity: 0;\n    }\n  }\n}\n```\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { RippleButton } from \"@/components/ui/ripple-button\"\n```\n\n```tsx showLineNumbers\n<RippleButton>Ripple Button</RippleButton>\n```\n\n## Props\n\n| Prop          | Type              | Default | Description                                               |\n| ------------- | ----------------- | ------- | --------------------------------------------------------- |\n| `children`    | `React.ReactNode` | `-`     | The content of the button.                                |\n| `className`   | `string`          | `-`     | Additional class names for the button.                    |\n| `rippleColor` | `string`          | `-`     | The rbg numbers only for the color of the rippling waves. |\n| `duration`    | `string`          | `-`     | The time span of one ripple.                              |\n\n## Credits\n\n- Credit to [@Sidd5arth](https://github.com/Sidd5arth)\n"
+}

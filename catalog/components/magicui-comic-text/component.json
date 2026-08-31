@@ -1,0 +1,88 @@
+{
+  "id": "magicui:comic-text",
+  "sourceId": "magicui",
+  "slug": "magicui-comic-text",
+  "name": "Comic Text",
+  "description": "Comic text animation",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "comic-text",
+    "tags": [
+      "code",
+      "number",
+      "text"
+    ],
+    "aliases": [
+      "comic text",
+      "comic-text"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "Comic text animation"
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "comic-text:code:number:text:type",
+    "searchText": "Comic Text\ncomic text\nComic text animation\ncomic-text\ncode\nnumber\ntext\ntype\ntitle: Comic Text date: 2025 07 15 description: Comic text animation that looks like a comic book text author: iambharathpadhu published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Usage Props Prop Type Default Description className string The class name to be applied to the component fontSize number 4 The font size of the text style CSSProperties ffffff The style of the text children string The text to be displayed Credits Credit to @iambharathpadhu"
+  },
+  "previewPath": "/preview/motion/magicui-comic-text",
+  "manifestPath": "components/magicui-comic-text/component.json",
+  "integrity": "sha256:f307ee16d0c11dfac285ec4e0236048b88d026b863417e902d9af619dbef3912",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/comic-text.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport { type CSSProperties } from \"react\"\nimport { motion } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\ntype ComicTextProps = {\n  children: string\n  className?: string\n  style?: CSSProperties\n  fontSize?: number\n}\n\nexport function ComicText({\n  children,\n  className,\n  style,\n  fontSize = 5,\n}: ComicTextProps) {\n  if (typeof children !== \"string\") {\n    throw new Error(\"children must be a string\")\n  }\n\n  const dotColor = \"#EF4444\"\n  const backgroundColor = \"#FACC15\"\n\n  return (\n    <motion.div\n      className={cn(\"text-center select-none\", className)}\n      style={{\n        fontSize: `${fontSize}rem`,\n        fontFamily: \"'Bangers', 'Comic Sans MS', 'Impact', sans-serif\",\n        fontWeight: \"900\",\n        WebkitTextStroke: `${fontSize * 0.35}px #000000`, // Thick black outline\n        transform: \"skewX(-10deg)\",\n        textTransform: \"uppercase\",\n        filter: `\n          drop-shadow(5px 5px 0px #000000) \n          drop-shadow(3px 3px 0px ${dotColor})\n        `,\n        backgroundColor: backgroundColor,\n        backgroundImage: `radial-gradient(circle at 1px 1px, ${dotColor} 1px, transparent 0)`,\n        backgroundSize: \"8px 8px\",\n        backgroundClip: \"text\",\n        WebkitBackgroundClip: \"text\",\n        WebkitTextFillColor: \"transparent\",\n        ...style,\n      }}\n      initial={{ opacity: 0, scale: 0.8, rotate: -2 }}\n      animate={{ opacity: 1, scale: 1, rotate: 0 }}\n      transition={{\n        duration: 0.6,\n        ease: [0.175, 0.885, 0.32, 1.275],\n        type: \"spring\",\n      }}\n    >\n      {children}\n    </motion.div>\n  )\n}\n",
+      "sha256": "d259aa2d9ef9fadcfd565a9bf29557660c511a08e3c18b675dd4b3d731417113",
+      "upstreamPath": "apps/www/registry/magicui/comic-text.tsx",
+      "upstreamSha256": "d259aa2d9ef9fadcfd565a9bf29557660c511a08e3c18b675dd4b3d731417113",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comic-text",
+    "upstreamPageUrl": "https://magicui.design/docs/components/comic-text",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/comic-text.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Comic Text\ndate: 2025-07-15\ndescription: Comic text animation that looks like a comic book text\nauthor: iambharathpadhu\npublished: true\n---\n\n<ComponentPreview name=\"comic-text-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/comic-text\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"comic-text\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { ComicText } from \"@/components/ui/comic-text\"\n```\n\n```tsx showLineNumbers\n<ComicText>Comic Text</ComicText>\n```\n\n## Props\n\n| Prop        | Type            | Default   | Description                                   |\n| ----------- | --------------- | --------- | --------------------------------------------- |\n| `className` | `string`        | `-`       | The class name to be applied to the component |\n| `fontSize`  | `number`        | `4`       | The font size of the text                     |\n| `style`     | `CSSProperties` | `#ffffff` | The style of the text                         |\n| `children`  | `string`        | `-`       | The text to be displayed                      |\n\n## Credits\n\n- Credit to [@iambharathpadhu](https://github.com/iambharathpadhu)\n"
+}

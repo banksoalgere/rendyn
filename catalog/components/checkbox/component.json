@@ -1,5 +1,6 @@
 {
   "id": "beui:checkbox",
+  "sourceId": "beui",
   "slug": "checkbox",
   "name": "Checkbox",
   "description": "Form choice control with a draw-on checkmark, spring press feedback and indeterminate state support.",
@@ -52,7 +53,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -88,6 +89,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -99,7 +102,8 @@
     "upstreamSlug": "checkbox",
     "upstreamPageUrl": "https://beui.dev/components/motion/checkbox",
     "upstreamDetailUrl": "https://beui.dev/r/checkbox",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/checkbox.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/checkbox.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Checkbox\"\ndescription: \"Form choice control with a draw-on checkmark, spring press feedback and indeterminate state support.\"\ncategory: \"Components\"\npublishedAt: \"2026-06-23\"\nupdatedAt: \"2026-07-01\"\ndocumentation: \"https://beui.dev/components/motion/checkbox\"\nmarkdown: \"https://beui.dev/components/motion/checkbox.md\"\nlicense: \"MIT\"\n---\n\n# Checkbox\n\n> Form choice control with a draw-on checkmark, spring press feedback and indeterminate state support.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/checkbox\n```\n\n## Dependencies\n\n- `clsx`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { useState } from \"react\";\nimport { Checkbox } from \"@/components/motion/checkbox\";\n\nexport function CheckboxPreview() {\n  const [terms, setTerms] = useState(true);\n  const [updates, setUpdates] = useState(false);\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <Checkbox\n        checked={terms}\n        onCheckedChange={setTerms}\n        label=\"Accept terms and conditions\"\n      />\n      <Checkbox\n        checked={updates}\n        onCheckedChange={setUpdates}\n        label=\"Email me product updates\"\n      />\n      <Checkbox checked indeterminate onCheckedChange={() => {}} label=\"Select all (partial)\" />\n      <Checkbox checked disabled onCheckedChange={() => {}} label=\"Disabled\" />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### Checkbox\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `checked` | `boolean` | — | Yes | — |\n| `onCheckedChange` | `(checked: boolean) => void` | — | Yes | — |\n| `disabled` | `boolean` | — | No | — |\n| `indeterminate` | `boolean` | — | No | — |\n| `label` | `string` | — | No | — |\n| `className` | `string` | — | No | — |\n| `id` | `string` | — | No | — |\n| `aria-label` | `string` | — | No | — |\n| `aria-describedby` | `string` | — | No | Associates an external message (e.g. a form error) with the control. |\n\n## Source\n\n- Registry detail: https://beui.dev/r/checkbox\n- Raw source: https://beui.dev/r/checkbox/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

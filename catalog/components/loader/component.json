@@ -1,5 +1,6 @@
 {
   "id": "beui:loader",
+  "sourceId": "beui",
   "slug": "loader",
   "name": "Loader",
   "description": "Loading indicator with seventeen variants: spinner, dots, bars, dot-matrix, dither, morph, comet, scramble, metaballs, newton, helix, percent, and five terminal-style ascii spinners. Scales from one size prop, uses currentColor, and reduced-motion swaps every transform for a calm opacity pulse.",
@@ -50,7 +51,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -86,6 +87,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -97,7 +100,8 @@
     "upstreamSlug": "loader",
     "upstreamPageUrl": "https://beui.dev/components/motion/loader",
     "upstreamDetailUrl": "https://beui.dev/r/loader",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/loader.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/loader.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Loader\"\ndescription: \"Loading indicator with seventeen variants: spinner, dots, bars, dot-matrix, dither, morph, comet, scramble, metaballs, newton, helix, percent, and five terminal-style ascii spinners. Scales from one size prop, uses currentColor, and reduced-motion swaps every transform for a calm opacity pulse.\"\ncategory: \"Components\"\npublishedAt: \"2026-07-04\"\nupdatedAt: \"2026-07-13\"\ndocumentation: \"https://beui.dev/components/motion/loader\"\nmarkdown: \"https://beui.dev/components/motion/loader.md\"\nlicense: \"MIT\"\n---\n\n# Loader\n\n> Loading indicator with seventeen variants: spinner, dots, bars, dot-matrix, dither, morph, comet, scramble, metaballs, newton, helix, percent, and five terminal-style ascii spinners. Scales from one size prop, uses currentColor, and reduced-motion swaps every transform for a calm opacity pulse.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/loader\n```\n\n## Dependencies\n\n- `clsx`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { Loader, type LoaderVariant } from \"@/components/motion/loader\";\n\nconst VARIANTS: { variant: LoaderVariant; label: string }[] = [\n  { variant: \"spinner\", label: \"Spinner\" },\n  { variant: \"dots\", label: \"Dots\" },\n  { variant: \"bars\", label: \"Bars\" },\n  { variant: \"dot-matrix\", label: \"Dot Matrix\" },\n  { variant: \"dither\", label: \"Dither\" },\n  { variant: \"morph\", label: \"Morph\" },\n  { variant: \"comet\", label: \"Comet\" },\n  { variant: \"metaballs\", label: \"Metaballs\" },\n  { variant: \"newton\", label: \"Newton\" },\n  { variant: \"helix\", label: \"Helix\" },\n  { variant: \"scramble\", label: \"Scramble\" },\n  { variant: \"percent\", label: \"Percent\" },\n  { variant: \"ascii\", label: \"ASCII\" },\n  { variant: \"ascii-line\", label: \"ASCII Line\" },\n  { variant: \"ascii-braille\", label: \"ASCII Braille\" },\n  { variant: \"ascii-blocks\", label: \"ASCII Blocks\" },\n  { variant: \"ascii-bounce\", label: \"ASCII Bounce\" },\n];\n\nexport function LoaderPreview() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-8 p-8\">\n      {VARIANTS.map(({ variant, label }) => (\n        <div key={variant} className=\"flex flex-col items-center gap-4\">\n          <Loader variant={variant} size={36} />\n          <span className=\"text-xs text-muted-foreground\">{label}</span>\n        </div>\n      ))}\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### Loader\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `variant` | `\"spinner\" \\| \"dots\" \\| \"bars\" \\| \"dot-matrix\" \\| \"dither\" \\| \"ascii\" \\| \"ascii-line\" \\| \"ascii-braille\" \\| \"ascii-blocks\" \\| \"ascii-bounce\" \\| \"morph\" \\| \"comet\" \\| \"scramble\" \\| \"metaballs\" \\| \"newton\" \\| \"helix\" \\| \"percent\"` | `spinner` | No | Which animation to render. |\n| `size` | `number` | `32` | No | Base square size in px. Everything scales from this. |\n| `speed` | `number` | `1` | No | Seconds per animation cycle. |\n| `label` | `string` | `Loading` | No | Accessible label announced to screen readers. |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/loader\n- Raw source: https://beui.dev/r/loader/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

@@ -1,0 +1,90 @@
+{
+  "id": "kibo:typography",
+  "sourceId": "kibo",
+  "slug": "kibo-typography",
+  "name": "Typography",
+  "description": "A typography component designed to display text with a consistent style.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "typography",
+    "tags": [
+      "code",
+      "dark",
+      "list",
+      "responsive",
+      "table",
+      "text"
+    ],
+    "aliases": [
+      "typography"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A typography component designed to display text with a consistent style."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "typography:code:dark:list:responsive:table:type",
+    "searchText": "Typography\ntypography\nA typography component designed to display text with a consistent style.\ncode\ndark\nlist\nresponsive\ntable\ntext\ntype\ntitle: Typography description: A component for applying consistent typography styles across your application. icon: Type installer: typography After installing the package, just add the typography class to your content e.g. Features Pre configured typography styles using CSS layers Comprehensive prose styling for rich text content Support for headings (h1 h6), paragraphs, lists, tables, and more Responsive typography with proper spacing and sizing Dark mode compatible with CSS variables Excludes .not typography elements from styling Built in styles for code blocks, blockquotes, and special text classes"
+  },
+  "previewPath": "/preview/blocks/kibo-typography",
+  "manifestPath": "components/kibo-typography/component.json",
+  "integrity": "sha256:c44c88201973bc8226b3fe89ebe12412b95d172582f081027cd3076db6da29f4",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/typography/styles.css",
+      "type": "style",
+      "content": "@layer base {\n  .typography {\n    max-width: 65ch;\n    color: var(--color-foreground);\n\n    & h1:not(.not-typography h1) {\n      scroll-margin: calc(var(--spacing) * 20);\n      font-size: var(--text-4xl);\n      line-height: var(--text-4xl--line-height);\n      font-weight: 800;\n      letter-spacing: var(--tracking-tight);\n\n      @media (min-width: 1024px) {\n        font-size: var(--text-5xl);\n        line-height: var(--text-5xl--line-height);\n      }\n    }\n\n    & h2:not(.not-typography h2) {\n      scroll-margin: calc(var(--spacing) * 20);\n      border-bottom: 1px solid var(--color-border);\n      padding-bottom: calc(var(--spacing) * 2);\n      font-size: var(--text-3xl);\n      line-height: var(--text-3xl--line-height);\n      font-weight: 600;\n      letter-spacing: var(--tracking-tight);\n      margin-top: calc(var(--spacing) * 12);\n\n      &:first-child {\n        margin-top: 0;\n      }\n    }\n\n    & h3:not(.not-typography h3) {\n      scroll-margin: calc(var(--spacing) * 20);\n      font-size: var(--text-2xl);\n      line-height: var(--text-2xl--line-height);\n      font-weight: 600;\n      letter-spacing: var(--tracking-tight);\n      margin-top: calc(var(--spacing) * 12);\n\n      &:first-child {\n        margin-top: 0;\n      }\n    }\n\n    & h4:not(.not-typography h4) {\n      scroll-margin: calc(var(--spacing) * 20);\n      font-size: var(--text-xl);\n      line-height: var(--text-xl--line-height);\n      font-weight: 600;\n      letter-spacing: var(--tracking-tight);\n      margin-top: calc(var(--spacing) * 12);\n\n      &:first-child {\n        margin-top: 0;\n      }\n    }\n\n    & h5:not(.not-typography h5) {\n      scroll-margin: calc(var(--spacing) * 20);\n      font-size: var(--text-lg);\n      line-height: var(--text-lg--line-height);\n      font-weight: 600;\n      letter-spacing: var(--tracking-tight);\n      margin-top: calc(var(--spacing) * 12);\n\n      &:first-child {\n        margin-top: 0;\n      }\n    }\n\n    & h6:not(.not-typography h6) {\n      scroll-margin: calc(var(--spacing) * 20);\n      font-size: var(--text-base);\n      line-height: var(--text-base--line-height);\n      font-weight: 600;\n      letter-spacing: var(--tracking-tight);\n      margin-top: calc(var(--spacing) * 12);\n\n      &:first-child {\n        margin-top: 0;\n      }\n    }\n\n    & h1:not(.not-typography h1),\n    & h2:not(.not-typography h2),\n    & h3:not(.not-typography h3),\n    & h4:not(.not-typography h4),\n    & h5:not(.not-typography h5),\n    & h6:not(.not-typography h6) {\n      & + p {\n        margin-top: 0;\n      }\n    }\n\n    & p:not(.not-typography p) {\n      line-height: 1.75;\n\n      &:not(:first-child) {\n        margin-top: calc(var(--spacing) * 6);\n      }\n    }\n\n    & li:not(.not-typography li) {\n      line-height: 1.75;\n    }\n\n    & a:not(.not-typography a) {\n      font-weight: 500;\n      color: var(--color-primary);\n      text-decoration: underline;\n      text-underline-offset: var(--spacing);\n    }\n\n    & blockquote:not(.not-typography blockquote) {\n      margin-top: calc(var(--spacing) * 6);\n      border-left: 2px solid var(--color-border);\n      padding-left: calc(var(--spacing) * 6);\n      font-style: italic;\n    }\n\n    & table:not(.not-typography table) {\n      margin-top: calc(var(--spacing) * 6);\n      margin-bottom: calc(var(--spacing) * 6);\n      width: 100%;\n      overflow-y: auto;\n\n      & thead tr {\n        margin: 0;\n        border-top: 1px solid var(--color-border);\n        padding: 0;\n\n        &:nth-child(even) {\n          background-color: var(--color-muted);\n        }\n      }\n\n      & th {\n        border: 1px solid var(--color-border);\n        padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);\n        text-align: left;\n        font-weight: 700;\n\n        &[align=\"center\"] {\n          text-align: center;\n        }\n\n        &[align=\"right\"] {\n          text-align: right;\n        }\n      }\n\n      & tbody tr {\n        margin: 0;\n        border-top: 1px solid var(--color-border);\n        padding: 0;\n\n        &:nth-child(even) {\n          background-color: var(--color-muted);\n        }\n      }\n\n      & td {\n        border: 1px solid var(--color-border);\n        padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);\n        text-align: left;\n\n        &[align=\"center\"] {\n          text-align: center;\n        }\n\n        &[align=\"right\"] {\n          text-align: right;\n        }\n      }\n    }\n\n    & ul:not(.not-typography ul) {\n      margin-top: calc(var(--spacing) * 6);\n      margin-left: calc(var(--spacing) * 6);\n      list-style: disc;\n\n      & > li {\n        margin-top: calc(var(--spacing) * 2);\n      }\n\n      & p {\n        margin-top: 0;\n        margin-bottom: 0;\n        display: inline;\n      }\n    }\n\n    & ol:not(.not-typography ol) {\n      margin-top: calc(var(--spacing) * 6);\n      margin-left: calc(var(--spacing) * 6);\n      list-style: decimal;\n\n      & > li {\n        margin-top: calc(var(--spacing) * 2);\n      }\n\n      & p {\n        margin-top: 0;\n        margin-bottom: 0;\n        display: inline;\n      }\n    }\n\n    & pre:not(.not-typography pre) {\n      background-color: var(--color-muted);\n      border-radius: calc(var(--radius) - 2px);\n      padding: calc(var(--spacing) * 4);\n      margin-top: calc(var(--spacing) * 6);\n      margin-bottom: calc(var(--spacing) * 6);\n      font-size: var(--text-sm);\n      line-height: var(--text-sm--line-height);\n      overflow-y: auto;\n    }\n\n    & code:not(pre code):not(.not-typography code) {\n      position: relative;\n      border-radius: var(--radius);\n      background-color: var(--color-muted);\n      padding: calc(var(--spacing) * 0.2) calc(var(--spacing) * 0.3);\n      font-family: var(--font-mono);\n      font-size: var(--text-sm);\n      line-height: var(--text-sm--line-height);\n      font-weight: 600;\n    }\n\n    & .lead:not(.not-typography .lead) {\n      font-size: var(--text-xl);\n      line-height: var(--text-xl--line-height);\n      color: var(--color-muted-foreground);\n    }\n\n    & .large:not(.not-typography .large) {\n      font-size: var(--text-lg);\n      line-height: var(--text-lg--line-height);\n      font-weight: 600;\n    }\n\n    & .small:not(.not-typography .small) {\n      font-size: var(--text-sm);\n      line-height: var(--text-sm--line-height);\n      font-weight: 500;\n      line-height: 1;\n    }\n\n    & .muted:not(.not-typography .muted) {\n      font-size: var(--text-sm);\n      line-height: var(--text-sm--line-height);\n      color: var(--color-muted-foreground);\n    }\n\n    & img:not(.not-typography img),\n    & picture:not(.not-typography picture),\n    & video:not(.not-typography video) {\n      margin-top: calc(var(--spacing) * 6);\n      margin-bottom: calc(var(--spacing) * 6);\n    }\n\n    & picture > img:not(.not-typography picture > img) {\n      margin-top: 0;\n      margin-bottom: 0;\n    }\n\n    & kbd:not(.not-typography kbd) {\n      border-radius: calc(var(--radius) - 2px);\n      background-color: var(--color-muted);\n      padding: calc(var(--spacing) * 0.5) calc(var(--spacing) * 1.5);\n      font-size: var(--text-xs);\n      line-height: var(--text-xs--line-height);\n      font-weight: 600;\n    }\n\n    & hr {\n      margin-top: calc(var(--spacing) * 10);\n      margin-bottom: calc(var(--spacing) * 10);\n    }\n\n    & dl:not(.not-typography dl) {\n      margin-top: calc(var(--spacing) * 6);\n      margin-bottom: calc(var(--spacing) * 6);\n\n      & dt {\n        font-weight: 600;\n        margin-top: calc(var(--spacing) * 6);\n        letter-spacing: var(--tracking-tight);\n\n        &:first-child {\n          margin-top: 0;\n        }\n      }\n    }\n\n    & details:not(.not-typography details) {\n      margin-top: calc(var(--spacing) * 6);\n\n      & summary {\n        cursor: pointer;\n        font-weight: 600;\n        margin-top: calc(var(--spacing) * 6);\n        letter-spacing: var(--tracking-tight);\n      }\n\n      & p {\n        &:first-of-type {\n          margin-top: calc(var(--spacing) * 2);\n        }\n      }\n    }\n\n    & mark:not(.not-typography mark) {\n      background-color: var(--color-yellow-300);\n    }\n\n    & small:not(.not-typography small) {\n      font-size: var(--text-xs);\n      line-height: var(--text-xs--line-height);\n      line-height: 1;\n    }\n  }\n}\n",
+      "sha256": "b53eaa2e6b8496d6f3e71efdcb4e2a7191ffb269c46092e9dff29b4f94781e61",
+      "upstreamPath": "packages/typography/styles.css",
+      "upstreamSha256": "b53eaa2e6b8496d6f3e71efdcb4e2a7191ffb269c46092e9dff29b4f94781e61",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/kibo-ui/typography/styles.css"
+    ],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Include the returned styles: components/kibo-ui/typography/styles.css"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "typography",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/typography",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/typography.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Typography\ndescription: A component for applying consistent typography styles across your application.\nicon: Type\ninstaller: typography\n---\n\nAfter installing the package, just add the `typography` class to your content e.g.\n\n```tsx\n<div className=\"typography\">\n  <h1>Typography</h1>\n</div>\n```\n\n## Features\n\n- Pre-configured typography styles using CSS layers\n- Comprehensive prose styling for rich text content\n- Support for headings (h1-h6), paragraphs, lists, tables, and more\n- Responsive typography with proper spacing and sizing\n- Dark mode compatible with CSS variables\n- Excludes `.not-typography` elements from styling\n- Built-in styles for code blocks, blockquotes, and special text classes\n"
+}

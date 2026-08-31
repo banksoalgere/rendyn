@@ -1,0 +1,88 @@
+{
+  "id": "magicui:hero-video-dialog",
+  "sourceId": "magicui",
+  "slug": "magicui-hero-video-dialog",
+  "name": "Hero Video Dialog",
+  "description": "A hero video dialog component.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "hero-video-dialog",
+    "tags": [
+      "code",
+      "dialog",
+      "text"
+    ],
+    "aliases": [
+      "hero video dialog",
+      "hero-video-dialog"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A hero video dialog component."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "hero-video-dialog:code:dialog:text:type",
+    "searchText": "Hero Video Dialog\nhero video dialog\nA hero video dialog component.\nhero-video-dialog\ncode\ndialog\ntext\ntype\ntitle: Hero Video Dialog date: 2024 08 26 description: A hero video dialog component. author: dillionverma published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Examples Top in bottom out Usage Props Prop Type Default Description animationStyle string \"from center\" Animation style for the dialog videoSrc string URL of the video to be played thumbnailSrc string URL of the thumbnail image thumbnailAlt string \"Video thumbnail\" Alt text for the thumbnail image Animation Styles The animationStyle prop accepts the following values: \"from bottom\": Dialog enters from the bottom and exits to the bottom \"from center\": Dialog scales up from the center and scales down to the center \"from top\": Dialog enters from the top and exits to the top \"from left\": Dialog enters from the left and exits to the left \"from right\": Dialog enters from the right and exits to the right \"fade\": Dialog fades in and out \"top in bottom out\": Dialog enters from the top and exits to the bottom \"left in right out\": Dialog enters from the left and exits to the right Note If using a YouTube video, make sure to use the embed version of the video URL."
+  },
+  "previewPath": "/preview/motion/magicui-hero-video-dialog",
+  "manifestPath": "components/magicui-hero-video-dialog/component.json",
+  "integrity": "sha256:6002dd89d0dc736ed3ee91bd2772a167c78014675addd5aae618d6f493b30a1b",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/hero-video-dialog.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\nimport { Play, XIcon } from \"lucide-react\"\nimport { AnimatePresence, motion } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\ntype AnimationStyle =\n  | \"from-bottom\"\n  | \"from-center\"\n  | \"from-top\"\n  | \"from-left\"\n  | \"from-right\"\n  | \"fade\"\n  | \"top-in-bottom-out\"\n  | \"left-in-right-out\"\n\ninterface HeroVideoProps {\n  animationStyle?: AnimationStyle\n  videoSrc: string\n  thumbnailSrc: string\n  thumbnailAlt?: string\n  className?: string\n}\n\nconst animationVariants = {\n  \"from-bottom\": {\n    initial: { y: \"100%\", opacity: 0 },\n    animate: { y: 0, opacity: 1 },\n    exit: { y: \"100%\", opacity: 0 },\n  },\n  \"from-center\": {\n    initial: { scale: 0.5, opacity: 0 },\n    animate: { scale: 1, opacity: 1 },\n    exit: { scale: 0.5, opacity: 0 },\n  },\n  \"from-top\": {\n    initial: { y: \"-100%\", opacity: 0 },\n    animate: { y: 0, opacity: 1 },\n    exit: { y: \"-100%\", opacity: 0 },\n  },\n  \"from-left\": {\n    initial: { x: \"-100%\", opacity: 0 },\n    animate: { x: 0, opacity: 1 },\n    exit: { x: \"-100%\", opacity: 0 },\n  },\n  \"from-right\": {\n    initial: { x: \"100%\", opacity: 0 },\n    animate: { x: 0, opacity: 1 },\n    exit: { x: \"100%\", opacity: 0 },\n  },\n  fade: {\n    initial: { opacity: 0 },\n    animate: { opacity: 1 },\n    exit: { opacity: 0 },\n  },\n  \"top-in-bottom-out\": {\n    initial: { y: \"-100%\", opacity: 0 },\n    animate: { y: 0, opacity: 1 },\n    exit: { y: \"100%\", opacity: 0 },\n  },\n  \"left-in-right-out\": {\n    initial: { x: \"-100%\", opacity: 0 },\n    animate: { x: 0, opacity: 1 },\n    exit: { x: \"100%\", opacity: 0 },\n  },\n}\n\nexport function HeroVideoDialog({\n  animationStyle = \"from-center\",\n  videoSrc,\n  thumbnailSrc,\n  thumbnailAlt = \"Video thumbnail\",\n  className,\n}: HeroVideoProps) {\n  const [isVideoOpen, setIsVideoOpen] = useState(false)\n  const selectedAnimation = animationVariants[animationStyle]\n\n  return (\n    <div className={cn(\"relative\", className)}>\n      <button\n        type=\"button\"\n        aria-label=\"Play video\"\n        className=\"group relative cursor-pointer border-0 bg-transparent p-0\"\n        onClick={() => setIsVideoOpen(true)}\n      >\n        <img\n          src={thumbnailSrc}\n          alt={thumbnailAlt}\n          width={1920}\n          height={1080}\n          className=\"w-full rounded-md border shadow-lg transition-all duration-200 ease-out group-hover:brightness-[0.8]\"\n        />\n        <div className=\"absolute inset-0 flex scale-[0.9] items-center justify-center rounded-2xl transition-all duration-200 ease-out group-hover:scale-100\">\n          <div className=\"bg-primary/10 flex size-28 items-center justify-center rounded-full backdrop-blur-md\">\n            <div\n              className={`from-primary/30 to-primary relative flex size-20 scale-100 items-center justify-center rounded-full bg-linear-to-b shadow-md transition-all duration-200 ease-out group-hover:scale-[1.2]`}\n            >\n              <Play\n                className=\"size-8 scale-100 fill-white text-white transition-transform duration-200 ease-out group-hover:scale-105\"\n                style={{\n                  filter:\n                    \"drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))\",\n                }}\n              />\n            </div>\n          </div>\n        </div>\n      </button>\n      <AnimatePresence>\n        {isVideoOpen && (\n          <motion.div\n            initial={{ opacity: 0 }}\n            animate={{ opacity: 1 }}\n            role=\"button\"\n            tabIndex={0}\n            onKeyDown={(e) => {\n              if (e.key === \"Escape\" || e.key === \"Enter\" || e.key === \" \") {\n                setIsVideoOpen(false)\n              }\n            }}\n            onClick={() => setIsVideoOpen(false)}\n            exit={{ opacity: 0 }}\n            className=\"fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md\"\n          >\n            <motion.div\n              {...selectedAnimation}\n              transition={{ type: \"spring\", damping: 30, stiffness: 300 }}\n              className=\"relative mx-4 aspect-video w-full max-w-4xl md:mx-0\"\n            >\n              <motion.button className=\"absolute -top-16 right-0 rounded-full bg-neutral-900/50 p-2 text-xl text-white ring-1 backdrop-blur-md dark:bg-neutral-100/50 dark:text-black\">\n                <XIcon className=\"size-5\" />\n              </motion.button>\n              <div className=\"relative isolate z-1 size-full overflow-hidden rounded-2xl border-2 border-white\">\n                <iframe\n                  src={videoSrc}\n                  title=\"Hero Video player\"\n                  className=\"mt-0 size-full rounded-2xl\"\n                  allowFullScreen\n                  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n                ></iframe>\n              </div>\n            </motion.div>\n          </motion.div>\n        )}\n      </AnimatePresence>\n    </div>\n  )\n}\n",
+      "sha256": "8a7a25227054b5b747e77efe12aacf3e4fff4410a55e4bcd8fda6c5bcf71b670",
+      "upstreamPath": "apps/www/registry/magicui/hero-video-dialog.tsx",
+      "upstreamSha256": "8a7a25227054b5b747e77efe12aacf3e4fff4410a55e4bcd8fda6c5bcf71b670",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "hero-video-dialog",
+    "upstreamPageUrl": "https://magicui.design/docs/components/hero-video-dialog",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/hero-video-dialog.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Hero Video Dialog\ndate: 2024-08-26\ndescription: A hero video dialog component.\nauthor: dillionverma\npublished: true\n---\n\n<ComponentPreview name=\"hero-video-dialog-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/hero-video-dialog\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"hero-video-dialog\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Examples\n\n### Top-in-bottom-out\n\n<ComponentPreview name=\"hero-video-dialog-demo-top-in-bottom-out\" />\n\n## Usage\n\n```tsx showLineNumbers\nimport { HeroVideoDialog } from \"@/components/ui/hero-video-dialog\"\n```\n\n```tsx showLineNumbers\n<HeroVideoDialog\n  className=\"block dark:hidden\"\n  animationStyle=\"from-center\"\n  videoSrc=\"https://www.example.com/dummy-video\"\n  thumbnailSrc=\"https://www.example.com/dummy-thumbnail.png\"\n  thumbnailAlt=\"Dummy Video Thumbnail\"\n/>\n```\n\n## Props\n\n| Prop             | Type     | Default             | Description                      |\n| ---------------- | -------- | ------------------- | -------------------------------- |\n| `animationStyle` | `string` | `\"from-center\"`     | Animation style for the dialog   |\n| `videoSrc`       | `string` | `-`                 | URL of the video to be played    |\n| `thumbnailSrc`   | `string` | `-`                 | URL of the thumbnail image       |\n| `thumbnailAlt`   | `string` | `\"Video thumbnail\"` | Alt text for the thumbnail image |\n\n## Animation Styles\n\nThe `animationStyle` prop accepts the following values:\n\n- `\"from-bottom\"`: Dialog enters from the bottom and exits to the bottom\n- `\"from-center\"`: Dialog scales up from the center and scales down to the center\n- `\"from-top\"`: Dialog enters from the top and exits to the top\n- `\"from-left\"`: Dialog enters from the left and exits to the left\n- `\"from-right\"`: Dialog enters from the right and exits to the right\n- `\"fade\"`: Dialog fades in and out\n- `\"top-in-bottom-out\"`: Dialog enters from the top and exits to the bottom\n- `\"left-in-right-out\"`: Dialog enters from the left and exits to the right\n\n## Note\n\n- If using a YouTube video, make sure to use the `embed` version of the video URL.\n"
+}

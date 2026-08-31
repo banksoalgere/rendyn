@@ -1,0 +1,84 @@
+{
+  "id": "magicui:striped-pattern",
+  "sourceId": "magicui",
+  "slug": "magicui-striped-pattern",
+  "name": "Striped Pattern",
+  "description": "A background striped pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "striped-pattern",
+    "tags": [
+      "code",
+      "number"
+    ],
+    "aliases": [
+      "striped pattern",
+      "striped-pattern"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A background striped pattern made with SVGs, fully customizable using Tailwind CSS."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "striped-pattern:code:number:type",
+    "searchText": "Striped Pattern\nstriped pattern\nA background striped pattern made with SVGs, fully customizable using Tailwind CSS.\nstriped-pattern\ncode\nnumber\ntype\ntitle: Striped Pattern date: 2025 09 01 description: A background striped pattern made with SVGs, fully customizable using Tailwind CSS. author: matheusfigueiredo published: true Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Examples Striped Pattern with a dashed stroke Striped Pattern To Right Usage Props StripedPattern Prop Type Default Description width number 40 Width of the pattern height number 40 Height of the pattern x number 1 X offset of the pattern y number 1 Y offset of the pattern direction \"left\" \\ \"right\" \"left\" Line direction Credits Credit to @chishiyac"
+  },
+  "previewPath": "/preview/motion/magicui-striped-pattern",
+  "manifestPath": "components/magicui-striped-pattern/component.json",
+  "integrity": "sha256:f2ad9154982d7f5ce9aa7288fc268dd17f1a786fd3d0da83e92da21de5d29a10",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/striped-pattern.tsx",
+      "type": "component",
+      "content": "import React, { useId } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface StripedPatternProps extends React.SVGProps<SVGSVGElement> {\n  direction?: \"left\" | \"right\"\n}\n\nexport function StripedPattern({\n  direction = \"left\",\n  className,\n  width = 10,\n  height = 10,\n  ...props\n}: StripedPatternProps) {\n  const id = useId()\n  const w = Number(width)\n  const h = Number(height)\n\n  return (\n    <svg\n      aria-hidden=\"true\"\n      className={cn(\n        \"pointer-events-none absolute inset-0 z-10 h-full w-full stroke-[0.5]\",\n        className\n      )}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...props}\n    >\n      <defs>\n        <pattern id={id} width={w} height={h} patternUnits=\"userSpaceOnUse\">\n          {direction === \"left\" ? (\n            <>\n              <line x1=\"0\" y1={h} x2={w} y2=\"0\" stroke=\"currentColor\" />\n              <line x1={-w} y1={h} x2=\"0\" y2=\"0\" stroke=\"currentColor\" />\n              <line x1={w} y1={h} x2={w * 2} y2=\"0\" stroke=\"currentColor\" />\n            </>\n          ) : (\n            <>\n              <line x1=\"0\" y1=\"0\" x2={w} y2={h} stroke=\"currentColor\" />\n              <line x1={-w} y1=\"0\" x2=\"0\" y2={h} stroke=\"currentColor\" />\n              <line x1={w} y1=\"0\" x2={w * 2} y2={h} stroke=\"currentColor\" />\n            </>\n          )}\n        </pattern>\n      </defs>\n      <rect width=\"100%\" height=\"100%\" fill={`url(#${id})`} />\n    </svg>\n  )\n}\n",
+      "sha256": "e7616db6087216fc5e8ad0e0aa3fada349ea238a651d85ef4986c88f1f070966",
+      "upstreamPath": "apps/www/registry/magicui/striped-pattern.tsx",
+      "upstreamSha256": "e7616db6087216fc5e8ad0e0aa3fada349ea238a651d85ef4986c88f1f070966",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "striped-pattern",
+    "upstreamPageUrl": "https://magicui.design/docs/components/striped-pattern",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/striped-pattern.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Striped Pattern\ndate: 2025-09-01\ndescription: A background striped pattern made with SVGs, fully customizable using Tailwind CSS.\nauthor: matheusfigueiredo\npublished: true\n---\n\n<ComponentPreview name=\"striped-pattern-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/striped-pattern\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"striped-pattern\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Examples\n\n### Striped Pattern with a dashed stroke\n\n<ComponentPreview name=\"striped-pattern-dashed\" />\n\n### Striped Pattern To Right\n\n<ComponentPreview name=\"striped-pattern-right\" />\n\n### Usage\n\n```tsx\nimport { StripedPattern } from \"@/components/ui/striped-pattern\"\n```\n\n```tsx\n<div className=\"relative h-[500px] w-full overflow-hidden\">\n  <StripedPattern />\n</div>\n```\n\n## Props\n\n### StripedPattern\n\n| Prop        | Type                  | Default  | Description             |\n| ----------- | --------------------- | -------- | ----------------------- |\n| `width`     | `number`              | `40`     | Width of the pattern    |\n| `height`    | `number`              | `40`     | Height of the pattern   |\n| `x`         | `number`              | `-1`     | X offset of the pattern |\n| `y`         | `number`              | `-1`     | Y offset of the pattern |\n| `direction` | `\"left\"` \\| `\"right\"` | `\"left\"` | Line direction          |\n\n## Credits\n\n- Credit to [@chishiyac](https://github.com/chishiyac)\n"
+}

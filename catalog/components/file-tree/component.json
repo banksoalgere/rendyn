@@ -1,5 +1,6 @@
 {
   "id": "beui:file-tree",
+  "sourceId": "beui",
   "slug": "file-tree",
   "name": "File Tree",
   "description": "Composable file and folder primitives with springing branches, a gliding selection, and complete keyboard navigation.",
@@ -55,7 +56,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -97,6 +98,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -108,7 +111,8 @@
     "upstreamSlug": "file-tree",
     "upstreamPageUrl": "https://beui.dev/components/motion/file-tree",
     "upstreamDetailUrl": "https://beui.dev/r/file-tree",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/file-tree.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/file-tree.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"File Tree\"\ndescription: \"Composable file and folder primitives with springing branches, a gliding selection, and complete keyboard navigation.\"\ncategory: \"Components\"\npublishedAt: \"2026-08-27\"\nupdatedAt: \"2026-08-27\"\ndocumentation: \"https://beui.dev/components/motion/file-tree\"\nmarkdown: \"https://beui.dev/components/motion/file-tree.md\"\nlicense: \"MIT\"\n---\n\n# File Tree\n\n> Composable file and folder primitives with springing branches, a gliding selection, and complete keyboard navigation.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/file-tree\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport {\n  Braces,\n  FileCode2,\n  FileJson2,\n  FileText,\n  Palette,\n} from \"lucide-react\";\nimport {\n  FileTree,\n  FileTreeFile,\n  FileTreeFolder,\n} from \"@/components/motion/file-tree\";\n\nexport function FileTreePreview() {\n  return (\n    <div className=\"flex min-h-[420px] w-full items-start justify-center px-4 pt-10\">\n      <div className=\"w-full max-w-xs p-2\">\n        <FileTree\n          defaultValue=\"file-tree\"\n          defaultExpandedIds={[\"app\", \"components\"]}\n          ariaLabel=\"Project files\"\n        >\n          <FileTreeFolder value=\"app\" name=\"app\">\n            <FileTreeFolder value=\"components\" name=\"components\">\n              <FileTreeFile\n                value=\"file-tree\"\n                name=\"file-tree.tsx\"\n                icon={<Braces className=\"size-4 text-sky-500\" />}\n              />\n              <FileTreeFile\n                value=\"button\"\n                name=\"button.tsx\"\n                icon={<Braces className=\"size-4 text-sky-500\" />}\n              />\n            </FileTreeFolder>\n            <FileTreeFile\n              value=\"page\"\n              name=\"page.tsx\"\n              icon={<FileCode2 className=\"size-4 text-sky-500\" />}\n            />\n            <FileTreeFile\n              value=\"styles\"\n              name=\"globals.css\"\n              icon={<Palette className=\"size-4 text-violet-500\" />}\n            />\n          </FileTreeFolder>\n          <FileTreeFolder value=\"public\" name=\"public\">\n            <FileTreeFile value=\"logo\" name=\"logo.svg\" />\n            <FileTreeFile value=\"grid\" name=\"grid.svg\" />\n          </FileTreeFolder>\n          <FileTreeFile\n            value=\"package\"\n            name=\"package.json\"\n            icon={<FileJson2 className=\"size-4 text-amber-500\" />}\n          />\n          <FileTreeFile\n            value=\"readme\"\n            name=\"README.md\"\n            icon={<FileText className=\"size-4 text-muted-foreground\" />}\n          />\n        </FileTree>\n      </div>\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### FileTreeFolder\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `value` | `string` | — | Yes | — |\n| `name` | `string` | — | Yes | — |\n| `icon` | `ReactNode` | — | No | — |\n| `disabled` | `boolean` | — | No | — |\n| `className` | `string` | — | No | — |\n\n### FileTreeFile\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `value` | `string` | — | Yes | — |\n| `name` | `string` | — | Yes | — |\n| `icon` | `ReactNode` | — | No | — |\n| `disabled` | `boolean` | — | No | — |\n| `className` | `string` | — | No | — |\n\n### FileTree\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `value` | `string \\| null` | — | No | — |\n| `defaultValue` | `string \\| null` | `null` | No | — |\n| `onValueChange` | `((value: string) => void)` | — | No | — |\n| `expandedIds` | `string[]` | — | No | — |\n| `defaultExpandedIds` | `string[]` | `[]` | No | — |\n| `onExpandedChange` | `((expandedIds: string[]) => void)` | — | No | — |\n| `ariaLabel` | `string` | `Files` | No | — |\n| `indent` | `number` | `18` | No | — |\n| `className` | `string` | — | No | — |\n| `classNames` | `FileTreeClassNames` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/file-tree\n- Raw source: https://beui.dev/r/file-tree/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

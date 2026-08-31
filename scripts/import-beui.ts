@@ -1,6 +1,7 @@
 import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { basename, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 import type {
   CatalogCategory,
   CatalogComponentSummary,
@@ -23,6 +24,7 @@ import {
   parseJson,
   sha256,
 } from "./lib/catalog-import/security.js";
+import { assertStandardMitLicense } from "./lib/catalog-import/license.js";
 
 const REPOSITORY_ROOT = resolve(import.meta.dirname, "..");
 const SOURCE_CONFIG_PATH = resolve(REPOSITORY_ROOT, "sources/beui.json");
@@ -41,11 +43,7 @@ async function readPinnedLicense(
   config: SourceConfig,
 ): Promise<string> {
   const license = await readFile(resolve(pinnedRoot, "LICENSE"), "utf8");
-  invariant(sha256(license) === config.license.sha256, "Pinned MIT license hash changed");
-  invariant(
-    license.includes(config.license.copyright),
-    "Expected copyright notice is missing",
-  );
+  assertStandardMitLicense(license, config.license);
   return license;
 }
 
@@ -99,15 +97,15 @@ function createCatalogIndex(
   }));
 
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     generatedAt: source.importedAt,
-    source,
+    sources: [source],
     categories,
     components: summaries,
   };
 }
 
-async function main(): Promise<void> {
+export async function runBeuiImport(): Promise<void> {
   const config = await readSourceConfig();
   const temporaryRoot = await mkdtemp(resolve(tmpdir(), "designmcp-beui-"));
 
@@ -147,7 +145,7 @@ async function main(): Promise<void> {
 
 async function prepareCatalog(licensePath: string, licenseText: string): Promise<void> {
   await rm(resolve(CATALOG_ROOT, "components"), { recursive: true, force: true });
-  await rm(resolve(CATALOG_ROOT, "source/beui"), { recursive: true, force: true });
+  await rm(resolve(CATALOG_ROOT, "source"), { recursive: true, force: true });
   await mkdir(resolve(CATALOG_ROOT, "components"), { recursive: true });
   await mkdir(resolve(CATALOG_ROOT, "source/beui"), { recursive: true });
   await writeFile(resolve(CATALOG_ROOT, licensePath), licenseText);
@@ -161,7 +159,7 @@ async function writeCatalogOutputs(catalog: CatalogIndex, registryUrl: string): 
   await writeFile(
     resolve(CATALOG_ROOT, "source/beui/PROVENANCE.json"),
     `${JSON.stringify({
-      source: catalog.source,
+      source: catalog.sources[0],
       registryUrl,
       componentCount: catalog.components.length,
       categories: catalog.categories,
@@ -170,4 +168,6 @@ async function writeCatalogOutputs(catalog: CatalogIndex, registryUrl: string): 
   );
 }
 
-await main();
+if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
+  await runBeuiImport();
+}

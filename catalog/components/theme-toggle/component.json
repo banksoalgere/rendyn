@@ -1,5 +1,6 @@
 {
   "id": "beui:theme-toggle",
+  "sourceId": "beui",
   "slug": "theme-toggle",
   "name": "Theme Toggle",
   "description": "Theme toggle button that repaints the whole page through the View Transition API — a rectangle or circle clip-path reveal, or slats that open across the screen like a shutter.",
@@ -53,7 +54,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -95,6 +96,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion next-themes react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion next-themes react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -106,7 +109,8 @@
     "upstreamSlug": "theme-toggle",
     "upstreamPageUrl": "https://beui.dev/components/motion/theme-toggle",
     "upstreamDetailUrl": "https://beui.dev/r/theme-toggle",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/theme-toggle.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/theme-toggle.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Theme Toggle\"\ndescription: \"Theme toggle button that repaints the whole page through the View Transition API — a rectangle or circle clip-path reveal, or slats that open across the screen like a shutter.\"\ncategory: \"Components\"\npublishedAt: \"2026-06-15\"\nupdatedAt: \"2026-06-20\"\ndocumentation: \"https://beui.dev/components/motion/theme-toggle\"\nmarkdown: \"https://beui.dev/components/motion/theme-toggle.md\"\nlicense: \"MIT\"\n---\n\n# Theme Toggle\n\n> Theme toggle button that repaints the whole page through the View Transition API — a rectangle or circle clip-path reveal, or slats that open across the screen like a shutter.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/theme-toggle\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `next-themes`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { ThemeToggle, type ThemeVariant } from \"@/components/motion/theme-toggle\";\n\nconst VARIANTS: { variant: ThemeVariant; label: string }[] = [\n  { variant: \"rectangle\", label: \"Rectangle\" },\n  { variant: \"circle\", label: \"Circle\" },\n  { variant: \"circle-blur\", label: \"Circle blur\" },\n  { variant: \"blinds\", label: \"Blinds\" },\n];\n\nexport function ThemeTogglePreview() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center gap-5\">\n      {VARIANTS.map(({ variant, label }) => (\n        <div key={variant} className=\"flex flex-col items-center gap-2\">\n          <ThemeToggle\n            variant={variant}\n            start=\"bottom-up\"\n            className=\"rounded-xl border border-border bg-background p-2.5\"\n            iconClassName=\"h-5 w-5\"\n          />\n          <span className=\"text-[11px] text-muted-foreground\">{label}</span>\n        </div>\n      ))}\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### useThemeToggle\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `variant` | `\"circle\" \\| \"rectangle\" \\| \"circle-blur\" \\| \"blinds\"` | `rectangle` | No | — |\n| `start` | `\"center\" \\| \"top-left\" \\| \"top-right\" \\| \"bottom-left\" \\| \"bottom-right\" \\| \"bottom-up\"` | `bottom-up` | No | — |\n\n### ThemeToggle\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `variant` | `\"circle\" \\| \"rectangle\" \\| \"circle-blur\" \\| \"blinds\"` | `rectangle` | No | Animation variant. Default: \"rectangle\". |\n| `start` | `\"center\" \\| \"top-left\" \\| \"top-right\" \\| \"bottom-left\" \\| \"bottom-right\" \\| \"bottom-up\"` | `bottom-up` | No | Origin direction for the reveal. Default: \"bottom-up\". |\n| `iconClassName` | `string` | — | No | — |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/theme-toggle\n- Raw source: https://beui.dev/r/theme-toggle/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

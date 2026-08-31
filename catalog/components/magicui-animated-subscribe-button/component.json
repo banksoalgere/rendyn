@@ -1,0 +1,87 @@
+{
+  "id": "magicui:animated-subscribe-button",
+  "sourceId": "magicui",
+  "slug": "magicui-animated-subscribe-button",
+  "name": "Animated Subscribe Button",
+  "description": "An animated subscribe button useful for showing a micro animation from intial to final result.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "button",
+    "tags": [
+      "animated",
+      "button"
+    ],
+    "aliases": [
+      "animated subscribe button",
+      "button",
+      "cta",
+      "action control"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "An animated subscribe button useful for showing a micro animation from intial to final result."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "button:animated",
+    "searchText": "Animated Subscribe Button\nanimated subscribe button\nAn animated subscribe button useful for showing a micro animation from intial to final result.\nbutton\ncta\naction control\nanimated\nAnimated Subscribe Button An animated subscribe button useful for showing a micro animation from intial to final result."
+  },
+  "previewPath": "/preview/motion/magicui-animated-subscribe-button",
+  "manifestPath": "components/magicui-animated-subscribe-button/component.json",
+  "integrity": "sha256:1a91b45b12428aba0eeb0b2f3a8992127b148bc4028e539b0bb9f92f29da8acc",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/animated-subscribe-button.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport React, { useEffect, useState } from \"react\"\nimport { AnimatePresence, motion, type HTMLMotionProps } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface AnimatedSubscribeButtonProps extends Omit<\n  HTMLMotionProps<\"button\">,\n  \"ref\"\n> {\n  subscribeStatus?: boolean\n  children: React.ReactNode\n  className?: string\n}\n\nexport const AnimatedSubscribeButton = React.forwardRef<\n  HTMLButtonElement,\n  AnimatedSubscribeButtonProps\n>(({ subscribeStatus, onClick, className, children, ...props }, ref) => {\n  const isControlled = subscribeStatus !== undefined // controlled vs uncontrolled check\n  const [isSubscribed, setIsSubscribed] = useState<boolean>(\n    subscribeStatus ?? false\n  )\n\n  useEffect(() => {\n    if (isControlled) {\n      setIsSubscribed(subscribeStatus!)\n    }\n  }, [subscribeStatus, isControlled])\n\n  if (\n    React.Children.count(children) !== 2 ||\n    !React.Children.toArray(children).every(\n      (child) => React.isValidElement(child) && child.type === \"span\"\n    )\n  ) {\n    throw new Error(\n      \"AnimatedSubscribeButton expects two children, both of which must be <span> elements.\"\n    )\n  }\n\n  const childrenArray = React.Children.toArray(children)\n  const initialChild = childrenArray[0]\n  const changeChild = childrenArray[1]\n\n  return (\n    <AnimatePresence mode=\"wait\">\n      {isSubscribed ? (\n        <motion.button\n          ref={ref}\n          className={cn(\n            \"bg-primary text-primary-foreground relative flex h-10 w-fit items-center justify-center overflow-hidden rounded-lg px-6\",\n            className\n          )}\n          onClick={(e: React.MouseEvent<HTMLButtonElement>) => {\n            if (!isControlled) {\n              setIsSubscribed(false) // Only toggle manually if uncontrolled\n            }\n            onClick?.(e)\n          }}\n          initial={{ opacity: 0 }}\n          animate={{ opacity: 1 }}\n          exit={{ opacity: 0 }}\n          {...props}\n        >\n          <motion.span\n            key=\"action\"\n            className=\"relative flex h-full w-full items-center justify-center font-semibold\"\n            initial={{ y: -50 }}\n            animate={{ y: 0 }}\n          >\n            {changeChild} {/* Use children for subscribed state */}\n          </motion.span>\n        </motion.button>\n      ) : (\n        <motion.button\n          ref={ref}\n          className={cn(\n            \"bg-primary text-primary-foreground relative flex h-10 w-fit cursor-pointer items-center justify-center rounded-lg border-none px-6\",\n            className\n          )}\n          onClick={(e) => {\n            if (!isControlled) {\n              setIsSubscribed(true) // Only toggle manually if uncontrolled\n            }\n            onClick?.(e)\n          }}\n          initial={{ opacity: 0 }}\n          animate={{ opacity: 1 }}\n          exit={{ opacity: 0 }}\n          {...props}\n        >\n          <motion.span\n            key=\"reaction\"\n            className=\"relative flex items-center justify-center font-semibold\"\n            initial={{ x: 0 }}\n            exit={{ x: 50, transition: { duration: 0.1 } }}\n          >\n            {initialChild} {/* Use children for unsubscribed state */}\n          </motion.span>\n        </motion.button>\n      )}\n    </AnimatePresence>\n  )\n})\n\nAnimatedSubscribeButton.displayName = \"AnimatedSubscribeButton\"\n",
+      "sha256": "c441fd29a120f50c8030250a938c6082e7220108a8e3d0e8f8e969a215b90c85",
+      "upstreamPath": "apps/www/registry/magicui/animated-subscribe-button.tsx",
+      "upstreamSha256": "c441fd29a120f50c8030250a938c6082e7220108a8e3d0e8f8e969a215b90c85",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "animated-subscribe-button",
+    "upstreamPageUrl": "https://magicui.design/docs/components/animated-subscribe-button",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/animated-subscribe-button.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "# Animated Subscribe Button\n\nAn animated subscribe button useful for showing a micro animation from intial to final result.\n"
+}

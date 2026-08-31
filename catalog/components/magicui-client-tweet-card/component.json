@@ -1,0 +1,85 @@
+{
+  "id": "magicui:client-tweet-card",
+  "sourceId": "magicui",
+  "slug": "magicui-client-tweet-card",
+  "name": "Client Tweet Card",
+  "description": "A client-side version of the tweet card that displays a tweet with the author's name, handle, and profile picture.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "react-tweet"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "card",
+    "tags": [
+      "card",
+      "file"
+    ],
+    "aliases": [
+      "client tweet card",
+      "card"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "A client-side version of the tweet card that displays a tweet with the author's name, handle, and profile picture."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "card:file",
+    "searchText": "Client Tweet Card\nclient tweet card\nA client-side version of the tweet card that displays a tweet with the author's name, handle, and profile picture.\ncard\nfile\nClient Tweet Card A client side version of the tweet card that displays a tweet with the author's name, handle, and profile picture."
+  },
+  "previewPath": "/preview/motion/magicui-client-tweet-card",
+  "manifestPath": "components/magicui-client-tweet-card/component.json",
+  "integrity": "sha256:7e41dc3feec9a3b3a89841b1442792af6b7d0ed987bb03a3336e97921691b044",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/client-tweet-card.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport { useTweet, type TweetProps } from \"react-tweet\"\n\nimport {\n  MagicTweet,\n  TweetNotFound,\n  TweetSkeleton,\n} from \"@/components/magicui/tweet-card\"\n\nexport const ClientTweetCard = ({\n  id,\n  apiUrl,\n  fallback = <TweetSkeleton />,\n  components,\n  fetchOptions,\n  onError,\n  ...props\n}: TweetProps & { className?: string }) => {\n  const { data, error, isLoading } = useTweet(id, apiUrl, fetchOptions)\n\n  if (isLoading) return fallback\n  if (error || !data) {\n    const NotFound = components?.TweetNotFound ?? TweetNotFound\n    return <NotFound error={onError ? onError(error) : error} />\n  }\n\n  return <MagicTweet tweet={data} {...props} />\n}\n",
+      "sha256": "ec7baae502470dcdfc6d4d21346e42db182f57a5a099e94cb9f319904c52451f",
+      "upstreamPath": "apps/www/registry/magicui/client-tweet-card.tsx",
+      "upstreamSha256": "865680fbed5876bbda320e2ab75222b696175a67cc70001d56100a96c7afe4e4",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add react-tweet",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add react-tweet",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "client-tweet-card",
+    "upstreamPageUrl": "https://magicui.design/docs/components/client-tweet-card",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/client-tweet-card.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "# Client Tweet Card\n\nA client-side version of the tweet card that displays a tweet with the author's name, handle, and profile picture.\n"
+}

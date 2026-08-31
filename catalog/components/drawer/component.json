@@ -1,5 +1,6 @@
 {
   "id": "beui:drawer",
+  "sourceId": "beui",
   "slug": "drawer",
   "name": "Drawer",
   "description": "Side panel that slides in from the left or right with a spring, backdrop blur, body scroll lock and esc-to-close.",
@@ -51,7 +52,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -93,6 +94,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -104,7 +107,8 @@
     "upstreamSlug": "drawer",
     "upstreamPageUrl": "https://beui.dev/components/motion/drawer",
     "upstreamDetailUrl": "https://beui.dev/r/drawer",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/drawer.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/drawer.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Drawer\"\ndescription: \"Side panel that slides in from the left or right with a spring, backdrop blur, body scroll lock and esc-to-close.\"\ncategory: \"Components\"\npublishedAt: \"2026-06-22\"\nupdatedAt: \"2026-08-20\"\ndocumentation: \"https://beui.dev/components/motion/drawer\"\nmarkdown: \"https://beui.dev/components/motion/drawer.md\"\nlicense: \"MIT\"\n---\n\n# Drawer\n\n> Side panel that slides in from the left or right with a spring, backdrop blur, body scroll lock and esc-to-close.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/drawer\n```\n\n## Dependencies\n\n- `clsx`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { useState } from \"react\";\nimport { Drawer } from \"@/components/motion/drawer\";\n\nexport function DrawerPreview() {\n  const [open, setOpen] = useState(false);\n  const [side, setSide] = useState<\"left\" | \"right\">(\"right\");\n\n  const openWith = (s: \"left\" | \"right\") => {\n    setSide(s);\n    setOpen(true);\n  };\n\n  return (\n    <div className=\"flex items-center gap-3\">\n      <button\n        type=\"button\"\n        onClick={() => openWith(\"left\")}\n        className=\"inline-flex h-10 items-center rounded-full border border-border bg-card px-5 text-sm font-medium text-foreground transition-colors hover:bg-card/70\"\n      >\n        Open left\n      </button>\n      <button\n        type=\"button\"\n        onClick={() => openWith(\"right\")}\n        className=\"inline-flex h-10 items-center rounded-full bg-primary px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90\"\n      >\n        Open right\n      </button>\n\n      <Drawer\n        open={open}\n        onOpenChange={setOpen}\n        side={side}\n        ariaLabel=\"Demo drawer\"\n        className=\"gap-4 p-6\"\n      >\n        <h2 className=\"text-sm font-semibold text-foreground\">Drawer</h2>\n        <p className=\"text-sm text-muted-foreground\">\n          Slides in from the {side}. Press Esc or click outside to close.\n        </p>\n      </Drawer>\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### Drawer\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `open` | `boolean` | — | Yes | — |\n| `onOpenChange` | `(open: boolean) => void` | — | Yes | — |\n| `side` | `\"left\" \\| \"right\"` | `right` | No | — |\n| `className` | `string` | — | No | Class for the panel surface. |\n| `backdropClassName` | `string` | — | No | Class for the backdrop. |\n| `ariaLabel` | `string` | — | No | — |\n| `dismissable` | `boolean` | `true` | No | Close when the backdrop is clicked. Default true. |\n\n## Source\n\n- Registry detail: https://beui.dev/r/drawer\n- Raw source: https://beui.dev/r/drawer/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

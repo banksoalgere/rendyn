@@ -1,5 +1,6 @@
 {
   "id": "beui:wallet-card",
+  "sourceId": "beui",
   "slug": "wallet-card",
   "name": "Wallet Card",
   "description": "Wallet overview card with an account switcher and search that morph open from their triggers, a cascading balance with a live change pill and privacy toggle, copy-address, and Send / Deposit / Swap / Buy actions.",
@@ -73,7 +74,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -217,6 +218,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -228,7 +231,8 @@
     "upstreamSlug": "wallet-card",
     "upstreamPageUrl": "https://beui.dev/components/blocks/wallet-card",
     "upstreamDetailUrl": "https://beui.dev/r/wallet-card",
-    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/wallet-card.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/blocks/wallet-card.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Wallet Card\"\ndescription: \"Wallet overview card with an account switcher and search that morph open from their triggers, a cascading balance with a live change pill and privacy toggle, copy-address, and Send / Deposit / Swap / Buy actions.\"\ncategory: \"Blocks\"\npublishedAt: \"2026-07-03\"\nupdatedAt: \"2026-07-03\"\ndocumentation: \"https://beui.dev/components/blocks/wallet-card\"\nmarkdown: \"https://beui.dev/components/blocks/wallet-card.md\"\nlicense: \"MIT\"\n---\n\n# Wallet Card\n\n> Wallet overview card with an account switcher and search that morph open from their triggers, a cascading balance with a live change pill and privacy toggle, copy-address, and Send / Deposit / Swap / Buy actions.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/wallet-card\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { useState } from \"react\";\nimport { WalletCard } from \"@/components/motion/wallet-card\";\nimport { Button } from \"@/components/motion/button\";\n\nconst ACCOUNTS = [\n  { id: \"main\", name: \"Main Wallet\", address: \"0x8f3Cb1a29e4D7c6F1B2a3E9d0C4b5A6f7D8e9C0b\" },\n  { id: \"trading\", name: \"Trading\", address: \"0x1a2B3c4D5e6F7a8B9c0D1e2F3a4B5c6D7e8F9a0B\" },\n  { id: \"cold\", name: \"Cold Storage\", address: \"0x9F8e7D6c5B4a3E2d1C0b9A8f7E6d5C4b3A2e1F0d\" },\n];\n\nconst RECENT_SEARCHES = [\"vitalik.eth\", \"0xA0b8…6EB4\", \"Uniswap\", \"Send to Trading\"];\n\nexport function WalletCardPreview() {\n  const [balance, setBalance] = useState(12480.32);\n\n  return (\n    <div className=\"flex w-full flex-col items-center gap-4 p-6\">\n      <WalletCard\n        accounts={ACCOUNTS}\n        balance={balance}\n        defaultChange={124.5}\n        searchRecent={RECENT_SEARCHES}\n        hasNotifications\n      />\n      <Button\n        variant=\"ghost\"\n        size=\"sm\"\n        onClick={() => setBalance((b) => b + (Math.random() > 0.5 ? 1 : -1) * (50 + Math.random() * 400))}\n      >\n        Simulate balance change\n      </Button>\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### WalletCard\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `accounts` | `WalletAccount[]` | — | Yes | — |\n| `accountId` | `string` | — | No | — |\n| `defaultAccountId` | `string` | — | No | — |\n| `onAccountChange` | `((id: string) => void)` | — | No | — |\n| `balance` | `number` | — | Yes | — |\n| `balancePrefix` | `string` | `$` | No | — |\n| `defaultChange` | `number` | — | No | Initial balance change shown in the pill before any live change. |\n| `defaultBalanceHidden` | `boolean` | `false` | No | Start with the balance hidden behind dots. |\n| `onSend` | `(() => void)` | — | No | — |\n| `onDeposit` | `(() => void)` | — | No | — |\n| `onSwap` | `(() => void)` | — | No | — |\n| `onBuy` | `(() => void)` | — | No | — |\n| `searchPlaceholder` | `string` | — | No | — |\n| `searchRecent` | `string[]` | — | No | Recent searches shown in the expanded search panel. |\n| `onSearchChange` | `((value: string) => void)` | — | No | — |\n| `onSearchSubmit` | `((value: string) => void)` | — | No | — |\n| `hasNotifications` | `boolean` | `false` | No | Show an unread pulse on the notifications bell. |\n| `onNotifications` | `(() => void)` | — | No | — |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/wallet-card\n- Raw source: https://beui.dev/r/wallet-card/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

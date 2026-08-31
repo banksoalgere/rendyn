@@ -1,0 +1,83 @@
+{
+  "id": "kibo:avatar-stack",
+  "sourceId": "kibo",
+  "slug": "kibo-avatar-stack",
+  "name": "Avatar Stack",
+  "description": "Avatar Stack is a component that allows you to stack and overlap avatars.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "avatar-stack",
+    "tags": [
+      "hover"
+    ],
+    "aliases": [
+      "avatar stack",
+      "avatar-stack"
+    ],
+    "interactions": [
+      "hover"
+    ],
+    "useWhen": [
+      "Avatar Stack is a component that allows you to stack and overlap avatars."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "avatar-stack:hover",
+    "searchText": "Avatar Stack\navatar stack\nAvatar Stack is a component that allows you to stack and overlap avatars.\navatar-stack\nhover\ntitle: Avatar Stack description: Avatar Stack is a component that allows you to stack and overlap avatars. icon: Users installer: avatar stack Features Stack and overlap avatars Customize the appearance with className Examples With hover animation"
+  },
+  "previewPath": "/preview/blocks/kibo-avatar-stack",
+  "manifestPath": "components/kibo-avatar-stack/component.json",
+  "integrity": "sha256:d76b493c963ceaa719c94938a993e569bd31ec3d398c0e2b4d6be98318f81831",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/avatar-stack/index.tsx",
+      "type": "component",
+      "content": "import { Children, type ReactNode } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type AvatarStackProps = {\n  children: ReactNode;\n  className?: string;\n  animate?: boolean;\n  size?: number;\n};\n\nexport const AvatarStack = ({\n  children,\n  className,\n  animate = false,\n  size = 40,\n  ...props\n}: AvatarStackProps) => (\n  <div\n    className={cn(\n      \"-space-x-1 flex items-center\",\n      animate && \"hover:space-x-0 [&>*]:transition-all\",\n      className\n    )}\n    {...props}\n  >\n    {Children.map(children, (child, index) => {\n      if (!child) {\n        return null;\n      }\n\n      return (\n        <div\n          className={cn(\n            \"size-full shrink-0 overflow-hidden rounded-full\",\n            '[&_[data-slot=\"avatar\"]]:size-full',\n            className\n          )}\n          style={{\n            width: size,\n            height: size,\n            maskImage: index\n              ? `radial-gradient(circle ${size / 2}px at -${size / 4 + size / 10}px 50%, transparent 99%, white 100%)`\n              : \"\",\n          }}\n        >\n          {child}\n        </div>\n      );\n    })}\n  </div>\n);\n",
+      "sha256": "c477191e2ac7d8e7179879e51d4ce10bdfe4ea957e3d44b450d898308327357e",
+      "upstreamPath": "packages/avatar-stack/index.tsx",
+      "upstreamSha256": "c477191e2ac7d8e7179879e51d4ce10bdfe4ea957e3d44b450d898308327357e",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "avatar-stack",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/avatar-stack",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/avatar-stack.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Avatar Stack\ndescription: Avatar Stack is a component that allows you to stack and overlap avatars.\nicon: Users\ninstaller: avatar-stack\n---\n\n## Features\n\n- Stack and overlap avatars\n- Customize the appearance with className\n\n## Examples\n\n### With hover animation\n\n<Preview path=\"avatar-stack-hover\" />\n"
+}

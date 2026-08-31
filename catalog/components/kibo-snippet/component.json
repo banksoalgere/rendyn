@@ -1,0 +1,89 @@
+{
+  "id": "kibo:snippet",
+  "sourceId": "kibo",
+  "slug": "kibo-snippet",
+  "name": "Snippet",
+  "description": "Snippet is a component that allows you to display and copy code in a tabbed interface.",
+  "category": "blocks",
+  "publishedAt": "2026-05-04",
+  "updatedAt": "2026-05-04",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "internalDependencies": [
+    "button",
+    "tabs"
+  ],
+  "metadata": {
+    "kind": "block",
+    "family": "snippet",
+    "tags": [
+      "button",
+      "code",
+      "tabs"
+    ],
+    "aliases": [
+      "snippet"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "Snippet is a component that allows you to display and copy code in a tabbed interface."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "snippet:button:code:tabs",
+    "searchText": "Snippet\nsnippet\nSnippet is a component that allows you to display and copy code in a tabbed interface.\nbutton\ncode\ntabs\ntitle: Snippet description: Snippet is a component that allows you to display and copy code in a tabbed interface. icon: Code dependencies: https://www.radix ui.com/primitives/docs/components/tabs https://lucide.dev/ installer: snippet Features Copy code to clipboard Customize the tab contents Multiple tabs support Customizable copy button, tab triggers and tab content Customizable copy button timeout and callbacks Accessible tabs using Radix's Tabs primitive Examples NPM packages"
+  },
+  "previewPath": "/preview/blocks/kibo-snippet",
+  "manifestPath": "components/kibo-snippet/component.json",
+  "integrity": "sha256:5682392e14b09cd56547d83fa2b30009d64d1eb11c9cc8d65e585705cee89c24",
+  "source": {
+    "id": "kibo",
+    "name": "Kibo UI",
+    "repository": "https://github.com/haydenbleasel/kibo",
+    "commit": "3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "registrySha256": "e846a4b49c8a8cc5f31b11a51b30f6fd5e175fdd8ef14a77e57c34927895142c",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 — Present shadcnblocks",
+      "textPath": "source/kibo/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/kibo-ui/snippet/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { CheckIcon, CopyIcon } from \"lucide-react\";\nimport {\n  type ComponentProps,\n  cloneElement,\n  type HTMLAttributes,\n  type ReactElement,\n  useState,\n} from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\";\nimport { cn } from \"@/lib/utils\";\n\nexport type SnippetProps = ComponentProps<typeof Tabs>;\n\nexport const Snippet = ({ className, ...props }: SnippetProps) => (\n  <Tabs\n    className={cn(\n      \"group w-full gap-0 overflow-hidden rounded-md border\",\n      className\n    )}\n    {...props}\n  />\n);\n\nexport type SnippetHeaderProps = HTMLAttributes<HTMLDivElement>;\n\nexport const SnippetHeader = ({ className, ...props }: SnippetHeaderProps) => (\n  <div\n    className={cn(\n      \"flex flex-row items-center justify-between border-b bg-secondary p-1\",\n      className\n    )}\n    {...props}\n  />\n);\n\nexport type SnippetCopyButtonProps = ComponentProps<typeof Button> & {\n  value: string;\n  onCopy?: () => void;\n  onError?: (error: Error) => void;\n  timeout?: number;\n};\n\nexport const SnippetCopyButton = ({\n  asChild,\n  value,\n  onCopy,\n  onError,\n  timeout = 2000,\n  children,\n  ...props\n}: SnippetCopyButtonProps) => {\n  const [isCopied, setIsCopied] = useState(false);\n\n  const copyToClipboard = () => {\n    if (\n      typeof window === \"undefined\" ||\n      !navigator.clipboard.writeText ||\n      !value\n    ) {\n      return;\n    }\n\n    navigator.clipboard.writeText(value).then(() => {\n      setIsCopied(true);\n      onCopy?.();\n\n      setTimeout(() => setIsCopied(false), timeout);\n    }, onError);\n  };\n\n  if (asChild) {\n    return cloneElement(children as ReactElement, {\n      // @ts-expect-error - we know this is a button\n      onClick: copyToClipboard,\n    });\n  }\n\n  const icon = isCopied ? <CheckIcon size={14} /> : <CopyIcon size={14} />;\n\n  return (\n    <Button\n      className=\"opacity-0 transition-opacity group-hover:opacity-100\"\n      onClick={copyToClipboard}\n      size=\"icon\"\n      variant=\"ghost\"\n      {...props}\n    >\n      {children ?? icon}\n    </Button>\n  );\n};\n\nexport type SnippetTabsListProps = ComponentProps<typeof TabsList>;\n\nexport const SnippetTabsList = TabsList;\n\nexport type SnippetTabsTriggerProps = ComponentProps<typeof TabsTrigger>;\n\nexport const SnippetTabsTrigger = ({\n  className,\n  ...props\n}: SnippetTabsTriggerProps) => (\n  <TabsTrigger className={cn(\"gap-1.5\", className)} {...props} />\n);\n\nexport type SnippetTabsContentProps = ComponentProps<typeof TabsContent>;\n\nexport const SnippetTabsContent = ({\n  className,\n  children,\n  ...props\n}: SnippetTabsContentProps) => (\n  <TabsContent\n    asChild\n    className={cn(\"mt-0 bg-background p-4 text-sm\", className)}\n    {...props}\n  >\n    <pre className=\"truncate\">{children}</pre>\n  </TabsContent>\n);\n",
+      "sha256": "e33286b7ead323f457fabff91b545759156f6abbf37d80a183d3b290a29c89d5",
+      "upstreamPath": "packages/snippet/index.tsx",
+      "upstreamSha256": "e33286b7ead323f457fabff91b545759156f6abbf37d80a183d3b290a29c89d5",
+      "transformation": "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias. Rewrite @repo package imports to @/components/kibo-ui package paths."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add lucide-react",
+    "registryDependencyCommand": "pnpm dlx shadcn@latest add button tabs",
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add lucide-react",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Install the required shadcn primitives: pnpm dlx shadcn@latest add button tabs"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "snippet",
+    "upstreamPageUrl": "https://www.kibo-ui.com/components/snippet",
+    "upstreamDetailUrl": "https://github.com/haydenbleasel/kibo/tree/3d63cdb15b79d972e3dc38a10997987672f9b263",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/haydenbleasel/kibo/3d63cdb15b79d972e3dc38a10997987672f9b263/apps/docs/content/components/snippet.mdx",
+    "transformations": [
+      "Rewrite @repo/shadcn-ui component, hook, and utility imports to the consumer @/ alias.",
+      "Rewrite @repo package imports to @/components/kibo-ui package paths."
+    ]
+  },
+  "documentation": "---\ntitle: Snippet\ndescription: Snippet is a component that allows you to display and copy code in a tabbed interface.\nicon: Code\ndependencies:\n  - https://www.radix-ui.com/primitives/docs/components/tabs\n  - https://lucide.dev/\ninstaller: snippet\n---\n\n## Features\n\n- Copy code to clipboard\n- Customize the tab contents\n- Multiple tabs support\n- Customizable copy button, tab triggers and tab content\n- Customizable copy button timeout and callbacks\n- Accessible tabs using Radix's `Tabs` primitive\n\n## Examples\n\n### NPM packages\n\n<Preview path=\"snippet-npm\" />\n"
+}

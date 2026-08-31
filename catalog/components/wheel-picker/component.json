@@ -1,5 +1,6 @@
 {
   "id": "beui:wheel-picker",
+  "sourceId": "beui",
   "slug": "wheel-picker",
   "name": "Wheel Picker",
   "description": "iOS-style picker wheel: a 3D drum on native momentum scroll that snaps to the nearest notch, with wheel, drag and keyboard control. Composes side by side for date and time pickers, reduced-motion safe.",
@@ -56,7 +57,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -104,6 +105,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -115,7 +118,8 @@
     "upstreamSlug": "wheel-picker",
     "upstreamPageUrl": "https://beui.dev/components/motion/wheel-picker",
     "upstreamDetailUrl": "https://beui.dev/r/wheel-picker",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/wheel-picker.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/wheel-picker.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Wheel Picker\"\ndescription: \"iOS-style picker wheel: a 3D drum on native momentum scroll that snaps to the nearest notch, with wheel, drag and keyboard control. Composes side by side for date and time pickers, reduced-motion safe.\"\ncategory: \"Components\"\npublishedAt: \"2026-07-09\"\nupdatedAt: \"2026-07-09\"\ndocumentation: \"https://beui.dev/components/motion/wheel-picker\"\nmarkdown: \"https://beui.dev/components/motion/wheel-picker.md\"\nlicense: \"MIT\"\n---\n\n# Wheel Picker\n\n> iOS-style picker wheel: a 3D drum on native momentum scroll that snaps to the nearest notch, with wheel, drag and keyboard control. Composes side by side for date and time pickers, reduced-motion safe.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/wheel-picker\n```\n\n## Dependencies\n\n- `clsx`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { Switch } from \"@/components/motion/switch\";\nimport { WheelPicker } from \"@/components/motion/wheel-picker\";\n\nconst MONTHS = [\n  \"January\",\n  \"February\",\n  \"March\",\n  \"April\",\n  \"May\",\n  \"June\",\n  \"July\",\n  \"August\",\n  \"September\",\n  \"October\",\n  \"November\",\n  \"December\",\n];\nconst YEARS = Array.from({ length: 60 }, (_, i) => String(1980 + i));\n\nfunction daysIn(month: number, year: number) {\n  return new Date(year, month + 1, 0).getDate();\n}\n\nexport function WheelPickerPreview() {\n  const [month, setMonth] = useState(\"June\");\n  const [year, setYear] = useState(\"2004\");\n  const [day, setDay] = useState(\"9\");\n  const [sound, setSound] = useState(false);\n\n  const monthIndex = MONTHS.indexOf(month);\n  const dayCount = daysIn(monthIndex, Number(year));\n  const days = Array.from({ length: dayCount }, (_, i) => String(i + 1));\n\n  // A short month or a non-leap February can strand the day past the end —\n  // pull it back to the last valid day.\n  useEffect(() => {\n    if (Number(day) > dayCount) setDay(String(dayCount));\n  }, [day, dayCount]);\n\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <span className=\"text-sm text-muted-foreground\">\n        Born{\" \"}\n        <span className=\"font-medium text-foreground tabular-nums\">\n          {month} {day}, {year}\n        </span>\n      </span>\n      <div className=\"flex items-stretch gap-1 rounded-3xl border border-border bg-background p-2\">\n        <WheelPicker\n          options={MONTHS}\n          value={month}\n          onValueChange={setMonth}\n          className=\"w-32 border-0 bg-transparent\"\n          visibleCount={7}\n          itemHeight={42}\n          sound={sound}\n          aria-label=\"Month\"\n        />\n        <WheelPicker\n          options={days}\n          value={day}\n          onValueChange={setDay}\n          className=\"w-14 border-0 bg-transparent\"\n          visibleCount={7}\n          itemHeight={42}\n          sound={sound}\n          aria-label=\"Day\"\n        />\n        <WheelPicker\n          options={YEARS}\n          value={year}\n          onValueChange={setYear}\n          className=\"w-20 border-0 bg-transparent\"\n          visibleCount={7}\n          itemHeight={42}\n          sound={sound}\n          aria-label=\"Year\"\n        />\n      </div>\n      <Switch\n        checked={sound}\n        onCheckedChange={setSound}\n        label=\"Tick sound\"\n        className=\"origin-left scale-[0.85] [&_label]:text-sm\"\n      />\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### WheelPicker\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `options` | `WheelPickerOption[]` | — | Yes | — |\n| `value` | `string` | — | No | — |\n| `defaultValue` | `string` | — | No | — |\n| `onValueChange` | `((value: string) => void)` | — | No | — |\n| `visibleCount` | `number` | `5` | No | Rows visible through the window, odd. More = flatter curve. Default 5. |\n| `itemHeight` | `number` | `36` | No | Row height in px. Default 36. |\n| `disabled` | `boolean` | `false` | No | — |\n| `sound` | `boolean` | `false` | No | Play a short tick each time the selected value changes. Default false. |\n| `className` | `string` | — | No | — |\n| `aria-label` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/wheel-picker\n- Raw source: https://beui.dev/r/wheel-picker/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

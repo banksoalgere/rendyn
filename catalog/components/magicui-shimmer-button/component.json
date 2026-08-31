@@ -1,0 +1,97 @@
+{
+  "id": "magicui:shimmer-button",
+  "sourceId": "magicui",
+  "slug": "magicui-shimmer-button",
+  "name": "Shimmer Button",
+  "description": "A button with a shimmering light which travels around the perimeter.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "button",
+    "tags": [
+      "button",
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "shimmer button",
+      "button",
+      "cta",
+      "action control"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "A button with a shimmering light which travels around the perimeter."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "button:code:file:type",
+    "searchText": "Shimmer Button\nshimmer button\nA button with a shimmering light which travels around the perimeter.\nbutton\ncta\naction control\ncode\nfile\ntype\ntitle: Shimmer Button date: 2023 08 10 description: A button with a shimmering light which travels around the perimeter. author: dillionverma published: true video: https://cdn.magicui.design/shimmer button.mp4 Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Add the required CSS animations Add the following animations to your global CSS file. Usage Props Prop Type Default Description shimmerColor string ffffff The color of the shimmer shimmerSize string 0.05em The size of the shimmer borderRadius string 100px The border radius of the button shimmerDuration string 3s The duration of the spark animation background string rgba(0, 0, 0, 1) The background of the button className string undefined The class name of the button children React.ReactNode undefined The children of the button Credits Credit to @jh3yy for the inspiration behind this component."
+  },
+  "previewPath": "/preview/motion/magicui-shimmer-button",
+  "manifestPath": "components/magicui-shimmer-button/component.json",
+  "integrity": "sha256:594acc60d53677c4a937251c1dcb93fe43d1332e0836e2de03b21178749ba719",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/shimmer-button.tsx",
+      "type": "component",
+      "content": "import React, { type ComponentPropsWithoutRef, type CSSProperties } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface ShimmerButtonProps extends ComponentPropsWithoutRef<\"button\"> {\n  shimmerColor?: string\n  shimmerSize?: string\n  borderRadius?: string\n  shimmerDuration?: string\n  background?: string\n  className?: string\n  children?: React.ReactNode\n}\n\nexport const ShimmerButton = React.forwardRef<\n  HTMLButtonElement,\n  ShimmerButtonProps\n>(\n  (\n    {\n      shimmerColor = \"#ffffff\",\n      shimmerSize = \"0.05em\",\n      shimmerDuration = \"3s\",\n      borderRadius = \"100px\",\n      background = \"rgba(0, 0, 0, 1)\",\n      className,\n      children,\n      ...props\n    },\n    ref\n  ) => {\n    return (\n      <button\n        style={\n          {\n            \"--spread\": \"90deg\",\n            \"--shimmer-color\": shimmerColor,\n            \"--radius\": borderRadius,\n            \"--speed\": shimmerDuration,\n            \"--cut\": shimmerSize,\n            \"--bg\": background,\n          } as CSSProperties\n        }\n        className={cn(\n          \"group relative z-0 flex cursor-pointer items-center justify-center overflow-hidden [border-radius:var(--radius)] border border-white/10 px-6 py-3 whitespace-nowrap text-white [background:var(--bg)]\",\n          \"transform-gpu transition-transform duration-300 ease-in-out active:translate-y-px\",\n          className\n        )}\n        ref={ref}\n        {...props}\n      >\n        {/* spark container */}\n        <div\n          className={cn(\n            \"-z-30 blur-[2px]\",\n            \"@container-[size] absolute inset-0 overflow-visible\"\n          )}\n        >\n          {/* spark */}\n          <div className=\"animate-shimmer-slide absolute inset-0 aspect-[1] h-[100cqh] rounded-none [mask:none]\">\n            {/* spark before */}\n            <div className=\"animate-spin-around absolute -inset-full w-auto [translate:0_0] rotate-0 [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,var(--shimmer-color)_var(--spread),transparent_var(--spread))]\" />\n          </div>\n        </div>\n        {children}\n\n        {/* Highlight */}\n        <div\n          className={cn(\n            \"absolute inset-0 size-full\",\n\n            \"rounded-2xl px-4 py-1.5 text-sm font-medium shadow-[inset_0_-8px_10px_#ffffff1f]\",\n\n            // transition\n            \"transform-gpu transition-all duration-300 ease-in-out\",\n\n            // on hover\n            \"group-hover:shadow-[inset_0_-6px_10px_#ffffff3f]\",\n\n            // on click\n            \"group-active:shadow-[inset_0_-10px_10px_#ffffff3f]\"\n          )}\n        />\n\n        {/* backdrop */}\n        <div\n          className={cn(\n            \"absolute inset-(--cut) -z-20 [border-radius:var(--radius)] [background:var(--bg)]\"\n          )}\n        />\n      </button>\n    )\n  }\n)\n\nShimmerButton.displayName = \"ShimmerButton\"\n",
+      "sha256": "c85ffda63ba086d2078a8dacffdfc25f0b106e1566362fa251888a214ee3c010",
+      "upstreamPath": "apps/www/registry/magicui/shimmer-button.tsx",
+      "upstreamSha256": "c85ffda63ba086d2078a8dacffdfc25f0b106e1566362fa251888a214ee3c010",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    },
+    {
+      "path": "components/magicui/shimmer-button.css",
+      "type": "style",
+      "content": "@theme inline {\n  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;\n  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;\n}\n\n@keyframes shimmer-slide {\n  to {\n    transform: translate(calc(100cqw - 100%), 0);\n  }\n}\n\n@keyframes spin-around {\n  0% {\n    transform: translateZ(0) rotate(0);\n  }\n  15%, 35% {\n    transform: translateZ(0) rotate(90deg);\n  }\n  65%, 85% {\n    transform: translateZ(0) rotate(270deg);\n  }\n  100% {\n    transform: translateZ(0) rotate(360deg);\n  }\n}\n",
+      "sha256": "deeabb6fd3c6e60be6f2f9e87c84baaee74fd11a37416c2dd1da6ab3fcb97f37",
+      "transformation": "Materialize registry CSS and theme variables as a component stylesheet when present."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": null,
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/magicui/shimmer-button.css"
+    ],
+    "instructions": [
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Include the returned styles: components/magicui/shimmer-button.css"
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "shimmer-button",
+    "upstreamPageUrl": "https://magicui.design/docs/components/shimmer-button",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/shimmer-button.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Shimmer Button\ndate: 2023-08-10\ndescription: A button with a shimmering light which travels around the perimeter.\nauthor: dillionverma\npublished: true\nvideo: https://cdn.magicui.design/shimmer-button.mp4\n---\n\n<ComponentPreview name=\"shimmer-button-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n  \n```bash\nnpx shadcn@latest add @magicui/shimmer-button\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"shimmer-button\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n<Step>Add the required CSS animations</Step>\n\nAdd the following animations to your global CSS file.\n\n```css title=\"app/globals.css\" showLineNumbers {2-4, 6-26}\n@theme inline {\n  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite\n    alternate;\n  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;\n\n  @keyframes shimmer-slide {\n    to {\n      transform: translate(calc(100cqw - 100%), 0);\n    }\n  }\n  @keyframes spin-around {\n    0% {\n      transform: translateZ(0) rotate(0);\n    }\n    15%,\n    35% {\n      transform: translateZ(0) rotate(90deg);\n    }\n    65%,\n    85% {\n      transform: translateZ(0) rotate(270deg);\n    }\n    100% {\n      transform: translateZ(0) rotate(360deg);\n    }\n  }\n}\n```\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { ShimmerButton } from \"@/components/ui/shimmer-button\"\n```\n\n```tsx showLineNumbers\n<ShimmerButton>Shimmer Button</ShimmerButton>\n```\n\n## Props\n\n| Prop              | Type              | Default            | Description                         |\n| ----------------- | ----------------- | ------------------ | ----------------------------------- |\n| `shimmerColor`    | `string`          | `#ffffff`          | The color of the shimmer            |\n| `shimmerSize`     | `string`          | `0.05em`           | The size of the shimmer             |\n| `borderRadius`    | `string`          | `100px`            | The border radius of the button     |\n| `shimmerDuration` | `string`          | `3s`               | The duration of the spark animation |\n| `background`      | `string`          | `rgba(0, 0, 0, 1)` | The background of the button        |\n| `className`       | `string`          | `undefined`        | The class name of the button        |\n| `children`        | `React.ReactNode` | `undefined`        | The children of the button          |\n\n## Credits\n\nCredit to [@jh3yy](https://twitter.com/jh3yy/status/1656423856276488192) for the inspiration behind this component.\n"
+}

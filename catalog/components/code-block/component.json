@@ -1,5 +1,6 @@
 {
   "id": "beui:code-block",
+  "sourceId": "beui",
   "slug": "code-block",
   "name": "Code Block",
   "description": "A syntax-highlighted code surface with stable streaming updates, line numbers, focused lines, smooth following, and copy feedback.",
@@ -61,7 +62,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -103,6 +104,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add ai clsx lucide-react motion react shiki tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add ai clsx lucide-react motion react shiki tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -114,7 +117,8 @@
     "upstreamSlug": "code-block",
     "upstreamPageUrl": "https://beui.dev/components/agents/code-block",
     "upstreamDetailUrl": "https://beui.dev/r/code-block",
-    "upstreamMarkdownUrl": "https://beui.dev/components/agents/code-block.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/agents/code-block.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Code Block\"\ndescription: \"A syntax-highlighted code surface with stable streaming updates, line numbers, focused lines, smooth following, and copy feedback.\"\ncategory: \"AI Agents\"\npublishedAt: \"2026-08-02\"\nupdatedAt: \"2026-08-02\"\ndocumentation: \"https://beui.dev/components/agents/code-block\"\nmarkdown: \"https://beui.dev/components/agents/code-block.md\"\nlicense: \"MIT\"\n---\n\n# Code Block\n\n> A syntax-highlighted code surface with stable streaming updates, line numbers, focused lines, smooth following, and copy feedback.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/code-block\n```\n\n## Dependencies\n\n- `ai`\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `shiki`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { RotateCcw } from \"lucide-react\";\nimport { useEffect, useRef, useState } from \"react\";\nimport { CodeBlock } from \"@/components/agents/code-block\";\n\nconst LINES = [\n  'import { generateText } from \"ai\";',\n  \"\",\n  \"export async function summarize(input: string) {\",\n  \"  const { text } = await generateText({\",\n  '    model: \"openai/gpt-5\",',\n  `    prompt: \\`Summarize this clearly: \\${input}\\`,`,\n  \"  });\",\n  \"\",\n  \"  return {\",\n  \"    text,\",\n  \"    generatedAt: new Date().toISOString(),\",\n  \"  };\",\n  \"}\",\n];\n\nfunction StreamingCodeBlock() {\n  const [visibleLines, setVisibleLines] = useState(1);\n  const timer = useRef<number | undefined>(undefined);\n  const complete = visibleLines === LINES.length;\n\n  useEffect(() => {\n    if (visibleLines >= LINES.length) return;\n    timer.current = window.setTimeout(\n      () => setVisibleLines((value) => value + 1),\n      260,\n    );\n    return () => {\n      if (timer.current) window.clearTimeout(timer.current);\n    };\n  }, [visibleLines]);\n\n  return (\n    <CodeBlock\n      filename=\"summarize.ts\"\n      language=\"typescript\"\n      code={LINES.slice(0, visibleLines).join(\"\\n\")}\n      status={complete ? \"complete\" : \"streaming\"}\n      highlightLines={[4, 5, 6, 7]}\n      maxHeight={224}\n    />\n  );\n}\n\nexport function CodeBlockPreview() {\n  const [run, setRun] = useState(0);\n\n  return (\n    <div className=\"relative h-[340px] w-full max-w-xl\">\n      <StreamingCodeBlock key={run} />\n      <button\n        type=\"button\"\n        onClick={() => setRun((value) => value + 1)}\n        className=\"absolute bottom-0 left-0 inline-flex items-center gap-1.5 rounded-full px-2 py-1 text-xs font-medium text-muted-foreground outline-none transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring\"\n      >\n        <RotateCcw className=\"size-3\" />\n        Replay\n      </button>\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### CodeBlock\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `code` | `string` | — | Yes | — |\n| `language` | `\"text\" \\| \"bash\" \\| \"diff\" \\| \"json\" \\| \"tsx\" \\| \"typescript\"` | `typescript` | No | — |\n| `filename` | `ReactNode` | — | No | — |\n| `status` | `\"complete\" \\| \"streaming\"` | `complete` | No | — |\n| `showLineNumbers` | `boolean` | `true` | No | — |\n| `highlightLines` | `number[]` | `[]` | No | — |\n| `maxHeight` | `number` | `280` | No | — |\n| `wrap` | `boolean` | `false` | No | — |\n| `copyable` | `boolean` | `true` | No | — |\n| `onCopy` | `(() => void \\| Promise<void>)` | — | No | — |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/code-block\n- Raw source: https://beui.dev/r/code-block/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

@@ -1,0 +1,87 @@
+{
+  "id": "magicui:text-reveal",
+  "sourceId": "magicui",
+  "slug": "magicui-text-reveal",
+  "name": "Text Reveal",
+  "description": "Fade in text as you scroll down the page.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "text-reveal",
+    "tags": [
+      "code",
+      "text"
+    ],
+    "aliases": [
+      "text reveal",
+      "text-reveal"
+    ],
+    "interactions": [
+      "scroll"
+    ],
+    "useWhen": [
+      "Fade in text as you scroll down the page."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "text-reveal:code:text:scroll",
+    "searchText": "Text Reveal\ntext reveal\nFade in text as you scroll down the page.\ntext-reveal\ncode\ntext\nscroll\ntitle: Text Reveal date: 2024 04 08 description: Fade in text as you scroll down the page. author: dillionverma published: true video: https://cdn.magicui.design/text reveal.mp4 Installation CLI Manual Copy and paste the following code into your project. Update the import paths to match your project setup. Usage"
+  },
+  "previewPath": "/preview/motion/magicui-text-reveal",
+  "manifestPath": "components/magicui-text-reveal/component.json",
+  "integrity": "sha256:0ba85dbdaec56b57caf754bba8f7f01b65214eb883ae46f4cc2c8a1c5663c6cc",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/text-reveal.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport {\n  useRef,\n  type ComponentPropsWithoutRef,\n  type FC,\n  type ReactNode,\n} from \"react\"\nimport { motion, MotionValue, useScroll, useTransform } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface TextRevealProps extends ComponentPropsWithoutRef<\"div\"> {\n  children: string\n}\n\nexport const TextReveal: FC<TextRevealProps> = ({ children, className }) => {\n  const sectionRef = useRef<HTMLDivElement | null>(null)\n  const { scrollYProgress } = useScroll({\n    target: sectionRef,\n  })\n\n  if (typeof children !== \"string\") {\n    throw new Error(\"TextReveal: children must be a string\")\n  }\n\n  const words = children.split(\" \")\n\n  return (\n    <div ref={sectionRef} className={cn(\"relative z-0 h-[200vh]\", className)}>\n      <div\n        className={\n          \"sticky top-0 mx-auto flex h-[50%] max-w-4xl items-center bg-transparent px-4 py-20\"\n        }\n      >\n        <span\n          className={\n            \"flex flex-wrap p-5 text-2xl font-bold text-black/20 md:p-8 md:text-3xl lg:p-10 lg:text-4xl xl:text-5xl dark:text-white/20\"\n          }\n        >\n          {words.map((word, i) => {\n            const start = i / words.length\n            const end = start + 1 / words.length\n            return (\n              <Word key={i} progress={scrollYProgress} range={[start, end]}>\n                {word}\n              </Word>\n            )\n          })}\n        </span>\n      </div>\n    </div>\n  )\n}\n\ninterface WordProps {\n  children: ReactNode\n  progress: MotionValue<number>\n  range: [number, number]\n}\n\nconst Word: FC<WordProps> = ({ children, progress, range }) => {\n  const opacity = useTransform(progress, range, [0, 1])\n  return (\n    <span className=\"xl:lg-3 relative mx-1 lg:mx-1.5\">\n      <span className=\"absolute opacity-30\">{children}</span>\n      <motion.span\n        style={{ opacity: opacity }}\n        className={\"text-black dark:text-white\"}\n      >\n        {children}\n      </motion.span>\n    </span>\n  )\n}\n",
+      "sha256": "af69b435aa66a762af04d7d85b8578627ad9fb6541d01170135756e647d36240",
+      "upstreamPath": "apps/www/registry/magicui/text-reveal.tsx",
+      "upstreamSha256": "af69b435aa66a762af04d7d85b8578627ad9fb6541d01170135756e647d36240",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "text-reveal",
+    "upstreamPageUrl": "https://magicui.design/docs/components/text-reveal",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/text-reveal.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Text Reveal\ndate: 2024-04-08\ndescription: Fade in text as you scroll down the page.\nauthor: dillionverma\npublished: true\nvideo: https://cdn.magicui.design/text-reveal.mp4\n---\n\n<ComponentPreview name=\"text-reveal-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/text-reveal\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"text-reveal\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { TextReveal } from \"@/components/ui/text-reveal\"\n```\n\n```tsx showLineNumbers\n<TextReveal>Magic UI will change the way you design.</TextReveal>\n```\n"
+}

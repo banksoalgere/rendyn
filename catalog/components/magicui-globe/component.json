@@ -1,0 +1,87 @@
+{
+  "id": "magicui:globe",
+  "sourceId": "magicui",
+  "slug": "magicui-globe",
+  "name": "Globe",
+  "description": "An autorotating, interactive, and highly performant globe made using WebGL.",
+  "category": "motion",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "dependencies": [
+    "cobe",
+    "motion"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "component",
+    "family": "globe",
+    "tags": [
+      "code",
+      "form"
+    ],
+    "aliases": [
+      "globe"
+    ],
+    "interactions": [
+      "type"
+    ],
+    "useWhen": [
+      "An autorotating, interactive, and highly performant globe made using WebGL."
+    ],
+    "notIdealWhen": [
+      "Motion would distract from a dense or deliberately static information task."
+    ],
+    "visualSignature": "globe:code:form:type",
+    "searchText": "Globe\nglobe\nAn autorotating, interactive, and highly performant globe made using WebGL.\ncode\nform\ntype\ntitle: Globe date: 2023 08 02 description: An autorotating, interactive, and highly performant globe made using WebGL. author: dillionverma published: true video: https://cdn.magicui.design/globe.mp4 Installation CLI Manual Install the following dependencies: Copy and paste the following code into your project. Update the import paths to match your project setup. Usage Props Prop Type Default Description className string The css classes for the component config COBEOptions {} The configuration options for the globe. More details here Credits This component is built on top of Cobe."
+  },
+  "previewPath": "/preview/motion/magicui-globe",
+  "manifestPath": "components/magicui-globe/component.json",
+  "integrity": "sha256:e062c446f374a5602735201ab66df89bffc5c9109696032df250794f6f8b24da",
+  "source": {
+    "id": "magicui",
+    "name": "Magic UI",
+    "repository": "https://github.com/magicuidesign/magicui",
+    "commit": "2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "registrySha256": "a33da28f835aea7fca9312abb02a083c3e2481062971f7084d6d3235546ce20f",
+    "importedAt": "2026-08-31T14:06:20.125Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) Magic UI",
+      "textPath": "source/magicui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/magicui/globe.tsx",
+      "type": "component",
+      "content": "\"use client\"\n\nimport { useEffect, useRef } from \"react\"\nimport createGlobe, { type COBEOptions } from \"cobe\"\nimport { useMotionValue, useSpring } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst MOVEMENT_DAMPING = 1400\n\nconst GLOBE_CONFIG: COBEOptions = {\n  width: 800,\n  height: 800,\n  onRender: () => {},\n  devicePixelRatio: 2,\n  phi: 0,\n  theta: 0.3,\n  dark: 0,\n  diffuse: 0.4,\n  mapSamples: 16000,\n  mapBrightness: 1.2,\n  baseColor: [1, 1, 1],\n  markerColor: [251 / 255, 100 / 255, 21 / 255],\n  glowColor: [1, 1, 1],\n  markers: [\n    { location: [14.5995, 120.9842], size: 0.03 },\n    { location: [19.076, 72.8777], size: 0.1 },\n    { location: [23.8103, 90.4125], size: 0.05 },\n    { location: [30.0444, 31.2357], size: 0.07 },\n    { location: [39.9042, 116.4074], size: 0.08 },\n    { location: [-23.5505, -46.6333], size: 0.1 },\n    { location: [19.4326, -99.1332], size: 0.1 },\n    { location: [40.7128, -74.006], size: 0.1 },\n    { location: [34.6937, 135.5022], size: 0.05 },\n    { location: [41.0082, 28.9784], size: 0.06 },\n  ],\n}\n\nexport function Globe({\n  className,\n  config = GLOBE_CONFIG,\n}: {\n  className?: string\n  config?: COBEOptions\n}) {\n  const canvasRef = useRef<HTMLCanvasElement>(null)\n  const phiRef = useRef(0)\n  const widthRef = useRef(0)\n  const pointerInteracting = useRef<number | null>(null)\n  const pointerInteractionMovement = useRef(0)\n\n  const r = useMotionValue(0)\n  const rs = useSpring(r, {\n    mass: 1,\n    damping: 30,\n    stiffness: 100,\n  })\n\n  const updatePointerInteraction = (value: number | null) => {\n    pointerInteracting.current = value\n    if (canvasRef.current) {\n      canvasRef.current.style.cursor = value !== null ? \"grabbing\" : \"grab\"\n    }\n  }\n\n  const updateMovement = (clientX: number) => {\n    if (pointerInteracting.current !== null) {\n      const delta = clientX - pointerInteracting.current\n      pointerInteractionMovement.current = delta\n      r.set(r.get() + delta / MOVEMENT_DAMPING)\n    }\n  }\n\n  useEffect(() => {\n    const onResize = () => {\n      if (canvasRef.current) {\n        widthRef.current = canvasRef.current.offsetWidth\n      }\n    }\n\n    window.addEventListener(\"resize\", onResize)\n    onResize()\n\n    const globe = createGlobe(canvasRef.current!, {\n      ...config,\n      width: widthRef.current * 2,\n      height: widthRef.current * 2,\n      onRender: (state) => {\n        if (!pointerInteracting.current) phiRef.current += 0.005\n        state.phi = phiRef.current + rs.get()\n        state.width = widthRef.current * 2\n        state.height = widthRef.current * 2\n      },\n    })\n\n    setTimeout(() => (canvasRef.current!.style.opacity = \"1\"), 0)\n    return () => {\n      globe.destroy()\n      window.removeEventListener(\"resize\", onResize)\n    }\n  }, [rs, config])\n\n  return (\n    <div\n      className={cn(\n        \"absolute inset-0 mx-auto aspect-square w-full max-w-150\",\n        className\n      )}\n    >\n      <canvas\n        className={cn(\n          \"size-full opacity-0 transition-opacity duration-500 contain-[layout_paint_size]\"\n        )}\n        ref={canvasRef}\n        onPointerDown={(e) => {\n          pointerInteracting.current = e.clientX\n          updatePointerInteraction(e.clientX)\n        }}\n        onPointerUp={() => updatePointerInteraction(null)}\n        onPointerOut={() => updatePointerInteraction(null)}\n        onMouseMove={(e) => updateMovement(e.clientX)}\n        onTouchMove={(e) =>\n          e.touches[0] && updateMovement(e.touches[0].clientX)\n        }\n      />\n    </div>\n  )\n}\n",
+      "sha256": "76422bf378c6503883706fe7af90132f7716dbe383fab7728a95c95e4d16cfd0",
+      "upstreamPath": "apps/www/registry/magicui/globe.tsx",
+      "upstreamSha256": "76422bf378c6503883706fe7af90132f7716dbe383fab7728a95c95e4d16cfd0",
+      "transformation": "Rewrite @/registry/magicui imports to @/components/magicui."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add cobe motion",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add cobe motion",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "globe",
+    "upstreamPageUrl": "https://magicui.design/docs/components/globe",
+    "upstreamDetailUrl": "https://github.com/magicuidesign/magicui/tree/2d671cc6c0e0f40e28682c9cbddd16694dcfe627",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/2d671cc6c0e0f40e28682c9cbddd16694dcfe627/apps/www/content/docs/components/globe.mdx",
+    "transformations": [
+      "Rewrite @/registry/magicui imports to @/components/magicui.",
+      "Materialize registry CSS and theme variables as a component stylesheet when present."
+    ]
+  },
+  "documentation": "---\ntitle: Globe\ndate: 2023-08-02\ndescription: An autorotating, interactive, and highly performant globe made using WebGL.\nauthor: dillionverma\npublished: true\nvideo: https://cdn.magicui.design/globe.mp4\n---\n\n<ComponentPreview name=\"globe-demo\" />\n\n## Installation\n\n<Tabs defaultValue=\"cli\">\n\n<TabsList>\n  <TabsTrigger value=\"cli\">CLI</TabsTrigger>\n  <TabsTrigger value=\"manual\">Manual</TabsTrigger>\n</TabsList>\n<TabsContent value=\"cli\">\n\n```bash\nnpx shadcn@latest add @magicui/globe\n```\n\n</TabsContent>\n\n<TabsContent value=\"manual\">\n\n<Steps>\n\n<Step>Install the following dependencies:</Step>\n\n```bash\nnpm install cobe@0.6.4 motion\n```\n\n<Step>Copy and paste the following code into your project.</Step>\n\n<ComponentSource name=\"globe\" />\n\n<Step>Update the import paths to match your project setup.</Step>\n\n</Steps>\n\n</TabsContent>\n\n</Tabs>\n\n## Usage\n\n```tsx showLineNumbers\nimport { Globe } from \"@/components/ui/globe\"\n```\n\n```tsx showLineNumbers\n<Globe />\n```\n\n## Props\n\n| Prop        | Type          | Default | Description                                                                           |\n| ----------- | ------------- | ------- | ------------------------------------------------------------------------------------- |\n| `className` | `string`      | `-`     | The css classes for the component                                                     |\n| `config`    | `COBEOptions` | `{}`    | The configuration options for the globe. More details [here](https://cobe.vercel.app) |\n\n## Credits\n\nThis component is built on top of [Cobe](https://cobe.vercel.app).\n"
+}

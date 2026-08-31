@@ -1,5 +1,6 @@
 {
   "id": "beui:animated-badge",
+  "sourceId": "beui",
   "slug": "animated-badge",
   "name": "Animated Badge",
   "description": "Status badge with animated state icons, pulse feedback and compact size variants.",
@@ -52,7 +53,7 @@
     "repository": "https://github.com/starc007/ui-components",
     "commit": "afba7fa055ddc589823d658f300a3b2b9fa7b305",
     "registrySha256": "e5034f157413df8ad553899886e5f98ad8e6a94f40be23c02a90181b192fcd7c",
-    "importedAt": "2026-08-29T20:21:07.407Z",
+    "importedAt": "2026-08-31T14:06:18.628Z",
     "license": {
       "spdx": "MIT",
       "copyright": "Copyright (c) 2026 Saurabh Chauhan",
@@ -88,6 +89,8 @@
   "install": {
     "packageManager": "pnpm",
     "dependencyCommand": "pnpm add clsx lucide-react motion react tailwind-merge",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
     "instructions": [
       "Install external packages: pnpm add clsx lucide-react motion react tailwind-merge",
       "Copy every returned file to its stated project-relative path.",
@@ -99,7 +102,8 @@
     "upstreamSlug": "animated-badge",
     "upstreamPageUrl": "https://beui.dev/components/motion/animated-badge",
     "upstreamDetailUrl": "https://beui.dev/r/animated-badge",
-    "upstreamMarkdownUrl": "https://beui.dev/components/motion/animated-badge.md"
+    "upstreamMarkdownUrl": "https://beui.dev/components/motion/animated-badge.md",
+    "transformations": []
   },
   "documentation": "---\ntitle: \"Animated Badge\"\ndescription: \"Status badge with animated state icons, pulse feedback and compact size variants.\"\ncategory: \"Components\"\npublishedAt: \"2026-06-05\"\nupdatedAt: \"2026-06-10\"\ndocumentation: \"https://beui.dev/components/motion/animated-badge\"\nmarkdown: \"https://beui.dev/components/motion/animated-badge.md\"\nlicense: \"MIT\"\n---\n\n# Animated Badge\n\n> Status badge with animated state icons, pulse feedback and compact size variants.\n\n## Install\n\n```bash\nnpx shadcn@latest add @beui/animated-badge\n```\n\n## Dependencies\n\n- `clsx`\n- `lucide-react`\n- `motion`\n- `react`\n- `tailwind-merge`\n\n## Usage\n\n```tsx\n\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { AnimatedBadge, type AnimatedBadgeStatus } from \"@/components/motion/animated-badge\";\n\nconst STATES: Array<{ status: AnimatedBadgeStatus; label: string }> = [\n  { status: \"loading\", label: \"Syncing\" },\n  { status: \"success\", label: \"Synced\" },\n  { status: \"warning\", label: \"Review\" },\n  { status: \"danger\", label: \"Failed\" },\n];\n\nexport function AnimatedBadgePreview() {\n  const [active, setActive] = useState(0);\n  const state = STATES[active];\n\n  useEffect(() => {\n    const id = window.setInterval(() => {\n      setActive((current) => (current + 1) % STATES.length);\n    }, 1600);\n\n    return () => window.clearInterval(id);\n  }, []);\n\n  return (\n    <div className=\"flex flex-col items-center gap-6\">\n      <div className=\"flex h-16 items-center justify-center\">\n        <AnimatedBadge status={state.status} size=\"md\" aria-live=\"polite\">\n          {state.label}\n        </AnimatedBadge>\n      </div>\n\n      <div className=\"grid grid-cols-2 gap-2 sm:grid-cols-3\">\n        <AnimatedBadge status=\"neutral\" size=\"sm\">Queued</AnimatedBadge>\n        <AnimatedBadge status=\"info\" size=\"sm\">Live</AnimatedBadge>\n        <AnimatedBadge status=\"loading\" size=\"sm\">Indexing</AnimatedBadge>\n        <AnimatedBadge status=\"success\" size=\"sm\">Verified</AnimatedBadge>\n        <AnimatedBadge status=\"warning\" size=\"sm\">Pending</AnimatedBadge>\n        <AnimatedBadge status=\"danger\" size=\"sm\">Blocked</AnimatedBadge>\n      </div>\n    </div>\n  );\n}\n```\n\n## API Reference\n\n### AnimatedBadge\n\n| Prop | Type | Default | Required | Description |\n| --- | --- | --- | --- | --- |\n| `status` | `\"success\" \\| \"neutral\" \\| \"info\" \\| \"warning\" \\| \"danger\" \\| \"loading\"` | `neutral` | No | — |\n| `size` | `\"sm\" \\| \"md\"` | `md` | No | — |\n| `icon` | `ReactNode` | — | No | — |\n| `showIcon` | `boolean` | `true` | No | — |\n| `pulse` | `boolean` | `status === \"loading\"` | No | — |\n| `contentKey` | `string \\| number` | — | No | — |\n| `className` | `string` | — | No | — |\n\n## Source\n\n- Registry detail: https://beui.dev/r/animated-badge\n- Raw source: https://beui.dev/r/animated-badge/raw\n- GitHub: https://github.com/starc007/ui-components\n"
 }

@@ -49,7 +49,7 @@ export function CatalogueShowcase() {
 
       <div className="category-links">
         {categories.map((category, index) => (
-          <a href="#product" key={category}>
+          <a href={`/components?category=${category === 'Actions' || category === 'Navigation' || category === 'Motion' ? 'motion' : 'blocks'}`} key={category}>
             <span>0{index + 1}</span><p>{category}</p><i aria-hidden="true">↗</i>
           </a>
         ))}
