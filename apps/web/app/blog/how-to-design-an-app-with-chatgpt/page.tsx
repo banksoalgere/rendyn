@@ -8,7 +8,7 @@ const title = 'ChatGPT App Design: How to Design an App With ChatGPT';
 const description =
   'Learn a practical ChatGPT app design workflow, from product brief and user flows to an accessible, tested prototype your team can build.';
 const canonicalUrl =
-  'https://designmcp.jneilbaker.chatgpt.site/blog/how-to-design-an-app-with-chatgpt';
+  'https://designmcp-web.jneilbaker.workers.dev/blog/how-to-design-an-app-with-chatgpt';
 
 export const metadata: Metadata = {
   title: `${title} | DesignMCP`,
