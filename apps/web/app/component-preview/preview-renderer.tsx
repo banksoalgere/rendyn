@@ -1,5 +1,6 @@
 'use client';
 
+import { useSyncExternalStore } from 'react';
 import { externalPreviews } from '../../../preview/vendor-root/components/external-previews';
 import { previews } from '../../../preview/vendor-root/components/previews';
 
@@ -9,7 +10,15 @@ interface PreviewRendererProps {
   previewKey: string;
 }
 
+const subscribe = () => () => {};
+
 export function PreviewRenderer({ description, name, previewKey }: PreviewRendererProps) {
+  const mounted = useSyncExternalStore(subscribe, () => true, () => false);
+
+  if (!mounted) {
+    return <div aria-label={`Loading ${name} preview`} role="status" />;
+  }
+
   const Preview = previews[previewKey] ?? externalPreviews[previewKey];
   if (Preview) return <Preview />;
 
