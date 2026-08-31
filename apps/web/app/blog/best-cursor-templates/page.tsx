@@ -6,7 +6,7 @@ import { SiteHeader } from '../../components/site-header';
 const pageTitle = '7 Best Cursor Templates for Websites in 2026';
 const pageDescription =
   'Compare seven Cursor website templates and starter approaches for SaaS, content, full-stack apps, and polished UI, with practical selection criteria.';
-const articleUrl = 'https://designmcp.jneilbaker.chatgpt.site/blog/best-cursor-templates';
+const articleUrl = 'https://designmcp-web.jneilbaker.workers.dev/blog/best-cursor-templates';
 
 export const metadata: Metadata = {
   title: `${pageTitle} | DesignMCP`,
@@ -61,7 +61,7 @@ const articleSchema = {
   publisher: {
     '@type': 'Organization',
     name: 'DesignMCP',
-    url: 'https://designmcp.jneilbaker.chatgpt.site',
+    url: 'https://designmcp-web.jneilbaker.workers.dev',
   },
 };
 
