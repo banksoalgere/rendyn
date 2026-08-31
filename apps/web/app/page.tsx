@@ -1,3 +1,5 @@
+import { ProductMenu } from './components/product-menu';
+
 const codingAgents = [
   { name: 'Codex', logo: '/agent-logos/codex.svg' },
   { name: 'Claude Code', logo: '/agent-logos/claude-code.svg' },
@@ -65,10 +67,11 @@ export default function Home() {
       <header className="site-header page-width">
         <Brand />
         <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="#how-it-works">Product <span>⌄</span></a>
-          <a href="#components">Components</a>
-          <a href="#for-teams">For teams <span>⌄</span></a>
-          <a href="#docs">Resources <span>⌄</span></a>
+          <ProductMenu />
+          <a href="#how-it-works">How it works</a>
+          <a href="/pricing">Pricing</a>
+          <a href="#for-teams">For teams</a>
+          <a href="#docs">Resources</a>
         </nav>
         <div className="header-actions">
           <a className="text-link" href="#docs">Sign in</a>
@@ -304,7 +307,7 @@ export default function Home() {
         </div>
         <div className="footer-nav">
           {footerGroups.map(([title, links]) => (
-            <div key={title as string}><strong>{title}</strong>{(links as string[]).map((link) => <a href="#top" key={link}>{link}</a>)}</div>
+            <div key={title as string}><strong>{title}</strong>{(links as string[]).map((link) => <a href={link === 'Pricing' ? '/pricing' : '#top'} key={link}>{link}</a>)}</div>
           ))}
         </div>
         <div className="footer-bottom"><span>© 2026 DesignMCP</span><span>Built for better product decisions.</span></div>
