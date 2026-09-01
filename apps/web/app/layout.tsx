@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://designmcp.jneilbaker.chatgpt.site'),
   title: 'DesignMCP | Give your coding agent great taste',
   description: 'A curated catalogue of polished interface components, visual previews and complete code for coding agents.',
+  icons: {
+    icon: '/favicon.png',
+  },
   openGraph: {
     title: 'DesignMCP | Give your coding agent great taste',
     description: 'Polished interface components, visual previews and complete code for coding agents.',
