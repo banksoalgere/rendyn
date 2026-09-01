@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Brand } from '../../components/brand';
 import styles from './page.module.css';
 
-const pageTitle = 'Cursor Design: How to Make Cursor Better at UI | DesignMCP';
+const pageTitle = 'Cursor Design: How to Make Cursor Better at UI | Rendyn';
 const pageDescription = 'A practical Cursor design workflow for better UI: encode your design system, choose stronger components, prompt in passes, and verify in a real browser.';
 
 export const metadata: Metadata = {
@@ -195,7 +195,7 @@ export default function CursorDesignGuide() {
   return (
     <main className={styles.page} id="top">
       <header className={styles.header}>
-        <Brand href="/" label="DesignMCP home" />
+        <Brand href="/" label="Rendyn home" />
         <nav aria-label="Guide navigation">
           <a href="#workflow">Workflow</a>
           <a href="#prompt">Prompt</a>
@@ -217,8 +217,8 @@ export default function CursorDesignGuide() {
             a visual system, strong component choices, and a browser loop that makes taste testable.
           </p>
           <div className={styles.byline}>
-            <span className={styles.authorMark} aria-hidden="true">D</span>
-            <p>By <strong>DesignMCP Editorial</strong></p>
+            <span className={styles.authorMark} aria-hidden="true">R</span>
+            <p>By <strong>Rendyn Editorial</strong></p>
             <span aria-hidden="true">•</span>
             <time dateTime="2026-08-29">29 August 2026</time>
           </div>
@@ -246,10 +246,10 @@ export default function CursorDesignGuide() {
             </ol>
           </div>
           <aside className={styles.frameCta}>
-            <span className={styles.miniMark} aria-hidden="true">D</span>
+            <span className={styles.miniMark} aria-hidden="true">R</span>
             <h2>Start with better building blocks.</h2>
             <p>Give Cursor a small, relevant set of polished components instead of another blank canvas.</p>
-            <a href="/#catalogue">Explore DesignMCP <Arrow /></a>
+            <a href="/#catalogue">Explore Rendyn <Arrow /></a>
             <small>React · TypeScript · complete source</small>
           </aside>
         </section>
@@ -264,9 +264,9 @@ export default function CursorDesignGuide() {
                 ))}
               </ol>
               <div className={styles.asideCta}>
-                <span>DesignMCP</span>
+                <span>Rendyn</span>
                 <strong>From interface intent to production-ready source.</strong>
-                <a href="/#early-access">Get early access <Arrow /></a>
+                <a href="/pricing">Start 7-day trial <Arrow /></a>
               </div>
             </div>
           </aside>
@@ -379,7 +379,7 @@ export default function CursorDesignGuide() {
                 <article><span>Deliver</span><h3>Use the complete source</h3><p>Bring the chosen component, states, supporting files, and install instructions into the existing system.</p></article>
               </div>
               <div className={styles.productCta}>
-                <div><span className={styles.miniMark} aria-hidden="true">D</span><p><strong>DesignMCP</strong><small>A curated component catalogue for coding agents</small></p></div>
+                <div><span className={styles.miniMark} aria-hidden="true">R</span><p><strong>Rendyn</strong><small>A curated component catalogue for coding agents</small></p></div>
                 <a href="/#product">See how it works <Arrow /></a>
               </div>
             </section>
@@ -505,7 +505,7 @@ export default function CursorDesignGuide() {
       </article>
 
       <section className={styles.related} aria-labelledby="related-title">
-        <div><p>From the resource library</p><h2 id="related-title">Related DesignMCP reading</h2></div>
+        <div><p>From the resource library</p><h2 id="related-title">Related Rendyn reading</h2></div>
         <div>
           {relatedGuides.map((guide) => (
             <a aria-label={`Find ${guide.title} in the resource library`} href={guide.href} key={guide.title}>
@@ -518,14 +518,14 @@ export default function CursorDesignGuide() {
       <section className={styles.finalCta} aria-labelledby="final-cta-title">
         <p>Put the Cursor design workflow to work</p>
         <h2 id="final-cta-title">Give Cursor better<br />design context.</h2>
-        <span>DesignMCP helps Cursor find, compare, and implement polished interface components with the context to choose well.</span>
-        <div><a href="/#catalogue">Browse the catalogue <Arrow /></a><a href="/#early-access">Get early access</a></div>
+        <span>Rendyn helps Cursor find, compare, and implement polished interface components with the context to choose well.</span>
+        <div><a href="/#catalogue">Browse the catalogue <Arrow /></a><a href="/pricing">Start 7-day trial</a></div>
       </section>
 
       <footer className={styles.footer}>
-        <div><Brand href="/" label="DesignMCP home" /><p>A curated component catalogue for the coding agents you already use.</p></div>
+        <div><Brand href="/" label="Rendyn home" /><p>A curated component catalogue for the coding agents you already use.</p></div>
         <nav aria-label="Footer navigation"><a href="/#product">Product</a><a href="/#catalogue">Components</a><a href="/#resources">Resources</a><a href="#top">Back to top ↑</a></nav>
-        <p>© 2026 DesignMCP <span>Editorial guide · Cursor is a trademark of its respective owner.</span></p>
+        <p>© 2026 Rendyn <span>Editorial guide · Cursor is a trademark of its respective owner.</span></p>
       </footer>
     </main>
   );

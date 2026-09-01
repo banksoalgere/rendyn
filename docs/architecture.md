@@ -16,7 +16,7 @@ Native Cloudflare Worker / MCP resource server ---> OpenAI Embeddings (optional)
       +----> internal Next.js previews
       |
       +----> Supabase Auth + Postgres
-              users, subscriptions, atomic unlocks
+              users, subscriptions, paid access ledger
 ```
 
 ## Code boundaries
@@ -26,7 +26,7 @@ The repository keeps orchestration thin and puts behavior behind explicit module
 - `packages/catalog` owns catalog types, runtime schemas, safe path resolution, indexed lookup, pagination, search, and validated filesystem/snapshot loading. Every catalog or embedding JSON file is validated before use.
 - `apps/api/src/routes` owns HTTP transport only. Shared catalog response shaping lives in `catalog-presenter.ts`, so HTTP and MCP return the same public representation.
 - `apps/api/src/mcp.ts` only creates the MCP server. Each tool lives under `apps/api/src/mcp-tools`, grouped into search, source retrieval, and catalogue navigation.
-- `apps/api/src/entitlements.ts` owns Supabase quota claims and validates complete RPC responses before returning them to a route or MCP tool.
+- `apps/api/src/entitlements.ts` owns trial-or-paid access claims and validates complete RPC responses before returning them to a route or MCP tool.
 - `scripts/import-catalog.ts` coordinates the beUI base import and the Magic UI/Kibo UI adapters. Fetch limits, URL/path policy, external schemas, metadata extraction, concurrency, pinned-repository handling, licence checks, and component assembly live in focused import modules.
 - `apps/web/app/page.tsx` composes independent landing-page sections from `apps/web/app/components`. It stays an independent deployable package while its source is versioned with the rest of the monorepo.
 
@@ -58,7 +58,7 @@ Supabase solves the stateful commercial concerns cleanly:
 - dynamic client registration for compatible MCP hosts
 - asymmetric JWTs that the MCP service validates locally through JWKS
 - row-level security for account data
-- PostgreSQL transactions and advisory locks for quota claims
+- PostgreSQL transactions for subscription and component-access accounting
 
 The MCP service is a protected resource server. It validates access tokens but never issues or refreshes them.
 
@@ -81,9 +81,9 @@ The official MCP TypeScript SDK v2 provides the current Streamable HTTP protocol
 
 ## Why a separate preview renderer
 
-Preview code is executable UI, while the API handles secrets and entitlements. Keeping them separate means:
+Preview code is executable UI, while the API handles bearer-token entitlements. Keeping them separate means:
 
-- preview routes never receive Supabase service credentials;
+- preview and MCP routes never receive Supabase service credentials;
 - the preview service can have a stricter CSP and independent scaling;
 - source/API deployments are not coupled to Next.js rendering;
 - the human-facing site can embed the same internal preview URLs later.
@@ -92,6 +92,6 @@ The importer copies only the pinned component runtime, selected preview modules,
 
 ## Commercial access model
 
-Anonymous browser identity is a signed, HTTP-only cookie. It receives four unique lifetime component unlocks. Creating an account supplies four further signup unlocks. Recurring free allowance begins on the first day of the following calendar month and supplies four unique components each month. An unlock is permanent, so asking for the same component again never spends another allowance.
+Public catalogue pages, metadata and previews remain browseable. Complete source delivery and every MCP tool require an authenticated subscription in either `trialing` or `active` state with a future access boundary.
 
-The database claim functions take a per-identity transaction lock before counting/inserting. Concurrent agent requests cannot exceed a quota. Active or trialing paid subscriptions bypass the free allowance; `$9/month` checkout and provider webhooks remain a frontend/billing integration.
+Stripe Checkout collects a payment card when the user starts a seven-day full-access trial. The first subscription charge is due on day 8 unless the user cancels beforehand. Signed Stripe webhooks are authoritative: the website Worker verifies the raw request body, then a service-role-only database function records the newest provider event and ignores out-of-order delivery. Trialing access uses `trial_end`; active access uses the subscription item's `current_period_end`. The MCP Worker holds no Stripe or Supabase service-role secret.

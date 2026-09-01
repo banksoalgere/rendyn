@@ -1,6 +1,6 @@
-# DesignMCP
+# Rendyn
 
-DesignMCP is a commercial, agent-first catalogue of high-quality React, TypeScript, and Tailwind UI source. Agents search by intent, inspect internally hosted previews, and unlock complete copy-paste implementations without reading or modifying the user's repository.
+Rendyn is a commercial, agent-first catalogue of high-quality React, TypeScript, and Tailwind UI source. Agents search by intent, inspect internally hosted previews, and unlock complete copy-paste implementations without reading or modifying the user's repository.
 
 The current snapshot contains 189 verified MIT components from three immutable sources:
 
@@ -22,7 +22,8 @@ Seven Magic UI registry records are deliberately excluded because their files ar
 - Deterministic lexical search, with optional hosted OpenAI query embeddings when a matching generated embedding snapshot is present. No vector database is required.
 - Public search, category browsing, component metadata, interactive previews, and numbered visual contact sheets.
 - Complete source retrieval with dependencies, install instructions, content hashes, source revision, and the full MIT notice.
-- Transaction-safe quota claims: four anonymous lifetime unlocks, four account signup unlocks, then four unique components per calendar month starting the next month. Existing unlocks remain accessible. Active paid subscriptions are unrestricted.
+- Card-backed Stripe Checkout with a seven-day full-access trial, first charge on day 8, signed webhook synchronization, and a self-service billing portal.
+- Trial-or-paid enforcement before every MCP tool and complete source response. Public catalogue discovery and previews remain browseable.
 - A pinned multi-source importer that rejects registry drift, modified MIT grants, Commons Clause input, unsafe paths, missing source, and unreviewed transformations.
 
 ## Why this backend
@@ -69,14 +70,13 @@ Updating any source is intentionally manual: review its new commit, registry or 
 
 The website is public at `https://rendyn.dev`, and the native Cloudflare MCP service is live at `https://mcp.rendyn.dev/mcp`. Production health, catalogue search, preview media, protected-resource discovery, Google provider configuration, ES256 signing, and dynamic client registration are live.
 
-These remain before authenticated MCP access can be called fully verified:
+The production release includes the seven-day trial and paid-access boundary. These remain before authenticated MCP access can be called fully verified:
 
 - complete one real hosted MCP authorization/tool run from a signed-in account
-- pricing/checkout and the billing webhook that writes `subscriptions`
 - edge rate limits, analytics, and alerts
 
-Do not expose `SUPABASE_SERVICE_ROLE_KEY` to either browser application.
+The website Worker uses `SUPABASE_SERVICE_ROLE_KEY` only in its server-side, signature-verified Stripe webhook. Never expose it through a `NEXT_PUBLIC_` variable or browser bundle. The MCP Worker does not receive a service-role key.
 
 ## Licence
 
-DesignMCP's own code has not yet been assigned a distribution licence. Imported files retain the separate beUI, Magic UI, and Kibo UI notices under `catalog/source/`. See [Catalogue policy](docs/catalog-policy.md) before adding another source.
+Rendyn's own code has not yet been assigned a distribution licence. Imported files retain the separate beUI, Magic UI, and Kibo UI notices under `catalog/source/`. See [Catalogue policy](docs/catalog-policy.md) before adding another source.

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: 'A practical workflow for giving a Cursor-built website clear art direction, consistent UI and a rigorous browser QA pass.',
     type: 'article',
     publishedTime: '2026-08-29T00:00:00+01:00',
-    authors: ['DesignMCP Editorial'],
+    authors: ['Rendyn Editorial'],
     images: [],
   },
   twitter: {
@@ -89,7 +89,7 @@ function ArticleHeroVisual() {
     <div
       className="article-hero-visual"
       role="img"
-      aria-label="A generic website treatment refined into a deliberate DesignMCP interface"
+      aria-label="A generic website treatment refined into a deliberate Rendyn interface"
     >
       <div className="article-browser-bar">
         <div aria-hidden="true"><i /><i /><i /></div>
@@ -131,7 +131,7 @@ export default function CursorWebsiteDesignGuide() {
         <header className="article-hero grid-field">
           <div className="article-hero-copy">
             <div className="article-meta">
-              <span className="article-author"><b aria-hidden="true">D</b> By <strong>DesignMCP Editorial</strong></span><i aria-hidden="true" />
+              <span className="article-author"><b aria-hidden="true">R</b> By <strong>Rendyn Editorial</strong></span><i aria-hidden="true" />
               <span>Design field guide</span><i aria-hidden="true" />
               <span>12 min read</span><i aria-hidden="true" />
               <time dateTime="2026-08-29">August 29, 2026</time>
@@ -240,7 +240,7 @@ export default function CursorWebsiteDesignGuide() {
               </div>
               <div className="article-product-demo">
                 <div className="product-demo-head">
-                  <span>Illustrative product workflow</span><i>DesignMCP · concept</i>
+                  <span>Illustrative product workflow</span><i>Rendyn · concept</i>
                 </div>
                 <div className="product-demo-query">
                   <span aria-hidden="true">✦</span>
@@ -400,7 +400,7 @@ the primary interactions, and report console or network errors.`}</code></pre>
 
             <section className="article-related" aria-labelledby="related-guides-title">
               <p className="article-section-label">Coming next</p>
-              <h2 id="related-guides-title">Explore what DesignMCP is covering next</h2>
+              <h2 id="related-guides-title">Explore what Rendyn is covering next</h2>
               <div>
                 <a href="/#choose-ui-components-by-product-intent">
                   <span>Planned guide · Component strategy</span>
@@ -427,7 +427,7 @@ the primary interactions, and report console or network errors.`}</code></pre>
               </p>
               <div>
                 <a className="button" href="/#catalogue">Give your agent better components <span aria-hidden="true">↗</span></a>
-                <a className="button button--ghost" href="/#how-it-works">See how DesignMCP works</a>
+                <a className="button button--ghost" href="/#how-it-works">See how Rendyn works</a>
               </div>
             </section>
           </div>

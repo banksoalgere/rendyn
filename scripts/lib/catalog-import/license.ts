@@ -29,6 +29,6 @@ export function assertStandardMitLicense(
   );
   invariant(
     !license.toLowerCase().includes("commons clause"),
-    "Commons Clause sources cannot be redistributed by DesignMCP",
+    "Commons Clause sources cannot be redistributed by Rendyn",
   );
 }

@@ -1,5 +1,5 @@
 import { resolve } from "node:path";
-import { CatalogStore } from "@designmcp/catalog";
+import { CatalogStore } from "@rendyn/catalog";
 import { readConfig, type AppConfig } from "./config.js";
 import { createNodePreviewMedia } from "./contact-sheet.js";
 import { buildApp } from "./server.js";

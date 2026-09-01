@@ -5,7 +5,7 @@ import { SiteFooter } from '../../components/site-footer';
 import { SiteHeader } from '../../components/site-header';
 
 export const metadata: Metadata = {
-  title: 'Best Vibe Coding Templates for Better UI | DesignMCP',
+  title: 'Best Vibe Coding Templates for Better UI | Rendyn',
   description:
     'Compare the best vibe coding templates and UI template approaches for polished, editable apps—plus a practical checklist for choosing the right starting point.',
   openGraph: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: '2026-08-29T00:00:00+01:00',
     modifiedTime: '2026-08-29T00:00:00+01:00',
-    authors: ['DesignMCP Editorial'],
+    authors: ['Rendyn Editorial'],
   },
   twitter: {
     card: 'summary',
@@ -184,8 +184,8 @@ export default function VibeCodingTemplatesPage() {
           <div className="editorial-hero-copy">
             <p className="editorial-breadcrumb"><a href="/#resources">Guides</a><span>/</span>Template strategy</p>
             <div className="editorial-byline">
-              <span className="editorial-author-mark" aria-hidden="true">D</span>
-              <p><strong>By DesignMCP Editorial</strong><span>Researched from primary product sources</span></p>
+              <span className="editorial-author-mark" aria-hidden="true">R</span>
+              <p><strong>By Rendyn Editorial</strong><span>Researched from primary product sources</span></p>
               <time dateTime="2026-08-29">29 August 2026</time>
               <i aria-hidden="true">·</i>
               <span>12 min read</span>
@@ -199,7 +199,7 @@ export default function VibeCodingTemplatesPage() {
           </div>
 
           <div className="editorial-hero-frame" role="img" aria-label="A template evaluation board showing structure, visual quality, and code ownership">
-            <div className="editorial-frame-top"><span>Template fit board</span><span>DesignMCP editorial</span></div>
+            <div className="editorial-frame-top"><span>Template fit board</span><span>Rendyn editorial</span></div>
             <div className="editorial-frame-grid" aria-hidden="true">
               <div className="editorial-template-card editorial-template-card--structure"><span>01</span><strong>Structure</strong><i /></div>
               <div className="editorial-template-card editorial-template-card--visual"><span>02</span><strong>Visual system</strong><i /></div>
@@ -222,7 +222,7 @@ export default function VibeCodingTemplatesPage() {
             <div className="editorial-side-cta">
               <span>Need a smaller starting point?</span>
               <strong>Give your coding agent a curated component catalogue.</strong>
-              <a href="/#catalogue">Explore DesignMCP <span aria-hidden="true">↗</span></a>
+              <a href="/#catalogue">Explore Rendyn <span aria-hidden="true">↗</span></a>
             </div>
           </aside>
 
@@ -337,12 +337,12 @@ export default function VibeCodingTemplatesPage() {
               </div>
             </section>
 
-            <aside className="editorial-inline-cta" aria-label="DesignMCP component catalogue">
+            <aside className="editorial-inline-cta" aria-label="Rendyn component catalogue">
               <div>
                 <p className="eyebrow">The component-first alternative</p>
                 <h2>Use a whole template only when you need a whole template.</h2>
                 <p>
-                  DesignMCP helps coding agents search polished interface components by product intent,
+                  Rendyn helps coding agents search polished interface components by product intent,
                   compare focused options, and retrieve complete source with dependencies and install
                   steps. It is designed for the moment your architecture already exists but the right UI does not.
                 </p>
@@ -427,7 +427,7 @@ export default function VibeCodingTemplatesPage() {
               <p className="eyebrow">Start with stronger ingredients</p>
               <h2>Your coding agent can move fast without designing from zero.</h2>
               <p>Give it focused visual options, product context, and complete source it can safely adapt inside the codebase you already trust.</p>
-              <div><a className="button" href="/#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></a><a className="button button--ghost" href="/#early-access">Join early access</a></div>
+              <div><a className="button" href="/#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></a><a className="button button--ghost" href="/pricing">Start 7-day trial</a></div>
             </section>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { catalogueEntries } from '../lib/catalogue';
 
-const siteUrl = 'https://designmcp.jneilbaker.chatgpt.site';
+const siteUrl = 'https://rendyn.dev';
 const publicRoutes = [
   '/',
   '/components',

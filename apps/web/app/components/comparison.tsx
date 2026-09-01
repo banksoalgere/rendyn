@@ -10,7 +10,7 @@ export function Comparison() {
     <section className="comparison-section">
       <div className="section-shell comparison-grid">
         <div className="comparison-copy">
-          <p className="eyebrow">The DesignMCP effect</p>
+          <p className="eyebrow">The Rendyn effect</p>
           <h2>Better ingredients<br /><span>for every interface.</span></h2>
         </div>
         <div className="comparison-list">

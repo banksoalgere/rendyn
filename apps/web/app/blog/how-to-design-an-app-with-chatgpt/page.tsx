@@ -8,12 +8,12 @@ const title = 'ChatGPT App Design: How to Design an App With ChatGPT';
 const description =
   'Learn a practical ChatGPT app design workflow, from product brief and user flows to an accessible, tested prototype your team can build.';
 const canonicalUrl =
-  'https://designmcp-web.jneilbaker.workers.dev/blog/how-to-design-an-app-with-chatgpt';
+  'https://rendyn.dev/blog/how-to-design-an-app-with-chatgpt';
 
 export const metadata: Metadata = {
-  title: `${title} | DesignMCP`,
+  title: `${title} | Rendyn`,
   description,
-  authors: [{ name: 'DesignMCP Editorial' }],
+  authors: [{ name: 'Rendyn Editorial' }],
   alternates: {
     canonical: canonicalUrl,
   },
@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     description,
     type: 'article',
     url: canonicalUrl,
-    siteName: 'DesignMCP',
+    siteName: 'Rendyn',
     locale: 'en_GB',
     publishedTime: '2026-08-29T00:00:00.000Z',
     modifiedTime: '2026-08-29T00:00:00.000Z',
-    authors: ['DesignMCP Editorial'],
+    authors: ['Rendyn Editorial'],
     section: 'Product design',
     tags: ['ChatGPT app design', 'app prototyping', 'product design'],
     images: [],
@@ -194,13 +194,13 @@ const faqs = [
 function ArticleHeader() {
   return (
     <header className="chatgpt-app-header">
-      <Brand href="/" label="DesignMCP home" />
+      <Brand href="/" label="Rendyn home" />
       <nav className="chatgpt-app-header-nav" aria-label="Article navigation">
         <a href="#workflow">Workflow</a>
         <a href="#prompt">Prompt</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a className="button button--small" href="/#early-access">Connect DesignMCP</a>
+      <a className="button button--small" href="/pricing">Connect Rendyn</a>
     </header>
   );
 }
@@ -236,7 +236,7 @@ export default function ChatGPTAppDesignArticle() {
             <div className="chatgpt-app-meta">
               <span>Design workflow</span>
               <span aria-hidden="true">•</span>
-              <span>By DesignMCP Editorial</span>
+              <span>By Rendyn Editorial</span>
               <span aria-hidden="true">•</span>
               <time dateTime="2026-08-29">August 29, 2026</time>
               <span aria-hidden="true">•</span>
@@ -263,7 +263,7 @@ export default function ChatGPTAppDesignArticle() {
               <div className="chatgpt-app-side-cta">
                 <span>Building in code?</span>
                 <strong>Give your agent stronger interface choices.</strong>
-                <a href="/#catalogue">Explore DesignMCP <i aria-hidden="true">↗</i></a>
+                <a href="/#catalogue">Explore Rendyn <i aria-hidden="true">↗</i></a>
               </div>
             </aside>
 
@@ -395,17 +395,17 @@ export default function ChatGPTAppDesignArticle() {
 
             <aside className="chatgpt-app-product-demo" aria-labelledby="product-demo-heading">
               <div className="chatgpt-app-product-demo-copy">
-                <p className="chatgpt-app-kicker">DesignMCP in the workflow</p>
+                <p className="chatgpt-app-kicker">Rendyn in the workflow</p>
                 <h2 id="product-demo-heading">Give the agent product context before it chooses the component.</h2>
                 <p>
-                  Once the journey and states are clear, DesignMCP can help a coding agent
+                  Once the journey and states are clear, Rendyn can help a coding agent
                   compare polished interface options by product intent, then deliver the
                   chosen source and setup details into the build.
                 </p>
                 <a href="/#how-it-works">How agent-ready delivery works <span aria-hidden="true">↗</span></a>
               </div>
               <div className="chatgpt-app-product-console" aria-hidden="true">
-                <div><span>designmcp / component search</span><i>Live catalogue</i></div>
+                <div><span>rendyn / component search</span><i>Live catalogue</i></div>
                 <p><strong>Request</strong> “A calm confirmation action for a high-trust account change.”</p>
                 <ol>
                   <li><span>01</span><div><strong>Signal button</strong><p>Clear hierarchy · low motion · complete states</p></div><i>Best fit</i></li>
@@ -489,11 +489,11 @@ export default function ChatGPTAppDesignArticle() {
 
             <section className="chatgpt-app-related-guides" aria-labelledby="chatgpt-app-related-guides-heading">
               <p className="chatgpt-app-kicker">Continue exploring</p>
-              <h2 id="chatgpt-app-related-guides-heading">Related DesignMCP resources.</h2>
+              <h2 id="chatgpt-app-related-guides-heading">Related Rendyn resources.</h2>
               <div>
                 <a href="/#product">
                   <span>Product overview</span>
-                  <strong>See how DesignMCP improves an agent&apos;s interface choices</strong>
+                  <strong>See how Rendyn improves an agent&apos;s interface choices</strong>
                   <i aria-hidden="true">↗</i>
                 </a>
                 <a href="/#catalogue">
@@ -513,7 +513,7 @@ export default function ChatGPTAppDesignArticle() {
               <p className="chatgpt-app-kicker">Build with better ingredients</p>
               <h2>Give the prototype a point of view.</h2>
               <p>
-                DesignMCP helps coding agents choose polished interface components with
+                Rendyn helps coding agents choose polished interface components with
                 visual previews, product context, complete source, and install guidance.
               </p>
               <div>

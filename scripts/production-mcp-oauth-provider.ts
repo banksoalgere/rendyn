@@ -19,7 +19,7 @@ export class ProductionOAuthProvider implements OAuthClientProvider {
 
   get clientMetadata(): OAuthClientMetadata {
     return {
-      client_name: "DesignMCP production verifier",
+      client_name: "Rendyn production verifier",
       redirect_uris: [this.redirectUrl.toString()],
       grant_types: ["authorization_code", "refresh_token"],
       response_types: ["code"],

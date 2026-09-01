@@ -6,19 +6,19 @@ import { SiteHeader } from '../../components/site-header';
 const pageTitle = '7 Best Cursor Templates for Websites in 2026';
 const pageDescription =
   'Compare seven Cursor website templates and starter approaches for SaaS, content, full-stack apps, and polished UI, with practical selection criteria.';
-const articleUrl = 'https://designmcp-web.jneilbaker.workers.dev/blog/best-cursor-templates';
+const articleUrl = 'https://rendyn.dev/blog/best-cursor-templates';
 
 export const metadata: Metadata = {
-  title: `${pageTitle} | DesignMCP`,
+  title: `${pageTitle} | Rendyn`,
   description: pageDescription,
   keywords: [
     'cursor templates',
     'Cursor website templates',
     'website templates for Cursor',
   ],
-  authors: [{ name: 'DesignMCP' }],
-  creator: 'DesignMCP',
-  publisher: 'DesignMCP',
+  authors: [{ name: 'Rendyn' }],
+  creator: 'Rendyn',
+  publisher: 'Rendyn',
   alternates: { canonical: articleUrl },
   robots: { index: true, follow: true },
   openGraph: {
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     url: articleUrl,
     title: pageTitle,
     description: pageDescription,
-    siteName: 'DesignMCP',
+    siteName: 'Rendyn',
     publishedTime: '2026-08-29T00:00:00.000Z',
     modifiedTime: '2026-08-29T00:00:00.000Z',
-    authors: ['DesignMCP'],
+    authors: ['Rendyn'],
     images: [],
   },
   twitter: {
@@ -56,12 +56,12 @@ const articleSchema = {
   keywords: ['cursor templates', 'Cursor website templates'],
   author: {
     '@type': 'Organization',
-    name: 'DesignMCP editorial',
+    name: 'Rendyn editorial',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'DesignMCP',
-    url: 'https://designmcp-web.jneilbaker.workers.dev',
+    name: 'Rendyn',
+    url: 'https://rendyn.dev',
   },
 };
 
@@ -336,8 +336,8 @@ export default function BestCursorTemplatesPage() {
                 <span>Field guide</span>
               </nav>
               <div className="cursor-templates-byline">
-                <span className="cursor-templates-avatar" aria-hidden="true">D</span>
-                <span>By DesignMCP editorial</span>
+                <span className="cursor-templates-avatar" aria-hidden="true">R</span>
+                <span>By Rendyn editorial</span>
                 <i aria-hidden="true">•</i>
                 <time dateTime="2026-08-29">August 29, 2026</time>
                 <i aria-hidden="true">•</i>
@@ -362,7 +362,7 @@ export default function BestCursorTemplatesPage() {
                 </ol>
               </nav>
               <div className="cursor-templates-sidebar-cta">
-                <span>DesignMCP</span>
+                <span>Rendyn</span>
                 <strong>Give Cursor a stronger visual vocabulary.</strong>
                 <p>Browse polished, source-available interface components by product intent.</p>
                 <a href="/#catalogue">Explore the catalogue <ExternalArrow /></a>
@@ -517,7 +517,7 @@ export default function BestCursorTemplatesPage() {
                     <span>Better inputs, better interface work</span>
                     <strong>Give your agent components with real interaction and source context.</strong>
                   </div>
-                  <a className="button" href="/#catalogue">Browse DesignMCP <ExternalArrow /></a>
+                  <a className="button" href="/#catalogue">Browse Rendyn <ExternalArrow /></a>
                 </div>
               </section>
 
@@ -562,14 +562,14 @@ export default function BestCursorTemplatesPage() {
               </section>
 
               <section className="cursor-templates-product-demo" aria-labelledby="product-demo-heading">
-                <span className="cursor-templates-section-number">In practice · DesignMCP</span>
+                <span className="cursor-templates-section-number">In practice · Rendyn</span>
                 <h2 id="product-demo-heading">A template gives Cursor structure. Context helps it choose well.</h2>
                 <p>
-                  Once the starter is stable, the next problem is usually specificity: which component suits this product, this interaction, and this visual system? DesignMCP lets an agent search by intent, compare a short list, inspect interactive previews, and retrieve the chosen source without treating the whole catalogue as prompt context.
+                  Once the starter is stable, the next problem is usually specificity: which component suits this product, this interaction, and this visual system? Rendyn lets an agent search by intent, compare a short list, inspect interactive previews, and retrieve the chosen source without treating the whole catalogue as prompt context.
                 </p>
                 <div className="cursor-templates-product-panel">
                   <div className="cursor-templates-product-bar" aria-hidden="true">
-                    <span><i aria-hidden="true">D</i> DesignMCP search</span>
+                    <span><i aria-hidden="true">R</i> Rendyn search</span>
                     <span>Intent-aware · 3 results</span>
                   </div>
                   <div className="cursor-templates-product-query" aria-hidden="true">
@@ -631,7 +631,7 @@ export default function BestCursorTemplatesPage() {
           <div>
             <p>From template to product</p>
             <h2 id="article-cta-title">Your starter has structure.<br />Give it better taste.</h2>
-            <span>DesignMCP helps coding agents find and implement polished components with the source and context to use them well.</span>
+            <span>Rendyn helps coding agents find and implement polished components with the source and context to use them well.</span>
             <div>
               <a className="button" href="/#catalogue">Browse components <ExternalArrow /></a>
               <a className="button button--ghost" href="/#product">See how it works</a>

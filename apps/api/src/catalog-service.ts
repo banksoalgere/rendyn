@@ -3,7 +3,7 @@ import {
   type CatalogCategorySlug,
   type CatalogStore,
   type SearchResult,
-} from "@designmcp/catalog";
+} from "@rendyn/catalog";
 import type { AppConfig } from "./config.js";
 import { HostedEmbeddingProvider } from "./embeddings.js";
 

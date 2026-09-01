@@ -1,4 +1,4 @@
-// Shared motion tokens used by components installed from the DesignMCP catalogue.
+// Shared motion tokens used by components installed from the Rendyn catalogue.
 export const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
 // Overlay panels summoned by a direct action.

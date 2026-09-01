@@ -4,7 +4,7 @@ import { SiteFooter } from '../../components/site-footer';
 import { SiteHeader } from '../../components/site-header';
 import { PromptCopy } from './prompt-copy';
 
-const title = 'How to Design a Website With Claude Code | DesignMCP';
+const title = 'How to Design a Website With Claude Code | Rendyn';
 const description =
   'A practical Claude Code website design workflow for planning, building, testing and refining a distinctive, production-ready frontend.';
 
@@ -12,16 +12,16 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: '/guides/how-to-design-a-website-with-claude-code' },
-  authors: [{ name: 'DesignMCP Editorial' }],
+  authors: [{ name: 'Rendyn Editorial' }],
   category: 'AI interface design',
   openGraph: {
     title,
     description,
     type: 'article',
-    siteName: 'DesignMCP',
+    siteName: 'Rendyn',
     publishedTime: '2026-08-29T00:00:00+01:00',
     modifiedTime: '2026-08-29T00:00:00+01:00',
-    authors: ['DesignMCP Editorial'],
+    authors: ['Rendyn Editorial'],
   },
   twitter: { card: 'summary', title, description },
 };
@@ -206,8 +206,8 @@ export default function ClaudeCodeWebsiteDesignGuide() {
               a responsive website that feels considered—not generated.
             </p>
             <div className="article-byline">
-              <span className="byline-mark" aria-hidden="true">D</span>
-              <span><strong>DesignMCP Editorial</strong><time dateTime="2026-08-29">Updated August 29, 2026</time></span>
+              <span className="byline-mark" aria-hidden="true">R</span>
+              <span><strong>Rendyn Editorial</strong><time dateTime="2026-08-29">Updated August 29, 2026</time></span>
               <i aria-hidden="true" />
               <span><strong>12 min read</strong><small>Practical guide</small></span>
             </div>
@@ -237,10 +237,10 @@ export default function ClaudeCodeWebsiteDesignGuide() {
               <div className="workspace-status"><span><i /> Browser checked</span><span>1440</span><span>768</span><span>390</span></div>
             </div>
             <aside className="article-hero-cta">
-              <span className="brand-mark" aria-hidden="true">D</span>
+              <span className="brand-mark" aria-hidden="true">R</span>
               <p className="article-cta-title">Give Claude Code better building blocks.</p>
               <p>Search polished components by product intent, compare visual options, then get the complete source.</p>
-              <Link className="button" href="/#early-access">Join DesignMCP early access <span aria-hidden="true">↗</span></Link>
+              <Link className="button" href="/pricing">Start Rendyn trial <span aria-hidden="true">↗</span></Link>
               <Link href="/#catalogue">Browse the component catalogue <span aria-hidden="true">→</span></Link>
             </aside>
           </div>
@@ -358,18 +358,18 @@ export default function ClaudeCodeWebsiteDesignGuide() {
                 <div><span>04</span><div><h3>Use one memorable move</h3><p>A framed workspace, a precise transition or an asymmetric composition is more credible than effects on every element.</p></div></div>
                 <div><span>05</span><div><h3>Specify the anti-brief</h3><p>Name the patterns that would betray the product: default gradients, vague icon grids, excessive pills or motion without meaning.</p></div></div>
               </div>
-              <div className="designmcp-callout">
+              <div className="rendyn-callout">
                 <div>
-                  <span className="article-kicker">Where DesignMCP helps</span>
+                  <span className="article-kicker">Where Rendyn helps</span>
                   <h3>Move from “invent a component” to “choose the right component.”</h3>
-                  <p>DesignMCP lets coding agents search by product intent, inspect visual options and receive the source, states, dependencies and install steps for the selected component.</p>
+                  <p>Rendyn lets coding agents search by product intent, inspect visual options and receive the source, states, dependencies and install steps for the selected component.</p>
                 </div>
                 <div className="callout-stack" aria-hidden="true">
                   <div><span>01</span><strong>Search by intent</strong><i>“A high-trust approval step”</i></div>
                   <div><span>02</span><strong>Compare the fit</strong><i>Ranked visual options</i></div>
                   <div><span>03</span><strong>Keep the code</strong><i>Complete editable source</i></div>
                 </div>
-                <Link className="button" href="/#catalogue">Explore DesignMCP components <span aria-hidden="true">→</span></Link>
+                <Link className="button" href="/#catalogue">Explore Rendyn components <span aria-hidden="true">→</span></Link>
               </div>
             </section>
 
@@ -432,10 +432,10 @@ export default function ClaudeCodeWebsiteDesignGuide() {
               {contents.map(([id, label]) => <Link href={`#${id}`} key={id}>{label}</Link>)}
             </nav>
             <div className="sidebar-cta">
-              <span className="brand-mark" aria-hidden="true">D</span>
+              <span className="brand-mark" aria-hidden="true">R</span>
               <p className="sidebar-cta-title">Better choices in, better interfaces out.</p>
               <p>Give your coding agent polished component options and complete code.</p>
-              <Link className="button" href="/#early-access">Get early access <span aria-hidden="true">↗</span></Link>
+              <Link className="button" href="/pricing">Start 7-day trial <span aria-hidden="true">↗</span></Link>
             </div>
           </aside>
         </div>

@@ -11,7 +11,7 @@ import {
 import { CopyPrompt } from './copy-prompt';
 import styles from './component-page.module.css';
 
-const siteUrl = 'https://designmcp.jneilbaker.chatgpt.site';
+const siteUrl = 'https://rendyn.dev';
 
 interface ComponentPageProps {
   params: Promise<{ componentSlug: string }>;
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: ComponentPageProps): Promise<
   const component = findCatalogueEntry(componentSlug);
   if (!component) return {};
 
-  const title = `${component.name} component example for Claude Code | DesignMCP`;
+  const title = `${component.name} component example for Claude Code | Rendyn`;
   const description = `Try a live ${component.name} React component example. See usage guidance, dependencies, and a ready-to-copy prompt for Claude Code, Codex, Cursor, and other coding agents.`;
   const canonical = `/components/${component.publicSlug}`;
 
@@ -92,7 +92,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'DesignMCP', item: siteUrl },
+          { '@type': 'ListItem', position: 1, name: 'Rendyn', item: siteUrl },
           { '@type': 'ListItem', position: 2, name: 'Components', item: `${siteUrl}/components` },
           { '@type': 'ListItem', position: 3, name: component.name, item: canonicalUrl },
         ],
@@ -108,12 +108,12 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
       />
 
       <header className={styles.topbar}>
-        <a className={styles.brand} href="/" aria-label="DesignMCP home">
-          <span>D</span><strong>DesignMCP</strong>
+        <a className={styles.brand} href="/" aria-label="Rendyn home">
+          <span>R</span><strong>Rendyn</strong>
         </a>
         <nav aria-label="Component page navigation">
           <a href="/components">All components</a>
-          <a href="/#docs">Connect</a>
+          <a href="/pricing">Start trial</a>
         </nav>
       </header>
 
@@ -232,7 +232,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
 
           <footer className={styles.articleFooter}>
             <a href="/components"><span aria-hidden="true">←</span> Browse all 189 components</a>
-            <a href="/#docs">Connect DesignMCP <span aria-hidden="true">→</span></a>
+            <a href="/pricing">Start 7-day trial <span aria-hidden="true">→</span></a>
           </footer>
         </article>
 

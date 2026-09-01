@@ -29,20 +29,20 @@ const footerGroups = [
   },
   {
     title: 'Company',
-    links: [['About', '/#top'], ['Early access', '/#early-access'], ['Contact', '/#top']],
+    links: [['About', '/#top'], ['Pricing', '/pricing'], ['Contact', '/#top']],
   },
 ];
 
 export function FinalCallToAction() {
   return (
-    <section className="final-cta grid-field" id="early-access">
+    <section className="final-cta grid-field" id="start-trial">
       <div className="final-cta-card">
         <p className="eyebrow">Your agent&apos;s design upgrade</p>
         <h2>Build your best<br />interface yet.</h2>
-        <p>Connect DesignMCP and give every feature polished components, complete code and the context to choose well.</p>
+        <p>Start with seven days of full access, then keep giving every feature polished components, complete code and the context to choose well.</p>
         <div>
           <a className="button" href="/components">Browse the catalogue <span aria-hidden="true">↗</span></a>
-          <a className="button button--cream" href="/#docs">Connect DesignMCP</a>
+          <a className="button button--cream" href="/pricing">Start 7-day trial</a>
         </div>
       </div>
     </section>
@@ -53,7 +53,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="footer-top">
-        <Brand label="Back to DesignMCP home" />
+        <Brand label="Back to Rendyn home" />
         <p>A curated component catalogue for the coding agents you already use.</p>
       </div>
       <div className="footer-links">
@@ -66,7 +66,7 @@ export function SiteFooter() {
           </div>
         ))}
       </div>
-      <div className="footer-bottom"><span>© 2026 DesignMCP</span><span>React · TypeScript · Tailwind</span></div>
+      <div className="footer-bottom"><span>© 2026 Rendyn</span><span>React · TypeScript · Tailwind</span></div>
     </footer>
   );
 }

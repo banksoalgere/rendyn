@@ -45,13 +45,13 @@ const footerGroups = [
   ['Company', ['About', 'Contact', 'Privacy', 'Terms']],
 ];
 
-const SIGN_UP_HREF = '/login?next=%2Fcomponents';
+const SIGN_UP_HREF = '/pricing';
 
 function Brand({ footer = false }: { footer?: boolean }) {
   return (
-    <a className="brand" href="#top" aria-label="DesignMCP home">
-      <span className="brand-mark" aria-hidden="true">D</span>
-      <span>DesignMCP</span>
+    <a className="brand" href="#top" aria-label="Rendyn home">
+      <span className="brand-mark" aria-hidden="true">R</span>
+      <span>Rendyn</span>
       {!footer && <small>beta</small>}
     </a>
   );
@@ -81,7 +81,7 @@ export default function Home() {
         </nav>
         <div className="header-actions">
           <a className="text-link" href="/login?next=%2Faccount">Sign in</a>
-          <a className="button button--small" href={SIGN_UP_HREF}>Get started</a>
+          <a className="button button--small" href={SIGN_UP_HREF}>Start trial</a>
           <MobileMenu />
         </div>
       </header>
@@ -95,15 +95,15 @@ export default function Home() {
             complete source and the context to ship it well.
           </p>
           <div className="hero-actions">
-            <a className="button button--wide" href={SIGN_UP_HREF}>Continue with Google <span>→</span></a>
+            <a className="button button--wide" href={SIGN_UP_HREF}>Start 7-day trial <span>→</span></a>
             <a className="button button--secondary button--wide" href="#how-it-works">See how it works</a>
           </div>
         </div>
 
-        <div className="hero-product" aria-label="DesignMCP component search example">
+        <div className="hero-product" aria-label="Rendyn component search example">
           <div className="product-window">
             <div className="window-bar">
-              <div className="window-brand"><span>DM</span><strong>DesignMCP</strong></div>
+              <div className="window-brand"><span>R</span><strong>Rendyn</strong></div>
               <div className="window-status"><i /> Connected</div>
             </div>
             <div className="agent-prompt">
@@ -206,8 +206,8 @@ export default function Home() {
           <div className="connect-copy">
             <span className="pill pill--section">One connection</span>
             <h2>Works where you already build.</h2>
-            <p>DesignMCP brings better component choices to the coding agents you already use.</p>
-            <a className="button button--secondary" href={SIGN_UP_HREF}>Continue with Google <span>→</span></a>
+            <p>Rendyn brings better component choices to the coding agents you already use.</p>
+            <a className="button button--secondary" href={SIGN_UP_HREF}>Start 7-day trial <span>→</span></a>
           </div>
           <div className="tool-grid" aria-label="MCP-compatible coding agents">
             {codingAgents.map((agent) => (
@@ -226,10 +226,10 @@ export default function Home() {
             <span className="pill pill--section">For teams</span>
             <h2>One visual standard. Every agent.</h2>
             <p>Give the whole team the same curated source and the same quality bar—without adding another design tool.</p>
-            <a className="button" href={SIGN_UP_HREF}>Get started <span>→</span></a>
+            <a className="button" href={SIGN_UP_HREF}>Start team trial <span>→</span></a>
           </div>
-          <div className="team-console" aria-label="Example DesignMCP tool response">
-            <div className="console-top"><span>designmcp / search</span><i /><i /><i /></div>
+          <div className="team-console" aria-label="Example Rendyn tool response">
+            <div className="console-top"><span>rendyn / search</span><i /><i /><i /></div>
             <div className="console-prompt"><span>›</span><p>approval flow · high trust · low motion</p></div>
             <div className="console-result">
               <div><span>01</span><p><b>approval-card</b><small>Strongest match for explicit review.</small></p><i>0.96</i></div>
@@ -245,7 +245,7 @@ export default function Home() {
         <div className="content-width">
           <SectionHeading
             label="Product-aware matching"
-            title={<>See how DesignMCP reads the room.</>}
+            title={<>See how Rendyn reads the room.</>}
             copy="The right component changes with the product around it."
           />
           <div className="scenario-grid">
@@ -260,8 +260,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="trust-strip trust-strip--lower page-width" aria-label="What every unlocked component includes">
-        <p>Every unlocked component includes</p>
+      <section className="trust-strip trust-strip--lower page-width" aria-label="What every delivered component includes">
+        <p>Every delivered component includes</p>
         <div>
           {['Complete source', 'Every state', 'Dependencies', 'Install steps', 'Editable code'].map((item) => (
             <span key={item}><i aria-hidden="true">✓</i>{item}</span>
@@ -273,7 +273,7 @@ export default function Home() {
         <div className="closing-card content-width grid-surface">
           <span className="pill pill--section">Ready when your agent is</span>
           <h2>Smarter, simpler<br />interface building.</h2>
-          <a className="button" href={SIGN_UP_HREF}>Continue with Google <span>→</span></a>
+          <a className="button" href={SIGN_UP_HREF}>Start 7-day trial <span>→</span></a>
           <p><span>189</span> live components <i>·</i> MIT licensed <i>·</i> complete code you own</p>
         </div>
       </section>
@@ -289,7 +289,7 @@ export default function Home() {
             <div key={title as string}><strong>{title}</strong>{(links as string[]).map((link) => <a href={link === 'Pricing' ? '/pricing' : link === 'Components' ? '/components' : '#top'} key={link}>{link}</a>)}</div>
           ))}
         </div>
-        <div className="footer-bottom"><span>© 2026 DesignMCP</span><span>Built for better product decisions.</span></div>
+        <div className="footer-bottom"><span>© 2026 Rendyn</span><span>Built for better product decisions.</span></div>
       </footer>
     </main>
   );

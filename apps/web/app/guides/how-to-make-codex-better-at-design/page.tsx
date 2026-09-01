@@ -5,10 +5,10 @@ import { SiteHeader } from '../../components/site-header';
 import './page.css';
 
 export const metadata: Metadata = {
-  title: 'How to Make Codex Better at Design | DesignMCP',
+  title: 'How to Make Codex Better at Design | Rendyn',
   description:
     'A practical Codex design workflow for building better websites and apps with stronger context, visual references, reusable rules, and browser QA.',
-  authors: [{ name: 'DesignMCP editorial' }],
+  authors: [{ name: 'Rendyn editorial' }],
   robots: {
     index: true,
     follow: true,
@@ -148,8 +148,8 @@ export default function CodexDesignGuide() {
 
             <div className="codex-article-title-block">
               <div className="codex-article-byline">
-                <span className="codex-article-avatar" aria-hidden="true">DM</span>
-                <span>DesignMCP editorial</span>
+                <span className="codex-article-avatar" aria-hidden="true">R</span>
+                <span>Rendyn editorial</span>
                 <i aria-hidden="true" />
                 <time dateTime="2026-08-29">29 August 2026</time>
                 <i aria-hidden="true" />
@@ -185,7 +185,7 @@ export default function CodexDesignGuide() {
               </div>
 
               <aside className="codex-hero-principle">
-                <div className="codex-hero-principle-mark" aria-hidden="true">D</div>
+                <div className="codex-hero-principle-mark" aria-hidden="true">R</div>
                 <p className="codex-hero-principle-label">The core principle</p>
                 <h2>Make good decisions easier to retrieve.</h2>
                 <p>
@@ -212,7 +212,7 @@ export default function CodexDesignGuide() {
             </nav>
 
             <div className="codex-rail-cta">
-              <span>DesignMCP</span>
+              <span>Rendyn</span>
               <strong>Give Codex better interface ingredients.</strong>
               <p>Curated components, visual previews, fit notes, and complete source.</p>
               <Link href="/#catalogue">Explore the catalogue <ArrowIcon /></Link>
@@ -471,12 +471,12 @@ Definition of done
               </div>
             </section>
 
-            <section className="codex-designmcp-section" id="designmcp">
+            <section className="codex-rendyn-section" id="rendyn">
               <div>
-                <p className="codex-article-section-label">Where DesignMCP fits</p>
+                <p className="codex-article-section-label">Where Rendyn fits</p>
                 <h2>Better output starts with better ingredients.</h2>
                 <p>
-                  DesignMCP gives coding agents a curated catalogue of polished React,
+                  Rendyn gives coding agents a curated catalogue of polished React,
                   TypeScript, and Tailwind components. Codex can search by product intent,
                   inspect visual options, understand fit, and retrieve complete source
                   with dependencies and setup details.
@@ -486,12 +486,12 @@ Definition of done
                   implementation layer more legible—so the agent spends less time
                   inventing generic UI and more time composing a coherent product.
                 </p>
-                <div className="codex-designmcp-actions">
+                <div className="codex-rendyn-actions">
                   <Link className="button" href="/#catalogue">Browse components <ArrowIcon /></Link>
-                  <Link className="button button--ghost" href="/#docs">Connect DesignMCP</Link>
+                  <Link className="button button--ghost" href="/#docs">Connect Rendyn</Link>
                 </div>
               </div>
-              <div className="codex-ingredient-stack" aria-label="What DesignMCP gives a coding agent">
+              <div className="codex-ingredient-stack" aria-label="What Rendyn gives a coding agent">
                 <div><span>01</span><strong>Intent-ranked options</strong><i>Choose</i></div>
                 <div><span>02</span><strong>Rendered previews</strong><i>Inspect</i></div>
                 <div><span>03</span><strong>Fit reasoning</strong><i>Decide</i></div>
@@ -542,7 +542,7 @@ Definition of done
               </div>
               <p className="codex-source-note">
                 Product capabilities were checked against OpenAI sources on 29 August
-                2026. This guide is independent editorial content by DesignMCP.
+                2026. This guide is independent editorial content by Rendyn.
               </p>
             </section>
 
@@ -574,7 +574,7 @@ Definition of done
             <p>Pair a clear design brief with curated components, visual previews, fit reasoning, and complete source code.</p>
             <div>
               <Link className="button" href="/#catalogue">Browse components <ArrowIcon /></Link>
-              <Link className="button button--cream" href="/#docs">Connect DesignMCP</Link>
+              <Link className="button button--cream" href="/#docs">Connect Rendyn</Link>
             </div>
           </div>
         </section>

@@ -14,7 +14,7 @@ export function registerGetComponentTool(
     "get_component",
     {
       description:
-        "Unlock and return a complete component implementation: every source file, dependency, install instruction, integrity hash, and license notice.",
+        "Return a complete component implementation for a trialing or paid subscriber: every source file, dependency, install instruction, integrity hash, and license notice.",
       inputSchema: z.object({
         id: z.string().trim().regex(COMPONENT_ID_PATTERN),
       }),
@@ -41,9 +41,9 @@ export function registerGetComponentTool(
         return {
           isError: true,
           content: [textContent({
-            error: "free_component_allowance_exhausted",
-            message:
-              "This component is not unlocked. Upgrade to the paid plan or wait for the next monthly allowance.",
+            error: "subscription_required",
+            message: "Start a 7-day Rendyn trial or restore a paid subscription to get component source.",
+            checkout_url: "https://rendyn.dev/pricing",
             entitlement,
           })],
         };

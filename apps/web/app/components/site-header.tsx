@@ -31,9 +31,9 @@ export function SiteHeader({ activeSection }: SiteHeaderProps = {}) {
       </nav>
       <div className="header-actions">
         <a className="text-link" href="/#docs">View docs</a>
-        <a className="button button--small" href="/#early-access">
-          <span className="desktop-label">Early access</span>
-          <span className="mobile-label">Join</span>
+        <a className="button button--small" href="/pricing">
+          <span className="desktop-label">Start trial</span>
+          <span className="mobile-label">Trial</span>
         </a>
       </div>
     </header>

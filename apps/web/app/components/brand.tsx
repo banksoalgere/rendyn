@@ -3,11 +3,11 @@ interface BrandProps {
   label?: string;
 }
 
-export function Brand({ href = '/', label = 'DesignMCP home' }: BrandProps) {
+export function Brand({ href = '/', label = 'Rendyn home' }: BrandProps) {
   return (
     <a className="brand" href={href} aria-label={label}>
-      <span className="brand-mark" aria-hidden="true">D</span>
-      <span>DesignMCP</span>
+      <span className="brand-mark" aria-hidden="true">R</span>
+      <span>Rendyn</span>
     </a>
   );
 }

@@ -34,10 +34,10 @@ describe('authentication input boundaries', () => {
   );
 
   it('requires an exact same-origin POST boundary', () => {
-    const sameOrigin = new Request('https://designmcp.example/oauth/consent/decision', {
-      headers: { origin: 'https://designmcp.example' },
+    const sameOrigin = new Request('https://rendyn.example/oauth/consent/decision', {
+      headers: { origin: 'https://rendyn.example' },
     });
-    const crossOrigin = new Request('https://designmcp.example/oauth/consent/decision', {
+    const crossOrigin = new Request('https://rendyn.example/oauth/consent/decision', {
       headers: { origin: 'https://attacker.example' },
     });
 

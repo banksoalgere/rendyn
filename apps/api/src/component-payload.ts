@@ -1,4 +1,4 @@
-import type { CatalogComponent } from "@designmcp/catalog";
+import type { CatalogComponent } from "@rendyn/catalog";
 
 export function componentPayload(component: CatalogComponent, previewUrl: string, licenseText: string) {
   return {

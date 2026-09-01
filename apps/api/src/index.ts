@@ -16,5 +16,5 @@ const config = readConfig();
 const app = await buildNodeApp(config);
 
 serve({ fetch: app.fetch, port: config.PORT, hostname: "0.0.0.0" }, (info) => {
-  process.stdout.write(`DesignMCP API listening on http://localhost:${info.port}\n`);
+  process.stdout.write(`Rendyn API listening on http://localhost:${info.port}\n`);
 });

@@ -134,6 +134,18 @@
   text-align: center;
 }
 
+.pricingNotice {
+  background: #fff5e8;
+  border: 1px solid #ecd8bb;
+  border-radius: 7px;
+  color: #704f24;
+  font-size: 11px;
+  margin: 20px auto 0;
+  max-width: 620px;
+  padding: 11px 14px;
+  text-align: center;
+}
+
 .billingTabs {
   margin: 36px auto 0;
   max-width: calc(100% - 32px);
@@ -203,10 +215,27 @@
 .planGrid {
   display: grid;
   gap: 14px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: 68px auto 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 34px auto 0;
   max-width: 930px;
 }
+
+.trialPromise {
+  align-items: center;
+  background: #f3f1ff;
+  border: 1px solid #ded8ff;
+  border-radius: 8px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin: 28px auto 0;
+  max-width: 930px;
+  padding: 14px 18px;
+  text-align: center;
+}
+
+.trialPromise strong { font-size: 12px; white-space: nowrap; }
+.trialPromise span { color: #5f5d68; font-size: 11px; line-height: 1.5; }
 
 .planCard {
   border: 1px solid var(--pricing-line);
@@ -294,16 +323,33 @@
   gap: 15px;
 }
 
-.planActions > a {
+.planActions > a,
+.planActions button {
   background: #f2f2f0;
+  border: 0;
   border-radius: 999px;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
   font-size: 10px;
   font-weight: 600;
   padding: 10px 16px;
 }
 
+.planActions form { margin: 0; }
+.planActions button:focus-visible { outline: 3px solid rgba(29, 29, 27, .22); outline-offset: 3px; }
+
 .planActions > span { font-size: 9px; }
 .planActions b { font-size: 15px; margin-left: 3px; }
+
+.planFooter .trialTerms {
+  color: #777773;
+  display: block;
+  font-size: 9px;
+  line-height: 1.55;
+  margin: 14px 0 0;
+  max-width: 290px;
+}
 
 .trustedSection {
   margin: 150px auto 0;
@@ -354,7 +400,7 @@
 .comparisonPlans,
 .comparisonRow {
   display: grid;
-  grid-template-columns: 1.35fr repeat(4, .72fr);
+  grid-template-columns: 1.35fr repeat(3, .72fr);
 }
 
 .comparisonPlans {

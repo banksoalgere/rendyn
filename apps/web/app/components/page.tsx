@@ -7,7 +7,7 @@ import { ComponentExplorer, type CatalogueComponent } from './component-explorer
 import styles from './components.module.css';
 
 export const metadata: Metadata = {
-  title: 'Live component catalogue | DesignMCP',
+  title: 'Live component catalogue | Rendyn',
   description: 'Browse 189 interactive React component examples, each with a dedicated live preview, usage guidance, and complete editable source.',
 };
 
@@ -75,7 +75,7 @@ export default async function ComponentsPage({ searchParams }: ComponentsPagePro
       <section className={styles.catalogueCta}>
         <p>Found the right direction?</p>
         <h2>Let your coding agent<br />take it from here.</h2>
-        <a className="button" href="/#docs">Connect DesignMCP <span aria-hidden="true">→</span></a>
+        <a className="button" href="/pricing">Start 7-day trial <span aria-hidden="true">→</span></a>
       </section>
       <SiteFooter />
     </main>

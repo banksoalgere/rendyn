@@ -16,7 +16,7 @@ const previewVendorRoot = resolve(previewDirectory, 'vendor-root');
 
 function previewAlias() {
   return {
-    name: 'designmcp-preview-alias',
+    name: 'rendyn-preview-alias',
     enforce: 'pre' as const,
     transform(code: string, id: string) {
       const modulePath = id.split('?')[0];
@@ -34,8 +34,21 @@ function previewAlias() {
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === 'seatbelt';
 
 const localBindingConfig = {
+  name: 'rendyn-web',
   main: 'vinext/server/app-router-entry',
+  compatibility_date: '2026-09-01',
   compatibility_flags: ['nodejs_compat'],
+  secrets: {
+    required: [
+      'SUPABASE_SERVICE_ROLE_KEY',
+      'STRIPE_SECRET_KEY',
+      'STRIPE_WEBHOOK_SECRET',
+      'STRIPE_PRO_MONTHLY_PRICE_ID',
+      'STRIPE_PRO_YEARLY_PRICE_ID',
+      'STRIPE_TEAM_MONTHLY_PRICE_ID',
+      'STRIPE_TEAM_YEARLY_PRICE_ID',
+    ],
+  },
   d1_databases: d1
     ? [
         {

@@ -2,7 +2,7 @@ import type {
   BrowsePage,
   CatalogComponentSummary,
   SearchResult,
-} from "@designmcp/catalog";
+} from "@rendyn/catalog";
 import type { CatalogService } from "./catalog-service.js";
 
 export function presentSearchResults(

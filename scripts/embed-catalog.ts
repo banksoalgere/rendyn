@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { parseCatalogIndex, type EmbeddingIndex } from "@designmcp/catalog";
+import { parseCatalogIndex, type EmbeddingIndex } from "@rendyn/catalog";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const MODEL = process.env.OPENAI_EMBEDDING_MODEL ?? "text-embedding-3-small";

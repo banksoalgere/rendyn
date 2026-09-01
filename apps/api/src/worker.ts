@@ -1,5 +1,5 @@
 import { Buffer } from "node:buffer";
-import { CatalogStore } from "@designmcp/catalog";
+import { CatalogStore } from "@rendyn/catalog";
 import type { AppConfig } from "./config.js";
 import { readConfig } from "./config.js";
 import { catalogSnapshot } from "./generated/catalog-data.js";
@@ -13,10 +13,8 @@ interface WorkerEnvironment {
   ALLOWED_HOSTS: string;
   SUPABASE_URL: string;
   SUPABASE_ANON_KEY: string;
-  SUPABASE_SERVICE_ROLE_KEY: string;
   SUPABASE_JWT_AUDIENCE: string;
   MCP_REQUIRED_SCOPES: string;
-  ANONYMOUS_COOKIE_SECRET: string;
   OPENAI_EMBEDDING_MODEL: string;
 }
 
@@ -91,10 +89,8 @@ function workerConfig(env: WorkerEnvironment): AppConfig {
     ALLOWED_HOSTS: env.ALLOWED_HOSTS,
     SUPABASE_URL: env.SUPABASE_URL,
     SUPABASE_ANON_KEY: env.SUPABASE_ANON_KEY,
-    SUPABASE_SERVICE_ROLE_KEY: env.SUPABASE_SERVICE_ROLE_KEY,
     SUPABASE_JWT_AUDIENCE: env.SUPABASE_JWT_AUDIENCE,
     MCP_REQUIRED_SCOPES: env.MCP_REQUIRED_SCOPES,
-    ANONYMOUS_COOKIE_SECRET: env.ANONYMOUS_COOKIE_SECRET,
     OPENAI_EMBEDDING_MODEL: env.OPENAI_EMBEDDING_MODEL,
     ALLOW_INSECURE_DEV_AUTH: "false",
   });

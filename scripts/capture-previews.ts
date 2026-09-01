@@ -1,7 +1,7 @@
 import { access, mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
 import { chromium } from "playwright-core";
-import { CatalogStore } from "@designmcp/catalog";
+import { CatalogStore } from "@rendyn/catalog";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const PREVIEW_BASE_URL = process.env.PREVIEW_BASE_URL ?? "http://localhost:3100";

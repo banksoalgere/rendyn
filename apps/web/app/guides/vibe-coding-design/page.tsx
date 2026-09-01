@@ -8,7 +8,7 @@ import { CopyPromptButton } from './copy-prompt-button';
 export const metadata: Metadata = {
   title: 'Vibe Coding Design: How to Make Your App Look Good',
   description: 'A practical vibe coding design workflow for stronger hierarchy, typography, prompts, accessibility and a polished vibe coding UI.',
-  authors: [{ name: 'DesignMCP Editorial' }],
+  authors: [{ name: 'Rendyn Editorial' }],
   openGraph: {
     title: 'Vibe Coding Design: How to Make Your App Look Good',
     description: 'Turn a functional AI-built app into a clear, coherent and polished product with this practical design workflow.',
@@ -174,14 +174,14 @@ export default function VibeCodingDesignPage() {
         <section className="vcd-hero grid-field" aria-labelledby="vcd-title">
         <div className="vcd-hero-copy">
           <nav className="vcd-breadcrumb" aria-label="Breadcrumb">
-            <a href="/">DesignMCP</a><span aria-hidden="true">/</span><a href="/#resources">Resources</a><span aria-hidden="true">/</span><span>Vibe coding design</span>
+            <a href="/">Rendyn</a><span aria-hidden="true">/</span><a href="/#resources">Resources</a><span aria-hidden="true">/</span><span>Vibe coding design</span>
           </nav>
           <p className="vcd-category"><span aria-hidden="true">✦</span> Vibe coding design</p>
           <h1 id="vcd-title">Vibe Coding Design:<br /><span>How to Make Your App Look Good</span></h1>
           <p className="vcd-deck">A practical system for turning a functional AI-built interface into a product that feels clear, coherent and finished—without throwing away working code.</p>
           <div className="vcd-byline">
-            <span className="vcd-author-mark" aria-hidden="true">D</span>
-            <span><strong>DesignMCP Editorial</strong><time dateTime="2026-08-29">Updated 29 August 2026</time></span>
+            <span className="vcd-author-mark" aria-hidden="true">R</span>
+            <span><strong>Rendyn Editorial</strong><time dateTime="2026-08-29">Updated 29 August 2026</time></span>
             <span className="vcd-byline-divider" aria-hidden="true" />
             <span className="vcd-read-time">12 min read</span>
           </div>
@@ -233,10 +233,10 @@ export default function VibeCodingDesignPage() {
               ))}
             </ol>
             <div className="vcd-sidebar-cta">
-              <span aria-hidden="true">D</span>
+              <span aria-hidden="true">R</span>
               <strong>Give your agent better visual choices.</strong>
               <p>Search polished components with previews, context and complete code.</p>
-              <a href="/#catalogue">Explore DesignMCP <span aria-hidden="true">↗</span></a>
+              <a href="/#catalogue">Explore Rendyn <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </aside>
@@ -317,9 +317,9 @@ export default function VibeCodingDesignPage() {
               <div className="vcd-swatches"><span>COLOUR</span><i /><i /><i /><i /></div>
             </div>
 
-            <aside className="vcd-product-demo" aria-label="DesignMCP component search example">
+            <aside className="vcd-product-demo" aria-label="Rendyn component search example">
               <div className="vcd-product-preview" aria-hidden="true">
-                <div><span>D</span><p>Search components</p><kbd>⌘ K</kbd></div>
+                <div><span>R</span><p>Search components</p><kbd>⌘ K</kbd></div>
                 <small>Intent: make a status change clear without blocking the flow</small>
                 <section><i>01</i><p><strong>Animated badge</strong><span>Compact status · motion</span></p><b>94%</b></section>
                 <section><i>02</i><p><strong>Notification stack</strong><span>Async feedback · queue</span></p><b>88%</b></section>
@@ -328,7 +328,7 @@ export default function VibeCodingDesignPage() {
               <div>
                 <p className="eyebrow">A practical shortcut</p>
                 <h3>Let the agent compare real components before it invents another one.</h3>
-                <p>DesignMCP gives coding agents visual previews, product context and complete source files, so “find the right feedback pattern” becomes a concrete search instead of a vague styling request.</p>
+                <p>Rendyn gives coding agents visual previews, product context and complete source files, so “find the right feedback pattern” becomes a concrete search instead of a vague styling request.</p>
                 <a href="/#catalogue">Explore the component catalogue <span aria-hidden="true">↗</span></a>
               </div>
             </aside>
@@ -439,7 +439,7 @@ export default function VibeCodingDesignPage() {
 
           <section className="vcd-related" aria-labelledby="related-title">
             <p className="vcd-section-label">Keep improving the system</p>
-            <h2 id="related-title">Related DesignMCP resources</h2>
+            <h2 id="related-title">Related Rendyn resources</h2>
             <div>
               <a href="/#catalogue"><span>Component strategy</span><h3>Choose UI components by product intent</h3><p>Start with the user outcome, compare likely patterns and make the choice defensible.</p><i aria-hidden="true">↗</i></a>
               <a href="/#how-it-works"><span>Agent workflow</span><h3>What coding agents need from component libraries</h3><p>See how previews, context and source files turn a vague request into a reliable implementation.</p><i aria-hidden="true">↗</i></a>
@@ -453,7 +453,7 @@ export default function VibeCodingDesignPage() {
         <div>
           <p className="eyebrow">Better inputs. Better interfaces.</p>
           <h2 id="vcd-cta-title">Give your coding agent<br />something good to choose.</h2>
-          <p>DesignMCP pairs visual previews with component context and complete code, so an agent can compare real options before it builds.</p>
+          <p>Rendyn pairs visual previews with component context and complete code, so an agent can compare real options before it builds.</p>
           <div><a className="button" href="/#catalogue">Explore the catalogue <span aria-hidden="true">↗</span></a><a className="button button--cream" href="/#docs">See how it works</a></div>
         </div>
       </section>

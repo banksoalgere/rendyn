@@ -220,7 +220,7 @@ export function Resources() {
           </div>
         </div>
 
-        <div className="resources-grid" aria-label="DesignMCP guides">
+        <div className="resources-grid" aria-label="Rendyn guides">
           {resources.map((resource) => (
             <ResourceCard key={resource.slug} resource={resource} />
           ))}

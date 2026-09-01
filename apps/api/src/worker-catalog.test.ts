@@ -1,4 +1,4 @@
-import { CatalogStore } from "@designmcp/catalog";
+import { CatalogStore } from "@rendyn/catalog";
 import { describe, expect, it } from "vitest";
 import { catalogSnapshot } from "./generated/catalog-data.js";
 

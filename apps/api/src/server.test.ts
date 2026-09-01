@@ -42,14 +42,33 @@ describe("HTTP API", () => {
     });
   });
 
-  it("keeps source retrieval unavailable when entitlements are not configured", async () => {
+  it("requires authentication before source retrieval", async () => {
     const response = await app.request("http://localhost/api/components/button/source", {
       headers: requestHeaders,
     });
 
-    expect(response.status).toBe(503);
+    expect(response.status).toBe(401);
     await expect(response.json()).resolves.toMatchObject({
-      error: "entitlements_not_configured",
+      error: "authentication_required",
     });
+  });
+
+  it("requires bearer authentication before any MCP request is dispatched", async () => {
+    const response = await app.request("http://localhost/mcp", {
+      method: "POST",
+      headers: {
+        ...requestHeaders,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        jsonrpc: "2.0",
+        id: 1,
+        method: "tools/list",
+        params: {},
+      }),
+    });
+
+    expect(response.status).toBe(401);
+    expect(response.headers.get("www-authenticate")).toContain("Bearer");
   });
 });

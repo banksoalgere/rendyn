@@ -1,6 +1,6 @@
 import { createMcpHonoApp } from "@modelcontextprotocol/hono";
 import { createMcpHandler, requireBearerAuth } from "@modelcontextprotocol/server";
-import type { CatalogStore } from "@designmcp/catalog";
+import type { CatalogStore } from "@rendyn/catalog";
 import type { Context } from "hono";
 import { SupabaseTokenVerifier } from "./auth.js";
 import { CatalogService } from "./catalog-service.js";
@@ -35,7 +35,7 @@ export async function buildApp(
 
   registerPublicRoutes(app, { config, store, catalog, previewMedia });
   registerOAuthRoutes(app, config);
-  registerSourceRoute(app, { config, store, catalog, entitlements, tokenVerifier });
+  registerSourceRoute(app, { store, catalog, entitlements, tokenVerifier });
 
   const mcpHandler = createMcpHandler(() =>
     buildMcpServer({ config, catalog, entitlements, previewMedia }),
@@ -48,6 +48,14 @@ export async function buildApp(
   app.all("/mcp", async (context: Context) => {
     const auth = await authGate(context.req.raw);
     if (auth instanceof Response) return auth;
+    const access = await entitlements.subscriptionAccess(auth.token);
+    if (!access.allowed) {
+      return jsonError(context, 402, "subscription_required", {
+        ...access,
+        checkout_url: "https://rendyn.dev/pricing",
+        message: "Start a 7-day Rendyn trial or restore a paid subscription to use MCP tools.",
+      });
+    }
     return mcpHandler.fetch(context.req.raw, {
       authInfo: auth,
       parsedBody: context.get("parsedBody"),

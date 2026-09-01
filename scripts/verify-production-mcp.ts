@@ -7,18 +7,18 @@ import {
 } from "@modelcontextprotocol/client";
 import { ProductionOAuthProvider } from "./production-mcp-oauth-provider.js";
 
-const endpoint = new URL(process.env.DESIGNMCP_MCP_URL ?? "https://mcp.rendyn.dev/mcp");
+const endpoint = new URL(process.env.RENDYN_MCP_URL ?? "https://mcp.rendyn.dev/mcp");
 const callbackUrl = new URL(
-  process.env.DESIGNMCP_OAUTH_CALLBACK ?? "http://127.0.0.1:8090/callback",
+  process.env.RENDYN_OAUTH_CALLBACK ?? "http://127.0.0.1:8090/callback",
 );
-const componentId = process.env.DESIGNMCP_VERIFY_COMPONENT?.trim();
+const componentId = process.env.RENDYN_VERIFY_COMPONENT?.trim();
 
 if (endpoint.protocol !== "https:") throw new Error("Production MCP URL must use HTTPS");
 if (callbackUrl.protocol !== "http:" || callbackUrl.hostname !== "127.0.0.1") {
   throw new Error("OAuth callback must use the 127.0.0.1 loopback address");
 }
 if (!componentId || !/^(?:[a-z0-9]+:)?[a-z0-9]+(?:-[a-z0-9]+)*$/.test(componentId)) {
-  throw new Error("Set DESIGNMCP_VERIFY_COMPONENT to the component this check may unlock");
+  throw new Error("Set RENDYN_VERIFY_COMPONENT to the component this check may unlock");
 }
 
 function callbackServer(provider: ProductionOAuthProvider): {
@@ -50,13 +50,13 @@ function callbackServer(provider: ProductionOAuthProvider): {
         "Content-Type": "text/plain; charset=utf-8",
         "Content-Security-Policy": "default-src 'none'",
         "Cache-Control": "no-store",
-      }).end("DesignMCP authorization succeeded. You can return to Codex.");
+      }).end("Rendyn authorization succeeded. You can return to Codex.");
       resolveCallback(url.searchParams);
     } catch (error) {
       response.writeHead(400, {
         "Content-Type": "text/plain; charset=utf-8",
         "Cache-Control": "no-store",
-      }).end("DesignMCP authorization failed.");
+      }).end("Rendyn authorization failed.");
       rejectCallback(error instanceof Error ? error : new Error("OAuth callback failed"));
     }
   });
@@ -91,7 +91,7 @@ function arrayField(value: Record<string, unknown>, key: string): unknown[] {
 }
 
 const provider = new ProductionOAuthProvider(callbackUrl);
-const client = new Client({ name: "designmcp-production-verifier", version: "1.0.0" });
+const client = new Client({ name: "rendyn-production-verifier", version: "1.0.0" });
 
 async function connect(): Promise<void> {
   const transport = new StreamableHTTPClientTransport(endpoint, { authProvider: provider });

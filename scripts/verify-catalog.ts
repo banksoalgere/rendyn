@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { resolve } from "node:path";
-import { CatalogStore } from "@designmcp/catalog";
+import { CatalogStore } from "@rendyn/catalog";
 
 const catalogRoot = resolve(import.meta.dirname, "../catalog");
 const store = await CatalogStore.load(catalogRoot);

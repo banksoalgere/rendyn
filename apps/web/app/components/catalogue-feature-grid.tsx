@@ -93,7 +93,7 @@ function SearchByIntentCard() {
   return (
     <article className="feature-card">
       <FeatureCopy
-        copy="DesignMCP reads product context, interaction needs and constraints."
+        copy="Rendyn reads product context, interaction needs and constraints."
         label="Search by intent"
         title="Ask for the outcome, not a component name."
       />

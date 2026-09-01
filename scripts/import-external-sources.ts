@@ -693,7 +693,7 @@ export async function runExternalImports(): Promise<void> {
 
   for (const configPath of SOURCE_CONFIG_PATHS) {
     const config = await readConfig(configPath);
-    const temporaryRoot = await mkdtemp(resolve(tmpdir(), `designmcp-${config.id}-`));
+    const temporaryRoot = await mkdtemp(resolve(tmpdir(), `rendyn-${config.id}-`));
     try {
       const pinnedRoot = await extractPinnedRepository(config, temporaryRoot);
       const license = await readPinnedFile(pinnedRoot, config.license.path);

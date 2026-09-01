@@ -14,7 +14,7 @@ const primaryLinks = [
   { href: '#docs', label: 'Resources', number: '05' },
 ] as const;
 
-const SIGN_UP_HREF = '/login?next=%2Fcomponents';
+const SIGN_UP_HREF = '/pricing';
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -48,7 +48,7 @@ export function MobileMenu() {
         side="right"
       >
         <div className="mobile-menu__header">
-          <span><b>DesignMCP</b><small>Navigation</small></span>
+          <span><b>Rendyn</b><small>Navigation</small></span>
           <button aria-label="Close site menu" onClick={closeMenu} type="button">
             <svg aria-hidden="true" viewBox="0 0 18 18"><path d="m4.5 4.5 9 9m0-9-9 9" /></svg>
           </button>
@@ -106,7 +106,7 @@ export function MobileMenu() {
 
           <div className="mobile-menu__actions">
             <a href="/login?next=%2Faccount" onClick={closeMenu}>Sign in</a>
-            <a className="button" href={SIGN_UP_HREF} onClick={closeMenu}>Get started</a>
+            <a className="button" href={SIGN_UP_HREF} onClick={closeMenu}>Start 7-day trial</a>
           </div>
         </div>
       </Drawer>

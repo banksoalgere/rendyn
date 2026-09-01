@@ -4,17 +4,17 @@ export function Hero() {
       <div className="hero-copy">
         <h1>Give your coding agent<br />great taste.</h1>
         <p className="hero-deck">
-          DesignMCP is a curated catalogue of polished interface components. Your agent
+          Rendyn is a curated catalogue of polished interface components. Your agent
           gets visual options, product context and complete code for every screen.
         </p>
         <div className="hero-actions">
           <a className="button" href="#catalogue">Browse components <span aria-hidden="true">↓</span></a>
-          <a className="button button--ghost" href="#docs">Connect DesignMCP</a>
+          <a className="button button--ghost" href="#docs">Connect Rendyn</a>
         </div>
         <p className="stack-note">Ranked choices <span>·</span> Complete source code <span>·</span> Agent-ready delivery</p>
       </div>
 
-      <div className="component-stage" id="product" aria-label="A finance product composed with DesignMCP components">
+      <div className="component-stage" id="product" aria-label="A finance product composed with Rendyn components">
         <div className="showcase-toolbar">
           <div className="showcase-product">
             <span className="showcase-product-mark" aria-hidden="true">O</span>
@@ -53,7 +53,7 @@ export function Hero() {
 
         <div className="showcase-footer">
           <p><span aria-hidden="true">✓</span> Real components shown inside a finished product</p>
-          <span>Built from the DesignMCP catalogue</span>
+          <span>Built from the Rendyn catalogue</span>
         </div>
       </div>
     </section>

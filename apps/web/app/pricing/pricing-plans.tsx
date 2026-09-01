@@ -6,23 +6,12 @@ import styles from './pricing.module.css';
 
 const plans = [
   {
-    name: 'Free',
-    description: 'Explore the catalogue and try DesignMCP on your next interface.',
-    monthlyPrice: '0',
-    yearlyPrice: '0',
-    features: [
-      'Browse the curated component catalogue',
-      'Four complete component unlocks',
-      'Interactive component previews',
-      'Use source in personal or commercial work',
-    ],
-  },
-  {
     name: 'Pro',
     description: 'For individual builders shipping polished product interfaces regularly.',
     monthlyPrice: '15',
     yearlyPrice: '150',
     recommended: true,
+    planPrefix: 'pro',
     features: [
       'Unlimited component searches',
       'Complete React and TypeScript source',
@@ -37,6 +26,7 @@ const plans = [
     monthlyPrice: '20',
     yearlyPrice: '200',
     perUser: true,
+    planPrefix: 'team',
     features: [
       'Everything in Pro',
       'Shared team collections',
@@ -47,10 +37,11 @@ const plans = [
   },
   {
     name: 'Enterprise',
-    description: 'A tailored DesignMCP rollout for larger product and engineering organisations.',
+    description: 'A tailored Rendyn rollout for larger product and engineering organisations.',
     monthlyPrice: null,
     yearlyPrice: null,
     wide: true,
+    planPrefix: null,
     features: [
       'Everything in Team',
       'Flexible workspace and seat arrangements',
@@ -65,7 +56,7 @@ function Check() {
   return <span className={styles.check} aria-hidden="true">✓</span>;
 }
 
-export default function PricingPlans() {
+export default function PricingPlans({ returnTo }: { returnTo: string }) {
   const [yearly, setYearly] = useState(false);
 
   function changeBillingPeriod(value: string) {
@@ -99,6 +90,10 @@ export default function PricingPlans() {
           </TabsTrigger>
         </TabsList>
       </Tabs>
+      <div className={styles.trialPromise}>
+        <strong>7 days free. Card required.</strong>
+        <span>Start with full access today. Your first subscription charge is on day 8 unless you cancel before the trial ends.</span>
+      </div>
       <div className={styles.planGrid}>
         {plans.map((plan) => {
           const price = yearly ? plan.yearlyPrice : plan.monthlyPrice;
@@ -119,12 +114,29 @@ export default function PricingPlans() {
                   {price === null ? (
                     <p><strong className={styles.customPrice}>Custom</strong></p>
                   ) : (
-                    <p><strong>${price}</strong><span>{price === '0' ? '/ forever' : cadence}</span></p>
+                    <p><strong>${price}</strong><span>{cadence}</span></p>
                   )}
                   <div className={styles.planActions}>
-                    <a href="#compare">{plan.name === 'Enterprise' ? 'Contact sales' : `Get ${plan.name}`}</a>
-                    {yearly && price !== null && price !== '0' && <span>Two months included <b aria-hidden="true">›</b></span>}
+                    {plan.name === 'Enterprise' ? (
+                      <a href="mailto:sales@rendyn.dev">Contact sales</a>
+                    ) : (
+                      <form action="/api/billing/checkout" method="post">
+                        <input
+                          name="plan"
+                          type="hidden"
+                          value={`${plan.planPrefix}_${yearly ? 'yearly' : 'monthly'}`}
+                        />
+                        <input name="return_to" type="hidden" value={returnTo} />
+                        <button type="submit">Start 7-day trial</button>
+                      </form>
+                    )}
+                    {yearly && price !== null && <span>Two months included <b aria-hidden="true">›</b></span>}
                   </div>
+                  {price !== null ? (
+                    <p className={styles.trialTerms}>
+                      Card collected now. No subscription charge today. Cancel before the trial ends to avoid being charged.
+                    </p>
+                  ) : null}
                 </div>
               </div>
               <ul className={styles.planFeatures}>

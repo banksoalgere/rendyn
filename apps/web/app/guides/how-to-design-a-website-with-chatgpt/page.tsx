@@ -5,7 +5,7 @@ import { SiteHeader } from '../../components/site-header';
 import { CopyPrompt } from './copy-prompt';
 import './page.css';
 
-const title = 'How to Design a Website With ChatGPT | DesignMCP';
+const title = 'How to Design a Website With ChatGPT | Rendyn';
 const description =
   'Learn a practical ChatGPT website design workflow—from a sharp brief and visual direction to responsive code, review, and launch.';
 
@@ -42,7 +42,7 @@ First inspect the project and explain the route and files you will change. Then 
 export const metadata: Metadata = {
   title,
   description,
-  authors: [{ name: 'DesignMCP Editorial' }],
+  authors: [{ name: 'Rendyn Editorial' }],
   alternates: { canonical: '/guides/how-to-design-a-website-with-chatgpt' },
   openGraph: {
     title,
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: '2026-08-29T00:00:00.000Z',
     modifiedTime: '2026-08-29T00:00:00.000Z',
-    authors: ['DesignMCP Editorial'],
+    authors: ['Rendyn Editorial'],
     images: [],
   },
   twitter: {
@@ -85,8 +85,8 @@ export default function ChatGPTWebsiteDesignGuide() {
           responsive website people can actually use—not another generic AI template.
         </p>
         <div className="chatgpt-website-author">
-          <span className="chatgpt-website-author__mark" aria-hidden="true">D</span>
-          <span>By DesignMCP Editorial</span>
+          <span className="chatgpt-website-author__mark" aria-hidden="true">R</span>
+          <span>By Rendyn Editorial</span>
           <i aria-hidden="true" />
           <span>Planning, prompting, production, and QA</span>
         </div>
@@ -114,8 +114,8 @@ export default function ChatGPTWebsiteDesignGuide() {
         </div>
 
         <aside className="chatgpt-website-frame__aside">
-          <span className="chatgpt-website-aside__mark" aria-hidden="true">D</span>
-          <p className="chatgpt-website-aside__eyebrow">DesignMCP</p>
+          <span className="chatgpt-website-aside__mark" aria-hidden="true">R</span>
+          <p className="chatgpt-website-aside__eyebrow">Rendyn</p>
           <p className="chatgpt-website-aside__title">Build with better ingredients.</p>
           <p>Give your coding agent polished components, complete source, and the context to choose well.</p>
           <a className="button" href="/#catalogue">Browse components <span aria-hidden="true">↗</span></a>
@@ -271,7 +271,7 @@ export default function ChatGPTWebsiteDesignGuide() {
             <p>
               A model is more consistent when it can reuse proven primitives instead of inventing every
               card, menu, input, and animation from scratch. A curated component source such as
-              <a href="/#catalogue"> DesignMCP&apos;s catalogue</a> gives a coding agent visual previews,
+              <a href="/#catalogue"> Rendyn&apos;s catalogue</a> gives a coding agent visual previews,
               implementation context, and complete source to adapt to the product.
             </p>
           </section>
@@ -308,7 +308,7 @@ export default function ChatGPTWebsiteDesignGuide() {
               <div><span aria-hidden="true">A</span><h3>Content</h3><ul><li>Claims are sourced and current</li><li>Headings form a useful outline</li><li>Labels say what actions do</li><li>No placeholders or invented proof</li></ul></div>
               <div><span aria-hidden="true">B</span><h3>Visual system</h3><ul><li>Hierarchy is clear without decoration</li><li>Spacing follows a repeatable rhythm</li><li>Type and colour fit the brand</li><li>Mobile is composed, not compressed</li></ul></div>
               <div><span aria-hidden="true">C</span><h3>Interaction</h3><ul><li>Keyboard focus is visible</li><li>Controls have usable names</li><li>Motion explains state and can reduce</li><li>Touch targets have breathing room</li></ul></div>
-              <div><span aria-hidden="true">D</span><h3>Engineering</h3><ul><li>Links and forms really work</li><li>Console and network are clean</li><li>Images do not shift the layout</li><li>Inputs and trust boundaries validate</li></ul></div>
+              <div><span aria-hidden="true">R</span><h3>Engineering</h3><ul><li>Links and forms really work</li><li>Console and network are clean</li><li>Images do not shift the layout</li><li>Inputs and trust boundaries validate</li></ul></div>
             </div>
 
             <div className="chatgpt-website-quote">
@@ -373,7 +373,7 @@ export default function ChatGPTWebsiteDesignGuide() {
 
           <section className="chatgpt-website-related" aria-labelledby="keep-exploring">
             <p className="chatgpt-website-step">Continue designing</p>
-            <h2 id="keep-exploring">Keep exploring DesignMCP</h2>
+            <h2 id="keep-exploring">Keep exploring Rendyn</h2>
             <div className="chatgpt-website-related__grid">
               <a href="/#catalogue">
                 <span>Component catalogue</span>
@@ -396,7 +396,7 @@ export default function ChatGPTWebsiteDesignGuide() {
             </p>
             <div>
               <a className="button" href="/#catalogue">Explore the component catalogue <span aria-hidden="true">↗</span></a>
-              <a className="chatgpt-website-text-button" href="/#how-it-works">How DesignMCP works <span aria-hidden="true">→</span></a>
+              <a className="chatgpt-website-text-button" href="/#how-it-works">How Rendyn works <span aria-hidden="true">→</span></a>
             </div>
           </section>
         </article>
@@ -418,7 +418,7 @@ export default function ChatGPTWebsiteDesignGuide() {
             <div className="chatgpt-website-rail__note">
               <span>Better inputs, better interface</span>
               <p>Search by product intent. Give your agent the component source and context to finish the job.</p>
-              <a href="/#catalogue">Browse DesignMCP <span aria-hidden="true">↗</span></a>
+              <a href="/#catalogue">Browse Rendyn <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </aside>

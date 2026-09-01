@@ -10,8 +10,8 @@ import styles from '../auth/auth.module.css';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Sign in | DesignMCP',
-  description: 'Sign in to DesignMCP with Google.',
+  title: 'Sign in | Rendyn',
+  description: 'Sign in to Rendyn with Google.',
 };
 
 const errorMessages: Record<string, string> = {
@@ -48,18 +48,18 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
   return (
     <main className={styles.page}>
       <header className={styles.topbar}>
-        <Link className={styles.brand} href="/" aria-label="DesignMCP home">
-          <span className={styles.brandMark} aria-hidden="true">D</span>
-          <span>DesignMCP</span>
+        <Link className={styles.brand} href="/" aria-label="Rendyn home">
+          <span className={styles.brandMark} aria-hidden="true">R</span>
+          <span>Rendyn</span>
         </Link>
         <Link className={styles.backLink} href="/">Back to home</Link>
       </header>
 
       <section className={styles.card} aria-labelledby="login-title">
-        <p className={styles.eyebrow}>Your DesignMCP account</p>
+        <p className={styles.eyebrow}>Your Rendyn account</p>
         <h1 id="login-title">Welcome in.</h1>
         <p className={styles.intro}>
-          Sign in to keep your component unlocks connected across the website and your coding agent.
+          Sign in to use one Rendyn identity for your subscription, the website and your coding agent.
         </p>
 
         {errorMessage ? <p className={styles.error} role="alert">{errorMessage}</p> : null}
@@ -71,7 +71,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
 
         <GoogleSignInButton configured={configured} returnTo={returnTo} />
         <p className={styles.finePrint}>
-          We request your basic profile and email. Your Google password is never shared with DesignMCP.
+          We request your basic profile and email. Your Google password is never shared with Rendyn.
         </p>
       </section>
     </main>

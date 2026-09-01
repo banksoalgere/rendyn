@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import sharp from "sharp";
-import type { CatalogStore } from "@designmcp/catalog";
+import type { CatalogStore } from "@rendyn/catalog";
 import type { PreviewMedia } from "./preview-media.js";
 
 function escapeXml(value: string): string {

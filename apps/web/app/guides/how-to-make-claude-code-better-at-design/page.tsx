@@ -6,16 +6,16 @@ import { SiteHeader } from '../../components/site-header';
 const route = '/guides/how-to-make-claude-code-better-at-design';
 
 export const metadata: Metadata = {
-  title: 'How to Make Claude Code Better at Design | DesignMCP',
+  title: 'How to Make Claude Code Better at Design | Rendyn',
   description: 'Make Claude Code better at design with a practical workflow for stronger prompts, persistent visual context, better components and browser-based UI review.',
-  authors: [{ name: 'DesignMCP Editorial' }],
+  authors: [{ name: 'Rendyn Editorial' }],
   alternates: { canonical: route },
   robots: { index: true, follow: true },
   openGraph: {
     type: 'article',
     title: 'How to Make Claude Code Better at Design',
     description: 'A practical workflow for turning generic Claude Code UI into coherent, product-ready interface work.',
-    authors: ['DesignMCP Editorial'],
+    authors: ['Rendyn Editorial'],
     publishedTime: '2026-08-29T00:00:00.000Z',
     images: [],
   },
@@ -110,7 +110,7 @@ export default function ClaudeCodeDesignGuide() {
         <header className="guide-hero grid-field">
           <div className="guide-hero-inner">
             <div className="guide-byline">
-              <span className="guide-topic">By DesignMCP Editorial</span>
+              <span className="guide-topic">By Rendyn Editorial</span>
               <span aria-hidden="true">•</span>
               <span>Field guide · Claude Code design</span>
               <span aria-hidden="true">•</span>
@@ -157,10 +157,10 @@ export default function ClaudeCodeDesignGuide() {
               ))}
             </nav>
             <div className="guide-sidebar-cta">
-              <span className="brand-mark" aria-hidden="true">D</span>
+              <span className="brand-mark" aria-hidden="true">R</span>
               <p className="guide-sidebar-title">Give Claude better ingredients.</p>
               <p>Search polished interface components by product intent, then give your agent the source and context to ship them well.</p>
-              <Link className="button" href="/#catalogue">Explore DesignMCP <span aria-hidden="true">↗</span></Link>
+              <Link className="button" href="/#catalogue">Explore Rendyn <span aria-hidden="true">↗</span></Link>
             </div>
           </aside>
 
@@ -269,9 +269,9 @@ Report the route, files changed, design decisions and browser evidence.`}</code>
                 <span>Useful rule of thumb</span>
                 <p>If every task needs the instruction, use CLAUDE.md. If only design work needs it, use a Skill. If only this page needs it, keep it in the prompt.</p>
               </div>
-              <div className="article-product-demo" role="group" aria-label="Example of a DesignMCP component result for Claude Code">
+              <div className="article-product-demo" role="group" aria-label="Example of a Rendyn component result for Claude Code">
                 <div className="article-product-demo-top">
-                  <div><span className="brand-mark" aria-hidden="true">D</span><p><strong>DesignMCP</strong><small>Component context for an agent</small></p></div>
+                  <div><span className="brand-mark" aria-hidden="true">R</span><p><strong>Rendyn</strong><small>Component context for an agent</small></p></div>
                   <span>Example result</span>
                 </div>
                 <div className="article-product-query"><span aria-hidden="true">✦</span><p>“A calm confirmation action for a high-trust workflow”</p></div>
@@ -356,7 +356,7 @@ Report the route, files changed, design decisions and browser evidence.`}</code>
 
             <section className="guide-related" aria-labelledby="related-title">
               <p className="guide-section-label">Put it into practice</p>
-              <h2 id="related-title">Use the workflow with DesignMCP</h2>
+              <h2 id="related-title">Use the workflow with Rendyn</h2>
               <div className="guide-related-grid">
                 <Link href="/#catalogue"><span>Component strategy</span><h3>Choose UI components by product intent</h3><p>Move from a product outcome to a focused, defensible component choice.</p><i aria-hidden="true">↗</i></Link>
                 <Link href="/#intelligence"><span>Agent-ready UI</span><h3>What a complete component handoff includes</h3><p>See the previews, reasoning, states and source files that make a result usable.</p><i aria-hidden="true">↗</i></Link>
@@ -382,7 +382,7 @@ Report the route, files changed, design decisions and browser evidence.`}</code>
           <div>
             <p className="eyebrow">Better inputs. Better interfaces.</p>
             <h2>Give your agent<br />something worth building with.</h2>
-            <p>DesignMCP helps coding agents find polished, product-ready components with visual context, fit reasoning and complete source.</p>
+            <p>Rendyn helps coding agents find polished, product-ready components with visual context, fit reasoning and complete source.</p>
             <Link className="button" href="/#catalogue">Browse the component catalogue <span aria-hidden="true">↗</span></Link>
           </div>
         </section>

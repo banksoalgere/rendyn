@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Best Claude Code Templates: 6 Practical Picks (2026)',
     description: 'A practical comparison of Claude Code templates, from CLAUDE.md foundations to reusable skills and website UI resources.',
-    authors: ['DesignMCP editorial'],
+    authors: ['Rendyn editorial'],
     images: ['/og.png'],
     modifiedTime: '2026-08-29',
     publishedTime: '2026-08-29',
@@ -154,7 +154,7 @@ export default function BestClaudeCodeTemplatesPage() {
         <article>
         <header className="editorial-hero section-shell">
           <div className="editorial-meta">
-            <span>By DesignMCP editorial</span>
+            <span>By Rendyn editorial</span>
             <i aria-hidden="true">•</i>
             <time dateTime="2026-08-29">Updated August 29, 2026</time>
             <i aria-hidden="true">•</i>
@@ -193,10 +193,10 @@ export default function BestClaudeCodeTemplatesPage() {
               </nav>
             </div>
             <div className="sidebar-card sidebar-card--cta">
-              <span className="sidebar-mark" aria-hidden="true">D</span>
+              <span className="sidebar-mark" aria-hidden="true">R</span>
               <p>Better ingredients for AI-built interfaces.</p>
               <small>Give your coding agent polished components, visual previews and complete source.</small>
-              <a className="button" href="/#catalogue">Browse DesignMCP <span aria-hidden="true">↗</span></a>
+              <a className="button" href="/#catalogue">Browse Rendyn <span aria-hidden="true">↗</span></a>
             </div>
             <div className="sidebar-research"><i aria-hidden="true" /> <time dateTime="2026-08-29">Current as of August 2026</time></div>
           </aside>
@@ -328,7 +328,7 @@ export default function BestClaudeCodeTemplatesPage() {
                 <article className="website-choice website-choice--peach">
                   <span>Existing product</span><h3>Use the design system</h3>
                   <p>Preserve the architecture. Give Claude proven components, visual previews and implementation context rather than a second competing scaffold.</p>
-                  <small>Explore: <a href="/#catalogue">DesignMCP components ↗</a></small>
+                  <small>Explore: <a href="/#catalogue">Rendyn components ↗</a></small>
                 </article>
               </div>
               <p><a href="https://code.claude.com/docs/en/best-practices">Anthropic’s workflow guidance</a> supports screenshots and mockups as visual context, while <a href="https://code.claude.com/docs/en/desktop">Claude Code Desktop previews</a> can run an app, inspect its DOM and iterate in an embedded browser. The durable advantage is not the screenshot itself; it is pairing visual intent with the existing product’s constraints and verifying the result in a real browser.</p>
@@ -397,7 +397,7 @@ export default function BestClaudeCodeTemplatesPage() {
                   <i aria-hidden="true">↗</i>
                 </a>
                 <a href="/#resources">
-                  <span>DesignMCP resources</span>
+                  <span>Rendyn resources</span>
                   <h3>Guides for better AI-built products</h3>
                   <i aria-hidden="true">↗</i>
                 </a>

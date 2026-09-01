@@ -88,7 +88,7 @@ export function getRelatedCatalogueEntries(component: CatalogueEntry, limit = 4)
 
 export function getAgentPrompt(component: CatalogueEntry) {
   return [
-    `Use DesignMCP to find the ${component.name} component.`,
+    `Use Rendyn to find the ${component.name} component.`,
     'Return the complete MIT-licensed React source, required dependencies, and installation steps.',
     `Adapt it for my product while preserving its ${component.metadata.interactions.join(', ') || 'core'} interaction behaviour, accessibility, responsive layout, and reduced-motion support.`,
   ].join(' ');

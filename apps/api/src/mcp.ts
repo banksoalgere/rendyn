@@ -16,9 +16,9 @@ export interface McpDependencies {
 
 export function buildMcpServer(dependencies: McpDependencies): McpServer {
   const server = new McpServer({
-    name: "designmcp",
+    name: "rendyn",
     version: "0.1.0",
-    title: "DesignMCP",
+    title: "Rendyn",
     description: "Search and retrieve high-quality React, TypeScript, and Tailwind UI source.",
   });
 

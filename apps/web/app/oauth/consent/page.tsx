@@ -2,13 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { firstQueryValue, safeAuthorizationId, safeOAuthRedirect } from '@/lib/auth/inputs';
+import { getSubscriptionAccess } from '@/lib/billing/access';
 import { createClient } from '@/lib/supabase/server';
 import styles from '../../auth/auth.module.css';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Connect your coding agent | DesignMCP',
+  title: 'Connect your coding agent | Rendyn',
   description: 'Review a coding agent connection request.',
 };
 
@@ -17,9 +18,9 @@ interface ConsentPageProps {
 }
 
 const scopeDescriptions: Record<string, string> = {
-  openid: 'Confirm your DesignMCP identity.',
+  openid: 'Confirm your Rendyn identity.',
   email: 'See the email address attached to your account.',
-  profile: 'See your basic DesignMCP profile.',
+  profile: 'See your basic Rendyn profile.',
 };
 
 function clientDestination(value: string): string {
@@ -35,7 +36,7 @@ function ConsentFailure({ message }: { message: string }) {
         <p className={styles.eyebrow}>Connection request</p>
         <h1>We couldn’t open this request.</h1>
         <p className={styles.intro}>{message}</p>
-        <Link className={styles.secondaryButton} href="/">Return to DesignMCP</Link>
+        <Link className={styles.secondaryButton} href="/">Return to Rendyn</Link>
       </section>
     </main>
   );
@@ -64,6 +65,40 @@ export default async function ConsentPage({ searchParams }: ConsentPageProps) {
 
   if (!hasAuthenticatedUser) {
     redirect(`/login?next=${encodeURIComponent(consentPath)}`);
+  }
+
+  let hasSubscriptionAccess = false;
+  try {
+    hasSubscriptionAccess = (await getSubscriptionAccess(supabase)).allowed;
+  } catch {
+    return <ConsentFailure message="Subscription status is temporarily unavailable." />;
+  }
+
+  if (!hasSubscriptionAccess) {
+    return (
+      <main className={styles.page}>
+        <header className={styles.topbar}>
+          <Link className={styles.brand} href="/" aria-label="Rendyn home">
+            <span className={styles.brandMark} aria-hidden="true">R</span>
+            <span>Rendyn</span>
+          </Link>
+          <Link className={styles.backLink} href="/account">Your account</Link>
+        </header>
+        <section className={`${styles.card} ${styles.consentCard}`}>
+          <p className={styles.eyebrow}>Subscription required</p>
+          <h1>Start your trial before connecting.</h1>
+          <p className={styles.intro}>
+            Rendyn MCP is available during a seven-day full-access trial and with a paid subscription. A card is collected now and the first charge is on day 8 unless you cancel before the trial ends.
+          </p>
+          <Link
+            className={styles.primaryButton}
+            href={`/pricing?next=${encodeURIComponent(consentPath)}`}
+          >
+            Start 7-day trial
+          </Link>
+        </section>
+      </main>
+    );
   }
 
   let authorizationResponse;
@@ -97,9 +132,9 @@ export default async function ConsentPage({ searchParams }: ConsentPageProps) {
   return (
     <main className={styles.page}>
       <header className={styles.topbar}>
-        <Link className={styles.brand} href="/" aria-label="DesignMCP home">
-          <span className={styles.brandMark} aria-hidden="true">D</span>
-          <span>DesignMCP</span>
+        <Link className={styles.brand} href="/" aria-label="Rendyn home">
+          <span className={styles.brandMark} aria-hidden="true">R</span>
+          <span>Rendyn</span>
         </Link>
         <Link className={styles.backLink} href="/account">Your account</Link>
       </header>
@@ -144,7 +179,7 @@ export default async function ConsentPage({ searchParams }: ConsentPageProps) {
         </div>
 
         <p className={styles.securityNote}>
-          Only approve requests you started. DesignMCP sends the resulting access token to the registered client, never your Google password.
+          Only approve requests you started. Rendyn sends the resulting access token to the registered client, never your Google password.
         </p>
       </section>
     </main>

@@ -29,11 +29,12 @@ NEXT_PUBLIC_SUPABASE_URL=https://<project-ref>.supabase.co
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_...
 ```
 
-Add the same two public values to the website's deployment environment before publishing the authenticated flow. Never add `SUPABASE_SERVICE_ROLE_KEY` to the website environment.
+Add the same two public values to the website's deployment environment before publishing the authenticated flow. Billing also requires server-only Stripe values and `SUPABASE_SERVICE_ROLE_KEY`; never prefix those secrets with `NEXT_PUBLIC_` or reference them from a Client Component.
 
 ## Verification
 
 1. Open `/login` and continue with Google.
 2. Confirm Google returns through `/auth/callback` and `/account` shows the signed-in email.
 3. Sign out and confirm `/account` requires sign-in again.
-4. Start an MCP connection and confirm `/oauth/consent` preserves the request, shows the client and scopes, and returns both allow and deny decisions to the registered client callback.
+4. Start the card-backed seven-day trial and confirm `/account` shows the future trial end.
+5. Start an MCP connection and confirm `/oauth/consent` preserves the request, requires trial-or-paid access, shows the client and scopes, and returns both allow and deny decisions to the registered client callback.

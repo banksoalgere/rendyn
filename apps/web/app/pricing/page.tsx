@@ -1,11 +1,12 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import styles from './pricing.module.css';
 import type { Metadata } from 'next';
+import { safeReturnTo } from '@/lib/auth/inputs';
 import PricingPlans from './pricing-plans';
 
 export const metadata: Metadata = {
-  title: 'Pricing | DesignMCP',
-  description: 'Simple monthly or yearly access to DesignMCP.',
+  title: 'Pricing | Rendyn',
+  description: 'Start Rendyn with seven days free, then continue on a monthly or yearly plan.',
 };
 
 const trustedAgents = [
@@ -19,86 +20,93 @@ const trustedAgents = [
 type FeatureValue = string | boolean;
 type ComparisonSection = {
   title: string;
-  rows: Array<[string, FeatureValue, FeatureValue, FeatureValue, FeatureValue]>;
+  rows: Array<[string, FeatureValue, FeatureValue, FeatureValue]>;
 };
 
 const comparisonSections: ComparisonSection[] = [
   {
     title: 'Essentials',
     rows: [
-      ['Component searches', 'Limited', 'Unlimited', 'Unlimited', 'Unlimited'],
-      ['Interactive previews', '4', 'Unlimited', 'Unlimited', 'Unlimited'],
-      ['Access on web and through MCP', 'Web only', true, true, true],
-      ['Personal catalogue history', '30 days', 'Unlimited', 'Unlimited', 'Unlimited'],
-      ['Shared team workspace', false, false, true, true],
+      ['Seven-day full-access trial', true, true, 'Custom'],
+      ['Card collected when trial starts', true, true, 'Custom'],
+      ['First charge on day 8', true, true, 'Custom'],
+      ['Component searches', 'Unlimited', 'Unlimited', 'Unlimited'],
+      ['Interactive previews', 'Unlimited', 'Unlimited', 'Unlimited'],
+      ['Access on web and through MCP', true, true, true],
+      ['Personal catalogue history', 'Unlimited', 'Unlimited', 'Unlimited'],
+      ['Shared team workspace', false, true, true],
     ],
   },
   {
     title: 'Catalogue quality',
     rows: [
-      ['Curated component source', true, true, true, true],
-      ['Complete interaction states', '4 unlocks', true, true, true],
-      ['Responsive implementations', '4 unlocks', true, true, true],
-      ['Keyboard and touch behaviour', '4 unlocks', true, true, true],
-      ['Reduced-motion support', '4 unlocks', true, true, true],
-      ['Accessibility notes', true, true, true, true],
-      ['Fit reasoning for every result', true, true, true, true],
-      ['Regular catalogue updates', true, true, true, true],
-      ['Early access to new drops', false, true, true, true],
+      ['Curated component source', true, true, true],
+      ['Complete interaction states', true, true, true],
+      ['Responsive implementations', true, true, true],
+      ['Keyboard and touch behaviour', true, true, true],
+      ['Reduced-motion support', true, true, true],
+      ['Accessibility notes', true, true, true],
+      ['Fit reasoning for every result', true, true, true],
+      ['Regular catalogue updates', true, true, true],
+      ['Early access to new drops', true, true, true],
     ],
   },
   {
     title: 'Features',
     rows: [
-      ['Ranked shortlists', 'Limited', 'Unlimited', 'Unlimited', 'Unlimited'],
-      ['Working component previews', true, true, true, true],
-      ['Search by product intent', true, true, true, true],
-      ['Search by interaction pattern', true, true, true, true],
-      ['Search by visual direction', true, true, true, true],
-      ['Filter by framework', true, true, true, true],
-      ['Filter by dependency', true, true, true, true],
-      ['Compare candidate components', false, true, true, true],
-      ['Save collections', 'Up to 3', 'Unlimited', 'Shared', 'Custom'],
-      ['Share collection links', false, true, true, true],
-      ['Component unlocks', '4 total', 'Unlimited', 'Unlimited', 'Unlimited'],
-      ['Priority catalogue requests', false, false, true, true],
-      ['Team discovery controls', false, false, true, true],
+      ['Ranked shortlists', 'Unlimited', 'Unlimited', 'Unlimited'],
+      ['Working component previews', true, true, true],
+      ['Search by product intent', true, true, true],
+      ['Search by interaction pattern', true, true, true],
+      ['Search by visual direction', true, true, true],
+      ['Filter by framework', true, true, true],
+      ['Filter by dependency', true, true, true],
+      ['Compare candidate components', true, true, true],
+      ['Save collections', 'Unlimited', 'Shared', 'Custom'],
+      ['Share collection links', true, true, true],
+      ['Component source access', 'Unlimited', 'Unlimited', 'Unlimited'],
+      ['Priority catalogue requests', false, true, true],
+      ['Team discovery controls', false, true, true],
     ],
   },
   {
     title: 'Source & delivery',
     rows: [
-      ['Complete React source', '4 unlocks', true, true, true],
-      ['Complete TypeScript source', '4 unlocks', true, true, true],
-      ['Styles and design tokens', '4 unlocks', true, true, true],
-      ['Dependencies included', true, true, true, true],
-      ['Exact install steps', true, true, true, true],
-      ['Asset inventory', true, true, true, true],
-      ['Source hashes', true, true, true, true],
-      ['Licence clarity', true, true, true, true],
-      ['Copy from the browser', true, true, true, true],
-      ['Deliver directly to your agent', false, true, true, true],
+      ['Complete React source', true, true, true],
+      ['Complete TypeScript source', true, true, true],
+      ['Styles and design tokens', true, true, true],
+      ['Dependencies included', true, true, true],
+      ['Exact install steps', true, true, true],
+      ['Asset inventory', true, true, true],
+      ['Source hashes', true, true, true],
+      ['Licence clarity', true, true, true],
+      ['Copy from the browser', true, true, true],
+      ['Deliver directly to your agent', true, true, true],
     ],
   },
   {
     title: 'Account & support',
     rows: [
-      ['Included seats', '1', '1', '2+', 'Custom'],
-      ['Billing', 'None', 'Individual', 'Centralised', 'Custom'],
-      ['Cancel any time', true, true, true, 'Contract'],
-      ['Support', 'Community', 'Standard', 'Priority', 'Dedicated'],
-      ['Catalogue request voting', false, true, true, true],
-      ['Team onboarding', false, false, true, true],
-      ['Procurement support', false, false, false, true],
-      ['Custom catalogue guidance', false, false, false, true],
+      ['Included seats', '1', '2+', 'Custom'],
+      ['Billing', 'Individual', 'Centralised', 'Custom'],
+      ['Cancel any time', true, true, 'Contract'],
+      ['Support', 'Standard', 'Priority', 'Dedicated'],
+      ['Catalogue request voting', true, true, true],
+      ['Team onboarding', false, true, true],
+      ['Procurement support', false, false, true],
+      ['Custom catalogue guidance', false, false, true],
     ],
   },
 ];
 
 const faqs = [
   {
-    question: 'How does DesignMCP pricing work?',
-    answer: 'Start free, choose Pro for $15 per month, or use Team from $20 per user per month. Pro and Team can be billed yearly with two months included, while Enterprise pricing is tailored to the organisation.',
+    question: 'How does Rendyn pricing work?',
+    answer: 'Choose Pro or Team, enter a card and get full access free for seven days. Unless you cancel before the trial ends, your first charge is made on day 8. Pro is $15 per month and Team starts at $20 per user per month; yearly billing includes two months.',
+  },
+  {
+    question: 'Will I be charged when I start the trial?',
+    answer: 'No subscription charge is made when you start. A valid card is collected up front, and the selected plan is charged automatically on day 8 unless you cancel before the seven-day trial ends.',
   },
   {
     question: 'Can I switch from monthly to yearly?',
@@ -106,7 +114,7 @@ const faqs = [
   },
   {
     question: 'Can I cancel whenever I want?',
-    answer: 'Yes. Your access continues until the end of the period you already paid for, with no additional cancellation fee.',
+    answer: 'Yes. Cancel before the trial ends to avoid the first charge. After billing starts, your access continues until the end of the period you already paid for, with no additional cancellation fee.',
   },
   {
     question: 'Is Team pricing charged per user?',
@@ -118,7 +126,7 @@ const faqs = [
   },
   {
     question: 'Which coding agents are supported?',
-    answer: 'DesignMCP works with modern MCP-compatible coding agents and can also be used directly from the browser.',
+    answer: 'Rendyn works with modern MCP-compatible coding agents and can also be used directly from the browser.',
   },
   {
     question: 'Can I use the source in commercial projects?',
@@ -126,7 +134,7 @@ const faqs = [
   },
   {
     question: 'Is payment secure?',
-    answer: 'Payments are handled by a dedicated payment provider. DesignMCP does not store your full card details.',
+    answer: 'Payments are handled by a dedicated payment provider. Rendyn does not store your full card details.',
   },
 ];
 
@@ -143,13 +151,30 @@ function ComparisonValue({ value }: { value: FeatureValue }) {
   return <span>{value}</span>;
 }
 
-export default function PricingPage() {
+interface PricingPageProps {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}
+
+const pricingErrors: Record<string, string> = {
+  checkout: 'Checkout could not be started. Please try again.',
+  configuration: 'Billing is temporarily unavailable. Please try again shortly.',
+  trial_used: 'This account has already used its trial. Manage or restore billing from your account.',
+  no_subscription: 'No existing subscription was found. Start a trial below.',
+};
+
+export default async function PricingPage({ searchParams }: PricingPageProps) {
+  const query = await searchParams;
+  const errorCode = Array.isArray(query.error) ? query.error[0] : query.error;
+  const message = errorCode ? pricingErrors[errorCode] : null;
+  const nextValue = Array.isArray(query.next) ? query.next[0] : query.next;
+  const returnTo = safeReturnTo(nextValue, '/account');
+  const billingState = Array.isArray(query.billing) ? query.billing[0] : query.billing;
   return (
     <div className={styles.pricingPage} id="top">
       <header className={styles.topbar}>
-        <a className={styles.brand} href="/" aria-label="DesignMCP home">
-          <span className={styles.brandMark}>D</span>
-          <strong>DesignMCP</strong>
+        <a className={styles.brand} href="/" aria-label="Rendyn home">
+          <span className={styles.brandMark}>R</span>
+          <strong>Rendyn</strong>
           <span className={styles.brandMenu} aria-hidden="true">◧</span>
         </a>
         <div className={styles.topActions}>
@@ -173,9 +198,13 @@ export default function PricingPage() {
 
       <main className={styles.main}>
         <section className={styles.pricingHero} aria-labelledby="pricing-title">
-          <p className={styles.eyebrow}>DesignMCP</p>
+          <p className={styles.eyebrow}>Rendyn</p>
           <h1 id="pricing-title">Pricing</h1>
-          <PricingPlans />
+          {message ? <p className={styles.pricingNotice} role="alert">{message}</p> : null}
+          {billingState === 'cancelled' ? (
+            <p className={styles.pricingNotice} role="status">Checkout was cancelled. No subscription was started.</p>
+          ) : null}
+          <PricingPlans returnTo={returnTo} />
         </section>
 
         <section className={styles.trustedSection} aria-label="Compatible coding agents">
@@ -189,21 +218,19 @@ export default function PricingPage() {
 
         <section className={styles.compareSection} id="compare" aria-labelledby="compare-title">
           <h2 id="compare-title">Compare features across plans</h2>
-          <div className={styles.comparisonTable} role="table" aria-label="DesignMCP plan comparison">
+          <div className={styles.comparisonTable} role="table" aria-label="Rendyn plan comparison">
             <div className={`${styles.comparisonRow} ${styles.comparisonPlans}`} role="row">
               <span role="columnheader" />
-              <div role="columnheader"><strong>Free</strong><a href="#top">Get Free</a></div>
-              <div role="columnheader"><strong>Pro</strong><a href="#top">Get Pro</a></div>
-              <div role="columnheader"><strong>Team</strong><a href="#top">Get Team</a></div>
+              <div role="columnheader"><strong>Pro</strong><a href="#top">Start trial</a></div>
+              <div role="columnheader"><strong>Team</strong><a href="#top">Start trial</a></div>
               <div role="columnheader"><strong>Enterprise</strong><a href="#top">Contact</a></div>
             </div>
             {comparisonSections.map((section) => (
               <div className={styles.comparisonGroup} key={section.title} role="rowgroup">
                 <h3>{section.title}</h3>
-                {section.rows.map(([label, free, pro, team, enterprise]) => (
+                {section.rows.map(([label, pro, team, enterprise]) => (
                   <div className={styles.comparisonRow} role="row" key={label}>
                     <strong role="rowheader">{label}</strong>
-                    <div role="cell"><ComparisonValue value={free} /></div>
                     <div role="cell"><ComparisonValue value={pro} /></div>
                     <div role="cell"><ComparisonValue value={team} /></div>
                     <div role="cell"><ComparisonValue value={enterprise} /></div>
@@ -238,7 +265,7 @@ export default function PricingPage() {
           </div>
           <div className={styles.footerBottom}>
             <div className={styles.socials} aria-label="Social links"><a href="#top">X</a><a href="#top">in</a><a href="#top">◉</a><a href="#top">◌</a></div>
-            <p>DesignMCP © 2026 <a href="/">Manage cookies</a></p>
+            <p>Rendyn © 2026 <a href="/">Manage cookies</a></p>
             <span>English&nbsp;&nbsp; United Kingdom</span>
           </div>
         </footer>

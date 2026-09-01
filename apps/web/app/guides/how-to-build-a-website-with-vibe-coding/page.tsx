@@ -110,13 +110,13 @@ const buildSteps = [
           Three adjectives are a start, but references make them operational. Supply two or three examples and annotate the quality you want from each: editorial spacing, compact navigation, tactile controls or restrained motion. Tell the agent what not to copy and what to avoid.
         </p>
         <p>
-          Then lock a few decisions: type scale, content width, spacing rhythm, colour roles, border treatment, control shape and motion rules. Reusing a curated component system helps the page keep a point of view as it grows. That is the role of the <a className="vibe-website-source-link" href="/#catalogue">DesignMCP catalogue</a>: your agent can compare polished options and install the complete implementation instead of improvising every control.
+          Then lock a few decisions: type scale, content width, spacing rhythm, colour roles, border treatment, control shape and motion rules. Reusing a curated component system helps the page keep a point of view as it grows. That is the role of the <a className="vibe-website-source-link" href="/#catalogue">Rendyn catalogue</a>: your agent can compare polished options and install the complete implementation instead of improvising every control.
         </p>
-        <div className="vibe-website-product-demo" role="group" aria-label="Example DesignMCP component result">
-          <div className="vibe-website-product-demo-bar"><span>DesignMCP</span><i>Component result</i></div>
+        <div className="vibe-website-product-demo" role="group" aria-label="Example Rendyn component result">
+          <div className="vibe-website-product-demo-bar"><span>Rendyn</span><i>Component result</i></div>
           <p>“Find a compact, accessible progress pattern for a multi-step AI workflow.”</p>
           <div className="vibe-website-product-demo-result">
-            <span aria-hidden="true">D</span>
+            <span aria-hidden="true">R</span>
             <div><strong>Agent activity steps</strong><small>Preview · fit reasoning · complete source</small></div>
             <i aria-hidden="true">↗</i>
           </div>
@@ -218,7 +218,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: 'How to Build a Website With Vibe Coding | DesignMCP',
+  title: 'How to Build a Website With Vibe Coding | Rendyn',
   description: 'Build a distinctive vibe coding website with a practical brief, prompt template, testing loop and launch checklist for websites and web apps.',
   robots: { index: true, follow: true },
   openGraph: {
@@ -227,7 +227,7 @@ export const metadata: Metadata = {
     description: 'A practical workflow for briefing, prompting, testing and shipping an AI-built website that still feels designed.',
     publishedTime: '2026-08-29T00:00:00.000Z',
     modifiedTime: '2026-08-29T00:00:00.000Z',
-    authors: ['DesignMCP Editorial'],
+    authors: ['Rendyn Editorial'],
     images: [],
   },
   twitter: {
@@ -247,8 +247,8 @@ export default function VibeCodingWebsiteGuide() {
           <header className="vibe-website-hero">
           <a className="vibe-website-back" href="/#resources">Resources <span aria-hidden="true">/</span> Guides</a>
           <div className="vibe-website-byline">
-            <span className="vibe-website-author-mark" aria-hidden="true">DM</span>
-            <p>By DesignMCP Editorial</p>
+            <span className="vibe-website-author-mark" aria-hidden="true">R</span>
+            <p>By Rendyn Editorial</p>
             <i aria-hidden="true">•</i>
             <time dateTime="2026-08-29">August 29, 2026</time>
             <i aria-hidden="true">•</i>
@@ -275,7 +275,7 @@ export default function VibeCodingWebsiteGuide() {
             </ol>
           </div>
           <aside className="vibe-website-lead-aside" aria-label="Guide outcome">
-            <span className="vibe-website-lead-icon" aria-hidden="true">D</span>
+            <span className="vibe-website-lead-icon" aria-hidden="true">R</span>
             <h2>Start with a brief, not a blank chat.</h2>
             <p>Use the copy-ready template in this guide to define the outcome, proof, visual direction and guardrails.</p>
             <a className="button" href="#prompt-template">Get the starter prompt <span aria-hidden="true">↓</span></a>
@@ -472,10 +472,10 @@ export default function VibeCodingWebsiteGuide() {
           <div>
             <p className="eyebrow">Better ingredients for the next prompt</p>
             <h2>Give your agent<br />a stronger starting point.</h2>
-            <p>DesignMCP gives coding agents polished component options, visual previews, product context and complete source.</p>
+            <p>Rendyn gives coding agents polished component options, visual previews, product context and complete source.</p>
             <div>
               <a className="button" href="/#catalogue">Browse components <span aria-hidden="true">↗</span></a>
-              <a className="button button--ghost" href="/#docs">Connect DesignMCP</a>
+              <a className="button button--ghost" href="/#docs">Connect Rendyn</a>
             </div>
           </div>
         </section>

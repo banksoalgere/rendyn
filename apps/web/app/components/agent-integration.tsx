@@ -11,17 +11,17 @@ export function AgentIntegration() {
         <p className="eyebrow">Works with the agents you already use</p>
         <h2>One connection.<br />A design upgrade for every build.</h2>
         <p>
-          DesignMCP joins your agent&apos;s existing workflow and supplies component choices,
+          Rendyn joins your agent&apos;s existing workflow and supplies component choices,
           product-aware reasoning and complete implementation code.
         </p>
-        <a className="button button--light" href="#early-access">Connect DesignMCP <span aria-hidden="true">↗</span></a>
+        <a className="button button--light" href="/pricing">Start 7-day trial <span aria-hidden="true">↗</span></a>
       </div>
 
-      <div className="agent-console" aria-label="Example DesignMCP tool response">
-        <div className="console-bar"><span>designmcp</span><div><i /><i /><i /></div></div>
+      <div className="agent-console" aria-label="Example Rendyn tool response">
+        <div className="console-bar"><span>rendyn</span><div><i /><i /><i /></div></div>
         <div className="console-body">
           <p className="console-comment">{'// Find the right component'}</p>
-          <p><span className="code-purple">designmcp</span>.<span className="code-blue">search</span>{'({'}</p>
+          <p><span className="code-purple">rendyn</span>.<span className="code-blue">search</span>{'({'}</p>
           <p className="indent">intent: <span className="code-green">&quot;primary CTA&quot;</span>,</p>
           <p className="indent">context: <span className="code-green">&quot;dark finance dashboard&quot;</span>,</p>
           <p className="indent">motion: <span className="code-green">&quot;subtle&quot;</span>,</p>

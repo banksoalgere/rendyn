@@ -1,69 +1,76 @@
-import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import type { AppConfig } from "./config.js";
 
 const userAccessGrantSchema = z.object({
   allowed: z.boolean(),
   newly_unlocked: z.boolean(),
-  grant_type: z.enum(["signup_bonus", "monthly", "paid"]).nullable(),
-  signup_bonus_remaining: z.number().int().nonnegative(),
-  monthly_remaining: z.number().int().nonnegative(),
-  monthly_reset_at: z.string().min(1),
+  plan_code: z.string().nullable(),
+  subscription_status: z.enum([
+    "trialing",
+    "active",
+    "past_due",
+    "canceled",
+    "incomplete",
+    "unpaid",
+  ]).nullable(),
+  access_ends_at: z.string().nullable(),
 }).strict();
 
-const anonymousAccessGrantSchema = z.object({
+const subscriptionAccessSchema = z.object({
   allowed: z.boolean(),
-  newly_unlocked: z.boolean(),
-  remaining: z.number().int().nonnegative(),
+  plan_code: z.string().nullable(),
+  subscription_status: z.enum([
+    "trialing",
+    "active",
+    "past_due",
+    "canceled",
+    "incomplete",
+    "unpaid",
+  ]).nullable(),
+  trial_end: z.string().nullable(),
+  current_period_end: z.string().nullable(),
+  cancel_at_period_end: z.boolean(),
 }).strict();
 
 export type UserAccessGrant = z.infer<typeof userAccessGrantSchema>;
-export type AnonymousAccessGrant = z.infer<typeof anonymousAccessGrantSchema>;
+export type SubscriptionAccess = z.infer<typeof subscriptionAccessSchema>;
 
 function firstRow(value: unknown): unknown {
   return Array.isArray(value) ? value[0] : value;
 }
 
 export class EntitlementService {
-  private readonly serviceClient: SupabaseClient | null;
-
-  constructor(private readonly config: AppConfig) {
-    this.serviceClient = config.supabaseConfigured
-      ? createClient(config.SUPABASE_URL!, config.SUPABASE_SERVICE_ROLE_KEY!, {
-          auth: { persistSession: false, autoRefreshToken: false },
-        })
-      : null;
-  }
+  constructor(private readonly config: AppConfig) {}
 
   private requireConfigured(): void {
-    if (!this.config.supabaseConfigured || !this.serviceClient) {
+    if (!this.config.supabaseConfigured) {
       throw new Error("Entitlements are unavailable until Supabase is configured");
     }
   }
 
-  async claimUser(token: string, componentSlug: string): Promise<UserAccessGrant> {
+  private userClient(token: string) {
     this.requireConfigured();
-    const client = createClient(this.config.SUPABASE_URL!, this.config.SUPABASE_ANON_KEY!, {
+    return createClient(this.config.SUPABASE_URL!, this.config.SUPABASE_ANON_KEY!, {
       auth: { persistSession: false, autoRefreshToken: false },
       global: { headers: { Authorization: `Bearer ${token}` } },
     });
-    const { data, error } = await client.rpc("claim_component_access", {
+  }
+
+  async subscriptionAccess(token: string): Promise<SubscriptionAccess> {
+    const { data, error } = await this.userClient(token).rpc("get_subscription_access");
+    if (error) throw new Error(`Subscription access check failed: ${error.code}`);
+    const parsed = subscriptionAccessSchema.safeParse(firstRow(data));
+    if (!parsed.success) throw new Error("Malformed subscription access response");
+    return parsed.data;
+  }
+
+  async claimUser(token: string, componentSlug: string): Promise<UserAccessGrant> {
+    const { data, error } = await this.userClient(token).rpc("claim_component_access", {
       p_component_slug: componentSlug,
     });
     if (error) throw new Error(`Entitlement claim failed: ${error.code}`);
     const parsed = userAccessGrantSchema.safeParse(firstRow(data));
-    if (!parsed.success) throw new Error("Malformed entitlement response");
-    return parsed.data;
-  }
-
-  async claimAnonymous(identityHash: string, componentSlug: string): Promise<AnonymousAccessGrant> {
-    this.requireConfigured();
-    const { data, error } = await this.serviceClient!.rpc("claim_anonymous_component_access", {
-      p_identity_hash: identityHash,
-      p_component_slug: componentSlug,
-    });
-    if (error) throw new Error(`Anonymous entitlement claim failed: ${error.code}`);
-    const parsed = anonymousAccessGrantSchema.safeParse(firstRow(data));
     if (!parsed.success) throw new Error("Malformed entitlement response");
     return parsed.data;
   }

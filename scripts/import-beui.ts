@@ -107,7 +107,7 @@ function createCatalogIndex(
 
 export async function runBeuiImport(): Promise<void> {
   const config = await readSourceConfig();
-  const temporaryRoot = await mkdtemp(resolve(tmpdir(), "designmcp-beui-"));
+  const temporaryRoot = await mkdtemp(resolve(tmpdir(), "rendyn-beui-"));
 
   try {
     const pinnedRoot = await extractPinnedRepository(config, temporaryRoot);

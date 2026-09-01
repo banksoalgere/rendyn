@@ -22,7 +22,7 @@ export function safeReturnTo(
   }
 
   try {
-    const base = new URL('https://designmcp.invalid');
+    const base = new URL('https://rendyn.invalid');
     const parsed = new URL(value, base);
 
     if (parsed.origin !== base.origin) return fallback;

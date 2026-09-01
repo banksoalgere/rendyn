@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/account', '/component-preview/', '/login', '/oauth/'],
     },
-    sitemap: 'https://designmcp.jneilbaker.chatgpt.site/sitemap.xml',
+    sitemap: 'https://rendyn.dev/sitemap.xml',
   };
 }

@@ -11,7 +11,7 @@ export function resourceMetadata(config: AppConfig) {
   if (!config.SUPABASE_URL) return null;
   return {
     resource: new URL("/mcp", config.publicBaseUrl).toString(),
-    resource_name: "DesignMCP component catalogue",
+    resource_name: "Rendyn component catalogue",
     authorization_servers: [`${config.SUPABASE_URL.replace(/\/$/, "")}/auth/v1`],
     scopes_supported: config.requiredScopes,
     bearer_methods_supported: ["header"],

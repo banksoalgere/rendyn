@@ -17,7 +17,7 @@ const outcomes = [
 
 export function ResultIncludesStrip() {
   return (
-    <section className="category-strip" aria-label="What every DesignMCP result includes">
+    <section className="category-strip" aria-label="What every Rendyn result includes">
       <p>Inside every result</p>
       <div>
         {includedResults.map((item, index) => (

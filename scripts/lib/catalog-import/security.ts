@@ -24,7 +24,7 @@ export function assertAllowedUrl(rawUrl: string, expectedOrigin: string): URL {
 export async function fetchBytes(url: URL, maximumBytes: number): Promise<Uint8Array> {
   const response = await fetch(url, {
     redirect: "error",
-    headers: { "User-Agent": "designmcp-catalog-importer/0.1" },
+    headers: { "User-Agent": "rendyn-catalog-importer/0.1" },
   });
   invariant(response.ok, `Fetch failed (${response.status}) for ${url}`);
   const declaredLength = Number(response.headers.get("content-length") ?? 0);

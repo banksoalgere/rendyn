@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DesignMCP internal previews",
+  title: "Rendyn internal previews",
   robots: { index: false, follow: false },
 };
 

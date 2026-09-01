@@ -1,4 +1,4 @@
-import type { CatalogStore } from "@designmcp/catalog";
+import type { CatalogStore } from "@rendyn/catalog";
 import type { Hono } from "hono";
 import type { AppConfig } from "../config.js";
 import type { CatalogService } from "../catalog-service.js";
