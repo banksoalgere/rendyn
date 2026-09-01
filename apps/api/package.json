@@ -5,7 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "start": "tsx src/index.ts"
+    "start": "tsx src/index.ts",
+    "worker:dev": "wrangler dev --config wrangler.jsonc",
+    "worker:types": "wrangler types --config wrangler.jsonc worker-configuration.d.ts",
+    "deploy:dry-run": "wrangler deploy --config wrangler.jsonc --dry-run",
+    "deploy": "wrangler deploy --config wrangler.jsonc"
   },
   "dependencies": {
     "@designmcp/catalog": "workspace:*",
@@ -19,6 +23,8 @@
     "zod": "4.5.4"
   },
   "devDependencies": {
-    "tsx": "4.23.12"
+    "@cloudflare/workers-types": "5.20260901.1",
+    "tsx": "4.23.12",
+    "wrangler": "4.127.1"
   }
 }

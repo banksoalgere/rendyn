@@ -9,7 +9,7 @@
 | `GET /api/categories` | Categories and counts |
 | `GET /api/browse/:category?cursor=...&limit=20` | Stable JSON pagination, maximum 50 |
 | `GET /api/components/:slug` | Public metadata and internal preview URL |
-| `GET /api/previews/contact-sheet?ids=a,b,c` | Numbered PNG for up to five cached previews |
+| `GET /api/previews/contact-sheet?ids=a,b,c` | Numbered visual sheet for up to five cached previews (`image/svg+xml` in the production Worker, PNG in the local Node runtime) |
 | `GET /api/components/:slug/source` | Anonymous-cookie or bearer-token quota claim and source |
 
 Source responses use `Cache-Control: private, no-store`. Search responses never expose upstream preview/page URLs; returned previews are hosted by `PREVIEW_BASE_URL`.
@@ -26,7 +26,7 @@ The initial unauthenticated request returns `401` with a `WWW-Authenticate` chal
 
 ### `search_components`
 
-Inputs: `query`, optional `limit` (1–5), optional `category`. Returns JSON plus a PNG contact sheet when cached previews exist.
+Inputs: `query`, optional `limit` (1–5), optional `category`. Returns JSON plus cached component preview images when available.
 
 ### `get_component`
 

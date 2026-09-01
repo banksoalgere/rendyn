@@ -7,15 +7,15 @@ The website implements Google sign-in through Supabase Auth. It expects a cookie
 1. Create or select a Google Cloud project.
 2. Configure the Google Auth Platform branding, audience and the `openid`, `email` and `profile` scopes.
 3. Create an OAuth client with application type **Web application**.
-4. Add the website origins, including `http://localhost:3000` for local development and the production website origin.
-5. Add the Supabase Auth callback shown on the Supabase Google provider page. Hosted projects normally use `https://<project-ref>.supabase.co/auth/v1/callback`. Local Supabase uses `http://127.0.0.1:54321/auth/v1/callback`.
+4. Add `http://localhost:3000` and `https://rendyn.dev` as authorized JavaScript origins.
+5. Add `https://vgihvrqelwuenfumnugw.supabase.co/auth/v1/callback` as the hosted Supabase Auth redirect URI. Local Supabase uses `http://127.0.0.1:54321/auth/v1/callback`.
 
 ## Supabase
 
 1. Open **Authentication → Providers → Google**.
 2. Enable Google and add the Google client ID and client secret.
-3. Under **Authentication → URL Configuration**, set the production Site URL.
-4. Add `http://localhost:3000/auth/callback` and the production `/auth/callback` URL to the redirect allow list.
+3. Under **Authentication → URL Configuration**, set the Site URL to `https://rendyn.dev`.
+4. Add `http://localhost:3000/auth/callback`, `http://127.0.0.1:3000/auth/callback`, and `https://rendyn.dev/auth/callback` to the redirect allow list.
 5. Keep email identity linking automatic. Do not enable manual account linking for this flow.
 
 For MCP login, also enable the Supabase OAuth 2.1 Server, use an asymmetric signing key, set the authorization path to `/oauth/consent`, and enable dynamic client registration only for environments that need MCP client interoperability.

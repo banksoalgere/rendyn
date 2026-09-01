@@ -7,8 +7,8 @@ AI coding agent
       |
       | OAuth 2.1 + MCP Streamable HTTP
       v
-Hono API / MCP resource server --------> OpenAI Embeddings
-      |                                  query vector only
+Native Cloudflare Worker / MCP resource server ---> OpenAI Embeddings (optional)
+      |                                               query vector only
       |
       +----> versioned catalogue files
       |       source, metadata, vectors, screenshots
@@ -23,7 +23,7 @@ Hono API / MCP resource server --------> OpenAI Embeddings
 
 The repository keeps orchestration thin and puts behavior behind explicit module boundaries:
 
-- `packages/catalog` owns catalog types, runtime schemas, safe path resolution, indexed lookup, pagination, and search. Every catalog or embedding JSON file is validated before use.
+- `packages/catalog` owns catalog types, runtime schemas, safe path resolution, indexed lookup, pagination, search, and validated filesystem/snapshot loading. Every catalog or embedding JSON file is validated before use.
 - `apps/api/src/routes` owns HTTP transport only. Shared catalog response shaping lives in `catalog-presenter.ts`, so HTTP and MCP return the same public representation.
 - `apps/api/src/mcp.ts` only creates the MCP server. Each tool lives under `apps/api/src/mcp-tools`, grouped into search, source retrieval, and catalogue navigation.
 - `apps/api/src/entitlements.ts` owns Supabase quota claims and validates complete RPC responses before returning them to a route or MCP tool.
@@ -75,9 +75,9 @@ The initial search path is:
 
 There is no token-by-token generation or LLM reranker, so temperature and top-p do not apply. This keeps latency and cost predictable. A generative reranker can be added later if measured search failures justify it.
 
-## Why Hono, MCP SDK v2, and Node
+## Why Hono, MCP SDK v2, and a native Worker
 
-The official MCP TypeScript SDK v2 provides the current Streamable HTTP protocol, tool validation, bearer challenges, and request-local auth context. Hono gives a small web-standard API surface and host/origin protection. Node is used because the service reads a versioned file catalogue and creates PNG contact sheets with Sharp.
+The official MCP TypeScript SDK v2 provides the current Streamable HTTP protocol, tool validation, bearer challenges, and request-local auth context. Hono gives a small web-standard API surface and host/origin protection. Production runs directly in a Cloudflare Worker: a generated, validated catalogue snapshot ships in the Worker bundle and preview PNGs use a static-assets binding. The local Node runtime keeps filesystem loading and Sharp contact sheets for development without putting those dependencies in the production bundle.
 
 ## Why a separate preview renderer
 

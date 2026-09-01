@@ -22,6 +22,13 @@ interface JsonFile {
   value: unknown;
 }
 
+export interface CatalogSnapshot {
+  rawIndex: string;
+  components: Record<string, unknown>;
+  licenses: Record<string, string>;
+  rawEmbeddings?: string;
+}
+
 async function readJsonFile(filePath: string): Promise<JsonFile> {
   const raw = await readFile(filePath, "utf8");
   try {
@@ -134,8 +141,16 @@ export class CatalogStore {
   private readonly summariesBySlug: Map<string, CatalogComponentSummary>;
   private readonly summariesById: Map<string, CatalogComponentSummary>;
   private readonly summariesByCategory: Map<CatalogCategorySlug, CatalogComponentSummary[]>;
+  private readonly snapshotComponents: Map<string, CatalogComponent> | null;
+  private readonly snapshotLicenses: Map<string, string> | null;
 
-  private constructor(root: string, index: CatalogIndex, embeddings: EmbeddingIndex | null) {
+  private constructor(
+    root: string,
+    index: CatalogIndex,
+    embeddings: EmbeddingIndex | null,
+    snapshotComponents: Map<string, CatalogComponent> | null = null,
+    snapshotLicenses: Map<string, string> | null = null,
+  ) {
     this.root = root;
     this.index = index;
     this.embeddings = embeddings;
@@ -146,6 +161,8 @@ export class CatalogStore {
       index.components.map((component) => [component.id, component]),
     );
     this.summariesByCategory = indexByCategory(index);
+    this.snapshotComponents = snapshotComponents;
+    this.snapshotLicenses = snapshotLicenses;
   }
 
   static async load(root = resolve(process.cwd(), "catalog")): Promise<CatalogStore> {
@@ -157,6 +174,56 @@ export class CatalogStore {
     const embeddings = await loadOptionalEmbeddings(root, index, indexFile.raw);
 
     return new CatalogStore(root, index, embeddings);
+  }
+
+  static fromSnapshot(snapshot: CatalogSnapshot): CatalogStore {
+    let indexValue: unknown;
+    try {
+      indexValue = JSON.parse(snapshot.rawIndex);
+    } catch {
+      throw new Error("Catalogue snapshot index is not valid JSON");
+    }
+    const index = parseCatalogIndex(indexValue);
+    validateIndexConsistency(index);
+
+    let embeddings: EmbeddingIndex | null = null;
+    if (snapshot.rawEmbeddings) {
+      let embeddingValue: unknown;
+      try {
+        embeddingValue = JSON.parse(snapshot.rawEmbeddings);
+      } catch {
+        throw new Error("Catalogue snapshot embeddings are not valid JSON");
+      }
+      embeddings = parseEmbeddingIndex(embeddingValue);
+      validateEmbeddings(embeddings, index, snapshot.rawIndex);
+    }
+
+    const components = new Map<string, CatalogComponent>();
+    for (const summary of index.components) {
+      const value = snapshot.components[summary.manifestPath];
+      if (!value) throw new Error(`Catalogue snapshot is missing: ${summary.manifestPath}`);
+      const component = parseCatalogComponent(value);
+      const indexedSource = index.sources.find((source) => source.id === summary.sourceId);
+      const matchesIndex =
+        component.slug === summary.slug &&
+        component.id === summary.id &&
+        component.sourceId === summary.sourceId &&
+        component.integrity === summary.integrity &&
+        indexedSource?.commit === component.source.commit;
+      if (!matchesIndex) {
+        throw new Error(`Catalogue snapshot manifest does not match its index: ${summary.slug}`);
+      }
+      components.set(summary.manifestPath, component);
+    }
+
+    const licenses = new Map(Object.entries(snapshot.licenses));
+    for (const source of index.sources) {
+      if (!licenses.has(source.license.textPath)) {
+        throw new Error(`Catalogue snapshot is missing: ${source.license.textPath}`);
+      }
+    }
+
+    return new CatalogStore("/catalog", index, embeddings, components, licenses);
   }
 
   has(identifier: string): boolean {
@@ -177,6 +244,9 @@ export class CatalogStore {
     const summary = this.find(identifier);
     if (!summary) return null;
 
+    const snapshotComponent = this.snapshotComponents?.get(summary.manifestPath);
+    if (snapshotComponent) return snapshotComponent;
+
     const manifestPath = resolveCatalogPath(this.root, summary.manifestPath);
     const manifestFile = await readJsonFile(manifestPath);
     const component = parseCatalogComponent(manifestFile.value);
@@ -196,6 +266,8 @@ export class CatalogStore {
   }
 
   async readLicenseText(component: CatalogComponent): Promise<string> {
+    const snapshotLicense = this.snapshotLicenses?.get(component.source.license.textPath);
+    if (snapshotLicense) return snapshotLicense;
     const licensePath = resolveCatalogPath(this.root, component.source.license.textPath);
     return readFile(licensePath, "utf8");
   }

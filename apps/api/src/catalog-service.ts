@@ -9,12 +9,19 @@ import { HostedEmbeddingProvider } from "./embeddings.js";
 
 export class CatalogService {
   private readonly embeddings: HostedEmbeddingProvider;
+  private readonly previewIds: Map<string, string>;
 
   constructor(
     readonly store: CatalogStore,
     private readonly config: AppConfig,
   ) {
     this.embeddings = new HostedEmbeddingProvider(config);
+    this.previewIds = new Map(
+      store.index.components.map((component, index) => [
+        component.previewPath,
+        String(index + 1).padStart(3, "0"),
+      ]),
+    );
   }
 
   async search(
@@ -39,7 +46,9 @@ export class CatalogService {
   }
 
   previewUrl(path: string): string {
-    return new URL(path, this.config.previewBaseUrl).toString();
+    const previewId = this.previewIds.get(path);
+    if (!previewId) throw new Error(`Unknown catalogue preview path: ${path}`);
+    return new URL(`/component-preview/${previewId}`, this.config.previewBaseUrl).toString();
   }
 
   browse(category: CatalogCategorySlug, cursor?: string, limit?: number) {

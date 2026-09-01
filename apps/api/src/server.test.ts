@@ -1,13 +1,13 @@
 import { beforeAll, describe, expect, it } from "vitest";
 import { readConfig } from "./config.js";
-import { buildApp } from "./server.js";
+import { buildNodeApp } from "./node-app.js";
 
 describe("HTTP API", () => {
-  let app: Awaited<ReturnType<typeof buildApp>>;
+  let app: Awaited<ReturnType<typeof buildNodeApp>>;
   const requestHeaders = { Host: "localhost", Origin: "http://localhost:8787" };
 
   beforeAll(async () => {
-    app = await buildApp(readConfig({ NODE_ENV: "test" }));
+    app = await buildNodeApp(readConfig({ NODE_ENV: "test" }));
   });
 
   it("reports catalogue readiness", async () => {
@@ -38,7 +38,7 @@ describe("HTTP API", () => {
     await expect(response.json()).resolves.toMatchObject({
       id: "beui:button",
       slug: "button",
-      preview_url: "http://localhost:3100/preview/motion/button",
+      preview_url: "http://localhost:3100/component-preview/002",
     });
   });
 

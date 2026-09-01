@@ -7,23 +7,24 @@ import {
   presentComponentMetadata,
   presentSearchResults,
 } from "../catalog-presenter.js";
-import { buildContactSheet } from "../contact-sheet.js";
 import {
   browseRequestSchema,
   contactSheetRequestSchema,
   jsonError,
   searchRequestSchema,
 } from "../http.js";
+import type { PreviewMedia } from "../preview-media.js";
 
 interface PublicRouteDependencies {
   config: AppConfig;
   store: CatalogStore;
   catalog: CatalogService;
+  previewMedia: PreviewMedia;
 }
 
 export function registerPublicRoutes(
   app: Hono,
-  { config, store, catalog }: PublicRouteDependencies,
+  { config, store, catalog, previewMedia }: PublicRouteDependencies,
 ): void {
   app.get("/health", (context) =>
     context.json({
@@ -85,11 +86,11 @@ export function registerPublicRoutes(
     if (!input.success || input.data.ids.some((slug) => !store.has(slug))) {
       return jsonError(context, 400, "invalid_component_ids");
     }
-    const image = await buildContactSheet(store, input.data.ids);
+    const image = await previewMedia.buildContactSheet(input.data.ids);
     if (!image) return jsonError(context, 404, "preview_images_not_generated");
-    return new Response(image, {
+    return new Response(image.data, {
       headers: {
-        "Content-Type": "image/png",
+        "Content-Type": image.mimeType,
         "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
       },
     });

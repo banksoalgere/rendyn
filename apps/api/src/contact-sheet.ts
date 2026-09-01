@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import sharp from "sharp";
 import type { CatalogStore } from "@designmcp/catalog";
+import type { PreviewMedia } from "./preview-media.js";
 
 function escapeXml(value: string): string {
   return value.replace(/[&<>"']/g, (character) => ({
@@ -52,4 +53,17 @@ export async function buildContactSheet(store: CatalogStore, slugs: string[]): P
     .composite(composite)
     .png()
     .toBuffer();
+}
+
+export function createNodePreviewMedia(store: CatalogStore): PreviewMedia {
+  return {
+    async buildContactSheet(slugs) {
+      const data = await buildContactSheet(store, slugs);
+      return data ? { data, mimeType: "image/png" } : null;
+    },
+    async loadMcpImages(slugs) {
+      const data = await buildContactSheet(store, slugs);
+      return data ? [{ data, mimeType: "image/png" }] : [];
+    },
+  };
 }

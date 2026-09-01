@@ -1,0 +1,46 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "rendyn-mcp",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "mcp.rendyn.dev",
+      "custom_domain": true
+    }
+  ],
+  "vars": {
+    "PUBLIC_BASE_URL": "https://mcp.rendyn.dev",
+    "PREVIEW_BASE_URL": "https://rendyn.dev",
+    "ALLOWED_HOSTS": "mcp.rendyn.dev,rendyn-mcp.jneilbaker.workers.dev",
+    "SUPABASE_URL": "https://vgihvrqelwuenfumnugw.supabase.co",
+    "SUPABASE_JWT_AUDIENCE": "authenticated",
+    "MCP_REQUIRED_SCOPES": "openid",
+    "OPENAI_EMBEDDING_MODEL": "text-embedding-3-small"
+  },
+  "secrets": {
+    "required": [
+      "SUPABASE_ANON_KEY",
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "ANONYMOUS_COOKIE_SECRET"
+    ]
+  },
+  "assets": {
+    "directory": "../../catalog/previews",
+    "binding": "PREVIEW_ASSETS",
+    "run_worker_first": true
+  },
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "head_sampling_rate": 1
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.1
+    }
+  }
+}

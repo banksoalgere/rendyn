@@ -13,12 +13,16 @@
     "catalog:embed": "tsx scripts/embed-catalog.ts",
     "catalog:screenshots": "tsx scripts/capture-previews.ts",
     "catalog:verify": "tsx scripts/verify-catalog.ts",
-    "check": "pnpm test && pnpm catalog:verify",
+    "catalog:worker:generate": "tsx scripts/generate-worker-catalog.ts",
+    "catalog:worker:verify": "tsx scripts/generate-worker-catalog.ts --check",
+    "verify:production-mcp": "tsx scripts/verify-production-mcp.ts",
+    "check": "pnpm test && pnpm catalog:verify && pnpm catalog:worker:verify",
     "test": "vitest run",
     "test:watch": "vitest"
   },
   "devDependencies": {
     "@designmcp/catalog": "workspace:*",
+    "@modelcontextprotocol/client": "2.0.0",
     "@types/node": "^26.0.0",
     "playwright-core": "^1.55.0",
     "tsx": "4.23.12",

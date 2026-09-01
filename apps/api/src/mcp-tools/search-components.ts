@@ -1,17 +1,17 @@
 import type { McpServer } from "@modelcontextprotocol/server";
+import { Buffer } from "node:buffer";
 import * as z from "zod/v4";
 import { presentSearchResults } from "../catalog-presenter.js";
-import { buildContactSheet } from "../contact-sheet.js";
 import type { McpDependencies } from "../mcp.js";
 import { textContent, type TextContent } from "./response.js";
 
 type SearchContent =
   | TextContent
-  | { type: "image"; data: string; mimeType: "image/png" };
+  | { type: "image"; data: string; mimeType: string };
 
 export function registerSearchComponentsTool(
   server: McpServer,
-  { config, catalog }: McpDependencies,
+  { config, catalog, previewMedia }: McpDependencies,
 ): void {
   server.registerTool(
     "search_components",
@@ -33,16 +33,14 @@ export function registerSearchComponentsTool(
         config.publicBaseUrl,
       );
       const content: SearchContent[] = [textContent(response)];
-      const contactSheet = await buildContactSheet(
-        catalog.store,
+      const images = await previewMedia.loadMcpImages(
         results.map((result) => result.slug),
       );
-
-      if (contactSheet) {
+      for (const image of images) {
         content.push({
           type: "image",
-          data: contactSheet.toString("base64"),
-          mimeType: "image/png",
+          data: Buffer.from(image.data).toString("base64"),
+          mimeType: image.mimeType,
         });
       }
 

@@ -19,8 +19,8 @@ Seven Magic UI registry records are deliberately excluded because their files ar
 - Remote MCP over Streamable HTTP at `/mcp` with `search_components`, `get_component`, `list_categories`, and `browse_category`.
 - OAuth 2.1 protected-resource discovery for browser-based MCP login through Supabase Auth.
 - Hybrid lexical/vector search with a relevance cutoff, maximum five results, and MMR-style diversity.
-- Hosted OpenAI embeddings. The provider performs tokenization/vectorization; no local model or vector database is required.
-- Public search, category browsing, component metadata, interactive previews, and numbered PNG contact sheets.
+- Deterministic lexical search, with optional hosted OpenAI query embeddings when a matching generated embedding snapshot is present. No vector database is required.
+- Public search, category browsing, component metadata, interactive previews, and numbered visual contact sheets.
 - Complete source retrieval with dependencies, install instructions, content hashes, source revision, and the full MIT notice.
 - Transaction-safe quota claims: four anonymous lifetime unlocks, four account signup unlocks, then four unique components per calendar month starting the next month. Existing unlocks remain accessible. Active paid subscriptions are unrestricted.
 - A pinned multi-source importer that rejects registry drift, modified MIT grants, Commons Clause input, unsafe paths, missing source, and unreviewed transformations.
@@ -58,20 +58,22 @@ The static index is generated once per catalogue revision. Runtime search sends 
 ```bash
 pnpm catalog:import       # pinned import; fails if upstream drifted
 pnpm catalog:verify       # integrity, count, path, and licence checks
+pnpm catalog:worker:generate # refresh the native Worker catalogue snapshot
 pnpm catalog:screenshots  # refresh all internal preview PNGs
 pnpm test
 ```
 
 Updating any source is intentionally manual: review its new commit, registry or package inventory, licence, missing-file set, and transformations; update the matching file under `sources/`; then run import, verification, preview capture, and tests. The importer never silently follows a default branch.
 
-## Remaining integration work
+## Production status
 
-These remain before the complete production product is ready:
+The website is public at `https://rendyn.dev`, and the native Cloudflare MCP service is live at `https://mcp.rendyn.dev/mcp`. Production health, catalogue search, preview media, protected-resource discovery, Google provider configuration, ES256 signing, and dynamic client registration are live.
 
-- Google provider, redirect URL and OAuth Server configuration in Supabase, followed by a real hosted authentication check
+These remain before authenticated MCP access can be called fully verified:
+
+- complete one real hosted MCP authorization/tool run from a signed-in account
 - pricing/checkout and the billing webhook that writes `subscriptions`
-- the public landing page and component gallery
-- production hosting on the chosen application host, edge rate limits, analytics, and alerts
+- edge rate limits, analytics, and alerts
 
 Do not expose `SUPABASE_SERVICE_ROLE_KEY` to either browser application.
 
