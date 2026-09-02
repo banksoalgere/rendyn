@@ -77,6 +77,8 @@ The production release includes the seven-day trial and paid-access boundary. Th
 
 The website Worker uses `SUPABASE_SERVICE_ROLE_KEY` only in its server-side, signature-verified Stripe webhook. Never expose it through a `NEXT_PUBLIC_` variable or browser bundle. The MCP Worker does not receive a service-role key.
 
+Production pushes are configured through [Cloudflare Workers Builds](docs/cloudflare-builds.md). Keep the production branch limited to `main` and satisfy the documented database and secret prerequisites before enabling its first deployment.
+
 ## Licence
 
 Rendyn's own code has not yet been assigned a distribution licence. Imported files retain the separate beUI, Magic UI, and Kibo UI notices under `catalog/source/`. See [Catalogue policy](docs/catalog-policy.md) before adding another source.

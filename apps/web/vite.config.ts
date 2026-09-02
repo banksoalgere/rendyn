@@ -34,7 +34,9 @@ function previewAlias() {
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === 'seatbelt';
 
 const localBindingConfig = {
-  name: 'rendyn-web',
+  // Keep this aligned with the existing production Worker. Cloudflare Workers
+  // Builds rejects a connected repository when the configured name differs.
+  name: 'designmcp-web',
   main: 'vinext/server/app-router-entry',
   compatibility_date: '2026-09-01',
   compatibility_flags: ['nodejs_compat'],
