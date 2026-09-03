@@ -11,6 +11,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Your account | Rendyn',
   description: 'Your Rendyn account.',
+  robots: { index: false, follow: false },
 };
 
 interface AccountPageProps {

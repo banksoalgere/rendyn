@@ -14,10 +14,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/guides/how-to-design-a-website-with-claude-code' },
   authors: [{ name: 'Rendyn Editorial' }],
   category: 'AI interface design',
+  robots: { index: true, follow: true },
   openGraph: {
     title,
     description,
     type: 'article',
+    url: '/guides/how-to-design-a-website-with-claude-code',
     siteName: 'Rendyn',
     publishedTime: '2026-08-29T00:00:00+01:00',
     modifiedTime: '2026-08-29T00:00:00+01:00',

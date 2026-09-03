@@ -9,11 +9,13 @@ const pageDescription = 'A practical Cursor design workflow for better UI: encod
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
+  alternates: { canonical: '/guides/cursor-design' },
   robots: { index: true, follow: true },
   openGraph: {
     type: 'article',
     title: pageTitle,
     description: pageDescription,
+    url: '/guides/cursor-design',
     publishedTime: '2026-08-29T00:00:00+01:00',
     modifiedTime: '2026-08-29T00:00:00+01:00',
   },

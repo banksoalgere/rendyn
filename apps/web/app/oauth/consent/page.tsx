@@ -11,6 +11,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Connect your coding agent | Rendyn',
   description: 'Review a coding agent connection request.',
+  robots: { index: false, follow: false },
 };
 
 interface ConsentPageProps {

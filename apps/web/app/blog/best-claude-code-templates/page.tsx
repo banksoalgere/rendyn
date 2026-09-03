@@ -7,6 +7,7 @@ import { CopyTemplate } from './copy-template';
 export const metadata: Metadata = {
   title: 'Best Claude Code Templates: 6 Practical Picks (2026)',
   description: 'Compare the best Claude Code templates for project instructions, skills, agents, plugins and website UI—plus a safe starter CLAUDE.md.',
+  alternates: { canonical: '/blog/best-claude-code-templates' },
   robots: {
     follow: true,
     index: true,
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     modifiedTime: '2026-08-29',
     publishedTime: '2026-08-29',
     type: 'article',
+    url: '/blog/best-claude-code-templates',
   },
   twitter: {
     card: 'summary_large_image',

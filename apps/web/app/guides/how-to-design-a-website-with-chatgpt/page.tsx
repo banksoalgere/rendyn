@@ -44,10 +44,12 @@ export const metadata: Metadata = {
   description,
   authors: [{ name: 'Rendyn Editorial' }],
   alternates: { canonical: '/guides/how-to-design-a-website-with-chatgpt' },
+  robots: { index: true, follow: true },
   openGraph: {
     title,
     description,
     type: 'article',
+    url: '/guides/how-to-design-a-website-with-chatgpt',
     publishedTime: '2026-08-29T00:00:00.000Z',
     modifiedTime: '2026-08-29T00:00:00.000Z',
     authors: ['Rendyn Editorial'],

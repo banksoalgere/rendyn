@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'How to Make Codex Better at Design | Rendyn',
   description:
     'A practical Codex design workflow for building better websites and apps with stronger context, visual references, reusable rules, and browser QA.',
+  alternates: { canonical: '/guides/how-to-make-codex-better-at-design' },
   authors: [{ name: 'Rendyn editorial' }],
   robots: {
     index: true,
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     title: 'How to Make Codex Better at Design',
     description:
       'Give Codex the product context, visual system, implementation ingredients, and review loop it needs to build polished interfaces.',
+    url: '/guides/how-to-make-codex-better-at-design',
     type: 'article',
     publishedTime: '2026-08-29T00:00:00+01:00',
     modifiedTime: '2026-08-29T00:00:00+01:00',

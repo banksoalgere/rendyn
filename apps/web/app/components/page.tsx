@@ -9,6 +9,21 @@ import styles from './components.module.css';
 export const metadata: Metadata = {
   title: 'Live component catalogue | Rendyn',
   description: 'Browse 189 interactive React component examples, each with a dedicated live preview, usage guidance, and complete editable source.',
+  alternates: { canonical: '/components' },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: 'Live React component catalogue | Rendyn',
+    description: 'Browse 189 interactive React component examples with live previews, usage guidance, and complete editable source.',
+    type: 'website',
+    url: '/components',
+    images: ['/og.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Live React component catalogue | Rendyn',
+    description: 'Browse 189 interactive React component examples with live previews, usage guidance, and complete editable source.',
+    images: ['/og.png'],
+  },
 };
 
 const featuredComponents = [

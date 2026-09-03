@@ -18,7 +18,6 @@ const publicRoutes = [
   '/guides/how-to-make-codex-better-at-design',
   '/guides/vibe-coding-design',
   '/guides/vibe-coding-templates',
-  '/resources/how-to-design-a-website-with-chatgpt',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -32,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...publicRoutes.map((route) => ({
       url: `${siteUrl}${route}`,
-      lastModified: new Date('2026-08-31'),
+      lastModified: new Date('2026-09-03'),
       changeFrequency: route === '/' || route === '/components' ? 'weekly' as const : 'monthly' as const,
       priority: route === '/' ? 1 : route === '/components' ? 0.9 : 0.7,
     })),

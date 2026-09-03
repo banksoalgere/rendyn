@@ -7,6 +7,8 @@ import PricingPlans from './pricing-plans';
 export const metadata: Metadata = {
   title: 'Pricing | Rendyn',
   description: 'Start Rendyn with seven days free, then continue on a monthly or yearly plan.',
+  alternates: { canonical: '/pricing' },
+  robots: { index: true, follow: true },
 };
 
 const trustedAgents = [

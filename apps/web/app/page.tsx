@@ -1,8 +1,34 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
 
+import type { Metadata } from 'next';
 import { ProductMenu } from './components/product-menu';
 import { MobileMenu } from './components/mobile-menu';
 import { CatalogueFeatureGrid } from './components/catalogue-feature-grid';
+
+const title = 'React UI Components for AI Coding Agents | Rendyn';
+const description = 'Browse 189 polished React UI components with live previews, complete TypeScript source, and MCP-ready context for Claude Code, Codex, Cursor, and other coding agents.';
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: '/' },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title,
+    description,
+    locale: 'en_GB',
+    siteName: 'Rendyn',
+    type: 'website',
+    url: '/',
+    images: ['/og.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+    images: ['/og.png'],
+  },
+};
 
 const codingAgents = [
   { name: 'Codex', logo: '/agent-logos/codex.svg' },
@@ -89,7 +115,7 @@ export default function Home() {
       <section className="hero page-width grid-surface" id="top">
         <div className="hero-copy">
           <span className="pill">Agent-ready UI source <b>↗</b></span>
-          <h1>The better way<br />to build polished<br />interfaces.</h1>
+          <h1>Polished React UI<br />for coding agents,<br />ready to ship.</h1>
           <p>
             A curated component catalogue that gives coding agents the right UI,
             complete source and the context to ship it well.

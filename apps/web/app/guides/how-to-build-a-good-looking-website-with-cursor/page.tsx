@@ -7,6 +7,7 @@ import { SiteHeader } from '../../components/site-header';
 export const metadata: Metadata = {
   title: 'Cursor Website Design: How to Build a Good-Looking Site',
   description: 'A practical Cursor website design workflow: define your visual direction, build a design system, prompt in passes, and test the result in a real browser.',
+  alternates: { canonical: '/guides/how-to-build-a-good-looking-website-with-cursor' },
   robots: {
     index: true,
     follow: true,
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'How to Build a Good-Looking Website With Cursor',
     description: 'A practical workflow for giving a Cursor-built website clear art direction, consistent UI and a rigorous browser QA pass.',
+    url: '/guides/how-to-build-a-good-looking-website-with-cursor',
     type: 'article',
     publishedTime: '2026-08-29T00:00:00+01:00',
     authors: ['Rendyn Editorial'],

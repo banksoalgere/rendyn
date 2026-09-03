@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     type: 'article',
     title: 'How to Make Claude Code Better at Design',
     description: 'A practical workflow for turning generic Claude Code UI into coherent, product-ready interface work.',
+    url: route,
     authors: ['Rendyn Editorial'],
     publishedTime: '2026-08-29T00:00:00.000Z',
     images: [],

@@ -14,20 +14,23 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://rendyn.dev'),
-  title: 'Rendyn | Give your coding agent great taste',
-  description: 'A curated catalogue of polished interface components, visual previews and complete code for coding agents.',
+  title: 'React UI Components for AI Coding Agents | Rendyn',
+  description: 'Browse polished React UI components with live previews, complete TypeScript source, and MCP-ready context for AI coding agents.',
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
-    title: 'Rendyn | Give your coding agent great taste',
-    description: 'Polished interface components, visual previews and complete code for coding agents.',
+    title: 'React UI Components for AI Coding Agents | Rendyn',
+    description: 'Polished React UI components, live previews, and complete source for AI coding agents.',
+    locale: 'en_GB',
+    siteName: 'Rendyn',
+    type: 'website',
     images: ['/og.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Rendyn | Give your coding agent great taste',
-    description: 'Polished interface components, visual previews and complete code for coding agents.',
+    title: 'React UI Components for AI Coding Agents | Rendyn',
+    description: 'Polished React UI components, live previews, and complete source for AI coding agents.',
     images: ['/og.png'],
   },
 };

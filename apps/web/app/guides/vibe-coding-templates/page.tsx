@@ -8,10 +8,13 @@ export const metadata: Metadata = {
   title: 'Best Vibe Coding Templates for Better UI | Rendyn',
   description:
     'Compare the best vibe coding templates and UI template approaches for polished, editable apps—plus a practical checklist for choosing the right starting point.',
+  alternates: { canonical: '/guides/vibe-coding-templates' },
+  robots: { index: true, follow: true },
   openGraph: {
     title: 'Best Vibe Coding Templates for Better UI',
     description:
       'A researched comparison of remixable apps, code-first UI blocks, premium starters, and team templates.',
+    url: '/guides/vibe-coding-templates',
     type: 'article',
     publishedTime: '2026-08-29T00:00:00+01:00',
     modifiedTime: '2026-08-29T00:00:00+01:00',

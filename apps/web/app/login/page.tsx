@@ -12,6 +12,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Sign in | Rendyn',
   description: 'Sign in to Rendyn with Google.',
+  robots: { index: false, follow: false },
 };
 
 const errorMessages: Record<string, string> = {

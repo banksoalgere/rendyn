@@ -220,11 +220,13 @@ const faqs = [
 export const metadata: Metadata = {
   title: 'How to Build a Website With Vibe Coding | Rendyn',
   description: 'Build a distinctive vibe coding website with a practical brief, prompt template, testing loop and launch checklist for websites and web apps.',
+  alternates: { canonical: '/guides/how-to-build-a-website-with-vibe-coding' },
   robots: { index: true, follow: true },
   openGraph: {
     type: 'article',
     title: 'How to Build a Website With Vibe Coding',
     description: 'A practical workflow for briefing, prompting, testing and shipping an AI-built website that still feels designed.',
+    url: '/guides/how-to-build-a-website-with-vibe-coding',
     publishedTime: '2026-08-29T00:00:00.000Z',
     modifiedTime: '2026-08-29T00:00:00.000Z',
     authors: ['Rendyn Editorial'],

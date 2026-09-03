@@ -8,10 +8,12 @@ import { CopyPromptButton } from './copy-prompt-button';
 export const metadata: Metadata = {
   title: 'Vibe Coding Design: How to Make Your App Look Good',
   description: 'A practical vibe coding design workflow for stronger hierarchy, typography, prompts, accessibility and a polished vibe coding UI.',
+  alternates: { canonical: '/guides/vibe-coding-design' },
   authors: [{ name: 'Rendyn Editorial' }],
   openGraph: {
     title: 'Vibe Coding Design: How to Make Your App Look Good',
     description: 'Turn a functional AI-built app into a clear, coherent and polished product with this practical design workflow.',
+    url: '/guides/vibe-coding-design',
     type: 'article',
     publishedTime: '2026-08-29T00:00:00+01:00',
     modifiedTime: '2026-08-29T00:00:00+01:00',
