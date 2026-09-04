@@ -1,13 +1,13 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
+import type { ComponentPreviewData } from '../../lib/component-preview';
+import { ComponentPreview } from './component-preview';
 import styles from './components.module.css';
 
-export interface CatalogueComponent {
+export interface CatalogueComponent extends ComponentPreviewData {
   category: 'motion' | 'agents' | 'blocks';
   description: string;
-  name: string;
-  publicSlug: string;
   tags: string[];
 }
 
@@ -40,7 +40,18 @@ export function ComponentExplorer({
 }: ComponentExplorerProps) {
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState(initialCategory);
+  const explorerRef = useRef<HTMLElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
+
+  function updateFilters(nextQuery: string, nextCategory: string) {
+    // Keep the results visible when filtering from the sticky search bar.
+    const explorer = explorerRef.current;
+    if (explorer && explorer.getBoundingClientRect().top < 0) {
+      explorer.scrollIntoView({ block: 'start', behavior: 'instant' });
+    }
+    setQuery(nextQuery);
+    setCategory(nextCategory);
+  }
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -62,19 +73,15 @@ export function ComponentExplorer({
     [category, components, query],
   );
 
-  const setCategoryFilter = (value: string) => {
-    setCategory(value);
-  };
-
   return (
-    <section className={styles.explorer} aria-label="Interactive component catalogue">
+    <section className={styles.explorer} aria-label="Interactive component catalogue" ref={explorerRef}>
       <div className={styles.controlBar}>
         <label className={styles.search}>
           <span aria-hidden="true">⌕</span>
           <span className={styles.visuallyHidden}>Search components</span>
           <input
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search by outcome, interaction or component..."
+            onChange={(event) => updateFilters(event.target.value, category)}
+            placeholder="Search components, e.g. approval or navigation"
             ref={searchInputRef}
             type="search"
             value={query}
@@ -83,14 +90,14 @@ export function ComponentExplorer({
         </label>
 
         <div aria-label="Filter by category" className={styles.categoryDock} role="group">
-          <button aria-pressed={category === 'all'} onClick={() => setCategoryFilter('all')} type="button">
+          <button aria-pressed={category === 'all'} onClick={() => updateFilters(query, 'all')} type="button">
             <span>All</span><b>{components.length}</b>
           </button>
           {Object.entries(categoryLabels).map(([value, label]) => (
             <button
               aria-pressed={category === value}
               key={value}
-              onClick={() => setCategoryFilter(value)}
+              onClick={() => updateFilters(query, value)}
               type="button"
             >
               <span>{label}</span>
@@ -104,31 +111,33 @@ export function ComponentExplorer({
         <div className={styles.resultsHeading} aria-live="polite">
           <div>
             <span>{String(filteredComponents.length).padStart(3, '0')}</span>
-            <p>component pages</p>
+            <p>{filteredComponents.length === 1 ? 'component' : 'components'}</p>
           </div>
-          <small>Open one to see and use the full live example</small>
+          <small>Made to be explored. Ready to be yours.</small>
         </div>
 
         <div className={styles.componentGrid} aria-label="Component results">
-          {filteredComponents.map((component, index) => (
-            <a
+          {filteredComponents.map((component) => (
+            <article
               className={styles.componentLink}
-              href={`/components/${component.publicSlug}`}
               key={component.publicSlug}
             >
-              <div className={styles.componentLinkMeta}>
-                <span>{String(index + 1).padStart(3, '0')}</span>
-                <span>{categoryLabels[component.category]}</span>
+              <div className={styles.cardPreview}>
+                <ComponentPreview component={component} size="card" />
               </div>
-              <h2>{component.name}</h2>
-              <p>{component.description}</p>
-              <div className={styles.componentLinkFooter}>
-                <div aria-label="Component tags">
-                  {component.tags.slice(0, 3).map((tag) => <span key={tag}>{tag}</span>)}
+              <div className={styles.cardInfo}>
+                <div className={styles.componentLinkMeta}>
+                  <span>{categoryLabels[component.category]}</span>
                 </div>
-                <b aria-hidden="true">↗</b>
+                <h2><a href={`/components/${component.publicSlug}`}>{component.name} <span aria-hidden="true">↗</span></a></h2>
+                <p>{component.description}</p>
+                <div className={styles.componentLinkFooter}>
+                  <div aria-label="Component tags">
+                    {component.tags.slice(0, 3).map((tag) => <span key={tag}>{tag}</span>)}
+                  </div>
+                </div>
               </div>
-            </a>
+            </article>
           ))}
         </div>
 
@@ -137,7 +146,7 @@ export function ComponentExplorer({
             <span>00</span>
             <strong>No matches</strong>
             <p>Try “navigation”, “data” or “motion”.</p>
-            <button onClick={() => { setQuery(''); setCategoryFilter('all'); }} type="button">Clear search</button>
+            <button onClick={() => updateFilters('', 'all')} type="button">Clear search</button>
           </div>
         )}
       </div>

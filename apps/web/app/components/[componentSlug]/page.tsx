@@ -9,6 +9,8 @@ import {
   getRelatedCatalogueEntries,
 } from '../../../lib/catalogue';
 import { CopyPrompt } from './copy-prompt';
+import { ComponentPreview } from '../component-preview';
+import { getComponentPreview } from '../../../lib/component-preview';
 import styles from './component-page.module.css';
 
 const siteUrl = 'https://rendyn.dev';
@@ -160,12 +162,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
 
           <section aria-label={`${component.name} live example`} className={styles.previewSection} id="preview">
             <div className={styles.previewCanvas}>
-              <iframe
-                loading="eager"
-                sandbox="allow-forms allow-modals allow-popups allow-same-origin allow-scripts"
-                src={`/component-preview/${component.previewId}`}
-                title={`${component.name} interactive React component example`}
-              />
+              <ComponentPreview component={getComponentPreview(component)} />
             </div>
           </section>
 

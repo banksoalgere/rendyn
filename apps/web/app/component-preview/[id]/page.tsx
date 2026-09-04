@@ -6,6 +6,7 @@ import { PreviewRenderer } from '../preview-renderer';
 
 interface PreviewPageProps {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ embed?: string | string[] }>;
 }
 
 export function generateStaticParams() {
@@ -14,12 +15,13 @@ export function generateStaticParams() {
   }));
 }
 
-export default async function PreviewPage({ params }: PreviewPageProps) {
+export default async function PreviewPage({ params, searchParams }: PreviewPageProps) {
   const { id } = await params;
   if (!/^\d{3}$/.test(id)) notFound();
 
   const component = catalog.components[Number(id) - 1];
   if (!component) notFound();
+  const embedded = (await searchParams).embed === '1';
 
   const category = registry.find((item) => item.slug === component.category);
   const localComponent = category?.components.find((item) => item.slug === component.slug);
@@ -33,7 +35,7 @@ export default async function PreviewPage({ params }: PreviewPageProps) {
     ?? `${component.category}/${component.slug}`;
 
   return (
-    <main className="preview-shell">
+    <main className={embedded ? 'preview-shell preview-shell--embedded' : 'preview-shell'}>
       <section
         aria-label={`${component.name} interactive preview`}
         className="preview-frame"

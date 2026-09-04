@@ -4,6 +4,9 @@ import type { Metadata } from 'next';
 import { ProductMenu } from './components/product-menu';
 import { MobileMenu } from './components/mobile-menu';
 import { CatalogueFeatureGrid } from './components/catalogue-feature-grid';
+import { HomeDemo } from './components/home-demo';
+import { catalogueEntries } from '../lib/catalogue';
+import { getComponentPreview } from '../lib/component-preview';
 
 const title = 'React UI Components for AI Coding Agents | Rendyn';
 const description = 'Browse 189 polished React UI components with live previews, complete TypeScript source, and MCP-ready context for Claude Code, Codex, Cursor, and other coding agents.';
@@ -40,6 +43,15 @@ const codingAgents = [
   { name: 'Gemini CLI', logo: '/agent-logos/gemini-cli.svg' },
   { name: 'OpenCode', logo: '/agent-logos/opencode.svg' },
 ];
+
+const demoExamples = [
+  { slug: 'approval-card', label: 'Agent workspace', description: 'A little human input. A much better outcome.' },
+  { slug: 'table', label: 'Team dashboard', description: 'A clear view of your team, down to the last detail.' },
+  { slug: 'signup-form', label: 'Onboarding', description: 'Make a great first impression, one field at a time.' },
+].flatMap(({ slug, label, description }) => {
+  const entry = catalogueEntries.find((component) => component.slug === slug);
+  return entry ? [{ label, description, ...getComponentPreview(entry) }] : [];
+});
 
 const extras = [
   ['01', 'Ranked shortlists'],
@@ -126,35 +138,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-product" aria-label="Rendyn component search example">
-          <div className="product-window">
-            <div className="window-bar">
-              <div className="window-brand"><span>R</span><strong>Rendyn</strong></div>
-              <div className="window-status"><i /> Connected</div>
-            </div>
-            <div className="agent-prompt">
-              <span className="prompt-icon">✦</span>
-              <div>
-                <small>Agent request</small>
-                <p>Find a calm approval flow for a high-trust product.</p>
-              </div>
-            </div>
-            <div className="result-label"><span>3 matches</span><small>Ranked by product fit</small></div>
-            <div className="result-card result-card--active">
-              <div className="result-preview">
-                <span className="approval-avatar">JD</span>
-                <div><i /><i /><i /></div>
-                <button type="button">Approve</button>
-              </div>
-              <div className="result-copy">
-                <span><b>01</b> Approval card</span>
-                <strong>Best match</strong>
-              </div>
-            </div>
-            <div className="result-row"><span>02</span><p>Tool approval</p><small>Strong fit</small></div>
-            <div className="result-row"><span>03</span><p>Confirmation modal</p><small>Good fit</small></div>
-            <div className="source-ready"><span>✓</span><p><strong>Complete source ready</strong><small>TSX · CSS · dependencies · install steps</small></p></div>
-          </div>
+        <div className="hero-product">
+          <HomeDemo examples={demoExamples} componentCount={catalogueEntries.length} />
         </div>
       </section>
 

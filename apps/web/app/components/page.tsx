@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
 import type { Metadata } from 'next';
 import { catalogueEntries } from '../../lib/catalogue';
+import { getComponentPreview } from '../../lib/component-preview';
 import { SiteFooter } from '../components/site-footer';
 import { SiteHeader } from '../components/site-header';
 import { ComponentExplorer, type CatalogueComponent } from './component-explorer';
@@ -50,8 +51,7 @@ const catalogueComponents: CatalogueComponent[] = [...catalogueEntries].sort((le
 }).map((component) => ({
   category: component.category as CatalogueComponent['category'],
   description: component.description,
-  name: component.name,
-  publicSlug: component.publicSlug,
+  ...getComponentPreview(component),
   tags: component.metadata.tags,
 }));
 

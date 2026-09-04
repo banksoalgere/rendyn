@@ -1,0 +1,37 @@
+.preview {
+  --preview-scale: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #f7f7f5;
+}
+
+.preview[data-size='card'] { --preview-scale: .75; }
+.preview[data-size='hero'] { --preview-scale: .9; }
+
+.preview iframe {
+  display: block;
+  width: calc(100% / var(--preview-scale));
+  height: calc(100% / var(--preview-scale));
+  border: 0;
+  transform: scale(var(--preview-scale));
+  transform-origin: top left;
+  background: white;
+}
+
+.preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.placeholder {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 24px;
+  font-size: 14px;
+  color: var(--muted);
+}
