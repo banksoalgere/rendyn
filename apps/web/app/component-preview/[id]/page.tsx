@@ -3,10 +3,11 @@ import catalog from '../../../../../catalog/index.json';
 import { externalRegistry } from '../../../../preview/generated/external-registry';
 import { registry } from '../../../../preview/vendor-root/lib/registry';
 import { PreviewRenderer } from '../preview-renderer';
+import { getComponentExamples } from '../../../../preview/presentation/examples';
 
 interface PreviewPageProps {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ embed?: string | string[] }>;
+  searchParams: Promise<{ embed?: string | string[]; example?: string | string[]; theme?: string | string[] }>;
 }
 
 export function generateStaticParams() {
@@ -21,7 +22,8 @@ export default async function PreviewPage({ params, searchParams }: PreviewPageP
 
   const component = catalog.components[Number(id) - 1];
   if (!component) notFound();
-  const embedded = (await searchParams).embed === '1';
+  const query = await searchParams;
+  const embedded = query.embed === '1';
 
   const category = registry.find((item) => item.slug === component.category);
   const localComponent = category?.components.find((item) => item.slug === component.slug);
@@ -30,9 +32,8 @@ export default async function PreviewPage({ params, searchParams }: PreviewPageP
   );
   if (!localComponent && !externalComponent) notFound();
 
-  const previewKey = externalComponent?.previewKey
-    ?? localComponent?.examples?.[0]?.previewKey
-    ?? `${component.category}/${component.slug}`;
+  const examples = getComponentExamples(component.category, component.slug);
+  const previewKey = (examples.find((example) => example.slug === query.example) ?? examples[0]).previewKey;
 
   return (
     <main className={embedded ? 'preview-shell preview-shell--embedded' : 'preview-shell'}>
@@ -45,6 +46,7 @@ export default async function PreviewPage({ params, searchParams }: PreviewPageP
           description={component.description}
           name={component.name}
           previewKey={previewKey}
+          dark={query.theme === 'dark'}
         />
       </section>
     </main>

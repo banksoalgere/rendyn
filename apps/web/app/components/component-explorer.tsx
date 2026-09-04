@@ -77,7 +77,7 @@ export function ComponentExplorer({
     <section className={styles.explorer} aria-label="Interactive component catalogue" ref={explorerRef}>
       <div className={styles.controlBar}>
         <label className={styles.search}>
-          <span aria-hidden="true">⌕</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 4.5 4.5" /></svg>
           <span className={styles.visuallyHidden}>Search components</span>
           <input
             onChange={(event) => updateFilters(event.target.value, category)}
@@ -86,7 +86,7 @@ export function ComponentExplorer({
             type="search"
             value={query}
           />
-          <kbd>⌘ K</kbd>
+          <kbd aria-hidden="true">⌘ K</kbd>
         </label>
 
         <div aria-label="Filter by category" className={styles.categoryDock} role="group">
@@ -113,7 +113,7 @@ export function ComponentExplorer({
             <span>{String(filteredComponents.length).padStart(3, '0')}</span>
             <p>{filteredComponents.length === 1 ? 'component' : 'components'}</p>
           </div>
-          <small>Made to be explored. Ready to be yours.</small>
+          <small>Explore a preview, or open it for a closer look.</small>
         </div>
 
         <div className={styles.componentGrid} aria-label="Component results">
@@ -122,13 +122,16 @@ export function ComponentExplorer({
               className={styles.componentLink}
               key={component.publicSlug}
             >
+              <div className={styles.cardToolbar}>
+                <span>{categoryLabels[component.category]}</span>
+                <a href={`/components/${component.publicSlug}`} aria-label={`Open ${component.name} details`}>
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M14 4h6v6M20 4l-8 8M10 4H4v16h16v-6" /></svg>
+                </a>
+              </div>
               <div className={styles.cardPreview}>
                 <ComponentPreview component={component} size="card" />
               </div>
               <div className={styles.cardInfo}>
-                <div className={styles.componentLinkMeta}>
-                  <span>{categoryLabels[component.category]}</span>
-                </div>
                 <h2><a href={`/components/${component.publicSlug}`}>{component.name} <span aria-hidden="true">↗</span></a></h2>
                 <p>{component.description}</p>
                 <div className={styles.componentLinkFooter}>

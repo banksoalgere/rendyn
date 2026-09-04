@@ -9,9 +9,11 @@ import {
   getRelatedCatalogueEntries,
 } from '../../../lib/catalogue';
 import { CopyPrompt } from './copy-prompt';
+import { ComponentNavScroll } from './component-nav-scroll';
 import { SiteHeader } from '../site-header';
 import { SiteFooter } from '../site-footer';
-import { ComponentPreview } from '../component-preview';
+import { PreviewWorkbench } from './preview-workbench';
+import { getComponentExamples } from '../../../../preview/presentation/examples';
 import { getComponentPreview } from '../../../lib/component-preview';
 import styles from './component-page.module.css';
 
@@ -70,6 +72,9 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
 
   const relatedComponents = getRelatedCatalogueEntries(component);
   const prompt = getAgentPrompt(component);
+  const displayDescription = component.publicSlug === 'stories'
+    ? 'A swipeable carousel for images and video, with author details, overlays, and touch navigation.'
+    : component.description;
   const canonicalUrl = `${siteUrl}/components/${component.publicSlug}`;
   const description = `A live ${component.name} React component example with usage guidance for Claude Code, Codex, Cursor, and other coding agents.`;
   const groupedComponents = Object.entries(catalogueCategoryLabels).map(([category, label]) => ({
@@ -118,7 +123,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
           <a className={styles.catalogueBack} href="/components">
             <span aria-hidden="true">←</span> Component catalogue
           </a>
-          <div className={styles.navScroll}>
+          <ComponentNavScroll>
             {groupedComponents.map((group) => (
               <section key={group.category}>
                 <h2>{group.label} <span>{group.components.length}</span></h2>
@@ -135,68 +140,52 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
                 </nav>
               </section>
             ))}
-          </div>
+          </ComponentNavScroll>
         </aside>
 
         <article className={styles.article}>
           <nav aria-label="Breadcrumb" className={styles.breadcrumbs}>
             <a href="/components">Components</a>
             <span aria-hidden="true">›</span>
-            <span>{component.name}</span>
+            <span>{component.categoryLabel}</span>
           </nav>
 
-          <header className={styles.componentHeader}>
+          <header className={styles.componentHeader} id="overview">
             <div>
-              <span className={styles.category}>{component.categoryLabel}</span>
               <h1>{component.name}</h1>
-              <p>{component.description}</p>
+              <p>{displayDescription}</p>
             </div>
             <CopyPrompt prompt={prompt} />
           </header>
 
-          <section aria-label={`${component.name} live example`} className={styles.previewSection} id="preview">
-            <div className={styles.previewCanvas}>
-              <ComponentPreview component={getComponentPreview(component)} />
-            </div>
-          </section>
-
-          <section className={styles.contentSection} id="usage">
-            <div className={styles.sectionHeading}>
-              <span>01</span>
-              <div><p>Usage guidance</p><h2>When to use {component.name}</h2></div>
-            </div>
-            <div className={styles.guidanceGrid}>
-              <article>
-                <span>Use it when</span>
-                <p>{component.metadata.useWhen[0] ?? component.description}</p>
-              </article>
-              <article>
-                <span>Choose another pattern when</span>
-                <p>{component.metadata.notIdealWhen[0] ?? 'A simpler interface would communicate the outcome more clearly.'}</p>
-              </article>
-            </div>
-          </section>
+          <PreviewWorkbench
+            component={getComponentPreview(component)}
+            examples={getComponentExamples(component.category, component.slug)}
+            kind={component.metadata.kind}
+            useWhen={component.metadata.useWhen}
+            notIdealWhen={component.metadata.notIdealWhen}
+          />
 
           <section className={styles.contentSection} id="install">
             <div className={styles.sectionHeading}>
-              <span>02</span>
-              <div><p>Agent install</p><h2>Add the complete component</h2></div>
+              <h2>Installation</h2>
+              <p>Add {component.name} to your project with your coding agent.</p>
             </div>
             <div className={styles.promptBox}>
-              <div><span>Agent prompt</span><CopyPrompt prompt={prompt} /></div>
+              <div><span><span aria-hidden="true">⌘</span> Agent prompt</span><CopyPrompt prompt={prompt} /></div>
               <pre><code>{prompt}</code></pre>
             </div>
           </section>
 
           <section className={styles.contentSection} id="implementation">
             <div className={styles.sectionHeading}>
-              <span>03</span>
-              <div><p>Implementation profile</p><h2>What your agent should preserve</h2></div>
+              <h2>Component details</h2>
+              <p>The essentials for working with this component.</p>
             </div>
             <dl className={styles.profileGrid}>
               <div><dt>Component type</dt><dd>{component.metadata.kind === 'block' ? 'Composed product block' : 'Reusable interface component'}</dd></div>
               <div><dt>Interaction</dt><dd>{component.metadata.interactions.length > 0 ? component.metadata.interactions.join(' · ') : 'Static presentation'}</dd></div>
-              <div><dt>Dependencies</dt><dd>{component.dependencies.length > 0 ? component.dependencies.join(' · ') : 'No external packages'}</dd></div>
+              <div><dt>Dependencies</dt><dd>{component.dependencies.length > 0 ? component.dependencies.join(' · ') : 'See the component installation steps'}</dd></div>
               <div><dt>Licence</dt><dd>MIT licensed · complete editable source</dd></div>
             </dl>
             <div className={styles.tagRow} aria-label="Component characteristics">
@@ -206,8 +195,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
 
           <section className={styles.relatedSection} id="related">
             <div className={styles.sectionHeading}>
-              <span>04</span>
-              <div><p>Keep exploring</p><h2>Related components</h2></div>
+              <h2>Related components</h2>
             </div>
             <div className={styles.relatedGrid}>
               {relatedComponents.map((related) => (
@@ -222,11 +210,27 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
           </section>
 
           <footer className={styles.articleFooter}>
-            <a href="/components"><span aria-hidden="true">←</span> Browse all 189 components</a>
+            <a href="/components"><span aria-hidden="true">←</span> Browse all {catalogueEntries.length} components</a>
             <a href="/pricing">Start 7-day trial <span aria-hidden="true">→</span></a>
           </footer>
         </article>
 
+        <aside className={styles.pageNav} aria-label="On this page">
+          <p>On this page</p>
+          <nav>
+            <a href="#overview">Overview</a>
+            <a href="#preview">Preview</a>
+            <a href="#install">Installation</a>
+            <a href="#implementation">Component details</a>
+            <a href="#related">Related components</a>
+          </nav>
+          <div className={styles.agentNote}>
+            <span aria-hidden="true">✳</span>
+            <strong>From preview to product.</strong>
+            <p>Let your agent bring this component into your codebase.</p>
+            <a href="#install">Get the prompt <span aria-hidden="true">↗</span></a>
+          </div>
+        </aside>
       </div>
       <SiteFooter />
     </main>

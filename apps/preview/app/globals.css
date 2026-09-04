@@ -1,6 +1,8 @@
 @import "../vendor-root/globals.css";
 @import "../vendor-root/external-styles.css";
+@import "../presentation/presentation.css";
 @source "../vendor-root";
+@source "../presentation";
 
 html,
 body {
@@ -9,6 +11,16 @@ body {
 
 body {
   margin: 0;
+}
+
+/* Registry primitives with an uncoloured border expect the semantic default.
+   Keep this in the base layer so explicit demo border colours still win. */
+@layer base {
+  .preview-shell *,
+  .preview-shell *::before,
+  .preview-shell *::after {
+    border-color: var(--border);
+  }
 }
 
 .preview-shell {

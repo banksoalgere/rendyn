@@ -9,18 +9,23 @@ interface CopyPromptProps {
 
 export function CopyPrompt({ prompt }: CopyPromptProps) {
   const [copied, setCopied] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   const copyPrompt = async () => {
-    if (!navigator.clipboard) return;
-    await navigator.clipboard.writeText(prompt);
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 1800);
+    try {
+      await navigator.clipboard.writeText(prompt);
+      setFailed(false);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      setFailed(true);
+    }
   };
 
   return (
-    <button className={styles.copyButton} onClick={copyPrompt} type="button">
+    <button className={styles.copyButton} onClick={copyPrompt} type="button" aria-live="polite" title={failed ? 'Clipboard unavailable. Select and copy the prompt below.' : 'Copy agent prompt'}>
       <span aria-hidden="true">{copied ? '✓' : '⧉'}</span>
-      {copied ? 'Copied' : 'Copy agent prompt'}
+      {failed ? 'Select prompt below' : copied ? 'Copied' : 'Copy prompt'}
     </button>
   );
 }
