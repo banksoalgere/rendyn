@@ -1,14 +1,27 @@
-/* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
 import { Brand } from './brand';
+import { MobileMenu, type MobileComponentGroup } from './mobile-menu';
+import { catalogueEntries } from '../../lib/catalogue';
+import styles from './site-shell.module.css';
 
 const navigation = [
-  { href: '/#product', id: 'product', label: 'Product' },
+  { href: '/', id: 'product', label: 'Overview' },
   { href: '/components', id: 'catalogue', label: 'Components' },
-  { href: '/#how-it-works', id: 'how-it-works', label: 'What you get' },
-  { href: '/#resources', id: 'resources', label: 'Resources' },
+  { href: '/#how-it-works', id: 'how-it-works', label: 'How it works' },
+  { href: '/pricing', id: 'pricing', label: 'Pricing' },
+  { href: '/guides/how-to-make-claude-code-better-at-design', id: 'resources', label: 'Guides' },
 ];
 
 type NavigationId = (typeof navigation)[number]['id'];
+
+const mobileGroups: MobileComponentGroup[] = [
+  { id: 'motion', label: 'Interaction', detail: 'Interaction and animation' },
+  { id: 'agents', label: 'Agent UI', detail: 'Interfaces for AI products' },
+  { id: 'blocks', label: 'Product blocks', detail: 'Complete product patterns' },
+].map((group) => ({
+  ...group,
+  components: catalogueEntries.filter((entry) => entry.category === group.id)
+    .map(({ publicSlug, name }) => ({ publicSlug, name })),
+}));
 
 interface SiteHeaderProps {
   activeSection?: NavigationId;
@@ -16,9 +29,9 @@ interface SiteHeaderProps {
 
 export function SiteHeader({ activeSection }: SiteHeaderProps = {}) {
   return (
-    <header className={`site-header${activeSection ? ' editorial-header' : ''}`}>
+    <header className={styles.header}>
       <Brand />
-      <nav className="desktop-nav" aria-label="Primary navigation">
+      <nav className={styles.navigation} aria-label="Primary navigation">
         {navigation.map((item) => (
           <a
             aria-current={activeSection === item.id ? 'page' : undefined}
@@ -29,12 +42,10 @@ export function SiteHeader({ activeSection }: SiteHeaderProps = {}) {
           </a>
         ))}
       </nav>
-      <div className="header-actions">
-        <a className="text-link" href="/#docs">View docs</a>
-        <a className="button button--small" href="/pricing">
-          <span className="desktop-label">Start trial</span>
-          <span className="mobile-label">Trial</span>
-        </a>
+      <div className={styles.actions}>
+        <a className={styles.signIn} href="/login?next=%2Faccount">Sign in</a>
+        <a className={styles.trial} href="/pricing">Start trial <span aria-hidden="true">↗</span></a>
+        <MobileMenu groups={mobileGroups} />
       </div>
     </header>
   );

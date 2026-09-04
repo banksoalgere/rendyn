@@ -1,12 +1,13 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
 
 import type { Metadata } from 'next';
-import { ProductMenu } from './components/product-menu';
-import { MobileMenu } from './components/mobile-menu';
-import { CatalogueFeatureGrid } from './components/catalogue-feature-grid';
+import { SiteHeader } from './components/site-header';
+import { SiteFooter } from './components/site-footer';
 import { HomeDemo } from './components/home-demo';
 import { catalogueEntries } from '../lib/catalogue';
 import { getComponentPreview } from '../lib/component-preview';
+import styles from './home.module.css';
+import { CatalogueFeatureGrid } from './components/catalogue-feature-grid';
 
 const title = 'React UI Components for AI Coding Agents | Rendyn';
 const description = 'Browse 189 polished React UI components with live previews, complete TypeScript source, and MCP-ready context for Claude Code, Codex, Cursor, and other coding agents.';
@@ -53,98 +54,42 @@ const demoExamples = [
   return entry ? [{ label, description, ...getComponentPreview(entry) }] : [];
 });
 
-const extras = [
-  ['01', 'Ranked shortlists'],
-  ['02', 'Interactive previews'],
-  ['03', 'Complete states'],
-  ['04', 'Fit reasoning'],
-  ['05', 'Dependencies'],
-  ['06', 'Install steps'],
-  ['07', 'Source hashes'],
-  ['08', 'Licence clarity'],
+const steps = [
+  { number: '01', title: 'Start with an idea', copy: 'Tell your agent what you’re building and how it should feel.' },
+  { number: '02', title: 'Find your favourite', copy: 'Explore working components and choose the details that fit.' },
+  { number: '03', title: 'Make it your own', copy: 'Get the source, dependencies and install steps. Build from there.' },
 ];
 
-const scenarios = [
-  ['Clinical workflow', 'Calm, explicit actions with every state included.', 'high trust'],
-  ['Finance dashboard', 'Dense data patterns that stay easy to scan.', 'data rich'],
-  ['Agent interface', 'Tool calls, streaming and approvals that feel native.', 'agentic'],
-  ['Mobile product', 'Touch-ready controls with sensible constraints.', 'responsive'],
-  ['Team workspace', 'Patterns that scale across repeated workflows.', 'system ready'],
-  ['Developer tool', 'Keyboard-friendly UI with crisp feedback.', 'technical'],
-  ['Consumer app', 'Distinctive motion without losing usability.', 'expressive'],
-  ['Admin product', 'Useful density, clear hierarchy and safe actions.', 'operational'],
-  ['New feature', 'A strong first draft without the generic AI look.', 'fast start'],
+const collectionStats = [
+  { category: 'motion', label: 'Interactions', description: 'The details that make it feel right.' },
+  { category: 'agents', label: 'Agent interfaces', description: 'A human touch for AI products.' },
+  { category: 'blocks', label: 'Product blocks', description: 'Good foundations for big ideas.' },
 ];
-
-const footerGroups = [
-  ['Product', ['Components', 'How it works', 'For teams', 'Pricing']],
-  ['Developers', ['Documentation', 'MCP connection', 'Component format', 'Changelog']],
-  ['Resources', ['Component guide', 'Agent workflows', 'Catalogue policy', 'Status']],
-  ['Company', ['About', 'Contact', 'Privacy', 'Terms']],
-];
-
-const SIGN_UP_HREF = '/pricing';
-
-function Brand({ footer = false }: { footer?: boolean }) {
-  return (
-    <a className="brand" href="#top" aria-label="Rendyn home">
-      <span className="brand-mark" aria-hidden="true">R</span>
-      <span>Rendyn</span>
-      {!footer && <small>beta</small>}
-    </a>
-  );
-}
-
-function SectionHeading({ label, title, copy }: { label: string; title: React.ReactNode; copy: string }) {
-  return (
-    <div className="section-heading">
-      <span className="pill pill--section">{label}</span>
-      <h2>{title}</h2>
-      <p>{copy}</p>
-    </div>
-  );
-}
 
 export default function Home() {
   return (
-    <main>
-      <header className="site-header page-width">
-        <Brand />
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          <ProductMenu />
-          <a href="#how-it-works">How it works</a>
-          <a href="/pricing">Pricing</a>
-          <a href="#for-teams">For teams</a>
-          <a href="#docs">Resources</a>
-        </nav>
-        <div className="header-actions">
-          <a className="text-link" href="/login?next=%2Faccount">Sign in</a>
-          <a className="button button--small" href={SIGN_UP_HREF}>Start trial</a>
-          <MobileMenu />
-        </div>
-      </header>
-
-      <section className="hero page-width grid-surface" id="top">
-        <div className="hero-copy">
-          <span className="pill">Agent-ready UI source <b>↗</b></span>
-          <h1>Polished React UI<br />for coding agents,<br />ready to ship.</h1>
-          <p>
-            A curated component catalogue that gives coding agents the right UI,
-            complete source and the context to ship it well.
-          </p>
-          <div className="hero-actions">
-            <a className="button button--wide" href={SIGN_UP_HREF}>Start 7-day trial <span>→</span></a>
-            <a className="button button--secondary button--wide" href="#how-it-works">See how it works</a>
+    <main className={styles.page}>
+      <SiteHeader activeSection="product" />
+      <section className={styles.hero} id="top">
+        <div className={styles.copy}>
+          <span className={styles.eyebrow}><i /> For people who care about the details</span>
+          <h1>Good ideas.<br />Beautiful<br /><em>interfaces.</em></h1>
+          <p>Give your coding agent a head start with thoughtfully crafted React components. Ready to explore. Yours to make your own.</p>
+          <div className={styles.actions}>
+            <a className={styles.primary} href="/components">Find your next component <span aria-hidden="true">↗</span></a>
+            <a className={styles.secondary} href="/pricing">Start 7-day trial <span aria-hidden="true">→</span></a>
           </div>
+          <div className={styles.notes}><span><b>{catalogueEntries.length}</b> components</span><span>MIT licensed</span><span>Built to be yours</span></div>
         </div>
-
-        <div className="hero-product">
+        <div className={styles.showcase}>
+          <div className={styles.showcaseLabel}><span>THE PLAYGROUND</span><span>Go on. Try it out ↘</span></div>
           <HomeDemo examples={demoExamples} componentCount={catalogueEntries.length} />
+          <p className={styles.showcaseNote}><span aria-hidden="true">✳</span> Good design is in the interaction.</p>
         </div>
       </section>
 
-      <section className="trust-strip page-width" aria-label="Compatible coding tools">
-        <p>Built for the agents you already use</p>
+      <section className={styles.trust} aria-label="Compatible coding tools">
+        <p>A little more design.<br /><strong>In the tools you already love.</strong></p>
         <div>
           {codingAgents.slice(0, 5).map((agent) => (
             <span key={agent.name}><img src={agent.logo} alt="" />{agent.name}</span>
@@ -152,156 +97,60 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="steps-section section-grid" id="how-it-works">
-        <div className="content-width">
-          <SectionHeading
-            label="How it works"
-            title={<>With us, finding the right UI is easy.</>}
-            copy="From product intent to usable source in three focused steps."
-          />
-          <div className="steps-grid">
-            <article className="step-card">
-              <div className="step-copy"><span>01</span><h3>Describe the outcome</h3><p>Tell your agent what the interface needs to do.</p></div>
-              <div className="step-prompt"><span>✦</span><p>A safe delete flow for a team workspace...</p><i>↵</i></div>
-            </article>
-            <article className="step-card">
-              <div className="step-copy"><span>02</span><h3>Review the best fits</h3><p>Compare a small, ranked set with clear reasoning.</p></div>
-              <div className="step-stack" aria-hidden="true"><i /><i className="chosen" /><i /></div>
-            </article>
-            <article className="step-card">
-              <div className="step-copy"><span>03</span><h3>Ship complete source</h3><p>Copy the component, states and install steps.</p></div>
-              <div className="step-files"><span><b>TSX</b> component.tsx <i>✓</i></span><span><b>CSS</b> styles.css <i>✓</i></span><span><b>DOC</b> install.md <i>✓</i></span></div>
-            </article>
-          </div>
+      <section className={styles.collection} id="components">
+        <div className={styles.sectionHeading}>
+          <div><span className={styles.kicker}>A considered collection</span><h2>Small details.<br /><em>A big difference.</em></h2></div>
+          <p>From the first click to the final state, find components with a little more care built in.</p>
         </div>
-      </section>
-
-      <section className="features-section section-grid" id="components">
-        <div className="content-width">
-          <SectionHeading
-            label="The catalogue"
-            title={<>Your all-purpose<br />interface source.</>}
-            copy="Polished components, understood in context and delivered whole."
-          />
-          <CatalogueFeatureGrid />
-
-          <div className="more-section">
-            <h2>...and so much more.</h2>
-            <div className="more-grid">
-              {extras.map(([number, label]) => (
-                <div key={number}><span>{number}</span><i aria-hidden="true">✦</i><p>{label}</p></div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="proof-section section-grid">
-        <div className="content-width">
-          <SectionHeading
-            label="In the catalogue today"
-            title={<>The catalogue speaks for itself.</>}
-            copy="A focused library, not an unfiltered component dump."
-          />
-          <div className="proof-grid">
-            <article><span>189</span><p>component examples</p><small>Every entry has a verified preview and complete source.</small></article>
-            <article><span>109</span><p>interaction components</p><small>Motion-rich patterns with the details agents usually miss.</small></article>
-            <article><span>17</span><p>agent interfaces</p><small>Purpose-built patterns for tools, approvals and streaming.</small></article>
-            <article><span>63</span><p>product blocks</p><small>Useful foundations for real product screens.</small></article>
-          </div>
-        </div>
-      </section>
-
-      <section className="connect-section section-grid" id="docs">
-        <div className="connect-card content-width">
-          <div className="connect-copy">
-            <span className="pill pill--section">One connection</span>
-            <h2>Works where you already build.</h2>
-            <p>Rendyn brings better component choices to the coding agents you already use.</p>
-            <a className="button button--secondary" href={SIGN_UP_HREF}>Start 7-day trial <span>→</span></a>
-          </div>
-          <div className="tool-grid" aria-label="MCP-compatible coding agents">
-            {codingAgents.map((agent) => (
-              <div className="tool-logo" key={agent.name}>
-                <span><img src={agent.logo} alt="" /></span>
-                <small>{agent.name}</small>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="teams-section section-grid" id="for-teams">
-        <div className="teams-grid content-width">
-          <div className="teams-copy">
-            <span className="pill pill--section">For teams</span>
-            <h2>One visual standard. Every agent.</h2>
-            <p>Give the whole team the same curated source and the same quality bar—without adding another design tool.</p>
-            <a className="button" href={SIGN_UP_HREF}>Start team trial <span>→</span></a>
-          </div>
-          <div className="team-console" aria-label="Example Rendyn tool response">
-            <div className="console-top"><span>rendyn / search</span><i /><i /><i /></div>
-            <div className="console-prompt"><span>›</span><p>approval flow · high trust · low motion</p></div>
-            <div className="console-result">
-              <div><span>01</span><p><b>approval-card</b><small>Strongest match for explicit review.</small></p><i>0.96</i></div>
-              <div><span>02</span><p><b>tool-approval</b><small>Best for agent-led actions.</small></p><i>0.89</i></div>
-              <div><span>03</span><p><b>confirmation-modal</b><small>Familiar fallback pattern.</small></p><i>0.82</i></div>
-            </div>
-            <div className="console-ready"><span>✓</span> Source and install steps ready</div>
-          </div>
-        </div>
-      </section>
-
-      <section className="scenarios-section section-grid">
-        <div className="content-width">
-          <SectionHeading
-            label="Product-aware matching"
-            title={<>See how Rendyn reads the room.</>}
-            copy="The right component changes with the product around it."
-          />
-          <div className="scenario-grid">
-            {scenarios.map(([title, copy, tag], index) => (
-              <article key={title}>
-                <div><span className={`scenario-avatar avatar-${index + 1}`}>{title.charAt(0)}</span><p><b>{title}</b><small>{tag}</small></p></div>
-                <p>{copy}</p>
-                <a href="/components">Explore the fit <span>↗</span></a>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="trust-strip trust-strip--lower page-width" aria-label="What every delivered component includes">
-        <p>Every delivered component includes</p>
-        <div>
-          {['Complete source', 'Every state', 'Dependencies', 'Install steps', 'Editable code'].map((item) => (
-            <span key={item}><i aria-hidden="true">✓</i>{item}</span>
+        <CatalogueFeatureGrid />
+        <div className={styles.collectionStats}>
+          {collectionStats.map(({ category, label, description }) => (
+            <a href={`/components?category=${category}`} key={category}>
+              <strong>{catalogueEntries.filter((entry) => entry.category === category).length}</strong>
+              <div><h3>{label}</h3><p>{description}</p></div>
+              <span aria-hidden="true">↗</span>
+            </a>
           ))}
         </div>
       </section>
 
-      <section className="closing-section section-grid" id="get-started">
-        <div className="closing-card content-width grid-surface">
-          <span className="pill pill--section">Ready when your agent is</span>
-          <h2>Smarter, simpler<br />interface building.</h2>
-          <a className="button" href={SIGN_UP_HREF}>Start 7-day trial <span>→</span></a>
-          <p><span>189</span> live components <i>·</i> MIT licensed <i>·</i> complete code you own</p>
+      <section className={styles.workflow} id="how-it-works">
+        <div className={styles.sectionHeading}>
+          <div><span className={styles.kicker}>From inspiration to implementation</span><h2>Less starting over.<br /><em>More making it yours.</em></h2></div>
+          <a className={styles.textLink} href="/components">Take a look around <span aria-hidden="true">↗</span></a>
+        </div>
+        <div className={styles.steps}>
+          {steps.map((step) => (
+            <article key={step.number}>
+              <span>{step.number}</span>
+              <h3>{step.title}</h3>
+              <p>{step.copy}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      <footer className="site-footer page-width">
-        <div className="footer-intro">
-          <Brand footer />
-          <p>Curated UI source for coding agents.</p>
-          <div className="footer-stamps"><span>React</span><span>TS</span><span>MCP</span><span>MIT source</span></div>
+      <section className={styles.connect} id="for-teams">
+        <div id="docs">
+          <span className={styles.kicker}>Made for your workflow</span>
+          <h2>Your favourite agent.<br /><em>A better eye for design.</em></h2>
+          <p>One connection gives you and your team the same considered collection. Complete source, ready to adapt to the way you build.</p>
+          <a className={styles.primary} href="/pricing">Find your plan <span aria-hidden="true">↗</span></a>
         </div>
-        <div className="footer-nav">
-          {footerGroups.map(([title, links]) => (
-            <div key={title as string}><strong>{title}</strong>{(links as string[]).map((link) => <a href={link === 'Pricing' ? '/pricing' : link === 'Components' ? '/components' : '#top'} key={link}>{link}</a>)}</div>
+        <div className={styles.tools} aria-label="MCP-compatible coding agents">
+          {codingAgents.map((agent) => (
+            <div key={agent.name}><img src={agent.logo} alt="" /><span>{agent.name}</span></div>
           ))}
         </div>
-        <div className="footer-bottom"><span>© 2026 Rendyn</span><span>Built for better product decisions.</span></div>
-      </footer>
+      </section>
+
+      <section className={styles.closing} id="get-started">
+        <span className={styles.kicker}>Your next great interface starts here</span>
+        <h2>Make something<br /><em>worth clicking.</em></h2>
+        <a className={styles.primary} href="/components">Explore the collection <span aria-hidden="true">↗</span></a>
+        <p>{catalogueEntries.length} components. Endless possibilities.</p>
+      </section>
+      <SiteFooter />
     </main>
   );
 }

@@ -9,6 +9,8 @@ import {
   getRelatedCatalogueEntries,
 } from '../../../lib/catalogue';
 import { CopyPrompt } from './copy-prompt';
+import { SiteHeader } from '../site-header';
+import { SiteFooter } from '../site-footer';
 import { ComponentPreview } from '../component-preview';
 import { getComponentPreview } from '../../../lib/component-preview';
 import styles from './component-page.module.css';
@@ -109,15 +111,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
         type="application/ld+json"
       />
 
-      <header className={styles.topbar}>
-        <a className={styles.brand} href="/" aria-label="Rendyn home">
-          <span>R</span><strong>Rendyn</strong>
-        </a>
-        <nav aria-label="Component page navigation">
-          <a href="/components">All components</a>
-          <a href="/pricing">Start trial</a>
-        </nav>
-      </header>
+      <div className={styles.headerShell}><SiteHeader activeSection="catalogue" /></div>
 
       <div className={styles.docsShell}>
         <aside className={styles.componentNav}>
@@ -234,6 +228,7 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
         </article>
 
       </div>
+      <SiteFooter />
     </main>
   );
 }

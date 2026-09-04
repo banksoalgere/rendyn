@@ -3,7 +3,7 @@
   --pricing-muted: #6f6f6b;
   --pricing-faint: #91918d;
   --pricing-line: #dadad6;
-  background: #fff;
+  background: var(--paper);
   color: var(--pricing-ink);
   min-height: 100vh;
 }
@@ -590,3 +590,32 @@
   .socials, .footerBottom > span { justify-self: center; }
   .footerBottom p { grid-row: 3; }
 }
+
+/* Shared shell and reading scale. Billing controls retain their existing flow. */
+.headerShell { border-bottom: 1px solid var(--line); }
+.main { max-width: 1200px; margin: auto; padding: 48px 32px 80px; }
+.pricingHero { max-width: 1100px; }
+.eyebrow { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+.planCard { background: white; border-radius: 14px; }
+.recommendedCard { border-color: #9bc3aa; background: #f5fbf7; }
+.planDescription { font-size: 15px; }
+.planFeatures { font-size: 14px; }
+.trialPromise { font-size: 14px; }
+.comparisonRow > strong, .comparisonRow > div { font-size: 13px; }
+.comparisonRow { grid-template-columns: minmax(210px, 1.25fr) repeat(3, minmax(110px, .75fr)); }
+.faqList summary { font-size: 16px; }
+.faqList p { font-size: 15px; }
+@media (max-width: 600px) { .main { padding: 32px 20px 60px; } .comparisonRow { min-width: 590px; } .comparisonTable { overflow-x: auto; } }
+
+.planCard { min-height: 500px; }
+.enterpriseCard { min-height: 310px; }
+.planFeatures li { font-size: 14px; }
+.planFooter strong { font-size: 32px; font-weight: 550; letter-spacing: -.04em; }
+.planFooter p span { font-size: 13px; }
+.planActions button, .planActions > a { background: var(--ink); color: white; font-size: 14px; padding: 12px 18px; border-radius: 8px; }
+.trialPromise { background: var(--mint); border-color: #c5ddce; }
+.trialPromise strong, .trialPromise span { font-size: 13px; color: var(--ink); }
+.billingTrigger { font-size: 14px; }
+.billingSaving { font-size: 11px; }
+.recommendedLabel { font-size: 11px; background: var(--mint); color: var(--accent); }
+@media (max-width: 600px) { .trialPromise { flex-direction: column; gap: 8px; } .planCard { min-height: 0; } .enterpriseCard { gap: 24px; } }

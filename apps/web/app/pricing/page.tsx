@@ -1,8 +1,9 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 import styles from './pricing.module.css';
 import type { Metadata } from 'next';
 import { safeReturnTo } from '@/lib/auth/inputs';
 import PricingPlans from './pricing-plans';
+import { SiteHeader } from '../components/site-header';
+import { SiteFooter } from '../components/site-footer';
 
 export const metadata: Metadata = {
   title: 'Pricing | Rendyn',
@@ -140,13 +141,6 @@ const faqs = [
   },
 ];
 
-const footerGroups = [
-  ['Product', ['Components', 'How it works', 'For teams', 'Pricing']],
-  ['Developers', ['Documentation', 'MCP connection', 'Component format', 'Changelog']],
-  ['Resources', ['Component guide', 'Agent workflows', 'Catalogue policy', 'Status']],
-  ['Company', ['About', 'Contact', 'Privacy', 'Terms']],
-];
-
 function ComparisonValue({ value }: { value: FeatureValue }) {
   if (value === true) return <span className={styles.tableCheck} aria-label="Included">✓</span>;
   if (value === false) return <span className={styles.tableDash} aria-label="Not included">—</span>;
@@ -173,30 +167,7 @@ export default async function PricingPage({ searchParams }: PricingPageProps) {
   const billingState = Array.isArray(query.billing) ? query.billing[0] : query.billing;
   return (
     <div className={styles.pricingPage} id="top">
-      <header className={styles.topbar}>
-        <a className={styles.brand} href="/" aria-label="Rendyn home">
-          <span className={styles.brandMark}>R</span>
-          <strong>Rendyn</strong>
-          <span className={styles.brandMenu} aria-hidden="true">◧</span>
-        </a>
-        <div className={styles.topActions}>
-          <button type="button" aria-label="Search"><span aria-hidden="true">⌕</span></button>
-          <a href="/login?next=%2Faccount">Log in</a>
-        </div>
-      </header>
-
-      <aside className={styles.sidebar} aria-label="Site navigation">
-        <nav>
-          <a className={styles.backLink} href="/"><span aria-hidden="true">←</span> Home</a>
-          <a href="/#components">Explore components</a>
-          <a href="/#how-it-works">How it works</a>
-          <a href="/#for-teams">For teams</a>
-          <a href="/#docs">Documentation</a>
-          <a className={styles.activeLink} href="/pricing" aria-current="page">Pricing</a>
-          <a href="/#get-started">Get started</a>
-        </nav>
-        <span className={styles.sidebarGlyph} aria-hidden="true">⌜⌟</span>
-      </aside>
+      <div className={styles.headerShell}><SiteHeader activeSection="pricing" /></div>
 
       <main className={styles.main}>
         <section className={styles.pricingHero} aria-labelledby="pricing-title">
@@ -210,7 +181,7 @@ export default async function PricingPage({ searchParams }: PricingPageProps) {
         </section>
 
         <section className={styles.trustedSection} aria-label="Compatible coding agents">
-          <h2>Trusted by builders using</h2>
+          <h2>Works with the agents you use</h2>
           <div className={styles.trustedLogos}>
             {trustedAgents.map((agent) => (
               <span key={agent.name}><img src={agent.logo} alt="" />{agent.name}</span>
@@ -256,22 +227,9 @@ export default async function PricingPage({ searchParams }: PricingPageProps) {
           </div>
         </section>
 
-        <footer className={styles.footer}>
-          <div className={styles.footerGrid}>
-            {footerGroups.map(([title, links]) => (
-              <div key={title}>
-                <strong>{title}</strong>
-                {(links as string[]).map((link) => <a href={link === 'Pricing' ? '/pricing' : '/'} key={link}>{link}</a>)}
-              </div>
-            ))}
-          </div>
-          <div className={styles.footerBottom}>
-            <div className={styles.socials} aria-label="Social links"><a href="#top">X</a><a href="#top">in</a><a href="#top">◉</a><a href="#top">◌</a></div>
-            <p>Rendyn © 2026 <a href="/">Manage cookies</a></p>
-            <span>English&nbsp;&nbsp; United Kingdom</span>
-          </div>
-        </footer>
+
       </main>
+      <SiteFooter />
     </div>
   );
 }

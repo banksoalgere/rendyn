@@ -1,14 +1,15 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
 import { Brand } from './brand';
+import styles from './site-shell.module.css';
 
 const footerGroups = [
   {
     title: 'Product',
-    links: [['Product', '/#product'], ['Components', '/components'], ['What you get', '/#how-it-works']],
+    links: [['Overview', '/'], ['Components', '/components'], ['How it works', '/#how-it-works'], ['Pricing', '/pricing']],
   },
   {
-    title: 'Developers',
-    links: [['Documentation', '/#docs'], ['MCP connection', '/#docs'], ['Component format', '/#docs']],
+    title: 'Explore',
+    links: [['Agent interfaces', '/components?category=agents'], ['Interaction', '/components?category=motion'], ['Product blocks', '/components?category=blocks']],
   },
   {
     title: 'Resources',
@@ -26,10 +27,6 @@ const footerGroups = [
       ['Vibe coding website', '/guides/how-to-build-a-website-with-vibe-coding'],
       ['Vibe coding templates', '/guides/vibe-coding-templates'],
     ],
-  },
-  {
-    title: 'Company',
-    links: [['About', '/#top'], ['Pricing', '/pricing'], ['Contact', '/#top']],
   },
 ];
 
@@ -51,12 +48,13 @@ export function FinalCallToAction() {
 
 export function SiteFooter() {
   return (
-    <footer className="site-footer">
-      <div className="footer-top">
+    <footer className={styles.footer}>
+      <div className={styles.footerInner}>
+      <div className={styles.footerTop}>
         <Brand label="Back to Rendyn home" />
         <p>A curated component catalogue for the coding agents you already use.</p>
       </div>
-      <div className="footer-links">
+      <div className={styles.footerLinks}>
         {footerGroups.map((group) => (
           <div key={group.title}>
             <span>{group.title}</span>
@@ -66,7 +64,8 @@ export function SiteFooter() {
           </div>
         ))}
       </div>
-      <div className="footer-bottom"><span>© 2026 Rendyn</span><span>React · TypeScript · Tailwind</span></div>
+      <div className={styles.footerBottom}><span>© 2026 Rendyn</span><span>React · TypeScript · Tailwind</span></div>
+      </div>
     </footer>
   );
 }

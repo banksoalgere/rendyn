@@ -4,23 +4,30 @@
 
 import { useState } from 'react';
 import { Drawer } from '@/components/motion/drawer';
-import { componentGroups, getPublicComponentSlug } from './product-menu';
+
+export interface MobileComponentGroup {
+  id: string;
+  label: string;
+  detail: string;
+  components: { publicSlug: string; name: string }[];
+}
 
 const primaryLinks = [
   { href: '/components', label: 'Browse components', number: '01' },
-  { href: '#how-it-works', label: 'How it works', number: '02' },
+  { href: '/#how-it-works', label: 'How it works', number: '02' },
   { href: '/pricing', label: 'Pricing', number: '03' },
-  { href: '#for-teams', label: 'For teams', number: '04' },
-  { href: '#docs', label: 'Resources', number: '05' },
+  { href: '/#for-teams', label: 'For teams', number: '04' },
+  { href: '/guides/how-to-make-claude-code-better-at-design', label: 'Guides', number: '05' },
 ] as const;
 
 const SIGN_UP_HREF = '/pricing';
 
-export function MobileMenu() {
+export function MobileMenu({ groups }: { groups: MobileComponentGroup[] }) {
   const [open, setOpen] = useState(false);
-  const [activeGroupId, setActiveGroupId] = useState<(typeof componentGroups)[number]['id']>('motion');
-  const activeGroup = componentGroups.find((group) => group.id === activeGroupId) ?? componentGroups[0];
+  const [activeGroupId, setActiveGroupId] = useState('motion');
+  const activeGroup = groups.find((group) => group.id === activeGroupId) ?? groups[0];
   const closeMenu = () => setOpen(false);
+  if (!activeGroup) return null;
 
   return (
     <div className="mobile-menu">
@@ -68,11 +75,11 @@ export function MobileMenu() {
           <section aria-labelledby="mobile-catalogue-title" className="mobile-menu__catalogue">
             <div className="mobile-menu__catalogue-heading">
               <span><b>Product</b><strong id="mobile-catalogue-title">Component catalogue</strong></span>
-              <small>189 components</small>
+              <small>{groups.reduce((count, group) => count + group.components.length, 0)} components</small>
             </div>
 
             <div aria-label="Filter components by category" className="mobile-menu__filters">
-              {componentGroups.map((group) => (
+              {groups.map((group) => (
                 <button
                   aria-pressed={group.id === activeGroup.id}
                   key={group.id}
@@ -90,8 +97,8 @@ export function MobileMenu() {
               <span>{activeGroup.detail}</span>
             </div>
             <div className="mobile-menu__components">
-              {activeGroup.components.map(([slug, name], index) => (
-                <a href={`/components/${getPublicComponentSlug(name)}`} key={slug} onClick={closeMenu}>
+              {activeGroup.components.map(({ publicSlug, name }, index) => (
+                <a href={`/components/${publicSlug}`} key={publicSlug} onClick={closeMenu}>
                   <span>{String(index + 1).padStart(2, '0')}</span>
                   <strong>{name}</strong>
                   <b aria-hidden="true">↗</b>

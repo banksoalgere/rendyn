@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
 import type { Metadata } from 'next';
 import { catalogueEntries } from '../../lib/catalogue';
 import { getComponentPreview } from '../../lib/component-preview';
@@ -68,17 +67,14 @@ export default async function ComponentsPage({ searchParams }: ComponentsPagePro
     <main className={styles.page}>
       <div className={styles.headerShell}><SiteHeader activeSection="catalogue" /></div>
       <section className={styles.hero}>
-        <div className={styles.heroIndex}><span>189</span><small>live components</small></div>
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>The component catalogue</p>
-          <h1>Don&apos;t imagine it.<br />Try it.</h1>
-          <p>
-            Search by intent, then open any component to try the complete live example.
-          </p>
+          <p className={styles.eyebrow}>The collection <span> / {catalogueComponents.length} components</span></p>
+          <h1>Find your next <em>great interface.</em></h1>
+          <p>Explore the details. Try the interaction. Make it yours.</p>
         </div>
         <div className={styles.heroNote}>
-          <span>01</span>
-          <p><strong>One page per component</strong>Every example has its own searchable URL, guidance, and implementation details.</p>
+          <span>React · TypeScript · Tailwind</span>
+          <p>Free to explore. Complete source with your trial.</p>
         </div>
       </section>
 
