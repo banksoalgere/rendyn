@@ -1,28 +1,23 @@
+import { pageMetadata } from '../../lib/seo';
 import type { Metadata } from 'next';
 import { guides } from '../../lib/guides';
 import styles from '../components/guides.module.css';
 
-export const metadata: Metadata = {
-  title: 'Guides for Better AI-built Interfaces | Rendyn',
-  description: 'Practical guides to designing and building with Claude Code, Cursor, Codex and ChatGPT. Find workflows, prompts and templates for better interfaces.',
-  alternates: { canonical: '/guides' },
-  openGraph: {
-    title: 'Guides for Better AI-built Interfaces | Rendyn',
-    description: 'Practical workflows, prompts and templates for better AI-built interfaces.',
-    url: '/guides',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = pageMetadata(
+  'AI Coding & UI Design Guides | Rendyn',
+  'Practical guides to designing and building with Claude Code, Cursor, Codex and ChatGPT. Find workflows, prompts and templates for better interfaces.',
+  '/guides',
+);
 
 export default function GuidesPage() {
   return (
     <main className={styles.index}>
       <header className={styles.intro}>
-        <span className={styles.kicker}>The Rendyn guides</span>
-        <h1>Better direction.<br /><em>Better interfaces.</em></h1>
+        <span className={styles.kicker}>Learn with Rendyn</span>
+        <h1>Guides</h1>
         <p>Practical workflows, prompts and templates for building with your coding agent.</p>
       </header>
-      <div className={styles.listHeading}><h2>All guides</h2><span>{guides.length} field guides</span></div>
+      <div className={styles.listHeading}><h2>All guides</h2><span>{guides.length} guides</span></div>
       <div className={styles.grid}>
         {guides.map((guide) => (
           <a className={styles.card} href={guide.href} key={guide.slug}>

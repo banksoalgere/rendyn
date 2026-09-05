@@ -1,3 +1,4 @@
+import { componentMetadata, siteOrigin } from '../../../lib/seo';
 /* eslint-disable @next/next/no-html-link-for-pages -- Native anchors avoid the Vinext next/link hydration boundary. */
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -17,7 +18,7 @@ import { getComponentExamples } from '../../../../preview/presentation/examples'
 import { getComponentPreview } from '../../../lib/component-preview';
 import styles from './component-page.module.css';
 
-const siteUrl = 'https://rendyn.dev';
+const siteUrl = siteOrigin;
 
 interface ComponentPageProps {
   params: Promise<{ componentSlug: string }>;
@@ -32,37 +33,7 @@ export async function generateMetadata({ params }: ComponentPageProps): Promise<
   const component = findCatalogueEntry(componentSlug);
   if (!component) return {};
 
-  const title = `${component.name} component example for Claude Code | Rendyn`;
-  const description = `Try a live ${component.name} React component example. See usage guidance, dependencies, and a ready-to-copy prompt for Claude Code, Codex, Cursor, and other coding agents.`;
-  const canonical = `/components/${component.publicSlug}`;
-
-  return {
-    title,
-    description,
-    alternates: { canonical },
-    keywords: [
-      `${component.name} component`,
-      `${component.name} example`,
-      `${component.name} React`,
-      `${component.name} Claude Code`,
-      `${component.name} Codex`,
-      ...component.metadata.tags,
-    ],
-    openGraph: {
-      title,
-      description,
-      type: 'article',
-      url: canonical,
-      images: ['/og.png'],
-    },
-    robots: { index: true, follow: true },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: ['/og.png'],
-    },
-  };
+  return componentMetadata(component);
 }
 
 export default async function ComponentPage({ params }: ComponentPageProps) {

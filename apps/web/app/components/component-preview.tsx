@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import type { ComponentPreviewData } from '../../lib/component-preview';
+import { isPreviewReadyMessage } from '../../lib/preview-ready';
 import styles from './component-preview.module.css';
 
 interface ComponentPreviewProps {
@@ -14,17 +15,30 @@ interface ComponentPreviewProps {
 /** One isolated, automatically interactive preview for every catalogue surface. */
 export function ComponentPreview({ component, size = 'full', example, dark = false }: ComponentPreviewProps) {
   const container = useRef<HTMLDivElement>(null);
+  const frame = useRef<HTMLIFrameElement>(null);
   const [active, setActive] = useState(false);
-  const [loaded, setLoaded] = useState(false);
-  const [scale, setScale] = useState(1);
+  const [readySource, setReadySource] = useState<string | null>(null);
+  const [scale, setScale] = useState(size === 'hero' ? 0.9 : 1);
+  const source = `/component-preview/${encodeURIComponent(component.previewId)}?embed=1${example ? `&example=${encodeURIComponent(example)}` : ''}${dark ? '&theme=dark' : ''}`;
+  const ready = active && readySource === source;
+
+  useEffect(() => {
+    const onReady = (event: MessageEvent<unknown>) => {
+      if (isPreviewReadyMessage(event, frame.current?.contentWindow, window.location.origin)) {
+        setReadySource(source);
+      }
+    };
+    window.addEventListener('message', onReady);
+    return () => window.removeEventListener('message', onReady);
+  }, [source]);
 
   useEffect(() => {
     const element = container.current;
-    if (!element || size !== 'card') return;
+    if (!element || size === 'full') return;
     // Give every demo a usable layout width, including in a narrow mobile card.
     const observer = new ResizeObserver(([entry]) => {
       if (entry.contentRect.width > 0) {
-        setScale(Math.min(1, entry.contentRect.width / 560));
+        setScale(Math.min(size === 'hero' ? 0.9 : 1, entry.contentRect.width / 560));
       }
     });
     observer.observe(element);
@@ -38,7 +52,7 @@ export function ComponentPreview({ component, size = 'full', example, dark = fal
     const update = () => {
       const nextActive = nearby || element.contains(document.activeElement);
       setActive(nextActive);
-      if (!nextActive) setLoaded(false);
+      if (!nextActive) setReadySource(null);
     };
     const observer = new IntersectionObserver(([entry]) => {
       nearby = entry.isIntersecting;
@@ -61,22 +75,26 @@ export function ComponentPreview({ component, size = 'full', example, dark = fal
     <div
       className={styles.preview}
       data-size={size}
-      data-loaded={active && loaded}
+      data-loaded={ready}
+      data-dark={dark}
+      aria-busy={active && !ready}
       ref={container}
-      style={size === 'card' ? { '--preview-scale': scale } as CSSProperties : undefined}
+      style={size !== 'full' ? { '--preview-scale': scale } as CSSProperties : undefined}
     >
-      {component.previewImage ? (
-        <img className={styles.poster} src={component.previewImage} alt={`${component.name} preview`} loading="lazy" decoding="async" />
-      ) : (
-        <span className={styles.placeholder}>{component.name}</span>
+      {active && !ready && (
+        <span className={styles.loading} role="status" aria-label={`Loading ${component.name}`}>
+          <span aria-hidden="true" />
+        </span>
       )}
       {active && (
         <iframe
-          key={component.previewId}
-          src={`/component-preview/${encodeURIComponent(component.previewId)}?embed=1${example ? `&example=${encodeURIComponent(example)}` : ''}${dark ? '&theme=dark' : ''}`}
+          key={source}
+          ref={frame}
+          src={source}
           title={`${component.name} interactive preview`}
           sandbox="allow-scripts allow-same-origin"
-          onLoad={() => setLoaded(true)}
+          tabIndex={ready ? 0 : -1}
+          aria-hidden={!ready}
         />
       )}
     </div>

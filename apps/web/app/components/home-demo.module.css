@@ -6,45 +6,19 @@
   box-shadow: 0 12px 32px #4f326c14, 0 2px 4px #4f326c08;
   min-width: 0;
 }
-.heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 17px 20px; border-bottom: 1px solid #eeebf3; }
-.heading > span { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 550; }
-.heading i { width: 12px; height: 12px; border: 3px solid var(--accent); border-radius: 4px; transform: rotate(-8deg); }
-.heading small { font: 12px var(--font-geist-mono), monospace; color: #42735d; padding: 5px 7px; background: #edf7f0; border-radius: 5px; white-space: nowrap; }
-.choices { display: flex; gap: 5px; padding: 14px 16px; background: #faf9fc; }
-.choices button { flex: 1; border: 1px solid transparent; background: transparent; border-radius: 7px; padding: 10px 6px; font: 500 12px var(--font-archivo), sans-serif; color: var(--muted); cursor: pointer; transition: background 160ms ease, box-shadow 160ms ease, color 160ms ease; }
+.toolbar { display: flex; align-items: center; gap: 8px; padding: 10px; border-bottom: 1px solid #eeebf3; background: #faf9fc; }
+.choices { display: flex; flex: 1; gap: 5px; min-width: 0; }
+.choices button { flex: 1; min-width: 0; min-height: 44px; border: 1px solid transparent; background: transparent; border-radius: 7px; padding: 9px 6px; font: 500 14px/1.35 var(--font-rendyn-sans), sans-serif; color: var(--muted); cursor: pointer; transition: background 160ms ease, box-shadow 160ms ease, color 160ms ease; }
 .choices button:hover { background: #f1edf8; color: var(--ink); }
 .choices button[aria-pressed='true'] { background: #fff; border-color: #e7e1f0; box-shadow: 0 2px 4px #24203508; color: var(--accent); }
-.canvas { height: 350px; position: relative; overflow: hidden; background: #fff; border-block: 1px solid #eeebf3; }
-.caption { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 20px; }
-.caption > div > span { font-size: 14px; font-weight: 600; }
-.caption p { margin: 5px 0 0; font-size: 12px; color: var(--muted); line-height: 1.5; max-width: 290px; }
-.caption a { display: flex; align-items: center; justify-content: center; gap: 10px; flex-shrink: 0; border: 1px solid var(--line); border-radius: 8px; padding: 9px 11px; font-size: 12px; }
-.caption a:hover { background: var(--mint); border-color: #d5caef; }
-.footnote { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 13px 20px; border-top: 1px solid #eeebf3; color: var(--muted); font-size: 12px; }
+.details { display: grid; place-items: center; flex: 0 0 44px; height: 44px; border: 1px solid var(--line); border-radius: 8px; font-size: 18px; }
+.details:hover { background: var(--mint); border-color: #d5caef; }
+.canvas { height: 350px; position: relative; overflow: hidden; background: #fff; }
 .demo button:focus-visible, .demo a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-@media (max-width: 1100px) and (min-width: 761px) {
-  .choices { padding-inline: 10px; gap: 2px; }
-  .choices button { font-size: 12px; }
-  .caption { padding: 16px; gap: 12px; }
-  .caption a { font-size: 0; gap: 0; }
-  .caption a span { font-size: 14px; }
-  .footnote { padding-inline: 16px; }
-  .footnote > a { display: none; }
-}
 @media (max-width: 480px) {
-  .heading { padding: 14px; }
-  .heading > span { font-size: 12px; }
-  .heading small { font-size: 12px; }
-  .choices { padding: 10px 8px; gap: 2px; }
-  .choices button { font-size: 12px; padding: 9px 4px; line-height: 1.45; }
+  .toolbar { padding: 8px; gap: 6px; }
+  .choices { gap: 2px; }
+  .choices button { padding-inline: 3px; }
   .canvas { height: 360px; }
-  .caption { padding: 16px 14px; gap: 12px; }
-  .caption p { font-size: 12px; }
-  .caption a { font-size: 0; gap: 0; padding: 9px; }
-  .caption a span { font-size: 15px; }
-  .footnote { padding: 12px 14px; font-size: 12px; }
-  .footnote > a { display: none; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .choices button { transition: none; }
-}
+@media (prefers-reduced-motion: reduce) { .choices button { transition: none; } }

@@ -1,3 +1,4 @@
+import { pageMetadata } from '../../lib/seo';
 import styles from './pricing.module.css';
 import type { Metadata } from 'next';
 import { safeReturnTo } from '@/lib/auth/inputs';
@@ -5,12 +6,11 @@ import PricingPlans from './pricing-plans';
 import { SiteHeader } from '../components/site-header';
 import { SiteFooter } from '../components/site-footer';
 
-export const metadata: Metadata = {
-  title: 'Pricing | Rendyn',
-  description: 'Start Rendyn with seven days free, then continue on a monthly or yearly plan.',
-  alternates: { canonical: '/pricing' },
-  robots: { index: true, follow: true },
-};
+export const metadata: Metadata = pageMetadata(
+  'Pricing for React Components & MCP Access | Rendyn',
+  'Explore Rendyn Pro and Team plans. Start a 7-day trial for React component source and MCP access, then choose monthly or yearly billing.',
+  '/pricing',
+);
 
 const trustedAgents = [
   { name: 'Codex', logo: '/agent-logos/codex.svg' },

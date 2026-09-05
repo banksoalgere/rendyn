@@ -15,6 +15,8 @@ export const metadata: Metadata = {
   },
   keywords: ['codex design', 'codex website', 'codex app', 'AI interface design'],
   openGraph: {
+    siteName: 'Rendyn',
+    locale: 'en_GB',
     title: 'How to Make Codex Better at Design',
     description:
       'Give Codex the product context, visual system, implementation ingredients, and review loop it needs to build polished interfaces.',

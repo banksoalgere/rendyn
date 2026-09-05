@@ -6,6 +6,9 @@ import type { ComponentType } from 'react';
 // Authored demo compositions live outside vendor-root so catalogue imports
 // cannot overwrite the presentation fixes or alter redistributed source.
 export const presentationPreviews: Record<string, ComponentType> = {
+  'homepage/cylinder-carousel': dynamic(() => import('./homepage').then((m) => m.HomeCarouselPreview), { ssr: false }),
+  'homepage/shader-background': dynamic(() => import('./homepage').then((m) => m.HomeShaderPreview), { ssr: false }),
+  'homepage/dock': dynamic(() => import('./homepage').then((m) => m.HomeDockPreview), { ssr: false }),
   'magicui/magicui-interactive-hover-button': dynamic(() => import('./buttons').then((m) => m.HoverButtonPreview), { ssr: false }),
   'magicui/magicui-ripple-button': dynamic(() => import('./buttons').then((m) => m.RipplePreview), { ssr: false }),
   'magicui/magicui-pulsating-button': dynamic(() => import('./buttons').then((m) => m.PulsatingPreview), { ssr: false }),

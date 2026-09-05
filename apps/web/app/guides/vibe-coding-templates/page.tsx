@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/guides/vibe-coding-templates' },
   robots: { index: true, follow: true },
   openGraph: {
+    siteName: 'Rendyn',
+    locale: 'en_GB',
     title: 'Best Vibe Coding Templates for Better UI',
     description:
       'A researched comparison of remixable apps, code-first UI blocks, premium starters, and team templates.',
