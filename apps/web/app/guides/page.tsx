@@ -13,11 +13,11 @@ export default function GuidesPage() {
   return (
     <main className={styles.index}>
       <header className={styles.intro}>
-        <span className={styles.kicker}>The Rendyn guides</span>
-        <h1>Better direction.<br /><em>Better interfaces.</em></h1>
+        <span className={styles.kicker}>Learn with Rendyn</span>
+        <h1>Guides</h1>
         <p>Practical workflows, prompts and templates for building with your coding agent.</p>
       </header>
-      <div className={styles.listHeading}><h2>All guides</h2><span>{guides.length} field guides</span></div>
+      <div className={styles.listHeading}><h2>All guides</h2><span>{guides.length} guides</span></div>
       <div className={styles.grid}>
         {guides.map((guide) => (
           <a className={styles.card} href={guide.href} key={guide.slug}>

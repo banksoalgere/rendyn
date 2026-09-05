@@ -113,7 +113,6 @@ export function ComponentExplorer({
             <span>{String(filteredComponents.length).padStart(3, '0')}</span>
             <p>{filteredComponents.length === 1 ? 'component' : 'components'}</p>
           </div>
-          <small>Explore a preview, or open it for a closer look.</small>
         </div>
 
         <div className={styles.componentGrid} aria-label="Component results">
@@ -133,12 +132,6 @@ export function ComponentExplorer({
               </div>
               <div className={styles.cardInfo}>
                 <h2><a href={`/components/${component.publicSlug}`}>{component.name} <span aria-hidden="true">↗</span></a></h2>
-                <p>{component.description}</p>
-                <div className={styles.componentLinkFooter}>
-                  <div aria-label="Component tags">
-                    {component.tags.slice(0, 3).map((tag) => <span key={tag}>{tag}</span>)}
-                  </div>
-                </div>
               </div>
             </article>
           ))}

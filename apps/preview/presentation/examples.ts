@@ -9,6 +9,10 @@ export function getComponentExamples(category: string, slug: string) {
     { slug: 'videos', name: 'Video stories', previewKey: 'kibo/kibo-stories-video', description: 'The same carousel with video cards. Select a card to play or pause. The sample clips are silent photo animations.' },
   ];
   const local = registry.find((item) => item.slug === category)?.components.find((item) => item.slug === slug);
+  if (category === 'motion' && ['cylinder-carousel', 'shader-background', 'dock'].includes(slug) && local) return [
+    { slug: 'default', name: 'Default', previewKey: `${category}/${slug}`, description: undefined },
+    { slug: 'homepage', name: 'Compact', previewKey: `homepage/${slug}`, description: undefined },
+  ];
   if (local?.examples?.length) return local.examples.map(({ slug, name, previewKey, description }) => ({ slug, name, previewKey, description }));
   const external = externalRegistry.find((item) => item.category === category && item.slug === slug);
   return [{ slug: 'default', name: 'Default', previewKey: external?.previewKey ?? `${category}/${slug}`, description: undefined }];

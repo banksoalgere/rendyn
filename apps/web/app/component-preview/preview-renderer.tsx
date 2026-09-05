@@ -4,6 +4,7 @@ import { useEffect, useSyncExternalStore } from 'react';
 import { externalPreviews } from '../../../preview/vendor-root/components/external-previews';
 import { previews } from '../../../preview/vendor-root/components/previews';
 import { presentationPreviews } from '../../../preview/presentation';
+import { PREVIEW_READY } from '../../lib/preview-ready';
 
 interface PreviewRendererProps {
   description: string;
@@ -24,6 +25,18 @@ export function PreviewRenderer({ description, name, previewKey, dark = false }:
       document.documentElement.style.colorScheme = '';
     };
   }, [dark]);
+
+  useEffect(() => {
+    if (!mounted || window.parent === window) return;
+    // Document load can precede React hydration. Reveal the frame after the
+    // selected demo and its theme have committed and had a frame to settle.
+    let paint = requestAnimationFrame(() => {
+      paint = requestAnimationFrame(() => {
+        window.parent.postMessage({ type: PREVIEW_READY }, window.location.origin);
+      });
+    });
+    return () => cancelAnimationFrame(paint);
+  }, [mounted, previewKey, dark]);
 
   if (!mounted) {
     return <div aria-label={`Loading ${name} preview`} role="status" />;

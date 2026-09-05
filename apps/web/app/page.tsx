@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
 
 import type { Metadata } from 'next';
-import { homeDescription, homeStructuredData, homeTitle, pageMetadata } from '../lib/seo';
 import { SiteHeader } from './components/site-header';
 import { SiteFooter } from './components/site-footer';
 import { HomeDemo } from './components/home-demo';
@@ -9,6 +8,8 @@ import { catalogueEntries } from '../lib/catalogue';
 import { getComponentPreview } from '../lib/component-preview';
 import styles from './home.module.css';
 import { CatalogueFeatureGrid } from './components/catalogue-feature-grid';
+import { HorizonWall } from './components/horizon-wall';
+import { homeDescription, homeStructuredData, homeTitle, pageMetadata } from '../lib/seo';
 
 export const metadata: Metadata = pageMetadata(homeTitle, homeDescription, '/');
 
@@ -23,13 +24,9 @@ const codingAgents = [
   { name: 'OpenCode', logo: '/agent-logos/opencode.svg' },
 ];
 
-const demoExamples = [
-  { slug: 'approval-card', label: 'Agent workspace', description: 'A little human input. A much better outcome.' },
-  { slug: 'table', label: 'Team dashboard', description: 'A clear view of your team, down to the last detail.' },
-  { slug: 'signup-form', label: 'Onboarding', description: 'Make a great first impression, one field at a time.' },
-].flatMap(({ slug, label, description }) => {
+const demoExamples = ['cylinder-carousel', 'shader-background', 'dock'].flatMap((slug) => {
   const entry = catalogueEntries.find((component) => component.slug === slug);
-  return entry ? [{ label, description, ...getComponentPreview(entry) }] : [];
+  return entry ? [getComponentPreview(entry)] : [];
 });
 
 const steps = [
@@ -54,20 +51,14 @@ export default function Home() {
       <SiteHeader activeSection="product" />
       <section className={styles.hero} id="top">
         <div className={styles.copy}>
-          <span className={styles.eyebrow}><i /> React UI components for AI coding agents</span>
-          <h1>Good ideas.<br />Beautiful<br /><em>interfaces.</em></h1>
+          <span className={styles.eyebrow}><i aria-hidden="true" /> React UI components for AI coding agents</span>
+          <h1>The details make<br />the difference.</h1>
           <p>Explore Rendyn’s React components with live previews and complete TypeScript source. Connect Claude Code, Codex or Cursor through MCP.</p>
           <div className={styles.actions}>
-            <a className={styles.primary} href="/components">Find your next component <span aria-hidden="true">↗</span></a>
-            <a className={styles.secondary} href="/pricing">Start 7-day trial <span aria-hidden="true">→</span></a>
+            <a className={styles.primary} href="/components">Explore the collection <span aria-hidden="true">↗</span></a>
           </div>
-          <div className={styles.notes}><span><b>{catalogueEntries.length}</b> components</span><span>MIT licensed</span><span>Built to be yours</span></div>
         </div>
-        <div className={styles.showcase}>
-          <div className={styles.showcaseLabel}><span>THE PLAYGROUND</span><span>Go on. Try it out ↘</span></div>
-          <HomeDemo examples={demoExamples} componentCount={catalogueEntries.length} />
-          <p className={styles.showcaseNote}><span aria-hidden="true">✳</span> Good design is in the interaction.</p>
-        </div>
+        <HorizonWall componentCount={catalogueEntries.length} />
       </section>
 
       <section className={styles.trust} aria-label="Compatible coding tools">
@@ -79,9 +70,22 @@ export default function Home() {
         </div>
       </section>
 
+      <section className={styles.playground} aria-labelledby="playground-heading">
+        <div>
+          <span className={styles.kicker}>The playground</span>
+          <h2 id="playground-heading">Good design is<br />in the interaction.</h2>
+          <p>Try a few favourites. Explore the states, feel the transitions, and find the details that belong in your next project.</p>
+          <a className={styles.textLink} href="/components">Find your next component <span aria-hidden="true">↗</span></a>
+          <div className={styles.notes}><span><b>{catalogueEntries.length}</b> components</span><span>MIT licensed</span><span>Built to be yours</span></div>
+        </div>
+        <div className={styles.showcase}>
+          <HomeDemo examples={demoExamples} />
+        </div>
+      </section>
+
       <section className={styles.collection} id="components">
         <div className={styles.sectionHeading}>
-          <div><span className={styles.kicker}>A considered collection</span><h2>Small details.<br /><em>A big difference.</em></h2></div>
+          <div><span className={styles.kicker}>A considered collection</span><h2>Small details.<br />A big difference.</h2></div>
           <p>From the first click to the final state, find components with a little more care built in.</p>
         </div>
         <CatalogueFeatureGrid />
@@ -98,7 +102,7 @@ export default function Home() {
 
       <section className={styles.workflow} id="how-it-works">
         <div className={styles.sectionHeading}>
-          <div><span className={styles.kicker}>From inspiration to implementation</span><h2>Less starting over.<br /><em>More making it yours.</em></h2></div>
+          <div><span className={styles.kicker}>From inspiration to implementation</span><h2>Less starting over.<br />More making it yours.</h2></div>
           <a className={styles.textLink} href="/components">Take a look around <span aria-hidden="true">↗</span></a>
         </div>
         <div className={styles.steps}>
@@ -115,7 +119,7 @@ export default function Home() {
       <section className={styles.connect} id="for-teams">
         <div id="docs">
           <span className={styles.kicker}>Made for your workflow</span>
-          <h2>Your favourite agent.<br /><em>A better eye for design.</em></h2>
+          <h2>Your favourite agent.<br />A better eye for design.</h2>
           <p>One connection gives you and your team the same considered collection. Complete source, ready to adapt to the way you build.</p>
           <a className={styles.primary} href="/pricing">Find your plan <span aria-hidden="true">↗</span></a>
         </div>
@@ -128,7 +132,7 @@ export default function Home() {
 
       <section className={styles.closing} id="get-started">
         <span className={styles.kicker}>Your next great interface starts here</span>
-        <h2>Make something<br /><em>worth clicking.</em></h2>
+        <h2>Make something<br />worth clicking.</h2>
         <a className={styles.primary} href="/components">Explore the collection <span aria-hidden="true">↗</span></a>
         <p>{catalogueEntries.length} components. Endless possibilities.</p>
       </section>

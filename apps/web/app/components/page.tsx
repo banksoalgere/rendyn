@@ -76,9 +76,9 @@ export default async function ComponentsPage({ searchParams }: ComponentsPagePro
       <div className={styles.headerShell}><SiteHeader activeSection="catalogue" /></div>
       <section className={styles.hero}>
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>The collection <span> / {catalogueComponents.length} components</span></p>
-          <h1>Find your next <em>great interface.</em></h1>
-          <p>Explore the details. Try the interaction. Make it yours.</p>
+          <p className={styles.eyebrow}>The collection <span> / {catalogueComponents.length}</span></p>
+          <h1>Components</h1>
+          <p>Interactive previews. Ready to use in your project.</p>
         </div>
         <div className={styles.heroNote}>
           <span>React · TypeScript · Tailwind</span>
@@ -92,8 +92,8 @@ export default async function ComponentsPage({ searchParams }: ComponentsPagePro
       />
 
       <section className={styles.catalogueCta}>
-        <p>Found the right direction?</p>
-        <h2>Let your coding agent<br />take it from here.</h2>
+        <h2>Get the complete source.</h2>
+        <p>Connect your coding agent and start building.</p>
         <a className="button" href="/pricing">Start 7-day trial <span aria-hidden="true">→</span></a>
       </section>
       <SiteFooter />
