@@ -1,8 +1,7 @@
+import { GuideHeading } from '../../components/guide-heading';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
 import type { Metadata } from 'next';
 import './page.css';
-import { Brand } from '../../components/brand';
-import { SiteFooter } from '../../components/site-footer';
 import { CopyPromptButton } from './copy-prompt-button';
 
 export const metadata: Metadata = {
@@ -160,36 +159,13 @@ const checklistGroups = [
 export default function VibeCodingDesignPage() {
   return (
     <main className="vcd-page" id="top">
-      <header className="vcd-header">
-        <div className="vcd-header-inner">
-          <Brand href="/" />
-          <nav className="vcd-nav" aria-label="Guide navigation">
-            <a href="#workflow">Workflow</a>
-            <a href="#ui-system">UI system</a>
-            <a href="#checklist">Checklist</a>
-          </nav>
-          <a className="button button--small" href="/#catalogue">Browse components <span aria-hidden="true">↗</span></a>
-        </div>
-      </header>
+
 
       <article className="vcd-document">
-        <section className="vcd-hero grid-field" aria-labelledby="vcd-title">
-        <div className="vcd-hero-copy">
-          <nav className="vcd-breadcrumb" aria-label="Breadcrumb">
-            <a href="/">Rendyn</a><span aria-hidden="true">/</span><a href="/#resources">Resources</a><span aria-hidden="true">/</span><span>Vibe coding design</span>
-          </nav>
-          <p className="vcd-category"><span aria-hidden="true">✦</span> Vibe coding design</p>
-          <h1 id="vcd-title">Vibe Coding Design:<br /><span>How to Make Your App Look Good</span></h1>
-          <p className="vcd-deck">A practical system for turning a functional AI-built interface into a product that feels clear, coherent and finished—without throwing away working code.</p>
-          <div className="vcd-byline">
-            <span className="vcd-author-mark" aria-hidden="true">R</span>
-            <span><strong>Rendyn Editorial</strong><time dateTime="2026-08-29">Updated 29 August 2026</time></span>
-            <span className="vcd-byline-divider" aria-hidden="true" />
-            <span className="vcd-read-time">12 min read</span>
-          </div>
-        </div>
+        <section className="vcd-hero grid-field guide-hero-container" aria-labelledby="vcd-title">
+        <GuideHeading slug="vibe-coding-design" id="vcd-title" />
 
-        <div className="vcd-hero-frame">
+        <div className="vcd-hero-frame guide-example">
           <figure className="vcd-comparison-stage" aria-label="A generic dashboard compared with a more intentional interface">
             <div className="vcd-window-bar" aria-hidden="true">
               <div><i /><i /><i /></div>
@@ -225,8 +201,8 @@ export default function VibeCodingDesignPage() {
         </div>
         </section>
 
-        <div className="vcd-content-shell">
-        <aside className="vcd-sidebar" aria-label="On this page">
+        <div className="vcd-content-shell guide-reading-layout">
+        <aside className="vcd-sidebar guide-reading-sidebar" aria-label="On this page">
           <div className="vcd-sidebar-sticky">
             <p>In this guide</p>
             <ol>
@@ -234,16 +210,16 @@ export default function VibeCodingDesignPage() {
                 <li key={href}><a href={`#${href}`}><span>{String(index + 1).padStart(2, '0')}</span>{label}</a></li>
               ))}
             </ol>
-            <div className="vcd-sidebar-cta">
+            <div className="vcd-sidebar-cta guide-callout">
               <span aria-hidden="true">R</span>
               <strong>Give your agent better visual choices.</strong>
               <p>Search polished components with previews, context and complete code.</p>
-              <a href="/#catalogue">Explore Rendyn <span aria-hidden="true">↗</span></a>
+              <a href="/components">Explore Rendyn <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </aside>
 
-        <div className="vcd-article">
+        <div className="vcd-article guide-reading-body">
           <section id="definition">
             <p className="vcd-lede">The fastest way to make a vibe coded app look better is not to ask for more polish. It is to give the agent fewer arbitrary choices and a clearer product problem.</p>
             <p>Vibe coding can get a working screen in front of you remarkably quickly. The visual quality often stalls because the initial request describes features but leaves hierarchy, tone, spacing, content and states undefined. The model fills those gaps with plausible defaults. The result works, yet it feels interchangeable.</p>
@@ -331,7 +307,7 @@ export default function VibeCodingDesignPage() {
                 <p className="eyebrow">A practical shortcut</p>
                 <h3>Let the agent compare real components before it invents another one.</h3>
                 <p>Rendyn gives coding agents visual previews, product context and complete source files, so “find the right feedback pattern” becomes a concrete search instead of a vague styling request.</p>
-                <a href="/#catalogue">Explore the component catalogue <span aria-hidden="true">↗</span></a>
+                <a href="/components">Explore the component catalogue <span aria-hidden="true">↗</span></a>
               </div>
             </aside>
           </section>
@@ -443,7 +419,7 @@ export default function VibeCodingDesignPage() {
             <p className="vcd-section-label">Keep improving the system</p>
             <h2 id="related-title">Related Rendyn resources</h2>
             <div>
-              <a href="/#catalogue"><span>Component strategy</span><h3>Choose UI components by product intent</h3><p>Start with the user outcome, compare likely patterns and make the choice defensible.</p><i aria-hidden="true">↗</i></a>
+              <a href="/components"><span>Component strategy</span><h3>Choose UI components by product intent</h3><p>Start with the user outcome, compare likely patterns and make the choice defensible.</p><i aria-hidden="true">↗</i></a>
               <a href="/#how-it-works"><span>Agent workflow</span><h3>What coding agents need from component libraries</h3><p>See how previews, context and source files turn a vague request into a reliable implementation.</p><i aria-hidden="true">↗</i></a>
             </div>
           </section>
@@ -451,16 +427,15 @@ export default function VibeCodingDesignPage() {
         </div>
       </article>
 
-      <section className="vcd-final-cta grid-field" aria-labelledby="vcd-cta-title">
+      <section className="vcd-final-cta grid-field guide-end" aria-labelledby="vcd-cta-title">
         <div>
           <p className="eyebrow">Better inputs. Better interfaces.</p>
           <h2 id="vcd-cta-title">Give your coding agent<br />something good to choose.</h2>
           <p>Rendyn pairs visual previews with component context and complete code, so an agent can compare real options before it builds.</p>
-          <div><a className="button" href="/#catalogue">Explore the catalogue <span aria-hidden="true">↗</span></a><a className="button button--cream" href="/#docs">See how it works</a></div>
+          <div><a className="button" href="/components">Explore the catalogue <span aria-hidden="true">↗</span></a><a className="button button--cream" href="/#docs">See how it works</a></div>
         </div>
       </section>
 
-      <SiteFooter />
     </main>
   );
 }

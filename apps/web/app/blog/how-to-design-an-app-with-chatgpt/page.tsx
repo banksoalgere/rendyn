@@ -1,7 +1,6 @@
+import { GuideHeading } from '../../components/guide-heading';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
 import type { Metadata } from 'next';
-import { Brand } from '../../components/brand';
-import { SiteFooter } from '../../components/site-footer';
 import { CopyPromptButton } from './copy-prompt-button';
 
 const title = 'ChatGPT App Design: How to Design an App With ChatGPT';
@@ -191,23 +190,9 @@ const faqs = [
   },
 ];
 
-function ArticleHeader() {
-  return (
-    <header className="chatgpt-app-header">
-      <Brand href="/" label="Rendyn home" />
-      <nav className="chatgpt-app-header-nav" aria-label="Article navigation">
-        <a href="#workflow">Workflow</a>
-        <a href="#prompt">Prompt</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <a className="button button--small" href="/pricing">Connect Rendyn</a>
-    </header>
-  );
-}
-
 function HeroVisual() {
   return (
-    <div className="chatgpt-app-hero-frame section-shell" aria-hidden="true">
+    <div className="chatgpt-app-hero-frame section-shell guide-example" aria-hidden="true">
       <div className="chatgpt-app-hero-board grid-field">
         <div className="chatgpt-app-hero-copy">
           <span>Design the outcome first</span>
@@ -228,46 +213,29 @@ function HeroVisual() {
 export default function ChatGPTAppDesignArticle() {
   return (
     <div className="chatgpt-app-page" id="top">
-      <ArticleHeader />
 
       <main>
         <article>
-          <header className="chatgpt-app-hero section-shell">
-            <div className="chatgpt-app-meta">
-              <span>Design workflow</span>
-              <span aria-hidden="true">•</span>
-              <span>By Rendyn Editorial</span>
-              <span aria-hidden="true">•</span>
-              <time dateTime="2026-08-29">August 29, 2026</time>
-              <span aria-hidden="true">•</span>
-              <span>12 min read</span>
-            </div>
-            <h1>How to Design an App With ChatGPT</h1>
-            <p>
-              A practical <strong>ChatGPT app design</strong> workflow for turning a rough
-              idea into clear user flows, an intentional interface, and a prototype you
-              can actually test.
-            </p>
-          </header>
+          <GuideHeading slug="how-to-design-an-app-with-chatgpt" id="guide-title" />
 
           <HeroVisual />
 
-          <div className="chatgpt-app-layout section-shell">
-            <aside className="chatgpt-app-sidebar">
+          <div className="chatgpt-app-layout section-shell guide-reading-layout">
+            <aside className="chatgpt-app-sidebar guide-reading-sidebar">
               <nav aria-label="On this page">
                 <p>On this page</p>
                 {sections.map(([href, label]) => (
                   <a href={`#${href}`} key={href}>{label}</a>
                 ))}
               </nav>
-              <div className="chatgpt-app-side-cta">
+              <div className="chatgpt-app-side-cta guide-callout">
                 <span>Building in code?</span>
                 <strong>Give your agent stronger interface choices.</strong>
-                <a href="/#catalogue">Explore Rendyn <i aria-hidden="true">↗</i></a>
+                <a href="/components">Explore Rendyn <i aria-hidden="true">↗</i></a>
               </div>
             </aside>
 
-            <div className="chatgpt-app-content">
+            <div className="chatgpt-app-content guide-reading-body">
             <section id="answer">
               <p className="chatgpt-app-kicker">The short answer</p>
               <h2>Use ChatGPT to sharpen decisions—not to skip the design process.</h2>
@@ -496,7 +464,7 @@ export default function ChatGPTAppDesignArticle() {
                   <strong>See how Rendyn improves an agent&apos;s interface choices</strong>
                   <i aria-hidden="true">↗</i>
                 </a>
-                <a href="/#catalogue">
+                <a href="/components">
                   <span>Component catalogue</span>
                   <strong>Explore components organised around product intent</strong>
                   <i aria-hidden="true">↗</i>
@@ -509,7 +477,7 @@ export default function ChatGPTAppDesignArticle() {
               </div>
             </section>
 
-            <section className="chatgpt-app-end-cta grid-field">
+            <section className="chatgpt-app-end-cta grid-field guide-end">
               <p className="chatgpt-app-kicker">Build with better ingredients</p>
               <h2>Give the prototype a point of view.</h2>
               <p>
@@ -517,7 +485,7 @@ export default function ChatGPTAppDesignArticle() {
                 visual previews, product context, complete source, and install guidance.
               </p>
               <div>
-                <a className="button" href="/#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></a>
+                <a className="button" href="/components">Browse the catalogue <span aria-hidden="true">↗</span></a>
                 <a className="button button--ghost" href="/#how-it-works">See what agents get</a>
               </div>
             </section>
@@ -526,7 +494,6 @@ export default function ChatGPTAppDesignArticle() {
         </article>
       </main>
 
-      <SiteFooter />
     </div>
   );
 }

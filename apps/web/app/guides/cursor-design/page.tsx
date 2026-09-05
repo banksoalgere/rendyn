@@ -1,6 +1,6 @@
+import { GuideHeading } from '../../components/guide-heading';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
 import type { Metadata } from 'next';
-import { Brand } from '../../components/brand';
 import styles from './page.module.css';
 
 const pageTitle = 'Cursor Design: How to Make Cursor Better at UI | Rendyn';
@@ -137,8 +137,8 @@ const faqs = [
 ];
 
 const relatedGuides = [
-  { label: 'Component strategy', title: 'How to choose UI components by product intent', href: '/#resources' },
-  { label: 'MCP workflows', title: 'What coding agents need from component libraries', href: '/#resources' },
+  { label: 'Component strategy', title: 'How to choose UI components by product intent', href: '/guides' },
+  { label: 'MCP workflows', title: 'What coding agents need from component libraries', href: '/guides' },
 ];
 
 const promptTemplate = `Build [route or screen] for [specific audience].
@@ -196,40 +196,12 @@ function Arrow() {
 export default function CursorDesignGuide() {
   return (
     <main className={styles.page} id="top">
-      <header className={styles.header}>
-        <Brand href="/" label="Rendyn home" />
-        <nav aria-label="Guide navigation">
-          <a href="#workflow">Workflow</a>
-          <a href="#prompt">Prompt</a>
-          <a href="#faq">FAQ</a>
-        </nav>
-        <a className={styles.headerCta} href="/#catalogue">Browse components <Arrow /></a>
-      </header>
+
 
       <article aria-labelledby="guide-title">
-        <header className={styles.hero}>
-          <div className={styles.meta}>
-            <span>Cursor design guide</span>
-            <span aria-hidden="true">•</span>
-            <span>12 min read</span>
-          </div>
-          <h1 id="guide-title">How to Make Cursor Better at Design</h1>
-          <p className={styles.deck}>
-            Better Cursor UI does not come from a longer prompt. It comes from giving the agent
-            a visual system, strong component choices, and a browser loop that makes taste testable.
-          </p>
-          <div className={styles.byline}>
-            <span className={styles.authorMark} aria-hidden="true">R</span>
-            <p>By <strong>Rendyn Editorial</strong></p>
-            <span aria-hidden="true">•</span>
-            <time dateTime="2026-08-29">29 August 2026</time>
-          </div>
-          <div className={styles.heroTags} aria-label="Guide topics">
-            <span>Design systems</span><span>Agent prompting</span><span>Browser QA</span>
-          </div>
-        </header>
+        <GuideHeading slug="cursor-design" id="guide-title" />
 
-        <section className={styles.heroFrame} aria-label="The four-part Cursor design workflow">
+        <section className={`${styles.heroFrame} guide-example`} aria-label="The four-part Cursor design workflow">
           <div className={styles.frameCanvas}>
             <div className={styles.canvasBar}>
               <span><i aria-hidden="true" /> Design brief / support overview</span>
@@ -251,13 +223,13 @@ export default function CursorDesignGuide() {
             <span className={styles.miniMark} aria-hidden="true">R</span>
             <h2>Start with better building blocks.</h2>
             <p>Give Cursor a small, relevant set of polished components instead of another blank canvas.</p>
-            <a href="/#catalogue">Explore Rendyn <Arrow /></a>
+            <a href="/components">Explore Rendyn <Arrow /></a>
             <small>React · TypeScript · complete source</small>
           </aside>
         </section>
 
-        <div className={styles.contentGrid}>
-          <aside className={styles.guideAside} aria-label="On this page">
+        <div className={`${styles.contentGrid} guide-reading-layout`}>
+          <aside className={`${styles.guideAside} guide-reading-sidebar`} aria-label="On this page">
             <div className={styles.asideInner}>
               <p>On this page</p>
               <ol>
@@ -265,7 +237,7 @@ export default function CursorDesignGuide() {
                   <li key={href}><a href={href}><span>{String(index + 1).padStart(2, '0')}</span>{label}</a></li>
                 ))}
               </ol>
-              <div className={styles.asideCta}>
+              <div className={`${styles.asideCta} guide-callout`}>
                 <span>Rendyn</span>
                 <strong>From interface intent to production-ready source.</strong>
                 <a href="/pricing">Start 7-day trial <Arrow /></a>
@@ -273,7 +245,7 @@ export default function CursorDesignGuide() {
             </div>
           </aside>
 
-          <div className={styles.articleBody}>
+          <div className={`${styles.articleBody} guide-reading-body`}>
             <p className={styles.lede}>
               Cursor can write polished front-end code. But code generation is only the last part of design.
               The harder work is deciding what the interface should prioritize, how it should feel, which patterns fit,
@@ -517,18 +489,14 @@ export default function CursorDesignGuide() {
         </div>
       </section>
 
-      <section className={styles.finalCta} aria-labelledby="final-cta-title">
+      <section className={`${styles.finalCta} guide-end`} aria-labelledby="final-cta-title">
         <p>Put the Cursor design workflow to work</p>
         <h2 id="final-cta-title">Give Cursor better<br />design context.</h2>
         <span>Rendyn helps Cursor find, compare, and implement polished interface components with the context to choose well.</span>
-        <div><a href="/#catalogue">Browse the catalogue <Arrow /></a><a href="/pricing">Start 7-day trial</a></div>
+        <div><a href="/components">Browse the catalogue <Arrow /></a><a href="/pricing">Start 7-day trial</a></div>
       </section>
 
-      <footer className={styles.footer}>
-        <div><Brand href="/" label="Rendyn home" /><p>A curated component catalogue for the coding agents you already use.</p></div>
-        <nav aria-label="Footer navigation"><a href="/#product">Product</a><a href="/#catalogue">Components</a><a href="/#resources">Resources</a><a href="#top">Back to top ↑</a></nav>
-        <p>© 2026 Rendyn <span>Editorial guide · Cursor is a trademark of its respective owner.</span></p>
-      </footer>
+
     </main>
   );
 }

@@ -1,7 +1,6 @@
+import { GuideHeading } from '../../components/guide-heading';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim breaks client hydration. */
 import type { Metadata } from 'next';
-import { SiteFooter } from '../../components/site-footer';
-import { SiteHeader } from '../../components/site-header';
 import { CopyPromptButton } from './copy-prompt-button';
 
 const starterPrompt = `Build a website for [business or product] that helps [specific audience] achieve [one primary outcome].
@@ -110,7 +109,7 @@ const buildSteps = [
           Three adjectives are a start, but references make them operational. Supply two or three examples and annotate the quality you want from each: editorial spacing, compact navigation, tactile controls or restrained motion. Tell the agent what not to copy and what to avoid.
         </p>
         <p>
-          Then lock a few decisions: type scale, content width, spacing rhythm, colour roles, border treatment, control shape and motion rules. Reusing a curated component system helps the page keep a point of view as it grows. That is the role of the <a className="vibe-website-source-link" href="/#catalogue">Rendyn catalogue</a>: your agent can compare polished options and install the complete implementation instead of improvising every control.
+          Then lock a few decisions: type scale, content width, spacing rhythm, colour roles, border treatment, control shape and motion rules. Reusing a curated component system helps the page keep a point of view as it grows. That is the role of the <a className="vibe-website-source-link" href="/components">Rendyn catalogue</a>: your agent can compare polished options and install the complete implementation instead of improvising every control.
         </p>
         <div className="vibe-website-product-demo" role="group" aria-label="Example Rendyn component result">
           <div className="vibe-website-product-demo-bar"><span>Rendyn</span><i>Component result</i></div>
@@ -243,26 +242,11 @@ export const metadata: Metadata = {
 export default function VibeCodingWebsiteGuide() {
   return (
     <>
-      <SiteHeader />
       <main className="vibe-website-page">
         <article>
-          <header className="vibe-website-hero">
-          <a className="vibe-website-back" href="/#resources">Resources <span aria-hidden="true">/</span> Guides</a>
-          <div className="vibe-website-byline">
-            <span className="vibe-website-author-mark" aria-hidden="true">R</span>
-            <p>By Rendyn Editorial</p>
-            <i aria-hidden="true">•</i>
-            <time dateTime="2026-08-29">August 29, 2026</time>
-            <i aria-hidden="true">•</i>
-            <span>8 min read</span>
-          </div>
-          <h1>How to Build a Website With Vibe Coding</h1>
-          <p className="vibe-website-deck">
-            Turn a clear product idea into a responsive, credible vibe coding website by giving your AI better context—and reviewing the result like a product team.
-          </p>
-          </header>
+          <GuideHeading slug="how-to-build-a-website-with-vibe-coding" id="guide-title" />
 
-        <section className="vibe-website-lead-frame" aria-label="The vibe coding website workflow">
+        <section className="vibe-website-lead-frame guide-example" aria-label="The vibe coding website workflow">
           <div className="vibe-website-lead-main">
             <div className="vibe-website-lead-copy">
               <span>THE WORKING LOOP</span>
@@ -285,8 +269,8 @@ export default function VibeCodingWebsiteGuide() {
           </aside>
         </section>
 
-        <div className="vibe-website-layout">
-          <aside className="vibe-website-toc" aria-label="Table of contents">
+        <div className="vibe-website-layout guide-reading-layout">
+          <aside className="vibe-website-toc guide-reading-sidebar" aria-label="Table of contents">
             <p>On this page</p>
             <nav>
               {toc.map(([href, label], index) => (
@@ -299,7 +283,7 @@ export default function VibeCodingWebsiteGuide() {
             </div>
           </aside>
 
-          <div className="vibe-website-body">
+          <div className="vibe-website-body guide-reading-body">
             <section id="quick-answer">
               <p className="vibe-website-section-label">THE SHORT ANSWER</p>
               <h2>What is a vibe coding website?</h2>
@@ -453,8 +437,8 @@ export default function VibeCodingWebsiteGuide() {
               <p className="vibe-website-section-label">KEEP BUILDING</p>
               <h2 id="related-title">More from the resource library</h2>
               <div>
-                <a href="/#resources"><span>MCP workflows</span><h3>The component library built for coding agents</h3><i aria-hidden="true">↗</i></a>
-                <a href="/#resources"><span>AI interface design</span><h3>Give AI-built interfaces a stronger point of view</h3><i aria-hidden="true">↗</i></a>
+                <a href="/guides"><span>MCP workflows</span><h3>The component library built for coding agents</h3><i aria-hidden="true">↗</i></a>
+                <a href="/guides"><span>AI interface design</span><h3>Give AI-built interfaces a stronger point of view</h3><i aria-hidden="true">↗</i></a>
               </div>
             </section>
           </div>
@@ -470,20 +454,19 @@ export default function VibeCodingWebsiteGuide() {
           </aside>
         </div>
 
-        <section className="vibe-website-end-cta grid-field">
+        <section className="vibe-website-end-cta grid-field guide-end">
           <div>
             <p className="eyebrow">Better ingredients for the next prompt</p>
             <h2>Give your agent<br />a stronger starting point.</h2>
             <p>Rendyn gives coding agents polished component options, visual previews, product context and complete source.</p>
             <div>
-              <a className="button" href="/#catalogue">Browse components <span aria-hidden="true">↗</span></a>
+              <a className="button" href="/components">Browse components <span aria-hidden="true">↗</span></a>
               <a className="button button--ghost" href="/#docs">Connect Rendyn</a>
             </div>
           </div>
         </section>
         </article>
       </main>
-      <SiteFooter />
     </>
   );
 }

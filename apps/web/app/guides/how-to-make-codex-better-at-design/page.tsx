@@ -1,7 +1,6 @@
+import { GuideHeading } from '../../components/guide-heading';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { SiteFooter } from '../../components/site-footer';
-import { SiteHeader } from '../../components/site-header';
 import './page.css';
 
 export const metadata: Metadata = {
@@ -137,35 +136,15 @@ export default function CodexDesignGuide() {
   return (
     <main className="codex-design-page codex-article-page">
       <a className="codex-article-skip-link" href="#article-content">Skip to article</a>
-      <SiteHeader />
 
       <article>
-        <header className="codex-article-masthead grid-field" id="article-top">
+        <header className="codex-article-masthead grid-field guide-hero-container" id="article-top">
           <div className="codex-article-shell">
-            <nav className="codex-article-breadcrumb" aria-label="Breadcrumb">
-              <Link href="/#resources">Guides</Link>
-              <span aria-hidden="true">/</span>
-              <span>Codex design</span>
-            </nav>
 
-            <div className="codex-article-title-block">
-              <div className="codex-article-byline">
-                <span className="codex-article-avatar" aria-hidden="true">R</span>
-                <span>Rendyn editorial</span>
-                <i aria-hidden="true" />
-                <time dateTime="2026-08-29">29 August 2026</time>
-                <i aria-hidden="true" />
-                <span>12 min read</span>
-              </div>
-              <h1>How to Make Codex{' '}<br />Better at Design</h1>
-              <p>
-                Better Codex design does not come from asking for more polish. It comes
-                from giving the agent a product outcome, a visual system, strong
-                implementation ingredients, and a rendered feedback loop.
-              </p>
-            </div>
 
-            <div className="codex-article-hero-frame" aria-label="A practical Codex design brief">
+            <GuideHeading slug="how-to-make-codex-better-at-design" id="guide-title" />
+
+            <div className="codex-article-hero-frame guide-example" aria-label="A practical Codex design brief">
               <div className="codex-brief-window">
                 <div className="codex-brief-toolbar">
                   <div><span /><span /><span /></div>
@@ -200,8 +179,8 @@ export default function CodexDesignGuide() {
           </div>
         </header>
 
-        <div className="codex-article-layout codex-article-shell" id="article-content" tabIndex={-1}>
-          <aside className="codex-article-rail">
+        <div className="codex-article-layout codex-article-shell guide-reading-layout" id="article-content" tabIndex={-1}>
+          <aside className="codex-article-rail guide-reading-sidebar">
             <nav aria-label="On this page">
               <p>On this page</p>
               <a href="#short-answer">The short answer</a>
@@ -213,15 +192,15 @@ export default function CodexDesignGuide() {
               <a href="#qa-checklist">QA checklist</a>
             </nav>
 
-            <div className="codex-rail-cta">
+            <div className="codex-rail-cta guide-callout">
               <span>Rendyn</span>
               <strong>Give Codex better interface ingredients.</strong>
               <p>Curated components, visual previews, fit notes, and complete source.</p>
-              <Link href="/#catalogue">Explore the catalogue <ArrowIcon /></Link>
+              <Link href="/components">Explore the catalogue <ArrowIcon /></Link>
             </div>
           </aside>
 
-          <div className="codex-article-body">
+          <div className="codex-article-body guide-reading-body">
             <section id="short-answer">
               <p className="codex-article-section-label">The short answer</p>
               <h2>Codex needs a design environment, not a magic prompt.</h2>
@@ -489,7 +468,7 @@ Definition of done
                   inventing generic UI and more time composing a coherent product.
                 </p>
                 <div className="codex-rendyn-actions">
-                  <Link className="button" href="/#catalogue">Browse components <ArrowIcon /></Link>
+                  <Link className="button" href="/components">Browse components <ArrowIcon /></Link>
                   <Link className="button button--ghost" href="/#docs">Connect Rendyn</Link>
                 </div>
               </div>
@@ -552,7 +531,7 @@ Definition of done
               <p className="codex-article-section-label">Continue the workflow</p>
               <h2 id="related-title">Put the guide into practice.</h2>
               <div className="codex-related-grid">
-                <Link href="/#catalogue">
+                <Link href="/components">
                   <span>Component catalogue</span>
                   <h3>Explore components by product intent</h3>
                   <p>Move from a product outcome to a focused, defensible component choice.</p>
@@ -569,13 +548,13 @@ Definition of done
           </div>
         </div>
 
-        <section className="codex-article-final-cta grid-field" aria-labelledby="article-cta-title">
+        <section className="codex-article-final-cta grid-field guide-end" aria-labelledby="article-cta-title">
           <div className="codex-article-final-cta-card">
             <p className="eyebrow">The next Codex design task</p>
             <h2 id="article-cta-title">Give the agent{' '}<br />better ingredients.</h2>
             <p>Pair a clear design brief with curated components, visual previews, fit reasoning, and complete source code.</p>
             <div>
-              <Link className="button" href="/#catalogue">Browse components <ArrowIcon /></Link>
+              <Link className="button" href="/components">Browse components <ArrowIcon /></Link>
               <Link className="button button--cream" href="/#docs">Connect Rendyn</Link>
             </div>
           </div>
@@ -587,7 +566,6 @@ Definition of done
         </footer>
       </article>
 
-      <SiteFooter />
     </main>
   );
 }

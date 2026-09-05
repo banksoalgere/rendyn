@@ -1,0 +1,133 @@
+export type Guide = {
+  slug: string;
+  href: string;
+  category: string;
+  title: string;
+  description: string;
+  accent: string;
+  readTime: string;
+  status: string;
+};
+
+export const guides: Guide[] = [
+  {
+    slug: 'vibe-coding-templates',
+    href: '/guides/vibe-coding-templates',
+    category: 'Template strategy',
+    title: 'Best templates for vibe coding',
+    description: 'A researched comparison of public remixes, code-first UI blocks, premium starters, and reusable team foundations.',
+    accent: 'intent',
+    readTime: '12 min read',
+    status: 'Read the guide',
+  },
+  {
+    slug: 'how-to-build-a-website-with-vibe-coding',
+    href: '/guides/how-to-build-a-website-with-vibe-coding',
+    category: 'Vibe coding',
+    title: 'How to Build a Website With Vibe Coding',
+    description: 'A practical brief, prompt template, testing loop and launch checklist for a website that feels designed.',
+    accent: 'vibe-website',
+    readTime: '8 min read',
+    status: 'Read the guide',
+  },
+  {
+    slug: 'how-to-design-an-app-with-chatgpt',
+    href: '/blog/how-to-design-an-app-with-chatgpt',
+    category: 'ChatGPT app design',
+    title: 'How to design an app with ChatGPT',
+    description: 'A practical workflow from product brief and user flows to an intentional, browser-tested prototype.',
+    accent: 'intent',
+    readTime: '12 min read',
+    status: 'Read the guide',
+  },
+  {
+    slug: 'how-to-design-a-website-with-chatgpt',
+    href: '/guides/how-to-design-a-website-with-chatgpt',
+    category: 'ChatGPT website design',
+    title: 'How to design a website with ChatGPT',
+    description: 'A complete design-led workflow for sharper briefs, distinctive visual direction, production code and real browser QA.',
+    accent: 'generic',
+    readTime: '13 min read',
+    status: 'Read the guide',
+  },
+  {
+    slug: 'vibe-coding-design',
+    href: '/guides/vibe-coding-design',
+    category: 'AI interface design',
+    title: 'Vibe Coding Design: How to Make Your App Look Good',
+    description: 'A practical workflow for hierarchy, design systems, better prompts and a more polished vibe coding UI.',
+    accent: 'generic',
+    readTime: '12 min read',
+    status: 'Read the guide',
+  },
+  {
+    slug: 'how-to-build-a-good-looking-website-with-cursor',
+    href: '/guides/how-to-build-a-good-looking-website-with-cursor',
+    category: 'Cursor website design',
+    title: 'How to build a good-looking website with Cursor',
+    description: 'A practical, design-system-first workflow for turning a functional Cursor build into a polished, distinctive website.',
+    accent: 'cursor',
+    readTime: '12 min read',
+    status: 'Read the guide',
+  },
+  {
+    slug: 'how-to-make-claude-code-better-at-design',
+    href: '/guides/how-to-make-claude-code-better-at-design',
+    category: 'Claude Code design',
+    title: 'How to make Claude Code better at design',
+    description: 'A practical workflow for giving Claude visual direction, reusable design context and a real browser feedback loop.',
+    accent: 'intent',
+    readTime: '12 min read',
+    status: 'Read the guide',
+  },
+  {
+    slug: 'how-to-design-a-website-with-claude-code',
+    href: '/guides/how-to-design-a-website-with-claude-code',
+    category: 'Claude Code frontend',
+    title: 'How to design a website with Claude Code',
+    description: 'A practical workflow for briefing, building, testing and refining a distinctive website with Claude Code.',
+    accent: 'generic',
+    readTime: '12 min read',
+    status: 'Read the guide',
+  },
+  {
+    slug: 'best-claude-code-templates',
+    href: '/blog/best-claude-code-templates',
+    category: 'Claude Code templates',
+    title: 'Best Claude Code templates for skills, agents and websites',
+    description: 'Six useful starting points compared by scope, safety, maintainability and speed to first value.',
+    accent: 'delivery',
+    readTime: '12 min read',
+    status: 'Read the guide',
+  },
+  {
+    slug: 'best-cursor-templates',
+    href: '/blog/best-cursor-templates',
+    category: 'Cursor templates',
+    title: 'The 7 best Cursor templates for building better websites',
+    description: 'A researched comparison of source-code starters, visual systems and practical ways to make any template work better in Cursor.',
+    accent: 'delivery',
+    readTime: '15 min read',
+    status: 'Read the guide',
+  },
+  {
+    slug: 'how-to-make-codex-better-at-design',
+    href: '/guides/how-to-make-codex-better-at-design',
+    category: 'Codex design',
+    title: 'How to make Codex better at design',
+    description: 'A practical workflow for giving Codex stronger context, visual direction, interface ingredients, and browser QA.',
+    accent: 'intent',
+    readTime: '12 min read',
+    status: 'Read the guide',
+  },
+  {
+    slug: 'cursor-design',
+    href: '/guides/cursor-design',
+    category: 'Cursor design',
+    title: 'How to make Cursor better at design',
+    description: 'A practical workflow for giving Cursor stronger visual context, component choices, prompts, and browser QA.',
+    accent: 'generic',
+    readTime: '12 min read',
+    status: 'Read the guide',
+  },
+];

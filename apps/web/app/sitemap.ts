@@ -6,6 +6,7 @@ const publicRoutes = [
   '/',
   '/components',
   '/pricing',
+  '/guides',
   '/blog/best-claude-code-templates',
   '/blog/best-cursor-templates',
   '/blog/how-to-design-an-app-with-chatgpt',

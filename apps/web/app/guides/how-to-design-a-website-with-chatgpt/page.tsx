@@ -1,7 +1,6 @@
+import { GuideHeading } from '../../components/guide-heading';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext must perform native navigation for reliable cross-route fragment scrolling. */
 import type { Metadata } from 'next';
-import { SiteFooter } from '../../components/site-footer';
-import { SiteHeader } from '../../components/site-header';
 import { CopyPrompt } from './copy-prompt';
 import './page.css';
 
@@ -70,31 +69,10 @@ function ExternalLink({ href, children }: { href: string; children: React.ReactN
 export default function ChatGPTWebsiteDesignGuide() {
   return (
     <main className="chatgpt-website-page" id="top">
-      <SiteHeader activeSection="resources" />
 
-      <header className="chatgpt-website-hero">
-        <nav className="chatgpt-website-breadcrumbs" aria-label="Breadcrumb">
-          <a href="/">Home</a><span aria-hidden="true">/</span><a href="/#resources">Resources</a><span aria-hidden="true">/</span><span aria-current="page">Website design</span>
-        </nav>
-        <div className="chatgpt-website-hero__meta">
-          <span>Field guide</span>
-          <span>13 min read</span>
-          <time dateTime="2026-08-29">Updated Aug 29, 2026</time>
-        </div>
-        <h1>How to Design a Website With ChatGPT</h1>
-        <p>
-          A practical, design-led workflow for turning a precise brief into a
-          responsive website people can actually use—not another generic AI template.
-        </p>
-        <div className="chatgpt-website-author">
-          <span className="chatgpt-website-author__mark" aria-hidden="true">R</span>
-          <span>By Rendyn Editorial</span>
-          <i aria-hidden="true" />
-          <span>Planning, prompting, production, and QA</span>
-        </div>
-      </header>
+      <GuideHeading slug="how-to-design-a-website-with-chatgpt" />
 
-      <section className="chatgpt-website-frame" aria-label="ChatGPT website design guide">
+      <section className="chatgpt-website-frame guide-example" aria-label="ChatGPT website design guide">
         <div className="chatgpt-website-cover grid-field">
           <div className="chatgpt-website-cover__copy">
             <span>01 / Brief before build</span>
@@ -114,17 +92,38 @@ export default function ChatGPTWebsiteDesignGuide() {
             </div>
           </div>
         </div>
-
         <aside className="chatgpt-website-frame__aside">
           <span className="chatgpt-website-aside__mark" aria-hidden="true">R</span>
           <p className="chatgpt-website-aside__eyebrow">Rendyn</p>
           <p className="chatgpt-website-aside__title">Build with better ingredients.</p>
           <p>Give your coding agent polished components, complete source, and the context to choose well.</p>
-          <a className="button" href="/#catalogue">Browse components <span aria-hidden="true">↗</span></a>
+          <a className="button" href="/components">Browse components <span aria-hidden="true">↗</span></a>
           <a className="chatgpt-website-aside__link" href="/#how-it-works">See how it works <span aria-hidden="true">→</span></a>
         </aside>
-
-        <article className="chatgpt-website-body">
+      </section>
+      <div className="guide-reading-layout">
+        <aside className="chatgpt-website-rail guide-reading-sidebar" aria-label="On this page">
+          <div className="chatgpt-website-rail__inner">
+            <p>On this page</p>
+            <nav>
+              <a href="#what-chatgpt-can-do">What ChatGPT can do</a>
+              <a href="#choose-path">Choose your path</a>
+              <a href="#write-brief">Write the brief</a>
+              <a href="#shape-structure">Shape the page</a>
+              <a href="#visual-direction">Direct the visuals</a>
+              <a href="#build-stages">Build in stages</a>
+              <a href="#review-output">Review the output</a>
+              <a href="#launch-checklist">Launch checklist</a>
+              <a href="#faq">FAQ</a>
+            </nav>
+            <div className="chatgpt-website-rail__note">
+              <span>Better inputs, better interface</span>
+              <p>Search by product intent. Give your agent the component source and context to finish the job.</p>
+              <a href="/components">Browse Rendyn <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </aside>
+        <article className="chatgpt-website-body guide-reading-body">
           <p className="chatgpt-website-lede">
             If you want ChatGPT to build a website, use it as a design and engineering
             collaborator—not a one-click substitute for judgment. A strong ChatGPT website
@@ -273,7 +272,7 @@ export default function ChatGPTWebsiteDesignGuide() {
             <p>
               A model is more consistent when it can reuse proven primitives instead of inventing every
               card, menu, input, and animation from scratch. A curated component source such as
-              <a href="/#catalogue"> Rendyn&apos;s catalogue</a> gives a coding agent visual previews,
+              <a href="/components"> Rendyn&apos;s catalogue</a> gives a coding agent visual previews,
               implementation context, and complete source to adapt to the product.
             </p>
           </section>
@@ -377,7 +376,7 @@ export default function ChatGPTWebsiteDesignGuide() {
             <p className="chatgpt-website-step">Continue designing</p>
             <h2 id="keep-exploring">Keep exploring Rendyn</h2>
             <div className="chatgpt-website-related__grid">
-              <a href="/#catalogue">
+              <a href="/components">
                 <span>Component catalogue</span>
                 <h3>Browse interface patterns by product intent</h3>
               </a>
@@ -397,36 +396,13 @@ export default function ChatGPTWebsiteDesignGuide() {
               and refine the rule that caused the problem.
             </p>
             <div>
-              <a className="button" href="/#catalogue">Explore the component catalogue <span aria-hidden="true">↗</span></a>
+              <a className="button" href="/components">Explore the component catalogue <span aria-hidden="true">↗</span></a>
               <a className="chatgpt-website-text-button" href="/#how-it-works">How Rendyn works <span aria-hidden="true">→</span></a>
             </div>
           </section>
         </article>
+      </div>
 
-        <aside className="chatgpt-website-rail" aria-label="On this page">
-          <div className="chatgpt-website-rail__inner">
-            <p>On this page</p>
-            <nav>
-              <a href="#what-chatgpt-can-do">What ChatGPT can do</a>
-              <a href="#choose-path">Choose your path</a>
-              <a href="#write-brief">Write the brief</a>
-              <a href="#shape-structure">Shape the page</a>
-              <a href="#visual-direction">Direct the visuals</a>
-              <a href="#build-stages">Build in stages</a>
-              <a href="#review-output">Review the output</a>
-              <a href="#launch-checklist">Launch checklist</a>
-              <a href="#faq">FAQ</a>
-            </nav>
-            <div className="chatgpt-website-rail__note">
-              <span>Better inputs, better interface</span>
-              <p>Search by product intent. Give your agent the component source and context to finish the job.</p>
-              <a href="/#catalogue">Browse Rendyn <span aria-hidden="true">↗</span></a>
-            </div>
-          </div>
-        </aside>
-      </section>
-
-      <SiteFooter />
     </main>
   );
 }

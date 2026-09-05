@@ -1,7 +1,6 @@
+import { GuideHeading } from '../../components/guide-heading';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { SiteFooter } from '../../components/site-footer';
-import { SiteHeader } from '../../components/site-header';
 
 const route = '/guides/how-to-make-claude-code-better-at-design';
 
@@ -104,29 +103,12 @@ const checklist = [
 export default function ClaudeCodeDesignGuide() {
   return (
     <div className="guide-page">
-      <SiteHeader />
 
       <main id="top">
         <article>
-        <header className="guide-hero grid-field">
-          <div className="guide-hero-inner">
-            <div className="guide-byline">
-              <span className="guide-topic">By Rendyn Editorial</span>
-              <span aria-hidden="true">•</span>
-              <span>Field guide · Claude Code design</span>
-              <span aria-hidden="true">•</span>
-              <time dateTime="2026-08-29">August 29, 2026</time>
-              <span aria-hidden="true">•</span>
-              <span>12 min read</span>
-            </div>
-            <h1>How to Make Claude Code Better at Design</h1>
-            <p className="guide-deck">
-              Claude Code can build polished interfaces, but taste does not come from asking it to “make this look better.” It comes from giving the agent a visual system, concrete references and a browser loop that turns judgment into evidence.
-            </p>
-          </div>
-        </header>
+        <GuideHeading slug="how-to-make-claude-code-better-at-design" id="guide-title" />
 
-        <div className="guide-feature section-shell" aria-label="The shift from a vague prompt to a design-informed workflow">
+        <div className="guide-feature section-shell guide-example" aria-label="The shift from a vague prompt to a design-informed workflow">
           <div className="guide-feature-copy">
             <span className="guide-feature-label">The essential shift</span>
             <h2>Stop prompting for polish.<br />Start supplying direction.</h2>
@@ -149,23 +131,23 @@ export default function ClaudeCodeDesignGuide() {
           </div>
         </div>
 
-        <div className="guide-layout section-shell">
-          <aside className="guide-sidebar">
+        <div className="guide-layout section-shell guide-reading-layout">
+          <aside className="guide-sidebar guide-reading-sidebar">
             <nav className="guide-toc" aria-label="On this page">
               <p>On this page</p>
               {tableOfContents.map(([href, label], index) => (
                 <a href={`#${href}`} key={href}><span>{String(index + 1).padStart(2, '0')}</span>{label}</a>
               ))}
             </nav>
-            <div className="guide-sidebar-cta">
+            <div className="guide-sidebar-cta guide-callout">
               <span className="brand-mark" aria-hidden="true">R</span>
               <p className="guide-sidebar-title">Give Claude better ingredients.</p>
               <p>Search polished interface components by product intent, then give your agent the source and context to ship them well.</p>
-              <Link className="button" href="/#catalogue">Explore Rendyn <span aria-hidden="true">↗</span></Link>
+              <Link className="button" href="/components">Explore Rendyn <span aria-hidden="true">↗</span></Link>
             </div>
           </aside>
 
-          <div className="guide-content">
+          <div className="guide-content guide-reading-body">
             <section id="quick-answer">
               <p className="guide-section-label">The short answer</p>
               <h2>The fastest way to make Claude Code better at design</h2>
@@ -282,7 +264,7 @@ Report the route, files changed, design decisions and browser evidence.`}</code>
                   <i>Best fit</i>
                 </div>
                 <div className="article-product-files"><span>signal-button.tsx</span><span>states.css</span><span>install.md</span></div>
-                <div className="article-product-demo-bottom"><p>A useful component handoff gives Claude a visual choice, fit reasoning and the implementation—not another adjective.</p><Link href="/#catalogue">Explore the catalogue <span aria-hidden="true">↗</span></Link></div>
+                <div className="article-product-demo-bottom"><p>A useful component handoff gives Claude a visual choice, fit reasoning and the implementation—not another adjective.</p><Link href="/components">Explore the catalogue <span aria-hidden="true">↗</span></Link></div>
               </div>
             </section>
 
@@ -359,7 +341,7 @@ Report the route, files changed, design decisions and browser evidence.`}</code>
               <p className="guide-section-label">Put it into practice</p>
               <h2 id="related-title">Use the workflow with Rendyn</h2>
               <div className="guide-related-grid">
-                <Link href="/#catalogue"><span>Component strategy</span><h3>Choose UI components by product intent</h3><p>Move from a product outcome to a focused, defensible component choice.</p><i aria-hidden="true">↗</i></Link>
+                <Link href="/components"><span>Component strategy</span><h3>Choose UI components by product intent</h3><p>Move from a product outcome to a focused, defensible component choice.</p><i aria-hidden="true">↗</i></Link>
                 <Link href="/#intelligence"><span>Agent-ready UI</span><h3>What a complete component handoff includes</h3><p>See the previews, reasoning, states and source files that make a result usable.</p><i aria-hidden="true">↗</i></Link>
                 <Link href="/#docs"><span>MCP workflow</span><h3>Connect design context to the coding agent</h3><p>Make interface knowledge available inside the build loop instead of another tab.</p><i aria-hidden="true">↗</i></Link>
               </div>
@@ -379,18 +361,17 @@ Report the route, files changed, design decisions and browser evidence.`}</code>
           </div>
         </div>
 
-        <section className="guide-final-cta grid-field">
+        <section className="guide-final-cta grid-field guide-end">
           <div>
             <p className="eyebrow">Better inputs. Better interfaces.</p>
             <h2>Give your agent<br />something worth building with.</h2>
             <p>Rendyn helps coding agents find polished, product-ready components with visual context, fit reasoning and complete source.</p>
-            <Link className="button" href="/#catalogue">Browse the component catalogue <span aria-hidden="true">↗</span></Link>
+            <Link className="button" href="/components">Browse the component catalogue <span aria-hidden="true">↗</span></Link>
           </div>
         </section>
         </article>
       </main>
 
-      <SiteFooter />
     </div>
   );
 }

@@ -1,8 +1,7 @@
+import { GuideHeading } from '../../components/guide-heading';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext shared server navigation uses native links. */
 import type { Metadata } from 'next';
 import { ArticleProgress } from './article-progress';
-import { SiteFooter } from '../../components/site-footer';
-import { SiteHeader } from '../../components/site-header';
 
 export const metadata: Metadata = {
   title: 'Cursor Website Design: How to Build a Good-Looking Site',
@@ -89,7 +88,7 @@ const qaItems = [
 function ArticleHeroVisual() {
   return (
     <div
-      className="article-hero-visual"
+      className="article-hero-visual guide-example"
       role="img"
       aria-label="A generic website treatment refined into a deliberate Rendyn interface"
     >
@@ -127,39 +126,25 @@ function ArticleHeroVisual() {
 export default function CursorWebsiteDesignGuide() {
   return (
     <main className="article-page">
-      <SiteHeader />
 
       <article>
-        <header className="article-hero grid-field">
-          <div className="article-hero-copy">
-            <div className="article-meta">
-              <span className="article-author"><b aria-hidden="true">R</b> By <strong>Rendyn Editorial</strong></span><i aria-hidden="true" />
-              <span>Design field guide</span><i aria-hidden="true" />
-              <span>12 min read</span><i aria-hidden="true" />
-              <time dateTime="2026-08-29">August 29, 2026</time>
-            </div>
-            <h1>How to Build a Good-Looking Website With Cursor</h1>
-            <p className="article-deck">
-              A strong Cursor website does not come from a more enthusiastic prompt. It comes from
-              clear art direction, a compact design system and a browser loop that turns subjective
-              feedback into specific, testable decisions.
-            </p>
-          </div>
+        <header className="article-hero grid-field guide-hero-container">
+          <GuideHeading slug="how-to-build-a-good-looking-website-with-cursor" id="guide-title" />
           <ArticleHeroVisual />
         </header>
 
-        <div className="article-frame">
-          <aside className="article-sidebar">
+        <div className="article-frame guide-reading-layout">
+          <aside className="article-sidebar guide-reading-sidebar">
             <ArticleProgress />
-            <div className="article-side-cta">
+            <div className="article-side-cta guide-callout">
               <span>Give your agent better ingredients</span>
               <p className="article-side-cta-title">Start with stronger UI choices.</p>
               <p>Explore polished components with previews, fit reasoning and complete source.</p>
-              <a href="/#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></a>
+              <a href="/components">Browse the catalogue <span aria-hidden="true">↗</span></a>
             </div>
           </aside>
 
-          <div className="article-body">
+          <div className="article-body guide-reading-body">
             <p className="article-lede">
               If you are searching for <strong>cursor website design</strong>, this guide is about the
               Cursor coding editor—not a custom mouse pointer. The goal is not to ask AI for “premium”
@@ -428,7 +413,7 @@ the primary interactions, and report console or network errors.`}</code></pre>
                 concrete evidence, make one class of decision at a time, and keep the final code native to your product.
               </p>
               <div>
-                <a className="button" href="/#catalogue">Give your agent better components <span aria-hidden="true">↗</span></a>
+                <a className="button" href="/components">Give your agent better components <span aria-hidden="true">↗</span></a>
                 <a className="button button--ghost" href="/#how-it-works">See how Rendyn works</a>
               </div>
             </section>
@@ -436,7 +421,6 @@ the primary interactions, and report console or network errors.`}</code></pre>
         </div>
       </article>
 
-      <SiteFooter />
     </main>
   );
 }

@@ -1,7 +1,7 @@
+import { GuideHeading } from '../../components/guide-heading';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
 import type { Metadata } from 'next';
-import { FinalCallToAction, SiteFooter } from '../../components/site-footer';
-import { SiteHeader } from '../../components/site-header';
+import { FinalCallToAction } from '../../components/site-footer';
 import { CopyTemplate } from './copy-template';
 
 export const metadata: Metadata = {
@@ -151,23 +151,11 @@ const toc = [
 export default function BestClaudeCodeTemplatesPage() {
   return (
     <div className="editorial-page" id="top">
-      <SiteHeader activeSection="resources" />
       <main>
         <article>
-        <header className="editorial-hero section-shell">
-          <div className="editorial-meta">
-            <span>By Rendyn editorial</span>
-            <i aria-hidden="true">•</i>
-            <time dateTime="2026-08-29">Updated August 29, 2026</time>
-            <i aria-hidden="true">•</i>
-            <span>12 min read</span>
-          </div>
-          <p className="eyebrow">Field guide / Claude Code</p>
-          <h1>Best Claude Code Templates</h1>
-          <p className="editorial-deck">Six genuinely useful starting points for project instructions, reusable skills, specialist agents and better Claude-built websites—compared by scope, safety, maintainability and speed to first value.</p>
-        </header>
+        <GuideHeading slug="best-claude-code-templates" id="guide-title" />
 
-        <section className="editorial-summary section-shell" aria-labelledby="short-answer-heading">
+        <section className="editorial-summary section-shell guide-example" aria-labelledby="short-answer-heading">
           <div className="editorial-summary-art grid-field" aria-hidden="true">
             <div className="template-orbit template-orbit--one" />
             <div className="template-orbit template-orbit--two" />
@@ -184,8 +172,8 @@ export default function BestClaudeCodeTemplatesPage() {
           </div>
         </section>
 
-        <div className="editorial-layout section-shell">
-          <aside className="editorial-sidebar" aria-label="Article tools">
+        <div className="editorial-layout section-shell guide-reading-layout">
+          <aside className="editorial-sidebar guide-reading-sidebar" aria-label="Article tools">
             <div className="sidebar-card sidebar-card--toc">
               <p>In this guide</p>
               <nav aria-label="Table of contents">
@@ -194,16 +182,16 @@ export default function BestClaudeCodeTemplatesPage() {
                 ))}
               </nav>
             </div>
-            <div className="sidebar-card sidebar-card--cta">
+            <div className="sidebar-card sidebar-card--cta guide-callout">
               <span className="sidebar-mark" aria-hidden="true">R</span>
               <p>Better ingredients for AI-built interfaces.</p>
               <small>Give your coding agent polished components, visual previews and complete source.</small>
-              <a className="button" href="/#catalogue">Browse Rendyn <span aria-hidden="true">↗</span></a>
+              <a className="button" href="/components">Browse Rendyn <span aria-hidden="true">↗</span></a>
             </div>
             <div className="sidebar-research"><i aria-hidden="true" /> <time dateTime="2026-08-29">Current as of August 2026</time></div>
           </aside>
 
-          <div className="editorial-body">
+          <div className="editorial-body guide-reading-body">
             <section className="article-section article-intro" aria-labelledby="overview-heading">
               <p className="article-overline">The practical view</p>
               <h2 id="overview-heading">The best Claude Code templates are systems, not magic prompts.</h2>
@@ -330,7 +318,7 @@ export default function BestClaudeCodeTemplatesPage() {
                 <article className="website-choice website-choice--peach">
                   <span>Existing product</span><h3>Use the design system</h3>
                   <p>Preserve the architecture. Give Claude proven components, visual previews and implementation context rather than a second competing scaffold.</p>
-                  <small>Explore: <a href="/#catalogue">Rendyn components ↗</a></small>
+                  <small>Explore: <a href="/components">Rendyn components ↗</a></small>
                 </article>
               </div>
               <p><a href="https://code.claude.com/docs/en/best-practices">Anthropic’s workflow guidance</a> supports screenshots and mockups as visual context, while <a href="https://code.claude.com/docs/en/desktop">Claude Code Desktop previews</a> can run an app, inspect its DOM and iterate in an embedded browser. The durable advantage is not the screenshot itself; it is pairing visual intent with the existing product’s constraints and verifying the result in a real browser.</p>
@@ -398,7 +386,7 @@ export default function BestClaudeCodeTemplatesPage() {
                   <h3>Common workflows and visual iteration</h3>
                   <i aria-hidden="true">↗</i>
                 </a>
-                <a href="/#resources">
+                <a href="/guides">
                   <span>Rendyn resources</span>
                   <h3>Guides for better AI-built products</h3>
                   <i aria-hidden="true">↗</i>
@@ -424,7 +412,6 @@ export default function BestClaudeCodeTemplatesPage() {
         </article>
         <FinalCallToAction />
       </main>
-      <SiteFooter />
     </div>
   );
 }

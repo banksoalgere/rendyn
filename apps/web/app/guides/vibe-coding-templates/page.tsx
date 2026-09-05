@@ -1,8 +1,7 @@
+import { GuideHeading } from '../../components/guide-heading';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim breaks client hydration. */
 import type { Metadata } from 'next';
 
-import { SiteFooter } from '../../components/site-footer';
-import { SiteHeader } from '../../components/site-header';
 
 export const metadata: Metadata = {
   title: 'Best Vibe Coding Templates for Better UI | Rendyn',
@@ -181,27 +180,11 @@ function TableOfContents() {
 export default function VibeCodingTemplatesPage() {
   return (
     <main className="vct-page" id="top">
-      <SiteHeader />
       <article aria-labelledby="guide-title">
-        <header className="editorial-hero grid-field">
-          <div className="editorial-hero-copy">
-            <p className="editorial-breadcrumb"><a href="/#resources">Guides</a><span>/</span>Template strategy</p>
-            <div className="editorial-byline">
-              <span className="editorial-author-mark" aria-hidden="true">R</span>
-              <p><strong>By Rendyn Editorial</strong><span>Researched from primary product sources</span></p>
-              <time dateTime="2026-08-29">29 August 2026</time>
-              <i aria-hidden="true">·</i>
-              <span>12 min read</span>
-            </div>
-            <h1 id="guide-title">Best templates for<br />vibe coding.</h1>
-            <p className="editorial-deck">
-              The best <strong>vibe coding templates</strong> give your agent more than a polished
-              screenshot. They provide sound structure, editable source, and enough product context
-              to make the result feel like yours.
-            </p>
-          </div>
+        <header className="editorial-hero grid-field guide-hero-container">
+          <GuideHeading slug="vibe-coding-templates" id="guide-title" />
 
-          <div className="editorial-hero-frame" role="img" aria-label="A template evaluation board showing structure, visual quality, and code ownership">
+          <div className="editorial-hero-frame guide-example" role="img" aria-label="A template evaluation board showing structure, visual quality, and code ownership">
             <div className="editorial-frame-top"><span>Template fit board</span><span>Rendyn editorial</span></div>
             <div className="editorial-frame-grid" aria-hidden="true">
               <div className="editorial-template-card editorial-template-card--structure"><span>01</span><strong>Structure</strong><i /></div>
@@ -219,17 +202,17 @@ export default function VibeCodingTemplatesPage() {
           </details>
         </div>
 
-        <div className="editorial-layout section-shell">
-          <aside className="editorial-sidebar">
+        <div className="editorial-layout section-shell guide-reading-layout">
+          <aside className="editorial-sidebar guide-reading-sidebar">
             <TableOfContents />
             <div className="editorial-side-cta">
               <span>Need a smaller starting point?</span>
               <strong>Give your coding agent a curated component catalogue.</strong>
-              <a href="/#catalogue">Explore Rendyn <span aria-hidden="true">↗</span></a>
+              <a href="/components">Explore Rendyn <span aria-hidden="true">↗</span></a>
             </div>
           </aside>
 
-          <div className="editorial-content">
+          <div className="editorial-content guide-reading-body">
             <section className="editorial-lede" id="shortlist">
               <p className="eyebrow">The short answer</p>
               <h2>Choose the template form before you choose the template.</h2>
@@ -414,7 +397,7 @@ export default function VibeCodingTemplatesPage() {
                 <article><span>Component strategy</span><h3>How to choose UI components by product intent</h3><p>Move from a product outcome to a focused, defensible component choice.</p><i>Coming soon</i></article>
                 <article><span>MCP workflows</span><h3>What coding agents need from component libraries</h3><p>Understand the previews, context, and source files that make agent decisions more reliable.</p><i>Coming soon</i></article>
               </div>
-              <a href="/#resources">Browse the resource library <span aria-hidden="true">↗</span></a>
+              <a href="/guides">Browse the resource library <span aria-hidden="true">↗</span></a>
             </section>
 
             <section className="editorial-sources" aria-labelledby="sources-title">
@@ -430,12 +413,11 @@ export default function VibeCodingTemplatesPage() {
               <p className="eyebrow">Start with stronger ingredients</p>
               <h2>Your coding agent can move fast without designing from zero.</h2>
               <p>Give it focused visual options, product context, and complete source it can safely adapt inside the codebase you already trust.</p>
-              <div><a className="button" href="/#catalogue">Browse the catalogue <span aria-hidden="true">↗</span></a><a className="button button--ghost" href="/pricing">Start 7-day trial</a></div>
+              <div><a className="button" href="/components">Browse the catalogue <span aria-hidden="true">↗</span></a><a className="button button--ghost" href="/pricing">Start 7-day trial</a></div>
             </section>
           </div>
         </div>
       </article>
-      <SiteFooter />
     </main>
   );
 }

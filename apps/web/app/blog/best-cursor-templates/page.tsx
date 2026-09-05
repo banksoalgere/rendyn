@@ -1,7 +1,6 @@
+import { GuideHeading } from '../../components/guide-heading';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
 import type { Metadata } from 'next';
-import { SiteFooter } from '../../components/site-footer';
-import { SiteHeader } from '../../components/site-header';
 
 const pageTitle = '7 Best Cursor Templates for Websites in 2026';
 const pageDescription =
@@ -277,7 +276,7 @@ function ExternalArrow() {
 
 function TemplateHero() {
   return (
-    <div className="cursor-templates-hero-frame" aria-hidden="true">
+    <div className="cursor-templates-hero-frame guide-example" aria-hidden="true">
       <div className="cursor-templates-hero-toolbar">
         <span><i aria-hidden="true" /> Template review</span>
         <span>7 sources · 6 criteria</span>
@@ -325,34 +324,17 @@ export default function BestCursorTemplatesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema).replace(/</g, '\\u003c') }}
       />
-      <SiteHeader />
       <main>
         <article>
-          <header className="cursor-templates-hero grid-field">
-            <div className="cursor-templates-hero-inner">
-              <nav className="cursor-templates-breadcrumb" aria-label="Breadcrumb">
-                <a href="/#resources">Resources</a>
-                <span aria-hidden="true">/</span>
-                <span>Field guide</span>
-              </nav>
-              <div className="cursor-templates-byline">
-                <span className="cursor-templates-avatar" aria-hidden="true">R</span>
-                <span>By Rendyn editorial</span>
-                <i aria-hidden="true">•</i>
-                <time dateTime="2026-08-29">August 29, 2026</time>
-                <i aria-hidden="true">•</i>
-                <span>15 min read</span>
-              </div>
-              <h1>7 Best Cursor Templates for Websites in 2026</h1>
-              <p className="cursor-templates-deck">
-                The most useful Cursor website templates are maintainable source code—not screenshots or oversized boilerplates. We compared seven practical starting points for SaaS, content, full-stack apps, and polished interface work.
-              </p>
+          <header className="cursor-templates-hero grid-field guide-hero-container">
+            <div className="cursor-templates-hero-inner guide-hero-container">
+              <GuideHeading slug="best-cursor-templates" id="guide-title" />
               <TemplateHero />
             </div>
           </header>
 
-          <div className="cursor-templates-layout">
-            <aside className="cursor-templates-sidebar" aria-label="Article navigation">
+          <div className="cursor-templates-layout guide-reading-layout">
+            <aside className="cursor-templates-sidebar guide-reading-sidebar" aria-label="Article navigation">
               <nav className="cursor-templates-toc">
                 <p>In this guide</p>
                 <ol>
@@ -361,15 +343,15 @@ export default function BestCursorTemplatesPage() {
                   ))}
                 </ol>
               </nav>
-              <div className="cursor-templates-sidebar-cta">
+              <div className="cursor-templates-sidebar-cta guide-callout">
                 <span>Rendyn</span>
                 <strong>Give Cursor a stronger visual vocabulary.</strong>
                 <p>Browse polished, source-available interface components by product intent.</p>
-                <a href="/#catalogue">Explore the catalogue <ExternalArrow /></a>
+                <a href="/components">Explore the catalogue <ExternalArrow /></a>
               </div>
             </aside>
 
-            <div className="cursor-templates-body">
+            <div className="cursor-templates-body guide-reading-body">
               <section id="quick-answer">
                 <p className="cursor-templates-lede">
                   <strong>Our quick answer:</strong> Vercel Templates is the best overall place to start because it offers inspectable repositories across the widest range of website jobs. Choose the Next.js SaaS Starter for a working application foundation, Supabase&apos;s official Next.js template for auth and data, and shadcn/ui Blocks when you already have a codebase and only need a well-formed page pattern.
@@ -517,7 +499,7 @@ export default function BestCursorTemplatesPage() {
                     <span>Better inputs, better interface work</span>
                     <strong>Give your agent components with real interaction and source context.</strong>
                   </div>
-                  <a className="button" href="/#catalogue">Browse Rendyn <ExternalArrow /></a>
+                  <a className="button" href="/components">Browse Rendyn <ExternalArrow /></a>
                 </div>
               </section>
 
@@ -581,7 +563,7 @@ export default function BestCursorTemplatesPage() {
                     <div><span>02</span><p><strong>Morphing search</strong><small>Alternative · compact discovery</small></p><i>Compare</i></div>
                     <div><span>03</span><p><strong>Expandable action bar</strong><small>Alternative · persistent actions</small></p><i>Compare</i></div>
                   </div>
-                  <div className="cursor-templates-product-footer"><span aria-hidden="true">Source + dependencies + usage context</span><a href="/#catalogue">Explore the catalogue <ExternalArrow /></a></div>
+                  <div className="cursor-templates-product-footer"><span aria-hidden="true">Source + dependencies + usage context</span><a href="/components">Explore the catalogue <ExternalArrow /></a></div>
                 </div>
               </section>
 
@@ -633,13 +615,12 @@ export default function BestCursorTemplatesPage() {
             <h2 id="article-cta-title">Your starter has structure.<br />Give it better taste.</h2>
             <span>Rendyn helps coding agents find and implement polished components with the source and context to use them well.</span>
             <div>
-              <a className="button" href="/#catalogue">Browse components <ExternalArrow /></a>
+              <a className="button" href="/components">Browse components <ExternalArrow /></a>
               <a className="button button--ghost" href="/#product">See how it works</a>
             </div>
           </div>
         </section>
       </main>
-      <SiteFooter />
     </div>
   );
 }

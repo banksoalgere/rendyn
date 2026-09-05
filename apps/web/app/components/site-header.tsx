@@ -8,7 +8,7 @@ const navigation = [
   { href: '/components', id: 'catalogue', label: 'Components' },
   { href: '/#how-it-works', id: 'how-it-works', label: 'How it works' },
   { href: '/pricing', id: 'pricing', label: 'Pricing' },
-  { href: '/guides/how-to-make-claude-code-better-at-design', id: 'resources', label: 'Guides' },
+  { href: '/guides', id: 'resources', label: 'Guides' },
 ];
 
 type NavigationId = (typeof navigation)[number]['id'];

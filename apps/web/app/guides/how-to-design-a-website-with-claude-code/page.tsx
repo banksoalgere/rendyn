@@ -1,7 +1,6 @@
+import { GuideHeading } from '../../components/guide-heading';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { SiteFooter } from '../../components/site-footer';
-import { SiteHeader } from '../../components/site-header';
 import { PromptCopy } from './prompt-copy';
 
 const title = 'How to Design a Website With Claude Code | Rendyn';
@@ -195,27 +194,13 @@ const workflowSteps = [
 export default function ClaudeCodeWebsiteDesignGuide() {
   return (
     <div className="article-page" id="top">
-      <SiteHeader />
 
       <main>
         <article>
-        <header className="article-hero grid-field">
-          <div className="article-hero-copy">
-            <Link className="article-breadcrumb" href="/#resources">Guides <span aria-hidden="true">/</span> Claude Code frontend</Link>
-            <h1>How to Design a Website With Claude Code</h1>
-            <p>
-              A practical, feedback-led system for turning a clear creative direction into
-              a responsive website that feels considered—not generated.
-            </p>
-            <div className="article-byline">
-              <span className="byline-mark" aria-hidden="true">R</span>
-              <span><strong>Rendyn Editorial</strong><time dateTime="2026-08-29">Updated August 29, 2026</time></span>
-              <i aria-hidden="true" />
-              <span><strong>12 min read</strong><small>Practical guide</small></span>
-            </div>
-          </div>
+        <header className="article-hero grid-field guide-hero-container">
+          <GuideHeading slug="how-to-design-a-website-with-claude-code" id="guide-title" />
 
-          <div className="article-hero-frame">
+          <div className="article-hero-frame guide-example">
             <div className="article-workspace" aria-hidden="true">
               <div className="workspace-bar">
                 <div aria-hidden="true"><i /><i /><i /></div>
@@ -243,13 +228,13 @@ export default function ClaudeCodeWebsiteDesignGuide() {
               <p className="article-cta-title">Give Claude Code better building blocks.</p>
               <p>Search polished components by product intent, compare visual options, then get the complete source.</p>
               <Link className="button" href="/pricing">Start Rendyn trial <span aria-hidden="true">↗</span></Link>
-              <Link href="/#catalogue">Browse the component catalogue <span aria-hidden="true">→</span></Link>
+              <Link href="/components">Browse the component catalogue <span aria-hidden="true">→</span></Link>
             </aside>
           </div>
         </header>
 
-        <div className="article-shell">
-          <div className="article-content">
+        <div className="article-shell guide-reading-layout">
+          <div className="article-content guide-reading-body">
             <details className="mobile-toc">
               <summary>On this page</summary>
               <nav aria-label="On this page">
@@ -371,7 +356,7 @@ export default function ClaudeCodeWebsiteDesignGuide() {
                   <div><span>02</span><strong>Compare the fit</strong><i>Ranked visual options</i></div>
                   <div><span>03</span><strong>Keep the code</strong><i>Complete editable source</i></div>
                 </div>
-                <Link className="button" href="/#catalogue">Explore Rendyn components <span aria-hidden="true">→</span></Link>
+                <Link className="button" href="/components">Explore Rendyn components <span aria-hidden="true">→</span></Link>
               </div>
             </section>
 
@@ -428,12 +413,12 @@ export default function ClaudeCodeWebsiteDesignGuide() {
             </section>
           </div>
 
-          <aside className="article-sidebar">
+          <aside className="article-sidebar guide-reading-sidebar">
             <nav aria-label="On this page">
               <span>On this page</span>
               {contents.map(([id, label]) => <Link href={`#${id}`} key={id}>{label}</Link>)}
             </nav>
-            <div className="sidebar-cta">
+            <div className="sidebar-cta guide-callout">
               <span className="brand-mark" aria-hidden="true">R</span>
               <p className="sidebar-cta-title">Better choices in, better interfaces out.</p>
               <p>Give your coding agent polished component options and complete code.</p>
@@ -447,13 +432,12 @@ export default function ClaudeCodeWebsiteDesignGuide() {
             <p className="eyebrow">Your next Claude Code frontend</p>
             <h2>Start with better<br />building blocks.</h2>
             <p>Search by product intent. Compare the strongest fits. Give your agent complete, editable interface source.</p>
-            <div><Link className="button" href="/#catalogue">Browse components <span aria-hidden="true">→</span></Link><Link className="button button--ghost" href="/#resources">Read more guides</Link></div>
+            <div><Link className="button" href="/components">Browse components <span aria-hidden="true">→</span></Link><Link className="button button--ghost" href="/guides">Read more guides</Link></div>
           </div>
         </section>
         </article>
       </main>
 
-      <SiteFooter />
     </div>
   );
 }

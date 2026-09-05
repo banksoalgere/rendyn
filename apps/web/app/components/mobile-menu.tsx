@@ -17,7 +17,7 @@ const primaryLinks = [
   { href: '/#how-it-works', label: 'How it works', number: '02' },
   { href: '/pricing', label: 'Pricing', number: '03' },
   { href: '/#for-teams', label: 'For teams', number: '04' },
-  { href: '/guides/how-to-make-claude-code-better-at-design', label: 'Guides', number: '05' },
+  { href: '/guides', label: 'Guides', number: '05' },
 ] as const;
 
 const SIGN_UP_HREF = '/pricing';
