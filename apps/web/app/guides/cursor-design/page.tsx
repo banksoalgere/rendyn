@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/guides/cursor-design' },
   robots: { index: true, follow: true },
   openGraph: {
+    siteName: 'Rendyn',
+    locale: 'en_GB',
     type: 'article',
     title: pageTitle,
     description: pageDescription,

@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
+    siteName: 'Rendyn',
+    locale: 'en_GB',
     title: 'How to Build a Good-Looking Website With Cursor',
     description: 'A practical workflow for giving a Cursor-built website clear art direction, consistent UI and a rigorous browser QA pass.',
     url: '/guides/how-to-build-a-good-looking-website-with-cursor',

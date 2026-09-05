@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/guides/vibe-coding-design' },
   authors: [{ name: 'Rendyn Editorial' }],
   openGraph: {
+    siteName: 'Rendyn',
+    locale: 'en_GB',
     title: 'Vibe Coding Design: How to Make Your App Look Good',
     description: 'Turn a functional AI-built app into a clear, coherent and polished product with this practical design workflow.',
     url: '/guides/vibe-coding-design',

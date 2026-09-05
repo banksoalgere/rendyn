@@ -13,6 +13,8 @@ export const metadata: Metadata = {
     index: true,
   },
   openGraph: {
+    siteName: 'Rendyn',
+    locale: 'en_GB',
     title: 'Best Claude Code Templates: 6 Practical Picks (2026)',
     description: 'A practical comparison of Claude Code templates, from CLAUDE.md foundations to reusable skills and website UI resources.',
     authors: ['Rendyn editorial'],

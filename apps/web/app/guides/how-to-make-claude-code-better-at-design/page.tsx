@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   alternates: { canonical: route },
   robots: { index: true, follow: true },
   openGraph: {
+    siteName: 'Rendyn',
+    locale: 'en_GB',
     type: 'article',
     title: 'How to Make Claude Code Better at Design',
     description: 'A practical workflow for turning generic Claude Code UI into coherent, product-ready interface work.',

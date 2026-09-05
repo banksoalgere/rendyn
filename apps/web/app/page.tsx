@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
 
 import type { Metadata } from 'next';
+import { homeDescription, homeStructuredData, homeTitle, pageMetadata } from '../lib/seo';
 import { SiteHeader } from './components/site-header';
 import { SiteFooter } from './components/site-footer';
 import { HomeDemo } from './components/home-demo';
@@ -9,30 +10,7 @@ import { getComponentPreview } from '../lib/component-preview';
 import styles from './home.module.css';
 import { CatalogueFeatureGrid } from './components/catalogue-feature-grid';
 
-const title = 'React UI Components for AI Coding Agents | Rendyn';
-const description = 'Browse 189 polished React UI components with live previews, complete TypeScript source, and MCP-ready context for Claude Code, Codex, Cursor, and other coding agents.';
-
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: '/' },
-  robots: { index: true, follow: true },
-  openGraph: {
-    title,
-    description,
-    locale: 'en_GB',
-    siteName: 'Rendyn',
-    type: 'website',
-    url: '/',
-    images: ['/og.png'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title,
-    description,
-    images: ['/og.png'],
-  },
-};
+export const metadata: Metadata = pageMetadata(homeTitle, homeDescription, '/');
 
 const codingAgents = [
   { name: 'Codex', logo: '/agent-logos/codex.svg' },
@@ -69,12 +47,16 @@ const collectionStats = [
 export default function Home() {
   return (
     <main className={styles.page}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeStructuredData).replace(/</g, '\\u003c') }}
+      />
       <SiteHeader activeSection="product" />
       <section className={styles.hero} id="top">
         <div className={styles.copy}>
-          <span className={styles.eyebrow}><i /> For people who care about the details</span>
+          <span className={styles.eyebrow}><i /> React UI components for AI coding agents</span>
           <h1>Good ideas.<br />Beautiful<br /><em>interfaces.</em></h1>
-          <p>Give your coding agent a head start with thoughtfully crafted React components. Ready to explore. Yours to make your own.</p>
+          <p>Explore Rendyn’s React components with live previews and complete TypeScript source. Connect Claude Code, Codex or Cursor through MCP.</p>
           <div className={styles.actions}>
             <a className={styles.primary} href="/components">Find your next component <span aria-hidden="true">↗</span></a>
             <a className={styles.secondary} href="/pricing">Start 7-day trial <span aria-hidden="true">→</span></a>

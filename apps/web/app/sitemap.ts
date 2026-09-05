@@ -1,24 +1,15 @@
 import type { MetadataRoute } from 'next';
 import { catalogueEntries } from '../lib/catalogue';
+import { guides } from '../lib/guides';
+import { siteOrigin } from '../lib/seo';
 
-const siteUrl = 'https://rendyn.dev';
+const siteUrl = siteOrigin;
 const publicRoutes = [
   '/',
   '/components',
   '/pricing',
   '/guides',
-  '/blog/best-claude-code-templates',
-  '/blog/best-cursor-templates',
-  '/blog/how-to-design-an-app-with-chatgpt',
-  '/guides/cursor-design',
-  '/guides/how-to-build-a-good-looking-website-with-cursor',
-  '/guides/how-to-build-a-website-with-vibe-coding',
-  '/guides/how-to-design-a-website-with-chatgpt',
-  '/guides/how-to-design-a-website-with-claude-code',
-  '/guides/how-to-make-claude-code-better-at-design',
-  '/guides/how-to-make-codex-better-at-design',
-  '/guides/vibe-coding-design',
-  '/guides/vibe-coding-templates',
+  ...guides.map((guide) => guide.href),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -32,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...publicRoutes.map((route) => ({
       url: `${siteUrl}${route}`,
-      lastModified: new Date('2026-09-03'),
+      // Omit lastmod until this route has a maintained content revision date.
       changeFrequency: route === '/' || route === '/components' ? 'weekly' as const : 'monthly' as const,
       priority: route === '/' ? 1 : route === '/components' ? 0.9 : 0.7,
     })),

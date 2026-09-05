@@ -45,6 +45,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/guides/how-to-design-a-website-with-chatgpt' },
   robots: { index: true, follow: true },
   openGraph: {
+    siteName: 'Rendyn',
+    locale: 'en_GB',
     title,
     description,
     type: 'article',

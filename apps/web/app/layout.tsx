@@ -1,26 +1,32 @@
 import type { Metadata } from 'next';
-import { Archivo, Geist_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
+import { homeDescription, homeTitle, siteOrigin } from '../lib/seo';
 
-const archivo = Archivo({
+const archivo = localFont({
+  src: '../public/fonts/archivo-latin.woff2',
   variable: '--font-archivo',
-  subsets: ['latin'],
+  weight: '100 900',
+  display: 'swap',
 });
 
-const geistMono = Geist_Mono({
+const geistMono = localFont({
+  src: '../public/fonts/geist-mono-latin.woff2',
   variable: '--font-geist-mono',
-  subsets: ['latin'],
+  weight: '100 900',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://rendyn.dev'),
-  title: 'React UI Components for AI Coding Agents | Rendyn',
-  description: 'Browse polished React UI components with live previews, complete TypeScript source, and MCP-ready context for AI coding agents.',
+  metadataBase: new URL(siteOrigin),
+  applicationName: 'Rendyn',
+  title: homeTitle,
+  description: homeDescription,
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
-    title: 'React UI Components for AI Coding Agents | Rendyn',
+    title: homeTitle,
     description: 'Polished React UI components, live previews, and complete source for AI coding agents.',
     locale: 'en_GB',
     siteName: 'Rendyn',
@@ -29,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'React UI Components for AI Coding Agents | Rendyn',
+    title: homeTitle,
     description: 'Polished React UI components, live previews, and complete source for AI coding agents.',
     images: ['/og.png'],
   },

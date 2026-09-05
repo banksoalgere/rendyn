@@ -1,3 +1,4 @@
+import { pageMetadata, siteOrigin } from '../../lib/seo';
 import type { Metadata } from 'next';
 import { catalogueEntries } from '../../lib/catalogue';
 import { getComponentPreview } from '../../lib/component-preview';
@@ -6,25 +7,11 @@ import { SiteHeader } from '../components/site-header';
 import { ComponentExplorer, type CatalogueComponent } from './component-explorer';
 import styles from './components.module.css';
 
-export const metadata: Metadata = {
-  title: 'Live component catalogue | Rendyn',
-  description: 'Browse 189 interactive React component examples, each with a dedicated live preview, usage guidance, and complete editable source.',
-  alternates: { canonical: '/components' },
-  robots: { index: true, follow: true },
-  openGraph: {
-    title: 'Live React component catalogue | Rendyn',
-    description: 'Browse 189 interactive React component examples with live previews, usage guidance, and complete editable source.',
-    type: 'website',
-    url: '/components',
-    images: ['/og.png'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Live React component catalogue | Rendyn',
-    description: 'Browse 189 interactive React component examples with live previews, usage guidance, and complete editable source.',
-    images: ['/og.png'],
-  },
-};
+export const metadata: Metadata = pageMetadata(
+  'React UI Component Library & Live Previews | Rendyn',
+  `Browse ${catalogueEntries.length} React UI components with interactive previews, TypeScript source and usage guidance for Claude Code, Codex and Cursor.`,
+  '/components',
+);
 
 const featuredComponents = [
   'magicui-animated-beam',
@@ -65,6 +52,27 @@ export default async function ComponentsPage({ searchParams }: ComponentsPagePro
 
   return (
     <main className={styles.page}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          '@id': `${siteOrigin}/components#catalogue`,
+          name: 'Rendyn React UI component library',
+          url: `${siteOrigin}/components`,
+          isPartOf: { '@id': `${siteOrigin}/#website` },
+          mainEntity: {
+            '@type': 'ItemList',
+            numberOfItems: catalogueComponents.length,
+            itemListElement: catalogueComponents.map((component, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              name: component.name,
+              url: `${siteOrigin}/components/${component.publicSlug}`,
+            })),
+          },
+        }).replace(/</g, '\\u003c') }}
+      />
       <div className={styles.headerShell}><SiteHeader activeSection="catalogue" /></div>
       <section className={styles.hero}>
         <div className={styles.heroCopy}>

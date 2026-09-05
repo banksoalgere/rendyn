@@ -222,6 +222,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/guides/how-to-build-a-website-with-vibe-coding' },
   robots: { index: true, follow: true },
   openGraph: {
+    siteName: 'Rendyn',
+    locale: 'en_GB',
     type: 'article',
     title: 'How to Build a Website With Vibe Coding',
     description: 'A practical workflow for briefing, prompting, testing and shipping an AI-built website that still feels designed.',

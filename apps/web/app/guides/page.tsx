@@ -1,18 +1,13 @@
+import { pageMetadata } from '../../lib/seo';
 import type { Metadata } from 'next';
 import { guides } from '../../lib/guides';
 import styles from '../components/guides.module.css';
 
-export const metadata: Metadata = {
-  title: 'Guides for Better AI-built Interfaces | Rendyn',
-  description: 'Practical guides to designing and building with Claude Code, Cursor, Codex and ChatGPT. Find workflows, prompts and templates for better interfaces.',
-  alternates: { canonical: '/guides' },
-  openGraph: {
-    title: 'Guides for Better AI-built Interfaces | Rendyn',
-    description: 'Practical workflows, prompts and templates for better AI-built interfaces.',
-    url: '/guides',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = pageMetadata(
+  'AI Coding & UI Design Guides | Rendyn',
+  'Practical guides to designing and building with Claude Code, Cursor, Codex and ChatGPT. Find workflows, prompts and templates for better interfaces.',
+  '/guides',
+);
 
 export default function GuidesPage() {
   return (
