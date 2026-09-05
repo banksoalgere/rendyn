@@ -106,18 +106,18 @@ function SearchByIntentCard() {
         </button>
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
-            animate={{ opacity: 1, y: 0 }}
+            animate={{ y: 0 }}
             className={styles.searchMeta}
-            exit={{ opacity: 0, y: 5 }}
-            initial={{ opacity: 0, y: -5 }}
+            exit={{ y: 5 }}
+            initial={{ y: -5 }}
             key={exampleIndex}
             transition={{ duration: reduceMotion ? 0 : 0.22 }}
           >
             <div aria-label="Detected constraints">
               {example.tags.map((tag, index) => (
                 <motion.span
-                  animate={{ opacity: 1, scale: 1 }}
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ scale: 1 }}
+                  initial={{ scale: 0.9 }}
                   key={tag}
                   transition={{ delay: reduceMotion ? 0 : index * 0.07 }}
                 >
