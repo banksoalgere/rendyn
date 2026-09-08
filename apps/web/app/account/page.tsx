@@ -42,7 +42,7 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
 
   if (!claims?.sub) redirect('/login?next=%2Faccount');
 
-  const email = typeof claims.email === 'string' ? claims.email : 'Google account';
+  const email = typeof claims.email === 'string' ? claims.email : 'Your account';
   let subscription: SubscriptionAccess | null = null;
   try {
     subscription = await getSubscriptionAccess(supabase);
@@ -80,7 +80,7 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
           <p className={styles.error} role="alert">The billing portal could not be opened. Please try again.</p>
         ) : null}
         <div className={styles.accountSummary}>
-          <span>Google account</span>
+          <span>Email</span>
           <strong>{email}</strong>
         </div>
         <div className={styles.accountSummary}>
@@ -106,7 +106,7 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
             <Link className={styles.primaryButton} href="/pricing">Start 7-day trial</Link>
           )}
           <Link className={styles.secondaryButton} href="/">Browse Rendyn</Link>
-          <SignOutForm />
+          <SignOutForm returnTo="/login" />
         </div>
       </section>
     </main>

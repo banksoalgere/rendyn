@@ -1,6 +1,6 @@
-# Google login setup
+# Website login setup
 
-The website implements Google sign-in through Supabase Auth. It expects a cookie-based PKCE flow and never exposes the Supabase secret or service-role key.
+The website offers Google and passwordless email sign-in through Supabase Auth. Both use the existing cookie-based PKCE callback and never expose the Supabase secret or service-role key.
 
 ## Google Cloud
 
@@ -17,6 +17,14 @@ The website implements Google sign-in through Supabase Auth. It expects a cookie
 3. Under **Authentication → URL Configuration**, set the Site URL to `https://rendyn.dev`.
 4. Add `http://localhost:3000/auth/callback`, `http://127.0.0.1:3000/auth/callback`, and `https://rendyn.dev/auth/callback` to the redirect allow list.
 5. Keep email identity linking automatic. Do not enable manual account linking for this flow.
+
+## Email sign-in
+
+1. Keep the Email provider enabled and email confirmation required.
+2. Configure production SMTP delivery. The default Supabase mail service is not a production delivery solution for arbitrary users.
+3. The Magic Link and Confirm Signup email templates must link to `{{ .ConfirmationURL }}` so Supabase verifies the email and returns an authorization code to `/auth/callback`. A code-only email template is not compatible with this link-based form.
+4. Retain Supabase email rate limits. Open the email link in the same browser that requested it so the PKCE verifier is available.
+5. Verify delivery and login for both an existing email and a new email before release; enabling the provider alone does not prove SMTP delivery.
 
 For MCP login, also enable the Supabase OAuth 2.1 Server, use an asymmetric signing key, set the authorization path to `/oauth/consent`, and enable dynamic client registration only for environments that need MCP client interoperability.
 
@@ -36,5 +44,6 @@ Add the same two public values to the website's deployment environment before pu
 1. Open `/login` and continue with Google.
 2. Confirm Google returns through `/auth/callback` and `/account` shows the signed-in email.
 3. Sign out and confirm `/account` requires sign-in again.
+   Confirm sign-out returns to `/login`, both login options appear, and email sign-in preserves a `next` destination such as `/oauth/consent?authorization_id=...`.
 4. Start the card-backed seven-day trial and confirm `/account` shows the future trial end.
 5. Start an MCP connection and confirm `/oauth/consent` preserves the request, requires trial-or-paid access, shows the client and scopes, and returns both allow and deny decisions to the registered client callback.

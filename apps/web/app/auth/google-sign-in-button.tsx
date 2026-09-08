@@ -26,12 +26,13 @@ export function GoogleSignInButton({ configured, returnTo }: GoogleSignInButtonP
     const callback = new URL('/auth/callback', window.location.origin);
     callback.searchParams.set('next', returnTo);
 
-    const { error: signInError } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: { redirectTo: callback.toString() },
-    });
-
-    if (signInError) {
+    try {
+      const { error: signInError } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: { redirectTo: callback.toString() },
+      });
+      if (signInError) throw signInError;
+    } catch {
       setPending(false);
       setError('Google sign-in could not be started. Please try again.');
     }
@@ -46,7 +47,7 @@ export function GoogleSignInButton({ configured, returnTo }: GoogleSignInButtonP
         onClick={signIn}
         type="button"
       >
-        {pending ? 'Opening Google…' : 'Continue with Google'}
+        {pending ? 'Opening Google…' : 'Log in with Google'}
       </button>
     </>
   );
