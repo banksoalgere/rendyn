@@ -1,6 +1,6 @@
 # Website login setup
 
-The website offers Google and passwordless email sign-in through Supabase Auth. Both use the existing cookie-based PKCE callback and never expose the Supabase secret or service-role key.
+The website offers Google and passwordless email sign-in through Supabase Auth. Google uses the existing cookie-based PKCE callback. Email uses a six-digit code verified through `verifyOtp({ email, token, type: "email" })`. Both retain Supabase SSR cookies and never expose the Supabase secret or service-role key.
 
 ## Google Cloud
 
@@ -22,8 +22,8 @@ The website offers Google and passwordless email sign-in through Supabase Auth. 
 
 1. Keep the Email provider enabled and email confirmation required.
 2. Configure production SMTP delivery. The default Supabase mail service is not a production delivery solution for arbitrary users.
-3. The Magic Link and Confirm Signup email templates must link to `{{ .ConfirmationURL }}` so Supabase verifies the email and returns an authorization code to `/auth/callback`. A code-only email template is not compatible with this link-based form.
-4. Retain Supabase email rate limits. Open the email link in the same browser that requested it so the PKCE verifier is available.
+3. Apply `supabase/templates/email-code.html` to both **Magic Link** and **Confirm Signup** in the hosted project, with subject **Your Rendyn login code**. The template renders `{{ .Token }}`; the form verifies that six-digit code. Keep OTP length at six. The checked-in template configuration applies to local Supabase; it does not update hosted settings.
+4. Retain Supabase email rate limits. The UI adds a 60-second resend cooldown; the provider remains authoritative for throttling, expiry and verification.
 5. Verify delivery and login for both an existing email and a new email before release; enabling the provider alone does not prove SMTP delivery.
 
 For MCP login, also enable the Supabase OAuth 2.1 Server, use an asymmetric signing key, set the authorization path to `/oauth/consent`, and enable dynamic client registration only for environments that need MCP client interoperability.
@@ -47,3 +47,7 @@ Add the same two public values to the website's deployment environment before pu
    Confirm sign-out returns to `/login`, both login options appear, and email sign-in preserves a `next` destination such as `/oauth/consent?authorization_id=...`.
 4. Start the card-backed seven-day trial and confirm `/account` shows the future trial end.
 5. Start an MCP connection and confirm `/oauth/consent` preserves the request, requires trial-or-paid access, shows the client and scopes, and returns both allow and deny decisions to the registered client callback.
+
+## Login design
+
+The login adopts the selected Quiet layout, with input focus treatment and code slots inspired by the catalogue’s `input` and `otp-input` components. It uses the existing `EASE_OUT` motion token for field expansion and screen transitions, respects reduced motion, and keeps native email input, keyboard editing, paste and one-time-code autofill.
