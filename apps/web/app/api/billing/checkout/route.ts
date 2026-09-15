@@ -80,16 +80,14 @@ export async function POST(request: Request) {
     const session = await getStripe().checkout.sessions.create({
       mode: 'subscription',
       client_reference_id: userId,
-      payment_method_types: ['card'],
+      // Managed Payments selects the available payment methods and checkout text.
+      // Keep payment collection mandatory without overriding those settings.
       payment_method_collection: 'always',
       line_items: [lineItem],
       subscription_data: subscriptionData,
       metadata: { rendyn_user_id: userId, rendyn_plan_code: planCode },
       success_url: successUrl.toString(),
       cancel_url: cancelUrl.toString(),
-      custom_text: {
-        submit: { message: selectedPlan.trialDisclosure },
-      },
       ...(typeof email === 'string' ? { customer_email: email } : {}),
     }, {
       idempotencyKey: `rendyn-trial-checkout:${userId}`,
