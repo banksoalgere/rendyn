@@ -87,7 +87,7 @@ export function EmailSignInForm({ configured, returnTo }: { configured: boolean;
           <form className={styles.emailForm} onSubmit={verifyCode}>
             <label htmlFor="login-code">Authentication code</label>
             <div className={styles.codeField}>
-              <input className={styles.codeInput} aria-describedby={error ? 'login-code-error' : undefined} aria-invalid={Boolean(error)} autoComplete="one-time-code" autoFocus disabled={pending} id="login-code" inputMode="numeric" maxLength={EMAIL_CODE_LENGTH} onChange={(event) => { setCode(event.target.value.replace(/\D/g, '').slice(0, EMAIL_CODE_LENGTH)); setError(undefined); }} pattern="[0-9]{6}" required type="text" value={code} />
+              <input className={styles.codeInput} aria-describedby={error ? 'login-code-error' : undefined} aria-invalid={Boolean(error)} autoComplete="one-time-code" autoFocus disabled={pending} id="login-code" inputMode="numeric" maxLength={EMAIL_CODE_LENGTH} onChange={(event) => { setCode(event.target.value.replace(/\D/g, '').slice(0, EMAIL_CODE_LENGTH)); setError(undefined); }} pattern={`[0-9]{${EMAIL_CODE_LENGTH}}`} required type="text" value={code} />
               <div className={styles.codeSlots} aria-hidden="true">
                 {Array.from({ length: EMAIL_CODE_LENGTH }, (_, index) => <span key={index} data-filled={Boolean(code[index])}>{code[index] || '·'}</span>)}
               </div>

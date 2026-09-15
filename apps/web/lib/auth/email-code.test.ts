@@ -26,12 +26,12 @@ describe('email code authentication', () => {
   });
   it('verifies the code for the same email and requires an authenticated session', async () => {
     const auth = provider();
-    await expect(verifyEmailCode(auth, 'person@example.com', '123456')).resolves.toBeUndefined();
-    expect(auth.verifyOtp).toHaveBeenCalledWith({ email: 'person@example.com', token: '123456', type: 'email' });
+    await expect(verifyEmailCode(auth, 'person@example.com', '12345678')).resolves.toBeUndefined();
+    expect(auth.verifyOtp).toHaveBeenCalledWith({ email: 'person@example.com', token: '12345678', type: 'email' });
   });
-  it.each(['12345', '1234567', '12345a', ' 123456'])('rejects malformed codes: %s', async (code) => {
+  it.each(['123456', '1234567', '123456789', '1234567a', ' 12345678'])('rejects malformed codes: %s', async (code) => {
     const auth = provider();
-    await expect(verifyEmailCode(auth, 'person@example.com', code)).rejects.toThrow('six-digit');
+    await expect(verifyEmailCode(auth, 'person@example.com', code)).rejects.toThrow('8-digit');
     expect(auth.verifyOtp).not.toHaveBeenCalled();
   });
   it.each([
@@ -40,6 +40,6 @@ describe('email code authentication', () => {
   ])('does not accept a missing session or rejected code', async (result) => {
     const auth = provider();
     auth.verifyOtp.mockResolvedValue(result);
-    await expect(verifyEmailCode(auth, 'person@example.com', '123456')).rejects.toThrow('invalid or has expired');
+    await expect(verifyEmailCode(auth, 'person@example.com', '12345678')).rejects.toThrow('invalid or has expired');
   });
 });
