@@ -77,7 +77,7 @@ export async function POST(request: Request) {
     const cancelUrl = new URL('/pricing', request.url);
     cancelUrl.searchParams.set('billing', 'cancelled');
     cancelUrl.searchParams.set('next', returnTo);
-    const session = await getStripe().checkout.sessions.create({
+    const sessionParams: Stripe.Checkout.SessionCreateParams = {
       mode: 'subscription',
       client_reference_id: userId,
       // Managed Payments selects the available payment methods and checkout text.
@@ -89,8 +89,12 @@ export async function POST(request: Request) {
       success_url: successUrl.toString(),
       cancel_url: cancelUrl.toString(),
       ...(typeof email === 'string' ? { customer_email: email } : {}),
-    }, {
-      idempotencyKey: `rendyn-trial-checkout:${userId}`,
+    };
+    // Reuse identical retries, but never reuse a key with different Stripe parameters.
+    const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(JSON.stringify(sessionParams)));
+    const fingerprint = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
+    const session = await getStripe().checkout.sessions.create(sessionParams, {
+      idempotencyKey: `rendyn-trial-checkout:v2:${userId}:${fingerprint}`,
     });
 
     if (!session.url) throw new Error('Stripe Checkout did not return a URL');
