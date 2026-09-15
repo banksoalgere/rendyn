@@ -94,7 +94,8 @@ export async function POST(request: Request) {
     const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(JSON.stringify(sessionParams)));
     const fingerprint = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
     const session = await getStripe().checkout.sessions.create(sessionParams, {
-      idempotencyKey: `rendyn-trial-checkout:v2:${userId}:${fingerprint}`,
+      // Start fresh after the product-tax configuration repair; Stripe also caches errors.
+      idempotencyKey: `rendyn-trial-checkout:v3:${userId}:${fingerprint}`,
     });
 
     if (!session.url) throw new Error('Stripe Checkout did not return a URL');
