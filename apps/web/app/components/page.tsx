@@ -2,27 +2,22 @@ import { pageMetadata, siteOrigin } from '../../lib/seo';
 import type { Metadata } from 'next';
 import { catalogueEntries } from '../../lib/catalogue';
 import { getComponentPreview } from '../../lib/component-preview';
+import { catalogueHref, createCatalogueSearchIndex, getCatalogueFilters, getCataloguePage } from '../../lib/catalogue-search';
 import { SiteFooter } from '../components/site-footer';
 import { SiteHeader } from '../components/site-header';
 import { ComponentExplorer, type CatalogueComponent } from './component-explorer';
 import styles from './components.module.css';
-
-export const metadata: Metadata = pageMetadata(
-  'React UI Component Library & Live Previews | Rendyn',
-  `Browse ${catalogueEntries.length} React UI components with interactive previews, TypeScript source and usage guidance for Claude Code, Codex and Cursor.`,
-  '/components',
-);
 
 const featuredComponents = [
   'magicui-animated-beam',
   'kibo-kanban',
   'approval-card',
   'magicui-bento-grid',
-  'kibo-gantt',
   'wallet-card',
+  'morphing-modal',
+  'kibo-gantt',
   'magicui-terminal',
   'kibo-editor',
-  'morphing-modal',
 ];
 
 const catalogueComponents: CatalogueComponent[] = [...catalogueEntries].sort((left, right) => {
@@ -39,16 +34,19 @@ const catalogueComponents: CatalogueComponent[] = [...catalogueEntries].sort((le
   description: component.description,
   ...getComponentPreview(component),
   tags: component.metadata.tags,
+  aliases: component.metadata.aliases,
 }));
+
+const searchIndex = createCatalogueSearchIndex(catalogueComponents);
 
 interface ComponentsPageProps {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
 
 export default async function ComponentsPage({ searchParams }: ComponentsPageProps) {
-  const parameters = await searchParams;
-  const requestedCategory = typeof parameters.category === 'string' ? parameters.category : 'all';
-  const initialCategory = ['motion', 'agents', 'blocks'].includes(requestedCategory) ? requestedCategory : 'all';
+  const filters = getCatalogueFilters(await searchParams);
+  const results = getCataloguePage(searchIndex, filters);
+  const pageUrl = `${siteOrigin}${catalogueHref({ ...filters, page: results.page })}`;
 
   return (
     <main className={styles.page}>
@@ -57,14 +55,14 @@ export default async function ComponentsPage({ searchParams }: ComponentsPagePro
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'CollectionPage',
-          '@id': `${siteOrigin}/components#catalogue`,
+          '@id': `${pageUrl}#catalogue`,
           name: 'Rendyn React UI component library',
-          url: `${siteOrigin}/components`,
+          url: pageUrl,
           isPartOf: { '@id': `${siteOrigin}/#website` },
           mainEntity: {
             '@type': 'ItemList',
-            numberOfItems: catalogueComponents.length,
-            itemListElement: catalogueComponents.map((component, index) => ({
+            numberOfItems: results.components.length,
+            itemListElement: results.components.map((component, index) => ({
               '@type': 'ListItem',
               position: index + 1,
               name: component.name,
@@ -75,28 +73,42 @@ export default async function ComponentsPage({ searchParams }: ComponentsPagePro
       />
       <div className={styles.headerShell}><SiteHeader activeSection="catalogue" /></div>
       <section className={styles.hero}>
-        <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>The collection <span> / {catalogueComponents.length}</span></p>
-          <h1>Components</h1>
-          <p>Interactive previews. Ready to use in your project.</p>
-        </div>
-        <div className={styles.heroNote}>
-          <span>React · TypeScript · Tailwind</span>
-          <p>Free to explore. Complete source with your trial.</p>
-        </div>
+        <p className={styles.eyebrow}>React · TypeScript · Tailwind</p>
+        <h1>Find your next<br /><span>React component.</span></h1>
+        <p>Search for what you need. Try it live. Make it yours.</p>
       </section>
 
       <ComponentExplorer
         components={catalogueComponents}
-        initialCategory={initialCategory}
+        initialCategory={filters.category}
+        initialQuery={filters.query}
+        initialPage={results.page}
       />
 
       <section className={styles.catalogueCta}>
-        <h2>Get the complete source.</h2>
-        <p>Connect your coding agent and start building.</p>
-        <a className="button" href="/pricing">Start 7-day trial <span aria-hidden="true">→</span></a>
+        <div>
+          <h2>From preview to your project.</h2>
+          <p>Get the source, or connect Claude Code, Codex or Cursor.</p>
+        </div>
+        <a className="button" href="/pricing">Get started <span aria-hidden="true">→</span></a>
       </section>
       <SiteFooter />
     </main>
   );
+}
+
+export async function generateMetadata({ searchParams }: ComponentsPageProps): Promise<Metadata> {
+  const filters = getCatalogueFilters(await searchParams);
+  const { page } = getCataloguePage(searchIndex, filters);
+  const isFiltered = Boolean(filters.query) || filters.category !== 'all';
+  const title = isFiltered ? 'React Component Search | Rendyn'
+    : page > 1 ? `React UI Components – Page ${page} | Rendyn`
+      : 'React UI Components & Live Previews | Rendyn';
+  const metadata = pageMetadata(
+    title,
+    'Find React UI components with live previews, TypeScript and Tailwind CSS. Search buttons, navigation, AI chat and product blocks, then get the source.',
+    isFiltered ? '/components' : catalogueHref({ ...filters, page }),
+  );
+  if (isFiltered) metadata.robots = { index: false, follow: true };
+  return metadata;
 }
