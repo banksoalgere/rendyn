@@ -1,80 +1,42 @@
-@import 'tailwindcss';
+@import 'tailwindcss' source(none);
+@source './';
+@source '../components';
 
 :root {
-  --ink: #242035;
-  --muted: #716d80;
-  --line: #e7e4ed;
-  --paper: #fcfbfe;
+  color-scheme: light;
+  --ink: #202124;
+  --muted: #65666e;
+  --line: #e6e6ea;
+  --paper: #ffffff;
   --card: #ffffff;
   --green: #d9fbe5;
   --purple: #d8c7ff;
   --purple-deep: #7c5cff;
-  --mint: #eeebff;
-  --accent: #6850d7;
+  --mint: #f3f0ff;
+  --accent: #6547c4;
   --peach: #ffd9cb;
   --yellow: #ffcf4a;
-  --surface-subtle: #f5f3f8;
-  --surface-raised: #eeebf2;
-  --line-strong: #d6d0e0;
-  --button-bg: #242035;
+  --surface-subtle: #f8f8fa;
+  --surface-raised: #f0f0f3;
+  --line-strong: #cfcfd6;
+  --button-bg: #202124;
   --button-ink: #ffffff;
-  --button-hover: #443951;
-  --strong-surface: #242035;
+  --button-hover: #3b3b43;
+  --strong-surface: #eeeef2;
   --positive: #31704b;
   --positive-bg: #e9f5ed;
   --negative: #8a3f34;
   --negative-bg: #fff1ef;
   --warning-ink: #704f24;
   --warning-bg: #fff5e8;
-}
-
-/* Embedded specimens keep their own light/dark palette from the preview app. */
-body[data-theme='horizon']:not(:has(.preview-shell)) {
-  color-scheme: dark;
-  --ink: #f5f3fc;
-  --muted: #aba9bf;
-  --line: #2c2d40;
-  --paper: #10121c;
-  --card: #1c2030;
-  --mint: #29263e;
-  --accent: #c4b3fa;
-  --surface-subtle: #171b29;
-  --surface-raised: #25293b;
-  --line-strong: #49445e;
-  --button-bg: #f1edf9;
-  --button-ink: #211b30;
-  --button-hover: #dacdfb;
-  --strong-surface: #252338;
-  --positive: #b4edc7;
-  --positive-bg: #263a35;
-  --negative: #efb4c3;
-  --negative-bg: #4a2d3d;
-  --warning-ink: #eed597;
-  --warning-bg: #3e3425;
-  --green: var(--positive-bg);
-  --purple: #342d4a;
-  --purple-deep: var(--accent);
-  --peach: #432f35;
-  --yellow: var(--warning-bg);
   --shell-nav: transparent;
   --shell-nav-border: transparent;
-  --shell-nav-hover: #202333;
-  --shell-nav-active: #252739;
-  --shell-button: transparent;
-  --shell-button-border: #424254;
-  --shell-button-ink: #f5f3fc;
-  --shell-footer: #0d0f18;
-}
-
-[data-theme='horizon'] .brand-mark { color: var(--paper); }
-[data-theme='horizon'] .mobile-menu__trigger {
-  background: var(--card);
-  border-color: var(--line);
-  min-height: 44px;
-}
-[data-theme='horizon'] .mobile-menu__drawer {
-  color-scheme: dark;
-  color: var(--ink);
+  --shell-nav-hover: var(--surface-subtle);
+  --shell-nav-active: var(--surface-raised);
+  --shell-button: var(--button-bg);
+  --shell-button-border: var(--button-bg);
+  --shell-button-ink: var(--button-ink);
+  --shell-footer: var(--surface-subtle);
 }
 
 * { box-sizing: border-box; }
@@ -102,7 +64,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   padding: 0 28px;
 }
 .brand { align-items: center; display: flex; font-size: 18px; font-weight: 760; gap: 8px; letter-spacing: -.045em; width: max-content; }
-.brand-mark { align-items: center; background: var(--strong-surface); border-radius: 5px; color: var(--ink); display: inline-flex; font-size: 10px; height: 25px; justify-content: center; transform: rotate(-3deg); width: 25px; }
+.brand-mark { display: inline-block; width: 28px; height: 28px; flex: 0 0 auto; color: var(--ink); vertical-align: middle; }
 .brand small { background: var(--green); border-radius: 999px; color: var(--positive); font-size: 9px; font-weight: 700; letter-spacing: .04em; padding: 4px 7px; text-transform: uppercase; }
 .desktop-nav { display: flex; font-size: 13px; font-weight: 560; gap: 30px; }
 .desktop-nav a { align-items: center; display: flex; gap: 5px; }
@@ -171,10 +133,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .mobile-menu__header button { align-items: center; appearance: none; background: var(--surface-subtle); border: 1px solid var(--line); border-radius: 50%; color: var(--ink); cursor: pointer; display: inline-flex; height: 44px; justify-content: center; width: 44px; }
 .mobile-menu__body { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 10px; scrollbar-color: var(--line) transparent; scrollbar-width: thin; }
 .mobile-menu__links { background: var(--card); border: 1px solid var(--line); border-radius: 10px; display: grid; overflow: hidden; }
-.mobile-menu__links a { align-items: center; border-bottom: 1px solid var(--line); display: grid; gap: 10px; grid-template-columns: 24px minmax(0,1fr) auto; min-height: 54px; padding: 8px 14px; }
+.mobile-menu__links a { align-items: center; border-bottom: 1px solid var(--line); display: grid; gap: 10px; grid-template-columns: minmax(0,1fr) auto; min-height: 54px; padding: 8px 14px; }
 .mobile-menu__links a:last-child { border-bottom: 0; }
 .mobile-menu__links a:hover, .mobile-menu__links a:focus-visible { background: var(--surface-subtle); outline: none; }
-.mobile-menu__links a > span { color: var(--muted); font: 8px var(--font-geist-mono), monospace; }
 .mobile-menu__links a > strong { font-size: 15px; font-weight: 650; }
 .mobile-menu__links a > b { color: var(--muted); font-size: 12px; font-weight: 400; }
 .mobile-menu__catalogue { background: var(--card); border: 1px solid var(--line); border-radius: 10px; margin-top: 10px; overflow: hidden; }
@@ -194,9 +155,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .mobile-menu__category-copy strong { font-size: 14px; }
 .mobile-menu__category-copy span { color: var(--muted); font-size: 12px; }
 .mobile-menu__components { display: grid; max-height: clamp(240px, 42dvh, 420px); overflow-y: auto; padding: 5px; scrollbar-color: var(--line) transparent; scrollbar-width: thin; }
-.mobile-menu__components a { align-items: center; border-radius: 6px; display: grid; gap: 9px; grid-template-columns: 23px minmax(0,1fr) auto; min-height: 42px; padding: 7px 9px; }
+.mobile-menu__components a { align-items: center; border-radius: 6px; display: grid; gap: 9px; grid-template-columns: minmax(0,1fr) auto; min-height: 42px; padding: 7px 9px; }
 .mobile-menu__components a:hover, .mobile-menu__components a:focus-visible { background: var(--surface-subtle); outline: none; }
-.mobile-menu__components a > span { color: var(--muted); font: 7px var(--font-geist-mono), monospace; }
 .mobile-menu__components a > strong { font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mobile-menu__components a > b { color: var(--muted); font-size: 10px; font-weight: 400; }
 .mobile-menu__catalogue-footer { align-items: center; background: var(--surface-subtle); border-top: 1px solid var(--line); display: flex; justify-content: space-between; padding: 12px 14px; }

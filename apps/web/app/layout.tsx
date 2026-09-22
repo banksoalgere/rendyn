@@ -49,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        data-theme="horizon"
+        data-theme="white"
         className={`${dmSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}

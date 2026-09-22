@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim breaks hydrated navigation on this auth boundary. */
+import { BrandMark } from '@/app/components/brand-mark';
+import '../globals.css';
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { getSubscriptionAccess, type SubscriptionAccess } from '@/lib/billing/access';
@@ -42,7 +44,7 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
 
   if (!claims?.sub) redirect('/login?next=%2Faccount');
 
-  const email = typeof claims.email === 'string' ? claims.email : 'Your account';
+  const email = typeof claims.email === 'string' ? claims.email : 'Google account';
   let subscription: SubscriptionAccess | null = null;
   try {
     subscription = await getSubscriptionAccess(supabase);
@@ -59,7 +61,7 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
     <main className={styles.page}>
       <header className={styles.topbar}>
         <a className={styles.brand} href="/" aria-label="Rendyn home">
-          <span className={styles.brandMark} aria-hidden="true">R</span>
+          <BrandMark className={styles.brandMark} />
           <span>Rendyn</span>
         </a>
         <a className={styles.backLink} href="/">Back to home</a>
@@ -80,7 +82,7 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
           <p className={styles.error} role="alert">The billing portal could not be opened. Please try again.</p>
         ) : null}
         <div className={styles.accountSummary}>
-          <span>Email</span>
+          <span>Google account</span>
           <strong>{email}</strong>
         </div>
         <div className={styles.accountSummary}>
@@ -106,7 +108,7 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
             <a className={styles.primaryButton} href="/pricing">Start 7-day trial</a>
           )}
           <a className={styles.secondaryButton} href="/">Browse Rendyn</a>
-          <SignOutForm returnTo="/login" />
+          <SignOutForm />
         </div>
       </section>
     </main>

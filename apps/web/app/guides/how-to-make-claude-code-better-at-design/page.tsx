@@ -1,3 +1,4 @@
+import { BrandMark } from '@/app/components/brand-mark';
 import { GuideHeading } from '../../components/guide-heading';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -142,7 +143,7 @@ export default function ClaudeCodeDesignGuide() {
               ))}
             </nav>
             <div className="guide-sidebar-cta guide-callout">
-              <span className="brand-mark" aria-hidden="true">R</span>
+              <BrandMark />
               <p className="guide-sidebar-title">Give Claude better ingredients.</p>
               <p>Search polished interface components by product intent, then give your agent the source and context to ship them well.</p>
               <Link className="button" href="/components">Explore Rendyn <span aria-hidden="true">↗</span></Link>
@@ -256,7 +257,7 @@ Report the route, files changed, design decisions and browser evidence.`}</code>
               </div>
               <div className="article-product-demo" role="group" aria-label="Example of a Rendyn component result for Claude Code">
                 <div className="article-product-demo-top">
-                  <div><span className="brand-mark" aria-hidden="true">R</span><p><strong>Rendyn</strong><small>Component context for an agent</small></p></div>
+                  <div><BrandMark /><p><strong>Rendyn</strong><small>Component context for an agent</small></p></div>
                   <span>Example result</span>
                 </div>
                 <div className="article-product-query"><span aria-hidden="true">✦</span><p>“A calm confirmation action for a high-trust workflow”</p></div>
