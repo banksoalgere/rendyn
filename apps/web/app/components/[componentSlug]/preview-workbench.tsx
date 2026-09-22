@@ -1,17 +1,23 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useSyncExternalStore } from 'react';
 import type { ComponentPreviewData } from '../../../lib/component-preview';
 import { ComponentPreview } from '../component-preview';
+import { ComponentCodePanel } from './component-code-panel';
 import styles from './component-page.module.css';
 
 type Example = { slug: string; name: string; description?: string };
+const tabNames = ['preview', 'code'] as const;
+function subscribeToLocation(callback: () => void) {
+  window.addEventListener('popstate', callback);
+  return () => window.removeEventListener('popstate', callback);
+}
+const requestedCodeTab = () => new URLSearchParams(window.location.search).get('tab') === 'code';
+const serverCodeTab = () => false;
 type Props = {
   component: ComponentPreviewData;
   examples: Example[];
   kind: string;
-  useWhen: string[];
-  notIdealWhen: string[];
 };
 
 function Icon({ kind }: { kind: 'desktop' | 'mobile' | 'replay' | 'sun' | 'moon' | 'open' }) {
@@ -26,8 +32,10 @@ function Icon({ kind }: { kind: 'desktop' | 'mobile' | 'replay' | 'sun' | 'moon'
   return <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[kind]}</svg>;
 }
 
-export function PreviewWorkbench({ component, examples, kind, useWhen, notIdealWhen }: Props) {
-  const [tab, setTab] = useState<'preview' | 'usage'>('preview');
+export function PreviewWorkbench({ component, examples, kind }: Props) {
+  const [selectedTab, setTab] = useState<typeof tabNames[number] | null>(null);
+  const codeRequested = useSyncExternalStore(subscribeToLocation, requestedCodeTab, serverCodeTab);
+  const tab = selectedTab ?? (codeRequested ? 'code' : 'preview');
   const [exampleSlug, setExampleSlug] = useState(examples[0].slug);
   const [mobile, setMobile] = useState(false);
   const [dark, setDark] = useState(false);
@@ -41,19 +49,20 @@ export function PreviewWorkbench({ component, examples, kind, useWhen, notIdealW
       <div className={styles.previewTabs} role="tablist" aria-label="Component example" ref={tabs} onKeyDown={(event) => {
         if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
         event.preventDefault();
-        const next = event.key === 'Home' ? 'preview' : event.key === 'End' ? 'usage' : tab === 'preview' ? 'usage' : 'preview';
+        const next = event.key === 'Home' ? 'preview' : event.key === 'End' ? 'code'
+          : tabNames[(tabNames.indexOf(tab) + (event.key === 'ArrowRight' ? 1 : -1) + tabNames.length) % tabNames.length];
         setTab(next);
         tabs.current?.querySelector<HTMLButtonElement>(`#example-tab-${next}`)?.focus();
       }}>
-        {(['preview', 'usage'] as const).map((value) => <button key={value} type="button" role="tab" id={`example-tab-${value}`} aria-selected={tab === value} aria-controls={`example-panel-${value}`} tabIndex={tab === value ? 0 : -1} onClick={() => setTab(value)}>{value === 'preview' ? 'Preview' : 'Usage'}</button>)}
+        {tabNames.map((value) => <button data-analytics-action={`tab-${value}`} key={value} type="button" role="tab" id={`example-tab-${value}`} aria-selected={tab === value} aria-controls={`example-panel-${value}`} tabIndex={tab === value ? 0 : -1} onClick={() => setTab(value)}>{value === 'preview' ? 'Preview' : 'Code'}</button>)}
       </div>
       <div className={styles.previewActions} hidden={tab !== 'preview'}>
         <div className={styles.viewportButtons} aria-label="Preview width">
-          <button type="button" aria-label="Desktop preview" title="Desktop preview" aria-pressed={!mobile} onClick={() => setMobile(false)}><Icon kind="desktop" /></button>
-          <button type="button" aria-label="Mobile preview" title="Mobile preview" aria-pressed={mobile} onClick={() => setMobile(true)}><Icon kind="mobile" /></button>
+          <button data-analytics-action="preview-desktop" type="button" aria-label="Desktop preview" title="Desktop preview" aria-pressed={!mobile} onClick={() => setMobile(false)}><Icon kind="desktop" /></button>
+          <button data-analytics-action="preview-mobile" type="button" aria-label="Mobile preview" title="Mobile preview" aria-pressed={mobile} onClick={() => setMobile(true)}><Icon kind="mobile" /></button>
         </div>
-        <button type="button" aria-label={dark ? 'Use light preview' : 'Use dark preview'} title={dark ? 'Use light preview' : 'Use dark preview'} onClick={() => setDark(!dark)}><Icon kind={dark ? 'sun' : 'moon'} /></button>
-        <button type="button" aria-label="Replay preview" title="Replay preview" onClick={() => setRun((value) => value + 1)}><Icon kind="replay" /></button>
+        <button data-analytics-action="preview-theme" type="button" aria-label={dark ? 'Use light preview' : 'Use dark preview'} title={dark ? 'Use light preview' : 'Use dark preview'} onClick={() => setDark(!dark)}><Icon kind={dark ? 'sun' : 'moon'} /></button>
+        <button data-analytics-action="preview-replay" type="button" aria-label="Replay preview" title="Replay preview" onClick={() => setRun((value) => value + 1)}><Icon kind="replay" /></button>
         <a href={previewUrl} target="_blank" rel="noopener noreferrer" aria-label="Open preview in a new tab" title="Open preview in a new tab"><Icon kind="open" /></a>
       </div>
     </div>
@@ -68,14 +77,8 @@ export function PreviewWorkbench({ component, examples, kind, useWhen, notIdealW
         <span>React <span aria-hidden="true">·</span> Tailwind CSS</span>
       </div>
     </div>
-    <div id="example-panel-usage" role="tabpanel" aria-labelledby="example-tab-usage" hidden={tab !== 'usage'} className={styles.usagePanel}>
-      <h2>{selected.name === 'Default' ? component.name : selected.name}</h2>
-      {selected.description && <p>{selected.description}</p>}
-      <h3>When to use it</h3>
-      <ul>{useWhen.map((text) => <li key={text}>{text}</li>)}</ul>
-      <h3>Consider another pattern when</h3>
-      <ul>{notIdealWhen.map((text) => <li key={text}>{text}</li>)}</ul>
-      <a href="#install">Add this component <span aria-hidden="true">↗</span></a>
+    <div id="example-panel-code" role="tabpanel" aria-labelledby="example-tab-code" hidden={tab !== 'code'}>
+      {tab === 'code' && <ComponentCodePanel key={component.publicSlug} slug={component.publicSlug} />}
     </div>
   </section>;
 }
