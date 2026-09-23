@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim breaks hydrated navigation on this auth boundary. */
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { getSubscriptionAccess, type SubscriptionAccess } from '@/lib/billing/access';
 import { createClient } from '@/lib/supabase/server';
@@ -58,11 +58,11 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
   return (
     <main className={styles.page}>
       <header className={styles.topbar}>
-        <Link className={styles.brand} href="/" aria-label="Rendyn home">
+        <a className={styles.brand} href="/" aria-label="Rendyn home">
           <span className={styles.brandMark} aria-hidden="true">R</span>
           <span>Rendyn</span>
-        </Link>
-        <Link className={styles.backLink} href="/">Back to home</Link>
+        </a>
+        <a className={styles.backLink} href="/">Back to home</a>
       </header>
 
       <section className={styles.card} aria-labelledby="account-title">
@@ -103,9 +103,9 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
               <button className={styles.secondaryButton} type="submit">Manage billing</button>
             </form>
           ) : (
-            <Link className={styles.primaryButton} href="/pricing">Start 7-day trial</Link>
+            <a className={styles.primaryButton} href="/pricing">Start 7-day trial</a>
           )}
-          <Link className={styles.secondaryButton} href="/">Browse Rendyn</Link>
+          <a className={styles.secondaryButton} href="/">Browse Rendyn</a>
           <SignOutForm returnTo="/login" />
         </div>
       </section>
