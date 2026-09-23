@@ -1,4 +1,5 @@
-import { jaccardSimilarity, tokenize } from "../text.js";
+import { jaccardSimilarity } from "../text.js";
+import { componentTokens } from './prepared.js';
 import type { EmbeddingIndex } from "../types.js";
 import { clampScore, cosineSimilarity, type Candidate } from "./scoring.js";
 
@@ -17,8 +18,8 @@ function candidateSimilarity(
   }
 
   const tokenSimilarity = jaccardSimilarity(
-    tokenize(left.component.metadata.searchText),
-    tokenize(right.component.metadata.searchText),
+    componentTokens(left.component).diversity,
+    componentTokens(right.component).diversity,
   );
   const sameVisualFamily =
     left.component.metadata.visualSignature === right.component.metadata.visualSignature
@@ -37,6 +38,13 @@ export function selectDiverseCandidates(
 
   const selected: Candidate[] = [];
   const remaining = [...candidates];
+  const similarities = new Map<string, number>();
+  const similarity = (left: Candidate, right: Candidate) => {
+    const key = [left.component.id, right.component.id].sort().join('\0');
+    let score = similarities.get(key);
+    if (score === undefined) { score = candidateSimilarity(left, right, embeddings); similarities.set(key, score); }
+    return score;
+  };
 
   while (selected.length < limit && remaining.length > 0) {
     let bestIndex = 0;
@@ -47,7 +55,7 @@ export function selectDiverseCandidates(
       const redundancy = selected.length === 0
         ? 0
         : Math.max(
-            ...selected.map((item) => candidateSimilarity(candidate, item, embeddings)),
+            ...selected.map((item) => similarity(candidate, item)),
           );
       const score =
         RELEVANCE_WEIGHT * candidate.score -

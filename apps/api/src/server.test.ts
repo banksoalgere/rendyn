@@ -38,7 +38,7 @@ describe("HTTP API", () => {
     await expect(response.json()).resolves.toMatchObject({
       id: "beui:button",
       slug: "button",
-      preview_url: "http://localhost:3100/component-preview/002",
+      preview_url: "http://localhost:3100/component-preview/button",
     });
   });
 

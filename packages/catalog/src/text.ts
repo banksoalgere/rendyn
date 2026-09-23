@@ -80,8 +80,8 @@ export function expandedQueryTokens(value: string): Set<string> {
 }
 
 export function jaccardSimilarity(left: Iterable<string>, right: Iterable<string>): number {
-  const a = new Set(left);
-  const b = new Set(right);
+  const a = left instanceof Set ? left : new Set(left);
+  const b = right instanceof Set ? right : new Set(right);
   if (a.size === 0 && b.size === 0) return 1;
   let intersection = 0;
   for (const value of a) if (b.has(value)) intersection += 1;

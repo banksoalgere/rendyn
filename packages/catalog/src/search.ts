@@ -1,4 +1,5 @@
 import { selectDiverseCandidates } from "./search/diversity.js";
+import { prepareQuery } from './search/prepared.js';
 import {
   buildCandidate,
   requestedComponentFamilies,
@@ -59,14 +60,15 @@ export function searchCatalog(
   const minimumScore = options.minimumScore ?? (
     usesSemanticSearch ? HYBRID_MINIMUM_SCORE : LEXICAL_MINIMUM_SCORE
   );
-  const requestedFamilies = requestedComponentFamilies(catalog, normalizedQuery);
+  const preparedQuery = prepareQuery(normalizedQuery);
+  const requestedFamilies = requestedComponentFamilies(catalog, preparedQuery);
 
   const candidates = catalog.components
     .filter((component) => !options.category || component.category === options.category)
     .filter((component) =>
       requestedFamilies.size === 0 || requestedFamilies.has(component.metadata.family),
     )
-    .map((component) => buildCandidate(component, normalizedQuery, options))
+    .map((component) => buildCandidate(component, preparedQuery, options))
     .filter((candidate) =>
       candidate.score >= minimumScore || candidate.lexicalScore >= STRONG_LEXICAL_SCORE,
     )

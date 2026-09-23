@@ -1,4 +1,4 @@
-import { expandedQueryTokens, tokenize } from "../text.js";
+import { componentTokens, prepareSearchIndex, type PreparedQuery } from './prepared.js';
 import type {
   CatalogComponentSummary,
   CatalogIndex,
@@ -52,10 +52,10 @@ export function cosineSimilarity(left: number[], right: number[]): number {
   return dotProduct / (Math.sqrt(leftMagnitude) * Math.sqrt(rightMagnitude));
 }
 
-function tokenOverlap(queryTokens: Set<string>, candidateTokens: Iterable<string>): number {
+function tokenOverlap(queryTokens: Set<string>, candidateTokens: Set<string>): number {
   if (queryTokens.size === 0) return 0;
 
-  const availableTokens = new Set(candidateTokens);
+  const availableTokens = candidateTokens;
   let matches = 0;
   for (const token of queryTokens) {
     if (availableTokens.has(token)) matches += 1;
@@ -65,27 +65,19 @@ function tokenOverlap(queryTokens: Set<string>, candidateTokens: Iterable<string
 
 function buildLexicalCandidate(
   component: CatalogComponentSummary,
-  rawQuery: string,
+  query: PreparedQuery,
 ): Candidate {
-  const normalizedQuery = rawQuery.trim().toLowerCase();
-  const queryTokens = expandedQueryTokens(rawQuery);
-  const nameTokens = tokenize(`${component.name} ${component.slug}`);
-  const descriptionTokens = tokenize(component.description);
-  const metadataTokens = tokenize([
-    ...component.metadata.tags,
-    ...component.metadata.aliases,
-    ...component.metadata.interactions,
-    ...component.metadata.useWhen,
-    component.metadata.searchText,
-  ].join(" "));
+  const normalizedQuery = query.normalized;
+  const queryTokens = query.tokens;
+  const prepared = componentTokens(component);
 
   const exactNameMatch =
     component.slug === normalizedQuery.replace(/\s+/g, "-") ||
-    component.name.toLowerCase() === normalizedQuery;
-  const nameScore = tokenOverlap(queryTokens, nameTokens);
-  const descriptionScore = tokenOverlap(queryTokens, descriptionTokens);
-  const metadataScore = tokenOverlap(queryTokens, metadataTokens);
-  const phraseMatch = component.metadata.searchText.toLowerCase().includes(normalizedQuery);
+    prepared.lowerName === normalizedQuery;
+  const nameScore = tokenOverlap(queryTokens, prepared.name);
+  const descriptionScore = tokenOverlap(queryTokens, prepared.description);
+  const metadataScore = tokenOverlap(queryTokens, prepared.metadata);
+  const phraseMatch = prepared.searchText.includes(normalizedQuery);
   const score = clampScore(
     (exactNameMatch ? LEXICAL_WEIGHTS.exactName : 0) +
       nameScore * LEXICAL_WEIGHTS.name +
@@ -124,20 +116,18 @@ function addSemanticScore(candidate: Candidate, options: ScoringOptions): Candid
 
 export function buildCandidate(
   component: CatalogComponentSummary,
-  query: string,
+  query: PreparedQuery,
   options: ScoringOptions,
 ): Candidate {
   return addSemanticScore(buildLexicalCandidate(component, query), options);
 }
 
-export function requestedComponentFamilies(catalog: CatalogIndex, query: string): Set<string> {
-  const knownFamilies = new Set(
-    catalog.components.map((component) => component.metadata.family),
-  );
-  const directMatches = tokenize(query).filter((token) => knownFamilies.has(token));
+export function requestedComponentFamilies(catalog: CatalogIndex, query: PreparedQuery): Set<string> {
+  const knownFamilies = prepareSearchIndex(catalog);
+  const directMatches = query.direct.filter((token) => knownFamilies.has(token));
   const matches = directMatches.length > 0
     ? directMatches
-    : [...expandedQueryTokens(query)].filter((token) => knownFamilies.has(token));
+    : [...query.tokens].filter((token) => knownFamilies.has(token));
 
   return new Set(matches);
 }
