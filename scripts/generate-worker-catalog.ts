@@ -2,7 +2,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { parseCatalogIndex, resolveCatalogPath } from "@rendyn/catalog";
 
-const projectRoot = resolve(import.meta.dirname, "..");
+const projectRoot = process.env.CATALOG_IMPORT_ROOT ?? resolve(import.meta.dirname, "..");
 const catalogRoot = resolve(projectRoot, "catalog");
 const outputPath = resolve(projectRoot, "apps/api/src/generated/catalog-data.ts");
 

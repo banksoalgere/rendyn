@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { resolve } from "node:path";
 import { CatalogStore } from "@rendyn/catalog";
 
-const catalogRoot = resolve(import.meta.dirname, "../catalog");
+const catalogRoot = resolve(process.env.CATALOG_IMPORT_ROOT ?? resolve(import.meta.dirname, '..'), 'catalog');
 const store = await CatalogStore.load(catalogRoot);
 
 if (store.index.components.length !== 189) {

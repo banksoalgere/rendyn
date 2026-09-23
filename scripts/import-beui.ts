@@ -28,9 +28,10 @@ import { assertStandardMitLicense } from "./lib/catalog-import/license.js";
 
 const REPOSITORY_ROOT = resolve(import.meta.dirname, "..");
 const SOURCE_CONFIG_PATH = resolve(REPOSITORY_ROOT, "sources/beui.json");
-const CATALOG_ROOT = resolve(REPOSITORY_ROOT, "catalog");
-const PREVIEW_VENDOR_ROOT = resolve(REPOSITORY_ROOT, "apps/preview/vendor-root");
-const PREVIEW_PUBLIC_ROOT = resolve(REPOSITORY_ROOT, "apps/preview/public");
+const OUTPUT_ROOT = process.env.CATALOG_IMPORT_ROOT ?? REPOSITORY_ROOT;
+const CATALOG_ROOT = resolve(OUTPUT_ROOT, "catalog");
+const PREVIEW_VENDOR_ROOT = resolve(OUTPUT_ROOT, "apps/preview/vendor-root");
+const PREVIEW_PUBLIC_ROOT = resolve(OUTPUT_ROOT, "apps/preview/public");
 const IMPORT_CONCURRENCY = 6;
 
 async function readSourceConfig(): Promise<SourceConfig> {
@@ -106,6 +107,7 @@ function createCatalogIndex(
 }
 
 export async function runBeuiImport(): Promise<void> {
+  invariant(resolve(OUTPUT_ROOT) !== REPOSITORY_ROOT, 'Use pnpm catalog:import to stage and validate catalogue changes');
   const config = await readSourceConfig();
   const temporaryRoot = await mkdtemp(resolve(tmpdir(), "rendyn-beui-"));
 

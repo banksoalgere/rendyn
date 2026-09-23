@@ -2,6 +2,7 @@ import { mkdir, mkdtemp, readFile, readdir, rm, writeFile } from "node:fs/promis
 import { tmpdir } from "node:os";
 import { basename, extname, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
+import { optimisePreviewRuntime } from './lib/catalog-import/preview-transforms.js';
 import { parseCatalogIndex } from "../packages/catalog/src/schema.js";
 import type {
   CatalogCategorySlug,
@@ -25,9 +26,10 @@ import {
 import { invariant, parseJson, safeOutputPath, sha256 } from "./lib/catalog-import/security.js";
 
 const REPOSITORY_ROOT = resolve(import.meta.dirname, "..");
-const CATALOG_ROOT = resolve(REPOSITORY_ROOT, "catalog");
-const PREVIEW_VENDOR_ROOT = resolve(REPOSITORY_ROOT, "apps/preview/vendor-root");
-const PREVIEW_GENERATED_ROOT = resolve(REPOSITORY_ROOT, "apps/preview/generated");
+const OUTPUT_ROOT = process.env.CATALOG_IMPORT_ROOT ?? REPOSITORY_ROOT;
+const CATALOG_ROOT = resolve(OUTPUT_ROOT, "catalog");
+const PREVIEW_VENDOR_ROOT = resolve(OUTPUT_ROOT, "apps/preview/vendor-root");
+const PREVIEW_GENERATED_ROOT = resolve(OUTPUT_ROOT, "apps/preview/generated");
 const SOURCE_CONFIG_PATHS = [
   resolve(REPOSITORY_ROOT, "sources/magicui.json"),
   resolve(REPOSITORY_ROOT, "sources/kibo.json"),
@@ -682,6 +684,7 @@ async function writePreviewRegistry(previews: PreviewEntry[], styles: string[]):
 }
 
 export async function runExternalImports(): Promise<void> {
+  invariant(resolve(OUTPUT_ROOT) !== REPOSITORY_ROOT, 'Use pnpm catalog:import to stage and validate catalogue changes');
   const indexPath = resolve(CATALOG_ROOT, "index.json");
   const catalog = parseCatalogIndex(parseJson(await readFile(indexPath, "utf8"), indexPath));
   invariant(
@@ -736,6 +739,7 @@ export async function runExternalImports(): Promise<void> {
     `Imported ${imports.flatMap((item) => item.summaries).length} external MIT components from ` +
       `${imports.map((item) => item.source.name).join(" and ")}.\n`,
   );
+  await optimisePreviewRuntime(PREVIEW_VENDOR_ROOT);
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
