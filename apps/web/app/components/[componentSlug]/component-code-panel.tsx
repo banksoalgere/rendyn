@@ -5,6 +5,7 @@ import type { ComponentCode } from '../../../lib/component-code';
 import { isCodeAccess, type CodeAccess } from '../../../lib/code-access';
 import { readCodeAccess } from '../../../lib/code-access.client';
 import styles from './component-page.module.css';
+import { trackCopy } from '../../../lib/analytics';
 
 type State = { status: 'loading' | 'signed-out' | 'error' } | { status: 'ready'; code: ComponentCode & CodeAccess };
 
@@ -61,6 +62,7 @@ export function ComponentCodePanel({ slug }: { slug: string }) {
       const access = await readCodeAccess();
       if (!access.signedIn) { setState({ status: 'signed-out' }); return; }
       await navigator.clipboard.writeText(file.content);
+      trackCopy('code', slug);
       setCopyStatus('Copied');
     } catch {
       setCopyStatus('We couldn’t copy the code. Please try again.');

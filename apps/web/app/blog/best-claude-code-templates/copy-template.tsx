@@ -1,5 +1,7 @@
 'use client';
 
+import { trackCopy } from '../../../lib/analytics';
+
 import { useState } from 'react';
 
 export function CopyTemplate({ value }: { value: string }) {
@@ -8,6 +10,7 @@ export function CopyTemplate({ value }: { value: string }) {
   async function copyTemplate() {
     try {
       await navigator.clipboard.writeText(value);
+      trackCopy('prompt');
       setStatus('copied');
     } catch {
       setStatus('error');

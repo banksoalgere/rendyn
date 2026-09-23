@@ -5,6 +5,7 @@ import {
   catalogueHref, categoryLabels, createCatalogueSearchIndex, getCatalogueFilters,
   getCataloguePage, MAX_SEARCH_LENGTH, type CatalogueComponent, type CatalogueFilters,
 } from '../../lib/catalogue-search';
+import { trackSearch } from '../../lib/analytics';
 import { ComponentPreview } from './component-preview';
 import styles from './components.module.css';
 
@@ -65,6 +66,11 @@ export function ComponentExplorer({
     }, 200);
     return () => window.clearTimeout(timer);
   }, [currentHref]);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => trackSearch(filters.query, filters.category, results.total), 600);
+    return () => window.clearTimeout(timer);
+  }, [filters.query, filters.category, results.total]);
 
   return (
     <section className={styles.explorer} aria-label="Interactive component catalogue" ref={explorerRef}>
