@@ -1,3 +1,7 @@
+import '../../globals.css';
+import '../../styles/editorial-guides.css';
+import '../../styles/editorial.css';
+import '../../styles/cursor-guide.css';
 import { GuideHeading } from '../../components/guide-heading';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext shared server navigation uses native links. */
 import type { Metadata } from 'next';

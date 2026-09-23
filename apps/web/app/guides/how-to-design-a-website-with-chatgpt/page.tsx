@@ -1,3 +1,6 @@
+import '../../globals.css';
+import '../../styles/editorial-guides.css';
+import '../../styles/editorial.css';
 import { GuideHeading } from '../../components/guide-heading';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext must perform native navigation for reliable cross-route fragment scrolling. */
 import type { Metadata } from 'next';

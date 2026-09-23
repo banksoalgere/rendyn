@@ -1,3 +1,4 @@
+import './globals.css';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
 
 import type { Metadata } from 'next';
