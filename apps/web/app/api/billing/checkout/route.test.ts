@@ -5,13 +5,13 @@ const { createClient, createSession, getClaims, subscriptionLimit } = vi.hoisted
 }));
 vi.mock('@/lib/auth/inputs', async () => import('../../../../lib/auth/inputs'));
 vi.mock('@/lib/billing/config', async () => import('../../../../lib/billing/config'));
-vi.mock('@/lib/billing/stripe', () => ({ getStripe: () => ({ checkout: { sessions: { create: createSession } } }) }));
+vi.mock('@/lib/billing/checkout-attempt', () => ({ checkoutSession: createSession, TrialAlreadyUsed: class extends Error {} }));
 vi.mock('@/lib/supabase/server', () => ({ createClient }));
 import { POST } from './route';
 
-function checkout(plan = 'pro_monthly', origin = 'https://rendyn.dev', returnTo = '/account') {
+function checkout(plan = 'pro_monthly', origin = 'https://rendyn.dev') {
   return POST(new Request('https://rendyn.dev/api/billing/checkout', {
-    method: 'POST', headers: { Origin: origin }, body: new URLSearchParams({ plan, return_to: returnTo }),
+    method: 'POST', headers: { Origin: origin }, body: new URLSearchParams({ plan }),
   }));
 }
 
@@ -29,7 +29,7 @@ describe('trial checkout', () => {
     getClaims.mockResolvedValue({ data: { claims: { sub: 'test-user', email: 'test@example.com' } } });
     subscriptionLimit.mockResolvedValue({ data: [], error: null });
     createClient.mockResolvedValue({ auth: { getClaims }, from: () => ({
-      select: () => ({ eq: () => ({ order: () => ({ limit: subscriptionLimit }) }) }),
+      select: () => ({ eq: () => ({ limit: subscriptionLimit }) }),
     }) });
     createSession.mockResolvedValue({ url: 'https://checkout.stripe.com/example' });
   });
@@ -38,7 +38,7 @@ describe('trial checkout', () => {
     const response = await checkout();
     expect(response.status).toBe(303);
     expect(response.headers.get('Location')).toBe('https://checkout.stripe.com/example');
-    const [params] = createSession.mock.calls[0];
+    const [, params] = createSession.mock.calls[0];
     expect(params).toMatchObject({
       mode: 'subscription', payment_method_collection: 'always',
       client_reference_id: 'test-user',
@@ -54,17 +54,6 @@ describe('trial checkout', () => {
     expect((await checkout('pro_monthly', 'https://other.example')).status).toBe(403);
     expect((await checkout('price_attacker')).status).toBe(400);
     expect(createSession).not.toHaveBeenCalled();
-  });
-
-  it('reuses identical retries while separating changed checkout parameters and legacy keys', async () => {
-    await checkout();
-    await checkout();
-    await checkout('pro_yearly');
-    await checkout('pro_monthly', 'https://rendyn.dev', '/components');
-    const keys = createSession.mock.calls.map(([, options]) => options.idempotencyKey);
-    expect(keys[0]).toBe(keys[1]);
-    expect(new Set([keys[0], keys[2], keys[3]]).size).toBe(3);
-    expect(keys[0]).not.toBe('rendyn-trial-checkout:test-user');
   });
 
   it('requires sign-in and prevents a repeat trial', async () => {
