@@ -1,6 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import dynamic from "../../../runtime/preview-dynamic";
 import type { ComponentType } from "react";
 
 export const externalPreviews: Record<string, ComponentType> = {

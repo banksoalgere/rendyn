@@ -57,7 +57,7 @@ export const catalogueEntries: CatalogueEntry[] = catalog.components.map((compon
       notIdealWhen: component.metadata.notIdealWhen.map(sanitisePublicText),
       useWhen: component.metadata.useWhen.map(sanitisePublicText),
     },
-    previewId: String(index + 1).padStart(3, '0'),
+    previewId: component.slug,
     publicSlug,
   };
 });
@@ -84,12 +84,4 @@ export function getRelatedCatalogueEntries(component: CatalogueEntry, limit = 4)
     .sort((left, right) => right.score - left.score || left.candidate.name.localeCompare(right.candidate.name))
     .slice(0, limit)
     .map(({ candidate }) => candidate);
-}
-
-export function getAgentPrompt(component: CatalogueEntry) {
-  return [
-    `Use Rendyn to find the ${component.name} component.`,
-    'Return the complete MIT-licensed React source, required dependencies, and installation steps.',
-    `Adapt it for my product while preserving its ${component.metadata.interactions.join(', ') || 'core'} interaction behaviour, accessibility, responsive layout, and reduced-motion support.`,
-  ].join(' ');
 }

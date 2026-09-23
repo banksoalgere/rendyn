@@ -2,6 +2,7 @@ import { access, mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
 import { chromium } from "playwright-core";
 import { CatalogStore } from "@rendyn/catalog";
+import { mapConcurrent } from './lib/catalog-import/concurrency.js';
 
 const ROOT = resolve(import.meta.dirname, "..");
 const PREVIEW_BASE_URL = process.env.PREVIEW_BASE_URL ?? "http://localhost:3100";
@@ -37,23 +38,25 @@ if (requestedSlugs.size && components.length !== requestedSlugs.size) {
 const outputRoot = resolve(ROOT, "catalog/previews");
 await mkdir(outputRoot, { recursive: true });
 const browser = await chromium.launch({ executablePath, headless: true });
-const page = await browser.newPage({ viewport: { width: 1280, height: 800 }, deviceScaleFactor: 1 });
 const failures: string[] = [];
 
 try {
-  for (const [position, component] of components.entries()) {
+  await mapConcurrent(components, 3, async (component, position) => {
+    const page = await browser.newPage({ viewport: { width: 1280, height: 800 }, deviceScaleFactor: 1 });
     const url = new URL(component.previewPath, PREVIEW_BASE_URL).toString();
     try {
       await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30_000 });
       const preview = page.locator("[data-preview-root]");
       await preview.waitFor({ state: "visible", timeout: 10_000 });
-      await page.waitForTimeout(750);
-      await preview.screenshot({ path: resolve(outputRoot, `${component.slug}.png`) });
+      await preview.locator('[data-preview-ready="true"]').waitFor({ state: 'attached', timeout: 15_000 });
+      await preview.screenshot({ path: resolve(outputRoot, `${component.slug}.png`), animations: 'disabled' });
       process.stdout.write(`[${position + 1}/${components.length}] captured ${component.slug}\n`);
     } catch (error) {
       failures.push(`${component.slug}: ${error instanceof Error ? error.message : String(error)}`);
+    } finally {
+      await page.close();
     }
-  }
+  });
 } finally {
   await browser.close();
 }

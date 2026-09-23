@@ -1,8 +1,17 @@
 @import "../vendor-root/globals.css";
 @import "../vendor-root/external-styles.css";
 @import "../presentation/presentation.css";
-@source "../vendor-root";
+@source "../vendor-root/components";
+@source "../vendor-root/lib";
+@source "../vendor-root/hooks";
+@source not "../vendor-root/components/app";
+@source "../vendor-root/components/app/icons.tsx";
 @source "../presentation";
+@source "../runtime";
+
+html[data-preview-paused='true'] *,
+html[data-preview-paused='true'] *::before,
+html[data-preview-paused='true'] *::after { animation-play-state: paused !important; }
 
 html,
 body {

@@ -1,4 +1,4 @@
-import dynamic from "next/dynamic";
+import dynamic from "../../../runtime/preview-dynamic";
 import type { ComponentType } from "react";
 
 // Every preview is a client component dragging the library + motion with it.
