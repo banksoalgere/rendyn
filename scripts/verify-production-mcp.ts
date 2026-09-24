@@ -138,7 +138,7 @@ try {
 
   const searchResult = await client.callTool({
     name: "search_components",
-    arguments: { query: "animated button", limit: 3 },
+    arguments: { query: "animated button", limit: 3, include_previews: true },
   });
   const search = textJson(searchResult);
   if (typeof search.count !== "number" || search.count < 1) {
@@ -167,7 +167,8 @@ try {
   if (!Array.isArray(componentRecord.files) || componentRecord.files.length < 1) {
     throw new Error("get_component returned no source files");
   }
-  if (typeof componentRecord.license_text !== "string" || !componentRecord.license_text.includes("MIT License")) {
+  const license = componentRecord.license as Record<string, unknown> | undefined;
+  if (typeof license?.text !== "string" || !license.text.includes("MIT License")) {
     throw new Error("get_component omitted its MIT licence text");
   }
   if (entitlementRecord.allowed !== true) throw new Error("get_component entitlement was not allowed");

@@ -15,8 +15,9 @@ export function registerGetComponentTool(
     {
       description:
         "Return a complete component implementation for a trialing or paid subscriber: every source file, dependency, install instruction, integrity hash, and license notice.",
+      annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: true, openWorldHint: false },
       inputSchema: z.object({
-        id: z.string().trim().regex(COMPONENT_ID_PATTERN),
+        id: z.string().trim().max(160).regex(COMPONENT_ID_PATTERN).describe('Use the exact id or slug returned by search_components or browse_category.'),
       }),
     },
     async ({ id }, context) => {
@@ -24,7 +25,7 @@ export function registerGetComponentTool(
       if (!component) {
         return {
           isError: true,
-          content: [textContent({ error: "component_not_found", id })],
+          content: [textContent({ error: "component_not_found", id, message: 'Search for the component and use its returned id or slug. Do not guess an identifier.' })],
         };
       }
 
@@ -36,7 +37,20 @@ export function registerGetComponentTool(
         };
       }
 
-      const entitlement = await entitlements.claimUser(token, component.slug);
+      let entitlement;
+      try {
+        entitlement = await entitlements.claimUser(token, component.slug);
+      } catch {
+        console.error(JSON.stringify({ message: 'component_access_check_failed', component: component.slug }));
+        return {
+          isError: true,
+          content: [textContent({
+            error: 'access_check_unavailable',
+            message: 'Rendyn could not verify source access. Retry once. If it persists, check your account; do not start another checkout for an existing subscription.',
+            account_url: 'https://rendyn.dev/account',
+          })],
+        };
+      }
       if (!entitlement.allowed) {
         return {
           isError: true,
