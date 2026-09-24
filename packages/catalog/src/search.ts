@@ -1,5 +1,6 @@
 import { selectDiverseCandidates } from "./search/diversity.js";
-import { prepareQuery } from './search/prepared.js';
+import { componentTokens, prepareQuery } from './search/prepared.js';
+import { matchesIntent, searchIntent } from './search/intent.js';
 import {
   buildCandidate,
   requestedComponentFamilies,
@@ -60,15 +61,25 @@ export function searchCatalog(
   const minimumScore = options.minimumScore ?? (
     usesSemanticSearch ? HYBRID_MINIMUM_SCORE : LEXICAL_MINIMUM_SCORE
   );
-  const preparedQuery = prepareQuery(normalizedQuery);
-  const requestedFamilies = requestedComponentFamilies(catalog, preparedQuery);
+  const preparedQuery = prepareQuery(normalizedQuery, catalog);
+  const intent = searchIntent(preparedQuery.normalized);
+  const requestedFamilies = intent ? new Set<string>() : requestedComponentFamilies(catalog, preparedQuery);
 
   const candidates = catalog.components
     .filter((component) => !options.category || component.category === options.category)
+    .filter((component) => matchesIntent(component, intent))
+    .filter((component) => {
+      const prepared = componentTokens(component);
+      // A static-only request needs positive evidence of no motion. This catalogue
+      // does not yet certify that property; do not promise it based on a sparse label.
+      if (preparedQuery.excludesMotion) return false;
+      return ![...preparedQuery.excluded].some(token => prepared.name.has(token) || prepared.description.has(token));
+    })
     .filter((component) =>
       requestedFamilies.size === 0 || requestedFamilies.has(component.metadata.family),
     )
     .map((component) => buildCandidate(component, preparedQuery, options))
+    .map((candidate) => intent ? { ...candidate, score: 0.22 + 0.78 * candidate.score, reasons: [...candidate.reasons, `suited to ${intent.label}`] } : candidate)
     .filter((candidate) =>
       candidate.score >= minimumScore || candidate.lexicalScore >= STRONG_LEXICAL_SCORE,
     )

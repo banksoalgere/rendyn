@@ -42,12 +42,13 @@ const SYNONYMS: Record<string, string[]> = {
   pricing: ["paywall", "subscription", "checkout", "plan"],
   search: ["find", "command", "combobox", "filter"],
   table: ["grid", "rows", "columns", "data"],
-  toast: ["notification", "alert", "status"],
+  toast: ["notification", "alert", "status", "snackbar"],
   toggle: ["switch", "checkbox", "theme"],
   upload: ["file", "attachment", "dropzone"],
 };
 
 function stem(token: string): string {
+  if (/^(animate|animated|animating|animation|animations)$/.test(token)) return 'animation';
   if (token.length > 5 && token.endsWith("ing")) return token.slice(0, -3);
   if (token.length > 4 && token.endsWith("ies")) return `${token.slice(0, -3)}y`;
   if (token.length > 4 && token.endsWith("ed")) return token.slice(0, -2);
@@ -68,12 +69,10 @@ export function tokenize(value: string): string[] {
 export function expandedQueryTokens(value: string): Set<string> {
   const tokens = new Set(tokenize(value));
   const originalTokens = [...tokens];
-  for (const token of originalTokens) {
-    for (const synonym of SYNONYMS[token] ?? []) {
-      for (const expanded of tokenize(synonym)) tokens.add(expanded);
-    }
-    for (const [canonical, synonyms] of Object.entries(SYNONYMS)) {
-      if (synonyms.some((synonym) => tokenize(synonym).includes(token))) tokens.add(canonical);
+  for (const [canonical, synonyms] of Object.entries(SYNONYMS)) {
+    const group = tokenize([canonical, ...synonyms].join(" "));
+    if (originalTokens.some((token) => group.includes(token))) {
+      for (const token of group) tokens.add(token);
     }
   }
   return tokens;
