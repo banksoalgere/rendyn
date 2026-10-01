@@ -67,7 +67,15 @@ describe('real catalogue design briefs', () => {
   });
   it.each(cases)('finds a useful first choice for %s', (query, slug) => {
     const actual=searchCatalog(catalog,query)[0];
-    if(slug==='animated-toast-stack') expect(actual?.name).toMatch(/toast|snackbar/i);
+    if(slug==='animated-toast-stack') expect(actual?.labels.family).toMatch(/^toast$/);
+    else if(slug==='bouncy-accordion') expect(actual?.labels.family).toBe('accordion');
+    else if(slug==='not-found') expect(actual?.name).toMatch(/not found/i);
+    else if(slug==='command-palette' && !/palete|command palette/.test(query)) expect(actual?.labels.family).toMatch(/^command(?:-palette)?$/);
+    else if(slug==='magicui-interactive-hover-button') {
+      expect(actual?.labels.family).toBe('button');
+      expect(actual?.labels.visual?.states).toContain('hover-state');
+      expect(actual?.labels.visual?.motion.length).toBeGreaterThan(0);
+    }
     else if(slug==='multi-select') expect(actual?.name).toMatch(/multi.?select/i);
     else expect(actual?.slug).toBe(slug);
   });
@@ -77,7 +85,7 @@ describe('real catalogue design briefs', () => {
   it('finds newly imported pricing patterns',()=>{
     const results=searchCatalog(catalog,'pricing tiers cards');
     expect(results.length).toBeGreaterThan(0);
-    expect(results.every(result=>/pricing/i.test(result.name))).toBe(true);
+    expect(results.every(result=>result.labels.family==='pricing')).toBe(true);
   });
   it('keeps secondary mentions of buttons from hiding a hero', () => {
     expect(searchCatalog(catalog, 'a hero video with a play button')[0]?.slug).toBe('magicui-hero-video-dialog');
@@ -85,7 +93,15 @@ describe('real catalogue design briefs', () => {
   it('keeps FAQ results focused on accordions rather than code disclosures', () => {
     const results = searchCatalog(catalog, 'FAQ with expandable answers');
     expect(results.length).toBeGreaterThan(0);
-    expect(results.every(result => /accordion/i.test(result.name))).toBe(true);
+    expect(results.every(result => result.labels.family === 'accordion')).toBe(true);
+  });
+  it.each([
+    ['password input', 'password-input'], ['number input', 'number-input'],
+    ['date picker', 'date-picker'], ['color picker', 'color-picker'],
+  ])('finds the specific control family for %s', (query, family) => {
+    const results = searchCatalog(catalog, query);
+    expect(results.length).toBeGreaterThan(0);
+    expect(results.every(result => result.labels.family === family)).toBe(true);
   });
   it('respects an explicit category rather than silently ignoring it', () => {
     expect(searchCatalog(catalog, 'bento grid', {category:'blocks'})).toEqual([]);

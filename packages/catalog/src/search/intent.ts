@@ -20,7 +20,8 @@ const intents = [
   { label: "skeleton", query: /\bskeletons?\b/i, match: /\bskeleton\b/i },
   { label: "AI activity", query: /\b(reasoning|thinking|tool calls?|agent activity|(?:ai|agent|assistant).{0,25}(?:progress|loading)|(?:progress|loading).{0,25}(?:ai|agent|assistant))\b/i, match: /\b(agent.activity|loading.states|tool.result|streaming.response)\b/i },
   { label: "revenue chart", query: /\b((monthly )?revenue|bar chart|line chart|pie chart|area chart)\b/i, match: /\b(revenue|bar.chart|line.chart|pie.chart|area.chart)\b/i },
-  { label: "FAQ", query: /\b(faq|frequently asked|accordion|collaps(?:e|ible))\b/i, match: /\b(accordion|disclosure|faq)\b/i },
+  { label: "FAQ", query: /\b(faq|frequently asked|accordion)\b/i, match: /\b(accordion|faq)\b/i },
+  { label: "disclosure", query: /\bcollaps(?:e|ible)\b/i, match: /\b(accordion|disclosure|collapsible)\b/i },
   { label: "file upload", query: /\b(file upload|upload.{0,20}file|dropzone)\b/i, match: /\b(upload|dropzone)\b/i },
   { label: "data table", query: /\b(tables?|tabular|spreadsheet)\b/i, match: /\b(table|spreadsheet)\b/i },
   { label: "kanban", query: /\b(kanban|task board)\b/i, match: /\bkanban\b/i },
@@ -35,5 +36,6 @@ export function searchIntent(query: string) {
 }
 
 export function matchesIntent(component: SearchComponent, intent: ReturnType<typeof searchIntent>): boolean {
+  if (intent?.label === 'pricing' && component.metadata.family === 'billing-period') return false;
   return !intent || intent.match.test(`${component.name} ${component.metadata.family} ${component.metadata.aliases.join(" ")}`);
 }
