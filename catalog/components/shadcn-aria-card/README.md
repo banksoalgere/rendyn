@@ -1,6 +1,6 @@
-# shadcn/ui aria card
+# shadcn/ui Card (React Aria)
 
-8 published shadcn/ui aria card examples with complete pinned source and MIT attribution.
+Group related content and actions in a distinct container.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui combobox
+# shadcn/ui Combobox
 
-4 published shadcn/ui combobox examples with complete pinned source and MIT attribution.
+Search and choose a value from a list of available options.
 
 ## Installation
 

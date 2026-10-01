@@ -1,6 +1,6 @@
-# Chakra UI code
+# Chakra UI Code
 
-6 published Chakra UI code examples with complete pinned source and MIT attribution.
+Display code or a technical snippet.
 
 ## Installation
 

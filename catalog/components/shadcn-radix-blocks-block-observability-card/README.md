@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block observability card
+# shadcn/ui Observability Card (Radix)
 
-8 published shadcn/ui radix blocks block observability card examples with complete pinned source and MIT attribution.
+Compose a observability card interface from related information and controls.
 
 ## Installation
 

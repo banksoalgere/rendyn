@@ -1,6 +1,6 @@
-# Mantine tip tap
+# Mantine Tip Tap
 
-15 published Mantine tip tap examples with complete pinned source and MIT attribution.
+Compose and edit formatted text.
 
 ## Installation
 

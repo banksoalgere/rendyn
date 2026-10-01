@@ -1,6 +1,6 @@
-# Ant Design auto complete
+# Ant Design Auto Complete
 
-17 published Ant Design auto complete examples with complete pinned source and MIT attribution.
+Search and choose a value from a list of available options.
 
 ## Installation
 

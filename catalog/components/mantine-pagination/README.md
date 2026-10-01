@@ -1,6 +1,6 @@
-# Mantine pagination
+# Mantine Pagination
 
-14 published Mantine pagination examples with complete pinned source and MIT attribution.
+Move between pages of a collection of results.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI float
+# Chakra UI Float
 
-6 published Chakra UI float examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

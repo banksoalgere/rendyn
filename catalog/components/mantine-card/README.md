@@ -1,6 +1,6 @@
-# Mantine card
+# Mantine Card
 
-5 published Mantine card examples with complete pinned source and MIT attribution.
+Group related content and actions in a distinct container.
 
 ## Installation
 

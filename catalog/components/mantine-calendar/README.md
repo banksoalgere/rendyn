@@ -1,6 +1,6 @@
-# Mantine calendar
+# Mantine Calendar
 
-6 published Mantine calendar examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

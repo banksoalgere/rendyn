@@ -1,6 +1,6 @@
-# Mantine use collapse
+# Mantine Use Collapse
 
-1 published Mantine use collapse examples with complete pinned source and MIT attribution.
+React hook example for collapse.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI tag
+# Chakra UI Tag
 
-11 published Chakra UI tag examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

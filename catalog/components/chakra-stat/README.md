@@ -1,6 +1,6 @@
-# Chakra UI stat
+# Chakra UI Stat
 
-10 published Chakra UI stat examples with complete pinned source and MIT attribution.
+Display a key metric or numeric summary.
 
 ## Installation
 

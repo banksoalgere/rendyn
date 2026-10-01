@@ -1,6 +1,6 @@
-# shadcn/ui aria demo
+# shadcn/ui Demo (React Aria)
 
-8 published shadcn/ui aria demo examples with complete pinned source and MIT attribution.
+Compare a collection of interface components or examples.
 
 ## Installation
 

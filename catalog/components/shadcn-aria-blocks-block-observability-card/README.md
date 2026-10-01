@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block observability card
+# shadcn/ui Observability Card (React Aria)
 
-8 published shadcn/ui aria blocks block observability card examples with complete pinned source and MIT attribution.
+Compose a observability card interface from related information and controls.
 
 ## Installation
 

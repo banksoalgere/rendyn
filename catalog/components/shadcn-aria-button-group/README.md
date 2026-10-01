@@ -1,6 +1,6 @@
-# shadcn/ui aria button group
+# shadcn/ui Button Group (React Aria)
 
-8 published shadcn/ui aria button group examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

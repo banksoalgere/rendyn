@@ -1,6 +1,6 @@
-# Chakra UI group
+# Chakra UI Group
 
-4 published Chakra UI group examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

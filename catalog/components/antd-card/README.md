@@ -1,6 +1,6 @@
-# Ant Design card
+# Ant Design Card
 
-14 published Ant Design card examples with complete pinned source and MIT attribution.
+Group related content and actions in a distinct container.
 
 ## Installation
 

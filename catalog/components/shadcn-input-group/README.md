@@ -1,6 +1,6 @@
-# shadcn/ui input group
+# shadcn/ui Input Group
 
-11 published shadcn/ui input group examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

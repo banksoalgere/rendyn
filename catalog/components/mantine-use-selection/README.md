@@ -1,6 +1,6 @@
-# Mantine use selection
+# Mantine Use Selection
 
-1 published Mantine use selection examples with complete pinned source and MIT attribution.
+React hook example for selection.
 
 ## Installation
 

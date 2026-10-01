@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block visitors
+# shadcn/ui Visitors (React Aria)
 
-8 published shadcn/ui aria blocks block visitors examples with complete pinned source and MIT attribution.
+Compose a visitors interface from related information and controls.
 
 ## Installation
 

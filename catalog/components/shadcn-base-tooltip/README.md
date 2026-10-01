@@ -1,6 +1,6 @@
-# shadcn/ui base tooltip
+# shadcn/ui Tooltip (Base UI)
 
-8 published shadcn/ui base tooltip examples with complete pinned source and MIT attribution.
+Show a brief explanation associated with a control or item.
 
 ## Installation
 

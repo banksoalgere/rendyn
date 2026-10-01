@@ -1,6 +1,6 @@
-# shadcn/ui typography lead
+# shadcn/ui Typography Lead
 
-1 published shadcn/ui typography lead examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

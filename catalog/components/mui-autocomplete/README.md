@@ -1,6 +1,6 @@
-# Material UI autocomplete
+# Material UI Autocomplete
 
-30 published Material UI autocomplete examples with complete pinned source and MIT attribution.
+Search and choose a value from a list of available options.
 
 ## Installation
 

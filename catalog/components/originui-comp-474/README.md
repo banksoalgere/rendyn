@@ -1,6 +1,6 @@
-# Origin UI table vertical table comp-474
+# Origin UI Table (Example 474)
 
-1 published Origin UI table vertical table comp-474 examples with complete pinned source and MIT attribution.
+Display related values in a row and column structure.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui aria component example
+# shadcn/ui Component Example (React Aria)
 
-8 published shadcn/ui aria component example examples with complete pinned source and MIT attribution.
+Compare a collection of interface components or examples.
 
 ## Installation
 

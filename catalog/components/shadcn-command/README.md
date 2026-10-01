@@ -1,6 +1,6 @@
-# shadcn/ui command
+# shadcn/ui Command
 
-2 published shadcn/ui command examples with complete pinned source and MIT attribution.
+Find commands and actions in a searchable command menu.
 
 ## Installation
 

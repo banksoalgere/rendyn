@@ -1,6 +1,6 @@
-# Ant Design back top
+# Ant Design Back Top
 
-1 published Ant Design back top examples with complete pinned source and MIT attribution.
+Provide links and controls for moving between pages or sections.
 
 ## Installation
 

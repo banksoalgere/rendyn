@@ -1,6 +1,6 @@
-# shadcn/ui base message
+# shadcn/ui Message (Base UI)
 
-8 published shadcn/ui base message examples with complete pinned source and MIT attribution.
+Display a transient notification about an event or action.
 
 ## Installation
 

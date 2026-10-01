@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block environment variables
+# shadcn/ui Environment Variables (Radix)
 
-8 published shadcn/ui radix blocks block environment variables examples with complete pinned source and MIT attribution.
+Compose a environment variables interface from related information and controls.
 
 ## Installation
 

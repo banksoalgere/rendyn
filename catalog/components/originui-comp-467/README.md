@@ -1,6 +1,6 @@
-# Origin UI table user avatar comp-467
+# Origin UI Table (Example 467)
 
-1 published Origin UI table user avatar comp-467 examples with complete pinned source and MIT attribution.
+Display related values in a row and column structure.
 
 ## Installation
 

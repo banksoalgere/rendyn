@@ -1,6 +1,6 @@
-# Chakra UI blockquote
+# Chakra UI Blockquote
 
-10 published Chakra UI blockquote examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

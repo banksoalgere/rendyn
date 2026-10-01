@@ -1,6 +1,6 @@
-# Material UI system palette
+# Material UI System Palette
 
-2 published Material UI system palette examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

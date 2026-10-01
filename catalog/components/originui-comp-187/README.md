@@ -1,6 +1,6 @@
-# Origin UI switch label card comp-187
+# Origin UI Switch (Example 187)
 
-1 published Origin UI switch label card comp-187 examples with complete pinned source and MIT attribution.
+Turn a setting on or off.
 
 ## Installation
 

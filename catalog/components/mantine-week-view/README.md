@@ -1,6 +1,6 @@
-# Mantine week view
+# Mantine Week View
 
-46 published Mantine week view examples with complete pinned source and MIT attribution.
+Display appointments or resources in a time-based layout.
 
 ## Installation
 

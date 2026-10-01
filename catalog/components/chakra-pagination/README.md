@@ -1,6 +1,6 @@
-# Chakra UI pagination
+# Chakra UI Pagination
 
-11 published Chakra UI pagination examples with complete pinned source and MIT attribution.
+Move between pages of a collection of results.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI editable
+# Chakra UI Editable
 
-10 published Chakra UI editable examples with complete pinned source and MIT attribution.
+Edit a text value in place.
 
 ## Installation
 

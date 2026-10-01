@@ -1,6 +1,6 @@
-# shadcn/ui radix breadcrumb
+# shadcn/ui Breadcrumb (Radix)
 
-8 published shadcn/ui radix breadcrumb examples with complete pinned source and MIT attribution.
+Show the current location within a hierarchy of pages.
 
 ## Installation
 

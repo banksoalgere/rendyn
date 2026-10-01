@@ -1,6 +1,6 @@
-# Mantine waffle chart
+# Mantine Waffle Chart
 
-6 published Mantine waffle chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

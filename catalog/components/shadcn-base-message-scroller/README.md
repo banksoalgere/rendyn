@@ -1,6 +1,6 @@
-# shadcn/ui base message scroller
+# shadcn/ui Message Scroller (Base UI)
 
-8 published shadcn/ui base message scroller examples with complete pinned source and MIT attribution.
+Present a conversation with messages and related controls.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui radix empty
+# shadcn/ui Empty (Radix)
 
-8 published shadcn/ui radix empty examples with complete pinned source and MIT attribution.
+Explain why content is absent and provide relevant next steps.
 
 ## Installation
 

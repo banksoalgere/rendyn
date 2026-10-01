@@ -1,6 +1,6 @@
-# MUI Switches
+# Material UI Switches
 
-8 published Material UI switches examples with complete pinned source and MIT attribution.
+Turn a setting on or off.
 
 ## Installation
 

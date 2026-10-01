@@ -1,6 +1,6 @@
-# Origin UI breadcrumb radix comp-450
+# Origin UI Breadcrumbs (Example 450)
 
-1 published Origin UI breadcrumb radix comp-450 examples with complete pinned source and MIT attribution.
+Show the current location within a hierarchy of pages.
 
 ## Installation
 

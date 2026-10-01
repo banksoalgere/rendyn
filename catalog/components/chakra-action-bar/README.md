@@ -1,6 +1,6 @@
-# Chakra UI action bar
+# Chakra UI Action Bar
 
-4 published Chakra UI action bar examples with complete pinned source and MIT attribution.
+Group actions and controls for the current view or selection.
 
 ## Installation
 

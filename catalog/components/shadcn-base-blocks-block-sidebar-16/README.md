@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block sidebar 16
+# shadcn/ui Sidebar 16 (Base UI)
 
-8 published shadcn/ui base blocks block sidebar 16 examples with complete pinned source and MIT attribution.
+Organize application navigation and supporting controls in a side panel.
 
 ## Installation
 

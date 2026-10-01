@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block savings progress
+# shadcn/ui Savings Progress (Base UI)
 
-8 published shadcn/ui base blocks block savings progress examples with complete pinned source and MIT attribution.
+Compose a savings progress interface from related information and controls.
 
 ## Installation
 

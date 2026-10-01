@@ -1,6 +1,6 @@
-# Mantine sankey chart
+# Mantine Sankey Chart
 
-6 published Mantine sankey chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

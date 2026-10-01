@@ -1,6 +1,6 @@
-# shadcn/ui base select
+# shadcn/ui Select (Base UI)
 
-8 published shadcn/ui base select examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

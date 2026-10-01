@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block github profile
+# shadcn/ui Github Profile (React Aria)
 
-8 published shadcn/ui aria blocks block github profile examples with complete pinned source and MIT attribution.
+Compose a github profile interface from related information and controls.
 
 ## Installation
 

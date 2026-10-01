@@ -1,6 +1,6 @@
-# Origin UI banner countdown sale comp-310
+# Origin UI Button (Example 310)
 
-1 published Origin UI banner countdown sale comp-310 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

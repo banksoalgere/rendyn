@@ -1,6 +1,6 @@
-# Material UI modal
+# Material UI Modal
 
-6 published Material UI modal examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI switch label darkmode comp-183
+# Origin UI Switch (Example 183)
 
-1 published Origin UI switch label darkmode comp-183 examples with complete pinned source and MIT attribution.
+Turn a setting on or off.
 
 ## Installation
 

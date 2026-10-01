@@ -1,6 +1,6 @@
-# Ant Design space
+# Ant Design Space
 
-15 published Ant Design space examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

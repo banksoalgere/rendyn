@@ -1,6 +1,6 @@
-# shadcn/ui base empty
+# shadcn/ui Empty (Base UI)
 
-8 published shadcn/ui base empty examples with complete pinned source and MIT attribution.
+Explain why content is absent and provide relevant next steps.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine use scroller
+# Mantine Use Scroller
 
-3 published Mantine use scroller examples with complete pinned source and MIT attribution.
+React hook example for scroller.
 
 ## Installation
 

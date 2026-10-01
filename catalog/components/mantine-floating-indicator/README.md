@@ -1,6 +1,6 @@
-# Mantine floating indicator
+# Mantine Floating Indicator
 
-3 published Mantine floating indicator examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

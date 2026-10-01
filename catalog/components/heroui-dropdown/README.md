@@ -1,6 +1,6 @@
-# HeroUI dropdown
+# HeroUI Dropdown
 
-15 published HeroUI dropdown examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

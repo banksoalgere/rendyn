@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block release catalog
+# shadcn/ui Release Catalog (Radix)
 
-8 published shadcn/ui radix blocks block release catalog examples with complete pinned source and MIT attribution.
+Compose a release catalog interface from related information and controls.
 
 ## Installation
 

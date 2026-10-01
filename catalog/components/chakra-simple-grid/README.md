@@ -1,6 +1,6 @@
-# Chakra UI simple grid
+# Chakra UI Simple Grid
 
-5 published Chakra UI simple grid examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

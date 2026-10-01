@@ -1,6 +1,6 @@
-# shadcn/ui radix alert dialog
+# shadcn/ui Alert Dialog (Radix)
 
-8 published shadcn/ui radix alert dialog examples with complete pinned source and MIT attribution.
+Ask for confirmation before completing an important action.
 
 ## Installation
 

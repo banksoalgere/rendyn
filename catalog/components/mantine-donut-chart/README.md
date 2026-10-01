@@ -1,6 +1,6 @@
-# Mantine donut chart
+# Mantine Donut Chart
 
-13 published Mantine donut chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

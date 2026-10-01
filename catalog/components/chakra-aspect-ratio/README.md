@@ -1,6 +1,6 @@
-# Chakra UI aspect ratio
+# Chakra UI Aspect Ratio
 
-5 published Chakra UI aspect ratio examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

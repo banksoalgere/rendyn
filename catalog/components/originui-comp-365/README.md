@@ -1,6 +1,6 @@
-# Origin UI tooltip hover card image comp-365
+# Origin UI Card (Example 365)
 
-1 published Origin UI tooltip hover card image comp-365 examples with complete pinned source and MIT attribution.
+Group related content and actions in a distinct container.
 
 ## Installation
 

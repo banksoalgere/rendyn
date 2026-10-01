@@ -1,6 +1,6 @@
-# Chakra UI format byte
+# Chakra UI Format Byte
 
-5 published Chakra UI format byte examples with complete pinned source and MIT attribution.
+Display a key metric or numeric summary.
 
 ## Installation
 

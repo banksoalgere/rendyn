@@ -1,6 +1,6 @@
-# HeroUI breadcrumbs
+# HeroUI Breadcrumbs
 
-16 published HeroUI breadcrumbs examples with complete pinned source and MIT attribution.
+Show the current location within a hierarchy of pages.
 
 ## Installation
 

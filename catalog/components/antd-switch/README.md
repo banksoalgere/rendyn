@@ -1,6 +1,6 @@
 # Ant Design Switch
 
-7 published Ant Design switch examples with complete pinned source and MIT attribution.
+Turn a setting on or off.
 
 ## Installation
 

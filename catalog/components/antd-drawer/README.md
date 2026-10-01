@@ -1,6 +1,6 @@
-# Ant Design drawer
+# Ant Design Drawer
 
-18 published Ant Design drawer examples with complete pinned source and MIT attribution.
+Open a panel alongside the current page for details or additional controls.
 
 ## Installation
 

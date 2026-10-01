@@ -1,6 +1,6 @@
-# shadcn/ui base toggle group
+# shadcn/ui Toggle Group (Base UI)
 
-8 published shadcn/ui base toggle group examples with complete pinned source and MIT attribution.
+Change the selected state of an option or control.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Material UI material getting started templates sign in
+# Material UI Material Getting Started Templates Sign In
 
-1 published Material UI material getting started templates sign in examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

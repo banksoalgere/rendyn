@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block analytics card
+# shadcn/ui Analytics Card (Base UI)
 
-8 published shadcn/ui base blocks block analytics card examples with complete pinned source and MIT attribution.
+Compose a analytics card interface from related information and controls.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI popover tour radix comp-389
+# Origin UI Popover (Example 389)
 
-1 published Origin UI popover tour radix comp-389 examples with complete pinned source and MIT attribution.
+Display contextual content beside its trigger.
 
 ## Installation
 

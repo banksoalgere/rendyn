@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block new milestone
+# shadcn/ui New Milestone (Radix)
 
-8 published shadcn/ui radix blocks block new milestone examples with complete pinned source and MIT attribution.
+Compose a new milestone interface from related information and controls.
 
 ## Installation
 

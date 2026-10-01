@@ -1,6 +1,6 @@
-# Material UI box
+# Material UI Box
 
-2 published Material UI box examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

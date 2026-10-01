@@ -1,6 +1,6 @@
-# shadcn/ui menubar
+# shadcn/ui Menubar
 
-1 published shadcn/ui menubar examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

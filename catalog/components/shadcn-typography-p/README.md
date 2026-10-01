@@ -1,6 +1,6 @@
-# shadcn/ui typography p
+# shadcn/ui Typography P
 
-1 published shadcn/ui typography p examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

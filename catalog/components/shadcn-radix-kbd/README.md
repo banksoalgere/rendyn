@@ -1,6 +1,6 @@
-# shadcn/ui radix kbd
+# shadcn/ui Kbd (Radix)
 
-8 published shadcn/ui radix kbd examples with complete pinned source and MIT attribution.
+Display a key or keyboard shortcut hint.
 
 ## Installation
 

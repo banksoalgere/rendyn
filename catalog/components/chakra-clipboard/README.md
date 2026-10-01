@@ -1,6 +1,6 @@
-# Chakra UI clipboard
+# Chakra UI Clipboard
 
-7 published Chakra UI clipboard examples with complete pinned source and MIT attribution.
+Copy a selected value or snippet to the clipboard.
 
 ## Installation
 

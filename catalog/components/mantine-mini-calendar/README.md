@@ -1,6 +1,6 @@
-# Mantine mini calendar
+# Mantine Mini Calendar
 
-5 published Mantine mini calendar examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

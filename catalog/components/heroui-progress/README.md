@@ -1,6 +1,6 @@
-# HeroUI progress
+# HeroUI Progress
 
-9 published HeroUI progress examples with complete pinned source and MIT attribution.
+Show how far a task has progressed.
 
 ## Installation
 

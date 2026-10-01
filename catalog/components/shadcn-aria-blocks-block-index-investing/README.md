@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block index investing
+# shadcn/ui Index Investing (React Aria)
 
-8 published shadcn/ui aria blocks block index investing examples with complete pinned source and MIT attribution.
+Compose a index investing interface from related information and controls.
 
 ## Installation
 

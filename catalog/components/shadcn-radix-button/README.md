@@ -1,6 +1,6 @@
-# shadcn/ui radix button
+# shadcn/ui Button (Radix)
 
-8 published shadcn/ui radix button examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

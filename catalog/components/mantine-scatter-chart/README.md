@@ -1,6 +1,6 @@
-# Mantine scatter chart
+# Mantine Scatter Chart
 
-19 published Mantine scatter chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

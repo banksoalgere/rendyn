@@ -1,6 +1,6 @@
-# Origin UI badge chip counter comp-418
+# Origin UI Badge (Example 418)
 
-1 published Origin UI badge chip counter comp-418 examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

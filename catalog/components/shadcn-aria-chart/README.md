@@ -1,6 +1,6 @@
-# shadcn/ui aria chart
+# shadcn/ui Chart (React Aria)
 
-8 published shadcn/ui aria chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

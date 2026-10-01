@@ -1,6 +1,6 @@
-# Material UI use media query
+# Material UI Use Media Query
 
-5 published Material UI use media query examples with complete pinned source and MIT attribution.
+React hook example for media query.
 
 ## Installation
 

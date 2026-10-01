@@ -1,6 +1,6 @@
-# Origin UI input label comp-16
+# Origin UI Text Input (Example 16)
 
-1 published Origin UI input label comp-16 examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

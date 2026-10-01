@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block visitors
+# shadcn/ui Visitors (Radix)
 
-8 published shadcn/ui radix blocks block visitors examples with complete pinned source and MIT attribution.
+Compose a visitors interface from related information and controls.
 
 ## Installation
 

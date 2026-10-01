@@ -1,6 +1,6 @@
-# Material UI material customization typography
+# Material UI Material Customization Typography
 
-6 published Material UI material customization typography examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

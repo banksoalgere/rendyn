@@ -1,6 +1,6 @@
-# Origin UI avatar user profile comp-394
+# Origin UI Avatar (Example 394)
 
-1 published Origin UI avatar user profile comp-394 examples with complete pinned source and MIT attribution.
+Represent a person or account with an image or initials.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine avatar
+# Mantine Avatar
 
-9 published Mantine avatar examples with complete pinned source and MIT attribution.
+Represent a person or account with an image or initials.
 
 ## Installation
 

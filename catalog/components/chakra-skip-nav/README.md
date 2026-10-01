@@ -1,6 +1,6 @@
-# Chakra UI skip nav
+# Chakra UI Skip Nav
 
-3 published Chakra UI skip nav examples with complete pinned source and MIT attribution.
+Provide links and controls for moving between pages or sections.
 
 ## Installation
 

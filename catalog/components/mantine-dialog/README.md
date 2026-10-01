@@ -1,6 +1,6 @@
-# Mantine dialog
+# Mantine Dialog
 
-1 published Mantine dialog examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

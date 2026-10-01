@@ -1,6 +1,6 @@
-# Mantine modals
+# Mantine Modals
 
-8 published Mantine modals examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

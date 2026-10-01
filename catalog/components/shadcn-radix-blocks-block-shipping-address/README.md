@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block shipping address
+# shadcn/ui Shipping Address (Radix)
 
-8 published shadcn/ui radix blocks block shipping address examples with complete pinned source and MIT attribution.
+Collect delivery address details in a form.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Ant Design mentions
+# Ant Design Mentions
 
-16 published Ant Design mentions examples with complete pinned source and MIT attribution.
+Insert references to people or items while entering text.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine accordion
+# Mantine Accordion
 
-12 published Mantine accordion examples with complete pinned source and MIT attribution.
+Expand and collapse grouped content such as frequently asked questions.
 
 ## Installation
 

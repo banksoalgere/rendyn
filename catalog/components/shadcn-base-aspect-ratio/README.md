@@ -1,6 +1,6 @@
-# shadcn/ui base aspect ratio
+# shadcn/ui Aspect Ratio (Base UI)
 
-8 published shadcn/ui base aspect ratio examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

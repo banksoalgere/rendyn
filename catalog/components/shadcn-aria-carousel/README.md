@@ -1,6 +1,6 @@
-# shadcn/ui aria carousel
+# shadcn/ui Carousel (React Aria)
 
-8 published shadcn/ui aria carousel examples with complete pinned source and MIT attribution.
+Move through a sequence of content items.
 
 ## Installation
 

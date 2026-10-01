@@ -1,6 +1,6 @@
-# Mantine use pagination
+# Mantine Use Pagination
 
-1 published Mantine use pagination examples with complete pinned source and MIT attribution.
+React hook example for pagination.
 
 ## Installation
 

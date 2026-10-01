@@ -1,6 +1,6 @@
-# Chakra UI number input
+# Chakra UI Number Input
 
-15 published Chakra UI number input examples with complete pinned source and MIT attribution.
+Enter a numeric value using a number field.
 
 ## Installation
 

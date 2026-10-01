@@ -1,6 +1,6 @@
-# Chakra UI checkmark
+# Chakra UI Checkmark
 
-7 published Chakra UI checkmark examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

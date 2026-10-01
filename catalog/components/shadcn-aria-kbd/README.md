@@ -1,6 +1,6 @@
-# shadcn/ui aria kbd
+# shadcn/ui Kbd (React Aria)
 
-8 published shadcn/ui aria kbd examples with complete pinned source and MIT attribution.
+Display a key or keyboard shortcut hint.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI box
+# Chakra UI Box
 
-9 published Chakra UI box examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

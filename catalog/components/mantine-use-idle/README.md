@@ -1,6 +1,6 @@
-# Mantine use idle
+# Mantine Use Idle
 
-3 published Mantine use idle examples with complete pinned source and MIT attribution.
+React hook example for idle.
 
 ## Installation
 

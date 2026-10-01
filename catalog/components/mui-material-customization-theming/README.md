@@ -1,6 +1,6 @@
-# Material UI material customization theming
+# Material UI Material Customization Theming
 
-3 published Material UI material customization theming examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

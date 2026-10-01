@@ -1,6 +1,6 @@
-# Mantine day view
+# Mantine Day View
 
-40 published Mantine day view examples with complete pinned source and MIT attribution.
+Display appointments or resources in a time-based layout.
 
 ## Installation
 

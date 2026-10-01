@@ -1,6 +1,6 @@
-# Material UI speed dial
+# Material UI Speed Dial
 
-5 published Material UI speed dial examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

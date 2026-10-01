@@ -1,6 +1,6 @@
-# shadcn/ui aria table
+# shadcn/ui Table (React Aria)
 
-8 published shadcn/ui aria table examples with complete pinned source and MIT attribution.
+Display related values in a row and column structure.
 
 ## Installation
 

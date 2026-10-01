@@ -1,6 +1,6 @@
-# Origin UI input label button comp-26
+# Origin UI Search Input (Example 26)
 
-1 published Origin UI input label button comp-26 examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

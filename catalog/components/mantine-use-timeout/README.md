@@ -1,6 +1,6 @@
-# Mantine use timeout
+# Mantine Use Timeout
 
-1 published Mantine use timeout examples with complete pinned source and MIT attribution.
+React hook example for timeout.
 
 ## Installation
 

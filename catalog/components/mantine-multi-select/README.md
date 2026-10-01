@@ -1,6 +1,6 @@
-# Mantine multi select
+# Mantine Multi Select
 
-35 published Mantine multi select examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

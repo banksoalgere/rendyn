@@ -1,6 +1,6 @@
-# HeroUI spinner
+# HeroUI Spinner
 
-6 published HeroUI spinner examples with complete pinned source and MIT attribution.
+Indicate that content or a task is still loading.
 
 ## Installation
 

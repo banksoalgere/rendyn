@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block contributors
+# shadcn/ui Contributors (Base UI)
 
-8 published shadcn/ui base blocks block contributors examples with complete pinned source and MIT attribution.
+Compose a contributors interface from related information and controls.
 
 ## Installation
 

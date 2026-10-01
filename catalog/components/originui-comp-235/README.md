@@ -1,6 +1,6 @@
-# Origin UI label select multiselect comp-235
+# Origin UI Select (Example 235)
 
-1 published Origin UI label select multiselect comp-235 examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

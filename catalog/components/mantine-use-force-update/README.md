@@ -1,6 +1,6 @@
-# Mantine use force update
+# Mantine Use Force Update
 
-1 published Mantine use force update examples with complete pinned source and MIT attribution.
+React hook example for force update.
 
 ## Installation
 

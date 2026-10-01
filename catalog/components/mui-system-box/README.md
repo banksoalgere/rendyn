@@ -1,6 +1,6 @@
-# Material UI system box
+# Material UI System Box
 
-3 published Material UI system box examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI toggle
+# Chakra UI Toggle
 
-4 published Chakra UI toggle examples with complete pinned source and MIT attribution.
+Change the selected state of an option or control.
 
 ## Installation
 

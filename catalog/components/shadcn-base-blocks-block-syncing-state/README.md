@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block syncing state
+# shadcn/ui Syncing State (Base UI)
 
-8 published shadcn/ui base blocks block syncing state examples with complete pinned source and MIT attribution.
+Indicate that content or a task is still loading.
 
 ## Installation
 

@@ -1,6 +1,6 @@
 # Origin UI Input Action
 
-1 published Origin UI input action examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

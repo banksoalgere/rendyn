@@ -1,6 +1,6 @@
-# Chakra UI date input
+# Chakra UI Date Input
 
-19 published Chakra UI date input examples with complete pinned source and MIT attribution.
+Choose a date or date range from date-selection controls.
 
 ## Installation
 

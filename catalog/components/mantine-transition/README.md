@@ -1,6 +1,6 @@
-# Mantine transition
+# Mantine Transition
 
-2 published Mantine transition examples with complete pinned source and MIT attribution.
+Demonstrate a motion or transition treatment.
 
 ## Installation
 

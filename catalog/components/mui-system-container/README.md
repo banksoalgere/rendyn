@@ -1,6 +1,6 @@
-# Material UI system container
+# Material UI System Container
 
-2 published Material UI system container examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

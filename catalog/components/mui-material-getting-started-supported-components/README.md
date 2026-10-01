@@ -1,6 +1,6 @@
-# Material UI material getting started supported components
+# Material UI Material Getting Started Supported Components
 
-1 published Material UI material getting started supported components examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

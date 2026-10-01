@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block card overview
+# shadcn/ui Card Overview (React Aria)
 
-8 published shadcn/ui aria blocks block card overview examples with complete pinned source and MIT attribution.
+Compose a card overview interface from related information and controls.
 
 ## Installation
 

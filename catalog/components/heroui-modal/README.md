@@ -1,6 +1,6 @@
-# HeroUI modal
+# HeroUI Modal
 
-12 published HeroUI modal examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

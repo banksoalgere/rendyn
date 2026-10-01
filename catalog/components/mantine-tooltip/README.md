@@ -1,6 +1,6 @@
-# Mantine tooltip
+# Mantine Tooltip
 
-15 published Mantine tooltip examples with complete pinned source and MIT attribution.
+Show a brief explanation associated with a control or item.
 
 ## Installation
 

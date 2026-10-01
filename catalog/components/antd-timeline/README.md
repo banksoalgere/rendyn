@@ -1,6 +1,6 @@
-# Ant Design timeline
+# Ant Design Timeline
 
-14 published Ant Design timeline examples with complete pinned source and MIT attribution.
+Display events or milestones in sequence.
 
 ## Installation
 

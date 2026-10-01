@@ -1,6 +1,6 @@
-# shadcn/ui base switch
+# shadcn/ui Switch (Base UI)
 
-8 published shadcn/ui base switch examples with complete pinned source and MIT attribution.
+Turn a setting on or off.
 
 ## Installation
 

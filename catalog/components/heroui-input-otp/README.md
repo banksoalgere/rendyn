@@ -1,6 +1,6 @@
-# HeroUI input otp
+# HeroUI Input OTP
 
-17 published HeroUI input otp examples with complete pinned source and MIT attribution.
+Enter a short verification code across a group of input slots.
 
 ## Installation
 

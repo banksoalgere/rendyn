@@ -1,6 +1,6 @@
-# Origin UI avatar avatar group comp-409
+# Origin UI Button (Example 409)
 
-1 published Origin UI avatar avatar group comp-409 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

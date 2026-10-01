@@ -1,6 +1,6 @@
-# Mantine action bar
+# Mantine Action Bar
 
-4 published Mantine action bar examples with complete pinned source and MIT attribution.
+Group actions and controls for the current view or selection.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI progress
+# Chakra UI Progress
 
-14 published Chakra UI progress examples with complete pinned source and MIT attribution.
+Show how far a task has progressed.
 
 ## Installation
 

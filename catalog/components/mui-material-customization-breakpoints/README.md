@@ -1,6 +1,6 @@
-# Material UI material customization breakpoints
+# Material UI Material Customization Breakpoints
 
-1 published Material UI material customization breakpoints examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

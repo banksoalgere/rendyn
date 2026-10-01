@@ -1,6 +1,6 @@
-# Mantine marquee
+# Mantine Marquee
 
-6 published Mantine marquee examples with complete pinned source and MIT attribution.
+Move a repeating sequence of content across a region.
 
 ## Installation
 

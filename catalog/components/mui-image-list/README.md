@@ -1,6 +1,6 @@
-# Material UI image list
+# Material UI Image List
 
-8 published Material UI image list examples with complete pinned source and MIT attribution.
+Display an image or collection of images.
 
 ## Installation
 

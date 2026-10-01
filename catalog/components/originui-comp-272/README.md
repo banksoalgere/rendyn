@@ -1,6 +1,6 @@
-# Origin UI alert success comp-272
+# Origin UI Alert (Example 272)
 
-1 published Origin UI alert success comp-272 examples with complete pinned source and MIT attribution.
+Display important information, warnings, or errors within the page.
 
 ## Installation
 

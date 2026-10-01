@@ -1,6 +1,6 @@
-# shadcn/ui data table
+# shadcn/ui Data Table
 
-1 published shadcn/ui data table examples with complete pinned source and MIT attribution.
+Present structured records in rows and columns.
 
 ## Installation
 

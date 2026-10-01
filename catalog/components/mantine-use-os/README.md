@@ -1,6 +1,6 @@
-# Mantine use os
+# Mantine Use Os
 
-1 published Mantine use os examples with complete pinned source and MIT attribution.
+React hook example for os.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI button upload user comp-125
+# Origin UI File Upload (Example 125)
 
-1 published Origin UI button upload user comp-125 examples with complete pinned source and MIT attribution.
+Select files to attach or upload.
 
 ## Installation
 

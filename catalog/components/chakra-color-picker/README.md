@@ -1,6 +1,6 @@
-# Chakra UI color picker
+# Chakra UI Color Picker
 
-25 published Chakra UI color picker examples with complete pinned source and MIT attribution.
+Choose or inspect a color value.
 
 ## Installation
 

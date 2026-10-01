@@ -1,6 +1,6 @@
-# shadcn/ui radix questionnaire example
+# shadcn/ui Questionnaire Example (Radix)
 
-8 published shadcn/ui radix questionnaire example examples with complete pinned source and MIT attribution.
+Collect related values through a group of form controls.
 
 ## Installation
 

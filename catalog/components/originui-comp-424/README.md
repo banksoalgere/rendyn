@@ -1,6 +1,6 @@
-# Origin UI badge chip comp-424
+# Origin UI Button (Example 424)
 
-1 published Origin UI badge chip comp-424 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

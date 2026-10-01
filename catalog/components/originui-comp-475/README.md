@@ -1,6 +1,6 @@
-# Origin UI table sticky comp-475
+# Origin UI Table (Example 475)
 
-1 published Origin UI table sticky comp-475 examples with complete pinned source and MIT attribution.
+Display related values in a row and column structure.
 
 ## Installation
 

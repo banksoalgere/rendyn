@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block claimable balance
+# shadcn/ui Claimable Balance (Base UI)
 
-8 published shadcn/ui base blocks block claimable balance examples with complete pinned source and MIT attribution.
+Present payment details, balances, or related payment controls.
 
 ## Installation
 

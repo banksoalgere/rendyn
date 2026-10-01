@@ -1,6 +1,6 @@
-# Mantine unstyled button
+# Mantine Unstyled Button
 
-1 published Mantine unstyled button examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

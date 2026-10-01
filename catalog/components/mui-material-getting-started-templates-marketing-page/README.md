@@ -1,6 +1,6 @@
-# Material UI material getting started templates marketing page
+# Material UI Material Getting Started Templates Marketing Page
 
-1 published Material UI material getting started templates marketing page examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

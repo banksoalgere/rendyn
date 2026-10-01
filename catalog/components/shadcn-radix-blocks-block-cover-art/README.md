@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block cover art
+# shadcn/ui Cover Art (Radix)
 
-8 published shadcn/ui radix blocks block cover art examples with complete pinned source and MIT attribution.
+Compose a cover art interface from related information and controls.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI switch label radix comp-179
+# Origin UI Switch (Example 179)
 
-1 published Origin UI switch label radix comp-179 examples with complete pinned source and MIT attribution.
+Turn a setting on or off.
 
 ## Installation
 

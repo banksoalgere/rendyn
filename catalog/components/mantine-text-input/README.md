@@ -1,6 +1,6 @@
 # Mantine Text Input
 
-8 published Mantine text input examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Material UI material guides localization
+# Material UI Material Guides Localization
 
-1 published Material UI material guides localization examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

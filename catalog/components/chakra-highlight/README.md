@@ -1,6 +1,6 @@
-# Chakra UI highlight
+# Chakra UI Highlight
 
-5 published Chakra UI highlight examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

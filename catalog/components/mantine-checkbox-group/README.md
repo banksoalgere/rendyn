@@ -1,6 +1,6 @@
-# Mantine checkbox group
+# Mantine Checkbox Group
 
-1 published Mantine checkbox group examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

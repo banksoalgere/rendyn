@@ -1,6 +1,6 @@
-# shadcn/ui aria tooltip
+# shadcn/ui Tooltip (React Aria)
 
-8 published shadcn/ui aria tooltip examples with complete pinned source and MIT attribution.
+Show a brief explanation associated with a control or item.
 
 ## Installation
 

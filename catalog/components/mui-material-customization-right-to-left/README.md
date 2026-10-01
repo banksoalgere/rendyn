@@ -1,6 +1,6 @@
-# Material UI material customization right to left
+# Material UI Material Customization Right To Left
 
-2 published Material UI material customization right to left examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

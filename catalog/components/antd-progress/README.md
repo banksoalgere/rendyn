@@ -1,6 +1,6 @@
-# Ant Design progress
+# Ant Design Progress
 
-17 published Ant Design progress examples with complete pinned source and MIT attribution.
+Show how far a task has progressed.
 
 ## Installation
 

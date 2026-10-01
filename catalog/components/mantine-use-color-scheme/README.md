@@ -1,6 +1,6 @@
-# Mantine use color scheme
+# Mantine Use Color Scheme
 
-1 published Mantine use color scheme examples with complete pinned source and MIT attribution.
+React hook example for color scheme.
 
 ## Installation
 

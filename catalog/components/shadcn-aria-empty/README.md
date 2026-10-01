@@ -1,6 +1,6 @@
-# shadcn/ui aria empty
+# shadcn/ui Empty (React Aria)
 
-8 published shadcn/ui aria empty examples with complete pinned source and MIT attribution.
+Explain why content is absent and provide relevant next steps.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine use document visibility
+# Mantine Use Document Visibility
 
-1 published Mantine use document visibility examples with complete pinned source and MIT attribution.
+React hook example for document visibility.
 
 ## Installation
 

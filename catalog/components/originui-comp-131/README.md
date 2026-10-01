@@ -1,6 +1,6 @@
-# Origin UI button dropdown comp-131
+# Origin UI Dropdown Menu (Example 131)
 
-1 published Origin UI button dropdown comp-131 examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

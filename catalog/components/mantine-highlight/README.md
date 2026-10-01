@@ -1,6 +1,6 @@
-# Mantine highlight
+# Mantine Highlight
 
-8 published Mantine highlight examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

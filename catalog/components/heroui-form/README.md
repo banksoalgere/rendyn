@@ -1,6 +1,6 @@
-# HeroUI form
+# HeroUI Form
 
-11 published HeroUI form examples with complete pinned source and MIT attribution.
+Collect related values through a group of form controls.
 
 ## Installation
 

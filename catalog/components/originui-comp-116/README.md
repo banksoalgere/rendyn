@@ -1,6 +1,6 @@
-# Origin UI button next comp-116
+# Origin UI Button (Example 116)
 
-1 published Origin UI button next comp-116 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

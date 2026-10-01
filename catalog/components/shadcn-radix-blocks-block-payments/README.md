@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block payments
+# shadcn/ui Payments (Radix)
 
-8 published shadcn/ui radix blocks block payments examples with complete pinned source and MIT attribution.
+Present payment details, balances, or related payment controls.
 
 ## Installation
 

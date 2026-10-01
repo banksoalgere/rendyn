@@ -1,6 +1,6 @@
-# Ant Design upload
+# Ant Design Upload
 
-24 published Ant Design upload examples with complete pinned source and MIT attribution.
+Select files to attach or upload.
 
 ## Installation
 

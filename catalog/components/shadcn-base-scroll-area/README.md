@@ -1,6 +1,6 @@
-# shadcn/ui base scroll area
+# shadcn/ui Scroll Area (Base UI)
 
-8 published shadcn/ui base scroll area examples with complete pinned source and MIT attribution.
+Present content within a scrollable region.
 
 ## Installation
 

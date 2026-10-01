@@ -1,6 +1,6 @@
-# Mantine background image
+# Mantine Background Image
 
-1 published Mantine background image examples with complete pinned source and MIT attribution.
+Display an image or collection of images.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Ant Design spin
+# Ant Design Spin
 
-10 published Ant Design spin examples with complete pinned source and MIT attribution.
+Indicate that content or a task is still loading.
 
 ## Installation
 

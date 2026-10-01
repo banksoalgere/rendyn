@@ -1,6 +1,6 @@
-# Origin UI input label tag comp-56
+# Origin UI Text Input (Example 56)
 
-1 published Origin UI input label tag comp-56 examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

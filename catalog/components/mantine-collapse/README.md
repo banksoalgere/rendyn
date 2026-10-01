@@ -1,6 +1,6 @@
-# Mantine collapse
+# Mantine Collapse
 
-4 published Mantine collapse examples with complete pinned source and MIT attribution.
+Reveal or hide a section of supporting content.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Material UI bottom navigation
+# Material UI Bottom Navigation
 
-3 published Material UI bottom navigation examples with complete pinned source and MIT attribution.
+Provide links and controls for moving between pages or sections.
 
 ## Installation
 

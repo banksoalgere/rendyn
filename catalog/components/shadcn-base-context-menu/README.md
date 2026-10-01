@@ -1,6 +1,6 @@
-# shadcn/ui base context menu
+# shadcn/ui Context Menu (Base UI)
 
-8 published shadcn/ui base context menu examples with complete pinned source and MIT attribution.
+Show actions associated with the selected item or context.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI close button
+# Chakra UI Close Button
 
-4 published Chakra UI close button examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

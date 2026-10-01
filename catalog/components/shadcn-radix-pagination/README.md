@@ -1,6 +1,6 @@
-# shadcn/ui radix pagination
+# shadcn/ui Pagination (Radix)
 
-8 published shadcn/ui radix pagination examples with complete pinned source and MIT attribution.
+Move between pages of a collection of results.
 
 ## Installation
 

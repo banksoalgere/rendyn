@@ -1,6 +1,6 @@
-# Origin UI label select command comp-230
+# Origin UI Combobox (Example 230)
 
-1 published Origin UI label select command comp-230 examples with complete pinned source and MIT attribution.
+Search and choose a value from a list of available options.
 
 ## Installation
 

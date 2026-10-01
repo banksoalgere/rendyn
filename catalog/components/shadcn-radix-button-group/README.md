@@ -1,6 +1,6 @@
-# shadcn/ui radix button group
+# shadcn/ui Button Group (Radix)
 
-8 published shadcn/ui radix button group examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

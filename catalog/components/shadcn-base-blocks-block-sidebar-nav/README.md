@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block sidebar nav
+# shadcn/ui Sidebar Nav (Base UI)
 
-8 published shadcn/ui base blocks block sidebar nav examples with complete pinned source and MIT attribution.
+Organize application navigation and supporting controls in a side panel.
 
 ## Installation
 

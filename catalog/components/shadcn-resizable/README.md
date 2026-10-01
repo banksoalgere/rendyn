@@ -1,6 +1,6 @@
-# shadcn/ui resizable
+# shadcn/ui Resizable
 
-4 published shadcn/ui resizable examples with complete pinned source and MIT attribution.
+Let users adjust the space assigned to adjacent panels.
 
 ## Installation
 

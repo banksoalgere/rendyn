@@ -1,6 +1,6 @@
-# HeroUI circular progress
+# HeroUI Circular Progress
 
-7 published HeroUI circular progress examples with complete pinned source and MIT attribution.
+Show how far a task has progressed.
 
 ## Installation
 

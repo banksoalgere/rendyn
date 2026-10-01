@@ -1,6 +1,6 @@
-# Mantine use viewport size
+# Mantine Use Viewport Size
 
-1 published Mantine use viewport size examples with complete pinned source and MIT attribution.
+React hook example for viewport size.
 
 ## Installation
 

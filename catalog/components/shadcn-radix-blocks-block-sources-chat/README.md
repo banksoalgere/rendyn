@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block sources chat
+# shadcn/ui Sources Chat (Radix)
 
-8 published shadcn/ui radix blocks block sources chat examples with complete pinned source and MIT attribution.
+Present a conversation with messages and related controls.
 
 ## Installation
 

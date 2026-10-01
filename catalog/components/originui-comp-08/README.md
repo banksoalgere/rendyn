@@ -1,6 +1,6 @@
-# Origin UI input label disabled comp-08
+# Origin UI Email Input (Example 08)
 
-1 published Origin UI input label disabled comp-08 examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

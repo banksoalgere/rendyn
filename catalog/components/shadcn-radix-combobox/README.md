@@ -1,6 +1,6 @@
-# shadcn/ui radix combobox
+# shadcn/ui Combobox (Radix)
 
-8 published shadcn/ui radix combobox examples with complete pinned source and MIT attribution.
+Search and choose a value from a list of available options.
 
 ## Installation
 

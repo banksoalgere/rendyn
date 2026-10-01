@@ -1,6 +1,6 @@
-# Chakra UI container
+# Chakra UI Container
 
-3 published Chakra UI container examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

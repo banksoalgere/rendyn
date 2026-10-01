@@ -1,6 +1,6 @@
-# shadcn/ui radix label
+# shadcn/ui Label (Radix)
 
-8 published shadcn/ui radix label examples with complete pinned source and MIT attribution.
+Identify a control or describe the value it accepts.
 
 ## Installation
 

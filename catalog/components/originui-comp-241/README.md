@@ -1,6 +1,6 @@
-# Origin UI slider label disabled comp-241
+# Origin UI Slider (Example 241)
 
-1 published Origin UI slider label disabled comp-241 examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

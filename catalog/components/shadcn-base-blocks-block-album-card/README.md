@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block album card
+# shadcn/ui Album Card (Base UI)
 
-8 published shadcn/ui base blocks block album card examples with complete pinned source and MIT attribution.
+Compose a album card interface from related information and controls.
 
 ## Installation
 

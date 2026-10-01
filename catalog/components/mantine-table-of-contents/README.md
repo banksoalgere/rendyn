@@ -1,6 +1,6 @@
-# Mantine table of contents
+# Mantine Table Of Contents
 
-4 published Mantine table of contents examples with complete pinned source and MIT attribution.
+Provide links and controls for moving between pages or sections.
 
 ## Installation
 

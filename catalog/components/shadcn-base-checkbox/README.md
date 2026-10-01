@@ -1,6 +1,6 @@
-# shadcn/ui base checkbox
+# shadcn/ui Checkbox (Base UI)
 
-8 published shadcn/ui base checkbox examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

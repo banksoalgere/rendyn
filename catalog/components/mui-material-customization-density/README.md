@@ -1,6 +1,6 @@
-# Material UI material customization density
+# Material UI Material Customization Density
 
-1 published Material UI material customization density examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

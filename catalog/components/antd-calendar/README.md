@@ -1,6 +1,6 @@
-# Ant Design calendar
+# Ant Design Calendar
 
-10 published Ant Design calendar examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

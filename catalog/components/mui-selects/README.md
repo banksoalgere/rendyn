@@ -1,6 +1,6 @@
-# Material UI selects
+# Material UI Selects
 
-16 published Material UI selects examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

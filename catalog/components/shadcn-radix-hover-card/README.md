@@ -1,6 +1,6 @@
-# shadcn/ui radix hover card
+# shadcn/ui Hover Card (Radix)
 
-8 published shadcn/ui radix hover card examples with complete pinned source and MIT attribution.
+Preview supporting content alongside a trigger.
 
 ## Installation
 

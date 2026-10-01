@@ -1,6 +1,6 @@
-# shadcn/ui radix checkbox
+# shadcn/ui Checkbox (Radix)
 
-8 published shadcn/ui radix checkbox examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

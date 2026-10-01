@@ -1,6 +1,6 @@
-# Ant Design date picker
+# Ant Design Date Picker
 
-32 published Ant Design date picker examples with complete pinned source and MIT attribution.
+Choose a date or date range from date-selection controls.
 
 ## Installation
 

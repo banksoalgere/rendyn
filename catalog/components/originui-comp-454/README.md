@@ -1,6 +1,6 @@
-# Origin UI pagination comp-454
+# Origin UI Pagination (Example 454)
 
-1 published Origin UI pagination comp-454 examples with complete pinned source and MIT attribution.
+Move between pages of a collection of results.
 
 ## Installation
 

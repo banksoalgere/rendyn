@@ -1,6 +1,6 @@
-# Origin UI dropdown kbd delete comp-373
+# Origin UI Dropdown Menu (Example 373)
 
-1 published Origin UI dropdown kbd delete comp-373 examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

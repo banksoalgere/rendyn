@@ -1,6 +1,6 @@
-# Material UI system experimental api configure the sx prop
+# Material UI System Experimental API Configure The Sx Prop
 
-2 published Material UI system experimental api configure the sx prop examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

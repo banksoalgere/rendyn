@@ -1,6 +1,6 @@
-# Chakra UI radial
+# Chakra UI Radial
 
-3 published Chakra UI radial examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

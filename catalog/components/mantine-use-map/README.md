@@ -1,6 +1,6 @@
-# Mantine use map
+# Mantine Use Map
 
-1 published Mantine use map examples with complete pinned source and MIT attribution.
+React hook example for map.
 
 ## Installation
 

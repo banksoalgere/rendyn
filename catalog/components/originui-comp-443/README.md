@@ -1,6 +1,6 @@
-# Origin UI tabs vertical tabs radix comp-443
+# Origin UI Tabs (Example 443)
 
-1 published Origin UI tabs vertical tabs radix comp-443 examples with complete pinned source and MIT attribution.
+Switch between related panels without leaving the current view.
 
 ## Installation
 

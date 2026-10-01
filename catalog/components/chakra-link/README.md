@@ -1,6 +1,6 @@
-# Chakra UI link
+# Chakra UI Link
 
-5 published Chakra UI link examples with complete pinned source and MIT attribution.
+Navigate to a page or resource using a link.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine use hover
+# Mantine Use Hover
 
-1 published Mantine use hover examples with complete pinned source and MIT attribution.
+React hook example for hover.
 
 ## Installation
 

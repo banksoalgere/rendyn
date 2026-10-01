@@ -1,6 +1,6 @@
-# Mantine matrix chart
+# Mantine Matrix Chart
 
-9 published Mantine matrix chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

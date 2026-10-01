@@ -1,6 +1,6 @@
-# Origin UI badge chip checkbox comp-423
+# Origin UI Checkbox (Example 423)
 
-1 published Origin UI badge chip checkbox comp-423 examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

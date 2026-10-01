@@ -1,6 +1,6 @@
-# Origin UI calendar date button comp-512
+# Origin UI Calendar (Example 512)
 
-1 published Origin UI calendar date button comp-512 examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

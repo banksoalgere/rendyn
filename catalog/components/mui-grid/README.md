@@ -1,6 +1,6 @@
-# Material UI grid
+# Material UI Grid
 
-16 published Material UI grid examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

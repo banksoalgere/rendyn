@@ -1,6 +1,6 @@
-# Mantine field
+# Mantine Field
 
-9 published Mantine field examples with complete pinned source and MIT attribution.
+Collect related values through a group of form controls.
 
 ## Installation
 

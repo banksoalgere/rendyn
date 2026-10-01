@@ -1,6 +1,6 @@
-# Material UI material customization dark mode
+# Material UI Material Customization Dark Mode
 
-3 published Material UI material customization dark mode examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

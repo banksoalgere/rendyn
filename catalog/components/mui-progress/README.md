@@ -1,6 +1,6 @@
-# Material UI progress
+# Material UI Progress
 
-18 published Material UI progress examples with complete pinned source and MIT attribution.
+Show how far a task has progressed.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI button user avatar comp-95
+# Origin UI Button (Example 95)
 
-1 published Origin UI button user avatar comp-95 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

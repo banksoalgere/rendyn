@@ -1,6 +1,6 @@
-# HeroUI calendar
+# HeroUI Calendar
 
-15 published HeroUI calendar examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

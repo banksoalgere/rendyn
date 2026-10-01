@@ -1,6 +1,6 @@
-# Mantine composite chart
+# Mantine Composite Chart
 
-28 published Mantine composite chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

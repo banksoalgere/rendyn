@@ -1,6 +1,6 @@
-# Mantine use text selection
+# Mantine Use Text Selection
 
-1 published Mantine use text selection examples with complete pinned source and MIT attribution.
+React hook example for text selection.
 
 ## Installation
 

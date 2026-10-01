@@ -1,6 +1,6 @@
-# Origin UI popover feedback form comp-388
+# Origin UI Popover (Example 388)
 
-1 published Origin UI popover feedback form comp-388 examples with complete pinned source and MIT attribution.
+Display contextual content beside its trigger.
 
 ## Installation
 

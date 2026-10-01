@@ -1,6 +1,6 @@
-# Origin UI stepper comp-519
+# Origin UI Stepper (Example 519)
 
-1 published Origin UI stepper comp-519 examples with complete pinned source and MIT attribution.
+Show the current stage within a sequence of steps.
 
 ## Installation
 

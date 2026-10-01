@@ -1,6 +1,6 @@
-# Origin UI dialog modal feedback comp-322
+# Origin UI Dialog (Example 322)
 
-1 published Origin UI dialog modal feedback comp-322 examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# HeroUI textarea
+# HeroUI Textarea
 
-11 published HeroUI textarea examples with complete pinned source and MIT attribution.
+Enter text that spans multiple lines.
 
 ## Installation
 

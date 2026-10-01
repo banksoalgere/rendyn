@@ -1,6 +1,6 @@
-# HeroUI drawer
+# HeroUI Drawer
 
-8 published HeroUI drawer examples with complete pinned source and MIT attribution.
+Open a panel alongside the current page for details or additional controls.
 
 ## Installation
 

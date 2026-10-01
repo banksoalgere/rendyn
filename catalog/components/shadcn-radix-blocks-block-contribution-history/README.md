@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block contribution history
+# shadcn/ui Contribution History (Radix)
 
-8 published shadcn/ui radix blocks block contribution history examples with complete pinned source and MIT attribution.
+Compose a contribution history interface from related information and controls.
 
 ## Installation
 

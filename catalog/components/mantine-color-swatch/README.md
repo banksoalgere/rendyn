@@ -1,6 +1,6 @@
-# Mantine color swatch
+# Mantine Color Swatch
 
-3 published Mantine color swatch examples with complete pinned source and MIT attribution.
+Choose or inspect a color value.
 
 ## Installation
 

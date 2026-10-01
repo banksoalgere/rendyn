@@ -1,6 +1,6 @@
-# shadcn/ui base button group
+# shadcn/ui Button Group (Base UI)
 
-8 published shadcn/ui base button group examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

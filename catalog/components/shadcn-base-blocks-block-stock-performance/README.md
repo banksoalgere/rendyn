@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block stock performance
+# shadcn/ui Stock Performance (Base UI)
 
-8 published shadcn/ui base blocks block stock performance examples with complete pinned source and MIT attribution.
+Compose a stock performance interface from related information and controls.
 
 ## Installation
 

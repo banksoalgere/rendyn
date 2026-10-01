@@ -1,6 +1,6 @@
-# Mantine use media query
+# Mantine Use Media Query
 
-1 published Mantine use media query examples with complete pinned source and MIT attribution.
+React hook example for media query.
 
 ## Installation
 

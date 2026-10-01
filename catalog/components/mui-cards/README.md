@@ -1,6 +1,6 @@
-# Material UI cards
+# Material UI Cards
 
-9 published Material UI cards examples with complete pinned source and MIT attribution.
+Group related content and actions in a distinct container.
 
 ## Installation
 

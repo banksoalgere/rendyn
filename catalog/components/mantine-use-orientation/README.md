@@ -1,6 +1,6 @@
-# Mantine use orientation
+# Mantine Use Orientation
 
-1 published Mantine use orientation examples with complete pinned source and MIT attribution.
+React hook example for orientation.
 
 ## Installation
 

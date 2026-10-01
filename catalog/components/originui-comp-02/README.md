@@ -1,6 +1,6 @@
-# Origin UI input label required comp-02
+# Origin UI Required Email Input (Example 02)
 
-1 published Origin UI input label required comp-02 examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

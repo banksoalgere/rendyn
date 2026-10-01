@@ -1,6 +1,6 @@
-# Mantine use event listener
+# Mantine Use Event Listener
 
-1 published Mantine use event listener examples with complete pinned source and MIT attribution.
+React hook example for event listener.
 
 ## Installation
 

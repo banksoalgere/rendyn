@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block live waveform
+# shadcn/ui Live Waveform (Radix)
 
-8 published shadcn/ui radix blocks block live waveform examples with complete pinned source and MIT attribution.
+Compose a live waveform interface from related information and controls.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block claimable balance
+# shadcn/ui Claimable Balance (Radix)
 
-8 published shadcn/ui radix blocks block claimable balance examples with complete pinned source and MIT attribution.
+Present payment details, balances, or related payment controls.
 
 ## Installation
 

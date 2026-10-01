@@ -1,6 +1,6 @@
-# Origin UI calendar date week comp-499
+# Origin UI Calendar (Example 499)
 
-1 published Origin UI calendar date week comp-499 examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

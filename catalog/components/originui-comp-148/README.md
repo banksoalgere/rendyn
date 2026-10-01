@@ -1,6 +1,6 @@
-# Origin UI checkbox label tree comp-148
+# Origin UI Checkbox (Example 148)
 
-1 published Origin UI checkbox label tree comp-148 examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

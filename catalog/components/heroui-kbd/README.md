@@ -1,6 +1,6 @@
-# HeroUI kbd
+# HeroUI Kbd
 
-2 published HeroUI kbd examples with complete pinned source and MIT attribution.
+Display a key or keyboard shortcut hint.
 
 ## Installation
 

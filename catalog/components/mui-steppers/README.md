@@ -1,6 +1,6 @@
-# Material UI steppers
+# Material UI Steppers
 
-10 published Material UI steppers examples with complete pinned source and MIT attribution.
+Show the current stage within a sequence of steps.
 
 ## Installation
 

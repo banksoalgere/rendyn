@@ -1,6 +1,6 @@
-# Origin UI tooltip hover card user comp-363
+# Origin UI Button (Example 363)
 
-1 published Origin UI tooltip hover card user comp-363 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

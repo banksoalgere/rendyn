@@ -1,6 +1,6 @@
-# shadcn/ui base attachment
+# shadcn/ui Attachment (Base UI)
 
-8 published shadcn/ui base attachment examples with complete pinned source and MIT attribution.
+Select files to attach or upload.
 
 ## Installation
 

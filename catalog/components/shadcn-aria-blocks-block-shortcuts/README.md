@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block shortcuts
+# shadcn/ui Shortcuts (React Aria)
 
-8 published shadcn/ui aria blocks block shortcuts examples with complete pinned source and MIT attribution.
+Display a key or keyboard shortcut hint.
 
 ## Installation
 

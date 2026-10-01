@@ -1,6 +1,6 @@
-# Origin UI dialog modal login comp-326
+# Origin UI Dialog (Example 326)
 
-1 published Origin UI dialog modal login comp-326 examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

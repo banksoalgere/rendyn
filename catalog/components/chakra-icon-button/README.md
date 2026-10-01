@@ -1,6 +1,6 @@
-# Chakra UI icon button
+# Chakra UI Icon Button
 
-5 published Chakra UI icon button examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Ant Design layout
+# Ant Design Layout
 
-12 published Ant Design layout examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

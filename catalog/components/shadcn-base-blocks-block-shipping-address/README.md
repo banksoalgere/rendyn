@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block shipping address
+# shadcn/ui Shipping Address (Base UI)
 
-8 published shadcn/ui base blocks block shipping address examples with complete pinned source and MIT attribution.
+Collect delivery address details in a form.
 
 ## Installation
 

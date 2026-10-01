@@ -1,6 +1,6 @@
-# Material UI system typography
+# Material UI System Typography
 
-9 published Material UI system typography examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

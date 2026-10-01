@@ -1,6 +1,6 @@
-# shadcn/ui radix input otp
+# shadcn/ui Input OTP (Radix)
 
-8 published shadcn/ui radix input otp examples with complete pinned source and MIT attribution.
+Enter a short verification code across a group of input slots.
 
 ## Installation
 

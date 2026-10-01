@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block icon preview grid
+# shadcn/ui Icon Preview Grid (Base UI)
 
-8 published shadcn/ui base blocks block icon preview grid examples with complete pinned source and MIT attribution.
+Compose a icon preview grid interface from related information and controls.
 
 ## Installation
 

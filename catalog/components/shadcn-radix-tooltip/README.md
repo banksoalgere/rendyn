@@ -1,6 +1,6 @@
-# shadcn/ui radix tooltip
+# shadcn/ui Tooltip (Radix)
 
-8 published shadcn/ui radix tooltip examples with complete pinned source and MIT attribution.
+Show a brief explanation associated with a control or item.
 
 ## Installation
 

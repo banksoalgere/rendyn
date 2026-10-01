@@ -1,6 +1,6 @@
-# Origin UI button vote counter comp-102
+# Origin UI Button (Example 102)
 
-1 published Origin UI button vote counter comp-102 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

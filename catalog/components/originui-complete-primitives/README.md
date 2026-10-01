@@ -1,6 +1,6 @@
-# Origin UI complete primitives
+# Origin UI Complete Primitives
 
-1 published Origin UI complete primitives examples with complete pinned source and MIT attribution.
+Compare a collection of interface components or examples.
 
 ## Installation
 

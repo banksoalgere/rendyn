@@ -1,6 +1,6 @@
-# Chakra UI password input
+# Chakra UI Password Input
 
-6 published Chakra UI password input examples with complete pinned source and MIT attribution.
+Enter a password in a masked text field.
 
 ## Installation
 

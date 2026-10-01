@@ -1,6 +1,6 @@
-# Chakra UI checkbox card
+# Chakra UI Checkbox Card
 
-13 published Chakra UI checkbox card examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

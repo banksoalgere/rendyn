@@ -1,6 +1,6 @@
-# Ant Design float button
+# Ant Design Float Button
 
-16 published Ant Design float button examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

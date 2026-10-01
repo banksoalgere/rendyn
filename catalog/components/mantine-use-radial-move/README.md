@@ -1,6 +1,6 @@
-# Mantine use radial move
+# Mantine Use Radial Move
 
-1 published Mantine use radial move examples with complete pinned source and MIT attribution.
+React hook example for radial move.
 
 ## Installation
 

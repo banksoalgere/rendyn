@@ -1,6 +1,6 @@
-# Mantine radar chart
+# Mantine Radar Chart
 
-8 published Mantine radar chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

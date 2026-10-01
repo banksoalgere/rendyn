@@ -1,6 +1,6 @@
-# Chakra UI hover card
+# Chakra UI Hover Card
 
-9 published Chakra UI hover card examples with complete pinned source and MIT attribution.
+Preview supporting content alongside a trigger.
 
 ## Installation
 

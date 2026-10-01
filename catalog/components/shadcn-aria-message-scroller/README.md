@@ -1,6 +1,6 @@
-# shadcn/ui aria message scroller
+# shadcn/ui Message Scroller (React Aria)
 
-8 published shadcn/ui aria message scroller examples with complete pinned source and MIT attribution.
+Present a conversation with messages and related controls.
 
 ## Installation
 

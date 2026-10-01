@@ -1,6 +1,6 @@
-# Mantine use scroll into view
+# Mantine Use Scroll Into View
 
-3 published Mantine use scroll into view examples with complete pinned source and MIT attribution.
+React hook example for scroll into view.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine switch group
+# Mantine Switch Group
 
-1 published Mantine switch group examples with complete pinned source and MIT attribution.
+Turn a setting on or off.
 
 ## Installation
 

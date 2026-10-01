@@ -1,6 +1,6 @@
-# Mantine use hotkeys
+# Mantine Use Hotkeys
 
-2 published Mantine use hotkeys examples with complete pinned source and MIT attribution.
+React hook example for hotkeys.
 
 ## Installation
 

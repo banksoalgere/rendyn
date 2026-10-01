@@ -1,6 +1,6 @@
-# Mantine stepper
+# Mantine Stepper
 
-15 published Mantine stepper examples with complete pinned source and MIT attribution.
+Show the current stage within a sequence of steps.
 
 ## Installation
 

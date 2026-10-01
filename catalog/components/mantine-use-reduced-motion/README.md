@@ -1,6 +1,6 @@
-# Mantine use reduced motion
+# Mantine Use Reduced Motion
 
-1 published Mantine use reduced motion examples with complete pinned source and MIT attribution.
+React hook example for reduced motion.
 
 ## Installation
 

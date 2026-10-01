@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block transfer funds
+# shadcn/ui Transfer Funds (Base UI)
 
-8 published shadcn/ui base blocks block transfer funds examples with complete pinned source and MIT attribution.
+Present payment details, balances, or related payment controls.
 
 ## Installation
 

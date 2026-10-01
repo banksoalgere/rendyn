@@ -1,6 +1,6 @@
-# Origin UI radio label pricing comp-166
+# Origin UI Pricing Plan Selector (Example 166)
 
-1 published Origin UI radio label pricing comp-166 examples with complete pinned source and MIT attribution.
+Compare available plans and choose a pricing tier.
 
 ## Installation
 

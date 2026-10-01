@@ -1,6 +1,6 @@
-# shadcn/ui radix marker
+# shadcn/ui Marker (Radix)
 
-8 published shadcn/ui radix marker examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

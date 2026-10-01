@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block not found
+# shadcn/ui Not Found (React Aria)
 
-8 published shadcn/ui aria blocks block not found examples with complete pinned source and MIT attribution.
+Explain that the requested page or resource could not be found.
 
 ## Installation
 

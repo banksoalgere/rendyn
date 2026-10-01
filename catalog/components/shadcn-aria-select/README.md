@@ -1,6 +1,6 @@
-# shadcn/ui aria select
+# shadcn/ui Select (React Aria)
 
-8 published shadcn/ui aria select examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine use drag
+# Mantine Use Drag
 
-5 published Mantine use drag examples with complete pinned source and MIT attribution.
+React hook example for drag.
 
 ## Installation
 

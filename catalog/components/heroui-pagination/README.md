@@ -1,6 +1,6 @@
-# HeroUI pagination
+# HeroUI Pagination
 
-17 published HeroUI pagination examples with complete pinned source and MIT attribution.
+Move between pages of a collection of results.
 
 ## Installation
 

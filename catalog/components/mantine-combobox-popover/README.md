@@ -1,6 +1,6 @@
-# Mantine combobox popover
+# Mantine Combobox Popover
 
-19 published Mantine combobox popover examples with complete pinned source and MIT attribution.
+Search and choose a value from a list of available options.
 
 ## Installation
 

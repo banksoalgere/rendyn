@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block dividend income
+# shadcn/ui Dividend Income (React Aria)
 
-8 published shadcn/ui aria blocks block dividend income examples with complete pinned source and MIT attribution.
+Compose a dividend income interface from related information and controls.
 
 ## Installation
 

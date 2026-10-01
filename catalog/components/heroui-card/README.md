@@ -1,6 +1,6 @@
-# HeroUI card
+# HeroUI Card
 
-8 published HeroUI card examples with complete pinned source and MIT attribution.
+Group related content and actions in a distinct container.
 
 ## Installation
 

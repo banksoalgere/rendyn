@@ -1,6 +1,6 @@
-# shadcn/ui aria skeleton
+# shadcn/ui Skeleton (React Aria)
 
-8 published shadcn/ui aria skeleton examples with complete pinned source and MIT attribution.
+Reserve the shape of content while it is loading.
 
 ## Installation
 

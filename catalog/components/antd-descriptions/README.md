@@ -1,6 +1,6 @@
-# Ant Design descriptions
+# Ant Design Descriptions
 
-13 published Ant Design descriptions examples with complete pinned source and MIT attribution.
+Present structured records in rows and columns.
 
 ## Installation
 

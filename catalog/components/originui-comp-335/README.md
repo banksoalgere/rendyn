@@ -1,6 +1,6 @@
-# Origin UI accordion radix comp-335
+# Origin UI Accordion (Example 335)
 
-1 published Origin UI accordion radix comp-335 examples with complete pinned source and MIT attribution.
+Expand and collapse grouped content such as frequently asked questions.
 
 ## Installation
 

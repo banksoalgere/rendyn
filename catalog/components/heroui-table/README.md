@@ -1,6 +1,6 @@
-# HeroUI table
+# HeroUI Table
 
-26 published HeroUI table examples with complete pinned source and MIT attribution.
+Display related values in a row and column structure.
 
 ## Installation
 

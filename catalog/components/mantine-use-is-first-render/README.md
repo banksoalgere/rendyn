@@ -1,6 +1,6 @@
-# Mantine use is first render
+# Mantine Use Is First Render
 
-1 published Mantine use is first render examples with complete pinned source and MIT attribution.
+React hook example for is first render.
 
 ## Installation
 

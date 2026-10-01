@@ -1,6 +1,6 @@
-# Origin UI dialog modal alert comp-313
+# Origin UI Confirmation Dialog (Example 313)
 
-1 published Origin UI dialog modal alert comp-313 examples with complete pinned source and MIT attribution.
+Ask for confirmation before completing an important action.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Ant Design avatar
+# Ant Design Avatar
 
-10 published Ant Design avatar examples with complete pinned source and MIT attribution.
+Represent a person or account with an image or initials.
 
 ## Installation
 

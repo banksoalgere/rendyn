@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block contributors
+# shadcn/ui Contributors (React Aria)
 
-8 published shadcn/ui aria blocks block contributors examples with complete pinned source and MIT attribution.
+Compose a contributors interface from related information and controls.
 
 ## Installation
 

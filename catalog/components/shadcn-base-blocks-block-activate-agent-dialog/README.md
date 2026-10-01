@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block activate agent dialog
+# shadcn/ui Activate Agent Dialog (Base UI)
 
-8 published shadcn/ui base blocks block activate agent dialog examples with complete pinned source and MIT attribution.
+Ask for confirmation before completing an important action.
 
 ## Installation
 

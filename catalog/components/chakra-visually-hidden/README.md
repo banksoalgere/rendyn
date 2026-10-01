@@ -1,6 +1,6 @@
-# Chakra UI visually hidden
+# Chakra UI Visually Hidden
 
-2 published Chakra UI visually hidden examples with complete pinned source and MIT attribution.
+Support focus management or accessible presentation.
 
 ## Installation
 

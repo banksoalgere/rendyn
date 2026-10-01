@@ -1,6 +1,6 @@
-# Origin UI navbar, navigation comp-591
+# Origin UI Select (Example 591)
 
-1 published Origin UI navbar, navigation comp-591 examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

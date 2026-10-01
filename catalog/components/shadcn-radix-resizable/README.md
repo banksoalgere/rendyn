@@ -1,6 +1,6 @@
-# shadcn/ui radix resizable
+# shadcn/ui Resizable (Radix)
 
-8 published shadcn/ui radix resizable examples with complete pinned source and MIT attribution.
+Let users adjust the space assigned to adjacent panels.
 
 ## Installation
 

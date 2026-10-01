@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block savings targets
+# shadcn/ui Savings Targets (Radix)
 
-8 published shadcn/ui radix blocks block savings targets examples with complete pinned source and MIT attribution.
+Compose a savings targets interface from related information and controls.
 
 ## Installation
 

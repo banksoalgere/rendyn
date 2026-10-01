@@ -1,6 +1,6 @@
-# Origin UI tree button comp-574
+# Origin UI Tree View (Example 574)
 
-1 published Origin UI tree button comp-574 examples with complete pinned source and MIT attribution.
+Explore and select items in a hierarchical collection.
 
 ## Installation
 

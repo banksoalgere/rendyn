@@ -1,6 +1,6 @@
-# Mantine table
+# Mantine Table
 
-14 published Mantine table examples with complete pinned source and MIT attribution.
+Display related values in a row and column structure.
 
 ## Installation
 

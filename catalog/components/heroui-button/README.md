@@ -1,6 +1,6 @@
 # HeroUI Button
 
-15 published HeroUI button examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI input label date comp-38
+# Origin UI Text Input (Example 38)
 
-1 published Origin UI input label date comp-38 examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

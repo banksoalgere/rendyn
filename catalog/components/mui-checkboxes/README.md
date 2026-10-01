@@ -1,6 +1,6 @@
-# MUI Checkboxes
+# Material UI Checkboxes
 
-10 published Material UI checkboxes examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

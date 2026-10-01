@@ -1,6 +1,6 @@
-# Mantine floating window
+# Mantine Floating Window
 
-9 published Mantine floating window examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

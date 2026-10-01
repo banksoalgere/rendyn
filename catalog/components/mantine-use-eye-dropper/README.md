@@ -1,6 +1,6 @@
-# Mantine use eye dropper
+# Mantine Use Eye Dropper
 
-1 published Mantine use eye dropper examples with complete pinned source and MIT attribution.
+React hook example for eye dropper.
 
 ## Installation
 

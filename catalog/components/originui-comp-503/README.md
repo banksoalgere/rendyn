@@ -1,6 +1,6 @@
-# Origin UI calendar date input comp-503
+# Origin UI Calendar (Example 503)
 
-1 published Origin UI calendar date input comp-503 examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

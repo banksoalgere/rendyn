@@ -1,6 +1,6 @@
-# Mantine pie chart
+# Mantine Pie Chart
 
-11 published Mantine pie chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

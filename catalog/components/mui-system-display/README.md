@@ -1,6 +1,6 @@
-# Material UI system display
+# Material UI System Display
 
-8 published Material UI system display examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

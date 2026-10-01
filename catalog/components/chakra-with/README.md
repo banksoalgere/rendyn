@@ -1,6 +1,6 @@
-# Chakra UI with
+# Chakra UI With
 
-6 published Chakra UI with examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

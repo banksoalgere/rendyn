@@ -1,6 +1,6 @@
-# shadcn/ui base bubble
+# shadcn/ui Bubble (Base UI)
 
-8 published shadcn/ui base bubble examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI table
+# Chakra UI Table
 
-21 published Chakra UI table examples with complete pinned source and MIT attribution.
+Display related values in a row and column structure.
 
 ## Installation
 

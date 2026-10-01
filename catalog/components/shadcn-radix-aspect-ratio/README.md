@@ -1,6 +1,6 @@
-# shadcn/ui radix aspect ratio
+# shadcn/ui Aspect Ratio (Radix)
 
-8 published shadcn/ui radix aspect ratio examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

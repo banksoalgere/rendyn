@@ -1,6 +1,6 @@
-# Origin UI image crop zoom comp-558
+# Origin UI Image Cropper (Example 558)
 
-1 published Origin UI image crop zoom comp-558 examples with complete pinned source and MIT attribution.
+Choose the area of an image to keep.
 
 ## Installation
 

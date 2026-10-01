@@ -1,6 +1,6 @@
-# Origin UI calendar range calendar date comp-509
+# Origin UI Calendar (Example 509)
 
-1 published Origin UI calendar range calendar date comp-509 examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

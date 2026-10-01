@@ -1,6 +1,6 @@
-# shadcn/ui aria questionnaire example
+# shadcn/ui Questionnaire Example (React Aria)
 
-8 published shadcn/ui aria questionnaire example examples with complete pinned source and MIT attribution.
+Collect related values through a group of form controls.
 
 ## Installation
 

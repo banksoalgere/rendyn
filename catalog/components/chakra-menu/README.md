@@ -1,6 +1,6 @@
-# Chakra UI menu
+# Chakra UI Menu
 
-22 published Chakra UI menu examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

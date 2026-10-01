@@ -1,6 +1,6 @@
-# Origin UI avatar avatar group comp-401
+# Origin UI Avatar (Example 401)
 
-1 published Origin UI avatar avatar group comp-401 examples with complete pinned source and MIT attribution.
+Represent a person or account with an image or initials.
 
 ## Installation
 

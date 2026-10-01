@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block anomaly alert
+# shadcn/ui Anomaly Alert (React Aria)
 
-8 published shadcn/ui aria blocks block anomaly alert examples with complete pinned source and MIT attribution.
+Compose a anomaly alert interface from related information and controls.
 
 ## Installation
 

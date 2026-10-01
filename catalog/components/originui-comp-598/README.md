@@ -1,6 +1,6 @@
-# Origin UI tree checkbox comp-598
+# Origin UI Tree View (Example 598)
 
-1 published Origin UI tree checkbox comp-598 examples with complete pinned source and MIT attribution.
+Explore and select items in a hierarchical collection.
 
 ## Installation
 

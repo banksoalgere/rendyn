@@ -1,6 +1,6 @@
-# Mantine notifications
+# Mantine Notifications
 
-11 published Mantine notifications examples with complete pinned source and MIT attribution.
+Display a transient notification about an event or action.
 
 ## Installation
 

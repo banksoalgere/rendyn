@@ -1,6 +1,6 @@
-# Mantine skeleton
+# Mantine Skeleton
 
-2 published Mantine skeleton examples with complete pinned source and MIT attribution.
+Reserve the shape of content while it is loading.
 
 ## Installation
 

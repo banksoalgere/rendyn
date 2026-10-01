@@ -1,6 +1,6 @@
-# shadcn/ui aria input
+# shadcn/ui Input (React Aria)
 
-8 published shadcn/ui aria input examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

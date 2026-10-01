@@ -1,6 +1,6 @@
-# Origin UI label textarea required comp-60
+# Origin UI Text Area (Example 60)
 
-1 published Origin UI label textarea required comp-60 examples with complete pinned source and MIT attribution.
+Enter text that spans multiple lines.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI slider label volume comp-252
+# Origin UI Slider (Example 252)
 
-1 published Origin UI slider label volume comp-252 examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

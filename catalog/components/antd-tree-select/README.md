@@ -1,6 +1,6 @@
-# Ant Design tree select
+# Ant Design Tree Select
 
-15 published Ant Design tree select examples with complete pinned source and MIT attribution.
+Explore and select items in a hierarchical collection.
 
 ## Installation
 

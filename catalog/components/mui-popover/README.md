@@ -1,6 +1,6 @@
-# Material UI popover
+# Material UI Popover
 
-5 published Material UI popover examples with complete pinned source and MIT attribution.
+Display contextual content beside its trigger.
 
 ## Installation
 

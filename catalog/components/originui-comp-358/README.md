@@ -1,6 +1,6 @@
-# Origin UI tooltip radix comp-358
+# Origin UI Tooltip (Example 358)
 
-1 published Origin UI tooltip radix comp-358 examples with complete pinned source and MIT attribution.
+Show a brief explanation associated with a control or item.
 
 ## Installation
 

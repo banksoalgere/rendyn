@@ -1,6 +1,6 @@
-# shadcn Textarea
+# shadcn/ui Textarea
 
-5 published shadcn/ui textarea examples with complete pinned source and MIT attribution.
+Enter text that spans multiple lines.
 
 ## Installation
 

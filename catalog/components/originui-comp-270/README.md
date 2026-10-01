@@ -1,6 +1,6 @@
-# Origin UI alert error comp-270
+# Origin UI Alert (Example 270)
 
-1 published Origin UI alert error comp-270 examples with complete pinned source and MIT attribution.
+Display important information, warnings, or errors within the page.
 
 ## Installation
 

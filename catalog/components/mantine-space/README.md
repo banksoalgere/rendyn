@@ -1,6 +1,6 @@
-# Mantine space
+# Mantine Space
 
-2 published Mantine space examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

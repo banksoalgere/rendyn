@@ -1,6 +1,6 @@
-# Origin UI popover notification user comp-383
+# Origin UI Popover (Example 383)
 
-1 published Origin UI popover notification user comp-383 examples with complete pinned source and MIT attribution.
+Display contextual content beside its trigger.
 
 ## Installation
 

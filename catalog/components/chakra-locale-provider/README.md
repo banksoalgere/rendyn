@@ -1,6 +1,6 @@
-# Chakra UI locale provider
+# Chakra UI Locale Provider
 
-1 published Chakra UI locale provider examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

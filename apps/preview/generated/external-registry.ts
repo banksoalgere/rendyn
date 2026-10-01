@@ -874,8 +874,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-dashboard-01",
-    "name": "shadcn/ui aria blocks block dashboard 01",
-    "description": "8 published shadcn/ui aria blocks block dashboard 01 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Dashboard 01 (React Aria)",
+    "description": "Combine application navigation with information and controls in a dashboard layout.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-dashboard-01",
     "examples": [
@@ -924,8 +924,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-login-01",
-    "name": "shadcn/ui aria blocks block login 01",
-    "description": "8 published shadcn/ui aria blocks block login 01 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 01 (React Aria)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-login-01",
     "examples": [
@@ -974,8 +974,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-login-02",
-    "name": "shadcn/ui aria blocks block login 02",
-    "description": "8 published shadcn/ui aria blocks block login 02 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 02 (React Aria)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-login-02",
     "examples": [
@@ -1024,8 +1024,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-login-03",
-    "name": "shadcn/ui aria blocks block login 03",
-    "description": "8 published shadcn/ui aria blocks block login 03 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 03 (React Aria)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-login-03",
     "examples": [
@@ -1074,8 +1074,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-login-04",
-    "name": "shadcn/ui aria blocks block login 04",
-    "description": "8 published shadcn/ui aria blocks block login 04 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 04 (React Aria)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-login-04",
     "examples": [
@@ -1124,8 +1124,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-login-05",
-    "name": "shadcn/ui aria blocks block login 05",
-    "description": "8 published shadcn/ui aria blocks block login 05 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 05 (React Aria)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-login-05",
     "examples": [
@@ -1174,8 +1174,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-account-access",
-    "name": "shadcn/ui aria blocks block account access",
-    "description": "8 published shadcn/ui aria blocks block account access examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Account Access (React Aria)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-account-access",
     "examples": [
@@ -1224,8 +1224,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-album-card",
-    "name": "shadcn/ui aria blocks block album card",
-    "description": "8 published shadcn/ui aria blocks block album card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Album Card (React Aria)",
+    "description": "Compose a album card interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-album-card",
     "examples": [
@@ -1274,8 +1274,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-card-overview",
-    "name": "shadcn/ui aria blocks block card overview",
-    "description": "8 published shadcn/ui aria blocks block card overview examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Card Overview (React Aria)",
+    "description": "Compose a card overview interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-card-overview",
     "examples": [
@@ -1324,8 +1324,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-catalog-toolbar",
-    "name": "shadcn/ui aria blocks block catalog toolbar",
-    "description": "8 published shadcn/ui aria blocks block catalog toolbar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Catalog Toolbar (React Aria)",
+    "description": "Compose a catalog toolbar interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-catalog-toolbar",
     "examples": [
@@ -1374,8 +1374,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-claimable-balance",
-    "name": "shadcn/ui aria blocks block claimable balance",
-    "description": "8 published shadcn/ui aria blocks block claimable balance examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Claimable Balance (React Aria)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-claimable-balance",
     "examples": [
@@ -1424,8 +1424,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-contribution-history",
-    "name": "shadcn/ui aria blocks block contribution history",
-    "description": "8 published shadcn/ui aria blocks block contribution history examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Contribution History (React Aria)",
+    "description": "Compose a contribution history interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-contribution-history",
     "examples": [
@@ -1474,8 +1474,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-cover-art",
-    "name": "shadcn/ui aria blocks block cover art",
-    "description": "8 published shadcn/ui aria blocks block cover art examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Cover Art (React Aria)",
+    "description": "Compose a cover art interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-cover-art",
     "examples": [
@@ -1524,8 +1524,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-dividend-income",
-    "name": "shadcn/ui aria blocks block dividend income",
-    "description": "8 published shadcn/ui aria blocks block dividend income examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Dividend Income (React Aria)",
+    "description": "Compose a dividend income interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-dividend-income",
     "examples": [
@@ -1574,8 +1574,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-empty-connect-bank",
-    "name": "shadcn/ui aria blocks block empty connect bank",
-    "description": "8 published shadcn/ui aria blocks block empty connect bank examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Empty Connect Bank (React Aria)",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-empty-connect-bank",
     "examples": [
@@ -1624,8 +1624,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-empty-distribute-track",
-    "name": "shadcn/ui aria blocks block empty distribute track",
-    "description": "8 published shadcn/ui aria blocks block empty distribute track examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Empty Distribute Track (React Aria)",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-empty-distribute-track",
     "examples": [
@@ -1674,8 +1674,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-empty-explore-catalog",
-    "name": "shadcn/ui aria blocks block empty explore catalog",
-    "description": "8 published shadcn/ui aria blocks block empty explore catalog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Empty Explore Catalog (React Aria)",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-empty-explore-catalog",
     "examples": [
@@ -1724,8 +1724,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-faq",
-    "name": "shadcn/ui aria blocks block faq",
-    "description": "8 published shadcn/ui aria blocks block faq examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui FAQ (React Aria)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-faq",
     "examples": [
@@ -1774,8 +1774,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-front-door",
-    "name": "shadcn/ui aria blocks block front door",
-    "description": "8 published shadcn/ui aria blocks block front door examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Front Door (React Aria)",
+    "description": "Compose a front door interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-front-door",
     "examples": [
@@ -1824,8 +1824,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-index-investing",
-    "name": "shadcn/ui aria blocks block index investing",
-    "description": "8 published shadcn/ui aria blocks block index investing examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Index Investing (React Aria)",
+    "description": "Compose a index investing interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-index-investing",
     "examples": [
@@ -1874,8 +1874,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-kitchen-island",
-    "name": "shadcn/ui aria blocks block kitchen island",
-    "description": "8 published shadcn/ui aria blocks block kitchen island examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Kitchen Island (React Aria)",
+    "description": "Compose a kitchen island interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-kitchen-island",
     "examples": [
@@ -1924,8 +1924,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-loading-card",
-    "name": "shadcn/ui aria blocks block loading card",
-    "description": "8 published shadcn/ui aria blocks block loading card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Loading Card (React Aria)",
+    "description": "Indicate that content or a task is still loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-loading-card",
     "examples": [
@@ -1974,8 +1974,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-new-milestone",
-    "name": "shadcn/ui aria blocks block new milestone",
-    "description": "8 published shadcn/ui aria blocks block new milestone examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui New Milestone (React Aria)",
+    "description": "Compose a new milestone interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-new-milestone",
     "examples": [
@@ -2024,8 +2024,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-notification-settings",
-    "name": "shadcn/ui aria blocks block notification settings",
-    "description": "8 published shadcn/ui aria blocks block notification settings examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Notification Settings (React Aria)",
+    "description": "Group controls for configuring account or application preferences.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-notification-settings",
     "examples": [
@@ -2074,8 +2074,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-payments",
-    "name": "shadcn/ui aria blocks block payments",
-    "description": "8 published shadcn/ui aria blocks block payments examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Payments (React Aria)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-payments",
     "examples": [
@@ -2124,8 +2124,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-payout-threshold",
-    "name": "shadcn/ui aria blocks block payout threshold",
-    "description": "8 published shadcn/ui aria blocks block payout threshold examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Payout Threshold (React Aria)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-payout-threshold",
     "examples": [
@@ -2174,8 +2174,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-power-usage",
-    "name": "shadcn/ui aria blocks block power usage",
-    "description": "8 published shadcn/ui aria blocks block power usage examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Power Usage (React Aria)",
+    "description": "Compose a power usage interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-power-usage",
     "examples": [
@@ -2224,8 +2224,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-preferences",
-    "name": "shadcn/ui aria blocks block preferences",
-    "description": "8 published shadcn/ui aria blocks block preferences examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Preferences (React Aria)",
+    "description": "Group controls for configuring account or application preferences.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-preferences",
     "examples": [
@@ -2274,8 +2274,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-qr-connect",
-    "name": "shadcn/ui aria blocks block qr connect",
-    "description": "8 published shadcn/ui aria blocks block qr connect examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui QR Connect (React Aria)",
+    "description": "Display a value in a scannable QR code.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-qr-connect",
     "examples": [
@@ -2324,8 +2324,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-receiving-method",
-    "name": "shadcn/ui aria blocks block receiving method",
-    "description": "8 published shadcn/ui aria blocks block receiving method examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Receiving Method (React Aria)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-receiving-method",
     "examples": [
@@ -2374,8 +2374,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-recent-transactions",
-    "name": "shadcn/ui aria blocks block recent transactions",
-    "description": "8 published shadcn/ui aria blocks block recent transactions examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Recent Transactions (React Aria)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-recent-transactions",
     "examples": [
@@ -2424,8 +2424,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-release-catalog",
-    "name": "shadcn/ui aria blocks block release catalog",
-    "description": "8 published shadcn/ui aria blocks block release catalog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Release Catalog (React Aria)",
+    "description": "Compose a release catalog interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-release-catalog",
     "examples": [
@@ -2474,8 +2474,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-roller-shades",
-    "name": "shadcn/ui aria blocks block roller shades",
-    "description": "8 published shadcn/ui aria blocks block roller shades examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Roller Shades (React Aria)",
+    "description": "Compose a roller shades interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-roller-shades",
     "examples": [
@@ -2524,8 +2524,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-savings-progress",
-    "name": "shadcn/ui aria blocks block savings progress",
-    "description": "8 published shadcn/ui aria blocks block savings progress examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Savings Progress (React Aria)",
+    "description": "Compose a savings progress interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-savings-progress",
     "examples": [
@@ -2574,8 +2574,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-savings-targets",
-    "name": "shadcn/ui aria blocks block savings targets",
-    "description": "8 published shadcn/ui aria blocks block savings targets examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Savings Targets (React Aria)",
+    "description": "Compose a savings targets interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-savings-targets",
     "examples": [
@@ -2624,8 +2624,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-nav",
-    "name": "shadcn/ui aria blocks block sidebar nav",
-    "description": "8 published shadcn/ui aria blocks block sidebar nav examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar Nav (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-nav",
     "examples": [
@@ -2674,8 +2674,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-social-links",
-    "name": "shadcn/ui aria blocks block social links",
-    "description": "8 published shadcn/ui aria blocks block social links examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Social Links (React Aria)",
+    "description": "Compose a social links interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-social-links",
     "examples": [
@@ -2724,8 +2724,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-stock-performance",
-    "name": "shadcn/ui aria blocks block stock performance",
-    "description": "8 published shadcn/ui aria blocks block stock performance examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Stock Performance (React Aria)",
+    "description": "Compose a stock performance interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-stock-performance",
     "examples": [
@@ -2774,8 +2774,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-syncing-state",
-    "name": "shadcn/ui aria blocks block syncing state",
-    "description": "8 published shadcn/ui aria blocks block syncing state examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Syncing State (React Aria)",
+    "description": "Indicate that content or a task is still loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-syncing-state",
     "examples": [
@@ -2824,8 +2824,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-transfer-funds",
-    "name": "shadcn/ui aria blocks block transfer funds",
-    "description": "8 published shadcn/ui aria blocks block transfer funds examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Transfer Funds (React Aria)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-transfer-funds",
     "examples": [
@@ -2874,8 +2874,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-upcoming-payments",
-    "name": "shadcn/ui aria blocks block upcoming payments",
-    "description": "8 published shadcn/ui aria blocks block upcoming payments examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Upcoming Payments (React Aria)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-upcoming-payments",
     "examples": [
@@ -2924,8 +2924,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-preview-02",
-    "name": "shadcn/ui aria blocks block preview 02",
-    "description": "8 published shadcn/ui aria blocks block preview 02 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Preview 02 (React Aria)",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-preview-02",
     "examples": [
@@ -2974,8 +2974,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-preview-03",
-    "name": "shadcn/ui aria blocks block preview 03",
-    "description": "8 published shadcn/ui aria blocks block preview 03 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Preview 03 (React Aria)",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-preview-03",
     "examples": [
@@ -3024,8 +3024,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-activate-agent-dialog",
-    "name": "shadcn/ui aria blocks block activate agent dialog",
-    "description": "8 published shadcn/ui aria blocks block activate agent dialog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Activate Agent Dialog (React Aria)",
+    "description": "Ask for confirmation before completing an important action.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-activate-agent-dialog",
     "examples": [
@@ -3074,8 +3074,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-analytics-card",
-    "name": "shadcn/ui aria blocks block analytics card",
-    "description": "8 published shadcn/ui aria blocks block analytics card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Analytics Card (React Aria)",
+    "description": "Compose a analytics card interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-analytics-card",
     "examples": [
@@ -3124,8 +3124,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-anomaly-alert",
-    "name": "shadcn/ui aria blocks block anomaly alert",
-    "description": "8 published shadcn/ui aria blocks block anomaly alert examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Anomaly Alert (React Aria)",
+    "description": "Compose a anomaly alert interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-anomaly-alert",
     "examples": [
@@ -3174,8 +3174,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-assign-issue",
-    "name": "shadcn/ui aria blocks block assign issue",
-    "description": "8 published shadcn/ui aria blocks block assign issue examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Assign Issue (React Aria)",
+    "description": "Compose a assign issue interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-assign-issue",
     "examples": [
@@ -3224,8 +3224,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-bar-chart-card",
-    "name": "shadcn/ui aria blocks block bar chart card",
-    "description": "8 published shadcn/ui aria blocks block bar chart card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Bar Chart Card (React Aria)",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-bar-chart-card",
     "examples": [
@@ -3274,8 +3274,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-bar-visualizer",
-    "name": "shadcn/ui aria blocks block bar visualizer",
-    "description": "8 published shadcn/ui aria blocks block bar visualizer examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Bar Visualizer (React Aria)",
+    "description": "Compose a bar visualizer interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-bar-visualizer",
     "examples": [
@@ -3324,8 +3324,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-book-appointment",
-    "name": "shadcn/ui aria blocks block book appointment",
-    "description": "8 published shadcn/ui aria blocks block book appointment examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Book Appointment (React Aria)",
+    "description": "Present controls for arranging an appointment.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-book-appointment",
     "examples": [
@@ -3374,8 +3374,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-codespaces-card",
-    "name": "shadcn/ui aria blocks block codespaces card",
-    "description": "8 published shadcn/ui aria blocks block codespaces card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Codespaces Card (React Aria)",
+    "description": "Compose a codespaces card interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-codespaces-card",
     "examples": [
@@ -3424,8 +3424,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-contributions-activity",
-    "name": "shadcn/ui aria blocks block contributions activity",
-    "description": "8 published shadcn/ui aria blocks block contributions activity examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Contributions Activity (React Aria)",
+    "description": "Compose a contributions activity interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-contributions-activity",
     "examples": [
@@ -3474,8 +3474,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-contributors",
-    "name": "shadcn/ui aria blocks block contributors",
-    "description": "8 published shadcn/ui aria blocks block contributors examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Contributors (React Aria)",
+    "description": "Compose a contributors interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-contributors",
     "examples": [
@@ -3524,8 +3524,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-environment-variables",
-    "name": "shadcn/ui aria blocks block environment variables",
-    "description": "8 published shadcn/ui aria blocks block environment variables examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Environment Variables (React Aria)",
+    "description": "Compose a environment variables interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-environment-variables",
     "examples": [
@@ -3574,8 +3574,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-feedback-form",
-    "name": "shadcn/ui aria blocks block feedback form",
-    "description": "8 published shadcn/ui aria blocks block feedback form examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Feedback Form (React Aria)",
+    "description": "Collect feedback or a problem report from a user.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-feedback-form",
     "examples": [
@@ -3624,8 +3624,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-file-upload",
-    "name": "shadcn/ui aria blocks block file upload",
-    "description": "8 published shadcn/ui aria blocks block file upload examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui File Upload (React Aria)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-file-upload",
     "examples": [
@@ -3674,8 +3674,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-github-profile",
-    "name": "shadcn/ui aria blocks block github profile",
-    "description": "8 published shadcn/ui aria blocks block github profile examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Github Profile (React Aria)",
+    "description": "Compose a github profile interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-github-profile",
     "examples": [
@@ -3724,8 +3724,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-icon-preview-grid",
-    "name": "shadcn/ui aria blocks block icon preview grid",
-    "description": "8 published shadcn/ui aria blocks block icon preview grid examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Icon Preview Grid (React Aria)",
+    "description": "Compose a icon preview grid interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-icon-preview-grid",
     "examples": [
@@ -3774,8 +3774,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-invite-team",
-    "name": "shadcn/ui aria blocks block invite team",
-    "description": "8 published shadcn/ui aria blocks block invite team examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Invite Team (React Aria)",
+    "description": "Compose a invite team interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-invite-team",
     "examples": [
@@ -3824,8 +3824,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-invoice",
-    "name": "shadcn/ui aria blocks block invoice",
-    "description": "8 published shadcn/ui aria blocks block invoice examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Invoice (React Aria)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-invoice",
     "examples": [
@@ -3874,8 +3874,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-live-waveform",
-    "name": "shadcn/ui aria blocks block live waveform",
-    "description": "8 published shadcn/ui aria blocks block live waveform examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Live Waveform (React Aria)",
+    "description": "Compose a live waveform interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-live-waveform",
     "examples": [
@@ -3924,8 +3924,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-no-team-members",
-    "name": "shadcn/ui aria blocks block no team members",
-    "description": "8 published shadcn/ui aria blocks block no team members examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui No Team Members (React Aria)",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-no-team-members",
     "examples": [
@@ -3974,8 +3974,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-not-found",
-    "name": "shadcn/ui aria blocks block not found",
-    "description": "8 published shadcn/ui aria blocks block not found examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Not Found (React Aria)",
+    "description": "Explain that the requested page or resource could not be found.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-not-found",
     "examples": [
@@ -4024,8 +4024,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-observability-card",
-    "name": "shadcn/ui aria blocks block observability card",
-    "description": "8 published shadcn/ui aria blocks block observability card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Observability Card (React Aria)",
+    "description": "Compose a observability card interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-observability-card",
     "examples": [
@@ -4074,8 +4074,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-pie-chart-card",
-    "name": "shadcn/ui aria blocks block pie chart card",
-    "description": "8 published shadcn/ui aria blocks block pie chart card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Pie Chart Card (React Aria)",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-pie-chart-card",
     "examples": [
@@ -4124,8 +4124,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-report-bug",
-    "name": "shadcn/ui aria blocks block report bug",
-    "description": "8 published shadcn/ui aria blocks block report bug examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Report Bug (React Aria)",
+    "description": "Collect feedback or a problem report from a user.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-report-bug",
     "examples": [
@@ -4174,8 +4174,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-shipping-address",
-    "name": "shadcn/ui aria blocks block shipping address",
-    "description": "8 published shadcn/ui aria blocks block shipping address examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Shipping Address (React Aria)",
+    "description": "Collect delivery address details in a form.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-shipping-address",
     "examples": [
@@ -4224,8 +4224,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-shortcuts",
-    "name": "shadcn/ui aria blocks block shortcuts",
-    "description": "8 published shadcn/ui aria blocks block shortcuts examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Shortcuts (React Aria)",
+    "description": "Display a key or keyboard shortcut hint.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-shortcuts",
     "examples": [
@@ -4274,8 +4274,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-skeleton-loading",
-    "name": "shadcn/ui aria blocks block skeleton loading",
-    "description": "8 published shadcn/ui aria blocks block skeleton loading examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Skeleton Loading (React Aria)",
+    "description": "Reserve the shape of content while it is loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-skeleton-loading",
     "examples": [
@@ -4324,8 +4324,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sleep-report",
-    "name": "shadcn/ui aria blocks block sleep report",
-    "description": "8 published shadcn/ui aria blocks block sleep report examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sleep Report (React Aria)",
+    "description": "Compose a sleep report interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sleep-report",
     "examples": [
@@ -4374,8 +4374,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-style-overview",
-    "name": "shadcn/ui aria blocks block style overview",
-    "description": "8 published shadcn/ui aria blocks block style overview examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Style Overview (React Aria)",
+    "description": "Compose a style overview interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-style-overview",
     "examples": [
@@ -4424,8 +4424,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-typography-specimen",
-    "name": "shadcn/ui aria blocks block typography specimen",
-    "description": "8 published shadcn/ui aria blocks block typography specimen examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography Specimen (React Aria)",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-typography-specimen",
     "examples": [
@@ -4474,8 +4474,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-ui-elements",
-    "name": "shadcn/ui aria blocks block ui elements",
-    "description": "8 published shadcn/ui aria blocks block ui elements examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui UI Elements (React Aria)",
+    "description": "Compose a ui elements interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-ui-elements",
     "examples": [
@@ -4524,8 +4524,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-usage-card",
-    "name": "shadcn/ui aria blocks block usage card",
-    "description": "8 published shadcn/ui aria blocks block usage card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Usage Card (React Aria)",
+    "description": "Display a key metric or numeric summary.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-usage-card",
     "examples": [
@@ -4574,8 +4574,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-visitors",
-    "name": "shadcn/ui aria blocks block visitors",
-    "description": "8 published shadcn/ui aria blocks block visitors examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Visitors (React Aria)",
+    "description": "Compose a visitors interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-visitors",
     "examples": [
@@ -4624,8 +4624,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-weekly-fitness-summary",
-    "name": "shadcn/ui aria blocks block weekly fitness summary",
-    "description": "8 published shadcn/ui aria blocks block weekly fitness summary examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Weekly Fitness Summary (React Aria)",
+    "description": "Compose a weekly fitness summary interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-weekly-fitness-summary",
     "examples": [
@@ -4674,8 +4674,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-preview",
-    "name": "shadcn/ui aria blocks block preview",
-    "description": "8 published shadcn/ui aria blocks block preview examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Preview (React Aria)",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-preview",
     "examples": [
@@ -4724,8 +4724,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-01",
-    "name": "shadcn/ui aria blocks block sidebar 01",
-    "description": "8 published shadcn/ui aria blocks block sidebar 01 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 01 (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-01",
     "examples": [
@@ -4774,8 +4774,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-02",
-    "name": "shadcn/ui aria blocks block sidebar 02",
-    "description": "8 published shadcn/ui aria blocks block sidebar 02 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 02 (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-02",
     "examples": [
@@ -4824,8 +4824,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-03",
-    "name": "shadcn/ui aria blocks block sidebar 03",
-    "description": "8 published shadcn/ui aria blocks block sidebar 03 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 03 (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-03",
     "examples": [
@@ -4874,8 +4874,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-04",
-    "name": "shadcn/ui aria blocks block sidebar 04",
-    "description": "8 published shadcn/ui aria blocks block sidebar 04 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 04 (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-04",
     "examples": [
@@ -4924,8 +4924,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-05",
-    "name": "shadcn/ui aria blocks block sidebar 05",
-    "description": "8 published shadcn/ui aria blocks block sidebar 05 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 05 (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-05",
     "examples": [
@@ -4974,8 +4974,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-06",
-    "name": "shadcn/ui aria blocks block sidebar 06",
-    "description": "8 published shadcn/ui aria blocks block sidebar 06 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 06 (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-06",
     "examples": [
@@ -5024,8 +5024,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-07",
-    "name": "shadcn/ui aria blocks block sidebar 07",
-    "description": "8 published shadcn/ui aria blocks block sidebar 07 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 07 (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-07",
     "examples": [
@@ -5074,8 +5074,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-08",
-    "name": "shadcn/ui aria blocks block sidebar 08",
-    "description": "8 published shadcn/ui aria blocks block sidebar 08 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 08 (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-08",
     "examples": [
@@ -5124,8 +5124,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-09",
-    "name": "shadcn/ui aria blocks block sidebar 09",
-    "description": "8 published shadcn/ui aria blocks block sidebar 09 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 09 (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-09",
     "examples": [
@@ -5174,8 +5174,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-10",
-    "name": "shadcn/ui aria blocks block sidebar 10",
-    "description": "8 published shadcn/ui aria blocks block sidebar 10 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 10 (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-10",
     "examples": [
@@ -5224,8 +5224,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-11",
-    "name": "shadcn/ui aria blocks block sidebar 11",
-    "description": "8 published shadcn/ui aria blocks block sidebar 11 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 11 (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-11",
     "examples": [
@@ -5274,8 +5274,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-12",
-    "name": "shadcn/ui aria blocks block sidebar 12",
-    "description": "8 published shadcn/ui aria blocks block sidebar 12 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 12 (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-12",
     "examples": [
@@ -5324,8 +5324,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-13",
-    "name": "shadcn/ui aria blocks block sidebar 13",
-    "description": "8 published shadcn/ui aria blocks block sidebar 13 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 13 (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-13",
     "examples": [
@@ -5374,8 +5374,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-14",
-    "name": "shadcn/ui aria blocks block sidebar 14",
-    "description": "8 published shadcn/ui aria blocks block sidebar 14 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 14 (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-14",
     "examples": [
@@ -5424,8 +5424,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-15",
-    "name": "shadcn/ui aria blocks block sidebar 15",
-    "description": "8 published shadcn/ui aria blocks block sidebar 15 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 15 (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-15",
     "examples": [
@@ -5474,8 +5474,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-sidebar-16",
-    "name": "shadcn/ui aria blocks block sidebar 16",
-    "description": "8 published shadcn/ui aria blocks block sidebar 16 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 16 (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-sidebar-16",
     "examples": [
@@ -5524,8 +5524,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-signup-01",
-    "name": "shadcn/ui aria blocks block signup 01",
-    "description": "8 published shadcn/ui aria blocks block signup 01 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 01 (React Aria)",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-signup-01",
     "examples": [
@@ -5574,8 +5574,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-signup-02",
-    "name": "shadcn/ui aria blocks block signup 02",
-    "description": "8 published shadcn/ui aria blocks block signup 02 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 02 (React Aria)",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-signup-02",
     "examples": [
@@ -5624,8 +5624,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-signup-03",
-    "name": "shadcn/ui aria blocks block signup 03",
-    "description": "8 published shadcn/ui aria blocks block signup 03 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 03 (React Aria)",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-signup-03",
     "examples": [
@@ -5674,8 +5674,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-signup-04",
-    "name": "shadcn/ui aria blocks block signup 04",
-    "description": "8 published shadcn/ui aria blocks block signup 04 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 04 (React Aria)",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-signup-04",
     "examples": [
@@ -5724,8 +5724,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-blocks-block-signup-05",
-    "name": "shadcn/ui aria blocks block signup 05",
-    "description": "8 published shadcn/ui aria blocks block signup 05 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 05 (React Aria)",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-blocks-block-signup-05",
     "examples": [
@@ -5774,8 +5774,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-accordion",
-    "name": "shadcn/ui aria accordion",
-    "description": "8 published shadcn/ui aria accordion examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Accordion (React Aria)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-accordion",
     "examples": [
@@ -5824,8 +5824,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-alert-dialog",
-    "name": "shadcn/ui aria alert dialog",
-    "description": "8 published shadcn/ui aria alert dialog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Alert Dialog (React Aria)",
+    "description": "Ask for confirmation before completing an important action.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-alert-dialog",
     "examples": [
@@ -5874,8 +5874,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-alert",
-    "name": "shadcn/ui aria alert",
-    "description": "8 published shadcn/ui aria alert examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Alert (React Aria)",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-alert",
     "examples": [
@@ -5924,8 +5924,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-aspect-ratio",
-    "name": "shadcn/ui aria aspect ratio",
-    "description": "8 published shadcn/ui aria aspect ratio examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Aspect Ratio (React Aria)",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-aspect-ratio",
     "examples": [
@@ -5974,8 +5974,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-attachment",
-    "name": "shadcn/ui aria attachment",
-    "description": "8 published shadcn/ui aria attachment examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Attachment (React Aria)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-attachment",
     "examples": [
@@ -6024,8 +6024,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-avatar",
-    "name": "shadcn/ui aria avatar",
-    "description": "8 published shadcn/ui aria avatar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Avatar (React Aria)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-avatar",
     "examples": [
@@ -6074,8 +6074,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-badge",
-    "name": "shadcn/ui aria badge",
-    "description": "8 published shadcn/ui aria badge examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Badge (React Aria)",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-badge",
     "examples": [
@@ -6124,8 +6124,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-breadcrumb",
-    "name": "shadcn/ui aria breadcrumb",
-    "description": "8 published shadcn/ui aria breadcrumb examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Breadcrumb (React Aria)",
+    "description": "Show the current location within a hierarchy of pages.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-breadcrumb",
     "examples": [
@@ -6174,8 +6174,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-bubble",
-    "name": "shadcn/ui aria bubble",
-    "description": "8 published shadcn/ui aria bubble examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Bubble (React Aria)",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-bubble",
     "examples": [
@@ -6224,8 +6224,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-button",
-    "name": "shadcn/ui aria button",
-    "description": "8 published shadcn/ui aria button examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Button (React Aria)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-button",
     "examples": [
@@ -6274,8 +6274,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-button-group",
-    "name": "shadcn/ui aria button group",
-    "description": "8 published shadcn/ui aria button group examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Button Group (React Aria)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-button-group",
     "examples": [
@@ -6324,8 +6324,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-calendar",
-    "name": "shadcn/ui aria calendar",
-    "description": "8 published shadcn/ui aria calendar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Calendar (React Aria)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-calendar",
     "examples": [
@@ -6374,8 +6374,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-card",
-    "name": "shadcn/ui aria card",
-    "description": "8 published shadcn/ui aria card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Card (React Aria)",
+    "description": "Group related content and actions in a distinct container.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-card",
     "examples": [
@@ -6424,8 +6424,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-carousel",
-    "name": "shadcn/ui aria carousel",
-    "description": "8 published shadcn/ui aria carousel examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Carousel (React Aria)",
+    "description": "Move through a sequence of content items.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-carousel",
     "examples": [
@@ -6474,8 +6474,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-chart",
-    "name": "shadcn/ui aria chart",
-    "description": "8 published shadcn/ui aria chart examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Chart (React Aria)",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-chart",
     "examples": [
@@ -6524,8 +6524,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-checkbox",
-    "name": "shadcn/ui aria checkbox",
-    "description": "8 published shadcn/ui aria checkbox examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Checkbox (React Aria)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-checkbox",
     "examples": [
@@ -6574,8 +6574,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-collapsible",
-    "name": "shadcn/ui aria collapsible",
-    "description": "8 published shadcn/ui aria collapsible examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Collapsible (React Aria)",
+    "description": "Reveal or hide a section of supporting content.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-collapsible",
     "examples": [
@@ -6624,8 +6624,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-combobox",
-    "name": "shadcn/ui aria combobox",
-    "description": "8 published shadcn/ui aria combobox examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Combobox (React Aria)",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-combobox",
     "examples": [
@@ -6674,8 +6674,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-command",
-    "name": "shadcn/ui aria command",
-    "description": "8 published shadcn/ui aria command examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Command (React Aria)",
+    "description": "Find commands and actions in a searchable command menu.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-command",
     "examples": [
@@ -6724,8 +6724,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-component-example",
-    "name": "shadcn/ui aria component example",
-    "description": "8 published shadcn/ui aria component example examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Component Example (React Aria)",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-component-example",
     "examples": [
@@ -6774,8 +6774,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-context-menu",
-    "name": "shadcn/ui aria context menu",
-    "description": "8 published shadcn/ui aria context menu examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Context Menu (React Aria)",
+    "description": "Show actions associated with the selected item or context.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-context-menu",
     "examples": [
@@ -6824,8 +6824,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-demo",
-    "name": "shadcn/ui aria demo",
-    "description": "8 published shadcn/ui aria demo examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Demo (React Aria)",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-demo",
     "examples": [
@@ -6874,8 +6874,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-dialog",
-    "name": "shadcn/ui aria dialog",
-    "description": "8 published shadcn/ui aria dialog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Dialog (React Aria)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-dialog",
     "examples": [
@@ -6924,8 +6924,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-drawer",
-    "name": "shadcn/ui aria drawer",
-    "description": "8 published shadcn/ui aria drawer examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Drawer (React Aria)",
+    "description": "Open a panel alongside the current page for details or additional controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-drawer",
     "examples": [
@@ -6974,8 +6974,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-dropdown-menu",
-    "name": "shadcn/ui aria dropdown menu",
-    "description": "8 published shadcn/ui aria dropdown menu examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Dropdown Menu (React Aria)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-dropdown-menu",
     "examples": [
@@ -7024,8 +7024,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-empty",
-    "name": "shadcn/ui aria empty",
-    "description": "8 published shadcn/ui aria empty examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Empty (React Aria)",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-empty",
     "examples": [
@@ -7074,8 +7074,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-field",
-    "name": "shadcn/ui aria field",
-    "description": "8 published shadcn/ui aria field examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Field (React Aria)",
+    "description": "Collect related values through a group of form controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-field",
     "examples": [
@@ -7124,8 +7124,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-hover-card",
-    "name": "shadcn/ui aria hover card",
-    "description": "8 published shadcn/ui aria hover card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Hover Card (React Aria)",
+    "description": "Preview supporting content alongside a trigger.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-hover-card",
     "examples": [
@@ -7174,8 +7174,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-input",
-    "name": "shadcn/ui aria input",
-    "description": "8 published shadcn/ui aria input examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Input (React Aria)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-input",
     "examples": [
@@ -7224,8 +7224,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-input-group",
-    "name": "shadcn/ui aria input group",
-    "description": "8 published shadcn/ui aria input group examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Input Group (React Aria)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-input-group",
     "examples": [
@@ -7274,8 +7274,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-input-otp",
-    "name": "shadcn/ui aria input otp",
-    "description": "8 published shadcn/ui aria input otp examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Input OTP (React Aria)",
+    "description": "Enter a short verification code across a group of input slots.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-input-otp",
     "examples": [
@@ -7324,8 +7324,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-item",
-    "name": "shadcn/ui aria item",
-    "description": "8 published shadcn/ui aria item examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Item (React Aria)",
+    "description": "Present a collection of related items.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-item",
     "examples": [
@@ -7374,8 +7374,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-kbd",
-    "name": "shadcn/ui aria kbd",
-    "description": "8 published shadcn/ui aria kbd examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Kbd (React Aria)",
+    "description": "Display a key or keyboard shortcut hint.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-kbd",
     "examples": [
@@ -7424,8 +7424,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-label",
-    "name": "shadcn/ui aria label",
-    "description": "8 published shadcn/ui aria label examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Label (React Aria)",
+    "description": "Identify a control or describe the value it accepts.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-label",
     "examples": [
@@ -7474,8 +7474,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-marker",
-    "name": "shadcn/ui aria marker",
-    "description": "8 published shadcn/ui aria marker examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Marker (React Aria)",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-marker",
     "examples": [
@@ -7524,8 +7524,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-message",
-    "name": "shadcn/ui aria message",
-    "description": "8 published shadcn/ui aria message examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Message (React Aria)",
+    "description": "Display a transient notification about an event or action.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-message",
     "examples": [
@@ -7574,8 +7574,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-message-scroller",
-    "name": "shadcn/ui aria message scroller",
-    "description": "8 published shadcn/ui aria message scroller examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Message Scroller (React Aria)",
+    "description": "Present a conversation with messages and related controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-message-scroller",
     "examples": [
@@ -7624,8 +7624,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-native-select",
-    "name": "shadcn/ui aria native select",
-    "description": "8 published shadcn/ui aria native select examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Native Select (React Aria)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-native-select",
     "examples": [
@@ -7674,8 +7674,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-pagination",
-    "name": "shadcn/ui aria pagination",
-    "description": "8 published shadcn/ui aria pagination examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Pagination (React Aria)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-pagination",
     "examples": [
@@ -7724,8 +7724,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-popover",
-    "name": "shadcn/ui aria popover",
-    "description": "8 published shadcn/ui aria popover examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Popover (React Aria)",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-popover",
     "examples": [
@@ -7774,8 +7774,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-progress",
-    "name": "shadcn/ui aria progress",
-    "description": "8 published shadcn/ui aria progress examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Progress (React Aria)",
+    "description": "Show how far a task has progressed.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-progress",
     "examples": [
@@ -7824,8 +7824,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-questionnaire-example",
-    "name": "shadcn/ui aria questionnaire example",
-    "description": "8 published shadcn/ui aria questionnaire example examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Questionnaire Example (React Aria)",
+    "description": "Collect related values through a group of form controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-questionnaire-example",
     "examples": [
@@ -7874,8 +7874,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-radio-group",
-    "name": "shadcn/ui aria radio group",
-    "description": "8 published shadcn/ui aria radio group examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Radio Group (React Aria)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-radio-group",
     "examples": [
@@ -7924,8 +7924,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-resizable",
-    "name": "shadcn/ui aria resizable",
-    "description": "8 published shadcn/ui aria resizable examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Resizable (React Aria)",
+    "description": "Let users adjust the space assigned to adjacent panels.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-resizable",
     "examples": [
@@ -7974,8 +7974,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-scroll-area",
-    "name": "shadcn/ui aria scroll area",
-    "description": "8 published shadcn/ui aria scroll area examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Scroll Area (React Aria)",
+    "description": "Present content within a scrollable region.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-scroll-area",
     "examples": [
@@ -8024,8 +8024,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-select",
-    "name": "shadcn/ui aria select",
-    "description": "8 published shadcn/ui aria select examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Select (React Aria)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-select",
     "examples": [
@@ -8074,8 +8074,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-separator",
-    "name": "shadcn/ui aria separator",
-    "description": "8 published shadcn/ui aria separator examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Separator (React Aria)",
+    "description": "Visually separate related areas of an interface.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-separator",
     "examples": [
@@ -8124,8 +8124,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-sheet",
-    "name": "shadcn/ui aria sheet",
-    "description": "8 published shadcn/ui aria sheet examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sheet (React Aria)",
+    "description": "Open a panel alongside the current page for details or additional controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-sheet",
     "examples": [
@@ -8174,8 +8174,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-sidebar",
-    "name": "shadcn/ui aria sidebar",
-    "description": "32 published shadcn/ui aria sidebar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar (React Aria)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-sidebar",
     "examples": [
@@ -8344,8 +8344,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-skeleton",
-    "name": "shadcn/ui aria skeleton",
-    "description": "8 published shadcn/ui aria skeleton examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Skeleton (React Aria)",
+    "description": "Reserve the shape of content while it is loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-skeleton",
     "examples": [
@@ -8394,8 +8394,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-slider",
-    "name": "shadcn/ui aria slider",
-    "description": "8 published shadcn/ui aria slider examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Slider (React Aria)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-slider",
     "examples": [
@@ -8444,8 +8444,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-sonner",
-    "name": "shadcn/ui aria sonner",
-    "description": "8 published shadcn/ui aria sonner examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sonner (React Aria)",
+    "description": "Display a transient notification about an event or action.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-sonner",
     "examples": [
@@ -8494,8 +8494,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-spinner",
-    "name": "shadcn/ui aria spinner",
-    "description": "8 published shadcn/ui aria spinner examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Spinner (React Aria)",
+    "description": "Indicate that content or a task is still loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-spinner",
     "examples": [
@@ -8544,8 +8544,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-switch",
-    "name": "shadcn/ui aria switch",
-    "description": "8 published shadcn/ui aria switch examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Switch (React Aria)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-switch",
     "examples": [
@@ -8594,8 +8594,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-table",
-    "name": "shadcn/ui aria table",
-    "description": "8 published shadcn/ui aria table examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Table (React Aria)",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-table",
     "examples": [
@@ -8644,8 +8644,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-tabs",
-    "name": "shadcn/ui aria tabs",
-    "description": "8 published shadcn/ui aria tabs examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Tabs (React Aria)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-tabs",
     "examples": [
@@ -8694,8 +8694,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-textarea",
-    "name": "shadcn/ui aria textarea",
-    "description": "8 published shadcn/ui aria textarea examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Textarea (React Aria)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-textarea",
     "examples": [
@@ -8744,8 +8744,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-toggle",
-    "name": "shadcn/ui aria toggle",
-    "description": "8 published shadcn/ui aria toggle examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Toggle (React Aria)",
+    "description": "Change the selected state of an option or control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-toggle",
     "examples": [
@@ -8794,8 +8794,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-toggle-group",
-    "name": "shadcn/ui aria toggle group",
-    "description": "8 published shadcn/ui aria toggle group examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Toggle Group (React Aria)",
+    "description": "Change the selected state of an option or control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-toggle-group",
     "examples": [
@@ -8844,8 +8844,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aria-tooltip",
-    "name": "shadcn/ui aria tooltip",
-    "description": "8 published shadcn/ui aria tooltip examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Tooltip (React Aria)",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aria-tooltip",
     "examples": [
@@ -8894,8 +8894,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-dashboard-01",
-    "name": "shadcn/ui base blocks block dashboard 01",
-    "description": "8 published shadcn/ui base blocks block dashboard 01 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Dashboard 01 (Base UI)",
+    "description": "Combine application navigation with information and controls in a dashboard layout.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-dashboard-01",
     "examples": [
@@ -8944,8 +8944,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-login-01",
-    "name": "shadcn/ui base blocks block login 01",
-    "description": "8 published shadcn/ui base blocks block login 01 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 01 (Base UI)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-login-01",
     "examples": [
@@ -8994,8 +8994,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-login-02",
-    "name": "shadcn/ui base blocks block login 02",
-    "description": "8 published shadcn/ui base blocks block login 02 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 02 (Base UI)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-login-02",
     "examples": [
@@ -9044,8 +9044,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-login-03",
-    "name": "shadcn/ui base blocks block login 03",
-    "description": "8 published shadcn/ui base blocks block login 03 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 03 (Base UI)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-login-03",
     "examples": [
@@ -9094,8 +9094,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-login-04",
-    "name": "shadcn/ui base blocks block login 04",
-    "description": "8 published shadcn/ui base blocks block login 04 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 04 (Base UI)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-login-04",
     "examples": [
@@ -9144,8 +9144,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-login-05",
-    "name": "shadcn/ui base blocks block login 05",
-    "description": "8 published shadcn/ui base blocks block login 05 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 05 (Base UI)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-login-05",
     "examples": [
@@ -9194,8 +9194,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-account-access",
-    "name": "shadcn/ui base blocks block account access",
-    "description": "8 published shadcn/ui base blocks block account access examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Account Access (Base UI)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-account-access",
     "examples": [
@@ -9244,8 +9244,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-album-card",
-    "name": "shadcn/ui base blocks block album card",
-    "description": "8 published shadcn/ui base blocks block album card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Album Card (Base UI)",
+    "description": "Compose a album card interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-album-card",
     "examples": [
@@ -9294,8 +9294,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-card-overview",
-    "name": "shadcn/ui base blocks block card overview",
-    "description": "8 published shadcn/ui base blocks block card overview examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Card Overview (Base UI)",
+    "description": "Compose a card overview interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-card-overview",
     "examples": [
@@ -9344,8 +9344,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-catalog-toolbar",
-    "name": "shadcn/ui base blocks block catalog toolbar",
-    "description": "8 published shadcn/ui base blocks block catalog toolbar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Catalog Toolbar (Base UI)",
+    "description": "Compose a catalog toolbar interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-catalog-toolbar",
     "examples": [
@@ -9394,8 +9394,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-claimable-balance",
-    "name": "shadcn/ui base blocks block claimable balance",
-    "description": "8 published shadcn/ui base blocks block claimable balance examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Claimable Balance (Base UI)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-claimable-balance",
     "examples": [
@@ -9444,8 +9444,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-contribution-history",
-    "name": "shadcn/ui base blocks block contribution history",
-    "description": "8 published shadcn/ui base blocks block contribution history examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Contribution History (Base UI)",
+    "description": "Compose a contribution history interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-contribution-history",
     "examples": [
@@ -9494,8 +9494,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-cover-art",
-    "name": "shadcn/ui base blocks block cover art",
-    "description": "8 published shadcn/ui base blocks block cover art examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Cover Art (Base UI)",
+    "description": "Compose a cover art interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-cover-art",
     "examples": [
@@ -9544,8 +9544,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-dividend-income",
-    "name": "shadcn/ui base blocks block dividend income",
-    "description": "8 published shadcn/ui base blocks block dividend income examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Dividend Income (Base UI)",
+    "description": "Compose a dividend income interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-dividend-income",
     "examples": [
@@ -9594,8 +9594,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-empty-connect-bank",
-    "name": "shadcn/ui base blocks block empty connect bank",
-    "description": "8 published shadcn/ui base blocks block empty connect bank examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Empty Connect Bank (Base UI)",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-empty-connect-bank",
     "examples": [
@@ -9644,8 +9644,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-empty-distribute-track",
-    "name": "shadcn/ui base blocks block empty distribute track",
-    "description": "8 published shadcn/ui base blocks block empty distribute track examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Empty Distribute Track (Base UI)",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-empty-distribute-track",
     "examples": [
@@ -9694,8 +9694,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-empty-explore-catalog",
-    "name": "shadcn/ui base blocks block empty explore catalog",
-    "description": "8 published shadcn/ui base blocks block empty explore catalog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Empty Explore Catalog (Base UI)",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-empty-explore-catalog",
     "examples": [
@@ -9744,8 +9744,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-faq",
-    "name": "shadcn/ui base blocks block faq",
-    "description": "8 published shadcn/ui base blocks block faq examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui FAQ (Base UI)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-faq",
     "examples": [
@@ -9794,8 +9794,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-front-door",
-    "name": "shadcn/ui base blocks block front door",
-    "description": "8 published shadcn/ui base blocks block front door examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Front Door (Base UI)",
+    "description": "Compose a front door interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-front-door",
     "examples": [
@@ -9844,8 +9844,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-index-investing",
-    "name": "shadcn/ui base blocks block index investing",
-    "description": "8 published shadcn/ui base blocks block index investing examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Index Investing (Base UI)",
+    "description": "Compose a index investing interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-index-investing",
     "examples": [
@@ -9894,8 +9894,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-kitchen-island",
-    "name": "shadcn/ui base blocks block kitchen island",
-    "description": "8 published shadcn/ui base blocks block kitchen island examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Kitchen Island (Base UI)",
+    "description": "Compose a kitchen island interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-kitchen-island",
     "examples": [
@@ -9944,8 +9944,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-loading-card",
-    "name": "shadcn/ui base blocks block loading card",
-    "description": "8 published shadcn/ui base blocks block loading card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Loading Card (Base UI)",
+    "description": "Indicate that content or a task is still loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-loading-card",
     "examples": [
@@ -9994,8 +9994,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-new-milestone",
-    "name": "shadcn/ui base blocks block new milestone",
-    "description": "8 published shadcn/ui base blocks block new milestone examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui New Milestone (Base UI)",
+    "description": "Compose a new milestone interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-new-milestone",
     "examples": [
@@ -10044,8 +10044,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-notification-settings",
-    "name": "shadcn/ui base blocks block notification settings",
-    "description": "8 published shadcn/ui base blocks block notification settings examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Notification Settings (Base UI)",
+    "description": "Group controls for configuring account or application preferences.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-notification-settings",
     "examples": [
@@ -10094,8 +10094,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-payments",
-    "name": "shadcn/ui base blocks block payments",
-    "description": "8 published shadcn/ui base blocks block payments examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Payments (Base UI)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-payments",
     "examples": [
@@ -10144,8 +10144,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-payout-threshold",
-    "name": "shadcn/ui base blocks block payout threshold",
-    "description": "8 published shadcn/ui base blocks block payout threshold examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Payout Threshold (Base UI)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-payout-threshold",
     "examples": [
@@ -10194,8 +10194,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-power-usage",
-    "name": "shadcn/ui base blocks block power usage",
-    "description": "8 published shadcn/ui base blocks block power usage examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Power Usage (Base UI)",
+    "description": "Compose a power usage interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-power-usage",
     "examples": [
@@ -10244,8 +10244,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-preferences",
-    "name": "shadcn/ui base blocks block preferences",
-    "description": "8 published shadcn/ui base blocks block preferences examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Preferences (Base UI)",
+    "description": "Group controls for configuring account or application preferences.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-preferences",
     "examples": [
@@ -10294,8 +10294,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-qr-connect",
-    "name": "shadcn/ui base blocks block qr connect",
-    "description": "8 published shadcn/ui base blocks block qr connect examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui QR Connect (Base UI)",
+    "description": "Display a value in a scannable QR code.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-qr-connect",
     "examples": [
@@ -10344,8 +10344,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-receiving-method",
-    "name": "shadcn/ui base blocks block receiving method",
-    "description": "8 published shadcn/ui base blocks block receiving method examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Receiving Method (Base UI)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-receiving-method",
     "examples": [
@@ -10394,8 +10394,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-recent-transactions",
-    "name": "shadcn/ui base blocks block recent transactions",
-    "description": "8 published shadcn/ui base blocks block recent transactions examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Recent Transactions (Base UI)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-recent-transactions",
     "examples": [
@@ -10444,8 +10444,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-release-catalog",
-    "name": "shadcn/ui base blocks block release catalog",
-    "description": "8 published shadcn/ui base blocks block release catalog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Release Catalog (Base UI)",
+    "description": "Compose a release catalog interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-release-catalog",
     "examples": [
@@ -10494,8 +10494,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-roller-shades",
-    "name": "shadcn/ui base blocks block roller shades",
-    "description": "8 published shadcn/ui base blocks block roller shades examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Roller Shades (Base UI)",
+    "description": "Compose a roller shades interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-roller-shades",
     "examples": [
@@ -10544,8 +10544,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-savings-progress",
-    "name": "shadcn/ui base blocks block savings progress",
-    "description": "8 published shadcn/ui base blocks block savings progress examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Savings Progress (Base UI)",
+    "description": "Compose a savings progress interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-savings-progress",
     "examples": [
@@ -10594,8 +10594,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-savings-targets",
-    "name": "shadcn/ui base blocks block savings targets",
-    "description": "8 published shadcn/ui base blocks block savings targets examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Savings Targets (Base UI)",
+    "description": "Compose a savings targets interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-savings-targets",
     "examples": [
@@ -10644,8 +10644,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-nav",
-    "name": "shadcn/ui base blocks block sidebar nav",
-    "description": "8 published shadcn/ui base blocks block sidebar nav examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar Nav (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-nav",
     "examples": [
@@ -10694,8 +10694,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-social-links",
-    "name": "shadcn/ui base blocks block social links",
-    "description": "8 published shadcn/ui base blocks block social links examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Social Links (Base UI)",
+    "description": "Compose a social links interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-social-links",
     "examples": [
@@ -10744,8 +10744,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-stock-performance",
-    "name": "shadcn/ui base blocks block stock performance",
-    "description": "8 published shadcn/ui base blocks block stock performance examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Stock Performance (Base UI)",
+    "description": "Compose a stock performance interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-stock-performance",
     "examples": [
@@ -10794,8 +10794,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-syncing-state",
-    "name": "shadcn/ui base blocks block syncing state",
-    "description": "8 published shadcn/ui base blocks block syncing state examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Syncing State (Base UI)",
+    "description": "Indicate that content or a task is still loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-syncing-state",
     "examples": [
@@ -10844,8 +10844,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-transfer-funds",
-    "name": "shadcn/ui base blocks block transfer funds",
-    "description": "8 published shadcn/ui base blocks block transfer funds examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Transfer Funds (Base UI)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-transfer-funds",
     "examples": [
@@ -10894,8 +10894,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-upcoming-payments",
-    "name": "shadcn/ui base blocks block upcoming payments",
-    "description": "8 published shadcn/ui base blocks block upcoming payments examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Upcoming Payments (Base UI)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-upcoming-payments",
     "examples": [
@@ -10944,8 +10944,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-preview-02",
-    "name": "shadcn/ui base blocks block preview 02",
-    "description": "8 published shadcn/ui base blocks block preview 02 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Preview 02 (Base UI)",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-preview-02",
     "examples": [
@@ -10994,8 +10994,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-preview-03",
-    "name": "shadcn/ui base blocks block preview 03",
-    "description": "8 published shadcn/ui base blocks block preview 03 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Preview 03 (Base UI)",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-preview-03",
     "examples": [
@@ -11044,8 +11044,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-activate-agent-dialog",
-    "name": "shadcn/ui base blocks block activate agent dialog",
-    "description": "8 published shadcn/ui base blocks block activate agent dialog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Activate Agent Dialog (Base UI)",
+    "description": "Ask for confirmation before completing an important action.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-activate-agent-dialog",
     "examples": [
@@ -11094,8 +11094,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-analytics-card",
-    "name": "shadcn/ui base blocks block analytics card",
-    "description": "8 published shadcn/ui base blocks block analytics card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Analytics Card (Base UI)",
+    "description": "Compose a analytics card interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-analytics-card",
     "examples": [
@@ -11144,8 +11144,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-anomaly-alert",
-    "name": "shadcn/ui base blocks block anomaly alert",
-    "description": "8 published shadcn/ui base blocks block anomaly alert examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Anomaly Alert (Base UI)",
+    "description": "Compose a anomaly alert interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-anomaly-alert",
     "examples": [
@@ -11194,8 +11194,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-assign-issue",
-    "name": "shadcn/ui base blocks block assign issue",
-    "description": "8 published shadcn/ui base blocks block assign issue examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Assign Issue (Base UI)",
+    "description": "Compose a assign issue interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-assign-issue",
     "examples": [
@@ -11244,8 +11244,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-bar-chart-card",
-    "name": "shadcn/ui base blocks block bar chart card",
-    "description": "8 published shadcn/ui base blocks block bar chart card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Bar Chart Card (Base UI)",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-bar-chart-card",
     "examples": [
@@ -11294,8 +11294,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-bar-visualizer",
-    "name": "shadcn/ui base blocks block bar visualizer",
-    "description": "8 published shadcn/ui base blocks block bar visualizer examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Bar Visualizer (Base UI)",
+    "description": "Compose a bar visualizer interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-bar-visualizer",
     "examples": [
@@ -11344,8 +11344,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-book-appointment",
-    "name": "shadcn/ui base blocks block book appointment",
-    "description": "8 published shadcn/ui base blocks block book appointment examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Book Appointment (Base UI)",
+    "description": "Present controls for arranging an appointment.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-book-appointment",
     "examples": [
@@ -11394,8 +11394,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-codespaces-card",
-    "name": "shadcn/ui base blocks block codespaces card",
-    "description": "8 published shadcn/ui base blocks block codespaces card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Codespaces Card (Base UI)",
+    "description": "Compose a codespaces card interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-codespaces-card",
     "examples": [
@@ -11444,8 +11444,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-contributions-activity",
-    "name": "shadcn/ui base blocks block contributions activity",
-    "description": "8 published shadcn/ui base blocks block contributions activity examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Contributions Activity (Base UI)",
+    "description": "Compose a contributions activity interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-contributions-activity",
     "examples": [
@@ -11494,8 +11494,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-contributors",
-    "name": "shadcn/ui base blocks block contributors",
-    "description": "8 published shadcn/ui base blocks block contributors examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Contributors (Base UI)",
+    "description": "Compose a contributors interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-contributors",
     "examples": [
@@ -11544,8 +11544,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-environment-variables",
-    "name": "shadcn/ui base blocks block environment variables",
-    "description": "8 published shadcn/ui base blocks block environment variables examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Environment Variables (Base UI)",
+    "description": "Compose a environment variables interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-environment-variables",
     "examples": [
@@ -11594,8 +11594,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-feedback-form",
-    "name": "shadcn/ui base blocks block feedback form",
-    "description": "8 published shadcn/ui base blocks block feedback form examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Feedback Form (Base UI)",
+    "description": "Collect feedback or a problem report from a user.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-feedback-form",
     "examples": [
@@ -11644,8 +11644,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-file-upload",
-    "name": "shadcn/ui base blocks block file upload",
-    "description": "8 published shadcn/ui base blocks block file upload examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui File Upload (Base UI)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-file-upload",
     "examples": [
@@ -11694,8 +11694,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-github-profile",
-    "name": "shadcn/ui base blocks block github profile",
-    "description": "8 published shadcn/ui base blocks block github profile examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Github Profile (Base UI)",
+    "description": "Compose a github profile interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-github-profile",
     "examples": [
@@ -11744,8 +11744,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-icon-preview-grid",
-    "name": "shadcn/ui base blocks block icon preview grid",
-    "description": "8 published shadcn/ui base blocks block icon preview grid examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Icon Preview Grid (Base UI)",
+    "description": "Compose a icon preview grid interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-icon-preview-grid",
     "examples": [
@@ -11794,8 +11794,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-invite-team",
-    "name": "shadcn/ui base blocks block invite team",
-    "description": "8 published shadcn/ui base blocks block invite team examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Invite Team (Base UI)",
+    "description": "Compose a invite team interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-invite-team",
     "examples": [
@@ -11844,8 +11844,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-invoice",
-    "name": "shadcn/ui base blocks block invoice",
-    "description": "8 published shadcn/ui base blocks block invoice examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Invoice (Base UI)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-invoice",
     "examples": [
@@ -11894,8 +11894,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-live-waveform",
-    "name": "shadcn/ui base blocks block live waveform",
-    "description": "8 published shadcn/ui base blocks block live waveform examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Live Waveform (Base UI)",
+    "description": "Compose a live waveform interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-live-waveform",
     "examples": [
@@ -11944,8 +11944,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-no-team-members",
-    "name": "shadcn/ui base blocks block no team members",
-    "description": "8 published shadcn/ui base blocks block no team members examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui No Team Members (Base UI)",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-no-team-members",
     "examples": [
@@ -11994,8 +11994,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-not-found",
-    "name": "shadcn/ui base blocks block not found",
-    "description": "8 published shadcn/ui base blocks block not found examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Not Found (Base UI)",
+    "description": "Explain that the requested page or resource could not be found.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-not-found",
     "examples": [
@@ -12044,8 +12044,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-observability-card",
-    "name": "shadcn/ui base blocks block observability card",
-    "description": "8 published shadcn/ui base blocks block observability card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Observability Card (Base UI)",
+    "description": "Compose a observability card interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-observability-card",
     "examples": [
@@ -12094,8 +12094,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-pie-chart-card",
-    "name": "shadcn/ui base blocks block pie chart card",
-    "description": "8 published shadcn/ui base blocks block pie chart card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Pie Chart Card (Base UI)",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-pie-chart-card",
     "examples": [
@@ -12144,8 +12144,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-report-bug",
-    "name": "shadcn/ui base blocks block report bug",
-    "description": "8 published shadcn/ui base blocks block report bug examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Report Bug (Base UI)",
+    "description": "Collect feedback or a problem report from a user.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-report-bug",
     "examples": [
@@ -12194,8 +12194,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-shipping-address",
-    "name": "shadcn/ui base blocks block shipping address",
-    "description": "8 published shadcn/ui base blocks block shipping address examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Shipping Address (Base UI)",
+    "description": "Collect delivery address details in a form.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-shipping-address",
     "examples": [
@@ -12244,8 +12244,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-shortcuts",
-    "name": "shadcn/ui base blocks block shortcuts",
-    "description": "8 published shadcn/ui base blocks block shortcuts examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Shortcuts (Base UI)",
+    "description": "Display a key or keyboard shortcut hint.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-shortcuts",
     "examples": [
@@ -12294,8 +12294,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-skeleton-loading",
-    "name": "shadcn/ui base blocks block skeleton loading",
-    "description": "8 published shadcn/ui base blocks block skeleton loading examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Skeleton Loading (Base UI)",
+    "description": "Reserve the shape of content while it is loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-skeleton-loading",
     "examples": [
@@ -12344,8 +12344,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sleep-report",
-    "name": "shadcn/ui base blocks block sleep report",
-    "description": "8 published shadcn/ui base blocks block sleep report examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sleep Report (Base UI)",
+    "description": "Compose a sleep report interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sleep-report",
     "examples": [
@@ -12394,8 +12394,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-style-overview",
-    "name": "shadcn/ui base blocks block style overview",
-    "description": "8 published shadcn/ui base blocks block style overview examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Style Overview (Base UI)",
+    "description": "Compose a style overview interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-style-overview",
     "examples": [
@@ -12444,8 +12444,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-typography-specimen",
-    "name": "shadcn/ui base blocks block typography specimen",
-    "description": "8 published shadcn/ui base blocks block typography specimen examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography Specimen (Base UI)",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-typography-specimen",
     "examples": [
@@ -12494,8 +12494,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-ui-elements",
-    "name": "shadcn/ui base blocks block ui elements",
-    "description": "8 published shadcn/ui base blocks block ui elements examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui UI Elements (Base UI)",
+    "description": "Compose a ui elements interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-ui-elements",
     "examples": [
@@ -12544,8 +12544,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-usage-card",
-    "name": "shadcn/ui base blocks block usage card",
-    "description": "8 published shadcn/ui base blocks block usage card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Usage Card (Base UI)",
+    "description": "Display a key metric or numeric summary.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-usage-card",
     "examples": [
@@ -12594,8 +12594,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-visitors",
-    "name": "shadcn/ui base blocks block visitors",
-    "description": "8 published shadcn/ui base blocks block visitors examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Visitors (Base UI)",
+    "description": "Compose a visitors interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-visitors",
     "examples": [
@@ -12644,8 +12644,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-weekly-fitness-summary",
-    "name": "shadcn/ui base blocks block weekly fitness summary",
-    "description": "8 published shadcn/ui base blocks block weekly fitness summary examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Weekly Fitness Summary (Base UI)",
+    "description": "Compose a weekly fitness summary interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-weekly-fitness-summary",
     "examples": [
@@ -12694,8 +12694,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-preview",
-    "name": "shadcn/ui base blocks block preview",
-    "description": "8 published shadcn/ui base blocks block preview examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Preview (Base UI)",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-preview",
     "examples": [
@@ -12744,8 +12744,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-01",
-    "name": "shadcn/ui base blocks block sidebar 01",
-    "description": "8 published shadcn/ui base blocks block sidebar 01 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 01 (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-01",
     "examples": [
@@ -12794,8 +12794,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-02",
-    "name": "shadcn/ui base blocks block sidebar 02",
-    "description": "8 published shadcn/ui base blocks block sidebar 02 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 02 (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-02",
     "examples": [
@@ -12844,8 +12844,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-03",
-    "name": "shadcn/ui base blocks block sidebar 03",
-    "description": "8 published shadcn/ui base blocks block sidebar 03 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 03 (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-03",
     "examples": [
@@ -12894,8 +12894,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-04",
-    "name": "shadcn/ui base blocks block sidebar 04",
-    "description": "8 published shadcn/ui base blocks block sidebar 04 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 04 (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-04",
     "examples": [
@@ -12944,8 +12944,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-05",
-    "name": "shadcn/ui base blocks block sidebar 05",
-    "description": "8 published shadcn/ui base blocks block sidebar 05 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 05 (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-05",
     "examples": [
@@ -12994,8 +12994,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-06",
-    "name": "shadcn/ui base blocks block sidebar 06",
-    "description": "8 published shadcn/ui base blocks block sidebar 06 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 06 (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-06",
     "examples": [
@@ -13044,8 +13044,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-07",
-    "name": "shadcn/ui base blocks block sidebar 07",
-    "description": "8 published shadcn/ui base blocks block sidebar 07 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 07 (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-07",
     "examples": [
@@ -13094,8 +13094,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-08",
-    "name": "shadcn/ui base blocks block sidebar 08",
-    "description": "8 published shadcn/ui base blocks block sidebar 08 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 08 (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-08",
     "examples": [
@@ -13144,8 +13144,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-09",
-    "name": "shadcn/ui base blocks block sidebar 09",
-    "description": "8 published shadcn/ui base blocks block sidebar 09 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 09 (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-09",
     "examples": [
@@ -13194,8 +13194,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-10",
-    "name": "shadcn/ui base blocks block sidebar 10",
-    "description": "8 published shadcn/ui base blocks block sidebar 10 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 10 (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-10",
     "examples": [
@@ -13244,8 +13244,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-11",
-    "name": "shadcn/ui base blocks block sidebar 11",
-    "description": "8 published shadcn/ui base blocks block sidebar 11 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 11 (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-11",
     "examples": [
@@ -13294,8 +13294,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-12",
-    "name": "shadcn/ui base blocks block sidebar 12",
-    "description": "8 published shadcn/ui base blocks block sidebar 12 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 12 (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-12",
     "examples": [
@@ -13344,8 +13344,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-13",
-    "name": "shadcn/ui base blocks block sidebar 13",
-    "description": "8 published shadcn/ui base blocks block sidebar 13 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 13 (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-13",
     "examples": [
@@ -13394,8 +13394,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-14",
-    "name": "shadcn/ui base blocks block sidebar 14",
-    "description": "8 published shadcn/ui base blocks block sidebar 14 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 14 (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-14",
     "examples": [
@@ -13444,8 +13444,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-15",
-    "name": "shadcn/ui base blocks block sidebar 15",
-    "description": "8 published shadcn/ui base blocks block sidebar 15 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 15 (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-15",
     "examples": [
@@ -13494,8 +13494,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-sidebar-16",
-    "name": "shadcn/ui base blocks block sidebar 16",
-    "description": "8 published shadcn/ui base blocks block sidebar 16 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 16 (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-sidebar-16",
     "examples": [
@@ -13544,8 +13544,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-signup-01",
-    "name": "shadcn/ui base blocks block signup 01",
-    "description": "8 published shadcn/ui base blocks block signup 01 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 01 (Base UI)",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-signup-01",
     "examples": [
@@ -13594,8 +13594,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-signup-02",
-    "name": "shadcn/ui base blocks block signup 02",
-    "description": "8 published shadcn/ui base blocks block signup 02 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 02 (Base UI)",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-signup-02",
     "examples": [
@@ -13644,8 +13644,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-signup-03",
-    "name": "shadcn/ui base blocks block signup 03",
-    "description": "8 published shadcn/ui base blocks block signup 03 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 03 (Base UI)",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-signup-03",
     "examples": [
@@ -13694,8 +13694,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-signup-04",
-    "name": "shadcn/ui base blocks block signup 04",
-    "description": "8 published shadcn/ui base blocks block signup 04 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 04 (Base UI)",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-signup-04",
     "examples": [
@@ -13744,8 +13744,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-blocks-block-signup-05",
-    "name": "shadcn/ui base blocks block signup 05",
-    "description": "8 published shadcn/ui base blocks block signup 05 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 05 (Base UI)",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-blocks-block-signup-05",
     "examples": [
@@ -13794,8 +13794,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-accordion",
-    "name": "shadcn/ui base accordion",
-    "description": "8 published shadcn/ui base accordion examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Accordion (Base UI)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-accordion",
     "examples": [
@@ -13844,8 +13844,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-alert-dialog",
-    "name": "shadcn/ui base alert dialog",
-    "description": "8 published shadcn/ui base alert dialog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Alert Dialog (Base UI)",
+    "description": "Ask for confirmation before completing an important action.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-alert-dialog",
     "examples": [
@@ -13894,8 +13894,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-alert",
-    "name": "shadcn/ui base alert",
-    "description": "8 published shadcn/ui base alert examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Alert (Base UI)",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-alert",
     "examples": [
@@ -13944,8 +13944,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-aspect-ratio",
-    "name": "shadcn/ui base aspect ratio",
-    "description": "8 published shadcn/ui base aspect ratio examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Aspect Ratio (Base UI)",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-aspect-ratio",
     "examples": [
@@ -13994,8 +13994,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-attachment",
-    "name": "shadcn/ui base attachment",
-    "description": "8 published shadcn/ui base attachment examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Attachment (Base UI)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-attachment",
     "examples": [
@@ -14044,8 +14044,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-avatar",
-    "name": "shadcn/ui base avatar",
-    "description": "8 published shadcn/ui base avatar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Avatar (Base UI)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-avatar",
     "examples": [
@@ -14094,8 +14094,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-badge",
-    "name": "shadcn/ui base badge",
-    "description": "8 published shadcn/ui base badge examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Badge (Base UI)",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-badge",
     "examples": [
@@ -14144,8 +14144,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-breadcrumb",
-    "name": "shadcn/ui base breadcrumb",
-    "description": "8 published shadcn/ui base breadcrumb examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Breadcrumb (Base UI)",
+    "description": "Show the current location within a hierarchy of pages.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-breadcrumb",
     "examples": [
@@ -14194,8 +14194,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-bubble",
-    "name": "shadcn/ui base bubble",
-    "description": "8 published shadcn/ui base bubble examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Bubble (Base UI)",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-bubble",
     "examples": [
@@ -14244,8 +14244,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-button",
-    "name": "shadcn/ui base button",
-    "description": "8 published shadcn/ui base button examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Button (Base UI)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-button",
     "examples": [
@@ -14294,8 +14294,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-button-group",
-    "name": "shadcn/ui base button group",
-    "description": "8 published shadcn/ui base button group examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Button Group (Base UI)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-button-group",
     "examples": [
@@ -14344,8 +14344,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-calendar",
-    "name": "shadcn/ui base calendar",
-    "description": "8 published shadcn/ui base calendar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Calendar (Base UI)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-calendar",
     "examples": [
@@ -14394,8 +14394,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-card",
-    "name": "shadcn/ui base card",
-    "description": "8 published shadcn/ui base card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Card (Base UI)",
+    "description": "Group related content and actions in a distinct container.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-card",
     "examples": [
@@ -14444,8 +14444,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-carousel",
-    "name": "shadcn/ui base carousel",
-    "description": "8 published shadcn/ui base carousel examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Carousel (Base UI)",
+    "description": "Move through a sequence of content items.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-carousel",
     "examples": [
@@ -14494,8 +14494,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-chart",
-    "name": "shadcn/ui base chart",
-    "description": "8 published shadcn/ui base chart examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Chart (Base UI)",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-chart",
     "examples": [
@@ -14544,8 +14544,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-checkbox",
-    "name": "shadcn/ui base checkbox",
-    "description": "8 published shadcn/ui base checkbox examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Checkbox (Base UI)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-checkbox",
     "examples": [
@@ -14594,8 +14594,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-collapsible",
-    "name": "shadcn/ui base collapsible",
-    "description": "8 published shadcn/ui base collapsible examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Collapsible (Base UI)",
+    "description": "Reveal or hide a section of supporting content.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-collapsible",
     "examples": [
@@ -14644,8 +14644,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-combobox",
-    "name": "shadcn/ui base combobox",
-    "description": "8 published shadcn/ui base combobox examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Combobox (Base UI)",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-combobox",
     "examples": [
@@ -14694,8 +14694,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-command",
-    "name": "shadcn/ui base command",
-    "description": "8 published shadcn/ui base command examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Command (Base UI)",
+    "description": "Find commands and actions in a searchable command menu.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-command",
     "examples": [
@@ -14744,8 +14744,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-component-example",
-    "name": "shadcn/ui base component example",
-    "description": "8 published shadcn/ui base component example examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Component Example (Base UI)",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-component-example",
     "examples": [
@@ -14794,8 +14794,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-context-menu",
-    "name": "shadcn/ui base context menu",
-    "description": "8 published shadcn/ui base context menu examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Context Menu (Base UI)",
+    "description": "Show actions associated with the selected item or context.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-context-menu",
     "examples": [
@@ -14844,8 +14844,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-demo",
-    "name": "shadcn/ui base demo",
-    "description": "8 published shadcn/ui base demo examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Demo (Base UI)",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-demo",
     "examples": [
@@ -14894,8 +14894,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-dialog",
-    "name": "shadcn/ui base dialog",
-    "description": "8 published shadcn/ui base dialog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Dialog (Base UI)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-dialog",
     "examples": [
@@ -14944,8 +14944,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-drawer",
-    "name": "shadcn/ui base drawer",
-    "description": "8 published shadcn/ui base drawer examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Drawer (Base UI)",
+    "description": "Open a panel alongside the current page for details or additional controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-drawer",
     "examples": [
@@ -14994,8 +14994,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-dropdown-menu",
-    "name": "shadcn/ui base dropdown menu",
-    "description": "8 published shadcn/ui base dropdown menu examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Dropdown Menu (Base UI)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-dropdown-menu",
     "examples": [
@@ -15044,8 +15044,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-empty",
-    "name": "shadcn/ui base empty",
-    "description": "8 published shadcn/ui base empty examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Empty (Base UI)",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-empty",
     "examples": [
@@ -15094,8 +15094,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-field",
-    "name": "shadcn/ui base field",
-    "description": "8 published shadcn/ui base field examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Field (Base UI)",
+    "description": "Collect related values through a group of form controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-field",
     "examples": [
@@ -15144,8 +15144,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-hover-card",
-    "name": "shadcn/ui base hover card",
-    "description": "8 published shadcn/ui base hover card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Hover Card (Base UI)",
+    "description": "Preview supporting content alongside a trigger.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-hover-card",
     "examples": [
@@ -15194,8 +15194,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-input",
-    "name": "shadcn/ui base input",
-    "description": "8 published shadcn/ui base input examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Input (Base UI)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-input",
     "examples": [
@@ -15244,8 +15244,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-input-group",
-    "name": "shadcn/ui base input group",
-    "description": "8 published shadcn/ui base input group examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Input Group (Base UI)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-input-group",
     "examples": [
@@ -15294,8 +15294,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-input-otp",
-    "name": "shadcn/ui base input otp",
-    "description": "8 published shadcn/ui base input otp examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Input OTP (Base UI)",
+    "description": "Enter a short verification code across a group of input slots.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-input-otp",
     "examples": [
@@ -15344,8 +15344,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-item",
-    "name": "shadcn/ui base item",
-    "description": "8 published shadcn/ui base item examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Item (Base UI)",
+    "description": "Present a collection of related items.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-item",
     "examples": [
@@ -15394,8 +15394,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-kbd",
-    "name": "shadcn/ui base kbd",
-    "description": "8 published shadcn/ui base kbd examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Kbd (Base UI)",
+    "description": "Display a key or keyboard shortcut hint.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-kbd",
     "examples": [
@@ -15444,8 +15444,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-label",
-    "name": "shadcn/ui base label",
-    "description": "8 published shadcn/ui base label examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Label (Base UI)",
+    "description": "Identify a control or describe the value it accepts.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-label",
     "examples": [
@@ -15494,8 +15494,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-marker",
-    "name": "shadcn/ui base marker",
-    "description": "8 published shadcn/ui base marker examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Marker (Base UI)",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-marker",
     "examples": [
@@ -15544,8 +15544,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-menubar",
-    "name": "shadcn/ui base menubar",
-    "description": "8 published shadcn/ui base menubar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Menubar (Base UI)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-menubar",
     "examples": [
@@ -15594,8 +15594,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-message",
-    "name": "shadcn/ui base message",
-    "description": "8 published shadcn/ui base message examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Message (Base UI)",
+    "description": "Display a transient notification about an event or action.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-message",
     "examples": [
@@ -15644,8 +15644,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-message-scroller",
-    "name": "shadcn/ui base message scroller",
-    "description": "8 published shadcn/ui base message scroller examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Message Scroller (Base UI)",
+    "description": "Present a conversation with messages and related controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-message-scroller",
     "examples": [
@@ -15694,8 +15694,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-native-select",
-    "name": "shadcn/ui base native select",
-    "description": "8 published shadcn/ui base native select examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Native Select (Base UI)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-native-select",
     "examples": [
@@ -15744,8 +15744,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-navigation-menu",
-    "name": "shadcn/ui base navigation menu",
-    "description": "8 published shadcn/ui base navigation menu examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Navigation Menu (Base UI)",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-navigation-menu",
     "examples": [
@@ -15794,8 +15794,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-pagination",
-    "name": "shadcn/ui base pagination",
-    "description": "8 published shadcn/ui base pagination examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Pagination (Base UI)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-pagination",
     "examples": [
@@ -15844,8 +15844,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-popover",
-    "name": "shadcn/ui base popover",
-    "description": "8 published shadcn/ui base popover examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Popover (Base UI)",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-popover",
     "examples": [
@@ -15894,8 +15894,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-progress",
-    "name": "shadcn/ui base progress",
-    "description": "8 published shadcn/ui base progress examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Progress (Base UI)",
+    "description": "Show how far a task has progressed.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-progress",
     "examples": [
@@ -15944,8 +15944,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-questionnaire-example",
-    "name": "shadcn/ui base questionnaire example",
-    "description": "8 published shadcn/ui base questionnaire example examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Questionnaire Example (Base UI)",
+    "description": "Collect related values through a group of form controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-questionnaire-example",
     "examples": [
@@ -15994,8 +15994,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-radio-group",
-    "name": "shadcn/ui base radio group",
-    "description": "8 published shadcn/ui base radio group examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Radio Group (Base UI)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-radio-group",
     "examples": [
@@ -16044,8 +16044,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-resizable",
-    "name": "shadcn/ui base resizable",
-    "description": "8 published shadcn/ui base resizable examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Resizable (Base UI)",
+    "description": "Let users adjust the space assigned to adjacent panels.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-resizable",
     "examples": [
@@ -16094,8 +16094,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-scroll-area",
-    "name": "shadcn/ui base scroll area",
-    "description": "8 published shadcn/ui base scroll area examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Scroll Area (Base UI)",
+    "description": "Present content within a scrollable region.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-scroll-area",
     "examples": [
@@ -16144,8 +16144,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-select",
-    "name": "shadcn/ui base select",
-    "description": "8 published shadcn/ui base select examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Select (Base UI)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-select",
     "examples": [
@@ -16194,8 +16194,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-separator",
-    "name": "shadcn/ui base separator",
-    "description": "8 published shadcn/ui base separator examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Separator (Base UI)",
+    "description": "Visually separate related areas of an interface.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-separator",
     "examples": [
@@ -16244,8 +16244,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-sheet",
-    "name": "shadcn/ui base sheet",
-    "description": "8 published shadcn/ui base sheet examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sheet (Base UI)",
+    "description": "Open a panel alongside the current page for details or additional controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-sheet",
     "examples": [
@@ -16294,8 +16294,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-sidebar",
-    "name": "shadcn/ui base sidebar",
-    "description": "32 published shadcn/ui base sidebar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar (Base UI)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-sidebar",
     "examples": [
@@ -16464,8 +16464,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-skeleton",
-    "name": "shadcn/ui base skeleton",
-    "description": "8 published shadcn/ui base skeleton examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Skeleton (Base UI)",
+    "description": "Reserve the shape of content while it is loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-skeleton",
     "examples": [
@@ -16514,8 +16514,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-slider",
-    "name": "shadcn/ui base slider",
-    "description": "8 published shadcn/ui base slider examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Slider (Base UI)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-slider",
     "examples": [
@@ -16564,8 +16564,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-sonner",
-    "name": "shadcn/ui base sonner",
-    "description": "8 published shadcn/ui base sonner examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sonner (Base UI)",
+    "description": "Display a transient notification about an event or action.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-sonner",
     "examples": [
@@ -16614,8 +16614,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-spinner",
-    "name": "shadcn/ui base spinner",
-    "description": "8 published shadcn/ui base spinner examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Spinner (Base UI)",
+    "description": "Indicate that content or a task is still loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-spinner",
     "examples": [
@@ -16664,8 +16664,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-switch",
-    "name": "shadcn/ui base switch",
-    "description": "8 published shadcn/ui base switch examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Switch (Base UI)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-switch",
     "examples": [
@@ -16714,8 +16714,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-table",
-    "name": "shadcn/ui base table",
-    "description": "8 published shadcn/ui base table examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Table (Base UI)",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-table",
     "examples": [
@@ -16764,8 +16764,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-tabs",
-    "name": "shadcn/ui base tabs",
-    "description": "8 published shadcn/ui base tabs examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Tabs (Base UI)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-tabs",
     "examples": [
@@ -16814,8 +16814,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-textarea",
-    "name": "shadcn/ui base textarea",
-    "description": "8 published shadcn/ui base textarea examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Textarea (Base UI)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-textarea",
     "examples": [
@@ -16864,8 +16864,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-toast-example",
-    "name": "shadcn/ui base toast example",
-    "description": "8 published shadcn/ui base toast example examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Toast Example (Base UI)",
+    "description": "Display a transient notification about an event or action.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-toast-example",
     "examples": [
@@ -16914,8 +16914,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-toggle",
-    "name": "shadcn/ui base toggle",
-    "description": "8 published shadcn/ui base toggle examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Toggle (Base UI)",
+    "description": "Change the selected state of an option or control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-toggle",
     "examples": [
@@ -16964,8 +16964,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-toggle-group",
-    "name": "shadcn/ui base toggle group",
-    "description": "8 published shadcn/ui base toggle group examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Toggle Group (Base UI)",
+    "description": "Change the selected state of an option or control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-toggle-group",
     "examples": [
@@ -17014,8 +17014,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-base-tooltip",
-    "name": "shadcn/ui base tooltip",
-    "description": "8 published shadcn/ui base tooltip examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Tooltip (Base UI)",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-base-tooltip",
     "examples": [
@@ -17064,8 +17064,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-dashboard-01",
-    "name": "shadcn/ui radix blocks block dashboard 01",
-    "description": "8 published shadcn/ui radix blocks block dashboard 01 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Dashboard 01 (Radix)",
+    "description": "Combine application navigation with information and controls in a dashboard layout.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-dashboard-01",
     "examples": [
@@ -17114,8 +17114,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-login-01",
-    "name": "shadcn/ui radix blocks block login 01",
-    "description": "8 published shadcn/ui radix blocks block login 01 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 01 (Radix)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-login-01",
     "examples": [
@@ -17164,8 +17164,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-login-02",
-    "name": "shadcn/ui radix blocks block login 02",
-    "description": "8 published shadcn/ui radix blocks block login 02 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 02 (Radix)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-login-02",
     "examples": [
@@ -17214,8 +17214,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-login-03",
-    "name": "shadcn/ui radix blocks block login 03",
-    "description": "8 published shadcn/ui radix blocks block login 03 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 03 (Radix)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-login-03",
     "examples": [
@@ -17264,8 +17264,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-login-04",
-    "name": "shadcn/ui radix blocks block login 04",
-    "description": "8 published shadcn/ui radix blocks block login 04 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 04 (Radix)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-login-04",
     "examples": [
@@ -17314,8 +17314,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-login-05",
-    "name": "shadcn/ui radix blocks block login 05",
-    "description": "8 published shadcn/ui radix blocks block login 05 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 05 (Radix)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-login-05",
     "examples": [
@@ -17364,8 +17364,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-account-access",
-    "name": "shadcn/ui radix blocks block account access",
-    "description": "8 published shadcn/ui radix blocks block account access examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Account Access (Radix)",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-account-access",
     "examples": [
@@ -17414,8 +17414,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-album-card",
-    "name": "shadcn/ui radix blocks block album card",
-    "description": "8 published shadcn/ui radix blocks block album card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Album Card (Radix)",
+    "description": "Compose a album card interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-album-card",
     "examples": [
@@ -17464,8 +17464,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-card-overview",
-    "name": "shadcn/ui radix blocks block card overview",
-    "description": "8 published shadcn/ui radix blocks block card overview examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Card Overview (Radix)",
+    "description": "Compose a card overview interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-card-overview",
     "examples": [
@@ -17514,8 +17514,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-catalog-toolbar",
-    "name": "shadcn/ui radix blocks block catalog toolbar",
-    "description": "8 published shadcn/ui radix blocks block catalog toolbar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Catalog Toolbar (Radix)",
+    "description": "Compose a catalog toolbar interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-catalog-toolbar",
     "examples": [
@@ -17564,8 +17564,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-claimable-balance",
-    "name": "shadcn/ui radix blocks block claimable balance",
-    "description": "8 published shadcn/ui radix blocks block claimable balance examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Claimable Balance (Radix)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-claimable-balance",
     "examples": [
@@ -17614,8 +17614,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-contribution-history",
-    "name": "shadcn/ui radix blocks block contribution history",
-    "description": "8 published shadcn/ui radix blocks block contribution history examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Contribution History (Radix)",
+    "description": "Compose a contribution history interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-contribution-history",
     "examples": [
@@ -17664,8 +17664,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-cover-art",
-    "name": "shadcn/ui radix blocks block cover art",
-    "description": "8 published shadcn/ui radix blocks block cover art examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Cover Art (Radix)",
+    "description": "Compose a cover art interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-cover-art",
     "examples": [
@@ -17714,8 +17714,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-dividend-income",
-    "name": "shadcn/ui radix blocks block dividend income",
-    "description": "8 published shadcn/ui radix blocks block dividend income examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Dividend Income (Radix)",
+    "description": "Compose a dividend income interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-dividend-income",
     "examples": [
@@ -17764,8 +17764,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-empty-connect-bank",
-    "name": "shadcn/ui radix blocks block empty connect bank",
-    "description": "8 published shadcn/ui radix blocks block empty connect bank examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Empty Connect Bank (Radix)",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-empty-connect-bank",
     "examples": [
@@ -17814,8 +17814,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-empty-distribute-track",
-    "name": "shadcn/ui radix blocks block empty distribute track",
-    "description": "8 published shadcn/ui radix blocks block empty distribute track examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Empty Distribute Track (Radix)",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-empty-distribute-track",
     "examples": [
@@ -17864,8 +17864,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-empty-explore-catalog",
-    "name": "shadcn/ui radix blocks block empty explore catalog",
-    "description": "8 published shadcn/ui radix blocks block empty explore catalog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Empty Explore Catalog (Radix)",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-empty-explore-catalog",
     "examples": [
@@ -17914,8 +17914,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-faq",
-    "name": "shadcn/ui radix blocks block faq",
-    "description": "8 published shadcn/ui radix blocks block faq examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui FAQ (Radix)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-faq",
     "examples": [
@@ -17964,8 +17964,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-front-door",
-    "name": "shadcn/ui radix blocks block front door",
-    "description": "8 published shadcn/ui radix blocks block front door examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Front Door (Radix)",
+    "description": "Compose a front door interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-front-door",
     "examples": [
@@ -18014,8 +18014,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-index-investing",
-    "name": "shadcn/ui radix blocks block index investing",
-    "description": "8 published shadcn/ui radix blocks block index investing examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Index Investing (Radix)",
+    "description": "Compose a index investing interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-index-investing",
     "examples": [
@@ -18064,8 +18064,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-kitchen-island",
-    "name": "shadcn/ui radix blocks block kitchen island",
-    "description": "8 published shadcn/ui radix blocks block kitchen island examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Kitchen Island (Radix)",
+    "description": "Compose a kitchen island interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-kitchen-island",
     "examples": [
@@ -18114,8 +18114,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-loading-card",
-    "name": "shadcn/ui radix blocks block loading card",
-    "description": "8 published shadcn/ui radix blocks block loading card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Loading Card (Radix)",
+    "description": "Indicate that content or a task is still loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-loading-card",
     "examples": [
@@ -18164,8 +18164,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-new-milestone",
-    "name": "shadcn/ui radix blocks block new milestone",
-    "description": "8 published shadcn/ui radix blocks block new milestone examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui New Milestone (Radix)",
+    "description": "Compose a new milestone interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-new-milestone",
     "examples": [
@@ -18214,8 +18214,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-notification-settings",
-    "name": "shadcn/ui radix blocks block notification settings",
-    "description": "8 published shadcn/ui radix blocks block notification settings examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Notification Settings (Radix)",
+    "description": "Group controls for configuring account or application preferences.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-notification-settings",
     "examples": [
@@ -18264,8 +18264,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-payments",
-    "name": "shadcn/ui radix blocks block payments",
-    "description": "8 published shadcn/ui radix blocks block payments examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Payments (Radix)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-payments",
     "examples": [
@@ -18314,8 +18314,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-payout-threshold",
-    "name": "shadcn/ui radix blocks block payout threshold",
-    "description": "8 published shadcn/ui radix blocks block payout threshold examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Payout Threshold (Radix)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-payout-threshold",
     "examples": [
@@ -18364,8 +18364,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-power-usage",
-    "name": "shadcn/ui radix blocks block power usage",
-    "description": "8 published shadcn/ui radix blocks block power usage examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Power Usage (Radix)",
+    "description": "Compose a power usage interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-power-usage",
     "examples": [
@@ -18414,8 +18414,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-preferences",
-    "name": "shadcn/ui radix blocks block preferences",
-    "description": "8 published shadcn/ui radix blocks block preferences examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Preferences (Radix)",
+    "description": "Group controls for configuring account or application preferences.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-preferences",
     "examples": [
@@ -18464,8 +18464,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-qr-connect",
-    "name": "shadcn/ui radix blocks block qr connect",
-    "description": "8 published shadcn/ui radix blocks block qr connect examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui QR Connect (Radix)",
+    "description": "Display a value in a scannable QR code.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-qr-connect",
     "examples": [
@@ -18514,8 +18514,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-receiving-method",
-    "name": "shadcn/ui radix blocks block receiving method",
-    "description": "8 published shadcn/ui radix blocks block receiving method examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Receiving Method (Radix)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-receiving-method",
     "examples": [
@@ -18564,8 +18564,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-recent-transactions",
-    "name": "shadcn/ui radix blocks block recent transactions",
-    "description": "8 published shadcn/ui radix blocks block recent transactions examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Recent Transactions (Radix)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-recent-transactions",
     "examples": [
@@ -18614,8 +18614,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-release-catalog",
-    "name": "shadcn/ui radix blocks block release catalog",
-    "description": "8 published shadcn/ui radix blocks block release catalog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Release Catalog (Radix)",
+    "description": "Compose a release catalog interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-release-catalog",
     "examples": [
@@ -18664,8 +18664,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-roller-shades",
-    "name": "shadcn/ui radix blocks block roller shades",
-    "description": "8 published shadcn/ui radix blocks block roller shades examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Roller Shades (Radix)",
+    "description": "Compose a roller shades interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-roller-shades",
     "examples": [
@@ -18714,8 +18714,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-savings-progress",
-    "name": "shadcn/ui radix blocks block savings progress",
-    "description": "8 published shadcn/ui radix blocks block savings progress examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Savings Progress (Radix)",
+    "description": "Compose a savings progress interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-savings-progress",
     "examples": [
@@ -18764,8 +18764,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-savings-targets",
-    "name": "shadcn/ui radix blocks block savings targets",
-    "description": "8 published shadcn/ui radix blocks block savings targets examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Savings Targets (Radix)",
+    "description": "Compose a savings targets interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-savings-targets",
     "examples": [
@@ -18814,8 +18814,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-nav",
-    "name": "shadcn/ui radix blocks block sidebar nav",
-    "description": "8 published shadcn/ui radix blocks block sidebar nav examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar Nav (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-nav",
     "examples": [
@@ -18864,8 +18864,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-social-links",
-    "name": "shadcn/ui radix blocks block social links",
-    "description": "8 published shadcn/ui radix blocks block social links examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Social Links (Radix)",
+    "description": "Compose a social links interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-social-links",
     "examples": [
@@ -18914,8 +18914,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-stock-performance",
-    "name": "shadcn/ui radix blocks block stock performance",
-    "description": "8 published shadcn/ui radix blocks block stock performance examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Stock Performance (Radix)",
+    "description": "Compose a stock performance interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-stock-performance",
     "examples": [
@@ -18964,8 +18964,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-syncing-state",
-    "name": "shadcn/ui radix blocks block syncing state",
-    "description": "8 published shadcn/ui radix blocks block syncing state examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Syncing State (Radix)",
+    "description": "Indicate that content or a task is still loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-syncing-state",
     "examples": [
@@ -19014,8 +19014,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-transfer-funds",
-    "name": "shadcn/ui radix blocks block transfer funds",
-    "description": "8 published shadcn/ui radix blocks block transfer funds examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Transfer Funds (Radix)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-transfer-funds",
     "examples": [
@@ -19064,8 +19064,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-upcoming-payments",
-    "name": "shadcn/ui radix blocks block upcoming payments",
-    "description": "8 published shadcn/ui radix blocks block upcoming payments examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Upcoming Payments (Radix)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-upcoming-payments",
     "examples": [
@@ -19114,8 +19114,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-preview-02",
-    "name": "shadcn/ui radix blocks block preview 02",
-    "description": "8 published shadcn/ui radix blocks block preview 02 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Preview 02 (Radix)",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-preview-02",
     "examples": [
@@ -19164,8 +19164,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-files-chat",
-    "name": "shadcn/ui radix blocks block files chat",
-    "description": "8 published shadcn/ui radix blocks block files chat examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Files Chat (Radix)",
+    "description": "Present a conversation with messages and related controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-files-chat",
     "examples": [
@@ -19214,8 +19214,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-group-chat",
-    "name": "shadcn/ui radix blocks block group chat",
-    "description": "8 published shadcn/ui radix blocks block group chat examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Group Chat (Radix)",
+    "description": "Present a conversation with messages and related controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-group-chat",
     "examples": [
@@ -19264,8 +19264,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-reasoning-chat",
-    "name": "shadcn/ui radix blocks block reasoning chat",
-    "description": "8 published shadcn/ui radix blocks block reasoning chat examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Reasoning Chat (Radix)",
+    "description": "Present a conversation with messages and related controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-reasoning-chat",
     "examples": [
@@ -19314,8 +19314,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-simple-chat",
-    "name": "shadcn/ui radix blocks block simple chat",
-    "description": "8 published shadcn/ui radix blocks block simple chat examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Simple Chat (Radix)",
+    "description": "Present a conversation with messages and related controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-simple-chat",
     "examples": [
@@ -19364,8 +19364,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sources-chat",
-    "name": "shadcn/ui radix blocks block sources chat",
-    "description": "8 published shadcn/ui radix blocks block sources chat examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sources Chat (Radix)",
+    "description": "Present a conversation with messages and related controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sources-chat",
     "examples": [
@@ -19414,8 +19414,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-tool-chat",
-    "name": "shadcn/ui radix blocks block tool chat",
-    "description": "8 published shadcn/ui radix blocks block tool chat examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Tool Chat (Radix)",
+    "description": "Present a conversation with messages and related controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-tool-chat",
     "examples": [
@@ -19464,8 +19464,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-preview-03",
-    "name": "shadcn/ui radix blocks block preview 03",
-    "description": "8 published shadcn/ui radix blocks block preview 03 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Preview 03 (Radix)",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-preview-03",
     "examples": [
@@ -19514,8 +19514,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-activate-agent-dialog",
-    "name": "shadcn/ui radix blocks block activate agent dialog",
-    "description": "8 published shadcn/ui radix blocks block activate agent dialog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Activate Agent Dialog (Radix)",
+    "description": "Ask for confirmation before completing an important action.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-activate-agent-dialog",
     "examples": [
@@ -19564,8 +19564,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-analytics-card",
-    "name": "shadcn/ui radix blocks block analytics card",
-    "description": "8 published shadcn/ui radix blocks block analytics card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Analytics Card (Radix)",
+    "description": "Compose a analytics card interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-analytics-card",
     "examples": [
@@ -19614,8 +19614,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-anomaly-alert",
-    "name": "shadcn/ui radix blocks block anomaly alert",
-    "description": "8 published shadcn/ui radix blocks block anomaly alert examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Anomaly Alert (Radix)",
+    "description": "Compose a anomaly alert interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-anomaly-alert",
     "examples": [
@@ -19664,8 +19664,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-assign-issue",
-    "name": "shadcn/ui radix blocks block assign issue",
-    "description": "8 published shadcn/ui radix blocks block assign issue examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Assign Issue (Radix)",
+    "description": "Compose a assign issue interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-assign-issue",
     "examples": [
@@ -19714,8 +19714,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-bar-chart-card",
-    "name": "shadcn/ui radix blocks block bar chart card",
-    "description": "8 published shadcn/ui radix blocks block bar chart card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Bar Chart Card (Radix)",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-bar-chart-card",
     "examples": [
@@ -19764,8 +19764,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-bar-visualizer",
-    "name": "shadcn/ui radix blocks block bar visualizer",
-    "description": "8 published shadcn/ui radix blocks block bar visualizer examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Bar Visualizer (Radix)",
+    "description": "Compose a bar visualizer interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-bar-visualizer",
     "examples": [
@@ -19814,8 +19814,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-book-appointment",
-    "name": "shadcn/ui radix blocks block book appointment",
-    "description": "8 published shadcn/ui radix blocks block book appointment examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Book Appointment (Radix)",
+    "description": "Present controls for arranging an appointment.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-book-appointment",
     "examples": [
@@ -19864,8 +19864,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-codespaces-card",
-    "name": "shadcn/ui radix blocks block codespaces card",
-    "description": "8 published shadcn/ui radix blocks block codespaces card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Codespaces Card (Radix)",
+    "description": "Compose a codespaces card interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-codespaces-card",
     "examples": [
@@ -19914,8 +19914,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-contributions-activity",
-    "name": "shadcn/ui radix blocks block contributions activity",
-    "description": "8 published shadcn/ui radix blocks block contributions activity examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Contributions Activity (Radix)",
+    "description": "Compose a contributions activity interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-contributions-activity",
     "examples": [
@@ -19964,8 +19964,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-contributors",
-    "name": "shadcn/ui radix blocks block contributors",
-    "description": "8 published shadcn/ui radix blocks block contributors examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Contributors (Radix)",
+    "description": "Compose a contributors interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-contributors",
     "examples": [
@@ -20014,8 +20014,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-environment-variables",
-    "name": "shadcn/ui radix blocks block environment variables",
-    "description": "8 published shadcn/ui radix blocks block environment variables examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Environment Variables (Radix)",
+    "description": "Compose a environment variables interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-environment-variables",
     "examples": [
@@ -20064,8 +20064,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-feedback-form",
-    "name": "shadcn/ui radix blocks block feedback form",
-    "description": "8 published shadcn/ui radix blocks block feedback form examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Feedback Form (Radix)",
+    "description": "Collect feedback or a problem report from a user.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-feedback-form",
     "examples": [
@@ -20114,8 +20114,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-file-upload",
-    "name": "shadcn/ui radix blocks block file upload",
-    "description": "8 published shadcn/ui radix blocks block file upload examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui File Upload (Radix)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-file-upload",
     "examples": [
@@ -20164,8 +20164,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-github-profile",
-    "name": "shadcn/ui radix blocks block github profile",
-    "description": "8 published shadcn/ui radix blocks block github profile examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Github Profile (Radix)",
+    "description": "Compose a github profile interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-github-profile",
     "examples": [
@@ -20214,8 +20214,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-icon-preview-grid",
-    "name": "shadcn/ui radix blocks block icon preview grid",
-    "description": "8 published shadcn/ui radix blocks block icon preview grid examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Icon Preview Grid (Radix)",
+    "description": "Compose a icon preview grid interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-icon-preview-grid",
     "examples": [
@@ -20264,8 +20264,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-invite-team",
-    "name": "shadcn/ui radix blocks block invite team",
-    "description": "8 published shadcn/ui radix blocks block invite team examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Invite Team (Radix)",
+    "description": "Compose a invite team interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-invite-team",
     "examples": [
@@ -20314,8 +20314,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-invoice",
-    "name": "shadcn/ui radix blocks block invoice",
-    "description": "8 published shadcn/ui radix blocks block invoice examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Invoice (Radix)",
+    "description": "Present payment details, balances, or related payment controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-invoice",
     "examples": [
@@ -20364,8 +20364,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-live-waveform",
-    "name": "shadcn/ui radix blocks block live waveform",
-    "description": "8 published shadcn/ui radix blocks block live waveform examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Live Waveform (Radix)",
+    "description": "Compose a live waveform interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-live-waveform",
     "examples": [
@@ -20414,8 +20414,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-no-team-members",
-    "name": "shadcn/ui radix blocks block no team members",
-    "description": "8 published shadcn/ui radix blocks block no team members examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui No Team Members (Radix)",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-no-team-members",
     "examples": [
@@ -20464,8 +20464,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-not-found",
-    "name": "shadcn/ui radix blocks block not found",
-    "description": "8 published shadcn/ui radix blocks block not found examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Not Found (Radix)",
+    "description": "Explain that the requested page or resource could not be found.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-not-found",
     "examples": [
@@ -20514,8 +20514,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-observability-card",
-    "name": "shadcn/ui radix blocks block observability card",
-    "description": "8 published shadcn/ui radix blocks block observability card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Observability Card (Radix)",
+    "description": "Compose a observability card interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-observability-card",
     "examples": [
@@ -20564,8 +20564,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-pie-chart-card",
-    "name": "shadcn/ui radix blocks block pie chart card",
-    "description": "8 published shadcn/ui radix blocks block pie chart card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Pie Chart Card (Radix)",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-pie-chart-card",
     "examples": [
@@ -20614,8 +20614,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-report-bug",
-    "name": "shadcn/ui radix blocks block report bug",
-    "description": "8 published shadcn/ui radix blocks block report bug examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Report Bug (Radix)",
+    "description": "Collect feedback or a problem report from a user.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-report-bug",
     "examples": [
@@ -20664,8 +20664,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-shipping-address",
-    "name": "shadcn/ui radix blocks block shipping address",
-    "description": "8 published shadcn/ui radix blocks block shipping address examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Shipping Address (Radix)",
+    "description": "Collect delivery address details in a form.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-shipping-address",
     "examples": [
@@ -20714,8 +20714,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-shortcuts",
-    "name": "shadcn/ui radix blocks block shortcuts",
-    "description": "8 published shadcn/ui radix blocks block shortcuts examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Shortcuts (Radix)",
+    "description": "Display a key or keyboard shortcut hint.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-shortcuts",
     "examples": [
@@ -20764,8 +20764,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-skeleton-loading",
-    "name": "shadcn/ui radix blocks block skeleton loading",
-    "description": "8 published shadcn/ui radix blocks block skeleton loading examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Skeleton Loading (Radix)",
+    "description": "Reserve the shape of content while it is loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-skeleton-loading",
     "examples": [
@@ -20814,8 +20814,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sleep-report",
-    "name": "shadcn/ui radix blocks block sleep report",
-    "description": "8 published shadcn/ui radix blocks block sleep report examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sleep Report (Radix)",
+    "description": "Compose a sleep report interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sleep-report",
     "examples": [
@@ -20864,8 +20864,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-style-overview",
-    "name": "shadcn/ui radix blocks block style overview",
-    "description": "8 published shadcn/ui radix blocks block style overview examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Style Overview (Radix)",
+    "description": "Compose a style overview interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-style-overview",
     "examples": [
@@ -20914,8 +20914,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-typography-specimen",
-    "name": "shadcn/ui radix blocks block typography specimen",
-    "description": "8 published shadcn/ui radix blocks block typography specimen examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography Specimen (Radix)",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-typography-specimen",
     "examples": [
@@ -20964,8 +20964,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-ui-elements",
-    "name": "shadcn/ui radix blocks block ui elements",
-    "description": "8 published shadcn/ui radix blocks block ui elements examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui UI Elements (Radix)",
+    "description": "Compose a ui elements interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-ui-elements",
     "examples": [
@@ -21014,8 +21014,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-usage-card",
-    "name": "shadcn/ui radix blocks block usage card",
-    "description": "8 published shadcn/ui radix blocks block usage card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Usage Card (Radix)",
+    "description": "Display a key metric or numeric summary.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-usage-card",
     "examples": [
@@ -21064,8 +21064,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-visitors",
-    "name": "shadcn/ui radix blocks block visitors",
-    "description": "8 published shadcn/ui radix blocks block visitors examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Visitors (Radix)",
+    "description": "Compose a visitors interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-visitors",
     "examples": [
@@ -21114,8 +21114,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-weekly-fitness-summary",
-    "name": "shadcn/ui radix blocks block weekly fitness summary",
-    "description": "8 published shadcn/ui radix blocks block weekly fitness summary examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Weekly Fitness Summary (Radix)",
+    "description": "Compose a weekly fitness summary interface from related information and controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-weekly-fitness-summary",
     "examples": [
@@ -21164,8 +21164,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-preview",
-    "name": "shadcn/ui radix blocks block preview",
-    "description": "8 published shadcn/ui radix blocks block preview examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Preview (Radix)",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-preview",
     "examples": [
@@ -21214,8 +21214,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-01",
-    "name": "shadcn/ui radix blocks block sidebar 01",
-    "description": "8 published shadcn/ui radix blocks block sidebar 01 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 01 (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-01",
     "examples": [
@@ -21264,8 +21264,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-02",
-    "name": "shadcn/ui radix blocks block sidebar 02",
-    "description": "8 published shadcn/ui radix blocks block sidebar 02 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 02 (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-02",
     "examples": [
@@ -21314,8 +21314,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-03",
-    "name": "shadcn/ui radix blocks block sidebar 03",
-    "description": "8 published shadcn/ui radix blocks block sidebar 03 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 03 (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-03",
     "examples": [
@@ -21364,8 +21364,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-04",
-    "name": "shadcn/ui radix blocks block sidebar 04",
-    "description": "8 published shadcn/ui radix blocks block sidebar 04 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 04 (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-04",
     "examples": [
@@ -21414,8 +21414,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-05",
-    "name": "shadcn/ui radix blocks block sidebar 05",
-    "description": "8 published shadcn/ui radix blocks block sidebar 05 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 05 (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-05",
     "examples": [
@@ -21464,8 +21464,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-06",
-    "name": "shadcn/ui radix blocks block sidebar 06",
-    "description": "8 published shadcn/ui radix blocks block sidebar 06 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 06 (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-06",
     "examples": [
@@ -21514,8 +21514,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-07",
-    "name": "shadcn/ui radix blocks block sidebar 07",
-    "description": "8 published shadcn/ui radix blocks block sidebar 07 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 07 (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-07",
     "examples": [
@@ -21564,8 +21564,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-08",
-    "name": "shadcn/ui radix blocks block sidebar 08",
-    "description": "8 published shadcn/ui radix blocks block sidebar 08 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 08 (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-08",
     "examples": [
@@ -21614,8 +21614,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-09",
-    "name": "shadcn/ui radix blocks block sidebar 09",
-    "description": "8 published shadcn/ui radix blocks block sidebar 09 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 09 (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-09",
     "examples": [
@@ -21664,8 +21664,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-10",
-    "name": "shadcn/ui radix blocks block sidebar 10",
-    "description": "8 published shadcn/ui radix blocks block sidebar 10 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 10 (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-10",
     "examples": [
@@ -21714,8 +21714,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-11",
-    "name": "shadcn/ui radix blocks block sidebar 11",
-    "description": "8 published shadcn/ui radix blocks block sidebar 11 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 11 (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-11",
     "examples": [
@@ -21764,8 +21764,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-12",
-    "name": "shadcn/ui radix blocks block sidebar 12",
-    "description": "8 published shadcn/ui radix blocks block sidebar 12 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 12 (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-12",
     "examples": [
@@ -21814,8 +21814,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-13",
-    "name": "shadcn/ui radix blocks block sidebar 13",
-    "description": "8 published shadcn/ui radix blocks block sidebar 13 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 13 (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-13",
     "examples": [
@@ -21864,8 +21864,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-14",
-    "name": "shadcn/ui radix blocks block sidebar 14",
-    "description": "8 published shadcn/ui radix blocks block sidebar 14 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 14 (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-14",
     "examples": [
@@ -21914,8 +21914,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-15",
-    "name": "shadcn/ui radix blocks block sidebar 15",
-    "description": "8 published shadcn/ui radix blocks block sidebar 15 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 15 (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-15",
     "examples": [
@@ -21964,8 +21964,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-sidebar-16",
-    "name": "shadcn/ui radix blocks block sidebar 16",
-    "description": "8 published shadcn/ui radix blocks block sidebar 16 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 16 (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-sidebar-16",
     "examples": [
@@ -22014,8 +22014,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-signup-01",
-    "name": "shadcn/ui radix blocks block signup 01",
-    "description": "8 published shadcn/ui radix blocks block signup 01 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 01 (Radix)",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-signup-01",
     "examples": [
@@ -22064,8 +22064,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-signup-02",
-    "name": "shadcn/ui radix blocks block signup 02",
-    "description": "8 published shadcn/ui radix blocks block signup 02 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 02 (Radix)",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-signup-02",
     "examples": [
@@ -22114,8 +22114,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-signup-03",
-    "name": "shadcn/ui radix blocks block signup 03",
-    "description": "8 published shadcn/ui radix blocks block signup 03 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 03 (Radix)",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-signup-03",
     "examples": [
@@ -22164,8 +22164,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-signup-04",
-    "name": "shadcn/ui radix blocks block signup 04",
-    "description": "8 published shadcn/ui radix blocks block signup 04 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 04 (Radix)",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-signup-04",
     "examples": [
@@ -22214,8 +22214,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-blocks-block-signup-05",
-    "name": "shadcn/ui radix blocks block signup 05",
-    "description": "8 published shadcn/ui radix blocks block signup 05 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 05 (Radix)",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-blocks-block-signup-05",
     "examples": [
@@ -22264,8 +22264,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-accordion",
-    "name": "shadcn/ui radix accordion",
-    "description": "8 published shadcn/ui radix accordion examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Accordion (Radix)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-accordion",
     "examples": [
@@ -22314,8 +22314,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-alert-dialog",
-    "name": "shadcn/ui radix alert dialog",
-    "description": "8 published shadcn/ui radix alert dialog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Alert Dialog (Radix)",
+    "description": "Ask for confirmation before completing an important action.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-alert-dialog",
     "examples": [
@@ -22364,8 +22364,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-alert",
-    "name": "shadcn/ui radix alert",
-    "description": "8 published shadcn/ui radix alert examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Alert (Radix)",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-alert",
     "examples": [
@@ -22414,8 +22414,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-aspect-ratio",
-    "name": "shadcn/ui radix aspect ratio",
-    "description": "8 published shadcn/ui radix aspect ratio examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Aspect Ratio (Radix)",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-aspect-ratio",
     "examples": [
@@ -22464,8 +22464,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-attachment",
-    "name": "shadcn/ui radix attachment",
-    "description": "8 published shadcn/ui radix attachment examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Attachment (Radix)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-attachment",
     "examples": [
@@ -22514,8 +22514,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-avatar",
-    "name": "shadcn/ui radix avatar",
-    "description": "8 published shadcn/ui radix avatar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Avatar (Radix)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-avatar",
     "examples": [
@@ -22564,8 +22564,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-badge",
-    "name": "shadcn/ui radix badge",
-    "description": "8 published shadcn/ui radix badge examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Badge (Radix)",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-badge",
     "examples": [
@@ -22614,8 +22614,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-breadcrumb",
-    "name": "shadcn/ui radix breadcrumb",
-    "description": "8 published shadcn/ui radix breadcrumb examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Breadcrumb (Radix)",
+    "description": "Show the current location within a hierarchy of pages.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-breadcrumb",
     "examples": [
@@ -22664,8 +22664,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-bubble",
-    "name": "shadcn/ui radix bubble",
-    "description": "8 published shadcn/ui radix bubble examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Bubble (Radix)",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-bubble",
     "examples": [
@@ -22714,8 +22714,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-button",
-    "name": "shadcn/ui radix button",
-    "description": "8 published shadcn/ui radix button examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Button (Radix)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-button",
     "examples": [
@@ -22764,8 +22764,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-button-group",
-    "name": "shadcn/ui radix button group",
-    "description": "8 published shadcn/ui radix button group examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Button Group (Radix)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-button-group",
     "examples": [
@@ -22814,8 +22814,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-calendar",
-    "name": "shadcn/ui radix calendar",
-    "description": "8 published shadcn/ui radix calendar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Calendar (Radix)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-calendar",
     "examples": [
@@ -22864,8 +22864,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-card",
-    "name": "shadcn/ui radix card",
-    "description": "8 published shadcn/ui radix card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Card (Radix)",
+    "description": "Group related content and actions in a distinct container.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-card",
     "examples": [
@@ -22914,8 +22914,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-carousel",
-    "name": "shadcn/ui radix carousel",
-    "description": "8 published shadcn/ui radix carousel examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Carousel (Radix)",
+    "description": "Move through a sequence of content items.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-carousel",
     "examples": [
@@ -22964,8 +22964,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-chart",
-    "name": "shadcn/ui radix chart",
-    "description": "8 published shadcn/ui radix chart examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Chart (Radix)",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-chart",
     "examples": [
@@ -23014,8 +23014,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-checkbox",
-    "name": "shadcn/ui radix checkbox",
-    "description": "8 published shadcn/ui radix checkbox examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Checkbox (Radix)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-checkbox",
     "examples": [
@@ -23064,8 +23064,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-collapsible",
-    "name": "shadcn/ui radix collapsible",
-    "description": "8 published shadcn/ui radix collapsible examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Collapsible (Radix)",
+    "description": "Reveal or hide a section of supporting content.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-collapsible",
     "examples": [
@@ -23114,8 +23114,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-combobox",
-    "name": "shadcn/ui radix combobox",
-    "description": "8 published shadcn/ui radix combobox examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Combobox (Radix)",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-combobox",
     "examples": [
@@ -23164,8 +23164,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-command",
-    "name": "shadcn/ui radix command",
-    "description": "8 published shadcn/ui radix command examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Command (Radix)",
+    "description": "Find commands and actions in a searchable command menu.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-command",
     "examples": [
@@ -23214,8 +23214,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-component-example",
-    "name": "shadcn/ui radix component example",
-    "description": "8 published shadcn/ui radix component example examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Component Example (Radix)",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-component-example",
     "examples": [
@@ -23264,8 +23264,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-context-menu",
-    "name": "shadcn/ui radix context menu",
-    "description": "8 published shadcn/ui radix context menu examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Context Menu (Radix)",
+    "description": "Show actions associated with the selected item or context.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-context-menu",
     "examples": [
@@ -23314,8 +23314,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-demo",
-    "name": "shadcn/ui radix demo",
-    "description": "8 published shadcn/ui radix demo examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Demo (Radix)",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-demo",
     "examples": [
@@ -23364,8 +23364,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-dialog",
-    "name": "shadcn/ui radix dialog",
-    "description": "8 published shadcn/ui radix dialog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Dialog (Radix)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-dialog",
     "examples": [
@@ -23414,8 +23414,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-drawer",
-    "name": "shadcn/ui radix drawer",
-    "description": "8 published shadcn/ui radix drawer examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Drawer (Radix)",
+    "description": "Open a panel alongside the current page for details or additional controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-drawer",
     "examples": [
@@ -23464,8 +23464,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-dropdown-menu",
-    "name": "shadcn/ui radix dropdown menu",
-    "description": "8 published shadcn/ui radix dropdown menu examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Dropdown Menu (Radix)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-dropdown-menu",
     "examples": [
@@ -23514,8 +23514,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-empty",
-    "name": "shadcn/ui radix empty",
-    "description": "8 published shadcn/ui radix empty examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Empty (Radix)",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-empty",
     "examples": [
@@ -23564,8 +23564,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-field",
-    "name": "shadcn/ui radix field",
-    "description": "8 published shadcn/ui radix field examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Field (Radix)",
+    "description": "Collect related values through a group of form controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-field",
     "examples": [
@@ -23614,8 +23614,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-hover-card",
-    "name": "shadcn/ui radix hover card",
-    "description": "8 published shadcn/ui radix hover card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Hover Card (Radix)",
+    "description": "Preview supporting content alongside a trigger.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-hover-card",
     "examples": [
@@ -23664,8 +23664,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-input",
-    "name": "shadcn/ui radix input",
-    "description": "8 published shadcn/ui radix input examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Input (Radix)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-input",
     "examples": [
@@ -23714,8 +23714,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-input-group",
-    "name": "shadcn/ui radix input group",
-    "description": "8 published shadcn/ui radix input group examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Input Group (Radix)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-input-group",
     "examples": [
@@ -23764,8 +23764,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-input-otp",
-    "name": "shadcn/ui radix input otp",
-    "description": "8 published shadcn/ui radix input otp examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Input OTP (Radix)",
+    "description": "Enter a short verification code across a group of input slots.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-input-otp",
     "examples": [
@@ -23814,8 +23814,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-item",
-    "name": "shadcn/ui radix item",
-    "description": "8 published shadcn/ui radix item examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Item (Radix)",
+    "description": "Present a collection of related items.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-item",
     "examples": [
@@ -23864,8 +23864,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-kbd",
-    "name": "shadcn/ui radix kbd",
-    "description": "8 published shadcn/ui radix kbd examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Kbd (Radix)",
+    "description": "Display a key or keyboard shortcut hint.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-kbd",
     "examples": [
@@ -23914,8 +23914,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-label",
-    "name": "shadcn/ui radix label",
-    "description": "8 published shadcn/ui radix label examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Label (Radix)",
+    "description": "Identify a control or describe the value it accepts.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-label",
     "examples": [
@@ -23964,8 +23964,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-marker",
-    "name": "shadcn/ui radix marker",
-    "description": "8 published shadcn/ui radix marker examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Marker (Radix)",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-marker",
     "examples": [
@@ -24014,8 +24014,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-menubar",
-    "name": "shadcn/ui radix menubar",
-    "description": "8 published shadcn/ui radix menubar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Menubar (Radix)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-menubar",
     "examples": [
@@ -24064,8 +24064,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-message",
-    "name": "shadcn/ui radix message",
-    "description": "8 published shadcn/ui radix message examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Message (Radix)",
+    "description": "Display a transient notification about an event or action.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-message",
     "examples": [
@@ -24114,8 +24114,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-message-scroller",
-    "name": "shadcn/ui radix message scroller",
-    "description": "8 published shadcn/ui radix message scroller examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Message Scroller (Radix)",
+    "description": "Present a conversation with messages and related controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-message-scroller",
     "examples": [
@@ -24164,8 +24164,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-native-select",
-    "name": "shadcn/ui radix native select",
-    "description": "8 published shadcn/ui radix native select examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Native Select (Radix)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-native-select",
     "examples": [
@@ -24214,8 +24214,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-navigation-menu",
-    "name": "shadcn/ui radix navigation menu",
-    "description": "8 published shadcn/ui radix navigation menu examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Navigation Menu (Radix)",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-navigation-menu",
     "examples": [
@@ -24264,8 +24264,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-pagination",
-    "name": "shadcn/ui radix pagination",
-    "description": "8 published shadcn/ui radix pagination examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Pagination (Radix)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-pagination",
     "examples": [
@@ -24314,8 +24314,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-popover",
-    "name": "shadcn/ui radix popover",
-    "description": "8 published shadcn/ui radix popover examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Popover (Radix)",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-popover",
     "examples": [
@@ -24364,8 +24364,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-progress",
-    "name": "shadcn/ui radix progress",
-    "description": "8 published shadcn/ui radix progress examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Progress (Radix)",
+    "description": "Show how far a task has progressed.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-progress",
     "examples": [
@@ -24414,8 +24414,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-questionnaire-example",
-    "name": "shadcn/ui radix questionnaire example",
-    "description": "8 published shadcn/ui radix questionnaire example examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Questionnaire Example (Radix)",
+    "description": "Collect related values through a group of form controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-questionnaire-example",
     "examples": [
@@ -24464,8 +24464,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-radio-group",
-    "name": "shadcn/ui radix radio group",
-    "description": "8 published shadcn/ui radix radio group examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Radio Group (Radix)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-radio-group",
     "examples": [
@@ -24514,8 +24514,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-resizable",
-    "name": "shadcn/ui radix resizable",
-    "description": "8 published shadcn/ui radix resizable examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Resizable (Radix)",
+    "description": "Let users adjust the space assigned to adjacent panels.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-resizable",
     "examples": [
@@ -24564,8 +24564,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-scroll-area",
-    "name": "shadcn/ui radix scroll area",
-    "description": "8 published shadcn/ui radix scroll area examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Scroll Area (Radix)",
+    "description": "Present content within a scrollable region.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-scroll-area",
     "examples": [
@@ -24614,8 +24614,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-select",
-    "name": "shadcn/ui radix select",
-    "description": "8 published shadcn/ui radix select examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Select (Radix)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-select",
     "examples": [
@@ -24664,8 +24664,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-separator",
-    "name": "shadcn/ui radix separator",
-    "description": "8 published shadcn/ui radix separator examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Separator (Radix)",
+    "description": "Visually separate related areas of an interface.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-separator",
     "examples": [
@@ -24714,8 +24714,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-sheet",
-    "name": "shadcn/ui radix sheet",
-    "description": "8 published shadcn/ui radix sheet examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sheet (Radix)",
+    "description": "Open a panel alongside the current page for details or additional controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-sheet",
     "examples": [
@@ -24764,8 +24764,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-sidebar",
-    "name": "shadcn/ui radix sidebar",
-    "description": "32 published shadcn/ui radix sidebar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar (Radix)",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-sidebar",
     "examples": [
@@ -24934,8 +24934,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-skeleton",
-    "name": "shadcn/ui radix skeleton",
-    "description": "8 published shadcn/ui radix skeleton examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Skeleton (Radix)",
+    "description": "Reserve the shape of content while it is loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-skeleton",
     "examples": [
@@ -24984,8 +24984,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-slider",
-    "name": "shadcn/ui radix slider",
-    "description": "8 published shadcn/ui radix slider examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Slider (Radix)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-slider",
     "examples": [
@@ -25034,8 +25034,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-sonner",
-    "name": "shadcn/ui radix sonner",
-    "description": "8 published shadcn/ui radix sonner examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sonner (Radix)",
+    "description": "Display a transient notification about an event or action.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-sonner",
     "examples": [
@@ -25084,8 +25084,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-spinner",
-    "name": "shadcn/ui radix spinner",
-    "description": "8 published shadcn/ui radix spinner examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Spinner (Radix)",
+    "description": "Indicate that content or a task is still loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-spinner",
     "examples": [
@@ -25134,8 +25134,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-switch",
-    "name": "shadcn/ui radix switch",
-    "description": "8 published shadcn/ui radix switch examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Switch (Radix)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-switch",
     "examples": [
@@ -25184,8 +25184,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-table",
-    "name": "shadcn/ui radix table",
-    "description": "8 published shadcn/ui radix table examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Table (Radix)",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-table",
     "examples": [
@@ -25234,8 +25234,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-tabs",
-    "name": "shadcn/ui radix tabs",
-    "description": "8 published shadcn/ui radix tabs examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Tabs (Radix)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-tabs",
     "examples": [
@@ -25284,8 +25284,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-textarea",
-    "name": "shadcn/ui radix textarea",
-    "description": "8 published shadcn/ui radix textarea examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Textarea (Radix)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-textarea",
     "examples": [
@@ -25334,8 +25334,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-toggle",
-    "name": "shadcn/ui radix toggle",
-    "description": "8 published shadcn/ui radix toggle examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Toggle (Radix)",
+    "description": "Change the selected state of an option or control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-toggle",
     "examples": [
@@ -25384,8 +25384,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-toggle-group",
-    "name": "shadcn/ui radix toggle group",
-    "description": "8 published shadcn/ui radix toggle group examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Toggle Group (Radix)",
+    "description": "Change the selected state of an option or control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-toggle-group",
     "examples": [
@@ -25434,8 +25434,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radix-tooltip",
-    "name": "shadcn/ui radix tooltip",
-    "description": "8 published shadcn/ui radix tooltip examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Tooltip (Radix)",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radix-tooltip",
     "examples": [
@@ -25484,8 +25484,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-dashboard-01",
-    "name": "shadcn/ui block dashboard 01",
-    "description": "1 published shadcn/ui block dashboard 01 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Dashboard 01",
+    "description": "Combine application navigation with information and controls in a dashboard layout.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-dashboard-01",
     "examples": [
@@ -25499,8 +25499,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-login-01",
-    "name": "shadcn/ui block login 01",
-    "description": "1 published shadcn/ui block login 01 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 01",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-login-01",
     "examples": [
@@ -25514,8 +25514,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-login-02",
-    "name": "shadcn/ui block login 02",
-    "description": "1 published shadcn/ui block login 02 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 02",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-login-02",
     "examples": [
@@ -25529,8 +25529,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-login-03",
-    "name": "shadcn/ui block login 03",
-    "description": "1 published shadcn/ui block login 03 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 03",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-login-03",
     "examples": [
@@ -25544,8 +25544,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-login-04",
-    "name": "shadcn/ui block login 04",
-    "description": "1 published shadcn/ui block login 04 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 04",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-login-04",
     "examples": [
@@ -25559,8 +25559,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-login-05",
-    "name": "shadcn/ui block login 05",
-    "description": "1 published shadcn/ui block login 05 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Login 05",
+    "description": "Collect the information needed to sign in to an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-login-05",
     "examples": [
@@ -25574,8 +25574,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-sidebar-01",
-    "name": "shadcn/ui block sidebar 01",
-    "description": "1 published shadcn/ui block sidebar 01 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 01",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-sidebar-01",
     "examples": [
@@ -25589,8 +25589,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-sidebar-02",
-    "name": "shadcn/ui block sidebar 02",
-    "description": "1 published shadcn/ui block sidebar 02 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 02",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-sidebar-02",
     "examples": [
@@ -25604,8 +25604,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-sidebar-03",
-    "name": "shadcn/ui block sidebar 03",
-    "description": "1 published shadcn/ui block sidebar 03 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 03",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-sidebar-03",
     "examples": [
@@ -25619,8 +25619,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-sidebar-04",
-    "name": "shadcn/ui block sidebar 04",
-    "description": "1 published shadcn/ui block sidebar 04 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 04",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-sidebar-04",
     "examples": [
@@ -25634,8 +25634,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-sidebar-05",
-    "name": "shadcn/ui block sidebar 05",
-    "description": "1 published shadcn/ui block sidebar 05 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 05",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-sidebar-05",
     "examples": [
@@ -25649,8 +25649,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-sidebar-06",
-    "name": "shadcn/ui block sidebar 06",
-    "description": "1 published shadcn/ui block sidebar 06 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 06",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-sidebar-06",
     "examples": [
@@ -25664,8 +25664,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-sidebar-07",
-    "name": "shadcn/ui block sidebar 07",
-    "description": "1 published shadcn/ui block sidebar 07 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 07",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-sidebar-07",
     "examples": [
@@ -25679,8 +25679,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-sidebar-08",
-    "name": "shadcn/ui block sidebar 08",
-    "description": "1 published shadcn/ui block sidebar 08 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 08",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-sidebar-08",
     "examples": [
@@ -25694,8 +25694,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-sidebar-09",
-    "name": "shadcn/ui block sidebar 09",
-    "description": "1 published shadcn/ui block sidebar 09 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 09",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-sidebar-09",
     "examples": [
@@ -25709,8 +25709,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-sidebar-10",
-    "name": "shadcn/ui block sidebar 10",
-    "description": "1 published shadcn/ui block sidebar 10 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 10",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-sidebar-10",
     "examples": [
@@ -25724,8 +25724,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-sidebar-11",
-    "name": "shadcn/ui block sidebar 11",
-    "description": "1 published shadcn/ui block sidebar 11 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 11",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-sidebar-11",
     "examples": [
@@ -25739,8 +25739,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-sidebar-12",
-    "name": "shadcn/ui block sidebar 12",
-    "description": "1 published shadcn/ui block sidebar 12 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 12",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-sidebar-12",
     "examples": [
@@ -25754,8 +25754,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-sidebar-13",
-    "name": "shadcn/ui block sidebar 13",
-    "description": "1 published shadcn/ui block sidebar 13 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 13",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-sidebar-13",
     "examples": [
@@ -25769,8 +25769,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-sidebar-14",
-    "name": "shadcn/ui block sidebar 14",
-    "description": "1 published shadcn/ui block sidebar 14 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 14",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-sidebar-14",
     "examples": [
@@ -25784,8 +25784,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-sidebar-15",
-    "name": "shadcn/ui block sidebar 15",
-    "description": "1 published shadcn/ui block sidebar 15 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 15",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-sidebar-15",
     "examples": [
@@ -25799,8 +25799,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-sidebar-16",
-    "name": "shadcn/ui block sidebar 16",
-    "description": "1 published shadcn/ui block sidebar 16 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sidebar 16",
+    "description": "Organize application navigation and supporting controls in a side panel.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-sidebar-16",
     "examples": [
@@ -25814,8 +25814,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-signup-01",
-    "name": "shadcn/ui block signup 01",
-    "description": "1 published shadcn/ui block signup 01 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 01",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-signup-01",
     "examples": [
@@ -25829,8 +25829,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-signup-02",
-    "name": "shadcn/ui block signup 02",
-    "description": "1 published shadcn/ui block signup 02 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 02",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-signup-02",
     "examples": [
@@ -25844,8 +25844,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-signup-03",
-    "name": "shadcn/ui block signup 03",
-    "description": "1 published shadcn/ui block signup 03 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 03",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-signup-03",
     "examples": [
@@ -25859,8 +25859,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-signup-04",
-    "name": "shadcn/ui block signup 04",
-    "description": "1 published shadcn/ui block signup 04 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 04",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-signup-04",
     "examples": [
@@ -25874,8 +25874,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-block-signup-05",
-    "name": "shadcn/ui block signup 05",
-    "description": "1 published shadcn/ui block signup 05 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Signup 05",
+    "description": "Collect the information needed to create an account.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-block-signup-05",
     "examples": [
@@ -25889,8 +25889,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-chart",
-    "name": "shadcn/ui chart",
-    "description": "76 published shadcn/ui chart examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-chart",
     "examples": [
@@ -26279,8 +26279,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-accordion",
-    "name": "shadcn/ui accordion",
-    "description": "1 published shadcn/ui accordion examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Accordion",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-accordion",
     "examples": [
@@ -26294,8 +26294,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-alert",
-    "name": "shadcn/ui alert",
-    "description": "2 published shadcn/ui alert examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Alert",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-alert",
     "examples": [
@@ -26314,8 +26314,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-alert-dialog",
-    "name": "shadcn/ui alert dialog",
-    "description": "1 published shadcn/ui alert dialog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Alert Dialog",
+    "description": "Ask for confirmation before completing an important action.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-alert-dialog",
     "examples": [
@@ -26329,8 +26329,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-aspect-ratio",
-    "name": "shadcn/ui aspect ratio",
-    "description": "1 published shadcn/ui aspect ratio examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Aspect Ratio",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-aspect-ratio",
     "examples": [
@@ -26344,8 +26344,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-avatar",
-    "name": "shadcn/ui avatar",
-    "description": "1 published shadcn/ui avatar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Avatar",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-avatar",
     "examples": [
@@ -26359,8 +26359,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-badge",
-    "name": "shadcn Badge",
-    "description": "4 published shadcn/ui badge examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Badge",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-badge",
     "examples": [
@@ -26389,8 +26389,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-breadcrumb",
-    "name": "shadcn/ui breadcrumb",
-    "description": "6 published shadcn/ui breadcrumb examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Breadcrumb",
+    "description": "Show the current location within a hierarchy of pages.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-breadcrumb",
     "examples": [
@@ -26429,8 +26429,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-button",
-    "name": "shadcn Button",
-    "description": "13 published shadcn/ui button examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Button",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-button",
     "examples": [
@@ -26504,8 +26504,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-button-group",
-    "name": "shadcn/ui button group",
-    "description": "11 published shadcn/ui button group examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Button Group",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-button-group",
     "examples": [
@@ -26569,8 +26569,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-calendar",
-    "name": "shadcn/ui calendar",
-    "description": "2 published shadcn/ui calendar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Calendar",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-calendar",
     "examples": [
@@ -26589,8 +26589,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-card",
-    "name": "shadcn/ui card",
-    "description": "2 published shadcn/ui card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Card",
+    "description": "Group related content and actions in a distinct container.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-card",
     "examples": [
@@ -26609,8 +26609,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-carousel",
-    "name": "shadcn/ui carousel",
-    "description": "6 published shadcn/ui carousel examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Carousel",
+    "description": "Move through a sequence of content items.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-carousel",
     "examples": [
@@ -26649,8 +26649,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-checkbox",
-    "name": "shadcn/ui checkbox",
-    "description": "3 published shadcn/ui checkbox examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Checkbox",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-checkbox",
     "examples": [
@@ -26674,8 +26674,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-collapsible",
-    "name": "shadcn/ui collapsible",
-    "description": "1 published shadcn/ui collapsible examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Collapsible",
+    "description": "Reveal or hide a section of supporting content.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-collapsible",
     "examples": [
@@ -26689,8 +26689,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-combobox",
-    "name": "shadcn/ui combobox",
-    "description": "4 published shadcn/ui combobox examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Combobox",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-combobox",
     "examples": [
@@ -26719,8 +26719,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-command",
-    "name": "shadcn/ui command",
-    "description": "2 published shadcn/ui command examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Command",
+    "description": "Find commands and actions in a searchable command menu.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-command",
     "examples": [
@@ -26739,8 +26739,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-context-menu",
-    "name": "shadcn/ui context menu",
-    "description": "1 published shadcn/ui context menu examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Context Menu",
+    "description": "Show actions associated with the selected item or context.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-context-menu",
     "examples": [
@@ -26754,8 +26754,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-data-table",
-    "name": "shadcn/ui data table",
-    "description": "1 published shadcn/ui data table examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Data Table",
+    "description": "Present structured records in rows and columns.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-data-table",
     "examples": [
@@ -26769,8 +26769,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-date-picker",
-    "name": "shadcn/ui date picker",
-    "description": "1 published shadcn/ui date picker examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Date Picker",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-date-picker",
     "examples": [
@@ -26784,8 +26784,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-date-picker-with-presets",
-    "name": "shadcn/ui date picker with presets",
-    "description": "1 published shadcn/ui date picker with presets examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Date Picker With Presets",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-date-picker-with-presets",
     "examples": [
@@ -26799,8 +26799,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-date-picker-with-range",
-    "name": "shadcn/ui date picker with range",
-    "description": "1 published shadcn/ui date picker with range examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Date Picker With Range",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-date-picker-with-range",
     "examples": [
@@ -26814,8 +26814,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-dialog",
-    "name": "shadcn/ui dialog",
-    "description": "2 published shadcn/ui dialog examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Dialog",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-dialog",
     "examples": [
@@ -26834,8 +26834,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-drawer",
-    "name": "shadcn/ui drawer",
-    "description": "2 published shadcn/ui drawer examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Drawer",
+    "description": "Open a panel alongside the current page for details or additional controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-drawer",
     "examples": [
@@ -26854,8 +26854,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-dropdown-menu",
-    "name": "shadcn/ui dropdown menu",
-    "description": "4 published shadcn/ui dropdown menu examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Dropdown Menu",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-dropdown-menu",
     "examples": [
@@ -26884,8 +26884,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-empty",
-    "name": "shadcn/ui empty",
-    "description": "7 published shadcn/ui empty examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Empty",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-empty",
     "examples": [
@@ -26929,8 +26929,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-field",
-    "name": "shadcn/ui field",
-    "description": "12 published shadcn/ui field examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Field",
+    "description": "Collect related values through a group of form controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-field",
     "examples": [
@@ -26999,8 +26999,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-form",
-    "name": "shadcn/ui form",
-    "description": "30 published shadcn/ui form examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Form",
+    "description": "Collect related values through a group of form controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-form",
     "examples": [
@@ -27159,8 +27159,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-hover-card",
-    "name": "shadcn/ui hover card",
-    "description": "1 published shadcn/ui hover card examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Hover Card",
+    "description": "Preview supporting content alongside a trigger.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-hover-card",
     "examples": [
@@ -27174,8 +27174,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-input",
-    "name": "shadcn Input",
-    "description": "6 published shadcn/ui input examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Input",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-input",
     "examples": [
@@ -27214,8 +27214,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-input-group",
-    "name": "shadcn/ui input group",
-    "description": "11 published shadcn/ui input group examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Input Group",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-input-group",
     "examples": [
@@ -27279,8 +27279,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-input-otp",
-    "name": "shadcn/ui input otp",
-    "description": "4 published shadcn/ui input otp examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Input OTP",
+    "description": "Enter a short verification code across a group of input slots.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-input-otp",
     "examples": [
@@ -27309,8 +27309,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-item",
-    "name": "shadcn/ui item",
-    "description": "10 published shadcn/ui item examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Item",
+    "description": "Present a collection of related items.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-item",
     "examples": [
@@ -27369,8 +27369,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-kbd",
-    "name": "shadcn/ui kbd",
-    "description": "5 published shadcn/ui kbd examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Kbd",
+    "description": "Display a key or keyboard shortcut hint.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-kbd",
     "examples": [
@@ -27404,8 +27404,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-label",
-    "name": "shadcn/ui label",
-    "description": "1 published shadcn/ui label examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Label",
+    "description": "Identify a control or describe the value it accepts.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-label",
     "examples": [
@@ -27419,8 +27419,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-menubar",
-    "name": "shadcn/ui menubar",
-    "description": "1 published shadcn/ui menubar examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Menubar",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-menubar",
     "examples": [
@@ -27434,8 +27434,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-mode-toggle",
-    "name": "shadcn/ui mode toggle",
-    "description": "1 published shadcn/ui mode toggle examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Mode Toggle",
+    "description": "Configure or demonstrate shared interface theme values.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-mode-toggle",
     "examples": [
@@ -27449,8 +27449,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-native-select",
-    "name": "shadcn/ui native select",
-    "description": "4 published shadcn/ui native select examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Native Select",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-native-select",
     "examples": [
@@ -27479,8 +27479,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-navigation-menu",
-    "name": "shadcn/ui navigation menu",
-    "description": "1 published shadcn/ui navigation menu examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Navigation Menu",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-navigation-menu",
     "examples": [
@@ -27494,8 +27494,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-pagination",
-    "name": "shadcn/ui pagination",
-    "description": "1 published shadcn/ui pagination examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Pagination",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-pagination",
     "examples": [
@@ -27509,8 +27509,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-popover",
-    "name": "shadcn/ui popover",
-    "description": "1 published shadcn/ui popover examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Popover",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-popover",
     "examples": [
@@ -27524,8 +27524,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-progress",
-    "name": "shadcn/ui progress",
-    "description": "1 published shadcn/ui progress examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Progress",
+    "description": "Show how far a task has progressed.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-progress",
     "examples": [
@@ -27539,8 +27539,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-radio-group",
-    "name": "shadcn/ui radio group",
-    "description": "1 published shadcn/ui radio group examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Radio Group",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-radio-group",
     "examples": [
@@ -27554,8 +27554,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-resizable",
-    "name": "shadcn/ui resizable",
-    "description": "4 published shadcn/ui resizable examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Resizable",
+    "description": "Let users adjust the space assigned to adjacent panels.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-resizable",
     "examples": [
@@ -27584,8 +27584,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-scroll-area",
-    "name": "shadcn/ui scroll area",
-    "description": "2 published shadcn/ui scroll area examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Scroll Area",
+    "description": "Present content within a scrollable region.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-scroll-area",
     "examples": [
@@ -27604,8 +27604,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-select",
-    "name": "shadcn/ui select",
-    "description": "2 published shadcn/ui select examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Select",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-select",
     "examples": [
@@ -27624,8 +27624,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-separator",
-    "name": "shadcn/ui separator",
-    "description": "1 published shadcn/ui separator examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Separator",
+    "description": "Visually separate related areas of an interface.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-separator",
     "examples": [
@@ -27639,8 +27639,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-sheet",
-    "name": "shadcn/ui sheet",
-    "description": "2 published shadcn/ui sheet examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sheet",
+    "description": "Open a panel alongside the current page for details or additional controls.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-sheet",
     "examples": [
@@ -27659,8 +27659,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-skeleton",
-    "name": "shadcn/ui skeleton",
-    "description": "2 published shadcn/ui skeleton examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Skeleton",
+    "description": "Reserve the shape of content while it is loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-skeleton",
     "examples": [
@@ -27679,8 +27679,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-slider",
-    "name": "shadcn/ui slider",
-    "description": "1 published shadcn/ui slider examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Slider",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-slider",
     "examples": [
@@ -27694,8 +27694,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-sonner",
-    "name": "shadcn/ui sonner",
-    "description": "2 published shadcn/ui sonner examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Sonner",
+    "description": "Display a transient notification about an event or action.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-sonner",
     "examples": [
@@ -27714,8 +27714,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-spinner",
-    "name": "shadcn/ui spinner",
-    "description": "10 published shadcn/ui spinner examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Spinner",
+    "description": "Indicate that content or a task is still loading.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-spinner",
     "examples": [
@@ -27774,8 +27774,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-switch",
-    "name": "shadcn/ui switch",
-    "description": "1 published shadcn/ui switch examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Switch",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-switch",
     "examples": [
@@ -27789,8 +27789,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-table",
-    "name": "shadcn/ui table",
-    "description": "1 published shadcn/ui table examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Table",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-table",
     "examples": [
@@ -27804,8 +27804,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-tabs",
-    "name": "shadcn/ui tabs",
-    "description": "1 published shadcn/ui tabs examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Tabs",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-tabs",
     "examples": [
@@ -27819,8 +27819,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-textarea",
-    "name": "shadcn Textarea",
-    "description": "5 published shadcn/ui textarea examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Textarea",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-textarea",
     "examples": [
@@ -27854,8 +27854,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-toggle",
-    "name": "shadcn/ui toggle",
-    "description": "6 published shadcn/ui toggle examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Toggle",
+    "description": "Change the selected state of an option or control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-toggle",
     "examples": [
@@ -27894,8 +27894,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-toggle-group",
-    "name": "shadcn/ui toggle group",
-    "description": "7 published shadcn/ui toggle group examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Toggle Group",
+    "description": "Change the selected state of an option or control.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-toggle-group",
     "examples": [
@@ -27939,8 +27939,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-tooltip",
-    "name": "shadcn/ui tooltip",
-    "description": "1 published shadcn/ui tooltip examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Tooltip",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-tooltip",
     "examples": [
@@ -27954,8 +27954,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-typography-blockquote",
-    "name": "shadcn/ui typography blockquote",
-    "description": "1 published shadcn/ui typography blockquote examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography Blockquote",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-typography-blockquote",
     "examples": [
@@ -27969,8 +27969,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-typography",
-    "name": "shadcn/ui typography",
-    "description": "1 published shadcn/ui typography examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-typography",
     "examples": [
@@ -27984,8 +27984,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-typography-h1",
-    "name": "shadcn/ui typography h1",
-    "description": "1 published shadcn/ui typography h1 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography H1",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-typography-h1",
     "examples": [
@@ -27999,8 +27999,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-typography-h2",
-    "name": "shadcn/ui typography h2",
-    "description": "1 published shadcn/ui typography h2 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography H2",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-typography-h2",
     "examples": [
@@ -28014,8 +28014,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-typography-h3",
-    "name": "shadcn/ui typography h3",
-    "description": "1 published shadcn/ui typography h3 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography H3",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-typography-h3",
     "examples": [
@@ -28029,8 +28029,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-typography-h4",
-    "name": "shadcn/ui typography h4",
-    "description": "1 published shadcn/ui typography h4 examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography H4",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-typography-h4",
     "examples": [
@@ -28044,8 +28044,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-typography-inline-code",
-    "name": "shadcn/ui typography inline code",
-    "description": "1 published shadcn/ui typography inline code examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography Inline Code",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-typography-inline-code",
     "examples": [
@@ -28059,8 +28059,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-typography-large",
-    "name": "shadcn/ui typography large",
-    "description": "1 published shadcn/ui typography large examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography Large",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-typography-large",
     "examples": [
@@ -28074,8 +28074,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-typography-lead",
-    "name": "shadcn/ui typography lead",
-    "description": "1 published shadcn/ui typography lead examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography Lead",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-typography-lead",
     "examples": [
@@ -28089,8 +28089,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-typography-list",
-    "name": "shadcn/ui typography list",
-    "description": "1 published shadcn/ui typography list examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography List",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-typography-list",
     "examples": [
@@ -28104,8 +28104,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-typography-muted",
-    "name": "shadcn/ui typography muted",
-    "description": "1 published shadcn/ui typography muted examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography Muted",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-typography-muted",
     "examples": [
@@ -28119,8 +28119,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-typography-p",
-    "name": "shadcn/ui typography p",
-    "description": "1 published shadcn/ui typography p examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography P",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-typography-p",
     "examples": [
@@ -28134,8 +28134,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-typography-small",
-    "name": "shadcn/ui typography small",
-    "description": "1 published shadcn/ui typography small examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography Small",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-typography-small",
     "examples": [
@@ -28149,8 +28149,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-typography-table",
-    "name": "shadcn/ui typography table",
-    "description": "1 published shadcn/ui typography table examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Typography Table",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-typography-table",
     "examples": [
@@ -28164,8 +28164,8 @@ export const externalRegistry = [
   {
     "sourceId": "shadcn",
     "slug": "shadcn-complete-primitives",
-    "name": "shadcn/ui complete primitives",
-    "description": "8 published shadcn/ui complete primitives examples with complete pinned source and MIT attribution.",
+    "name": "shadcn/ui Complete Primitives",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "shadcn/shadcn-complete-primitives",
     "examples": [
@@ -28214,8 +28214,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-01",
-    "name": "Origin UI input label comp-01",
-    "description": "1 published Origin UI input label comp-01 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Email Input (Example 01)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-01",
     "examples": [
@@ -28229,8 +28229,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-02",
-    "name": "Origin UI input label required comp-02",
-    "description": "1 published Origin UI input label required comp-02 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Required Email Input (Example 02)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-02",
     "examples": [
@@ -28245,7 +28245,7 @@ export const externalRegistry = [
     "sourceId": "originui",
     "slug": "originui-helper-input",
     "name": "Origin UI Helper Input",
-    "description": "1 published Origin UI helper input examples with complete pinned source and MIT attribution.",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-helper-input",
     "examples": [
@@ -28259,8 +28259,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-04",
-    "name": "Origin UI input label hint comp-04",
-    "description": "1 published Origin UI input label hint comp-04 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Email Input (Example 04)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-04",
     "examples": [
@@ -28274,8 +28274,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-05",
-    "name": "Origin UI input label comp-05",
-    "description": "1 published Origin UI input label comp-05 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Email Input (Example 05)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-05",
     "examples": [
@@ -28289,8 +28289,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-06",
-    "name": "Origin UI input label error comp-06",
-    "description": "1 published Origin UI input label error comp-06 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Email Input (Example 06)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-06",
     "examples": [
@@ -28304,8 +28304,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-07",
-    "name": "Origin UI input label comp-07",
-    "description": "1 published Origin UI input label comp-07 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Email Input (Example 07)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-07",
     "examples": [
@@ -28319,8 +28319,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-08",
-    "name": "Origin UI input label disabled comp-08",
-    "description": "1 published Origin UI input label disabled comp-08 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Email Input (Example 08)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-08",
     "examples": [
@@ -28334,8 +28334,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-09",
-    "name": "Origin UI input label comp-09",
-    "description": "1 published Origin UI input label comp-09 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Email Input (Example 09)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-09",
     "examples": [
@@ -28350,7 +28350,7 @@ export const externalRegistry = [
     "sourceId": "originui",
     "slug": "originui-icon-input",
     "name": "Origin UI Icon Input",
-    "description": "1 published Origin UI icon input examples with complete pinned source and MIT attribution.",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-icon-input",
     "examples": [
@@ -28364,8 +28364,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-100",
-    "name": "Origin UI button menu hamburger comp-100",
-    "description": "1 published Origin UI button menu hamburger comp-100 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 100)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-100",
     "examples": [
@@ -28379,8 +28379,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-101",
-    "name": "Origin UI button toggle comp-101",
-    "description": "1 published Origin UI button toggle comp-101 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Toggle (Example 101)",
+    "description": "Change the selected state of an option or control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-101",
     "examples": [
@@ -28394,8 +28394,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-102",
-    "name": "Origin UI button vote counter comp-102",
-    "description": "1 published Origin UI button vote counter comp-102 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 102)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-102",
     "examples": [
@@ -28409,8 +28409,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-103",
-    "name": "Origin UI button vote counter comp-103",
-    "description": "1 published Origin UI button vote counter comp-103 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 103)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-103",
     "examples": [
@@ -28424,8 +28424,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-104",
-    "name": "Origin UI button volume controls comp-104",
-    "description": "1 published Origin UI button volume controls comp-104 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 104)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-104",
     "examples": [
@@ -28439,8 +28439,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-105",
-    "name": "Origin UI button copy comp-105",
-    "description": "1 published Origin UI button copy comp-105 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tooltip (Example 105)",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-105",
     "examples": [
@@ -28454,8 +28454,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-106",
-    "name": "Origin UI button toggle group comp-106",
-    "description": "1 published Origin UI button toggle group comp-106 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 106)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-106",
     "examples": [
@@ -28469,8 +28469,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-107",
-    "name": "Origin UI button toggle group comp-107",
-    "description": "1 published Origin UI button toggle group comp-107 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Toggle (Example 107)",
+    "description": "Change the selected state of an option or control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-107",
     "examples": [
@@ -28484,8 +28484,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-108",
-    "name": "Origin UI button toggle group dropdown comp-108",
-    "description": "1 published Origin UI button toggle group dropdown comp-108 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 108)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-108",
     "examples": [
@@ -28499,8 +28499,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-109",
-    "name": "Origin UI button toggle group comp-109",
-    "description": "1 published Origin UI button toggle group comp-109 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Toggle (Example 109)",
+    "description": "Change the selected state of an option or control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-109",
     "examples": [
@@ -28514,8 +28514,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-11",
-    "name": "Origin UI input label comp-11",
-    "description": "1 published Origin UI input label comp-11 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 11)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-11",
     "examples": [
@@ -28529,8 +28529,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-110",
-    "name": "Origin UI button toggle group comp-110",
-    "description": "1 published Origin UI button toggle group comp-110 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Toggle (Example 110)",
+    "description": "Change the selected state of an option or control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-110",
     "examples": [
@@ -28544,8 +28544,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-111",
-    "name": "Origin UI button comp-111",
-    "description": "1 published Origin UI button comp-111 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 111)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-111",
     "examples": [
@@ -28559,8 +28559,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-112",
-    "name": "Origin UI button comp-112",
-    "description": "1 published Origin UI button comp-112 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 112)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-112",
     "examples": [
@@ -28574,8 +28574,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-113",
-    "name": "Origin UI button dropdown comp-113",
-    "description": "1 published Origin UI button dropdown comp-113 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 113)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-113",
     "examples": [
@@ -28589,8 +28589,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-114",
-    "name": "Origin UI button dropdown counter comp-114",
-    "description": "1 published Origin UI button dropdown counter comp-114 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 114)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-114",
     "examples": [
@@ -28604,8 +28604,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-115",
-    "name": "Origin UI button previous comp-115",
-    "description": "1 published Origin UI button previous comp-115 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 115)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-115",
     "examples": [
@@ -28619,8 +28619,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-116",
-    "name": "Origin UI button next comp-116",
-    "description": "1 published Origin UI button next comp-116 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 116)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-116",
     "examples": [
@@ -28634,8 +28634,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-117",
-    "name": "Origin UI button like counter comp-117",
-    "description": "1 published Origin UI button like counter comp-117 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 117)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-117",
     "examples": [
@@ -28649,8 +28649,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-118",
-    "name": "Origin UI button like counter comp-118",
-    "description": "1 published Origin UI button like counter comp-118 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 118)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-118",
     "examples": [
@@ -28664,8 +28664,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-119",
-    "name": "Origin UI button social login comp-119",
-    "description": "1 published Origin UI button social login comp-119 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 119)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-119",
     "examples": [
@@ -28679,8 +28679,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-12",
-    "name": "Origin UI input label comp-12",
-    "description": "1 published Origin UI input label comp-12 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 12)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-12",
     "examples": [
@@ -28694,8 +28694,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-120",
-    "name": "Origin UI button social login comp-120",
-    "description": "1 published Origin UI button social login comp-120 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 120)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-120",
     "examples": [
@@ -28709,8 +28709,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-121",
-    "name": "Origin UI button social login comp-121",
-    "description": "1 published Origin UI button social login comp-121 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 121)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-121",
     "examples": [
@@ -28724,8 +28724,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-122",
-    "name": "Origin UI button social login comp-122",
-    "description": "1 published Origin UI button social login comp-122 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 122)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-122",
     "examples": [
@@ -28739,8 +28739,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-123",
-    "name": "Origin UI button collapsible comp-123",
-    "description": "1 published Origin UI button collapsible comp-123 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 123)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-123",
     "examples": [
@@ -28754,8 +28754,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-124",
-    "name": "Origin UI button back comp-124",
-    "description": "1 published Origin UI button back comp-124 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 124)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-124",
     "examples": [
@@ -28769,8 +28769,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-125",
-    "name": "Origin UI button upload user comp-125",
-    "description": "1 published Origin UI button upload user comp-125 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI File Upload (Example 125)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-125",
     "examples": [
@@ -28784,8 +28784,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-126",
-    "name": "Origin UI button upload user comp-126",
-    "description": "1 published Origin UI button upload user comp-126 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI File Upload (Example 126)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-126",
     "examples": [
@@ -28799,8 +28799,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-127",
-    "name": "Origin UI button comp-127",
-    "description": "1 published Origin UI button comp-127 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 127)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-127",
     "examples": [
@@ -28814,8 +28814,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-128",
-    "name": "Origin UI button comp-128",
-    "description": "1 published Origin UI button comp-128 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 128)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-128",
     "examples": [
@@ -28829,8 +28829,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-129",
-    "name": "Origin UI button dropdown notification comp-129",
-    "description": "1 published Origin UI button dropdown notification comp-129 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 129)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-129",
     "examples": [
@@ -28844,8 +28844,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-13",
-    "name": "Origin UI input label comp-13",
-    "description": "1 published Origin UI input label comp-13 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 13)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-13",
     "examples": [
@@ -28859,8 +28859,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-130",
-    "name": "Origin UI button toggle darkmode comp-130",
-    "description": "1 published Origin UI button toggle darkmode comp-130 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Toggle (Example 130)",
+    "description": "Change the selected state of an option or control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-130",
     "examples": [
@@ -28874,8 +28874,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-131",
-    "name": "Origin UI button dropdown comp-131",
-    "description": "1 published Origin UI button dropdown comp-131 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 131)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-131",
     "examples": [
@@ -28889,8 +28889,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-132",
-    "name": "Origin UI checkbox label radix comp-132",
-    "description": "1 published Origin UI checkbox label radix comp-132 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 132)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-132",
     "examples": [
@@ -28904,8 +28904,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-133",
-    "name": "Origin UI checkbox label radix comp-133",
-    "description": "1 published Origin UI checkbox label radix comp-133 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 133)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-133",
     "examples": [
@@ -28919,8 +28919,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-134",
-    "name": "Origin UI checkbox label radix comp-134",
-    "description": "1 published Origin UI checkbox label radix comp-134 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 134)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-134",
     "examples": [
@@ -28934,8 +28934,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-135",
-    "name": "Origin UI checkbox label disabled comp-135",
-    "description": "1 published Origin UI checkbox label disabled comp-135 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 135)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-135",
     "examples": [
@@ -28949,8 +28949,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-136",
-    "name": "Origin UI checkbox label radix comp-136",
-    "description": "1 published Origin UI checkbox label radix comp-136 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 136)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-136",
     "examples": [
@@ -28964,8 +28964,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-137",
-    "name": "Origin UI checkbox label radix comp-137",
-    "description": "1 published Origin UI checkbox label radix comp-137 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 137)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-137",
     "examples": [
@@ -28979,8 +28979,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-138",
-    "name": "Origin UI checkbox label login comp-138",
-    "description": "1 published Origin UI checkbox label login comp-138 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 138)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-138",
     "examples": [
@@ -28994,8 +28994,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-139",
-    "name": "Origin UI checkbox label radix comp-139",
-    "description": "1 published Origin UI checkbox label radix comp-139 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 139)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-139",
     "examples": [
@@ -29009,8 +29009,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-14",
-    "name": "Origin UI input label comp-14",
-    "description": "1 published Origin UI input label comp-14 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 14)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-14",
     "examples": [
@@ -29024,8 +29024,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-140",
-    "name": "Origin UI checkbox label radix comp-140",
-    "description": "1 published Origin UI checkbox label radix comp-140 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 140)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-140",
     "examples": [
@@ -29039,8 +29039,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-141",
-    "name": "Origin UI checkbox label radix comp-141",
-    "description": "1 published Origin UI checkbox label radix comp-141 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 141)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-141",
     "examples": [
@@ -29054,8 +29054,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-142",
-    "name": "Origin UI checkbox label collapsible comp-142",
-    "description": "1 published Origin UI checkbox label collapsible comp-142 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 142)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-142",
     "examples": [
@@ -29069,8 +29069,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-143",
-    "name": "Origin UI checkbox label radix comp-143",
-    "description": "1 published Origin UI checkbox label radix comp-143 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 143)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-143",
     "examples": [
@@ -29084,8 +29084,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-144",
-    "name": "Origin UI checkbox label card comp-144",
-    "description": "1 published Origin UI checkbox label card comp-144 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 144)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-144",
     "examples": [
@@ -29099,8 +29099,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-145",
-    "name": "Origin UI checkbox label card comp-145",
-    "description": "1 published Origin UI checkbox label card comp-145 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 145)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-145",
     "examples": [
@@ -29114,8 +29114,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-146",
-    "name": "Origin UI checkbox label card comp-146",
-    "description": "1 published Origin UI checkbox label card comp-146 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 146)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-146",
     "examples": [
@@ -29129,8 +29129,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-147",
-    "name": "Origin UI checkbox label card comp-147",
-    "description": "1 published Origin UI checkbox label card comp-147 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 147)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-147",
     "examples": [
@@ -29144,8 +29144,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-148",
-    "name": "Origin UI checkbox label tree comp-148",
-    "description": "1 published Origin UI checkbox label tree comp-148 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 148)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-148",
     "examples": [
@@ -29159,8 +29159,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-149",
-    "name": "Origin UI checkbox label week comp-149",
-    "description": "1 published Origin UI checkbox label week comp-149 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 149)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-149",
     "examples": [
@@ -29174,8 +29174,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-15",
-    "name": "Origin UI input label comp-15",
-    "description": "1 published Origin UI input label comp-15 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 15)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-15",
     "examples": [
@@ -29189,8 +29189,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-150",
-    "name": "Origin UI checkbox label toggle comp-150",
-    "description": "1 published Origin UI checkbox label toggle comp-150 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 150)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-150",
     "examples": [
@@ -29204,8 +29204,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-151",
-    "name": "Origin UI checkbox label radix comp-151",
-    "description": "1 published Origin UI checkbox label radix comp-151 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 151)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-151",
     "examples": [
@@ -29219,8 +29219,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-152",
-    "name": "Origin UI radio label radix comp-152",
-    "description": "1 published Origin UI radio label radix comp-152 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 152)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-152",
     "examples": [
@@ -29234,8 +29234,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-153",
-    "name": "Origin UI radio label radix comp-153",
-    "description": "1 published Origin UI radio label radix comp-153 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 153)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-153",
     "examples": [
@@ -29249,8 +29249,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-154",
-    "name": "Origin UI radio label radix comp-154",
-    "description": "1 published Origin UI radio label radix comp-154 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 154)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-154",
     "examples": [
@@ -29264,8 +29264,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-155",
-    "name": "Origin UI radio label radix comp-155",
-    "description": "1 published Origin UI radio label radix comp-155 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 155)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-155",
     "examples": [
@@ -29279,8 +29279,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-156",
-    "name": "Origin UI radio label collapsible comp-156",
-    "description": "1 published Origin UI radio label collapsible comp-156 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 156)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-156",
     "examples": [
@@ -29294,8 +29294,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-157",
-    "name": "Origin UI radio label rating comp-157",
-    "description": "1 published Origin UI radio label rating comp-157 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 157)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-157",
     "examples": [
@@ -29309,8 +29309,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-158",
-    "name": "Origin UI radio label color comp-158",
-    "description": "1 published Origin UI radio label color comp-158 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 158)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-158",
     "examples": [
@@ -29324,8 +29324,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-159",
-    "name": "Origin UI radio label card comp-159",
-    "description": "1 published Origin UI radio label card comp-159 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 159)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-159",
     "examples": [
@@ -29339,8 +29339,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-16",
-    "name": "Origin UI input label comp-16",
-    "description": "1 published Origin UI input label comp-16 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 16)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-16",
     "examples": [
@@ -29354,8 +29354,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-160",
-    "name": "Origin UI radio label card comp-160",
-    "description": "1 published Origin UI radio label card comp-160 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 160)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-160",
     "examples": [
@@ -29369,8 +29369,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-161",
-    "name": "Origin UI radio label card comp-161",
-    "description": "1 published Origin UI radio label card comp-161 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 161)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-161",
     "examples": [
@@ -29384,8 +29384,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-162",
-    "name": "Origin UI radio label card comp-162",
-    "description": "1 published Origin UI radio label card comp-162 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 162)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-162",
     "examples": [
@@ -29399,8 +29399,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-163",
-    "name": "Origin UI radio label card comp-163",
-    "description": "1 published Origin UI radio label card comp-163 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 163)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-163",
     "examples": [
@@ -29414,8 +29414,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-164",
-    "name": "Origin UI radio label card comp-164",
-    "description": "1 published Origin UI radio label card comp-164 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 164)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-164",
     "examples": [
@@ -29429,8 +29429,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-165",
-    "name": "Origin UI radio label card comp-165",
-    "description": "1 published Origin UI radio label card comp-165 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 165)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-165",
     "examples": [
@@ -29444,8 +29444,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-166",
-    "name": "Origin UI radio label pricing comp-166",
-    "description": "1 published Origin UI radio label pricing comp-166 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Pricing Plan Selector (Example 166)",
+    "description": "Compare available plans and choose a pricing tier.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-166",
     "examples": [
@@ -29459,8 +29459,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-167",
-    "name": "Origin UI radio label rating comp-167",
-    "description": "1 published Origin UI radio label rating comp-167 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 167)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-167",
     "examples": [
@@ -29474,8 +29474,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-168",
-    "name": "Origin UI radio label rating comp-168",
-    "description": "1 published Origin UI radio label rating comp-168 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 168)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-168",
     "examples": [
@@ -29489,8 +29489,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-169",
-    "name": "Origin UI radio label darkmode comp-169",
-    "description": "1 published Origin UI radio label darkmode comp-169 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Radio Group (Example 169)",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-169",
     "examples": [
@@ -29504,8 +29504,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-17",
-    "name": "Origin UI input label select comp-17",
-    "description": "1 published Origin UI input label select comp-17 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 17)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-17",
     "examples": [
@@ -29519,8 +29519,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-170",
-    "name": "Origin UI radio label pricing comp-170",
-    "description": "1 published Origin UI radio label pricing comp-170 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Billing Period Toggle (Example 170)",
+    "description": "Switch between monthly and yearly billing periods.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-170",
     "examples": [
@@ -29534,8 +29534,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-171",
-    "name": "Origin UI radio label rating comp-171",
-    "description": "1 published Origin UI radio label rating comp-171 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Rating (Example 171)",
+    "description": "Choose or display a rating on a bounded scale.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-171",
     "examples": [
@@ -29549,8 +29549,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-172",
-    "name": "Origin UI switch radix comp-172",
-    "description": "1 published Origin UI switch radix comp-172 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 172)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-172",
     "examples": [
@@ -29564,8 +29564,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-173",
-    "name": "Origin UI switch radix comp-173",
-    "description": "1 published Origin UI switch radix comp-173 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 173)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-173",
     "examples": [
@@ -29579,8 +29579,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-174",
-    "name": "Origin UI switch radix comp-174",
-    "description": "1 published Origin UI switch radix comp-174 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 174)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-174",
     "examples": [
@@ -29594,8 +29594,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-175",
-    "name": "Origin UI switch radix comp-175",
-    "description": "1 published Origin UI switch radix comp-175 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 175)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-175",
     "examples": [
@@ -29609,8 +29609,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-176",
-    "name": "Origin UI switch radix comp-176",
-    "description": "1 published Origin UI switch radix comp-176 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 176)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-176",
     "examples": [
@@ -29624,8 +29624,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-177",
-    "name": "Origin UI switch radix comp-177",
-    "description": "1 published Origin UI switch radix comp-177 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 177)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-177",
     "examples": [
@@ -29639,8 +29639,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-178",
-    "name": "Origin UI switch radix comp-178",
-    "description": "1 published Origin UI switch radix comp-178 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 178)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-178",
     "examples": [
@@ -29654,8 +29654,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-179",
-    "name": "Origin UI switch label radix comp-179",
-    "description": "1 published Origin UI switch label radix comp-179 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 179)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-179",
     "examples": [
@@ -29669,8 +29669,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-18",
-    "name": "Origin UI input label select comp-18",
-    "description": "1 published Origin UI input label select comp-18 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 18)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-18",
     "examples": [
@@ -29684,8 +29684,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-180",
-    "name": "Origin UI switch label radix comp-180",
-    "description": "1 published Origin UI switch label radix comp-180 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 180)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-180",
     "examples": [
@@ -29699,8 +29699,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-181",
-    "name": "Origin UI switch label darkmode comp-181",
-    "description": "1 published Origin UI switch label darkmode comp-181 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 181)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-181",
     "examples": [
@@ -29714,8 +29714,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-182",
-    "name": "Origin UI switch label darkmode comp-182",
-    "description": "1 published Origin UI switch label darkmode comp-182 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 182)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-182",
     "examples": [
@@ -29729,8 +29729,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-183",
-    "name": "Origin UI switch label darkmode comp-183",
-    "description": "1 published Origin UI switch label darkmode comp-183 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 183)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-183",
     "examples": [
@@ -29744,8 +29744,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-184",
-    "name": "Origin UI switch label darkmode comp-184",
-    "description": "1 published Origin UI switch label darkmode comp-184 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 184)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-184",
     "examples": [
@@ -29759,8 +29759,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-185",
-    "name": "Origin UI switch label radix comp-185",
-    "description": "1 published Origin UI switch label radix comp-185 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 185)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-185",
     "examples": [
@@ -29774,8 +29774,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-186",
-    "name": "Origin UI switch label card comp-186",
-    "description": "1 published Origin UI switch label card comp-186 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 186)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-186",
     "examples": [
@@ -29789,8 +29789,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-187",
-    "name": "Origin UI switch label card comp-187",
-    "description": "1 published Origin UI switch label card comp-187 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 187)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-187",
     "examples": [
@@ -29804,8 +29804,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-188",
-    "name": "Origin UI switch label card comp-188",
-    "description": "1 published Origin UI switch label card comp-188 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 188)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-188",
     "examples": [
@@ -29819,8 +29819,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-189",
-    "name": "Origin UI label select native select comp-189",
-    "description": "1 published Origin UI label select native select comp-189 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 189)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-189",
     "examples": [
@@ -29834,8 +29834,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-19",
-    "name": "Origin UI input label button comp-19",
-    "description": "1 published Origin UI input label button comp-19 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Email Input (Example 19)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-19",
     "examples": [
@@ -29849,8 +29849,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-190",
-    "name": "Origin UI label select native select comp-190",
-    "description": "1 published Origin UI label select native select comp-190 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 190)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-190",
     "examples": [
@@ -29864,8 +29864,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-191",
-    "name": "Origin UI label select native select comp-191",
-    "description": "1 published Origin UI label select native select comp-191 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 191)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-191",
     "examples": [
@@ -29879,8 +29879,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-192",
-    "name": "Origin UI label select native select comp-192",
-    "description": "1 published Origin UI label select native select comp-192 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 192)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-192",
     "examples": [
@@ -29894,8 +29894,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-193",
-    "name": "Origin UI label select native select comp-193",
-    "description": "1 published Origin UI label select native select comp-193 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 193)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-193",
     "examples": [
@@ -29909,8 +29909,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-194",
-    "name": "Origin UI label select native select comp-194",
-    "description": "1 published Origin UI label select native select comp-194 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 194)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-194",
     "examples": [
@@ -29924,8 +29924,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-195",
-    "name": "Origin UI label select native select comp-195",
-    "description": "1 published Origin UI label select native select comp-195 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 195)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-195",
     "examples": [
@@ -29939,8 +29939,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-196",
-    "name": "Origin UI label select native select comp-196",
-    "description": "1 published Origin UI label select native select comp-196 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 196)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-196",
     "examples": [
@@ -29954,8 +29954,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-197",
-    "name": "Origin UI label select native select comp-197",
-    "description": "1 published Origin UI label select native select comp-197 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 197)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-197",
     "examples": [
@@ -29969,8 +29969,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-198",
-    "name": "Origin UI label select native select comp-198",
-    "description": "1 published Origin UI label select native select comp-198 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 198)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-198",
     "examples": [
@@ -29984,8 +29984,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-199",
-    "name": "Origin UI label select native select comp-199",
-    "description": "1 published Origin UI label select native select comp-199 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 199)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-199",
     "examples": [
@@ -30000,7 +30000,7 @@ export const externalRegistry = [
     "sourceId": "originui",
     "slug": "originui-input-action",
     "name": "Origin UI Input Action",
-    "description": "1 published Origin UI input action examples with complete pinned source and MIT attribution.",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-input-action",
     "examples": [
@@ -30014,8 +30014,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-200",
-    "name": "Origin UI label select native select comp-200",
-    "description": "1 published Origin UI label select native select comp-200 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 200)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-200",
     "examples": [
@@ -30029,8 +30029,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-201",
-    "name": "Origin UI label select native select comp-201",
-    "description": "1 published Origin UI label select native select comp-201 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 201)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-201",
     "examples": [
@@ -30044,8 +30044,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-202",
-    "name": "Origin UI label select native select comp-202",
-    "description": "1 published Origin UI label select native select comp-202 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 202)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-202",
     "examples": [
@@ -30059,8 +30059,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-203",
-    "name": "Origin UI label select radix comp-203",
-    "description": "1 published Origin UI label select radix comp-203 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 203)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-203",
     "examples": [
@@ -30074,8 +30074,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-204",
-    "name": "Origin UI label select radix comp-204",
-    "description": "1 published Origin UI label select radix comp-204 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 204)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-204",
     "examples": [
@@ -30089,8 +30089,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-205",
-    "name": "Origin UI label select radix comp-205",
-    "description": "1 published Origin UI label select radix comp-205 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 205)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-205",
     "examples": [
@@ -30104,8 +30104,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-206",
-    "name": "Origin UI label select helper comp-206",
-    "description": "1 published Origin UI label select helper comp-206 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 206)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-206",
     "examples": [
@@ -30119,8 +30119,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-207",
-    "name": "Origin UI label select radix comp-207",
-    "description": "1 published Origin UI label select radix comp-207 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 207)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-207",
     "examples": [
@@ -30134,8 +30134,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-208",
-    "name": "Origin UI label select radix comp-208",
-    "description": "1 published Origin UI label select radix comp-208 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 208)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-208",
     "examples": [
@@ -30149,8 +30149,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-209",
-    "name": "Origin UI label select radix comp-209",
-    "description": "1 published Origin UI label select radix comp-209 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 209)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-209",
     "examples": [
@@ -30164,8 +30164,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-21",
-    "name": "Origin UI input label button comp-21",
-    "description": "1 published Origin UI input label button comp-21 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Email Input (Example 21)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-21",
     "examples": [
@@ -30179,8 +30179,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-210",
-    "name": "Origin UI label select disabled comp-210",
-    "description": "1 published Origin UI label select disabled comp-210 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 210)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-210",
     "examples": [
@@ -30194,8 +30194,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-211",
-    "name": "Origin UI label select required comp-211",
-    "description": "1 published Origin UI label select required comp-211 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 211)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-211",
     "examples": [
@@ -30209,8 +30209,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-212",
-    "name": "Origin UI label select radix comp-212",
-    "description": "1 published Origin UI label select radix comp-212 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 212)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-212",
     "examples": [
@@ -30224,8 +30224,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-213",
-    "name": "Origin UI label select radix comp-213",
-    "description": "1 published Origin UI label select radix comp-213 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 213)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-213",
     "examples": [
@@ -30239,8 +30239,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-214",
-    "name": "Origin UI label select radix comp-214",
-    "description": "1 published Origin UI label select radix comp-214 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 214)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-214",
     "examples": [
@@ -30254,8 +30254,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-215",
-    "name": "Origin UI label select disabled comp-215",
-    "description": "1 published Origin UI label select disabled comp-215 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 215)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-215",
     "examples": [
@@ -30269,8 +30269,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-216",
-    "name": "Origin UI label select radix comp-216",
-    "description": "1 published Origin UI label select radix comp-216 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 216)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-216",
     "examples": [
@@ -30284,8 +30284,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-217",
-    "name": "Origin UI label select radix comp-217",
-    "description": "1 published Origin UI label select radix comp-217 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 217)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-217",
     "examples": [
@@ -30299,8 +30299,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-218",
-    "name": "Origin UI label select timezone comp-218",
-    "description": "1 published Origin UI label select timezone comp-218 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 218)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-218",
     "examples": [
@@ -30314,8 +30314,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-219",
-    "name": "Origin UI label select radix comp-219",
-    "description": "1 published Origin UI label select radix comp-219 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 219)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-219",
     "examples": [
@@ -30329,8 +30329,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-22",
-    "name": "Origin UI input label button comp-22",
-    "description": "1 published Origin UI input label button comp-22 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Email Input (Example 22)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-22",
     "examples": [
@@ -30344,8 +30344,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-220",
-    "name": "Origin UI label select status comp-220",
-    "description": "1 published Origin UI label select status comp-220 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 220)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-220",
     "examples": [
@@ -30359,8 +30359,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-221",
-    "name": "Origin UI label select radix comp-221",
-    "description": "1 published Origin UI label select radix comp-221 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 221)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-221",
     "examples": [
@@ -30374,8 +30374,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-222",
-    "name": "Origin UI label select radix comp-222",
-    "description": "1 published Origin UI label select radix comp-222 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 222)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-222",
     "examples": [
@@ -30389,8 +30389,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-223",
-    "name": "Origin UI label select radix comp-223",
-    "description": "1 published Origin UI label select radix comp-223 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 223)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-223",
     "examples": [
@@ -30404,8 +30404,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-224",
-    "name": "Origin UI label select radix comp-224",
-    "description": "1 published Origin UI label select radix comp-224 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 224)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-224",
     "examples": [
@@ -30419,8 +30419,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-225",
-    "name": "Origin UI label select flag comp-225",
-    "description": "1 published Origin UI label select flag comp-225 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 225)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-225",
     "examples": [
@@ -30434,8 +30434,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-226",
-    "name": "Origin UI label select user comp-226",
-    "description": "1 published Origin UI label select user comp-226 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 226)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-226",
     "examples": [
@@ -30449,8 +30449,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-227",
-    "name": "Origin UI label select user comp-227",
-    "description": "1 published Origin UI label select user comp-227 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 227)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-227",
     "examples": [
@@ -30464,8 +30464,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-228",
-    "name": "Origin UI label select user comp-228",
-    "description": "1 published Origin UI label select user comp-228 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 228)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-228",
     "examples": [
@@ -30479,8 +30479,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-229",
-    "name": "Origin UI label select command comp-229",
-    "description": "1 published Origin UI label select command comp-229 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Combobox (Example 229)",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-229",
     "examples": [
@@ -30494,8 +30494,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-23",
-    "name": "Origin UI input label button comp-23",
-    "description": "1 published Origin UI input label button comp-23 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 23)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-23",
     "examples": [
@@ -30509,8 +30509,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-230",
-    "name": "Origin UI label select command comp-230",
-    "description": "1 published Origin UI label select command comp-230 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Combobox (Example 230)",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-230",
     "examples": [
@@ -30524,8 +30524,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-231",
-    "name": "Origin UI label select command comp-231",
-    "description": "1 published Origin UI label select command comp-231 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Combobox (Example 231)",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-231",
     "examples": [
@@ -30539,8 +30539,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-232",
-    "name": "Origin UI label select command comp-232",
-    "description": "1 published Origin UI label select command comp-232 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Combobox (Example 232)",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-232",
     "examples": [
@@ -30554,8 +30554,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-233",
-    "name": "Origin UI label select command comp-233",
-    "description": "1 published Origin UI label select command comp-233 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Combobox (Example 233)",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-233",
     "examples": [
@@ -30569,8 +30569,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-234",
-    "name": "Origin UI label select multiselect comp-234",
-    "description": "1 published Origin UI label select multiselect comp-234 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 234)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-234",
     "examples": [
@@ -30584,8 +30584,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-235",
-    "name": "Origin UI label select multiselect comp-235",
-    "description": "1 published Origin UI label select multiselect comp-235 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 235)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-235",
     "examples": [
@@ -30599,8 +30599,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-236",
-    "name": "Origin UI label select multiselect comp-236",
-    "description": "1 published Origin UI label select multiselect comp-236 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 236)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-236",
     "examples": [
@@ -30614,8 +30614,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-237",
-    "name": "Origin UI label select multiselect comp-237",
-    "description": "1 published Origin UI label select multiselect comp-237 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 237)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-237",
     "examples": [
@@ -30629,8 +30629,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-238",
-    "name": "Origin UI label select multiselect comp-238",
-    "description": "1 published Origin UI label select multiselect comp-238 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 238)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-238",
     "examples": [
@@ -30644,8 +30644,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-239",
-    "name": "Origin UI label select multiselect comp-239",
-    "description": "1 published Origin UI label select multiselect comp-239 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 239)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-239",
     "examples": [
@@ -30659,8 +30659,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-24",
-    "name": "Origin UI input label button comp-24",
-    "description": "1 published Origin UI input label button comp-24 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 24)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-24",
     "examples": [
@@ -30674,8 +30674,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-240",
-    "name": "Origin UI slider label radix comp-240",
-    "description": "1 published Origin UI slider label radix comp-240 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 240)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-240",
     "examples": [
@@ -30689,8 +30689,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-241",
-    "name": "Origin UI slider label disabled comp-241",
-    "description": "1 published Origin UI slider label disabled comp-241 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 241)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-241",
     "examples": [
@@ -30704,8 +30704,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-242",
-    "name": "Origin UI slider label radix comp-242",
-    "description": "1 published Origin UI slider label radix comp-242 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 242)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-242",
     "examples": [
@@ -30719,8 +30719,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-243",
-    "name": "Origin UI slider label radix comp-243",
-    "description": "1 published Origin UI slider label radix comp-243 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 243)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-243",
     "examples": [
@@ -30734,8 +30734,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-244",
-    "name": "Origin UI slider label radix comp-244",
-    "description": "1 published Origin UI slider label radix comp-244 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 244)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-244",
     "examples": [
@@ -30749,8 +30749,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-245",
-    "name": "Origin UI slider label radix comp-245",
-    "description": "1 published Origin UI slider label radix comp-245 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 245)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-245",
     "examples": [
@@ -30764,8 +30764,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-246",
-    "name": "Origin UI slider label radix comp-246",
-    "description": "1 published Origin UI slider label radix comp-246 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 246)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-246",
     "examples": [
@@ -30779,8 +30779,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-247",
-    "name": "Origin UI slider label radix comp-247",
-    "description": "1 published Origin UI slider label radix comp-247 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 247)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-247",
     "examples": [
@@ -30794,8 +30794,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-248",
-    "name": "Origin UI slider label radix comp-248",
-    "description": "1 published Origin UI slider label radix comp-248 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 248)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-248",
     "examples": [
@@ -30809,8 +30809,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-249",
-    "name": "Origin UI slider label tooltip comp-249",
-    "description": "1 published Origin UI slider label tooltip comp-249 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 249)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-249",
     "examples": [
@@ -30824,8 +30824,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-25",
-    "name": "Origin UI input label search comp-25",
-    "description": "1 published Origin UI input label search comp-25 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Search Input (Example 25)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-25",
     "examples": [
@@ -30839,8 +30839,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-250",
-    "name": "Origin UI slider range slider label comp-250",
-    "description": "1 published Origin UI slider range slider label comp-250 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 250)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-250",
     "examples": [
@@ -30854,8 +30854,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-251",
-    "name": "Origin UI slider range slider label comp-251",
-    "description": "1 published Origin UI slider range slider label comp-251 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 251)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-251",
     "examples": [
@@ -30869,8 +30869,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-252",
-    "name": "Origin UI slider label volume comp-252",
-    "description": "1 published Origin UI slider label volume comp-252 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 252)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-252",
     "examples": [
@@ -30884,8 +30884,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-253",
-    "name": "Origin UI slider range slider label comp-253",
-    "description": "1 published Origin UI slider range slider label comp-253 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 253)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-253",
     "examples": [
@@ -30899,8 +30899,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-254",
-    "name": "Origin UI slider label button comp-254",
-    "description": "1 published Origin UI slider label button comp-254 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 254)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-254",
     "examples": [
@@ -30914,8 +30914,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-255",
-    "name": "Origin UI slider label input comp-255",
-    "description": "1 published Origin UI slider label input comp-255 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 255)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-255",
     "examples": [
@@ -30929,8 +30929,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-256",
-    "name": "Origin UI slider label vote comp-256",
-    "description": "1 published Origin UI slider label vote comp-256 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 256)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-256",
     "examples": [
@@ -30944,8 +30944,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-257",
-    "name": "Origin UI slider label vote comp-257",
-    "description": "1 published Origin UI slider label vote comp-257 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 257)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-257",
     "examples": [
@@ -30959,8 +30959,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-258",
-    "name": "Origin UI slider range slider label comp-258",
-    "description": "1 published Origin UI slider range slider label comp-258 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 258)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-258",
     "examples": [
@@ -30974,8 +30974,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-259",
-    "name": "Origin UI slider label button comp-259",
-    "description": "1 published Origin UI slider label button comp-259 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 259)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-259",
     "examples": [
@@ -30989,8 +30989,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-26",
-    "name": "Origin UI input label button comp-26",
-    "description": "1 published Origin UI input label button comp-26 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Search Input (Example 26)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-26",
     "examples": [
@@ -31004,8 +31004,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-260",
-    "name": "Origin UI slider range slider label comp-260",
-    "description": "1 published Origin UI slider range slider label comp-260 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 260)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-260",
     "examples": [
@@ -31019,8 +31019,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-261",
-    "name": "Origin UI slider vertical slider label comp-261",
-    "description": "1 published Origin UI slider vertical slider label comp-261 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 261)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-261",
     "examples": [
@@ -31034,8 +31034,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-262",
-    "name": "Origin UI slider vertical slider label comp-262",
-    "description": "1 published Origin UI slider vertical slider label comp-262 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 262)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-262",
     "examples": [
@@ -31049,8 +31049,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-263",
-    "name": "Origin UI slider vertical slider range slider comp-263",
-    "description": "1 published Origin UI slider vertical slider range slider comp-263 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 263)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-263",
     "examples": [
@@ -31064,8 +31064,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-264",
-    "name": "Origin UI slider label input comp-264",
-    "description": "1 published Origin UI slider label input comp-264 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 264)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-264",
     "examples": [
@@ -31079,8 +31079,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-265",
-    "name": "Origin UI slider label input comp-265",
-    "description": "1 published Origin UI slider label input comp-265 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 265)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-265",
     "examples": [
@@ -31094,8 +31094,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-266",
-    "name": "Origin UI slider label equalizer comp-266",
-    "description": "1 published Origin UI slider label equalizer comp-266 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Slider (Example 266)",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-266",
     "examples": [
@@ -31109,8 +31109,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-267",
-    "name": "Origin UI alert warning comp-267",
-    "description": "1 published Origin UI alert warning comp-267 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Alert (Example 267)",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-267",
     "examples": [
@@ -31124,8 +31124,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-268",
-    "name": "Origin UI alert warning comp-268",
-    "description": "1 published Origin UI alert warning comp-268 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Alert (Example 268)",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-268",
     "examples": [
@@ -31139,8 +31139,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-269",
-    "name": "Origin UI alert error comp-269",
-    "description": "1 published Origin UI alert error comp-269 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Alert (Example 269)",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-269",
     "examples": [
@@ -31154,8 +31154,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-27",
-    "name": "Origin UI input label button comp-27",
-    "description": "1 published Origin UI input label button comp-27 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Search Input (Example 27)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-27",
     "examples": [
@@ -31169,8 +31169,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-270",
-    "name": "Origin UI alert error comp-270",
-    "description": "1 published Origin UI alert error comp-270 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Alert (Example 270)",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-270",
     "examples": [
@@ -31184,8 +31184,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-271",
-    "name": "Origin UI alert success comp-271",
-    "description": "1 published Origin UI alert success comp-271 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Alert (Example 271)",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-271",
     "examples": [
@@ -31199,8 +31199,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-272",
-    "name": "Origin UI alert success comp-272",
-    "description": "1 published Origin UI alert success comp-272 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Alert (Example 272)",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-272",
     "examples": [
@@ -31214,8 +31214,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-273",
-    "name": "Origin UI alert info comp-273",
-    "description": "1 published Origin UI alert info comp-273 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Alert (Example 273)",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-273",
     "examples": [
@@ -31229,8 +31229,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-274",
-    "name": "Origin UI alert info comp-274",
-    "description": "1 published Origin UI alert info comp-274 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Alert (Example 274)",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-274",
     "examples": [
@@ -31244,8 +31244,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-275",
-    "name": "Origin UI alert warning comp-275",
-    "description": "1 published Origin UI alert warning comp-275 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Alert (Example 275)",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-275",
     "examples": [
@@ -31259,8 +31259,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-276",
-    "name": "Origin UI alert warning comp-276",
-    "description": "1 published Origin UI alert warning comp-276 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Alert (Example 276)",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-276",
     "examples": [
@@ -31274,8 +31274,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-277",
-    "name": "Origin UI alert error signup comp-277",
-    "description": "1 published Origin UI alert error signup comp-277 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Alert (Example 277)",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-277",
     "examples": [
@@ -31289,8 +31289,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-278",
-    "name": "Origin UI alert error signup comp-278",
-    "description": "1 published Origin UI alert error signup comp-278 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Alert (Example 278)",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-278",
     "examples": [
@@ -31304,8 +31304,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-279",
-    "name": "Origin UI notification warning comp-279",
-    "description": "1 published Origin UI notification warning comp-279 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 279)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-279",
     "examples": [
@@ -31319,8 +31319,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-28",
-    "name": "Origin UI input label button comp-28",
-    "description": "1 published Origin UI input label button comp-28 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 28)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-28",
     "examples": [
@@ -31334,8 +31334,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-280",
-    "name": "Origin UI notification error comp-280",
-    "description": "1 published Origin UI notification error comp-280 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 280)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-280",
     "examples": [
@@ -31349,8 +31349,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-281",
-    "name": "Origin UI notification success comp-281",
-    "description": "1 published Origin UI notification success comp-281 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 281)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-281",
     "examples": [
@@ -31364,8 +31364,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-282",
-    "name": "Origin UI notification info comp-282",
-    "description": "1 published Origin UI notification info comp-282 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 282)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-282",
     "examples": [
@@ -31379,8 +31379,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-283",
-    "name": "Origin UI notification warning comp-283",
-    "description": "1 published Origin UI notification warning comp-283 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 283)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-283",
     "examples": [
@@ -31394,8 +31394,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-284",
-    "name": "Origin UI notification error comp-284",
-    "description": "1 published Origin UI notification error comp-284 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 284)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-284",
     "examples": [
@@ -31409,8 +31409,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-285",
-    "name": "Origin UI notification success comp-285",
-    "description": "1 published Origin UI notification success comp-285 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 285)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-285",
     "examples": [
@@ -31424,8 +31424,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-286",
-    "name": "Origin UI notification info comp-286",
-    "description": "1 published Origin UI notification info comp-286 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 286)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-286",
     "examples": [
@@ -31439,8 +31439,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-287",
-    "name": "Origin UI notification button success comp-287",
-    "description": "1 published Origin UI notification button success comp-287 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 287)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-287",
     "examples": [
@@ -31454,8 +31454,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-288",
-    "name": "Origin UI notification success comp-288",
-    "description": "1 published Origin UI notification success comp-288 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 288)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-288",
     "examples": [
@@ -31469,8 +31469,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-289",
-    "name": "Origin UI notification button warning comp-289",
-    "description": "1 published Origin UI notification button warning comp-289 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 289)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-289",
     "examples": [
@@ -31484,8 +31484,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-29",
-    "name": "Origin UI input label button comp-29",
-    "description": "1 published Origin UI input label button comp-29 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 29)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-29",
     "examples": [
@@ -31499,8 +31499,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-290",
-    "name": "Origin UI notification button error comp-290",
-    "description": "1 published Origin UI notification button error comp-290 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 290)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-290",
     "examples": [
@@ -31514,8 +31514,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-291",
-    "name": "Origin UI notification button success comp-291",
-    "description": "1 published Origin UI notification button success comp-291 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 291)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-291",
     "examples": [
@@ -31529,8 +31529,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-292",
-    "name": "Origin UI notification button info comp-292",
-    "description": "1 published Origin UI notification button info comp-292 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 292)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-292",
     "examples": [
@@ -31544,8 +31544,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-293",
-    "name": "Origin UI notification button cookies comp-293",
-    "description": "1 published Origin UI notification button cookies comp-293 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 293)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-293",
     "examples": [
@@ -31559,8 +31559,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-294",
-    "name": "Origin UI notification button info comp-294",
-    "description": "1 published Origin UI notification button info comp-294 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 294)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-294",
     "examples": [
@@ -31574,8 +31574,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-295",
-    "name": "Origin UI notification button comp-295",
-    "description": "1 published Origin UI notification button comp-295 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 295)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-295",
     "examples": [
@@ -31589,8 +31589,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-296",
-    "name": "Origin UI notification button comp-296",
-    "description": "1 published Origin UI notification button comp-296 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 296)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-296",
     "examples": [
@@ -31604,8 +31604,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-297",
-    "name": "Origin UI notification toast radix comp-297",
-    "description": "1 published Origin UI notification toast radix comp-297 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 297)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-297",
     "examples": [
@@ -31619,8 +31619,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-298",
-    "name": "Origin UI notification toast success comp-298",
-    "description": "1 published Origin UI notification toast success comp-298 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 298)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-298",
     "examples": [
@@ -31634,8 +31634,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-299",
-    "name": "Origin UI notification toast sonner comp-299",
-    "description": "1 published Origin UI notification toast sonner comp-299 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 299)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-299",
     "examples": [
@@ -31650,7 +31650,7 @@ export const externalRegistry = [
     "sourceId": "originui",
     "slug": "originui-file-input",
     "name": "Origin UI File Input",
-    "description": "1 published Origin UI file input examples with complete pinned source and MIT attribution.",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "originui/originui-file-input",
     "examples": [
@@ -31664,8 +31664,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-300",
-    "name": "Origin UI notification toast sonner comp-300",
-    "description": "1 published Origin UI notification toast sonner comp-300 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 300)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-300",
     "examples": [
@@ -31679,8 +31679,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-301",
-    "name": "Origin UI banner cookies gdpr comp-301",
-    "description": "1 published Origin UI banner cookies gdpr comp-301 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 301)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-301",
     "examples": [
@@ -31694,8 +31694,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-302",
-    "name": "Origin UI banner comp-302",
-    "description": "1 published Origin UI banner comp-302 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Announcement Banner (Example 302)",
+    "description": "Display an announcement or call to action across a page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-302",
     "examples": [
@@ -31709,8 +31709,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-303",
-    "name": "Origin UI banner comp-303",
-    "description": "1 published Origin UI banner comp-303 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Announcement Banner (Example 303)",
+    "description": "Display an announcement or call to action across a page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-303",
     "examples": [
@@ -31724,8 +31724,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-304",
-    "name": "Origin UI banner comp-304",
-    "description": "1 published Origin UI banner comp-304 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Announcement Banner (Example 304)",
+    "description": "Display an announcement or call to action across a page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-304",
     "examples": [
@@ -31739,8 +31739,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-305",
-    "name": "Origin UI banner comp-305",
-    "description": "1 published Origin UI banner comp-305 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 305)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-305",
     "examples": [
@@ -31754,8 +31754,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-306",
-    "name": "Origin UI banner comp-306",
-    "description": "1 published Origin UI banner comp-306 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 306)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-306",
     "examples": [
@@ -31769,8 +31769,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-307",
-    "name": "Origin UI banner comp-307",
-    "description": "1 published Origin UI banner comp-307 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 307)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-307",
     "examples": [
@@ -31784,8 +31784,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-308",
-    "name": "Origin UI banner comp-308",
-    "description": "1 published Origin UI banner comp-308 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 308)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-308",
     "examples": [
@@ -31799,8 +31799,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-309",
-    "name": "Origin UI banner comp-309",
-    "description": "1 published Origin UI banner comp-309 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 309)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-309",
     "examples": [
@@ -31814,8 +31814,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-31",
-    "name": "Origin UI input label comp-31",
-    "description": "1 published Origin UI input label comp-31 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Email Input (Example 31)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-31",
     "examples": [
@@ -31829,8 +31829,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-310",
-    "name": "Origin UI banner countdown sale comp-310",
-    "description": "1 published Origin UI banner countdown sale comp-310 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 310)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-310",
     "examples": [
@@ -31844,8 +31844,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-311",
-    "name": "Origin UI banner newsletter subscribe comp-311",
-    "description": "1 published Origin UI banner newsletter subscribe comp-311 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Announcement Banner (Example 311)",
+    "description": "Display an announcement or call to action across a page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-311",
     "examples": [
@@ -31859,8 +31859,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-312",
-    "name": "Origin UI banner comp-312",
-    "description": "1 published Origin UI banner comp-312 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 312)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-312",
     "examples": [
@@ -31874,8 +31874,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-313",
-    "name": "Origin UI dialog modal alert comp-313",
-    "description": "1 published Origin UI dialog modal alert comp-313 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Confirmation Dialog (Example 313)",
+    "description": "Ask for confirmation before completing an important action.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-313",
     "examples": [
@@ -31889,8 +31889,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-314",
-    "name": "Origin UI dialog modal alert comp-314",
-    "description": "1 published Origin UI dialog modal alert comp-314 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Confirmation Dialog (Example 314)",
+    "description": "Ask for confirmation before completing an important action.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-314",
     "examples": [
@@ -31904,8 +31904,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-315",
-    "name": "Origin UI dialog modal radix comp-315",
-    "description": "1 published Origin UI dialog modal radix comp-315 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 315)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-315",
     "examples": [
@@ -31919,8 +31919,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-316",
-    "name": "Origin UI dialog modal radix comp-316",
-    "description": "1 published Origin UI dialog modal radix comp-316 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 316)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-316",
     "examples": [
@@ -31934,8 +31934,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-317",
-    "name": "Origin UI dialog modal radix comp-317",
-    "description": "1 published Origin UI dialog modal radix comp-317 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 317)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-317",
     "examples": [
@@ -31949,8 +31949,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-318",
-    "name": "Origin UI dialog modal radix comp-318",
-    "description": "1 published Origin UI dialog modal radix comp-318 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 318)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-318",
     "examples": [
@@ -31964,8 +31964,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-319",
-    "name": "Origin UI dialog modal radix comp-319",
-    "description": "1 published Origin UI dialog modal radix comp-319 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 319)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-319",
     "examples": [
@@ -31979,8 +31979,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-32",
-    "name": "Origin UI input label comp-32",
-    "description": "1 published Origin UI input label comp-32 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Email Input (Example 32)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-32",
     "examples": [
@@ -31994,8 +31994,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-320",
-    "name": "Origin UI dialog modal delete comp-320",
-    "description": "1 published Origin UI dialog modal delete comp-320 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 320)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-320",
     "examples": [
@@ -32009,8 +32009,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-321",
-    "name": "Origin UI dialog modal newsletter comp-321",
-    "description": "1 published Origin UI dialog modal newsletter comp-321 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 321)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-321",
     "examples": [
@@ -32024,8 +32024,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-322",
-    "name": "Origin UI dialog modal feedback comp-322",
-    "description": "1 published Origin UI dialog modal feedback comp-322 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 322)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-322",
     "examples": [
@@ -32039,8 +32039,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-323",
-    "name": "Origin UI dialog modal rating comp-323",
-    "description": "1 published Origin UI dialog modal rating comp-323 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 323)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-323",
     "examples": [
@@ -32054,8 +32054,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-324",
-    "name": "Origin UI dialog modal otp comp-324",
-    "description": "1 published Origin UI dialog modal otp comp-324 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 324)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-324",
     "examples": [
@@ -32069,8 +32069,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-325",
-    "name": "Origin UI dialog modal signup comp-325",
-    "description": "1 published Origin UI dialog modal signup comp-325 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 325)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-325",
     "examples": [
@@ -32084,8 +32084,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-326",
-    "name": "Origin UI dialog modal login comp-326",
-    "description": "1 published Origin UI dialog modal login comp-326 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 326)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-326",
     "examples": [
@@ -32099,8 +32099,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-327",
-    "name": "Origin UI dialog modal form comp-327",
-    "description": "1 published Origin UI dialog modal form comp-327 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 327)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-327",
     "examples": [
@@ -32114,8 +32114,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-328",
-    "name": "Origin UI dialog modal checkout comp-328",
-    "description": "1 published Origin UI dialog modal checkout comp-328 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 328)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-328",
     "examples": [
@@ -32129,8 +32129,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-329",
-    "name": "Origin UI dialog modal checkout comp-329",
-    "description": "1 published Origin UI dialog modal checkout comp-329 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 329)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-329",
     "examples": [
@@ -32144,8 +32144,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-33",
-    "name": "Origin UI input label comp-33",
-    "description": "1 published Origin UI input label comp-33 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Email Input (Example 33)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-33",
     "examples": [
@@ -32159,8 +32159,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-330",
-    "name": "Origin UI dialog modal user comp-330",
-    "description": "1 published Origin UI dialog modal user comp-330 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 330)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-330",
     "examples": [
@@ -32174,8 +32174,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-331",
-    "name": "Origin UI dialog modal user comp-331",
-    "description": "1 published Origin UI dialog modal user comp-331 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI File Upload (Example 331)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-331",
     "examples": [
@@ -32189,8 +32189,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-332",
-    "name": "Origin UI dialog modal onboarding comp-332",
-    "description": "1 published Origin UI dialog modal onboarding comp-332 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 332)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-332",
     "examples": [
@@ -32204,8 +32204,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-333",
-    "name": "Origin UI dialog modal command comp-333",
-    "description": "1 published Origin UI dialog modal command comp-333 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 333)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-333",
     "examples": [
@@ -32219,8 +32219,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-334",
-    "name": "Origin UI accordion radix comp-334",
-    "description": "1 published Origin UI accordion radix comp-334 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 334)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-334",
     "examples": [
@@ -32234,8 +32234,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-335",
-    "name": "Origin UI accordion radix comp-335",
-    "description": "1 published Origin UI accordion radix comp-335 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 335)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-335",
     "examples": [
@@ -32249,8 +32249,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-336",
-    "name": "Origin UI accordion radix comp-336",
-    "description": "1 published Origin UI accordion radix comp-336 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 336)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-336",
     "examples": [
@@ -32264,8 +32264,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-337",
-    "name": "Origin UI accordion radix comp-337",
-    "description": "1 published Origin UI accordion radix comp-337 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 337)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-337",
     "examples": [
@@ -32279,8 +32279,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-338",
-    "name": "Origin UI accordion radix comp-338",
-    "description": "1 published Origin UI accordion radix comp-338 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 338)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-338",
     "examples": [
@@ -32294,8 +32294,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-339",
-    "name": "Origin UI accordion radix comp-339",
-    "description": "1 published Origin UI accordion radix comp-339 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 339)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-339",
     "examples": [
@@ -32309,8 +32309,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-34",
-    "name": "Origin UI input label comp-34",
-    "description": "1 published Origin UI input label comp-34 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 34)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-34",
     "examples": [
@@ -32324,8 +32324,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-340",
-    "name": "Origin UI accordion radix comp-340",
-    "description": "1 published Origin UI accordion radix comp-340 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 340)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-340",
     "examples": [
@@ -32339,8 +32339,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-341",
-    "name": "Origin UI accordion radix comp-341",
-    "description": "1 published Origin UI accordion radix comp-341 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 341)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-341",
     "examples": [
@@ -32354,8 +32354,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-342",
-    "name": "Origin UI accordion radix comp-342",
-    "description": "1 published Origin UI accordion radix comp-342 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 342)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-342",
     "examples": [
@@ -32369,8 +32369,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-343",
-    "name": "Origin UI accordion radix comp-343",
-    "description": "1 published Origin UI accordion radix comp-343 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 343)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-343",
     "examples": [
@@ -32384,8 +32384,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-344",
-    "name": "Origin UI accordion radix comp-344",
-    "description": "1 published Origin UI accordion radix comp-344 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 344)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-344",
     "examples": [
@@ -32399,8 +32399,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-345",
-    "name": "Origin UI accordion radix comp-345",
-    "description": "1 published Origin UI accordion radix comp-345 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 345)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-345",
     "examples": [
@@ -32414,8 +32414,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-346",
-    "name": "Origin UI accordion radix comp-346",
-    "description": "1 published Origin UI accordion radix comp-346 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 346)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-346",
     "examples": [
@@ -32429,8 +32429,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-347",
-    "name": "Origin UI accordion radix comp-347",
-    "description": "1 published Origin UI accordion radix comp-347 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 347)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-347",
     "examples": [
@@ -32444,8 +32444,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-348",
-    "name": "Origin UI accordion radix comp-348",
-    "description": "1 published Origin UI accordion radix comp-348 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 348)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-348",
     "examples": [
@@ -32459,8 +32459,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-349",
-    "name": "Origin UI accordion radix comp-349",
-    "description": "1 published Origin UI accordion radix comp-349 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 349)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-349",
     "examples": [
@@ -32474,8 +32474,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-35",
-    "name": "Origin UI input label comp-35",
-    "description": "1 published Origin UI input label comp-35 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 35)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-35",
     "examples": [
@@ -32489,8 +32489,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-350",
-    "name": "Origin UI accordion radix comp-350",
-    "description": "1 published Origin UI accordion radix comp-350 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 350)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-350",
     "examples": [
@@ -32504,8 +32504,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-351",
-    "name": "Origin UI accordion radix comp-351",
-    "description": "1 published Origin UI accordion radix comp-351 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 351)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-351",
     "examples": [
@@ -32519,8 +32519,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-352",
-    "name": "Origin UI accordion collapsible radix comp-352",
-    "description": "1 published Origin UI accordion collapsible radix comp-352 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 352)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-352",
     "examples": [
@@ -32534,8 +32534,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-353",
-    "name": "Origin UI accordion collapsible radix comp-353",
-    "description": "1 published Origin UI accordion collapsible radix comp-353 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Accordion (Example 353)",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-353",
     "examples": [
@@ -32549,8 +32549,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-354",
-    "name": "Origin UI tooltip radix comp-354",
-    "description": "1 published Origin UI tooltip radix comp-354 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tooltip (Example 354)",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-354",
     "examples": [
@@ -32564,8 +32564,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-355",
-    "name": "Origin UI tooltip radix comp-355",
-    "description": "1 published Origin UI tooltip radix comp-355 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tooltip (Example 355)",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-355",
     "examples": [
@@ -32579,8 +32579,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-356",
-    "name": "Origin UI tooltip radix comp-356",
-    "description": "1 published Origin UI tooltip radix comp-356 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tooltip (Example 356)",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-356",
     "examples": [
@@ -32594,8 +32594,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-357",
-    "name": "Origin UI tooltip radix comp-357",
-    "description": "1 published Origin UI tooltip radix comp-357 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tooltip (Example 357)",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-357",
     "examples": [
@@ -32609,8 +32609,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-358",
-    "name": "Origin UI tooltip radix comp-358",
-    "description": "1 published Origin UI tooltip radix comp-358 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tooltip (Example 358)",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-358",
     "examples": [
@@ -32624,8 +32624,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-359",
-    "name": "Origin UI tooltip image radix comp-359",
-    "description": "1 published Origin UI tooltip image radix comp-359 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tooltip (Example 359)",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-359",
     "examples": [
@@ -32639,8 +32639,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-36",
-    "name": "Origin UI input label date comp-36",
-    "description": "1 published Origin UI input label date comp-36 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 36)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-36",
     "examples": [
@@ -32654,8 +32654,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-360",
-    "name": "Origin UI tooltip button kbd comp-360",
-    "description": "1 published Origin UI tooltip button kbd comp-360 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tooltip (Example 360)",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-360",
     "examples": [
@@ -32669,8 +32669,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-361",
-    "name": "Origin UI tooltip radix comp-361",
-    "description": "1 published Origin UI tooltip radix comp-361 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tooltip (Example 361)",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-361",
     "examples": [
@@ -32684,8 +32684,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-362",
-    "name": "Origin UI tooltip chart radix comp-362",
-    "description": "1 published Origin UI tooltip chart radix comp-362 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tooltip (Example 362)",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-362",
     "examples": [
@@ -32699,8 +32699,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-363",
-    "name": "Origin UI tooltip hover card user comp-363",
-    "description": "1 published Origin UI tooltip hover card user comp-363 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 363)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-363",
     "examples": [
@@ -32714,8 +32714,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-364",
-    "name": "Origin UI tooltip hover card user comp-364",
-    "description": "1 published Origin UI tooltip hover card user comp-364 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Card (Example 364)",
+    "description": "Group related content and actions in a distinct container.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-364",
     "examples": [
@@ -32729,8 +32729,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-365",
-    "name": "Origin UI tooltip hover card image comp-365",
-    "description": "1 published Origin UI tooltip hover card image comp-365 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Card (Example 365)",
+    "description": "Group related content and actions in a distinct container.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-365",
     "examples": [
@@ -32744,8 +32744,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-366",
-    "name": "Origin UI dropdown radix comp-366",
-    "description": "1 published Origin UI dropdown radix comp-366 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 366)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-366",
     "examples": [
@@ -32759,8 +32759,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-367",
-    "name": "Origin UI dropdown radix comp-367",
-    "description": "1 published Origin UI dropdown radix comp-367 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 367)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-367",
     "examples": [
@@ -32774,8 +32774,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-368",
-    "name": "Origin UI dropdown radix comp-368",
-    "description": "1 published Origin UI dropdown radix comp-368 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 368)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-368",
     "examples": [
@@ -32789,8 +32789,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-369",
-    "name": "Origin UI dropdown radix comp-369",
-    "description": "1 published Origin UI dropdown radix comp-369 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 369)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-369",
     "examples": [
@@ -32804,8 +32804,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-37",
-    "name": "Origin UI input label date comp-37",
-    "description": "1 published Origin UI input label date comp-37 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 37)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-37",
     "examples": [
@@ -32819,8 +32819,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-370",
-    "name": "Origin UI dropdown radix comp-370",
-    "description": "1 published Origin UI dropdown radix comp-370 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 370)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-370",
     "examples": [
@@ -32834,8 +32834,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-371",
-    "name": "Origin UI dropdown checkbox radix comp-371",
-    "description": "1 published Origin UI dropdown checkbox radix comp-371 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 371)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-371",
     "examples": [
@@ -32849,8 +32849,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-372",
-    "name": "Origin UI dropdown radio radix comp-372",
-    "description": "1 published Origin UI dropdown radio radix comp-372 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 372)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-372",
     "examples": [
@@ -32864,8 +32864,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-373",
-    "name": "Origin UI dropdown kbd delete comp-373",
-    "description": "1 published Origin UI dropdown kbd delete comp-373 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 373)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-373",
     "examples": [
@@ -32879,8 +32879,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-374",
-    "name": "Origin UI dropdown checkbox radio comp-374",
-    "description": "1 published Origin UI dropdown checkbox radio comp-374 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 374)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-374",
     "examples": [
@@ -32894,8 +32894,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-375",
-    "name": "Origin UI dropdown user profile comp-375",
-    "description": "1 published Origin UI dropdown user profile comp-375 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 375)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-375",
     "examples": [
@@ -32909,8 +32909,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-376",
-    "name": "Origin UI dropdown user profile comp-376",
-    "description": "1 published Origin UI dropdown user profile comp-376 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 376)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-376",
     "examples": [
@@ -32924,8 +32924,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-377",
-    "name": "Origin UI dropdown user avatar comp-377",
-    "description": "1 published Origin UI dropdown user avatar comp-377 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 377)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-377",
     "examples": [
@@ -32939,8 +32939,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-378",
-    "name": "Origin UI dropdown info radix comp-378",
-    "description": "1 published Origin UI dropdown info radix comp-378 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 378)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-378",
     "examples": [
@@ -32954,8 +32954,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-379",
-    "name": "Origin UI dropdown text editor radix comp-379",
-    "description": "1 published Origin UI dropdown text editor radix comp-379 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 379)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-379",
     "examples": [
@@ -32969,8 +32969,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-38",
-    "name": "Origin UI input label date comp-38",
-    "description": "1 published Origin UI input label date comp-38 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 38)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-38",
     "examples": [
@@ -32984,8 +32984,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-380",
-    "name": "Origin UI dropdown darkmode radix comp-380",
-    "description": "1 published Origin UI dropdown darkmode radix comp-380 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 380)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-380",
     "examples": [
@@ -32999,8 +32999,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-381",
-    "name": "Origin UI popover filter radix comp-381",
-    "description": "1 published Origin UI popover filter radix comp-381 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Popover (Example 381)",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-381",
     "examples": [
@@ -33014,8 +33014,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-382",
-    "name": "Origin UI popover notification radix comp-382",
-    "description": "1 published Origin UI popover notification radix comp-382 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Popover (Example 382)",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-382",
     "examples": [
@@ -33029,8 +33029,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-383",
-    "name": "Origin UI popover notification user comp-383",
-    "description": "1 published Origin UI popover notification user comp-383 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Popover (Example 383)",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-383",
     "examples": [
@@ -33044,8 +33044,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-384",
-    "name": "Origin UI popover tooltip radix comp-384",
-    "description": "1 published Origin UI popover tooltip radix comp-384 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Popover (Example 384)",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-384",
     "examples": [
@@ -33059,8 +33059,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-385",
-    "name": "Origin UI popover tooltip radix comp-385",
-    "description": "1 published Origin UI popover tooltip radix comp-385 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Popover (Example 385)",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-385",
     "examples": [
@@ -33074,8 +33074,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-386",
-    "name": "Origin UI popover tooltip radix comp-386",
-    "description": "1 published Origin UI popover tooltip radix comp-386 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Popover (Example 386)",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-386",
     "examples": [
@@ -33089,8 +33089,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-387",
-    "name": "Origin UI popover share social comp-387",
-    "description": "1 published Origin UI popover share social comp-387 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tooltip (Example 387)",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-387",
     "examples": [
@@ -33104,8 +33104,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-388",
-    "name": "Origin UI popover feedback form comp-388",
-    "description": "1 published Origin UI popover feedback form comp-388 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Popover (Example 388)",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-388",
     "examples": [
@@ -33119,8 +33119,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-389",
-    "name": "Origin UI popover tour radix comp-389",
-    "description": "1 published Origin UI popover tour radix comp-389 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Popover (Example 389)",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-389",
     "examples": [
@@ -33134,8 +33134,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-39",
-    "name": "Origin UI input label date comp-39",
-    "description": "1 published Origin UI input label date comp-39 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 39)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-39",
     "examples": [
@@ -33149,8 +33149,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-390",
-    "name": "Origin UI avatar user profile comp-390",
-    "description": "1 published Origin UI avatar user profile comp-390 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 390)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-390",
     "examples": [
@@ -33164,8 +33164,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-391",
-    "name": "Origin UI avatar user profile comp-391",
-    "description": "1 published Origin UI avatar user profile comp-391 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 391)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-391",
     "examples": [
@@ -33179,8 +33179,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-392",
-    "name": "Origin UI avatar user profile comp-392",
-    "description": "1 published Origin UI avatar user profile comp-392 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 392)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-392",
     "examples": [
@@ -33194,8 +33194,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-393",
-    "name": "Origin UI avatar user profile comp-393",
-    "description": "1 published Origin UI avatar user profile comp-393 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 393)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-393",
     "examples": [
@@ -33209,8 +33209,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-394",
-    "name": "Origin UI avatar user profile comp-394",
-    "description": "1 published Origin UI avatar user profile comp-394 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 394)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-394",
     "examples": [
@@ -33224,8 +33224,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-395",
-    "name": "Origin UI avatar user profile comp-395",
-    "description": "1 published Origin UI avatar user profile comp-395 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 395)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-395",
     "examples": [
@@ -33239,8 +33239,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-396",
-    "name": "Origin UI avatar user profile comp-396",
-    "description": "1 published Origin UI avatar user profile comp-396 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 396)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-396",
     "examples": [
@@ -33254,8 +33254,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-397",
-    "name": "Origin UI avatar user profile comp-397",
-    "description": "1 published Origin UI avatar user profile comp-397 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 397)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-397",
     "examples": [
@@ -33269,8 +33269,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-398",
-    "name": "Origin UI avatar user profile comp-398",
-    "description": "1 published Origin UI avatar user profile comp-398 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 398)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-398",
     "examples": [
@@ -33284,8 +33284,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-399",
-    "name": "Origin UI avatar user profile comp-399",
-    "description": "1 published Origin UI avatar user profile comp-399 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 399)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-399",
     "examples": [
@@ -33299,8 +33299,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-40",
-    "name": "Origin UI input label date comp-40",
-    "description": "1 published Origin UI input label date comp-40 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 40)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-40",
     "examples": [
@@ -33314,8 +33314,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-400",
-    "name": "Origin UI avatar user profile comp-400",
-    "description": "1 published Origin UI avatar user profile comp-400 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 400)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-400",
     "examples": [
@@ -33329,8 +33329,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-401",
-    "name": "Origin UI avatar avatar group comp-401",
-    "description": "1 published Origin UI avatar avatar group comp-401 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 401)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-401",
     "examples": [
@@ -33344,8 +33344,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-402",
-    "name": "Origin UI avatar avatar group comp-402",
-    "description": "1 published Origin UI avatar avatar group comp-402 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 402)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-402",
     "examples": [
@@ -33359,8 +33359,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-403",
-    "name": "Origin UI avatar avatar group comp-403",
-    "description": "1 published Origin UI avatar avatar group comp-403 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 403)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-403",
     "examples": [
@@ -33374,8 +33374,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-404",
-    "name": "Origin UI avatar avatar group comp-404",
-    "description": "1 published Origin UI avatar avatar group comp-404 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 404)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-404",
     "examples": [
@@ -33389,8 +33389,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-405",
-    "name": "Origin UI avatar avatar group comp-405",
-    "description": "1 published Origin UI avatar avatar group comp-405 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 405)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-405",
     "examples": [
@@ -33404,8 +33404,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-406",
-    "name": "Origin UI avatar avatar group comp-406",
-    "description": "1 published Origin UI avatar avatar group comp-406 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 406)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-406",
     "examples": [
@@ -33419,8 +33419,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-407",
-    "name": "Origin UI avatar avatar group comp-407",
-    "description": "1 published Origin UI avatar avatar group comp-407 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 407)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-407",
     "examples": [
@@ -33434,8 +33434,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-408",
-    "name": "Origin UI avatar avatar group comp-408",
-    "description": "1 published Origin UI avatar avatar group comp-408 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 408)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-408",
     "examples": [
@@ -33449,8 +33449,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-409",
-    "name": "Origin UI avatar avatar group comp-409",
-    "description": "1 published Origin UI avatar avatar group comp-409 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 409)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-409",
     "examples": [
@@ -33464,8 +33464,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-41",
-    "name": "Origin UI input label date comp-41",
-    "description": "1 published Origin UI input label date comp-41 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 41)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-41",
     "examples": [
@@ -33479,8 +33479,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-410",
-    "name": "Origin UI avatar avatar group comp-410",
-    "description": "1 published Origin UI avatar avatar group comp-410 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 410)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-410",
     "examples": [
@@ -33494,8 +33494,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-411",
-    "name": "Origin UI avatar avatar group comp-411",
-    "description": "1 published Origin UI avatar avatar group comp-411 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 411)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-411",
     "examples": [
@@ -33509,8 +33509,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-412",
-    "name": "Origin UI avatar avatar group comp-412",
-    "description": "1 published Origin UI avatar avatar group comp-412 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Avatar (Example 412)",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-412",
     "examples": [
@@ -33524,8 +33524,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-413",
-    "name": "Origin UI badge chip comp-413",
-    "description": "1 published Origin UI badge chip comp-413 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Badge (Example 413)",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-413",
     "examples": [
@@ -33539,8 +33539,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-414",
-    "name": "Origin UI badge chip comp-414",
-    "description": "1 published Origin UI badge chip comp-414 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Badge (Example 414)",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-414",
     "examples": [
@@ -33554,8 +33554,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-415",
-    "name": "Origin UI badge chip comp-415",
-    "description": "1 published Origin UI badge chip comp-415 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Badge (Example 415)",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-415",
     "examples": [
@@ -33569,8 +33569,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-416",
-    "name": "Origin UI badge chip counter comp-416",
-    "description": "1 published Origin UI badge chip counter comp-416 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Badge (Example 416)",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-416",
     "examples": [
@@ -33584,8 +33584,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-417",
-    "name": "Origin UI badge chip comp-417",
-    "description": "1 published Origin UI badge chip comp-417 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Badge (Example 417)",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-417",
     "examples": [
@@ -33599,8 +33599,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-418",
-    "name": "Origin UI badge chip counter comp-418",
-    "description": "1 published Origin UI badge chip counter comp-418 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Badge (Example 418)",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-418",
     "examples": [
@@ -33614,8 +33614,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-419",
-    "name": "Origin UI badge chip status comp-419",
-    "description": "1 published Origin UI badge chip status comp-419 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Badge (Example 419)",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-419",
     "examples": [
@@ -33629,8 +33629,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-42",
-    "name": "Origin UI input label date comp-42",
-    "description": "1 published Origin UI input label date comp-42 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 42)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-42",
     "examples": [
@@ -33644,8 +33644,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-420",
-    "name": "Origin UI badge chip status comp-420",
-    "description": "1 published Origin UI badge chip status comp-420 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Badge (Example 420)",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-420",
     "examples": [
@@ -33659,8 +33659,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-421",
-    "name": "Origin UI badge chip status comp-421",
-    "description": "1 published Origin UI badge chip status comp-421 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Badge (Example 421)",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-421",
     "examples": [
@@ -33674,8 +33674,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-422",
-    "name": "Origin UI badge chip status comp-422",
-    "description": "1 published Origin UI badge chip status comp-422 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Badge (Example 422)",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-422",
     "examples": [
@@ -33689,8 +33689,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-423",
-    "name": "Origin UI badge chip checkbox comp-423",
-    "description": "1 published Origin UI badge chip checkbox comp-423 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 423)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-423",
     "examples": [
@@ -33704,8 +33704,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-424",
-    "name": "Origin UI badge chip comp-424",
-    "description": "1 published Origin UI badge chip comp-424 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 424)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-424",
     "examples": [
@@ -33719,8 +33719,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-425",
-    "name": "Origin UI badge chip tag comp-425",
-    "description": "1 published Origin UI badge chip tag comp-425 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 425)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-425",
     "examples": [
@@ -33734,8 +33734,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-426",
-    "name": "Origin UI tabs radix comp-426",
-    "description": "1 published Origin UI tabs radix comp-426 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 426)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-426",
     "examples": [
@@ -33749,8 +33749,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-427",
-    "name": "Origin UI tabs radix comp-427",
-    "description": "1 published Origin UI tabs radix comp-427 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 427)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-427",
     "examples": [
@@ -33764,8 +33764,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-428",
-    "name": "Origin UI tabs radix comp-428",
-    "description": "1 published Origin UI tabs radix comp-428 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 428)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-428",
     "examples": [
@@ -33779,8 +33779,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-429",
-    "name": "Origin UI tabs radix comp-429",
-    "description": "1 published Origin UI tabs radix comp-429 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 429)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-429",
     "examples": [
@@ -33794,8 +33794,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-43",
-    "name": "Origin UI input label date comp-43",
-    "description": "1 published Origin UI input label date comp-43 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dialog (Example 43)",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-43",
     "examples": [
@@ -33809,8 +33809,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-430",
-    "name": "Origin UI tabs radix comp-430",
-    "description": "1 published Origin UI tabs radix comp-430 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 430)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-430",
     "examples": [
@@ -33824,8 +33824,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-431",
-    "name": "Origin UI tabs radix comp-431",
-    "description": "1 published Origin UI tabs radix comp-431 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 431)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-431",
     "examples": [
@@ -33839,8 +33839,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-432",
-    "name": "Origin UI tabs radix comp-432",
-    "description": "1 published Origin UI tabs radix comp-432 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 432)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-432",
     "examples": [
@@ -33854,8 +33854,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-433",
-    "name": "Origin UI tabs radix comp-433",
-    "description": "1 published Origin UI tabs radix comp-433 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 433)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-433",
     "examples": [
@@ -33869,8 +33869,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-434",
-    "name": "Origin UI tabs radix comp-434",
-    "description": "1 published Origin UI tabs radix comp-434 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 434)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-434",
     "examples": [
@@ -33884,8 +33884,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-435",
-    "name": "Origin UI tabs radix comp-435",
-    "description": "1 published Origin UI tabs radix comp-435 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 435)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-435",
     "examples": [
@@ -33899,8 +33899,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-436",
-    "name": "Origin UI tabs radix comp-436",
-    "description": "1 published Origin UI tabs radix comp-436 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 436)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-436",
     "examples": [
@@ -33914,8 +33914,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-437",
-    "name": "Origin UI tabs radix comp-437",
-    "description": "1 published Origin UI tabs radix comp-437 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 437)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-437",
     "examples": [
@@ -33929,8 +33929,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-438",
-    "name": "Origin UI tabs radix comp-438",
-    "description": "1 published Origin UI tabs radix comp-438 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 438)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-438",
     "examples": [
@@ -33944,8 +33944,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-439",
-    "name": "Origin UI tabs radix comp-439",
-    "description": "1 published Origin UI tabs radix comp-439 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 439)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-439",
     "examples": [
@@ -33959,8 +33959,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-44",
-    "name": "Origin UI input label otp comp-44",
-    "description": "1 published Origin UI input label otp comp-44 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 44)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-44",
     "examples": [
@@ -33974,8 +33974,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-440",
-    "name": "Origin UI tabs radix comp-440",
-    "description": "1 published Origin UI tabs radix comp-440 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 440)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-440",
     "examples": [
@@ -33989,8 +33989,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-441",
-    "name": "Origin UI tabs radix comp-441",
-    "description": "1 published Origin UI tabs radix comp-441 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 441)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-441",
     "examples": [
@@ -34004,8 +34004,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-442",
-    "name": "Origin UI tabs vertical tabs radix comp-442",
-    "description": "1 published Origin UI tabs vertical tabs radix comp-442 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 442)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-442",
     "examples": [
@@ -34019,8 +34019,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-443",
-    "name": "Origin UI tabs vertical tabs radix comp-443",
-    "description": "1 published Origin UI tabs vertical tabs radix comp-443 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 443)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-443",
     "examples": [
@@ -34034,8 +34034,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-444",
-    "name": "Origin UI tabs vertical tabs radix comp-444",
-    "description": "1 published Origin UI tabs vertical tabs radix comp-444 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 444)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-444",
     "examples": [
@@ -34049,8 +34049,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-445",
-    "name": "Origin UI tabs vertical tabs radix comp-445",
-    "description": "1 published Origin UI tabs vertical tabs radix comp-445 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tabs (Example 445)",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-445",
     "examples": [
@@ -34064,8 +34064,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-446",
-    "name": "Origin UI breadcrumb radix comp-446",
-    "description": "1 published Origin UI breadcrumb radix comp-446 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 446)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-446",
     "examples": [
@@ -34079,8 +34079,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-447",
-    "name": "Origin UI breadcrumb dropdown radix comp-447",
-    "description": "1 published Origin UI breadcrumb dropdown radix comp-447 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 447)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-447",
     "examples": [
@@ -34094,8 +34094,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-448",
-    "name": "Origin UI breadcrumb radix comp-448",
-    "description": "1 published Origin UI breadcrumb radix comp-448 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Breadcrumbs (Example 448)",
+    "description": "Show the current location within a hierarchy of pages.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-448",
     "examples": [
@@ -34109,8 +34109,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-449",
-    "name": "Origin UI breadcrumb radix comp-449",
-    "description": "1 published Origin UI breadcrumb radix comp-449 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Breadcrumbs (Example 449)",
+    "description": "Show the current location within a hierarchy of pages.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-449",
     "examples": [
@@ -34124,8 +34124,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-45",
-    "name": "Origin UI input label otp comp-45",
-    "description": "1 published Origin UI input label otp comp-45 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 45)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-45",
     "examples": [
@@ -34139,8 +34139,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-450",
-    "name": "Origin UI breadcrumb radix comp-450",
-    "description": "1 published Origin UI breadcrumb radix comp-450 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Breadcrumbs (Example 450)",
+    "description": "Show the current location within a hierarchy of pages.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-450",
     "examples": [
@@ -34154,8 +34154,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-451",
-    "name": "Origin UI breadcrumb radix comp-451",
-    "description": "1 published Origin UI breadcrumb radix comp-451 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Breadcrumbs (Example 451)",
+    "description": "Show the current location within a hierarchy of pages.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-451",
     "examples": [
@@ -34169,8 +34169,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-452",
-    "name": "Origin UI breadcrumb radix comp-452",
-    "description": "1 published Origin UI breadcrumb radix comp-452 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Breadcrumbs (Example 452)",
+    "description": "Show the current location within a hierarchy of pages.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-452",
     "examples": [
@@ -34184,8 +34184,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-453",
-    "name": "Origin UI breadcrumb select radix comp-453",
-    "description": "1 published Origin UI breadcrumb select radix comp-453 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Breadcrumbs (Example 453)",
+    "description": "Show the current location within a hierarchy of pages.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-453",
     "examples": [
@@ -34199,8 +34199,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-454",
-    "name": "Origin UI pagination comp-454",
-    "description": "1 published Origin UI pagination comp-454 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Pagination (Example 454)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-454",
     "examples": [
@@ -34214,8 +34214,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-455",
-    "name": "Origin UI pagination comp-455",
-    "description": "1 published Origin UI pagination comp-455 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Pagination (Example 455)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-455",
     "examples": [
@@ -34229,8 +34229,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-456",
-    "name": "Origin UI pagination comp-456",
-    "description": "1 published Origin UI pagination comp-456 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Pagination (Example 456)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-456",
     "examples": [
@@ -34244,8 +34244,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-457",
-    "name": "Origin UI pagination comp-457",
-    "description": "1 published Origin UI pagination comp-457 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Pagination (Example 457)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-457",
     "examples": [
@@ -34259,8 +34259,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-458",
-    "name": "Origin UI pagination comp-458",
-    "description": "1 published Origin UI pagination comp-458 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Pagination (Example 458)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-458",
     "examples": [
@@ -34274,8 +34274,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-459",
-    "name": "Origin UI pagination comp-459",
-    "description": "1 published Origin UI pagination comp-459 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Pagination (Example 459)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-459",
     "examples": [
@@ -34289,8 +34289,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-46",
-    "name": "Origin UI input label phone comp-46",
-    "description": "1 published Origin UI input label phone comp-46 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 46)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-46",
     "examples": [
@@ -34304,8 +34304,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-460",
-    "name": "Origin UI pagination comp-460",
-    "description": "1 published Origin UI pagination comp-460 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Pagination (Example 460)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-460",
     "examples": [
@@ -34319,8 +34319,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-461",
-    "name": "Origin UI pagination comp-461",
-    "description": "1 published Origin UI pagination comp-461 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Pagination (Example 461)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-461",
     "examples": [
@@ -34334,8 +34334,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-462",
-    "name": "Origin UI pagination comp-462",
-    "description": "1 published Origin UI pagination comp-462 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Pagination (Example 462)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-462",
     "examples": [
@@ -34349,8 +34349,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-463",
-    "name": "Origin UI pagination select radix comp-463",
-    "description": "1 published Origin UI pagination select radix comp-463 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Pagination (Example 463)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-463",
     "examples": [
@@ -34364,8 +34364,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-464",
-    "name": "Origin UI pagination select radix comp-464",
-    "description": "1 published Origin UI pagination select radix comp-464 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Pagination (Example 464)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-464",
     "examples": [
@@ -34379,8 +34379,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-465",
-    "name": "Origin UI pagination input comp-465",
-    "description": "1 published Origin UI pagination input comp-465 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Pagination (Example 465)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-465",
     "examples": [
@@ -34394,8 +34394,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-466",
-    "name": "Origin UI table comp-466",
-    "description": "1 published Origin UI table comp-466 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Table (Example 466)",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-466",
     "examples": [
@@ -34409,8 +34409,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-467",
-    "name": "Origin UI table user avatar comp-467",
-    "description": "1 published Origin UI table user avatar comp-467 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Table (Example 467)",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-467",
     "examples": [
@@ -34424,8 +34424,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-468",
-    "name": "Origin UI table comp-468",
-    "description": "1 published Origin UI table comp-468 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Table (Example 468)",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-468",
     "examples": [
@@ -34439,8 +34439,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-469",
-    "name": "Origin UI table comp-469",
-    "description": "1 published Origin UI table comp-469 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Table (Example 469)",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-469",
     "examples": [
@@ -34454,8 +34454,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-47",
-    "name": "Origin UI input label checkout comp-47",
-    "description": "1 published Origin UI input label checkout comp-47 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 47)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-47",
     "examples": [
@@ -34469,8 +34469,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-470",
-    "name": "Origin UI table comp-470",
-    "description": "1 published Origin UI table comp-470 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Table (Example 470)",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-470",
     "examples": [
@@ -34484,8 +34484,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-471",
-    "name": "Origin UI table comp-471",
-    "description": "1 published Origin UI table comp-471 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Table (Example 471)",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-471",
     "examples": [
@@ -34499,8 +34499,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-472",
-    "name": "Origin UI table checkbox comp-472",
-    "description": "1 published Origin UI table checkbox comp-472 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 472)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-472",
     "examples": [
@@ -34514,8 +34514,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-473",
-    "name": "Origin UI table checkbox card comp-473",
-    "description": "1 published Origin UI table checkbox card comp-473 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 473)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-473",
     "examples": [
@@ -34529,8 +34529,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-474",
-    "name": "Origin UI table vertical table comp-474",
-    "description": "1 published Origin UI table vertical table comp-474 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Table (Example 474)",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-474",
     "examples": [
@@ -34544,8 +34544,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-475",
-    "name": "Origin UI table sticky comp-475",
-    "description": "1 published Origin UI table sticky comp-475 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Table (Example 475)",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-475",
     "examples": [
@@ -34559,8 +34559,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-476",
-    "name": "Origin UI table comp-476",
-    "description": "1 published Origin UI table comp-476 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Table (Example 476)",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-476",
     "examples": [
@@ -34574,8 +34574,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-477",
-    "name": "Origin UI table tanstack checkbox comp-477",
-    "description": "1 published Origin UI table tanstack checkbox comp-477 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 477)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-477",
     "examples": [
@@ -34589,8 +34589,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-478",
-    "name": "Origin UI table tanstack checkbox comp-478",
-    "description": "1 published Origin UI table tanstack checkbox comp-478 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 478)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-478",
     "examples": [
@@ -34604,8 +34604,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-479",
-    "name": "Origin UI table tanstack flag comp-479",
-    "description": "1 published Origin UI table tanstack flag comp-479 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Table (Example 479)",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-479",
     "examples": [
@@ -34619,8 +34619,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-48",
-    "name": "Origin UI input label checkout comp-48",
-    "description": "1 published Origin UI input label checkout comp-48 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 48)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-48",
     "examples": [
@@ -34634,8 +34634,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-480",
-    "name": "Origin UI table tanstack flag comp-480",
-    "description": "1 published Origin UI table tanstack flag comp-480 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 480)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-480",
     "examples": [
@@ -34649,8 +34649,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-481",
-    "name": "Origin UI table tanstack flag comp-481",
-    "description": "1 published Origin UI table tanstack flag comp-481 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Table (Example 481)",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-481",
     "examples": [
@@ -34664,8 +34664,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-482",
-    "name": "Origin UI table tanstack checkbox comp-482",
-    "description": "1 published Origin UI table tanstack checkbox comp-482 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Checkbox (Example 482)",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-482",
     "examples": [
@@ -34679,8 +34679,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-483",
-    "name": "Origin UI table tanstack checkbox comp-483",
-    "description": "1 published Origin UI table tanstack checkbox comp-483 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Pagination (Example 483)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-483",
     "examples": [
@@ -34694,8 +34694,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-484",
-    "name": "Origin UI table tanstack checkbox comp-484",
-    "description": "1 published Origin UI table tanstack checkbox comp-484 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Pagination (Example 484)",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-484",
     "examples": [
@@ -34709,8 +34709,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-485",
-    "name": "Origin UI table tanstack checkbox comp-485",
-    "description": "1 published Origin UI table tanstack checkbox comp-485 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Confirmation Dialog (Example 485)",
+    "description": "Ask for confirmation before completing an important action.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-485",
     "examples": [
@@ -34724,8 +34724,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-486",
-    "name": "Origin UI input label range comp-486",
-    "description": "1 published Origin UI input label range comp-486 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 486)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-486",
     "examples": [
@@ -34739,8 +34739,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-487",
-    "name": "Origin UI calendar date react aria comp-487",
-    "description": "1 published Origin UI calendar date react aria comp-487 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 487)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-487",
     "examples": [
@@ -34754,8 +34754,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-488",
-    "name": "Origin UI calendar range calendar date comp-488",
-    "description": "1 published Origin UI calendar range calendar date comp-488 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 488)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-488",
     "examples": [
@@ -34769,8 +34769,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-489",
-    "name": "Origin UI calendar range calendar date comp-489",
-    "description": "1 published Origin UI calendar range calendar date comp-489 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 489)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-489",
     "examples": [
@@ -34784,8 +34784,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-49",
-    "name": "Origin UI input label checkout comp-49",
-    "description": "1 published Origin UI input label checkout comp-49 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 49)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-49",
     "examples": [
@@ -34799,8 +34799,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-490",
-    "name": "Origin UI calendar date react daypicker comp-490",
-    "description": "1 published Origin UI calendar date react daypicker comp-490 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 490)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-490",
     "examples": [
@@ -34814,8 +34814,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-491",
-    "name": "Origin UI calendar range calendar date comp-491",
-    "description": "1 published Origin UI calendar range calendar date comp-491 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 491)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-491",
     "examples": [
@@ -34829,8 +34829,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-492",
-    "name": "Origin UI calendar range calendar date comp-492",
-    "description": "1 published Origin UI calendar range calendar date comp-492 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 492)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-492",
     "examples": [
@@ -34844,8 +34844,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-493",
-    "name": "Origin UI calendar date react daypicker comp-493",
-    "description": "1 published Origin UI calendar date react daypicker comp-493 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 493)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-493",
     "examples": [
@@ -34859,8 +34859,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-494",
-    "name": "Origin UI calendar date react daypicker comp-494",
-    "description": "1 published Origin UI calendar date react daypicker comp-494 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 494)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-494",
     "examples": [
@@ -34874,8 +34874,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-495",
-    "name": "Origin UI calendar range calendar date comp-495",
-    "description": "1 published Origin UI calendar range calendar date comp-495 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 495)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-495",
     "examples": [
@@ -34889,8 +34889,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-496",
-    "name": "Origin UI calendar date react daypicker comp-496",
-    "description": "1 published Origin UI calendar date react daypicker comp-496 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 496)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-496",
     "examples": [
@@ -34904,8 +34904,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-497",
-    "name": "Origin UI calendar date react daypicker comp-497",
-    "description": "1 published Origin UI calendar date react daypicker comp-497 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 497)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-497",
     "examples": [
@@ -34919,8 +34919,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-498",
-    "name": "Origin UI calendar date react daypicker comp-498",
-    "description": "1 published Origin UI calendar date react daypicker comp-498 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 498)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-498",
     "examples": [
@@ -34934,8 +34934,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-499",
-    "name": "Origin UI calendar date week comp-499",
-    "description": "1 published Origin UI calendar date week comp-499 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 499)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-499",
     "examples": [
@@ -34949,8 +34949,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-50",
-    "name": "Origin UI input label checkout comp-50",
-    "description": "1 published Origin UI input label checkout comp-50 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 50)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-50",
     "examples": [
@@ -34964,8 +34964,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-500",
-    "name": "Origin UI calendar date button comp-500",
-    "description": "1 published Origin UI calendar date button comp-500 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 500)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-500",
     "examples": [
@@ -34979,8 +34979,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-501",
-    "name": "Origin UI calendar date button comp-501",
-    "description": "1 published Origin UI calendar date button comp-501 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 501)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-501",
     "examples": [
@@ -34994,8 +34994,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-502",
-    "name": "Origin UI calendar date input comp-502",
-    "description": "1 published Origin UI calendar date input comp-502 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 502)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-502",
     "examples": [
@@ -35009,8 +35009,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-503",
-    "name": "Origin UI calendar date input comp-503",
-    "description": "1 published Origin UI calendar date input comp-503 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 503)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-503",
     "examples": [
@@ -35024,8 +35024,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-504",
-    "name": "Origin UI calendar date collapsible comp-504",
-    "description": "1 published Origin UI calendar date collapsible comp-504 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 504)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-504",
     "examples": [
@@ -35039,8 +35039,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-505",
-    "name": "Origin UI calendar date time comp-505",
-    "description": "1 published Origin UI calendar date time comp-505 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 505)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-505",
     "examples": [
@@ -35054,8 +35054,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-506",
-    "name": "Origin UI calendar date button comp-506",
-    "description": "1 published Origin UI calendar date button comp-506 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 506)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-506",
     "examples": [
@@ -35069,8 +35069,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-507",
-    "name": "Origin UI calendar range calendar date comp-507",
-    "description": "1 published Origin UI calendar range calendar date comp-507 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 507)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-507",
     "examples": [
@@ -35084,8 +35084,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-508",
-    "name": "Origin UI calendar range calendar date comp-508",
-    "description": "1 published Origin UI calendar range calendar date comp-508 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 508)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-508",
     "examples": [
@@ -35099,8 +35099,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-509",
-    "name": "Origin UI calendar range calendar date comp-509",
-    "description": "1 published Origin UI calendar range calendar date comp-509 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 509)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-509",
     "examples": [
@@ -35114,8 +35114,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-51",
-    "name": "Origin UI input label password comp-51",
-    "description": "1 published Origin UI input label password comp-51 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 51)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-51",
     "examples": [
@@ -35129,8 +35129,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-510",
-    "name": "Origin UI calendar date react daypicker comp-510",
-    "description": "1 published Origin UI calendar date react daypicker comp-510 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 510)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-510",
     "examples": [
@@ -35144,8 +35144,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-511",
-    "name": "Origin UI calendar date button comp-511",
-    "description": "1 published Origin UI calendar date button comp-511 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 511)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-511",
     "examples": [
@@ -35159,8 +35159,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-512",
-    "name": "Origin UI calendar date button comp-512",
-    "description": "1 published Origin UI calendar date button comp-512 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 512)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-512",
     "examples": [
@@ -35174,8 +35174,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-513",
-    "name": "Origin UI stepper comp-513",
-    "description": "1 published Origin UI stepper comp-513 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 513)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-513",
     "examples": [
@@ -35189,8 +35189,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-514",
-    "name": "Origin UI stepper comp-514",
-    "description": "1 published Origin UI stepper comp-514 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 514)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-514",
     "examples": [
@@ -35204,8 +35204,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-515",
-    "name": "Origin UI stepper comp-515",
-    "description": "1 published Origin UI stepper comp-515 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 515)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-515",
     "examples": [
@@ -35219,8 +35219,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-516",
-    "name": "Origin UI stepper comp-516",
-    "description": "1 published Origin UI stepper comp-516 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 516)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-516",
     "examples": [
@@ -35234,8 +35234,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-517",
-    "name": "Origin UI stepper comp-517",
-    "description": "1 published Origin UI stepper comp-517 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 517)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-517",
     "examples": [
@@ -35249,8 +35249,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-518",
-    "name": "Origin UI stepper comp-518",
-    "description": "1 published Origin UI stepper comp-518 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 518)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-518",
     "examples": [
@@ -35264,8 +35264,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-519",
-    "name": "Origin UI stepper comp-519",
-    "description": "1 published Origin UI stepper comp-519 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 519)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-519",
     "examples": [
@@ -35279,8 +35279,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-52",
-    "name": "Origin UI input label read only comp-52",
-    "description": "1 published Origin UI input label read only comp-52 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Read-only Email Input (Example 52)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-52",
     "examples": [
@@ -35294,8 +35294,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-520",
-    "name": "Origin UI stepper comp-520",
-    "description": "1 published Origin UI stepper comp-520 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 520)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-520",
     "examples": [
@@ -35309,8 +35309,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-521",
-    "name": "Origin UI stepper comp-521",
-    "description": "1 published Origin UI stepper comp-521 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 521)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-521",
     "examples": [
@@ -35324,8 +35324,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-522",
-    "name": "Origin UI stepper comp-522",
-    "description": "1 published Origin UI stepper comp-522 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 522)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-522",
     "examples": [
@@ -35339,8 +35339,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-523",
-    "name": "Origin UI stepper comp-523",
-    "description": "1 published Origin UI stepper comp-523 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 523)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-523",
     "examples": [
@@ -35354,8 +35354,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-524",
-    "name": "Origin UI stepper comp-524",
-    "description": "1 published Origin UI stepper comp-524 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 524)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-524",
     "examples": [
@@ -35369,8 +35369,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-525",
-    "name": "Origin UI stepper comp-525",
-    "description": "1 published Origin UI stepper comp-525 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 525)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-525",
     "examples": [
@@ -35384,8 +35384,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-526",
-    "name": "Origin UI stepper vertical stepper comp-526",
-    "description": "1 published Origin UI stepper vertical stepper comp-526 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 526)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-526",
     "examples": [
@@ -35399,8 +35399,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-527",
-    "name": "Origin UI stepper vertical stepper comp-527",
-    "description": "1 published Origin UI stepper vertical stepper comp-527 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 527)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-527",
     "examples": [
@@ -35414,8 +35414,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-528",
-    "name": "Origin UI stepper vertical stepper comp-528",
-    "description": "1 published Origin UI stepper vertical stepper comp-528 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 528)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-528",
     "examples": [
@@ -35429,8 +35429,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-529",
-    "name": "Origin UI stepper vertical stepper comp-529",
-    "description": "1 published Origin UI stepper vertical stepper comp-529 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Stepper (Example 529)",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-529",
     "examples": [
@@ -35444,8 +35444,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-53",
-    "name": "Origin UI input label copy comp-53",
-    "description": "1 published Origin UI input label copy comp-53 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tooltip (Example 53)",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-53",
     "examples": [
@@ -35459,8 +35459,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-530",
-    "name": "Origin UI timeline vertical timeline comp-530",
-    "description": "1 published Origin UI timeline vertical timeline comp-530 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Timeline (Example 530)",
+    "description": "Display events or milestones in sequence.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-530",
     "examples": [
@@ -35474,8 +35474,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-531",
-    "name": "Origin UI timeline vertical timeline comp-531",
-    "description": "1 published Origin UI timeline vertical timeline comp-531 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Timeline (Example 531)",
+    "description": "Display events or milestones in sequence.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-531",
     "examples": [
@@ -35489,8 +35489,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-532",
-    "name": "Origin UI timeline vertical timeline comp-532",
-    "description": "1 published Origin UI timeline vertical timeline comp-532 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Timeline (Example 532)",
+    "description": "Display events or milestones in sequence.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-532",
     "examples": [
@@ -35504,8 +35504,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-533",
-    "name": "Origin UI timeline vertical timeline comp-533",
-    "description": "1 published Origin UI timeline vertical timeline comp-533 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Timeline (Example 533)",
+    "description": "Display events or milestones in sequence.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-533",
     "examples": [
@@ -35519,8 +35519,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-534",
-    "name": "Origin UI timeline vertical timeline comp-534",
-    "description": "1 published Origin UI timeline vertical timeline comp-534 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Timeline (Example 534)",
+    "description": "Display events or milestones in sequence.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-534",
     "examples": [
@@ -35534,8 +35534,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-535",
-    "name": "Origin UI timeline vertical timeline comp-535",
-    "description": "1 published Origin UI timeline vertical timeline comp-535 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Timeline (Example 535)",
+    "description": "Display events or milestones in sequence.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-535",
     "examples": [
@@ -35549,8 +35549,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-536",
-    "name": "Origin UI timeline vertical timeline comp-536",
-    "description": "1 published Origin UI timeline vertical timeline comp-536 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Timeline (Example 536)",
+    "description": "Display events or milestones in sequence.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-536",
     "examples": [
@@ -35564,8 +35564,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-537",
-    "name": "Origin UI timeline vertical timeline comp-537",
-    "description": "1 published Origin UI timeline vertical timeline comp-537 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Timeline (Example 537)",
+    "description": "Display events or milestones in sequence.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-537",
     "examples": [
@@ -35579,8 +35579,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-538",
-    "name": "Origin UI timeline vertical timeline comp-538",
-    "description": "1 published Origin UI timeline vertical timeline comp-538 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Timeline (Example 538)",
+    "description": "Display events or milestones in sequence.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-538",
     "examples": [
@@ -35594,8 +35594,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-539",
-    "name": "Origin UI timeline vertical timeline comp-539",
-    "description": "1 published Origin UI timeline vertical timeline comp-539 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Timeline (Example 539)",
+    "description": "Display events or milestones in sequence.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-539",
     "examples": [
@@ -35609,8 +35609,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-54",
-    "name": "Origin UI input label mask comp-54",
-    "description": "1 published Origin UI input label mask comp-54 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 54)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-54",
     "examples": [
@@ -35624,8 +35624,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-540",
-    "name": "Origin UI timeline comp-540",
-    "description": "1 published Origin UI timeline comp-540 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Timeline (Example 540)",
+    "description": "Display events or milestones in sequence.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-540",
     "examples": [
@@ -35639,8 +35639,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-541",
-    "name": "Origin UI timeline comp-541",
-    "description": "1 published Origin UI timeline comp-541 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Timeline (Example 541)",
+    "description": "Display events or milestones in sequence.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-541",
     "examples": [
@@ -35654,8 +35654,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-542",
-    "name": "Origin UI calendar comp-542",
-    "description": "1 published Origin UI calendar comp-542 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Calendar (Example 542)",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-542",
     "examples": [
@@ -35669,8 +35669,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-543",
-    "name": "Origin UI upload file image comp-543",
-    "description": "1 published Origin UI upload file image comp-543 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI File Upload (Example 543)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-543",
     "examples": [
@@ -35684,8 +35684,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-544",
-    "name": "Origin UI upload file image comp-544",
-    "description": "1 published Origin UI upload file image comp-544 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI File Upload (Example 544)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-544",
     "examples": [
@@ -35699,8 +35699,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-545",
-    "name": "Origin UI upload file image comp-545",
-    "description": "1 published Origin UI upload file image comp-545 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI File Upload (Example 545)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-545",
     "examples": [
@@ -35714,8 +35714,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-546",
-    "name": "Origin UI upload file image comp-546",
-    "description": "1 published Origin UI upload file image comp-546 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI File Upload (Example 546)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-546",
     "examples": [
@@ -35729,8 +35729,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-547",
-    "name": "Origin UI upload file image comp-547",
-    "description": "1 published Origin UI upload file image comp-547 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI File Upload (Example 547)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-547",
     "examples": [
@@ -35744,8 +35744,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-548",
-    "name": "Origin UI upload file image comp-548",
-    "description": "1 published Origin UI upload file image comp-548 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI File Upload (Example 548)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-548",
     "examples": [
@@ -35759,8 +35759,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-549",
-    "name": "Origin UI upload file image comp-549",
-    "description": "1 published Origin UI upload file image comp-549 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI File Upload (Example 549)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-549",
     "examples": [
@@ -35774,8 +35774,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-55",
-    "name": "Origin UI input label mask comp-55",
-    "description": "1 published Origin UI input label mask comp-55 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 55)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-55",
     "examples": [
@@ -35789,8 +35789,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-550",
-    "name": "Origin UI upload file image comp-550",
-    "description": "1 published Origin UI upload file image comp-550 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI File Upload (Example 550)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-550",
     "examples": [
@@ -35804,8 +35804,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-551",
-    "name": "Origin UI upload file image comp-551",
-    "description": "1 published Origin UI upload file image comp-551 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI File Upload (Example 551)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-551",
     "examples": [
@@ -35819,8 +35819,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-552",
-    "name": "Origin UI upload file image comp-552",
-    "description": "1 published Origin UI upload file image comp-552 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI File Upload (Example 552)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-552",
     "examples": [
@@ -35834,8 +35834,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-553",
-    "name": "Origin UI upload file image comp-553",
-    "description": "1 published Origin UI upload file image comp-553 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI File Upload (Example 553)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-553",
     "examples": [
@@ -35849,8 +35849,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-554",
-    "name": "Origin UI upload file image comp-554",
-    "description": "1 published Origin UI upload file image comp-554 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI File Upload (Example 554)",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-554",
     "examples": [
@@ -35864,8 +35864,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-555",
-    "name": "Origin UI image crop zoom comp-555",
-    "description": "1 published Origin UI image crop zoom comp-555 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Image Cropper (Example 555)",
+    "description": "Choose the area of an image to keep.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-555",
     "examples": [
@@ -35879,8 +35879,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-556",
-    "name": "Origin UI image crop zoom comp-556",
-    "description": "1 published Origin UI image crop zoom comp-556 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Image Cropper (Example 556)",
+    "description": "Choose the area of an image to keep.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-556",
     "examples": [
@@ -35894,8 +35894,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-557",
-    "name": "Origin UI image crop zoom comp-557",
-    "description": "1 published Origin UI image crop zoom comp-557 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Image Cropper (Example 557)",
+    "description": "Choose the area of an image to keep.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-557",
     "examples": [
@@ -35909,8 +35909,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-558",
-    "name": "Origin UI image crop zoom comp-558",
-    "description": "1 published Origin UI image crop zoom comp-558 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Image Cropper (Example 558)",
+    "description": "Choose the area of an image to keep.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-558",
     "examples": [
@@ -35924,8 +35924,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-559",
-    "name": "Origin UI image crop zoom comp-559",
-    "description": "1 published Origin UI image crop zoom comp-559 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Image Cropper (Example 559)",
+    "description": "Choose the area of an image to keep.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-559",
     "examples": [
@@ -35939,8 +35939,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-56",
-    "name": "Origin UI input label tag comp-56",
-    "description": "1 published Origin UI input label tag comp-56 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 56)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-56",
     "examples": [
@@ -35954,8 +35954,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-560",
-    "name": "Origin UI image crop zoom comp-560",
-    "description": "1 published Origin UI image crop zoom comp-560 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Image Cropper (Example 560)",
+    "description": "Choose the area of an image to keep.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-560",
     "examples": [
@@ -35969,8 +35969,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-561",
-    "name": "Origin UI image crop zoom comp-561",
-    "description": "1 published Origin UI image crop zoom comp-561 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Image Cropper (Example 561)",
+    "description": "Choose the area of an image to keep.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-561",
     "examples": [
@@ -35984,8 +35984,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-562",
-    "name": "Origin UI image crop zoom comp-562",
-    "description": "1 published Origin UI image crop zoom comp-562 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Image Cropper (Example 562)",
+    "description": "Choose the area of an image to keep.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-562",
     "examples": [
@@ -35999,8 +35999,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-563",
-    "name": "Origin UI image crop zoom comp-563",
-    "description": "1 published Origin UI image crop zoom comp-563 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Image Cropper (Example 563)",
+    "description": "Choose the area of an image to keep.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-563",
     "examples": [
@@ -36014,8 +36014,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-564",
-    "name": "Origin UI image crop zoom comp-564",
-    "description": "1 published Origin UI image crop zoom comp-564 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Image Cropper (Example 564)",
+    "description": "Choose the area of an image to keep.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-564",
     "examples": [
@@ -36029,8 +36029,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-565",
-    "name": "Origin UI tree comp-565",
-    "description": "1 published Origin UI tree comp-565 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tree View (Example 565)",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-565",
     "examples": [
@@ -36044,8 +36044,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-566",
-    "name": "Origin UI tree comp-566",
-    "description": "1 published Origin UI tree comp-566 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tree View (Example 566)",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-566",
     "examples": [
@@ -36059,8 +36059,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-567",
-    "name": "Origin UI tree comp-567",
-    "description": "1 published Origin UI tree comp-567 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tree View (Example 567)",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-567",
     "examples": [
@@ -36074,8 +36074,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-568",
-    "name": "Origin UI tree comp-568",
-    "description": "1 published Origin UI tree comp-568 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tree View (Example 568)",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-568",
     "examples": [
@@ -36089,8 +36089,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-569",
-    "name": "Origin UI tree comp-569",
-    "description": "1 published Origin UI tree comp-569 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tree View (Example 569)",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-569",
     "examples": [
@@ -36104,8 +36104,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-57",
-    "name": "Origin UI input label tag comp-57",
-    "description": "1 published Origin UI input label tag comp-57 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 57)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-57",
     "examples": [
@@ -36119,8 +36119,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-570",
-    "name": "Origin UI tree comp-570",
-    "description": "1 published Origin UI tree comp-570 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tree View (Example 570)",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-570",
     "examples": [
@@ -36134,8 +36134,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-571",
-    "name": "Origin UI tree filter search comp-571",
-    "description": "1 published Origin UI tree filter search comp-571 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tree View (Example 571)",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-571",
     "examples": [
@@ -36149,8 +36149,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-572",
-    "name": "Origin UI tree filter search comp-572",
-    "description": "1 published Origin UI tree filter search comp-572 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tree View (Example 572)",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-572",
     "examples": [
@@ -36164,8 +36164,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-573",
-    "name": "Origin UI tree comp-573",
-    "description": "1 published Origin UI tree comp-573 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tree View (Example 573)",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-573",
     "examples": [
@@ -36179,8 +36179,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-574",
-    "name": "Origin UI tree button comp-574",
-    "description": "1 published Origin UI tree button comp-574 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tree View (Example 574)",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-574",
     "examples": [
@@ -36194,8 +36194,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-575",
-    "name": "Origin UI tree comp-575",
-    "description": "1 published Origin UI tree comp-575 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tree View (Example 575)",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-575",
     "examples": [
@@ -36209,8 +36209,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-576",
-    "name": "Origin UI tree menu comp-576",
-    "description": "1 published Origin UI tree menu comp-576 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tree View (Example 576)",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-576",
     "examples": [
@@ -36224,8 +36224,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-577",
-    "name": "Origin UI navbar, navigation comp-577",
-    "description": "1 published Origin UI navbar, navigation comp-577 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Navigation (Example 577)",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-577",
     "examples": [
@@ -36239,8 +36239,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-578",
-    "name": "Origin UI navbar, navigation comp-578",
-    "description": "1 published Origin UI navbar, navigation comp-578 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Navigation (Example 578)",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-578",
     "examples": [
@@ -36254,8 +36254,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-579",
-    "name": "Origin UI navbar, navigation comp-579",
-    "description": "1 published Origin UI navbar, navigation comp-579 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Navigation (Example 579)",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-579",
     "examples": [
@@ -36269,8 +36269,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-58",
-    "name": "Origin UI input label otp comp-58",
-    "description": "1 published Origin UI input label otp comp-58 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Input (Example 58)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-58",
     "examples": [
@@ -36284,8 +36284,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-580",
-    "name": "Origin UI navbar, navigation comp-580",
-    "description": "1 published Origin UI navbar, navigation comp-580 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Navigation (Example 580)",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-580",
     "examples": [
@@ -36299,8 +36299,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-581",
-    "name": "Origin UI navbar, navigation comp-581",
-    "description": "1 published Origin UI navbar, navigation comp-581 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Navigation (Example 581)",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-581",
     "examples": [
@@ -36314,8 +36314,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-582",
-    "name": "Origin UI navbar, navigation comp-582",
-    "description": "1 published Origin UI navbar, navigation comp-582 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Navigation (Example 582)",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-582",
     "examples": [
@@ -36329,8 +36329,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-583",
-    "name": "Origin UI navbar, navigation comp-583",
-    "description": "1 published Origin UI navbar, navigation comp-583 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Dropdown Menu (Example 583)",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-583",
     "examples": [
@@ -36344,8 +36344,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-584",
-    "name": "Origin UI navbar, navigation comp-584",
-    "description": "1 published Origin UI navbar, navigation comp-584 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Navigation (Example 584)",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-584",
     "examples": [
@@ -36359,8 +36359,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-585",
-    "name": "Origin UI navbar, navigation comp-585",
-    "description": "1 published Origin UI navbar, navigation comp-585 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Navigation (Example 585)",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-585",
     "examples": [
@@ -36374,8 +36374,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-586",
-    "name": "Origin UI navbar, navigation comp-586",
-    "description": "1 published Origin UI navbar, navigation comp-586 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Search Input (Example 586)",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-586",
     "examples": [
@@ -36389,8 +36389,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-587",
-    "name": "Origin UI navbar, navigation comp-587",
-    "description": "1 published Origin UI navbar, navigation comp-587 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Navigation (Example 587)",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-587",
     "examples": [
@@ -36404,8 +36404,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-588",
-    "name": "Origin UI navbar, navigation comp-588",
-    "description": "1 published Origin UI navbar, navigation comp-588 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Navigation (Example 588)",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-588",
     "examples": [
@@ -36419,8 +36419,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-589",
-    "name": "Origin UI navbar, navigation comp-589",
-    "description": "1 published Origin UI navbar, navigation comp-589 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Navigation (Example 589)",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-589",
     "examples": [
@@ -36434,8 +36434,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-59",
-    "name": "Origin UI label textarea comp-59",
-    "description": "1 published Origin UI label textarea comp-59 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 59)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-59",
     "examples": [
@@ -36449,8 +36449,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-590",
-    "name": "Origin UI navbar, navigation comp-590",
-    "description": "1 published Origin UI navbar, navigation comp-590 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Navigation (Example 590)",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-590",
     "examples": [
@@ -36464,8 +36464,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-591",
-    "name": "Origin UI navbar, navigation comp-591",
-    "description": "1 published Origin UI navbar, navigation comp-591 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Select (Example 591)",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-591",
     "examples": [
@@ -36479,8 +36479,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-592",
-    "name": "Origin UI navbar, navigation comp-592",
-    "description": "1 published Origin UI navbar, navigation comp-592 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 592)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-592",
     "examples": [
@@ -36494,8 +36494,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-593",
-    "name": "Origin UI navbar, navigation comp-593",
-    "description": "1 published Origin UI navbar, navigation comp-593 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Breadcrumbs (Example 593)",
+    "description": "Show the current location within a hierarchy of pages.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-593",
     "examples": [
@@ -36509,8 +36509,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-594",
-    "name": "Origin UI navbar, navigation comp-594",
-    "description": "1 published Origin UI navbar, navigation comp-594 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Switch (Example 594)",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-594",
     "examples": [
@@ -36524,8 +36524,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-595",
-    "name": "Origin UI navbar, navigation comp-595",
-    "description": "1 published Origin UI navbar, navigation comp-595 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 595)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-595",
     "examples": [
@@ -36539,8 +36539,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-596",
-    "name": "Origin UI navbar, navigation comp-596",
-    "description": "1 published Origin UI navbar, navigation comp-596 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Navigation (Example 596)",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-596",
     "examples": [
@@ -36554,8 +36554,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-597",
-    "name": "Origin UI tree checkbox comp-597",
-    "description": "1 published Origin UI tree checkbox comp-597 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tree View (Example 597)",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-597",
     "examples": [
@@ -36569,8 +36569,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-598",
-    "name": "Origin UI tree checkbox comp-598",
-    "description": "1 published Origin UI tree checkbox comp-598 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tree View (Example 598)",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-598",
     "examples": [
@@ -36584,8 +36584,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-599",
-    "name": "Origin UI tree checkbox comp-599",
-    "description": "1 published Origin UI tree checkbox comp-599 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tree View (Example 599)",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-599",
     "examples": [
@@ -36599,8 +36599,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-60",
-    "name": "Origin UI label textarea required comp-60",
-    "description": "1 published Origin UI label textarea required comp-60 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 60)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-60",
     "examples": [
@@ -36614,8 +36614,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-61",
-    "name": "Origin UI label textarea helper comp-61",
-    "description": "1 published Origin UI label textarea helper comp-61 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 61)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-61",
     "examples": [
@@ -36629,8 +36629,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-62",
-    "name": "Origin UI label textarea hint comp-62",
-    "description": "1 published Origin UI label textarea hint comp-62 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 62)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-62",
     "examples": [
@@ -36644,8 +36644,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-63",
-    "name": "Origin UI label textarea comp-63",
-    "description": "1 published Origin UI label textarea comp-63 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 63)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-63",
     "examples": [
@@ -36659,8 +36659,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-64",
-    "name": "Origin UI label textarea error comp-64",
-    "description": "1 published Origin UI label textarea error comp-64 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 64)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-64",
     "examples": [
@@ -36674,8 +36674,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-65",
-    "name": "Origin UI label textarea comp-65",
-    "description": "1 published Origin UI label textarea comp-65 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 65)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-65",
     "examples": [
@@ -36689,8 +36689,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-66",
-    "name": "Origin UI label textarea comp-66",
-    "description": "1 published Origin UI label textarea comp-66 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 66)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-66",
     "examples": [
@@ -36704,8 +36704,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-67",
-    "name": "Origin UI label textarea disabled comp-67",
-    "description": "1 published Origin UI label textarea disabled comp-67 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 67)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-67",
     "examples": [
@@ -36719,8 +36719,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-68",
-    "name": "Origin UI label textarea button comp-68",
-    "description": "1 published Origin UI label textarea button comp-68 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 68)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-68",
     "examples": [
@@ -36734,8 +36734,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-69",
-    "name": "Origin UI label textarea button comp-69",
-    "description": "1 published Origin UI label textarea button comp-69 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 69)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-69",
     "examples": [
@@ -36749,8 +36749,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-70",
-    "name": "Origin UI label textarea button comp-70",
-    "description": "1 published Origin UI label textarea button comp-70 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 70)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-70",
     "examples": [
@@ -36764,8 +36764,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-71",
-    "name": "Origin UI label textarea comp-71",
-    "description": "1 published Origin UI label textarea comp-71 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 71)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-71",
     "examples": [
@@ -36779,8 +36779,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-72",
-    "name": "Origin UI label textarea comp-72",
-    "description": "1 published Origin UI label textarea comp-72 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 72)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-72",
     "examples": [
@@ -36794,8 +36794,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-73",
-    "name": "Origin UI label textarea comp-73",
-    "description": "1 published Origin UI label textarea comp-73 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 73)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-73",
     "examples": [
@@ -36809,8 +36809,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-74",
-    "name": "Origin UI label textarea comp-74",
-    "description": "1 published Origin UI label textarea comp-74 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 74)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-74",
     "examples": [
@@ -36824,8 +36824,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-75",
-    "name": "Origin UI label textarea comp-75",
-    "description": "1 published Origin UI label textarea comp-75 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 75)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-75",
     "examples": [
@@ -36839,8 +36839,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-76",
-    "name": "Origin UI label textarea read only comp-76",
-    "description": "1 published Origin UI label textarea read only comp-76 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 76)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-76",
     "examples": [
@@ -36854,8 +36854,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-77",
-    "name": "Origin UI label textarea comp-77",
-    "description": "1 published Origin UI label textarea comp-77 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Text Area (Example 77)",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-77",
     "examples": [
@@ -36869,8 +36869,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-78",
-    "name": "Origin UI button comp-78",
-    "description": "1 published Origin UI button comp-78 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 78)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-78",
     "examples": [
@@ -36884,8 +36884,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-79",
-    "name": "Origin UI button disabled comp-79",
-    "description": "1 published Origin UI button disabled comp-79 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 79)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-79",
     "examples": [
@@ -36899,8 +36899,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-80",
-    "name": "Origin UI button comp-80",
-    "description": "1 published Origin UI button comp-80 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 80)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-80",
     "examples": [
@@ -36914,8 +36914,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-81",
-    "name": "Origin UI button comp-81",
-    "description": "1 published Origin UI button comp-81 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 81)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-81",
     "examples": [
@@ -36929,8 +36929,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-82",
-    "name": "Origin UI button delete comp-82",
-    "description": "1 published Origin UI button delete comp-82 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 82)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-82",
     "examples": [
@@ -36944,8 +36944,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-83",
-    "name": "Origin UI button comp-83",
-    "description": "1 published Origin UI button comp-83 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 83)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-83",
     "examples": [
@@ -36959,8 +36959,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-84",
-    "name": "Origin UI button comp-84",
-    "description": "1 published Origin UI button comp-84 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 84)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-84",
     "examples": [
@@ -36974,8 +36974,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-85",
-    "name": "Origin UI button back comp-85",
-    "description": "1 published Origin UI button back comp-85 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 85)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-85",
     "examples": [
@@ -36989,8 +36989,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-86",
-    "name": "Origin UI button next comp-86",
-    "description": "1 published Origin UI button next comp-86 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 86)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-86",
     "examples": [
@@ -37004,8 +37004,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-87",
-    "name": "Origin UI button comp-87",
-    "description": "1 published Origin UI button comp-87 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 87)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-87",
     "examples": [
@@ -37019,8 +37019,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-88",
-    "name": "Origin UI button dropdown comp-88",
-    "description": "1 published Origin UI button dropdown comp-88 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 88)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-88",
     "examples": [
@@ -37034,8 +37034,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-89",
-    "name": "Origin UI button comp-89",
-    "description": "1 published Origin UI button comp-89 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 89)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-89",
     "examples": [
@@ -37049,8 +37049,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-90",
-    "name": "Origin UI button loading comp-90",
-    "description": "1 published Origin UI button loading comp-90 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 90)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-90",
     "examples": [
@@ -37064,8 +37064,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-91",
-    "name": "Origin UI button loading comp-91",
-    "description": "1 published Origin UI button loading comp-91 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 91)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-91",
     "examples": [
@@ -37079,8 +37079,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-92",
-    "name": "Origin UI button counter comp-92",
-    "description": "1 published Origin UI button counter comp-92 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 92)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-92",
     "examples": [
@@ -37094,8 +37094,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-93",
-    "name": "Origin UI button kbd comp-93",
-    "description": "1 published Origin UI button kbd comp-93 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 93)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-93",
     "examples": [
@@ -37109,8 +37109,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-94",
-    "name": "Origin UI button user avatar comp-94",
-    "description": "1 published Origin UI button user avatar comp-94 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 94)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-94",
     "examples": [
@@ -37124,8 +37124,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-95",
-    "name": "Origin UI button user avatar comp-95",
-    "description": "1 published Origin UI button user avatar comp-95 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 95)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-95",
     "examples": [
@@ -37139,8 +37139,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-96",
-    "name": "Origin UI button comp-96",
-    "description": "1 published Origin UI button comp-96 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 96)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-96",
     "examples": [
@@ -37154,8 +37154,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-97",
-    "name": "Origin UI button comp-97",
-    "description": "1 published Origin UI button comp-97 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 97)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-97",
     "examples": [
@@ -37169,8 +37169,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-98",
-    "name": "Origin UI button menu comp-98",
-    "description": "1 published Origin UI button menu comp-98 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Button (Example 98)",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-98",
     "examples": [
@@ -37184,8 +37184,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-comp-99",
-    "name": "Origin UI button tooltip comp-99",
-    "description": "1 published Origin UI button tooltip comp-99 examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Tooltip (Example 99)",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "originui/originui-comp-99",
     "examples": [
@@ -37199,8 +37199,8 @@ export const externalRegistry = [
   {
     "sourceId": "originui",
     "slug": "originui-complete-primitives",
-    "name": "Origin UI complete primitives",
-    "description": "1 published Origin UI complete primitives examples with complete pinned source and MIT attribution.",
+    "name": "Origin UI Complete Primitives",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "originui/originui-complete-primitives",
     "examples": [
@@ -37214,8 +37214,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-accordion",
-    "name": "Material UI accordion",
-    "description": "7 published Material UI accordion examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Accordion",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "mui/mui-accordion",
     "examples": [
@@ -37259,8 +37259,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-alert",
-    "name": "Material UI alert",
-    "description": "9 published Material UI alert examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Alert",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "mui/mui-alert",
     "examples": [
@@ -37314,8 +37314,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-app-bar",
-    "name": "Material UI app bar",
-    "description": "13 published Material UI app bar examples with complete pinned source and MIT attribution.",
+    "name": "Material UI App Bar",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "mui/mui-app-bar",
     "examples": [
@@ -37389,8 +37389,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-autocomplete",
-    "name": "Material UI autocomplete",
-    "description": "30 published Material UI autocomplete examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Autocomplete",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "mui/mui-autocomplete",
     "examples": [
@@ -37549,8 +37549,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-avatars",
-    "name": "Material UI avatars",
-    "description": "13 published Material UI avatars examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Avatars",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "mui/mui-avatars",
     "examples": [
@@ -37624,8 +37624,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-backdrop",
-    "name": "Material UI backdrop",
-    "description": "1 published Material UI backdrop examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Backdrop",
+    "description": "Place a visual layer above the underlying interface.",
     "category": "blocks",
     "previewKey": "mui/mui-backdrop",
     "examples": [
@@ -37639,8 +37639,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-badges",
-    "name": "Material UI badges",
-    "description": "11 published Material UI badges examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Badges",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "mui/mui-badges",
     "examples": [
@@ -37704,8 +37704,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-bottom-navigation",
-    "name": "Material UI bottom navigation",
-    "description": "3 published Material UI bottom navigation examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Bottom Navigation",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "mui/mui-bottom-navigation",
     "examples": [
@@ -37729,8 +37729,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-box",
-    "name": "Material UI box",
-    "description": "2 published Material UI box examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Box",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mui/mui-box",
     "examples": [
@@ -37749,8 +37749,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-breadcrumbs",
-    "name": "Material UI breadcrumbs",
-    "description": "8 published Material UI breadcrumbs examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Breadcrumbs",
+    "description": "Show the current location within a hierarchy of pages.",
     "category": "blocks",
     "previewKey": "mui/mui-breadcrumbs",
     "examples": [
@@ -37799,8 +37799,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-button-group",
-    "name": "Material UI button group",
-    "description": "7 published Material UI button group examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Button Group",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "mui/mui-button-group",
     "examples": [
@@ -37844,8 +37844,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-buttons",
-    "name": "MUI Buttons",
-    "description": "18 published Material UI buttons examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Buttons",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "mui/mui-buttons",
     "examples": [
@@ -37944,8 +37944,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-cards",
-    "name": "Material UI cards",
-    "description": "9 published Material UI cards examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Cards",
+    "description": "Group related content and actions in a distinct container.",
     "category": "blocks",
     "previewKey": "mui/mui-cards",
     "examples": [
@@ -37999,8 +37999,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-checkboxes",
-    "name": "MUI Checkboxes",
-    "description": "10 published Material UI checkboxes examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Checkboxes",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "mui/mui-checkboxes",
     "examples": [
@@ -38059,8 +38059,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-chips",
-    "name": "Material UI chips",
-    "description": "13 published Material UI chips examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Chips",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "mui/mui-chips",
     "examples": [
@@ -38134,8 +38134,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-click-away-listener",
-    "name": "Material UI click away listener",
-    "description": "3 published Material UI click away listener examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Click Away Listener",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-click-away-listener",
     "examples": [
@@ -38159,8 +38159,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-container",
-    "name": "Material UI container",
-    "description": "2 published Material UI container examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Container",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mui/mui-container",
     "examples": [
@@ -38179,8 +38179,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-dialogs",
-    "name": "Material UI dialogs",
-    "description": "12 published Material UI dialogs examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Dialogs",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "mui/mui-dialogs",
     "examples": [
@@ -38249,8 +38249,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-dividers",
-    "name": "Material UI dividers",
-    "description": "7 published Material UI dividers examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Dividers",
+    "description": "Visually separate related areas of an interface.",
     "category": "blocks",
     "previewKey": "mui/mui-dividers",
     "examples": [
@@ -38294,8 +38294,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-drawers",
-    "name": "Material UI drawers",
-    "description": "11 published Material UI drawers examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Drawers",
+    "description": "Open a panel alongside the current page for details or additional controls.",
     "category": "blocks",
     "previewKey": "mui/mui-drawers",
     "examples": [
@@ -38359,8 +38359,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-floating-action-button",
-    "name": "Material UI floating action button",
-    "description": "4 published Material UI floating action button examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Floating Action Button",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "mui/mui-floating-action-button",
     "examples": [
@@ -38389,8 +38389,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-grid",
-    "name": "Material UI grid",
-    "description": "16 published Material UI grid examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Grid",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mui/mui-grid",
     "examples": [
@@ -38479,8 +38479,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-icons",
-    "name": "Material UI icons",
-    "description": "9 published Material UI icons examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Icons",
+    "description": "Represent an interface concept with a compact symbol.",
     "category": "blocks",
     "previewKey": "mui/mui-icons",
     "examples": [
@@ -38534,8 +38534,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-image-list",
-    "name": "Material UI image list",
-    "description": "8 published Material UI image list examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Image List",
+    "description": "Display an image or collection of images.",
     "category": "blocks",
     "previewKey": "mui/mui-image-list",
     "examples": [
@@ -38584,8 +38584,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-links",
-    "name": "Material UI links",
-    "description": "3 published Material UI links examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Links",
+    "description": "Navigate to a page or resource using a link.",
     "category": "blocks",
     "previewKey": "mui/mui-links",
     "examples": [
@@ -38609,8 +38609,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-lists",
-    "name": "Material UI lists",
-    "description": "14 published Material UI lists examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Lists",
+    "description": "Present a collection of related items.",
     "category": "blocks",
     "previewKey": "mui/mui-lists",
     "examples": [
@@ -38689,8 +38689,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-masonry",
-    "name": "Material UI masonry",
-    "description": "9 published Material UI masonry examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Masonry",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mui/mui-masonry",
     "examples": [
@@ -38744,8 +38744,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-icons",
-    "name": "Material UI material icons",
-    "description": "2 published Material UI material icons examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Icons",
+    "description": "Represent an interface concept with a compact symbol.",
     "category": "blocks",
     "previewKey": "mui/mui-material-icons",
     "examples": [
@@ -38764,8 +38764,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-menubar",
-    "name": "Material UI menubar",
-    "description": "7 published Material UI menubar examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Menubar",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "mui/mui-menubar",
     "examples": [
@@ -38809,8 +38809,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-menus",
-    "name": "Material UI menus",
-    "description": "16 published Material UI menus examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Menus",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "mui/mui-menus",
     "examples": [
@@ -38899,8 +38899,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-modal",
-    "name": "Material UI modal",
-    "description": "6 published Material UI modal examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Modal",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "mui/mui-modal",
     "examples": [
@@ -38939,8 +38939,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-no-ssr",
-    "name": "Material UI no ssr",
-    "description": "2 published Material UI no ssr examples with complete pinned source and MIT attribution.",
+    "name": "Material UI No Ssr",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-no-ssr",
     "examples": [
@@ -38959,8 +38959,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-number-field",
-    "name": "Material UI number field",
-    "description": "4 published Material UI number field examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Number Field",
+    "description": "Enter a numeric value using a number field.",
     "category": "blocks",
     "previewKey": "mui/mui-number-field",
     "examples": [
@@ -38989,8 +38989,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-pagination",
-    "name": "Material UI pagination",
-    "description": "11 published Material UI pagination examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Pagination",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "mui/mui-pagination",
     "examples": [
@@ -39054,8 +39054,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-paper",
-    "name": "Material UI paper",
-    "description": "4 published Material UI paper examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Paper",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mui/mui-paper",
     "examples": [
@@ -39084,8 +39084,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-popover",
-    "name": "Material UI popover",
-    "description": "5 published Material UI popover examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Popover",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "mui/mui-popover",
     "examples": [
@@ -39119,8 +39119,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-popper",
-    "name": "Material UI popper",
-    "description": "7 published Material UI popper examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Popper",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "mui/mui-popper",
     "examples": [
@@ -39164,8 +39164,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-portal",
-    "name": "Material UI portal",
-    "description": "1 published Material UI portal examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Portal",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-portal",
     "examples": [
@@ -39179,8 +39179,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-progress",
-    "name": "Material UI progress",
-    "description": "18 published Material UI progress examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Progress",
+    "description": "Show how far a task has progressed.",
     "category": "blocks",
     "previewKey": "mui/mui-progress",
     "examples": [
@@ -39279,8 +39279,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-radio-buttons",
-    "name": "Material UI radio buttons",
-    "description": "10 published Material UI radio buttons examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Radio Buttons",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "mui/mui-radio-buttons",
     "examples": [
@@ -39339,8 +39339,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-rating",
-    "name": "Material UI rating",
-    "description": "7 published Material UI rating examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Rating",
+    "description": "Choose or display a rating on a bounded scale.",
     "category": "blocks",
     "previewKey": "mui/mui-rating",
     "examples": [
@@ -39384,8 +39384,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-selects",
-    "name": "Material UI selects",
-    "description": "16 published Material UI selects examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Selects",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "mui/mui-selects",
     "examples": [
@@ -39474,8 +39474,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-skeleton",
-    "name": "Material UI skeleton",
-    "description": "7 published Material UI skeleton examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Skeleton",
+    "description": "Reserve the shape of content while it is loading.",
     "category": "blocks",
     "previewKey": "mui/mui-skeleton",
     "examples": [
@@ -39519,8 +39519,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-slider",
-    "name": "Material UI slider",
-    "description": "18 published Material UI slider examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Slider",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "mui/mui-slider",
     "examples": [
@@ -39619,8 +39619,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-snackbars",
-    "name": "Material UI snackbars",
-    "description": "10 published Material UI snackbars examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Snackbars",
+    "description": "Display a transient notification about an event or action.",
     "category": "blocks",
     "previewKey": "mui/mui-snackbars",
     "examples": [
@@ -39679,8 +39679,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-speed-dial",
-    "name": "Material UI speed dial",
-    "description": "5 published Material UI speed dial examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Speed Dial",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "mui/mui-speed-dial",
     "examples": [
@@ -39714,8 +39714,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-stack",
-    "name": "Material UI stack",
-    "description": "7 published Material UI stack examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Stack",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mui/mui-stack",
     "examples": [
@@ -39759,8 +39759,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-steppers",
-    "name": "Material UI steppers",
-    "description": "10 published Material UI steppers examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Steppers",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "mui/mui-steppers",
     "examples": [
@@ -39819,8 +39819,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-switches",
-    "name": "MUI Switches",
-    "description": "8 published Material UI switches examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Switches",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "mui/mui-switches",
     "examples": [
@@ -39869,8 +39869,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-table",
-    "name": "Material UI table",
-    "description": "12 published Material UI table examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Table",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "mui/mui-table",
     "examples": [
@@ -39939,8 +39939,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-tabs",
-    "name": "Material UI tabs",
-    "description": "21 published Material UI tabs examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Tabs",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "mui/mui-tabs",
     "examples": [
@@ -40054,8 +40054,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-text-fields",
-    "name": "MUI Text Fields",
-    "description": "23 published Material UI text fields examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Text Fields",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "mui/mui-text-fields",
     "examples": [
@@ -40179,8 +40179,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-textarea-autosize",
-    "name": "Material UI textarea autosize",
-    "description": "3 published Material UI textarea autosize examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Textarea Autosize",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "mui/mui-textarea-autosize",
     "examples": [
@@ -40204,8 +40204,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-timeline",
-    "name": "Material UI timeline",
-    "description": "11 published Material UI timeline examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Timeline",
+    "description": "Display events or milestones in sequence.",
     "category": "blocks",
     "previewKey": "mui/mui-timeline",
     "examples": [
@@ -40269,8 +40269,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-toggle-button",
-    "name": "Material UI toggle button",
-    "description": "10 published Material UI toggle button examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Toggle Button",
+    "description": "Change the selected state of an option or control.",
     "category": "blocks",
     "previewKey": "mui/mui-toggle-button",
     "examples": [
@@ -40329,8 +40329,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-tooltips",
-    "name": "Material UI tooltips",
-    "description": "16 published Material UI tooltips examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Tooltips",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "mui/mui-tooltips",
     "examples": [
@@ -40419,8 +40419,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-transfer-list",
-    "name": "Material UI transfer list",
-    "description": "2 published Material UI transfer list examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Transfer List",
+    "description": "Move selected items between two collections.",
     "category": "blocks",
     "previewKey": "mui/mui-transfer-list",
     "examples": [
@@ -40439,8 +40439,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-transitions",
-    "name": "Material UI transitions",
-    "description": "7 published Material UI transitions examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Transitions",
+    "description": "Demonstrate a motion or transition treatment.",
     "category": "blocks",
     "previewKey": "mui/mui-transitions",
     "examples": [
@@ -40484,8 +40484,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-typography",
-    "name": "Material UI typography",
-    "description": "2 published Material UI typography examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Typography",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "mui/mui-typography",
     "examples": [
@@ -40504,8 +40504,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-use-media-query",
-    "name": "Material UI use media query",
-    "description": "5 published Material UI use media query examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Use Media Query",
+    "description": "React hook example for media query.",
     "category": "blocks",
     "previewKey": "mui/mui-use-media-query",
     "examples": [
@@ -40539,8 +40539,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-breakpoints",
-    "name": "Material UI material customization breakpoints",
-    "description": "1 published Material UI material customization breakpoints examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization Breakpoints",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-breakpoints",
     "examples": [
@@ -40554,8 +40554,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-color",
-    "name": "Material UI material customization color",
-    "description": "3 published Material UI material customization color examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization Color",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-color",
     "examples": [
@@ -40579,8 +40579,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-container-queries",
-    "name": "Material UI material customization container queries",
-    "description": "3 published Material UI material customization container queries examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization Container Queries",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-container-queries",
     "examples": [
@@ -40604,8 +40604,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-creating-themed-components",
-    "name": "Material UI material customization creating themed components",
-    "description": "3 published Material UI material customization creating themed components examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization Creating Themed Components",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-creating-themed-components",
     "examples": [
@@ -40629,8 +40629,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-css-layers",
-    "name": "Material UI material customization css layers",
-    "description": "2 published Material UI material customization css layers examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization CSS Layers",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-css-layers",
     "examples": [
@@ -40649,8 +40649,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-css-theme-variables",
-    "name": "Material UI material customization css theme variables",
-    "description": "7 published Material UI material customization css theme variables examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization CSS Theme Variables",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-css-theme-variables",
     "examples": [
@@ -40694,8 +40694,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-dark-mode",
-    "name": "Material UI material customization dark mode",
-    "description": "3 published Material UI material customization dark mode examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization Dark Mode",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-dark-mode",
     "examples": [
@@ -40719,8 +40719,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-default-theme",
-    "name": "Material UI material customization default theme",
-    "description": "1 published Material UI material customization default theme examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization Default Theme",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-default-theme",
     "examples": [
@@ -40734,8 +40734,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-density",
-    "name": "Material UI material customization density",
-    "description": "1 published Material UI material customization density examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization Density",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-density",
     "examples": [
@@ -40749,8 +40749,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-focus-visible",
-    "name": "Material UI material customization focus visible",
-    "description": "7 published Material UI material customization focus visible examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization Focus Visible",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-focus-visible",
     "examples": [
@@ -40794,8 +40794,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-how-to-customize",
-    "name": "Material UI material customization how to customize",
-    "description": "9 published Material UI material customization how to customize examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization How To Customize",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-how-to-customize",
     "examples": [
@@ -40849,8 +40849,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-overriding-component-structure",
-    "name": "Material UI material customization overriding component structure",
-    "description": "2 published Material UI material customization overriding component structure examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization Overriding Component Structure",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-overriding-component-structure",
     "examples": [
@@ -40869,8 +40869,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-palette",
-    "name": "Material UI material customization palette",
-    "description": "12 published Material UI material customization palette examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization Palette",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-palette",
     "examples": [
@@ -40939,8 +40939,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-right-to-left",
-    "name": "Material UI material customization right to left",
-    "description": "2 published Material UI material customization right to left examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization Right To Left",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-right-to-left",
     "examples": [
@@ -40959,8 +40959,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-shadow-dom",
-    "name": "Material UI material customization shadow dom",
-    "description": "1 published Material UI material customization shadow dom examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization Shadow Dom",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-shadow-dom",
     "examples": [
@@ -40974,8 +40974,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-theme-components",
-    "name": "Material UI material customization theme components",
-    "description": "6 published Material UI material customization theme components examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization Theme Components",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-theme-components",
     "examples": [
@@ -41014,8 +41014,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-theming",
-    "name": "Material UI material customization theming",
-    "description": "3 published Material UI material customization theming examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization Theming",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-theming",
     "examples": [
@@ -41039,8 +41039,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-transitions",
-    "name": "Material UI material customization transitions",
-    "description": "1 published Material UI material customization transitions examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization Transitions",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-transitions",
     "examples": [
@@ -41054,8 +41054,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-customization-typography",
-    "name": "Material UI material customization typography",
-    "description": "6 published Material UI material customization typography examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Customization Typography",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-customization-typography",
     "examples": [
@@ -41094,8 +41094,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-getting-started-supported-components",
-    "name": "Material UI material getting started supported components",
-    "description": "1 published Material UI material getting started supported components examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Getting Started Supported Components",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-getting-started-supported-components",
     "examples": [
@@ -41109,8 +41109,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-getting-started-templates-blog",
-    "name": "Material UI material getting started templates blog",
-    "description": "1 published Material UI material getting started templates blog examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Getting Started Templates Blog",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-getting-started-templates-blog",
     "examples": [
@@ -41124,8 +41124,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-getting-started-templates-checkout",
-    "name": "Material UI material getting started templates checkout",
-    "description": "1 published Material UI material getting started templates checkout examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Getting Started Templates Checkout",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-getting-started-templates-checkout",
     "examples": [
@@ -41139,8 +41139,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-getting-started-templates-crud-dashboard-context",
-    "name": "Material UI material getting started templates crud dashboard context",
-    "description": "1 published Material UI material getting started templates crud dashboard context examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Getting Started Templates Crud Dashboard Context",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-getting-started-templates-crud-dashboard-context",
     "examples": [
@@ -41154,8 +41154,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-getting-started-templates-crud-dashboard-hooks-use-dialogs",
-    "name": "Material UI material getting started templates crud dashboard hooks use dialogs",
-    "description": "3 published Material UI material getting started templates crud dashboard hooks use dialogs examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Getting Started Templates Crud Dashboard Hooks Use Dialogs",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-getting-started-templates-crud-dashboard-hooks-use-dialogs",
     "examples": [
@@ -41179,8 +41179,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-getting-started-templates-crud-dashboard-hooks-use-notifications",
-    "name": "Material UI material getting started templates crud dashboard hooks use notifications",
-    "description": "3 published Material UI material getting started templates crud dashboard hooks use notifications examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Getting Started Templates Crud Dashboard Hooks Use Notifications",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-getting-started-templates-crud-dashboard-hooks-use-notifications",
     "examples": [
@@ -41204,8 +41204,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-getting-started-templates-marketing-page",
-    "name": "Material UI material getting started templates marketing page",
-    "description": "1 published Material UI material getting started templates marketing page examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Getting Started Templates Marketing Page",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-getting-started-templates-marketing-page",
     "examples": [
@@ -41219,8 +41219,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-getting-started-templates-sign-in-side",
-    "name": "Material UI material getting started templates sign in side",
-    "description": "1 published Material UI material getting started templates sign in side examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Getting Started Templates Sign In Side",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-getting-started-templates-sign-in-side",
     "examples": [
@@ -41234,8 +41234,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-getting-started-templates-sign-in",
-    "name": "Material UI material getting started templates sign in",
-    "description": "1 published Material UI material getting started templates sign in examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Getting Started Templates Sign In",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-getting-started-templates-sign-in",
     "examples": [
@@ -41249,8 +41249,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-getting-started-templates-sign-up",
-    "name": "Material UI material getting started templates sign up",
-    "description": "1 published Material UI material getting started templates sign up examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Getting Started Templates Sign Up",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-getting-started-templates-sign-up",
     "examples": [
@@ -41264,8 +41264,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-getting-started-usage",
-    "name": "Material UI material getting started usage",
-    "description": "1 published Material UI material getting started usage examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Getting Started Usage",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-getting-started-usage",
     "examples": [
@@ -41279,8 +41279,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-getting-started-versions",
-    "name": "Material UI material getting started versions",
-    "description": "2 published Material UI material getting started versions examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Getting Started Versions",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-getting-started-versions",
     "examples": [
@@ -41299,8 +41299,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-guides-building-extensible-themes",
-    "name": "Material UI material guides building extensible themes",
-    "description": "1 published Material UI material guides building extensible themes examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Guides Building Extensible Themes",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-guides-building-extensible-themes",
     "examples": [
@@ -41314,8 +41314,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-guides-composition",
-    "name": "Material UI material guides composition",
-    "description": "1 published Material UI material guides composition examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Guides Composition",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-guides-composition",
     "examples": [
@@ -41329,8 +41329,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-guides-localization",
-    "name": "Material UI material guides localization",
-    "description": "1 published Material UI material guides localization examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Guides Localization",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-guides-localization",
     "examples": [
@@ -41344,8 +41344,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-integrations-interoperability",
-    "name": "Material UI material integrations interoperability",
-    "description": "5 published Material UI material integrations interoperability examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Integrations Interoperability",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-integrations-interoperability",
     "examples": [
@@ -41379,8 +41379,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-integrations-routing",
-    "name": "Material UI material integrations routing",
-    "description": "7 published Material UI material integrations routing examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Integrations Routing",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-integrations-routing",
     "examples": [
@@ -41424,8 +41424,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material-integrations-tailwindcss",
-    "name": "Material UI material integrations tailwindcss",
-    "description": "1 published Material UI material integrations tailwindcss examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material Integrations Tailwindcss",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-material-integrations-tailwindcss",
     "examples": [
@@ -41439,8 +41439,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-material",
-    "name": "Material UI material",
-    "description": "1 published Material UI material examples with complete pinned source and MIT attribution.",
+    "name": "Material UI Material",
+    "description": "Compare a collection of interface components or examples.",
     "category": "blocks",
     "previewKey": "mui/mui-material",
     "examples": [
@@ -41454,8 +41454,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-borders",
-    "name": "Material UI system borders",
-    "description": "4 published Material UI system borders examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Borders",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-borders",
     "examples": [
@@ -41484,8 +41484,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-box",
-    "name": "Material UI system box",
-    "description": "3 published Material UI system box examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Box",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-box",
     "examples": [
@@ -41509,8 +41509,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-container",
-    "name": "Material UI system container",
-    "description": "2 published Material UI system container examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Container",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-container",
     "examples": [
@@ -41529,8 +41529,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-grid",
-    "name": "Material UI system grid",
-    "description": "21 published Material UI system grid examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Grid",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-grid",
     "examples": [
@@ -41644,8 +41644,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-stack",
-    "name": "Material UI system stack",
-    "description": "6 published Material UI system stack examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Stack",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-stack",
     "examples": [
@@ -41684,8 +41684,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-display",
-    "name": "Material UI system display",
-    "description": "8 published Material UI system display examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Display",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-display",
     "examples": [
@@ -41734,8 +41734,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-experimental-api-configure-the-sx-prop",
-    "name": "Material UI system experimental api configure the sx prop",
-    "description": "2 published Material UI system experimental api configure the sx prop examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Experimental API Configure The Sx Prop",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-experimental-api-configure-the-sx-prop",
     "examples": [
@@ -41754,8 +41754,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-experimental-api-css-theme-variables",
-    "name": "Material UI system experimental api css theme variables",
-    "description": "1 published Material UI system experimental api css theme variables examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Experimental API CSS Theme Variables",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-experimental-api-css-theme-variables",
     "examples": [
@@ -41769,8 +41769,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-flexbox",
-    "name": "Material UI system flexbox",
-    "description": "10 published Material UI system flexbox examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Flexbox",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-flexbox",
     "examples": [
@@ -41829,8 +41829,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-getting-started-custom-components",
-    "name": "Material UI system getting started custom components",
-    "description": "2 published Material UI system getting started custom components examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Getting Started Custom Components",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-getting-started-custom-components",
     "examples": [
@@ -41849,8 +41849,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-getting-started-the-sx-prop",
-    "name": "Material UI system getting started the sx prop",
-    "description": "3 published Material UI system getting started the sx prop examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Getting Started The Sx Prop",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-getting-started-the-sx-prop",
     "examples": [
@@ -41874,8 +41874,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-getting-started-usage",
-    "name": "Material UI system getting started usage",
-    "description": "6 published Material UI system getting started usage examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Getting Started Usage",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-getting-started-usage",
     "examples": [
@@ -41914,8 +41914,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system",
-    "name": "Material UI system",
-    "description": "1 published Material UI system examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system",
     "examples": [
@@ -41929,8 +41929,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-palette",
-    "name": "Material UI system palette",
-    "description": "2 published Material UI system palette examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Palette",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-palette",
     "examples": [
@@ -41949,8 +41949,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-positions",
-    "name": "Material UI system positions",
-    "description": "1 published Material UI system positions examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Positions",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-positions",
     "examples": [
@@ -41964,8 +41964,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-screen-readers",
-    "name": "Material UI system screen readers",
-    "description": "1 published Material UI system screen readers examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Screen Readers",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-screen-readers",
     "examples": [
@@ -41979,8 +41979,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-shadows",
-    "name": "Material UI system shadows",
-    "description": "1 published Material UI system shadows examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Shadows",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-shadows",
     "examples": [
@@ -41994,8 +41994,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-sizing",
-    "name": "Material UI system sizing",
-    "description": "3 published Material UI system sizing examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Sizing",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-sizing",
     "examples": [
@@ -42019,8 +42019,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-spacing",
-    "name": "Material UI system spacing",
-    "description": "2 published Material UI system spacing examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Spacing",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-spacing",
     "examples": [
@@ -42039,8 +42039,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-styled",
-    "name": "Material UI system styled",
-    "description": "4 published Material UI system styled examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Styled",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-styled",
     "examples": [
@@ -42069,8 +42069,8 @@ export const externalRegistry = [
   {
     "sourceId": "mui",
     "slug": "mui-system-typography",
-    "name": "Material UI system typography",
-    "description": "9 published Material UI system typography examples with complete pinned source and MIT attribution.",
+    "name": "Material UI System Typography",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mui/mui-system-typography",
     "examples": [
@@ -42124,8 +42124,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-carousel",
-    "name": "Mantine carousel",
-    "description": "17 published Mantine carousel examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Carousel",
+    "description": "Move through a sequence of content items.",
     "category": "blocks",
     "previewKey": "mantine/mantine-carousel",
     "examples": [
@@ -42219,8 +42219,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-changelog730",
-    "name": "Mantine changelog730",
-    "description": "1 published Mantine changelog730 examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Changelog730",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mantine/mantine-changelog730",
     "examples": [
@@ -42234,8 +42234,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-area-chart",
-    "name": "Mantine area chart",
-    "description": "38 published Mantine area chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Area Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-area-chart",
     "examples": [
@@ -42434,8 +42434,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-bar-chart",
-    "name": "Mantine bar chart",
-    "description": "35 published Mantine bar chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Bar Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-bar-chart",
     "examples": [
@@ -42619,8 +42619,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-bars-list",
-    "name": "Mantine bars list",
-    "description": "12 published Mantine bars list examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Bars List",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-bars-list",
     "examples": [
@@ -42689,8 +42689,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-bubble-chart",
-    "name": "Mantine bubble chart",
-    "description": "6 published Mantine bubble chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Bubble Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-bubble-chart",
     "examples": [
@@ -42729,8 +42729,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-bullet-chart",
-    "name": "Mantine bullet chart",
-    "description": "7 published Mantine bullet chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Bullet Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-bullet-chart",
     "examples": [
@@ -42774,8 +42774,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-candlestick-chart",
-    "name": "Mantine candlestick chart",
-    "description": "7 published Mantine candlestick chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Candlestick Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-candlestick-chart",
     "examples": [
@@ -42819,8 +42819,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-composite-chart",
-    "name": "Mantine composite chart",
-    "description": "28 published Mantine composite chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Composite Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-composite-chart",
     "examples": [
@@ -42969,8 +42969,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-donut-chart",
-    "name": "Mantine donut chart",
-    "description": "13 published Mantine donut chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Donut Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-donut-chart",
     "examples": [
@@ -43044,8 +43044,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-funnel-chart",
-    "name": "Mantine funnel chart",
-    "description": "9 published Mantine funnel chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Funnel Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-funnel-chart",
     "examples": [
@@ -43099,8 +43099,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-gauge-chart",
-    "name": "Mantine gauge chart",
-    "description": "7 published Mantine gauge chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Gauge Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-gauge-chart",
     "examples": [
@@ -43144,8 +43144,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-heatmap",
-    "name": "Mantine heatmap",
-    "description": "13 published Mantine heatmap examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Heatmap",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-heatmap",
     "examples": [
@@ -43219,8 +43219,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-line-chart",
-    "name": "Mantine line chart",
-    "description": "31 published Mantine line chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Line Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-line-chart",
     "examples": [
@@ -43384,8 +43384,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-matrix-chart",
-    "name": "Mantine matrix chart",
-    "description": "9 published Mantine matrix chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Matrix Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-matrix-chart",
     "examples": [
@@ -43439,8 +43439,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-pie-chart",
-    "name": "Mantine pie chart",
-    "description": "11 published Mantine pie chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Pie Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-pie-chart",
     "examples": [
@@ -43504,8 +43504,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-radar-chart",
-    "name": "Mantine radar chart",
-    "description": "8 published Mantine radar chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Radar Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-radar-chart",
     "examples": [
@@ -43554,8 +43554,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-radial-bar-chart",
-    "name": "Mantine radial bar chart",
-    "description": "5 published Mantine radial bar chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Radial Bar Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-radial-bar-chart",
     "examples": [
@@ -43589,8 +43589,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-sankey-chart",
-    "name": "Mantine sankey chart",
-    "description": "6 published Mantine sankey chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Sankey Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-sankey-chart",
     "examples": [
@@ -43629,8 +43629,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-scatter-chart",
-    "name": "Mantine scatter chart",
-    "description": "19 published Mantine scatter chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Scatter Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-scatter-chart",
     "examples": [
@@ -43734,8 +43734,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-sparkline",
-    "name": "Mantine sparkline",
-    "description": "3 published Mantine sparkline examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Sparkline",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-sparkline",
     "examples": [
@@ -43759,8 +43759,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-sunburst-chart",
-    "name": "Mantine sunburst chart",
-    "description": "7 published Mantine sunburst chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Sunburst Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-sunburst-chart",
     "examples": [
@@ -43804,8 +43804,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-treemap",
-    "name": "Mantine treemap",
-    "description": "6 published Mantine treemap examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Treemap",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-treemap",
     "examples": [
@@ -43844,8 +43844,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-waffle-chart",
-    "name": "Mantine waffle chart",
-    "description": "6 published Mantine waffle chart examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Waffle Chart",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "mantine/mantine-waffle-chart",
     "examples": [
@@ -43884,8 +43884,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-code-highlight",
-    "name": "Mantine code highlight",
-    "description": "11 published Mantine code highlight examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Code Highlight",
+    "description": "Display code or a technical snippet.",
     "category": "blocks",
     "previewKey": "mantine/mantine-code-highlight",
     "examples": [
@@ -43949,8 +43949,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-accordion",
-    "name": "Mantine accordion",
-    "description": "12 published Mantine accordion examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Accordion",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "mantine/mantine-accordion",
     "examples": [
@@ -44019,8 +44019,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-action-bar",
-    "name": "Mantine action bar",
-    "description": "4 published Mantine action bar examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Action Bar",
+    "description": "Group actions and controls for the current view or selection.",
     "category": "blocks",
     "previewKey": "mantine/mantine-action-bar",
     "examples": [
@@ -44049,8 +44049,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-action-icon",
-    "name": "Mantine action icon",
-    "description": "16 published Mantine action icon examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Action Icon",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "mantine/mantine-action-icon",
     "examples": [
@@ -44139,8 +44139,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-affix",
-    "name": "Mantine affix",
-    "description": "1 published Mantine affix examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Affix",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-affix",
     "examples": [
@@ -44154,8 +44154,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-alert",
-    "name": "Mantine alert",
-    "description": "2 published Mantine alert examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Alert",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "mantine/mantine-alert",
     "examples": [
@@ -44174,8 +44174,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-anchor",
-    "name": "Mantine anchor",
-    "description": "3 published Mantine anchor examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Anchor",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-anchor",
     "examples": [
@@ -44199,8 +44199,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-angle-slider",
-    "name": "Mantine angle slider",
-    "description": "5 published Mantine angle slider examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Angle Slider",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "mantine/mantine-angle-slider",
     "examples": [
@@ -44234,8 +44234,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-aspect-ratio",
-    "name": "Mantine aspect ratio",
-    "description": "4 published Mantine aspect ratio examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Aspect Ratio",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-aspect-ratio",
     "examples": [
@@ -44264,8 +44264,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-autocomplete",
-    "name": "Mantine autocomplete",
-    "description": "28 published Mantine autocomplete examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Autocomplete",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "mantine/mantine-autocomplete",
     "examples": [
@@ -44414,8 +44414,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-avatar",
-    "name": "Mantine avatar",
-    "description": "9 published Mantine avatar examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Avatar",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "mantine/mantine-avatar",
     "examples": [
@@ -44469,8 +44469,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-background-image",
-    "name": "Mantine background image",
-    "description": "1 published Mantine background image examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Background Image",
+    "description": "Display an image or collection of images.",
     "category": "blocks",
     "previewKey": "mantine/mantine-background-image",
     "examples": [
@@ -44485,7 +44485,7 @@ export const externalRegistry = [
     "sourceId": "mantine",
     "slug": "mantine-badge",
     "name": "Mantine Badge",
-    "description": "8 published Mantine badge examples with complete pinned source and MIT attribution.",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-badge",
     "examples": [
@@ -44534,8 +44534,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-blockquote",
-    "name": "Mantine blockquote",
-    "description": "2 published Mantine blockquote examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Blockquote",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "mantine/mantine-blockquote",
     "examples": [
@@ -44554,8 +44554,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-breadcrumbs",
-    "name": "Mantine breadcrumbs",
-    "description": "1 published Mantine breadcrumbs examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Breadcrumbs",
+    "description": "Show the current location within a hierarchy of pages.",
     "category": "blocks",
     "previewKey": "mantine/mantine-breadcrumbs",
     "examples": [
@@ -44569,8 +44569,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-burger",
-    "name": "Mantine burger",
-    "description": "2 published Mantine burger examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Burger",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "mantine/mantine-burger",
     "examples": [
@@ -44589,8 +44589,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-button",
-    "name": "Mantine button",
-    "description": "16 published Mantine button examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Button",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "mantine/mantine-button",
     "examples": [
@@ -44680,7 +44680,7 @@ export const externalRegistry = [
     "sourceId": "mantine",
     "slug": "mantine-loading-buttons",
     "name": "Mantine Loading Buttons",
-    "description": "1 published Mantine loading buttons examples with complete pinned source and MIT attribution.",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "mantine/mantine-loading-buttons",
     "examples": [
@@ -44694,8 +44694,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-card",
-    "name": "Mantine card",
-    "description": "5 published Mantine card examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Card",
+    "description": "Group related content and actions in a distinct container.",
     "category": "blocks",
     "previewKey": "mantine/mantine-card",
     "examples": [
@@ -44729,8 +44729,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-cascader",
-    "name": "Mantine cascader",
-    "description": "33 published Mantine cascader examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Cascader",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "mantine/mantine-cascader",
     "examples": [
@@ -44904,8 +44904,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-center",
-    "name": "Mantine center",
-    "description": "2 published Mantine center examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Center",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-center",
     "examples": [
@@ -44924,8 +44924,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-checkbox",
-    "name": "Mantine checkbox",
-    "description": "19 published Mantine checkbox examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Checkbox",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "mantine/mantine-checkbox",
     "examples": [
@@ -45029,8 +45029,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-checkbox-group",
-    "name": "Mantine checkbox group",
-    "description": "1 published Mantine checkbox group examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Checkbox Group",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "mantine/mantine-checkbox-group",
     "examples": [
@@ -45044,8 +45044,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-chip",
-    "name": "Mantine chip",
-    "description": "6 published Mantine chip examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Chip",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-chip",
     "examples": [
@@ -45084,8 +45084,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-close-button",
-    "name": "Mantine close button",
-    "description": "2 published Mantine close button examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Close Button",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "mantine/mantine-close-button",
     "examples": [
@@ -45104,8 +45104,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-code",
-    "name": "Mantine code",
-    "description": "3 published Mantine code examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Code",
+    "description": "Display code or a technical snippet.",
     "category": "blocks",
     "previewKey": "mantine/mantine-code",
     "examples": [
@@ -45129,8 +45129,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-collapse",
-    "name": "Mantine collapse",
-    "description": "4 published Mantine collapse examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Collapse",
+    "description": "Reveal or hide a section of supporting content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-collapse",
     "examples": [
@@ -45159,8 +45159,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-color-input",
-    "name": "Mantine color input",
-    "description": "19 published Mantine color input examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Color Input",
+    "description": "Choose or inspect a color value.",
     "category": "blocks",
     "previewKey": "mantine/mantine-color-input",
     "examples": [
@@ -45264,8 +45264,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-color-picker",
-    "name": "Mantine color picker",
-    "description": "10 published Mantine color picker examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Color Picker",
+    "description": "Choose or inspect a color value.",
     "category": "blocks",
     "previewKey": "mantine/mantine-color-picker",
     "examples": [
@@ -45324,8 +45324,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-color-swatch",
-    "name": "Mantine color swatch",
-    "description": "3 published Mantine color swatch examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Color Swatch",
+    "description": "Choose or inspect a color value.",
     "category": "blocks",
     "previewKey": "mantine/mantine-color-swatch",
     "examples": [
@@ -45349,8 +45349,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-combobox",
-    "name": "Mantine combobox",
-    "description": "20 published Mantine combobox examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Combobox",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "mantine/mantine-combobox",
     "examples": [
@@ -45459,8 +45459,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-combobox-popover",
-    "name": "Mantine combobox popover",
-    "description": "19 published Mantine combobox popover examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Combobox Popover",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "mantine/mantine-combobox-popover",
     "examples": [
@@ -45564,8 +45564,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-container",
-    "name": "Mantine container",
-    "description": "5 published Mantine container examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Container",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-container",
     "examples": [
@@ -45599,8 +45599,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-copy-button",
-    "name": "Mantine copy button",
-    "description": "2 published Mantine copy button examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Copy Button",
+    "description": "Copy a selected value or snippet to the clipboard.",
     "category": "blocks",
     "previewKey": "mantine/mantine-copy-button",
     "examples": [
@@ -45619,8 +45619,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-data-list",
-    "name": "Mantine data list",
-    "description": "4 published Mantine data list examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Data List",
+    "description": "Present a collection of related items.",
     "category": "blocks",
     "previewKey": "mantine/mantine-data-list",
     "examples": [
@@ -45649,8 +45649,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-dialog",
-    "name": "Mantine dialog",
-    "description": "1 published Mantine dialog examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Dialog",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "mantine/mantine-dialog",
     "examples": [
@@ -45664,8 +45664,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-divider",
-    "name": "Mantine divider",
-    "description": "5 published Mantine divider examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Divider",
+    "description": "Visually separate related areas of an interface.",
     "category": "blocks",
     "previewKey": "mantine/mantine-divider",
     "examples": [
@@ -45699,8 +45699,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-drawer",
-    "name": "Mantine drawer",
-    "description": "15 published Mantine drawer examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Drawer",
+    "description": "Open a panel alongside the current page for details or additional controls.",
     "category": "blocks",
     "previewKey": "mantine/mantine-drawer",
     "examples": [
@@ -45784,8 +45784,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-empty-state",
-    "name": "Mantine empty state",
-    "description": "5 published Mantine empty state examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Empty State",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "mantine/mantine-empty-state",
     "examples": [
@@ -45819,8 +45819,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-fieldset",
-    "name": "Mantine fieldset",
-    "description": "2 published Mantine fieldset examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Fieldset",
+    "description": "Collect related values through a group of form controls.",
     "category": "blocks",
     "previewKey": "mantine/mantine-fieldset",
     "examples": [
@@ -45839,8 +45839,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-file-button",
-    "name": "Mantine file button",
-    "description": "3 published Mantine file button examples with complete pinned source and MIT attribution.",
+    "name": "Mantine File Button",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "mantine/mantine-file-button",
     "examples": [
@@ -45864,8 +45864,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-file-input",
-    "name": "Mantine file input",
-    "description": "12 published Mantine file input examples with complete pinned source and MIT attribution.",
+    "name": "Mantine File Input",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "mantine/mantine-file-input",
     "examples": [
@@ -45934,8 +45934,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-flex",
-    "name": "Mantine flex",
-    "description": "2 published Mantine flex examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Flex",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-flex",
     "examples": [
@@ -45954,8 +45954,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-floating-indicator",
-    "name": "Mantine floating indicator",
-    "description": "3 published Mantine floating indicator examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Floating Indicator",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-floating-indicator",
     "examples": [
@@ -45979,8 +45979,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-floating-window",
-    "name": "Mantine floating window",
-    "description": "9 published Mantine floating window examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Floating Window",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "mantine/mantine-floating-window",
     "examples": [
@@ -46034,8 +46034,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-focus-trap",
-    "name": "Mantine focus trap",
-    "description": "2 published Mantine focus trap examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Focus Trap",
+    "description": "Support focus management or accessible presentation.",
     "category": "blocks",
     "previewKey": "mantine/mantine-focus-trap",
     "examples": [
@@ -46054,8 +46054,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-grid",
-    "name": "Mantine grid",
-    "description": "14 published Mantine grid examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Grid",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-grid",
     "examples": [
@@ -46134,8 +46134,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-group",
-    "name": "Mantine group",
-    "description": "2 published Mantine group examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Group",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-group",
     "examples": [
@@ -46154,8 +46154,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-highlight",
-    "name": "Mantine highlight",
-    "description": "8 published Mantine highlight examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Highlight",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "mantine/mantine-highlight",
     "examples": [
@@ -46204,8 +46204,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-hover-card",
-    "name": "Mantine hover card",
-    "description": "4 published Mantine hover card examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Hover Card",
+    "description": "Preview supporting content alongside a trigger.",
     "category": "blocks",
     "previewKey": "mantine/mantine-hover-card",
     "examples": [
@@ -46234,8 +46234,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-image",
-    "name": "Mantine image",
-    "description": "4 published Mantine image examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Image",
+    "description": "Display an image or collection of images.",
     "category": "blocks",
     "previewKey": "mantine/mantine-image",
     "examples": [
@@ -46264,8 +46264,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-indicator",
-    "name": "Mantine indicator",
-    "description": "8 published Mantine indicator examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Indicator",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-indicator",
     "examples": [
@@ -46314,8 +46314,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-input",
-    "name": "Mantine input",
-    "description": "19 published Mantine input examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Input",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "mantine/mantine-input",
     "examples": [
@@ -46419,8 +46419,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-json-input",
-    "name": "Mantine json input",
-    "description": "6 published Mantine json input examples with complete pinned source and MIT attribution.",
+    "name": "Mantine JSON Input",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "mantine/mantine-json-input",
     "examples": [
@@ -46459,8 +46459,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-kbd",
-    "name": "Mantine kbd",
-    "description": "1 published Mantine kbd examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Kbd",
+    "description": "Display a key or keyboard shortcut hint.",
     "category": "blocks",
     "previewKey": "mantine/mantine-kbd",
     "examples": [
@@ -46474,8 +46474,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-kdb",
-    "name": "Mantine kdb",
-    "description": "1 published Mantine kdb examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Kdb",
+    "description": "Display a key or keyboard shortcut hint.",
     "category": "blocks",
     "previewKey": "mantine/mantine-kdb",
     "examples": [
@@ -46489,8 +46489,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-list",
-    "name": "Mantine list",
-    "description": "6 published Mantine list examples with complete pinned source and MIT attribution.",
+    "name": "Mantine List",
+    "description": "Present a collection of related items.",
     "category": "blocks",
     "previewKey": "mantine/mantine-list",
     "examples": [
@@ -46529,8 +46529,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-loader",
-    "name": "Mantine loader",
-    "description": "4 published Mantine loader examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Loader",
+    "description": "Indicate that content or a task is still loading.",
     "category": "blocks",
     "previewKey": "mantine/mantine-loader",
     "examples": [
@@ -46559,8 +46559,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-loading-overlay",
-    "name": "Mantine loading overlay",
-    "description": "3 published Mantine loading overlay examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Loading Overlay",
+    "description": "Indicate that content or a task is still loading.",
     "category": "blocks",
     "previewKey": "mantine/mantine-loading-overlay",
     "examples": [
@@ -46584,8 +46584,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-mark",
-    "name": "Mantine mark",
-    "description": "1 published Mantine mark examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Mark",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "mantine/mantine-mark",
     "examples": [
@@ -46599,8 +46599,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-marquee",
-    "name": "Mantine marquee",
-    "description": "6 published Mantine marquee examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Marquee",
+    "description": "Move a repeating sequence of content across a region.",
     "category": "blocks",
     "previewKey": "mantine/mantine-marquee",
     "examples": [
@@ -46639,8 +46639,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-mask-input",
-    "name": "Mantine mask input",
-    "description": "10 published Mantine mask input examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Mask Input",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "mantine/mantine-mask-input",
     "examples": [
@@ -46699,8 +46699,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-menu",
-    "name": "Mantine menu",
-    "description": "20 published Mantine menu examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Menu",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "mantine/mantine-menu",
     "examples": [
@@ -46809,8 +46809,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-menubar",
-    "name": "Mantine menubar",
-    "description": "5 published Mantine menubar examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Menubar",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "mantine/mantine-menubar",
     "examples": [
@@ -46844,8 +46844,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-modal",
-    "name": "Mantine modal",
-    "description": "18 published Mantine modal examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Modal",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "mantine/mantine-modal",
     "examples": [
@@ -46944,8 +46944,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-multi-select",
-    "name": "Mantine multi select",
-    "description": "35 published Mantine multi select examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Multi Select",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "mantine/mantine-multi-select",
     "examples": [
@@ -47129,8 +47129,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-native-select",
-    "name": "Mantine native select",
-    "description": "10 published Mantine native select examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Native Select",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "mantine/mantine-native-select",
     "examples": [
@@ -47189,8 +47189,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-nav-link",
-    "name": "Mantine nav link",
-    "description": "4 published Mantine nav link examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Nav Link",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "mantine/mantine-nav-link",
     "examples": [
@@ -47219,8 +47219,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-notification",
-    "name": "Mantine notification",
-    "description": "3 published Mantine notification examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Notification",
+    "description": "Display a transient notification about an event or action.",
     "category": "blocks",
     "previewKey": "mantine/mantine-notification",
     "examples": [
@@ -47244,8 +47244,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-number-formatter",
-    "name": "Mantine number formatter",
-    "description": "4 published Mantine number formatter examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Number Formatter",
+    "description": "Display a key metric or numeric summary.",
     "category": "blocks",
     "previewKey": "mantine/mantine-number-formatter",
     "examples": [
@@ -47274,8 +47274,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-number-input",
-    "name": "Mantine number input",
-    "description": "21 published Mantine number input examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Number Input",
+    "description": "Enter a numeric value using a number field.",
     "category": "blocks",
     "previewKey": "mantine/mantine-number-input",
     "examples": [
@@ -47389,8 +47389,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-overflow-list",
-    "name": "Mantine overflow list",
-    "description": "5 published Mantine overflow list examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Overflow List",
+    "description": "Present a collection of related items.",
     "category": "blocks",
     "previewKey": "mantine/mantine-overflow-list",
     "examples": [
@@ -47424,8 +47424,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-overlay",
-    "name": "Mantine overlay",
-    "description": "3 published Mantine overlay examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Overlay",
+    "description": "Place a visual layer above the underlying interface.",
     "category": "blocks",
     "previewKey": "mantine/mantine-overlay",
     "examples": [
@@ -47449,8 +47449,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-pagination",
-    "name": "Mantine pagination",
-    "description": "14 published Mantine pagination examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Pagination",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "mantine/mantine-pagination",
     "examples": [
@@ -47529,8 +47529,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-paper",
-    "name": "Mantine paper",
-    "description": "1 published Mantine paper examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Paper",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-paper",
     "examples": [
@@ -47544,8 +47544,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-password-input",
-    "name": "Mantine password input",
-    "description": "11 published Mantine password input examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Password Input",
+    "description": "Enter a password in a masked text field.",
     "category": "blocks",
     "previewKey": "mantine/mantine-password-input",
     "examples": [
@@ -47609,8 +47609,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-pill",
-    "name": "Mantine pill",
-    "description": "3 published Mantine pill examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Pill",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-pill",
     "examples": [
@@ -47634,8 +47634,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-pills-input",
-    "name": "Mantine pills input",
-    "description": "3 published Mantine pills input examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Pills Input",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "mantine/mantine-pills-input",
     "examples": [
@@ -47659,8 +47659,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-pin-input",
-    "name": "Mantine pin input",
-    "description": "4 published Mantine pin input examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Pin Input",
+    "description": "Enter a short verification code across a group of input slots.",
     "category": "blocks",
     "previewKey": "mantine/mantine-pin-input",
     "examples": [
@@ -47689,8 +47689,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-popover",
-    "name": "Mantine popover",
-    "description": "14 published Mantine popover examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Popover",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "mantine/mantine-popover",
     "examples": [
@@ -47769,8 +47769,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-progress",
-    "name": "Mantine progress",
-    "description": "7 published Mantine progress examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Progress",
+    "description": "Show how far a task has progressed.",
     "category": "blocks",
     "previewKey": "mantine/mantine-progress",
     "examples": [
@@ -47814,8 +47814,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-radio",
-    "name": "Mantine radio",
-    "description": "11 published Mantine radio examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Radio",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "mantine/mantine-radio",
     "examples": [
@@ -47879,8 +47879,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-radio-group",
-    "name": "Mantine radio group",
-    "description": "1 published Mantine radio group examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Radio Group",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "mantine/mantine-radio-group",
     "examples": [
@@ -47894,8 +47894,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-range-slider",
-    "name": "Mantine range slider",
-    "description": "13 published Mantine range slider examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Range Slider",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "mantine/mantine-range-slider",
     "examples": [
@@ -47969,8 +47969,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-rating",
-    "name": "Mantine rating",
-    "description": "6 published Mantine rating examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Rating",
+    "description": "Choose or display a rating on a bounded scale.",
     "category": "blocks",
     "previewKey": "mantine/mantine-rating",
     "examples": [
@@ -48009,8 +48009,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-ring-progress",
-    "name": "Mantine ring progress",
-    "description": "9 published Mantine ring progress examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Ring Progress",
+    "description": "Show how far a task has progressed.",
     "category": "blocks",
     "previewKey": "mantine/mantine-ring-progress",
     "examples": [
@@ -48064,8 +48064,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-rolling-number",
-    "name": "Mantine rolling number",
-    "description": "3 published Mantine rolling number examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Rolling Number",
+    "description": "Display a key metric or numeric summary.",
     "category": "blocks",
     "previewKey": "mantine/mantine-rolling-number",
     "examples": [
@@ -48089,8 +48089,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-scroll-area",
-    "name": "Mantine scroll area",
-    "description": "12 published Mantine scroll area examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Scroll Area",
+    "description": "Present content within a scrollable region.",
     "category": "blocks",
     "previewKey": "mantine/mantine-scroll-area",
     "examples": [
@@ -48159,8 +48159,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-scroller",
-    "name": "Mantine scroller",
-    "description": "5 published Mantine scroller examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Scroller",
+    "description": "Present content within a scrollable region.",
     "category": "blocks",
     "previewKey": "mantine/mantine-scroller",
     "examples": [
@@ -48194,8 +48194,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-segmented-control",
-    "name": "Mantine segmented control",
-    "description": "10 published Mantine segmented control examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Segmented Control",
+    "description": "Choose between options presented in a compact group.",
     "category": "blocks",
     "previewKey": "mantine/mantine-segmented-control",
     "examples": [
@@ -48254,8 +48254,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-select",
-    "name": "Mantine select",
-    "description": "34 published Mantine select examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Select",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "mantine/mantine-select",
     "examples": [
@@ -48434,8 +48434,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-semi-circle-progress",
-    "name": "Mantine semi circle progress",
-    "description": "7 published Mantine semi circle progress examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Semi Circle Progress",
+    "description": "Show how far a task has progressed.",
     "category": "blocks",
     "previewKey": "mantine/mantine-semi-circle-progress",
     "examples": [
@@ -48479,8 +48479,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-simple-grid",
-    "name": "Mantine simple grid",
-    "description": "6 published Mantine simple grid examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Simple Grid",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-simple-grid",
     "examples": [
@@ -48519,8 +48519,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-skeleton",
-    "name": "Mantine skeleton",
-    "description": "2 published Mantine skeleton examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Skeleton",
+    "description": "Reserve the shape of content while it is loading.",
     "category": "blocks",
     "previewKey": "mantine/mantine-skeleton",
     "examples": [
@@ -48539,8 +48539,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-slider",
-    "name": "Mantine slider",
-    "description": "19 published Mantine slider examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Slider",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "mantine/mantine-slider",
     "examples": [
@@ -48644,8 +48644,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-space",
-    "name": "Mantine space",
-    "description": "2 published Mantine space examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Space",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-space",
     "examples": [
@@ -48664,8 +48664,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-splitter",
-    "name": "Mantine splitter",
-    "description": "10 published Mantine splitter examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Splitter",
+    "description": "Let users adjust the space assigned to adjacent panels.",
     "category": "blocks",
     "previewKey": "mantine/mantine-splitter",
     "examples": [
@@ -48724,8 +48724,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-spoiler",
-    "name": "Mantine spoiler",
-    "description": "2 published Mantine spoiler examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Spoiler",
+    "description": "Reveal or hide a section of supporting content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-spoiler",
     "examples": [
@@ -48744,8 +48744,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-stack",
-    "name": "Mantine stack",
-    "description": "1 published Mantine stack examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Stack",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "mantine/mantine-stack",
     "examples": [
@@ -48759,8 +48759,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-stepper",
-    "name": "Mantine stepper",
-    "description": "15 published Mantine stepper examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Stepper",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "mantine/mantine-stepper",
     "examples": [
@@ -48844,8 +48844,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-switch",
-    "name": "Mantine switch",
-    "description": "9 published Mantine switch examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Switch",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "mantine/mantine-switch",
     "examples": [
@@ -48900,7 +48900,7 @@ export const externalRegistry = [
     "sourceId": "mantine",
     "slug": "mantine-labelled-switches",
     "name": "Mantine Labelled Switches",
-    "description": "1 published Mantine labelled switches examples with complete pinned source and MIT attribution.",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "mantine/mantine-labelled-switches",
     "examples": [
@@ -48914,8 +48914,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-switch-group",
-    "name": "Mantine switch group",
-    "description": "1 published Mantine switch group examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Switch Group",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "mantine/mantine-switch-group",
     "examples": [
@@ -48929,8 +48929,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-table",
-    "name": "Mantine table",
-    "description": "14 published Mantine table examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Table",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "mantine/mantine-table",
     "examples": [
@@ -49009,8 +49009,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-table-of-contents",
-    "name": "Mantine table of contents",
-    "description": "4 published Mantine table of contents examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Table Of Contents",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "mantine/mantine-table-of-contents",
     "examples": [
@@ -49039,8 +49039,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-tabs",
-    "name": "Mantine tabs",
-    "description": "12 published Mantine tabs examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Tabs",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "mantine/mantine-tabs",
     "examples": [
@@ -49109,8 +49109,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-tags-input",
-    "name": "Mantine tags input",
-    "description": "36 published Mantine tags input examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Tags Input",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "mantine/mantine-tags-input",
     "examples": [
@@ -49299,8 +49299,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-text",
-    "name": "Mantine text",
-    "description": "7 published Mantine text examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Text",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "mantine/mantine-text",
     "examples": [
@@ -49345,7 +49345,7 @@ export const externalRegistry = [
     "sourceId": "mantine",
     "slug": "mantine-text-input",
     "name": "Mantine Text Input",
-    "description": "8 published Mantine text input examples with complete pinned source and MIT attribution.",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "mantine/mantine-text-input",
     "examples": [
@@ -49394,8 +49394,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-textarea",
-    "name": "Mantine textarea",
-    "description": "9 published Mantine textarea examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Textarea",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "mantine/mantine-textarea",
     "examples": [
@@ -49449,8 +49449,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-theme-icon",
-    "name": "Mantine theme icon",
-    "description": "4 published Mantine theme icon examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Theme Icon",
+    "description": "Configure or demonstrate shared interface theme values.",
     "category": "blocks",
     "previewKey": "mantine/mantine-theme-icon",
     "examples": [
@@ -49479,8 +49479,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-timeline",
-    "name": "Mantine timeline",
-    "description": "5 published Mantine timeline examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Timeline",
+    "description": "Display events or milestones in sequence.",
     "category": "blocks",
     "previewKey": "mantine/mantine-timeline",
     "examples": [
@@ -49514,8 +49514,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-title",
-    "name": "Mantine title",
-    "description": "4 published Mantine title examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Title",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "mantine/mantine-title",
     "examples": [
@@ -49544,8 +49544,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-tooltip",
-    "name": "Mantine tooltip",
-    "description": "15 published Mantine tooltip examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Tooltip",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "mantine/mantine-tooltip",
     "examples": [
@@ -49629,8 +49629,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-transition",
-    "name": "Mantine transition",
-    "description": "2 published Mantine transition examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Transition",
+    "description": "Demonstrate a motion or transition treatment.",
     "category": "blocks",
     "previewKey": "mantine/mantine-transition",
     "examples": [
@@ -49649,8 +49649,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-tree",
-    "name": "Mantine tree",
-    "description": "18 published Mantine tree examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Tree",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "mantine/mantine-tree",
     "examples": [
@@ -49749,8 +49749,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-tree-select",
-    "name": "Mantine tree select",
-    "description": "27 published Mantine tree select examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Tree Select",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "mantine/mantine-tree-select",
     "examples": [
@@ -49894,8 +49894,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-typography",
-    "name": "Mantine typography",
-    "description": "2 published Mantine typography examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Typography",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "mantine/mantine-typography",
     "examples": [
@@ -49914,8 +49914,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-unstyled-button",
-    "name": "Mantine unstyled button",
-    "description": "1 published Mantine unstyled button examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Unstyled Button",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "mantine/mantine-unstyled-button",
     "examples": [
@@ -49929,8 +49929,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-calendar",
-    "name": "Mantine calendar",
-    "description": "6 published Mantine calendar examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Calendar",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "mantine/mantine-calendar",
     "examples": [
@@ -49969,8 +49969,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-date-input",
-    "name": "Mantine date input",
-    "description": "11 published Mantine date input examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Date Input",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "mantine/mantine-date-input",
     "examples": [
@@ -50034,8 +50034,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-date-picker",
-    "name": "Mantine date picker",
-    "description": "28 published Mantine date picker examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Date Picker",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "mantine/mantine-date-picker",
     "examples": [
@@ -50184,8 +50184,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-date-picker-input",
-    "name": "Mantine date picker input",
-    "description": "28 published Mantine date picker input examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Date Picker Input",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "mantine/mantine-date-picker-input",
     "examples": [
@@ -50334,8 +50334,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-date-time-picker",
-    "name": "Mantine date time picker",
-    "description": "13 published Mantine date time picker examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Date Time Picker",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "mantine/mantine-date-time-picker",
     "examples": [
@@ -50409,8 +50409,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-dates-provider",
-    "name": "Mantine dates provider",
-    "description": "3 published Mantine dates provider examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Dates Provider",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mantine/mantine-dates-provider",
     "examples": [
@@ -50434,8 +50434,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-inline-date-time-picker",
-    "name": "Mantine inline date time picker",
-    "description": "5 published Mantine inline date time picker examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Inline Date Time Picker",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "mantine/mantine-inline-date-time-picker",
     "examples": [
@@ -50469,8 +50469,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-mini-calendar",
-    "name": "Mantine mini calendar",
-    "description": "5 published Mantine mini calendar examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Mini Calendar",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "mantine/mantine-mini-calendar",
     "examples": [
@@ -50504,8 +50504,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-month-picker",
-    "name": "Mantine month picker",
-    "description": "19 published Mantine month picker examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Month Picker",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "mantine/mantine-month-picker",
     "examples": [
@@ -50609,8 +50609,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-month-picker-input",
-    "name": "Mantine month picker input",
-    "description": "19 published Mantine month picker input examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Month Picker Input",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "mantine/mantine-month-picker-input",
     "examples": [
@@ -50714,8 +50714,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-time-grid",
-    "name": "Mantine time grid",
-    "description": "6 published Mantine time grid examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Time Grid",
+    "description": "Choose or enter a time value.",
     "category": "blocks",
     "previewKey": "mantine/mantine-time-grid",
     "examples": [
@@ -50754,8 +50754,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-time-input",
-    "name": "Mantine time input",
-    "description": "5 published Mantine time input examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Time Input",
+    "description": "Choose or enter a time value.",
     "category": "blocks",
     "previewKey": "mantine/mantine-time-input",
     "examples": [
@@ -50789,8 +50789,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-time-picker",
-    "name": "Mantine time picker",
-    "description": "23 published Mantine time picker examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Time Picker",
+    "description": "Choose or enter a time value.",
     "category": "blocks",
     "previewKey": "mantine/mantine-time-picker",
     "examples": [
@@ -50914,8 +50914,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-time-value",
-    "name": "Mantine time value",
-    "description": "4 published Mantine time value examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Time Value",
+    "description": "Choose or enter a time value.",
     "category": "blocks",
     "previewKey": "mantine/mantine-time-value",
     "examples": [
@@ -50944,8 +50944,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-year-picker",
-    "name": "Mantine year picker",
-    "description": "16 published Mantine year picker examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Year Picker",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "mantine/mantine-year-picker",
     "examples": [
@@ -51034,8 +51034,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-year-picker-input",
-    "name": "Mantine year picker input",
-    "description": "17 published Mantine year picker input examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Year Picker Input",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "mantine/mantine-year-picker-input",
     "examples": [
@@ -51129,8 +51129,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-dropzone",
-    "name": "Mantine dropzone",
-    "description": "8 published Mantine dropzone examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Dropzone",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "mantine/mantine-dropzone",
     "examples": [
@@ -51179,8 +51179,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-emotion",
-    "name": "Mantine emotion",
-    "description": "7 published Mantine emotion examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Emotion",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mantine/mantine-emotion",
     "examples": [
@@ -51224,8 +51224,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-field",
-    "name": "Mantine field",
-    "description": "9 published Mantine field examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Field",
+    "description": "Collect related values through a group of form controls.",
     "category": "blocks",
     "previewKey": "mantine/mantine-field",
     "examples": [
@@ -51279,8 +51279,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-form",
-    "name": "Mantine form",
-    "description": "69 published Mantine form examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Form",
+    "description": "Collect related values through a group of form controls.",
     "category": "blocks",
     "previewKey": "mantine/mantine-form",
     "examples": [
@@ -51634,8 +51634,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-guides",
-    "name": "Mantine guides",
-    "description": "7 published Mantine guides examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Guides",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "mantine/mantine-guides",
     "examples": [
@@ -51679,8 +51679,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-click-outside",
-    "name": "Mantine use click outside",
-    "description": "2 published Mantine use click outside examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Click Outside",
+    "description": "React hook example for click outside.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-click-outside",
     "examples": [
@@ -51699,8 +51699,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-clipboard-usage",
-    "name": "Mantine use clipboard usage",
-    "description": "1 published Mantine use clipboard usage examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Clipboard Usage",
+    "description": "React hook example for clipboard usage.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-clipboard-usage",
     "examples": [
@@ -51714,8 +51714,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-collapse",
-    "name": "Mantine use collapse",
-    "description": "1 published Mantine use collapse examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Collapse",
+    "description": "React hook example for collapse.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-collapse",
     "examples": [
@@ -51729,8 +51729,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-color-scheme",
-    "name": "Mantine use color scheme",
-    "description": "1 published Mantine use color scheme examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Color Scheme",
+    "description": "React hook example for color scheme.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-color-scheme",
     "examples": [
@@ -51744,8 +51744,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-counter",
-    "name": "Mantine use counter",
-    "description": "1 published Mantine use counter examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Counter",
+    "description": "React hook example for counter.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-counter",
     "examples": [
@@ -51759,8 +51759,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-debounced-callback",
-    "name": "Mantine use debounced callback",
-    "description": "2 published Mantine use debounced callback examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Debounced Callback",
+    "description": "React hook example for debounced callback.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-debounced-callback",
     "examples": [
@@ -51779,8 +51779,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-debounced-state",
-    "name": "Mantine use debounced state",
-    "description": "2 published Mantine use debounced state examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Debounced State",
+    "description": "React hook example for debounced state.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-debounced-state",
     "examples": [
@@ -51799,8 +51799,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-debounced-value",
-    "name": "Mantine use debounced value",
-    "description": "3 published Mantine use debounced value examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Debounced Value",
+    "description": "React hook example for debounced value.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-debounced-value",
     "examples": [
@@ -51824,8 +51824,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-document-title",
-    "name": "Mantine use document title",
-    "description": "1 published Mantine use document title examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Document Title",
+    "description": "React hook example for document title.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-document-title",
     "examples": [
@@ -51839,8 +51839,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-document-visibility",
-    "name": "Mantine use document visibility",
-    "description": "1 published Mantine use document visibility examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Document Visibility",
+    "description": "React hook example for document visibility.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-document-visibility",
     "examples": [
@@ -51854,8 +51854,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-drag",
-    "name": "Mantine use drag",
-    "description": "5 published Mantine use drag examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Drag",
+    "description": "React hook example for drag.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-drag",
     "examples": [
@@ -51889,8 +51889,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-element-size",
-    "name": "Mantine use element size",
-    "description": "1 published Mantine use element size examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Element Size",
+    "description": "React hook example for element size.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-element-size",
     "examples": [
@@ -51904,8 +51904,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-event-listener",
-    "name": "Mantine use event listener",
-    "description": "1 published Mantine use event listener examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Event Listener",
+    "description": "React hook example for event listener.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-event-listener",
     "examples": [
@@ -51919,8 +51919,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-eye-dropper",
-    "name": "Mantine use eye dropper",
-    "description": "1 published Mantine use eye dropper examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Eye Dropper",
+    "description": "React hook example for eye dropper.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-eye-dropper",
     "examples": [
@@ -51934,8 +51934,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-favicon",
-    "name": "Mantine use favicon",
-    "description": "1 published Mantine use favicon examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Favicon",
+    "description": "React hook example for favicon.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-favicon",
     "examples": [
@@ -51949,8 +51949,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-fetch",
-    "name": "Mantine use fetch",
-    "description": "1 published Mantine use fetch examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Fetch",
+    "description": "React hook example for fetch.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-fetch",
     "examples": [
@@ -51964,8 +51964,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-file-dialog",
-    "name": "Mantine use file dialog",
-    "description": "1 published Mantine use file dialog examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use File Dialog",
+    "description": "React hook example for file dialog.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-file-dialog",
     "examples": [
@@ -51979,8 +51979,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-floating-window",
-    "name": "Mantine use floating window",
-    "description": "7 published Mantine use floating window examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Floating Window",
+    "description": "React hook example for floating window.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-floating-window",
     "examples": [
@@ -52024,8 +52024,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-focus-within",
-    "name": "Mantine use focus within",
-    "description": "1 published Mantine use focus within examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Focus Within",
+    "description": "React hook example for focus within.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-focus-within",
     "examples": [
@@ -52039,8 +52039,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-force-update",
-    "name": "Mantine use force update",
-    "description": "1 published Mantine use force update examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Force Update",
+    "description": "React hook example for force update.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-force-update",
     "examples": [
@@ -52054,8 +52054,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-fullscreen",
-    "name": "Mantine use fullscreen",
-    "description": "2 published Mantine use fullscreen examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Fullscreen",
+    "description": "React hook example for fullscreen.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-fullscreen",
     "examples": [
@@ -52074,8 +52074,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-hash",
-    "name": "Mantine use hash",
-    "description": "1 published Mantine use hash examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Hash",
+    "description": "React hook example for hash.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-hash",
     "examples": [
@@ -52089,8 +52089,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-headroom",
-    "name": "Mantine use headroom",
-    "description": "3 published Mantine use headroom examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Headroom",
+    "description": "React hook example for headroom.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-headroom",
     "examples": [
@@ -52114,8 +52114,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-horizontal-collapse",
-    "name": "Mantine use horizontal collapse",
-    "description": "1 published Mantine use horizontal collapse examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Horizontal Collapse",
+    "description": "React hook example for horizontal collapse.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-horizontal-collapse",
     "examples": [
@@ -52129,8 +52129,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-hotkeys",
-    "name": "Mantine use hotkeys",
-    "description": "2 published Mantine use hotkeys examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Hotkeys",
+    "description": "React hook example for hotkeys.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-hotkeys",
     "examples": [
@@ -52149,8 +52149,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-hover",
-    "name": "Mantine use hover",
-    "description": "1 published Mantine use hover examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Hover",
+    "description": "React hook example for hover.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-hover",
     "examples": [
@@ -52164,8 +52164,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-idle",
-    "name": "Mantine use idle",
-    "description": "3 published Mantine use idle examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Idle",
+    "description": "React hook example for idle.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-idle",
     "examples": [
@@ -52189,8 +52189,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-in-viewport",
-    "name": "Mantine use in viewport",
-    "description": "1 published Mantine use in viewport examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use In Viewport",
+    "description": "React hook example for in viewport.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-in-viewport",
     "examples": [
@@ -52204,8 +52204,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-intersection",
-    "name": "Mantine use intersection",
-    "description": "1 published Mantine use intersection examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Intersection",
+    "description": "React hook example for intersection.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-intersection",
     "examples": [
@@ -52219,8 +52219,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-interval",
-    "name": "Mantine use interval",
-    "description": "1 published Mantine use interval examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Interval",
+    "description": "React hook example for interval.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-interval",
     "examples": [
@@ -52234,8 +52234,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-is-first-render",
-    "name": "Mantine use is first render",
-    "description": "1 published Mantine use is first render examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Is First Render",
+    "description": "React hook example for is first render.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-is-first-render",
     "examples": [
@@ -52249,8 +52249,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-logger",
-    "name": "Mantine use logger",
-    "description": "1 published Mantine use logger examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Logger",
+    "description": "React hook example for logger.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-logger",
     "examples": [
@@ -52264,8 +52264,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-long-press",
-    "name": "Mantine use long press",
-    "description": "1 published Mantine use long press examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Long Press",
+    "description": "React hook example for long press.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-long-press",
     "examples": [
@@ -52279,8 +52279,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-map",
-    "name": "Mantine use map",
-    "description": "1 published Mantine use map examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Map",
+    "description": "React hook example for map.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-map",
     "examples": [
@@ -52294,8 +52294,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-mask",
-    "name": "Mantine use mask",
-    "description": "7 published Mantine use mask examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Mask",
+    "description": "React hook example for mask.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-mask",
     "examples": [
@@ -52339,8 +52339,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-media-query",
-    "name": "Mantine use media query",
-    "description": "1 published Mantine use media query examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Media Query",
+    "description": "React hook example for media query.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-media-query",
     "examples": [
@@ -52354,8 +52354,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-mouse",
-    "name": "Mantine use mouse",
-    "description": "2 published Mantine use mouse examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Mouse",
+    "description": "React hook example for mouse.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-mouse",
     "examples": [
@@ -52374,8 +52374,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-move",
-    "name": "Mantine use move",
-    "description": "4 published Mantine use move examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Move",
+    "description": "React hook example for move.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-move",
     "examples": [
@@ -52404,8 +52404,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-mutation-observer",
-    "name": "Mantine use mutation observer",
-    "description": "2 published Mantine use mutation observer examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Mutation Observer",
+    "description": "React hook example for mutation observer.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-mutation-observer",
     "examples": [
@@ -52424,8 +52424,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-network",
-    "name": "Mantine use network",
-    "description": "1 published Mantine use network examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Network",
+    "description": "React hook example for network.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-network",
     "examples": [
@@ -52439,8 +52439,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-orientation",
-    "name": "Mantine use orientation",
-    "description": "1 published Mantine use orientation examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Orientation",
+    "description": "React hook example for orientation.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-orientation",
     "examples": [
@@ -52454,8 +52454,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-os",
-    "name": "Mantine use os",
-    "description": "1 published Mantine use os examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Os",
+    "description": "React hook example for os.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-os",
     "examples": [
@@ -52469,8 +52469,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-page-leave",
-    "name": "Mantine use page leave",
-    "description": "1 published Mantine use page leave examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Page Leave",
+    "description": "React hook example for page leave.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-page-leave",
     "examples": [
@@ -52484,8 +52484,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-pagination",
-    "name": "Mantine use pagination",
-    "description": "1 published Mantine use pagination examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Pagination",
+    "description": "React hook example for pagination.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-pagination",
     "examples": [
@@ -52499,8 +52499,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-previous",
-    "name": "Mantine use previous",
-    "description": "1 published Mantine use previous examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Previous",
+    "description": "React hook example for previous.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-previous",
     "examples": [
@@ -52514,8 +52514,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-radial-move",
-    "name": "Mantine use radial move",
-    "description": "1 published Mantine use radial move examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Radial Move",
+    "description": "React hook example for radial move.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-radial-move",
     "examples": [
@@ -52529,8 +52529,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-reduced-motion",
-    "name": "Mantine use reduced motion",
-    "description": "1 published Mantine use reduced motion examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Reduced Motion",
+    "description": "React hook example for reduced motion.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-reduced-motion",
     "examples": [
@@ -52544,8 +52544,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-resize-observer",
-    "name": "Mantine use resize observer",
-    "description": "1 published Mantine use resize observer examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Resize Observer",
+    "description": "React hook example for resize observer.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-resize-observer",
     "examples": [
@@ -52559,8 +52559,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-roving-index",
-    "name": "Mantine use roving index",
-    "description": "5 published Mantine use roving index examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Roving Index",
+    "description": "React hook example for roving index.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-roving-index",
     "examples": [
@@ -52594,8 +52594,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-scroll-direction",
-    "name": "Mantine use scroll direction",
-    "description": "1 published Mantine use scroll direction examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Scroll Direction",
+    "description": "React hook example for scroll direction.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-scroll-direction",
     "examples": [
@@ -52609,8 +52609,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-scroll-into-view",
-    "name": "Mantine use scroll into view",
-    "description": "3 published Mantine use scroll into view examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Scroll Into View",
+    "description": "React hook example for scroll into view.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-scroll-into-view",
     "examples": [
@@ -52634,8 +52634,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-scroll-spy",
-    "name": "Mantine use scroll spy",
-    "description": "2 published Mantine use scroll spy examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Scroll Spy",
+    "description": "React hook example for scroll spy.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-scroll-spy",
     "examples": [
@@ -52654,8 +52654,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-scroller",
-    "name": "Mantine use scroller",
-    "description": "3 published Mantine use scroller examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Scroller",
+    "description": "React hook example for scroller.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-scroller",
     "examples": [
@@ -52679,8 +52679,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-selection",
-    "name": "Mantine use selection",
-    "description": "1 published Mantine use selection examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Selection",
+    "description": "React hook example for selection.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-selection",
     "examples": [
@@ -52694,8 +52694,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-set",
-    "name": "Mantine use set",
-    "description": "1 published Mantine use set examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Set",
+    "description": "React hook example for set.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-set",
     "examples": [
@@ -52709,8 +52709,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-splitter",
-    "name": "Mantine use splitter",
-    "description": "12 published Mantine use splitter examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Splitter",
+    "description": "React hook example for splitter.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-splitter",
     "examples": [
@@ -52779,8 +52779,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-state-history",
-    "name": "Mantine use state history",
-    "description": "1 published Mantine use state history examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use State History",
+    "description": "React hook example for state history.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-state-history",
     "examples": [
@@ -52794,8 +52794,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-text-selection",
-    "name": "Mantine use text selection",
-    "description": "1 published Mantine use text selection examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Text Selection",
+    "description": "React hook example for text selection.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-text-selection",
     "examples": [
@@ -52809,8 +52809,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-throttled-callback",
-    "name": "Mantine use throttled callback",
-    "description": "1 published Mantine use throttled callback examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Throttled Callback",
+    "description": "React hook example for throttled callback.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-throttled-callback",
     "examples": [
@@ -52824,8 +52824,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-throttled-state",
-    "name": "Mantine use throttled state",
-    "description": "1 published Mantine use throttled state examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Throttled State",
+    "description": "React hook example for throttled state.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-throttled-state",
     "examples": [
@@ -52839,8 +52839,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-throttled-value",
-    "name": "Mantine use throttled value",
-    "description": "1 published Mantine use throttled value examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Throttled Value",
+    "description": "React hook example for throttled value.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-throttled-value",
     "examples": [
@@ -52854,8 +52854,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-timeout",
-    "name": "Mantine use timeout",
-    "description": "1 published Mantine use timeout examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Timeout",
+    "description": "React hook example for timeout.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-timeout",
     "examples": [
@@ -52869,8 +52869,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-toggle",
-    "name": "Mantine use toggle",
-    "description": "1 published Mantine use toggle examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Toggle",
+    "description": "React hook example for toggle.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-toggle",
     "examples": [
@@ -52884,8 +52884,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-validated-state",
-    "name": "Mantine use validated state",
-    "description": "1 published Mantine use validated state examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Validated State",
+    "description": "React hook example for validated state.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-validated-state",
     "examples": [
@@ -52899,8 +52899,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-viewport-size",
-    "name": "Mantine use viewport size",
-    "description": "1 published Mantine use viewport size examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Viewport Size",
+    "description": "React hook example for viewport size.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-viewport-size",
     "examples": [
@@ -52914,8 +52914,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-use-window-scroll",
-    "name": "Mantine use window scroll",
-    "description": "1 published Mantine use window scroll examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Use Window Scroll",
+    "description": "React hook example for window scroll.",
     "category": "blocks",
     "previewKey": "mantine/mantine-use-window-scroll",
     "examples": [
@@ -52929,8 +52929,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-lightbox",
-    "name": "Mantine lightbox",
-    "description": "14 published Mantine lightbox examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Lightbox",
+    "description": "Inspect media in an enlarged overlay.",
     "category": "blocks",
     "previewKey": "mantine/mantine-lightbox",
     "examples": [
@@ -53009,8 +53009,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-modals",
-    "name": "Mantine modals",
-    "description": "8 published Mantine modals examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Modals",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "mantine/mantine-modals",
     "examples": [
@@ -53059,8 +53059,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-notifications",
-    "name": "Mantine notifications",
-    "description": "11 published Mantine notifications examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Notifications",
+    "description": "Display a transient notification about an event or action.",
     "category": "blocks",
     "previewKey": "mantine/mantine-notifications",
     "examples": [
@@ -53124,8 +53124,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-nprogress",
-    "name": "Mantine nprogress",
-    "description": "1 published Mantine nprogress examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Nprogress",
+    "description": "Show how far a task has progressed.",
     "category": "blocks",
     "previewKey": "mantine/mantine-nprogress",
     "examples": [
@@ -53139,8 +53139,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-agenda-view",
-    "name": "Mantine agenda view",
-    "description": "7 published Mantine agenda view examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Agenda View",
+    "description": "Display appointments or resources in a time-based layout.",
     "category": "blocks",
     "previewKey": "mantine/mantine-agenda-view",
     "examples": [
@@ -53184,8 +53184,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-day-view",
-    "name": "Mantine day view",
-    "description": "40 published Mantine day view examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Day View",
+    "description": "Display appointments or resources in a time-based layout.",
     "category": "blocks",
     "previewKey": "mantine/mantine-day-view",
     "examples": [
@@ -53394,8 +53394,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-mobile-month-view",
-    "name": "Mantine mobile month view",
-    "description": "11 published Mantine mobile month view examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Mobile Month View",
+    "description": "Display appointments or resources in a time-based layout.",
     "category": "blocks",
     "previewKey": "mantine/mantine-mobile-month-view",
     "examples": [
@@ -53459,8 +53459,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-month-view",
-    "name": "Mantine month view",
-    "description": "26 published Mantine month view examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Month View",
+    "description": "Display appointments or resources in a time-based layout.",
     "category": "blocks",
     "previewKey": "mantine/mantine-month-view",
     "examples": [
@@ -53599,8 +53599,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-resources-day-view",
-    "name": "Mantine resources day view",
-    "description": "27 published Mantine resources day view examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Resources Day View",
+    "description": "Display appointments or resources in a time-based layout.",
     "category": "blocks",
     "previewKey": "mantine/mantine-resources-day-view",
     "examples": [
@@ -53744,8 +53744,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-resources-month-view",
-    "name": "Mantine resources month view",
-    "description": "19 published Mantine resources month view examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Resources Month View",
+    "description": "Display appointments or resources in a time-based layout.",
     "category": "blocks",
     "previewKey": "mantine/mantine-resources-month-view",
     "examples": [
@@ -53849,8 +53849,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-resources-schedule",
-    "name": "Mantine resources schedule",
-    "description": "9 published Mantine resources schedule examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Resources Schedule",
+    "description": "Display appointments or resources in a time-based layout.",
     "category": "blocks",
     "previewKey": "mantine/mantine-resources-schedule",
     "examples": [
@@ -53904,8 +53904,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-resources-week-view",
-    "name": "Mantine resources week view",
-    "description": "26 published Mantine resources week view examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Resources Week View",
+    "description": "Display appointments or resources in a time-based layout.",
     "category": "blocks",
     "previewKey": "mantine/mantine-resources-week-view",
     "examples": [
@@ -54044,8 +54044,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-schedule",
-    "name": "Mantine schedule",
-    "description": "14 published Mantine schedule examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Schedule",
+    "description": "Display appointments or resources in a time-based layout.",
     "category": "blocks",
     "previewKey": "mantine/mantine-schedule",
     "examples": [
@@ -54124,8 +54124,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-week-view",
-    "name": "Mantine week view",
-    "description": "46 published Mantine week view examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Week View",
+    "description": "Display appointments or resources in a time-based layout.",
     "category": "blocks",
     "previewKey": "mantine/mantine-week-view",
     "examples": [
@@ -54364,8 +54364,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-year-view",
-    "name": "Mantine year view",
-    "description": "14 published Mantine year view examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Year View",
+    "description": "Display appointments or resources in a time-based layout.",
     "category": "blocks",
     "previewKey": "mantine/mantine-year-view",
     "examples": [
@@ -54444,8 +54444,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-spotlight",
-    "name": "Mantine spotlight",
-    "description": "7 published Mantine spotlight examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Spotlight",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "mantine/mantine-spotlight",
     "examples": [
@@ -54489,8 +54489,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-styles",
-    "name": "Mantine styles",
-    "description": "21 published Mantine styles examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Styles",
+    "description": "Configure or demonstrate shared interface theme values.",
     "category": "blocks",
     "previewKey": "mantine/mantine-styles",
     "examples": [
@@ -54604,8 +54604,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-theming",
-    "name": "Mantine theming",
-    "description": "26 published Mantine theming examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Theming",
+    "description": "Configure or demonstrate shared interface theme values.",
     "category": "blocks",
     "previewKey": "mantine/mantine-theming",
     "examples": [
@@ -54744,8 +54744,8 @@ export const externalRegistry = [
   {
     "sourceId": "mantine",
     "slug": "mantine-tip-tap",
-    "name": "Mantine tip tap",
-    "description": "15 published Mantine tip tap examples with complete pinned source and MIT attribution.",
+    "name": "Mantine Tip Tap",
+    "description": "Compose and edit formatted text.",
     "category": "blocks",
     "previewKey": "mantine/mantine-tip-tap",
     "examples": [
@@ -54829,8 +54829,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-affix",
-    "name": "Ant Design affix",
-    "description": "4 published Ant Design affix examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Affix",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "antd/antd-affix",
     "examples": [
@@ -54859,8 +54859,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-alert",
-    "name": "Ant Design alert",
-    "description": "15 published Ant Design alert examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Alert",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "antd/antd-alert",
     "examples": [
@@ -54944,8 +54944,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-anchor",
-    "name": "Ant Design anchor",
-    "description": "12 published Ant Design anchor examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Anchor",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "antd/antd-anchor",
     "examples": [
@@ -55014,8 +55014,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-app",
-    "name": "Ant Design app",
-    "description": "2 published Ant Design app examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design App",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "antd/antd-app",
     "examples": [
@@ -55034,8 +55034,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-auto-complete",
-    "name": "Ant Design auto complete",
-    "description": "17 published Ant Design auto complete examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Auto Complete",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "antd/antd-auto-complete",
     "examples": [
@@ -55129,8 +55129,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-avatar",
-    "name": "Ant Design avatar",
-    "description": "10 published Ant Design avatar examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Avatar",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "antd/antd-avatar",
     "examples": [
@@ -55189,8 +55189,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-back-top",
-    "name": "Ant Design back top",
-    "description": "1 published Ant Design back top examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Back Top",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "antd/antd-back-top",
     "examples": [
@@ -55204,8 +55204,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-badge",
-    "name": "Ant Design badge",
-    "description": "17 published Ant Design badge examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Badge",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "antd/antd-badge",
     "examples": [
@@ -55299,8 +55299,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-border-beam",
-    "name": "Ant Design border beam",
-    "description": "10 published Ant Design border beam examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Border Beam",
+    "description": "Demonstrate a motion or transition treatment.",
     "category": "blocks",
     "previewKey": "antd/antd-border-beam",
     "examples": [
@@ -55359,8 +55359,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-breadcrumb",
-    "name": "Ant Design breadcrumb",
-    "description": "9 published Ant Design breadcrumb examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Breadcrumb",
+    "description": "Show the current location within a hierarchy of pages.",
     "category": "blocks",
     "previewKey": "antd/antd-breadcrumb",
     "examples": [
@@ -55415,7 +55415,7 @@ export const externalRegistry = [
     "sourceId": "antd",
     "slug": "antd-button",
     "name": "Ant Design Button",
-    "description": "22 published Ant Design button examples with complete pinned source and MIT attribution.",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "antd/antd-button",
     "examples": [
@@ -55534,8 +55534,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-calendar",
-    "name": "Ant Design calendar",
-    "description": "10 published Ant Design calendar examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Calendar",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "antd/antd-calendar",
     "examples": [
@@ -55594,8 +55594,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-card",
-    "name": "Ant Design card",
-    "description": "14 published Ant Design card examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Card",
+    "description": "Group related content and actions in a distinct container.",
     "category": "blocks",
     "previewKey": "antd/antd-card",
     "examples": [
@@ -55674,8 +55674,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-carousel",
-    "name": "Ant Design carousel",
-    "description": "7 published Ant Design carousel examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Carousel",
+    "description": "Move through a sequence of content items.",
     "category": "blocks",
     "previewKey": "antd/antd-carousel",
     "examples": [
@@ -55719,8 +55719,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-cascader",
-    "name": "Ant Design cascader",
-    "description": "23 published Ant Design cascader examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Cascader",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "antd/antd-cascader",
     "examples": [
@@ -55845,7 +55845,7 @@ export const externalRegistry = [
     "sourceId": "antd",
     "slug": "antd-checkbox",
     "name": "Ant Design Checkbox",
-    "description": "11 published Ant Design checkbox examples with complete pinned source and MIT attribution.",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "antd/antd-checkbox",
     "examples": [
@@ -55909,8 +55909,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-collapse",
-    "name": "Ant Design collapse",
-    "description": "13 published Ant Design collapse examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Collapse",
+    "description": "Reveal or hide a section of supporting content.",
     "category": "blocks",
     "previewKey": "antd/antd-collapse",
     "examples": [
@@ -55984,8 +55984,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-color-picker",
-    "name": "Ant Design color picker",
-    "description": "16 published Ant Design color picker examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Color Picker",
+    "description": "Choose or inspect a color value.",
     "category": "blocks",
     "previewKey": "antd/antd-color-picker",
     "examples": [
@@ -56074,8 +56074,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-config-provider",
-    "name": "Ant Design config provider",
-    "description": "10 published Ant Design config provider examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Config Provider",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "antd/antd-config-provider",
     "examples": [
@@ -56134,8 +56134,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-date-picker",
-    "name": "Ant Design date picker",
-    "description": "32 published Ant Design date picker examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Date Picker",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "antd/antd-date-picker",
     "examples": [
@@ -56304,8 +56304,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-descriptions",
-    "name": "Ant Design descriptions",
-    "description": "13 published Ant Design descriptions examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Descriptions",
+    "description": "Present structured records in rows and columns.",
     "category": "blocks",
     "previewKey": "antd/antd-descriptions",
     "examples": [
@@ -56379,8 +56379,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-divider",
-    "name": "Ant Design divider",
-    "description": "9 published Ant Design divider examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Divider",
+    "description": "Visually separate related areas of an interface.",
     "category": "blocks",
     "previewKey": "antd/antd-divider",
     "examples": [
@@ -56434,8 +56434,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-drawer",
-    "name": "Ant Design drawer",
-    "description": "18 published Ant Design drawer examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Drawer",
+    "description": "Open a panel alongside the current page for details or additional controls.",
     "category": "blocks",
     "previewKey": "antd/antd-drawer",
     "examples": [
@@ -56534,8 +56534,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-dropdown",
-    "name": "Ant Design dropdown",
-    "description": "21 published Ant Design dropdown examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Dropdown",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "antd/antd-dropdown",
     "examples": [
@@ -56649,8 +56649,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-empty",
-    "name": "Ant Design empty",
-    "description": "6 published Ant Design empty examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Empty",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "antd/antd-empty",
     "examples": [
@@ -56689,8 +56689,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-flex",
-    "name": "Ant Design flex",
-    "description": "6 published Ant Design flex examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Flex",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "antd/antd-flex",
     "examples": [
@@ -56729,8 +56729,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-float-button",
-    "name": "Ant Design float button",
-    "description": "16 published Ant Design float button examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Float Button",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "antd/antd-float-button",
     "examples": [
@@ -56819,8 +56819,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-form",
-    "name": "Ant Design form",
-    "description": "44 published Ant Design form examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Form",
+    "description": "Collect related values through a group of form controls.",
     "category": "blocks",
     "previewKey": "antd/antd-form",
     "examples": [
@@ -57049,8 +57049,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-grid",
-    "name": "Ant Design grid",
-    "description": "13 published Ant Design grid examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Grid",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "antd/antd-grid",
     "examples": [
@@ -57124,8 +57124,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-icon",
-    "name": "Ant Design icon",
-    "description": "5 published Ant Design icon examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Icon",
+    "description": "Represent an interface concept with a compact symbol.",
     "category": "blocks",
     "previewKey": "antd/antd-icon",
     "examples": [
@@ -57159,8 +57159,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-image",
-    "name": "Ant Design image",
-    "description": "17 published Ant Design image examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Image",
+    "description": "Display an image or collection of images.",
     "category": "blocks",
     "previewKey": "antd/antd-image",
     "examples": [
@@ -57254,8 +57254,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-input-number",
-    "name": "Ant Design input number",
-    "description": "22 published Ant Design input number examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Input Number",
+    "description": "Enter a numeric value using a number field.",
     "category": "blocks",
     "previewKey": "antd/antd-input-number",
     "examples": [
@@ -57375,7 +57375,7 @@ export const externalRegistry = [
     "sourceId": "antd",
     "slug": "antd-input",
     "name": "Ant Design Input",
-    "description": "26 published Ant Design input examples with complete pinned source and MIT attribution.",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "antd/antd-input",
     "examples": [
@@ -57514,8 +57514,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-layout",
-    "name": "Ant Design layout",
-    "description": "12 published Ant Design layout examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Layout",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "antd/antd-layout",
     "examples": [
@@ -57584,8 +57584,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-list",
-    "name": "Ant Design list",
-    "description": "16 published Ant Design list examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design List",
+    "description": "Present a collection of related items.",
     "category": "blocks",
     "previewKey": "antd/antd-list",
     "examples": [
@@ -57674,8 +57674,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-listy",
-    "name": "Ant Design listy",
-    "description": "8 published Ant Design listy examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Listy",
+    "description": "Present a collection of related items.",
     "category": "blocks",
     "previewKey": "antd/antd-listy",
     "examples": [
@@ -57724,8 +57724,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-masonry",
-    "name": "Ant Design masonry",
-    "description": "6 published Ant Design masonry examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Masonry",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "antd/antd-masonry",
     "examples": [
@@ -57764,8 +57764,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-mentions",
-    "name": "Ant Design mentions",
-    "description": "16 published Ant Design mentions examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Mentions",
+    "description": "Insert references to people or items while entering text.",
     "category": "blocks",
     "previewKey": "antd/antd-mentions",
     "examples": [
@@ -57854,8 +57854,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-menu",
-    "name": "Ant Design menu",
-    "description": "18 published Ant Design menu examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Menu",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "antd/antd-menu",
     "examples": [
@@ -57954,8 +57954,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-message",
-    "name": "Ant Design message",
-    "description": "11 published Ant Design message examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Message",
+    "description": "Display a transient notification about an event or action.",
     "category": "blocks",
     "previewKey": "antd/antd-message",
     "examples": [
@@ -58019,8 +58019,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-modal",
-    "name": "Ant Design modal",
-    "description": "23 published Ant Design modal examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Modal",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "antd/antd-modal",
     "examples": [
@@ -58144,8 +58144,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-notification",
-    "name": "Ant Design notification",
-    "description": "14 published Ant Design notification examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Notification",
+    "description": "Display a transient notification about an event or action.",
     "category": "blocks",
     "previewKey": "antd/antd-notification",
     "examples": [
@@ -58224,8 +58224,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-pagination",
-    "name": "Ant Design pagination",
-    "description": "16 published Ant Design pagination examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Pagination",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "antd/antd-pagination",
     "examples": [
@@ -58314,8 +58314,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-popconfirm",
-    "name": "Ant Design popconfirm",
-    "description": "11 published Ant Design popconfirm examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Popconfirm",
+    "description": "Ask for confirmation before completing an important action.",
     "category": "blocks",
     "previewKey": "antd/antd-popconfirm",
     "examples": [
@@ -58379,8 +58379,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-popover",
-    "name": "Ant Design popover",
-    "description": "12 published Ant Design popover examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Popover",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "antd/antd-popover",
     "examples": [
@@ -58449,8 +58449,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-progress",
-    "name": "Ant Design progress",
-    "description": "17 published Ant Design progress examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Progress",
+    "description": "Show how far a task has progressed.",
     "category": "blocks",
     "previewKey": "antd/antd-progress",
     "examples": [
@@ -58544,8 +58544,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-qr-code",
-    "name": "Ant Design qr code",
-    "description": "11 published Ant Design qr code examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design QR Code",
+    "description": "Display a value in a scannable QR code.",
     "category": "blocks",
     "previewKey": "antd/antd-qr-code",
     "examples": [
@@ -58609,8 +58609,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-radio",
-    "name": "Ant Design radio",
-    "description": "16 published Ant Design radio examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Radio",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "antd/antd-radio",
     "examples": [
@@ -58699,8 +58699,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-rate",
-    "name": "Ant Design rate",
-    "description": "9 published Ant Design rate examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Rate",
+    "description": "Choose or display a rating on a bounded scale.",
     "category": "blocks",
     "previewKey": "antd/antd-rate",
     "examples": [
@@ -58754,8 +58754,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-result",
-    "name": "Ant Design result",
-    "description": "10 published Ant Design result examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Result",
+    "description": "Present the outcome of an action or request.",
     "category": "blocks",
     "previewKey": "antd/antd-result",
     "examples": [
@@ -58814,8 +58814,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-segmented",
-    "name": "Ant Design segmented",
-    "description": "16 published Ant Design segmented examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Segmented",
+    "description": "Choose between options presented in a compact group.",
     "category": "blocks",
     "previewKey": "antd/antd-segmented",
     "examples": [
@@ -58904,8 +58904,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-select",
-    "name": "Ant Design select",
-    "description": "35 published Ant Design select examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Select",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "antd/antd-select",
     "examples": [
@@ -59089,8 +59089,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-skeleton",
-    "name": "Ant Design skeleton",
-    "description": "8 published Ant Design skeleton examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Skeleton",
+    "description": "Reserve the shape of content while it is loading.",
     "category": "blocks",
     "previewKey": "antd/antd-skeleton",
     "examples": [
@@ -59139,8 +59139,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-slider",
-    "name": "Ant Design slider",
-    "description": "15 published Ant Design slider examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Slider",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "antd/antd-slider",
     "examples": [
@@ -59224,8 +59224,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-space",
-    "name": "Ant Design space",
-    "description": "15 published Ant Design space examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Space",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "antd/antd-space",
     "examples": [
@@ -59309,8 +59309,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-spin",
-    "name": "Ant Design spin",
-    "description": "10 published Ant Design spin examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Spin",
+    "description": "Indicate that content or a task is still loading.",
     "category": "blocks",
     "previewKey": "antd/antd-spin",
     "examples": [
@@ -59369,8 +59369,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-splitter",
-    "name": "Ant Design splitter",
-    "description": "14 published Ant Design splitter examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Splitter",
+    "description": "Let users adjust the space assigned to adjacent panels.",
     "category": "blocks",
     "previewKey": "antd/antd-splitter",
     "examples": [
@@ -59449,8 +59449,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-statistic",
-    "name": "Ant Design statistic",
-    "description": "7 published Ant Design statistic examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Statistic",
+    "description": "Display a key metric or numeric summary.",
     "category": "blocks",
     "previewKey": "antd/antd-statistic",
     "examples": [
@@ -59494,8 +59494,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-steps",
-    "name": "Ant Design steps",
-    "description": "20 published Ant Design steps examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Steps",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "antd/antd-steps",
     "examples": [
@@ -59605,7 +59605,7 @@ export const externalRegistry = [
     "sourceId": "antd",
     "slug": "antd-switch",
     "name": "Ant Design Switch",
-    "description": "7 published Ant Design switch examples with complete pinned source and MIT attribution.",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "antd/antd-switch",
     "examples": [
@@ -59649,8 +59649,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-table",
-    "name": "Ant Design table",
-    "description": "53 published Ant Design table examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Table",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "antd/antd-table",
     "examples": [
@@ -59924,8 +59924,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-tabs",
-    "name": "Ant Design tabs",
-    "description": "20 published Ant Design tabs examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Tabs",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "antd/antd-tabs",
     "examples": [
@@ -60034,8 +60034,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-tag",
-    "name": "Ant Design tag",
-    "description": "12 published Ant Design tag examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Tag",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "antd/antd-tag",
     "examples": [
@@ -60104,8 +60104,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-time-picker",
-    "name": "Ant Design time picker",
-    "description": "17 published Ant Design time picker examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Time Picker",
+    "description": "Choose or enter a time value.",
     "category": "blocks",
     "previewKey": "antd/antd-time-picker",
     "examples": [
@@ -60199,8 +60199,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-timeline",
-    "name": "Ant Design timeline",
-    "description": "14 published Ant Design timeline examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Timeline",
+    "description": "Display events or milestones in sequence.",
     "category": "blocks",
     "previewKey": "antd/antd-timeline",
     "examples": [
@@ -60279,8 +60279,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-tooltip",
-    "name": "Ant Design tooltip",
-    "description": "16 published Ant Design tooltip examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Tooltip",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "antd/antd-tooltip",
     "examples": [
@@ -60369,8 +60369,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-tour",
-    "name": "Ant Design tour",
-    "description": "9 published Ant Design tour examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Tour",
+    "description": "Guide users through a sequence of interface features.",
     "category": "blocks",
     "previewKey": "antd/antd-tour",
     "examples": [
@@ -60424,8 +60424,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-transfer",
-    "name": "Ant Design transfer",
-    "description": "13 published Ant Design transfer examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Transfer",
+    "description": "Move selected items between two collections.",
     "category": "blocks",
     "previewKey": "antd/antd-transfer",
     "examples": [
@@ -60499,8 +60499,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-tree-select",
-    "name": "Ant Design tree select",
-    "description": "15 published Ant Design tree select examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Tree Select",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "antd/antd-tree-select",
     "examples": [
@@ -60584,8 +60584,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-tree",
-    "name": "Ant Design tree",
-    "description": "19 published Ant Design tree examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Tree",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "antd/antd-tree",
     "examples": [
@@ -60689,8 +60689,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-typography",
-    "name": "Ant Design typography",
-    "description": "14 published Ant Design typography examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Typography",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "antd/antd-typography",
     "examples": [
@@ -60769,8 +60769,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-upload",
-    "name": "Ant Design upload",
-    "description": "24 published Ant Design upload examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Upload",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "antd/antd-upload",
     "examples": [
@@ -60899,8 +60899,8 @@ export const externalRegistry = [
   {
     "sourceId": "antd",
     "slug": "antd-watermark",
-    "name": "Ant Design watermark",
-    "description": "6 published Ant Design watermark examples with complete pinned source and MIT attribution.",
+    "name": "Ant Design Watermark",
+    "description": "Overlay a repeated identifying mark on content.",
     "category": "blocks",
     "previewKey": "antd/antd-watermark",
     "examples": [
@@ -60939,8 +60939,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-absolute-center",
-    "name": "Chakra UI absolute center",
-    "description": "5 published Chakra UI absolute center examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Absolute Center",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-absolute-center",
     "examples": [
@@ -60974,8 +60974,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-accordion",
-    "name": "Chakra UI accordion",
-    "description": "15 published Chakra UI accordion examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Accordion",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "chakra/chakra-accordion",
     "examples": [
@@ -61059,8 +61059,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-action-bar",
-    "name": "Chakra UI action bar",
-    "description": "4 published Chakra UI action bar examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Action Bar",
+    "description": "Group actions and controls for the current view or selection.",
     "category": "blocks",
     "previewKey": "chakra/chakra-action-bar",
     "examples": [
@@ -61089,8 +61089,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-alert",
-    "name": "Chakra UI alert",
-    "description": "14 published Chakra UI alert examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Alert",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "chakra/chakra-alert",
     "examples": [
@@ -61169,8 +61169,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-aspect-ratio",
-    "name": "Chakra UI aspect ratio",
-    "description": "5 published Chakra UI aspect ratio examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Aspect Ratio",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-aspect-ratio",
     "examples": [
@@ -61204,8 +61204,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-avatar",
-    "name": "Chakra UI avatar",
-    "description": "17 published Chakra UI avatar examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Avatar",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "chakra/chakra-avatar",
     "examples": [
@@ -61299,8 +61299,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-badge",
-    "name": "Chakra UI badge",
-    "description": "9 published Chakra UI badge examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Badge",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-badge",
     "examples": [
@@ -61354,8 +61354,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-bleed",
-    "name": "Chakra UI bleed",
-    "description": "3 published Chakra UI bleed examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Bleed",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-bleed",
     "examples": [
@@ -61379,8 +61379,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-blockquote",
-    "name": "Chakra UI blockquote",
-    "description": "10 published Chakra UI blockquote examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Blockquote",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "chakra/chakra-blockquote",
     "examples": [
@@ -61439,8 +61439,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-box",
-    "name": "Chakra UI box",
-    "description": "9 published Chakra UI box examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Box",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-box",
     "examples": [
@@ -61494,8 +61494,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-breadcrumb",
-    "name": "Chakra UI breadcrumb",
-    "description": "9 published Chakra UI breadcrumb examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Breadcrumb",
+    "description": "Show the current location within a hierarchy of pages.",
     "category": "blocks",
     "previewKey": "chakra/chakra-breadcrumb",
     "examples": [
@@ -61550,7 +61550,7 @@ export const externalRegistry = [
     "sourceId": "chakra",
     "slug": "chakra-button",
     "name": "Chakra UI Button",
-    "description": "22 published Chakra UI button examples with complete pinned source and MIT attribution.",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "chakra/chakra-button",
     "examples": [
@@ -61669,8 +61669,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-card",
-    "name": "Chakra UI card",
-    "description": "10 published Chakra UI card examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Card",
+    "description": "Group related content and actions in a distinct container.",
     "category": "blocks",
     "previewKey": "chakra/chakra-card",
     "examples": [
@@ -61729,8 +61729,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-carousel",
-    "name": "Chakra UI carousel",
-    "description": "18 published Chakra UI carousel examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Carousel",
+    "description": "Move through a sequence of content items.",
     "category": "blocks",
     "previewKey": "chakra/chakra-carousel",
     "examples": [
@@ -61829,8 +61829,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-center",
-    "name": "Chakra UI center",
-    "description": "6 published Chakra UI center examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Center",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-center",
     "examples": [
@@ -61869,8 +61869,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-area",
-    "name": "Chakra UI area",
-    "description": "14 published Chakra UI area examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Area",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "chakra/chakra-area",
     "examples": [
@@ -61949,8 +61949,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-bar",
-    "name": "Chakra UI bar",
-    "description": "31 published Chakra UI bar examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Bar",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "chakra/chakra-bar",
     "examples": [
@@ -62114,8 +62114,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-donut",
-    "name": "Chakra UI donut",
-    "description": "7 published Chakra UI donut examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Donut",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "chakra/chakra-donut",
     "examples": [
@@ -62159,8 +62159,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-line",
-    "name": "Chakra UI line",
-    "description": "20 published Chakra UI line examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Line",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "chakra/chakra-line",
     "examples": [
@@ -62269,8 +62269,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-pie",
-    "name": "Chakra UI pie",
-    "description": "8 published Chakra UI pie examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Pie",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "chakra/chakra-pie",
     "examples": [
@@ -62319,8 +62319,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-radar",
-    "name": "Chakra UI radar",
-    "description": "8 published Chakra UI radar examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Radar",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "chakra/chakra-radar",
     "examples": [
@@ -62369,8 +62369,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-radial",
-    "name": "Chakra UI radial",
-    "description": "3 published Chakra UI radial examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Radial",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "chakra/chakra-radial",
     "examples": [
@@ -62394,8 +62394,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-scatter",
-    "name": "Chakra UI scatter",
-    "description": "5 published Chakra UI scatter examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Scatter",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "chakra/chakra-scatter",
     "examples": [
@@ -62429,8 +62429,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-sparkline",
-    "name": "Chakra UI sparkline",
-    "description": "8 published Chakra UI sparkline examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Sparkline",
+    "description": "Visualize values, comparisons, or changes in a dataset.",
     "category": "blocks",
     "previewKey": "chakra/chakra-sparkline",
     "examples": [
@@ -62480,7 +62480,7 @@ export const externalRegistry = [
     "sourceId": "chakra",
     "slug": "chakra-checkbox",
     "name": "Chakra UI Checkbox",
-    "description": "20 published Chakra UI checkbox examples with complete pinned source and MIT attribution.",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "chakra/chakra-checkbox",
     "examples": [
@@ -62589,8 +62589,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-checkbox-card",
-    "name": "Chakra UI checkbox card",
-    "description": "13 published Chakra UI checkbox card examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Checkbox Card",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "chakra/chakra-checkbox-card",
     "examples": [
@@ -62664,8 +62664,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-checkmark",
-    "name": "Chakra UI checkmark",
-    "description": "7 published Chakra UI checkmark examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Checkmark",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-checkmark",
     "examples": [
@@ -62709,8 +62709,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-client-only",
-    "name": "Chakra UI client only",
-    "description": "3 published Chakra UI client only examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Client Only",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "chakra/chakra-client-only",
     "examples": [
@@ -62734,8 +62734,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-clipboard",
-    "name": "Chakra UI clipboard",
-    "description": "7 published Chakra UI clipboard examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Clipboard",
+    "description": "Copy a selected value or snippet to the clipboard.",
     "category": "blocks",
     "previewKey": "chakra/chakra-clipboard",
     "examples": [
@@ -62779,8 +62779,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-close-button",
-    "name": "Chakra UI close button",
-    "description": "4 published Chakra UI close button examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Close Button",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "chakra/chakra-close-button",
     "examples": [
@@ -62809,8 +62809,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-code",
-    "name": "Chakra UI code",
-    "description": "6 published Chakra UI code examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Code",
+    "description": "Display code or a technical snippet.",
     "category": "blocks",
     "previewKey": "chakra/chakra-code",
     "examples": [
@@ -62849,8 +62849,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-code-block",
-    "name": "Chakra UI code block",
-    "description": "21 published Chakra UI code block examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Code Block",
+    "description": "Display code or a technical snippet.",
     "category": "blocks",
     "previewKey": "chakra/chakra-code-block",
     "examples": [
@@ -62964,8 +62964,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-collapsible",
-    "name": "Chakra UI collapsible",
-    "description": "8 published Chakra UI collapsible examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Collapsible",
+    "description": "Reveal or hide a section of supporting content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-collapsible",
     "examples": [
@@ -63014,8 +63014,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-color",
-    "name": "Chakra UI color",
-    "description": "6 published Chakra UI color examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Color",
+    "description": "Choose or inspect a color value.",
     "category": "blocks",
     "previewKey": "chakra/chakra-color",
     "examples": [
@@ -63054,8 +63054,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-color-picker",
-    "name": "Chakra UI color picker",
-    "description": "25 published Chakra UI color picker examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Color Picker",
+    "description": "Choose or inspect a color value.",
     "category": "blocks",
     "previewKey": "chakra/chakra-color-picker",
     "examples": [
@@ -63189,8 +63189,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-color-swatch",
-    "name": "Chakra UI color swatch",
-    "description": "7 published Chakra UI color swatch examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Color Swatch",
+    "description": "Choose or inspect a color value.",
     "category": "blocks",
     "previewKey": "chakra/chakra-color-swatch",
     "examples": [
@@ -63234,8 +63234,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-combobox",
-    "name": "Chakra UI combobox",
-    "description": "36 published Chakra UI combobox examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Combobox",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "chakra/chakra-combobox",
     "examples": [
@@ -63424,8 +63424,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-container",
-    "name": "Chakra UI container",
-    "description": "3 published Chakra UI container examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Container",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-container",
     "examples": [
@@ -63449,8 +63449,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-data-list",
-    "name": "Chakra UI data list",
-    "description": "7 published Chakra UI data list examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Data List",
+    "description": "Present a collection of related items.",
     "category": "blocks",
     "previewKey": "chakra/chakra-data-list",
     "examples": [
@@ -63494,8 +63494,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-date-input",
-    "name": "Chakra UI date input",
-    "description": "19 published Chakra UI date input examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Date Input",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "chakra/chakra-date-input",
     "examples": [
@@ -63599,8 +63599,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-date-picker",
-    "name": "Chakra UI date picker",
-    "description": "52 published Chakra UI date picker examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Date Picker",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "chakra/chakra-date-picker",
     "examples": [
@@ -63869,8 +63869,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-dialog",
-    "name": "Chakra UI dialog",
-    "description": "23 published Chakra UI dialog examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Dialog",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "chakra/chakra-dialog",
     "examples": [
@@ -63994,8 +63994,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-download-trigger",
-    "name": "Chakra UI download trigger",
-    "description": "4 published Chakra UI download trigger examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Download Trigger",
+    "description": "Start downloading a file or resource.",
     "category": "blocks",
     "previewKey": "chakra/chakra-download-trigger",
     "examples": [
@@ -64024,8 +64024,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-drawer",
-    "name": "Chakra UI drawer",
-    "description": "11 published Chakra UI drawer examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Drawer",
+    "description": "Open a panel alongside the current page for details or additional controls.",
     "category": "blocks",
     "previewKey": "chakra/chakra-drawer",
     "examples": [
@@ -64089,8 +64089,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-editable",
-    "name": "Chakra UI editable",
-    "description": "10 published Chakra UI editable examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Editable",
+    "description": "Edit a text value in place.",
     "category": "blocks",
     "previewKey": "chakra/chakra-editable",
     "examples": [
@@ -64149,8 +64149,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-em",
-    "name": "Chakra UI em",
-    "description": "1 published Chakra UI em examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Em",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "chakra/chakra-em",
     "examples": [
@@ -64164,8 +64164,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-empty-state",
-    "name": "Chakra UI empty state",
-    "description": "4 published Chakra UI empty state examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Empty State",
+    "description": "Explain why content is absent and provide relevant next steps.",
     "category": "blocks",
     "previewKey": "chakra/chakra-empty-state",
     "examples": [
@@ -64194,8 +64194,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-field",
-    "name": "Chakra UI field",
-    "description": "12 published Chakra UI field examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Field",
+    "description": "Collect related values through a group of form controls.",
     "category": "blocks",
     "previewKey": "chakra/chakra-field",
     "examples": [
@@ -64264,8 +64264,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-fieldset",
-    "name": "Chakra UI fieldset",
-    "description": "4 published Chakra UI fieldset examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Fieldset",
+    "description": "Collect related values through a group of form controls.",
     "category": "blocks",
     "previewKey": "chakra/chakra-fieldset",
     "examples": [
@@ -64294,8 +64294,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-file-upload",
-    "name": "Chakra UI file upload",
-    "description": "15 published Chakra UI file upload examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI File Upload",
+    "description": "Select files to attach or upload.",
     "category": "blocks",
     "previewKey": "chakra/chakra-file-upload",
     "examples": [
@@ -64379,8 +64379,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-flex",
-    "name": "Chakra UI flex",
-    "description": "9 published Chakra UI flex examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Flex",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-flex",
     "examples": [
@@ -64434,8 +64434,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-float",
-    "name": "Chakra UI float",
-    "description": "6 published Chakra UI float examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Float",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-float",
     "examples": [
@@ -64474,8 +64474,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-floating-panel",
-    "name": "Chakra UI floating panel",
-    "description": "17 published Chakra UI floating panel examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Floating Panel",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "chakra/chakra-floating-panel",
     "examples": [
@@ -64569,8 +64569,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-for",
-    "name": "Chakra UI for",
-    "description": "3 published Chakra UI for examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI For",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "chakra/chakra-for",
     "examples": [
@@ -64594,8 +64594,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-format-byte",
-    "name": "Chakra UI format byte",
-    "description": "5 published Chakra UI format byte examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Format Byte",
+    "description": "Display a key metric or numeric summary.",
     "category": "blocks",
     "previewKey": "chakra/chakra-format-byte",
     "examples": [
@@ -64629,8 +64629,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-format-number",
-    "name": "Chakra UI format number",
-    "description": "6 published Chakra UI format number examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Format Number",
+    "description": "Display a key metric or numeric summary.",
     "category": "blocks",
     "previewKey": "chakra/chakra-format-number",
     "examples": [
@@ -64669,8 +64669,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-grid",
-    "name": "Chakra UI grid",
-    "description": "4 published Chakra UI grid examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Grid",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-grid",
     "examples": [
@@ -64699,8 +64699,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-group",
-    "name": "Chakra UI group",
-    "description": "4 published Chakra UI group examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Group",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-group",
     "examples": [
@@ -64729,8 +64729,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-heading",
-    "name": "Chakra UI heading",
-    "description": "7 published Chakra UI heading examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Heading",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "chakra/chakra-heading",
     "examples": [
@@ -64774,8 +64774,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-highlight",
-    "name": "Chakra UI highlight",
-    "description": "5 published Chakra UI highlight examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Highlight",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "chakra/chakra-highlight",
     "examples": [
@@ -64809,8 +64809,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-hover-card",
-    "name": "Chakra UI hover card",
-    "description": "9 published Chakra UI hover card examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Hover Card",
+    "description": "Preview supporting content alongside a trigger.",
     "category": "blocks",
     "previewKey": "chakra/chakra-hover-card",
     "examples": [
@@ -64864,8 +64864,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-icon",
-    "name": "Chakra UI icon",
-    "description": "6 published Chakra UI icon examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Icon",
+    "description": "Represent an interface concept with a compact symbol.",
     "category": "blocks",
     "previewKey": "chakra/chakra-icon",
     "examples": [
@@ -64904,8 +64904,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-icon-button",
-    "name": "Chakra UI icon button",
-    "description": "5 published Chakra UI icon button examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Icon Button",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "chakra/chakra-icon-button",
     "examples": [
@@ -64939,8 +64939,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-image",
-    "name": "Chakra UI image",
-    "description": "6 published Chakra UI image examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Image",
+    "description": "Display an image or collection of images.",
     "category": "blocks",
     "previewKey": "chakra/chakra-image",
     "examples": [
@@ -64980,7 +64980,7 @@ export const externalRegistry = [
     "sourceId": "chakra",
     "slug": "chakra-input",
     "name": "Chakra UI Input",
-    "description": "31 published Chakra UI input examples with complete pinned source and MIT attribution.",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "chakra/chakra-input",
     "examples": [
@@ -65144,8 +65144,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-kbd",
-    "name": "Chakra UI kbd",
-    "description": "8 published Chakra UI kbd examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Kbd",
+    "description": "Display a key or keyboard shortcut hint.",
     "category": "blocks",
     "previewKey": "chakra/chakra-kbd",
     "examples": [
@@ -65194,8 +65194,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-link",
-    "name": "Chakra UI link",
-    "description": "5 published Chakra UI link examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Link",
+    "description": "Navigate to a page or resource using a link.",
     "category": "blocks",
     "previewKey": "chakra/chakra-link",
     "examples": [
@@ -65229,8 +65229,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-link-overlay",
-    "name": "Chakra UI link overlay",
-    "description": "2 published Chakra UI link overlay examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Link Overlay",
+    "description": "Navigate to a page or resource using a link.",
     "category": "blocks",
     "previewKey": "chakra/chakra-link-overlay",
     "examples": [
@@ -65249,8 +65249,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-list",
-    "name": "Chakra UI list",
-    "description": "5 published Chakra UI list examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI List",
+    "description": "Present a collection of related items.",
     "category": "blocks",
     "previewKey": "chakra/chakra-list",
     "examples": [
@@ -65284,8 +65284,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-listbox",
-    "name": "Chakra UI listbox",
-    "description": "21 published Chakra UI listbox examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Listbox",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "chakra/chakra-listbox",
     "examples": [
@@ -65399,8 +65399,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-loader",
-    "name": "Chakra UI loader",
-    "description": "3 published Chakra UI loader examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Loader",
+    "description": "Indicate that content or a task is still loading.",
     "category": "blocks",
     "previewKey": "chakra/chakra-loader",
     "examples": [
@@ -65424,8 +65424,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-locale-provider",
-    "name": "Chakra UI locale provider",
-    "description": "1 published Chakra UI locale provider examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Locale Provider",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "chakra/chakra-locale-provider",
     "examples": [
@@ -65439,8 +65439,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-mark",
-    "name": "Chakra UI mark",
-    "description": "2 published Chakra UI mark examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Mark",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "chakra/chakra-mark",
     "examples": [
@@ -65459,8 +65459,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-marquee",
-    "name": "Chakra UI marquee",
-    "description": "14 published Chakra UI marquee examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Marquee",
+    "description": "Move a repeating sequence of content across a region.",
     "category": "blocks",
     "previewKey": "chakra/chakra-marquee",
     "examples": [
@@ -65539,8 +65539,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-menu",
-    "name": "Chakra UI menu",
-    "description": "22 published Chakra UI menu examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Menu",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "chakra/chakra-menu",
     "examples": [
@@ -65659,8 +65659,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-native-select",
-    "name": "Chakra UI native select",
-    "description": "9 published Chakra UI native select examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Native Select",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "chakra/chakra-native-select",
     "examples": [
@@ -65714,8 +65714,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-number-input",
-    "name": "Chakra UI number input",
-    "description": "15 published Chakra UI number input examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Number Input",
+    "description": "Enter a numeric value using a number field.",
     "category": "blocks",
     "previewKey": "chakra/chakra-number-input",
     "examples": [
@@ -65799,8 +65799,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-overlay",
-    "name": "Chakra UI overlay",
-    "description": "7 published Chakra UI overlay examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Overlay",
+    "description": "Place a visual layer above the underlying interface.",
     "category": "blocks",
     "previewKey": "chakra/chakra-overlay",
     "examples": [
@@ -65844,8 +65844,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-pagination",
-    "name": "Chakra UI pagination",
-    "description": "11 published Chakra UI pagination examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Pagination",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "chakra/chakra-pagination",
     "examples": [
@@ -65909,8 +65909,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-password-input",
-    "name": "Chakra UI password input",
-    "description": "6 published Chakra UI password input examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Password Input",
+    "description": "Enter a password in a masked text field.",
     "category": "blocks",
     "previewKey": "chakra/chakra-password-input",
     "examples": [
@@ -65949,8 +65949,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-pin-input",
-    "name": "Chakra UI pin input",
-    "description": "16 published Chakra UI pin input examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Pin Input",
+    "description": "Enter a short verification code across a group of input slots.",
     "category": "blocks",
     "previewKey": "chakra/chakra-pin-input",
     "examples": [
@@ -66039,8 +66039,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-popover",
-    "name": "Chakra UI popover",
-    "description": "15 published Chakra UI popover examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Popover",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "chakra/chakra-popover",
     "examples": [
@@ -66124,8 +66124,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-portal",
-    "name": "Chakra UI portal",
-    "description": "3 published Chakra UI portal examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Portal",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "chakra/chakra-portal",
     "examples": [
@@ -66149,8 +66149,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-presence",
-    "name": "Chakra UI presence",
-    "description": "6 published Chakra UI presence examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Presence",
+    "description": "Demonstrate a motion or transition treatment.",
     "category": "blocks",
     "previewKey": "chakra/chakra-presence",
     "examples": [
@@ -66189,8 +66189,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-progress",
-    "name": "Chakra UI progress",
-    "description": "14 published Chakra UI progress examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Progress",
+    "description": "Show how far a task has progressed.",
     "category": "blocks",
     "previewKey": "chakra/chakra-progress",
     "examples": [
@@ -66269,8 +66269,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-progress-circle",
-    "name": "Chakra UI progress circle",
-    "description": "8 published Chakra UI progress circle examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Progress Circle",
+    "description": "Show how far a task has progressed.",
     "category": "blocks",
     "previewKey": "chakra/chakra-progress-circle",
     "examples": [
@@ -66319,8 +66319,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-prose",
-    "name": "Chakra UI prose",
-    "description": "7 published Chakra UI prose examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Prose",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "chakra/chakra-prose",
     "examples": [
@@ -66364,8 +66364,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-qr-code",
-    "name": "Chakra UI qr code",
-    "description": "11 published Chakra UI qr code examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI QR Code",
+    "description": "Display a value in a scannable QR code.",
     "category": "blocks",
     "previewKey": "chakra/chakra-qr-code",
     "examples": [
@@ -66429,8 +66429,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-radio",
-    "name": "Chakra UI radio",
-    "description": "9 published Chakra UI radio examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Radio",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "chakra/chakra-radio",
     "examples": [
@@ -66484,8 +66484,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-radio-card",
-    "name": "Chakra UI radio card",
-    "description": "15 published Chakra UI radio card examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Radio Card",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "chakra/chakra-radio-card",
     "examples": [
@@ -66569,8 +66569,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-radiomark",
-    "name": "Chakra UI radiomark",
-    "description": "6 published Chakra UI radiomark examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Radiomark",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "chakra/chakra-radiomark",
     "examples": [
@@ -66609,8 +66609,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-rating",
-    "name": "Chakra UI rating",
-    "description": "13 published Chakra UI rating examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Rating",
+    "description": "Choose or display a rating on a bounded scale.",
     "category": "blocks",
     "previewKey": "chakra/chakra-rating",
     "examples": [
@@ -66684,8 +66684,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-rich-text-editor",
-    "name": "Chakra UI rich text editor",
-    "description": "19 published Chakra UI rich text editor examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Rich Text Editor",
+    "description": "Compose and edit formatted text.",
     "category": "blocks",
     "previewKey": "chakra/chakra-rich-text-editor",
     "examples": [
@@ -66789,8 +66789,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-scroll-area",
-    "name": "Chakra UI scroll area",
-    "description": "14 published Chakra UI scroll area examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Scroll Area",
+    "description": "Present content within a scrollable region.",
     "category": "blocks",
     "previewKey": "chakra/chakra-scroll-area",
     "examples": [
@@ -66869,8 +66869,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-segmented-control",
-    "name": "Chakra UI segmented control",
-    "description": "11 published Chakra UI segmented control examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Segmented Control",
+    "description": "Choose between options presented in a compact group.",
     "category": "blocks",
     "previewKey": "chakra/chakra-segmented-control",
     "examples": [
@@ -66934,8 +66934,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-select",
-    "name": "Chakra UI select",
-    "description": "24 published Chakra UI select examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Select",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "chakra/chakra-select",
     "examples": [
@@ -67064,8 +67064,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-separator",
-    "name": "Chakra UI separator",
-    "description": "6 published Chakra UI separator examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Separator",
+    "description": "Visually separate related areas of an interface.",
     "category": "blocks",
     "previewKey": "chakra/chakra-separator",
     "examples": [
@@ -67104,8 +67104,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-show",
-    "name": "Chakra UI show",
-    "description": "3 published Chakra UI show examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Show",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "chakra/chakra-show",
     "examples": [
@@ -67129,8 +67129,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-simple-grid",
-    "name": "Chakra UI simple grid",
-    "description": "5 published Chakra UI simple grid examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Simple Grid",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-simple-grid",
     "examples": [
@@ -67164,8 +67164,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-accessibility",
-    "name": "Chakra UI accessibility",
-    "description": "1 published Chakra UI accessibility examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Accessibility",
+    "description": "Support focus management or accessible presentation.",
     "category": "blocks",
     "previewKey": "chakra/chakra-accessibility",
     "examples": [
@@ -67179,8 +67179,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-skeleton",
-    "name": "Chakra UI skeleton",
-    "description": "8 published Chakra UI skeleton examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Skeleton",
+    "description": "Reserve the shape of content while it is loading.",
     "category": "blocks",
     "previewKey": "chakra/chakra-skeleton",
     "examples": [
@@ -67229,8 +67229,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-skip-nav",
-    "name": "Chakra UI skip nav",
-    "description": "3 published Chakra UI skip nav examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Skip Nav",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "chakra/chakra-skip-nav",
     "examples": [
@@ -67254,8 +67254,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-slider",
-    "name": "Chakra UI slider",
-    "description": "26 published Chakra UI slider examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Slider",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "chakra/chakra-slider",
     "examples": [
@@ -67394,8 +67394,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-spinner",
-    "name": "Chakra UI spinner",
-    "description": "11 published Chakra UI spinner examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Spinner",
+    "description": "Indicate that content or a task is still loading.",
     "category": "blocks",
     "previewKey": "chakra/chakra-spinner",
     "examples": [
@@ -67459,8 +67459,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-splitter",
-    "name": "Chakra UI splitter",
-    "description": "21 published Chakra UI splitter examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Splitter",
+    "description": "Let users adjust the space assigned to adjacent panels.",
     "category": "blocks",
     "previewKey": "chakra/chakra-splitter",
     "examples": [
@@ -67574,8 +67574,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-stack",
-    "name": "Chakra UI stack",
-    "description": "8 published Chakra UI stack examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Stack",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-stack",
     "examples": [
@@ -67624,8 +67624,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-stat",
-    "name": "Chakra UI stat",
-    "description": "10 published Chakra UI stat examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Stat",
+    "description": "Display a key metric or numeric summary.",
     "category": "blocks",
     "previewKey": "chakra/chakra-stat",
     "examples": [
@@ -67684,8 +67684,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-status",
-    "name": "Chakra UI status",
-    "description": "4 published Chakra UI status examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Status",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-status",
     "examples": [
@@ -67714,8 +67714,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-steps",
-    "name": "Chakra UI steps",
-    "description": "16 published Chakra UI steps examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Steps",
+    "description": "Show the current stage within a sequence of steps.",
     "category": "blocks",
     "previewKey": "chakra/chakra-steps",
     "examples": [
@@ -67805,7 +67805,7 @@ export const externalRegistry = [
     "sourceId": "chakra",
     "slug": "chakra-switch",
     "name": "Chakra UI Switch",
-    "description": "13 published Chakra UI switch examples with complete pinned source and MIT attribution.",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "chakra/chakra-switch",
     "examples": [
@@ -67879,8 +67879,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-inline",
-    "name": "Chakra UI inline",
-    "description": "2 published Chakra UI inline examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Inline",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "chakra/chakra-inline",
     "examples": [
@@ -67899,8 +67899,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-with",
-    "name": "Chakra UI with",
-    "description": "6 published Chakra UI with examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI With",
+    "description": "Demonstrate a supporting interface utility.",
     "category": "blocks",
     "previewKey": "chakra/chakra-with",
     "examples": [
@@ -67939,8 +67939,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-table",
-    "name": "Chakra UI table",
-    "description": "21 published Chakra UI table examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Table",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "chakra/chakra-table",
     "examples": [
@@ -68054,8 +68054,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-tabs",
-    "name": "Chakra UI tabs",
-    "description": "18 published Chakra UI tabs examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Tabs",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "chakra/chakra-tabs",
     "examples": [
@@ -68154,8 +68154,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-tag",
-    "name": "Chakra UI tag",
-    "description": "11 published Chakra UI tag examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Tag",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-tag",
     "examples": [
@@ -68219,8 +68219,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-tags-input",
-    "name": "Chakra UI tags input",
-    "description": "23 published Chakra UI tags input examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Tags Input",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "chakra/chakra-tags-input",
     "examples": [
@@ -68344,8 +68344,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-text",
-    "name": "Chakra UI text",
-    "description": "7 published Chakra UI text examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Text",
+    "description": "Present text with an appropriate hierarchy and emphasis.",
     "category": "blocks",
     "previewKey": "chakra/chakra-text",
     "examples": [
@@ -68389,8 +68389,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-textarea",
-    "name": "Chakra UI textarea",
-    "description": "13 published Chakra UI textarea examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Textarea",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "chakra/chakra-textarea",
     "examples": [
@@ -68464,8 +68464,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-theme",
-    "name": "Chakra UI theme",
-    "description": "3 published Chakra UI theme examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Theme",
+    "description": "Configure or demonstrate shared interface theme values.",
     "category": "blocks",
     "previewKey": "chakra/chakra-theme",
     "examples": [
@@ -68489,8 +68489,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-timeline",
-    "name": "Chakra UI timeline",
-    "description": "6 published Chakra UI timeline examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Timeline",
+    "description": "Display events or milestones in sequence.",
     "category": "blocks",
     "previewKey": "chakra/chakra-timeline",
     "examples": [
@@ -68529,8 +68529,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-toaster",
-    "name": "Chakra UI toaster",
-    "description": "12 published Chakra UI toaster examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Toaster",
+    "description": "Display a transient notification about an event or action.",
     "category": "blocks",
     "previewKey": "chakra/chakra-toaster",
     "examples": [
@@ -68599,8 +68599,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-toggle",
-    "name": "Chakra UI toggle",
-    "description": "4 published Chakra UI toggle examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Toggle",
+    "description": "Change the selected state of an option or control.",
     "category": "blocks",
     "previewKey": "chakra/chakra-toggle",
     "examples": [
@@ -68629,8 +68629,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-toggle-tip",
-    "name": "Chakra UI toggle tip",
-    "description": "6 published Chakra UI toggle tip examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Toggle Tip",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "chakra/chakra-toggle-tip",
     "examples": [
@@ -68669,8 +68669,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-animation",
-    "name": "Chakra UI animation",
-    "description": "1 published Chakra UI animation examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Animation",
+    "description": "Demonstrate a motion or transition treatment.",
     "category": "blocks",
     "previewKey": "chakra/chakra-animation",
     "examples": [
@@ -68684,8 +68684,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-focus",
-    "name": "Chakra UI focus",
-    "description": "1 published Chakra UI focus examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Focus",
+    "description": "Support focus management or accessible presentation.",
     "category": "blocks",
     "previewKey": "chakra/chakra-focus",
     "examples": [
@@ -68699,8 +68699,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-layer",
-    "name": "Chakra UI layer",
-    "description": "1 published Chakra UI layer examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Layer",
+    "description": "Place a visual layer above the underlying interface.",
     "category": "blocks",
     "previewKey": "chakra/chakra-layer",
     "examples": [
@@ -68714,8 +68714,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-tooltip",
-    "name": "Chakra UI tooltip",
-    "description": "20 published Chakra UI tooltip examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Tooltip",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "chakra/chakra-tooltip",
     "examples": [
@@ -68824,8 +68824,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-tree-view",
-    "name": "Chakra UI tree view",
-    "description": "24 published Chakra UI tree view examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Tree View",
+    "description": "Explore and select items in a hierarchical collection.",
     "category": "blocks",
     "previewKey": "chakra/chakra-tree-view",
     "examples": [
@@ -68954,8 +68954,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-visually-hidden",
-    "name": "Chakra UI visually hidden",
-    "description": "2 published Chakra UI visually hidden examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Visually Hidden",
+    "description": "Support focus management or accessible presentation.",
     "category": "blocks",
     "previewKey": "chakra/chakra-visually-hidden",
     "examples": [
@@ -68974,8 +68974,8 @@ export const externalRegistry = [
   {
     "sourceId": "chakra",
     "slug": "chakra-wrap",
-    "name": "Chakra UI wrap",
-    "description": "6 published Chakra UI wrap examples with complete pinned source and MIT attribution.",
+    "name": "Chakra UI Wrap",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "chakra/chakra-wrap",
     "examples": [
@@ -69014,8 +69014,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-accordion",
-    "name": "HeroUI accordion",
-    "description": "17 published HeroUI accordion examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Accordion",
+    "description": "Expand and collapse grouped content such as frequently asked questions.",
     "category": "blocks",
     "previewKey": "heroui/heroui-accordion",
     "examples": [
@@ -69109,8 +69109,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-alert",
-    "name": "HeroUI alert",
-    "description": "11 published HeroUI alert examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Alert",
+    "description": "Display important information, warnings, or errors within the page.",
     "category": "blocks",
     "previewKey": "heroui/heroui-alert",
     "examples": [
@@ -69174,8 +69174,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-autocomplete",
-    "name": "HeroUI autocomplete",
-    "description": "32 published HeroUI autocomplete examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Autocomplete",
+    "description": "Search and choose a value from a list of available options.",
     "category": "blocks",
     "previewKey": "heroui/heroui-autocomplete",
     "examples": [
@@ -69344,8 +69344,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-avatar",
-    "name": "HeroUI avatar",
-    "description": "17 published HeroUI avatar examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Avatar",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "heroui/heroui-avatar",
     "examples": [
@@ -69439,8 +69439,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-badge",
-    "name": "HeroUI badge",
-    "description": "10 published HeroUI badge examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Badge",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "heroui/heroui-badge",
     "examples": [
@@ -69499,8 +69499,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-breadcrumbs",
-    "name": "HeroUI breadcrumbs",
-    "description": "16 published HeroUI breadcrumbs examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Breadcrumbs",
+    "description": "Show the current location within a hierarchy of pages.",
     "category": "blocks",
     "previewKey": "heroui/heroui-breadcrumbs",
     "examples": [
@@ -69590,7 +69590,7 @@ export const externalRegistry = [
     "sourceId": "heroui",
     "slug": "heroui-button",
     "name": "HeroUI Button",
-    "description": "15 published HeroUI button examples with complete pinned source and MIT attribution.",
+    "description": "Trigger an action from a button control.",
     "category": "blocks",
     "previewKey": "heroui/heroui-button",
     "examples": [
@@ -69674,8 +69674,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-calendar",
-    "name": "HeroUI calendar",
-    "description": "15 published HeroUI calendar examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Calendar",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "heroui/heroui-calendar",
     "examples": [
@@ -69759,8 +69759,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-card",
-    "name": "HeroUI card",
-    "description": "8 published HeroUI card examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Card",
+    "description": "Group related content and actions in a distinct container.",
     "category": "blocks",
     "previewKey": "heroui/heroui-card",
     "examples": [
@@ -69809,8 +69809,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-checkbox-group",
-    "name": "HeroUI checkbox group",
-    "description": "7 published HeroUI checkbox group examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Checkbox Group",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "heroui/heroui-checkbox-group",
     "examples": [
@@ -69855,7 +69855,7 @@ export const externalRegistry = [
     "sourceId": "heroui",
     "slug": "heroui-checkbox",
     "name": "HeroUI Checkbox",
-    "description": "11 published HeroUI checkbox examples with complete pinned source and MIT attribution.",
+    "description": "Choose whether an option is selected.",
     "category": "blocks",
     "previewKey": "heroui/heroui-checkbox",
     "examples": [
@@ -69919,8 +69919,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-chip",
-    "name": "HeroUI chip",
-    "description": "11 published HeroUI chip examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Chip",
+    "description": "Display a compact label, count, or status alongside content.",
     "category": "blocks",
     "previewKey": "heroui/heroui-chip",
     "examples": [
@@ -69984,8 +69984,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-circular-progress",
-    "name": "HeroUI circular progress",
-    "description": "7 published HeroUI circular progress examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Circular Progress",
+    "description": "Show how far a task has progressed.",
     "category": "blocks",
     "previewKey": "heroui/heroui-circular-progress",
     "examples": [
@@ -70029,8 +70029,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-code",
-    "name": "HeroUI code",
-    "description": "3 published HeroUI code examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Code",
+    "description": "Display code or a technical snippet.",
     "category": "blocks",
     "previewKey": "heroui/heroui-code",
     "examples": [
@@ -70054,8 +70054,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-date-input",
-    "name": "HeroUI date input",
-    "description": "17 published HeroUI date input examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Date Input",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "heroui/heroui-date-input",
     "examples": [
@@ -70149,8 +70149,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-date-picker",
-    "name": "HeroUI date picker",
-    "description": "23 published HeroUI date picker examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Date Picker",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "heroui/heroui-date-picker",
     "examples": [
@@ -70274,8 +70274,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-date-range-picker",
-    "name": "HeroUI date range picker",
-    "description": "25 published HeroUI date range picker examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Date Range Picker",
+    "description": "Choose a date or date range from date-selection controls.",
     "category": "blocks",
     "previewKey": "heroui/heroui-date-range-picker",
     "examples": [
@@ -70409,8 +70409,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-divider",
-    "name": "HeroUI divider",
-    "description": "1 published HeroUI divider examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Divider",
+    "description": "Visually separate related areas of an interface.",
     "category": "blocks",
     "previewKey": "heroui/heroui-divider",
     "examples": [
@@ -70424,8 +70424,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-drawer",
-    "name": "HeroUI drawer",
-    "description": "8 published HeroUI drawer examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Drawer",
+    "description": "Open a panel alongside the current page for details or additional controls.",
     "category": "blocks",
     "previewKey": "heroui/heroui-drawer",
     "examples": [
@@ -70474,8 +70474,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-dropdown",
-    "name": "HeroUI dropdown",
-    "description": "15 published HeroUI dropdown examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Dropdown",
+    "description": "Open a menu of actions from a trigger control.",
     "category": "blocks",
     "previewKey": "heroui/heroui-dropdown",
     "examples": [
@@ -70559,8 +70559,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-form",
-    "name": "HeroUI form",
-    "description": "11 published HeroUI form examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Form",
+    "description": "Collect related values through a group of form controls.",
     "category": "blocks",
     "previewKey": "heroui/heroui-form",
     "examples": [
@@ -70624,8 +70624,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-image",
-    "name": "HeroUI image",
-    "description": "6 published HeroUI image examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Image",
+    "description": "Display an image or collection of images.",
     "category": "blocks",
     "previewKey": "heroui/heroui-image",
     "examples": [
@@ -70664,8 +70664,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-input-otp",
-    "name": "HeroUI input otp",
-    "description": "17 published HeroUI input otp examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Input OTP",
+    "description": "Enter a short verification code across a group of input slots.",
     "category": "blocks",
     "previewKey": "heroui/heroui-input-otp",
     "examples": [
@@ -70760,7 +70760,7 @@ export const externalRegistry = [
     "sourceId": "heroui",
     "slug": "heroui-input",
     "name": "HeroUI Input",
-    "description": "22 published HeroUI input examples with complete pinned source and MIT attribution.",
+    "description": "Enter a value in a text field.",
     "category": "blocks",
     "previewKey": "heroui/heroui-input",
     "examples": [
@@ -70879,8 +70879,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-kbd",
-    "name": "HeroUI kbd",
-    "description": "2 published HeroUI kbd examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Kbd",
+    "description": "Display a key or keyboard shortcut hint.",
     "category": "blocks",
     "previewKey": "heroui/heroui-kbd",
     "examples": [
@@ -70899,8 +70899,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-link",
-    "name": "HeroUI link",
-    "description": "11 published HeroUI link examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Link",
+    "description": "Navigate to a page or resource using a link.",
     "category": "blocks",
     "previewKey": "heroui/heroui-link",
     "examples": [
@@ -70964,8 +70964,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-listbox",
-    "name": "HeroUI listbox",
-    "description": "13 published HeroUI listbox examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Listbox",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "heroui/heroui-listbox",
     "examples": [
@@ -71039,8 +71039,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-modal",
-    "name": "HeroUI modal",
-    "description": "12 published HeroUI modal examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Modal",
+    "description": "Display a focused interaction in an overlay above the current page.",
     "category": "blocks",
     "previewKey": "heroui/heroui-modal",
     "examples": [
@@ -71109,8 +71109,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-navbar",
-    "name": "HeroUI navbar",
-    "description": "12 published HeroUI navbar examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Navbar",
+    "description": "Provide links and controls for moving between pages or sections.",
     "category": "blocks",
     "previewKey": "heroui/heroui-navbar",
     "examples": [
@@ -71179,8 +71179,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-number-input",
-    "name": "HeroUI number input",
-    "description": "24 published HeroUI number input examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Number Input",
+    "description": "Enter a numeric value using a number field.",
     "category": "blocks",
     "previewKey": "heroui/heroui-number-input",
     "examples": [
@@ -71309,8 +71309,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-pagination",
-    "name": "HeroUI pagination",
-    "description": "17 published HeroUI pagination examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Pagination",
+    "description": "Move between pages of a collection of results.",
     "category": "blocks",
     "previewKey": "heroui/heroui-pagination",
     "examples": [
@@ -71404,8 +71404,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-popover",
-    "name": "HeroUI popover",
-    "description": "13 published HeroUI popover examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Popover",
+    "description": "Display contextual content beside its trigger.",
     "category": "blocks",
     "previewKey": "heroui/heroui-popover",
     "examples": [
@@ -71479,8 +71479,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-progress",
-    "name": "HeroUI progress",
-    "description": "9 published HeroUI progress examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Progress",
+    "description": "Show how far a task has progressed.",
     "category": "blocks",
     "previewKey": "heroui/heroui-progress",
     "examples": [
@@ -71534,8 +71534,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-radio-group",
-    "name": "HeroUI radio group",
-    "description": "9 published HeroUI radio group examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Radio Group",
+    "description": "Choose one option from a set of alternatives.",
     "category": "blocks",
     "previewKey": "heroui/heroui-radio-group",
     "examples": [
@@ -71589,8 +71589,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-range-calendar",
-    "name": "HeroUI range calendar",
-    "description": "16 published HeroUI range calendar examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Range Calendar",
+    "description": "Display dates in a calendar layout.",
     "category": "blocks",
     "previewKey": "heroui/heroui-range-calendar",
     "examples": [
@@ -71679,8 +71679,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-scroll-shadow",
-    "name": "HeroUI scroll shadow",
-    "description": "5 published HeroUI scroll shadow examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Scroll Shadow",
+    "description": "Present content within a scrollable region.",
     "category": "blocks",
     "previewKey": "heroui/heroui-scroll-shadow",
     "examples": [
@@ -71714,8 +71714,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-select",
-    "name": "HeroUI select",
-    "description": "35 published HeroUI select examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Select",
+    "description": "Choose a value from a list of options.",
     "category": "blocks",
     "previewKey": "heroui/heroui-select",
     "examples": [
@@ -71899,8 +71899,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-skeleton",
-    "name": "HeroUI skeleton",
-    "description": "3 published HeroUI skeleton examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Skeleton",
+    "description": "Reserve the shape of content while it is loading.",
     "category": "blocks",
     "previewKey": "heroui/heroui-skeleton",
     "examples": [
@@ -71924,8 +71924,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-slider",
-    "name": "HeroUI slider",
-    "description": "27 published HeroUI slider examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Slider",
+    "description": "Choose a numeric value or range along a track.",
     "category": "blocks",
     "previewKey": "heroui/heroui-slider",
     "examples": [
@@ -72069,8 +72069,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-snippet",
-    "name": "HeroUI snippet",
-    "description": "9 published HeroUI snippet examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Snippet",
+    "description": "Display code or a technical snippet.",
     "category": "blocks",
     "previewKey": "heroui/heroui-snippet",
     "examples": [
@@ -72124,8 +72124,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-spacer",
-    "name": "HeroUI spacer",
-    "description": "1 published HeroUI spacer examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Spacer",
+    "description": "Arrange and align interface content.",
     "category": "blocks",
     "previewKey": "heroui/heroui-spacer",
     "examples": [
@@ -72139,8 +72139,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-spinner",
-    "name": "HeroUI spinner",
-    "description": "6 published HeroUI spinner examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Spinner",
+    "description": "Indicate that content or a task is still loading.",
     "category": "blocks",
     "previewKey": "heroui/heroui-spinner",
     "examples": [
@@ -72180,7 +72180,7 @@ export const externalRegistry = [
     "sourceId": "heroui",
     "slug": "heroui-switch",
     "name": "HeroUI Switch",
-    "description": "10 published HeroUI switch examples with complete pinned source and MIT attribution.",
+    "description": "Turn a setting on or off.",
     "category": "blocks",
     "previewKey": "heroui/heroui-switch",
     "examples": [
@@ -72239,8 +72239,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-table",
-    "name": "HeroUI table",
-    "description": "26 published HeroUI table examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Table",
+    "description": "Display related values in a row and column structure.",
     "category": "blocks",
     "previewKey": "heroui/heroui-table",
     "examples": [
@@ -72379,8 +72379,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-tabs",
-    "name": "HeroUI tabs",
-    "description": "14 published HeroUI tabs examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Tabs",
+    "description": "Switch between related panels without leaving the current view.",
     "category": "blocks",
     "previewKey": "heroui/heroui-tabs",
     "examples": [
@@ -72459,8 +72459,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-textarea",
-    "name": "HeroUI textarea",
-    "description": "11 published HeroUI textarea examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Textarea",
+    "description": "Enter text that spans multiple lines.",
     "category": "blocks",
     "previewKey": "heroui/heroui-textarea",
     "examples": [
@@ -72524,8 +72524,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-time-input",
-    "name": "HeroUI time input",
-    "description": "19 published HeroUI time input examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Time Input",
+    "description": "Choose or enter a time value.",
     "category": "blocks",
     "previewKey": "heroui/heroui-time-input",
     "examples": [
@@ -72629,8 +72629,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-toast",
-    "name": "HeroUI toast",
-    "description": "9 published HeroUI toast examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Toast",
+    "description": "Display a transient notification about an event or action.",
     "category": "blocks",
     "previewKey": "heroui/heroui-toast",
     "examples": [
@@ -72684,8 +72684,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-tooltip",
-    "name": "HeroUI tooltip",
-    "description": "11 published HeroUI tooltip examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI Tooltip",
+    "description": "Show a brief explanation associated with a control or item.",
     "category": "blocks",
     "previewKey": "heroui/heroui-tooltip",
     "examples": [
@@ -72749,8 +72749,8 @@ export const externalRegistry = [
   {
     "sourceId": "heroui",
     "slug": "heroui-user",
-    "name": "HeroUI user",
-    "description": "2 published HeroUI user examples with complete pinned source and MIT attribution.",
+    "name": "HeroUI User",
+    "description": "Represent a person or account with an image or initials.",
     "category": "blocks",
     "previewKey": "heroui/heroui-user",
     "examples": [

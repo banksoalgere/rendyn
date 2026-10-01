@@ -1,6 +1,6 @@
-# shadcn/ui block login 03
+# shadcn/ui Login 03
 
-1 published shadcn/ui block login 03 examples with complete pinned source and MIT attribution.
+Collect the information needed to sign in to an account.
 
 ## Installation
 

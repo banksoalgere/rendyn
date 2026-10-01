@@ -1,6 +1,6 @@
-# MUI Text Fields
+# Material UI Text Fields
 
-23 published Material UI text fields examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

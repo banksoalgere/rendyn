@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block card overview
+# shadcn/ui Card Overview (Base UI)
 
-8 published shadcn/ui base blocks block card overview examples with complete pinned source and MIT attribution.
+Compose a card overview interface from related information and controls.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Ant Design border beam
+# Ant Design Border Beam
 
-10 published Ant Design border beam examples with complete pinned source and MIT attribution.
+Demonstrate a motion or transition treatment.
 
 ## Installation
 

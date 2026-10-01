@@ -1,6 +1,6 @@
-# shadcn/ui aria accordion
+# shadcn/ui Accordion (React Aria)
 
-8 published shadcn/ui aria accordion examples with complete pinned source and MIT attribution.
+Expand and collapse grouped content such as frequently asked questions.
 
 ## Installation
 

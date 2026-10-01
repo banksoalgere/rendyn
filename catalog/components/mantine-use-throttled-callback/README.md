@@ -1,6 +1,6 @@
-# Mantine use throttled callback
+# Mantine Use Throttled Callback
 
-1 published Mantine use throttled callback examples with complete pinned source and MIT attribution.
+React hook example for throttled callback.
 
 ## Installation
 

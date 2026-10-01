@@ -1,6 +1,6 @@
-# Origin UI label select native select comp-197
+# Origin UI Select (Example 197)
 
-1 published Origin UI label select native select comp-197 examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

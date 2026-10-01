@@ -1,6 +1,6 @@
-# shadcn/ui base questionnaire example
+# shadcn/ui Questionnaire Example (Base UI)
 
-8 published shadcn/ui base questionnaire example examples with complete pinned source and MIT attribution.
+Collect related values through a group of form controls.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI bleed
+# Chakra UI Bleed
 
-3 published Chakra UI bleed examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

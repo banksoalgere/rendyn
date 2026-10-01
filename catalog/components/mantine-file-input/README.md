@@ -1,6 +1,6 @@
-# Mantine file input
+# Mantine File Input
 
-12 published Mantine file input examples with complete pinned source and MIT attribution.
+Select files to attach or upload.
 
 ## Installation
 

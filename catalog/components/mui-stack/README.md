@@ -1,6 +1,6 @@
-# Material UI stack
+# Material UI Stack
 
-7 published Material UI stack examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine breadcrumbs
+# Mantine Breadcrumbs
 
-1 published Mantine breadcrumbs examples with complete pinned source and MIT attribution.
+Show the current location within a hierarchy of pages.
 
 ## Installation
 

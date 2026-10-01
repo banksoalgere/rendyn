@@ -1,6 +1,6 @@
-# Mantine use move
+# Mantine Use Move
 
-4 published Mantine use move examples with complete pinned source and MIT attribution.
+React hook example for move.
 
 ## Installation
 

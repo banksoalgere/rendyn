@@ -1,6 +1,6 @@
-# Origin UI radio label darkmode comp-169
+# Origin UI Radio Group (Example 169)
 
-1 published Origin UI radio label darkmode comp-169 examples with complete pinned source and MIT attribution.
+Choose one option from a set of alternatives.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Ant Design badge
+# Ant Design Badge
 
-17 published Ant Design badge examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

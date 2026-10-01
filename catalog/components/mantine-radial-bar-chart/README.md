@@ -1,6 +1,6 @@
-# Mantine radial bar chart
+# Mantine Radial Bar Chart
 
-5 published Mantine radial bar chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

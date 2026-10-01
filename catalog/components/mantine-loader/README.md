@@ -1,6 +1,6 @@
-# Mantine loader
+# Mantine Loader
 
-4 published Mantine loader examples with complete pinned source and MIT attribution.
+Indicate that content or a task is still loading.
 
 ## Installation
 

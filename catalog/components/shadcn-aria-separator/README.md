@@ -1,6 +1,6 @@
-# shadcn/ui aria separator
+# shadcn/ui Separator (React Aria)
 
-8 published shadcn/ui aria separator examples with complete pinned source and MIT attribution.
+Visually separate related areas of an interface.
 
 ## Installation
 

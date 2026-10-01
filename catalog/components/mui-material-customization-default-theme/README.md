@@ -1,6 +1,6 @@
-# Material UI material customization default theme
+# Material UI Material Customization Default Theme
 
-1 published Material UI material customization default theme examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

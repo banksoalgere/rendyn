@@ -1,6 +1,6 @@
-# Ant Design statistic
+# Ant Design Statistic
 
-7 published Ant Design statistic examples with complete pinned source and MIT attribution.
+Display a key metric or numeric summary.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# HeroUI scroll shadow
+# HeroUI Scroll Shadow
 
-5 published HeroUI scroll shadow examples with complete pinned source and MIT attribution.
+Present content within a scrollable region.
 
 ## Installation
 

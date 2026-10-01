@@ -1,6 +1,6 @@
-# shadcn/ui aria label
+# shadcn/ui Label (React Aria)
 
-8 published shadcn/ui aria label examples with complete pinned source and MIT attribution.
+Identify a control or describe the value it accepts.
 
 ## Installation
 

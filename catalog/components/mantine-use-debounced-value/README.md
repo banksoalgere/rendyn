@@ -1,6 +1,6 @@
-# Mantine use debounced value
+# Mantine Use Debounced Value
 
-3 published Mantine use debounced value examples with complete pinned source and MIT attribution.
+React hook example for debounced value.
 
 ## Installation
 

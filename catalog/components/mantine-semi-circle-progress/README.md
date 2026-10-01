@@ -1,6 +1,6 @@
-# Mantine semi circle progress
+# Mantine Semi Circle Progress
 
-7 published Mantine semi circle progress examples with complete pinned source and MIT attribution.
+Show how far a task has progressed.
 
 ## Installation
 

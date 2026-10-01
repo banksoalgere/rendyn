@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block syncing state
+# shadcn/ui Syncing State (React Aria)
 
-8 published shadcn/ui aria blocks block syncing state examples with complete pinned source and MIT attribution.
+Indicate that content or a task is still loading.
 
 ## Installation
 

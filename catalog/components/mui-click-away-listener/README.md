@@ -1,6 +1,6 @@
-# Material UI click away listener
+# Material UI Click Away Listener
 
-3 published Material UI click away listener examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

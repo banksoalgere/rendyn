@@ -1,6 +1,6 @@
-# shadcn/ui kbd
+# shadcn/ui Kbd
 
-5 published shadcn/ui kbd examples with complete pinned source and MIT attribution.
+Display a key or keyboard shortcut hint.
 
 ## Installation
 

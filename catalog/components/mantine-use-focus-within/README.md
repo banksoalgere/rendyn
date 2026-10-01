@@ -1,6 +1,6 @@
-# Mantine use focus within
+# Mantine Use Focus Within
 
-1 published Mantine use focus within examples with complete pinned source and MIT attribution.
+React hook example for focus within.
 
 ## Installation
 

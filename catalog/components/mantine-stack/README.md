@@ -1,6 +1,6 @@
-# Mantine stack
+# Mantine Stack
 
-1 published Mantine stack examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

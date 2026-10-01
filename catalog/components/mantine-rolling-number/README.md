@@ -1,6 +1,6 @@
-# Mantine rolling number
+# Mantine Rolling Number
 
-3 published Mantine rolling number examples with complete pinned source and MIT attribution.
+Display a key metric or numeric summary.
 
 ## Installation
 

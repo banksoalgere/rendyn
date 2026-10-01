@@ -1,6 +1,6 @@
-# Mantine use network
+# Mantine Use Network
 
-1 published Mantine use network examples with complete pinned source and MIT attribution.
+React hook example for network.
 
 ## Installation
 

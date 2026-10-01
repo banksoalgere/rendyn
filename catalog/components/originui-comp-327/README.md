@@ -1,6 +1,6 @@
-# Origin UI dialog modal form comp-327
+# Origin UI Dialog (Example 327)
 
-1 published Origin UI dialog modal form comp-327 examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

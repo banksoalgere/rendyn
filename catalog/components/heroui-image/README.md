@@ -1,6 +1,6 @@
-# HeroUI image
+# HeroUI Image
 
-6 published HeroUI image examples with complete pinned source and MIT attribution.
+Display an image or collection of images.
 
 ## Installation
 

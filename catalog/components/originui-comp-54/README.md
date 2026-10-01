@@ -1,6 +1,6 @@
-# Origin UI input label mask comp-54
+# Origin UI Text Input (Example 54)
 
-1 published Origin UI input label mask comp-54 examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

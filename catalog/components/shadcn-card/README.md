@@ -1,6 +1,6 @@
-# shadcn/ui card
+# shadcn/ui Card
 
-2 published shadcn/ui card examples with complete pinned source and MIT attribution.
+Group related content and actions in a distinct container.
 
 ## Installation
 

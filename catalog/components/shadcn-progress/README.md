@@ -1,6 +1,6 @@
-# shadcn/ui progress
+# shadcn/ui Progress
 
-1 published shadcn/ui progress examples with complete pinned source and MIT attribution.
+Show how far a task has progressed.
 
 ## Installation
 

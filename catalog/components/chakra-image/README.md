@@ -1,6 +1,6 @@
-# Chakra UI image
+# Chakra UI Image
 
-6 published Chakra UI image examples with complete pinned source and MIT attribution.
+Display an image or collection of images.
 
 ## Installation
 

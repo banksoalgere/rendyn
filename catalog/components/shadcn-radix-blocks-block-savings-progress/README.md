@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block savings progress
+# shadcn/ui Savings Progress (Radix)
 
-8 published shadcn/ui radix blocks block savings progress examples with complete pinned source and MIT attribution.
+Compose a savings progress interface from related information and controls.
 
 ## Installation
 

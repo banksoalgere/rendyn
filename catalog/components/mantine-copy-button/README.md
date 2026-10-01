@@ -1,6 +1,6 @@
-# Mantine copy button
+# Mantine Copy Button
 
-2 published Mantine copy button examples with complete pinned source and MIT attribution.
+Copy a selected value or snippet to the clipboard.
 
 ## Installation
 

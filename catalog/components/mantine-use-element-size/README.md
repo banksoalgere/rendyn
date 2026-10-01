@@ -1,6 +1,6 @@
-# Mantine use element size
+# Mantine Use Element Size
 
-1 published Mantine use element size examples with complete pinned source and MIT attribution.
+React hook example for element size.
 
 ## Installation
 

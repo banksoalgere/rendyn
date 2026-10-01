@@ -1,6 +1,6 @@
-# Chakra UI animation
+# Chakra UI Animation
 
-1 published Chakra UI animation examples with complete pinned source and MIT attribution.
+Demonstrate a motion or transition treatment.
 
 ## Installation
 

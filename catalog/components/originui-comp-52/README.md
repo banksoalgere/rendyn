@@ -1,6 +1,6 @@
-# Origin UI input label read only comp-52
+# Origin UI Read-only Email Input (Example 52)
 
-1 published Origin UI input label read only comp-52 examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

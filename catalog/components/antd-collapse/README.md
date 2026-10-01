@@ -1,6 +1,6 @@
-# Ant Design collapse
+# Ant Design Collapse
 
-13 published Ant Design collapse examples with complete pinned source and MIT attribution.
+Reveal or hide a section of supporting content.
 
 ## Installation
 

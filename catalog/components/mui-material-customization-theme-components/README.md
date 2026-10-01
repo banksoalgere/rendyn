@@ -1,6 +1,6 @@
-# Material UI material customization theme components
+# Material UI Material Customization Theme Components
 
-6 published Material UI material customization theme components examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

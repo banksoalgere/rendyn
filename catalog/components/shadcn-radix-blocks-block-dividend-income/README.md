@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block dividend income
+# shadcn/ui Dividend Income (Radix)
 
-8 published shadcn/ui radix blocks block dividend income examples with complete pinned source and MIT attribution.
+Compose a dividend income interface from related information and controls.
 
 ## Installation
 

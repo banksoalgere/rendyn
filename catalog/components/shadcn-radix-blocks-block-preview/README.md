@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block preview
+# shadcn/ui Preview (Radix)
 
-8 published shadcn/ui radix blocks block preview examples with complete pinned source and MIT attribution.
+Compare a collection of interface components or examples.
 
 ## Installation
 

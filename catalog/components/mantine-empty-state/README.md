@@ -1,6 +1,6 @@
-# Mantine empty state
+# Mantine Empty State
 
-5 published Mantine empty state examples with complete pinned source and MIT attribution.
+Explain why content is absent and provide relevant next steps.
 
 ## Installation
 

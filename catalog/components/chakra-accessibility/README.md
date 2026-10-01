@@ -1,6 +1,6 @@
-# Chakra UI accessibility
+# Chakra UI Accessibility
 
-1 published Chakra UI accessibility examples with complete pinned source and MIT attribution.
+Support focus management or accessible presentation.
 
 ## Installation
 

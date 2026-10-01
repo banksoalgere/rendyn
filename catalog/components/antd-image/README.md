@@ -1,6 +1,6 @@
-# Ant Design image
+# Ant Design Image
 
-17 published Ant Design image examples with complete pinned source and MIT attribution.
+Display an image or collection of images.
 
 ## Installation
 

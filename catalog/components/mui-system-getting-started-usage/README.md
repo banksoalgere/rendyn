@@ -1,6 +1,6 @@
-# Material UI system getting started usage
+# Material UI System Getting Started Usage
 
-6 published Material UI system getting started usage examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# HeroUI code
+# HeroUI Code
 
-3 published HeroUI code examples with complete pinned source and MIT attribution.
+Display code or a technical snippet.
 
 ## Installation
 

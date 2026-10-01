@@ -1,6 +1,6 @@
-# Chakra UI scroll area
+# Chakra UI Scroll Area
 
-14 published Chakra UI scroll area examples with complete pinned source and MIT attribution.
+Present content within a scrollable region.
 
 ## Installation
 

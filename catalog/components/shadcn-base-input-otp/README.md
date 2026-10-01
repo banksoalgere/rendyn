@@ -1,6 +1,6 @@
-# shadcn/ui base input otp
+# shadcn/ui Input OTP (Base UI)
 
-8 published shadcn/ui base input otp examples with complete pinned source and MIT attribution.
+Enter a short verification code across a group of input slots.
 
 ## Installation
 

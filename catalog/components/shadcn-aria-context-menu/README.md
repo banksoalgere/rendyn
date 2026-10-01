@@ -1,6 +1,6 @@
-# shadcn/ui aria context menu
+# shadcn/ui Context Menu (React Aria)
 
-8 published shadcn/ui aria context menu examples with complete pinned source and MIT attribution.
+Show actions associated with the selected item or context.
 
 ## Installation
 

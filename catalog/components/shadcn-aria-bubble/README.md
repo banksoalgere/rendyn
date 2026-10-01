@@ -1,6 +1,6 @@
-# shadcn/ui aria bubble
+# shadcn/ui Bubble (React Aria)
 
-8 published shadcn/ui aria bubble examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

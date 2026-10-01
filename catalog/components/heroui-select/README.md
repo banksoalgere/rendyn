@@ -1,6 +1,6 @@
-# HeroUI select
+# HeroUI Select
 
-35 published HeroUI select examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

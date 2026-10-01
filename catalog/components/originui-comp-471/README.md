@@ -1,6 +1,6 @@
-# Origin UI table comp-471
+# Origin UI Table (Example 471)
 
-1 published Origin UI table comp-471 examples with complete pinned source and MIT attribution.
+Display related values in a row and column structure.
 
 ## Installation
 

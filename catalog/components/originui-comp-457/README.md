@@ -1,6 +1,6 @@
-# Origin UI pagination comp-457
+# Origin UI Pagination (Example 457)
 
-1 published Origin UI pagination comp-457 examples with complete pinned source and MIT attribution.
+Move between pages of a collection of results.
 
 ## Installation
 

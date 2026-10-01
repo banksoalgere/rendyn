@@ -1,6 +1,6 @@
-# Mantine hover card
+# Mantine Hover Card
 
-4 published Mantine hover card examples with complete pinned source and MIT attribution.
+Preview supporting content alongside a trigger.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui switch
+# shadcn/ui Switch
 
-1 published shadcn/ui switch examples with complete pinned source and MIT attribution.
+Turn a setting on or off.
 
 ## Installation
 

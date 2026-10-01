@@ -1,6 +1,6 @@
-# shadcn/ui hover card
+# shadcn/ui Hover Card
 
-1 published shadcn/ui hover card examples with complete pinned source and MIT attribution.
+Preview supporting content alongside a trigger.
 
 ## Installation
 

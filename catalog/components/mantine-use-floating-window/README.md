@@ -1,6 +1,6 @@
-# Mantine use floating window
+# Mantine Use Floating Window
 
-7 published Mantine use floating window examples with complete pinned source and MIT attribution.
+React hook example for floating window.
 
 ## Installation
 

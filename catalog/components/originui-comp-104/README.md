@@ -1,6 +1,6 @@
-# Origin UI button volume controls comp-104
+# Origin UI Button (Example 104)
 
-1 published Origin UI button volume controls comp-104 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

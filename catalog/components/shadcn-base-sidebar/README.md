@@ -1,6 +1,6 @@
-# shadcn/ui base sidebar
+# shadcn/ui Sidebar (Base UI)
 
-32 published shadcn/ui base sidebar examples with complete pinned source and MIT attribution.
+Organize application navigation and supporting controls in a side panel.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui aria badge
+# shadcn/ui Badge (React Aria)
 
-8 published shadcn/ui aria badge examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI card
+# Chakra UI Card
 
-10 published Chakra UI card examples with complete pinned source and MIT attribution.
+Group related content and actions in a distinct container.
 
 ## Installation
 

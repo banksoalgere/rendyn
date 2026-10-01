@@ -1,6 +1,6 @@
-# Mantine fieldset
+# Mantine Fieldset
 
-2 published Mantine fieldset examples with complete pinned source and MIT attribution.
+Collect related values through a group of form controls.
 
 ## Installation
 

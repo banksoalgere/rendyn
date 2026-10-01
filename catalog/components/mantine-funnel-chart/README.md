@@ -1,6 +1,6 @@
-# Mantine funnel chart
+# Mantine Funnel Chart
 
-9 published Mantine funnel chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

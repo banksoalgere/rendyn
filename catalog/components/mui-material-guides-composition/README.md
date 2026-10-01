@@ -1,6 +1,6 @@
-# Material UI material guides composition
+# Material UI Material Guides Composition
 
-1 published Material UI material guides composition examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

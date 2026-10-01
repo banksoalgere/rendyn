@@ -1,6 +1,6 @@
-# Mantine switch
+# Mantine Switch
 
-9 published Mantine switch examples with complete pinned source and MIT attribution.
+Turn a setting on or off.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine menu
+# Mantine Menu
 
-20 published Mantine menu examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

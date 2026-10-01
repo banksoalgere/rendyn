@@ -1,6 +1,6 @@
-# Origin UI stepper vertical stepper comp-527
+# Origin UI Stepper (Example 527)
 
-1 published Origin UI stepper vertical stepper comp-527 examples with complete pinned source and MIT attribution.
+Show the current stage within a sequence of steps.
 
 ## Installation
 

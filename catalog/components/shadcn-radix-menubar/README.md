@@ -1,6 +1,6 @@
-# shadcn/ui radix menubar
+# shadcn/ui Menubar (Radix)
 
-8 published shadcn/ui radix menubar examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

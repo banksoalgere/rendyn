@@ -1,6 +1,6 @@
-# Mantine use mask
+# Mantine Use Mask
 
-7 published Mantine use mask examples with complete pinned source and MIT attribution.
+React hook example for mask.
 
 ## Installation
 

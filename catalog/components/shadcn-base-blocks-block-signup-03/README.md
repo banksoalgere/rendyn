@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block signup 03
+# shadcn/ui Signup 03 (Base UI)
 
-8 published shadcn/ui base blocks block signup 03 examples with complete pinned source and MIT attribution.
+Collect the information needed to create an account.
 
 ## Installation
 

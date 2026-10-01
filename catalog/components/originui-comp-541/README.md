@@ -1,6 +1,6 @@
-# Origin UI timeline comp-541
+# Origin UI Timeline (Example 541)
 
-1 published Origin UI timeline comp-541 examples with complete pinned source and MIT attribution.
+Display events or milestones in sequence.
 
 ## Installation
 

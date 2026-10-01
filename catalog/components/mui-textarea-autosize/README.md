@@ -1,6 +1,6 @@
-# Material UI textarea autosize
+# Material UI Textarea Autosize
 
-3 published Material UI textarea autosize examples with complete pinned source and MIT attribution.
+Enter text that spans multiple lines.
 
 ## Installation
 

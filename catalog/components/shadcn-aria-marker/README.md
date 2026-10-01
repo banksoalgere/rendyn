@@ -1,6 +1,6 @@
-# shadcn/ui aria marker
+# shadcn/ui Marker (React Aria)
 
-8 published shadcn/ui aria marker examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

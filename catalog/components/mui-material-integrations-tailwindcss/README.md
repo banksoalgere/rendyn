@@ -1,6 +1,6 @@
-# Material UI material integrations tailwindcss
+# Material UI Material Integrations Tailwindcss
 
-1 published Material UI material integrations tailwindcss examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

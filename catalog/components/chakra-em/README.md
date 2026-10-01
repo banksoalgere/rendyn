@@ -1,6 +1,6 @@
-# Chakra UI em
+# Chakra UI Em
 
-1 published Chakra UI em examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

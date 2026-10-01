@@ -1,6 +1,6 @@
-# Mantine theme icon
+# Mantine Theme Icon
 
-4 published Mantine theme icon examples with complete pinned source and MIT attribution.
+Configure or demonstrate shared interface theme values.
 
 ## Installation
 

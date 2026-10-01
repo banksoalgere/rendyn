@@ -1,6 +1,6 @@
-# Mantine code
+# Mantine Code
 
-3 published Mantine code examples with complete pinned source and MIT attribution.
+Display code or a technical snippet.
 
 ## Installation
 

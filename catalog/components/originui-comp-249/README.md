@@ -1,6 +1,6 @@
-# Origin UI slider label tooltip comp-249
+# Origin UI Slider (Example 249)
 
-1 published Origin UI slider label tooltip comp-249 examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI empty state
+# Chakra UI Empty State
 
-4 published Chakra UI empty state examples with complete pinned source and MIT attribution.
+Explain why content is absent and provide relevant next steps.
 
 ## Installation
 

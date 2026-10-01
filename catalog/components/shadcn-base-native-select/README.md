@@ -1,6 +1,6 @@
-# shadcn/ui base native select
+# shadcn/ui Native Select (Base UI)
 
-8 published shadcn/ui base native select examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

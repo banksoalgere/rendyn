@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block new milestone
+# shadcn/ui New Milestone (React Aria)
 
-8 published shadcn/ui aria blocks block new milestone examples with complete pinned source and MIT attribution.
+Compose a new milestone interface from related information and controls.
 
 ## Installation
 

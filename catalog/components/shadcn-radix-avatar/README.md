@@ -1,6 +1,6 @@
-# shadcn/ui radix avatar
+# shadcn/ui Avatar (Radix)
 
-8 published shadcn/ui radix avatar examples with complete pinned source and MIT attribution.
+Represent a person or account with an image or initials.
 
 ## Installation
 

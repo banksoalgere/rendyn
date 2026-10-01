@@ -1,6 +1,6 @@
-# shadcn/ui radix bubble
+# shadcn/ui Bubble (Radix)
 
-8 published shadcn/ui radix bubble examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

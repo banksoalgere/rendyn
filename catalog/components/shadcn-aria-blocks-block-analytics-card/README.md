@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block analytics card
+# shadcn/ui Analytics Card (React Aria)
 
-8 published shadcn/ui aria blocks block analytics card examples with complete pinned source and MIT attribution.
+Compose a analytics card interface from related information and controls.
 
 ## Installation
 

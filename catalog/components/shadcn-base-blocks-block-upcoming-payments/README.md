@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block upcoming payments
+# shadcn/ui Upcoming Payments (Base UI)
 
-8 published shadcn/ui base blocks block upcoming payments examples with complete pinned source and MIT attribution.
+Present payment details, balances, or related payment controls.
 
 ## Installation
 

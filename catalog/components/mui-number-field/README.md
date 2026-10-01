@@ -1,6 +1,6 @@
-# Material UI number field
+# Material UI Number Field
 
-4 published Material UI number field examples with complete pinned source and MIT attribution.
+Enter a numeric value using a number field.
 
 ## Installation
 

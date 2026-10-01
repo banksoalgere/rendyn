@@ -1,6 +1,6 @@
-# Mantine use throttled value
+# Mantine Use Throttled Value
 
-1 published Mantine use throttled value examples with complete pinned source and MIT attribution.
+React hook example for throttled value.
 
 ## Installation
 

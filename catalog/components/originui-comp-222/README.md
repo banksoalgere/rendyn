@@ -1,6 +1,6 @@
-# Origin UI label select radix comp-222
+# Origin UI Select (Example 222)
 
-1 published Origin UI label select radix comp-222 examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

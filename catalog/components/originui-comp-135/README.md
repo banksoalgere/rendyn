@@ -1,6 +1,6 @@
-# Origin UI checkbox label disabled comp-135
+# Origin UI Checkbox (Example 135)
 
-1 published Origin UI checkbox label disabled comp-135 examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

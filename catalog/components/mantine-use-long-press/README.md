@@ -1,6 +1,6 @@
-# Mantine use long press
+# Mantine Use Long Press
 
-1 published Mantine use long press examples with complete pinned source and MIT attribution.
+React hook example for long press.
 
 ## Installation
 

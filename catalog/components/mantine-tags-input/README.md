@@ -1,6 +1,6 @@
-# Mantine tags input
+# Mantine Tags Input
 
-36 published Mantine tags input examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

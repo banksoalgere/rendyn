@@ -1,6 +1,6 @@
 # Origin UI Icon Input
 
-1 published Origin UI icon input examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

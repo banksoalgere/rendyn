@@ -1,6 +1,6 @@
-# Origin UI dialog modal checkout comp-329
+# Origin UI Dialog (Example 329)
 
-1 published Origin UI dialog modal checkout comp-329 examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

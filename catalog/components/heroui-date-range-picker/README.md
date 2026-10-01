@@ -1,6 +1,6 @@
-# HeroUI date range picker
+# HeroUI Date Range Picker
 
-25 published HeroUI date range picker examples with complete pinned source and MIT attribution.
+Choose a date or date range from date-selection controls.
 
 ## Installation
 

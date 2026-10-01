@@ -1,6 +1,6 @@
-# Mantine center
+# Mantine Center
 
-2 published Mantine center examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

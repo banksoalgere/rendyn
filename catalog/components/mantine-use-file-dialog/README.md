@@ -1,6 +1,6 @@
-# Mantine use file dialog
+# Mantine Use File Dialog
 
-1 published Mantine use file dialog examples with complete pinned source and MIT attribution.
+React hook example for file dialog.
 
 ## Installation
 

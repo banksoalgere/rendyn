@@ -1,6 +1,6 @@
-# Origin UI slider vertical slider range slider comp-263
+# Origin UI Slider (Example 263)
 
-1 published Origin UI slider vertical slider range slider comp-263 examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

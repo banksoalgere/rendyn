@@ -1,6 +1,6 @@
-# Origin UI button social login comp-122
+# Origin UI Button (Example 122)
 
-1 published Origin UI button social login comp-122 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Material UI dividers
+# Material UI Dividers
 
-7 published Material UI dividers examples with complete pinned source and MIT attribution.
+Visually separate related areas of an interface.
 
 ## Installation
 

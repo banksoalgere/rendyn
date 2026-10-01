@@ -1,6 +1,6 @@
-# Mantine use favicon
+# Mantine Use Favicon
 
-1 published Mantine use favicon examples with complete pinned source and MIT attribution.
+React hook example for favicon.
 
 ## Installation
 

@@ -1,6 +1,6 @@
 # Chakra UI Checkbox
 
-20 published Chakra UI checkbox examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

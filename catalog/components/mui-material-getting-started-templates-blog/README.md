@@ -1,6 +1,6 @@
-# Material UI material getting started templates blog
+# Material UI Material Getting Started Templates Blog
 
-1 published Material UI material getting started templates blog examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

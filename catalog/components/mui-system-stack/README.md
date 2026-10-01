@@ -1,6 +1,6 @@
-# Material UI system stack
+# Material UI System Stack
 
-6 published Material UI system stack examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

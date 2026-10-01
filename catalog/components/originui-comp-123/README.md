@@ -1,6 +1,6 @@
-# Origin UI button collapsible comp-123
+# Origin UI Button (Example 123)
 
-1 published Origin UI button collapsible comp-123 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

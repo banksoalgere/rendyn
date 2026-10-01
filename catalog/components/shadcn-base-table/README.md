@@ -1,6 +1,6 @@
-# shadcn/ui base table
+# shadcn/ui Table (Base UI)
 
-8 published shadcn/ui base table examples with complete pinned source and MIT attribution.
+Display related values in a row and column structure.
 
 ## Installation
 

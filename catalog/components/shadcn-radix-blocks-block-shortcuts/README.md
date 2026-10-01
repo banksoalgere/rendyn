@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block shortcuts
+# shadcn/ui Shortcuts (Radix)
 
-8 published shadcn/ui radix blocks block shortcuts examples with complete pinned source and MIT attribution.
+Display a key or keyboard shortcut hint.
 
 ## Installation
 

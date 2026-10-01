@@ -1,6 +1,6 @@
-# Material UI material customization creating themed components
+# Material UI Material Customization Creating Themed Components
 
-3 published Material UI material customization creating themed components examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

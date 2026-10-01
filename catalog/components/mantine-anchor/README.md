@@ -1,6 +1,6 @@
-# Mantine anchor
+# Mantine Anchor
 
-3 published Mantine anchor examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

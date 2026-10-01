@@ -1,6 +1,6 @@
-# Mantine use headroom
+# Mantine Use Headroom
 
-3 published Mantine use headroom examples with complete pinned source and MIT attribution.
+React hook example for headroom.
 
 ## Installation
 

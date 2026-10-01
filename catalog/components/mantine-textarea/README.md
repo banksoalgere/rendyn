@@ -1,6 +1,6 @@
-# Mantine textarea
+# Mantine Textarea
 
-9 published Mantine textarea examples with complete pinned source and MIT attribution.
+Enter text that spans multiple lines.
 
 ## Installation
 

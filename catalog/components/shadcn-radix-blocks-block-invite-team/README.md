@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block invite team
+# shadcn/ui Invite Team (Radix)
 
-8 published shadcn/ui radix blocks block invite team examples with complete pinned source and MIT attribution.
+Compose a invite team interface from related information and controls.
 
 ## Installation
 

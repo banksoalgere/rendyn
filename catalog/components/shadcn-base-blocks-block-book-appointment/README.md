@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block book appointment
+# shadcn/ui Book Appointment (Base UI)
 
-8 published shadcn/ui base blocks block book appointment examples with complete pinned source and MIT attribution.
+Present controls for arranging an appointment.
 
 ## Installation
 

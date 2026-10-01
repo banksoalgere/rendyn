@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block receiving method
+# shadcn/ui Receiving Method (Base UI)
 
-8 published shadcn/ui base blocks block receiving method examples with complete pinned source and MIT attribution.
+Present payment details, balances, or related payment controls.
 
 ## Installation
 

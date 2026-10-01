@@ -1,6 +1,6 @@
-# Origin UI input label comp-09
+# Origin UI Email Input (Example 09)
 
-1 published Origin UI input label comp-09 examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

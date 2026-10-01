@@ -1,6 +1,6 @@
-# Origin UI slider label input comp-264
+# Origin UI Slider (Example 264)
 
-1 published Origin UI slider label input comp-264 examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui chart
+# shadcn/ui Chart
 
-76 published shadcn/ui chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

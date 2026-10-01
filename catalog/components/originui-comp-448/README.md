@@ -1,6 +1,6 @@
-# Origin UI breadcrumb radix comp-448
+# Origin UI Breadcrumbs (Example 448)
 
-1 published Origin UI breadcrumb radix comp-448 examples with complete pinned source and MIT attribution.
+Show the current location within a hierarchy of pages.
 
 ## Installation
 

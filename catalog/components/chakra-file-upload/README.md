@@ -1,6 +1,6 @@
-# Chakra UI file upload
+# Chakra UI File Upload
 
-15 published Chakra UI file upload examples with complete pinned source and MIT attribution.
+Select files to attach or upload.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI portal
+# Chakra UI Portal
 
-3 published Chakra UI portal examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

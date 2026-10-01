@@ -1,6 +1,6 @@
-# shadcn/ui alert
+# shadcn/ui Alert
 
-2 published shadcn/ui alert examples with complete pinned source and MIT attribution.
+Display important information, warnings, or errors within the page.
 
 ## Installation
 

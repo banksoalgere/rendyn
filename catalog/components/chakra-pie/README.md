@@ -1,6 +1,6 @@
-# Chakra UI pie
+# Chakra UI Pie
 
-8 published Chakra UI pie examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

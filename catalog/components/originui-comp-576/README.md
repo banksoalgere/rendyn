@@ -1,6 +1,6 @@
-# Origin UI tree menu comp-576
+# Origin UI Tree View (Example 576)
 
-1 published Origin UI tree menu comp-576 examples with complete pinned source and MIT attribution.
+Explore and select items in a hierarchical collection.
 
 ## Installation
 

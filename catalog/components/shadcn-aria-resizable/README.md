@@ -1,6 +1,6 @@
-# shadcn/ui aria resizable
+# shadcn/ui Resizable (React Aria)
 
-8 published shadcn/ui aria resizable examples with complete pinned source and MIT attribution.
+Let users adjust the space assigned to adjacent panels.
 
 ## Installation
 

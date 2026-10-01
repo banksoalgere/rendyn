@@ -1,6 +1,6 @@
-# shadcn/ui radix context menu
+# shadcn/ui Context Menu (Radix)
 
-8 published shadcn/ui radix context menu examples with complete pinned source and MIT attribution.
+Show actions associated with the selected item or context.
 
 ## Installation
 

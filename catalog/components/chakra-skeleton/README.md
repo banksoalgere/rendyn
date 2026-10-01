@@ -1,6 +1,6 @@
-# Chakra UI skeleton
+# Chakra UI Skeleton
 
-8 published Chakra UI skeleton examples with complete pinned source and MIT attribution.
+Reserve the shape of content while it is loading.
 
 ## Installation
 

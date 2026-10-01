@@ -1,6 +1,6 @@
-# shadcn/ui base chart
+# shadcn/ui Chart (Base UI)
 
-8 published shadcn/ui base chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI badge chip status comp-421
+# Origin UI Badge (Example 421)
 
-1 published Origin UI badge chip status comp-421 examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

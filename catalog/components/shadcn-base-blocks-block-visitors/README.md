@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block visitors
+# shadcn/ui Visitors (Base UI)
 
-8 published shadcn/ui base blocks block visitors examples with complete pinned source and MIT attribution.
+Compose a visitors interface from related information and controls.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI input label select comp-17
+# Origin UI Select (Example 17)
 
-1 published Origin UI input label select comp-17 examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

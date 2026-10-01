@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block ui elements
+# shadcn/ui UI Elements (Base UI)
 
-8 published shadcn/ui base blocks block ui elements examples with complete pinned source and MIT attribution.
+Compose a ui elements interface from related information and controls.
 
 ## Installation
 

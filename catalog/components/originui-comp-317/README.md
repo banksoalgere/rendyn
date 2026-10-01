@@ -1,6 +1,6 @@
-# Origin UI dialog modal radix comp-317
+# Origin UI Dialog (Example 317)
 
-1 published Origin UI dialog modal radix comp-317 examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

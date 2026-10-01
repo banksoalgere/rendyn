@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block icon preview grid
+# shadcn/ui Icon Preview Grid (Radix)
 
-8 published shadcn/ui radix blocks block icon preview grid examples with complete pinned source and MIT attribution.
+Compose a icon preview grid interface from related information and controls.
 
 ## Installation
 

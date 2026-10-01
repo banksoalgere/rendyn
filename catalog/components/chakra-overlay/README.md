@@ -1,6 +1,6 @@
-# Chakra UI overlay
+# Chakra UI Overlay
 
-7 published Chakra UI overlay examples with complete pinned source and MIT attribution.
+Place a visual layer above the underlying interface.
 
 ## Installation
 

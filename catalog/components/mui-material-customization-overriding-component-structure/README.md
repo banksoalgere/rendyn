@@ -1,6 +1,6 @@
-# Material UI material customization overriding component structure
+# Material UI Material Customization Overriding Component Structure
 
-2 published Material UI material customization overriding component structure examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

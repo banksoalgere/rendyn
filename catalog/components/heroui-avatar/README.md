@@ -1,6 +1,6 @@
-# HeroUI avatar
+# HeroUI Avatar
 
-17 published HeroUI avatar examples with complete pinned source and MIT attribution.
+Represent a person or account with an image or initials.
 
 ## Installation
 

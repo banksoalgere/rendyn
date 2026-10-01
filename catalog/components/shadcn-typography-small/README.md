@@ -1,6 +1,6 @@
-# shadcn/ui typography small
+# shadcn/ui Typography Small
 
-1 published shadcn/ui typography small examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

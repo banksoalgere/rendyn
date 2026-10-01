@@ -1,6 +1,6 @@
-# Mantine bars list
+# Mantine Bars List
 
-12 published Mantine bars list examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

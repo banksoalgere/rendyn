@@ -1,6 +1,6 @@
-# Mantine time input
+# Mantine Time Input
 
-5 published Mantine time input examples with complete pinned source and MIT attribution.
+Choose or enter a time value.
 
 ## Installation
 

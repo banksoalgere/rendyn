@@ -1,6 +1,6 @@
-# shadcn/ui aria input otp
+# shadcn/ui Input OTP (React Aria)
 
-8 published shadcn/ui aria input otp examples with complete pinned source and MIT attribution.
+Enter a short verification code across a group of input slots.
 
 ## Installation
 

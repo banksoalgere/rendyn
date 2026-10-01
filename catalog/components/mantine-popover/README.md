@@ -1,6 +1,6 @@
-# Mantine popover
+# Mantine Popover
 
-14 published Mantine popover examples with complete pinned source and MIT attribution.
+Display contextual content beside its trigger.
 
 ## Installation
 

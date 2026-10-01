@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block weekly fitness summary
+# shadcn/ui Weekly Fitness Summary (Radix)
 
-8 published shadcn/ui radix blocks block weekly fitness summary examples with complete pinned source and MIT attribution.
+Compose a weekly fitness summary interface from related information and controls.
 
 ## Installation
 

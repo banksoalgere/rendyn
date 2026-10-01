@@ -1,6 +1,6 @@
-# Chakra UI steps
+# Chakra UI Steps
 
-16 published Chakra UI steps examples with complete pinned source and MIT attribution.
+Show the current stage within a sequence of steps.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui aria collapsible
+# shadcn/ui Collapsible (React Aria)
 
-8 published shadcn/ui aria collapsible examples with complete pinned source and MIT attribution.
+Reveal or hide a section of supporting content.
 
 ## Installation
 

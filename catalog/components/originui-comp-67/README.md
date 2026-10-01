@@ -1,6 +1,6 @@
-# Origin UI label textarea disabled comp-67
+# Origin UI Text Area (Example 67)
 
-1 published Origin UI label textarea disabled comp-67 examples with complete pinned source and MIT attribution.
+Enter text that spans multiple lines.
 
 ## Installation
 

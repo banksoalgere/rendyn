@@ -1,6 +1,6 @@
 # Chakra UI Switch
 
-13 published Chakra UI switch examples with complete pinned source and MIT attribution.
+Turn a setting on or off.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Material UI system sizing
+# Material UI System Sizing
 
-3 published Material UI system sizing examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

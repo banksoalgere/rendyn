@@ -1,6 +1,6 @@
-# Chakra UI inline
+# Chakra UI Inline
 
-2 published Chakra UI inline examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

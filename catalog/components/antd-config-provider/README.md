@@ -1,6 +1,6 @@
-# Ant Design config provider
+# Ant Design Config Provider
 
-10 published Ant Design config provider examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

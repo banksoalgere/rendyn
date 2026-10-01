@@ -1,6 +1,6 @@
-# Mantine time grid
+# Mantine Time Grid
 
-6 published Mantine time grid examples with complete pinned source and MIT attribution.
+Choose or enter a time value.
 
 ## Installation
 

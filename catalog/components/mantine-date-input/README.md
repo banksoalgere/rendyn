@@ -1,6 +1,6 @@
-# Mantine date input
+# Mantine Date Input
 
-11 published Mantine date input examples with complete pinned source and MIT attribution.
+Choose a date or date range from date-selection controls.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI radio label pricing comp-170
+# Origin UI Billing Period Toggle (Example 170)
 
-1 published Origin UI radio label pricing comp-170 examples with complete pinned source and MIT attribution.
+Switch between monthly and yearly billing periods.
 
 ## Installation
 

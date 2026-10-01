@@ -1,6 +1,6 @@
-# Material UI paper
+# Material UI Paper
 
-4 published Material UI paper examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine kbd
+# Mantine Kbd
 
-1 published Mantine kbd examples with complete pinned source and MIT attribution.
+Display a key or keyboard shortcut hint.
 
 ## Installation
 

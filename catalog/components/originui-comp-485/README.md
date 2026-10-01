@@ -1,6 +1,6 @@
-# Origin UI table tanstack checkbox comp-485
+# Origin UI Confirmation Dialog (Example 485)
 
-1 published Origin UI table tanstack checkbox comp-485 examples with complete pinned source and MIT attribution.
+Ask for confirmation before completing an important action.
 
 ## Installation
 

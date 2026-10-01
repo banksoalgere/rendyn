@@ -1,6 +1,6 @@
-# Origin UI alert warning comp-267
+# Origin UI Alert (Example 267)
 
-1 published Origin UI alert warning comp-267 examples with complete pinned source and MIT attribution.
+Display important information, warnings, or errors within the page.
 
 ## Installation
 

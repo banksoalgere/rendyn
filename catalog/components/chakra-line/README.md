@@ -1,6 +1,6 @@
-# Chakra UI line
+# Chakra UI Line
 
-20 published Chakra UI line examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

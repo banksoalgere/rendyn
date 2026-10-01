@@ -1,6 +1,6 @@
-# Ant Design masonry
+# Ant Design Masonry
 
-6 published Ant Design masonry examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui typography muted
+# shadcn/ui Typography Muted
 
-1 published shadcn/ui typography muted examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

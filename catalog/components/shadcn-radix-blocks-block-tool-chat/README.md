@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block tool chat
+# shadcn/ui Tool Chat (Radix)
 
-8 published shadcn/ui radix blocks block tool chat examples with complete pinned source and MIT attribution.
+Present a conversation with messages and related controls.
 
 ## Installation
 

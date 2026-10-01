@@ -1,6 +1,6 @@
-# Mantine use document title
+# Mantine Use Document Title
 
-1 published Mantine use document title examples with complete pinned source and MIT attribution.
+React hook example for document title.
 
 ## Installation
 

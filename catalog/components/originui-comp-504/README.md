@@ -1,6 +1,6 @@
-# Origin UI calendar date collapsible comp-504
+# Origin UI Calendar (Example 504)
 
-1 published Origin UI calendar date collapsible comp-504 examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

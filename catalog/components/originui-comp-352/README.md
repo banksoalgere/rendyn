@@ -1,6 +1,6 @@
-# Origin UI accordion collapsible radix comp-352
+# Origin UI Accordion (Example 352)
 
-1 published Origin UI accordion collapsible radix comp-352 examples with complete pinned source and MIT attribution.
+Expand and collapse grouped content such as frequently asked questions.
 
 ## Installation
 

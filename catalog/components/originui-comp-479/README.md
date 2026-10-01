@@ -1,6 +1,6 @@
-# Origin UI table tanstack flag comp-479
+# Origin UI Table (Example 479)
 
-1 published Origin UI table tanstack flag comp-479 examples with complete pinned source and MIT attribution.
+Display related values in a row and column structure.
 
 ## Installation
 

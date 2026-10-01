@@ -1,6 +1,6 @@
-# Material UI material customization container queries
+# Material UI Material Customization Container Queries
 
-3 published Material UI material customization container queries examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

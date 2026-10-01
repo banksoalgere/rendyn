@@ -1,6 +1,6 @@
-# Mantine spotlight
+# Mantine Spotlight
 
-7 published Mantine spotlight examples with complete pinned source and MIT attribution.
+Search and choose a value from a list of available options.
 
 ## Installation
 

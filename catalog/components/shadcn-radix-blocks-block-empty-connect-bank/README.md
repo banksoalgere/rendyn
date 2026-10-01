@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block empty connect bank
+# shadcn/ui Empty Connect Bank (Radix)
 
-8 published shadcn/ui radix blocks block empty connect bank examples with complete pinned source and MIT attribution.
+Explain why content is absent and provide relevant next steps.
 
 ## Installation
 

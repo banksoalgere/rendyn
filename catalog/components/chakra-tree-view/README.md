@@ -1,6 +1,6 @@
-# Chakra UI tree view
+# Chakra UI Tree View
 
-24 published Chakra UI tree view examples with complete pinned source and MIT attribution.
+Explore and select items in a hierarchical collection.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block no team members
+# shadcn/ui No Team Members (Base UI)
 
-8 published shadcn/ui base blocks block no team members examples with complete pinned source and MIT attribution.
+Explain why content is absent and provide relevant next steps.
 
 ## Installation
 

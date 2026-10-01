@@ -1,6 +1,6 @@
-# Origin UI popover share social comp-387
+# Origin UI Tooltip (Example 387)
 
-1 published Origin UI popover share social comp-387 examples with complete pinned source and MIT attribution.
+Show a brief explanation associated with a control or item.
 
 ## Installation
 

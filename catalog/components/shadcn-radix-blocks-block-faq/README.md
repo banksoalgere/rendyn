@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block faq
+# shadcn/ui FAQ (Radix)
 
-8 published shadcn/ui radix blocks block faq examples with complete pinned source and MIT attribution.
+Expand and collapse grouped content such as frequently asked questions.
 
 ## Installation
 

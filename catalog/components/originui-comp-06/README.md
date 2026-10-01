@@ -1,6 +1,6 @@
-# Origin UI input label error comp-06
+# Origin UI Email Input (Example 06)
 
-1 published Origin UI input label error comp-06 examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

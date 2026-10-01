@@ -1,6 +1,6 @@
 # Origin UI Helper Input
 
-1 published Origin UI helper input examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

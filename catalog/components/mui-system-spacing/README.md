@@ -1,6 +1,6 @@
-# Material UI system spacing
+# Material UI System Spacing
 
-2 published Material UI system spacing examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

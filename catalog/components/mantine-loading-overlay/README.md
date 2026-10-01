@@ -1,6 +1,6 @@
-# Mantine loading overlay
+# Mantine Loading Overlay
 
-3 published Mantine loading overlay examples with complete pinned source and MIT attribution.
+Indicate that content or a task is still loading.
 
 ## Installation
 

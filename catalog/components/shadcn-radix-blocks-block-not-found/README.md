@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block not found
+# shadcn/ui Not Found (Radix)
 
-8 published shadcn/ui radix blocks block not found examples with complete pinned source and MIT attribution.
+Explain that the requested page or resource could not be found.
 
 ## Installation
 

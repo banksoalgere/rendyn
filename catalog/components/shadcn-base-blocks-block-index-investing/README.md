@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block index investing
+# shadcn/ui Index Investing (Base UI)
 
-8 published shadcn/ui base blocks block index investing examples with complete pinned source and MIT attribution.
+Compose a index investing interface from related information and controls.
 
 ## Installation
 

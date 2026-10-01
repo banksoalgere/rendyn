@@ -1,6 +1,6 @@
-# Origin UI table checkbox comp-472
+# Origin UI Checkbox (Example 472)
 
-1 published Origin UI table checkbox comp-472 examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

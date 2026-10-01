@@ -1,6 +1,6 @@
-# Mantine use fetch
+# Mantine Use Fetch
 
-1 published Mantine use fetch examples with complete pinned source and MIT attribution.
+React hook example for fetch.
 
 ## Installation
 

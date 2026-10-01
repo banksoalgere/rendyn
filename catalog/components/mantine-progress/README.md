@@ -1,6 +1,6 @@
-# Mantine progress
+# Mantine Progress
 
-7 published Mantine progress examples with complete pinned source and MIT attribution.
+Show how far a task has progressed.
 
 ## Installation
 

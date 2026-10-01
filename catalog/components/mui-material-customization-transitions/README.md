@@ -1,6 +1,6 @@
-# Material UI material customization transitions
+# Material UI Material Customization Transitions
 
-1 published Material UI material customization transitions examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

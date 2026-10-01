@@ -1,6 +1,6 @@
-# Chakra UI date picker
+# Chakra UI Date Picker
 
-52 published Chakra UI date picker examples with complete pinned source and MIT attribution.
+Choose a date or date range from date-selection controls.
 
 ## Installation
 

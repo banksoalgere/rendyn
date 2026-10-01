@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block usage card
+# shadcn/ui Usage Card (Base UI)
 
-8 published shadcn/ui base blocks block usage card examples with complete pinned source and MIT attribution.
+Display a key metric or numeric summary.
 
 ## Installation
 

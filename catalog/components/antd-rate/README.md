@@ -1,6 +1,6 @@
-# Ant Design rate
+# Ant Design Rate
 
-9 published Ant Design rate examples with complete pinned source and MIT attribution.
+Choose or display a rating on a bounded scale.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui base drawer
+# shadcn/ui Drawer (Base UI)
 
-8 published shadcn/ui base drawer examples with complete pinned source and MIT attribution.
+Open a panel alongside the current page for details or additional controls.
 
 ## Installation
 

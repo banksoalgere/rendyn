@@ -1,6 +1,6 @@
-# shadcn/ui typography inline code
+# shadcn/ui Typography Inline Code
 
-1 published shadcn/ui typography inline code examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Material UI app bar
+# Material UI App Bar
 
-13 published Material UI app bar examples with complete pinned source and MIT attribution.
+Provide links and controls for moving between pages or sections.
 
 ## Installation
 

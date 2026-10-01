@@ -1,6 +1,6 @@
-# HeroUI navbar
+# HeroUI Navbar
 
-12 published HeroUI navbar examples with complete pinned source and MIT attribution.
+Provide links and controls for moving between pages or sections.
 
 ## Installation
 

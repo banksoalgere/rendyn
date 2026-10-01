@@ -1,6 +1,6 @@
-# shadcn/ui base slider
+# shadcn/ui Slider (Base UI)
 
-8 published shadcn/ui base slider examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

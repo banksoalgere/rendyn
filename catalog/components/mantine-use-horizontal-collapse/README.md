@@ -1,6 +1,6 @@
-# Mantine use horizontal collapse
+# Mantine Use Horizontal Collapse
 
-1 published Mantine use horizontal collapse examples with complete pinned source and MIT attribution.
+React hook example for horizontal collapse.
 
 ## Installation
 

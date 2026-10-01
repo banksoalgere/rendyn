@@ -1,6 +1,6 @@
-# Material UI material guides building extensible themes
+# Material UI Material Guides Building Extensible Themes
 
-1 published Material UI material guides building extensible themes examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

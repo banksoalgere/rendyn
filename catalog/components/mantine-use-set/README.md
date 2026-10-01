@@ -1,6 +1,6 @@
-# Mantine use set
+# Mantine Use Set
 
-1 published Mantine use set examples with complete pinned source and MIT attribution.
+React hook example for set.
 
 ## Installation
 

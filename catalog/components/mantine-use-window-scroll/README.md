@@ -1,6 +1,6 @@
-# Mantine use window scroll
+# Mantine Use Window Scroll
 
-1 published Mantine use window scroll examples with complete pinned source and MIT attribution.
+React hook example for window scroll.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Material UI container
+# Material UI Container
 
-2 published Material UI container examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

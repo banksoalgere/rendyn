@@ -1,6 +1,6 @@
-# Material UI system experimental api css theme variables
+# Material UI System Experimental API CSS Theme Variables
 
-1 published Material UI system experimental api css theme variables examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

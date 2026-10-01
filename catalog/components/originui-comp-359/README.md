@@ -1,6 +1,6 @@
-# Origin UI tooltip image radix comp-359
+# Origin UI Tooltip (Example 359)
 
-1 published Origin UI tooltip image radix comp-359 examples with complete pinned source and MIT attribution.
+Show a brief explanation associated with a control or item.
 
 ## Installation
 

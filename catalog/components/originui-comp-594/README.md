@@ -1,6 +1,6 @@
-# Origin UI navbar, navigation comp-594
+# Origin UI Switch (Example 594)
 
-1 published Origin UI navbar, navigation comp-594 examples with complete pinned source and MIT attribution.
+Turn a setting on or off.
 
 ## Installation
 

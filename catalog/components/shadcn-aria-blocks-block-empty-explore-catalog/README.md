@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block empty explore catalog
+# shadcn/ui Empty Explore Catalog (React Aria)
 
-8 published shadcn/ui aria blocks block empty explore catalog examples with complete pinned source and MIT attribution.
+Explain why content is absent and provide relevant next steps.
 
 ## Installation
 

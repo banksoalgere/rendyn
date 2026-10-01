@@ -1,6 +1,6 @@
-# Mantine color picker
+# Mantine Color Picker
 
-10 published Mantine color picker examples with complete pinned source and MIT attribution.
+Choose or inspect a color value.
 
 ## Installation
 

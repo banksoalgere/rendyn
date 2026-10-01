@@ -1,6 +1,6 @@
-# Origin UI pagination select radix comp-464
+# Origin UI Pagination (Example 464)
 
-1 published Origin UI pagination select radix comp-464 examples with complete pinned source and MIT attribution.
+Move between pages of a collection of results.
 
 ## Installation
 

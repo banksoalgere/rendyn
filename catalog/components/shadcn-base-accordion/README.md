@@ -1,6 +1,6 @@
-# shadcn/ui base accordion
+# shadcn/ui Accordion (Base UI)
 
-8 published shadcn/ui base accordion examples with complete pinned source and MIT attribution.
+Expand and collapse grouped content such as frequently asked questions.
 
 ## Installation
 

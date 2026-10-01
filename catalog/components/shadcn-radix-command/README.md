@@ -1,6 +1,6 @@
-# shadcn/ui radix command
+# shadcn/ui Command (Radix)
 
-8 published shadcn/ui radix command examples with complete pinned source and MIT attribution.
+Find commands and actions in a searchable command menu.
 
 ## Installation
 

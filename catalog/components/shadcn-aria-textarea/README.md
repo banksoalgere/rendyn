@@ -1,6 +1,6 @@
-# shadcn/ui aria textarea
+# shadcn/ui Textarea (React Aria)
 
-8 published shadcn/ui aria textarea examples with complete pinned source and MIT attribution.
+Enter text that spans multiple lines.
 
 ## Installation
 

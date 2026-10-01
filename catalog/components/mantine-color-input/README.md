@@ -1,6 +1,6 @@
-# Mantine color input
+# Mantine Color Input
 
-19 published Mantine color input examples with complete pinned source and MIT attribution.
+Choose or inspect a color value.
 
 ## Installation
 

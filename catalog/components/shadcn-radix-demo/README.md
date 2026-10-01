@@ -1,6 +1,6 @@
-# shadcn/ui radix demo
+# shadcn/ui Demo (Radix)
 
-8 published shadcn/ui radix demo examples with complete pinned source and MIT attribution.
+Compare a collection of interface components or examples.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI select
+# Chakra UI Select
 
-24 published Chakra UI select examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

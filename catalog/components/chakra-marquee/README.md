@@ -1,6 +1,6 @@
-# Chakra UI marquee
+# Chakra UI Marquee
 
-14 published Chakra UI marquee examples with complete pinned source and MIT attribution.
+Move a repeating sequence of content across a region.
 
 ## Installation
 

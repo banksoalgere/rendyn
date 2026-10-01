@@ -1,6 +1,6 @@
 # Ant Design Button
 
-22 published Ant Design button examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

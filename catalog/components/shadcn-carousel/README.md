@@ -1,6 +1,6 @@
-# shadcn/ui carousel
+# shadcn/ui Carousel
 
-6 published shadcn/ui carousel examples with complete pinned source and MIT attribution.
+Move through a sequence of content items.
 
 ## Installation
 

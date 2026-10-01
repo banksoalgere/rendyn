@@ -1,6 +1,6 @@
-# Mantine area chart
+# Mantine Area Chart
 
-38 published Mantine area chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

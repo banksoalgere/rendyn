@@ -1,6 +1,6 @@
-# Mantine overflow list
+# Mantine Overflow List
 
-5 published Mantine overflow list examples with complete pinned source and MIT attribution.
+Present a collection of related items.
 
 ## Installation
 

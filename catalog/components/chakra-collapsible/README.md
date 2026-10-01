@@ -1,6 +1,6 @@
-# Chakra UI collapsible
+# Chakra UI Collapsible
 
-8 published Chakra UI collapsible examples with complete pinned source and MIT attribution.
+Reveal or hide a section of supporting content.
 
 ## Installation
 

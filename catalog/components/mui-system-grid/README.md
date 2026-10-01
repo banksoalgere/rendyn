@@ -1,6 +1,6 @@
-# Material UI system grid
+# Material UI System Grid
 
-21 published Material UI system grid examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

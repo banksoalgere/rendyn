@@ -1,6 +1,6 @@
-# Origin UI button dropdown counter comp-114
+# Origin UI Button (Example 114)
 
-1 published Origin UI button dropdown counter comp-114 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

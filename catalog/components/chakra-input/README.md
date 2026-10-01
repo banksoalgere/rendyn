@@ -1,6 +1,6 @@
 # Chakra UI Input
 
-31 published Chakra UI input examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

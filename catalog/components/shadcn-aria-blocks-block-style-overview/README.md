@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block style overview
+# shadcn/ui Style Overview (React Aria)
 
-8 published shadcn/ui aria blocks block style overview examples with complete pinned source and MIT attribution.
+Compose a style overview interface from related information and controls.
 
 ## Installation
 

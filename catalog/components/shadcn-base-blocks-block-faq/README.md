@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block faq
+# shadcn/ui FAQ (Base UI)
 
-8 published shadcn/ui base blocks block faq examples with complete pinned source and MIT attribution.
+Expand and collapse grouped content such as frequently asked questions.
 
 ## Installation
 

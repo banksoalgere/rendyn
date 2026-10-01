@@ -1,6 +1,6 @@
-# Origin UI dialog modal otp comp-324
+# Origin UI Dialog (Example 324)
 
-1 published Origin UI dialog modal otp comp-324 examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

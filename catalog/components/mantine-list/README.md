@@ -1,6 +1,6 @@
-# Mantine list
+# Mantine List
 
-6 published Mantine list examples with complete pinned source and MIT attribution.
+Present a collection of related items.
 
 ## Installation
 

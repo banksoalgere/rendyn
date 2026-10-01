@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block codespaces card
+# shadcn/ui Codespaces Card (React Aria)
 
-8 published shadcn/ui aria blocks block codespaces card examples with complete pinned source and MIT attribution.
+Compose a codespaces card interface from related information and controls.
 
 ## Installation
 

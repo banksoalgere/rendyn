@@ -1,6 +1,6 @@
-# Mantine use page leave
+# Mantine Use Page Leave
 
-1 published Mantine use page leave examples with complete pinned source and MIT attribution.
+React hook example for page leave.
 
 ## Installation
 

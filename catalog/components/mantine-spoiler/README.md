@@ -1,6 +1,6 @@
-# Mantine spoiler
+# Mantine Spoiler
 
-2 published Mantine spoiler examples with complete pinned source and MIT attribution.
+Reveal or hide a section of supporting content.
 
 ## Installation
 

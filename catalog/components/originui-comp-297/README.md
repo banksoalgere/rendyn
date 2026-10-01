@@ -1,6 +1,6 @@
-# Origin UI notification toast radix comp-297
+# Origin UI Button (Example 297)
 
-1 published Origin UI notification toast radix comp-297 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

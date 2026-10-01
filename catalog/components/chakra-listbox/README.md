@@ -1,6 +1,6 @@
-# Chakra UI listbox
+# Chakra UI Listbox
 
-21 published Chakra UI listbox examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

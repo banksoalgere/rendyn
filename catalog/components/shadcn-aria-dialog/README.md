@@ -1,6 +1,6 @@
-# shadcn/ui aria dialog
+# shadcn/ui Dialog (React Aria)
 
-8 published shadcn/ui aria dialog examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

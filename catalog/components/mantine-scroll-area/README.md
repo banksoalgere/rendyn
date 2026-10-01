@@ -1,6 +1,6 @@
-# Mantine scroll area
+# Mantine Scroll Area
 
-12 published Mantine scroll area examples with complete pinned source and MIT attribution.
+Present content within a scrollable region.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine grid
+# Mantine Grid
 
-14 published Mantine grid examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 
