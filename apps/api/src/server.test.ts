@@ -1,6 +1,9 @@
+import libraries from '../../../sources/libraries.json';
 import { beforeAll, describe, expect, it } from "vitest";
 import { readConfig } from "./config.js";
 import { buildNodeApp } from "./node-app.js";
+
+const expectedCatalogueCount = 189 + libraries.reduce((n,c)=>n+c.components.length,0);
 
 describe("HTTP API", () => {
   let app: Awaited<ReturnType<typeof buildNodeApp>>;
@@ -16,7 +19,7 @@ describe("HTTP API", () => {
     expect(response.status).toBe(200);
     await expect(response.json()).resolves.toMatchObject({
       status: "ok",
-      catalog_components: 189,
+      catalog_components: expectedCatalogueCount,
     });
   });
 
@@ -38,7 +41,7 @@ describe("HTTP API", () => {
     await expect(response.json()).resolves.toMatchObject({
       id: "beui:button",
       slug: "button",
-      preview_url: "http://localhost:3100/component-preview/002",
+      preview_url: "http://localhost:3100/component-preview/button",
     });
   });
 

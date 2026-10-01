@@ -10,6 +10,7 @@ import { HostedEmbeddingProvider } from "./embeddings.js";
 export class CatalogService {
   private readonly embeddings: HostedEmbeddingProvider;
   private readonly previewIds: Map<string, string>;
+  private readonly searchCache = new Map<string, { expires: number; results: SearchResult[] }>();
 
   constructor(
     readonly store: CatalogStore,
@@ -17,9 +18,9 @@ export class CatalogService {
   ) {
     this.embeddings = new HostedEmbeddingProvider(config);
     this.previewIds = new Map(
-      store.index.components.map((component, index) => [
+      store.index.components.map((component) => [
         component.previewPath,
-        String(index + 1).padStart(3, "0"),
+        component.slug,
       ]),
     );
   }
@@ -29,6 +30,13 @@ export class CatalogService {
     limit = 5,
     category?: CatalogCategorySlug,
   ): Promise<SearchResult[]> {
+    const cacheKey = JSON.stringify([query.trim(), limit, category ?? null]);
+    const cached = this.searchCache.get(cacheKey);
+    if (cached && cached.expires > Date.now()) {
+      this.searchCache.delete(cacheKey);
+      this.searchCache.set(cacheKey, cached);
+      return cached.results;
+    }
     let queryEmbedding: number[] | null = null;
     if (this.store.embeddings) {
       try {
@@ -37,12 +45,15 @@ export class CatalogService {
         console.warn("Hosted embedding search failed; using lexical fallback", error);
       }
     }
-    return searchCatalog(this.store.index, query, {
+    const results = searchCatalog(this.store.index, query, {
       limit,
       category,
       queryEmbedding,
       embeddings: this.store.embeddings,
     });
+    if (this.searchCache.size >= 100) this.searchCache.delete(this.searchCache.keys().next().value!);
+    this.searchCache.set(cacheKey, { results, expires: Date.now() + 60_000 });
+    return results;
   }
 
   previewUrl(path: string): string {

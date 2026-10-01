@@ -20,6 +20,8 @@ export function buildMcpServer(dependencies: McpDependencies): McpServer {
     version: "0.1.0",
     title: "Rendyn",
     description: "Search and retrieve high-quality React, TypeScript, and Tailwind UI source.",
+  }, {
+    instructions: 'Use Rendyn to find and implement React UI from the existing catalogue. Search one UI need at a time using a natural design brief. Omit category initially: hero video and bento grids are individual components in motion. Search returns compact metadata by default; include_previews=true opts into images. Call get_component with the returned id for source. Respect no-match responses and explain catalogue gaps instead of choosing an unrelated result. Preserve all licence notices and verify fit in the target app.',
   });
 
   registerSearchComponentsTool(server, dependencies);
