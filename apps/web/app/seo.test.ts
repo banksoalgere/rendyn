@@ -26,7 +26,8 @@ describe('public search metadata', () => {
   it('includes every public guide and component once, excluding private routes', () => {
     const urls = sitemap().map(({ url }) => url);
     const expectedPaths = [
-      '/', '/components', '/pricing', '/guides',
+      '/', '/components', '/libraries', '/pricing', '/guides',
+      '/mcp', '/collections/ai-agent-ui', '/collections/animated-react-components',
       ...guides.map(({ href }) => href),
       ...catalogueEntries.map(({ publicSlug }) => `/components/${publicSlug}`),
     ];
