@@ -1,4 +1,5 @@
 import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
+import { optimisePreviewRuntime } from "./preview-transforms.js";
 import { resolve } from "node:path";
 import type { SourceConfig } from "./schemas.js";
 import {
@@ -48,6 +49,8 @@ export async function vendorPreviewRuntime(
   await cp(resolve(pinnedRoot, "lib"), resolve(vendorRoot, "lib"), { recursive: true });
   await cp(resolve(pinnedRoot, "app/globals.css"), resolve(vendorRoot, "globals.css"));
   await cp(resolve(pinnedRoot, "LICENSE"), resolve(vendorRoot, "LICENSE"));
+
+  await optimisePreviewRuntime(vendorRoot);
 
   await rm(publicRoot, { recursive: true, force: true });
   await cp(resolve(pinnedRoot, "public"), publicRoot, { recursive: true });

@@ -1,6 +1,7 @@
 import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
 import { resolve, sep } from "node:path";
+import { readBoundedBody } from "../../../packages/catalog/src/bounded-body.js";
 
 export const MAX_JSON_BYTES = 4 * 1024 * 1024;
 export const MAX_MARKDOWN_BYTES = 1 * 1024 * 1024;
@@ -24,6 +25,7 @@ export function assertAllowedUrl(rawUrl: string, expectedOrigin: string): URL {
 export async function fetchBytes(url: URL, maximumBytes: number): Promise<Uint8Array> {
   const response = await fetch(url, {
     redirect: "error",
+    signal: AbortSignal.timeout(60_000),
     headers: { "User-Agent": "rendyn-catalog-importer/0.1" },
   });
   invariant(response.ok, `Fetch failed (${response.status}) for ${url}`);
@@ -36,7 +38,7 @@ export async function fetchBytes(url: URL, maximumBytes: number): Promise<Uint8A
     declaredLength === 0 || declaredLength <= maximumBytes,
     `Response too large for ${url}`,
   );
-  const bytes = new Uint8Array(await response.arrayBuffer());
+  const bytes = await readBoundedBody(response, maximumBytes);
   invariant(bytes.byteLength <= maximumBytes, `Response exceeded size limit for ${url}`);
   return bytes;
 }
