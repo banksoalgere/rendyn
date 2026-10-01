@@ -9,7 +9,7 @@ const footerGroups = [
   },
   {
     title: 'Explore',
-    links: [['Component libraries', '/libraries'], ['AI agent UI', '/collections/ai-agent-ui'], ['Animated React components', '/collections/animated-react-components'], ['All interaction components', '/components?category=motion'], ['Product blocks', '/components?category=blocks']],
+    links: [['Component libraries', '/libraries'], ['AI agent UI', '/collections/ai-agent-ui'], ['Animated React components', '/collections/animated-react-components'], ['All interaction components', '/components?category=motion'], ['Components & blocks', '/components?category=blocks']],
   },
   {
     title: 'Resources',

@@ -39,7 +39,7 @@ const steps = [
 const collectionStats = [
   { category: 'motion', label: 'Interactions', description: 'The details that make it feel right.' },
   { category: 'agents', label: 'Agent interfaces', description: 'A human touch for AI products.' },
-  { category: 'blocks', label: 'Product blocks', description: 'Good foundations for big ideas.' },
+  { category: 'blocks', label: 'Components & blocks', description: 'Good foundations for big ideas.' },
 ];
 
 export default function Home() {

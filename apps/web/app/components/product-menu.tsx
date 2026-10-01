@@ -91,8 +91,8 @@ export const componentGroups = [
   },
   {
     id: 'blocks',
-    label: 'Product blocks',
-    detail: 'Complete product patterns',
+    label: 'Components & blocks',
+    detail: 'Controls and product patterns',
     components: [
       ['infinite-masonry', 'Infinite Masonry'],
       ['notification-stack', 'Notification Stack'],
