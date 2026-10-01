@@ -1,0 +1,170 @@
+{
+  "id": "shadcn:drawer",
+  "sourceId": "shadcn",
+  "slug": "shadcn-drawer",
+  "name": "shadcn/ui drawer",
+  "description": "2 published shadcn/ui drawer examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "class-variance-authority@0.7.1",
+    "cn@0.4.0",
+    "lucide-react@1.35.0",
+    "radix-ui@1.4.3",
+    "recharts@3.8.0",
+    "vaul@1.1.2"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "drawer",
+    "tags": [
+      "drawer",
+      "file",
+      "input"
+    ],
+    "aliases": [
+      "drawer",
+      "shadcn/ui drawer"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "2 published shadcn/ui drawer examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "drawer:file:input",
+    "searchText": "shadcn/ui drawer\ndrawer\n2 published shadcn/ui drawer examples with complete pinned source and MIT attribution.\nfile\ninput\nshadcn/ui drawer 2 published shadcn/ui drawer examples with complete pinned source and MIT attribution. Installation Copyable component source and official examples, not a dependency on a hosted registry. Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent). Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/shadcn ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples Pinned source: https://github.com/shadcn ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples/drawer demo.tsx"
+  },
+  "previewPath": "/preview/blocks/shadcn-drawer",
+  "manifestPath": "components/shadcn-drawer/component.json",
+  "integrity": "sha256:9671bad6b5e4e63f5d46a7b438c2dbd8805950672092e3a269ef7532add20dbc",
+  "source": {
+    "id": "shadcn",
+    "name": "shadcn/ui",
+    "repository": "https://github.com/shadcn-ui/ui",
+    "commit": "a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4",
+    "registrySha256": "0054ee914f9451ebe390d414d34264df3a61f5e264c59b25b4c8155452fff343",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 shadcn",
+      "textPath": "source/shadcn/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/drawer-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { Minus, Plus } from \"lucide-react\"\nimport { Bar, BarChart, ResponsiveContainer } from \"recharts\"\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerContent,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/drawer\"\n\nconst data = [\n  {\n    goal: 400,\n  },\n  {\n    goal: 300,\n  },\n  {\n    goal: 200,\n  },\n  {\n    goal: 300,\n  },\n  {\n    goal: 200,\n  },\n  {\n    goal: 278,\n  },\n  {\n    goal: 189,\n  },\n  {\n    goal: 239,\n  },\n  {\n    goal: 300,\n  },\n  {\n    goal: 200,\n  },\n  {\n    goal: 278,\n  },\n  {\n    goal: 189,\n  },\n  {\n    goal: 349,\n  },\n]\n\nexport default function DrawerDemo() {\n  const [goal, setGoal] = React.useState(350)\n\n  function onClick(adjustment: number) {\n    setGoal(Math.max(200, Math.min(400, goal + adjustment)))\n  }\n\n  return (\n    <Drawer>\n      <DrawerTrigger asChild>\n        <Button variant=\"outline\">Open Drawer</Button>\n      </DrawerTrigger>\n      <DrawerContent>\n        <div className=\"mx-auto w-full max-w-sm\">\n          <DrawerHeader>\n            <DrawerTitle>Move Goal</DrawerTitle>\n            <DrawerDescription>Set your daily activity goal.</DrawerDescription>\n          </DrawerHeader>\n          <div className=\"p-4 pb-0\">\n            <div className=\"flex items-center justify-center space-x-2\">\n              <Button\n                variant=\"outline\"\n                size=\"icon\"\n                className=\"h-8 w-8 shrink-0 rounded-full\"\n                onClick={() => onClick(-10)}\n                disabled={goal <= 200}\n              >\n                <Minus />\n                <span className=\"sr-only\">Decrease</span>\n              </Button>\n              <div className=\"flex-1 text-center\">\n                <div className=\"text-7xl font-bold tracking-tighter\">\n                  {goal}\n                </div>\n                <div className=\"text-[0.70rem] text-muted-foreground uppercase\">\n                  Calories/day\n                </div>\n              </div>\n              <Button\n                variant=\"outline\"\n                size=\"icon\"\n                className=\"h-8 w-8 shrink-0 rounded-full\"\n                onClick={() => onClick(10)}\n                disabled={goal >= 400}\n              >\n                <Plus />\n                <span className=\"sr-only\">Increase</span>\n              </Button>\n            </div>\n            <div className=\"mt-3 h-[120px]\">\n              <ResponsiveContainer width=\"100%\" height=\"100%\">\n                <BarChart data={data}>\n                  <Bar\n                    dataKey=\"goal\"\n                    style={\n                      {\n                        fill: \"hsl(var(--foreground))\",\n                        opacity: 0.9,\n                      } as React.CSSProperties\n                    }\n                  />\n                </BarChart>\n              </ResponsiveContainer>\n            </div>\n          </div>\n          <DrawerFooter>\n            <Button>Submit</Button>\n            <DrawerClose asChild>\n              <Button variant=\"outline\">Cancel</Button>\n            </DrawerClose>\n          </DrawerFooter>\n        </div>\n      </DrawerContent>\n    </Drawer>\n  )\n}\n",
+      "sha256": "93f76c5764c95522e14626c8a47317ab3816c5b3042be7790f05aba54ae53ad6",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/drawer-demo.tsx",
+      "upstreamSha256": "76b49ff4b558d5014009219285bb7b907152d2fd08613d79553bcce0c6bb3699",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/ui/button.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { cn } from \"cn\"\nimport { Slot } from \"radix-ui\"\n\nconst buttonVariants = cva(\n  \"inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground hover:bg-primary/90\",\n        destructive:\n          \"bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:bg-destructive/60 dark:focus-visible:ring-destructive/40\",\n        outline:\n          \"border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50\",\n        secondary:\n          \"bg-secondary text-secondary-foreground hover:bg-secondary/80\",\n        ghost:\n          \"hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n      },\n      size: {\n        default: \"h-9 px-4 py-2 has-[>svg]:px-3\",\n        xs: \"h-6 gap-1 rounded-md px-2 text-xs has-[>svg]:px-1.5 [&_svg:not([class*='size-'])]:size-3\",\n        sm: \"h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5\",\n        lg: \"h-10 rounded-md px-6 has-[>svg]:px-4\",\n        icon: \"size-9\",\n        \"icon-xs\": \"size-6 rounded-md [&_svg:not([class*='size-'])]:size-3\",\n        \"icon-sm\": \"size-8\",\n        \"icon-lg\": \"size-10\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n)\n\nfunction Button({\n  className,\n  variant = \"default\",\n  size = \"default\",\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean\n  }) {\n  const Comp = asChild ? Slot.Root : \"button\"\n\n  return (\n    <Comp\n      data-slot=\"button\"\n      data-variant={variant}\n      data-size={size}\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  )\n}\n\nexport { Button, buttonVariants }\n",
+      "sha256": "3763472684dc688736e821e59003cac5ef8d753447f399abae7809fa3571c6c0",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/button.tsx",
+      "upstreamSha256": "79dd6f75f8136394442202d6b8b922fb269eaad0a5dba579397c9d5b41f893bb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/drawer.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { Drawer as DrawerPrimitive } from \"vaul\"\n\nfunction Drawer({\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Root>) {\n  return <DrawerPrimitive.Root data-slot=\"drawer\" {...props} />\n}\n\nfunction DrawerTrigger({\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Trigger>) {\n  return <DrawerPrimitive.Trigger data-slot=\"drawer-trigger\" {...props} />\n}\n\nfunction DrawerPortal({\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Portal>) {\n  return <DrawerPrimitive.Portal data-slot=\"drawer-portal\" {...props} />\n}\n\nfunction DrawerClose({\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Close>) {\n  return <DrawerPrimitive.Close data-slot=\"drawer-close\" {...props} />\n}\n\nfunction DrawerOverlay({\n  className,\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Overlay>) {\n  return (\n    <DrawerPrimitive.Overlay\n      data-slot=\"drawer-overlay\"\n      className={cn(\n        \"fixed inset-0 z-50 bg-black/50 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction DrawerContent({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Content>) {\n  return (\n    <DrawerPortal data-slot=\"drawer-portal\">\n      <DrawerOverlay />\n      <DrawerPrimitive.Content\n        data-slot=\"drawer-content\"\n        className={cn(\n          \"group/drawer-content fixed z-50 flex h-auto flex-col bg-background\",\n          \"data-[vaul-drawer-direction=top]:inset-x-0 data-[vaul-drawer-direction=top]:top-0 data-[vaul-drawer-direction=top]:mb-24 data-[vaul-drawer-direction=top]:max-h-[80vh] data-[vaul-drawer-direction=top]:rounded-b-lg data-[vaul-drawer-direction=top]:border-b\",\n          \"data-[vaul-drawer-direction=bottom]:inset-x-0 data-[vaul-drawer-direction=bottom]:bottom-0 data-[vaul-drawer-direction=bottom]:mt-24 data-[vaul-drawer-direction=bottom]:max-h-[80vh] data-[vaul-drawer-direction=bottom]:rounded-t-lg data-[vaul-drawer-direction=bottom]:border-t\",\n          \"data-[vaul-drawer-direction=right]:inset-y-0 data-[vaul-drawer-direction=right]:right-0 data-[vaul-drawer-direction=right]:w-3/4 data-[vaul-drawer-direction=right]:border-l data-[vaul-drawer-direction=right]:sm:max-w-sm\",\n          \"data-[vaul-drawer-direction=left]:inset-y-0 data-[vaul-drawer-direction=left]:left-0 data-[vaul-drawer-direction=left]:w-3/4 data-[vaul-drawer-direction=left]:border-r data-[vaul-drawer-direction=left]:sm:max-w-sm\",\n          className\n        )}\n        {...props}\n      >\n        <div className=\"mx-auto mt-4 hidden h-2 w-[100px] shrink-0 rounded-full bg-muted group-data-[vaul-drawer-direction=bottom]/drawer-content:block\" />\n        {children}\n      </DrawerPrimitive.Content>\n    </DrawerPortal>\n  )\n}\n\nfunction DrawerHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"drawer-header\"\n      className={cn(\n        \"flex flex-col gap-0.5 p-4 group-data-[vaul-drawer-direction=bottom]/drawer-content:text-center group-data-[vaul-drawer-direction=top]/drawer-content:text-center md:gap-1.5 md:text-left\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction DrawerFooter({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"drawer-footer\"\n      className={cn(\"mt-auto flex flex-col gap-2 p-4\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction DrawerTitle({\n  className,\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Title>) {\n  return (\n    <DrawerPrimitive.Title\n      data-slot=\"drawer-title\"\n      className={cn(\"font-semibold text-foreground\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction DrawerDescription({\n  className,\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Description>) {\n  return (\n    <DrawerPrimitive.Description\n      data-slot=\"drawer-description\"\n      className={cn(\"text-sm text-muted-foreground\", className)}\n      {...props}\n    />\n  )\n}\n\nexport {\n  Drawer,\n  DrawerPortal,\n  DrawerOverlay,\n  DrawerTrigger,\n  DrawerClose,\n  DrawerContent,\n  DrawerHeader,\n  DrawerFooter,\n  DrawerTitle,\n  DrawerDescription,\n}\n",
+      "sha256": "cf8ec9d78e8b8cd313ece01b11d1887ef72532b5ca9a8ed6c7cee1d9e48cd20d",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/drawer.tsx",
+      "upstreamSha256": "63f04fe50a4bf29b56b0f5e2944c6efe980b895f589923659cc2e8ecc90b16c6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/drawer-dialog.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\n\nimport { useMediaQuery } from \"@/components/rendyn-libraries/shadcn/upstream/hooks/use-media-query\"\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/dialog\"\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerContent,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/drawer\"\nimport { Input } from \"@/components/rendyn-libraries/shadcn/ui/input\"\nimport { Label } from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/label\"\n\nexport default function DrawerDialogDemo() {\n  const [open, setOpen] = React.useState(false)\n  const isDesktop = useMediaQuery(\"(min-width: 768px)\")\n\n  if (isDesktop) {\n    return (\n      <Dialog open={open} onOpenChange={setOpen}>\n        <DialogTrigger asChild>\n          <Button variant=\"outline\">Edit Profile</Button>\n        </DialogTrigger>\n        <DialogContent className=\"sm:max-w-[425px]\">\n          <DialogHeader>\n            <DialogTitle>Edit profile</DialogTitle>\n            <DialogDescription>\n              Make changes to your profile here. Click save when you&apos;re\n              done.\n            </DialogDescription>\n          </DialogHeader>\n          <ProfileForm />\n        </DialogContent>\n      </Dialog>\n    )\n  }\n\n  return (\n    <Drawer open={open} onOpenChange={setOpen}>\n      <DrawerTrigger asChild>\n        <Button variant=\"outline\">Edit Profile</Button>\n      </DrawerTrigger>\n      <DrawerContent>\n        <DrawerHeader className=\"text-left\">\n          <DrawerTitle>Edit profile</DrawerTitle>\n          <DrawerDescription>\n            Make changes to your profile here. Click save when you&apos;re done.\n          </DrawerDescription>\n        </DrawerHeader>\n        <ProfileForm className=\"px-4\" />\n        <DrawerFooter className=\"pt-2\">\n          <DrawerClose asChild>\n            <Button variant=\"outline\">Cancel</Button>\n          </DrawerClose>\n        </DrawerFooter>\n      </DrawerContent>\n    </Drawer>\n  )\n}\n\nfunction ProfileForm({ className }: React.ComponentProps<\"form\">) {\n  return (\n    <form className={cn(\"grid items-start gap-6\", className)}>\n      <div className=\"grid gap-3\">\n        <Label htmlFor=\"email\">Email</Label>\n        <Input type=\"email\" id=\"email\" defaultValue=\"shadcn@example.com\" />\n      </div>\n      <div className=\"grid gap-3\">\n        <Label htmlFor=\"username\">Username</Label>\n        <Input id=\"username\" defaultValue=\"@shadcn\" />\n      </div>\n      <Button type=\"submit\">Save changes</Button>\n    </form>\n  )\n}\n",
+      "sha256": "af964467384d02a5fe54f36d8d31b643b4dab486128a030d6b89f0147612993b",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/drawer-dialog.tsx",
+      "upstreamSha256": "17c925647bb0402932660b4ecf6ec912356b522fe92e29d53308b981f6ea9fda",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/hooks/use-media-query.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\n\nexport function useMediaQuery(query: string) {\n  const [value, setValue] = React.useState(false)\n\n  React.useEffect(() => {\n    function onChange(event: MediaQueryListEvent) {\n      setValue(event.matches)\n    }\n\n    const result = matchMedia(query)\n    result.addEventListener(\"change\", onChange)\n    setValue(result.matches)\n\n    return () => result.removeEventListener(\"change\", onChange)\n  }, [query])\n\n  return value\n}\n",
+      "sha256": "65e462f13b3e166c5ae23217e233f2185e96f4d352afcff8943d1882ba7d7a8e",
+      "upstreamPath": "apps/v4/hooks/use-media-query.tsx",
+      "upstreamSha256": "f8ce5e3c372eff6e0969641289142f711ed80ac1981343fdbad469d21480c936",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/dialog.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { XIcon } from \"lucide-react\"\nimport { Dialog as DialogPrimitive } from \"radix-ui\"\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\n\nfunction Dialog({\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Root>) {\n  return <DialogPrimitive.Root data-slot=\"dialog\" {...props} />\n}\n\nfunction DialogTrigger({\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Trigger>) {\n  return <DialogPrimitive.Trigger data-slot=\"dialog-trigger\" {...props} />\n}\n\nfunction DialogPortal({\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Portal>) {\n  return <DialogPrimitive.Portal data-slot=\"dialog-portal\" {...props} />\n}\n\nfunction DialogClose({\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Close>) {\n  return <DialogPrimitive.Close data-slot=\"dialog-close\" {...props} />\n}\n\nfunction DialogOverlay({\n  className,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Overlay>) {\n  return (\n    <DialogPrimitive.Overlay\n      data-slot=\"dialog-overlay\"\n      className={cn(\n        \"fixed inset-0 z-50 bg-black/50 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction DialogContent({\n  className,\n  children,\n  showCloseButton = true,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Content> & {\n  showCloseButton?: boolean\n}) {\n  return (\n    <DialogPortal data-slot=\"dialog-portal\">\n      <DialogOverlay />\n      <DialogPrimitive.Content\n        data-slot=\"dialog-content\"\n        className={cn(\n          \"fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border bg-background p-6 shadow-lg duration-200 outline-none data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 sm:max-w-lg\",\n          className\n        )}\n        {...props}\n      >\n        {children}\n        {showCloseButton && (\n          <DialogPrimitive.Close\n            data-slot=\"dialog-close\"\n            className=\"absolute top-4 right-4 rounded-xs opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\"\n          >\n            <XIcon />\n            <span className=\"sr-only\">Close</span>\n          </DialogPrimitive.Close>\n        )}\n      </DialogPrimitive.Content>\n    </DialogPortal>\n  )\n}\n\nfunction DialogHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"dialog-header\"\n      className={cn(\"flex flex-col gap-2 text-center sm:text-left\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction DialogFooter({\n  className,\n  showCloseButton = false,\n  children,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  showCloseButton?: boolean\n}) {\n  return (\n    <div\n      data-slot=\"dialog-footer\"\n      className={cn(\n        \"flex flex-col-reverse gap-2 sm:flex-row sm:justify-end\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n      {showCloseButton && (\n        <DialogPrimitive.Close asChild>\n          <Button variant=\"outline\">Close</Button>\n        </DialogPrimitive.Close>\n      )}\n    </div>\n  )\n}\n\nfunction DialogTitle({\n  className,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Title>) {\n  return (\n    <DialogPrimitive.Title\n      data-slot=\"dialog-title\"\n      className={cn(\"text-lg leading-none font-semibold\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction DialogDescription({\n  className,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Description>) {\n  return (\n    <DialogPrimitive.Description\n      data-slot=\"dialog-description\"\n      className={cn(\"text-sm text-muted-foreground\", className)}\n      {...props}\n    />\n  )\n}\n\nexport {\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogOverlay,\n  DialogPortal,\n  DialogTitle,\n  DialogTrigger,\n}\n",
+      "sha256": "9067635649f31e4635ac5bcd05689d1c4d542817aa32759d4e619c74e09f8755",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/dialog.tsx",
+      "upstreamSha256": "2ade6074e5fad0a4eb171ead44c43d3301a3c83d186d7236fb1fdbea80ee556b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/ui/input.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\n\nfunction Input({ className, type, ...props }: React.ComponentProps<\"input\">) {\n  return (\n    <input\n      type={type}\n      data-slot=\"input\"\n      className={cn(\n        \"h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none selection:bg-primary selection:text-primary-foreground file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm dark:bg-input/30\",\n        \"focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n        \"aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Input }\n",
+      "sha256": "6eeb51e5be0f5dcf8cd92527d8c42c6eadd8fb9354df069f88b91b044b3b0b35",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/input.tsx",
+      "upstreamSha256": "0c9457181f6ddc80969bcf854e92c362903a55b6e889fbef3fd85343ecc4af5b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/label.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { Label as LabelPrimitive } from \"radix-ui\"\n\nfunction Label({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      data-slot=\"label\"\n      className={cn(\n        \"flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Label }\n",
+      "sha256": "6f607dba73c5065d02f42532bb2debb4b2d825074a77f137438a86b21cfcdc1a",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/label.tsx",
+      "upstreamSha256": "344bde38b8531615dbf8e14af3895517c24d8ef6ce56ddeda7e2e6fe4b5d0c00",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/drawer/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/drawer-demo\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "71cdc351d808da1bf4b880c8ea7766b170fa4af93a65ad97e2f92faa991e92c5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/drawer/previews/drawer-dialog.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/drawer-dialog\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "bc74cce539d8de3b3ffb1a2b74181f7192bfe201e74e39fe89b323e352378d39",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add class-variance-authority@0.7.1 cn@0.4.0 lucide-react@1.35.0 radix-ui@1.4.3 recharts@3.8.0 vaul@1.1.2",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add class-variance-authority@0.7.1 cn@0.4.0 lucide-react@1.35.0 radix-ui@1.4.3 recharts@3.8.0 vaul@1.1.2",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable component source and official examples, not a dependency on a hosted registry.",
+      "Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent)."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "drawer",
+    "upstreamPageUrl": "https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples",
+    "upstreamDetailUrl": "https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/drawer-demo.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/shadcn-ui/ui/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/drawer-demo.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# shadcn/ui drawer\n\n2 published shadcn/ui drawer examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable component source and official examples, not a dependency on a hosted registry.\n- Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent).\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples\nPinned source: https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/drawer-demo.tsx\n"
+}

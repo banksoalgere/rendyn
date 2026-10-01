@@ -1,0 +1,133 @@
+{
+  "id": "shadcn:scroll-area",
+  "sourceId": "shadcn",
+  "slug": "shadcn-scroll-area",
+  "name": "shadcn/ui scroll area",
+  "description": "2 published shadcn/ui scroll area examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "cn@0.4.0",
+    "next@16.3.5",
+    "radix-ui@1.4.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "scroll-area",
+    "tags": [
+      "file",
+      "input"
+    ],
+    "aliases": [
+      "scroll area",
+      "shadcn/ui scroll area",
+      "scroll-area"
+    ],
+    "interactions": [
+      "scroll"
+    ],
+    "useWhen": [
+      "2 published shadcn/ui scroll area examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "scroll-area:file:input:scroll",
+    "searchText": "shadcn/ui scroll area\nscroll area\n2 published shadcn/ui scroll area examples with complete pinned source and MIT attribution.\nscroll-area\nfile\ninput\nscroll\nshadcn/ui scroll area 2 published shadcn/ui scroll area examples with complete pinned source and MIT attribution. Installation Copyable component source and official examples, not a dependency on a hosted registry. Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent). Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/shadcn ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples Pinned source: https://github.com/shadcn ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples/scroll area demo.tsx"
+  },
+  "previewPath": "/preview/blocks/shadcn-scroll-area",
+  "manifestPath": "components/shadcn-scroll-area/component.json",
+  "integrity": "sha256:8170105f8fce3ec42c35b95e2da3146e09f7860045467e28c4f9a64ba9216064",
+  "source": {
+    "id": "shadcn",
+    "name": "shadcn/ui",
+    "repository": "https://github.com/shadcn-ui/ui",
+    "commit": "a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4",
+    "registrySha256": "0054ee914f9451ebe390d414d34264df3a61f5e264c59b25b4c8155452fff343",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 shadcn",
+      "textPath": "source/shadcn/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/scroll-area-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\n\nimport { ScrollArea } from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/scroll-area\"\nimport { Separator } from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/separator\"\n\nconst tags = Array.from({ length: 50 }).map(\n  (_, i, a) => `v1.2.0-beta.${a.length - i}`\n)\n\nexport default function ScrollAreaDemo() {\n  return (\n    <ScrollArea className=\"h-72 w-48 rounded-md border\">\n      <div className=\"p-4\">\n        <h4 className=\"mb-4 text-sm leading-none font-medium\">Tags</h4>\n        {tags.map((tag) => (\n          <React.Fragment key={tag}>\n            <div className=\"text-sm\">{tag}</div>\n            <Separator className=\"my-2\" />\n          </React.Fragment>\n        ))}\n      </div>\n    </ScrollArea>\n  )\n}\n",
+      "sha256": "92dc18f27138f88518fc75fb2be8c910e8189fe19c9539ad205525af59a53dfd",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/scroll-area-demo.tsx",
+      "upstreamSha256": "f8ea27481634f98570aa108a8fcbc0a11ed14516421a2c10c349cfbe1e3b8e1f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/scroll-area.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { ScrollArea as ScrollAreaPrimitive } from \"radix-ui\"\n\nfunction ScrollArea({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof ScrollAreaPrimitive.Root>) {\n  return (\n    <ScrollAreaPrimitive.Root\n      data-slot=\"scroll-area\"\n      className={cn(\"relative\", className)}\n      {...props}\n    >\n      <ScrollAreaPrimitive.Viewport\n        data-slot=\"scroll-area-viewport\"\n        className=\"size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1\"\n      >\n        {children}\n      </ScrollAreaPrimitive.Viewport>\n      <ScrollBar />\n      <ScrollAreaPrimitive.Corner />\n    </ScrollAreaPrimitive.Root>\n  )\n}\n\nfunction ScrollBar({\n  className,\n  orientation = \"vertical\",\n  ...props\n}: React.ComponentProps<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>) {\n  return (\n    <ScrollAreaPrimitive.ScrollAreaScrollbar\n      data-slot=\"scroll-area-scrollbar\"\n      orientation={orientation}\n      className={cn(\n        \"flex touch-none p-px transition-colors select-none\",\n        orientation === \"vertical\" &&\n          \"h-full w-2.5 border-l border-l-transparent\",\n        orientation === \"horizontal\" &&\n          \"h-2.5 flex-col border-t border-t-transparent\",\n        className\n      )}\n      {...props}\n    >\n      <ScrollAreaPrimitive.ScrollAreaThumb\n        data-slot=\"scroll-area-thumb\"\n        className=\"relative flex-1 rounded-full bg-border\"\n      />\n    </ScrollAreaPrimitive.ScrollAreaScrollbar>\n  )\n}\n\nexport { ScrollArea, ScrollBar }\n",
+      "sha256": "a9a2a688a8fdbe31f8bc3a3bae36221246da114e1c307fff29a36c6438e26c4f",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/scroll-area.tsx",
+      "upstreamSha256": "8b73bb9be51300079c7f561bafbe43ee10f6f464cf39c8c1b25123cd4edb94dd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/separator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { Separator as SeparatorPrimitive } from \"radix-ui\"\n\nfunction Separator({\n  className,\n  orientation = \"horizontal\",\n  decorative = true,\n  ...props\n}: React.ComponentProps<typeof SeparatorPrimitive.Root>) {\n  return (\n    <SeparatorPrimitive.Root\n      data-slot=\"separator\"\n      decorative={decorative}\n      orientation={orientation}\n      className={cn(\n        \"shrink-0 bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Separator }\n",
+      "sha256": "182ca281d2ec1135bd18b00a22ef1f0b79efef6de42379c807bd69bd7a5b4727",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/separator.tsx",
+      "upstreamSha256": "ad7d5403fe337160e41dbf04147896e448ae3a747b8d06660d627d74d60021bc",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/scroll-area-horizontal-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport Image from \"next/image\"\n\nimport { ScrollArea, ScrollBar } from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/scroll-area\"\n\nexport interface Artwork {\n  artist: string\n  art: string\n}\n\nexport const works: Artwork[] = [\n  {\n    artist: \"Ornella Binni\",\n    art: \"https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80\",\n  },\n  {\n    artist: \"Tom Byrom\",\n    art: \"https://images.unsplash.com/photo-1548516173-3cabfa4607e9?auto=format&fit=crop&w=300&q=80\",\n  },\n  {\n    artist: \"Vladimir Malyavko\",\n    art: \"https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80\",\n  },\n]\n\nexport default function ScrollAreaHorizontalDemo() {\n  return (\n    <ScrollArea className=\"w-96 rounded-md border whitespace-nowrap\">\n      <div className=\"flex w-max space-x-4 p-4\">\n        {works.map((artwork) => (\n          <figure key={artwork.artist} className=\"shrink-0\">\n            <div className=\"overflow-hidden rounded-md\">\n              <Image\n                src={artwork.art}\n                alt={`Photo by ${artwork.artist}`}\n                className=\"aspect-[3/4] h-fit w-fit object-cover\"\n                width={300}\n                height={400}\n              />\n            </div>\n            <figcaption className=\"pt-2 text-xs text-muted-foreground\">\n              Photo by{\" \"}\n              <span className=\"font-semibold text-foreground\">\n                {artwork.artist}\n              </span>\n            </figcaption>\n          </figure>\n        ))}\n      </div>\n      <ScrollBar orientation=\"horizontal\" />\n    </ScrollArea>\n  )\n}\n",
+      "sha256": "0a1a800c44ed1b2d3ae562002d69368c924695ac62626b2b3ed2302a04e4c045",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/scroll-area-horizontal-demo.tsx",
+      "upstreamSha256": "8cb20b3eb45ad902f4d3d2e9ab45dc1485875e07ea5087505c1885b07249e7eb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/scroll-area/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/scroll-area-demo\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "09a2ae782a25b4441f43cd686693f3e3eaa154b990f6dbe7fbd2667cee12f078",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/scroll-area/previews/scroll-area-horizontal-demo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/scroll-area-horizontal-demo\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "b42989e83dfcfd267b9f3a2a998fcac56d839df288049c1bf914d323c9d0a040",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add cn@0.4.0 next@16.3.5 radix-ui@1.4.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add cn@0.4.0 next@16.3.5 radix-ui@1.4.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable component source and official examples, not a dependency on a hosted registry.",
+      "Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent)."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "scroll-area",
+    "upstreamPageUrl": "https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples",
+    "upstreamDetailUrl": "https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/scroll-area-demo.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/shadcn-ui/ui/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/scroll-area-demo.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# shadcn/ui scroll area\n\n2 published shadcn/ui scroll area examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable component source and official examples, not a dependency on a hosted registry.\n- Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent).\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples\nPinned source: https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/scroll-area-demo.tsx\n"
+}

@@ -1,0 +1,156 @@
+{
+  "id": "shadcn:native-select",
+  "sourceId": "shadcn",
+  "slug": "shadcn-native-select",
+  "name": "shadcn/ui native select",
+  "description": "4 published shadcn/ui native select examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "cn@0.4.0",
+    "lucide-react@1.35.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "select",
+    "tags": [
+      "file",
+      "input",
+      "select"
+    ],
+    "aliases": [
+      "native select",
+      "shadcn/ui native select",
+      "select",
+      "dropdown",
+      "picker"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "4 published shadcn/ui native select examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "select:file:input",
+    "searchText": "shadcn/ui native select\nnative select\n4 published shadcn/ui native select examples with complete pinned source and MIT attribution.\nselect\ndropdown\npicker\nfile\ninput\nshadcn/ui native select 4 published shadcn/ui native select examples with complete pinned source and MIT attribution. Installation Copyable component source and official examples, not a dependency on a hosted registry. Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent). Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/shadcn ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples Pinned source: https://github.com/shadcn ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples/native select demo.tsx"
+  },
+  "previewPath": "/preview/blocks/shadcn-native-select",
+  "manifestPath": "components/shadcn-native-select/component.json",
+  "integrity": "sha256:fb33665900268ad4f028487ea9b81fb8e32b17b55ff3b0ce8b2ae177c5b015f0",
+  "source": {
+    "id": "shadcn",
+    "name": "shadcn/ui",
+    "repository": "https://github.com/shadcn-ui/ui",
+    "commit": "a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4",
+    "registrySha256": "0054ee914f9451ebe390d414d34264df3a61f5e264c59b25b4c8155452fff343",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 shadcn",
+      "textPath": "source/shadcn/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/native-select-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  NativeSelect,\n  NativeSelectOption,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/native-select\"\n\nexport default function NativeSelectDemo() {\n  return (\n    <NativeSelect>\n      <NativeSelectOption value=\"\">Select status</NativeSelectOption>\n      <NativeSelectOption value=\"todo\">Todo</NativeSelectOption>\n      <NativeSelectOption value=\"in-progress\">In Progress</NativeSelectOption>\n      <NativeSelectOption value=\"done\">Done</NativeSelectOption>\n      <NativeSelectOption value=\"cancelled\">Cancelled</NativeSelectOption>\n    </NativeSelect>\n  )\n}\n",
+      "sha256": "e4fb0683d23fee22bcceba3ee9eb6e8add6401cb0714244111183bfa18e7aaa9",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/native-select-demo.tsx",
+      "upstreamSha256": "290656cdadbdf1f5cfe39d21c449548e7cd0c2c63fa5a9844634d94be54a7652",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/native-select.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { ChevronDownIcon } from \"lucide-react\"\n\nfunction NativeSelect({\n  className,\n  size = \"default\",\n  ...props\n}: Omit<React.ComponentProps<\"select\">, \"size\"> & { size?: \"sm\" | \"default\" }) {\n  return (\n    <div\n      className=\"group/native-select relative w-fit has-[select:disabled]:opacity-50\"\n      data-slot=\"native-select-wrapper\"\n    >\n      <select\n        data-slot=\"native-select\"\n        data-size={size}\n        className={cn(\n          \"h-9 w-full min-w-0 appearance-none rounded-md border border-input bg-transparent px-3 py-2 pr-9 text-sm shadow-xs transition-[color,box-shadow] outline-none selection:bg-primary selection:text-primary-foreground placeholder:text-muted-foreground disabled:pointer-events-none disabled:cursor-not-allowed data-[size=sm]:h-8 data-[size=sm]:py-1 dark:bg-input/30 dark:hover:bg-input/50\",\n          \"focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n          \"aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40\",\n          className\n        )}\n        {...props}\n      />\n      <ChevronDownIcon\n        className=\"pointer-events-none absolute top-1/2 right-3.5 size-4 -translate-y-1/2 text-muted-foreground opacity-50 select-none\"\n        aria-hidden=\"true\"\n        data-slot=\"native-select-icon\"\n      />\n    </div>\n  )\n}\n\nfunction NativeSelectOption({\n  className,\n  ...props\n}: React.ComponentProps<\"option\">) {\n  return (\n    <option\n      data-slot=\"native-select-option\"\n      className={cn(\"bg-[Canvas] text-[CanvasText]\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction NativeSelectOptGroup({\n  className,\n  ...props\n}: React.ComponentProps<\"optgroup\">) {\n  return (\n    <optgroup\n      data-slot=\"native-select-optgroup\"\n      className={cn(\"bg-[Canvas] text-[CanvasText]\", className)}\n      {...props}\n    />\n  )\n}\n\nexport { NativeSelect, NativeSelectOptGroup, NativeSelectOption }\n",
+      "sha256": "04a80f285acc0ec7325be297a1f14578894564e5311fa9a23e27742b33d6ecd3",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/native-select.tsx",
+      "upstreamSha256": "4bdbce5575dce610fed747df4547a3d494713f4df8d28e09b3ccee62e4d72f93",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/native-select-disabled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  NativeSelect,\n  NativeSelectOption,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/native-select\"\n\nexport default function NativeSelectDisabled() {\n  return (\n    <NativeSelect disabled>\n      <NativeSelectOption value=\"\">Select priority</NativeSelectOption>\n      <NativeSelectOption value=\"low\">Low</NativeSelectOption>\n      <NativeSelectOption value=\"medium\">Medium</NativeSelectOption>\n      <NativeSelectOption value=\"high\">High</NativeSelectOption>\n      <NativeSelectOption value=\"critical\">Critical</NativeSelectOption>\n    </NativeSelect>\n  )\n}\n",
+      "sha256": "139b9077f447f37acdd5fec39757451088f4c4d8fdc926d5e6668bb5fdf39b50",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/native-select-disabled.tsx",
+      "upstreamSha256": "5a0841bbf48c701718049f1e2ac6a0d575f21fac0610124a9ae6858f0727c439",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/native-select-groups.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  NativeSelect,\n  NativeSelectOptGroup,\n  NativeSelectOption,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/native-select\"\n\nexport default function NativeSelectGroups() {\n  return (\n    <NativeSelect>\n      <NativeSelectOption value=\"\">Select department</NativeSelectOption>\n      <NativeSelectOptGroup label=\"Engineering\">\n        <NativeSelectOption value=\"frontend\">Frontend</NativeSelectOption>\n        <NativeSelectOption value=\"backend\">Backend</NativeSelectOption>\n        <NativeSelectOption value=\"devops\">DevOps</NativeSelectOption>\n      </NativeSelectOptGroup>\n      <NativeSelectOptGroup label=\"Sales\">\n        <NativeSelectOption value=\"sales-rep\">Sales Rep</NativeSelectOption>\n        <NativeSelectOption value=\"account-manager\">\n          Account Manager\n        </NativeSelectOption>\n        <NativeSelectOption value=\"sales-director\">\n          Sales Director\n        </NativeSelectOption>\n      </NativeSelectOptGroup>\n      <NativeSelectOptGroup label=\"Operations\">\n        <NativeSelectOption value=\"support\">\n          Customer Support\n        </NativeSelectOption>\n        <NativeSelectOption value=\"product-manager\">\n          Product Manager\n        </NativeSelectOption>\n        <NativeSelectOption value=\"ops-manager\">\n          Operations Manager\n        </NativeSelectOption>\n      </NativeSelectOptGroup>\n    </NativeSelect>\n  )\n}\n",
+      "sha256": "6b0a3aa38f92e44becbcc116298572392b26adb27139cca542dd4d741a9e9297",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/native-select-groups.tsx",
+      "upstreamSha256": "5ca40f732271da4dc0ea65cf45204a1331f303d815bc0b0661e5485bbf2e810e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/native-select-invalid.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  NativeSelect,\n  NativeSelectOption,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/native-select\"\n\nexport default function NativeSelectInvalid() {\n  return (\n    <NativeSelect aria-invalid=\"true\">\n      <NativeSelectOption value=\"\">Select role</NativeSelectOption>\n      <NativeSelectOption value=\"admin\">Admin</NativeSelectOption>\n      <NativeSelectOption value=\"editor\">Editor</NativeSelectOption>\n      <NativeSelectOption value=\"viewer\">Viewer</NativeSelectOption>\n      <NativeSelectOption value=\"guest\">Guest</NativeSelectOption>\n    </NativeSelect>\n  )\n}\n",
+      "sha256": "8ac9eb73ec25b1854d95d629528e5472ab8dfa759657d13165bd7da5a927cc14",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/native-select-invalid.tsx",
+      "upstreamSha256": "59a6138c0102343ca2f0ff1d5481a8fb74dfe3d36644721bde35911e6a7804e2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/native-select/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/native-select-demo\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "58ac717af15fbab6e6270fd609ef6defdb2aa2933e3f2e089252ff0218817cc8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/native-select/previews/native-select-disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/native-select-disabled\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "64abce28e3f93f661a7feed7b738ccb4bd3ea08d682a8a46fc041901d39396ee",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/native-select/previews/native-select-groups.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/native-select-groups\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "064ac7c9e5a050e771b8186561417973e8524fe0a132015eddcdcf1ebee77480",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/native-select/previews/native-select-invalid.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/native-select-invalid\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "4b5e6167aca7e6af76ddaa312da5b62dadce06f9e8705d76d8fac6ae90dd1f94",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add cn@0.4.0 lucide-react@1.35.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add cn@0.4.0 lucide-react@1.35.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable component source and official examples, not a dependency on a hosted registry.",
+      "Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent)."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "native-select",
+    "upstreamPageUrl": "https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples",
+    "upstreamDetailUrl": "https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/native-select-demo.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/shadcn-ui/ui/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/native-select-demo.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# shadcn/ui native select\n\n4 published shadcn/ui native select examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable component source and official examples, not a dependency on a hosted registry.\n- Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent).\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples\nPinned source: https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/native-select-demo.tsx\n"
+}

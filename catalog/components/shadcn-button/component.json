@@ -1,0 +1,312 @@
+{
+  "id": "shadcn:button",
+  "sourceId": "shadcn",
+  "slug": "shadcn-button",
+  "name": "shadcn Button",
+  "description": "13 published shadcn/ui button examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@tabler/icons-react@3.48.0",
+    "class-variance-authority@0.7.1",
+    "cn@0.4.0",
+    "lucide-react@1.35.0",
+    "next@16.3.5",
+    "radix-ui@1.4.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "button",
+    "tags": [
+      "button",
+      "file",
+      "input"
+    ],
+    "aliases": [
+      "button",
+      "shadcn button",
+      "cta",
+      "action control"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "13 published shadcn/ui button examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "button:file:input",
+    "searchText": "shadcn Button\nbutton\n13 published shadcn/ui button examples with complete pinned source and MIT attribution.\nshadcn button\ncta\naction control\nfile\ninput\nshadcn Button 13 published shadcn/ui button examples with complete pinned source and MIT attribution. Installation Copyable component source and official examples, not a dependency on a hosted registry. Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent). Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://ui.shadcn.com/docs/components/button Pinned source: https://github.com/shadcn ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples/button demo.tsx"
+  },
+  "previewPath": "/preview/blocks/shadcn-button",
+  "manifestPath": "components/shadcn-button/component.json",
+  "integrity": "sha256:93e24038964b35ccce8c0d993de148dbdc084870f54524615d3e9b8b314209dc",
+  "source": {
+    "id": "shadcn",
+    "name": "shadcn/ui",
+    "repository": "https://github.com/shadcn-ui/ui",
+    "commit": "a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4",
+    "registrySha256": "0054ee914f9451ebe390d414d34264df3a61f5e264c59b25b4c8155452fff343",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 shadcn",
+      "textPath": "source/shadcn/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/shadcn/button/example.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ArrowUpIcon } from \"lucide-react\"\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\n\nexport default function ButtonDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2 md:flex-row\">\n      <Button variant=\"outline\">Button</Button>\n      <Button variant=\"outline\" size=\"icon\" aria-label=\"Submit\">\n        <ArrowUpIcon />\n      </Button>\n    </div>\n  )\n}\n",
+      "sha256": "9616c4b4db92e4ce506a9700fa51875408f4413097934df29e5a443e272a3702",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/button-demo.tsx",
+      "upstreamSha256": "79b686fd86aae77ff1307ebd9ce843832331d6ce85ba49af82113acfc9a377ac",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/ui/button.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { cn } from \"cn\"\nimport { Slot } from \"radix-ui\"\n\nconst buttonVariants = cva(\n  \"inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground hover:bg-primary/90\",\n        destructive:\n          \"bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:bg-destructive/60 dark:focus-visible:ring-destructive/40\",\n        outline:\n          \"border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50\",\n        secondary:\n          \"bg-secondary text-secondary-foreground hover:bg-secondary/80\",\n        ghost:\n          \"hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n      },\n      size: {\n        default: \"h-9 px-4 py-2 has-[>svg]:px-3\",\n        xs: \"h-6 gap-1 rounded-md px-2 text-xs has-[>svg]:px-1.5 [&_svg:not([class*='size-'])]:size-3\",\n        sm: \"h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5\",\n        lg: \"h-10 rounded-md px-6 has-[>svg]:px-4\",\n        icon: \"size-9\",\n        \"icon-xs\": \"size-6 rounded-md [&_svg:not([class*='size-'])]:size-3\",\n        \"icon-sm\": \"size-8\",\n        \"icon-lg\": \"size-10\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n)\n\nfunction Button({\n  className,\n  variant = \"default\",\n  size = \"default\",\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean\n  }) {\n  const Comp = asChild ? Slot.Root : \"button\"\n\n  return (\n    <Comp\n      data-slot=\"button\"\n      data-variant={variant}\n      data-size={size}\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  )\n}\n\nexport { Button, buttonVariants }\n",
+      "sha256": "3763472684dc688736e821e59003cac5ef8d753447f399abae7809fa3571c6c0",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/button.tsx",
+      "upstreamSha256": "79dd6f75f8136394442202d6b8b922fb269eaad0a5dba579397c9d5b41f893bb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-as-child.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Link from \"next/link\"\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\n\nexport default function ButtonAsChild() {\n  return (\n    <Button asChild>\n      <Link href=\"/login\">Login</Link>\n    </Button>\n  )\n}\n",
+      "sha256": "da1c35ca3fe0de9e1adeb0b53c6196d08fc0fdcfae1bf6c5bb592ea4328059a5",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/button-as-child.tsx",
+      "upstreamSha256": "0534a0c2dcca3b73a2b0081fff3684980e7920c52e3df75992b903ad6294f272",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-default.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\n\nexport default function ButtonDefault() {\n  return <Button>Button</Button>\n}\n",
+      "sha256": "da154f15f2ccd8a6d5a02af349fb16cf565a38fcc2f80eda5ed5916507593208",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/button-default.tsx",
+      "upstreamSha256": "f3996427057cd4e42796a4bb67b9f48e024b17a122e0ca24e06c7bada67119c4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-destructive.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\n\nexport default function ButtonDestructive() {\n  return <Button variant=\"destructive\">Destructive</Button>\n}\n",
+      "sha256": "b6e9880e96cdd8865ebf73d88544731aac5d9a7062b25108b6f35953565e3578",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/button-destructive.tsx",
+      "upstreamSha256": "8418569dd574723dc05f5acf6a52e6ea132d432cb588f4e1a16ba88a259a834c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-ghost.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\n\nexport default function ButtonGhost() {\n  return <Button variant=\"ghost\">Ghost</Button>\n}\n",
+      "sha256": "33fa0ed1a5cc1b35c09b9477c9f8b343484b5911c77d7a068b337b750febf4c7",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/button-ghost.tsx",
+      "upstreamSha256": "cde79a90f00856ba4eaba53db0e9be1c21e3250bba05633de33f991e9bebf9d9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-icon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { CircleFadingArrowUpIcon } from \"lucide-react\"\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\n\nexport default function ButtonIcon() {\n  return (\n    <Button variant=\"outline\" size=\"icon\">\n      <CircleFadingArrowUpIcon />\n    </Button>\n  )\n}\n",
+      "sha256": "f1682d221a8d04f0e24984242cdc473ce8ffb3fa67a8d58556eaa7384a765815",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/button-icon.tsx",
+      "upstreamSha256": "77806dc90a0eb5c989e641f02fdbc3c3550c358c2acc0bea53ec6421a5a74e54",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-link.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\n\nexport default function ButtonLink() {\n  return <Button variant=\"link\">Link</Button>\n}\n",
+      "sha256": "7717da9872583ed3232f2fbade0d448cfe2f97e7d8831cc6a713510b904fead5",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/button-link.tsx",
+      "upstreamSha256": "1bc3845c09d2d0d52a00b3bc23c81e4a6c59f7e23a54ae2c295ff5110afdfa8e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-loading.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\nimport { Spinner } from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/spinner\"\n\nexport default function ButtonLoading() {\n  return (\n    <Button size=\"sm\" variant=\"outline\" disabled>\n      <Spinner />\n      Submit\n    </Button>\n  )\n}\n",
+      "sha256": "fa4d7256771ec52916f10adb88c7b4b4fb9230fe7a8aac64295f895150677c01",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/button-loading.tsx",
+      "upstreamSha256": "056d7cc61aed0abcb5ded9886d56d46b95f816dae6f9affd1c03aebd707b3e94",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/spinner.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { cn } from \"cn\"\nimport { Loader2Icon } from \"lucide-react\"\n\nfunction Spinner({ className, ...props }: React.ComponentProps<\"svg\">) {\n  return (\n    <Loader2Icon\n      role=\"status\"\n      aria-label=\"Loading\"\n      className={cn(\"size-4 animate-spin\", className)}\n      {...props}\n    />\n  )\n}\n\nexport { Spinner }\n",
+      "sha256": "b441998c1c2dad04bdf7d6ad0788fc3a8690f47e936135c7afae0447759b5e20",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/spinner.tsx",
+      "upstreamSha256": "5d040fc49cb54c0296070644053b5a8840ddbfca89a430546bf308df3fffad65",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-outline.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\n\nexport default function ButtonOutline() {\n  return <Button variant=\"outline\">Outline</Button>\n}\n",
+      "sha256": "9fdb4cca402bd68890f2dc42415c0cb193a58b775147cb8eaca39c33b9d5485c",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/button-outline.tsx",
+      "upstreamSha256": "6d1581ca9388228b5360cce4ab61efc4335d1f98f5af4fcaf3859078141d6e21",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-rounded.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ArrowUpIcon } from \"lucide-react\"\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\n\nexport default function ButtonRounded() {\n  return (\n    <div className=\"flex flex-col gap-8\">\n      <Button variant=\"outline\" size=\"icon\" className=\"rounded-full\">\n        <ArrowUpIcon />\n      </Button>\n    </div>\n  )\n}\n",
+      "sha256": "5e03e8bbe589eb0683606d2fcc8efabe0e65fcb121e3ce227e9ac02a01c9d534",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/button-rounded.tsx",
+      "upstreamSha256": "13e04f9015bf4b878528aa62964b6a7e5550c8cda99a45edbcc2ad0bf3a5f0f4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-secondary.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\n\nexport default function ButtonSecondary() {\n  return <Button variant=\"secondary\">Secondary</Button>\n}\n",
+      "sha256": "5f9327af026690dc59c2a094a3cdeee6c85965ec45f2b08e63510fe49fd752b0",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/button-secondary.tsx",
+      "upstreamSha256": "8798a36b4d91b4c42cfd3029d5161443f1d025ab6cafdc759103e9c9bb35505e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-size.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ArrowUpRightIcon } from \"lucide-react\"\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\n\nexport default function ButtonSize() {\n  return (\n    <div className=\"flex flex-col items-start gap-8 sm:flex-row\">\n      <div className=\"flex items-start gap-2\">\n        <Button size=\"sm\" variant=\"outline\">\n          Small\n        </Button>\n        <Button size=\"icon-sm\" aria-label=\"Submit\" variant=\"outline\">\n          <ArrowUpRightIcon />\n        </Button>\n      </div>\n      <div className=\"flex items-start gap-2\">\n        <Button variant=\"outline\">Default</Button>\n        <Button size=\"icon\" aria-label=\"Submit\" variant=\"outline\">\n          <ArrowUpRightIcon />\n        </Button>\n      </div>\n      <div className=\"flex items-start gap-2\">\n        <Button variant=\"outline\" size=\"lg\">\n          Large\n        </Button>\n        <Button size=\"icon-lg\" aria-label=\"Submit\" variant=\"outline\">\n          <ArrowUpRightIcon />\n        </Button>\n      </div>\n    </div>\n  )\n}\n",
+      "sha256": "169288905998c3ccb245308f7bb738fa01d166a17148620ff402b661f71c4970",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/button-size.tsx",
+      "upstreamSha256": "bab639686b0e35b601d5a9917383a8a6c12bdc20ceed1a1ffd131d269b0d12c7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-with-icon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { IconGitBranch } from \"@tabler/icons-react\"\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\n\nexport default function ButtonWithIcon() {\n  return (\n    <Button variant=\"outline\" size=\"sm\">\n      <IconGitBranch /> New Branch\n    </Button>\n  )\n}\n",
+      "sha256": "5c0b34ce64838f27d1d8d869596a89f1730142988b2545c59315cdf29b0db3b9",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/button-with-icon.tsx",
+      "upstreamSha256": "aedb19f1e8f67e42b37a91a7ab75f4c55cc161140dde8edd6f3f34cb5938c357",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/button/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/button/example\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "867a77d1f2caf634fb86e522d18481fc949e4b2391bc5948f74d4c1d2f64cdff",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/button/previews/button-as-child.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-as-child\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "4749f0eb6ab394458a978e2bda996f35cfa69be9a2bba80935c385f7871b18b5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/button/previews/button-default.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-default\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "38bb3fbccb5a44c583a1c171a0483154a214469e7124f04a4e524ce319a5dee9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/button/previews/button-destructive.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-destructive\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "efa070a3af18c1baefcb0650332d24cbe6ee5990d1999bb72ec2fea2468262a4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/button/previews/button-ghost.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-ghost\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "dfee7ea83553ea473f50f84496d7bb8b254bc4ce34676da36f317d2bb321a973",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/button/previews/button-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-icon\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1a0bd924a3c331a14af8a98319ff761fd55d552cc4bc2b2bbf26caae580e457b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/button/previews/button-link.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-link\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "b6b0d5bc3989d1d75b4120865ee3fa66dc27d2569b2f78fdeab3d65d825e3d1d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/button/previews/button-loading.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-loading\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8414335fa3df0cd039feb60eb6c8e0cdd03f5941cfe56058c0337fbf705c88d3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/button/previews/button-outline.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-outline\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8863f2fe9b854c6b5413af133d685be2478df60521dd924b51405a0a23dbc61e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/button/previews/button-rounded.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-rounded\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "dcda684eb1c05786738430487fe14ca0ff41bdaee098dfeeaf782aa67795b582",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/button/previews/button-secondary.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-secondary\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "83e6e1557ca3ec14e36a42b98b8df986853af53dda3377692c217f04f026f878",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/button/previews/button-size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-size\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "f6ed6c02946b6e7bb0584a3eed784d0f3589d5af86c52df2bbe37e93716d2ded",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/button/previews/button-with-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/button-with-icon\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "45ae669dba556e7088faa9de50cf755f1453a77a9bfa231da59cc3fccaf8d622",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @tabler/icons-react@3.48.0 class-variance-authority@0.7.1 cn@0.4.0 lucide-react@1.35.0 next@16.3.5 radix-ui@1.4.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @tabler/icons-react@3.48.0 class-variance-authority@0.7.1 cn@0.4.0 lucide-react@1.35.0 next@16.3.5 radix-ui@1.4.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable component source and official examples, not a dependency on a hosted registry.",
+      "Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent)."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "button",
+    "upstreamPageUrl": "https://ui.shadcn.com/docs/components/button",
+    "upstreamDetailUrl": "https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/button-demo.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/shadcn-ui/ui/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/button-demo.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# shadcn Button\n\n13 published shadcn/ui button examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable component source and official examples, not a dependency on a hosted registry.\n- Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent).\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://ui.shadcn.com/docs/components/button\nPinned source: https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/button-demo.tsx\n"
+}
