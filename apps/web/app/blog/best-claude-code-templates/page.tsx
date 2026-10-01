@@ -1,12 +1,23 @@
+import '../../globals.css';
+import '../../styles/editorial-guides.css';
+import '../../styles/editorial.css';
 import { GuideHeading } from '../../components/guide-heading';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import bentoGridPreview from '../../../../../catalog/previews/delivery/magicui-bento-grid.png';
+import styles from './templates.module.css';
 import { FinalCallToAction } from '../../components/site-footer';
 import { CopyTemplate } from './copy-template';
 
+const pageTitle = 'Claude Code Website Templates & UI Starters (2026)';
+const pageDescription = 'Choose Claude Code website templates for landing pages, SaaS dashboards and React UI, with source comparisons, build recipes and a starter CLAUDE.md.';
+const articleUrl = 'https://rendyn.dev/blog/best-claude-code-templates';
+
 export const metadata: Metadata = {
-  title: 'Best Claude Code Templates: 6 Practical Picks (2026)',
-  description: 'Compare the best Claude Code templates for project instructions, skills, agents, plugins and website UI—plus a safe starter CLAUDE.md.',
+  title: pageTitle,
+  description: pageDescription,
+  keywords: ['Claude Code website templates', 'Claude Code landing page templates', 'Claude Code dashboard starter', 'Claude Code React UI', 'CLAUDE.md template'],
   alternates: { canonical: '/blog/best-claude-code-templates' },
   robots: {
     follow: true,
@@ -15,22 +26,74 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: 'Rendyn',
     locale: 'en_GB',
-    title: 'Best Claude Code Templates: 6 Practical Picks (2026)',
-    description: 'A practical comparison of Claude Code templates, from CLAUDE.md foundations to reusable skills and website UI resources.',
+    title: pageTitle,
+    description: pageDescription,
     authors: ['Rendyn editorial'],
     images: ['/og.png'],
-    modifiedTime: '2026-08-29',
+    modifiedTime: '2026-09-29',
     publishedTime: '2026-08-29',
     type: 'article',
     url: '/blog/best-claude-code-templates',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Claude Code Templates: 6 Practical Picks (2026)',
-    description: 'A practical comparison of Claude Code templates, skills, agents, plugins and website UI resources.',
+    title: pageTitle,
+    description: pageDescription,
     images: ['/og.png'],
   },
 };
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  '@id': `${articleUrl}#article`,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
+  headline: pageTitle,
+  description: pageDescription,
+  datePublished: '2026-08-29',
+  dateModified: '2026-09-29',
+  inLanguage: 'en',
+  author: { '@type': 'Organization', name: 'Rendyn editorial' },
+  publisher: { '@type': 'Organization', name: 'Rendyn', url: 'https://rendyn.dev' },
+};
+
+const websiteStarters = [
+  {
+    name: 'Vercel Templates',
+    href: 'https://vercel.com/templates',
+    fit: 'Landing pages, portfolios and framework examples',
+    format: 'Starter repositories; inspect the chosen stack',
+    limitation: 'Individual publishers set the licence and service requirements.',
+  },
+  {
+    name: 'Next.js SaaS Starter',
+    href: 'https://vercel.com/templates/next.js/next-js-saas-starter',
+    fit: 'An account-based product with a dashboard',
+    format: 'Next.js, Postgres, Drizzle, Stripe and shadcn/ui',
+    limitation: 'A learning foundation with demo assumptions to review, not a finished production app.',
+  },
+  {
+    name: 'Tailwind Plus Radiant',
+    href: 'https://tailwindcss.com/plus/templates/radiant/preview',
+    fit: 'A cohesive SaaS marketing website',
+    format: 'Paid Tailwind CSS and React website template',
+    limitation: 'Check the current licence and source requirements before purchasing.',
+  },
+  {
+    name: 'Astro Themes',
+    href: 'https://astro.build/themes/',
+    fit: 'Content-led websites, blogs and documentation',
+    format: 'Free and paid Astro themes',
+    limitation: 'Review each theme; React components require the appropriate integration.',
+  },
+  {
+    name: 'shadcn/ui Blocks',
+    href: 'https://ui.shadcn.com/blocks',
+    fit: 'A dashboard or account flow inside an existing React app',
+    format: 'Open-source page blocks with editable source',
+    limitation: 'A block supplies a UI pattern; your app supplies data and authorization.',
+  },
+];
 
 const picks = [
   {
@@ -103,7 +166,7 @@ const picks = [
     fit: 'Creating or translating visual direction',
     format: 'Claude Code skill',
     strength: 'Separates design intent from implementation',
-    limitation: 'It is a young community project with crawler and image-fetching scripts that deserve inspection.',
+    limitation: 'Its crawler and image-fetching scripts need review; a design workflow does not supply your application backend.',
   },
 ];
 
@@ -139,13 +202,33 @@ const starter = `# Project guide
 - Relevant tests and the production build pass.
 - Accessibility and responsive states are checked for UI work.`;
 
+const websiteBrief = `Adapt this existing starter into a website for [product] used by [audience].
+Primary action: [real destination or user flow].
+Pages in scope: [landing page, pricing, dashboard, or named routes].
+Use only the supplied product facts and assets; ask when content is missing.
+Preserve routing, existing design tokens, account boundaries and validation.
+
+First inspect the project and propose the smallest page composition.
+For a marketing page, evaluate Bento Grid and Hero Video Dialog from Rendyn.
+For a dashboard, evaluate its Table, Command Palette and Kanban components.
+Read the selected component's source, dependencies and attribution before adapting it.
+Use only components needed for this flow; do not install every candidate.
+Keep placeholders and simulated interactions clearly labelled.
+
+Build loading, empty and error states where relevant.
+Check 390px and desktop layouts, keyboard access, focus and reduced motion.
+Report the exact routes and interactions verified, plus what still needs backend work.
+Do not publish or deploy without approval.`;
+
 const toc = [
-  ['comparison', 'Quick picks'],
+  ['website-templates', 'Website starter comparison'],
+  ['website-builds', 'Landing page and dashboard'],
+  ['website-brief', 'Copy a website brief'],
+  ['comparison', 'Skills and instruction picks'],
   ['meaning', 'What “template” means'],
   ['criteria', 'How we chose'],
   ['reviews', 'Detailed reviews'],
   ['starter', 'Starter CLAUDE.md'],
-  ['website-templates', 'Website templates'],
   ['safety', 'Safe adoption'],
   ['faq', 'Questions answered'],
 ];
@@ -153,6 +236,7 @@ const toc = [
 export default function BestClaudeCodeTemplatesPage() {
   return (
     <div className="editorial-page" id="top">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema).replace(/</g, '\\u003c') }} />
       <main>
         <article>
         <GuideHeading slug="best-claude-code-templates" id="guide-title" />
@@ -161,16 +245,16 @@ export default function BestClaudeCodeTemplatesPage() {
           <div className="editorial-summary-art grid-field" aria-hidden="true">
             <div className="template-orbit template-orbit--one" />
             <div className="template-orbit template-orbit--two" />
-            <span>CLAUDE.md</span>
-            <span>SKILL.md</span>
-            <span>agents/</span>
-            <small>Choose by job, not by size</small>
+            <span>Landing page</span>
+            <span>Dashboard</span>
+            <span>React UI</span>
+            <small>Source + project context + browser checks</small>
           </div>
           <div className="editorial-summary-copy">
             <p className="editorial-label">The short answer</p>
-            <h2 id="short-answer-heading">Start with the smallest template that fixes a repeated problem.</h2>
-            <p>Use <code>CLAUDE.md</code> for always-on project context, a skill for a repeatable workflow, a subagent for isolated specialist work, and a plugin only when the bundle needs to travel between projects or teams.</p>
-            <a href="#comparison">See the six picks <span aria-hidden="true">↓</span></a>
+            <h2 id="short-answer-heading">Choose a website starter for the page you need to build.</h2>
+            <p>Use a marketing template for a landing page, a SaaS starter for an account-based dashboard, or individual components inside an existing React app. Add a concise <code>CLAUDE.md</code> so Claude understands that codebase.</p>
+            <a href="#website-templates">Compare website starting points <span aria-hidden="true">↓</span></a>
           </div>
         </section>
 
@@ -190,19 +274,109 @@ export default function BestClaudeCodeTemplatesPage() {
               <small>Give your coding agent polished components, visual previews and complete source.</small>
               <a className="button" href="/components">Browse Rendyn <span aria-hidden="true">↗</span></a>
             </div>
-            <div className="sidebar-research"><i aria-hidden="true" /> <time dateTime="2026-08-29">Current as of August 2026</time></div>
+            <div className="sidebar-research"><i aria-hidden="true" /> <time dateTime="2026-09-29">Updated 29 September 2026</time></div>
           </aside>
 
           <div className="editorial-body guide-reading-body">
             <section className="article-section article-intro" aria-labelledby="overview-heading">
               <p className="article-overline">The practical view</p>
-              <h2 id="overview-heading">The best Claude Code templates are systems, not magic prompts.</h2>
-              <p className="article-lede">The phrase can mean a project instruction file, a reusable workflow, a specialist agent, an automation hook, an integration bundle or an entire starter repository. That ambiguity is why giant “ultimate” setups often disappoint: they solve a different layer than the one slowing your project down.</p>
-              <p>Our default recommendation is deliberately unglamorous. Begin with a short, repository-specific <code>CLAUDE.md</code>. Add a skill after a workflow repeats. Add a hook when a deterministic action must fire every time. Reach for a plugin only when the tested bundle is worth distributing. This matches <a href="https://code.claude.com/docs/en/features-overview">Anthropic’s current extension guidance</a>.</p>
+              <h2 id="overview-heading">What should a Claude Code website template actually give you?</h2>
+              <p className="article-lede">Working routes, a visible design direction and source you can inspect. Claude Code can work with a normal website repository; it does not require a special Claude-branded theme. A landing-page starter and an application dashboard have different requirements, so choose by product scope and stack before adding agent configuration.</p>
+              <p>If you searched for a <code>CLAUDE.md</code> template, reusable skills or the Claude Code Templates CLI, go to the <a href="#comparison">six configuration resources</a> below. Those tools guide Claude&apos;s work; a source-code starter supplies the website. <a href="https://code.claude.com/docs/en/features-overview">Anthropic&apos;s feature overview</a> explains how project context, skills and plugins fit together.</p>
               <div className="editorial-callout">
                 <span aria-hidden="true">✦</span>
                 <p><strong>One important update:</strong> custom commands now live under the skills model. Existing <code>.claude/commands/</code> files still work, but Anthropic recommends skills for new workflows because they can include supporting files and load when relevant.</p>
               </div>
+            </section>
+
+            <section className="article-section" id="website-templates" aria-labelledby="website-heading">
+              <p className="article-overline">Source-code starting points</p>
+              <h2 id="website-heading">Compare Claude Code website templates by use case</h2>
+              <p className="article-lede">For a new website, shortlist a source repository that fits your framework, pages and data requirements. None of these needs a Claude-specific installer. Open the chosen project in Claude Code, run its documented development command, and map the architecture before adapting the UI.</p>
+              <div aria-label="Website starter comparison" className="comparison-table-wrap" role="region" tabIndex={0}>
+                <table className="template-table">
+                  <caption>Website source and page-block options for Claude Code</caption>
+                  <thead><tr><th scope="col">Starting point</th><th scope="col">Website job</th><th scope="col">Stack and access</th><th scope="col">What remains</th></tr></thead>
+                  <tbody>
+                    {websiteStarters.map((entry) => (
+                      <tr key={entry.name}>
+                        <th scope="row"><a href={entry.href}>{entry.name}</a></th>
+                        <td>{entry.fit}</td><td>{entry.format}</td><td>{entry.limitation}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="table-note">Public documentation and demos checked on 29 September 2026. These are source and scope comparisons; paid template source was not tested.</p>
+              <div className="website-choice-grid">
+                <article className="website-choice website-choice--purple">
+                  <span>Landing page</span><h3>Start with the story</h3>
+                  <p>Choose a marketing starter with the right visual rhythm. Verify the headline, real product demonstration and primary action before adding effects. A brochure site may not need database or billing setup.</p>
+                  <small>Preview: <a href="https://tailwindcss.com/plus/templates/radiant/preview">Tailwind Plus Radiant ↗</a></small>
+                </article>
+                <article className="website-choice website-choice--mint">
+                  <span>Dashboard</span><h3>Start with the flow</h3>
+                  <p>Choose a starter with the account and data model you need. Inspect roles, record actions and failure states. If you need Supabase accounts, its official Next.js quickstart is another foundation to review.</p>
+                  <small>Inspect: <a href="https://supabase.com/docs/guides/getting-started/quickstarts/nextjs">Supabase Next.js quickstart ↗</a></small>
+                </article>
+                <article className="website-choice website-choice--peach">
+                  <span>Existing React app</span><h3>Extend its UI system</h3>
+                  <p>Preserve routing and shared tokens. Give Claude a small selection of components and examples from the app. A design skill can guide the procedure without introducing another application scaffold.</p>
+                  <small>Explore: <a href="/components">Rendyn React components ↗</a></small>
+                </article>
+              </div>
+              <p>A free Claude Code website template may still depend on paid services. Inspect the repository licence, dependency versions and content rights separately. If no visual template fits, begin with a framework scaffold and choose components deliberately rather than adapting a large starter around one attractive screenshot.</p>
+            </section>
+
+            <section className="article-section" id="website-builds" aria-labelledby="website-builds-heading">
+              <p className="article-overline">Compose the interface</p>
+              <h2 id="website-builds-heading">Build a landing page or dashboard from real components</h2>
+              <p>Rendyn supplies React component previews and source access, rather than a complete Claude Code website template. These are suggested compositions inside your chosen starter. Inspect the source, dependencies, attribution and current access terms for each component before bringing it into the project.</p>
+              <div className="pick-list">
+                <article className="pick-card">
+                  <div aria-hidden="true" className="pick-card-number">01</div>
+                  <div className="pick-card-content">
+                    <div className="pick-card-topline"><span>SaaS marketing website</span><span>Explain the product</span></div>
+                    <h3>A landing page with product evidence</h3>
+                    <p>Keep the starter&apos;s header, footer and responsive rhythm. Put the primary action beside a clear promise, then use a <a href="/components/bento-grid">Bento Grid</a> to explain three specific capabilities. A <a href="/components/hero-video-dialog">Hero Video Dialog</a> can open a real product walkthrough; use <a href="/components/marquee">Marquee</a> only for a justified logo or content strip.</p>
+                    <figure className={styles.preview}>
+                      <Image src={bentoGridPreview} alt="Bento Grid catalogue demo with file, notification, integration and calendar feature cards" width={640} height={400} unoptimized />
+                      <figcaption>Existing <a href="/components/bento-grid">Bento Grid</a> component from Magic UI. This is catalogue demo content, not a complete website; replace sample claims and logos before publishing.</figcaption>
+                    </figure>
+                    <dl>
+                      <div><dt>Give Claude</dt><dd>Approved product facts, real assets, the CTA destination and a visual reference you have permission to use.</dd></div>
+                      <div><dt>Verify</dt><dd>Readable mobile ordering, visible feature links, keyboard focus and reduced-motion behavior. Remove any fabricated testimonials or conversion claims.</dd></div>
+                    </dl>
+                    <a className="source-link" href="/components/bento-grid">Preview the feature-grid component <span aria-hidden="true">↗</span></a>
+                  </div>
+                </article>
+                <article className="pick-card">
+                  <div aria-hidden="true" className="pick-card-number">02</div>
+                  <div className="pick-card-content">
+                    <div className="pick-card-topline"><span>Product dashboard</span><span>Finish one user flow</span></div>
+                    <h3>A dashboard for tracking and acting on work</h3>
+                    <p>Keep the starter&apos;s navigation and account boundary. Use the <a href="/components/table">Virtualized Data Table</a> for records and a <a href="/components/command-palette">Command Palette</a> for navigation or actions. Pick <a href="/components/kanban">Kanban</a> when statuses are central, or <a href="/components/dropzone">Dropzone</a> when users must select files.</p>
+                    <dl>
+                      <div><dt>Give Claude</dt><dd>Your record schema, allowed actions and examples of loading, empty and failed-save states.</dd></div>
+                      <div><dt>Implement</dt><dd>Server authorization, persistence and file validation. The components supply interface behavior; your backend remains responsible for the actions.</dd></div>
+                    </dl>
+                    <a className="source-link" href="/components/command-palette">Preview keyboard navigation <span aria-hidden="true">↗</span></a>
+                  </div>
+                </article>
+              </div>
+              <p><a href="https://code.claude.com/docs/en/best-practices">Anthropic&apos;s best-practice guidance</a> recommends giving Claude screenshots or mockups and a way to verify the result. Attach a reference with the product constraints, build one complete flow, then inspect the actual browser result before repeating the pattern across more pages.</p>
+              <p>For an AI product interface, <a href="/components/prompt-input">Prompt Input</a> and <a href="/components/streaming-response">Streaming Response</a> are useful adjacent components. They do not provide a model API, streaming transport or an agent backend.</p>
+            </section>
+
+            <section className="article-section" id="website-brief" aria-labelledby="website-brief-heading">
+              <p className="article-overline">Make the starter specific</p>
+              <h2 id="website-brief-heading">A Claude Code website brief you can adapt</h2>
+              <p>Replace the bracketed fields and remove the recipe that does not fit your project. Provide component source through the access route available to you; naming a component in a prompt does not install it. Put durable repository facts in the <a href="#starter">CLAUDE.md starter</a> below.</p>
+              <div className="starter-card">
+                <div className="starter-toolbar"><span>Website adaptation brief</span><CopyTemplate value={websiteBrief} label="Copy website brief" /></div>
+                <pre><code>{websiteBrief}</code></pre>
+              </div>
+              <p>Continue with <a href="/guides/how-to-design-a-website-with-claude-code">designing a website with Claude Code</a> for the full build workflow, or <a href="/guides/how-to-make-claude-code-better-at-design">improving Claude&apos;s design output</a> when your existing UI needs refinement.</p>
             </section>
 
             <section className="article-section" id="comparison" aria-labelledby="comparison-heading">
@@ -211,7 +385,7 @@ export default function BestClaudeCodeTemplatesPage() {
                   <p className="article-overline">At a glance</p>
                   <h2 id="comparison-heading">Six useful picks, each for a different job</h2>
                 </div>
-                <time className="research-stamp" dateTime="2026-08-29">Reviewed 29.08.26</time>
+                <time className="research-stamp" dateTime="2026-09-29">Reviewed 29.09.26</time>
               </div>
               <div aria-label="Template comparison" className="comparison-table-wrap" role="region" tabIndex={0}>
                 <table className="template-table">
@@ -302,30 +476,6 @@ export default function BestClaudeCodeTemplatesPage() {
               </div>
             </section>
 
-            <section className="article-section" id="website-templates" aria-labelledby="website-heading">
-              <p className="article-overline">For visual projects</p>
-              <h2 id="website-heading">Claude website templates: skill, starter or design system?</h2>
-              <p className="article-lede">“Claude website templates” usually hides three different needs: a fresh codebase, a reusable design process, or good components inside an existing product. Choosing the wrong one creates more cleanup than momentum.</p>
-              <div className="website-choice-grid">
-                <article className="website-choice website-choice--purple">
-                  <span>New project</span><h3>Use a code starter</h3>
-                  <p>Choose this when you genuinely need framework, routing, dependencies and deployment conventions. Inspect the full stack before inheriting it.</p>
-                  <small>Example to inspect: <a href="https://github.com/textura-agency/next16-claude-starter">next16-claude-starter ↗</a></small>
-                </article>
-                <article className="website-choice website-choice--mint">
-                  <span>Visual brief</span><h3>Use a design skill</h3>
-                  <p>Best when you have a screenshot, URL or product brief and need a repeatable specification-to-code workflow without replacing the repo.</p>
-                  <small>Our pick: <a href="#pick-06">Web Design skill ↓</a></small>
-                </article>
-                <article className="website-choice website-choice--peach">
-                  <span>Existing product</span><h3>Use the design system</h3>
-                  <p>Preserve the architecture. Give Claude proven components, visual previews and implementation context rather than a second competing scaffold.</p>
-                  <small>Explore: <a href="/components">Rendyn components ↗</a></small>
-                </article>
-              </div>
-              <p><a href="https://code.claude.com/docs/en/best-practices">Anthropic’s workflow guidance</a> supports screenshots and mockups as visual context, while <a href="https://code.claude.com/docs/en/desktop">Claude Code Desktop previews</a> can run an app, inspect its DOM and iterate in an embedded browser. The durable advantage is not the screenshot itself; it is pairing visual intent with the existing product’s constraints and verifying the result in a real browser.</p>
-            </section>
-
             <section className="article-section" id="safety" aria-labelledby="safety-heading">
               <div className="safety-panel">
                 <p className="article-overline">Before you install</p>
@@ -347,6 +497,14 @@ export default function BestClaudeCodeTemplatesPage() {
               <p className="article-overline">Questions answered</p>
               <h2 id="faq-heading">Claude template FAQ</h2>
               <div className="faq-list">
+                <details>
+                  <summary>What is a good Claude Code landing page template?<span aria-hidden="true">+</span></summary>
+                  <p>Choose a small marketing repository with source you can inspect and a visual system that fits your product. Vercel Templates, Tailwind Plus Radiant and Astro Themes are starting points to compare. Real copy, assets, CTA destinations and browser checks matter more than whether the template includes Claude branding.</p>
+                </details>
+                <details>
+                  <summary>Which Claude Code template should I use for a dashboard?<span aria-hidden="true">+</span></summary>
+                  <p>Inspect the Next.js SaaS Starter if you need a new account-based application. In an existing React product, use a sidebar or page block and selected data components while preserving your backend. Confirm loading, empty, failed-save and permission states before calling the flow complete.</p>
+                </details>
                 <details>
                   <summary>Does Claude Code have an official templates folder?<span aria-hidden="true">+</span></summary>
                   <p>No. Current project customisation uses specific locations such as <code>CLAUDE.md</code>, <code>.claude/rules/</code>, <code>.claude/skills/</code>, <code>.claude/agents/</code>, settings and <code>.mcp.json</code>. “Template” is a useful ecosystem label, not a native folder name.</p>
@@ -399,10 +557,10 @@ export default function BestClaudeCodeTemplatesPage() {
             <footer className="article-sources">
               <p className="article-overline">Research note</p>
               <h2>Primary sources first</h2>
-              <p>This guide was checked against current Anthropic documentation and the linked project repositories on August 29, 2026. Community catalogues change quickly; inspect their current source before installing.</p>
+              <p>Public Anthropic documentation, the linked resource pages and starter descriptions were reviewed on September 29, 2026. The component recipes are editorial suggestions, not performance benchmarks or completed customer builds. Paid template source was not tested. Community catalogues change quickly; inspect their current source before installing.</p>
               <div>
                 <a href="https://code.claude.com/docs/en/claude-directory">Claude directory reference ↗</a>
-                <a href="https://code.claude.com/docs/en/slash-commands">Skills documentation ↗</a>
+                <a href="https://code.claude.com/docs/en/skills">Skills documentation ↗</a>
                 <a href="https://code.claude.com/docs/en/subagents">Subagents documentation ↗</a>
                 <a href="https://code.claude.com/docs/en/hooks-guide">Hooks guide ↗</a>
                 <a href="https://code.claude.com/docs/en/discover-plugins">Plugin marketplace guidance ↗</a>

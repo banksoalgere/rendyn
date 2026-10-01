@@ -1,3 +1,6 @@
+import '../../globals.css';
+import '../../styles/editorial-guides.css';
+import '../../styles/editorial.css';
 import { GuideHeading } from '../../components/guide-heading';
 import type { Metadata } from 'next';
 import Link from 'next/link';

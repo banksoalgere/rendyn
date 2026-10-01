@@ -1,3 +1,4 @@
+import '../../globals.css';
 import { permanentRedirect } from 'next/navigation';
 
 export default function LegacyChatGPTWebsiteDesignGuide() {
