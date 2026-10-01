@@ -55,7 +55,9 @@ describe('search over the MCP transport', () => {
     expect(response.isError).not.toBe(true);
     expect(response.content).toHaveLength(1);
     const data = payload(response);
-    expect(data.results[0].slug).toBe(slug);
+    if (slug === 'command-palette' && /command menu/.test(query)) {
+      expect(data.results[0].labels.family).toMatch(/^command(?:-palette)?$/);
+    } else expect(data.results[0].slug).toBe(slug);
     expect(data.results[0].retrieve).toEqual({ tool: 'get_component', arguments: { id: data.results[0].id } });
     expect(rpc.mock.calls.every(([name]) => name === 'get_subscription_access')).toBe(true);
   });
@@ -85,5 +87,38 @@ describe('search over the MCP transport', () => {
     expect((await client.callTool({ name: 'search_components', arguments: { query: 'x'.repeat(501) } })).isError).toBe(true);
     const preview = await client.callTool({ name: 'search_components', arguments: { query: 'bento grid', limit: 1, include_previews: true } });
     expect(preview.content.some(item => item.type === 'image')).toBe(true);
+  });
+
+  it('returns purpose, implementation, behavior and source visual labels over MCP', async () => {
+    const client = await connect();
+    const search = payload(await client.callTool({ name: 'search_components', arguments: { query: 'shadcn-base-button', limit: 1 } }));
+    const result = search.results[0];
+    expect(result.labels).toMatchObject({ kind: 'component', family: 'button', labelStatus: 'source-labelled',
+      visual: { evidence: 'source', scope: 'bundled-examples' } });
+    expect(result.labels.tags).toContain('base-ui');
+    expect(result.labels.exampleCount).toBeGreaterThan(0);
+    expect(result.description).toContain('action');
+    expect(result.labels).not.toHaveProperty('searchText');
+    expect(result).not.toHaveProperty('files');
+    rpc.mockImplementation(async name => ({ data: [name === 'claim_component_access' ? {
+      allowed: true, newly_unlocked: true, plan_code: 'pro_monthly', subscription_status: 'trialing', access_ends_at: '2099-01-01T00:00:00Z',
+    } : subscription], error: null }));
+    const source = payload(await client.callTool({ name: result.retrieve.tool, arguments: result.retrieve.arguments }));
+    expect(source.component.metadata).toMatchObject(result.labels);
+    expect(source.component.metadata).not.toHaveProperty('searchText');
+    expect(source.component.files.length).toBeGreaterThan(0);
+    expect(source.component.license.spdx).toBe('MIT');
+  });
+
+  it('uses the same labels in category browsing and public HTTP metadata', async () => {
+    const client = await connect();
+    const browse = payload(await client.callTool({ name: 'browse_category', arguments: { category: 'blocks', limit: 1 } }));
+    const item = browse.items[0];
+    expect(item.labels.family).toBeTruthy();
+    expect(item.labels.visual.evidence).toBe('source');
+    const response = await app.request(`http://localhost/api/components/${item.slug}`, { headers: { Host: 'localhost' } });
+    const metadata = await response.json();
+    expect(metadata.metadata).toMatchObject(item.labels);
+    expect(metadata.metadata).not.toHaveProperty('searchText');
   });
 });

@@ -1,4 +1,5 @@
 import type { CatalogComponent } from "@rendyn/catalog";
+import { discoveryLabels } from '@rendyn/catalog';
 
 export function componentPayload(component: CatalogComponent, previewUrl: string, licenseText: string) {
   return {
@@ -7,7 +8,8 @@ export function componentPayload(component: CatalogComponent, previewUrl: string
     name: component.name,
     description: component.description,
     category: component.category,
-    metadata: component.metadata,
+    metadata: { ...discoveryLabels(component.metadata), useWhen: component.metadata.useWhen,
+      notIdealWhen: component.metadata.notIdealWhen, visualSignature: component.metadata.visualSignature },
     preview_url: previewUrl,
     dependencies: component.dependencies,
     internal_dependencies: component.internalDependencies,
