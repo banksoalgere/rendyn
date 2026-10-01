@@ -1,0 +1,439 @@
+{
+  "id": "chakra:table",
+  "sourceId": "chakra",
+  "slug": "chakra-table",
+  "name": "Chakra UI table",
+  "description": "21 published Chakra UI table examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "@tanstack/react-table@8.21.3",
+    "react-icons@5.5.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "table",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input",
+      "table"
+    ],
+    "aliases": [
+      "table",
+      "chakra ui table"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "21 published Chakra UI table examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "table:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI table\ntable\n21 published Chakra UI table examples with complete pinned source and MIT attribution.\nchakra ui table\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI table 21 published Chakra UI table examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/table basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-table",
+  "manifestPath": "components/chakra-table/component.json",
+  "integrity": "sha256:fae250a4e3c17e446628c30eed01cb1581f20e291adca00888d37668339ef413",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Table } from \"@chakra-ui/react\"\n\nexport const TableBasic = () => {\n  return (\n    <Table.Root size=\"sm\">\n      <Table.Header>\n        <Table.Row>\n          <Table.ColumnHeader>Product</Table.ColumnHeader>\n          <Table.ColumnHeader>Category</Table.ColumnHeader>\n          <Table.ColumnHeader textAlign=\"end\">Price</Table.ColumnHeader>\n        </Table.Row>\n      </Table.Header>\n      <Table.Body>\n        {items.map((item) => (\n          <Table.Row key={item.id}>\n            <Table.Cell>{item.name}</Table.Cell>\n            <Table.Cell>{item.category}</Table.Cell>\n            <Table.Cell textAlign=\"end\">{item.price}</Table.Cell>\n          </Table.Row>\n        ))}\n      </Table.Body>\n    </Table.Root>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "fec07e0a0dc527819df4af0e3b60ec37f07213570d5f839d847c940e962fa411",
+      "upstreamPath": "apps/compositions/src/examples/table-basic.tsx",
+      "upstreamSha256": "e83c2b5c3203b47a7caf8bfb41b2e7326499daa06b0569195af01d214111af71",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-explorer-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Table } from \"@chakra-ui/react\"\n\nexport const TableExplorerDemo = () => {\n  const total = items.reduce((sum, item) => sum + item.price, 0)\n\n  return (\n    <Table.Root size=\"sm\">\n      <Table.Caption>Product inventory and pricing information</Table.Caption>\n\n      <Table.Header>\n        <Table.Row>\n          <Table.ColumnHeader>Product</Table.ColumnHeader>\n          <Table.ColumnHeader>Category</Table.ColumnHeader>\n          <Table.ColumnHeader textAlign=\"end\">Price</Table.ColumnHeader>\n          <Table.ColumnHeader textAlign=\"end\">Stock</Table.ColumnHeader>\n        </Table.Row>\n      </Table.Header>\n\n      <Table.Body>\n        {items.map((item) => (\n          <Table.Row key={item.id}>\n            <Table.Cell>{item.name}</Table.Cell>\n            <Table.Cell>{item.category}</Table.Cell>\n            <Table.Cell textAlign=\"end\">${item.price.toFixed(2)}</Table.Cell>\n            <Table.Cell textAlign=\"end\">{item.stock}</Table.Cell>\n          </Table.Row>\n        ))}\n      </Table.Body>\n\n      <Table.Footer>\n        <Table.Row>\n          <Table.Cell colSpan={2} textAlign=\"end\" fontWeight=\"bold\">\n            Total\n          </Table.Cell>\n          <Table.Cell textAlign=\"end\" fontWeight=\"bold\">\n            ${total.toFixed(2)}\n          </Table.Cell>\n          <Table.Cell textAlign=\"end\" fontWeight=\"bold\">\n            {items.reduce((sum, item) => sum + item.stock, 0)}\n          </Table.Cell>\n        </Table.Row>\n      </Table.Footer>\n    </Table.Root>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99, stock: 12 },\n  {\n    id: 2,\n    name: \"Coffee Maker\",\n    category: \"Home Appliances\",\n    price: 49.99,\n    stock: 35,\n  },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0, stock: 8 },\n  {\n    id: 4,\n    name: \"Smartphone\",\n    category: \"Electronics\",\n    price: 799.99,\n    stock: 20,\n  },\n  {\n    id: 5,\n    name: \"Headphones\",\n    category: \"Accessories\",\n    price: 199.99,\n    stock: 50,\n  },\n]\n",
+      "sha256": "eae99c31711ee838ea99a12f5326f57a55e427f1bea8290fb706e54a524bdea6",
+      "upstreamPath": "apps/compositions/src/examples/table-explorer-demo.tsx",
+      "upstreamSha256": "9721094f75a6800ba2d395edcae35de4338630ddce1a0cad0c4bd05c23cbb725",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-size-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  For,\n  Span,\n  Table,\n  type TableRootProps,\n  useSlotRecipe,\n} from \"@chakra-ui/react\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const TableSizeTable = () => {\n  const recipe = useSlotRecipe({ key: \"table\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.size}>{(v) => <td key={v}>{v}</td>}</For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={recipe.variantMap.variant}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.size}>\n                {(v) => (\n                  <td key={v}>\n                    <DemoTable size={v} variant={c} striped />\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n\nconst DemoTable = (props: TableRootProps) => {\n  return (\n    <Table.Root size=\"sm\" {...props}>\n      <Table.Header>\n        <Table.Row>\n          <Table.ColumnHeader>Product</Table.ColumnHeader>\n          <Table.ColumnHeader>Category</Table.ColumnHeader>\n          <Table.ColumnHeader textAlign=\"end\">Price</Table.ColumnHeader>\n        </Table.Row>\n      </Table.Header>\n      <Table.Body>\n        {items.map((item) => (\n          <Table.Row key={item.id}>\n            <Table.Cell>{item.name}</Table.Cell>\n            <Table.Cell>{item.category}</Table.Cell>\n            <Table.Cell textAlign=\"end\">{item.price}</Table.Cell>\n          </Table.Row>\n        ))}\n      </Table.Body>\n    </Table.Root>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "95c56c07729e613cd61618a4817a0fcfec98ee0b32e6259d520981469bba6ca5",
+      "upstreamPath": "apps/compositions/src/examples/table-size-table.tsx",
+      "upstreamSha256": "ef330c25a4d2e76ba726b2aab717fb8076cad96e5780105374e3d7957553a1b7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/playground-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { chakra } from \"@chakra-ui/react\"\n\nexport const PlaygroundTable = chakra(\"table\", {\n  base: {\n    width: \"full\",\n    marginBottom: \"32px\",\n    borderCollapse: \"collapse\",\n    \"& td:not(.chakra-table__cell)\": {\n      paddingRight: \"8\",\n      paddingBottom: \"8\",\n    },\n    \"& th:not(.chakra-table__column-header)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n    \"& thead td:not(.chakra-table__cell)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n  },\n})\n",
+      "sha256": "0c8b12b7fc74b6aec643559359ca4d43afbca488faeb90424ba3f98e71e3d7e7",
+      "upstreamPath": "apps/compositions/src/lib/playground-table.tsx",
+      "upstreamSha256": "d42456810c8b507d7171df7dca2fc955f2c04f4e8e711a74de35507acf64416c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-variant-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  For,\n  Span,\n  Table,\n  type TableRootProps,\n  useSlotRecipe,\n} from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const TableVariantTable = () => {\n  const recipe = useSlotRecipe({ key: \"table\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.variant}>\n            {(v) => <td key={v}>{v}</td>}\n          </For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.variant}>\n                {(v) => (\n                  <td key={v}>\n                    <DemoTable showColumnBorder variant={v} colorPalette={c} />\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n\nconst DemoTable = (props: TableRootProps) => {\n  return (\n    <Table.Root size=\"sm\" {...props}>\n      <Table.Header>\n        <Table.Row>\n          <Table.ColumnHeader>Product</Table.ColumnHeader>\n          <Table.ColumnHeader>Category</Table.ColumnHeader>\n          <Table.ColumnHeader textAlign=\"end\">Price</Table.ColumnHeader>\n        </Table.Row>\n      </Table.Header>\n      <Table.Body>\n        {items.map((item) => (\n          <Table.Row key={item.id}>\n            <Table.Cell>{item.name}</Table.Cell>\n            <Table.Cell>{item.category}</Table.Cell>\n            <Table.Cell textAlign=\"end\">{item.price}</Table.Cell>\n          </Table.Row>\n        ))}\n      </Table.Body>\n    </Table.Root>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "937c25dce18e25d4df109d61b6c39c83943f7cd7ba946e0bc4b5f35ccd8722f5",
+      "upstreamPath": "apps/compositions/src/examples/table-variant-table.tsx",
+      "upstreamSha256": "9706667e9e6bb4fc6c88755ae593b6d2c3a214358b61b1fb314ac24fcc2cf932",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/color-palettes.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { ColorPalette } from \"@chakra-ui/react\"\n\nexport const colorPalettes: ColorPalette[] = [\n  \"gray\",\n  \"red\",\n  \"green\",\n  \"blue\",\n  \"teal\",\n  \"pink\",\n  \"purple\",\n  \"cyan\",\n  \"orange\",\n  \"yellow\",\n]\n",
+      "sha256": "90c5e84e17059e5935c80798a833fb5ac46ea296bb8d1ee978fd7a6e8cdb15e7",
+      "upstreamPath": "apps/compositions/src/lib/color-palettes.ts",
+      "upstreamSha256": "bc209453f7e4dbfc131d92ed9c81f00e20ad5da6cab70624417dcd591e62eac1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-caption.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Table } from \"@chakra-ui/react\"\n\nexport const TableWithCaption = () => {\n  return (\n    <Table.Root size=\"sm\">\n      <Table.Caption>Product inventory and pricing information</Table.Caption>\n      <Table.Header>\n        <Table.Row>\n          <Table.ColumnHeader>Product</Table.ColumnHeader>\n          <Table.ColumnHeader>Category</Table.ColumnHeader>\n          <Table.ColumnHeader textAlign=\"end\">Price</Table.ColumnHeader>\n        </Table.Row>\n      </Table.Header>\n      <Table.Body>\n        {items.map((item) => (\n          <Table.Row key={item.id}>\n            <Table.Cell>{item.name}</Table.Cell>\n            <Table.Cell>{item.category}</Table.Cell>\n            <Table.Cell textAlign=\"end\">{item.price}</Table.Cell>\n          </Table.Row>\n        ))}\n      </Table.Body>\n    </Table.Root>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "174d283c2478c8f4697c0d068f6d99870d701b92b6f00682562890c2caa0ed92",
+      "upstreamPath": "apps/compositions/src/examples/table-with-caption.tsx",
+      "upstreamSha256": "bad0a0ae3814c17a81de780c946cf452a4f9ef211badcb044359e019f735fc5a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-caption-top.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Table } from \"@chakra-ui/react\"\n\nexport const TableWithCaptionTop = () => {\n  return (\n    <Table.Root size=\"sm\">\n      <Table.Caption captionSide=\"top\">\n        Product inventory and pricing information\n      </Table.Caption>\n      <Table.Header>\n        <Table.Row>\n          <Table.ColumnHeader>Product</Table.ColumnHeader>\n          <Table.ColumnHeader>Category</Table.ColumnHeader>\n          <Table.ColumnHeader textAlign=\"end\">Price</Table.ColumnHeader>\n        </Table.Row>\n      </Table.Header>\n      <Table.Body>\n        {items.map((item) => (\n          <Table.Row key={item.id}>\n            <Table.Cell>{item.name}</Table.Cell>\n            <Table.Cell>{item.category}</Table.Cell>\n            <Table.Cell textAlign=\"end\">{item.price}</Table.Cell>\n          </Table.Row>\n        ))}\n      </Table.Body>\n    </Table.Root>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "cc327ea894bfdab61592be675773d09fb2c2bc4be66402581399930b591aae70",
+      "upstreamPath": "apps/compositions/src/examples/table-with-caption-top.tsx",
+      "upstreamSha256": "2351693a5a868dece7b65735a2078a586109b8df7af1d4d2af76e885173a677b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-column-border.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Table } from \"@chakra-ui/react\"\n\nexport const TableWithColumnBorder = () => {\n  return (\n    <Table.Root size=\"sm\" showColumnBorder>\n      <Table.Header>\n        <Table.Row>\n          <Table.ColumnHeader>Product</Table.ColumnHeader>\n          <Table.ColumnHeader>Category</Table.ColumnHeader>\n          <Table.ColumnHeader textAlign=\"end\">Price</Table.ColumnHeader>\n        </Table.Row>\n      </Table.Header>\n      <Table.Body>\n        {items.map((item) => (\n          <Table.Row key={item.id}>\n            <Table.Cell>{item.name}</Table.Cell>\n            <Table.Cell>{item.category}</Table.Cell>\n            <Table.Cell textAlign=\"end\">{item.price}</Table.Cell>\n          </Table.Row>\n        ))}\n      </Table.Body>\n    </Table.Root>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "3bd81530e9f9d476587e80b6137ac4836fd625b768b061aa462d6b4269de1d0f",
+      "upstreamPath": "apps/compositions/src/examples/table-with-column-border.tsx",
+      "upstreamSha256": "2f12c5aca8499d3cfddaea9d4c4843ae5f6c8de4e77fe805001a1e537271bbf5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-column-group.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Table } from \"@chakra-ui/react\"\n\nexport const TableWithColumnGroup = () => {\n  return (\n    <Table.Root size=\"sm\" variant=\"outline\">\n      <Table.ColumnGroup>\n        <Table.Column htmlWidth=\"50%\" />\n        <Table.Column htmlWidth=\"40%\" />\n        <Table.Column />\n      </Table.ColumnGroup>\n      <Table.Header>\n        <Table.Row>\n          <Table.ColumnHeader>Product</Table.ColumnHeader>\n          <Table.ColumnHeader>Category</Table.ColumnHeader>\n          <Table.ColumnHeader textAlign=\"end\">Price</Table.ColumnHeader>\n        </Table.Row>\n      </Table.Header>\n      <Table.Body>\n        {items.map((item) => (\n          <Table.Row key={item.id}>\n            <Table.Cell>{item.name}</Table.Cell>\n            <Table.Cell>{item.category}</Table.Cell>\n            <Table.Cell textAlign=\"end\">{item.price}</Table.Cell>\n          </Table.Row>\n        ))}\n      </Table.Body>\n    </Table.Root>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "88771c338c1ea0e8df95da6fef8937b313bf18614b4bd6dae02b721dbe325eda",
+      "upstreamPath": "apps/compositions/src/examples/table-with-column-group.tsx",
+      "upstreamSha256": "12ee37b99962dd05cafe56590cb4c40363d998b58de5fdd18cdd839499249291",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-interactive.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Table } from \"@chakra-ui/react\"\n\nexport const TableWithInteractive = () => {\n  return (\n    <Table.Root size=\"sm\" interactive>\n      <Table.Header>\n        <Table.Row>\n          <Table.ColumnHeader>Product</Table.ColumnHeader>\n          <Table.ColumnHeader>Category</Table.ColumnHeader>\n          <Table.ColumnHeader textAlign=\"end\">Price</Table.ColumnHeader>\n        </Table.Row>\n      </Table.Header>\n      <Table.Body>\n        {items.map((item) => (\n          <Table.Row key={item.id}>\n            <Table.Cell>{item.name}</Table.Cell>\n            <Table.Cell>{item.category}</Table.Cell>\n            <Table.Cell textAlign=\"end\">{item.price}</Table.Cell>\n          </Table.Row>\n        ))}\n      </Table.Body>\n    </Table.Root>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "7b839cc3c77b05b949819285c693d3dd151ba564747444f277619bc8175b2407",
+      "upstreamPath": "apps/compositions/src/examples/table-with-interactive.tsx",
+      "upstreamSha256": "2f0570605bbe5dd6e244abc9224b86c1343f32e707d431430a1ea31227f04ad5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-native.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Table } from \"@chakra-ui/react\"\n\nexport const TableWithNative = () => {\n  return (\n    <Table.Root size=\"sm\" native>\n      <thead>\n        <tr>\n          <th>Product</th>\n          <th>Category</th>\n          <th>Price</th>\n        </tr>\n      </thead>\n      <tbody>\n        {items.map((item) => (\n          <tr key={item.id}>\n            <td>{item.name}</td>\n            <td>{item.category}</td>\n            <td>{item.price}</td>\n          </tr>\n        ))}\n      </tbody>\n    </Table.Root>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: \"$999.00\" },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: \"$49.99\" },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: \"$150.00\" },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: \"$799.99\" },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: \"$199.99\" },\n]\n",
+      "sha256": "49fb03667e8fb1d83017c64942167a018ad70df0cc0e3931b3d33d8c49808360",
+      "upstreamPath": "apps/compositions/src/examples/table-with-native.tsx",
+      "upstreamSha256": "bc1ea4d3da5bde4609296f263a664d17bef0f1d58fb21caf8785240ba2994ef4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-overflow.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Table } from \"@chakra-ui/react\"\n\nexport const TableWithOverflow = () => {\n  return (\n    <Table.ScrollArea borderWidth=\"1px\" maxW=\"xl\">\n      <Table.Root size=\"sm\" variant=\"outline\">\n        <Table.Header>\n          <Table.Row>\n            <Table.ColumnHeader minW=\"400px\">Product</Table.ColumnHeader>\n            <Table.ColumnHeader minW=\"400px\">Category</Table.ColumnHeader>\n            <Table.ColumnHeader minW=\"200px\" textAlign=\"end\">\n              Price\n            </Table.ColumnHeader>\n          </Table.Row>\n        </Table.Header>\n        <Table.Body>\n          {items.map((item) => (\n            <Table.Row key={item.id}>\n              <Table.Cell>{item.name}</Table.Cell>\n              <Table.Cell>{item.category}</Table.Cell>\n              <Table.Cell textAlign=\"end\">{item.price}</Table.Cell>\n            </Table.Row>\n          ))}\n        </Table.Body>\n      </Table.Root>\n    </Table.ScrollArea>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "6d169b0fdc9d9275417246de8da8ed3b9c6af564502ede61ca5f90f90878879d",
+      "upstreamPath": "apps/compositions/src/examples/table-with-overflow.tsx",
+      "upstreamSha256": "fe91c79c6a4e109ebcaaf54d1d69a37950dc0b4e925037519b754256c6253867",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-pagination.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  ButtonGroup,\n  Heading,\n  IconButton,\n  Pagination,\n  Stack,\n  Table,\n} from \"@chakra-ui/react\"\nimport { LuChevronLeft, LuChevronRight } from \"react-icons/lu\"\n\nexport const TableWithPagination = () => {\n  return (\n    <Stack width=\"full\" gap=\"5\">\n      <Heading size=\"xl\">Products</Heading>\n      <Table.Root size=\"sm\" variant=\"outline\" striped>\n        <Table.Header>\n          <Table.Row>\n            <Table.ColumnHeader>Product</Table.ColumnHeader>\n            <Table.ColumnHeader>Category</Table.ColumnHeader>\n            <Table.ColumnHeader textAlign=\"end\">Price</Table.ColumnHeader>\n          </Table.Row>\n        </Table.Header>\n        <Table.Body>\n          {items.map((item) => (\n            <Table.Row key={item.id}>\n              <Table.Cell>{item.name}</Table.Cell>\n              <Table.Cell>{item.category}</Table.Cell>\n              <Table.Cell textAlign=\"end\">{item.price}</Table.Cell>\n            </Table.Row>\n          ))}\n        </Table.Body>\n      </Table.Root>\n\n      <Pagination.Root count={items.length * 5} pageSize={5} page={1}>\n        <ButtonGroup variant=\"ghost\" size=\"sm\" wrap=\"wrap\">\n          <Pagination.PrevTrigger asChild>\n            <IconButton>\n              <LuChevronLeft />\n            </IconButton>\n          </Pagination.PrevTrigger>\n\n          <Pagination.Items\n            render={(page) => (\n              <IconButton variant={{ base: \"ghost\", _selected: \"outline\" }}>\n                {page.value}\n              </IconButton>\n            )}\n          />\n\n          <Pagination.NextTrigger asChild>\n            <IconButton>\n              <LuChevronRight />\n            </IconButton>\n          </Pagination.NextTrigger>\n        </ButtonGroup>\n      </Pagination.Root>\n    </Stack>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "d525dae8013037879aac429f95379cadbb7b96eacf00a73447d74902e256763a",
+      "upstreamPath": "apps/compositions/src/examples/table-with-pagination.tsx",
+      "upstreamSha256": "f5d15795986890f4b8ac57b8320ae2204703aed0835795fd653436c64b6fe2ba",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-selection.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, Table } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\nexport const TableWithSelection = () => {\n  const [selection, setSelection] = useState<string[]>([])\n\n  const indeterminate = selection.length > 0 && selection.length < items.length\n\n  const rows = items.map((item) => (\n    <Table.Row\n      key={item.name}\n      data-selected={selection.includes(item.name) ? \"\" : undefined}\n    >\n      <Table.Cell>\n        <Checkbox.Root\n          size=\"sm\"\n          mt=\"0.5\"\n          aria-label=\"Select row\"\n          checked={selection.includes(item.name)}\n          onCheckedChange={(changes) => {\n            setSelection((prev) =>\n              changes.checked\n                ? [...prev, item.name]\n                : selection.filter((name) => name !== item.name),\n            )\n          }}\n        >\n          <Checkbox.HiddenInput />\n          <Checkbox.Control />\n        </Checkbox.Root>\n      </Table.Cell>\n      <Table.Cell>{item.name}</Table.Cell>\n      <Table.Cell>{item.category}</Table.Cell>\n      <Table.Cell>${item.price}</Table.Cell>\n    </Table.Row>\n  ))\n\n  return (\n    <Table.Root>\n      <Table.Header>\n        <Table.Row>\n          <Table.ColumnHeader w=\"6\">\n            <Checkbox.Root\n              size=\"sm\"\n              mt=\"0.5\"\n              aria-label=\"Select all rows\"\n              checked={indeterminate ? \"indeterminate\" : selection.length > 0}\n              onCheckedChange={(changes) => {\n                setSelection(\n                  changes.checked ? items.map((item) => item.name) : [],\n                )\n              }}\n            >\n              <Checkbox.HiddenInput />\n              <Checkbox.Control />\n            </Checkbox.Root>\n          </Table.ColumnHeader>\n          <Table.ColumnHeader>Product</Table.ColumnHeader>\n          <Table.ColumnHeader>Category</Table.ColumnHeader>\n          <Table.ColumnHeader>Price</Table.ColumnHeader>\n        </Table.Row>\n      </Table.Header>\n      <Table.Body>{rows}</Table.Body>\n    </Table.Root>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "5d5f23fda0931eda78e6f2fef79d800d3e2405f13e807fb04a41cae38f8475bf",
+      "upstreamPath": "apps/compositions/src/examples/table-with-selection.tsx",
+      "upstreamSha256": "0292aa1d81b862a29e17f52c07ea1c520b06d68c79039471dc578bde97762e00",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-selection-action-bar.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  ActionBar,\n  Button,\n  Checkbox,\n  Kbd,\n  Portal,\n  Table,\n} from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\nexport const TableWithSelectionActionBar = () => {\n  const [selection, setSelection] = useState<string[]>([])\n\n  const hasSelection = selection.length > 0\n  const indeterminate = hasSelection && selection.length < items.length\n\n  const rows = items.map((item) => (\n    <Table.Row\n      key={item.name}\n      data-selected={selection.includes(item.name) ? \"\" : undefined}\n    >\n      <Table.Cell>\n        <Checkbox.Root\n          size=\"sm\"\n          top=\"0.5\"\n          aria-label=\"Select row\"\n          checked={selection.includes(item.name)}\n          onCheckedChange={(changes) => {\n            setSelection((prev) =>\n              changes.checked\n                ? [...prev, item.name]\n                : selection.filter((name) => name !== item.name),\n            )\n          }}\n        >\n          <Checkbox.HiddenInput />\n          <Checkbox.Control />\n        </Checkbox.Root>\n      </Table.Cell>\n      <Table.Cell>{item.name}</Table.Cell>\n      <Table.Cell>{item.category}</Table.Cell>\n      <Table.Cell>${item.price}</Table.Cell>\n    </Table.Row>\n  ))\n\n  return (\n    <>\n      <Table.Root>\n        <Table.Header>\n          <Table.Row>\n            <Table.ColumnHeader w=\"6\">\n              <Checkbox.Root\n                size=\"sm\"\n                top=\"0.5\"\n                aria-label=\"Select all rows\"\n                checked={indeterminate ? \"indeterminate\" : selection.length > 0}\n                onCheckedChange={(changes) => {\n                  setSelection(\n                    changes.checked ? items.map((item) => item.name) : [],\n                  )\n                }}\n              >\n                <Checkbox.HiddenInput />\n                <Checkbox.Control />\n              </Checkbox.Root>\n            </Table.ColumnHeader>\n            <Table.ColumnHeader>Product</Table.ColumnHeader>\n            <Table.ColumnHeader>Category</Table.ColumnHeader>\n            <Table.ColumnHeader>Price</Table.ColumnHeader>\n          </Table.Row>\n        </Table.Header>\n        <Table.Body>{rows}</Table.Body>\n      </Table.Root>\n\n      <ActionBar.Root open={hasSelection}>\n        <Portal>\n          <ActionBar.Positioner>\n            <ActionBar.Content>\n              <ActionBar.SelectionTrigger>\n                {selection.length} selected\n              </ActionBar.SelectionTrigger>\n              <ActionBar.Separator />\n              <Button variant=\"outline\" size=\"sm\">\n                Delete <Kbd>⌫</Kbd>\n              </Button>\n              <Button variant=\"outline\" size=\"sm\">\n                Share <Kbd>T</Kbd>\n              </Button>\n            </ActionBar.Content>\n          </ActionBar.Positioner>\n        </Portal>\n      </ActionBar.Root>\n    </>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "24acf0efc527aa457e30898522e7c4a8c60189bb556e3b52040e95b2933faafc",
+      "upstreamPath": "apps/compositions/src/examples/table-with-selection-action-bar.tsx",
+      "upstreamSha256": "47c3dd804ad5c98c7be928d7d98e50d09f79f25cddd99d51b25d48e3af3b6c90",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-sizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { For, Stack, Table } from \"@chakra-ui/react\"\n\nexport const TableWithSizes = () => {\n  return (\n    <Stack gap=\"10\">\n      <For each={[\"sm\", \"md\", \"lg\"]}>\n        {(size) => (\n          <Table.Root key={size} size={size}>\n            <Table.Header>\n              <Table.Row>\n                <Table.ColumnHeader>Product</Table.ColumnHeader>\n                <Table.ColumnHeader>Category</Table.ColumnHeader>\n                <Table.ColumnHeader textAlign=\"end\">Price</Table.ColumnHeader>\n              </Table.Row>\n            </Table.Header>\n            <Table.Body>\n              {items.map((item) => (\n                <Table.Row key={item.id}>\n                  <Table.Cell>{item.name}</Table.Cell>\n                  <Table.Cell>{item.category}</Table.Cell>\n                  <Table.Cell textAlign=\"end\">{item.price}</Table.Cell>\n                </Table.Row>\n              ))}\n            </Table.Body>\n          </Table.Root>\n        )}\n      </For>\n    </Stack>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "31769448163e4c291cd534b4a68084666966f77512980d1efed4eec117efa591",
+      "upstreamPath": "apps/compositions/src/examples/table-with-sizes.tsx",
+      "upstreamSha256": "2e763dd59724ccb49f4f522ea280b6133a69d2972d72b394520d4f6cc4cbde9c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-sticky-column.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Table } from \"@chakra-ui/react\"\n\nexport const TableWithStickyColumn = () => {\n  return (\n    <Table.ScrollArea borderWidth=\"1px\" rounded=\"md\" maxW=\"2xl\">\n      <Table.Root\n        size=\"sm\"\n        css={{\n          \"& [data-sticky]\": {\n            position: \"sticky\",\n            zIndex: 1,\n            bg: \"bg\",\n\n            _after: {\n              content: '\"\"',\n              position: \"absolute\",\n              pointerEvents: \"none\",\n              top: \"0\",\n              bottom: \"-1px\",\n              width: \"32px\",\n            },\n          },\n\n          \"& [data-sticky=end]\": {\n            _after: {\n              insetInlineEnd: \"0\",\n              translate: \"100% 0\",\n              shadow: \"inset 8px 0px 8px -8px rgba(0, 0, 0, 0.16)\",\n            },\n          },\n\n          \"& [data-sticky=start]\": {\n            _after: {\n              insetInlineStart: \"0\",\n              translate: \"-100% 0\",\n              shadow: \"inset -8px 0px 8px -8px rgba(0, 0, 0, 0.16)\",\n            },\n          },\n        }}\n      >\n        <Table.Header>\n          <Table.Row>\n            <Table.ColumnHeader data-sticky=\"end\" minW=\"160px\" left=\"0\">\n              Product\n            </Table.ColumnHeader>\n            <Table.ColumnHeader minW=\"400px\">Category</Table.ColumnHeader>\n            <Table.ColumnHeader minW=\"200px\" textAlign=\"end\">\n              Price\n            </Table.ColumnHeader>\n          </Table.Row>\n        </Table.Header>\n\n        <Table.Body>\n          {items.map((item) => (\n            <Table.Row key={item.id}>\n              <Table.Cell data-sticky=\"end\" left=\"0\">\n                {item.name}\n              </Table.Cell>\n              <Table.Cell>{item.category}</Table.Cell>\n              <Table.Cell textAlign=\"end\">{item.price}</Table.Cell>\n            </Table.Row>\n          ))}\n        </Table.Body>\n      </Table.Root>\n    </Table.ScrollArea>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "f46a4824ad6791572d3b6e120d09bc844e72bd7248f29f44fb4e5e9aa990aca1",
+      "upstreamPath": "apps/compositions/src/examples/table-with-sticky-column.tsx",
+      "upstreamSha256": "44a8ea4fd066efbeac4770178ba92c8118adc683c0bc5f0edc8c4a19ac4d59c8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-sticky-header.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Table } from \"@chakra-ui/react\"\n\nexport const TableWithStickyHeader = () => {\n  return (\n    <Table.ScrollArea borderWidth=\"1px\" rounded=\"md\" height=\"160px\">\n      <Table.Root size=\"sm\" stickyHeader>\n        <Table.Header>\n          <Table.Row bg=\"bg.subtle\">\n            <Table.ColumnHeader>Product</Table.ColumnHeader>\n            <Table.ColumnHeader>Category</Table.ColumnHeader>\n            <Table.ColumnHeader textAlign=\"end\">Price</Table.ColumnHeader>\n          </Table.Row>\n        </Table.Header>\n\n        <Table.Body>\n          {items.map((item) => (\n            <Table.Row key={item.id}>\n              <Table.Cell>{item.name}</Table.Cell>\n              <Table.Cell>{item.category}</Table.Cell>\n              <Table.Cell textAlign=\"end\">{item.price}</Table.Cell>\n            </Table.Row>\n          ))}\n        </Table.Body>\n      </Table.Root>\n    </Table.ScrollArea>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "c55cc9ac5a53de1aa7de89f1f4effb911681db860c9a24a3def84f0e43efd775",
+      "upstreamPath": "apps/compositions/src/examples/table-with-sticky-header.tsx",
+      "upstreamSha256": "f17d77b9bf9942c4aeec71312ccb6809a34e1616fece6a586cce342ca9a3327e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-sticky-header-and-column.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Table } from \"@chakra-ui/react\"\n\nexport const TableWithStickyHeaderAndColumn = () => {\n  return (\n    <Table.ScrollArea h=\"500px\" borderWidth=\"1px\" rounded=\"md\" maxW=\"2xl\">\n      <Table.Root\n        size=\"sm\"\n        stickyHeader\n        css={{\n          \"& [data-sticky]\": {\n            position: \"sticky\",\n            zIndex: 1,\n            bg: \"bg\",\n\n            _after: {\n              content: '\"\"',\n              position: \"absolute\",\n              pointerEvents: \"none\",\n              top: \"0\",\n              bottom: \"-1px\",\n              width: \"32px\",\n            },\n          },\n\n          \"& [data-sticky=end]\": {\n            _after: {\n              insetInlineEnd: \"0\",\n              translate: \"100% 0\",\n              shadow: \"inset 8px 0px 8px -8px rgba(0, 0, 0, 0.16)\",\n            },\n          },\n\n          \"& [data-sticky=start]\": {\n            _after: {\n              insetInlineStart: \"0\",\n              translate: \"-100% 0\",\n              shadow: \"inset -8px 0px 8px -8px rgba(0, 0, 0, 0.16)\",\n            },\n          },\n\n          \"& thead tr\": {\n            shadow: \"0 1px 0 0 {colors.border}\",\n            \"&:has(th[data-sticky])\": {\n              zIndex: 2,\n            },\n          },\n        }}\n      >\n        <Table.Header>\n          <Table.Row>\n            <Table.ColumnHeader data-sticky=\"end\" minW=\"160px\" left=\"0\">\n              Product\n            </Table.ColumnHeader>\n            <Table.ColumnHeader minW=\"400px\">Category</Table.ColumnHeader>\n            <Table.ColumnHeader minW=\"200px\" textAlign=\"end\">\n              Price\n            </Table.ColumnHeader>\n          </Table.Row>\n        </Table.Header>\n\n        <Table.Body>\n          {items.map((item) => (\n            <Table.Row key={item.id}>\n              <Table.Cell data-sticky=\"end\" left=\"0\">\n                {item.name}\n              </Table.Cell>\n              <Table.Cell>{item.category}</Table.Cell>\n              <Table.Cell textAlign=\"end\">{item.price}</Table.Cell>\n            </Table.Row>\n          ))}\n        </Table.Body>\n      </Table.Root>\n    </Table.ScrollArea>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Headphones\", category: \"Electronics\", price: 834.12 },\n  { id: 2, name: \"Desk Chair\", category: \"Furniture\", price: 245.88 },\n  { id: 3, name: \"Microwave\", category: \"Home Appliances\", price: 379.26 },\n  { id: 4, name: \"Backpack\", category: \"Accessories\", price: 112.47 },\n  { id: 5, name: \"Football\", category: \"Sports\", price: 95.14 },\n  { id: 6, name: \"Smartphone\", category: \"Electronics\", price: 921.63 },\n  { id: 7, name: \"Wrist Watch\", category: \"Accessories\", price: 418.52 },\n  { id: 8, name: \"T-Shirt\", category: \"Clothing\", price: 35.29 },\n  { id: 9, name: \"Vacuum Cleaner\", category: \"Home Appliances\", price: 601.22 },\n  { id: 10, name: \"Lamp\", category: \"Furniture\", price: 157.88 },\n  { id: 11, name: \"Drone\", category: \"Electronics\", price: 836.15 },\n  { id: 12, name: \"Perfume\", category: \"Beauty\", price: 128.9 },\n  { id: 13, name: \"Camping Tent\", category: \"Outdoors\", price: 458.4 },\n  { id: 14, name: \"Cookware Set\", category: \"Home Appliances\", price: 292.86 },\n  { id: 15, name: \"Camera\", category: \"Electronics\", price: 792.54 },\n  { id: 16, name: \"Sneakers\", category: \"Clothing\", price: 154.61 },\n  { id: 17, name: \"Monitor\", category: \"Electronics\", price: 348.57 },\n  { id: 18, name: \"Gaming Console\", category: \"Electronics\", price: 896.01 },\n  { id: 19, name: \"Keyboard\", category: \"Electronics\", price: 94.71 },\n  { id: 20, name: \"Sofa\", category: \"Furniture\", price: 719.33 },\n  { id: 21, name: \"Tablet\", category: \"Electronics\", price: 612.57 },\n  { id: 22, name: \"Action Figure\", category: \"Toys\", price: 73.49 },\n  { id: 23, name: \"Smartwatch\", category: \"Electronics\", price: 482.46 },\n  { id: 24, name: \"Tent\", category: \"Outdoors\", price: 623.3 },\n  { id: 25, name: \"Cookware Set\", category: \"Home Appliances\", price: 257.38 },\n  { id: 26, name: \"Helmet\", category: \"Sports\", price: 88.26 },\n  { id: 27, name: \"Hair Dryer\", category: \"Beauty\", price: 164.79 },\n  { id: 28, name: \"Lamp\", category: \"Furniture\", price: 122.1 },\n  {\n    id: 29,\n    name: \"Electric Kettle\",\n    category: \"Home Appliances\",\n    price: 69.42,\n  },\n  { id: 30, name: \"Sneakers\", category: \"Clothing\", price: 182.13 },\n  { id: 31, name: \"Drone\", category: \"Electronics\", price: 934.72 },\n  { id: 32, name: \"Coffee Maker\", category: \"Home Appliances\", price: 148.99 },\n  { id: 33, name: \"Backpack\", category: \"Accessories\", price: 81.22 },\n  { id: 34, name: \"Microwave\", category: \"Home Appliances\", price: 399.53 },\n  { id: 35, name: \"T-Shirt\", category: \"Clothing\", price: 45.33 },\n  {\n    id: 36,\n    name: \"Vacuum Cleaner\",\n    category: \"Home Appliances\",\n    price: 552.87,\n  },\n]\n",
+      "sha256": "6281fb1f70789c8d7cded5cb523e27f7f5593a125b44f7b06733184ea0ac0a2c",
+      "upstreamPath": "apps/compositions/src/examples/table-with-sticky-header-and-column.tsx",
+      "upstreamSha256": "ae1e3c8eda49113d33233a0c76ddb99bd7944226663dd0261383147982f80a38",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-striped.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Table } from \"@chakra-ui/react\"\n\nexport const TableWithStriped = () => {\n  return (\n    <Table.Root size=\"sm\" striped>\n      <Table.Header>\n        <Table.Row>\n          <Table.ColumnHeader>Product</Table.ColumnHeader>\n          <Table.ColumnHeader>Category</Table.ColumnHeader>\n          <Table.ColumnHeader textAlign=\"end\">Price</Table.ColumnHeader>\n        </Table.Row>\n      </Table.Header>\n      <Table.Body>\n        {items.map((item) => (\n          <Table.Row key={item.id}>\n            <Table.Cell>{item.name}</Table.Cell>\n            <Table.Cell>{item.category}</Table.Cell>\n            <Table.Cell textAlign=\"end\">{item.price}</Table.Cell>\n          </Table.Row>\n        ))}\n      </Table.Body>\n    </Table.Root>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "3e68fdadbbe047fb12073f80bcd95b23606737f5e02247af40c93834bdb00a76",
+      "upstreamPath": "apps/compositions/src/examples/table-with-striped.tsx",
+      "upstreamSha256": "fd80cfdc4b611173c68ff4427ea066ccbde99417c91ccbaf397869dd2e57798b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-tanstack.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Table } from \"@chakra-ui/react\"\nimport {\n  createColumnHelper,\n  flexRender,\n  getCoreRowModel,\n  getPaginationRowModel,\n  getSortedRowModel,\n  useReactTable,\n} from \"@tanstack/react-table\"\n\ntype Product = {\n  id: number\n  name: string\n  category: string\n  price: number\n  stock: number\n}\n\nconst columnHelper = createColumnHelper<Product>()\n\nconst columns = [\n  columnHelper.accessor(\"name\", {\n    header: \"Product\",\n    cell: (info) => info.getValue(),\n  }),\n  columnHelper.accessor(\"category\", {\n    header: \"Category\",\n    cell: (info) => info.getValue(),\n  }),\n  columnHelper.accessor(\"price\", {\n    header: \"Price\",\n    cell: (info) => `$${info.getValue().toFixed(2)}`,\n  }),\n  columnHelper.accessor(\"stock\", {\n    header: \"Stock\",\n    cell: (info) => info.getValue(),\n  }),\n]\n\nexport const TableWithTanstack = () => {\n  const table = useReactTable({\n    data,\n    columns,\n    getCoreRowModel: getCoreRowModel(),\n    getSortedRowModel: getSortedRowModel(),\n    getPaginationRowModel: getPaginationRowModel(),\n  })\n\n  return (\n    <Table.Root size=\"sm\" variant=\"outline\" native>\n      <thead>\n        {table.getHeaderGroups().map((headerGroup) => (\n          <tr key={headerGroup.id}>\n            {headerGroup.headers.map((header) => (\n              <th key={header.id}>\n                {header.isPlaceholder\n                  ? null\n                  : flexRender(\n                      header.column.columnDef.header,\n                      header.getContext(),\n                    )}\n              </th>\n            ))}\n          </tr>\n        ))}\n      </thead>\n      <tbody>\n        {table.getRowModel().rows.map((row) => (\n          <tr key={row.id}>\n            {row.getVisibleCells().map((cell) => (\n              <td key={cell.id}>\n                {flexRender(cell.column.columnDef.cell, cell.getContext())}\n              </td>\n            ))}\n          </tr>\n        ))}\n      </tbody>\n    </Table.Root>\n  )\n}\n\nconst data: Product[] = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99, stock: 50 },\n  {\n    id: 2,\n    name: \"Coffee Maker\",\n    category: \"Home Appliances\",\n    price: 49.99,\n    stock: 120,\n  },\n  {\n    id: 3,\n    name: \"Desk Chair\",\n    category: \"Furniture\",\n    price: 150.0,\n    stock: 30,\n  },\n  {\n    id: 4,\n    name: \"Smartphone\",\n    category: \"Electronics\",\n    price: 799.99,\n    stock: 75,\n  },\n  {\n    id: 5,\n    name: \"Headphones\",\n    category: \"Accessories\",\n    price: 199.99,\n    stock: 200,\n  },\n]\n",
+      "sha256": "d6c4300c192ef6d9ec7226ff99bd40e46934b02229af9ca58f45877c8dcfaaff",
+      "upstreamPath": "apps/compositions/src/examples/table-with-tanstack.tsx",
+      "upstreamSha256": "cbff4445f889697c718eeab9cabdaea9eb6dec891bbda1e6521f72c069949f51",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/table-with-variants.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { For, Stack, Table } from \"@chakra-ui/react\"\n\nexport const TableWithVariants = () => {\n  return (\n    <Stack gap=\"10\">\n      <For each={[\"line\", \"outline\"]}>\n        {(variant) => (\n          <Table.Root key={variant} size=\"sm\" variant={variant}>\n            <Table.Header>\n              <Table.Row>\n                <Table.ColumnHeader>Product</Table.ColumnHeader>\n                <Table.ColumnHeader>Category</Table.ColumnHeader>\n                <Table.ColumnHeader textAlign=\"end\">Price</Table.ColumnHeader>\n              </Table.Row>\n            </Table.Header>\n            <Table.Body>\n              {items.map((item) => (\n                <Table.Row key={item.id}>\n                  <Table.Cell>{item.name}</Table.Cell>\n                  <Table.Cell>{item.category}</Table.Cell>\n                  <Table.Cell textAlign=\"end\">{item.price}</Table.Cell>\n                </Table.Row>\n              ))}\n            </Table.Body>\n          </Table.Root>\n        )}\n      </For>\n    </Stack>\n  )\n}\n\nconst items = [\n  { id: 1, name: \"Laptop\", category: \"Electronics\", price: 999.99 },\n  { id: 2, name: \"Coffee Maker\", category: \"Home Appliances\", price: 49.99 },\n  { id: 3, name: \"Desk Chair\", category: \"Furniture\", price: 150.0 },\n  { id: 4, name: \"Smartphone\", category: \"Electronics\", price: 799.99 },\n  { id: 5, name: \"Headphones\", category: \"Accessories\", price: 199.99 },\n]\n",
+      "sha256": "c510981c1d4173d5817c1d1290a10b7e00c825dccdf189b2bf3f2537bd98d056",
+      "upstreamPath": "apps/compositions/src/examples/table-with-variants.tsx",
+      "upstreamSha256": "9f562feb7aed77b6a185c911ca4a2f8404cd0aa9af570872c4b951f69cf3fb23",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "bfa51b6364d4a6ee09553ed91393cc5dfce304a64e3b0b718076d97ae4e0d019",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-explorer-demo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableExplorerDemo as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-explorer-demo\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "e494190ad9227d1bee240c45fa69c7f14d85e60291df04ae8ca3a9f8958fb5e1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-size-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableSizeTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-size-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "2c20daefa5464a033f984b7e9ca36803cc410b6d86e6df8537ffba1c9e0a03f0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-variant-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableVariantTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-variant-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "ba12f6c3e38603ce43b317b998390973a8873ad33b326b133ba8146f6d56c755",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-caption.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithCaption as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-caption\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "07f98a26c457435896318b6bce17cb6c1628eb72838674405383f263c014b627",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-caption-top.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithCaptionTop as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-caption-top\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "f01a1ce23dc593b569402f644864633e241cf4d7ab20820a214364ca6594c843",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-column-border.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithColumnBorder as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-column-border\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "d92ec21f47911d3b3ace108bf7ad01ce3388898380b72ca28f9ab155a46ed937",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-column-group.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithColumnGroup as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-column-group\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "4eac33327a4ad495ed5688b4c7a83a364a3b6f9d293a5ffbcdcd600743314994",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-interactive.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithInteractive as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-interactive\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "5b843c8bb1c1d8e07b12d16bedc87a42719c795448c6ccab6de27d00555a1f8c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-native.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithNative as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-native\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "e4598885413a598ca41a892c163ea8d177db26184e5200afca88694b0adc0f19",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-overflow.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithOverflow as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-overflow\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "bb114c95b693ecaae30b5c9506e82dd1130d7b1517e45cd7fe8e80d20e86aec0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-pagination.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithPagination as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-pagination\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "9b1e041a61c40f8ac24cafbd39396bf83b6ad035d06efce5f514eeb32941ceab",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-selection.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithSelection as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-selection\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "11d1de2f9844f338fa1c1339f42b895534898b34e61c4e8d5c4ffc7795cd0f5f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-selection-action-bar.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithSelectionActionBar as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-selection-action-bar\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "2049de30f59de802cad7e1de95ef6316b1a296ed8bd9c8f8b8420db22a0d976c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithSizes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-sizes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "8c529fb446424b643a6e8b02038fbad22554a60d23b2c17ab9302c9839d06811",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-sticky-column.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithStickyColumn as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-sticky-column\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "ff4430b9f1238350ab610ef5dd1920c36d0e42c0f226ea9ac613c103cadf28c2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-sticky-header.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithStickyHeader as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-sticky-header\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "091585a422c2a35a2fd597695ff119a704b12ee35e6d9b0598d969365360a2b4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-sticky-header-and-column.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithStickyHeaderAndColumn as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-sticky-header-and-column\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "896e7aa99a4ee0686132a05502e25b671c6ec13dcc10d1ca68989af4e6cd6290",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-striped.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithStriped as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-striped\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "8198536b5171c79c67c086133326e70127d405f6b19e3b1dd005a5fc7b1ae4ad",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-tanstack.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithTanstack as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-tanstack\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "fce59d4754492aa33f7769442b5c1fa77f6a1f4a659b0c665ef164f9b3d131a8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/table/previews/table-with-variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TableWithVariants as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/table-with-variants\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a9827a7f07d0d972cbe1de7266c758e4a9be1e03a8fd806898eecdfa6c84f1b3",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 @tanstack/react-table@8.21.3 react-icons@5.5.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 @tanstack/react-table@8.21.3 react-icons@5.5.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "table",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/table-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/table-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI table\n\n21 published Chakra UI table examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/table-basic.tsx\n"
+}

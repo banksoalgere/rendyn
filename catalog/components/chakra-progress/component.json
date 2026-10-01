@@ -1,0 +1,344 @@
+{
+  "id": "chakra:progress",
+  "sourceId": "chakra",
+  "slug": "chakra-progress",
+  "name": "Chakra UI progress",
+  "description": "14 published Chakra UI progress examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "react-icons@5.5.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "progress",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input",
+      "progress"
+    ],
+    "aliases": [
+      "progress",
+      "chakra ui progress"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "14 published Chakra UI progress examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "progress:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI progress\nprogress\n14 published Chakra UI progress examples with complete pinned source and MIT attribution.\nchakra ui progress\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI progress 14 published Chakra UI progress examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/progress basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-progress",
+  "manifestPath": "components/chakra-progress/component.json",
+  "integrity": "sha256:6ea389b8e06a1fe48d4af87212de339cabb00d263002e210ea91ecc5ae86cb32",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/progress-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Progress } from \"@chakra-ui/react\"\n\nexport const ProgressBasic = () => {\n  return (\n    <Progress.Root maxW=\"240px\">\n      <Progress.Track>\n        <Progress.Range />\n      </Progress.Track>\n    </Progress.Root>\n  )\n}\n",
+      "sha256": "d69ec62decb152d1c8c80260e1f122a333dfd5bd862cdcac6f10cf541b6a1245",
+      "upstreamPath": "apps/compositions/src/examples/progress-basic.tsx",
+      "upstreamSha256": "7919176ac04317e2acc39986c993991d2f1370626922a95fb96db50e2bc97b3d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/progress-composition.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  HStack,\n  Heading,\n  Progress,\n  Span,\n  Square,\n  Stack,\n} from \"@chakra-ui/react\"\nimport { HiFolder, HiLockClosed, HiPencil } from \"react-icons/hi\"\n\nexport const ProgressComposition = () => {\n  return (\n    <Stack gap=\"8\" maxW=\"300px\">\n      <Heading size=\"sm\">Features</Heading>\n      <FeatureUsage\n        data={{ max: 100, value: 65, label: \"Private Users\" }}\n        icon={<HiLockClosed />}\n      />\n      <FeatureUsage\n        data={{ max: 100, value: 50, label: \"Editors\" }}\n        icon={<HiPencil />}\n      />\n      <FeatureUsage\n        data={{ max: 5, value: 1, label: \"Projects\" }}\n        icon={<HiFolder />}\n      />\n    </Stack>\n  )\n}\n\ninterface FeatureData {\n  min?: number\n  max: number\n  value: number\n  label: string\n}\n\ninterface FeatureUsageProps {\n  icon: React.ReactNode\n  data: FeatureData\n}\n\nconst FeatureUsage = (props: FeatureUsageProps) => {\n  const { data, icon } = props\n  return (\n    <HStack gap=\"4\">\n      <Square borderRadius=\"sm\" bg=\"bg.muted\" size=\"10\">\n        {icon}\n      </Square>\n      <Progress.Root\n        size=\"sm\"\n        min={data.min}\n        max={data.max}\n        value={data.value}\n        flex=\"1\"\n      >\n        <HStack justify=\"space-between\">\n          <Progress.Label>{data.label}</Progress.Label>\n          <Progress.ValueText color=\"inherit\">\n            {data.value} <Span color=\"fg.muted\">/ {data.max}</Span>\n          </Progress.ValueText>\n        </HStack>\n        <Progress.Track mt=\"2\">\n          <Progress.Range />\n        </Progress.Track>\n      </Progress.Root>\n    </HStack>\n  )\n}\n",
+      "sha256": "eb69c49d676a630ff65ec34b596cb3451b43e14ff2327e85acb84c6f5dff4781",
+      "upstreamPath": "apps/compositions/src/examples/progress-composition.tsx",
+      "upstreamSha256": "c04a22cb8abb3501baf85e70a3e63f204319728cd2414a779d426c6a962f6737",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/progress-explorer-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Progress, Stack } from \"@chakra-ui/react\"\n\nexport const ProgressExplorerDemo = () => {\n  return (\n    <Stack gap=\"8\" align=\"start\">\n      <Progress.Root value={60} max={100} width=\"240px\">\n        <Progress.Label>Loading…</Progress.Label>\n        <Progress.Track>\n          <Progress.Range />\n        </Progress.Track>\n        <Progress.ValueText />\n      </Progress.Root>\n    </Stack>\n  )\n}\n",
+      "sha256": "2296f0f6dddf4ed2703456f3244d9cdb2113f64ed0233482e394635d68e270bf",
+      "upstreamPath": "apps/compositions/src/examples/progress-explorer-demo.tsx",
+      "upstreamSha256": "56a8e819bf5e85b36c34230e150b1984861c24540d026e535f5d681a1cdcbe25",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/progress-indeterminate.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Progress } from \"@chakra-ui/react\"\n\nexport const ProgressIndeterminate = () => {\n  return (\n    <Progress.Root maxW=\"240px\" value={null}>\n      <Progress.Track>\n        <Progress.Range />\n      </Progress.Track>\n    </Progress.Root>\n  )\n}\n",
+      "sha256": "5df6abe75b699e33cb7356a4ba794ccaf9874180ce26a2908aba9ad569003e34",
+      "upstreamPath": "apps/compositions/src/examples/progress-indeterminate.tsx",
+      "upstreamSha256": "13d6865a62c84f10f2677d2e6b784c4fc55e428d1400002346f9b52929f0e202",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/progress-size-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { For, Progress, Span, useSlotRecipe } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const ProgressSizeTable = () => {\n  const recipe = useSlotRecipe({ key: \"progress\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.size}>{(v) => <td key={v}>{v}</td>}</For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.size}>\n                {(v) => (\n                  <td key={v}>\n                    <Progress.Root\n                      minW=\"200px\"\n                      colorPalette={c}\n                      size={v}\n                      value={65}\n                    >\n                      <Progress.Track>\n                        <Progress.Range />\n                      </Progress.Track>\n                    </Progress.Root>\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n",
+      "sha256": "716cb446879de7813cd3c0fc6142ed63df187d6c03d7de852fe8ae08b45b7829",
+      "upstreamPath": "apps/compositions/src/examples/progress-size-table.tsx",
+      "upstreamSha256": "5f3f0314e79eb04291f8f8a491525758ac006ff3d6cc2ddeced085d4dfebc852",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/color-palettes.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { ColorPalette } from \"@chakra-ui/react\"\n\nexport const colorPalettes: ColorPalette[] = [\n  \"gray\",\n  \"red\",\n  \"green\",\n  \"blue\",\n  \"teal\",\n  \"pink\",\n  \"purple\",\n  \"cyan\",\n  \"orange\",\n  \"yellow\",\n]\n",
+      "sha256": "90c5e84e17059e5935c80798a833fb5ac46ea296bb8d1ee978fd7a6e8cdb15e7",
+      "upstreamPath": "apps/compositions/src/lib/color-palettes.ts",
+      "upstreamSha256": "bc209453f7e4dbfc131d92ed9c81f00e20ad5da6cab70624417dcd591e62eac1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/playground-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { chakra } from \"@chakra-ui/react\"\n\nexport const PlaygroundTable = chakra(\"table\", {\n  base: {\n    width: \"full\",\n    marginBottom: \"32px\",\n    borderCollapse: \"collapse\",\n    \"& td:not(.chakra-table__cell)\": {\n      paddingRight: \"8\",\n      paddingBottom: \"8\",\n    },\n    \"& th:not(.chakra-table__column-header)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n    \"& thead td:not(.chakra-table__cell)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n  },\n})\n",
+      "sha256": "0c8b12b7fc74b6aec643559359ca4d43afbca488faeb90424ba3f98e71e3d7e7",
+      "upstreamPath": "apps/compositions/src/lib/playground-table.tsx",
+      "upstreamSha256": "d42456810c8b507d7171df7dca2fc955f2c04f4e8e711a74de35507acf64416c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/progress-variant-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { For, Progress, Span, Stack, useSlotRecipe } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const ProgressVariantTable = () => {\n  const recipe = useSlotRecipe({ key: \"progress\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.variant}>\n            {(v) => <td key={v}>{v}</td>}\n          </For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.variant}>\n                {(v) => (\n                  <td key={v}>\n                    <Stack minW=\"200px\">\n                      <DemoProgress colorPalette={c} variant={v} value={65} />\n                      <DemoProgress\n                        colorPalette={c}\n                        variant={v}\n                        striped\n                        value={65}\n                      />\n                      <DemoProgress\n                        colorPalette={c}\n                        variant={v}\n                        striped\n                        animated\n                        value={65}\n                      />\n                    </Stack>\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n\nexport const DemoProgress = (props: Progress.RootProps) => {\n  return (\n    <Progress.Root {...props}>\n      <Progress.Track>\n        <Progress.Range />\n      </Progress.Track>\n    </Progress.Root>\n  )\n}\n",
+      "sha256": "e780b8f18170cbad61a39aa7f0fa0ea0efd559daf3471442291a3571dc6da2f4",
+      "upstreamPath": "apps/compositions/src/examples/progress-variant-table.tsx",
+      "upstreamSha256": "93fffefafea0e9f9e38c82cf19ae42b1e34dbe358a227398f97d26f33379a615",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/progress-with-animated-stripes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Progress } from \"@chakra-ui/react\"\n\nexport const ProgressWithAnimatedStripes = () => {\n  return (\n    <Progress.Root maxW=\"240px\" striped animated>\n      <Progress.Track>\n        <Progress.Range />\n      </Progress.Track>\n    </Progress.Root>\n  )\n}\n",
+      "sha256": "968e10ea4f80b9b8f182b159cbd4767fbeba8feebd7b5a7009e00a10f6dd0dc4",
+      "upstreamPath": "apps/compositions/src/examples/progress-with-animated-stripes.tsx",
+      "upstreamSha256": "8e0b0c293ccecde8177e1ae2fe0f3c5431d2e998fb0cf2aad8dc45dd81ce0838",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/progress-with-colors.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Progress, Stack, Text } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\n\nexport const ProgressWithColors = () => {\n  return (\n    <Stack gap=\"2\" align=\"flex-start\">\n      {colorPalettes.map((colorPalette) => (\n        <Stack\n          align=\"center\"\n          key={colorPalette}\n          direction=\"row\"\n          gap=\"10\"\n          px=\"4\"\n        >\n          <Text minW=\"8ch\">{colorPalette}</Text>\n\n          <Progress.Root\n            width=\"120px\"\n            defaultValue={40}\n            colorPalette={colorPalette}\n            variant=\"outline\"\n          >\n            <Progress.Track>\n              <Progress.Range />\n            </Progress.Track>\n          </Progress.Root>\n          <Progress.Root\n            width=\"120px\"\n            defaultValue={40}\n            colorPalette={colorPalette}\n            variant=\"subtle\"\n          >\n            <Progress.Track>\n              <Progress.Range />\n            </Progress.Track>\n          </Progress.Root>\n        </Stack>\n      ))}\n    </Stack>\n  )\n}\n",
+      "sha256": "810e065dbae513114522a07a6ca42265ea070255975823850466e42f285cac51",
+      "upstreamPath": "apps/compositions/src/examples/progress-with-colors.tsx",
+      "upstreamSha256": "29e7266ffb296800b7bc026fc699dde292d37a01b4c2179b333c7d0d59fbae6b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/progress-with-inline-label.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HStack, Progress } from \"@chakra-ui/react\"\n\nexport const ProgressWithInlineLabel = () => {\n  return (\n    <Progress.Root defaultValue={40} maxW=\"sm\">\n      <HStack gap=\"5\">\n        <Progress.Label>Usage</Progress.Label>\n        <Progress.Track flex=\"1\">\n          <Progress.Range />\n        </Progress.Track>\n        <Progress.ValueText>40%</Progress.ValueText>\n      </HStack>\n    </Progress.Root>\n  )\n}\n",
+      "sha256": "39065154544e157820cf7e5d4b5e461b85872ba78f44a1fb10068d117aff23b1",
+      "upstreamPath": "apps/compositions/src/examples/progress-with-inline-label.tsx",
+      "upstreamSha256": "3c5c07bb07629c11d92753c921c63027cbdcdf2b7c75f7eef330cd46d419ba91",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/progress-with-label.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HStack, Progress } from \"@chakra-ui/react\"\n\nexport const ProgressWithLabel = () => {\n  return (\n    <Progress.Root defaultValue={40} maxW=\"240px\">\n      <HStack justify=\"space-between\" mb=\"1\">\n        <Progress.Label>Token usage</Progress.Label>\n        <Progress.ValueText />\n      </HStack>\n      <Progress.Track>\n        <Progress.Range />\n      </Progress.Track>\n    </Progress.Root>\n  )\n}\n",
+      "sha256": "09a36ab8654d613bc725ede813327fda2283c43590ae2523d4107563265c883b",
+      "upstreamPath": "apps/compositions/src/examples/progress-with-label.tsx",
+      "upstreamSha256": "8192c60464dae64de1b838bfd51058b9aa169e232d18e9edea0f488a98822153",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/progress-with-label-info.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Progress } from \"@chakra-ui/react\"\nimport { InfoTip } from \"@/components/rendyn-libraries/chakra/upstream/ui/toggle-tip\"\n\nexport const ProgressWithLabelInfo = () => {\n  return (\n    <Progress.Root maxW=\"240px\">\n      <Progress.Label mb=\"2\">\n        Uploading\n        <InfoTip>Uploading document to the server</InfoTip>\n      </Progress.Label>\n      <Progress.Track>\n        <Progress.Range />\n      </Progress.Track>\n    </Progress.Root>\n  )\n}\n",
+      "sha256": "379b4807a73d457c459efaf92b7b20c4e2079c3f2a103bc1e0bf0b89c2580707",
+      "upstreamPath": "apps/compositions/src/examples/progress-with-label-info.tsx",
+      "upstreamSha256": "043bc0b73667a2a436812c820669b02a63d3d98b9dd52e45615caade60a88985",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/ui/toggle-tip.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Popover as ChakraPopover,\n  IconButton,\n  type IconButtonProps,\n  Portal,\n} from \"@chakra-ui/react\"\nimport * as React from \"react\"\nimport { HiOutlineInformationCircle } from \"react-icons/hi\"\n\nexport interface ToggleTipProps extends ChakraPopover.RootProps {\n  showArrow?: boolean\n  portalled?: boolean\n  portalRef?: React.RefObject<HTMLElement | null>\n  content?: React.ReactNode\n  contentProps?: ChakraPopover.ContentProps\n}\n\nexport const ToggleTip = React.forwardRef<HTMLDivElement, ToggleTipProps>(\n  function ToggleTip(props, ref) {\n    const {\n      showArrow,\n      children,\n      portalled = true,\n      content,\n      contentProps,\n      portalRef,\n      ...rest\n    } = props\n\n    return (\n      <ChakraPopover.Root\n        {...rest}\n        positioning={{ ...rest.positioning, gutter: 4 }}\n      >\n        <ChakraPopover.Trigger asChild>{children}</ChakraPopover.Trigger>\n        <Portal disabled={!portalled} container={portalRef}>\n          <ChakraPopover.Positioner>\n            <ChakraPopover.Content\n              width=\"auto\"\n              px=\"2\"\n              py=\"1\"\n              textStyle=\"xs\"\n              rounded=\"sm\"\n              ref={ref}\n              {...contentProps}\n            >\n              {showArrow && (\n                <ChakraPopover.Arrow>\n                  <ChakraPopover.ArrowTip />\n                </ChakraPopover.Arrow>\n              )}\n              {content}\n            </ChakraPopover.Content>\n          </ChakraPopover.Positioner>\n        </Portal>\n      </ChakraPopover.Root>\n    )\n  },\n)\n\nexport interface InfoTipProps extends Partial<ToggleTipProps> {\n  buttonProps?: IconButtonProps | undefined\n}\n\nexport const InfoTip = React.forwardRef<HTMLDivElement, InfoTipProps>(\n  function InfoTip(props, ref) {\n    const { children, buttonProps, ...rest } = props\n    return (\n      <ToggleTip content={children} {...rest} ref={ref}>\n        <IconButton\n          variant=\"ghost\"\n          aria-label=\"info\"\n          size=\"2xs\"\n          colorPalette=\"gray\"\n          {...buttonProps}\n        >\n          <HiOutlineInformationCircle />\n        </IconButton>\n      </ToggleTip>\n    )\n  },\n)\n",
+      "sha256": "39a755306d4ab3a63a86620458306aba320004140693ac5b0efa5703a60d56be",
+      "upstreamPath": "apps/compositions/src/ui/toggle-tip.tsx",
+      "upstreamSha256": "43e2c6994dfb92f6cb1f427b491110dd0e4ac5bf6a46720200a8a9a6a155d5e6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/progress-with-sizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { For, Progress, Stack } from \"@chakra-ui/react\"\n\nexport const ProgressWithSizes = () => {\n  return (\n    <Stack gap=\"4\" maxW=\"240px\">\n      <For each={[\"xs\", \"sm\", \"md\", \"lg\"]}>\n        {(size) => (\n          <Progress.Root key={size} size={size}>\n            <Progress.Track>\n              <Progress.Range />\n            </Progress.Track>\n          </Progress.Root>\n        )}\n      </For>\n    </Stack>\n  )\n}\n",
+      "sha256": "246f3b954ace5d1a4ba6f90c6887d60bcc20af294722c8af76cea77ef35cd01c",
+      "upstreamPath": "apps/compositions/src/examples/progress-with-sizes.tsx",
+      "upstreamSha256": "cea7fa329b0a6168216dc3aa1b085646f8f7be72581ba690a531163d4c4aab54",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/progress-with-stripes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Progress } from \"@chakra-ui/react\"\n\nexport const ProgressWithStripes = () => {\n  return (\n    <Progress.Root maxW=\"240px\" striped>\n      <Progress.Track>\n        <Progress.Range />\n      </Progress.Track>\n    </Progress.Root>\n  )\n}\n",
+      "sha256": "d5e82566e90df3baf933e494559875853408d994c75dd16c016c24d50216344b",
+      "upstreamPath": "apps/compositions/src/examples/progress-with-stripes.tsx",
+      "upstreamSha256": "4705b72c3038a9c806ecdc99c23aa045e1bdca4370c6fdadc99316cc6804fe90",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/progress-with-variants.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Progress, Stack } from \"@chakra-ui/react\"\n\nexport const ProgressWithVariants = () => {\n  return (\n    <Stack gap=\"4\" maxW=\"240px\">\n      <Progress.Root variant=\"subtle\">\n        <Progress.Track>\n          <Progress.Range />\n        </Progress.Track>\n      </Progress.Root>\n      <Progress.Root variant=\"outline\">\n        <Progress.Track>\n          <Progress.Range />\n        </Progress.Track>\n      </Progress.Root>\n    </Stack>\n  )\n}\n",
+      "sha256": "8d83eb7c1ef4e81c7b305d4378ad9ff1eb4e6f247f05d2ba818da6dda89ac79c",
+      "upstreamPath": "apps/compositions/src/examples/progress-with-variants.tsx",
+      "upstreamSha256": "b498850a93713b53f5e34af35f029950a36b99710d440fa31392aceb76868668",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/progress-closed-component.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Progress as ChakraProgress } from \"@chakra-ui/react\"\nimport { InfoTip } from \"@/components/rendyn-libraries/chakra/upstream/ui/toggle-tip\"\nimport * as React from \"react\"\n\ninterface ProgressProps extends ChakraProgress.RootProps {\n  showValueText?: boolean\n  valueText?: React.ReactNode\n  label?: React.ReactNode\n  info?: React.ReactNode\n}\n\nexport const Progress = React.forwardRef<HTMLDivElement, ProgressProps>(\n  function Progress(props, ref) {\n    const { showValueText, valueText, label, info, ...rest } = props\n    return (\n      <ChakraProgress.Root {...rest} ref={ref}>\n        {label && (\n          <ChakraProgress.Label>\n            {label} {info && <InfoTip>{info}</InfoTip>}\n          </ChakraProgress.Label>\n        )}\n        <ChakraProgress.Track>\n          <ChakraProgress.Range />\n        </ChakraProgress.Track>\n        {showValueText && (\n          <ChakraProgress.ValueText>{valueText}</ChakraProgress.ValueText>\n        )}\n      </ChakraProgress.Root>\n    )\n  },\n)\n",
+      "sha256": "5857ec83409df22f9f072ae84020a4c7a37cd3e3d1a2c96044fdddef90681bd5",
+      "upstreamPath": "apps/compositions/src/examples/progress-closed-component.tsx",
+      "upstreamSha256": "36b56f9f7f51edaad19c42e96f7627af11a806628ab17c89078ee6340eb2cc5b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/progress/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ProgressBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/progress-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "0d56ebe258c42e24e0d039aaf765c72cd1bcb7b30fdb1b630ae8bda3a616d8e9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/progress/previews/progress-composition.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ProgressComposition as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/progress-composition\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "bdda309bc19da0a30987c85d6e3aefb61d92e73c12060dbc652ebed3c4b36de4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/progress/previews/progress-explorer-demo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ProgressExplorerDemo as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/progress-explorer-demo\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "ac443d5f9e8dc489584fd5486e0d1a31709d89ffb3911f179b691827e0e9a5e9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/progress/previews/progress-indeterminate.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ProgressIndeterminate as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/progress-indeterminate\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "7e07f24a1f9a8d0ed4e6930b4d9e583f4f9d7c32ace5a9903119db0368959b76",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/progress/previews/progress-size-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ProgressSizeTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/progress-size-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "d2f8618ed70d1858fdde20ead9d6e91280356df43d566977ec5eb5bedd4a1f1f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/progress/previews/progress-variant-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ProgressVariantTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/progress-variant-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "aecf5d164cd228c209856dc051df0bcc3f1fd5160dc6b5f7251b955d97d6e0f4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/progress/previews/progress-with-animated-stripes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ProgressWithAnimatedStripes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/progress-with-animated-stripes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "e6dab33cc0c14b8999589f525d0a0cc85699a7af4520b78412d4536f3ba9bdb0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/progress/previews/progress-with-colors.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ProgressWithColors as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/progress-with-colors\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "1ef746b8809ff0bab713a15f27ed12727419bf2efe169343437f9e9a49698619",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/progress/previews/progress-with-inline-label.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ProgressWithInlineLabel as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/progress-with-inline-label\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "65e622c97ca4cd57c1b224e5af54982bc93ad91778d4fa1a44624ebb85f84e51",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/progress/previews/progress-with-label.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ProgressWithLabel as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/progress-with-label\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "0effe35516f929398618bb19128797406bba5590190280848908744177198f6b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/progress/previews/progress-with-label-info.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ProgressWithLabelInfo as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/progress-with-label-info\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "04fdb22024cdadad1bcb5ccb4b56f5dab2cad42d71b00c5d29bd28b49d4dc707",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/progress/previews/progress-with-sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ProgressWithSizes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/progress-with-sizes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "3060dcf1bb301928a69c2e2bedf327e53c2d4f077c0c8ffcd56df87c46e47cec",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/progress/previews/progress-with-stripes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ProgressWithStripes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/progress-with-stripes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "8c61ebeec02fdbc3d2699babb97e76d50b46c2327cb212274849e9fd7d6aa098",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/progress/previews/progress-with-variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ProgressWithVariants as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/progress-with-variants\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "837e9e8d514ac4fa7e5601f02e3dccde2a33de734a064b1aa186808c09e09f50",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "progress",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/progress-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/progress-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI progress\n\n14 published Chakra UI progress examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/progress-basic.tsx\n"
+}

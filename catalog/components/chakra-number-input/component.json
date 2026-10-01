@@ -1,0 +1,337 @@
+{
+  "id": "chakra:number-input",
+  "sourceId": "chakra",
+  "slug": "chakra-number-input",
+  "name": "Chakra UI number input",
+  "description": "15 published Chakra UI number input examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "@hookform/resolvers@5.9.1",
+    "react-hook-form@7.87.0",
+    "react-icons@5.5.0",
+    "zod@4.5.4"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "input",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input",
+      "number"
+    ],
+    "aliases": [
+      "number input",
+      "chakra ui number input",
+      "input"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "15 published Chakra UI number input examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "input:checkbox:file:form:number:keyboard",
+    "searchText": "Chakra UI number input\nnumber input\n15 published Chakra UI number input examples with complete pinned source and MIT attribution.\nchakra ui number input\ninput\ncheckbox\nfile\nform\nnumber\nkeyboard\nChakra UI number input 15 published Chakra UI number input examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/number input basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-number-input",
+  "manifestPath": "components/chakra-number-input/component.json",
+  "integrity": "sha256:9ae66a57f8a2afa133216f01a3b1f89fc020ae6fc7c1822c81e1f392c068d5f9",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/number-input-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from \"@chakra-ui/react\"\n\nexport const NumberInputBasic = () => {\n  return (\n    <NumberInput.Root defaultValue=\"10\" width=\"200px\">\n      <NumberInput.Control />\n      <NumberInput.Input />\n    </NumberInput.Root>\n  )\n}\n",
+      "sha256": "da6f1a264e8cc46e87d78f2584893072a56804441b381179fc0dee6eef460f2c",
+      "upstreamPath": "apps/compositions/src/examples/number-input-basic.tsx",
+      "upstreamSha256": "ef47eaf57e2eafdf58a75b596f5f88cb044ba755615455cebc6e2e19b671f959",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/number-input-controlled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\nexport const NumberInputControlled = () => {\n  const [value, setValue] = useState(\"10\")\n  return (\n    <NumberInput.Root\n      maxW=\"200px\"\n      value={value}\n      onValueChange={(e) => setValue(e.value)}\n    >\n      <NumberInput.Control />\n      <NumberInput.Input />\n    </NumberInput.Root>\n  )\n}\n",
+      "sha256": "4b0a0fbcc0b400911b3a22b00286cf5f108c89b5205838befa06c14714b91c4a",
+      "upstreamPath": "apps/compositions/src/examples/number-input-controlled.tsx",
+      "upstreamSha256": "121f13d7bd6444d8a2126e0088dfe341afde5d8ebe38d2842621be676a1ce5ba",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/number-input-explorer-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { InputGroup, NumberInput, Text, VStack } from \"@chakra-ui/react\"\nimport { LuArrowRightLeft } from \"react-icons/lu\"\n\nexport const NumberInputExplorerDemo = () => {\n  return (\n    <VStack p=\"8\" maxW=\"400px\" mx=\"auto\" gap=\"8\" align=\"stretch\">\n      <VStack gap=\"1\" align=\"start\">\n        <Text fontSize=\"lg\" fontWeight=\"bold\">\n          Adjust a Number\n        </Text>\n        <Text fontSize=\"sm\" color=\"gray.600\">\n          Try using the arrows, typing directly, or dragging the scrubber to\n          change the value.\n        </Text>\n      </VStack>\n\n      <NumberInput.Root defaultValue=\"10\" min={1} max={100} width=\"full\">\n        <VStack align=\"start\" gap=\"2\" w=\"full\">\n          <NumberInput.Label fontSize=\"sm\" fontWeight=\"medium\" color=\"gray.700\">\n            Quantity\n          </NumberInput.Label>\n\n          <InputGroup\n            startElementProps={{ pointerEvents: \"auto\" }}\n            startElement={\n              <NumberInput.Scrubber cursor=\"ew-resize\">\n                <LuArrowRightLeft />\n              </NumberInput.Scrubber>\n            }\n          >\n            <>\n              <NumberInput.Input pl=\"10\" />\n              <NumberInput.Control>\n                <NumberInput.IncrementTrigger />\n                <NumberInput.DecrementTrigger />\n              </NumberInput.Control>\n            </>\n          </InputGroup>\n\n          <Text fontSize=\"xs\" color=\"gray.500\">\n            Enter a number between 1 and 100.\n          </Text>\n        </VStack>\n      </NumberInput.Root>\n    </VStack>\n  )\n}\n",
+      "sha256": "3a3eda3c1fa0ec51a180f7fb180064564a9c386b78dc08ccc1b75b26b669d620",
+      "upstreamPath": "apps/compositions/src/examples/number-input-explorer-demo.tsx",
+      "upstreamSha256": "bd85b5eb0ecc73db14fd3e5f37085955bf18dadf36f07d94bb54769a75dbdca6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/number-input-with-disabled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from \"@chakra-ui/react\"\n\nexport const NumberInputWithDisabled = () => {\n  return (\n    <NumberInput.Root defaultValue=\"10\" width=\"200px\" disabled>\n      <NumberInput.Control />\n      <NumberInput.Input />\n    </NumberInput.Root>\n  )\n}\n",
+      "sha256": "82137ff14b517dd168ba645275d16436d95d1ada9a9756383779c0542a93f775",
+      "upstreamPath": "apps/compositions/src/examples/number-input-with-disabled.tsx",
+      "upstreamSha256": "63388cb2e94d3b2f47490355cc3ba3d469189f44ba2cb5dfb955e4857536f988",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/number-input-with-element.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { InputGroup, NumberInput } from \"@chakra-ui/react\"\nimport { LuDollarSign } from \"react-icons/lu\"\n\nexport const NumberInputWithElement = () => {\n  return (\n    <NumberInput.Root defaultValue=\"10\" width=\"200px\">\n      <NumberInput.Control />\n      <InputGroup startElement={<LuDollarSign />}>\n        <NumberInput.Input />\n      </InputGroup>\n    </NumberInput.Root>\n  )\n}\n",
+      "sha256": "5b400fa94e9cef214c3323d71076f7a4d944f70b61535ca7ba9d7754eee853d4",
+      "upstreamPath": "apps/compositions/src/examples/number-input-with-element.tsx",
+      "upstreamSha256": "0d698c234d9b469480fe38d73ee59d75f4b7080c87f40343ecdb64dd430d07fa",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/number-input-with-field.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Field, NumberInput } from \"@chakra-ui/react\"\n\nexport const NumberInputWithField = () => {\n  return (\n    <Field.Root>\n      <Field.Label>Enter Number</Field.Label>\n      <NumberInput.Root width=\"200px\">\n        <NumberInput.Control />\n        <NumberInput.Input />\n      </NumberInput.Root>\n      <Field.HelperText>Enter a number between 1 and 10</Field.HelperText>\n    </Field.Root>\n  )\n}\n",
+      "sha256": "4e160347a19e3305cd36570bdad387c90c5b25aa964adaa35f60f9ba442ba71a",
+      "upstreamPath": "apps/compositions/src/examples/number-input-with-field.tsx",
+      "upstreamSha256": "2fef7089a663603d8193fb48aa829aca62952ad20e7f7012cfa58aaaa54c23d4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/number-input-with-format-options.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput, Stack } from \"@chakra-ui/react\"\n\nexport const NumberInputWithFormatOptions = () => {\n  return (\n    <Stack gap=\"5\" maxW=\"200px\">\n      <NumberInput.Root\n        defaultValue=\"5\"\n        step={0.01}\n        formatOptions={{\n          style: \"percent\",\n        }}\n      >\n        <NumberInput.Control />\n        <NumberInput.Input />\n      </NumberInput.Root>\n\n      <NumberInput.Root\n        defaultValue=\"45\"\n        formatOptions={{\n          style: \"currency\",\n          currency: \"EUR\",\n          currencyDisplay: \"code\",\n          currencySign: \"accounting\",\n        }}\n      >\n        <NumberInput.Control />\n        <NumberInput.Input />\n      </NumberInput.Root>\n\n      <NumberInput.Root\n        defaultValue=\"4\"\n        formatOptions={{\n          style: \"unit\",\n          unit: \"inch\",\n          unitDisplay: \"long\",\n        }}\n      >\n        <NumberInput.Control />\n        <NumberInput.Input />\n      </NumberInput.Root>\n    </Stack>\n  )\n}\n",
+      "sha256": "d891b9f068d35dbb88c659d639c8552f0bbe5aa96934895bc81e5800a0b1f4a1",
+      "upstreamPath": "apps/compositions/src/examples/number-input-with-format-options.tsx",
+      "upstreamSha256": "d1dc7b646283bb356676327d5167c616f83292f23475665eb8bd0608f63a14fc",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/number-input-with-hook-form.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Field, NumberInput } from \"@chakra-ui/react\"\nimport { standardSchemaResolver } from \"@hookform/resolvers/standard-schema\"\nimport { Controller, useForm } from \"react-hook-form\"\nimport { z } from \"zod\"\n\nconst formSchema = z.object({\n  number: z.string({ message: \"Number is required\" }),\n})\n\ntype FormValues = z.infer<typeof formSchema>\n\nexport const NumberInputWithHookForm = () => {\n  const {\n    control,\n    handleSubmit,\n    formState: { errors },\n  } = useForm<FormValues>({\n    resolver: standardSchemaResolver(formSchema),\n  })\n\n  const onSubmit = handleSubmit((data) => console.log(data))\n\n  return (\n    <form onSubmit={onSubmit}>\n      <Field.Root invalid={!!errors.number}>\n        <Field.Label>Number</Field.Label>\n        <Controller\n          name=\"number\"\n          control={control}\n          render={({ field }) => (\n            <NumberInput.Root\n              disabled={field.disabled}\n              name={field.name}\n              value={field.value}\n              onValueChange={({ value }) => {\n                field.onChange(value)\n              }}\n            >\n              <NumberInput.Control />\n              <NumberInput.Input onBlur={field.onBlur} />\n            </NumberInput.Root>\n          )}\n        />\n        <Field.ErrorText>{errors.number?.message}</Field.ErrorText>\n      </Field.Root>\n      <Button size=\"sm\" type=\"submit\" mt=\"4\">\n        Submit\n      </Button>\n    </form>\n  )\n}\n",
+      "sha256": "fc8ae6d9e965abd31b68845d46e491a14c7508f2606a199af99c84761902803b",
+      "upstreamPath": "apps/compositions/src/examples/number-input-with-hook-form.tsx",
+      "upstreamSha256": "ada302ec9f1ddfb88fac7a135acc15344193a51d0f30fa7a0b6db84ce3405e52",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/number-input-with-invalid.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Field, NumberInput } from \"@chakra-ui/react\"\n\nexport const NumberInputWithInvalid = () => {\n  return (\n    <Field.Root invalid>\n      <Field.Label>Enter Number</Field.Label>\n      <NumberInput.Root defaultValue=\"10\" width=\"200px\">\n        <NumberInput.Control />\n        <NumberInput.Input />\n      </NumberInput.Root>\n      <Field.ErrorText>The entry is invalid</Field.ErrorText>\n    </Field.Root>\n  )\n}\n",
+      "sha256": "021340954b972aa28e9c363911ff519b5fd09780dddf9e3aabe4f5c697174b0b",
+      "upstreamPath": "apps/compositions/src/examples/number-input-with-invalid.tsx",
+      "upstreamSha256": "8d1de575220aec63cb8edbe79148c63a78478bc15384cba5e858756ee1c1ffa2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/number-input-with-min-max.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from \"@chakra-ui/react\"\n\nexport const NumberInputWithMinMax = () => {\n  return (\n    <NumberInput.Root width=\"200px\" defaultValue=\"10\" min={5} max={50}>\n      <NumberInput.Control />\n      <NumberInput.Input />\n    </NumberInput.Root>\n  )\n}\n",
+      "sha256": "42ff8aa69b407c7fbd63ddc0bc10dae2ea60779238cc2a1ed4afbd5e8c1f9bc0",
+      "upstreamPath": "apps/compositions/src/examples/number-input-with-min-max.tsx",
+      "upstreamSha256": "f9c6cb91cbfa0bd28e9aa982712b4605f58b144b89a9ad9e3aa85dfab9e92dd9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/number-input-with-mouse-wheel.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from \"@chakra-ui/react\"\n\nexport const NumberInputWithMouseWheel = () => {\n  return (\n    <NumberInput.Root defaultValue=\"10\" width=\"200px\" allowMouseWheel>\n      <NumberInput.Control />\n      <NumberInput.Input />\n    </NumberInput.Root>\n  )\n}\n",
+      "sha256": "f68c0577ddfadf17bc7c6494fd073f4293fb8c0d06c3ad97c14332194e51e8ab",
+      "upstreamPath": "apps/compositions/src/examples/number-input-with-mouse-wheel.tsx",
+      "upstreamSha256": "8077ac93d478b34ffe52d771d77d12af253319fdb7de4037198cba04c586bc60",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/number-input-with-scrubber.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { InputGroup, NumberInput } from \"@chakra-ui/react\"\nimport { LuArrowRightLeft } from \"react-icons/lu\"\n\nexport const NumberInputWithScrubber = () => {\n  return (\n    <NumberInput.Root defaultValue=\"10\" width=\"200px\">\n      <NumberInput.Control />\n      <InputGroup\n        startElementProps={{ pointerEvents: \"auto\" }}\n        startElement={\n          <NumberInput.Scrubber>\n            <LuArrowRightLeft />\n          </NumberInput.Scrubber>\n        }\n      >\n        <NumberInput.Input />\n      </InputGroup>\n    </NumberInput.Root>\n  )\n}\n",
+      "sha256": "12b2f9eec7f131e53653f221525a6acc345c9bbad17268e3a24ed60e003606bb",
+      "upstreamPath": "apps/compositions/src/examples/number-input-with-scrubber.tsx",
+      "upstreamSha256": "24e6729afdfae1d26c166eaad2b3204f94977f6d83dbda593aa05f0dabc73880",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/number-input-with-sizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { For, NumberInput, Stack } from \"@chakra-ui/react\"\n\nexport const NumberInputWithSizes = () => {\n  return (\n    <Stack gap=\"5\" width=\"200px\">\n      <For each={[\"xs\", \"sm\", \"md\", \"lg\"]}>\n        {(size) => (\n          <NumberInput.Root size={size} key={size} defaultValue=\"10\">\n            <NumberInput.Control />\n            <NumberInput.Input />\n          </NumberInput.Root>\n        )}\n      </For>\n    </Stack>\n  )\n}\n",
+      "sha256": "df7acb9cb536e59338d0150f403e71d0a5edd3ef00c8032abab4eb304ed7230d",
+      "upstreamPath": "apps/compositions/src/examples/number-input-with-sizes.tsx",
+      "upstreamSha256": "4aa0e499ed63c524a2847563cf4844c41226f039e346c2819502d23c24426ea6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/number-input-with-step.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from \"@chakra-ui/react\"\n\nexport const NumberInputWithStep = () => {\n  return (\n    <NumberInput.Root maxW=\"200px\" defaultValue=\"2\" step={3}>\n      <NumberInput.Control />\n      <NumberInput.Input />\n    </NumberInput.Root>\n  )\n}\n",
+      "sha256": "ef188b0b538f97891ab78f9f641ea466473f55b1a04f8f0782da0fe5040a16e8",
+      "upstreamPath": "apps/compositions/src/examples/number-input-with-step.tsx",
+      "upstreamSha256": "16458290a4b34d4c6d8afab9f42c227836be4b80c7403695757c160e8d4fa326",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/number-input-with-stepper.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HStack, IconButton, NumberInput } from \"@chakra-ui/react\"\nimport { LuMinus, LuPlus } from \"react-icons/lu\"\n\nexport const NumberInputWithStepper = () => {\n  return (\n    <NumberInput.Root defaultValue=\"3\" unstyled spinOnPress={false}>\n      <HStack gap=\"2\">\n        <NumberInput.DecrementTrigger asChild>\n          <IconButton variant=\"outline\" size=\"sm\">\n            <LuMinus />\n          </IconButton>\n        </NumberInput.DecrementTrigger>\n        <NumberInput.ValueText textAlign=\"center\" fontSize=\"lg\" minW=\"3ch\" />\n        <NumberInput.IncrementTrigger asChild>\n          <IconButton variant=\"outline\" size=\"sm\">\n            <LuPlus />\n          </IconButton>\n        </NumberInput.IncrementTrigger>\n      </HStack>\n    </NumberInput.Root>\n  )\n}\n",
+      "sha256": "21c496286a5eb2d9560a56edae3f27f3fa90d8de250abbe1273f043ef2267ad9",
+      "upstreamPath": "apps/compositions/src/examples/number-input-with-stepper.tsx",
+      "upstreamSha256": "4c6f73b91a598dde543892adc168e55a2616f2988a3b40e5439ca9ac635b1827",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/number-input-closed-component.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput as ChakraNumberInput } from \"@chakra-ui/react\"\nimport * as React from \"react\"\n\nexport interface NumberInputProps extends ChakraNumberInput.RootProps {}\n\nexport const NumberInputRoot = React.forwardRef<\n  HTMLDivElement,\n  NumberInputProps\n>(function NumberInput(props, ref) {\n  const { children, ...rest } = props\n  return (\n    <ChakraNumberInput.Root ref={ref} variant=\"outline\" {...rest}>\n      {children}\n      <ChakraNumberInput.Control>\n        <ChakraNumberInput.IncrementTrigger />\n        <ChakraNumberInput.DecrementTrigger />\n      </ChakraNumberInput.Control>\n    </ChakraNumberInput.Root>\n  )\n})\n\nexport const NumberInputField = ChakraNumberInput.Input\nexport const NumberInputScrubber = ChakraNumberInput.Scrubber\nexport const NumberInputLabel = ChakraNumberInput.Label\n",
+      "sha256": "e2397bdeddb8bd2cb86dc597516878375f848f291c01222eebc6fd4df89841c8",
+      "upstreamPath": "apps/compositions/src/examples/number-input-closed-component.tsx",
+      "upstreamSha256": "b9cbbd2744cbf4e0cfac5e73215f0d9d671185f8e4384ea9c1314f0240593dfc",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/number-input/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { NumberInputBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/number-input-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "8f395905a5eca473cb6663acf6d5d7a88fdf91f54eb981cff465c8439927ebbf",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/number-input/previews/number-input-controlled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { NumberInputControlled as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/number-input-controlled\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "fb66c1d10430fcfe9cfc9d7d985bef3c025b053e68501673dbc5e5567d1a983b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/number-input/previews/number-input-explorer-demo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { NumberInputExplorerDemo as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/number-input-explorer-demo\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "37ce531dcb28d72c1970c83596125fd1b428c6779f2f0b0aeb06ccdd73fb65b9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/number-input/previews/number-input-with-disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { NumberInputWithDisabled as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/number-input-with-disabled\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "929c36e2627faf618e44a9201211682da2f81b93f06657a20c29bad7a05cdeab",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/number-input/previews/number-input-with-element.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { NumberInputWithElement as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/number-input-with-element\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "f66a165a70d6f8768ec94f9177afd3d76033716f2c870b3051bf71260600a730",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/number-input/previews/number-input-with-field.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { NumberInputWithField as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/number-input-with-field\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "8ba1bb27ec0e48d0e92b34e9e53ab8d1f23c8ce250a02a679b6490cc0cc601c8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/number-input/previews/number-input-with-format-options.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { NumberInputWithFormatOptions as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/number-input-with-format-options\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "c2a17a0ceb0f1315043267bf40a03af9a20ecc3d66ced933fbd520bea5a0db0d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/number-input/previews/number-input-with-hook-form.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { NumberInputWithHookForm as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/number-input-with-hook-form\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "446708156d7976d6a8715de19ef2432850283885d1ea518abf304c846b4940ab",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/number-input/previews/number-input-with-invalid.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { NumberInputWithInvalid as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/number-input-with-invalid\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "9749bdcff48d54269d2b3458e0b6e303ab377eb80dc4922f9f3475273259b4dc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/number-input/previews/number-input-with-min-max.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { NumberInputWithMinMax as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/number-input-with-min-max\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "bbdef7d7e17ccca12b60491d183368ae0e821cceda259c4c3f31169bfd564adb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/number-input/previews/number-input-with-mouse-wheel.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { NumberInputWithMouseWheel as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/number-input-with-mouse-wheel\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "6c722e81ad017f7609d935082816b07b8be7df3d3a484228c84278b7f523652e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/number-input/previews/number-input-with-scrubber.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { NumberInputWithScrubber as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/number-input-with-scrubber\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "cde6b868e614643c08ac47900638d865488630fc548f5a9194eac666f4a9cd0b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/number-input/previews/number-input-with-sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { NumberInputWithSizes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/number-input-with-sizes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "cfa12e60c9b8b17c5e37d3059ef73db26f6fc5587f0c8c9faba703a69fc301c8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/number-input/previews/number-input-with-step.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { NumberInputWithStep as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/number-input-with-step\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "4719df81060eb538c1a4ca8c7d66228166b76f6396e476e121a25c3ef89a3c13",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/number-input/previews/number-input-with-stepper.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { NumberInputWithStepper as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/number-input-with-stepper\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "0e8df2fc89d052e560a916948e431279563895aaf3213e560ffc40369450b82b",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 @hookform/resolvers@5.9.1 react-hook-form@7.87.0 react-icons@5.5.0 zod@4.5.4",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 @hookform/resolvers@5.9.1 react-hook-form@7.87.0 react-icons@5.5.0 zod@4.5.4",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "number-input",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/number-input-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/number-input-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI number input\n\n15 published Chakra UI number input examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/number-input-basic.tsx\n"
+}

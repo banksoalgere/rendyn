@@ -1,0 +1,254 @@
+{
+  "id": "chakra:breadcrumb",
+  "sourceId": "chakra",
+  "slug": "chakra-breadcrumb",
+  "name": "Chakra UI breadcrumb",
+  "description": "9 published Chakra UI breadcrumb examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "react-icons@5.5.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "breadcrumb",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "breadcrumb",
+      "chakra ui breadcrumb"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "9 published Chakra UI breadcrumb examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "breadcrumb:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI breadcrumb\nbreadcrumb\n9 published Chakra UI breadcrumb examples with complete pinned source and MIT attribution.\nchakra ui breadcrumb\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI breadcrumb 9 published Chakra UI breadcrumb examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/breadcrumb basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-breadcrumb",
+  "manifestPath": "components/chakra-breadcrumb/component.json",
+  "integrity": "sha256:137b14e1b8cd7565952fdbadd4b449d154b006da34b7c6ec4c97247237b6acda",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/breadcrumb-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Breadcrumb } from \"@chakra-ui/react\"\n\nexport const BreadcrumbBasic = () => {\n  return (\n    <Breadcrumb.Root>\n      <Breadcrumb.List>\n        <Breadcrumb.Item>\n          <Breadcrumb.Link href=\"#\">Docs</Breadcrumb.Link>\n        </Breadcrumb.Item>\n        <Breadcrumb.Separator />\n        <Breadcrumb.Item>\n          <Breadcrumb.Link href=\"#\">Components</Breadcrumb.Link>\n        </Breadcrumb.Item>\n        <Breadcrumb.Separator />\n        <Breadcrumb.Item>\n          <Breadcrumb.CurrentLink>Props</Breadcrumb.CurrentLink>\n        </Breadcrumb.Item>\n      </Breadcrumb.List>\n    </Breadcrumb.Root>\n  )\n}\n",
+      "sha256": "62df25906b2dca17b34ca0e27a03700dd700a230f6be9998b1f64ea213c381d4",
+      "upstreamPath": "apps/compositions/src/examples/breadcrumb-basic.tsx",
+      "upstreamSha256": "30b56dc097c786b38a86dd9c76f8ba6d9a3247b72f53c7c636859b6cf375637b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/breadcrumb-size-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Breadcrumb, For, Span, Stack, useSlotRecipe } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const BreadcrumbSizeTable = () => {\n  const recipe = useSlotRecipe({ key: \"breadcrumb\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.size}>{(v) => <td key={v}>{v}</td>}</For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.size}>\n                {(v) => (\n                  <td key={v}>\n                    <Stack>\n                      <DemoBreadcrumb size={v} colorPalette={c} />\n                      <DemoBreadcrumb size={v} colorPalette={c} separator=\"/\" />\n                    </Stack>\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n\nconst DemoBreadcrumb = (\n  props: Breadcrumb.RootProps & { separator?: string },\n) => {\n  const { separator, ...rest } = props\n  return (\n    <Breadcrumb.Root {...rest}>\n      <Breadcrumb.List>\n        <Breadcrumb.Item>\n          <Breadcrumb.Link href=\"#\">Docs</Breadcrumb.Link>\n        </Breadcrumb.Item>\n        <Breadcrumb.Separator>{separator}</Breadcrumb.Separator>\n        <Breadcrumb.Item>\n          <Breadcrumb.Link href=\"#\">Components</Breadcrumb.Link>\n        </Breadcrumb.Item>\n        <Breadcrumb.Separator>{separator}</Breadcrumb.Separator>\n        <Breadcrumb.Item>\n          <Breadcrumb.CurrentLink>Props</Breadcrumb.CurrentLink>\n        </Breadcrumb.Item>\n      </Breadcrumb.List>\n    </Breadcrumb.Root>\n  )\n}\n",
+      "sha256": "19a97b50dbf95d87eb580fa871b7c022b016ea4af8ce35e2627b8bc8f32c0d43",
+      "upstreamPath": "apps/compositions/src/examples/breadcrumb-size-table.tsx",
+      "upstreamSha256": "ea3ebe5bd0f451f7ea7cd73cebdb6ed47170bb90099352af69190702b1a1766c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/color-palettes.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { ColorPalette } from \"@chakra-ui/react\"\n\nexport const colorPalettes: ColorPalette[] = [\n  \"gray\",\n  \"red\",\n  \"green\",\n  \"blue\",\n  \"teal\",\n  \"pink\",\n  \"purple\",\n  \"cyan\",\n  \"orange\",\n  \"yellow\",\n]\n",
+      "sha256": "90c5e84e17059e5935c80798a833fb5ac46ea296bb8d1ee978fd7a6e8cdb15e7",
+      "upstreamPath": "apps/compositions/src/lib/color-palettes.ts",
+      "upstreamSha256": "bc209453f7e4dbfc131d92ed9c81f00e20ad5da6cab70624417dcd591e62eac1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/playground-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { chakra } from \"@chakra-ui/react\"\n\nexport const PlaygroundTable = chakra(\"table\", {\n  base: {\n    width: \"full\",\n    marginBottom: \"32px\",\n    borderCollapse: \"collapse\",\n    \"& td:not(.chakra-table__cell)\": {\n      paddingRight: \"8\",\n      paddingBottom: \"8\",\n    },\n    \"& th:not(.chakra-table__column-header)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n    \"& thead td:not(.chakra-table__cell)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n  },\n})\n",
+      "sha256": "0c8b12b7fc74b6aec643559359ca4d43afbca488faeb90424ba3f98e71e3d7e7",
+      "upstreamPath": "apps/compositions/src/lib/playground-table.tsx",
+      "upstreamSha256": "d42456810c8b507d7171df7dca2fc955f2c04f4e8e711a74de35507acf64416c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/breadcrumb-variant-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Breadcrumb, For, Span, Stack, useSlotRecipe } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const BreadcrumbVariantTable = () => {\n  const recipe = useSlotRecipe({ key: \"breadcrumb\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.variant}>\n            {(v) => <td key={v}>{v}</td>}\n          </For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.variant}>\n                {(v) => (\n                  <td key={v}>\n                    <Stack>\n                      <DemoBreadcrumb variant={v} colorPalette={c} />\n                      <DemoBreadcrumb\n                        variant={v}\n                        colorPalette={c}\n                        separator=\"/\"\n                      />\n                    </Stack>\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n\nconst DemoBreadcrumb = (\n  props: Breadcrumb.RootProps & { separator?: string },\n) => {\n  const { separator, ...rest } = props\n  return (\n    <Breadcrumb.Root {...rest}>\n      <Breadcrumb.List>\n        <Breadcrumb.Item>\n          <Breadcrumb.Link href=\"#\">Docs</Breadcrumb.Link>\n        </Breadcrumb.Item>\n        <Breadcrumb.Separator>{separator}</Breadcrumb.Separator>\n        <Breadcrumb.Item>\n          <Breadcrumb.Link href=\"#\">Components</Breadcrumb.Link>\n        </Breadcrumb.Item>\n        <Breadcrumb.Separator>{separator}</Breadcrumb.Separator>\n        <Breadcrumb.Item>\n          <Breadcrumb.CurrentLink>Props</Breadcrumb.CurrentLink>\n        </Breadcrumb.Item>\n      </Breadcrumb.List>\n    </Breadcrumb.Root>\n  )\n}\n",
+      "sha256": "dc733fd5a68780ad8991ef929d855cc462814a480470582bf8029ab9822e9915",
+      "upstreamPath": "apps/compositions/src/examples/breadcrumb-variant-table.tsx",
+      "upstreamSha256": "03f8b724d20d84c45cdcc900d27885fd0179c8d91be1c5a5fa4a58fadc402336",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/breadcrumb-with-ellipsis.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Breadcrumb } from \"@chakra-ui/react\"\n\nexport const BreadcrumbWithEllipsis = () => {\n  return (\n    <Breadcrumb.Root>\n      <Breadcrumb.List>\n        <Breadcrumb.Item>\n          <Breadcrumb.Link href=\"#\">Docs</Breadcrumb.Link>\n        </Breadcrumb.Item>\n        <Breadcrumb.Separator />\n        <Breadcrumb.Item>\n          <Breadcrumb.Link href=\"#\">Components</Breadcrumb.Link>\n        </Breadcrumb.Item>\n        <Breadcrumb.Separator />\n        <Breadcrumb.Ellipsis />\n        <Breadcrumb.Separator />\n        <Breadcrumb.Item>\n          <Breadcrumb.CurrentLink>Props</Breadcrumb.CurrentLink>\n        </Breadcrumb.Item>\n      </Breadcrumb.List>\n    </Breadcrumb.Root>\n  )\n}\n",
+      "sha256": "9be26b21d27ee3dbefc88f22ad53ebe5f3622f96d9fba8520f90b26ac3316ab4",
+      "upstreamPath": "apps/compositions/src/examples/breadcrumb-with-ellipsis.tsx",
+      "upstreamSha256": "a5090d1955a1e4745a7fa0f5ad39d041ae2ecff8923d6290c03565b44c819733",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/breadcrumb-with-icon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Breadcrumb } from \"@chakra-ui/react\"\nimport { LuHouse, LuShirt } from \"react-icons/lu\"\n\nexport const BreadcrumbWithIcon = () => {\n  return (\n    <Breadcrumb.Root>\n      <Breadcrumb.List>\n        <Breadcrumb.Item>\n          <Breadcrumb.Link href=\"#\">\n            <LuHouse />\n            Home\n          </Breadcrumb.Link>\n        </Breadcrumb.Item>\n        <Breadcrumb.Separator />\n\n        <Breadcrumb.Item>\n          <Breadcrumb.Link href=\"#\">\n            <LuShirt />\n            Men Wear\n          </Breadcrumb.Link>\n        </Breadcrumb.Item>\n        <Breadcrumb.Separator />\n\n        <Breadcrumb.Item>\n          <Breadcrumb.CurrentLink>Trousers</Breadcrumb.CurrentLink>\n        </Breadcrumb.Item>\n      </Breadcrumb.List>\n    </Breadcrumb.Root>\n  )\n}\n",
+      "sha256": "1f3c3d16458bf45a3908f785479c56867bb2c05eb7153c4b4310e8a6834279c7",
+      "upstreamPath": "apps/compositions/src/examples/breadcrumb-with-icon.tsx",
+      "upstreamSha256": "c03e733977d67636fd0480170a67d1db39ba2036392fca08aaf73d7f15fe989a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/breadcrumb-with-menu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Breadcrumb, Menu, Portal } from \"@chakra-ui/react\"\nimport { LuChevronDown } from \"react-icons/lu\"\n\ninterface BreadcrumbMenuItemProps {\n  children: React.ReactNode\n  items: Array<{ label: string; value: string }>\n}\n\nconst BreadcrumbMenuItem = (props: BreadcrumbMenuItemProps) => {\n  const { children, items } = props\n  return (\n    <Breadcrumb.Item>\n      <Menu.Root>\n        <Menu.Trigger asChild>{children}</Menu.Trigger>\n        <Portal>\n          <Menu.Positioner>\n            <Menu.Content>\n              {items.map((item) => (\n                <Menu.Item key={item.value} value={item.value}>\n                  {item.label}\n                </Menu.Item>\n              ))}\n            </Menu.Content>\n          </Menu.Positioner>\n        </Portal>\n      </Menu.Root>\n    </Breadcrumb.Item>\n  )\n}\n\nexport const BreadcrumbWithMenu = () => {\n  return (\n    <Breadcrumb.Root>\n      <Breadcrumb.List gap=\"4\">\n        <Breadcrumb.Item>\n          <Breadcrumb.Link href=\"#\">Docs</Breadcrumb.Link>\n        </Breadcrumb.Item>\n        <Breadcrumb.Separator>/</Breadcrumb.Separator>\n\n        <BreadcrumbMenuItem\n          items={[\n            { label: \"Components\", value: \"components\" },\n            { label: \"Props\", value: \"props\" },\n            { label: \"Customization\", value: \"customization\" },\n          ]}\n        >\n          <Breadcrumb.Link as=\"button\">\n            Components\n            <LuChevronDown />\n          </Breadcrumb.Link>\n        </BreadcrumbMenuItem>\n\n        <Breadcrumb.Separator>/</Breadcrumb.Separator>\n        <Breadcrumb.Item>\n          <Breadcrumb.CurrentLink>Props</Breadcrumb.CurrentLink>\n        </Breadcrumb.Item>\n      </Breadcrumb.List>\n    </Breadcrumb.Root>\n  )\n}\n",
+      "sha256": "32d358189eef991c057b1f46c60f0cea3618cda26acf21b268ccf260dfecc245",
+      "upstreamPath": "apps/compositions/src/examples/breadcrumb-with-menu.tsx",
+      "upstreamSha256": "1574402daaf9b29777d480bf919e8ec093971e81acce626e4c79451f8be769b6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/breadcrumb-with-separator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Breadcrumb } from \"@chakra-ui/react\"\nimport { LiaSlashSolid } from \"react-icons/lia\"\n\nexport const BreadcrumbWithSeparator = () => {\n  return (\n    <Breadcrumb.Root>\n      <Breadcrumb.List>\n        <Breadcrumb.Item>\n          <Breadcrumb.Link href=\"#\">Docs</Breadcrumb.Link>\n        </Breadcrumb.Item>\n        <Breadcrumb.Separator>\n          <LiaSlashSolid />\n        </Breadcrumb.Separator>\n        <Breadcrumb.Item>\n          <Breadcrumb.Link href=\"#\">Components</Breadcrumb.Link>\n        </Breadcrumb.Item>\n        <Breadcrumb.Separator>\n          <LiaSlashSolid />\n        </Breadcrumb.Separator>\n        <Breadcrumb.Item>\n          <Breadcrumb.CurrentLink>Props</Breadcrumb.CurrentLink>\n        </Breadcrumb.Item>\n      </Breadcrumb.List>\n    </Breadcrumb.Root>\n  )\n}\n",
+      "sha256": "d471baeecdf5e76e467cdeb21dbdd92446cefa5a2faa0f8b07a8c7f557189dd8",
+      "upstreamPath": "apps/compositions/src/examples/breadcrumb-with-separator.tsx",
+      "upstreamSha256": "7609c9bb776c3f45884d7f00a5ba13858c02e69cb87db951cd986ae25e64c0d6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/breadcrumb-with-sizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Breadcrumb, For, Stack } from \"@chakra-ui/react\"\n\nexport const BreadcrumbWithSizes = () => {\n  return (\n    <Stack>\n      <For each={[\"sm\", \"md\", \"lg\"]}>\n        {(size) => (\n          <Breadcrumb.Root key={size} size={size}>\n            <Breadcrumb.List>\n              <Breadcrumb.Item>\n                <Breadcrumb.Link href=\"#\">Docs</Breadcrumb.Link>\n              </Breadcrumb.Item>\n              <Breadcrumb.Separator />\n              <Breadcrumb.Item>\n                <Breadcrumb.Link href=\"#\">Components</Breadcrumb.Link>\n              </Breadcrumb.Item>\n              <Breadcrumb.Separator />\n              <Breadcrumb.Item>\n                <Breadcrumb.CurrentLink>Props</Breadcrumb.CurrentLink>\n              </Breadcrumb.Item>\n            </Breadcrumb.List>\n          </Breadcrumb.Root>\n        )}\n      </For>\n    </Stack>\n  )\n}\n",
+      "sha256": "8eebba2401b37aa061fadb41f208b1d80bbc7c0974a9d857f1db3ffbe047e86b",
+      "upstreamPath": "apps/compositions/src/examples/breadcrumb-with-sizes.tsx",
+      "upstreamSha256": "70e42c498369b58395fbbba25a1264f951f18ff71f6375d4c9c9e9f9b4b96fd0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/breadcrumb-with-variants.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Breadcrumb, For, Stack } from \"@chakra-ui/react\"\n\nexport const BreadcrumbWithVariants = () => {\n  return (\n    <Stack>\n      <For each={[\"plain\", \"underline\"]}>\n        {(variant) => (\n          <Breadcrumb.Root key={variant} variant={variant}>\n            <Breadcrumb.List>\n              <Breadcrumb.Item>\n                <Breadcrumb.Link href=\"#\">Docs</Breadcrumb.Link>\n              </Breadcrumb.Item>\n              <Breadcrumb.Separator />\n              <Breadcrumb.Item>\n                <Breadcrumb.Link href=\"#\">Components</Breadcrumb.Link>\n              </Breadcrumb.Item>\n              <Breadcrumb.Separator />\n              <Breadcrumb.Item>\n                <Breadcrumb.CurrentLink>Props</Breadcrumb.CurrentLink>\n              </Breadcrumb.Item>\n            </Breadcrumb.List>\n          </Breadcrumb.Root>\n        )}\n      </For>\n    </Stack>\n  )\n}\n",
+      "sha256": "0f58252bc69558ef5ea12f0c5aaf31c9b74ed1d14c0e6bae4defc7d4cff6d5ac",
+      "upstreamPath": "apps/compositions/src/examples/breadcrumb-with-variants.tsx",
+      "upstreamSha256": "9e151fa88f464fd212de3c43e8fd30652ae1eaf33681a18195c7036913ae5fc1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/breadcrumb-closed-component.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Breadcrumb as ChakraBreadcrumb,\n  Show,\n  type SystemStyleObject,\n} from \"@chakra-ui/react\"\nimport * as React from \"react\"\n\nexport interface BreadcrumbProps extends ChakraBreadcrumb.RootProps {\n  separator?: React.ReactNode\n  separatorGap?: SystemStyleObject[\"gap\"]\n  items: Array<{ title: React.ReactNode; url?: string }>\n}\n\nexport const Breadcrumb = React.forwardRef<HTMLDivElement, BreadcrumbProps>(\n  function BreadcrumbRoot(props, ref) {\n    const { separator, separatorGap, items, ...rest } = props\n\n    return (\n      <ChakraBreadcrumb.Root ref={ref} {...rest}>\n        <ChakraBreadcrumb.List gap={separatorGap}>\n          {items.map((item, index) => {\n            const last = index === items.length - 1\n            return (\n              <React.Fragment key={index}>\n                <ChakraBreadcrumb.Item>\n                  <ChakraBreadcrumb.Link href={item.url}>\n                    {item.title}\n                  </ChakraBreadcrumb.Link>\n                </ChakraBreadcrumb.Item>\n                <Show\n                  when={last}\n                  fallback={\n                    <ChakraBreadcrumb.Separator>\n                      {separator}\n                    </ChakraBreadcrumb.Separator>\n                  }\n                >\n                  <ChakraBreadcrumb.Item>\n                    <ChakraBreadcrumb.CurrentLink>\n                      {item.title}\n                    </ChakraBreadcrumb.CurrentLink>\n                  </ChakraBreadcrumb.Item>\n                </Show>\n              </React.Fragment>\n            )\n          })}\n        </ChakraBreadcrumb.List>\n      </ChakraBreadcrumb.Root>\n    )\n  },\n)\n",
+      "sha256": "bdab5262957cbc0138a0faa782585d408f014e62381ef85f3edd00e143c01b29",
+      "upstreamPath": "apps/compositions/src/examples/breadcrumb-closed-component.tsx",
+      "upstreamSha256": "f9776949100b0d25c2f4779f14c3803297b3fccfb52b0f4dc5b65499ae046c98",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/breadcrumb/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { BreadcrumbBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/breadcrumb-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "e6d375155eb76b484af6a2ad65ee2f4117e4ba363ccf0359711d3d8aceaa8f70",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/breadcrumb/previews/breadcrumb-size-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { BreadcrumbSizeTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/breadcrumb-size-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "847b9cf13d32339bca2cb30322a77425625a4f1ff65e95290be5555c64cb96a2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/breadcrumb/previews/breadcrumb-variant-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { BreadcrumbVariantTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/breadcrumb-variant-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "9894d75a7d9365229517925b4b33b76cfecc496d2f80d2818f1aa46620519a7f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/breadcrumb/previews/breadcrumb-with-ellipsis.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { BreadcrumbWithEllipsis as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/breadcrumb-with-ellipsis\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "ade24005cb2f8536606d9de691da5869e0495d7490ab0965e0420fc6e57d16d0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/breadcrumb/previews/breadcrumb-with-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { BreadcrumbWithIcon as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/breadcrumb-with-icon\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "46e37575ed51d4656f2d81982dc3eea45b171548038a57945eb71e5b05470b6b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/breadcrumb/previews/breadcrumb-with-menu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { BreadcrumbWithMenu as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/breadcrumb-with-menu\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "9b7ff73ad71863f966d26d40d2981c84d327bc808649282045ec237604f89335",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/breadcrumb/previews/breadcrumb-with-separator.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { BreadcrumbWithSeparator as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/breadcrumb-with-separator\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "fe9b6bb352319df34e053025c65339596637b0e07fb1955f64ecff88be81abe2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/breadcrumb/previews/breadcrumb-with-sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { BreadcrumbWithSizes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/breadcrumb-with-sizes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "07d6ad5bf7f75af9563ecc3016959e46284be600043079fd64ec883deadbd3c6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/breadcrumb/previews/breadcrumb-with-variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { BreadcrumbWithVariants as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/breadcrumb-with-variants\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "fe560e8351912b0b7066ccf0481d758dca027fe900d7274f53c3e63db652f596",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "breadcrumb",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/breadcrumb-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/breadcrumb-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI breadcrumb\n\n9 published Chakra UI breadcrumb examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/breadcrumb-basic.tsx\n"
+}

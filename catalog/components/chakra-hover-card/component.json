@@ -1,0 +1,231 @@
+{
+  "id": "chakra:hover-card",
+  "sourceId": "chakra",
+  "slug": "chakra-hover-card",
+  "name": "Chakra UI hover card",
+  "description": "9 published Chakra UI hover card examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "react-icons@5.5.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "card",
+    "tags": [
+      "card",
+      "checkbox",
+      "file",
+      "form",
+      "hover",
+      "input"
+    ],
+    "aliases": [
+      "hover card",
+      "chakra ui hover card",
+      "card"
+    ],
+    "interactions": [
+      "hover",
+      "keyboard"
+    ],
+    "useWhen": [
+      "9 published Chakra UI hover card examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "card:checkbox:file:form:hover:keyboard",
+    "searchText": "Chakra UI hover card\nhover card\n9 published Chakra UI hover card examples with complete pinned source and MIT attribution.\nchakra ui hover card\ncard\ncheckbox\nfile\nform\nhover\ninput\nkeyboard\nChakra UI hover card 9 published Chakra UI hover card examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/hover card basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-hover-card",
+  "manifestPath": "components/chakra-hover-card/component.json",
+  "integrity": "sha256:66833321aa9f2a2a38b551fcb9f29a6b3f3dd6ab3e55a3bdc7c1c1ebf9f2fa3d",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/hover-card-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Avatar,\n  HStack,\n  HoverCard,\n  Icon,\n  Link,\n  Portal,\n  Stack,\n  Text,\n} from \"@chakra-ui/react\"\nimport { LuChartLine } from \"react-icons/lu\"\n\nexport const HoverCardBasic = () => {\n  return (\n    <HoverCard.Root size=\"sm\">\n      <HoverCard.Trigger asChild>\n        <Link href=\"#\">@chakra_ui</Link>\n      </HoverCard.Trigger>\n      <Portal>\n        <HoverCard.Positioner>\n          <HoverCard.Content>\n            <HoverCard.Arrow />\n            <Stack gap=\"4\" direction=\"row\">\n              <Avatar.Root>\n                <Avatar.Image src=\"https://pbs.twimg.com/profile_images/1244925541448286208/rzylUjaf_400x400.jpg\" />\n                <Avatar.Fallback name=\"Chakra UI\" />\n              </Avatar.Root>\n              <Stack gap=\"3\">\n                <Stack gap=\"1\">\n                  <Text textStyle=\"sm\" fontWeight=\"semibold\">\n                    Chakra UI\n                  </Text>\n                  <Text textStyle=\"sm\" color=\"fg.muted\">\n                    The most powerful toolkit for building modern web\n                    applications.\n                  </Text>\n                </Stack>\n                <HStack color=\"fg.subtle\">\n                  <Icon size=\"sm\">\n                    <LuChartLine />\n                  </Icon>\n                  <Text textStyle=\"xs\">2.5M Downloads</Text>\n                </HStack>\n              </Stack>\n            </Stack>\n          </HoverCard.Content>\n        </HoverCard.Positioner>\n      </Portal>\n    </HoverCard.Root>\n  )\n}\n",
+      "sha256": "15088c30b9ba959de8b77a6b83c922cc0ba0d46da608ca9aa8fb54ff60dd8289",
+      "upstreamPath": "apps/compositions/src/examples/hover-card-basic.tsx",
+      "upstreamSha256": "9ecc676fc1ba7360783eaff412654e030dd1757dbd781281489b43bc49901a38",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/hover-card-controlled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, HoverCard, Link, Portal, Strong } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\nexport const HoverCardControlled = () => {\n  const [open, setOpen] = useState(false)\n  return (\n    <HoverCard.Root size=\"sm\" open={open} onOpenChange={(e) => setOpen(e.open)}>\n      <HoverCard.Trigger asChild>\n        <Link href=\"#\">@chakra_ui</Link>\n      </HoverCard.Trigger>\n      <Portal>\n        <HoverCard.Positioner>\n          <HoverCard.Content maxWidth=\"240px\">\n            <HoverCard.Arrow />\n            <Box>\n              <Strong>Chakra</Strong> is a Sanskrit word that means disk or\n              wheel, referring to energy centers in the body\n            </Box>\n          </HoverCard.Content>\n        </HoverCard.Positioner>\n      </Portal>\n    </HoverCard.Root>\n  )\n}\n",
+      "sha256": "d46eb99ca8716a83b007381deca0ff10235ae34a91abc316b8b29607dc3402e3",
+      "upstreamPath": "apps/compositions/src/examples/hover-card-controlled.tsx",
+      "upstreamSha256": "fbcc3fa7dc4d8ccc8bacc0228eab72f9e0bbc89a07747217b855af1e4e947c0a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/hover-card-explorer-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Avatar,\n  HStack,\n  HoverCard,\n  Icon,\n  Link,\n  Stack,\n  Text,\n} from \"@chakra-ui/react\"\nimport { LuChartLine } from \"react-icons/lu\"\n\nexport const HoverCardExplorerDemo = () => {\n  return (\n    <HoverCard.Root size=\"sm\" open>\n      <HoverCard.Trigger asChild>\n        <Link href=\"#\">@chakra_ui</Link>\n      </HoverCard.Trigger>\n\n      <HoverCard.Positioner>\n        <HoverCard.Content>\n          <HoverCard.Arrow />\n          <Stack gap=\"4\" direction=\"row\">\n            <Avatar.Root>\n              <Avatar.Image src=\"https://pbs.twimg.com/profile_images/1244925541448286208/rzylUjaf_400x400.jpg\" />\n              <Avatar.Fallback name=\"Chakra UI\" />\n            </Avatar.Root>\n            <Stack gap=\"3\">\n              <Stack gap=\"1\">\n                <Text textStyle=\"sm\" fontWeight=\"semibold\">\n                  Chakra UI\n                </Text>\n                <Text textStyle=\"sm\" color=\"fg.muted\">\n                  The most powerful toolkit for building modern web\n                  applications.\n                </Text>\n              </Stack>\n              <HStack color=\"fg.subtle\">\n                <Icon size=\"sm\">\n                  <LuChartLine />\n                </Icon>\n                <Text textStyle=\"xs\">2.5M Downloads</Text>\n              </HStack>\n            </Stack>\n          </Stack>\n        </HoverCard.Content>\n      </HoverCard.Positioner>\n    </HoverCard.Root>\n  )\n}\n",
+      "sha256": "3044d0d907adffc99acc91be1c34fcb22014360d07b8338c23a21843426e5d35",
+      "upstreamPath": "apps/compositions/src/examples/hover-card-explorer-demo.tsx",
+      "upstreamSha256": "865467d67cbe3e5f2c05b3e70e674b40ca3147be4557cbc093d2a93a42226d9d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/hover-card-open-from-dialog.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  CloseButton,\n  Dialog,\n  HoverCard,\n  Link,\n  Portal,\n  Stack,\n  Text,\n} from \"@chakra-ui/react\"\n\nexport const HoverCardOpenFromDialog = () => {\n  return (\n    <Dialog.Root>\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\">Open Dialog</Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.CloseTrigger asChild>\n              <CloseButton size=\"sm\" />\n            </Dialog.CloseTrigger>\n            <Dialog.Header>\n              <Dialog.Title>Select in Dialog</Dialog.Title>\n            </Dialog.Header>\n            <Dialog.Body>\n              <DialogHoverCard />\n            </Dialog.Body>\n            <Dialog.Footer />\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n\nconst DialogHoverCard = () => {\n  return (\n    <HoverCard.Root size=\"sm\">\n      <HoverCard.Trigger asChild>\n        <Link href=\"#\">@chakra_ui</Link>\n      </HoverCard.Trigger>\n      <HoverCard.Positioner>\n        <HoverCard.Content>\n          <HoverCard.Arrow />\n          <Stack gap=\"1\">\n            <Text textStyle=\"sm\" fontWeight=\"semibold\">\n              Chakra UI\n            </Text>\n            <Text textStyle=\"sm\" color=\"fg.muted\">\n              The most powerful toolkit for building modern web applications.\n            </Text>\n          </Stack>\n        </HoverCard.Content>\n      </HoverCard.Positioner>\n    </HoverCard.Root>\n  )\n}\n",
+      "sha256": "1d14f90ea7b56661435496c888401f13e5eecad46872c3582650a99edb594c47",
+      "upstreamPath": "apps/compositions/src/examples/hover-card-open-from-dialog.tsx",
+      "upstreamSha256": "ca068b9daab5420cc9a335d8a125e190e8b50eb16f093bd6fd444f8b5cf6c6ec",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/hover-card-rtl.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HoverCard, LocaleProvider, Portal } from \"@chakra-ui/react\"\n\nexport const HoverCardRTL = () => {\n  return (\n    <LocaleProvider locale=\"ar-AE\">\n      <HoverCard.Root>\n        <HoverCard.Trigger cursor=\"pointer\">@chakra_ui</HoverCard.Trigger>\n        <Portal>\n          <HoverCard.Positioner>\n            <HoverCard.Content>\n              <HoverCard.Arrow />\n              <h4>واجهة المستخدم شاكرا</h4>\n              <p>مكتبة مكونات React الحديثة</p>\n              <p>يجب أن يشير السهم بشكل صحيح إلى الزناد</p>\n            </HoverCard.Content>\n          </HoverCard.Positioner>\n        </Portal>\n      </HoverCard.Root>\n    </LocaleProvider>\n  )\n}\n",
+      "sha256": "578b4bc11174688520e5931148653133a16ef2c27e10042c9b5ab3c3eddae492",
+      "upstreamPath": "apps/compositions/src/examples/hover-card-rtl.tsx",
+      "upstreamSha256": "0713cdbe03ac76466ec0f1a39e0fb265efac19c10069ab581a07eecba40e1f20",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/hover-card-with-delay.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, HoverCard, Link, Portal, Strong } from \"@chakra-ui/react\"\n\nexport const HoverCardWithDelay = () => {\n  return (\n    <HoverCard.Root size=\"sm\" openDelay={1000} closeDelay={100}>\n      <HoverCard.Trigger asChild>\n        <Link href=\"#\">@chakra_ui</Link>\n      </HoverCard.Trigger>\n      <Portal>\n        <HoverCard.Positioner>\n          <HoverCard.Content maxWidth=\"240px\">\n            <HoverCard.Arrow />\n            <Box>\n              <Strong>Chakra</Strong> is a Sanskrit word that means disk or\n              wheel, referring to energy centers in the body\n            </Box>\n          </HoverCard.Content>\n        </HoverCard.Positioner>\n      </Portal>\n    </HoverCard.Root>\n  )\n}\n",
+      "sha256": "bed738a32b35488e6473f63ddb10ac60ff69033ccc3fb86c301f3fe0ada5243b",
+      "upstreamPath": "apps/compositions/src/examples/hover-card-with-delay.tsx",
+      "upstreamSha256": "2a145bd6f978f85d0d2dbf7916351e97072e07c3ec385b2434e4555876a71a19",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/hover-card-with-disabled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HoverCard, Link, Portal, Stack, Text } from \"@chakra-ui/react\"\n\nexport const HoverCardWithDisabled = () => {\n  return (\n    <HoverCard.Root size=\"sm\" disabled>\n      <HoverCard.Trigger asChild>\n        <Link href=\"#\">@chakra_ui</Link>\n      </HoverCard.Trigger>\n      <Portal>\n        <HoverCard.Positioner>\n          <HoverCard.Content>\n            <HoverCard.Arrow />\n            <Stack gap=\"1\">\n              <Text textStyle=\"sm\" fontWeight=\"semibold\">\n                Chakra UI\n              </Text>\n              <Text textStyle=\"sm\" color=\"fg.muted\">\n                The most powerful toolkit for building modern web applications.\n              </Text>\n            </Stack>\n          </HoverCard.Content>\n        </HoverCard.Positioner>\n      </Portal>\n    </HoverCard.Root>\n  )\n}\n",
+      "sha256": "70b11060a2eaf2cc8c90d01a41e092c5d07ebba72a6d1547063fadf4f4839311",
+      "upstreamPath": "apps/compositions/src/examples/hover-card-with-disabled.tsx",
+      "upstreamSha256": "3e8019c10f95097c23ef3df5c7477b7574917fcd6fa644a3a833ca73e3800042",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/hover-card-with-multiple-triggers.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HStack, HoverCard, Link, Portal, Text } from \"@chakra-ui/react\"\n\nconst people = {\n  ananya: \"Ananya builds design systems.\",\n  jules: \"Jules works on accessibility.\",\n  nico: \"Nico writes the docs.\",\n}\n\nexport const HoverCardWithMultipleTriggers = () => {\n  return (\n    <HoverCard.Root size=\"sm\">\n      <HStack gap=\"4\">\n        <HoverCard.Trigger asChild value=\"ananya\">\n          <Link href=\"#\">@ananya</Link>\n        </HoverCard.Trigger>\n        <HoverCard.Trigger asChild value=\"jules\">\n          <Link href=\"#\">@jules</Link>\n        </HoverCard.Trigger>\n        <HoverCard.Trigger asChild value=\"nico\">\n          <Link href=\"#\">@nico</Link>\n        </HoverCard.Trigger>\n      </HStack>\n      <Portal>\n        <HoverCard.Positioner>\n          <HoverCard.Content maxWidth=\"240px\">\n            <HoverCard.Arrow />\n            <HoverCard.Context>\n              {(api) => (\n                <Text textStyle=\"sm\">\n                  {people[api.triggerValue as keyof typeof people]}\n                </Text>\n              )}\n            </HoverCard.Context>\n          </HoverCard.Content>\n        </HoverCard.Positioner>\n      </Portal>\n    </HoverCard.Root>\n  )\n}\n",
+      "sha256": "d2659f673c1131c83c78a83a6ab772626a043e424fb76bd6831b9048cbcf2819",
+      "upstreamPath": "apps/compositions/src/examples/hover-card-with-multiple-triggers.tsx",
+      "upstreamSha256": "2e675195072507a2d168507b2e82b38329ac4ba7e51c1ab128cd8183548a01b4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/hover-card-with-placement.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, HoverCard, Link, Portal, Strong } from \"@chakra-ui/react\"\n\nexport const HoverCardWithPlacement = () => {\n  return (\n    <HoverCard.Root size=\"sm\" positioning={{ placement: \"top\" }}>\n      <HoverCard.Trigger asChild>\n        <Link href=\"#\">@chakra_ui</Link>\n      </HoverCard.Trigger>\n      <Portal>\n        <HoverCard.Positioner>\n          <HoverCard.Content maxWidth=\"240px\">\n            <HoverCard.Arrow />\n            <Box>\n              <Strong>Chakra</Strong> is a Sanskrit word that means disk or\n              wheel, referring to energy centers in the body\n            </Box>\n          </HoverCard.Content>\n        </HoverCard.Positioner>\n      </Portal>\n    </HoverCard.Root>\n  )\n}\n",
+      "sha256": "d00fa6ced17f4d168a0f2b6a6b2fe68a59f4ebb0c9b7dcde1311997a4c0f3dec",
+      "upstreamPath": "apps/compositions/src/examples/hover-card-with-placement.tsx",
+      "upstreamSha256": "e39051241a9495fc38b2809a21c7e5a61ac3f27bc8c60e74230eea934b26a8e6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/hover-card/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { HoverCardBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/hover-card-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "d73420d73b8d5f98bc30ec87ce37d404a036951f70d8aa9848d7ce5ff996b3eb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/hover-card/previews/hover-card-controlled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { HoverCardControlled as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/hover-card-controlled\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "28fae38f332891b319c0533592a5a55e00a804784384a680e782a6608a4572cf",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/hover-card/previews/hover-card-explorer-demo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { HoverCardExplorerDemo as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/hover-card-explorer-demo\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "d4c416a161df38e3ed80db5a12b9ef608982a19f60598e886005404f5fb581c7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/hover-card/previews/hover-card-open-from-dialog.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { HoverCardOpenFromDialog as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/hover-card-open-from-dialog\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "0ebf3ed80b6994b6e70bf81c3ccd3c363d3b6d5733652022ff9248582132e1ab",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/hover-card/previews/hover-card-rtl.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { HoverCardRTL as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/hover-card-rtl\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "d8c1c480443eddea6380eeaf6aba1f306fbacfb463f2a100d921db0db60a8b6e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/hover-card/previews/hover-card-with-delay.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { HoverCardWithDelay as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/hover-card-with-delay\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "c18835da58b06f7fd96c447a8cc473e0b08b87a2d90056d11c25c4c7c00dcfdc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/hover-card/previews/hover-card-with-disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { HoverCardWithDisabled as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/hover-card-with-disabled\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "40c7566b951a5b9cf81f47fe1fcc9fdbdc0d9e09d7826de07a01a6cb7b78c763",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/hover-card/previews/hover-card-with-multiple-triggers.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { HoverCardWithMultipleTriggers as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/hover-card-with-multiple-triggers\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "f1a44080936a1a5ae14a84edcab2e4dfcb8f68a7bc25d4f0a3ebe00743674997",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/hover-card/previews/hover-card-with-placement.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { HoverCardWithPlacement as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/hover-card-with-placement\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "db8854f9f5c3748e5c51d2558744cbaf5d8b9c976cc083718f221db5f2693aec",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "hover-card",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/hover-card-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/hover-card-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI hover card\n\n9 published Chakra UI hover card examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/hover-card-basic.tsx\n"
+}

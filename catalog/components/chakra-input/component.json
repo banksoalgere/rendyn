@@ -1,0 +1,591 @@
+{
+  "id": "chakra:input",
+  "sourceId": "chakra",
+  "slug": "chakra-input",
+  "name": "Chakra UI Input",
+  "description": "31 published Chakra UI input examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "react-hook-form@7.87.0",
+    "react-icons@5.5.0",
+    "react-payment-inputs@1.2.0",
+    "use-mask-input@3.14.2"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "input",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "input",
+      "chakra ui input"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "31 published Chakra UI input examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "input:checkbox:file:form:keyboard",
+    "searchText": "Chakra UI Input\ninput\n31 published Chakra UI input examples with complete pinned source and MIT attribution.\nchakra ui input\ncheckbox\nfile\nform\nkeyboard\nChakra UI Input 31 published Chakra UI input examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://chakra ui.com/docs/components/input Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/input basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-input",
+  "manifestPath": "components/chakra-input/component.json",
+  "integrity": "sha256:0938dce37ba90150abd41aebbfbc2493019dd4d4138bc52d7c915a8f973e2850",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/input/example.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input } from \"@chakra-ui/react\"\n\nexport const InputBasic = () => {\n  return <Input placeholder=\"Enter your email\" />\n}\n",
+      "sha256": "2cf5024bbb8a93bb4ded0741d6ed3392acc29bd0732288400e425230d2dce418",
+      "upstreamPath": "apps/compositions/src/examples/input-basic.tsx",
+      "upstreamSha256": "6640e401d1902de7f733867d95b4c438db0178e972db70e3a30c736a7fca6737",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-size-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { For, Input, Span, Stack, useRecipe } from \"@chakra-ui/react\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const InputSizeTable = () => {\n  const recipe = useRecipe({ key: \"input\" })\n  return (\n    <PlaygroundTable>\n      <tbody>\n        <For each={recipe.variantMap.size}>\n          {(v) => (\n            <tr key={v}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {v}\n                </Span>\n              </td>\n              <td>\n                <Stack>\n                  <Input size={v} placeholder=\"Placeholder\" />\n                  <Input variant=\"subtle\" size={v} placeholder=\"Placeholder\" />\n                </Stack>\n              </td>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n",
+      "sha256": "1ae7c62a773bc187365032609af2072f0558a4b832d83d0fedd1010b17fb044b",
+      "upstreamPath": "apps/compositions/src/examples/input-size-table.tsx",
+      "upstreamSha256": "8c4798f876d01cee20e1de9960832a1577a902bc1b7fca437469b63cff602403",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/playground-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { chakra } from \"@chakra-ui/react\"\n\nexport const PlaygroundTable = chakra(\"table\", {\n  base: {\n    width: \"full\",\n    marginBottom: \"32px\",\n    borderCollapse: \"collapse\",\n    \"& td:not(.chakra-table__cell)\": {\n      paddingRight: \"8\",\n      paddingBottom: \"8\",\n    },\n    \"& th:not(.chakra-table__column-header)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n    \"& thead td:not(.chakra-table__cell)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n  },\n})\n",
+      "sha256": "0c8b12b7fc74b6aec643559359ca4d43afbca488faeb90424ba3f98e71e3d7e7",
+      "upstreamPath": "apps/compositions/src/lib/playground-table.tsx",
+      "upstreamSha256": "d42456810c8b507d7171df7dca2fc955f2c04f4e8e711a74de35507acf64416c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-variant-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { For, Input, Span, useRecipe } from \"@chakra-ui/react\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const InputVariantTable = () => {\n  const recipe = useRecipe({ key: \"input\" })\n  return (\n    <PlaygroundTable>\n      <tbody>\n        <For each={recipe.variantMap.variant}>\n          {(v) => (\n            <tr key={v}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {v}\n                </Span>\n              </td>\n              <td>\n                <Input variant={v} placeholder=\"Placeholder\" />\n              </td>\n            </tr>\n          )}\n        </For>\n        <tr>\n          <td>\n            <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n              unstyled\n            </Span>\n          </td>\n          <td>\n            <Input unstyled placeholder=\"Placeholder\" />\n          </td>\n        </tr>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n",
+      "sha256": "8eca18f22d343a1f520b6f2841a1b5cf777da3dd1612c44eb2567c7fd8a08b50",
+      "upstreamPath": "apps/compositions/src/examples/input-variant-table.tsx",
+      "upstreamSha256": "cace106d12f9b4964af90aee02e29082823c4df6791499adb6773a4b1e653df2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-card-details.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Group, Input, InputGroup, Show } from \"@chakra-ui/react\"\nimport { LuCreditCard } from \"react-icons/lu\"\nimport { usePaymentInputs } from \"react-payment-inputs\"\nimport cardImages, { type CardImages } from \"react-payment-inputs/images\"\n\nconst images = cardImages as unknown as CardImages\n\nconst CardImage = (props: ReturnType<typeof usePaymentInputs>) => {\n  const { meta, getCardImageProps } = props\n  return (\n    <Show\n      when={meta.cardType}\n      fallback={<LuCreditCard size={16} aria-hidden=\"true\" />}\n    >\n      <svg {...getCardImageProps({ images })} />\n    </Show>\n  )\n}\n\nexport const InputWithCardDetails = () => {\n  const payment = usePaymentInputs()\n  return (\n    <Box spaceY=\"-1px\">\n      <InputGroup\n        zIndex={{ _focusWithin: \"1\" }}\n        endElement={<CardImage {...payment} />}\n      >\n        <Input roundedBottom=\"0\" {...payment.getCardNumberProps()} />\n      </InputGroup>\n      <Group w=\"full\" attached>\n        <Input roundedTopLeft=\"0\" {...payment.getExpiryDateProps()} />\n        <Input roundedTopRight=\"0\" {...payment.getCVCProps()} />\n      </Group>\n    </Box>\n  )\n}\n",
+      "sha256": "5a79f11174f38cb1a36ac30fa776aa2465c6f55778a7ed252671664dded19721",
+      "upstreamPath": "apps/compositions/src/examples/input-with-card-details.tsx",
+      "upstreamSha256": "2b3ec2ab2bc3e44d460e5c7166d10ec855312dd6fb05bfc45c816cd52519f506",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-card-number.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input, InputGroup } from \"@chakra-ui/react\"\nimport { LuCreditCard } from \"react-icons/lu\"\nimport { usePaymentInputs } from \"react-payment-inputs\"\n\nexport const InputWithCardNumber = () => {\n  const { wrapperProps, getCardNumberProps } = usePaymentInputs()\n  return (\n    <InputGroup {...wrapperProps} endElement={<LuCreditCard />}>\n      <Input {...getCardNumberProps()} />\n    </InputGroup>\n  )\n}\n",
+      "sha256": "e7aab9b197a2a67f787b4cc6d82b821d1df46902d8b002893cec6806a1e154e6",
+      "upstreamPath": "apps/compositions/src/examples/input-with-card-number.tsx",
+      "upstreamSha256": "7305ba641f8573e115120e955eab025554d4f1da8831c3085fb1e36215f46632",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-character-counter.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input, InputGroup, Span } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\nconst MAX_CHARACTERS = 20\n\nexport const InputWithCharacterCounter = () => {\n  const [value, setValue] = useState(\"\")\n  return (\n    <InputGroup\n      endElement={\n        <Span color=\"fg.muted\" textStyle=\"xs\">\n          {value.length} / {MAX_CHARACTERS}\n        </Span>\n      }\n    >\n      <Input\n        placeholder=\"Enter your message\"\n        value={value}\n        maxLength={MAX_CHARACTERS}\n        onChange={(e) => {\n          setValue(e.currentTarget.value.slice(0, MAX_CHARACTERS))\n        }}\n      />\n    </InputGroup>\n  )\n}\n",
+      "sha256": "577bdd72cb2c6f3e626cfaf21bdc58e3467b356188a30bb72735d663fe2d2f02",
+      "upstreamPath": "apps/compositions/src/examples/input-with-character-counter.tsx",
+      "upstreamSha256": "3dca7c7e09426299dff3a39a11c89b0dbc82963e458b6522a5a572f68d8f1301",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-clear-button.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { CloseButton, Input, InputGroup } from \"@chakra-ui/react\"\nimport { useRef, useState } from \"react\"\n\nexport const InputWithClearButton = () => {\n  const [value, setValue] = useState(\"Initial value\")\n  const inputRef = useRef<HTMLInputElement | null>(null)\n\n  const endElement = value ? (\n    <CloseButton\n      size=\"xs\"\n      onClick={() => {\n        setValue(\"\")\n        inputRef.current?.focus()\n      }}\n      me=\"-2\"\n    />\n  ) : undefined\n\n  return (\n    <InputGroup endElement={endElement}>\n      <Input\n        ref={inputRef}\n        placeholder=\"Email\"\n        value={value}\n        onChange={(e) => {\n          setValue(e.currentTarget.value)\n        }}\n      />\n    </InputGroup>\n  )\n}\n",
+      "sha256": "66d2972dfc06e736fcf167d63e20d3b44fb591a12c899adcd52b6fa676df4162",
+      "upstreamPath": "apps/compositions/src/examples/input-with-clear-button.tsx",
+      "upstreamSha256": "08ade787e789425ad0be7c86dc099feda50b648dd37d6b8ac27924395ecbfd68",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-disabled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input } from \"@chakra-ui/react\"\n\nexport const InputWithDisabled = () => {\n  return <Input disabled placeholder=\"disabled\" />\n}\n",
+      "sha256": "8e04c81f75fbc3d005a12021859288332680ddfa2b6d71ec542edba415de47e2",
+      "upstreamPath": "apps/compositions/src/examples/input-with-disabled.tsx",
+      "upstreamSha256": "fb1e3e76cebe74aa9bc12809520ede57690b4a4be8fe2eba537cb084c33ee9bd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-end-addon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input, InputGroup } from \"@chakra-ui/react\"\n\nexport const InputWithEndAddon = () => {\n  return (\n    <InputGroup endAddon=\".com\">\n      <Input placeholder=\"yoursite\" />\n    </InputGroup>\n  )\n}\n",
+      "sha256": "f454410c380b46d15b58d2b9b1657bf0ce743a9bd043ff08f435641c95d00ebc",
+      "upstreamPath": "apps/compositions/src/examples/input-with-end-addon.tsx",
+      "upstreamSha256": "6cb31ad2b4060085027ce1d56066e7d794089e3f4dd1122f658e1d7c99dd0257",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-end-button.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Group, Input } from \"@chakra-ui/react\"\n\nexport const InputWithEndButton = () => {\n  return (\n    <Group attached w=\"full\" maxW=\"sm\">\n      <Input flex=\"1\" placeholder=\"Enter your email\" />\n      <Button bg=\"bg.subtle\" variant=\"outline\">\n        Submit\n      </Button>\n    </Group>\n  )\n}\n",
+      "sha256": "db221751cede4fecd6b7fa8e3a2e96d3823561271308ab46ee94a7cd71f9281b",
+      "upstreamPath": "apps/compositions/src/examples/input-with-end-button.tsx",
+      "upstreamSha256": "6ca9c01606c9fe0f0d42e49830b090a1ec96f3a882d11b5ee6b0c1f963c07e44",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-end-icon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input, InputGroup } from \"@chakra-ui/react\"\nimport { LuMail } from \"react-icons/lu\"\n\nexport const InputWithEndIcon = () => {\n  return (\n    <InputGroup endElement={<LuMail />}>\n      <Input placeholder=\"Email\" />\n    </InputGroup>\n  )\n}\n",
+      "sha256": "0fdf63d4eacccc36af5ecb2631849e83eaad6a5403ec3c294576e921723bce95",
+      "upstreamPath": "apps/compositions/src/examples/input-with-end-icon.tsx",
+      "upstreamSha256": "74a68a5ffaa6d95ddf14a837616b9df75dbb94aa2aaa4909c247520563917301",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-end-text.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input, InputGroup } from \"@chakra-ui/react\"\n\nexport const InputWithEndText = () => {\n  return (\n    <InputGroup endElement=\".com\">\n      <Input placeholder=\"yoursite\" />\n    </InputGroup>\n  )\n}\n",
+      "sha256": "414af1fa03aea4b6e84cbb4bc155974cbb26dc101bda33108095a59746876841",
+      "upstreamPath": "apps/compositions/src/examples/input-with-end-text.tsx",
+      "upstreamSha256": "f3a311212c3d9b9c557e50c106cd1a63b5af7cfe5aca4ec5b8cfcd447d2f7c02",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-error-text.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Field, Input } from \"@chakra-ui/react\"\n\nexport const InputWithErrorText = () => {\n  return (\n    <Field.Root invalid>\n      <Field.Label>Email</Field.Label>\n      <Input placeholder=\"Enter your email\" />\n      <Field.ErrorText>This field is required</Field.ErrorText>\n    </Field.Root>\n  )\n}\n",
+      "sha256": "ca0054223549278ed621858454e5d252d3f3b86e0a0757a9d4fde7f4f3ba6a41",
+      "upstreamPath": "apps/compositions/src/examples/input-with-error-text.tsx",
+      "upstreamSha256": "dc0cb98bbd8a02f3c8a1b7d5a0d60436c95b42239dce30156bf4b8027db41dad",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-field.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Field, HStack, Input } from \"@chakra-ui/react\"\n\nexport const InputWithField = () => {\n  return (\n    <HStack gap=\"10\" width=\"full\">\n      <Field.Root required>\n        <Field.Label>\n          Email <Field.RequiredIndicator />\n        </Field.Label>\n        <Input placeholder=\"me@example.com\" variant=\"subtle\" />\n      </Field.Root>\n      <Field.Root required>\n        <Field.Label>\n          Email <Field.RequiredIndicator />\n        </Field.Label>\n        <Input placeholder=\"me@example.com\" variant=\"outline\" />\n      </Field.Root>\n    </HStack>\n  )\n}\n",
+      "sha256": "d55b73089b315a8718aa1653b50fbbad167300ae57926beba3acfcb2d5a04498",
+      "upstreamPath": "apps/compositions/src/examples/input-with-field.tsx",
+      "upstreamSha256": "29e7be38de6ca18f4135654d45e9e0f6a480babec4837cc2c7d75decbcdb4720",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-floating-label.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { InputProps } from \"@chakra-ui/react\"\nimport {\n  Box,\n  Field,\n  Input,\n  defineStyle,\n  useControllableState,\n} from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\nexport const InputWithFloatingLabel = () => {\n  return (\n    <Field.Root>\n      <FloatingLabelInput label=\"Email\" />\n      <Field.ErrorText>This field is required</Field.ErrorText>\n    </Field.Root>\n  )\n}\n\ninterface FloatingLabelInputProps extends InputProps {\n  label: React.ReactNode\n  value?: string | undefined\n  defaultValue?: string | undefined\n  onValueChange?: ((value: string) => void) | undefined\n}\n\nconst FloatingLabelInput = (props: FloatingLabelInputProps) => {\n  const { label, onValueChange, value, defaultValue = \"\", ...rest } = props\n\n  const [inputState, setInputState] = useControllableState({\n    defaultValue,\n    onChange: onValueChange,\n    value,\n  })\n\n  const [focused, setFocused] = useState(false)\n  const shouldFloat = inputState.length > 0 || focused\n\n  return (\n    <Box pos=\"relative\" w=\"full\">\n      <Input\n        {...rest}\n        onFocus={(e) => {\n          props.onFocus?.(e)\n          setFocused(true)\n        }}\n        onBlur={(e) => {\n          props.onBlur?.(e)\n          setFocused(false)\n        }}\n        onChange={(e) => {\n          props.onChange?.(e)\n          setInputState(e.target.value)\n        }}\n        value={inputState}\n        data-float={shouldFloat || undefined}\n      />\n      <Field.Label css={floatingStyles} data-float={shouldFloat || undefined}>\n        {label}\n      </Field.Label>\n    </Box>\n  )\n}\n\nconst floatingStyles = defineStyle({\n  pos: \"absolute\",\n  bg: \"bg\",\n  px: \"0.5\",\n  top: \"2.5\",\n  insetStart: \"3\",\n  fontWeight: \"normal\",\n  pointerEvents: \"none\",\n  transition: \"position\",\n  color: \"fg.muted\",\n  \"&[data-float]\": {\n    top: \"-3\",\n    insetStart: \"2\",\n    color: \"fg\",\n  },\n})\n",
+      "sha256": "158407a59976da1dfbaf6038fc1e2dbbe81b0a47b1e56a2416696cda5a0dbd3f",
+      "upstreamPath": "apps/compositions/src/examples/input-with-floating-label.tsx",
+      "upstreamSha256": "36f49611f6d61d54094806b56221e12f6593ab9e71247cba02bcae2b1ad8d72d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-focus-error-color.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Field, Input, Stack } from \"@chakra-ui/react\"\n\nexport const InputWithFocusErrorColor = () => {\n  return (\n    <Stack gap=\"4\">\n      <Field.Root>\n        <Field.Label>focusColor=lime</Field.Label>\n        <Input placeholder=\"Focus me\" css={{ \"--focus-color\": \"lime\" }} />\n      </Field.Root>\n      <Field.Root invalid>\n        <Field.Label>errorColor=green</Field.Label>\n        <Input placeholder=\"Email\" css={{ \"--error-color\": \"green\" }} />\n      </Field.Root>\n      <Field.Root invalid>\n        <Field.Label>errorColor=blue</Field.Label>\n        <Input placeholder=\"Password\" css={{ \"--error-color\": \"blue\" }} />\n      </Field.Root>\n\n      <Field.Root invalid>\n        <Field.Label>variant=outline,focusColor=error</Field.Label>\n        <Input placeholder=\"Focus me\" variant=\"outline\" />\n      </Field.Root>\n      <Field.Root invalid>\n        <Field.Label>variant=subtle,focusColor=error</Field.Label>\n        <Input placeholder=\"Focus me\" variant=\"subtle\" />\n      </Field.Root>\n      <Field.Root invalid>\n        <Field.Label>variant=flushed,focusColor=error</Field.Label>\n        <Input placeholder=\"Focus me\" variant=\"flushed\" />\n      </Field.Root>\n    </Stack>\n  )\n}\n",
+      "sha256": "9f35ce14e597af6171f27c3e05bdc5f7ba7127c9a9e08cce6754ff82438d7f87",
+      "upstreamPath": "apps/compositions/src/examples/input-with-focus-error-color.tsx",
+      "upstreamSha256": "bb02497ceccf9232e09f5b7cec8c63e1eb5887b781a23b80efc0d054552ea2da",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-helper-text.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Field, Input } from \"@chakra-ui/react\"\n\nexport const InputWithHelperText = () => {\n  return (\n    <Field.Root required>\n      <Field.Label>\n        Email <Field.RequiredIndicator />\n      </Field.Label>\n      <Input placeholder=\"Enter your email\" />\n      <Field.HelperText>We'll never share your email.</Field.HelperText>\n    </Field.Root>\n  )\n}\n",
+      "sha256": "a85db77ce7fed964ae91be1e5ebfa22e87d002946fb20a0157d2e07017cf7758",
+      "upstreamPath": "apps/compositions/src/examples/input-with-helper-text.tsx",
+      "upstreamSha256": "8367707f6341442244797e1b723842d7041b43eef94b5f62b4be4e3254d951b4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-hook-form.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Field, Input, Stack } from \"@chakra-ui/react\"\nimport { useForm } from \"react-hook-form\"\n\ninterface FormValues {\n  firstName: string\n  lastName: string\n}\n\nexport const InputWithHookForm = () => {\n  const {\n    register,\n    handleSubmit,\n    formState: { errors },\n  } = useForm<FormValues>()\n\n  const onSubmit = handleSubmit((data) => console.log(data))\n\n  return (\n    <form onSubmit={onSubmit}>\n      <Stack gap=\"4\" align=\"flex-start\" maxW=\"sm\">\n        <Field.Root invalid={!!errors.firstName}>\n          <Field.Label>First name</Field.Label>\n          <Input {...register(\"firstName\")} />\n          <Field.ErrorText>{errors.firstName?.message}</Field.ErrorText>\n        </Field.Root>\n\n        <Field.Root invalid={!!errors.lastName}>\n          <Field.Label>Last name</Field.Label>\n          <Input {...register(\"lastName\")} />\n          <Field.ErrorText>{errors.lastName?.message}</Field.ErrorText>\n        </Field.Root>\n\n        <Button type=\"submit\">Submit</Button>\n      </Stack>\n    </form>\n  )\n}\n",
+      "sha256": "6205d873f9af2f50137a9a09f43dae58e768f3505d8ae73461ab33c254ba3247",
+      "upstreamPath": "apps/compositions/src/examples/input-with-hook-form.tsx",
+      "upstreamSha256": "dff050b8c13e641bdc6b35a6c0e2c6223295775114fe822a8481b9066e604739",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-invalid.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Field, Input } from \"@chakra-ui/react\"\n\nexport const InputWithInvalid = () => (\n  <Field.Root id=\"first-name\" invalid>\n    <Field.Label>First name</Field.Label>\n    <Input placeholder=\"Enter first name\" />\n    <Field.ErrorText>First name is required</Field.ErrorText>\n  </Field.Root>\n)\n",
+      "sha256": "7f4cf5b992170b0add4bd4e5430c3877711e31c5999401ab79ed0966689bf020",
+      "upstreamPath": "apps/compositions/src/examples/input-with-invalid.tsx",
+      "upstreamSha256": "373431d32bc8a72b1c33981034fc3f47db8ddbe519c9f188834ce7f38740c4f5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-kbd.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input, InputGroup, Kbd } from \"@chakra-ui/react\"\nimport { LuSearch } from \"react-icons/lu\"\n\nexport const InputWithKbd = () => (\n  <InputGroup flex=\"1\" startElement={<LuSearch />} endElement={<Kbd>⌘K</Kbd>}>\n    <Input placeholder=\"Search contacts\" />\n  </InputGroup>\n)\n",
+      "sha256": "b63c51c58eec610a914fc7b2f7c59c752216200a8862ea9c7b9431fa09f48bd6",
+      "upstreamPath": "apps/compositions/src/examples/input-with-kbd.tsx",
+      "upstreamSha256": "60c5d5daacfd662fd58f05e0aa5021d46bab11fc2123f7ff515b4c005ce54838",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-mask.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input } from \"@chakra-ui/react\"\nimport { withMask } from \"use-mask-input\"\n\nexport const InputWithMask = () => {\n  return (\n    <Input placeholder=\"(99) 99999-9999\" ref={withMask(\"(99) 99999-9999\")} />\n  )\n}\n",
+      "sha256": "ed29333dde117ba20ed568c4c96ad79a3c5a14297e78d61a8b4ec2f5f0f6a2a6",
+      "upstreamPath": "apps/compositions/src/examples/input-with-mask.tsx",
+      "upstreamSha256": "d1dfe26518be22d963339f72282a3c83edeed923d3577d43d6d0fce1aee79b35",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-placeholder-style.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input } from \"@chakra-ui/react\"\n\nexport const InputWithPlaceholderStyle = () => {\n  return (\n    <Input\n      color=\"teal\"\n      placeholder=\"custom placeholder\"\n      _placeholder={{ color: \"inherit\" }}\n    />\n  )\n}\n",
+      "sha256": "c6ffaabb064ff6f201d27485685f3eab2b5fd0770fb324385786747259fa9c4f",
+      "upstreamPath": "apps/compositions/src/examples/input-with-placeholder-style.tsx",
+      "upstreamSha256": "77e0a6c61fc8657fad2cde744a95b2959ada8d2836bcd33c93d3871ace7927f3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-select.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input, InputGroup, NativeSelect } from \"@chakra-ui/react\"\n\nconst DomainSelect = () => (\n  <NativeSelect.Root size=\"xs\" variant=\"plain\" width=\"auto\" me=\"-1\">\n    <NativeSelect.Field defaultValue=\".com\" fontSize=\"sm\">\n      <option value=\".com\">.com</option>\n      <option value=\".org\">.org</option>\n      <option value=\".net\">.net</option>\n    </NativeSelect.Field>\n    <NativeSelect.Indicator />\n  </NativeSelect.Root>\n)\n\nexport const InputWithSelect = () => {\n  return (\n    <InputGroup flex=\"1\" startElement=\"https://\" endElement={<DomainSelect />}>\n      <Input ps=\"4.75em\" pe=\"0\" placeholder=\"yoursite.com\" />\n    </InputGroup>\n  )\n}\n",
+      "sha256": "0567bbcff98b126a4edce2b8cd76daeed3717d7f4b47f822ceb9505925a8aadc",
+      "upstreamPath": "apps/compositions/src/examples/input-with-select.tsx",
+      "upstreamSha256": "4be2e78029709a91a05033448aa3395dbb506f77fc254b9642fb8e8be4c38aa3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-sizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input, Stack } from \"@chakra-ui/react\"\n\nexport const InputWithSizes = () => {\n  return (\n    <Stack gap=\"4\">\n      <Input placeholder=\"size (xs)\" size=\"xs\" />\n      <Input placeholder=\"size (sm)\" size=\"sm\" />\n      <Input placeholder=\"size (md)\" size=\"md\" />\n      <Input placeholder=\"size (lg)\" size=\"lg\" />\n    </Stack>\n  )\n}\n",
+      "sha256": "f7a117744a95e4403fdbb9f7a938f613a8351821d9420c4b4c5e0a24468e5efe",
+      "upstreamPath": "apps/compositions/src/examples/input-with-sizes.tsx",
+      "upstreamSha256": "d46dd2d3cd063c97a01141d21704d1d8d18b305c5bb28866d7dab138e863b380",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-start-addon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input, InputGroup } from \"@chakra-ui/react\"\n\nexport const InputWithStartAddon = () => {\n  return (\n    <InputGroup startAddon=\"https://\">\n      <Input placeholder=\"yoursite.com\" />\n    </InputGroup>\n  )\n}\n",
+      "sha256": "d16f47466060764a95110af45d10ec329d1a096b2d3cce02c747b0d1156c65e8",
+      "upstreamPath": "apps/compositions/src/examples/input-with-start-addon.tsx",
+      "upstreamSha256": "2ef3723baa16345a148fc0325a9f30432139b36345c5d821457b6cf3cb5eebcd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-start-and-end-addon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input, InputGroup } from \"@chakra-ui/react\"\n\nexport const InputWithStartAndEndAddon = () => {\n  return (\n    <InputGroup startAddon=\"$\" endAddon=\"USD\">\n      <Input placeholder=\"0.00\" />\n    </InputGroup>\n  )\n}\n",
+      "sha256": "2af0e5832f7cb9ea5bd132fb7ac407749d6c4d96dafa98486c57e894d520424a",
+      "upstreamPath": "apps/compositions/src/examples/input-with-start-and-end-addon.tsx",
+      "upstreamSha256": "5fcdf83b22bfe4ead328c64b2655c59c3cffa341e4a18182780eea533090396d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-start-and-end-text.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input, InputGroup } from \"@chakra-ui/react\"\n\nexport const InputWithStartAndEndText = () => {\n  return (\n    <InputGroup startElement=\"$\" endElement=\"USD\">\n      <Input placeholder=\"0.00\" />\n    </InputGroup>\n  )\n}\n",
+      "sha256": "3eb5bb4a0dfa3950961756a000f47480602678afba469fcda8810328ffc8b4d1",
+      "upstreamPath": "apps/compositions/src/examples/input-with-start-and-end-text.tsx",
+      "upstreamSha256": "659dc09a7aab7dcffe187da3e389f5f8d7267e838b2969a986d59fb9f1891f5a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-start-element-end-addon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input, InputGroup } from \"@chakra-ui/react\"\n\nexport const InputWithStartElementEndAddon = () => {\n  return (\n    <InputGroup startElement=\"$\" endAddon=\"USD\">\n      <Input placeholder=\"0.00\" />\n    </InputGroup>\n  )\n}\n",
+      "sha256": "1d9feedee231ea73ac89def3a81951643c638fce5bdfc440f3fe42a16784bf74",
+      "upstreamPath": "apps/compositions/src/examples/input-with-start-element-end-addon.tsx",
+      "upstreamSha256": "3410f05fe12673842c4242787fb1d0f424667f26a318db12cfee722b0f77f04f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-start-icon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input, InputGroup } from \"@chakra-ui/react\"\nimport { LuUser } from \"react-icons/lu\"\n\nexport const InputWithStartIcon = () => {\n  return (\n    <InputGroup startElement={<LuUser />}>\n      <Input placeholder=\"Username\" />\n    </InputGroup>\n  )\n}\n",
+      "sha256": "a3c861d95303510cb3695ed2de029711e177431b22ece10d2623931a9c3545a6",
+      "upstreamPath": "apps/compositions/src/examples/input-with-start-icon.tsx",
+      "upstreamSha256": "8bf36ffe96c7c1a6842c44251711d49b11d44d7ff38748ea3b8ea60c31508114",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-start-text.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input, InputGroup } from \"@chakra-ui/react\"\n\nexport const InputWithStartText = () => {\n  return (\n    <InputGroup\n      startElement=\"https://\"\n      startElementProps={{ color: \"fg.muted\" }}\n    >\n      <Input ps=\"7ch\" placeholder=\"yoursite.com\" />\n    </InputGroup>\n  )\n}\n",
+      "sha256": "b8304585e974e84946703284791124a3e2caea032a10142fdc54c45a7ae4a5ea",
+      "upstreamPath": "apps/compositions/src/examples/input-with-start-text.tsx",
+      "upstreamSha256": "4a0b66ce95cd4c05823ac7dbd35114fefb2660bd02b247a50685896dea265f46",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/input-with-variants.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input, Stack } from \"@chakra-ui/react\"\n\nexport const InputWithVariants = () => {\n  return (\n    <Stack gap=\"4\">\n      <Input placeholder=\"Subtle\" variant=\"subtle\" />\n      <Input placeholder=\"Outline\" variant=\"outline\" />\n      <Input placeholder=\"Flushed\" variant=\"flushed\" />\n    </Stack>\n  )\n}\n",
+      "sha256": "6525107047dd397ba95034f10fc4a7d2ca419e73a278e4985889842f97a73360",
+      "upstreamPath": "apps/compositions/src/examples/input-with-variants.tsx",
+      "upstreamSha256": "f064d0fd821ae2eeb5a604543b34447d8c1acb4d188bd57ee1753bec8bc413f8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputBasic as Example } from \"@/components/rendyn-libraries/chakra/input/example\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "52f9cce67048eb01d67badd62ee0452bae7a322f06ae34eb0bd1aa6c5b395941",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-size-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputSizeTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-size-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "60993299f01b391b01f56b32c972d306b00a2d21f73a452d63e28e0bb5c255fd",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-variant-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputVariantTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-variant-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "2f2025e1bbb815043c67748539bb4b9693f543231c710f4f84d37f8dafd1f9d9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-card-details.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithCardDetails as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-card-details\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "2948279a78ae5c646dfcd60ea6111ef7a627081d4a3f20b2dd50fb750bedad20",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-card-number.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithCardNumber as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-card-number\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "75b8987c70f1523e3422c0fc31c46f48e95ba36029da5307a88f0cb64175ab88",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-character-counter.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithCharacterCounter as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-character-counter\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "72479b9917f73ea016e1cdbba3127a55a47a292c68bc2894257d2a64f9733d35",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-clear-button.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithClearButton as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-clear-button\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "19961badf179d550d7e9a0d389776f7db0ac1b093e2ec1cfd940442681e62f73",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithDisabled as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-disabled\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "96377b7f3bc1bd6aae745acb3a7a3fc229c8b1c36d641e5bcca055e8f4d5178e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-end-addon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithEndAddon as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-end-addon\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "035c409739e05538c8b1bf00ac281227537941b2f13281b90f7b869696f827b0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-end-button.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithEndButton as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-end-button\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "3e7c64d1940e90a264ff5d1a8c4186c58952e04c2375e797cd6380ef57083250",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-end-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithEndIcon as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-end-icon\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "ebf33dd0956f9718ccec4f95f044cb30ca74212d87843d16a61998773b984cf7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-end-text.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithEndText as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-end-text\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "6565878b2f7b825d2a349493c96aa75936ee14f7d0c81fb2e64b3ba17ed0611c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-error-text.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithErrorText as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-error-text\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "43730669c19b60840db5ed54c68f3757bd365b93878a1ca3dd25ef2cd029e5ee",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-field.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithField as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-field\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "fd5310cc161abb42f2fe88aa342408ad1a00125562f558bdfee053bcd32b5d7f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-floating-label.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithFloatingLabel as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-floating-label\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a9a3667758aedb640ee5ee436fd6f23c5a81dcd121173d5bb6e9f600c80da5b9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-focus-error-color.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithFocusErrorColor as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-focus-error-color\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "04f57f227be6c0faf0d1bfed6e19b6390dbb39362e8ef06131d7991c4a696f4d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-helper-text.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithHelperText as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-helper-text\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "3bb36374e0a664745fd4e4446260910e2356ad7130ce9eb3f0391fa711b1d85a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-hook-form.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithHookForm as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-hook-form\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "e01d4d52a929e561e092fa3330387bce602789e41622c40e12e9dd7fe5381731",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-invalid.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithInvalid as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-invalid\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "9cf2d5654c898a867194a2c6309fe2393d4a39bd2d5df581885dc6867d9c4600",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-kbd.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithKbd as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-kbd\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "5dc1aaf9c47ebf3e0c9d31b7bed76e812657f9c4aa935f02256413de9aa49dea",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-mask.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithMask as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-mask\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "02252784cdf2b81d18a959d91a6885bc193d9e81a74465e05997897f49b4e578",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-placeholder-style.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithPlaceholderStyle as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-placeholder-style\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "e3c612d7d34ff5e219e0157f266371055f3dcaf87736454290dc493700f76b6c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-select.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithSelect as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-select\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "044246056b84567de3a045b28772bbe5b1ca2757336832d33a27db167bc3fa8a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithSizes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-sizes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "7b542a5ddf5b61076c1b247134067ac99cbca1e505306594e2d9bf2cdc9c8028",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-start-addon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithStartAddon as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-start-addon\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "10f240f69e3d1efa4f20f1618315b10d575d503b8cce73a3f9668c90f9083d9e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-start-and-end-addon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithStartAndEndAddon as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-start-and-end-addon\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "16a71846f4e1d493b88a271d794d6311e30f841ec35fc990f74844cdb66a5445",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-start-and-end-text.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithStartAndEndText as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-start-and-end-text\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "80ad412e3c816d07856269ac995c36d3ed1e882e613a0adbe8c448144417d7fc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-start-element-end-addon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithStartElementEndAddon as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-start-element-end-addon\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "00277b10d406bafd410eed43be3f85e42e5d51d6f0e354f0287c0f746b76a588",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-start-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithStartIcon as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-start-icon\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "0aa9f232d46978435189957453558d01c649148351150beaccae30dcfd8d264f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-start-text.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithStartText as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-start-text\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "b95f4f0d650333a13ddae83e7259b1b015a2bf5727e0f25daf9c530f22931b5a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/input/previews/input-with-variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { InputWithVariants as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/input-with-variants\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "e69cd4f0ce40da51b50c2f26885976cfac650724e59719f12bef3d87f34841c2",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 react-hook-form@7.87.0 react-icons@5.5.0 react-payment-inputs@1.2.0 use-mask-input@3.14.2",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 react-hook-form@7.87.0 react-icons@5.5.0 react-payment-inputs@1.2.0 use-mask-input@3.14.2",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "input",
+    "upstreamPageUrl": "https://chakra-ui.com/docs/components/input",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/input-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/input-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI Input\n\n31 published Chakra UI input examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://chakra-ui.com/docs/components/input\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/input-basic.tsx\n"
+}

@@ -1,0 +1,244 @@
+{
+  "id": "chakra:editable",
+  "sourceId": "chakra",
+  "slug": "chakra-editable",
+  "name": "Chakra UI editable",
+  "description": "10 published Chakra UI editable examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "react-icons@5.5.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "editable",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input",
+      "table"
+    ],
+    "aliases": [
+      "editable",
+      "chakra ui editable"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "10 published Chakra UI editable examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "editable:checkbox:file:form:input:table:keyboard",
+    "searchText": "Chakra UI editable\neditable\n10 published Chakra UI editable examples with complete pinned source and MIT attribution.\nchakra ui editable\ncheckbox\nfile\nform\ninput\ntable\nkeyboard\nChakra UI editable 10 published Chakra UI editable examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/editable basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-editable",
+  "manifestPath": "components/chakra-editable/component.json",
+  "integrity": "sha256:9e8277f0cdbf0421548074a0f78a8b723b5dd87238ef66697bf2f7c660914252",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/editable-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Editable } from \"@chakra-ui/react\"\n\nexport const EditableBasic = () => (\n  <Editable.Root textAlign=\"start\" defaultValue=\"Click to edit\">\n    <Editable.Preview />\n    <Editable.Input />\n  </Editable.Root>\n)\n",
+      "sha256": "2cbf3310d9e1b04d587952fb195bb85ae2287c77ce7eac911c1afcc3f5341336",
+      "upstreamPath": "apps/compositions/src/examples/editable-basic.tsx",
+      "upstreamSha256": "0dd19caac5330c4fec57dc415b8dff1854b58da9f470b6ee1046376170e37769",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/editable-controlled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Editable } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\nexport const EditableControlled = () => {\n  const [name, setName] = useState(\"\")\n  return (\n    <Editable.Root\n      value={name}\n      onValueChange={(e) => setName(e.value)}\n      placeholder=\"Click to edit\"\n    >\n      <Editable.Preview />\n      <Editable.Input />\n    </Editable.Root>\n  )\n}\n",
+      "sha256": "1ceb6bb382fe8841607a551433d40ba22451941a0b98da705a0414c3d0fe5aa4",
+      "upstreamPath": "apps/compositions/src/examples/editable-controlled.tsx",
+      "upstreamSha256": "03f11223ca5a5497de6cc36049afac369eb14e46a747fa425d1f6fdb9c2610ec",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/editable-disabled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Editable } from \"@chakra-ui/react\"\n\nexport const EditableDisabled = () => {\n  return (\n    <Editable.Root disabled defaultValue=\"Click to edit\">\n      <Editable.Preview opacity={0.5} cursor=\"not-allowed\" />\n      <Editable.Input />\n    </Editable.Root>\n  )\n}\n",
+      "sha256": "bfc821391f7aebe19e4d137f847af3da05001fb0212aa198643140679c8e675e",
+      "upstreamPath": "apps/compositions/src/examples/editable-disabled.tsx",
+      "upstreamSha256": "670f96df003d982447e3acb647163542c66a270f36a5b0fc5e4d26578b86c983",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/editable-explorer-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Editable, HStack, IconButton, Text, VStack } from \"@chakra-ui/react\"\nimport { LuCheck, LuPencilLine, LuX } from \"react-icons/lu\"\n\nexport const EditableExplorerDemo = () => {\n  return (\n    <VStack p=\"6\" maxW=\"600px\" mx=\"auto\" gap=\"6\" align=\"stretch\">\n      <Editable.Root defaultValue=\"Click to edit\" defaultEdit>\n        <VStack align=\"stretch\" gap=\"3\">\n          <Editable.Label>\n            <Text fontSize=\"sm\" color=\"fg.muted\">\n              Editable Label\n            </Text>\n          </Editable.Label>\n\n          <Editable.Area>\n            <Editable.Preview p=\"2\" minH=\"40px\" />\n            <Editable.Input p=\"2\" mt=\"1\" />\n          </Editable.Area>\n\n          <Editable.Textarea\n            placeholder=\"Editable textarea\"\n            minH=\"80px\"\n            data-part=\"textarea\"\n            border={\"1px solid\"}\n            borderColor=\"fg.muted\"\n            p=\"2\"\n          />\n\n          <Editable.Control>\n            <HStack justify=\"flex-end\" gap=\"2\">\n              <Editable.EditTrigger asChild>\n                <IconButton size=\"sm\" aria-label=\"Edit\">\n                  <LuPencilLine />\n                </IconButton>\n              </Editable.EditTrigger>\n              <Editable.CancelTrigger asChild>\n                <IconButton size=\"sm\" aria-label=\"Cancel\">\n                  <LuX />\n                </IconButton>\n              </Editable.CancelTrigger>\n              <Editable.SubmitTrigger asChild>\n                <IconButton size=\"sm\" aria-label=\"Submit\">\n                  <LuCheck />\n                </IconButton>\n              </Editable.SubmitTrigger>\n            </HStack>\n          </Editable.Control>\n        </VStack>\n      </Editable.Root>\n    </VStack>\n  )\n}\n",
+      "sha256": "3087cc7cb9a7b6496f203ea6f1ce8cd4839b7c6991468c1880e0e86acb0f269c",
+      "upstreamPath": "apps/compositions/src/examples/editable-explorer-demo.tsx",
+      "upstreamSha256": "d488072b9b5061b4e78e40f42883cede9691a5d0317200f8ed4a8c266e52f18e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/editable-with-controls.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Editable, IconButton } from \"@chakra-ui/react\"\nimport { LuCheck, LuPencilLine, LuX } from \"react-icons/lu\"\n\nexport const EditableWithControls = () => {\n  return (\n    <Editable.Root defaultValue=\"Click to edit\">\n      <Editable.Preview />\n      <Editable.Input />\n      <Editable.Control>\n        <Editable.EditTrigger asChild>\n          <IconButton variant=\"ghost\" size=\"xs\">\n            <LuPencilLine />\n          </IconButton>\n        </Editable.EditTrigger>\n        <Editable.CancelTrigger asChild>\n          <IconButton variant=\"outline\" size=\"xs\">\n            <LuX />\n          </IconButton>\n        </Editable.CancelTrigger>\n        <Editable.SubmitTrigger asChild>\n          <IconButton variant=\"outline\" size=\"xs\">\n            <LuCheck />\n          </IconButton>\n        </Editable.SubmitTrigger>\n      </Editable.Control>\n    </Editable.Root>\n  )\n}\n",
+      "sha256": "933ca78d7732caf177d76b27b91a36381dfb4fab0df06a71fc89f89a2ad4cf13",
+      "upstreamPath": "apps/compositions/src/examples/editable-with-controls.tsx",
+      "upstreamSha256": "1bc673974f0485a1c474f244e3c99f5d6bdd1d4f3f2c6667df411c5d670d7e06",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/editable-with-custom-component.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Editable, Input } from \"@chakra-ui/react\"\n\nexport const EditableWithCustomComponent = () => {\n  return (\n    <Editable.Root defaultValue=\"Click to edit\">\n      <Editable.Preview>\n        <Input />\n      </Editable.Preview>\n    </Editable.Root>\n  )\n}\n",
+      "sha256": "a767ff401e1e1ca1bbe7e0ba85ba0669fc891494a5122137e4857b46c8e2d7be",
+      "upstreamPath": "apps/compositions/src/examples/editable-with-custom-component.tsx",
+      "upstreamSha256": "829dde18826c9263a58a303d2e1d35921bc77dc6d4c3cf38a6533cfc512b5c43",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/editable-with-double-click.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Editable } from \"@chakra-ui/react\"\n\nexport const EditableWithDoubleClick = () => (\n  <Editable.Root defaultValue=\"Double click to edit\" activationMode=\"dblclick\">\n    <Editable.Preview />\n    <Editable.Input />\n  </Editable.Root>\n)\n",
+      "sha256": "fa86d85d9137abd43292af435a3d2749989cf481311decab297587d04a4f6c4e",
+      "upstreamPath": "apps/compositions/src/examples/editable-with-double-click.tsx",
+      "upstreamSha256": "3557c5c2c52989ca1c55d30954dee8f71743340b768da52155b0d1ec81e567fc",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/editable-with-final-focus.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Editable, Input, Stack } from \"@chakra-ui/react\"\nimport { useRef } from \"react\"\n\nexport const EditableWithFinalFocus = () => {\n  const ref = useRef<HTMLInputElement | null>(null)\n\n  return (\n    <Stack>\n      <Editable.Root\n        finalFocusEl={() => ref.current}\n        defaultValue=\"Final fantasy\"\n      >\n        <Editable.Preview />\n        <Editable.Input />\n        <Editable.Control>\n          <Editable.EditTrigger>Edit</Editable.EditTrigger>\n          <Editable.CancelTrigger>Cancel</Editable.CancelTrigger>\n          <Editable.SubmitTrigger>Submit</Editable.SubmitTrigger>\n        </Editable.Control>\n      </Editable.Root>\n\n      <Input placeholder=\"Placeholder\" ref={ref} />\n    </Stack>\n  )\n}\n",
+      "sha256": "e3bfe4c76f247123534f1c5612bfb49a67c25d60160a22c68448b9304058b3a7",
+      "upstreamPath": "apps/compositions/src/examples/editable-with-final-focus.tsx",
+      "upstreamSha256": "6823bdabfc187e74930ed479d43605d52d850cda3b8110ade406d4de092e81b3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/editable-with-store.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Code, Editable, Stack, useEditable } from \"@chakra-ui/react\"\n\nexport const EditableWithStore = () => {\n  const editable = useEditable({\n    defaultValue: \"Click to edit\",\n  })\n\n  return (\n    <Stack align=\"flex-start\">\n      <Editable.RootProvider value={editable}>\n        <Editable.Preview />\n        <Editable.Input />\n      </Editable.RootProvider>\n      <Code>{editable.editing ? \"editing\" : \"not editing\"}</Code>\n    </Stack>\n  )\n}\n",
+      "sha256": "b3e365af65e9f28141aec853372c9697ae52fd30dbe6f3685a392af09a05b245",
+      "upstreamPath": "apps/compositions/src/examples/editable-with-store.tsx",
+      "upstreamSha256": "7499025af78cd394fb1b075e652161ef7e8784d6d9744066e895f63c4f8ede2a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/editable-with-textarea.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Editable } from \"@chakra-ui/react\"\n\nexport const EditableWithTextarea = () => {\n  return (\n    <Editable.Root defaultValue=\"Click to edit\">\n      <Editable.Preview minH=\"48px\" alignItems=\"flex-start\" width=\"full\" />\n      <Editable.Textarea />\n    </Editable.Root>\n  )\n}\n",
+      "sha256": "e144a6ead09684d5fcb42fcd5670e435490cb16993db1065e9ded5198d008754",
+      "upstreamPath": "apps/compositions/src/examples/editable-with-textarea.tsx",
+      "upstreamSha256": "9f97c8902c3bddf31714085b51e66b6047882cea79583c6d1f9eaef31f0f817f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/editable/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { EditableBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/editable-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "947654b3907e8b2f77851ac64b6666821763b07895143812f83acb8120f711e3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/editable/previews/editable-controlled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { EditableControlled as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/editable-controlled\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "04c846eb08eb3b48f77ed945968cfdfcac8739ca4372aed0102b707f41e7f6e3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/editable/previews/editable-disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { EditableDisabled as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/editable-disabled\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "db65f413ac7230bc29f5ef59348b521bfa5fbcfe54ff53a9cf2e22e34fb5fbe4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/editable/previews/editable-explorer-demo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { EditableExplorerDemo as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/editable-explorer-demo\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "b87883c6aa76ae24c893a7c41ddc35e566396b7d40f0acfd11c155ff802116ab",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/editable/previews/editable-with-controls.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { EditableWithControls as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/editable-with-controls\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "c55849190b0c02755f6f70fbeea6c353aff4901bae823d842d577e0890560de3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/editable/previews/editable-with-custom-component.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { EditableWithCustomComponent as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/editable-with-custom-component\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a56d19ec22b92737d79a36ca62bb048fbd20f8bd60981f46168bd38ad8c8e96c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/editable/previews/editable-with-double-click.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { EditableWithDoubleClick as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/editable-with-double-click\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "8391eb48ff3ceb81514e9054f14143be0cacb36ccbd73db00a001ef88f9fab8c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/editable/previews/editable-with-final-focus.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { EditableWithFinalFocus as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/editable-with-final-focus\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "f5b038429e115930ca5fe5824370a4e609007e1fd1188f3c0e9e25f8d7f80cca",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/editable/previews/editable-with-store.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { EditableWithStore as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/editable-with-store\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "535a8b34a95b2b506a12a5c3a3b767c445ba4e6f76e4b4e20ef8ec316b7c891b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/editable/previews/editable-with-textarea.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { EditableWithTextarea as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/editable-with-textarea\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "ca802e99d7089c3e48fb2ba49904a5f32c2e50d5f230d4c0caf91e135254065a",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "editable",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/editable-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/editable-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI editable\n\n10 published Chakra UI editable examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/editable-basic.tsx\n"
+}

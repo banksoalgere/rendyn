@@ -1,0 +1,356 @@
+{
+  "id": "chakra:floating-panel",
+  "sourceId": "chakra",
+  "slug": "chakra-floating-panel",
+  "name": "Chakra UI floating panel",
+  "description": "17 published Chakra UI floating panel examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "react-icons@5.5.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "floating-panel",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "floating panel",
+      "chakra ui floating panel",
+      "floating-panel"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "17 published Chakra UI floating panel examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "floating-panel:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI floating panel\nfloating panel\n17 published Chakra UI floating panel examples with complete pinned source and MIT attribution.\nchakra ui floating panel\nfloating-panel\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI floating panel 17 published Chakra UI floating panel examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/floating panel anchor position.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-floating-panel",
+  "manifestPath": "components/chakra-floating-panel/component.json",
+  "integrity": "sha256:9cf79f0f0bdc0d7e468aefd94192d80772d221d5b694392f628ce009f8129208",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-anchor-position.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  FloatingPanel,\n  IconButton,\n  Portal,\n  Text,\n} from \"@chakra-ui/react\"\nimport { useCallback, useRef } from \"react\"\nimport { LuGripHorizontal, LuX } from \"react-icons/lu\"\n\nexport const FloatingPanelAnchorPosition = () => {\n  const anchorPos = useRef({ x: 0, y: 0 })\n\n  const getAnchorPosition = useCallback(\n    (details: {\n      triggerRect: DOMRect | null\n      boundaryRect: DOMRect | null\n    }) => {\n      const rect = details.triggerRect\n      if (!rect) return anchorPos.current\n      anchorPos.current = { x: rect.left, y: rect.bottom + 8 }\n      return anchorPos.current\n    },\n    [],\n  )\n\n  return (\n    <FloatingPanel.Root\n      getAnchorPosition={getAnchorPosition}\n      defaultSize={{ width: 300, height: 200 }}\n      minSize={{ width: 280, height: 160 }}\n    >\n      <FloatingPanel.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Panel\n        </Button>\n      </FloatingPanel.Trigger>\n      <Portal>\n        <FloatingPanel.Positioner>\n          <FloatingPanel.Content>\n            <FloatingPanel.Header>\n              <FloatingPanel.DragTrigger>\n                <LuGripHorizontal />\n                <FloatingPanel.Title>Anchor Position</FloatingPanel.Title>\n              </FloatingPanel.DragTrigger>\n              <FloatingPanel.Control>\n                <FloatingPanel.CloseTrigger asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuX />\n                  </IconButton>\n                </FloatingPanel.CloseTrigger>\n              </FloatingPanel.Control>\n            </FloatingPanel.Header>\n            <FloatingPanel.Body>\n              <Text textStyle=\"sm\">\n                Opens below the trigger. Drag the header to reposition.\n              </Text>\n            </FloatingPanel.Body>\n            <FloatingPanel.ResizeTriggers />\n          </FloatingPanel.Content>\n        </FloatingPanel.Positioner>\n      </Portal>\n    </FloatingPanel.Root>\n  )\n}\n",
+      "sha256": "b0363daceca4cd7172a6c38d7f0ca186e657ace2dccdee583d01f416afeb9df2",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-anchor-position.tsx",
+      "upstreamSha256": "fde60da47ded2aefdadac2d0c8de8fdba525a39e081620757b558ee23745a9d2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, FloatingPanel, IconButton, Portal } from \"@chakra-ui/react\"\nimport {\n  LuGripHorizontal,\n  LuMaximize2,\n  LuMinus,\n  LuSquare,\n  LuX,\n} from \"react-icons/lu\"\n\nexport const FloatingPanelBasic = () => {\n  return (\n    <FloatingPanel.Root>\n      <FloatingPanel.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Panel\n        </Button>\n      </FloatingPanel.Trigger>\n      <Portal>\n        <FloatingPanel.Positioner>\n          <FloatingPanel.Content>\n            <FloatingPanel.Header>\n              <FloatingPanel.DragTrigger>\n                <LuGripHorizontal />\n                <FloatingPanel.Title>Floating Panel</FloatingPanel.Title>\n              </FloatingPanel.DragTrigger>\n              <FloatingPanel.Control>\n                <FloatingPanel.StageTrigger stage=\"minimized\" asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuMinus />\n                  </IconButton>\n                </FloatingPanel.StageTrigger>\n                <FloatingPanel.StageTrigger stage=\"maximized\" asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuSquare />\n                  </IconButton>\n                </FloatingPanel.StageTrigger>\n                <FloatingPanel.StageTrigger stage=\"default\" asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuMaximize2 />\n                  </IconButton>\n                </FloatingPanel.StageTrigger>\n                <FloatingPanel.CloseTrigger asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuX />\n                  </IconButton>\n                </FloatingPanel.CloseTrigger>\n              </FloatingPanel.Control>\n            </FloatingPanel.Header>\n            <FloatingPanel.Body>\n              <p>Drag the header to move this panel around.</p>\n            </FloatingPanel.Body>\n            <FloatingPanel.ResizeTriggers />\n          </FloatingPanel.Content>\n        </FloatingPanel.Positioner>\n      </Portal>\n    </FloatingPanel.Root>\n  )\n}\n",
+      "sha256": "ef47c22e33042e5edec3fc9bf5d581ca5cc0e274b7859d02bec89bda7e69006e",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-basic.tsx",
+      "upstreamSha256": "9feb0524bc0173b72036485b8471f3a9bdb3da562538965f93e6bd61e2af7a43",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-boundary.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Box,\n  Button,\n  FloatingPanel,\n  IconButton,\n  Portal,\n  Text,\n} from \"@chakra-ui/react\"\nimport { useRef } from \"react\"\nimport { LuGripHorizontal, LuX } from \"react-icons/lu\"\n\nexport const FloatingPanelBoundary = () => {\n  const boundaryRef = useRef<HTMLDivElement>(null)\n\n  return (\n    <Box\n      ref={boundaryRef}\n      position=\"relative\"\n      borderWidth=\"2px\"\n      borderStyle=\"dashed\"\n      borderColor=\"border.emphasized\"\n      borderRadius=\"l2\"\n      w=\"full\"\n      h=\"400px\"\n      p=\"4\"\n    >\n      <Text textStyle=\"xs\" color=\"fg.muted\" mb=\"2\">\n        Drag boundary\n      </Text>\n      <FloatingPanel.Root\n        persistRect\n        allowOverflow={false}\n        getBoundaryEl={() => boundaryRef.current}\n        defaultSize={{ width: 280, height: 180 }}\n        minSize={{ width: 280, height: 180 }}\n      >\n        <FloatingPanel.Trigger asChild>\n          <Button variant=\"outline\" size=\"sm\">\n            Open Panel\n          </Button>\n        </FloatingPanel.Trigger>\n        <Portal>\n          <FloatingPanel.Positioner>\n            <FloatingPanel.Content>\n              <FloatingPanel.Header>\n                <FloatingPanel.DragTrigger>\n                  <LuGripHorizontal />\n                  <FloatingPanel.Title>Bounded Panel</FloatingPanel.Title>\n                </FloatingPanel.DragTrigger>\n                <FloatingPanel.Control>\n                  <FloatingPanel.CloseTrigger asChild>\n                    <IconButton variant=\"ghost\" size=\"2xs\">\n                      <LuX />\n                    </IconButton>\n                  </FloatingPanel.CloseTrigger>\n                </FloatingPanel.Control>\n              </FloatingPanel.Header>\n              <FloatingPanel.Body>\n                <Text textStyle=\"sm\">\n                  This panel cannot be dragged outside the dashed boundary box.\n                </Text>\n              </FloatingPanel.Body>\n              <FloatingPanel.ResizeTriggers />\n            </FloatingPanel.Content>\n          </FloatingPanel.Positioner>\n        </Portal>\n      </FloatingPanel.Root>\n    </Box>\n  )\n}\n",
+      "sha256": "c2465b82285e1f459f431136e47a6186754ffbc952bcba28b1c4d1f1894b97c3",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-boundary.tsx",
+      "upstreamSha256": "ed3ec59613970f369fb5f41e4e817270ebf8acc698f10803f6264576396a14b8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-context.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  FloatingPanel,\n  HStack,\n  IconButton,\n  Portal,\n  Text,\n  useFloatingPanelContext,\n} from \"@chakra-ui/react\"\nimport { LuGripHorizontal, LuX } from \"react-icons/lu\"\n\nconst PanelActions = () => {\n  const api = useFloatingPanelContext()\n  return (\n    <HStack gap=\"2\">\n      <Button size=\"sm\" variant=\"outline\" onClick={() => api.minimize()}>\n        Minimize\n      </Button>\n      <Button size=\"sm\" variant=\"outline\" onClick={() => api.maximize()}>\n        Maximize\n      </Button>\n      <Button size=\"sm\" variant=\"outline\" onClick={() => api.restore()}>\n        Restore\n      </Button>\n    </HStack>\n  )\n}\n\nexport const FloatingPanelContext = () => {\n  return (\n    <FloatingPanel.Root\n      defaultSize={{ width: 320, height: 200 }}\n      minSize={{ width: 280, height: 160 }}\n    >\n      <FloatingPanel.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Panel\n        </Button>\n      </FloatingPanel.Trigger>\n      <Portal>\n        <FloatingPanel.Positioner>\n          <FloatingPanel.Content>\n            <FloatingPanel.Header>\n              <FloatingPanel.DragTrigger>\n                <LuGripHorizontal />\n                <FloatingPanel.Title>Context</FloatingPanel.Title>\n              </FloatingPanel.DragTrigger>\n              <FloatingPanel.Control>\n                <FloatingPanel.CloseTrigger asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuX />\n                  </IconButton>\n                </FloatingPanel.CloseTrigger>\n              </FloatingPanel.Control>\n            </FloatingPanel.Header>\n            <FloatingPanel.Body>\n              <Text textStyle=\"sm\" mb=\"3\">\n                Control the panel from inside the body using{\" \"}\n                <code>useFloatingPanelContext</code>.\n              </Text>\n              <PanelActions />\n            </FloatingPanel.Body>\n            <FloatingPanel.ResizeTriggers />\n          </FloatingPanel.Content>\n        </FloatingPanel.Positioner>\n      </Portal>\n    </FloatingPanel.Root>\n  )\n}\n",
+      "sha256": "c63796ac57fb7f34391ed8c86573a1001c195c24a90c2dba093a8ee1efa34ae4",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-context.tsx",
+      "upstreamSha256": "94d4e3643739026036f101e79a8244f89c58bd7eb457a869bf37c68f3f5e3dbb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-controlled-open.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  FloatingPanel,\n  HStack,\n  IconButton,\n  Portal,\n} from \"@chakra-ui/react\"\nimport { useState } from \"react\"\nimport { LuGripHorizontal, LuX } from \"react-icons/lu\"\n\nexport const FloatingPanelControlledOpen = () => {\n  const [open, setOpen] = useState(false)\n\n  return (\n    <FloatingPanel.Root\n      open={open}\n      onOpenChange={(details) => setOpen(details.open)}\n      persistRect\n      defaultSize={{ width: 320, height: 200 }}\n      minSize={{ width: 320, height: 200 }}\n    >\n      <HStack>\n        <FloatingPanel.Trigger asChild>\n          <Button variant=\"outline\" size=\"sm\">\n            {open ? \"Close Panel\" : \"Open Panel\"}\n          </Button>\n        </FloatingPanel.Trigger>\n      </HStack>\n      <Portal>\n        <FloatingPanel.Positioner>\n          <FloatingPanel.Content>\n            <FloatingPanel.Header>\n              <FloatingPanel.DragTrigger>\n                <LuGripHorizontal />\n                <FloatingPanel.Title>Controlled Open</FloatingPanel.Title>\n              </FloatingPanel.DragTrigger>\n              <FloatingPanel.Control>\n                <FloatingPanel.CloseTrigger asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuX />\n                  </IconButton>\n                </FloatingPanel.CloseTrigger>\n              </FloatingPanel.Control>\n            </FloatingPanel.Header>\n            <FloatingPanel.Body>\n              The open state is fully controlled externally. Closing via the ×\n              button or the trigger both update the same state.\n            </FloatingPanel.Body>\n            <FloatingPanel.ResizeTriggers />\n          </FloatingPanel.Content>\n        </FloatingPanel.Positioner>\n      </Portal>\n    </FloatingPanel.Root>\n  )\n}\n",
+      "sha256": "eada3df94ae400acd85ac85b4915765d99f33929de08ab91665816e40b5b43ce",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-controlled-open.tsx",
+      "upstreamSha256": "1929e44ba81ac6c3996759db9f8555444e4068314877d1cb4f05d026107dc41b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-controlled-position.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  FloatingPanel,\n  Grid,\n  HStack,\n  IconButton,\n  Portal,\n  Text,\n} from \"@chakra-ui/react\"\nimport { useState } from \"react\"\nimport {\n  LuArrowDown,\n  LuArrowLeft,\n  LuArrowRight,\n  LuArrowUp,\n  LuGripHorizontal,\n  LuX,\n} from \"react-icons/lu\"\n\nexport const FloatingPanelControlledPosition = () => {\n  const [position, setPosition] = useState({ x: 16, y: 100 })\n\n  const move = (dx: number, dy: number) =>\n    setPosition((p) => ({ x: p.x + dx, y: p.y + dy }))\n\n  return (\n    <FloatingPanel.Root\n      position={position}\n      onPositionChange={(details) => setPosition(details.position)}\n    >\n      <HStack align=\"start\" p=\"3\">\n        <FloatingPanel.Trigger asChild>\n          <Button variant=\"outline\" size=\"sm\">\n            Open Panel\n          </Button>\n        </FloatingPanel.Trigger>\n        <Grid templateColumns=\"repeat(3, 1fr)\" gap=\"1\">\n          <span />\n          <IconButton\n            size=\"xs\"\n            variant=\"outline\"\n            aria-label=\"Move up\"\n            onClick={() => move(0, -50)}\n          >\n            <LuArrowUp />\n          </IconButton>\n          <span />\n          <IconButton\n            size=\"xs\"\n            variant=\"outline\"\n            aria-label=\"Move left\"\n            onClick={() => move(-50, 0)}\n          >\n            <LuArrowLeft />\n          </IconButton>\n          <span />\n          <IconButton\n            size=\"xs\"\n            variant=\"outline\"\n            aria-label=\"Move right\"\n            onClick={() => move(50, 0)}\n          >\n            <LuArrowRight />\n          </IconButton>\n          <span />\n          <IconButton\n            size=\"xs\"\n            variant=\"outline\"\n            aria-label=\"Move down\"\n            onClick={() => move(0, 50)}\n          >\n            <LuArrowDown />\n          </IconButton>\n          <span />\n        </Grid>\n        <Text textStyle=\"xs\" fontFamily=\"mono\" color=\"fg.muted\" pt=\"1\">\n          x: {Math.round(position.x)}, y: {Math.round(position.y)}\n        </Text>\n      </HStack>\n      <Portal>\n        <FloatingPanel.Positioner>\n          <FloatingPanel.Content>\n            <FloatingPanel.Header>\n              <FloatingPanel.DragTrigger>\n                <LuGripHorizontal />\n                <FloatingPanel.Title>Controlled Position</FloatingPanel.Title>\n              </FloatingPanel.DragTrigger>\n              <FloatingPanel.Control>\n                <FloatingPanel.CloseTrigger asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuX />\n                  </IconButton>\n                </FloatingPanel.CloseTrigger>\n              </FloatingPanel.Control>\n            </FloatingPanel.Header>\n            <FloatingPanel.Body>\n              <Text textStyle=\"sm\">\n                Use the arrow pad above or drag the header to move this panel.\n              </Text>\n            </FloatingPanel.Body>\n            <FloatingPanel.ResizeTriggers />\n          </FloatingPanel.Content>\n        </FloatingPanel.Positioner>\n      </Portal>\n    </FloatingPanel.Root>\n  )\n}\n",
+      "sha256": "337e1da735e94c35b75cacb2fefc395373f801659886fcf95b28e5d07a2bb9d9",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-controlled-position.tsx",
+      "upstreamSha256": "433f1cc6f243b402b8b801c033c1670e4d9337931bed8a94a7ac7c6af55c0a33",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-controlled-size.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  FloatingPanel,\n  HStack,\n  IconButton,\n  Portal,\n  Stack,\n  Text,\n} from \"@chakra-ui/react\"\nimport { useState } from \"react\"\nimport { LuGripHorizontal, LuX } from \"react-icons/lu\"\n\nexport const FloatingPanelControlledSize = () => {\n  const [size, setSize] = useState({ width: 360, height: 260 })\n\n  return (\n    <FloatingPanel.Root\n      size={size}\n      onSizeChange={(details) => setSize(details.size)}\n    >\n      <FloatingPanel.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Panel\n        </Button>\n      </FloatingPanel.Trigger>\n      <Portal>\n        <FloatingPanel.Positioner>\n          <FloatingPanel.Content>\n            <FloatingPanel.Header>\n              <FloatingPanel.DragTrigger>\n                <LuGripHorizontal />\n                <FloatingPanel.Title>Controlled Size</FloatingPanel.Title>\n              </FloatingPanel.DragTrigger>\n              <FloatingPanel.Control>\n                <FloatingPanel.CloseTrigger asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuX />\n                  </IconButton>\n                </FloatingPanel.CloseTrigger>\n              </FloatingPanel.Control>\n            </FloatingPanel.Header>\n            <FloatingPanel.Body>\n              <Stack gap=\"3\">\n                <HStack gap=\"2\">\n                  <Button\n                    size=\"sm\"\n                    variant=\"outline\"\n                    onClick={() => setSize({ width: 240, height: 180 })}\n                  >\n                    S\n                  </Button>\n                  <Button\n                    size=\"sm\"\n                    variant=\"outline\"\n                    onClick={() => setSize({ width: 360, height: 260 })}\n                  >\n                    M\n                  </Button>\n                  <Button\n                    size=\"sm\"\n                    variant=\"outline\"\n                    onClick={() => setSize({ width: 520, height: 360 })}\n                  >\n                    L\n                  </Button>\n                </HStack>\n                <Text textStyle=\"sm\" color=\"fg.muted\">\n                  {Number(size.width.toFixed(2))} x{\" \"}\n                  {Number(size.height.toFixed(2))}px\n                </Text>\n              </Stack>\n            </FloatingPanel.Body>\n            <FloatingPanel.ResizeTriggers />\n          </FloatingPanel.Content>\n        </FloatingPanel.Positioner>\n      </Portal>\n    </FloatingPanel.Root>\n  )\n}\n",
+      "sha256": "8f5aec5a3f7eca29667a8c702092053fd5a64d9d85d224a631240af2e321d4b8",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-controlled-size.tsx",
+      "upstreamSha256": "d33800fe80c4f76006ad4fc3368a377500c0725771c13ce3318b7ebf43196637",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-disable-drag.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  FloatingPanel,\n  IconButton,\n  Portal,\n  Text,\n} from \"@chakra-ui/react\"\nimport { LuGripHorizontal, LuX } from \"react-icons/lu\"\n\nexport const FloatingPanelDisableDrag = () => {\n  return (\n    <FloatingPanel.Root\n      draggable={false}\n      persistRect\n      defaultSize={{ width: 320, height: 200 }}\n      minSize={{ width: 320, height: 200 }}\n    >\n      <FloatingPanel.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Panel\n        </Button>\n      </FloatingPanel.Trigger>\n      <Portal>\n        <FloatingPanel.Positioner>\n          <FloatingPanel.Content>\n            <FloatingPanel.Header>\n              <FloatingPanel.DragTrigger>\n                <LuGripHorizontal />\n                <FloatingPanel.Title>Disable Drag</FloatingPanel.Title>\n              </FloatingPanel.DragTrigger>\n              <FloatingPanel.Control>\n                <FloatingPanel.CloseTrigger asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuX />\n                  </IconButton>\n                </FloatingPanel.CloseTrigger>\n              </FloatingPanel.Control>\n            </FloatingPanel.Header>\n            <FloatingPanel.Body>\n              <Text textStyle=\"sm\">\n                This panel cannot be dragged. The position is fixed. Resizing is\n                still enabled.\n              </Text>\n            </FloatingPanel.Body>\n            <FloatingPanel.ResizeTriggers />\n          </FloatingPanel.Content>\n        </FloatingPanel.Positioner>\n      </Portal>\n    </FloatingPanel.Root>\n  )\n}\n",
+      "sha256": "c1f16e65cce4cd1415b1ee46499920660b502888efd5692f098c1fb7bb633d90",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-disable-drag.tsx",
+      "upstreamSha256": "f375ce1e63a857c995d387e296e2e86488512c1021b3f06a9fced6ca295fbcd3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-disable-resize.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  FloatingPanel,\n  IconButton,\n  Portal,\n  Text,\n} from \"@chakra-ui/react\"\nimport { LuGripHorizontal, LuX } from \"react-icons/lu\"\n\nexport const FloatingPanelDisableResize = () => {\n  return (\n    <FloatingPanel.Root\n      resizable={false}\n      persistRect\n      defaultSize={{ width: 320, height: 200 }}\n    >\n      <FloatingPanel.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Panel\n        </Button>\n      </FloatingPanel.Trigger>\n      <Portal>\n        <FloatingPanel.Positioner>\n          <FloatingPanel.Content>\n            <FloatingPanel.Header>\n              <FloatingPanel.DragTrigger>\n                <LuGripHorizontal />\n                <FloatingPanel.Title>Disable Resize</FloatingPanel.Title>\n              </FloatingPanel.DragTrigger>\n              <FloatingPanel.Control>\n                <FloatingPanel.CloseTrigger asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuX />\n                  </IconButton>\n                </FloatingPanel.CloseTrigger>\n              </FloatingPanel.Control>\n            </FloatingPanel.Header>\n            <FloatingPanel.Body>\n              <Text textStyle=\"sm\">\n                This panel has a fixed size and cannot be resized. Dragging is\n                still enabled.\n              </Text>\n            </FloatingPanel.Body>\n          </FloatingPanel.Content>\n        </FloatingPanel.Positioner>\n      </Portal>\n    </FloatingPanel.Root>\n  )\n}\n",
+      "sha256": "0f4cc00f80b5314a62d1112238e2dd8628aed49ed3374e2efb882489220f3c1c",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-disable-resize.tsx",
+      "upstreamSha256": "9e44ea8eff9167555bc38bedcdf751702c5416d4bcab8489c766e9d981e529c0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-min-max.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  FloatingPanel,\n  HStack,\n  IconButton,\n  Portal,\n  Span,\n  Stack,\n  Text,\n} from \"@chakra-ui/react\"\nimport {\n  LuGripHorizontal,\n  LuMouse,\n  LuMoveHorizontal,\n  LuX,\n} from \"react-icons/lu\"\n\nexport const FloatingPanelMinMax = () => {\n  return (\n    <Stack gap=\"4\" align=\"flex-start\">\n      <HStack textStyle=\"sm\" gap=\"2\">\n        <LuMouse />\n        <LuMoveHorizontal />\n        <Span>\n          Drag the resize handles — size is clamped between min and max.\n        </Span>\n      </HStack>\n\n      <FloatingPanel.Root\n        defaultSize={{ width: 320, height: 220 }}\n        minSize={{ width: 280, height: 160 }}\n        maxSize={{ width: 480, height: 320 }}\n      >\n        <FloatingPanel.Trigger asChild>\n          <Button variant=\"outline\" size=\"sm\">\n            Open Panel\n          </Button>\n        </FloatingPanel.Trigger>\n        <Portal>\n          <FloatingPanel.Positioner>\n            <FloatingPanel.Content>\n              <FloatingPanel.Header>\n                <FloatingPanel.DragTrigger>\n                  <LuGripHorizontal />\n                  <FloatingPanel.Title>Min/Max</FloatingPanel.Title>\n                </FloatingPanel.DragTrigger>\n                <FloatingPanel.Control>\n                  <FloatingPanel.CloseTrigger asChild>\n                    <IconButton variant=\"ghost\" size=\"2xs\">\n                      <LuX />\n                    </IconButton>\n                  </FloatingPanel.CloseTrigger>\n                </FloatingPanel.Control>\n              </FloatingPanel.Header>\n              <FloatingPanel.Body>\n                <Text textStyle=\"sm\">\n                  Resize the panel with the resize handles. Size is constrained\n                  between 280x160px (min) and 480x320px (max).\n                </Text>\n              </FloatingPanel.Body>\n              <FloatingPanel.ResizeTriggers />\n            </FloatingPanel.Content>\n          </FloatingPanel.Positioner>\n        </Portal>\n      </FloatingPanel.Root>\n    </Stack>\n  )\n}\n",
+      "sha256": "ec7c5dfd98f7ffbadc59d1335b6e7d461183ca7293b86273ab405e5aa27e9b1f",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-min-max.tsx",
+      "upstreamSha256": "1325c34bd0ff4d1d1d33f9af9ea7b4e576f37cbf232155aaa946f00cfe7b73a7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-multiple.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  FloatingPanel,\n  HStack,\n  IconButton,\n  Portal,\n  Text,\n} from \"@chakra-ui/react\"\nimport { LuGripHorizontal, LuX } from \"react-icons/lu\"\n\nconst panels = [\n  {\n    id: \"notes\",\n    label: \"Notes\",\n    title: \"Notes\",\n    defaultPosition: { x: 80, y: 80 },\n    description: \"Jot down quick ideas and reminders.\",\n  },\n  {\n    id: \"tasks\",\n    label: \"Tasks\",\n    title: \"Tasks\",\n    defaultPosition: { x: 260, y: 120 },\n    description: \"Track items you want to finish today.\",\n  },\n  {\n    id: \"chat\",\n    label: \"Chat\",\n    title: \"Chat\",\n    defaultPosition: { x: 440, y: 160 },\n    description: \"Keep a lightweight conversation panel open.\",\n  },\n] as const\n\nexport const FloatingPanelMultiple = () => {\n  return (\n    <HStack gap=\"2\" flexWrap=\"wrap\">\n      {panels.map((panel) => (\n        <FloatingPanel.Root\n          key={panel.id}\n          id={panel.id}\n          persistRect\n          defaultPosition={panel.defaultPosition}\n          defaultSize={{ width: 280, height: 200 }}\n          minSize={{ width: 240, height: 160 }}\n        >\n          <FloatingPanel.Trigger asChild>\n            <Button variant=\"outline\" size=\"sm\">\n              {panel.label}\n            </Button>\n          </FloatingPanel.Trigger>\n          <Portal>\n            <FloatingPanel.Positioner>\n              <FloatingPanel.Content>\n                <FloatingPanel.Header>\n                  <FloatingPanel.DragTrigger>\n                    <LuGripHorizontal />\n                    <FloatingPanel.Title>{panel.title}</FloatingPanel.Title>\n                  </FloatingPanel.DragTrigger>\n                  <FloatingPanel.Control>\n                    <FloatingPanel.CloseTrigger asChild>\n                      <IconButton variant=\"ghost\" size=\"2xs\">\n                        <LuX />\n                      </IconButton>\n                    </FloatingPanel.CloseTrigger>\n                  </FloatingPanel.Control>\n                </FloatingPanel.Header>\n                <FloatingPanel.Body>\n                  <Text textStyle=\"sm\">{panel.description}</Text>\n                </FloatingPanel.Body>\n                <FloatingPanel.ResizeTriggers />\n              </FloatingPanel.Content>\n            </FloatingPanel.Positioner>\n          </Portal>\n        </FloatingPanel.Root>\n      ))}\n    </HStack>\n  )\n}\n",
+      "sha256": "c9df9a68aacf92c7dcb7be0a26f430d0a17538774172793fbecb4ea13cd0d35c",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-multiple.tsx",
+      "upstreamSha256": "e4745ff1543c71982be12e4709fbfba07afaa2ff9a866a0bb7e13d4138ddf131",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-prevent-overflow.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  FloatingPanel,\n  IconButton,\n  Portal,\n  Text,\n} from \"@chakra-ui/react\"\nimport { LuGripHorizontal, LuX } from \"react-icons/lu\"\n\nexport const FloatingPanelPreventOverflow = () => {\n  return (\n    <FloatingPanel.Root\n      allowOverflow={false}\n      persistRect\n      defaultSize={{ width: 300, height: 180 }}\n      minSize={{ width: 300, height: 180 }}\n    >\n      <FloatingPanel.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Panel\n        </Button>\n      </FloatingPanel.Trigger>\n      <Portal>\n        <FloatingPanel.Positioner>\n          <FloatingPanel.Content>\n            <FloatingPanel.Header>\n              <FloatingPanel.DragTrigger>\n                <LuGripHorizontal />\n                <FloatingPanel.Title>Prevent Overflow</FloatingPanel.Title>\n              </FloatingPanel.DragTrigger>\n              <FloatingPanel.Control>\n                <FloatingPanel.CloseTrigger asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuX />\n                  </IconButton>\n                </FloatingPanel.CloseTrigger>\n              </FloatingPanel.Control>\n            </FloatingPanel.Header>\n            <FloatingPanel.Body>\n              <Text textStyle=\"sm\">\n                This panel cannot be dragged beyond the viewport edges.\n              </Text>\n            </FloatingPanel.Body>\n            <FloatingPanel.ResizeTriggers />\n          </FloatingPanel.Content>\n        </FloatingPanel.Positioner>\n      </Portal>\n    </FloatingPanel.Root>\n  )\n}\n",
+      "sha256": "99af5dbe59b4119efe0dd6b2425de4ea5991606dfc1065e4f270faa7b58bcf73",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-prevent-overflow.tsx",
+      "upstreamSha256": "4028f9010637fa7cb2ef972811f0964b2cf54994208d2f2b2d0c910e6845ca26",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-resize-axes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  FloatingPanel,\n  IconButton,\n  Portal,\n  Text,\n} from \"@chakra-ui/react\"\nimport { LuGripHorizontal, LuX } from \"react-icons/lu\"\n\nexport const FloatingPanelResizeAxes = () => {\n  return (\n    <FloatingPanel.Root\n      defaultSize={{ width: 320, height: 200 }}\n      minSize={{ width: 240, height: 160 }}\n    >\n      <FloatingPanel.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Panel\n        </Button>\n      </FloatingPanel.Trigger>\n      <Portal>\n        <FloatingPanel.Positioner>\n          <FloatingPanel.Content>\n            <FloatingPanel.Header>\n              <FloatingPanel.DragTrigger>\n                <LuGripHorizontal />\n                <FloatingPanel.Title>Resize Axes</FloatingPanel.Title>\n              </FloatingPanel.DragTrigger>\n              <FloatingPanel.Control>\n                <FloatingPanel.CloseTrigger asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuX />\n                  </IconButton>\n                </FloatingPanel.CloseTrigger>\n              </FloatingPanel.Control>\n            </FloatingPanel.Header>\n            <FloatingPanel.Body>\n              <Text textStyle=\"sm\">\n                Only the south, east, and southeast handles are enabled.\n              </Text>\n            </FloatingPanel.Body>\n            <FloatingPanel.ResizeTriggers axes={[\"s\", \"e\", \"se\"]} />\n          </FloatingPanel.Content>\n        </FloatingPanel.Positioner>\n      </Portal>\n    </FloatingPanel.Root>\n  )\n}\n",
+      "sha256": "5553eccb9357b4d544c002469f1229a5f953e721042ab25ac373c3b7fc58e95d",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-resize-axes.tsx",
+      "upstreamSha256": "15ee73900ae894e24a5a714b4f5aac68b0a921ed5fbc19c3ee9335813586ae86",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-rtl.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  FloatingPanel,\n  IconButton,\n  Portal,\n  Text,\n} from \"@chakra-ui/react\"\nimport { LuGripHorizontal, LuX } from \"react-icons/lu\"\n\nexport const FloatingPanelRtl = () => {\n  return (\n    <FloatingPanel.Root\n      dir=\"rtl\"\n      persistRect\n      defaultSize={{ width: 320, height: 200 }}\n      minSize={{ width: 320, height: 200 }}\n    >\n      <FloatingPanel.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          فتح اللوحة\n        </Button>\n      </FloatingPanel.Trigger>\n      <Portal>\n        <FloatingPanel.Positioner>\n          <FloatingPanel.Content>\n            <FloatingPanel.Header>\n              <FloatingPanel.DragTrigger>\n                <LuGripHorizontal />\n                <FloatingPanel.Title>لوحة عائمة</FloatingPanel.Title>\n              </FloatingPanel.DragTrigger>\n              <FloatingPanel.Control>\n                <FloatingPanel.CloseTrigger asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuX />\n                  </IconButton>\n                </FloatingPanel.CloseTrigger>\n              </FloatingPanel.Control>\n            </FloatingPanel.Header>\n            <FloatingPanel.Body>\n              <Text textStyle=\"sm\">\n                هذه اللوحة تدعم اتجاه النص من اليمين إلى اليسار.\n              </Text>\n            </FloatingPanel.Body>\n            <FloatingPanel.ResizeTriggers />\n          </FloatingPanel.Content>\n        </FloatingPanel.Positioner>\n      </Portal>\n    </FloatingPanel.Root>\n  )\n}\n",
+      "sha256": "61a08ac7178c916155d0ae4257dcacf64908d3a258cf1921fa5f72024ef14e79",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-rtl.tsx",
+      "upstreamSha256": "574d192c5f68dceaeaf9b8f3f94762f7d3e5feb01ff52cd08c5bd8c23bb237f4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-stages.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  FloatingPanel,\n  IconButton,\n  Portal,\n  Text,\n} from \"@chakra-ui/react\"\nimport {\n  LuGripHorizontal,\n  LuMaximize2,\n  LuMinus,\n  LuSquare,\n  LuX,\n} from \"react-icons/lu\"\n\nexport const FloatingPanelStages = () => {\n  return (\n    <FloatingPanel.Root\n      persistRect\n      defaultSize={{ width: 320, height: 220 }}\n      minSize={{ width: 280, height: 160 }}\n    >\n      <FloatingPanel.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Panel\n        </Button>\n      </FloatingPanel.Trigger>\n      <Portal>\n        <FloatingPanel.Positioner>\n          <FloatingPanel.Content>\n            <FloatingPanel.Header>\n              <FloatingPanel.DragTrigger>\n                <LuGripHorizontal />\n                <FloatingPanel.Title>Stages</FloatingPanel.Title>\n              </FloatingPanel.DragTrigger>\n              <FloatingPanel.Control>\n                <FloatingPanel.StageTrigger stage=\"minimized\" asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuMinus />\n                  </IconButton>\n                </FloatingPanel.StageTrigger>\n                <FloatingPanel.StageTrigger stage=\"maximized\" asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuSquare />\n                  </IconButton>\n                </FloatingPanel.StageTrigger>\n                <FloatingPanel.StageTrigger stage=\"default\" asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuMaximize2 />\n                  </IconButton>\n                </FloatingPanel.StageTrigger>\n                <FloatingPanel.CloseTrigger asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuX />\n                  </IconButton>\n                </FloatingPanel.CloseTrigger>\n              </FloatingPanel.Control>\n            </FloatingPanel.Header>\n            <FloatingPanel.Body>\n              <Text textStyle=\"sm\">\n                Use the header controls to minimize, maximize, or restore the\n                panel.\n              </Text>\n            </FloatingPanel.Body>\n            <FloatingPanel.ResizeTriggers />\n          </FloatingPanel.Content>\n        </FloatingPanel.Positioner>\n      </Portal>\n    </FloatingPanel.Root>\n  )\n}\n",
+      "sha256": "63c22d5af00c833d8f81cbff373b67e1bbbe519897394957e9a1b7af64810cea",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-stages.tsx",
+      "upstreamSha256": "91413c69c32b0553b4315ed2bb146a81a4bd69fd792c63865ef683220c8bb511",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-with-overlay.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  Field,\n  FloatingPanel,\n  IconButton,\n  Input,\n  Portal,\n  Stack,\n  createOverlay,\n} from \"@chakra-ui/react\"\nimport { useState } from \"react\"\nimport { LuGripHorizontal, LuX } from \"react-icons/lu\"\n\ninterface FloatingPanelOverlayProps extends Omit<\n  FloatingPanel.RootProps,\n  \"children\"\n> {\n  title: string\n  content?: React.ReactNode\n}\n\nconst floatingPanel = createOverlay<FloatingPanelOverlayProps>((props) => {\n  const { title, content, ...rest } = props\n  return (\n    <FloatingPanel.Root {...rest}>\n      <Portal>\n        <FloatingPanel.Positioner>\n          <FloatingPanel.Content>\n            <FloatingPanel.Header>\n              <FloatingPanel.DragTrigger>\n                <LuGripHorizontal />\n                <FloatingPanel.Title>{title}</FloatingPanel.Title>\n              </FloatingPanel.DragTrigger>\n              <FloatingPanel.Control>\n                <FloatingPanel.CloseTrigger asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuX />\n                  </IconButton>\n                </FloatingPanel.CloseTrigger>\n              </FloatingPanel.Control>\n            </FloatingPanel.Header>\n            <FloatingPanel.Body>{content}</FloatingPanel.Body>\n            <FloatingPanel.ResizeTriggers />\n          </FloatingPanel.Content>\n        </FloatingPanel.Positioner>\n      </Portal>\n    </FloatingPanel.Root>\n  )\n})\n\nconst PanelForm = (props: { onClose: () => void }) => {\n  const [name, setName] = useState(\"\")\n\n  return (\n    <Stack\n      gap=\"4\"\n      as=\"form\"\n      onSubmit={(e) => {\n        e.preventDefault()\n        alert(`Hello ${name || \"there\"}!`)\n        props.onClose()\n        setName(\"\")\n      }}\n    >\n      <Field.Root>\n        <Field.Label>Name</Field.Label>\n        <Input\n          value={name}\n          onChange={(e) => setName(e.target.value)}\n          placeholder=\"Enter your name\"\n        />\n      </Field.Root>\n      <Button type=\"submit\" size=\"sm\" alignSelf=\"flex-start\">\n        Submit\n      </Button>\n    </Stack>\n  )\n}\n\nexport const FloatingPanelWithOverlay = () => {\n  return (\n    <>\n      <Button\n        variant=\"outline\"\n        size=\"sm\"\n        onClick={() => {\n          floatingPanel.open(\"panel\", {\n            title: \"Contact\",\n            content: <PanelForm onClose={() => floatingPanel.close(\"panel\")} />,\n          })\n        }}\n      >\n        Open Panel\n      </Button>\n      <floatingPanel.Viewport />\n    </>\n  )\n}\n",
+      "sha256": "1c6357f98d77fab283a3d79f9c77966dbe172c5ae0cfbfa79349e9273a4bd144",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-with-overlay.tsx",
+      "upstreamSha256": "1066ea0e6241f8b59233c217d65a965e86685f05f0f2a93ebb1f7f6aedaef19e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/floating-panel-with-store.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  FloatingPanel,\n  IconButton,\n  Portal,\n  useFloatingPanel,\n} from \"@chakra-ui/react\"\nimport { LuGripHorizontal, LuX } from \"react-icons/lu\"\n\nexport const FloatingPanelWithStore = () => {\n  const floatingPanel = useFloatingPanel({\n    defaultSize: { width: 320, height: 200 },\n    minSize: { width: 280, height: 160 },\n  })\n\n  return (\n    <FloatingPanel.RootProvider value={floatingPanel}>\n      <FloatingPanel.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          {floatingPanel.open ? \"Close Panel\" : \"Open Panel\"}\n        </Button>\n      </FloatingPanel.Trigger>\n      <Portal>\n        <FloatingPanel.Positioner>\n          <FloatingPanel.Content>\n            <FloatingPanel.Header>\n              <FloatingPanel.DragTrigger>\n                <LuGripHorizontal />\n                <FloatingPanel.Title>Store</FloatingPanel.Title>\n              </FloatingPanel.DragTrigger>\n              <FloatingPanel.Control>\n                <FloatingPanel.CloseTrigger asChild>\n                  <IconButton variant=\"ghost\" size=\"2xs\">\n                    <LuX />\n                  </IconButton>\n                </FloatingPanel.CloseTrigger>\n              </FloatingPanel.Control>\n            </FloatingPanel.Header>\n            <FloatingPanel.Body>\n              Use <code>useFloatingPanel</code> with{\" \"}\n              <code>FloatingPanel.RootProvider</code> to access panel state and\n              methods from outside the panel tree.\n            </FloatingPanel.Body>\n            <FloatingPanel.ResizeTriggers />\n          </FloatingPanel.Content>\n        </FloatingPanel.Positioner>\n      </Portal>\n    </FloatingPanel.RootProvider>\n  )\n}\n",
+      "sha256": "9020ab86e26c87993b394403b33a0e1e612ba4f74ce82cb774402609643a2066",
+      "upstreamPath": "apps/compositions/src/examples/floating-panel-with-store.tsx",
+      "upstreamSha256": "df08b26d31a44efe186006ffa9af96671c7df90e307fb5ee34dd2f77ae44fb03",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelAnchorPosition as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-anchor-position\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "4e6ce5b2291a2b94e8cbe0e5b80a0ab3e9e60d65aba6f5b29e5b1b99b4ddbc55",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/previews/floating-panel-basic.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "b9826a16c1a95268566b521ba133fac4704bf11b4696ac978886cd42982f6f5a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/previews/floating-panel-boundary.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelBoundary as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-boundary\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "8f7edeff9a1a217d2f49d254092be261276f42cefa525d897430964fdfcb2ba1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/previews/floating-panel-context.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelContext as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-context\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "5ad68e0728bce71c99414f38d2444a32c5d16e199dc77a271fa6abfd560f200d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/previews/floating-panel-controlled-open.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelControlledOpen as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-controlled-open\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "ec65021fbb5b7cd5824a54235ad33bf90fdb7ad0abb10fb5ffa31e9993f23d8d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/previews/floating-panel-controlled-position.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelControlledPosition as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-controlled-position\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "6e270239c4fc7a17d45437c89a7d500468c236acc57f67c0389dd089851eaec5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/previews/floating-panel-controlled-size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelControlledSize as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-controlled-size\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "914be7501fb449220630364d6f863d6b5036938b61f74360b3a4bc48f419f45a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/previews/floating-panel-disable-drag.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelDisableDrag as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-disable-drag\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "06de1933715a03255386e076af794d59ffaa55f71eb77e7e6d15eab9979f3daa",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/previews/floating-panel-disable-resize.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelDisableResize as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-disable-resize\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "0635969fa798d53cc8586a2e056111f65724bfe62eb0008373b7546f9c23df04",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/previews/floating-panel-min-max.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelMinMax as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-min-max\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "4654dbb7163a00a88b1691a26f60bf5cbbb66bacb731dc389636cd22ed137833",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/previews/floating-panel-multiple.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelMultiple as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-multiple\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "deb72f284f53a16ea72d3e0705ac627bec33e185e90879502962dd497db62892",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/previews/floating-panel-prevent-overflow.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelPreventOverflow as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-prevent-overflow\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "4b7c24b34aedbb45f4aaa4479aca39e3c8bcfa08a178e69d662898f97634f602",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/previews/floating-panel-resize-axes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelResizeAxes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-resize-axes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "3644b02e6553fe38d0ff31ef8f75452c1a24d7a585a245dc3cf9bd1b9a2f3697",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/previews/floating-panel-rtl.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelRtl as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-rtl\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "8f2fe40d563581778025e3294a907b20b5a7ad73aaca9478b37996fbc8bfebf7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/previews/floating-panel-stages.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelStages as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-stages\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "1a7a5776e1ab8e3ea393a38bb7f16f1f5cb23638a3cacbe0cd1c99edb238287e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/previews/floating-panel-with-overlay.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelWithOverlay as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-with-overlay\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "d134c9b3597c0465cb6bbba94a92f9c3afed98a41bdf74977e895de27530bdd7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/floating-panel/previews/floating-panel-with-store.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FloatingPanelWithStore as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/floating-panel-with-store\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "d5c75c2ec602804a39f0a79ec1dd541163a359d01e2007eb03a05efaae65bb08",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "floating-panel",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/floating-panel-anchor-position.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/floating-panel-anchor-position.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI floating panel\n\n17 published Chakra UI floating panel examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/floating-panel-anchor-position.tsx\n"
+}

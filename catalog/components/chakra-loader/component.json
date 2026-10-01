@@ -1,0 +1,131 @@
+{
+  "id": "chakra:loader",
+  "sourceId": "chakra",
+  "slug": "chakra-loader",
+  "name": "Chakra UI loader",
+  "description": "3 published Chakra UI loader examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "loader",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input",
+      "loader"
+    ],
+    "aliases": [
+      "loader",
+      "chakra ui loader"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "3 published Chakra UI loader examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "loader:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI loader\nloader\n3 published Chakra UI loader examples with complete pinned source and MIT attribution.\nchakra ui loader\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI loader 3 published Chakra UI loader examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/loader basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-loader",
+  "manifestPath": "components/chakra-loader/component.json",
+  "integrity": "sha256:d98554014c6ce14c69478fd564f1b0e4b5e51564240d4fcf6c1c401dfc14ec92",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/loader-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HStack, Loader } from \"@chakra-ui/react\"\n\nexport const LoaderBasic = () => {\n  return (\n    <HStack textStyle=\"sm\" fontWeight=\"medium\">\n      <Loader text=\"Loading...\">Click me</Loader>\n    </HStack>\n  )\n}\n",
+      "sha256": "82744dfec3692c1733090235cc96ee3d8f3167319b9872d4f23494f70f6e3f7d",
+      "upstreamPath": "apps/compositions/src/examples/loader-basic.tsx",
+      "upstreamSha256": "ea362a181dc04698005cce9cc7ae2ced855105f941f80cda1430fc6f4b8ddeeb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/loader-with-badge.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Badge, Loader } from \"@chakra-ui/react\"\n\nexport const LoaderWithBadge = () => {\n  return (\n    <Badge>\n      <Loader text=\"Loading...\">Click me</Loader>\n    </Badge>\n  )\n}\n",
+      "sha256": "888ae7d0c65937af2d0a106f5401f5d34dc52e68617ef281fe525aa1657a5a95",
+      "upstreamPath": "apps/compositions/src/examples/loader-with-badge.tsx",
+      "upstreamSha256": "8486c52c1c590739529d71226e7b70bb86b518c526168d5a67d494cd77602452",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/loader-with-overlay.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Box,\n  Button,\n  Field,\n  Input,\n  Loader,\n  LoaderOverlay,\n  Stack,\n} from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\nexport const LoaderWithOverlay = () => {\n  const [loading, setLoading] = useState(false)\n  return (\n    <Stack maxW=\"xl\" gap=\"4\">\n      <Box position=\"relative\" p=\"6\" bg=\"bg.panel\" shadow=\"sm\" rounded=\"l3\">\n        <Stack gap=\"4\">\n          <Field.Root>\n            <Field.Label>First name</Field.Label>\n            <Input />\n          </Field.Root>\n          <Field.Root>\n            <Field.Label>Last name</Field.Label>\n            <Input />\n          </Field.Root>\n          <Button>Click me</Button>\n        </Stack>\n        {loading && (\n          <LoaderOverlay bg=\"bg/80\" rounded=\"l3\">\n            <Loader textStyle=\"sm\" fontWeight=\"medium\" text=\"Loading...\" />\n          </LoaderOverlay>\n        )}\n      </Box>\n      <Button\n        alignSelf=\"flex-start\"\n        variant=\"outline\"\n        onClick={() => setLoading((c) => !c)}\n      >\n        Toggle loading\n      </Button>\n    </Stack>\n  )\n}\n",
+      "sha256": "73ac648009aa7e31e505842b6a8e5aa77281f007f1638cb8da0e6e864abc6e3f",
+      "upstreamPath": "apps/compositions/src/examples/loader-with-overlay.tsx",
+      "upstreamSha256": "9ff99e7b21d707ef324e156ecc5d1dcf771d2c2e2c06c6875e365a638c7143dd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/loader/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { LoaderBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/loader-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "3578b4438525ded14c68bbe685f1fbecf75b973a13984ff3e886edb2441a7e8f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/loader/previews/loader-with-badge.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { LoaderWithBadge as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/loader-with-badge\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "fa230c5470db34f4f91c092897e2d42b909580bfd82c7ab936c278264dead3b8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/loader/previews/loader-with-overlay.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { LoaderWithOverlay as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/loader-with-overlay\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "286774a1d3b33e655d9b63273e28408379cf4da62d6c6c249b53d19c36c1409b",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "loader",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/loader-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/loader-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI loader\n\n3 published Chakra UI loader examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/loader-basic.tsx\n"
+}

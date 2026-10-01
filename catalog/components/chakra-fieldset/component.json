@@ -1,0 +1,146 @@
+{
+  "id": "chakra:fieldset",
+  "sourceId": "chakra",
+  "slug": "chakra-fieldset",
+  "name": "Chakra UI fieldset",
+  "description": "4 published Chakra UI fieldset examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "fieldset",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "fieldset",
+      "chakra ui fieldset"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "4 published Chakra UI fieldset examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "fieldset:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI fieldset\nfieldset\n4 published Chakra UI fieldset examples with complete pinned source and MIT attribution.\nchakra ui fieldset\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI fieldset 4 published Chakra UI fieldset examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/fieldset basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-fieldset",
+  "manifestPath": "components/chakra-fieldset/component.json",
+  "integrity": "sha256:193bb884af634a2bc2c77c7771b56fad206c31af1cd3da6bd2ca998487649a3c",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/fieldset-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  Field,\n  Fieldset,\n  For,\n  Input,\n  NativeSelect,\n  Stack,\n} from \"@chakra-ui/react\"\n\nexport const FieldsetBasic = () => {\n  return (\n    <Fieldset.Root size=\"lg\" maxW=\"md\">\n      <Stack>\n        <Fieldset.Legend>Contact details</Fieldset.Legend>\n        <Fieldset.HelperText>\n          Please provide your contact details below.\n        </Fieldset.HelperText>\n      </Stack>\n\n      <Fieldset.Content>\n        <Field.Root>\n          <Field.Label>Name</Field.Label>\n          <Input name=\"name\" />\n        </Field.Root>\n\n        <Field.Root>\n          <Field.Label>Email address</Field.Label>\n          <Input name=\"email\" type=\"email\" />\n        </Field.Root>\n\n        <Field.Root>\n          <Field.Label>Country</Field.Label>\n          <NativeSelect.Root>\n            <NativeSelect.Field name=\"country\">\n              <For each={[\"United Kingdom\", \"Canada\", \"United States\"]}>\n                {(item) => (\n                  <option key={item} value={item}>\n                    {item}\n                  </option>\n                )}\n              </For>\n            </NativeSelect.Field>\n            <NativeSelect.Indicator />\n          </NativeSelect.Root>\n        </Field.Root>\n      </Fieldset.Content>\n\n      <Button type=\"submit\" alignSelf=\"flex-start\">\n        Submit\n      </Button>\n    </Fieldset.Root>\n  )\n}\n",
+      "sha256": "7927960b6637d3b135c7ef1329ff5e8a1f685c8ce328c26b3a684fffbf8f950d",
+      "upstreamPath": "apps/compositions/src/examples/fieldset-basic.tsx",
+      "upstreamSha256": "c95b141341d6a0ef70b3f7a9b77cb5c947cec36eb05f0df67fba5f8dd42a8874",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/fieldset-explorer-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  Field,\n  Fieldset,\n  For,\n  Input,\n  NativeSelect,\n  Stack,\n} from \"@chakra-ui/react\"\n\nexport const FieldsetExplorerDemo = () => {\n  return (\n    <Fieldset.Root size=\"lg\" maxW=\"md\">\n      <Stack>\n        <Fieldset.Legend>Contact details</Fieldset.Legend>\n        <Fieldset.HelperText>\n          Please provide your contact details below.\n        </Fieldset.HelperText>\n      </Stack>\n\n      <Fieldset.Content>\n        <Field.Root>\n          <Field.Label>Name</Field.Label>\n          <Input placeholder=\"Jane Doe\" />\n        </Field.Root>\n\n        <Field.Root invalid>\n          <Field.Label>Email address</Field.Label>\n          <Input type=\"email\" placeholder=\"me@example.com\" />\n          <Fieldset.ErrorText>\n            Please enter a valid email address\n          </Fieldset.ErrorText>\n        </Field.Root>\n\n        <Field.Root>\n          <Field.Label>Country</Field.Label>\n          <NativeSelect.Root>\n            <NativeSelect.Field>\n              <For each={[\"United Kingdom\", \"Canada\", \"United States\"]}>\n                {(item) => (\n                  <option key={item} value={item}>\n                    {item}\n                  </option>\n                )}\n              </For>\n            </NativeSelect.Field>\n            <NativeSelect.Indicator />\n          </NativeSelect.Root>\n        </Field.Root>\n      </Fieldset.Content>\n\n      <Button type=\"submit\" alignSelf=\"flex-start\">\n        Submit\n      </Button>\n    </Fieldset.Root>\n  )\n}\n",
+      "sha256": "826c512f7d407076e0d2719afcd7160978c929c0d2864d0b4b7825af93a4316a",
+      "upstreamPath": "apps/compositions/src/examples/fieldset-explorer-demo.tsx",
+      "upstreamSha256": "234940563dde3fc6b8f8655caefce63ed3d2728d89c870f166fdb9e1d31a533b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/fieldset-with-disabled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Field,\n  Fieldset,\n  For,\n  Input,\n  NativeSelect,\n  Textarea,\n} from \"@chakra-ui/react\"\n\nexport const FieldsetWithDisabled = () => {\n  return (\n    <Fieldset.Root size=\"lg\" disabled>\n      <Fieldset.Legend>Shipping details</Fieldset.Legend>\n      <Field.Root>\n        <Field.Label>Street address</Field.Label>\n        <Input name=\"address\" />\n      </Field.Root>\n      <Field.Root>\n        <Field.Label>Country</Field.Label>\n        <NativeSelect.Root>\n          <NativeSelect.Field name=\"country\">\n            <For each={[\"United Kingdom\", \"Canada\", \"United States\"]}>\n              {(item) => (\n                <option key={item} value={item}>\n                  {item}\n                </option>\n              )}\n            </For>\n          </NativeSelect.Field>\n          <NativeSelect.Indicator />\n        </NativeSelect.Root>\n      </Field.Root>\n      <Field.Root>\n        <Field.Label>Delivery notes</Field.Label>\n        <Textarea name=\"notes\" />\n      </Field.Root>\n    </Fieldset.Root>\n  )\n}\n",
+      "sha256": "9c293aad00462237ef4631bca16e5224bf372dc5628ea2f8707999acbc114bb4",
+      "upstreamPath": "apps/compositions/src/examples/fieldset-with-disabled.tsx",
+      "upstreamSha256": "a48135bc1b18446525e025a568f610142ce8524b6fb696af369f41874ac9984b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/fieldset-with-invalid.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Field,\n  Fieldset,\n  For,\n  Input,\n  NativeSelect,\n  Textarea,\n} from \"@chakra-ui/react\"\n\nexport const FieldsetWithInvalid = () => {\n  return (\n    <Fieldset.Root size=\"lg\" invalid>\n      <Fieldset.Legend>Shipping details</Fieldset.Legend>\n      <Fieldset.Content>\n        <Field.Root>\n          <Field.Label>Street address</Field.Label>\n          <Input name=\"address\" />\n        </Field.Root>\n        <Field.Root invalid>\n          <Field.Label>Country</Field.Label>\n          <NativeSelect.Root>\n            <NativeSelect.Field name=\"country\">\n              <For each={[\"United Kingdom\", \"Canada\", \"United States\"]}>\n                {(item) => (\n                  <option key={item} value={item}>\n                    {item}\n                  </option>\n                )}\n              </For>\n            </NativeSelect.Field>\n            <NativeSelect.Indicator />\n          </NativeSelect.Root>\n        </Field.Root>\n        <Field.Root invalid>\n          <Field.Label>Notes</Field.Label>\n          <Textarea name=\"notes\" />\n        </Field.Root>\n      </Fieldset.Content>\n      <Fieldset.ErrorText>\n        Some fields are invalid. Please check them.\n      </Fieldset.ErrorText>\n    </Fieldset.Root>\n  )\n}\n",
+      "sha256": "2c153514f17f2f7b496ef9e1f67574fdd38d2c9a58cfe11c9eb9312d0cf1ee27",
+      "upstreamPath": "apps/compositions/src/examples/fieldset-with-invalid.tsx",
+      "upstreamSha256": "7eeb565ee9e1b360c18914d460cd46f153c4c5da49e9c2bad5e378f1bf6bb10f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/fieldset/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FieldsetBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/fieldset-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "93f43a5123dd05f8bc0170bf0c2f58390069b4c35eb2483d40961d59f18659ec",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/fieldset/previews/fieldset-explorer-demo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FieldsetExplorerDemo as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/fieldset-explorer-demo\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "af92109c41aaa53f6197c4de84dcc5e3f3d583a7c7ee1996dc9abea6965abf17",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/fieldset/previews/fieldset-with-disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FieldsetWithDisabled as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/fieldset-with-disabled\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "048738468ce856351e1501126211d17dff370f500e0d8e88d5582f332062fafd",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/fieldset/previews/fieldset-with-invalid.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { FieldsetWithInvalid as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/fieldset-with-invalid\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "99b671231ff6a737b83014249aecf34a09d76a21bb68872257561814b739cfe8",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "fieldset",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/fieldset-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/fieldset-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI fieldset\n\n4 published Chakra UI fieldset examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/fieldset-basic.tsx\n"
+}

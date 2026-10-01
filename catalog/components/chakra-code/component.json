@@ -1,0 +1,197 @@
+{
+  "id": "chakra:code",
+  "sourceId": "chakra",
+  "slug": "chakra-code",
+  "name": "Chakra UI code",
+  "description": "6 published Chakra UI code examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "code",
+    "tags": [
+      "checkbox",
+      "code",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "code",
+      "chakra ui code"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "6 published Chakra UI code examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "code:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI code\ncode\n6 published Chakra UI code examples with complete pinned source and MIT attribution.\nchakra ui code\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI code 6 published Chakra UI code examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/code basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-code",
+  "manifestPath": "components/chakra-code/component.json",
+  "integrity": "sha256:ce58ba39c1035378d037c5e98f22e9342535de4e7bf88dcb4c8768e0453110ca",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/code-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Code } from \"@chakra-ui/react\"\n\nexport const CodeBasic = () => {\n  return <Code>{`console.log(\"Hello, world!\")`}</Code>\n}\n",
+      "sha256": "13744de53c2447c00d9c82aa591257f4332ef20f472497a6c17b66de843b00e1",
+      "upstreamPath": "apps/compositions/src/examples/code-basic.tsx",
+      "upstreamSha256": "83fece0f11b29fba23c40c234679b8e10b8659e25b534050bc479911da2c34b8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/code-size-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Code, For, Span, useRecipe } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const CodeSizeTable = () => {\n  const recipe = useRecipe({ key: \"code\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.size}>{(v) => <td key={v}>{v}</td>}</For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.size}>\n                {(v) => (\n                  <td key={v}>\n                    <Code size={v} colorPalette={c}>\n                      console.log(\"Chakra v3!\")\n                    </Code>\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n",
+      "sha256": "b26b8ff731969800c7f3fa51d98457e87d0c24ff48984f108d207530b3cd865b",
+      "upstreamPath": "apps/compositions/src/examples/code-size-table.tsx",
+      "upstreamSha256": "c87d841d88246afcdd8f676a546b8221258250494de49d7b526f6f78796d35f8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/color-palettes.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { ColorPalette } from \"@chakra-ui/react\"\n\nexport const colorPalettes: ColorPalette[] = [\n  \"gray\",\n  \"red\",\n  \"green\",\n  \"blue\",\n  \"teal\",\n  \"pink\",\n  \"purple\",\n  \"cyan\",\n  \"orange\",\n  \"yellow\",\n]\n",
+      "sha256": "90c5e84e17059e5935c80798a833fb5ac46ea296bb8d1ee978fd7a6e8cdb15e7",
+      "upstreamPath": "apps/compositions/src/lib/color-palettes.ts",
+      "upstreamSha256": "bc209453f7e4dbfc131d92ed9c81f00e20ad5da6cab70624417dcd591e62eac1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/playground-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { chakra } from \"@chakra-ui/react\"\n\nexport const PlaygroundTable = chakra(\"table\", {\n  base: {\n    width: \"full\",\n    marginBottom: \"32px\",\n    borderCollapse: \"collapse\",\n    \"& td:not(.chakra-table__cell)\": {\n      paddingRight: \"8\",\n      paddingBottom: \"8\",\n    },\n    \"& th:not(.chakra-table__column-header)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n    \"& thead td:not(.chakra-table__cell)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n  },\n})\n",
+      "sha256": "0c8b12b7fc74b6aec643559359ca4d43afbca488faeb90424ba3f98e71e3d7e7",
+      "upstreamPath": "apps/compositions/src/lib/playground-table.tsx",
+      "upstreamSha256": "d42456810c8b507d7171df7dca2fc955f2c04f4e8e711a74de35507acf64416c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/code-variant-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Code, For, Span, useRecipe } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const CodeVariantTable = () => {\n  const recipe = useRecipe({ key: \"code\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.variant}>\n            {(v) => <td key={v}>{v}</td>}\n          </For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.variant}>\n                {(v) => (\n                  <td key={v}>\n                    <Code variant={v} colorPalette={c}>\n                      console.log(\"Chakra v3!\")\n                    </Code>\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n",
+      "sha256": "357bd424413233a341c5963d34391abe386d0285b38071948ccb8ced5fd64e2b",
+      "upstreamPath": "apps/compositions/src/examples/code-variant-table.tsx",
+      "upstreamSha256": "41556d8ea78be8ef9c71e48feb15cf41dbf8baeb9c4c930b391568337fcd933b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/code-with-colors.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Code, Stack, Text } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\n\nexport const CodeWithColors = () => {\n  return (\n    <Stack gap=\"2\" align=\"flex-start\">\n      {colorPalettes.map((colorPalette) => (\n        <Stack\n          align=\"center\"\n          key={colorPalette}\n          direction=\"row\"\n          gap=\"10\"\n          px=\"4\"\n          width=\"full\"\n        >\n          <Text minW=\"8ch\" textStyle=\"sm\">\n            {colorPalette}\n          </Text>\n          <Code colorPalette={colorPalette} variant=\"solid\">\n            {`console.log()`}\n          </Code>\n          <Code colorPalette={colorPalette} variant=\"outline\">\n            {`console.log()`}\n          </Code>\n          <Code colorPalette={colorPalette} variant=\"subtle\">\n            {`console.log()`}\n          </Code>\n          <Code colorPalette={colorPalette} variant=\"surface\">\n            {`console.log()`}\n          </Code>\n        </Stack>\n      ))}\n    </Stack>\n  )\n}\n",
+      "sha256": "2a6143c5a03705aa3478cf245478324f20961e603c84c557ce7197cefca75e19",
+      "upstreamPath": "apps/compositions/src/examples/code-with-colors.tsx",
+      "upstreamSha256": "a1817e19fa2d2efd97fa219f5ffb29e36999fdf6350747fed6d2fc920d9947f3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/code-with-sizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Code, Stack } from \"@chakra-ui/react\"\n\nexport const CodeWithSizes = () => {\n  return (\n    <Stack gap=\"2\" align=\"flex-start\">\n      <Code size=\"xs\">console.log()</Code>\n      <Code size=\"sm\">console.log()</Code>\n      <Code size=\"md\">console.log()</Code>\n      <Code size=\"lg\">console.log()</Code>\n    </Stack>\n  )\n}\n",
+      "sha256": "72affbc071d407349120bf2cdc4afabbe174430fa3b7783ccef81d8a45ba6093",
+      "upstreamPath": "apps/compositions/src/examples/code-with-sizes.tsx",
+      "upstreamSha256": "41826a2589639bd2ae531cb569bea886376c667dea3d259b9c1d8cc300232309",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/code-with-variants.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Code, Stack } from \"@chakra-ui/react\"\n\nexport const CodeWithVariants = () => {\n  return (\n    <Stack gap=\"2\" align=\"flex-start\">\n      <Code variant=\"solid\">console.log()</Code>\n      <Code variant=\"outline\">console.log()</Code>\n      <Code variant=\"subtle\">console.log()</Code>\n      <Code variant=\"surface\">console.log()</Code>\n    </Stack>\n  )\n}\n",
+      "sha256": "a60cd71e76b59812e70220a7732b94c310c4909ce274ee35015604ca15bbd2f9",
+      "upstreamPath": "apps/compositions/src/examples/code-with-variants.tsx",
+      "upstreamSha256": "728d12685eda86b9aae89e85d459f26ba4ca749b0936f04b1ff781ba2b0b6baa",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/code/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CodeBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/code-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "2c46a4a03d8b2e799dc93d5acf4bd5bdd4234e4d890fe3f43d2e510c487b5afa",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/code/previews/code-size-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CodeSizeTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/code-size-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a8113c0e8ca713bbfecd601528fb7586b38f3a4772f06add2519292eff1b589e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/code/previews/code-variant-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CodeVariantTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/code-variant-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "b1bdbfd060bcb3e6625850e0e565eda5b66252390767dd3b832454c372df438f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/code/previews/code-with-colors.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CodeWithColors as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/code-with-colors\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "26e7155ba095eed8c219ac4d653b4da027a3524d3c105cefb219e1cbf20287fc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/code/previews/code-with-sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CodeWithSizes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/code-with-sizes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "3f45cfdc7d8cc3fcf85c8f3e3cea75a6c7e33cf3293e504c4f7f599f88e9e41e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/code/previews/code-with-variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CodeWithVariants as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/code-with-variants\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "7aab88c38f6006e6d4a22e5e13cc6302d83f7301f7393cbe69e74685bb3dafa6",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "code",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/code-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/code-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI code\n\n6 published Chakra UI code examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/code-basic.tsx\n"
+}

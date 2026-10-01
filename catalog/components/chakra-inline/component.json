@@ -1,0 +1,114 @@
+{
+  "id": "chakra:inline",
+  "sourceId": "chakra",
+  "slug": "chakra-inline",
+  "name": "Chakra UI inline",
+  "description": "2 published Chakra UI inline examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "inline",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "inline",
+      "chakra ui inline"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "2 published Chakra UI inline examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "inline:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI inline\ninline\n2 published Chakra UI inline examples with complete pinned source and MIT attribution.\nchakra ui inline\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI inline 2 published Chakra UI inline examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/system Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/system/inline recipe.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-inline",
+  "manifestPath": "components/chakra-inline/component.json",
+  "integrity": "sha256:c9e1bc7bb270018ca2a04df1df081dd38fca97fb88a68357c72ebc89f5c24443",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/system/inline-recipe.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type {\n  HTMLChakraProps,\n  RecipeVariantProps,\n  UnstyledProp,\n} from \"@chakra-ui/react\"\nimport { createRecipeContext, defineRecipe } from \"@chakra-ui/react\"\n\nconst buttonRecipe = defineRecipe({\n  className: \"button\",\n  base: {\n    padding: \"10px\",\n    borderRadius: \"4px\",\n    backgroundColor: \"red\",\n    color: \"white\",\n  },\n  variants: {\n    bold: {\n      true: {\n        fontWeight: \"bold\",\n      },\n    },\n  },\n})\n\nconst { withContext } = createRecipeContext({\n  recipe: buttonRecipe,\n})\n\ninterface ButtonProps\n  extends\n    HTMLChakraProps<\"button\", RecipeVariantProps<typeof buttonRecipe>>,\n    UnstyledProp {}\n\nconst Button = withContext<HTMLButtonElement, ButtonProps>(\"button\")\n\nexport const SystemInlineRecipe = () => {\n  return <Button bold>Welcome</Button>\n}\n",
+      "sha256": "9ce5975d9d6e140e01238d91f24055c179c9fc5d65cc5bd5a72da3fd96e7ad09",
+      "upstreamPath": "apps/compositions/src/examples/system/inline-recipe.tsx",
+      "upstreamSha256": "89b2cb8091b2556c49f5a7d5814b04dc49f8e54109c2bfc7aa2fd8d5c5eabcce",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/system/inline-slot-recipe.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { HTMLChakraProps, RecipeVariantProps } from \"@chakra-ui/react\"\nimport { createSlotRecipeContext, defineSlotRecipe } from \"@chakra-ui/react\"\n\n// 1. Define the recipe\n\nconst checkbox = defineSlotRecipe({\n  className: \"checkbox\",\n  slots: [\"root\", \"label\", \"control\"],\n  base: {\n    root: {\n      display: \"flex\",\n      alignItems: \"center\",\n      gap: \"2\",\n    },\n    label: {\n      fontWeight: \"medium\",\n    },\n    control: {\n      width: \"4\",\n      height: \"4\",\n      borderRadius: \"md\",\n      borderWidth: \"1px\",\n      borderColor: \"gray.300\",\n      backgroundColor: \"white\",\n    },\n  },\n  variants: {\n    colored: {\n      true: {\n        control: {\n          accentColor: \"pink.500\",\n        },\n      },\n    },\n  },\n})\n\nconst { withProvider, withContext } = createSlotRecipeContext({\n  recipe: checkbox,\n})\n\n// 2. Create the components\n\ninterface CheckboxRootProps extends HTMLChakraProps<\n  \"div\",\n  RecipeVariantProps<typeof checkbox>\n> {}\n\nconst CheckboxRoot = withProvider<HTMLDivElement, CheckboxRootProps>(\n  \"div\",\n  \"root\",\n)\n\ninterface CheckboxLabelProps extends HTMLChakraProps<\"label\"> {}\nconst CheckboxLabel = withContext<HTMLLabelElement, CheckboxLabelProps>(\n  \"label\",\n  \"label\",\n)\n\ninterface CheckboxControlProps extends HTMLChakraProps<\"input\"> {}\nconst CheckboxControl = withContext<HTMLInputElement, CheckboxControlProps>(\n  \"input\",\n  \"control\",\n)\n\n// 3. Use the components\n\nexport const SystemInlineSlotRecipe = () => {\n  return (\n    <CheckboxRoot colored>\n      <CheckboxControl id=\"checkbox\" type=\"checkbox\" defaultChecked />\n      <CheckboxLabel htmlFor=\"checkbox\">Checkbox</CheckboxLabel>\n    </CheckboxRoot>\n  )\n}\n",
+      "sha256": "44598c6204a99c6c530c6a38dc30ee3e322d830717c44544abe577da1ce4b279",
+      "upstreamPath": "apps/compositions/src/examples/system/inline-slot-recipe.tsx",
+      "upstreamSha256": "bd08c9be3b8af8b01391e102e47abc06d3ba70bd98d3f0f206b263715f68ed86",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/inline/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { SystemInlineRecipe as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/system/inline-recipe\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "02217e96caf231b76d9c9158e840909ccf4b484e1712a27c0b64c1857e4f9da3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/inline/previews/inline-slot-recipe.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { SystemInlineSlotRecipe as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/system/inline-slot-recipe\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "2c010d068ffe20fbf5c1f00bc634bad92eb17cfceaa1c0cf3d078d947de99ea3",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "inline",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/system",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/system/inline-recipe.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/system/inline-recipe.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI inline\n\n2 published Chakra UI inline examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/system\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/system/inline-recipe.tsx\n"
+}

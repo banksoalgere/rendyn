@@ -1,0 +1,269 @@
+{
+  "id": "chakra:qr-code",
+  "sourceId": "chakra",
+  "slug": "chakra-qr-code",
+  "name": "Chakra UI qr code",
+  "description": "11 published Chakra UI qr code examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "qr-code",
+    "tags": [
+      "checkbox",
+      "code",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "qr code",
+      "chakra ui qr code",
+      "qr-code"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "11 published Chakra UI qr code examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "qr-code:checkbox:code:file:form:input:keyboard",
+    "searchText": "Chakra UI qr code\nqr code\n11 published Chakra UI qr code examples with complete pinned source and MIT attribution.\nchakra ui qr code\nqr-code\ncheckbox\ncode\nfile\nform\ninput\nkeyboard\nChakra UI qr code 11 published Chakra UI qr code examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/qr code basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-qr-code",
+  "manifestPath": "components/chakra-qr-code/component.json",
+  "integrity": "sha256:fa5f7b00165064c75d25dc4ca3060f0c822728cd6037503a9e9db91cef7ef004",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/qr-code-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { QrCode } from \"@chakra-ui/react\"\n\nexport const QrCodeBasic = () => {\n  return (\n    <QrCode.Root value=\"https://www.google.com\">\n      <QrCode.Frame>\n        <QrCode.Pattern />\n      </QrCode.Frame>\n    </QrCode.Root>\n  )\n}\n",
+      "sha256": "b82eb683ff15ca8aa1137e97b55580d98a82c81dc3674187f9f47142b6c4c568",
+      "upstreamPath": "apps/compositions/src/examples/qr-code-basic.tsx",
+      "upstreamSha256": "a7c0a5cc8b3554822bca1985b85671b4df7f95b7ab84987b587fbab1f091adda",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/qr-code-explorer-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, QrCode, Stack } from \"@chakra-ui/react\"\n\nexport const QrCodeExplorerDemo = () => {\n  return (\n    <Stack gap=\"6\" maxW=\"sm\" align=\"center\">\n      <QrCode.Root value=\"https://www.google.com\">\n        <QrCode.Frame>\n          <QrCode.Pattern />\n        </QrCode.Frame>\n\n        <QrCode.DownloadTrigger\n          mt={4}\n          asChild\n          mimeType=\"image/png\"\n          fileName=\"qr-code.png\"\n        >\n          <Button size=\"sm\" variant=\"outline\">\n            Download QR\n          </Button>\n        </QrCode.DownloadTrigger>\n      </QrCode.Root>\n    </Stack>\n  )\n}\n",
+      "sha256": "019df790cc3c9918e596b47fadea4f413d990589c7ffe933e855c9d65a472df9",
+      "upstreamPath": "apps/compositions/src/examples/qr-code-explorer-demo.tsx",
+      "upstreamSha256": "d8f39760fc0d5ec3927fc2cae9e21630e32c11b28f93a07b6c64095cbf651558",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/qr-code-with-error-level.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { QrCode, SegmentGroup, Stack } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\ntype ErrorLevel = \"L\" | \"M\" | \"Q\" | \"H\"\n\nexport const QrCodeWithErrorLevel = () => {\n  const [errorLevel, setErrorLevel] = useState<ErrorLevel>(\"L\")\n  return (\n    <Stack align=\"flex-start\">\n      <QrCode.Root\n        value=\"https://www.google.com\"\n        size=\"xl\"\n        encoding={{ ecc: errorLevel }}\n      >\n        <QrCode.Frame />\n      </QrCode.Root>\n      <SegmentGroup.Root\n        size=\"sm\"\n        defaultValue={\"L\"}\n        onValueChange={(e) => setErrorLevel(e.value as ErrorLevel)}\n      >\n        <SegmentGroup.Indicator />\n        <SegmentGroup.Items items={[\"L\", \"M\", \"Q\", \"H\"]} />\n      </SegmentGroup.Root>\n    </Stack>\n  )\n}\n",
+      "sha256": "b0077cdfa8164cf200e6a9ea6b96155e4db26c21048ba80bf16e4519447c804f",
+      "upstreamPath": "apps/compositions/src/examples/qr-code-with-error-level.tsx",
+      "upstreamSha256": "522e8d35b6fc39ddbb267dfde02918fd24a517fdcb5dd44049cabed752e0ddf1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/qr-code-with-export.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, QrCode } from \"@chakra-ui/react\"\n\nexport const QrCodeWithExport = () => {\n  return (\n    <QrCode.Root value=\"https://www.google.com\">\n      <QrCode.Frame>\n        <QrCode.Pattern />\n      </QrCode.Frame>\n\n      <QrCode.DownloadTrigger\n        asChild\n        fileName=\"qr-code.png\"\n        mimeType=\"image/png\"\n      >\n        <Button variant=\"outline\" size=\"xs\" mt=\"3\">\n          Download\n        </Button>\n      </QrCode.DownloadTrigger>\n    </QrCode.Root>\n  )\n}\n",
+      "sha256": "ce5be147fecc2e53882399c4ec295d17c4aeb11e13f54d0909f9ef7246c26cc7",
+      "upstreamPath": "apps/compositions/src/examples/qr-code-with-export.tsx",
+      "upstreamSha256": "29ccbd8ff1c577d58388f90a0ed149a08f872de47e7d1084663f53d6691dac1a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/qr-code-with-export-with-logo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, QrCode } from \"@chakra-ui/react\"\n\nexport const QrCodeWithExportWithLogo = () => {\n  return (\n    <QrCode.Root value=\"https://www.google.com\">\n      <QrCode.Frame>\n        <QrCode.Pattern />\n        <foreignObject x=\"0\" y=\"0\" width=\"100%\" height=\"100%\">\n          <QrCode.Overlay\n            style={{\n              width: \"33%\",\n              height: \"33%\",\n              padding: \"8px\",\n              background: \"white\",\n            }}\n          >\n            <Logo />\n          </QrCode.Overlay>\n        </foreignObject>\n      </QrCode.Frame>\n\n      <QrCode.DownloadTrigger\n        fileName=\"qr-code-with-logo.png\"\n        mimeType=\"image/png\"\n        asChild\n      >\n        <Button variant=\"outline\" size=\"xs\" mt=\"3\">\n          Download\n        </Button>\n      </QrCode.DownloadTrigger>\n    </QrCode.Root>\n  )\n}\n\nconst Logo = () => {\n  return (\n    <svg\n      width=\"100%\"\n      height=\"100%\"\n      viewBox=\"0 0 40 40\"\n      fill=\"none\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n    >\n      <path\n        fillRule=\"evenodd\"\n        clipRule=\"evenodd\"\n        d=\"M10 0C15.5228 0 20 4.47715 20 10V0H30C35.5228 0 40 4.47715 40 10C40 15.5228 35.5228 20 30 20C35.5228 20 40 24.4772 40 30C40 32.7423 38.8961 35.2268 37.1085 37.0334L37.0711 37.0711L37.0379 37.1041C35.2309 38.8943 32.7446 40 30 40C27.2741 40 24.8029 38.9093 22.999 37.1405C22.9756 37.1175 22.9522 37.0943 22.9289 37.0711C22.907 37.0492 22.8852 37.0272 22.8635 37.0051C21.0924 35.2009 20 32.728 20 30C20 35.5228 15.5228 40 10 40C4.47715 40 0 35.5228 0 30V20H10C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0ZM18 10C18 14.4183 14.4183 18 10 18V2C14.4183 2 18 5.58172 18 10ZM38 30C38 25.5817 34.4183 22 30 22C25.5817 22 22 25.5817 22 30H38ZM2 22V30C2 34.4183 5.58172 38 10 38C14.4183 38 18 34.4183 18 30V22H2ZM22 18V2L30 2C34.4183 2 38 5.58172 38 10C38 14.4183 34.4183 18 30 18H22Z\"\n        fill=\"#5417D7\"\n      ></path>\n    </svg>\n  )\n}\n",
+      "sha256": "fba4732b74d751342329ace26e0dd68c58a71faf3048593839a4070466097356",
+      "upstreamPath": "apps/compositions/src/examples/qr-code-with-export-with-logo.tsx",
+      "upstreamSha256": "01a4a8b339a44962c32d2e5fdd4749e6b4408e86a8f5336bd013637639b2ae01",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/qr-code-with-fill.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Flex, For, QrCode } from \"@chakra-ui/react\"\n\nexport const QrCodeWithFill = () => {\n  return (\n    <Flex gap=\"4\">\n      <For each={[\"#5417D7\", \"#FF0000\"]}>\n        {(fill) => (\n          <QrCode.Root key={fill} value=\"https://www.google.com\">\n            <QrCode.Frame style={{ fill }}>\n              <QrCode.Pattern />\n            </QrCode.Frame>\n          </QrCode.Root>\n        )}\n      </For>\n    </Flex>\n  )\n}\n",
+      "sha256": "9dfbdc5e8e4b9c2348c5e0321cb299b9f815fe3f669b7080557126010459fd22",
+      "upstreamPath": "apps/compositions/src/examples/qr-code-with-fill.tsx",
+      "upstreamSha256": "627fa1ce421cea21550ec476b725fee00be8fdb6e38f0676292e2d1b4a4acc6f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/qr-code-with-input.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input, QrCode, Stack } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\nexport const QrCodeWithInput = () => {\n  const [value, setValue] = useState(\"https://www.google.com\")\n  return (\n    <Stack maxW=\"240px\" gap=\"4\">\n      <QrCode.Root value={value}>\n        <QrCode.Frame>\n          <QrCode.Pattern />\n        </QrCode.Frame>\n      </QrCode.Root>\n      <Input value={value} onChange={(e) => setValue(e.target.value)} />\n    </Stack>\n  )\n}\n",
+      "sha256": "76e62af27564bfcf33781e573eeee4a7163a39c96444924e27d42f3c73e36b59",
+      "upstreamPath": "apps/compositions/src/examples/qr-code-with-input.tsx",
+      "upstreamSha256": "58eecb55d6e0dc150beeb52c59d1bd697c27c2991fb5c057b3f2aad46b91b25b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/qr-code-with-overlay.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { QrCode } from \"@chakra-ui/react\"\n\nexport const QrCodeWithOverlay = () => {\n  return (\n    <QrCode.Root value=\"https://www.google.com\">\n      <QrCode.Frame>\n        <QrCode.Pattern />\n      </QrCode.Frame>\n      <QrCode.Overlay>\n        <Logo />\n      </QrCode.Overlay>\n    </QrCode.Root>\n  )\n}\n\nconst Logo = () => {\n  return (\n    <svg\n      width=\"40\"\n      height=\"40\"\n      viewBox=\"0 0 40 40\"\n      fill=\"none\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n    >\n      <path\n        fillRule=\"evenodd\"\n        clipRule=\"evenodd\"\n        d=\"M10 0C15.5228 0 20 4.47715 20 10V0H30C35.5228 0 40 4.47715 40 10C40 15.5228 35.5228 20 30 20C35.5228 20 40 24.4772 40 30C40 32.7423 38.8961 35.2268 37.1085 37.0334L37.0711 37.0711L37.0379 37.1041C35.2309 38.8943 32.7446 40 30 40C27.2741 40 24.8029 38.9093 22.999 37.1405C22.9756 37.1175 22.9522 37.0943 22.9289 37.0711C22.907 37.0492 22.8852 37.0272 22.8635 37.0051C21.0924 35.2009 20 32.728 20 30C20 35.5228 15.5228 40 10 40C4.47715 40 0 35.5228 0 30V20H10C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0ZM18 10C18 14.4183 14.4183 18 10 18V2C14.4183 2 18 5.58172 18 10ZM38 30C38 25.5817 34.4183 22 30 22C25.5817 22 22 25.5817 22 30H38ZM2 22V30C2 34.4183 5.58172 38 10 38C14.4183 38 18 34.4183 18 30V22H2ZM22 18V2L30 2C34.4183 2 38 5.58172 38 10C38 14.4183 34.4183 18 30 18H22Z\"\n        fill=\"#5417D7\"\n      ></path>\n    </svg>\n  )\n}\n",
+      "sha256": "a7c2cf6925f72976068548033b4b93a3084b0350928236a5cda1e9e88615eb58",
+      "upstreamPath": "apps/compositions/src/examples/qr-code-with-overlay.tsx",
+      "upstreamSha256": "8ef28f5fe0d0d9659af960ec6c0895a0d45b325cea73e3e93650131fa4783883",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/qr-code-with-sizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { For, QrCode, Stack } from \"@chakra-ui/react\"\n\nexport const QrCodeWithSizes = () => {\n  return (\n    <Stack>\n      <For each={[\"2xs\", \"xs\", \"sm\", \"md\", \"lg\", \"xl\", \"2xl\"]}>\n        {(size) => (\n          <QrCode.Root size={size} value=\"https://www.google.com\" key={size}>\n            <QrCode.Frame>\n              <QrCode.Pattern />\n            </QrCode.Frame>\n          </QrCode.Root>\n        )}\n      </For>\n    </Stack>\n  )\n}\n",
+      "sha256": "b31bbc528df56497c295fae859c23dd3ca97bae75472805473641fbe5cabbf47",
+      "upstreamPath": "apps/compositions/src/examples/qr-code-with-sizes.tsx",
+      "upstreamSha256": "0361edbc3800b29def950f528ca7fd161ab36adad6d06f574b614f98dbc979d9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/qr-code-with-spinner.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { AbsoluteCenter, Box, QrCode, Spinner } from \"@chakra-ui/react\"\n\nexport const QrCodeWithSpinner = () => {\n  return (\n    <Box position=\"relative\">\n      <QrCode.Root value=\"https://www.google.com\">\n        <QrCode.Frame>\n          <QrCode.Pattern />\n        </QrCode.Frame>\n\n        <AbsoluteCenter bg=\"bg/80\" boxSize=\"100%\">\n          <Spinner color=\"red\" />\n        </AbsoluteCenter>\n      </QrCode.Root>\n    </Box>\n  )\n}\n",
+      "sha256": "fd0884a58c830c48980e615b07e3a6c7dc7c86ce6101c0c81b9da38376cc641d",
+      "upstreamPath": "apps/compositions/src/examples/qr-code-with-spinner.tsx",
+      "upstreamSha256": "5faecc49efa9ed74fb1cca3bb20ec212ffbbe36e6f9dcc9ebd894e38f76db1b0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/qr-code-with-store.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, QrCode, Stack, useQrCode } from \"@chakra-ui/react\"\n\nexport const QrCodeWithStore = () => {\n  const qrCode = useQrCode({ defaultValue: \"https://www.google.com\" })\n  return (\n    <Stack align=\"flex-start\">\n      <Button onClick={() => qrCode.setValue(\"https://www.x.com\")}>\n        Update to x.com\n      </Button>\n      <QrCode.RootProvider value={qrCode}>\n        <QrCode.Frame>\n          <QrCode.Pattern />\n        </QrCode.Frame>\n      </QrCode.RootProvider>\n    </Stack>\n  )\n}\n",
+      "sha256": "5b4e12f549e0a01a849a756f8b0763251b25a962f5097a66a3a8e47d78b4eba4",
+      "upstreamPath": "apps/compositions/src/examples/qr-code-with-store.tsx",
+      "upstreamSha256": "19ade25b9c21f6062f20fcc0d0c564082d0085f22263d5dafa417f804a3c0daf",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/qr-code-closed-component.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { QrCode as ChakraQrCode } from \"@chakra-ui/react\"\nimport * as React from \"react\"\n\nexport interface QrCodeProps extends Omit<\n  ChakraQrCode.RootProps,\n  \"fill\" | \"overlay\"\n> {\n  fill?: string\n  overlay?: React.ReactNode\n}\n\nexport const QrCode = React.forwardRef<HTMLDivElement, QrCodeProps>(\n  function QrCode(props, ref) {\n    const { children, fill, overlay, ...rest } = props\n    return (\n      <ChakraQrCode.Root ref={ref} {...rest}>\n        <ChakraQrCode.Frame style={{ fill }}>\n          <ChakraQrCode.Pattern />\n        </ChakraQrCode.Frame>\n        {overlay}\n        {children && <ChakraQrCode.Overlay>{children}</ChakraQrCode.Overlay>}\n      </ChakraQrCode.Root>\n    )\n  },\n)\n",
+      "sha256": "5926e7310117a477670b4758c8599dc60e460a1be683eb72892b8c782eafe3b3",
+      "upstreamPath": "apps/compositions/src/examples/qr-code-closed-component.tsx",
+      "upstreamSha256": "78b0be7450a7023528b55ee369cf6c215743e2560526810efb744bf13cef9b8e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/qr-code/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { QrCodeBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/qr-code-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "6be4c30ac15e4fbc78be5d2ad5003633eaf912b455d0e1ff0890ec5625ddf6c1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/qr-code/previews/qr-code-explorer-demo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { QrCodeExplorerDemo as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/qr-code-explorer-demo\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "aa06f8abadd36b37ebad8a9640d81de659b5b822d8cf73c9339fe70f7fef404c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/qr-code/previews/qr-code-with-error-level.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { QrCodeWithErrorLevel as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/qr-code-with-error-level\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "0e90cad5097c262a777d3b7e576da4ead00154361ed6fb84d11ff72cb54b41fa",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/qr-code/previews/qr-code-with-export.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { QrCodeWithExport as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/qr-code-with-export\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "396a3c51738514802cb227e020e5a31891e6b911bcfe361afdb9fbb0f5146a7a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/qr-code/previews/qr-code-with-export-with-logo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { QrCodeWithExportWithLogo as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/qr-code-with-export-with-logo\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "1a5ad22760c41cd162a88f92b7306c396dca012f122771365c431cb5a86b42e5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/qr-code/previews/qr-code-with-fill.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { QrCodeWithFill as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/qr-code-with-fill\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "0937ad00bb8dd14a360424421f02e8df5386f4c0199768110b2ce55ee12a64f1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/qr-code/previews/qr-code-with-input.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { QrCodeWithInput as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/qr-code-with-input\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "87bf4aa2825033338cbdb125069893f9a264e82abf59aedbef12e4a11b80db69",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/qr-code/previews/qr-code-with-overlay.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { QrCodeWithOverlay as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/qr-code-with-overlay\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "29ddea2b160b821fc3f087ecbb1cfe98ec2aa8db8b6a1ef16cb9ebac49802f5a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/qr-code/previews/qr-code-with-sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { QrCodeWithSizes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/qr-code-with-sizes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "4f1e26f325141b6d714813e4619ce599cf1671a2d60b8665a4af54df5ef92c1c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/qr-code/previews/qr-code-with-spinner.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { QrCodeWithSpinner as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/qr-code-with-spinner\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "bfbb986685d1514db1029aa85f489744303a75e54bba3750c6fd83336a439354",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/qr-code/previews/qr-code-with-store.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { QrCodeWithStore as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/qr-code-with-store\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "ef0848a62acfadbc98682937117de76ea9fc5d0f6861c3bc0d99322a0a4a668b",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "qr-code",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/qr-code-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/qr-code-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI qr code\n\n11 published Chakra UI qr code examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/qr-code-basic.tsx\n"
+}

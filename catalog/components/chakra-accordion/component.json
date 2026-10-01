@@ -1,0 +1,343 @@
+{
+  "id": "chakra:accordion",
+  "sourceId": "chakra",
+  "slug": "chakra-accordion",
+  "name": "Chakra UI accordion",
+  "description": "15 published Chakra UI accordion examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "react-icons@5.5.0",
+    "react-lorem-ipsum@1.4.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "accordion",
+    "tags": [
+      "accordion",
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "accordion",
+      "chakra ui accordion"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "15 published Chakra UI accordion examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "accordion:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI accordion\naccordion\n15 published Chakra UI accordion examples with complete pinned source and MIT attribution.\nchakra ui accordion\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI accordion 15 published Chakra UI accordion examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/accordion basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-accordion",
+  "manifestPath": "components/chakra-accordion/component.json",
+  "integrity": "sha256:8104e6629e69a60a76b6f7ada3859d7e7a29ca582517c8bcdf8843759e8b443e",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/accordion-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Accordion, Span } from \"@chakra-ui/react\"\n\nexport const AccordionBasic = () => {\n  return (\n    <Accordion.Root collapsible defaultValue={[\"b\"]}>\n      {items.map((item, index) => (\n        <Accordion.Item key={index} value={item.value}>\n          <Accordion.ItemTrigger>\n            <Span flex=\"1\">{item.title}</Span>\n            <Accordion.ItemIndicator />\n          </Accordion.ItemTrigger>\n          <Accordion.ItemContent>\n            <Accordion.ItemBody>{item.text}</Accordion.ItemBody>\n          </Accordion.ItemContent>\n        </Accordion.Item>\n      ))}\n    </Accordion.Root>\n  )\n}\n\nconst items = [\n  { value: \"a\", title: \"First Item\", text: \"Some value 1...\" },\n  { value: \"b\", title: \"Second Item\", text: \"Some value 2...\" },\n  { value: \"c\", title: \"Third Item\", text: \"Some value 3...\" },\n]\n",
+      "sha256": "da1183fece3e23c403e4ff8bf863c56c77b090791160cea7ce75c84c37338195",
+      "upstreamPath": "apps/compositions/src/examples/accordion-basic.tsx",
+      "upstreamSha256": "27e881da3444462b073fa9c44e51e773f4b0310d1170b02f93ac1741704745bc",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/accordion-controlled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Accordion, Span, Stack, Text } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\nexport const AccordionControlled = () => {\n  const [value, setValue] = useState([\"second-item\"])\n  return (\n    <Stack gap=\"4\">\n      <Text fontWeight=\"medium\">Expanded: {value.join(\", \")}</Text>\n      <Accordion.Root value={value} onValueChange={(e) => setValue(e.value)}>\n        {items.map((item, index) => (\n          <Accordion.Item key={index} value={item.value}>\n            <Accordion.ItemTrigger>\n              <Span flex=\"1\">{item.title}</Span>\n              <Accordion.ItemIndicator />\n            </Accordion.ItemTrigger>\n            <Accordion.ItemContent>\n              <Accordion.ItemBody>{item.text}</Accordion.ItemBody>\n            </Accordion.ItemContent>\n          </Accordion.Item>\n        ))}\n      </Accordion.Root>\n    </Stack>\n  )\n}\n\nconst items = [\n  { value: \"first-item\", title: \"First Item\", text: \"Some value 1...\" },\n  { value: \"second-item\", title: \"Second Item\", text: \"Some value 2...\" },\n  { value: \"third-item\", title: \"Third Item\", text: \"Some value 3...\" },\n]\n",
+      "sha256": "867d0f2ef9765cc384d700a56721af141882d544873590ba64172781dc3c8105",
+      "upstreamPath": "apps/compositions/src/examples/accordion-controlled.tsx",
+      "upstreamSha256": "34ff184af9fbccd32135ce751582c78702deb6be5b14206ebcf206fd05e35754",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/accordion-explorer-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Accordion, Flex, Heading, Icon, Stack } from \"@chakra-ui/react\"\nimport { LuChartBarStacked, LuChevronDown, LuTags } from \"react-icons/lu\"\n\nexport const AccordionExplorerDemo = () => {\n  return (\n    <Stack width=\"full\" maxW=\"400px\">\n      <Heading size=\"md\">Product details</Heading>\n      <Accordion.Root collapsible defaultValue={[\"info\"]}>\n        {items.map((item) => (\n          <Accordion.Item key={item.value} value={item.value}>\n            <Accordion.ItemTrigger\n              display=\"flex\"\n              cursor=\"pointer\"\n              justifyContent=\"space-between\"\n              alignItems=\"center\"\n            >\n              <Flex align=\"center\" gap={2}>\n                <Icon fontSize=\"lg\" color=\"fg.subtle\">\n                  {item.icon}\n                </Icon>\n                {item.title}\n              </Flex>\n              <Accordion.ItemIndicator>\n                <LuChevronDown />\n              </Accordion.ItemIndicator>\n            </Accordion.ItemTrigger>\n            <Accordion.ItemContent>\n              <Accordion.ItemBody>{item.content}</Accordion.ItemBody>\n            </Accordion.ItemContent>\n          </Accordion.Item>\n        ))}\n      </Accordion.Root>\n    </Stack>\n  )\n}\n\nconst items = [\n  {\n    value: \"info\",\n    icon: <LuTags />,\n    title: \"Product Info\",\n    content:\n      \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec odio vel dui euismod fermentum.\",\n  },\n  {\n    value: \"stats\",\n    icon: <LuChartBarStacked />,\n    title: \"Stats\",\n    content:\n      \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec odio vel dui euismod fermentum.\",\n  },\n]\n",
+      "sha256": "4a51ff525a5bffa472ced866d0ee41fb8c1ce5b372facc6c4214ebab91114fcc",
+      "upstreamPath": "apps/compositions/src/examples/accordion-explorer-demo.tsx",
+      "upstreamSha256": "9db2d7d3a686a24afefe63c0c8f2016f1e844b47f631a3ef1f779ee11f79baf7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/accordion-size-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { AccordionRootProps } from \"@chakra-ui/react\"\nimport { Accordion, For, Span, useSlotRecipe } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const AccordionSizeTable = () => {\n  const recipe = useSlotRecipe({ key: \"accordion\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.size}>{(v) => <td key={v}>{v}</td>}</For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.size}>\n                {(v) => (\n                  <td key={v}>\n                    <AccordionDemo size={v} colorPalette={c} />\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n\nconst AccordionDemo = (props: AccordionRootProps) => {\n  return (\n    <Accordion.Root collapsible defaultValue={[\"b\"]} {...props}>\n      {items.map((item, index) => (\n        <Accordion.Item key={index} value={item.value}>\n          <Accordion.ItemTrigger>\n            <Span flex=\"1\">{item.title}</Span>\n            <Accordion.ItemIndicator />\n          </Accordion.ItemTrigger>\n          <Accordion.ItemContent>\n            <Accordion.ItemBody>{item.text}</Accordion.ItemBody>\n          </Accordion.ItemContent>\n        </Accordion.Item>\n      ))}\n    </Accordion.Root>\n  )\n}\n\nconst items = [\n  { value: \"a\", title: \"First Item\", text: \"Some value 1...\" },\n  { value: \"b\", title: \"Second Item\", text: \"Some value 2...\" },\n  { value: \"c\", title: \"Third Item\", text: \"Some value 3...\" },\n]\n",
+      "sha256": "7220f29d7646ba54313b584d8a9707e654c1f8747295d3e61d6f4ca62ade5dbb",
+      "upstreamPath": "apps/compositions/src/examples/accordion-size-table.tsx",
+      "upstreamSha256": "a5c4f152427cac0b0ea8a6116f1ae2e8a9ec4848be9065eec3765cd107599d02",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/color-palettes.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { ColorPalette } from \"@chakra-ui/react\"\n\nexport const colorPalettes: ColorPalette[] = [\n  \"gray\",\n  \"red\",\n  \"green\",\n  \"blue\",\n  \"teal\",\n  \"pink\",\n  \"purple\",\n  \"cyan\",\n  \"orange\",\n  \"yellow\",\n]\n",
+      "sha256": "90c5e84e17059e5935c80798a833fb5ac46ea296bb8d1ee978fd7a6e8cdb15e7",
+      "upstreamPath": "apps/compositions/src/lib/color-palettes.ts",
+      "upstreamSha256": "bc209453f7e4dbfc131d92ed9c81f00e20ad5da6cab70624417dcd591e62eac1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/playground-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { chakra } from \"@chakra-ui/react\"\n\nexport const PlaygroundTable = chakra(\"table\", {\n  base: {\n    width: \"full\",\n    marginBottom: \"32px\",\n    borderCollapse: \"collapse\",\n    \"& td:not(.chakra-table__cell)\": {\n      paddingRight: \"8\",\n      paddingBottom: \"8\",\n    },\n    \"& th:not(.chakra-table__column-header)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n    \"& thead td:not(.chakra-table__cell)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n  },\n})\n",
+      "sha256": "0c8b12b7fc74b6aec643559359ca4d43afbca488faeb90424ba3f98e71e3d7e7",
+      "upstreamPath": "apps/compositions/src/lib/playground-table.tsx",
+      "upstreamSha256": "d42456810c8b507d7171df7dca2fc955f2c04f4e8e711a74de35507acf64416c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/accordion-sizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Accordion, For, Span, Stack, Text } from \"@chakra-ui/react\"\n\nexport const AccordionSizes = () => {\n  return (\n    <Stack gap=\"8\">\n      <For each={[\"sm\", \"md\", \"lg\"]}>\n        {(size) => (\n          <Stack gap=\"2\" key={size}>\n            <Text fontWeight=\"semibold\">{size}</Text>\n            <Accordion.Root size={size} collapsible defaultValue={[\"b\"]}>\n              {items.map((item, index) => (\n                <Accordion.Item key={index} value={item.value}>\n                  <Accordion.ItemTrigger>\n                    <Span flex=\"1\">{item.title}</Span>\n                    <Accordion.ItemIndicator />\n                  </Accordion.ItemTrigger>\n                  <Accordion.ItemContent>\n                    <Accordion.ItemBody>{item.text}</Accordion.ItemBody>\n                  </Accordion.ItemContent>\n                </Accordion.Item>\n              ))}\n            </Accordion.Root>\n          </Stack>\n        )}\n      </For>\n    </Stack>\n  )\n}\n\nconst items = [\n  { value: \"a\", title: \"First Item\", text: \"Some value 1...\" },\n  { value: \"b\", title: \"Second Item\", text: \"Some value 2...\" },\n  { value: \"c\", title: \"Third Item\", text: \"Some value 3...\" },\n]\n",
+      "sha256": "c9f7f0c5a66264110bbac30509ce090a5c4feb8e492cab76674f150a09fc4cc3",
+      "upstreamPath": "apps/compositions/src/examples/accordion-sizes.tsx",
+      "upstreamSha256": "0f3573e12523d4ad17c41af8a1d2fc205f528e61dc6e2d6b72af6d014ee39ecb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/accordion-variant-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { AccordionRootProps } from \"@chakra-ui/react\"\nimport { Accordion, For, Span, useSlotRecipe } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const AccordionVariantTable = () => {\n  const recipe = useSlotRecipe({ key: \"accordion\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.variant}>\n            {(v) => <td key={v}>{v}</td>}\n          </For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.variant}>\n                {(v) => (\n                  <td key={v}>\n                    <AccordionDemo variant={v} colorPalette={c} />\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n\nconst items = [\n  { value: \"a\", title: \"First Item\", text: \"Some value 1...\" },\n  { value: \"b\", title: \"Second Item\", text: \"Some value 2...\" },\n  { value: \"c\", title: \"Third Item\", text: \"Some value 3...\" },\n]\n\nconst AccordionDemo = (props: AccordionRootProps) => {\n  return (\n    <Accordion.Root collapsible defaultValue={[\"b\"]} {...props}>\n      {items.map((item, index) => (\n        <Accordion.Item key={index} value={item.value}>\n          <Accordion.ItemTrigger>\n            <Span flex=\"1\">{item.title}</Span>\n            <Accordion.ItemIndicator />\n          </Accordion.ItemTrigger>\n          <Accordion.ItemContent>\n            <Accordion.ItemBody>{item.text}</Accordion.ItemBody>\n          </Accordion.ItemContent>\n        </Accordion.Item>\n      ))}\n    </Accordion.Root>\n  )\n}\n",
+      "sha256": "712a7ad6784abccd8e0cd9a7b13920fd54c2a1be266df7c5275e549ba1cb5076",
+      "upstreamPath": "apps/compositions/src/examples/accordion-variant-table.tsx",
+      "upstreamSha256": "39239c42e7981ed515be9b1ddab93f3a1e9ca86bdd944f34f0005ac8ea3b3c73",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/accordion-variants.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Accordion, For, Span, Stack, Text } from \"@chakra-ui/react\"\n\nexport const AccordionVariants = () => {\n  return (\n    <Stack gap=\"8\">\n      <For each={[\"outline\", \"subtle\", \"enclosed\", \"plain\"]}>\n        {(variant) => (\n          <Stack gap=\"2\" key={variant}>\n            <Text fontWeight=\"semibold\">{variant}</Text>\n            <Accordion.Root variant={variant} collapsible defaultValue={[\"b\"]}>\n              {items.map((item, index) => (\n                <Accordion.Item key={index} value={item.value}>\n                  <Accordion.ItemTrigger>\n                    <Span flex=\"1\">{item.title}</Span>\n                    <Accordion.ItemIndicator />\n                  </Accordion.ItemTrigger>\n                  <Accordion.ItemContent>\n                    <Accordion.ItemBody>{item.text}</Accordion.ItemBody>\n                  </Accordion.ItemContent>\n                </Accordion.Item>\n              ))}\n            </Accordion.Root>\n          </Stack>\n        )}\n      </For>\n    </Stack>\n  )\n}\n\nconst items = [\n  { value: \"a\", title: \"First Item\", text: \"Some value 1...\" },\n  { value: \"b\", title: \"Second Item\", text: \"Some value 2...\" },\n  { value: \"c\", title: \"Third Item\", text: \"Some value 3...\" },\n]\n",
+      "sha256": "a41c95289b9517d83607560cea929117b733e3d0f81db54d668cc6fd1f1a0f58",
+      "upstreamPath": "apps/compositions/src/examples/accordion-variants.tsx",
+      "upstreamSha256": "2545ff6742b0cd6af4570d6fb33e88057f746906e05a8719f8c9fac0589e5a66",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/accordion-with-actions.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { AbsoluteCenter, Accordion, Box, Button, Span } from \"@chakra-ui/react\"\nimport LoremIpsum from \"react-lorem-ipsum\"\n\nexport const AccordionWithActions = () => {\n  return (\n    <Accordion.Root spaceY=\"4\" variant=\"plain\" collapsible defaultValue={[\"b\"]}>\n      {items.map((item, index) => (\n        <Accordion.Item key={index} value={item.value}>\n          <Box position=\"relative\">\n            <Accordion.ItemTrigger>\n              <Span flex=\"1\">{item.title}</Span>\n              <Accordion.ItemIndicator />\n            </Accordion.ItemTrigger>\n            <AbsoluteCenter axis=\"vertical\" insetEnd=\"0\">\n              <Button variant=\"subtle\" colorPalette=\"blue\">\n                Action\n              </Button>\n            </AbsoluteCenter>\n          </Box>\n          <Accordion.ItemContent>\n            <Accordion.ItemBody>{item.text}</Accordion.ItemBody>\n          </Accordion.ItemContent>\n        </Accordion.Item>\n      ))}\n    </Accordion.Root>\n  )\n}\n\nconst items = [\n  { value: \"a\", title: \"First Item\", text: <LoremIpsum /> },\n  { value: \"b\", title: \"Second Item\", text: <LoremIpsum /> },\n  { value: \"c\", title: \"Third Item\", text: <LoremIpsum /> },\n]\n",
+      "sha256": "bf709ac5de1fd2fe9b15f9012de5a03c58e3fcd3804e18c3e936cf3d1e40b4e0",
+      "upstreamPath": "apps/compositions/src/examples/accordion-with-actions.tsx",
+      "upstreamSha256": "9d88716a19a692f6b2a95833af00a42bc783186ce227f60610e0e40b8db8364e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/accordion-with-avatar.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Accordion, Avatar, Badge, HStack } from \"@chakra-ui/react\"\nimport { LuTrophy } from \"react-icons/lu\"\nimport { LoremIpsum } from \"react-lorem-ipsum\"\n\nexport const AccordionWithAvatar = () => {\n  return (\n    <Accordion.Root collapsible defaultValue={[\"b\"]}>\n      {items.map((item, index) => (\n        <Accordion.Item key={index} value={item.name}>\n          <Accordion.ItemTrigger>\n            <Avatar.Root shape=\"rounded\">\n              <Avatar.Image src={item.image} />\n              <Avatar.Fallback name={item.name} />\n            </Avatar.Root>\n            <HStack flex=\"1\">\n              {item.name}{\" \"}\n              {item.topRated && (\n                <Badge colorPalette=\"green\">\n                  <LuTrophy />\n                  Top Rated\n                </Badge>\n              )}\n            </HStack>\n            <Accordion.ItemIndicator />\n          </Accordion.ItemTrigger>\n          <Accordion.ItemContent>\n            <Accordion.ItemBody>{item.bio}</Accordion.ItemBody>\n          </Accordion.ItemContent>\n        </Accordion.Item>\n      ))}\n    </Accordion.Root>\n  )\n}\n\nconst items = [\n  {\n    name: \"Alex\",\n    bio: <LoremIpsum />,\n    image: \"https://i.pravatar.cc/150?u=a\",\n    topRated: false,\n  },\n  {\n    name: \"Benji\",\n    bio: <LoremIpsum />,\n    image: \"https://i.pravatar.cc/150?u=b\",\n    topRated: true,\n  },\n  {\n    name: \"Charlie\",\n    bio: <LoremIpsum />,\n    image: \"https://i.pravatar.cc/150?u=c\",\n    topRated: false,\n  },\n]\n",
+      "sha256": "3195cb4fff20540fa097d82a70843726bf680248d0e179cc69568281e1e9d02f",
+      "upstreamPath": "apps/compositions/src/examples/accordion-with-avatar.tsx",
+      "upstreamSha256": "e4dbfb4b83c0855f400b7c1975e1c9871ff9ba0dc152929b69db1f6d3292a272",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/accordion-with-context.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Accordion, Box, useAccordionItemContext } from \"@chakra-ui/react\"\nimport { LuMinus, LuPlus } from \"react-icons/lu\"\n\nexport const AccordionWithContext = () => {\n  return (\n    <Accordion.Root collapsible defaultValue={[\"b\"]}>\n      {items.map((item) => (\n        <Accordion.Item key={item.value} value={item.value}>\n          {item.useContext ? (\n            <ItemWithContext item={item} />\n          ) : (\n            <ItemBasic item={item} />\n          )}\n        </Accordion.Item>\n      ))}\n    </Accordion.Root>\n  )\n}\n\nfunction ItemBasic({ item }: { item: (typeof items)[0] }) {\n  return (\n    <>\n      <Accordion.ItemTrigger>\n        <Box flex=\"1\">{item.title}</Box>\n        <Accordion.ItemIndicator />\n      </Accordion.ItemTrigger>\n      <Accordion.ItemContent>\n        <Accordion.ItemBody>{item.text}</Accordion.ItemBody>\n      </Accordion.ItemContent>\n    </>\n  )\n}\n\nfunction ItemWithContext({ item }: { item: (typeof items)[0] }) {\n  const { expanded } = useAccordionItemContext()\n\n  return (\n    <>\n      <Accordion.ItemTrigger>\n        <Box flex=\"1\">{item.title}</Box>\n        {expanded ? <LuMinus /> : <LuPlus />}\n      </Accordion.ItemTrigger>\n      <Accordion.ItemContent>\n        <Accordion.ItemBody>{item.text}</Accordion.ItemBody>\n      </Accordion.ItemContent>\n    </>\n  )\n}\n\nconst items = [\n  {\n    value: \"a\",\n    title: \"First Item (Standard)\",\n    text: \"This item uses the standard ItemIndicator component.\",\n    useContext: false,\n  },\n  {\n    value: \"b\",\n    title: \"Second Item (Custom Icons)\",\n    text: \"This item uses useAccordionItemContext to show custom +/- icons based on open state.\",\n    useContext: true,\n  },\n  {\n    value: \"c\",\n    title: \"Third Item (Standard)\",\n    text: \"This item uses the standard ItemIndicator component.\",\n    useContext: false,\n  },\n]\n",
+      "sha256": "c9da93fb12318277ecc8bd476e506268314a17b9b9378d77abb8e1873f25bb12",
+      "upstreamPath": "apps/compositions/src/examples/accordion-with-context.tsx",
+      "upstreamSha256": "65963025ea9e073f5c077d06f9fb913f8cca26df7675774df78d62447315b29a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/accordion-with-disabled-item.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Accordion, Span } from \"@chakra-ui/react\"\n\nexport const AccordionWithDisabledItem = () => {\n  return (\n    <Accordion.Root collapsible defaultValue={[\"b\"]}>\n      {items.map((item, index) => (\n        <Accordion.Item key={index} value={item.value} disabled={item.disabled}>\n          <Accordion.ItemTrigger>\n            <Span flex=\"1\">{item.title}</Span>\n            <Accordion.ItemIndicator />\n          </Accordion.ItemTrigger>\n          <Accordion.ItemContent>\n            <Accordion.ItemBody>{item.text}</Accordion.ItemBody>\n          </Accordion.ItemContent>\n        </Accordion.Item>\n      ))}\n    </Accordion.Root>\n  )\n}\n\nconst items = [\n  { value: \"a\", title: \"First Item\", text: \"Some value 1...\" },\n  { value: \"b\", title: \"Second Item\", text: \"Some value 2...\" },\n  { value: \"c\", title: \"Third Item\", text: \"Some value 3...\", disabled: true },\n]\n",
+      "sha256": "29c82724d45a0fc0ca88ab0db7abbdc53878fa4fae1fe3fdc70d1f6d2c1c07fe",
+      "upstreamPath": "apps/compositions/src/examples/accordion-with-disabled-item.tsx",
+      "upstreamSha256": "64acef95ff1804ff758cf820a38bf82555bef96d9e1f220b9d4d2f307cb299f0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/accordion-with-expanded-style.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Accordion, Span } from \"@chakra-ui/react\"\n\nexport const AccordionWithExpandedStyle = () => {\n  return (\n    <Accordion.Root collapsible defaultValue={[\"b\"]}>\n      {items.map((item, index) => (\n        <Accordion.Item key={index} value={item.value}>\n          <Accordion.ItemTrigger px=\"3\" _open={{ bg: \"gray.subtle\" }}>\n            <Span flex=\"1\">{item.title}</Span>\n            <Accordion.ItemIndicator />\n          </Accordion.ItemTrigger>\n          <Accordion.ItemContent>\n            <Accordion.ItemBody>{item.text}</Accordion.ItemBody>\n          </Accordion.ItemContent>\n        </Accordion.Item>\n      ))}\n    </Accordion.Root>\n  )\n}\n\nconst items = [\n  {\n    value: \"a\",\n    title: \"First Item\",\n    text: \"Click the accordion button to see a different style when expanded.\",\n  },\n  {\n    value: \"b\",\n    title: \"Second Item\",\n    text: \"The trigger background changes to teal with white text when expanded.\",\n  },\n  {\n    value: \"c\",\n    title: \"Third Item\",\n    text: \"You can use any style props with the _open pseudo selector.\",\n  },\n]\n",
+      "sha256": "b51554d4711a4174871b6020b54669fb48552f5d92f642b0b7d7680f7073c587",
+      "upstreamPath": "apps/compositions/src/examples/accordion-with-expanded-style.tsx",
+      "upstreamSha256": "6cff84b87334faafa38a3432589f4a121b086cd3555378571a95e5f5f6b98897",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/accordion-with-icon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Accordion, Heading, Icon, Stack } from \"@chakra-ui/react\"\nimport { LuChartBarStacked, LuTags } from \"react-icons/lu\"\n\nexport const AccordionWithIcon = () => {\n  return (\n    <Stack width=\"full\" maxW=\"400px\">\n      <Heading size=\"md\">Product details</Heading>\n      <Accordion.Root collapsible defaultValue={[\"info\"]}>\n        {items.map((item) => (\n          <Accordion.Item key={item.value} value={item.value}>\n            <Accordion.ItemTrigger>\n              <Icon fontSize=\"lg\" color=\"fg.subtle\">\n                {item.icon}\n              </Icon>\n              {item.title}\n            </Accordion.ItemTrigger>\n            <Accordion.ItemContent>\n              <Accordion.ItemBody>{item.content}</Accordion.ItemBody>\n            </Accordion.ItemContent>\n          </Accordion.Item>\n        ))}\n      </Accordion.Root>\n    </Stack>\n  )\n}\n\nconst items = [\n  {\n    value: \"info\",\n    icon: <LuTags />,\n    title: \"Product Info\",\n    content:\n      \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec odio vel dui euismod fermentum.\",\n  },\n  {\n    value: \"stats\",\n    icon: <LuChartBarStacked />,\n    title: \"Stats\",\n    content:\n      \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec odio vel dui euismod fermentum.\",\n  },\n]\n",
+      "sha256": "a99dc4350f0679f729ade87f53bbdab5e041173b43b17b5cd63a7c91f61d947a",
+      "upstreamPath": "apps/compositions/src/examples/accordion-with-icon.tsx",
+      "upstreamSha256": "499086f3a45f83722a0b5f3ea32bc261358412f01c180afd4d1ce112653965da",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/accordion-with-multiple.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Accordion, Span } from \"@chakra-ui/react\"\n\nexport const AccordionWithMultiple = () => {\n  return (\n    <Accordion.Root multiple defaultValue={[\"b\"]}>\n      {items.map((item, index) => (\n        <Accordion.Item key={index} value={item.value}>\n          <Accordion.ItemTrigger>\n            <Span flex=\"1\">{item.title}</Span>\n            <Accordion.ItemIndicator />\n          </Accordion.ItemTrigger>\n          <Accordion.ItemContent>\n            <Accordion.ItemBody>{item.text}</Accordion.ItemBody>\n          </Accordion.ItemContent>\n        </Accordion.Item>\n      ))}\n    </Accordion.Root>\n  )\n}\n\nconst items = [\n  { value: \"a\", title: \"First Item\", text: \"Some value 1...\" },\n  { value: \"b\", title: \"Second Item\", text: \"Some value 2...\" },\n  { value: \"c\", title: \"Third Item\", text: \"Some value 3...\" },\n]\n",
+      "sha256": "9d55f355adfc9b824b2f43241a6032d0322c9376324062a2e7e037253badd99a",
+      "upstreamPath": "apps/compositions/src/examples/accordion-with-multiple.tsx",
+      "upstreamSha256": "4801588717e83856b7af284709c15f49dbf42f3ceb67e34532573b0b5bb84db0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/accordion-with-subtext.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Accordion, Stack, Text } from \"@chakra-ui/react\"\nimport { LoremIpsum } from \"react-lorem-ipsum\"\n\nconst items = [\n  { value: \"a\", title: \"First Item\", text: <LoremIpsum p={1} /> },\n  { value: \"b\", title: \"Second Item\", text: <LoremIpsum p={1} /> },\n  { value: \"c\", title: \"Third Item\", text: <LoremIpsum p={1} /> },\n]\n\nexport const AccordionWithSubtext = () => {\n  return (\n    <Accordion.Root collapsible>\n      {items.map((item, index) => (\n        <Accordion.Item key={index} value={item.value}>\n          <Accordion.ItemTrigger>\n            <Stack gap=\"1\">\n              <Text>{item.title}</Text>\n              <Text fontSize=\"sm\" color=\"fg.muted\">\n                Click to expand\n              </Text>\n            </Stack>\n          </Accordion.ItemTrigger>\n          <Accordion.ItemContent>\n            <Accordion.ItemBody>{item.text}</Accordion.ItemBody>\n          </Accordion.ItemContent>\n        </Accordion.Item>\n      ))}\n    </Accordion.Root>\n  )\n}\n",
+      "sha256": "180345abd044419d6bb4a55c34c9d24bcd8bafa6e8d5bc01fbaa922a7ecd1c9a",
+      "upstreamPath": "apps/compositions/src/examples/accordion-with-subtext.tsx",
+      "upstreamSha256": "b75016129ef26291f782c27b83c499c0d7f601b5ff5d1e1210c1aec6c5b072ad",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/accordion/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AccordionBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/accordion-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "766a30e4f9f27bfb6b7393e38b517853a72de4f73e44d4a1b4638964cba34039",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/accordion/previews/accordion-controlled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AccordionControlled as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/accordion-controlled\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "042581f8ab4bfa4afe6b4107644edaba845fed53f1731c3821247b6e963798dc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/accordion/previews/accordion-explorer-demo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AccordionExplorerDemo as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/accordion-explorer-demo\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "68e3297cd2025cb145689f097f286a4df333cb9f8ea6353b277c917ef4c53ae0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/accordion/previews/accordion-size-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AccordionSizeTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/accordion-size-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "3517f4389448ea3211101563c88e72b37308578d76cc517f5f51c511090a067a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/accordion/previews/accordion-sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AccordionSizes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/accordion-sizes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "f15447b210ebec621d357b376e17b4d72c1ed34a5199a16e0cb7d9fa419f6d2d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/accordion/previews/accordion-variant-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AccordionVariantTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/accordion-variant-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "9c4ae5619ed1ec661467df076a586726f28686d356bbd62cd93be4f5733d28db",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/accordion/previews/accordion-variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AccordionVariants as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/accordion-variants\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "de748e07d492bb7bd8a5afdc5c0fb5bc431e40d6cdf353b900bd2c416859f462",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/accordion/previews/accordion-with-actions.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AccordionWithActions as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/accordion-with-actions\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "03d02bfc65dda4f1ee0e8be9a62d00f65e431908493a09162e90089c5282368f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/accordion/previews/accordion-with-avatar.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AccordionWithAvatar as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/accordion-with-avatar\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "502de05c62a509eeeaffb7e94b944e324e71de6df1dd737ff8add9346833377d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/accordion/previews/accordion-with-context.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AccordionWithContext as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/accordion-with-context\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "d0a1bf80bf5abe011096d693b882f6d0719ae7486ea807606934d7a2ca952d58",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/accordion/previews/accordion-with-disabled-item.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AccordionWithDisabledItem as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/accordion-with-disabled-item\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "c6298cd547f6c0b421960d1899d6c0616bda1f2a3468a4f6f89e25ccd4a99080",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/accordion/previews/accordion-with-expanded-style.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AccordionWithExpandedStyle as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/accordion-with-expanded-style\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "b3f9015dbca5201ef09e0890e70b77d5dac5e00e5aa14fb35a7271b87e18ab12",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/accordion/previews/accordion-with-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AccordionWithIcon as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/accordion-with-icon\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "d992f5043b074f76d475df36d3bd3b73909106b149505805f76852ada299db4f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/accordion/previews/accordion-with-multiple.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AccordionWithMultiple as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/accordion-with-multiple\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "458025ffa24ef733b0a38ee998978ae51b98997c409fb4821760079841c36638",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/accordion/previews/accordion-with-subtext.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AccordionWithSubtext as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/accordion-with-subtext\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "657268711b1b18cf6aaff001b21b9b231d4095506d0d98884a6f3cc1b3607583",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0 react-lorem-ipsum@1.4.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0 react-lorem-ipsum@1.4.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "accordion",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/accordion-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/accordion-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI accordion\n\n15 published Chakra UI accordion examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/accordion-basic.tsx\n"
+}

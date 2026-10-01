@@ -1,0 +1,212 @@
+{
+  "id": "chakra:radar",
+  "sourceId": "chakra",
+  "slug": "chakra-radar",
+  "name": "Chakra UI radar",
+  "description": "8 published Chakra UI radar examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/charts@3.37.0",
+    "@chakra-ui/react@3.37.0",
+    "recharts@3.8.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "radar",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "radar",
+      "chakra ui radar"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "8 published Chakra UI radar examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "radar:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI radar\nradar\n8 published Chakra UI radar examples with complete pinned source and MIT attribution.\nchakra ui radar\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI radar 8 published Chakra UI radar examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts/radar chart basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-radar",
+  "manifestPath": "components/chakra-radar/component.json",
+  "integrity": "sha256:696e672e3bb28912e0d58db97de99a480783eea388ccf7233ca2b30497e1672a",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/radar-chart-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport {\n  PolarAngleAxis,\n  PolarGrid,\n  PolarRadiusAxis,\n  Radar,\n  RadarChart,\n} from \"recharts\"\n\nexport const RadarChartBasic = () => {\n  const chart = useChart({\n    data: [\n      { windows: 110, month: \"January\" },\n      { windows: 130, month: \"February\" },\n      { windows: 110, month: \"March\" },\n      { windows: 90, month: \"May\" },\n      { windows: 75, month: \"June\" },\n    ],\n    series: [{ name: \"windows\", color: \"teal.solid\" }],\n  })\n\n  return (\n    <Chart.Root maxW=\"sm\" chart={chart} mx=\"auto\">\n      <RadarChart data={chart.data} responsive>\n        <PolarGrid stroke={chart.color(\"border\")} />\n        <PolarAngleAxis dataKey={chart.key(\"month\")} />\n        <PolarRadiusAxis />\n        {chart.series.map((item) => (\n          <Radar\n            isAnimationActive={false}\n            key={item.name}\n            name={item.name}\n            dataKey={chart.key(item.name)}\n            stroke={chart.color(item.color)}\n            fill={chart.color(item.color)}\n            fillOpacity={0.2}\n          />\n        ))}\n      </RadarChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "9e27fd54f26cf196f39322d4e0663ca341ff6b690b6ad0390841ecad3af2b3dd",
+      "upstreamPath": "apps/compositions/src/examples/charts/radar-chart-basic.tsx",
+      "upstreamSha256": "eea474c69bac00e018cbd722750baca85e96450ed7ff5a4449815a2df073dbcf",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/radar-chart-lines-only.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { Legend, PolarGrid, Radar, RadarChart } from \"recharts\"\n\nexport const RadarChartLinesOnly = () => {\n  const chart = useChart({\n    data: [\n      { windows: 30, mac: 100, month: \"January\" },\n      { windows: 120, mac: 20, month: \"February\" },\n      { windows: 45, mac: 130, month: \"March\" },\n      { windows: 140, mac: 40, month: \"May\" },\n      { windows: 60, mac: 50, month: \"June\" },\n      { windows: 20, mac: 160, month: \"July\" },\n    ],\n    series: [\n      { name: \"windows\", color: \"teal.solid\" },\n      { name: \"mac\", color: \"orange.solid\" },\n    ],\n  })\n\n  return (\n    <Chart.Root maxW=\"sm\" chart={chart} mx=\"auto\">\n      <RadarChart data={chart.data} responsive>\n        <PolarGrid stroke={chart.color(\"border\")} />\n        <Legend content={<Chart.Legend />} />\n        {chart.series.map((item) => (\n          <Radar\n            isAnimationActive={false}\n            key={item.name}\n            name={item.name}\n            dataKey={chart.key(item.name)}\n            strokeWidth={2}\n            stroke={chart.color(item.color)}\n            fill=\"none\"\n          />\n        ))}\n      </RadarChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "bbf9cc093e0c255735bca37098aa6df7bfb21e6bf14159ff19dcc195e9f7f139",
+      "upstreamPath": "apps/compositions/src/examples/charts/radar-chart-lines-only.tsx",
+      "upstreamSha256": "de0d57ba68c3145eec9a274295c03619383a852d0d5109a23048cfd24770462d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/radar-chart-multiple.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { Legend, PolarGrid, Radar, RadarChart } from \"recharts\"\n\nexport const RadarChartMultiple = () => {\n  const chart = useChart({\n    data: [\n      { windows: 30, mac: 100, month: \"January\" },\n      { windows: 120, mac: 20, month: \"February\" },\n      { windows: 45, mac: 130, month: \"March\" },\n      { windows: 140, mac: 40, month: \"May\" },\n      { windows: 60, mac: 50, month: \"June\" },\n      { windows: 20, mac: 160, month: \"July\" },\n    ],\n    series: [\n      { name: \"windows\", color: \"teal.solid\" },\n      { name: \"mac\", color: \"orange.solid\" },\n    ],\n  })\n\n  return (\n    <Chart.Root maxW=\"sm\" chart={chart} mx=\"auto\">\n      <RadarChart data={chart.data} responsive>\n        <PolarGrid stroke={chart.color(\"border\")} />\n        <Legend content={<Chart.Legend />} />\n        {chart.series.map((item) => (\n          <Radar\n            isAnimationActive={false}\n            key={item.name}\n            name={item.name}\n            dataKey={chart.key(item.name)}\n            strokeWidth={2}\n            stroke={chart.color(item.color)}\n            fill={chart.color(item.color)}\n            fillOpacity={0.2}\n          />\n        ))}\n      </RadarChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "01057eaa98e772eb141c45ef022b7472c19e212baf7daf5bdef9708142e9e37e",
+      "upstreamPath": "apps/compositions/src/examples/charts/radar-chart-multiple.tsx",
+      "upstreamSha256": "5cd8c8ea6baf9bd76140a249d04739addbbb8daebb7d5b530e940a365f461aa7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/radar-chart-with-circle-grid.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport {\n  PolarAngleAxis,\n  PolarGrid,\n  PolarRadiusAxis,\n  Radar,\n  RadarChart,\n} from \"recharts\"\n\nexport const RadarChartWithCircleGrid = () => {\n  const chart = useChart({\n    data: [\n      { windows: 120, month: \"January\" },\n      { windows: 120, month: \"February\" },\n      { windows: 80, month: \"March\" },\n      { windows: 140, month: \"May\" },\n      { windows: 60, month: \"June\" },\n    ],\n    series: [{ name: \"windows\", color: \"teal.solid\" }],\n  })\n\n  return (\n    <Chart.Root maxW=\"sm\" chart={chart} mx=\"auto\">\n      <RadarChart data={chart.data} responsive>\n        <PolarGrid stroke={chart.color(\"border\")} gridType=\"circle\" />\n        <PolarAngleAxis dataKey={chart.key(\"month\")} />\n        <PolarRadiusAxis />\n        {chart.series.map((item) => (\n          <Radar\n            isAnimationActive={false}\n            key={item.name}\n            name={item.name}\n            dataKey={chart.key(item.name)}\n            stroke={chart.color(item.color)}\n            fill={chart.color(item.color)}\n            fillOpacity={0.2}\n          />\n        ))}\n      </RadarChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "94c0c623c05309054b1803616f21aa3d6fd05b722b9a0c391bd33cf039518234",
+      "upstreamPath": "apps/compositions/src/examples/charts/radar-chart-with-circle-grid.tsx",
+      "upstreamSha256": "c2fdba31a82bd3370030a7f766bf70e91105e2aa92566be2e8b493f55e612f9c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/radar-chart-with-dots.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { PolarAngleAxis, PolarGrid, Radar, RadarChart } from \"recharts\"\n\nexport const RadarChartWithDots = () => {\n  const chart = useChart({\n    data: [\n      { windows: 110, month: \"January\" },\n      { windows: 130, month: \"February\" },\n      { windows: 110, month: \"March\" },\n      { windows: 90, month: \"May\" },\n      { windows: 75, month: \"June\" },\n    ],\n    series: [{ name: \"windows\", color: \"teal.solid\" }],\n  })\n\n  return (\n    <Chart.Root maxW=\"sm\" chart={chart} mx=\"auto\">\n      <RadarChart data={chart.data} responsive>\n        <PolarGrid stroke={chart.color(\"border\")} />\n        <PolarAngleAxis dataKey={chart.key(\"month\")} />\n        {chart.series.map((item) => (\n          <Radar\n            dot={{ fillOpacity: 1 }}\n            isAnimationActive={false}\n            key={item.name}\n            name={item.name}\n            dataKey={chart.key(item.name)}\n            stroke={chart.color(item.color)}\n            fill={chart.color(item.color)}\n            fillOpacity={0.2}\n          />\n        ))}\n      </RadarChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "6b3fb6691583fc1c04b3f4a95090820eab4e097f16a6cab63d3d3224a725f74e",
+      "upstreamPath": "apps/compositions/src/examples/charts/radar-chart-with-dots.tsx",
+      "upstreamSha256": "1a73b472a6362df7166f1255774b8b61b167911d697a0bf53ea19a04184d6727",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/radar-chart-with-filled-grid.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { PolarAngleAxis, PolarGrid, Radar, RadarChart } from \"recharts\"\n\nexport const RadarChartWithFilledGrid = () => {\n  const chart = useChart({\n    data: [\n      { windows: 110, month: \"January\" },\n      { windows: 130, month: \"February\" },\n      { windows: 110, month: \"March\" },\n      { windows: 90, month: \"May\" },\n      { windows: 75, month: \"June\" },\n    ],\n    series: [{ name: \"windows\", color: \"teal.solid\" }],\n  })\n\n  return (\n    <Chart.Root maxW=\"sm\" chart={chart} mx=\"auto\">\n      <RadarChart data={chart.data} responsive>\n        <PolarGrid\n          stroke=\"none\"\n          style={{ fill: chart.color(\"teal.solid\"), fillOpacity: 0.1 }}\n        />\n        <PolarAngleAxis dataKey={chart.key(\"month\")} />\n        {chart.series.map((item) => (\n          <Radar\n            dot={{ fillOpacity: 1 }}\n            isAnimationActive={false}\n            key={item.name}\n            name={item.name}\n            dataKey={chart.key(item.name)}\n            stroke={chart.color(item.color)}\n            fill={chart.color(item.color)}\n            fillOpacity={0.2}\n          />\n        ))}\n      </RadarChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "6dcabc829728d20580b8a17c8430bfbeca06cae32f73ca9bdebd2a7c2c0ebb52",
+      "upstreamPath": "apps/compositions/src/examples/charts/radar-chart-with-filled-grid.tsx",
+      "upstreamSha256": "6bbb829893fbd0a240e0795c84bcc8ab35479bec057cb7e8e0dc7a94eb8b3942",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/radar-chart-with-point-label.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { PolarAngleAxis, PolarGrid, Radar, RadarChart } from \"recharts\"\n\nexport const RadarChartWithPointLabel = () => {\n  const chart = useChart({\n    data: [\n      { windows: 110, month: \"January\" },\n      { windows: 130, month: \"February\" },\n      { windows: 110, month: \"March\" },\n      { windows: 90, month: \"May\" },\n      { windows: 75, month: \"June\" },\n    ],\n    series: [{ name: \"windows\", color: \"teal.solid\" }],\n  })\n\n  return (\n    <Chart.Root maxW=\"sm\" chart={chart} mx=\"auto\">\n      <RadarChart data={chart.data} responsive>\n        <PolarGrid stroke={chart.color(\"border\")} />\n        <PolarAngleAxis dataKey={chart.key(\"month\")} tickLine={false} />\n        {chart.series.map((item) => (\n          <Radar\n            isAnimationActive={false}\n            key={item.name}\n            name={item.name}\n            label={{ fill: chart.color(\"fg\") }}\n            dataKey={chart.key(item.name)}\n            stroke={chart.color(item.color)}\n            fill={chart.color(item.color)}\n            fillOpacity={0.2}\n          />\n        ))}\n      </RadarChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "abc75bb8b926bac31e2408cf3c500735f2fd6a9c2044c5b5fe98496ae7c73a7b",
+      "upstreamPath": "apps/compositions/src/examples/charts/radar-chart-with-point-label.tsx",
+      "upstreamSha256": "11135ce0ace984478ea0b9be4ab9c34af944656882d57153232a1e9ec10d8484",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/radar-chart-with-tooltip.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { PolarAngleAxis, PolarGrid, Radar, RadarChart, Tooltip } from \"recharts\"\n\nexport const RadarChartWithTooltip = () => {\n  const chart = useChart({\n    data: [\n      { windows: 110, month: \"January\" },\n      { windows: 130, month: \"February\" },\n      { windows: 110, month: \"March\" },\n      { windows: 90, month: \"May\" },\n      { windows: 75, month: \"June\" },\n    ],\n    series: [{ name: \"windows\", color: \"teal.solid\" }],\n  })\n\n  return (\n    <Chart.Root maxW=\"sm\" chart={chart} mx=\"auto\">\n      <RadarChart data={chart.data} responsive>\n        <PolarGrid stroke={chart.color(\"border\")} />\n        <PolarAngleAxis dataKey={chart.key(\"month\")} />\n        <Tooltip content={<Chart.Tooltip />} />\n        {chart.series.map((item) => (\n          <Radar\n            isAnimationActive={false}\n            key={item.name}\n            name={item.name}\n            dataKey={chart.key(item.name)}\n            stroke={chart.color(item.color)}\n            fill={chart.color(item.color)}\n            fillOpacity={0.2}\n          />\n        ))}\n      </RadarChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "05dcb005323d95bbfd6edf886112d8cc10aa6daf9ef074d52db92a1c8dd773b9",
+      "upstreamPath": "apps/compositions/src/examples/charts/radar-chart-with-tooltip.tsx",
+      "upstreamSha256": "bd658ae6c6b8d0fd33fa2689cbd41e7c4de0ef3fdbb99a82855ba6ee8b0f542b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/radar/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RadarChartBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/radar-chart-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "ee1c4d008033ddcf05866a2544d85ef025d9da3c6dd1c33b6e3b313476467ed5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/radar/previews/radar-chart-lines-only.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RadarChartLinesOnly as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/radar-chart-lines-only\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "9c7486a7dd3191b3b95688aff6cbd7385ac33931328bc0bcfbb599ac0594a5d1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/radar/previews/radar-chart-multiple.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RadarChartMultiple as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/radar-chart-multiple\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "6549a17e53d409db4024137c67a0fec9652534116dccbfe3e8262a70158aed5c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/radar/previews/radar-chart-with-circle-grid.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RadarChartWithCircleGrid as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/radar-chart-with-circle-grid\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "55fa883a3a559765d4e7d212159296b82960dd790ff7215b65c03870bb723414",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/radar/previews/radar-chart-with-dots.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RadarChartWithDots as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/radar-chart-with-dots\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a3600b7744663a728476491984c9d25ec938be32e6e6116ec00ea00663962b0c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/radar/previews/radar-chart-with-filled-grid.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RadarChartWithFilledGrid as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/radar-chart-with-filled-grid\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "de8cb7c97ef8ffe5ca1676cd29dc6e3c4b6fa48cc23d340b80d19f742e230c37",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/radar/previews/radar-chart-with-point-label.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RadarChartWithPointLabel as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/radar-chart-with-point-label\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "6c1c4c4c6b5d9d4f008a23f07dc67acf5d4051771da0faec02289a42e3c17e64",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/radar/previews/radar-chart-with-tooltip.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RadarChartWithTooltip as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/radar-chart-with-tooltip\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "7211dc42760a96c85d02bca48f831bf8bcbbb3ae138fc8daf137df6dd4aa977b",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/charts@3.37.0 @chakra-ui/react@3.37.0 recharts@3.8.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/charts@3.37.0 @chakra-ui/react@3.37.0 recharts@3.8.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "radar",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts/radar-chart-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts/radar-chart-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI radar\n\n8 published Chakra UI radar examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts/radar-chart-basic.tsx\n"
+}

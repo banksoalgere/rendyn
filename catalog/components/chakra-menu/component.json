@@ -1,0 +1,437 @@
+{
+  "id": "chakra:menu",
+  "sourceId": "chakra",
+  "slug": "chakra-menu",
+  "name": "Chakra UI menu",
+  "description": "22 published Chakra UI menu examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "react-icons@5.5.0",
+    "react-lorem-ipsum@1.4.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "menu",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input",
+      "menu"
+    ],
+    "aliases": [
+      "menu",
+      "chakra ui menu"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "22 published Chakra UI menu examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "menu:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI menu\nmenu\n22 published Chakra UI menu examples with complete pinned source and MIT attribution.\nchakra ui menu\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI menu 22 published Chakra UI menu examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/menu basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-menu",
+  "manifestPath": "components/chakra-menu/component.json",
+  "integrity": "sha256:20c445ad88cacb3b68ae8263dfa816834268a7b2d5ae92c60a2b3917d8c13189",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Menu, Portal } from \"@chakra-ui/react\"\n\nexport const MenuBasic = () => {\n  return (\n    <Menu.Root>\n      <Menu.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open\n        </Button>\n      </Menu.Trigger>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content>\n            <Menu.Item value=\"new-txt\">New Text File</Menu.Item>\n            <Menu.Item value=\"new-file\">New File...</Menu.Item>\n            <Menu.Item value=\"new-win\">New Window</Menu.Item>\n            <Menu.Item value=\"open-file\">Open File...</Menu.Item>\n            <Menu.Item value=\"export\">Export</Menu.Item>\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n",
+      "sha256": "598c8a13f9b50bd5584c4f2f6a616a135ad617b9b767cae1e03ba5373524be93",
+      "upstreamPath": "apps/compositions/src/examples/menu-basic.tsx",
+      "upstreamSha256": "5001cee5b99bb03d76b41842ccb19bb743a80048cdc107c773da71338fbbf012",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-controlled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Code, Menu, Portal, Stack } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\nexport const MenuControlled = () => {\n  const [open, setOpen] = useState(false)\n  return (\n    <Stack gap=\"4\" align=\"flex-start\">\n      <Code>open: {String(open)}</Code>\n      <Menu.Root open={open} onOpenChange={(e) => setOpen(e.open)}>\n        <Menu.Trigger asChild>\n          <Button variant=\"outline\" size=\"sm\">\n            Open\n          </Button>\n        </Menu.Trigger>\n        <Portal>\n          <Menu.Positioner>\n            <Menu.Content>\n              <Menu.Item value=\"new-txt\">New Text File</Menu.Item>\n              <Menu.Item value=\"new-file\">New File...</Menu.Item>\n              <Menu.Item value=\"new-win\">New Window</Menu.Item>\n              <Menu.Item value=\"open-file\">Open File...</Menu.Item>\n              <Menu.Item value=\"export\">Export</Menu.Item>\n            </Menu.Content>\n          </Menu.Positioner>\n        </Portal>\n      </Menu.Root>\n    </Stack>\n  )\n}\n",
+      "sha256": "4cf9a5f516e21068b34f137c0ac0eac8f9343c3c27fbc9e11104cffb8f7ed1f2",
+      "upstreamPath": "apps/compositions/src/examples/menu-controlled.tsx",
+      "upstreamSha256": "1f0b2ddbd338c90859ce5a060358ddd4614d322e6c1a0c63f6565e9b6bc05d29",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-explorer-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Menu } from \"@chakra-ui/react\"\n\nexport const MenuExplorerDemo = () => {\n  return (\n    <Menu.Root open>\n      <Menu.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open\n        </Button>\n      </Menu.Trigger>\n      <Menu.Positioner>\n        <Menu.Content>\n          <Menu.Item value=\"new-txt\">New Text File</Menu.Item>\n          <Menu.Item value=\"new-file\">New File...</Menu.Item>\n          <Menu.Item value=\"new-win\">New Window</Menu.Item>\n          <Menu.Item value=\"open-file\">Open File...</Menu.Item>\n          <Menu.Item value=\"export\">Export</Menu.Item>\n        </Menu.Content>\n      </Menu.Positioner>\n    </Menu.Root>\n  )\n}\n",
+      "sha256": "91a7191e436482bc69c6363c03e066c9ecdd5531519f230bd4455e9e67976bcb",
+      "upstreamPath": "apps/compositions/src/examples/menu-explorer-demo.tsx",
+      "upstreamSha256": "ae8799ff7630a2b5620b10d04c428752088f8f3445c87fd3804feaf4f4e95d29",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-open-from-dialog.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Dialog, Menu, Portal } from \"@chakra-ui/react\"\nimport Lorem from \"react-lorem-ipsum\"\n\nexport const MenuOpenFromDialog = () => {\n  return (\n    <Dialog.Root>\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open\n        </Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Header>\n              <Dialog.Title>Welcome to the menu</Dialog.Title>\n            </Dialog.Header>\n            <Dialog.Body spaceY=\"4\">\n              <DialogMenu />\n              <Lorem p={1} />\n            </Dialog.Body>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n\nconst DialogMenu = () => {\n  return (\n    <Menu.Root>\n      <Menu.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Menu\n        </Button>\n      </Menu.Trigger>\n      <Menu.Positioner>\n        <Menu.Content>\n          <Menu.Item value=\"new-txt\">New Text File</Menu.Item>\n          <Menu.Item value=\"new-file\">New File...</Menu.Item>\n          <Menu.Item value=\"new-win\">New Window</Menu.Item>\n          <Menu.Item value=\"open-file\">Open File...</Menu.Item>\n          <Menu.Item value=\"export\">Export</Menu.Item>\n        </Menu.Content>\n      </Menu.Positioner>\n    </Menu.Root>\n  )\n}\n",
+      "sha256": "2c16172b12805082107f682ee30dc00e3e40ba832735e1e997733aa1f6b1cce3",
+      "upstreamPath": "apps/compositions/src/examples/menu-open-from-dialog.tsx",
+      "upstreamSha256": "b5b68e9654146fc24e20d8524b5050a99784336f3870c9f975ae8ff66a2c1772",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-anchor-rect.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Button, Menu, Portal } from \"@chakra-ui/react\"\nimport { useRef } from \"react\"\n\nexport const MenuWithAnchorRect = () => {\n  const ref = useRef<HTMLDivElement | null>(null)\n  const getAnchorRect = () => ref.current!.getBoundingClientRect()\n\n  return (\n    <Menu.Root positioning={{ getAnchorRect }}>\n      <Menu.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open\n        </Button>\n      </Menu.Trigger>\n      <Box layerStyle=\"fill.subtle\" p=\"4\" ref={ref} mt=\"4\">\n        Anchor\n      </Box>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content>\n            <Menu.Item value=\"new-txt\">New Text File</Menu.Item>\n            <Menu.Item value=\"new-file\">New File...</Menu.Item>\n            <Menu.Item value=\"new-win\">New Window</Menu.Item>\n            <Menu.Item value=\"open-file\">Open File...</Menu.Item>\n            <Menu.Item value=\"export\">Export</Menu.Item>\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n",
+      "sha256": "595e197e2a886eaf0265fc5e9a9dc07379f4d95503829c6717a1e7f0eff5cd11",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-anchor-rect.tsx",
+      "upstreamSha256": "85e5a442f7e36b3e064f583fcc6858efc90f75a9761d7edbbfaa1ce36a59a7f7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-avatar.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, Menu, Portal } from \"@chakra-ui/react\"\n\nexport const MenuWithAvatar = () => {\n  return (\n    <Menu.Root positioning={{ placement: \"right-end\" }}>\n      <Menu.Trigger rounded=\"full\" focusRing=\"outside\">\n        <Avatar.Root size=\"sm\">\n          <Avatar.Fallback name=\"Segun Adebayo\" />\n          <Avatar.Image src=\"https://bit.ly/sage-adebayo\" />\n        </Avatar.Root>\n      </Menu.Trigger>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content>\n            <Menu.Item value=\"account\">Account</Menu.Item>\n            <Menu.Item value=\"settings\">Settings</Menu.Item>\n            <Menu.Item value=\"logout\">Logout</Menu.Item>\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n",
+      "sha256": "01deec0aa875c4a60b9e0813c74019a84e60ab728445ec52f1da7785da72d624",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-avatar.tsx",
+      "upstreamSha256": "4e9e49264e68fa3f864a1558f1d480a7ff3c7961aa7c1e59e049df03b402a74b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-checkbox-items.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Menu, Portal, useCheckboxGroup } from \"@chakra-ui/react\"\nimport { HiCog } from \"react-icons/hi\"\n\nexport const MenuWithCheckboxItems = () => {\n  const group = useCheckboxGroup({ defaultValue: [\"autosave\"] })\n  return (\n    <Menu.Root>\n      <Menu.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          <HiCog /> Features\n        </Button>\n      </Menu.Trigger>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content>\n            <Menu.ItemGroup>\n              <Menu.ItemGroupLabel>Features</Menu.ItemGroupLabel>\n              {items.map(({ title, value }) => (\n                <Menu.CheckboxItem\n                  key={value}\n                  value={value}\n                  checked={group.isChecked(value)}\n                  onCheckedChange={() => group.toggleValue(value)}\n                >\n                  {title}\n                  <Menu.ItemIndicator />\n                </Menu.CheckboxItem>\n              ))}\n            </Menu.ItemGroup>\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n\nconst items = [\n  { title: \"Autosave\", value: \"autosave\" },\n  { title: \"Detect Language\", value: \"detect-language\" },\n  { title: \"Spellcheck\", value: \"spellcheck\" },\n]\n",
+      "sha256": "8bae20a8b4695e78252b669fd3093869b97ba05c7bf3fd759e1d0bb8a3231cef",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-checkbox-items.tsx",
+      "upstreamSha256": "4357195b6bbda19c6d6aee1178632dfe28aa8e09ac65ca54502033a49bbb7f70",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-command.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Menu, Portal } from \"@chakra-ui/react\"\n\nexport const MenuWithCommand = () => {\n  return (\n    <Menu.Root>\n      <Menu.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open\n        </Button>\n      </Menu.Trigger>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content>\n            <Menu.Item value=\"new-txt-a\">\n              New Text File <Menu.ItemCommand>⌘E</Menu.ItemCommand>\n            </Menu.Item>\n            <Menu.Item value=\"new-file-a\">\n              New File... <Menu.ItemCommand>⌘N</Menu.ItemCommand>\n            </Menu.Item>\n            <Menu.Item value=\"new-win-a\">\n              New Window <Menu.ItemCommand>⌘W</Menu.ItemCommand>\n            </Menu.Item>\n            <Menu.Item value=\"open-file-a\">\n              Open File... <Menu.ItemCommand>⌘O</Menu.ItemCommand>\n            </Menu.Item>\n            <Menu.Item value=\"export-a\">\n              Export <Menu.ItemCommand>⌘S</Menu.ItemCommand>\n            </Menu.Item>\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n",
+      "sha256": "41a3bdbdb8b6c5b7c3a4197fbee998484ecd79fce2c7afdb27b42f35f9e9f121",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-command.tsx",
+      "upstreamSha256": "a39f425b3c2cff18a82baa9cc1531760b3c631c146a6b4f974618d7efa1c38ea",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-context-trigger.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Center, Menu, Portal } from \"@chakra-ui/react\"\n\nexport const MenuWithContextTrigger = () => {\n  return (\n    <Menu.Root>\n      <Menu.ContextTrigger width=\"full\">\n        <Center\n          height=\"40\"\n          userSelect=\"none\"\n          borderWidth=\"2px\"\n          borderStyle=\"dashed\"\n          rounded=\"lg\"\n          padding=\"4\"\n        >\n          Right click here\n        </Center>\n      </Menu.ContextTrigger>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content>\n            <Menu.Item value=\"new-txt\">New Text File</Menu.Item>\n            <Menu.Item value=\"new-file\">New File...</Menu.Item>\n            <Menu.Item value=\"new-win\">New Window</Menu.Item>\n            <Menu.Item value=\"open-file\">Open File...</Menu.Item>\n            <Menu.Item value=\"export\">Export</Menu.Item>\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n",
+      "sha256": "5d585c38f6981ccf6fe112c800de5ab0b14c97a7b4163683a33532719f801739",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-context-trigger.tsx",
+      "upstreamSha256": "cde80b8084c9d303d30c7c129fce1b1ffc0bf3aa9d323a2cc38db0a78263fdac",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-danger-item.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Menu, Portal } from \"@chakra-ui/react\"\n\nexport const MenuWithDangerItem = () => {\n  return (\n    <Menu.Root>\n      <Menu.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Menu\n        </Button>\n      </Menu.Trigger>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content>\n            <Menu.Item value=\"rename\">Rename</Menu.Item>\n            <Menu.Item value=\"export\">Export</Menu.Item>\n            <Menu.Item\n              value=\"delete\"\n              color=\"fg.error\"\n              _hover={{ bg: \"bg.error\", color: \"fg.error\" }}\n            >\n              Delete...\n            </Menu.Item>\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n",
+      "sha256": "f36907ac4a8d94b0106794d4d5ceea989bf23e059582cdc805ad66ea4f8148ea",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-danger-item.tsx",
+      "upstreamSha256": "e6269bfa4b8a9cb881a2b09e705bc88004656246bdde97829e5197ee1a52dc28",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-group.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Menu, Portal } from \"@chakra-ui/react\"\n\nexport const MenuWithGroup = () => {\n  return (\n    <Menu.Root>\n      <Menu.Trigger asChild>\n        <Button variant=\"outline\">Edit</Button>\n      </Menu.Trigger>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content>\n            <Menu.ItemGroup>\n              <Menu.ItemGroupLabel>Styles</Menu.ItemGroupLabel>\n              <Menu.Item value=\"bold\">Bold</Menu.Item>\n              <Menu.Item value=\"underline\">Underline</Menu.Item>\n            </Menu.ItemGroup>\n            <Menu.Separator />\n            <Menu.ItemGroup>\n              <Menu.ItemGroupLabel>Align</Menu.ItemGroupLabel>\n              <Menu.Item value=\"left\">Left</Menu.Item>\n              <Menu.Item value=\"middle\">Middle</Menu.Item>\n              <Menu.Item value=\"right\">Right</Menu.Item>\n            </Menu.ItemGroup>\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n",
+      "sha256": "74a9f594d10c931f6217d60c29f820b1346d2adbf2e19c1dc631037ea9392348",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-group.tsx",
+      "upstreamSha256": "dfd830a52143e31da5d3d2fafaed6a89fa53447d84e5e4622c191403583a0fe8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-group-dynamic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Menu, Portal } from \"@chakra-ui/react\"\n\nexport const MenuWithGroupDynamic = () => {\n  return (\n    <Menu.Root>\n      <Menu.Trigger asChild>\n        <Button variant=\"outline\">Window</Button>\n      </Menu.Trigger>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content>\n            {items.map((group) => (\n              <Menu.ItemGroup key={group.name}>\n                <Menu.ItemGroupLabel>{group.name}</Menu.ItemGroupLabel>\n                {group.children.map((item) => (\n                  <Menu.Item key={item.value} value={item.value}>\n                    {item.name}\n                  </Menu.Item>\n                ))}\n              </Menu.ItemGroup>\n            ))}\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n\nconst items = [\n  {\n    name: \"Top Panel\",\n    value: \"top\",\n    children: [\n      { value: \"5\", name: \"index.html\" },\n      { value: \"6\", name: \"styles.css\" },\n    ],\n  },\n  {\n    name: \"Bottom Panel\",\n    value: \"bottom\",\n    children: [\n      { value: \"7\", name: \"script.js\" },\n      { value: \"8\", name: \"assets\" },\n    ],\n  },\n]\n",
+      "sha256": "3eb9c556033ad17d08e8b502652e1ebdc96ba4354531a90395ed507395938771",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-group-dynamic.tsx",
+      "upstreamSha256": "3bfee8eda564659f5fb273e82410d130ce183b332283f65c1384cb9cb77f99f5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-hide-when-detached.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Center, Flex, Menu, Portal, Text } from \"@chakra-ui/react\"\n\nexport const MenuWithHideWhenDetached = () => {\n  return (\n    <Center minH=\"sm\">\n      <Flex\n        w=\"300px\"\n        h=\"full\"\n        overflowX=\"auto\"\n        gapX=\"6\"\n        p=\"4\"\n        borderWidth=\"1px\"\n        bg=\"bg.subtle\"\n      >\n        {[...Array(6).keys()].map((x) => (\n          <Box layerStyle=\"fill.surface\" p=\"4\" borderRadius=\"md\" key={x}>\n            <Text>Item{x}</Text>\n          </Box>\n        ))}\n        <Box>\n          <Menu.Root positioning={{ hideWhenDetached: true }}>\n            <Menu.Trigger asChild>\n              <Box as=\"button\" bg=\"green.100\" p=\"4\" borderRadius=\"md\">\n                Menu\n              </Box>\n            </Menu.Trigger>\n            <Portal>\n              <Menu.Positioner>\n                <Menu.Content>\n                  <Menu.Item value=\"new-txt\">New Text File</Menu.Item>\n                  <Menu.Item value=\"new-file\">New File...</Menu.Item>\n                  <Menu.Item value=\"new-win\">New Window</Menu.Item>\n                  <Menu.Item value=\"open-file\">Open File...</Menu.Item>\n                  <Menu.Item value=\"export\">Export</Menu.Item>\n                </Menu.Content>\n              </Menu.Positioner>\n            </Portal>\n          </Menu.Root>\n        </Box>\n      </Flex>\n    </Center>\n  )\n}\n",
+      "sha256": "5d63514c4175cc2f05d709f222ef0cbef2d1d2970b305ff3c71f38aba4ddf411",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-hide-when-detached.tsx",
+      "upstreamSha256": "31d9d26707fdd13118dd4da4f389f7968623675a00543fc64f2b19f5f24a2648",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-icon-and-command.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Button, Menu, Portal } from \"@chakra-ui/react\"\nimport { LuClipboardPaste, LuCopy, LuScissors } from \"react-icons/lu\"\n\nexport const MenuWithIconAndCommand = () => {\n  return (\n    <Menu.Root>\n      <Menu.Trigger asChild>\n        <Button variant=\"outline\">Edit</Button>\n      </Menu.Trigger>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content>\n            <Menu.Item value=\"cut\">\n              <LuScissors />\n              <Box flex=\"1\">Cut</Box>\n              <Menu.ItemCommand>⌘X</Menu.ItemCommand>\n            </Menu.Item>\n            <Menu.Item value=\"copy\">\n              <LuCopy />\n              <Box flex=\"1\">Copy</Box>\n              <Menu.ItemCommand>⌘C</Menu.ItemCommand>\n            </Menu.Item>\n            <Menu.Item value=\"paste\">\n              <LuClipboardPaste />\n              <Box flex=\"1\">Paste</Box>\n              <Menu.ItemCommand>⌘V</Menu.ItemCommand>\n            </Menu.Item>\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n",
+      "sha256": "5c21fdfc99f5b6419e551c1f63a2fa06e2a7878338bb27910bf8d95996c83ed1",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-icon-and-command.tsx",
+      "upstreamSha256": "832ef101c0bafcdafc7b9e6d9f3607a538d82041743c36524ed20dc33aef149b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-links.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Menu, Portal } from \"@chakra-ui/react\"\n\nexport const MenuWithLinks = () => {\n  return (\n    <Menu.Root>\n      <Menu.Trigger asChild>\n        <Button size=\"sm\" variant=\"outline\">\n          Select Anime\n        </Button>\n      </Menu.Trigger>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content>\n            {links.map((link) => (\n              <Menu.Item key={link.href} asChild value={link.title}>\n                <a href={link.href} target=\"_blank\" rel=\"noreferrer\">\n                  {link.title}\n                </a>\n              </Menu.Item>\n            ))}\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n\nconst links = [\n  {\n    title: \"Naruto\",\n    href: \"https://www.crunchyroll.com/naruto\",\n  },\n  {\n    title: \"One Piece\",\n    href: \"https://www.crunchyroll.com/one-piece\",\n  },\n  {\n    title: \"Attack on Titan\",\n    href: \"https://www.crunchyroll.com/attack-on-titan\",\n  },\n]\n",
+      "sha256": "a8db1a71e11819931c9974e4828a97fc58fa90691b84661a46158f301f464fdc",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-links.tsx",
+      "upstreamSha256": "4ecc191d38791f558b7856b690bceaac898332fc8df92cb414555f00268bd08f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-mixed-layout.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Button, Group, Menu, Portal } from \"@chakra-ui/react\"\nimport {\n  LuClipboard,\n  LuCopy,\n  LuFileSearch,\n  LuMessageSquare,\n  LuScissors,\n  LuShare,\n} from \"react-icons/lu\"\n\nconst horizontalMenuItems = [\n  { label: \"Cut\", value: \"cut\", icon: <LuScissors /> },\n  { label: \"Copy\", value: \"copy\", icon: <LuCopy /> },\n  { label: \"Paste\", value: \"paste\", icon: <LuClipboard /> },\n]\n\nconst verticalMenuItems = [\n  { label: \"Look Up\", value: \"look-up\", icon: <LuFileSearch /> },\n  { label: \"Translate\", value: \"translate\", icon: <LuMessageSquare /> },\n  { label: \"Share\", value: \"share\", icon: <LuShare /> },\n]\n\nexport const MenuWithMixedLayout = () => {\n  return (\n    <Menu.Root>\n      <Menu.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open\n        </Button>\n      </Menu.Trigger>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content>\n            <Group grow gap=\"0\">\n              {horizontalMenuItems.map((item) => (\n                <Menu.Item\n                  key={item.value}\n                  value={item.value}\n                  width=\"14\"\n                  gap=\"1\"\n                  flexDirection=\"column\"\n                  justifyContent=\"center\"\n                >\n                  {item.icon}\n                  {item.label}\n                </Menu.Item>\n              ))}\n            </Group>\n            {verticalMenuItems.map((item) => (\n              <Menu.Item key={item.value} value={item.value}>\n                <Box flex=\"1\">{item.label}</Box>\n                {item.icon}\n              </Menu.Item>\n            ))}\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n",
+      "sha256": "371c1a9d647fba50b3c621c086f577eca29a6de05175303fc0e28cf0b68f4183",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-mixed-layout.tsx",
+      "upstreamSha256": "b0488ce6e2f98a487eb357e4c9525b7587416759cadebbd136f2dbe3584665c9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-overflow.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Menu, Portal } from \"@chakra-ui/react\"\n\nexport const MenuWithOverflow = () => {\n  return (\n    <Menu.Root>\n      <Menu.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Menu\n        </Button>\n      </Menu.Trigger>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content maxH=\"200px\" minW=\"10rem\">\n            {menuItems.map((item) => (\n              <Menu.Item key={item.value} value={item.value}>\n                {item.label}\n              </Menu.Item>\n            ))}\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n\nconst menuItems = [\n  { value: \"new-file\", label: \"New File\" },\n  { value: \"new-folder\", label: \"New Folder\" },\n  { value: \"open\", label: \"Open...\" },\n  { value: \"open-recent\", label: \"Open Recent\" },\n  { value: \"save\", label: \"Save\" },\n  { value: \"save-as\", label: \"Save As...\" },\n  { value: \"save-all\", label: \"Save All\" },\n  { value: \"export\", label: \"Export\" },\n  { value: \"import\", label: \"Import\" },\n  { value: \"print\", label: \"Print\" },\n  { value: \"share\", label: \"Share\" },\n  { value: \"duplicate\", label: \"Duplicate\" },\n  { value: \"rename\", label: \"Rename\" },\n  { value: \"move\", label: \"Move To...\" },\n  { value: \"copy\", label: \"Copy To...\" },\n  { value: \"delete\", label: \"Delete\" },\n  { value: \"find\", label: \"Find\" },\n  { value: \"replace\", label: \"Replace\" },\n  { value: \"preferences\", label: \"Preferences\" },\n  { value: \"settings\", label: \"Settings\" },\n  { value: \"help\", label: \"Help\" },\n  { value: \"about\", label: \"About\" },\n  { value: \"quit\", label: \"Quit\" },\n]\n",
+      "sha256": "c545db7c2cd2e54db51b0ea2c7ca8369d5a77babd603ff02307ab4c19d2f7319",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-overflow.tsx",
+      "upstreamSha256": "40df51ca437ee5f60055edaa97a69a69121a85a377286fa8320b4a013fa5a924",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-placement.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Menu, Portal } from \"@chakra-ui/react\"\n\nexport const MenuWithPlacement = () => {\n  return (\n    <Menu.Root positioning={{ placement: \"right-start\" }}>\n      <Menu.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open\n        </Button>\n      </Menu.Trigger>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content>\n            <Menu.Item value=\"new-txt\">New Text File</Menu.Item>\n            <Menu.Item value=\"new-file\">New File...</Menu.Item>\n            <Menu.Item value=\"new-win\">New Window</Menu.Item>\n            <Menu.Item value=\"open-file\">Open File...</Menu.Item>\n            <Menu.Item value=\"export\">Export</Menu.Item>\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n",
+      "sha256": "f9ff7308581e9cb618a916fef5309593602c58a20d6001484de30ba4f3fedbea",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-placement.tsx",
+      "upstreamSha256": "3ed94d9e1e17459f2f8239ff68912d6183cbed8b01ed373ea9fcf83e74875ec0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-radio-items.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Menu, Portal } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\nimport { HiSortAscending } from \"react-icons/hi\"\n\nexport const MenuWithRadioItems = () => {\n  const [value, setValue] = useState(\"asc\")\n  return (\n    <Menu.Root>\n      <Menu.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          <HiSortAscending /> Sort\n        </Button>\n      </Menu.Trigger>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content minW=\"10rem\">\n            <Menu.RadioItemGroup\n              value={value}\n              onValueChange={(e) => setValue(e.value)}\n            >\n              {items.map((item) => (\n                <Menu.RadioItem key={item.value} value={item.value}>\n                  {item.label}\n                  <Menu.ItemIndicator />\n                </Menu.RadioItem>\n              ))}\n            </Menu.RadioItemGroup>\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n\nconst items = [\n  { label: \"Ascending\", value: \"asc\" },\n  { label: \"Descending\", value: \"desc\" },\n]\n",
+      "sha256": "ad7b55224c677e305db1e1ddcffcb906e589d59c87ada589f7c305c5728472bb",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-radio-items.tsx",
+      "upstreamSha256": "33dd5a4a329e31a0b896f428525f4d5f10f8ffac1b94f09a7e485fa1f872fa9d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-store.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Code, Menu, Portal, Stack, useMenu } from \"@chakra-ui/react\"\n\nexport const MenuWithStore = () => {\n  const menu = useMenu()\n  return (\n    <Stack gap=\"4\" align=\"flex-start\">\n      <Code>open: {String(menu.api.open)}</Code>\n      <Menu.RootProvider value={menu}>\n        <Menu.Trigger asChild>\n          <Button variant=\"outline\" size=\"sm\">\n            Open\n          </Button>\n        </Menu.Trigger>\n        <Portal>\n          <Menu.Positioner>\n            <Menu.Content>\n              <Menu.Item value=\"new-txt\">New Text File</Menu.Item>\n              <Menu.Item value=\"new-file\">New File...</Menu.Item>\n              <Menu.Item value=\"new-win\">New Window</Menu.Item>\n              <Menu.Item value=\"open-file\">Open File...</Menu.Item>\n              <Menu.Item value=\"export\">Export</Menu.Item>\n            </Menu.Content>\n          </Menu.Positioner>\n        </Portal>\n      </Menu.RootProvider>\n    </Stack>\n  )\n}\n",
+      "sha256": "c3b38afe14e9d430d29de6462fd3305bfdf99d3924803bbfd3ca32f92ffac7bc",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-store.tsx",
+      "upstreamSha256": "7d8785d828df678b1e3d050c9b32135a6599ab39842cf558fc0b58c4bb7bb0c3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-submenu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Menu, Portal } from \"@chakra-ui/react\"\nimport { LuChevronRight } from \"react-icons/lu\"\n\nexport const MenuWithSubmenu = () => {\n  return (\n    <Menu.Root>\n      <Menu.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open\n        </Button>\n      </Menu.Trigger>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content>\n            <Menu.Item value=\"new-txt\">New Text File</Menu.Item>\n            <Menu.Item value=\"new-file\">New File...</Menu.Item>\n            <Menu.Root positioning={{ placement: \"right-start\", gutter: 2 }}>\n              <Menu.TriggerItem>\n                Open Recent <LuChevronRight />\n              </Menu.TriggerItem>\n              <Portal>\n                <Menu.Positioner>\n                  <Menu.Content>\n                    <Menu.Item value=\"panda\">Panda</Menu.Item>\n                    <Menu.Item value=\"ark\">Ark UI</Menu.Item>\n                    <Menu.Item value=\"chakra\">Chakra v3</Menu.Item>\n                  </Menu.Content>\n                </Menu.Positioner>\n              </Portal>\n            </Menu.Root>\n            <Menu.Item value=\"open-file\">Open File...</Menu.Item>\n            <Menu.Item value=\"export\">Export</Menu.Item>\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n",
+      "sha256": "7561584b0e6fea943e86ed196bb1253661ebc5ccc2e3e38285e2155e0ad323f3",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-submenu.tsx",
+      "upstreamSha256": "9ea1cbfed48a2c994ddfab35c2128b53904daf516d520bf3a88acde77a81e69d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/menu-with-submenu-dynamic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Menu, Portal } from \"@chakra-ui/react\"\nimport { LuChevronRight } from \"react-icons/lu\"\n\ninterface Item {\n  value: string\n  label: string\n  children?: Item[]\n}\n\nconst items: Item[] = [\n  { value: \"new-txt\", label: \"New Text File\" },\n  { value: \"new-file\", label: \"New File...\" },\n  {\n    value: \"open-recent\",\n    label: \"Open Recent\",\n    children: [\n      { value: \"panda\", label: \"Panda\" },\n      { value: \"ark\", label: \"Ark UI\" },\n      {\n        value: \"chakra\",\n        label: \"Chakra v3\",\n        children: [\n          { value: \"chakra-1\", label: \"Chakra v3.1\" },\n          { value: \"chakra-2\", label: \"Chakra v3.2\" },\n        ],\n      },\n    ],\n  },\n  { value: \"open-file\", label: \"Open File...\" },\n  { value: \"export\", label: \"Export\" },\n]\n\nconst MenuItem = ({ item }: { item: Item }) => {\n  if (!item.children) {\n    return <Menu.Item value={item.value}>{item.label}</Menu.Item>\n  }\n\n  return (\n    <Menu.Root positioning={{ placement: \"right-start\", gutter: 2 }}>\n      <Menu.TriggerItem>\n        {item.label} <LuChevronRight />\n      </Menu.TriggerItem>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content>\n            {item.children.map((child) => (\n              <MenuItem key={child.value} item={child} />\n            ))}\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n\nexport const MenuWithSubmenuDynamic = () => {\n  return (\n    <Menu.Root>\n      <Menu.Trigger asChild>\n        <Button variant=\"outline\">Nested</Button>\n      </Menu.Trigger>\n      <Portal>\n        <Menu.Positioner>\n          <Menu.Content>\n            {items.map((item) => (\n              <MenuItem key={item.value} item={item} />\n            ))}\n          </Menu.Content>\n        </Menu.Positioner>\n      </Portal>\n    </Menu.Root>\n  )\n}\n",
+      "sha256": "5a80a1aed17d80e6f68cdfe5bc6f94d9f667eb375584052f8bfbbef7b9010a5b",
+      "upstreamPath": "apps/compositions/src/examples/menu-with-submenu-dynamic.tsx",
+      "upstreamSha256": "bbfd8fe4aef72878aecb017eaf697557320dd6ff94b98023bd350e9305640323",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "36b69d2205ec9d0857338efaf788bf7941a1c3606efa21bbe3fd972e04ed704b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-controlled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuControlled as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-controlled\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "1d59155465811ec8f8772b6c5b80a0536750603d1a1809babb861260ec96fb7b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-explorer-demo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuExplorerDemo as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-explorer-demo\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "615e16a08f6530e8de1975b3f4f14f6ef529f93b5c7cb3436a51f1290b9524fa",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-open-from-dialog.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuOpenFromDialog as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-open-from-dialog\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "64943120c8b0fac2301aa758952c0af3ce3a08e4628d5537245b004235aaef49",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-anchor-rect.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithAnchorRect as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-anchor-rect\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "85d3c05089ef8f06842203e0c674ff81c975eda6fd43f514ee8f1064fe90f9a8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-avatar.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithAvatar as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-avatar\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "7508efcdaddb7507d422645d609dde7b9d3378221f83f265cc9650d4b23478c6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-checkbox-items.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithCheckboxItems as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-checkbox-items\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "2a2c30e8449953484484cb46b3efca81f32b5e96c081ca2a65af759cec677b43",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-command.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithCommand as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-command\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "6b953505df69ed9c776c6684734d7f9513c999b93d8aa6699719d29a13f0ae27",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-context-trigger.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithContextTrigger as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-context-trigger\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "80b23c0a8b2fcefdc6aab0cd4631396ddd342c1aa88aafb4984305c63f252a73",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-danger-item.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithDangerItem as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-danger-item\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "3284fcb005708e6b7f802479de6c2e0fd780e4f65765b767bb0f8851fa3c5fe5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-group.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithGroup as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-group\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "6493e75cfefe84dca8f08f9c962d5b0117631b3da781fcd6659aa6b1b09504f3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-group-dynamic.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithGroupDynamic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-group-dynamic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "fd9419fec9cb4ca3565a7a1c05315f3baf06fb69e95563cea5ae9fb97847273d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-hide-when-detached.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithHideWhenDetached as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-hide-when-detached\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "6d1d6de33ec1994768b4b9815e41f79aeacb0d575ed176f004ef8978ccdf2523",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-icon-and-command.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithIconAndCommand as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-icon-and-command\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "52acfe40be97d9ade543841f58c5c1f21dd5712932749243e317709433357516",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-links.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithLinks as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-links\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "7b100db60e8cf9123831a12f801f7b5064964960551bd9e833631f8eaf95ee68",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-mixed-layout.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithMixedLayout as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-mixed-layout\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "e3071cbed7b84fccefc501bd4d481f08e7af1e67b252ee0cf69eebac0a118c72",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-overflow.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithOverflow as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-overflow\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "f839ee4278a6ba2865c058c524172789908b90643288151f427780ab8e5751f9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-placement.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithPlacement as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-placement\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "0cd8e354fbc43cc5f808f3443e07897f7ef0b9a3cd3e76cafdd48a399ff7984c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-radio-items.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithRadioItems as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-radio-items\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "adadc2468571999af775b29dcc218c9d83cfe7a73366d7e09a68f54b18c1423f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-store.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithStore as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-store\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "2a72e66d881db4d54640557e104aebdc4f88460f7ccd8c749c5146662eeaadbe",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-submenu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithSubmenu as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-submenu\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "cf7a2f2b5b3860f85a07ca8c8032220a21bccaabfee0e083024c8aa60fa53d24",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/menu/previews/menu-with-submenu-dynamic.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MenuWithSubmenuDynamic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/menu-with-submenu-dynamic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "02aa55df390d77200019fb8c7ac7c97a3867324dc36149189dce762b7a857b86",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0 react-lorem-ipsum@1.4.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0 react-lorem-ipsum@1.4.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "menu",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/menu-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/menu-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI menu\n\n22 published Chakra UI menu examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/menu-basic.tsx\n"
+}

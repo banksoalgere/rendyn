@@ -1,0 +1,178 @@
+{
+  "id": "chakra:presence",
+  "sourceId": "chakra",
+  "slug": "chakra-presence",
+  "name": "Chakra UI presence",
+  "description": "6 published Chakra UI presence examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "presence",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "presence",
+      "chakra ui presence"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "6 published Chakra UI presence examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "presence:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI presence\npresence\n6 published Chakra UI presence examples with complete pinned source and MIT attribution.\nchakra ui presence\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI presence 6 published Chakra UI presence examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/presence fade.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-presence",
+  "manifestPath": "components/chakra-presence/component.json",
+  "integrity": "sha256:69aaf50b0d9f16ca10813a39a2b554c202ce3b2c3436ecefbfb4ad4b6a4162f1",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/presence-fade.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  Center,\n  Presence,\n  Stack,\n  useDisclosure,\n} from \"@chakra-ui/react\"\n\nexport const PresenceFade = () => {\n  const { open, onToggle } = useDisclosure()\n  return (\n    <Stack gap=\"4\">\n      <Button alignSelf=\"flex-start\" onClick={onToggle}>\n        Click Me\n      </Button>\n      <Presence\n        present={open}\n        animationName={{ _open: \"fade-in\", _closed: \"fade-out\" }}\n        animationDuration=\"moderate\"\n      >\n        <Center p=\"10\" layerStyle=\"fill.muted\">\n          Fade\n        </Center>\n      </Presence>\n    </Stack>\n  )\n}\n",
+      "sha256": "762e8f3fa81b18c059c45ac7b59f6d9822fb14721c1a84efcf4123881299f76e",
+      "upstreamPath": "apps/compositions/src/examples/presence-fade.tsx",
+      "upstreamSha256": "c0938053c4f27c4bce175e95f69eae0c9ec2bb168b18eedb61fdd0fbba9c50c2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/presence-lazy-mount.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Alert,\n  Button,\n  Center,\n  Presence,\n  Stack,\n  useDisclosure,\n} from \"@chakra-ui/react\"\n\nexport const PresenceLazyMount = () => {\n  const { open, onToggle } = useDisclosure()\n  return (\n    <Stack gap=\"4\">\n      <Alert.Root>\n        <Alert.Indicator />\n        <Alert.Title>\n          Check the DOM to see that the element not mounted initially\n        </Alert.Title>\n      </Alert.Root>\n      <Button alignSelf=\"flex-start\" onClick={onToggle}>\n        Click Me\n      </Button>\n      <Presence\n        lazyMount\n        present={open}\n        animationName={{ _open: \"fade-in\", _closed: \"fade-out\" }}\n        animationDuration=\"moderate\"\n      >\n        <Center p=\"10\" layerStyle=\"fill.muted\">\n          Fade\n        </Center>\n      </Presence>\n    </Stack>\n  )\n}\n",
+      "sha256": "14e1c6b8e90a0fe3d5cc92d73fb96ad50bf720076bf19336a1d63b79c99c712f",
+      "upstreamPath": "apps/compositions/src/examples/presence-lazy-mount.tsx",
+      "upstreamSha256": "0562c65dec7aa783c575ee512e131d2b1e8f1596891f11e8f7a18a736494eaa2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/presence-scale-fade.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  Center,\n  Presence,\n  Stack,\n  useDisclosure,\n} from \"@chakra-ui/react\"\n\nexport const PresenceScaleFade = () => {\n  const { open, onToggle } = useDisclosure()\n  return (\n    <Stack gap=\"4\">\n      <Button alignSelf=\"flex-start\" onClick={onToggle}>\n        Click Me\n      </Button>\n      <Presence\n        present={open}\n        animationStyle={{ _open: \"scale-fade-in\", _closed: \"scale-fade-out\" }}\n        animationDuration=\"moderate\"\n      >\n        <Center p=\"10\" layerStyle=\"fill.muted\">\n          Scale Fade\n        </Center>\n      </Presence>\n    </Stack>\n  )\n}\n",
+      "sha256": "218cfb0f775b9fcb8df6ae734ea61c06ca68cdf3c03614dc53bf6ca100fe68f2",
+      "upstreamPath": "apps/compositions/src/examples/presence-scale-fade.tsx",
+      "upstreamSha256": "bc8fb899e8b569b2a71ce350db71d65074fc13058e8450dbde261391f5085142",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/presence-slide.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  Center,\n  Presence,\n  Stack,\n  useDisclosure,\n} from \"@chakra-ui/react\"\n\nexport const PresenceSlide = () => {\n  const { open, onToggle } = useDisclosure()\n  return (\n    <Stack gap=\"4\">\n      <Button alignSelf=\"flex-start\" onClick={onToggle}>\n        Click Me\n      </Button>\n      <Presence\n        position=\"fixed\"\n        bottom=\"0\"\n        insetX=\"0\"\n        present={open}\n        animationName={{\n          _open: \"slide-from-bottom-full\",\n          _closed: \"slide-to-bottom-full\",\n        }}\n        animationDuration=\"moderate\"\n      >\n        <Center p=\"10\" roundedTop=\"md\" layerStyle=\"fill.muted\">\n          Slide\n        </Center>\n      </Presence>\n    </Stack>\n  )\n}\n",
+      "sha256": "232fe485937917616c319d65b6c9487f5f0e86815a5d1a5c3ee198a85760d705",
+      "upstreamPath": "apps/compositions/src/examples/presence-slide.tsx",
+      "upstreamSha256": "c5442673aa7c39de8f149587768f510f1ec105fbb7115b1e3ec86869c9f487e4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/presence-slide-fade.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  Center,\n  Presence,\n  Stack,\n  useDisclosure,\n} from \"@chakra-ui/react\"\n\nexport const PresenceSlideFade = () => {\n  const { open, onToggle } = useDisclosure()\n  return (\n    <Stack gap=\"4\">\n      <Button alignSelf=\"flex-start\" onClick={onToggle}>\n        Click Me\n      </Button>\n      <Presence\n        present={open}\n        animationName={{\n          _open: \"slide-from-bottom, fade-in\",\n          _closed: \"slide-to-bottom, fade-out\",\n        }}\n        animationDuration=\"moderate\"\n      >\n        <Center p=\"10\" layerStyle=\"fill.muted\">\n          Slide Fade\n        </Center>\n      </Presence>\n    </Stack>\n  )\n}\n",
+      "sha256": "a018d655cf796a0bc7b6972011ff6139c6bab960ed3d7bf506a87996c249cdc7",
+      "upstreamPath": "apps/compositions/src/examples/presence-slide-fade.tsx",
+      "upstreamSha256": "72058ca16cdfcc49e892b28b55e4abd6d4432d460cc8b563f4bfe3312557cb52",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/presence-unmount-on-exit.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Alert,\n  Button,\n  Center,\n  Presence,\n  Stack,\n  useDisclosure,\n} from \"@chakra-ui/react\"\n\nexport const PresenceUnmountOnExit = () => {\n  const { open, onToggle } = useDisclosure()\n  return (\n    <Stack gap=\"4\">\n      <Alert.Root>\n        <Alert.Indicator />\n        <Alert.Title>\n          Check the DOM to see that the element is removed when not present.\n        </Alert.Title>\n      </Alert.Root>\n      <Button alignSelf=\"flex-start\" onClick={onToggle}>\n        Click Me\n      </Button>\n      <Presence\n        unmountOnExit\n        present={open}\n        animationName={{ _open: \"fade-in\", _closed: \"fade-out\" }}\n        animationDuration=\"moderate\"\n      >\n        <Center p=\"10\" layerStyle=\"fill.muted\">\n          Fade\n        </Center>\n      </Presence>\n    </Stack>\n  )\n}\n",
+      "sha256": "1f517d072e69e282d0fb1ba1ddb7f574a10cff6b49a6498634358dbe39ecb83b",
+      "upstreamPath": "apps/compositions/src/examples/presence-unmount-on-exit.tsx",
+      "upstreamSha256": "68e008bdf5c6dc03c6b907022e679f0c4f06d86478be74c0f0ff907f3f8bc5c9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/presence/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { PresenceFade as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/presence-fade\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "74dfd1b718a2f90d9af01a41c655a9c3b5643af400211d7dbf7ea1a2a716faa4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/presence/previews/presence-lazy-mount.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { PresenceLazyMount as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/presence-lazy-mount\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "ace3cee6bcbee86d2ddcfe926db924458f42a4f8e223e8b68ce83882cc6457aa",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/presence/previews/presence-scale-fade.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { PresenceScaleFade as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/presence-scale-fade\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "36b01a270d798fb19c51c34357a73f8aa29cddef992138a2cf79fd574979cad0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/presence/previews/presence-slide.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { PresenceSlide as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/presence-slide\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "09d58120c9215624a03bb3dbfbb09cb498d99765c4c7755562034210c2983130",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/presence/previews/presence-slide-fade.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { PresenceSlideFade as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/presence-slide-fade\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "553a0ff2399f7c70354afcd9af8af7b2611fc32c8d8d92f99e42ef29b5b9f9da",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/presence/previews/presence-unmount-on-exit.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { PresenceUnmountOnExit as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/presence-unmount-on-exit\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "770b2a0d8e2537c8ea670bd387d1fe63b77c1affae40068dd14d317b0fdf74a1",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "presence",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/presence-fade.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/presence-fade.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI presence\n\n6 published Chakra UI presence examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/presence-fade.tsx\n"
+}

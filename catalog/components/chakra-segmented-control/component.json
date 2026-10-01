@@ -1,0 +1,263 @@
+{
+  "id": "chakra:segmented-control",
+  "sourceId": "chakra",
+  "slug": "chakra-segmented-control",
+  "name": "Chakra UI segmented control",
+  "description": "11 published Chakra UI segmented control examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "@hookform/resolvers@5.9.1",
+    "react-hook-form@7.87.0",
+    "react-icons@5.5.0",
+    "zod@4.5.4"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "segmented-control",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "segmented control",
+      "chakra ui segmented control",
+      "segmented-control"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "11 published Chakra UI segmented control examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "segmented-control:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI segmented control\nsegmented control\n11 published Chakra UI segmented control examples with complete pinned source and MIT attribution.\nchakra ui segmented control\nsegmented-control\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI segmented control 11 published Chakra UI segmented control examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/segmented control basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-segmented-control",
+  "manifestPath": "components/chakra-segmented-control/component.json",
+  "integrity": "sha256:81e428ad2d6dfc44491ba185c18709ecf0ba5a6b48991c6fb3feb2e38eb9a291",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/segmented-control-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SegmentGroup } from \"@chakra-ui/react\"\n\nexport const SegmentedControlBasic = () => {\n  return (\n    <SegmentGroup.Root defaultValue=\"React\">\n      <SegmentGroup.Indicator />\n      <SegmentGroup.Items items={[\"React\", \"Vue\", \"Solid\"]} />\n    </SegmentGroup.Root>\n  )\n}\n",
+      "sha256": "79782e80c03475ff173927a4cf3ada348e37df25713749c982044fbc052f6d26",
+      "upstreamPath": "apps/compositions/src/examples/segmented-control-basic.tsx",
+      "upstreamSha256": "ffb024630a13f23d72600e7134a58c2a77bdc1db809695afa9fb0ef8940d5b5b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/segmented-control-controlled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SegmentGroup } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\nexport const SegmentedControlControlled = () => {\n  const [value, setValue] = useState<string | null>(\"React\")\n  return (\n    <SegmentGroup.Root value={value} onValueChange={(e) => setValue(e.value)}>\n      <SegmentGroup.Indicator />\n      <SegmentGroup.Items items={[\"React\", \"Vue\", \"Solid\"]} />\n    </SegmentGroup.Root>\n  )\n}\n",
+      "sha256": "919d6db9021924c35f149034b52c852c6192fce31af45ef6b5e0b25401c0a6c3",
+      "upstreamPath": "apps/compositions/src/examples/segmented-control-controlled.tsx",
+      "upstreamSha256": "735cbbaf62848a46abb873a3060e41adc2db666a22ac4e48ce0d827c9adb50a7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/segmented-control-in-card.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Card, Field, Heading, SegmentGroup } from \"@chakra-ui/react\"\nimport { LuSearch } from \"react-icons/lu\"\n\nexport const SegmentedControlInCard = () => {\n  return (\n    <Card.Root width=\"320px\">\n      <Card.Header>\n        <Heading size=\"lg\">Find your dream home</Heading>\n      </Card.Header>\n      <Card.Body gap=\"6\">\n        <Field.Root>\n          <Field.Label>Bedrooms</Field.Label>\n          <SegmentGroup.Root defaultValue=\"Any\">\n            <SegmentGroup.Indicator />\n            <SegmentGroup.Items items={[\"Any\", \"1\", \"2\", \"3\", \"3+\"]} />\n          </SegmentGroup.Root>\n        </Field.Root>\n        <Field.Root>\n          <Field.Label>Beds</Field.Label>\n          <SegmentGroup.Root defaultValue=\"1\">\n            <SegmentGroup.Indicator />\n            <SegmentGroup.Items items={[\"Any\", \"1\", \"2\", \"2+\"]} />\n          </SegmentGroup.Root>\n        </Field.Root>\n        <Field.Root>\n          <Field.Label>Bathrooms</Field.Label>\n          <SegmentGroup.Root defaultValue=\"3\">\n            <SegmentGroup.Indicator />\n            <SegmentGroup.Items items={[\"Any\", \"1\", \"2\", \"3\"]} />\n          </SegmentGroup.Root>\n        </Field.Root>\n      </Card.Body>\n      <Card.Footer justifyContent=\"space-between\" mt=\"3\">\n        <Button variant=\"surface\">Reset</Button>\n        <Button>\n          <LuSearch /> 20 results\n        </Button>\n      </Card.Footer>\n    </Card.Root>\n  )\n}\n",
+      "sha256": "ea45864b29e6185e4cb037e935fe740ffd00332ef81061906624966e2a466fd6",
+      "upstreamPath": "apps/compositions/src/examples/segmented-control-in-card.tsx",
+      "upstreamSha256": "0e3a213047ee13ea5e107309a29d425f05586620945a8ed4e878030aff90b15c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/segmented-control-vertical.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SegmentGroup } from \"@chakra-ui/react\"\n\nexport const SegmentedControlVertical = () => {\n  return (\n    <SegmentGroup.Root defaultValue=\"React\" orientation=\"vertical\">\n      <SegmentGroup.Indicator />\n      <SegmentGroup.Items items={[\"React\", \"Vue\", \"Solid\"]} />\n    </SegmentGroup.Root>\n  )\n}\n",
+      "sha256": "078a425d5ccf17b00fdba2e688a9234d5cad9cbf4a12dfb6171ed835e5601058",
+      "upstreamPath": "apps/compositions/src/examples/segmented-control-vertical.tsx",
+      "upstreamSha256": "e0ead06a8fbe6d9752b22ce62018d35fedf806eda00a2a08debae93fc94ac098",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/segmented-control-with-color-palette.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Center, For, SegmentGroup } from \"@chakra-ui/react\"\n\nexport const SegmentedControlWithColorPalette = () => {\n  return (\n    <Center minH=\"dvh\">\n      <SegmentGroup.Root\n        bg=\"colorPalette.50\"\n        colorPalette=\"orange\"\n        defaultValue=\"Monthly\"\n      >\n        <SegmentGroup.Indicator />\n        <For each={[\"Monthly\", \"Yearly\"]}>\n          {(item) => (\n            <SegmentGroup.Item key={item} value={item}>\n              <SegmentGroup.ItemText\n                _checked={{ color: \"colorPalette.fg\", fontWeight: \"medium\" }}\n              >\n                {item}\n              </SegmentGroup.ItemText>\n              <SegmentGroup.ItemHiddenInput />\n            </SegmentGroup.Item>\n          )}\n        </For>\n      </SegmentGroup.Root>\n    </Center>\n  )\n}\n",
+      "sha256": "a5c2af8c879685916466a6ccc0e904cae9880ba8039c69881c97b84b629e9ffd",
+      "upstreamPath": "apps/compositions/src/examples/segmented-control-with-color-palette.tsx",
+      "upstreamSha256": "419cfd9c4bdca052ef002749a06d774f99a6b0d9bcd6895b90ca8712bf48da1b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/segmented-control-with-custom-indicator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SegmentGroup } from \"@chakra-ui/react\"\n\nexport const SegmentedControlWithCustomIndicator = () => {\n  return (\n    <SegmentGroup.Root\n      defaultValue=\"react\"\n      css={{\n        \"--segment-indicator-bg\": \"colors.teal.500\",\n        \"--segment-indicator-shadow\": \"shadows.md\",\n      }}\n    >\n      <SegmentGroup.Indicator />\n      <SegmentGroup.Items\n        items={[\n          { value: \"react\", label: \"React\" },\n          { value: \"vue\", label: \"Vue\" },\n          { value: \"solid\", label: \"Solid\" },\n        ]}\n      />\n    </SegmentGroup.Root>\n  )\n}\n",
+      "sha256": "cfe840e947fc097c3a356c62c9eb55680c74e1ac8c595c52c141daaf5ec02151",
+      "upstreamPath": "apps/compositions/src/examples/segmented-control-with-custom-indicator.tsx",
+      "upstreamSha256": "db849e062be5d9d95a6ea354cba0fb8240117b86ceeefe77a5d46bbabeff1a00",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/segmented-control-with-disabled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SegmentGroup } from \"@chakra-ui/react\"\n\nexport const SegmentedControlWithDisabled = () => {\n  return (\n    <SegmentGroup.Root disabled defaultValue=\"React\">\n      <SegmentGroup.Indicator />\n      <SegmentGroup.Items items={[\"React\", \"Vue\", \"Solid\"]} />\n    </SegmentGroup.Root>\n  )\n}\n",
+      "sha256": "07ea4db0ec4315ecc0f80b624606a3ea2e18d6821fd2b76329831a6fbdee3db4",
+      "upstreamPath": "apps/compositions/src/examples/segmented-control-with-disabled.tsx",
+      "upstreamSha256": "f56114229da4de60be2b9d88787d36448e24eb1883f797c6fb2bd75861afc756",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/segmented-control-with-disabled-item.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SegmentGroup } from \"@chakra-ui/react\"\n\nexport const SegmentedControlWithDisabledItem = () => {\n  return (\n    <SegmentGroup.Root defaultValue=\"React\">\n      <SegmentGroup.Indicator />\n      <SegmentGroup.Items\n        items={[\n          { label: \"React\", value: \"React\" },\n          { label: \"Vue\", value: \"Vue\", disabled: true },\n          { label: \"Solid\", value: \"Solid\" },\n        ]}\n      />\n    </SegmentGroup.Root>\n  )\n}\n",
+      "sha256": "87cebec9286cc5c91f135d3d81d1dc46398aa1940d1eeede75222bceb8603f8e",
+      "upstreamPath": "apps/compositions/src/examples/segmented-control-with-disabled-item.tsx",
+      "upstreamSha256": "b58e222fa8d847abfceb90dcc4b9a960743b6a40fd471e81bcb11923e213d00b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/segmented-control-with-hook-form.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Field, SegmentGroup, Stack } from \"@chakra-ui/react\"\nimport { standardSchemaResolver } from \"@hookform/resolvers/standard-schema\"\nimport { Controller, useForm } from \"react-hook-form\"\nimport { z } from \"zod\"\n\nconst formSchema = z.object({\n  fontSize: z.string({ message: \"Font size is required\" }),\n})\n\ntype FormValues = z.infer<typeof formSchema>\n\nexport const SegmentedControlWithHookForm = () => {\n  const {\n    handleSubmit,\n    formState: { errors },\n    control,\n  } = useForm<FormValues>({\n    defaultValues: { fontSize: \"md\" },\n    resolver: standardSchemaResolver(formSchema),\n  })\n\n  const onSubmit = handleSubmit((data) => console.log(data))\n\n  return (\n    <form onSubmit={onSubmit}>\n      <Stack gap=\"4\" align=\"flex-start\">\n        <Controller\n          control={control}\n          name=\"fontSize\"\n          render={({ field }) => (\n            <Field.Root invalid={!!errors.fontSize}>\n              <Field.Label>Font size</Field.Label>\n              <SegmentGroup.Root\n                size=\"sm\"\n                onBlur={field.onBlur}\n                name={field.name}\n                value={field.value}\n                onValueChange={({ value }) => field.onChange(value)}\n              >\n                <SegmentGroup.Items items={[\"sm\", \"md\", \"lg\"]} />\n                <SegmentGroup.Indicator />\n              </SegmentGroup.Root>\n              <Field.ErrorText>{errors.fontSize?.message}</Field.ErrorText>\n            </Field.Root>\n          )}\n        />\n\n        <Button size=\"sm\" type=\"submit\">\n          Submit\n        </Button>\n      </Stack>\n    </form>\n  )\n}\n",
+      "sha256": "a5d3886dfafcd412034c93e280762e3b4dc5be1cde8f64f7db715111a7380652",
+      "upstreamPath": "apps/compositions/src/examples/segmented-control-with-hook-form.tsx",
+      "upstreamSha256": "81297e13b9df09417e98c958654ba3f61fb6cc16fdb338dcf964af5493499781",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/segmented-control-with-icon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HStack, SegmentGroup } from \"@chakra-ui/react\"\nimport { LuGrid2X2, LuList, LuTable } from \"react-icons/lu\"\n\nexport const SegmentedControlWithIcon = () => {\n  return (\n    <SegmentGroup.Root defaultValue=\"table\">\n      <SegmentGroup.Indicator />\n      <SegmentGroup.Items\n        items={[\n          {\n            value: \"table\",\n            label: (\n              <HStack>\n                <LuTable />\n                Table\n              </HStack>\n            ),\n          },\n          {\n            value: \"board\",\n            label: (\n              <HStack>\n                <LuGrid2X2 />\n                Board\n              </HStack>\n            ),\n          },\n          {\n            value: \"list\",\n            label: (\n              <HStack>\n                <LuList />\n                List\n              </HStack>\n            ),\n          },\n        ]}\n      />\n    </SegmentGroup.Root>\n  )\n}\n",
+      "sha256": "8d659a2590e291fa3365de9aaea7eb2ba7101acc08efe23041c138310162c700",
+      "upstreamPath": "apps/compositions/src/examples/segmented-control-with-icon.tsx",
+      "upstreamSha256": "c5fa39c57634adefd70fbb23079abc296a255461a8ccb1c8c90ba46adc0db9bd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/segmented-control-with-sizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { For, SegmentGroup, Stack, Text, VStack } from \"@chakra-ui/react\"\n\nexport const SegmentedControlWithSizes = () => {\n  return (\n    <Stack gap=\"5\" align=\"flex-start\">\n      <For each={[\"xs\", \"sm\", \"md\", \"lg\"]}>\n        {(size) => (\n          <VStack key={size} align=\"flex-start\">\n            <SegmentGroup.Root size={size} defaultValue=\"React\">\n              <SegmentGroup.Indicator />\n              <SegmentGroup.Items items={[\"React\", \"Vue\", \"Solid\"]} />\n            </SegmentGroup.Root>\n            <Text>size = {size}</Text>\n          </VStack>\n        )}\n      </For>\n    </Stack>\n  )\n}\n",
+      "sha256": "a204d3c0f72eae240eb4a39ee61782c52c925c390f1b4639834c5c44cd73587c",
+      "upstreamPath": "apps/compositions/src/examples/segmented-control-with-sizes.tsx",
+      "upstreamSha256": "7152896e8f438e0da7f1679d67d0c37e7641dfba44175acb86b8218f8b3b8005",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/segmented-control/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { SegmentedControlBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/segmented-control-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a67c3b8adbabe53f852efb78b251b136ac8d54c0512ed30fd0411f6eb3647316",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/segmented-control/previews/segmented-control-controlled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { SegmentedControlControlled as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/segmented-control-controlled\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "ef5c126dc4ed0441206a891b11f542eda307b7c409dfe4b0d7f43103bfbd778f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/segmented-control/previews/segmented-control-in-card.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { SegmentedControlInCard as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/segmented-control-in-card\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "8733c0562703f2579a40880cf99a5d30666e33798ef5bdbc344c1fdab54fcbe6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/segmented-control/previews/segmented-control-vertical.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { SegmentedControlVertical as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/segmented-control-vertical\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "374f6a260c64037dccef47f73d3cc3d64fb573bb3676392134f06e392190bb6c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/segmented-control/previews/segmented-control-with-color-palette.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { SegmentedControlWithColorPalette as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/segmented-control-with-color-palette\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "b94a28ce982ba20fec269fb070c464880f0dc5472e65de79138b569a3990ae4c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/segmented-control/previews/segmented-control-with-custom-indicator.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { SegmentedControlWithCustomIndicator as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/segmented-control-with-custom-indicator\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "1119402e291ccf02aa424c4acbfe449124f851c56b28ac94a824f1b70095fbd6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/segmented-control/previews/segmented-control-with-disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { SegmentedControlWithDisabled as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/segmented-control-with-disabled\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "2b038f9c3439c85d1b260a49cd8c932b380060d7b0554275462986e3dd6f8e6f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/segmented-control/previews/segmented-control-with-disabled-item.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { SegmentedControlWithDisabledItem as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/segmented-control-with-disabled-item\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a656afdc0bad2aa46780f1d2c55b8860612375e7c4dcb96037bd6ee9b0b86ec1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/segmented-control/previews/segmented-control-with-hook-form.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { SegmentedControlWithHookForm as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/segmented-control-with-hook-form\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "d83dfa09ab49366aa3a2ca59753046023888099d274871788cc4086616b9f1de",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/segmented-control/previews/segmented-control-with-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { SegmentedControlWithIcon as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/segmented-control-with-icon\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "fd3d6d4575c07be9514a771b9c738dc73a68cb151c3da0f9209da76d63261561",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/segmented-control/previews/segmented-control-with-sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { SegmentedControlWithSizes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/segmented-control-with-sizes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "abb8448c990a356d6e82434cea83041dc082ff22e6c19902f10a0a3e6deea52d",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 @hookform/resolvers@5.9.1 react-hook-form@7.87.0 react-icons@5.5.0 zod@4.5.4",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 @hookform/resolvers@5.9.1 react-hook-form@7.87.0 react-icons@5.5.0 zod@4.5.4",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "segmented-control",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/segmented-control-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/segmented-control-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI segmented control\n\n11 published Chakra UI segmented control examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/segmented-control-basic.tsx\n"
+}
