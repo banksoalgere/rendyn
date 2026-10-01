@@ -6,6 +6,7 @@ import styles from './site-shell.module.css';
 const navigation = [
   { href: '/', id: 'product', label: 'Overview' },
   { href: '/components', id: 'catalogue', label: 'Components' },
+  { href: '/mcp', id: 'mcp', label: 'MCP' },
   { href: '/#how-it-works', id: 'how-it-works', label: 'How it works' },
   { href: '/pricing', id: 'pricing', label: 'Pricing' },
   { href: '/guides', id: 'resources', label: 'Guides' },

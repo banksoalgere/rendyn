@@ -1,3 +1,4 @@
+import '../globals.css';
 import { pageMetadata } from '../../lib/seo';
 import styles from './pricing.module.css';
 import type { Metadata } from 'next';

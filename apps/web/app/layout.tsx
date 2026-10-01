@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import './globals.css';
 import { homeDescription, homeTitle, siteOrigin } from '../lib/seo';
+import { WebsiteAnalytics } from './components/website-analytics';
 
 const dmSans = localFont({
   src: '../public/fonts/dm-sans-latin.woff2',
@@ -49,10 +49,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        data-theme="horizon"
+        data-theme="white"
         className={`${dmSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <WebsiteAnalytics />
       </body>
     </html>
   );

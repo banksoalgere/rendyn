@@ -5,11 +5,11 @@ import styles from './site-shell.module.css';
 const footerGroups = [
   {
     title: 'Product',
-    links: [['Overview', '/'], ['Components', '/components'], ['How it works', '/#how-it-works'], ['Pricing', '/pricing']],
+    links: [['Overview', '/'], ['Components', '/components'], ['Component MCP server', '/mcp'], ['How it works', '/#how-it-works'], ['Pricing', '/pricing']],
   },
   {
     title: 'Explore',
-    links: [['Agent interfaces', '/components?category=agents'], ['Interaction', '/components?category=motion'], ['Product blocks', '/components?category=blocks']],
+    links: [['Component libraries', '/libraries'], ['AI agent UI', '/collections/ai-agent-ui'], ['Animated React components', '/collections/animated-react-components'], ['All interaction components', '/components?category=motion'], ['Product blocks', '/components?category=blocks']],
   },
   {
     title: 'Resources',

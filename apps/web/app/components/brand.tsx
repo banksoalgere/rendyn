@@ -1,3 +1,5 @@
+import { BrandMark } from './brand-mark';
+
 interface BrandProps {
   href?: string;
   label?: string;
@@ -6,7 +8,7 @@ interface BrandProps {
 export function Brand({ href = '/', label = 'Rendyn home' }: BrandProps) {
   return (
     <a className="brand" href={href} aria-label={label}>
-      <span className="brand-mark" aria-hidden="true">R</span>
+      <BrandMark />
       <span>Rendyn</span>
     </a>
   );
