@@ -1,0 +1,131 @@
+{
+  "id": "originui:comp-131",
+  "sourceId": "originui",
+  "slug": "originui-comp-131",
+  "name": "Origin UI button dropdown comp-131",
+  "description": "1 published Origin UI button dropdown comp-131 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "class-variance-authority@0.7.1",
+    "clsx@2.1.1",
+    "lucide-react@1.35.0",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "button",
+    "tags": [
+      "button",
+      "dropdown",
+      "file",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 131",
+      "origin ui button dropdown comp-131",
+      "button",
+      "cta",
+      "action control"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI button dropdown comp-131 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "button:dropdown:file:select:upload",
+    "searchText": "Origin UI button dropdown comp-131\ncomp 131\n1 published Origin UI button dropdown comp-131 examples with complete pinned source and MIT attribution.\norigin ui button dropdown comp-131\nbutton\ncta\naction control\ndropdown\nfile\nselect\nupload\nOrigin UI button dropdown comp 131 1 published Origin UI button dropdown comp 131 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 131.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-131",
+  "manifestPath": "components/originui-comp-131/component.json",
+  "integrity": "sha256:813c48e30f47f43bee4f8d8aeec4185ed4ed5a30a8d1ece601d9e47f417cb22c",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-131.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ChevronDownIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { Button } from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/button\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuRadioGroup,\n  DropdownMenuRadioItem,\n  DropdownMenuTrigger,\n} from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/dropdown-menu\";\n\nconst options = [\n  {\n    description:\n      \"All commits from this branch will be added to the base branch via a commit version.\",\n    label: \"Merge pull request\",\n  },\n  {\n    description:\n      \"The 6 commits from this branch will be combined into one commit in the base branch.\",\n    label: \"Squash and merge\",\n  },\n  {\n    description:\n      \"The 6 commits from this branch will be rebased and added to the base branch.\",\n    label: \"Rebase and merge\",\n  },\n];\n\nexport default function Component() {\n  const [selectedIndex, setSelectedIndex] = useState(\"0\");\n\n  return (\n    <div className=\"inline-flex divide-x divide-primary-foreground/30 rounded-md shadow-xs rtl:space-x-reverse\">\n      <Button className=\"rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10\">\n        {options[Number(selectedIndex)].label}\n      </Button>\n      <DropdownMenu>\n        <DropdownMenuTrigger asChild>\n          <Button\n            aria-label=\"Options\"\n            className=\"rounded-none shadow-none first:rounded-s-md last:rounded-e-md focus-visible:z-10\"\n            size=\"icon\"\n          >\n            <ChevronDownIcon aria-hidden=\"true\" size={16} />\n          </Button>\n        </DropdownMenuTrigger>\n        <DropdownMenuContent\n          align=\"end\"\n          className=\"max-w-64 md:max-w-xs\"\n          side=\"bottom\"\n          sideOffset={4}\n        >\n          <DropdownMenuRadioGroup\n            onValueChange={setSelectedIndex}\n            value={selectedIndex}\n          >\n            {options.map((option, index) => (\n              <DropdownMenuRadioItem\n                className=\"items-start [&>span]:pt-1.5\"\n                key={option.label}\n                value={String(index)}\n              >\n                <div className=\"flex flex-col gap-1\">\n                  <span className=\"font-medium text-sm\">{option.label}</span>\n                  <span className=\"text-muted-foreground text-xs\">\n                    {option.description}\n                  </span>\n                </div>\n              </DropdownMenuRadioItem>\n            ))}\n          </DropdownMenuRadioGroup>\n        </DropdownMenuContent>\n      </DropdownMenu>\n    </div>\n  );\n}\n",
+      "sha256": "a53c0634f8d712420bc2916779b62a7a148923ffcbbd96d7360014a88719d776",
+      "upstreamPath": "apps/origin/registry/default/components/comp-131.tsx",
+      "upstreamSha256": "37a1a7d27b537bb7dce065668fdf543e2a5d246ebe29187815cbe01a3b1718e7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/button.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { Slot } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nconst buttonVariants = cva(\n  \"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium text-sm outline-none transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n  {\n    defaultVariants: {\n      size: \"default\",\n      variant: \"default\",\n    },\n    variants: {\n      size: {\n        default: \"h-9 px-4 py-2\",\n        icon: \"size-9\",\n        lg: \"h-10 rounded-md px-8\",\n        sm: \"h-8 rounded-md px-3 text-xs\",\n      },\n      variant: {\n        default:\n          \"bg-primary text-primary-foreground shadow-sm hover:bg-primary/90\",\n        destructive:\n          \"bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40\",\n        ghost: \"hover:bg-accent hover:text-accent-foreground\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n        outline:\n          \"border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground\",\n        secondary:\n          \"bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80\",\n      },\n    },\n  },\n);\n\nfunction Button({\n  className,\n  variant,\n  size,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean;\n  }) {\n  const Comp = asChild ? Slot.Root : \"button\";\n\n  return (\n    <Comp\n      className={cn(buttonVariants({ className, size, variant }))}\n      data-slot=\"button\"\n      {...props}\n    />\n  );\n}\n\nexport { Button, buttonVariants };\n",
+      "sha256": "f15a7a2b32b90ad280810e03b3f18805686836d956825068fa614978975837aa",
+      "upstreamPath": "apps/origin/registry/default/ui/button.tsx",
+      "upstreamSha256": "00c5b5d0afad82b368cfa34ae4abdaf1e0851dfa49adeb836d9a69747ef4bc49",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/dropdown-menu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { CheckIcon, ChevronRightIcon, CircleIcon } from \"lucide-react\";\nimport { DropdownMenu as DropdownMenuPrimitive } from \"radix-ui\";\nimport * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\ntype PointerDownEvent = Parameters<\n  NonNullable<DropdownMenuPrimitive.DropdownMenuContentProps[\"onPointerDown\"]>\n>[0];\ntype PointerDownOutsideEvent = Parameters<\n  NonNullable<\n    DropdownMenuPrimitive.DropdownMenuContentProps[\"onPointerDownOutside\"]\n  >\n>[0];\n\nfunction DropdownMenu({\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Root>) {\n  return <DropdownMenuPrimitive.Root data-slot=\"dropdown-menu\" {...props} />;\n}\n\nfunction DropdownMenuPortal({\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Portal>) {\n  return (\n    <DropdownMenuPrimitive.Portal data-slot=\"dropdown-menu-portal\" {...props} />\n  );\n}\n\nfunction DropdownMenuTrigger({\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Trigger>) {\n  return (\n    <DropdownMenuPrimitive.Trigger\n      data-slot=\"dropdown-menu-trigger\"\n      {...props}\n    />\n  );\n}\n\nfunction DropdownMenuContent({\n  className,\n  sideOffset = 4,\n  onPointerDown,\n  onPointerDownOutside,\n  onCloseAutoFocus,\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Content>) {\n  const isCloseFromMouse = React.useRef<boolean>(false);\n\n  const handlePointerDown = React.useCallback(\n    (e: PointerDownEvent) => {\n      isCloseFromMouse.current = true;\n      onPointerDown?.(e);\n    },\n    [onPointerDown],\n  );\n\n  const handlePointerDownOutside = React.useCallback(\n    (e: PointerDownOutsideEvent) => {\n      isCloseFromMouse.current = true;\n      onPointerDownOutside?.(e);\n    },\n    [onPointerDownOutside],\n  );\n\n  const handleCloseAutoFocus = React.useCallback(\n    (e: Event) => {\n      if (onCloseAutoFocus) {\n        return onCloseAutoFocus(e);\n      }\n\n      if (!isCloseFromMouse.current) {\n        return;\n      }\n\n      e.preventDefault();\n      isCloseFromMouse.current = false;\n    },\n    [onCloseAutoFocus],\n  );\n\n  return (\n    <DropdownMenuPrimitive.Portal>\n      <DropdownMenuPrimitive.Content\n        className={cn(\n          \"data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 z-50 min-w-40 overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=closed]:animate-out data-[state=open]:animate-in\",\n          className,\n        )}\n        data-slot=\"dropdown-menu-content\"\n        onCloseAutoFocus={handleCloseAutoFocus}\n        onPointerDown={handlePointerDown}\n        onPointerDownOutside={handlePointerDownOutside}\n        sideOffset={sideOffset}\n        {...props}\n      />\n    </DropdownMenuPrimitive.Portal>\n  );\n}\n\nfunction DropdownMenuGroup({\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Group>) {\n  return (\n    <DropdownMenuPrimitive.Group data-slot=\"dropdown-menu-group\" {...props} />\n  );\n}\n\nfunction DropdownMenuItem({\n  className,\n  inset,\n  variant = \"default\",\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Item> & {\n  inset?: boolean;\n  variant?: \"default\" | \"destructive\";\n}) {\n  return (\n    <DropdownMenuPrimitive.Item\n      className={cn(\n        \"data-[variant=destructive]:*:[svg]:!text-destructive-foreground relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[inset]:pl-8 data-[variant=destructive]:text-destructive-foreground data-[disabled]:opacity-50 data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:text-destructive-foreground dark:data-[variant=destructive]:focus:bg-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n        className,\n      )}\n      data-inset={inset}\n      data-slot=\"dropdown-menu-item\"\n      data-variant={variant}\n      {...props}\n    />\n  );\n}\n\nfunction DropdownMenuCheckboxItem({\n  className,\n  children,\n  checked,\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.CheckboxItem>) {\n  return (\n    <DropdownMenuPrimitive.CheckboxItem\n      checked={checked}\n      className={cn(\n        \"relative flex cursor-default select-none items-center gap-2 rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n        className,\n      )}\n      data-slot=\"dropdown-menu-checkbox-item\"\n      {...props}\n    >\n      <span className=\"pointer-events-none absolute left-2 flex size-3.5 items-center justify-center\">\n        <DropdownMenuPrimitive.ItemIndicator>\n          <CheckIcon size={16} />\n        </DropdownMenuPrimitive.ItemIndicator>\n      </span>\n      {children}\n    </DropdownMenuPrimitive.CheckboxItem>\n  );\n}\n\nfunction DropdownMenuRadioGroup({\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.RadioGroup>) {\n  return (\n    <DropdownMenuPrimitive.RadioGroup\n      data-slot=\"dropdown-menu-radio-group\"\n      {...props}\n    />\n  );\n}\n\nfunction DropdownMenuRadioItem({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.RadioItem>) {\n  return (\n    <DropdownMenuPrimitive.RadioItem\n      className={cn(\n        \"relative flex cursor-default select-none items-center gap-2 rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n        className,\n      )}\n      data-slot=\"dropdown-menu-radio-item\"\n      {...props}\n    >\n      <span className=\"pointer-events-none absolute left-2 flex size-3.5 items-center justify-center\">\n        <DropdownMenuPrimitive.ItemIndicator>\n          <CircleIcon className=\"size-2 fill-current\" />\n        </DropdownMenuPrimitive.ItemIndicator>\n      </span>\n      {children}\n    </DropdownMenuPrimitive.RadioItem>\n  );\n}\n\nfunction DropdownMenuLabel({\n  className,\n  inset,\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Label> & {\n  inset?: boolean;\n}) {\n  return (\n    <DropdownMenuPrimitive.Label\n      className={cn(\n        \"px-2 py-1.5 font-medium text-muted-foreground text-xs data-[inset]:pl-8\",\n        className,\n      )}\n      data-inset={inset}\n      data-slot=\"dropdown-menu-label\"\n      {...props}\n    />\n  );\n}\n\nfunction DropdownMenuSeparator({\n  className,\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Separator>) {\n  return (\n    <DropdownMenuPrimitive.Separator\n      className={cn(\"-mx-1 my-1 h-px bg-border\", className)}\n      data-slot=\"dropdown-menu-separator\"\n      {...props}\n    />\n  );\n}\n\nfunction DropdownMenuShortcut({\n  className,\n  ...props\n}: React.ComponentProps<\"span\">) {\n  return (\n    <kbd\n      className={cn(\n        \"ms-auto -me-1 inline-flex h-5 max-h-full items-center rounded border bg-background px-1 font-[inherit] font-medium text-[0.625rem] text-muted-foreground/70\",\n        className,\n      )}\n      data-slot=\"dropdown-menu-shortcut\"\n      {...props}\n    />\n  );\n}\n\nfunction DropdownMenuSub({\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Sub>) {\n  return <DropdownMenuPrimitive.Sub data-slot=\"dropdown-menu-sub\" {...props} />;\n}\n\nfunction DropdownMenuSubTrigger({\n  className,\n  inset,\n  children,\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.SubTrigger> & {\n  inset?: boolean;\n}) {\n  return (\n    <DropdownMenuPrimitive.SubTrigger\n      className={cn(\n        \"flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-hidden focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[inset]:pl-8 data-[state=open]:text-accent-foreground\",\n        className,\n      )}\n      data-inset={inset}\n      data-slot=\"dropdown-menu-sub-trigger\"\n      {...props}\n    >\n      {children}\n      <ChevronRightIcon\n        className=\"ml-auto text-muted-foreground/80\"\n        size={16}\n      />\n    </DropdownMenuPrimitive.SubTrigger>\n  );\n}\n\nfunction DropdownMenuSubContent({\n  className,\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.SubContent>) {\n  return (\n    <DropdownMenuPrimitive.SubContent\n      className={cn(\n        \"data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 z-50 min-w-40 overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=closed]:animate-out data-[state=open]:animate-in\",\n        className,\n      )}\n      data-slot=\"dropdown-menu-sub-content\"\n      {...props}\n    />\n  );\n}\n\nexport {\n  DropdownMenu,\n  DropdownMenuCheckboxItem,\n  DropdownMenuContent,\n  DropdownMenuGroup,\n  DropdownMenuItem,\n  DropdownMenuLabel,\n  DropdownMenuPortal,\n  DropdownMenuRadioGroup,\n  DropdownMenuRadioItem,\n  DropdownMenuSeparator,\n  DropdownMenuShortcut,\n  DropdownMenuSub,\n  DropdownMenuSubContent,\n  DropdownMenuSubTrigger,\n  DropdownMenuTrigger,\n};\n",
+      "sha256": "d8600f005bcdff70f010bdcc15878b5e93d8535d6462d7f50dd6d55e2fd42f0b",
+      "upstreamPath": "apps/origin/registry/default/ui/dropdown-menu.tsx",
+      "upstreamSha256": "f753be744938efdaf80e85eab6598e8ec8cd40ef973464068d177c5944aac580",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-131/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-131\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "5a374ff155a13883eb88c09b7ad2ce0bc1b9600fa963c6f39ee7bba8b5643b45",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add class-variance-authority@0.7.1 clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add class-variance-authority@0.7.1 clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-131",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-131.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-131.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI button dropdown comp-131\n\n1 published Origin UI button dropdown comp-131 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-131.tsx\n"
+}

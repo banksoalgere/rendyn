@@ -1,0 +1,127 @@
+{
+  "id": "originui:comp-51",
+  "sourceId": "originui",
+  "slug": "originui-comp-51",
+  "name": "Origin UI input label password comp-51",
+  "description": "1 published Origin UI input label password comp-51 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "clsx@2.1.1",
+    "lucide-react@1.35.0",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "input",
+    "tags": [
+      "file",
+      "input",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 51",
+      "origin ui input label password comp-51",
+      "input"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI input label password comp-51 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "input:file:select:upload",
+    "searchText": "Origin UI input label password comp-51\ncomp 51\n1 published Origin UI input label password comp-51 examples with complete pinned source and MIT attribution.\norigin ui input label password comp-51\ninput\nfile\nselect\nupload\nOrigin UI input label password comp 51 1 published Origin UI input label password comp 51 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 51.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-51",
+  "manifestPath": "components/originui-comp-51/component.json",
+  "integrity": "sha256:68fe64ee6244bb525b0a4e8ea2153ce6e67716d60ae74f47068a1f0c10065d2c",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-51.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { CheckIcon, EyeIcon, EyeOffIcon, XIcon } from \"lucide-react\";\nimport { useId, useMemo, useState } from \"react\";\nimport { Input } from \"@/components/rendyn-libraries/originui/ui/input\";\nimport { Label } from \"@/components/rendyn-libraries/originui/ui/label\";\n\nexport default function Component() {\n  const id = useId();\n  const [password, setPassword] = useState(\"\");\n  const [isVisible, setIsVisible] = useState<boolean>(false);\n\n  const toggleVisibility = () => setIsVisible((prevState) => !prevState);\n\n  const checkStrength = (pass: string) => {\n    const requirements = [\n      { regex: /.{8,}/, text: \"At least 8 characters\" },\n      { regex: /[0-9]/, text: \"At least 1 number\" },\n      { regex: /[a-z]/, text: \"At least 1 lowercase letter\" },\n      { regex: /[A-Z]/, text: \"At least 1 uppercase letter\" },\n    ];\n\n    return requirements.map((req) => ({\n      met: req.regex.test(pass),\n      text: req.text,\n    }));\n  };\n\n  const strength = checkStrength(password);\n\n  const strengthScore = useMemo(() => {\n    return strength.filter((req) => req.met).length;\n  }, [strength]);\n\n  const getStrengthColor = (score: number) => {\n    if (score === 0) return \"bg-border\";\n    if (score <= 1) return \"bg-red-500\";\n    if (score <= 2) return \"bg-orange-500\";\n    if (score === 3) return \"bg-amber-500\";\n    return \"bg-emerald-500\";\n  };\n\n  const getStrengthText = (score: number) => {\n    if (score === 0) return \"Enter a password\";\n    if (score <= 2) return \"Weak password\";\n    if (score === 3) return \"Medium password\";\n    return \"Strong password\";\n  };\n\n  return (\n    <div>\n      {/* Password input field with toggle visibility button */}\n      <div className=\"*:not-first:mt-2\">\n        <Label htmlFor={id}>Input with password strength indicator</Label>\n        <div className=\"relative\">\n          <Input\n            aria-describedby={`${id}-description`}\n            className=\"pe-9\"\n            id={id}\n            onChange={(e) => setPassword(e.target.value)}\n            placeholder=\"Password\"\n            type={isVisible ? \"text\" : \"password\"}\n            value={password}\n          />\n          <button\n            aria-controls=\"password\"\n            aria-label={isVisible ? \"Hide password\" : \"Show password\"}\n            aria-pressed={isVisible}\n            className=\"absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center rounded-e-md text-muted-foreground/80 outline-none transition-[color,box-shadow] hover:text-foreground focus:z-10 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\"\n            onClick={toggleVisibility}\n            type=\"button\"\n          >\n            {isVisible ? (\n              <EyeOffIcon aria-hidden=\"true\" size={16} />\n            ) : (\n              <EyeIcon aria-hidden=\"true\" size={16} />\n            )}\n          </button>\n        </div>\n      </div>\n\n      {/* Password strength indicator */}\n      <div\n        aria-label=\"Password strength\"\n        aria-valuemax={4}\n        aria-valuemin={0}\n        aria-valuenow={strengthScore}\n        className=\"mt-3 mb-4 h-1 w-full overflow-hidden rounded-full bg-border\"\n        role=\"progressbar\"\n        tabIndex={-1}\n      >\n        <div\n          className={`h-full ${getStrengthColor(strengthScore)} transition-all duration-500 ease-out`}\n          style={{ width: `${(strengthScore / 4) * 100}%` }}\n        />\n      </div>\n\n      {/* Password strength description */}\n      <p\n        className=\"mb-2 font-medium text-foreground text-sm\"\n        id={`${id}-description`}\n      >\n        {getStrengthText(strengthScore)}. Must contain:\n      </p>\n\n      {/* Password requirements list */}\n      <ul aria-label=\"Password requirements\" className=\"space-y-1.5\">\n        {strength.map((req, _index) => (\n          <li className=\"flex items-center gap-2\" key={req.text}>\n            {req.met ? (\n              <CheckIcon\n                aria-hidden=\"true\"\n                className=\"text-emerald-500\"\n                size={16}\n              />\n            ) : (\n              <XIcon\n                aria-hidden=\"true\"\n                className=\"text-muted-foreground/80\"\n                size={16}\n              />\n            )}\n            <span\n              className={`text-xs ${req.met ? \"text-emerald-600\" : \"text-muted-foreground\"}`}\n            >\n              {req.text}\n              <span className=\"sr-only\">\n                {req.met ? \" - Requirement met\" : \" - Requirement not met\"}\n              </span>\n            </span>\n          </li>\n        ))}\n      </ul>\n    </div>\n  );\n}\n",
+      "sha256": "9e0a215a0ada68115894b1b022af921b798abd7805cc6b4fc365e2ff6a494e3c",
+      "upstreamPath": "apps/origin/registry/default/components/comp-51.tsx",
+      "upstreamSha256": "2f11015f74bf887316d716c29595ebb76a87bd3af9237f5fcf9e1c793583e388",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/ui/input.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Input({ className, type, ...props }: React.ComponentProps<\"input\">) {\n  return (\n    <input\n      className={cn(\n        \"flex h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow] file:inline-flex file:h-7 file:border-0 file:bg-transparent file:font-medium file:text-foreground file:text-sm placeholder:text-muted-foreground/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\",\n        \"focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n        \"aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40\",\n        type === \"search\" &&\n          \"[&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none\",\n        type === \"file\" &&\n          \"p-0 pr-3 text-muted-foreground/70 italic file:me-3 file:h-full file:border-0 file:border-input file:border-r file:border-solid file:bg-transparent file:px-3 file:font-medium file:text-foreground file:text-sm file:not-italic\",\n        className,\n      )}\n      data-slot=\"input\"\n      type={type}\n      {...props}\n    />\n  );\n}\n\nexport { Input };\n",
+      "sha256": "0321f74dc6b5ef9b8f14442db7633918d408c2b153919967755a0f89b19ce260",
+      "upstreamPath": "apps/origin/registry/default/ui/input.tsx",
+      "upstreamSha256": "b756e956e0884c781c249642b5052c185cd0501200769dba76365943bea3000a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/ui/label.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Label as LabelPrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Label({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      className={cn(\n        \"select-none font-medium text-foreground text-sm leading-4 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50\",\n        className,\n      )}\n      data-slot=\"label\"\n      {...props}\n    />\n  );\n}\n\nexport { Label };\n",
+      "sha256": "41c807094258a1323781107184a31dfb2e1ec87fb686e9e98de204b9cd3c841f",
+      "upstreamPath": "apps/origin/registry/default/ui/label.tsx",
+      "upstreamSha256": "5bc1af43d7f8acd46ba7bdd2ddadd3ac42ba5d86300fce320f687d84f6595ed3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-51/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-51\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "38d738c4ad94da7092f727bf5e27d9cfaa2d451cbfb0c84a0b569f573ec8f9df",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-51",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-51.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-51.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI input label password comp-51\n\n1 published Origin UI input label password comp-51 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-51.tsx\n"
+}

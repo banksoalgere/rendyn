@@ -1,0 +1,131 @@
+{
+  "id": "originui:comp-332",
+  "sourceId": "originui",
+  "slug": "originui-comp-332",
+  "name": "Origin UI dialog modal onboarding comp-332",
+  "description": "1 published Origin UI dialog modal onboarding comp-332 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "class-variance-authority@0.7.1",
+    "clsx@2.1.1",
+    "lucide-react@1.35.0",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "modal",
+    "tags": [
+      "dialog",
+      "file",
+      "modal",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 332",
+      "origin ui dialog modal onboarding comp-332",
+      "modal",
+      "dialog",
+      "overlay"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI dialog modal onboarding comp-332 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "modal:dialog:file:select:upload",
+    "searchText": "Origin UI dialog modal onboarding comp-332\ncomp 332\n1 published Origin UI dialog modal onboarding comp-332 examples with complete pinned source and MIT attribution.\norigin ui dialog modal onboarding comp-332\nmodal\ndialog\noverlay\nfile\nselect\nupload\nOrigin UI dialog modal onboarding comp 332 1 published Origin UI dialog modal onboarding comp 332 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 332.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-332",
+  "manifestPath": "components/originui-comp-332/component.json",
+  "integrity": "sha256:35b39101ddcbd5aa80ac0f0ab94aa305219409e2ff27d775ddb302b8dc95a542",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-332.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ArrowRightIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\nimport { Button } from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/button\";\nimport {\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/dialog\";\n\nexport default function Component() {\n  const [step, setStep] = useState(1);\n\n  const stepContent = [\n    {\n      description:\n        \"Discover a powerful collection of components designed to enhance your development workflow.\",\n      title: \"Welcome to coss.com\",\n    },\n    {\n      description:\n        \"Each component is fully customizable and built with modern web standards in mind.\",\n      title: \"Customizable Components\",\n    },\n    {\n      description:\n        \"Begin building amazing interfaces with our comprehensive component library.\",\n      title: \"Ready to Start?\",\n    },\n    {\n      description:\n        \"Access our extensive documentation and community resources to make the most of coss.com.\",\n      title: \"Get Support\",\n    },\n  ];\n\n  const totalSteps = stepContent.length;\n\n  const handleContinue = () => {\n    if (step < totalSteps) {\n      setStep(step + 1);\n    }\n  };\n\n  return (\n    <Dialog\n      onOpenChange={(open) => {\n        if (open) setStep(1);\n      }}\n    >\n      <DialogTrigger asChild>\n        <Button variant=\"outline\">Onboarding</Button>\n      </DialogTrigger>\n      <DialogContent className=\"gap-0 p-0 [&>button:last-child]:text-white\">\n        <div className=\"p-2\">\n          <img\n            alt=\"dialog\"\n            className=\"w-full rounded-md\"\n            height={216}\n            src=\"/origin/dialog-content.png\"\n            width={382}\n          />\n        </div>\n        <div className=\"space-y-6 px-6 pt-3 pb-6\">\n          <DialogHeader>\n            <DialogTitle>{stepContent[step - 1].title}</DialogTitle>\n            <DialogDescription>\n              {stepContent[step - 1].description}\n            </DialogDescription>\n          </DialogHeader>\n          <div className=\"flex flex-col justify-between gap-4 sm:flex-row sm:items-center\">\n            <div className=\"flex justify-center space-x-1.5 max-sm:order-1\">\n              {[...Array(totalSteps)].map((_, index) => (\n                <div\n                  className={cn(\n                    \"size-1.5 rounded-full bg-primary\",\n                    index + 1 === step ? \"bg-primary\" : \"opacity-20\",\n                  )}\n                  key={String(index)}\n                />\n              ))}\n            </div>\n            <DialogFooter>\n              <DialogClose asChild>\n                <Button type=\"button\" variant=\"ghost\">\n                  Skip\n                </Button>\n              </DialogClose>\n              {step < totalSteps ? (\n                <Button\n                  className=\"group\"\n                  onClick={handleContinue}\n                  type=\"button\"\n                >\n                  Next\n                  <ArrowRightIcon\n                    aria-hidden=\"true\"\n                    className=\"-me-1 opacity-60 transition-transform group-hover:translate-x-0.5\"\n                    size={16}\n                  />\n                </Button>\n              ) : (\n                <DialogClose asChild>\n                  <Button type=\"button\">Okay</Button>\n                </DialogClose>\n              )}\n            </DialogFooter>\n          </div>\n        </div>\n      </DialogContent>\n    </Dialog>\n  );\n}\n",
+      "sha256": "6ae9506898fc18abe926293abfb67ed7129c1326e9d7037f84c8c91a0ce5dacf",
+      "upstreamPath": "apps/origin/registry/default/components/comp-332.tsx",
+      "upstreamSha256": "76fca44a6ec1a4a8eb793a7f22b2a797ded6e4209a53da026ce5fc9abb4f3885",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/button.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { Slot } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nconst buttonVariants = cva(\n  \"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium text-sm outline-none transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n  {\n    defaultVariants: {\n      size: \"default\",\n      variant: \"default\",\n    },\n    variants: {\n      size: {\n        default: \"h-9 px-4 py-2\",\n        icon: \"size-9\",\n        lg: \"h-10 rounded-md px-8\",\n        sm: \"h-8 rounded-md px-3 text-xs\",\n      },\n      variant: {\n        default:\n          \"bg-primary text-primary-foreground shadow-sm hover:bg-primary/90\",\n        destructive:\n          \"bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40\",\n        ghost: \"hover:bg-accent hover:text-accent-foreground\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n        outline:\n          \"border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground\",\n        secondary:\n          \"bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80\",\n      },\n    },\n  },\n);\n\nfunction Button({\n  className,\n  variant,\n  size,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean;\n  }) {\n  const Comp = asChild ? Slot.Root : \"button\";\n\n  return (\n    <Comp\n      className={cn(buttonVariants({ className, size, variant }))}\n      data-slot=\"button\"\n      {...props}\n    />\n  );\n}\n\nexport { Button, buttonVariants };\n",
+      "sha256": "f15a7a2b32b90ad280810e03b3f18805686836d956825068fa614978975837aa",
+      "upstreamPath": "apps/origin/registry/default/ui/button.tsx",
+      "upstreamSha256": "00c5b5d0afad82b368cfa34ae4abdaf1e0851dfa49adeb836d9a69747ef4bc49",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/dialog.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { XIcon } from \"lucide-react\";\nimport { Dialog as DialogPrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Dialog({\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Root>) {\n  return <DialogPrimitive.Root data-slot=\"dialog\" {...props} />;\n}\n\nfunction DialogTrigger({\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Trigger>) {\n  return <DialogPrimitive.Trigger data-slot=\"dialog-trigger\" {...props} />;\n}\n\nfunction DialogPortal({\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Portal>) {\n  return <DialogPrimitive.Portal data-slot=\"dialog-portal\" {...props} />;\n}\n\nfunction DialogClose({\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Close>) {\n  return <DialogPrimitive.Close data-slot=\"dialog-close\" {...props} />;\n}\n\nfunction DialogOverlay({\n  className,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Overlay>) {\n  return (\n    <DialogPrimitive.Overlay\n      className={cn(\n        \"data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/80 data-[state=closed]:animate-out data-[state=open]:animate-in\",\n        className,\n      )}\n      data-slot=\"dialog-overlay\"\n      {...props}\n    />\n  );\n}\n\nfunction DialogContent({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Content>) {\n  return (\n    <DialogPortal>\n      <DialogOverlay />\n      <DialogPrimitive.Content\n        className={cn(\n          \"data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 fixed top-1/2 left-1/2 z-50 grid max-h-[calc(100%-2rem)] w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-4 overflow-y-auto rounded-xl border bg-background p-6 shadow-lg duration-200 data-[state=closed]:animate-out data-[state=open]:animate-in sm:max-w-100\",\n          className,\n        )}\n        data-slot=\"dialog-content\"\n        {...props}\n      >\n        {children}\n        <DialogPrimitive.Close className=\"group absolute top-3 right-3 flex size-7 items-center justify-center rounded outline-none transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none\">\n          <XIcon\n            className=\"opacity-60 transition-opacity group-hover:opacity-100\"\n            size={16}\n          />\n          <span className=\"sr-only\">Close</span>\n        </DialogPrimitive.Close>\n      </DialogPrimitive.Content>\n    </DialogPortal>\n  );\n}\n\nfunction DialogHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      className={cn(\"flex flex-col gap-1 text-center sm:text-left\", className)}\n      data-slot=\"alert-dialog-header\"\n      {...props}\n    />\n  );\n}\n\nfunction DialogFooter({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      className={cn(\n        \"flex flex-col-reverse gap-3 sm:flex-row sm:justify-end\",\n        className,\n      )}\n      data-slot=\"alert-dialog-footer\"\n      {...props}\n    />\n  );\n}\n\nfunction DialogTitle({\n  className,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Title>) {\n  return (\n    <DialogPrimitive.Title\n      className={cn(\"font-semibold text-lg leading-none\", className)}\n      data-slot=\"alert-dialog-title\"\n      {...props}\n    />\n  );\n}\n\nfunction DialogDescription({\n  className,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Description>) {\n  return (\n    <DialogPrimitive.Description\n      className={cn(\"text-muted-foreground text-sm\", className)}\n      data-slot=\"alert-dialog-description\"\n      {...props}\n    />\n  );\n}\n\nexport {\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogOverlay,\n  DialogPortal,\n  DialogTitle,\n  DialogTrigger,\n};\n",
+      "sha256": "4637b48877701d420a0f4a33659269a7e60c6a1a99a34645ddda8967874bddc9",
+      "upstreamPath": "apps/origin/registry/default/ui/dialog.tsx",
+      "upstreamSha256": "8c3abe62162f1bc3cccff0320ad529fb54e5ac4b693593e2aa1f31b2f66ccc01",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-332/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-332\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "6bb2a3a01fb8ee79112145fb973733a0c694a02fc4171e42f40e53f853286705",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add class-variance-authority@0.7.1 clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add class-variance-authority@0.7.1 clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-332",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-332.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-332.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI dialog modal onboarding comp-332\n\n1 published Origin UI dialog modal onboarding comp-332 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-332.tsx\n"
+}

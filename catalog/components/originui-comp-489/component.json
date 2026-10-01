@@ -1,0 +1,119 @@
+{
+  "id": "originui:comp-489",
+  "sourceId": "originui",
+  "slug": "originui-comp-489",
+  "name": "Origin UI calendar range calendar date comp-489",
+  "description": "1 published Origin UI calendar range calendar date comp-489 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@internationalized/date@3.12.4",
+    "clsx@2.1.1",
+    "lucide-react@1.35.0",
+    "react-aria@3.52.1",
+    "react-aria-components@1.21.1",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "comp-489",
+    "tags": [
+      "file",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 489",
+      "origin ui calendar range calendar date comp-489",
+      "comp-489"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI calendar range calendar date comp-489 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "comp-489:file:select:upload",
+    "searchText": "Origin UI calendar range calendar date comp-489\ncomp 489\n1 published Origin UI calendar range calendar date comp-489 examples with complete pinned source and MIT attribution.\norigin ui calendar range calendar date comp-489\ncomp-489\nfile\nselect\nupload\nOrigin UI calendar range calendar date comp 489 1 published Origin UI calendar range calendar date comp 489 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 489.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-489",
+  "manifestPath": "components/originui-comp-489/component.json",
+  "integrity": "sha256:79a875aea6e5e926b7d3c502022ae96d9b7cc0fe451cd3111dd7cbceb67a4a93",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-489.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { getLocalTimeZone, isWeekend, today } from \"@internationalized/date\";\nimport { useLocale } from \"react-aria\";\nimport type { DateValue } from \"react-aria-components\";\nimport { RangeCalendar } from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/calendar-rac\";\n\nexport default function Component() {\n  const now = today(getLocalTimeZone());\n  const disabledRanges = [\n    [now, now], // Disables today\n    [now.add({ days: 14 }), now.add({ days: 14 })], // Disables only the 14th day from now\n    [now.add({ days: 23 }), now.add({ days: 23 })], // Disables only the 23rd day from now\n  ];\n\n  const { locale } = useLocale();\n  const isDateUnavailable = (date: DateValue) =>\n    isWeekend(date, locale) ||\n    disabledRanges.some(\n      (interval) =>\n        date.compare(interval[0]) >= 0 && date.compare(interval[1]) <= 0,\n    );\n\n  return (\n    <div>\n      <RangeCalendar\n        className=\"rounded-md border p-2\"\n        isDateUnavailable={isDateUnavailable}\n        minValue={today(getLocalTimeZone())}\n      />\n      <p\n        aria-live=\"polite\"\n        className=\"mt-4 text-center text-muted-foreground text-xs\"\n        role=\"region\"\n      >\n        Disabled dates -{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://react-spectrum.adobe.com/react-aria/DateRangePicker.html\"\n          rel=\"noreferrer noopener nofollow\"\n          target=\"_blank\"\n        >\n          React Aria\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "sha256": "c3c28263ede4a3de102009a9ec335d7b05dc1c0f1fead244e01c2688eb97cdde",
+      "upstreamPath": "apps/origin/registry/default/components/comp-489.tsx",
+      "upstreamSha256": "832bab494d2b16c4ee0dfc3393ba86eea674b407fe6161422c67773c52d7f701",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/calendar-rac.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { getLocalTimeZone, today } from \"@internationalized/date\";\nimport { ChevronLeftIcon, ChevronRightIcon } from \"lucide-react\";\nimport type { ComponentProps } from \"react\";\nimport {\n  Button,\n  CalendarCell as CalendarCellRac,\n  CalendarGridBody as CalendarGridBodyRac,\n  CalendarGridHeader as CalendarGridHeaderRac,\n  CalendarGrid as CalendarGridRac,\n  CalendarHeaderCell as CalendarHeaderCellRac,\n  Calendar as CalendarRac,\n  composeRenderProps,\n  Heading as HeadingRac,\n  RangeCalendar as RangeCalendarRac,\n} from \"react-aria-components\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\ninterface BaseCalendarProps {\n  className?: string;\n}\n\ntype CalendarProps = ComponentProps<typeof CalendarRac> & BaseCalendarProps;\ntype RangeCalendarProps = ComponentProps<typeof RangeCalendarRac> &\n  BaseCalendarProps;\n\nfunction CalendarHeader() {\n  return (\n    <header className=\"flex w-full items-center gap-1 pb-1\">\n      <Button\n        className=\"flex size-9 items-center justify-center rounded-md text-muted-foreground/80 outline-none transition-[color,box-shadow] hover:bg-accent hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50\"\n        slot=\"previous\"\n      >\n        <ChevronLeftIcon size={16} />\n      </Button>\n      <HeadingRac className=\"grow text-center font-medium text-sm\" />\n      <Button\n        className=\"flex size-9 items-center justify-center rounded-md text-muted-foreground/80 outline-none transition-[color,box-shadow] hover:bg-accent hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50\"\n        slot=\"next\"\n      >\n        <ChevronRightIcon size={16} />\n      </Button>\n    </header>\n  );\n}\n\nfunction CalendarGridComponent({ isRange = false }: { isRange?: boolean }) {\n  const now = today(getLocalTimeZone());\n\n  return (\n    <CalendarGridRac>\n      <CalendarGridHeaderRac>\n        {(day) => (\n          <CalendarHeaderCellRac className=\"size-9 rounded-md p-0 font-medium text-muted-foreground/80 text-xs\">\n            {day}\n          </CalendarHeaderCellRac>\n        )}\n      </CalendarGridHeaderRac>\n      <CalendarGridBodyRac className=\"[&_td]:px-0 [&_td]:py-px\">\n        {(date) => (\n          <CalendarCellRac\n            className={cn(\n              \"relative flex size-9 items-center justify-center whitespace-nowrap rounded-md p-0 font-normal text-foreground text-sm outline-none duration-150 [transition-property:color,background-color,border-radius,box-shadow] data-disabled:pointer-events-none data-unavailable:pointer-events-none data-focus-visible:z-10 data-hovered:bg-accent data-selected:bg-primary data-hovered:text-foreground data-selected:text-primary-foreground data-unavailable:line-through data-disabled:opacity-30 data-unavailable:opacity-30 data-focus-visible:ring-[3px] data-focus-visible:ring-ring/50\",\n              // Range-specific styles\n              isRange &&\n                \"data-invalid:data-selection-end:bg-destructive data-invalid:data-selection-start:bg-destructive data-invalid:data-selection-end:text-white data-invalid:data-selection-start:text-white data-selected:rounded-none data-selection-start:rounded-s-md data-selection-end:rounded-e-md data-invalid:bg-red-100 data-selected:bg-accent data-selection-end:bg-primary data-selection-start:bg-primary data-selected:text-foreground data-selection-end:text-primary-foreground data-selection-start:text-primary-foreground\",\n              // Today indicator styles\n              date.compare(now) === 0 &&\n                cn(\n                  \"after:pointer-events-none after:absolute after:start-1/2 after:bottom-1 after:z-10 after:size-[3px] after:-translate-x-1/2 after:rounded-full after:bg-primary\",\n                  isRange\n                    ? \"data-selection-end:after:bg-background data-selection-start:after:bg-background\"\n                    : \"data-selected:after:bg-background\",\n                ),\n            )}\n            date={date}\n          />\n        )}\n      </CalendarGridBodyRac>\n    </CalendarGridRac>\n  );\n}\n\nfunction Calendar({ className, ...props }: CalendarProps) {\n  return (\n    <CalendarRac\n      {...props}\n      className={composeRenderProps(className, (className) =>\n        cn(\"w-fit\", className),\n      )}\n    >\n      <CalendarHeader />\n      <CalendarGridComponent />\n    </CalendarRac>\n  );\n}\n\nfunction RangeCalendar({ className, ...props }: RangeCalendarProps) {\n  return (\n    <RangeCalendarRac\n      {...props}\n      className={composeRenderProps(className, (className) =>\n        cn(\"w-fit\", className),\n      )}\n    >\n      <CalendarHeader />\n      <CalendarGridComponent isRange />\n    </RangeCalendarRac>\n  );\n}\n\nexport { Calendar, RangeCalendar };\n",
+      "sha256": "3049e5b5013283e923708c9d55e44d1bde3c4addba867d56568838fbd858b303",
+      "upstreamPath": "apps/origin/registry/default/ui/calendar-rac.tsx",
+      "upstreamSha256": "b12ea060162da794100ff244d4b4d8c0cf165c551149edc25e24d55eea0c7d21",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-489/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-489\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "6f34e5cf3b9329f0d6dc396226558cb61dbb9f7fb1e5ca3f02831cc60ac76673",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @internationalized/date@3.12.4 clsx@2.1.1 lucide-react@1.35.0 react-aria@3.52.1 react-aria-components@1.21.1 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @internationalized/date@3.12.4 clsx@2.1.1 lucide-react@1.35.0 react-aria@3.52.1 react-aria-components@1.21.1 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-489",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-489.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-489.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI calendar range calendar date comp-489\n\n1 published Origin UI calendar range calendar date comp-489 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-489.tsx\n"
+}

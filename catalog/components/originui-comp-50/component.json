@@ -1,0 +1,118 @@
+{
+  "id": "originui:comp-50",
+  "sourceId": "originui",
+  "slug": "originui-comp-50",
+  "name": "Origin UI input label checkout comp-50",
+  "description": "1 published Origin UI input label checkout comp-50 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "clsx@2.1.1",
+    "lucide-react@1.35.0",
+    "react-payment-inputs@1.2.0",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "input",
+    "tags": [
+      "file",
+      "input",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 50",
+      "origin ui input label checkout comp-50",
+      "input"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI input label checkout comp-50 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "input:file:select:upload",
+    "searchText": "Origin UI input label checkout comp-50\ncomp 50\n1 published Origin UI input label checkout comp-50 examples with complete pinned source and MIT attribution.\norigin ui input label checkout comp-50\ninput\nfile\nselect\nupload\nOrigin UI input label checkout comp 50 1 published Origin UI input label checkout comp 50 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 50.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-50",
+  "manifestPath": "components/originui-comp-50/component.json",
+  "integrity": "sha256:17098d1e75df531e320cdfd11a57c566835929ea2930f5c0bf0d923acb2b7e0f",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-50.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { CreditCardIcon } from \"lucide-react\";\nimport { useId } from \"react\";\nimport { usePaymentInputs } from \"react-payment-inputs\";\nimport images, { type CardImages } from \"react-payment-inputs/images\";\nimport { Input } from \"@/components/rendyn-libraries/originui/ui/input\";\n\nexport default function Component() {\n  const id = useId();\n  const {\n    meta,\n    getCardNumberProps,\n    getExpiryDateProps,\n    getCVCProps,\n    getCardImageProps,\n  } = usePaymentInputs();\n\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <legend className=\"font-medium text-foreground text-sm\">\n        Card Details\n      </legend>\n      <div className=\"rounded-md shadow-xs\">\n        <div className=\"relative focus-within:z-10\">\n          <Input\n            className=\"peer rounded-b-none pe-9 shadow-none [direction:inherit]\"\n            {...getCardNumberProps()}\n            id={`number-${id}`}\n          />\n          <div className=\"pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground/80 peer-disabled:opacity-50\">\n            {meta.cardType ? (\n              <svg\n                className=\"overflow-hidden rounded-sm\"\n                {...getCardImageProps({\n                  images: images as unknown as CardImages,\n                })}\n                width={20}\n              />\n            ) : (\n              <CreditCardIcon aria-hidden=\"true\" size={16} />\n            )}\n          </div>\n        </div>\n        <div className=\"-mt-px flex\">\n          <div className=\"min-w-0 flex-1 focus-within:z-10\">\n            <Input\n              className=\"rounded-e-none rounded-t-none shadow-none [direction:inherit]\"\n              {...getExpiryDateProps()}\n              id={`expiry-${id}`}\n            />\n          </div>\n          <div className=\"-ms-px min-w-0 flex-1 focus-within:z-10\">\n            <Input\n              className=\"rounded-s-none rounded-t-none shadow-none [direction:inherit]\"\n              {...getCVCProps()}\n              id={`cvc-${id}`}\n            />\n          </div>\n        </div>\n      </div>\n      <p\n        aria-live=\"polite\"\n        className=\"mt-2 text-muted-foreground text-xs\"\n        role=\"region\"\n      >\n        Built with{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://github.com/medipass/react-payment-inputs\"\n          rel=\"noreferrer noopener nofollow\"\n          target=\"_blank\"\n        >\n          React Payment Inputs\n        </a>\n      </p>\n    </div>\n  );\n}\n",
+      "sha256": "e9e701018e5850db58202795c638d759b4e32257371764881917fa23c1cb7361",
+      "upstreamPath": "apps/origin/registry/default/components/comp-50.tsx",
+      "upstreamSha256": "968c3d3a291b95c2b2a3cb0fd8b9866bfdfeb487024d0bde746f9a816e5d17dd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/ui/input.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Input({ className, type, ...props }: React.ComponentProps<\"input\">) {\n  return (\n    <input\n      className={cn(\n        \"flex h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow] file:inline-flex file:h-7 file:border-0 file:bg-transparent file:font-medium file:text-foreground file:text-sm placeholder:text-muted-foreground/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\",\n        \"focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n        \"aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40\",\n        type === \"search\" &&\n          \"[&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none\",\n        type === \"file\" &&\n          \"p-0 pr-3 text-muted-foreground/70 italic file:me-3 file:h-full file:border-0 file:border-input file:border-r file:border-solid file:bg-transparent file:px-3 file:font-medium file:text-foreground file:text-sm file:not-italic\",\n        className,\n      )}\n      data-slot=\"input\"\n      type={type}\n      {...props}\n    />\n  );\n}\n\nexport { Input };\n",
+      "sha256": "0321f74dc6b5ef9b8f14442db7633918d408c2b153919967755a0f89b19ce260",
+      "upstreamPath": "apps/origin/registry/default/ui/input.tsx",
+      "upstreamSha256": "b756e956e0884c781c249642b5052c185cd0501200769dba76365943bea3000a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-50/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-50\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d90113c317a97fa4ee6b9880b7acc3bf7eab2bd931d9609ebf51c456a809152d",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add clsx@2.1.1 lucide-react@1.35.0 react-payment-inputs@1.2.0 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add clsx@2.1.1 lucide-react@1.35.0 react-payment-inputs@1.2.0 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-50",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-50.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-50.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI input label checkout comp-50\n\n1 published Origin UI input label checkout comp-50 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-50.tsx\n"
+}

@@ -1,0 +1,117 @@
+{
+  "id": "originui:comp-36",
+  "sourceId": "originui",
+  "slug": "originui-comp-36",
+  "name": "Origin UI input label date comp-36",
+  "description": "1 published Origin UI input label date comp-36 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "clsx@2.1.1",
+    "react-aria-components@1.21.1",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "input",
+    "tags": [
+      "file",
+      "input",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 36",
+      "origin ui input label date comp-36",
+      "input"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI input label date comp-36 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "input:file:select:upload",
+    "searchText": "Origin UI input label date comp-36\ncomp 36\n1 published Origin UI input label date comp-36 examples with complete pinned source and MIT attribution.\norigin ui input label date comp-36\ninput\nfile\nselect\nupload\nOrigin UI input label date comp 36 1 published Origin UI input label date comp 36 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 36.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-36",
+  "manifestPath": "components/originui-comp-36/component.json",
+  "integrity": "sha256:68168a7ddfbec4700a0263636d61e44a05e21fd73ce216ac1a01881d3f424633",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-36.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Label } from \"react-aria-components\";\nimport { DateField, DateInput } from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/datefield-rac\";\n\nexport default function Component() {\n  return (\n    <DateField className=\"*:not-first:mt-2\">\n      <Label className=\"font-medium text-foreground text-sm\">Date input</Label>\n      <DateInput />\n      <p\n        aria-live=\"polite\"\n        className=\"mt-2 text-muted-foreground text-xs\"\n        role=\"region\"\n      >\n        Built with{\" \"}\n        <a\n          className=\"underline hover:text-foreground\"\n          href=\"https://react-spectrum.adobe.com/react-aria/DateField.html\"\n          rel=\"noreferrer noopener nofollow\"\n          target=\"_blank\"\n        >\n          React Aria\n        </a>\n      </p>\n    </DateField>\n  );\n}\n",
+      "sha256": "65349e3bbf4d9e905a189410edcd632edf6cbd6526ffcf2c109ab2988533abe7",
+      "upstreamPath": "apps/origin/registry/default/components/comp-36.tsx",
+      "upstreamSha256": "58b77c7c954275f1235ea5526b255b2388b1d2fa2aadc7ea055b91a287e602f0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/datefield-rac.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  composeRenderProps,\n  type DateFieldProps,\n  DateField as DateFieldRac,\n  type DateInputProps as DateInputPropsRac,\n  DateInput as DateInputRac,\n  type DateSegmentProps,\n  DateSegment as DateSegmentRac,\n  type DateValue as DateValueRac,\n  type TimeFieldProps,\n  TimeField as TimeFieldRac,\n  type TimeValue as TimeValueRac,\n} from \"react-aria-components\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction DateField<T extends DateValueRac>({\n  className,\n  children,\n  ...props\n}: DateFieldProps<T>) {\n  return (\n    <DateFieldRac\n      className={composeRenderProps(className, (className) => cn(className))}\n      {...props}\n    >\n      {children}\n    </DateFieldRac>\n  );\n}\n\nfunction TimeField<T extends TimeValueRac>({\n  className,\n  children,\n  ...props\n}: TimeFieldProps<T>) {\n  return (\n    <TimeFieldRac\n      className={composeRenderProps(className, (className) => cn(className))}\n      {...props}\n    >\n      {children}\n    </TimeFieldRac>\n  );\n}\n\nfunction DateSegment({ className, ...props }: DateSegmentProps) {\n  return (\n    <DateSegmentRac\n      className={composeRenderProps(className, (className) =>\n        cn(\n          \"inline rounded p-0.5 text-foreground caret-transparent outline-hidden data-invalid:data-focused:bg-destructive data-focused:data-placeholder:text-foreground data-invalid:data-focused:text-white data-invalid:data-placeholder:text-destructive data-disabled:cursor-not-allowed data-focused:bg-accent data-[type=literal]:px-0 data-[type=literal]:text-muted-foreground/70 data-focused:text-foreground data-invalid:data-focused:data-placeholder:text-white data-invalid:text-destructive data-placeholder:text-muted-foreground/70 data-disabled:opacity-50\",\n          className,\n        ),\n      )}\n      {...props}\n      data-invalid\n    />\n  );\n}\n\nconst dateInputStyle =\n  \"relative inline-flex h-9 w-full items-center overflow-hidden whitespace-nowrap rounded-md border border-input bg-background px-3 py-2 text-sm shadow-xs transition-[color,box-shadow] outline-none data-focus-within:border-ring data-focus-within:ring-ring/50 data-focus-within:ring-[3px] data-focus-within:has-aria-invalid:ring-destructive/20 dark:data-focus-within:has-aria-invalid:ring-destructive/40 data-focus-within:has-aria-invalid:border-destructive\";\n\ninterface DateInputProps extends DateInputPropsRac {\n  className?: string;\n  unstyled?: boolean;\n}\n\nfunction DateInput({\n  className,\n  unstyled = false,\n  ...props\n}: Omit<DateInputProps, \"children\">) {\n  return (\n    <DateInputRac\n      className={composeRenderProps(className, (className) =>\n        cn(!unstyled && dateInputStyle, className),\n      )}\n      {...props}\n    >\n      {(segment) => <DateSegment segment={segment} />}\n    </DateInputRac>\n  );\n}\n\nexport { DateField, DateInput, DateSegment, TimeField, dateInputStyle };\nexport type { DateInputProps };\n",
+      "sha256": "8ba6370db0f815d44cd7f3d4d7e52bd573abb65662620cdafd0c03c31cad78dd",
+      "upstreamPath": "apps/origin/registry/default/ui/datefield-rac.tsx",
+      "upstreamSha256": "031a9b7b827ebd8c3b890afb844ddb3890a33d982b0de43f011387f489700da6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-36/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-36\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "398bfd6eaf58a0dd123d88e2ef7979217049e736c3fb38a4435cc82f848c87c0",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add clsx@2.1.1 react-aria-components@1.21.1 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add clsx@2.1.1 react-aria-components@1.21.1 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-36",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-36.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-36.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI input label date comp-36\n\n1 published Origin UI input label date comp-36 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-36.tsx\n"
+}

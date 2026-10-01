@@ -1,0 +1,25 @@
+"use client";
+
+import { useId } from "react";
+import { Input } from "@/components/rendyn-libraries/originui/ui/input";
+import { Label } from "@/components/rendyn-libraries/originui/ui/label";
+
+export default function Component() {
+  const id = useId();
+  return (
+    <div className="*:not-first:mt-2">
+      <Label htmlFor={id}>Input with start inline add-on</Label>
+      <div className="relative">
+        <Input
+          className="peer ps-16"
+          id={id}
+          placeholder="google.com"
+          type="text"
+        />
+        <span className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground text-sm peer-disabled:opacity-50">
+          https://
+        </span>
+      </div>
+    </div>
+  );
+}

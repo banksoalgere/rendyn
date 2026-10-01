@@ -1,0 +1,131 @@
+{
+  "id": "originui:comp-319",
+  "sourceId": "originui",
+  "slug": "originui-comp-319",
+  "name": "Origin UI dialog modal radix comp-319",
+  "description": "1 published Origin UI dialog modal radix comp-319 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "class-variance-authority@0.7.1",
+    "clsx@2.1.1",
+    "lucide-react@1.35.0",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "modal",
+    "tags": [
+      "dialog",
+      "file",
+      "modal",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 319",
+      "origin ui dialog modal radix comp-319",
+      "modal",
+      "dialog",
+      "overlay"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI dialog modal radix comp-319 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "modal:dialog:file:select:upload",
+    "searchText": "Origin UI dialog modal radix comp-319\ncomp 319\n1 published Origin UI dialog modal radix comp-319 examples with complete pinned source and MIT attribution.\norigin ui dialog modal radix comp-319\nmodal\ndialog\noverlay\nfile\nselect\nupload\nOrigin UI dialog modal radix comp 319 1 published Origin UI dialog modal radix comp 319 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 319.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-319",
+  "manifestPath": "components/originui-comp-319/component.json",
+  "integrity": "sha256:46cccddce66603e0a8231a88849d9578517618b0374adc12c61e1dcf6f0d9f66",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-319.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useRef, useState } from \"react\";\nimport { Button } from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/button\";\nimport {\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/dialog\";\n\nexport default function Component() {\n  const [hasReadToBottom, setHasReadToBottom] = useState(false);\n  const contentRef = useRef<HTMLDivElement>(null);\n\n  const handleScroll = () => {\n    const content = contentRef.current;\n    if (!content) return;\n\n    const scrollPercentage =\n      content.scrollTop / (content.scrollHeight - content.clientHeight);\n    if (scrollPercentage >= 0.99 && !hasReadToBottom) {\n      setHasReadToBottom(true);\n    }\n  };\n\n  return (\n    <Dialog>\n      <DialogTrigger asChild>\n        <Button variant=\"outline\">Terms & Conditions</Button>\n      </DialogTrigger>\n      <DialogContent className=\"flex flex-col gap-0 p-0 sm:max-h-[min(640px,80vh)] sm:max-w-lg [&>button:last-child]:top-3.5\">\n        <DialogHeader className=\"contents space-y-0 text-left\">\n          <DialogTitle className=\"border-b px-6 py-4 text-base\">\n            Terms & Conditions\n          </DialogTitle>\n          <div\n            className=\"overflow-y-auto\"\n            onScroll={handleScroll}\n            ref={contentRef}\n          >\n            <DialogDescription asChild>\n              <div className=\"px-6 py-4\">\n                <div className=\"space-y-4 [&_strong]:font-semibold [&_strong]:text-foreground\">\n                  <div className=\"space-y-4\">\n                    <div className=\"space-y-1\">\n                      <p>\n                        <strong>Acceptance of Terms</strong>\n                      </p>\n                      <p>\n                        By accessing and using this website, users agree to\n                        comply with and be bound by these Terms of Service.\n                        Users who do not agree with these terms should\n                        discontinue use of the website immediately.\n                      </p>\n                    </div>\n\n                    <div className=\"space-y-1\">\n                      <p>\n                        <strong>User Account Responsibilities</strong>\n                      </p>\n                      <p>\n                        Users are responsible for maintaining the\n                        confidentiality of their account credentials. Any\n                        activities occurring under a user&lsquo;s account are\n                        the sole responsibility of the account holder. Users\n                        must notify the website administrators immediately of\n                        any unauthorized account access.\n                      </p>\n                    </div>\n\n                    <div className=\"space-y-1\">\n                      <p>\n                        <strong>Content Usage and Restrictions</strong>\n                      </p>\n                      <p>\n                        The website and its original content are protected by\n                        intellectual property laws. Users may not reproduce,\n                        distribute, modify, create derivative works, or\n                        commercially exploit any content without explicit\n                        written permission from the website owners.\n                      </p>\n                    </div>\n\n                    <div className=\"space-y-1\">\n                      <p>\n                        <strong>Limitation of Liability</strong>\n                      </p>\n                      <p>\n                        The website provides content &ldquo;as is&ldquo; without\n                        any warranties. The website owners shall not be liable\n                        for direct, indirect, incidental, consequential, or\n                        punitive damages arising from user interactions with the\n                        platform.\n                      </p>\n                    </div>\n\n                    <div className=\"space-y-1\">\n                      <p>\n                        <strong>User Conduct Guidelines</strong>\n                      </p>\n                      <ul className=\"list-disc pl-6\">\n                        <li>Not upload harmful or malicious content</li>\n                        <li>Respect the rights of other users</li>\n                        <li>\n                          Avoid activities that could disrupt website\n                          functionality\n                        </li>\n                        <li>\n                          Comply with applicable local and international laws\n                        </li>\n                      </ul>\n                    </div>\n\n                    <div className=\"space-y-1\">\n                      <p>\n                        <strong>Modifications to Terms</strong>\n                      </p>\n                      <p>\n                        The website reserves the right to modify these terms at\n                        any time. Continued use of the website after changes\n                        constitutes acceptance of the new terms.\n                      </p>\n                    </div>\n\n                    <div className=\"space-y-1\">\n                      <p>\n                        <strong>Termination Clause</strong>\n                      </p>\n                      <p>\n                        The website may terminate or suspend user access without\n                        prior notice for violations of these terms or for any\n                        other reason deemed appropriate by the administration.\n                      </p>\n                    </div>\n\n                    <div className=\"space-y-1\">\n                      <p>\n                        <strong>Governing Law</strong>\n                      </p>\n                      <p>\n                        These terms are governed by the laws of the jurisdiction\n                        where the website is primarily operated, without regard\n                        to conflict of law principles.\n                      </p>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </DialogDescription>\n          </div>\n        </DialogHeader>\n        <DialogFooter className=\"border-t px-6 py-4 sm:items-center\">\n          {!hasReadToBottom && (\n            <span className=\"grow text-muted-foreground text-xs max-sm:text-center\">\n              Read all terms before accepting.\n            </span>\n          )}\n          <DialogClose asChild>\n            <Button type=\"button\" variant=\"outline\">\n              Cancel\n            </Button>\n          </DialogClose>\n          <DialogClose asChild>\n            <Button disabled={!hasReadToBottom} type=\"button\">\n              I agree\n            </Button>\n          </DialogClose>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}\n",
+      "sha256": "2568ec78be7d1829659529d2b79bf17f2ff0b0e905f0114fe71b01a4e280ec63",
+      "upstreamPath": "apps/origin/registry/default/components/comp-319.tsx",
+      "upstreamSha256": "dfc3aeb98d7a13d7b67515e5c7776c7e0238f629f7f54b88ff73928acd5beedf",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/button.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { Slot } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nconst buttonVariants = cva(\n  \"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium text-sm outline-none transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n  {\n    defaultVariants: {\n      size: \"default\",\n      variant: \"default\",\n    },\n    variants: {\n      size: {\n        default: \"h-9 px-4 py-2\",\n        icon: \"size-9\",\n        lg: \"h-10 rounded-md px-8\",\n        sm: \"h-8 rounded-md px-3 text-xs\",\n      },\n      variant: {\n        default:\n          \"bg-primary text-primary-foreground shadow-sm hover:bg-primary/90\",\n        destructive:\n          \"bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40\",\n        ghost: \"hover:bg-accent hover:text-accent-foreground\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n        outline:\n          \"border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground\",\n        secondary:\n          \"bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80\",\n      },\n    },\n  },\n);\n\nfunction Button({\n  className,\n  variant,\n  size,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean;\n  }) {\n  const Comp = asChild ? Slot.Root : \"button\";\n\n  return (\n    <Comp\n      className={cn(buttonVariants({ className, size, variant }))}\n      data-slot=\"button\"\n      {...props}\n    />\n  );\n}\n\nexport { Button, buttonVariants };\n",
+      "sha256": "f15a7a2b32b90ad280810e03b3f18805686836d956825068fa614978975837aa",
+      "upstreamPath": "apps/origin/registry/default/ui/button.tsx",
+      "upstreamSha256": "00c5b5d0afad82b368cfa34ae4abdaf1e0851dfa49adeb836d9a69747ef4bc49",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/dialog.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { XIcon } from \"lucide-react\";\nimport { Dialog as DialogPrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Dialog({\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Root>) {\n  return <DialogPrimitive.Root data-slot=\"dialog\" {...props} />;\n}\n\nfunction DialogTrigger({\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Trigger>) {\n  return <DialogPrimitive.Trigger data-slot=\"dialog-trigger\" {...props} />;\n}\n\nfunction DialogPortal({\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Portal>) {\n  return <DialogPrimitive.Portal data-slot=\"dialog-portal\" {...props} />;\n}\n\nfunction DialogClose({\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Close>) {\n  return <DialogPrimitive.Close data-slot=\"dialog-close\" {...props} />;\n}\n\nfunction DialogOverlay({\n  className,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Overlay>) {\n  return (\n    <DialogPrimitive.Overlay\n      className={cn(\n        \"data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/80 data-[state=closed]:animate-out data-[state=open]:animate-in\",\n        className,\n      )}\n      data-slot=\"dialog-overlay\"\n      {...props}\n    />\n  );\n}\n\nfunction DialogContent({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Content>) {\n  return (\n    <DialogPortal>\n      <DialogOverlay />\n      <DialogPrimitive.Content\n        className={cn(\n          \"data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 fixed top-1/2 left-1/2 z-50 grid max-h-[calc(100%-2rem)] w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-4 overflow-y-auto rounded-xl border bg-background p-6 shadow-lg duration-200 data-[state=closed]:animate-out data-[state=open]:animate-in sm:max-w-100\",\n          className,\n        )}\n        data-slot=\"dialog-content\"\n        {...props}\n      >\n        {children}\n        <DialogPrimitive.Close className=\"group absolute top-3 right-3 flex size-7 items-center justify-center rounded outline-none transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none\">\n          <XIcon\n            className=\"opacity-60 transition-opacity group-hover:opacity-100\"\n            size={16}\n          />\n          <span className=\"sr-only\">Close</span>\n        </DialogPrimitive.Close>\n      </DialogPrimitive.Content>\n    </DialogPortal>\n  );\n}\n\nfunction DialogHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      className={cn(\"flex flex-col gap-1 text-center sm:text-left\", className)}\n      data-slot=\"alert-dialog-header\"\n      {...props}\n    />\n  );\n}\n\nfunction DialogFooter({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      className={cn(\n        \"flex flex-col-reverse gap-3 sm:flex-row sm:justify-end\",\n        className,\n      )}\n      data-slot=\"alert-dialog-footer\"\n      {...props}\n    />\n  );\n}\n\nfunction DialogTitle({\n  className,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Title>) {\n  return (\n    <DialogPrimitive.Title\n      className={cn(\"font-semibold text-lg leading-none\", className)}\n      data-slot=\"alert-dialog-title\"\n      {...props}\n    />\n  );\n}\n\nfunction DialogDescription({\n  className,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Description>) {\n  return (\n    <DialogPrimitive.Description\n      className={cn(\"text-muted-foreground text-sm\", className)}\n      data-slot=\"alert-dialog-description\"\n      {...props}\n    />\n  );\n}\n\nexport {\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogOverlay,\n  DialogPortal,\n  DialogTitle,\n  DialogTrigger,\n};\n",
+      "sha256": "4637b48877701d420a0f4a33659269a7e60c6a1a99a34645ddda8967874bddc9",
+      "upstreamPath": "apps/origin/registry/default/ui/dialog.tsx",
+      "upstreamSha256": "8c3abe62162f1bc3cccff0320ad529fb54e5ac4b693593e2aa1f31b2f66ccc01",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-319/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-319\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "571fa091811f31e031c63cc6428273552470bb173efc16204d0ffac595d0b2c6",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add class-variance-authority@0.7.1 clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add class-variance-authority@0.7.1 clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-319",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-319.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-319.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI dialog modal radix comp-319\n\n1 published Origin UI dialog modal radix comp-319 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-319.tsx\n"
+}

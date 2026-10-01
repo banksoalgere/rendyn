@@ -1,0 +1,128 @@
+{
+  "id": "originui:comp-192",
+  "sourceId": "originui",
+  "slug": "originui-comp-192",
+  "name": "Origin UI label select native select comp-192",
+  "description": "1 published Origin UI label select native select comp-192 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "clsx@2.1.1",
+    "lucide-react@1.35.0",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "select",
+    "tags": [
+      "file",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 192",
+      "origin ui label select native select comp-192",
+      "select",
+      "dropdown",
+      "picker"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI label select native select comp-192 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "select:file:upload",
+    "searchText": "Origin UI label select native select comp-192\ncomp 192\n1 published Origin UI label select native select comp-192 examples with complete pinned source and MIT attribution.\norigin ui label select native select comp-192\nselect\ndropdown\npicker\nfile\nupload\nOrigin UI label select native select comp 192 1 published Origin UI label select native select comp 192 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 192.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-192",
+  "manifestPath": "components/originui-comp-192/component.json",
+  "integrity": "sha256:376fe947c62f24349566a173245cd604abd22501bbd35451f0f1feab8a2c1760",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-192.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useId } from \"react\";\nimport { Label } from \"@/components/rendyn-libraries/originui/ui/label\";\nimport { SelectNative } from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/select-native\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <Label htmlFor={id}>Select with helper text (native)</Label>\n      <SelectNative id={id}>\n        <option value=\"1\">React</option>\n        <option value=\"2\">Next.js</option>\n        <option value=\"3\">Astro</option>\n        <option value=\"4\">Gatsby</option>\n      </SelectNative>\n      <p\n        aria-live=\"polite\"\n        className=\"mt-2 text-muted-foreground text-xs\"\n        role=\"region\"\n      >\n        Tell us what&lsquo;s your favorite Select framework\n      </p>\n    </div>\n  );\n}\n",
+      "sha256": "e229b475b6550b141e724451612093d9a99163200e93a1bf5e718cb32cdcd575",
+      "upstreamPath": "apps/origin/registry/default/components/comp-192.tsx",
+      "upstreamSha256": "e3eb0426992ad91d8cc1c793172c2a8b475bed526b577b2dc3bd348980461d25",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/ui/label.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Label as LabelPrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Label({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      className={cn(\n        \"select-none font-medium text-foreground text-sm leading-4 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50\",\n        className,\n      )}\n      data-slot=\"label\"\n      {...props}\n    />\n  );\n}\n\nexport { Label };\n",
+      "sha256": "41c807094258a1323781107184a31dfb2e1ec87fb686e9e98de204b9cd3c841f",
+      "upstreamPath": "apps/origin/registry/default/ui/label.tsx",
+      "upstreamSha256": "5bc1af43d7f8acd46ba7bdd2ddadd3ac42ba5d86300fce320f687d84f6595ed3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/select-native.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ChevronDownIcon } from \"lucide-react\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nconst SelectNative = ({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<\"select\">) => {\n  return (\n    <div className=\"relative flex\">\n      <select\n        className={cn(\n          \"peer inline-flex w-full cursor-pointer appearance-none items-center rounded-md border border-input text-foreground text-sm shadow-xs outline-none transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 has-[option[disabled]:checked]:text-muted-foreground aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40\",\n          props.multiple\n            ? \"py-1 *:px-3 *:py-1 [&_option:checked]:bg-accent\"\n            : \"h-9 ps-3 pe-8\",\n          className,\n        )}\n        data-slot=\"select-native\"\n        {...props}\n      >\n        {children}\n      </select>\n      {!props.multiple && (\n        <span className=\"pointer-events-none absolute inset-y-0 end-0 flex h-full w-9 items-center justify-center text-muted-foreground/80 peer-disabled:opacity-50 peer-aria-invalid:text-destructive/80\">\n          <ChevronDownIcon aria-hidden=\"true\" size={16} />\n        </span>\n      )}\n    </div>\n  );\n};\n\nexport { SelectNative };\n",
+      "sha256": "cc1f43b3805fd6f5fb0513c86afea8a0645003a20a632d705300a918f0275ff9",
+      "upstreamPath": "apps/origin/registry/default/ui/select-native.tsx",
+      "upstreamSha256": "78fec97f1b263c3072158ec2c3551b0a2abdf0ee0839e730c43998b9f26bedc2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-192/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-192\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1aa905c287f32d68406bfe88e9e650c0221739b542c27105e0070ae9da05c631",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-192",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-192.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-192.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI label select native select comp-192\n\n1 published Origin UI label select native select comp-192 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-192.tsx\n"
+}

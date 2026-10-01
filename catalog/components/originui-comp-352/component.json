@@ -1,0 +1,127 @@
+{
+  "id": "originui:comp-352",
+  "sourceId": "originui",
+  "slug": "originui-comp-352",
+  "name": "Origin UI accordion collapsible radix comp-352",
+  "description": "1 published Origin UI accordion collapsible radix comp-352 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "clsx@2.1.1",
+    "lucide-react@1.35.0",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "accordion",
+    "tags": [
+      "accordion",
+      "file",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 352",
+      "origin ui accordion collapsible radix comp-352",
+      "accordion"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI accordion collapsible radix comp-352 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "accordion:file:select:upload",
+    "searchText": "Origin UI accordion collapsible radix comp-352\ncomp 352\n1 published Origin UI accordion collapsible radix comp-352 examples with complete pinned source and MIT attribution.\norigin ui accordion collapsible radix comp-352\naccordion\nfile\nselect\nupload\nOrigin UI accordion collapsible radix comp 352 1 published Origin UI accordion collapsible radix comp 352 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 352.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-352",
+  "manifestPath": "components/originui-comp-352/component.json",
+  "integrity": "sha256:af96af6b34831b889c53ef52530d0fcbb1dbe8ddd9d61f78c9d2a219486a5954",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-352.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ChevronDownIcon } from \"lucide-react\";\nimport {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/accordion\";\nimport {\n  Collapsible,\n  CollapsibleContent,\n  CollapsibleTrigger,\n} from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/collapsible\";\n\nconst items = [\n  {\n    collapsibles: [\n      {\n        content:\n          \"We optimize every component for maximum performance and minimal bundle size.\",\n        title: \"What about performance?\",\n      },\n      {\n        content:\n          \"Our documentation is comprehensive and includes live examples for every component.\",\n        title: \"How is the documentation?\",\n      },\n    ],\n    id: \"1\",\n    title: \"What makes coss ui different?\",\n  },\n  {\n    collapsibles: [\n      {\n        content:\n          \"Yes, our theming system is fully customizable and supports both light and dark modes.\",\n        title: \"Can I use custom themes?\",\n      },\n      {\n        content:\n          \"We have first-class support for Tailwind CSS with custom utility classes.\",\n        title: \"What about Tailwind support?\",\n      },\n    ],\n    id: \"2\",\n    title: \"How can I customize the components?\",\n  },\n  {\n    collapsibles: [\n      {\n        content:\n          \"Our components are tree-shakeable and typically add minimal overhead to your bundle.\",\n        open: true,\n        title: \"What's the bundle size impact?\",\n      },\n      {\n        content:\n          \"We support automatic code splitting for optimal loading performance.\",\n        title: \"How is code splitting handled?\",\n      },\n    ],\n    id: \"3\",\n    title: \"Is coss ui optimized for performance?\",\n  },\n  {\n    collapsibles: [\n      {\n        content:\n          \"We test with NVDA, VoiceOver, and JAWS to ensure broad compatibility.\",\n        title: \"Which screen readers are supported?\",\n      },\n      {\n        content:\n          \"Full keyboard navigation support is implemented following WAI-ARIA best practices.\",\n        title: \"What about keyboard navigation?\",\n      },\n    ],\n    id: \"4\",\n    title: \"How accessible are the components?\",\n  },\n];\n\nexport default function Component() {\n  return (\n    <div className=\"space-y-4\">\n      <h2 className=\"font-bold text-xl\">Multi-level</h2>\n      <Accordion\n        className=\"w-full -space-y-px\"\n        collapsible\n        defaultValue=\"3\"\n        type=\"single\"\n      >\n        {items.map((item) => (\n          <AccordionItem\n            className=\"relative border bg-background outline-none first:rounded-t-md last:rounded-b-md last:border-b has-focus-visible:z-10 has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50\"\n            key={item.id}\n            value={item.id}\n          >\n            <AccordionTrigger className=\"rounded-md px-4 py-3 text-[15px] leading-6 outline-none hover:no-underline focus-visible:ring-0\">\n              {item.title}\n            </AccordionTrigger>\n            <AccordionContent className=\"p-0\">\n              {item.collapsibles.map((collapsible, _index) => (\n                <CollapsibleDemo\n                  content={collapsible.content}\n                  key={collapsible.title}\n                  open={collapsible.open}\n                  title={collapsible.title}\n                />\n              ))}\n            </AccordionContent>\n          </AccordionItem>\n        ))}\n      </Accordion>\n    </div>\n  );\n}\n\nfunction CollapsibleDemo({\n  title,\n  content,\n  open,\n}: {\n  title: string;\n  content: string;\n  open?: boolean;\n}) {\n  return (\n    <Collapsible className=\"border-t bg-accent px-4 py-3\" defaultOpen={open}>\n      <CollapsibleTrigger className=\"flex gap-2 font-semibold text-[15px] leading-6 [&[data-state=open]>svg]:rotate-180\">\n        <ChevronDownIcon\n          aria-hidden=\"true\"\n          className=\"mt-1 shrink-0 opacity-60 transition-transform duration-200\"\n          size={16}\n        />\n        {title}\n      </CollapsibleTrigger>\n      <CollapsibleContent className=\"mt-1 overflow-hidden ps-6 text-muted-foreground text-sm transition-all data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down\">\n        {content}\n      </CollapsibleContent>\n    </Collapsible>\n  );\n}\n",
+      "sha256": "61b12cb64770baad1151bfacd62db95bff84380fc8d05edfb57a079f11c0a2c3",
+      "upstreamPath": "apps/origin/registry/default/components/comp-352.tsx",
+      "upstreamSha256": "bc3c68ac32b506eb885f89402684703ad22899f95c95d87ca9888b781bfc0b7f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/accordion.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ChevronDownIcon } from \"lucide-react\";\nimport { Accordion as AccordionPrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Accordion({\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Root>) {\n  return <AccordionPrimitive.Root data-slot=\"accordion\" {...props} />;\n}\n\nfunction AccordionItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Item>) {\n  return (\n    <AccordionPrimitive.Item\n      className={cn(\"border-b last:border-b-0\", className)}\n      data-slot=\"accordion-item\"\n      {...props}\n    />\n  );\n}\n\nfunction AccordionTrigger({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {\n  return (\n    <AccordionPrimitive.Header className=\"flex\">\n      <AccordionPrimitive.Trigger\n        className={cn(\n          \"flex flex-1 items-center justify-between gap-4 rounded-md py-4 text-left font-semibold text-sm outline-none transition-all hover:underline focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180\",\n          className,\n        )}\n        data-slot=\"accordion-trigger\"\n        {...props}\n      >\n        {children}\n        <ChevronDownIcon\n          aria-hidden=\"true\"\n          className=\"pointer-events-none shrink-0 opacity-60 transition-transform duration-200\"\n          size={16}\n        />\n      </AccordionPrimitive.Trigger>\n    </AccordionPrimitive.Header>\n  );\n}\n\nfunction AccordionContent({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Content>) {\n  return (\n    <AccordionPrimitive.Content\n      className=\"overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down\"\n      data-slot=\"accordion-content\"\n      {...props}\n    >\n      <div className={cn(\"pt-0 pb-4\", className)}>{children}</div>\n    </AccordionPrimitive.Content>\n  );\n}\n\nexport { Accordion, AccordionContent, AccordionItem, AccordionTrigger };\n",
+      "sha256": "b4c3f658028abfa31f33a4fba613b567f1a070b54ec3932b6046c6ecc01ee04d",
+      "upstreamPath": "apps/origin/registry/default/ui/accordion.tsx",
+      "upstreamSha256": "80f3ed10bf414b0bd8f34e2b78806afb9cfa4586cc96768de9b97df0e88110a5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/collapsible.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Collapsible as CollapsiblePrimitive } from \"radix-ui\";\n\nfunction Collapsible({\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.Root>) {\n  return <CollapsiblePrimitive.Root data-slot=\"collapsible\" {...props} />;\n}\n\nfunction CollapsibleTrigger({\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleTrigger>) {\n  return (\n    <CollapsiblePrimitive.CollapsibleTrigger\n      data-slot=\"collapsible-trigger\"\n      {...props}\n    />\n  );\n}\n\nfunction CollapsibleContent({\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleContent>) {\n  return (\n    <CollapsiblePrimitive.CollapsibleContent\n      data-slot=\"collapsible-content\"\n      {...props}\n    />\n  );\n}\n\nexport { Collapsible, CollapsibleContent, CollapsibleTrigger };\n",
+      "sha256": "542cf9a9c03d5d97adf4ab46e59efc6f306ded03c698b72347edc151a5d214d8",
+      "upstreamPath": "apps/origin/registry/default/ui/collapsible.tsx",
+      "upstreamSha256": "542cf9a9c03d5d97adf4ab46e59efc6f306ded03c698b72347edc151a5d214d8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-352/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-352\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "5c3efb3d3edcda9e441dc99ebe8ff4e3eaf5f198ef34dfbd2312aaf53ab27c6a",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-352",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-352.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-352.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI accordion collapsible radix comp-352\n\n1 published Origin UI accordion collapsible radix comp-352 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-352.tsx\n"
+}

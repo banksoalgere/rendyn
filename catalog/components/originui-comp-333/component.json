@@ -1,0 +1,132 @@
+{
+  "id": "originui:comp-333",
+  "sourceId": "originui",
+  "slug": "originui-comp-333",
+  "name": "Origin UI dialog modal command comp-333",
+  "description": "1 published Origin UI dialog modal command comp-333 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "clsx@2.1.1",
+    "cmdk@1.1.1",
+    "lucide-react@1.35.0",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "modal",
+    "tags": [
+      "command",
+      "dialog",
+      "file",
+      "modal",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 333",
+      "origin ui dialog modal command comp-333",
+      "modal",
+      "dialog",
+      "overlay"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI dialog modal command comp-333 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "modal:command:dialog:file:select",
+    "searchText": "Origin UI dialog modal command comp-333\ncomp 333\n1 published Origin UI dialog modal command comp-333 examples with complete pinned source and MIT attribution.\norigin ui dialog modal command comp-333\nmodal\ndialog\noverlay\ncommand\nfile\nselect\nupload\nOrigin UI dialog modal command comp 333 1 published Origin UI dialog modal command comp 333 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 333.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-333",
+  "manifestPath": "components/originui-comp-333/component.json",
+  "integrity": "sha256:bb9c46e57a58681ec2ca9b93c599713d759399a135205e5ffec58e5e4f0eddec",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-333.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  ArrowUpRightIcon,\n  CircleFadingPlusIcon,\n  FileInputIcon,\n  FolderPlusIcon,\n  SearchIcon,\n} from \"lucide-react\";\nimport * as React from \"react\";\nimport {\n  CommandDialog,\n  CommandEmpty,\n  CommandGroup,\n  CommandInput,\n  CommandItem,\n  CommandList,\n  CommandSeparator,\n  CommandShortcut,\n} from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/command\";\n\nexport default function Component() {\n  const [open, setOpen] = React.useState(false);\n\n  React.useEffect(() => {\n    const down = (e: KeyboardEvent) => {\n      if (e.key === \"k\" && (e.metaKey || e.ctrlKey)) {\n        e.preventDefault();\n        setOpen((open) => !open);\n      }\n    };\n\n    document.addEventListener(\"keydown\", down);\n    return () => document.removeEventListener(\"keydown\", down);\n  }, []);\n\n  return (\n    <>\n      <button\n        className=\"inline-flex h-9 w-fit rounded-md border border-input bg-background px-3 py-2 text-foreground text-sm shadow-xs outline-none transition-[color,box-shadow] placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\"\n        onClick={() => setOpen(true)}\n        type=\"button\"\n      >\n        <span className=\"flex grow items-center\">\n          <SearchIcon\n            aria-hidden=\"true\"\n            className=\"-ms-1 me-3 text-muted-foreground/80\"\n            size={16}\n          />\n          <span className=\"font-normal text-muted-foreground/70\">Search</span>\n        </span>\n        <kbd className=\"ms-12 -me-1 inline-flex h-5 max-h-full items-center rounded border bg-background px-1 font-[inherit] font-medium text-[0.625rem] text-muted-foreground/70\">\n          ⌘K\n        </kbd>\n      </button>\n      <CommandDialog onOpenChange={setOpen} open={open}>\n        <CommandInput placeholder=\"Type a command or search...\" />\n        <CommandList>\n          <CommandEmpty>No results found.</CommandEmpty>\n          <CommandGroup heading=\"Quick start\">\n            <CommandItem>\n              <FolderPlusIcon\n                aria-hidden=\"true\"\n                className=\"opacity-60\"\n                size={16}\n              />\n              <span>New folder</span>\n              <CommandShortcut className=\"justify-center\">⌘N</CommandShortcut>\n            </CommandItem>\n            <CommandItem>\n              <FileInputIcon\n                aria-hidden=\"true\"\n                className=\"opacity-60\"\n                size={16}\n              />\n              <span>Import document</span>\n              <CommandShortcut className=\"justify-center\">⌘I</CommandShortcut>\n            </CommandItem>\n            <CommandItem>\n              <CircleFadingPlusIcon\n                aria-hidden=\"true\"\n                className=\"opacity-60\"\n                size={16}\n              />\n              <span>Add block</span>\n              <CommandShortcut className=\"justify-center\">⌘B</CommandShortcut>\n            </CommandItem>\n          </CommandGroup>\n          <CommandSeparator />\n          <CommandGroup heading=\"Navigation\">\n            <CommandItem>\n              <ArrowUpRightIcon\n                aria-hidden=\"true\"\n                className=\"opacity-60\"\n                size={16}\n              />\n              <span>Go to dashboard</span>\n            </CommandItem>\n            <CommandItem>\n              <ArrowUpRightIcon\n                aria-hidden=\"true\"\n                className=\"opacity-60\"\n                size={16}\n              />\n              <span>Go to apps</span>\n            </CommandItem>\n            <CommandItem>\n              <ArrowUpRightIcon\n                aria-hidden=\"true\"\n                className=\"opacity-60\"\n                size={16}\n              />\n              <span>Go to connections</span>\n            </CommandItem>\n          </CommandGroup>\n        </CommandList>\n      </CommandDialog>\n    </>\n  );\n}\n",
+      "sha256": "e5f8e9326dbc6cdba242f757519fbd67ec9c916eb4f0c5c3772957c9e1b1fde0",
+      "upstreamPath": "apps/origin/registry/default/components/comp-333.tsx",
+      "upstreamSha256": "d45c122d02235db0f04d5c6a98572169f646d7a8a9e3aaa48ec2746bb1ce4ff9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/command.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Command as CommandPrimitive } from \"cmdk\";\nimport { SearchIcon } from \"lucide-react\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogHeader,\n  DialogTitle,\n} from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/dialog\";\n\nfunction Command({\n  className,\n  ...props\n}: React.ComponentProps<typeof CommandPrimitive>) {\n  return (\n    <CommandPrimitive\n      className={cn(\n        \"flex size-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground\",\n        className,\n      )}\n      data-slot=\"command\"\n      {...props}\n    />\n  );\n}\n\nfunction CommandDialog({\n  title = \"Command Palette\",\n  description = \"Search for a command to run...\",\n  children,\n  ...props\n}: React.ComponentProps<typeof Dialog> & {\n  title?: string;\n  description?: string;\n}) {\n  return (\n    <Dialog {...props}>\n      <DialogHeader className=\"sr-only\">\n        <DialogTitle>{title}</DialogTitle>\n        <DialogDescription>{description}</DialogDescription>\n      </DialogHeader>\n      <DialogContent className=\"overflow-hidden p-0 sm:max-w-lg [&>button:last-child]:hidden\">\n        <Command className=\"max-h-[100svh] **:data-[slot=command-input-wrapper]:h-12 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]]:px-2 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-3 [&_[cmdk-item]]:py-2\">\n          {children}\n        </Command>\n      </DialogContent>\n    </Dialog>\n  );\n}\n\nfunction CommandInput({\n  className,\n  ...props\n}: React.ComponentProps<typeof CommandPrimitive.Input>) {\n  return (\n    <div\n      className=\"flex items-center border-input border-b px-5\"\n      cmdk-input-wrapper=\"\"\n    >\n      <SearchIcon className=\"me-3 text-muted-foreground/80\" size={20} />\n      <CommandPrimitive.Input\n        className={cn(\n          \"flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden placeholder:text-muted-foreground/70 disabled:cursor-not-allowed disabled:opacity-50\",\n          className,\n        )}\n        data-slot=\"command-input-wrapper\"\n        {...props}\n      />\n    </div>\n  );\n}\n\nfunction CommandList({\n  className,\n  ...props\n}: React.ComponentProps<typeof CommandPrimitive.List>) {\n  return (\n    <CommandPrimitive.List\n      className={cn(\n        \"max-h-80 flex-1 overflow-y-auto overflow-x-hidden\",\n        className,\n      )}\n      data-slot=\"command-list\"\n      {...props}\n    />\n  );\n}\n\nfunction CommandEmpty({\n  ...props\n}: React.ComponentProps<typeof CommandPrimitive.Empty>) {\n  return (\n    <CommandPrimitive.Empty\n      className=\"py-6 text-center text-sm\"\n      data-slot=\"command-empty\"\n      {...props}\n    />\n  );\n}\n\nfunction CommandGroup({\n  className,\n  ...props\n}: React.ComponentProps<typeof CommandPrimitive.Group>) {\n  return (\n    <CommandPrimitive.Group\n      className={cn(\n        \"overflow-hidden p-2 text-foreground [&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group-heading]]:text-xs\",\n        className,\n      )}\n      data-slot=\"command-group\"\n      {...props}\n    />\n  );\n}\n\nfunction CommandSeparator({\n  className,\n  ...props\n}: React.ComponentProps<typeof CommandPrimitive.Separator>) {\n  return (\n    <CommandPrimitive.Separator\n      className={cn(\"-mx-1 h-px bg-border\", className)}\n      data-slot=\"command-separator\"\n      {...props}\n    />\n  );\n}\n\nfunction CommandItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof CommandPrimitive.Item>) {\n  return (\n    <CommandPrimitive.Item\n      className={cn(\n        \"relative flex cursor-default select-none items-center gap-3 rounded-md px-2 py-1.5 text-sm outline-hidden data-[disabled=true]:pointer-events-none data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n        className,\n      )}\n      data-slot=\"command-item\"\n      {...props}\n    />\n  );\n}\n\nfunction CommandShortcut({\n  className,\n  ...props\n}: React.ComponentProps<\"span\">) {\n  return (\n    <kbd\n      className={cn(\n        \"ms-auto -me-1 inline-flex h-5 max-h-full items-center rounded border bg-background px-1 font-[inherit] font-medium text-[0.625rem] text-muted-foreground/70\",\n        className,\n      )}\n      data-slot=\"command-shortcut\"\n      {...props}\n    />\n  );\n}\n\nexport {\n  Command,\n  CommandDialog,\n  CommandEmpty,\n  CommandGroup,\n  CommandInput,\n  CommandItem,\n  CommandList,\n  CommandSeparator,\n  CommandShortcut,\n};\n",
+      "sha256": "9e6e180432bf815c7a4da60343a3f1d9f8610ec111e16fe15df62c3f0a1fd013",
+      "upstreamPath": "apps/origin/registry/default/ui/command.tsx",
+      "upstreamSha256": "9f6a36c0000db19613912d4dcee11a8052331c5cd2fac23e2b1a4d39b52de6d7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/dialog.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { XIcon } from \"lucide-react\";\nimport { Dialog as DialogPrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Dialog({\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Root>) {\n  return <DialogPrimitive.Root data-slot=\"dialog\" {...props} />;\n}\n\nfunction DialogTrigger({\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Trigger>) {\n  return <DialogPrimitive.Trigger data-slot=\"dialog-trigger\" {...props} />;\n}\n\nfunction DialogPortal({\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Portal>) {\n  return <DialogPrimitive.Portal data-slot=\"dialog-portal\" {...props} />;\n}\n\nfunction DialogClose({\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Close>) {\n  return <DialogPrimitive.Close data-slot=\"dialog-close\" {...props} />;\n}\n\nfunction DialogOverlay({\n  className,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Overlay>) {\n  return (\n    <DialogPrimitive.Overlay\n      className={cn(\n        \"data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/80 data-[state=closed]:animate-out data-[state=open]:animate-in\",\n        className,\n      )}\n      data-slot=\"dialog-overlay\"\n      {...props}\n    />\n  );\n}\n\nfunction DialogContent({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Content>) {\n  return (\n    <DialogPortal>\n      <DialogOverlay />\n      <DialogPrimitive.Content\n        className={cn(\n          \"data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 fixed top-1/2 left-1/2 z-50 grid max-h-[calc(100%-2rem)] w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-4 overflow-y-auto rounded-xl border bg-background p-6 shadow-lg duration-200 data-[state=closed]:animate-out data-[state=open]:animate-in sm:max-w-100\",\n          className,\n        )}\n        data-slot=\"dialog-content\"\n        {...props}\n      >\n        {children}\n        <DialogPrimitive.Close className=\"group absolute top-3 right-3 flex size-7 items-center justify-center rounded outline-none transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none\">\n          <XIcon\n            className=\"opacity-60 transition-opacity group-hover:opacity-100\"\n            size={16}\n          />\n          <span className=\"sr-only\">Close</span>\n        </DialogPrimitive.Close>\n      </DialogPrimitive.Content>\n    </DialogPortal>\n  );\n}\n\nfunction DialogHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      className={cn(\"flex flex-col gap-1 text-center sm:text-left\", className)}\n      data-slot=\"alert-dialog-header\"\n      {...props}\n    />\n  );\n}\n\nfunction DialogFooter({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      className={cn(\n        \"flex flex-col-reverse gap-3 sm:flex-row sm:justify-end\",\n        className,\n      )}\n      data-slot=\"alert-dialog-footer\"\n      {...props}\n    />\n  );\n}\n\nfunction DialogTitle({\n  className,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Title>) {\n  return (\n    <DialogPrimitive.Title\n      className={cn(\"font-semibold text-lg leading-none\", className)}\n      data-slot=\"alert-dialog-title\"\n      {...props}\n    />\n  );\n}\n\nfunction DialogDescription({\n  className,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Description>) {\n  return (\n    <DialogPrimitive.Description\n      className={cn(\"text-muted-foreground text-sm\", className)}\n      data-slot=\"alert-dialog-description\"\n      {...props}\n    />\n  );\n}\n\nexport {\n  Dialog,\n  DialogClose,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogOverlay,\n  DialogPortal,\n  DialogTitle,\n  DialogTrigger,\n};\n",
+      "sha256": "4637b48877701d420a0f4a33659269a7e60c6a1a99a34645ddda8967874bddc9",
+      "upstreamPath": "apps/origin/registry/default/ui/dialog.tsx",
+      "upstreamSha256": "8c3abe62162f1bc3cccff0320ad529fb54e5ac4b693593e2aa1f31b2f66ccc01",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-333/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-333\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "76c7eee331d7d9c4b3ca392cf7a3dac2951d25b75a235647df2d617b89299b3b",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add clsx@2.1.1 cmdk@1.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add clsx@2.1.1 cmdk@1.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-333",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-333.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-333.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI dialog modal command comp-333\n\n1 published Origin UI dialog modal command comp-333 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-333.tsx\n"
+}
