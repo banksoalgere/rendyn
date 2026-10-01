@@ -1,0 +1,99 @@
+{
+  "id": "mui:material-guides-localization",
+  "sourceId": "mui",
+  "slug": "mui-material-guides-localization",
+  "name": "Material UI material guides localization",
+  "description": "1 published Material UI material guides localization examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/material@9.4.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "material-guides-localization",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file"
+    ],
+    "aliases": [
+      "material guides localization",
+      "material ui material guides localization",
+      "material-guides-localization"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Material UI material guides localization examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "material-guides-localization:code:command:data:file",
+    "searchText": "Material UI material guides localization\nmaterial guides localization\n1 published Material UI material guides localization examples with complete pinned source and MIT attribution.\nmaterial ui material guides localization\nmaterial-guides-localization\ncode\ncommand\ndata\nfile\nMaterial UI material guides localization 1 published Material UI material guides localization examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/guides/localization Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/guides/localization/Locales.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-material-guides-localization",
+  "manifestPath": "components/mui-material-guides-localization/component.json",
+  "integrity": "sha256:6c4b9fa78d9b0c3cd608366d67ba2ea3d86a00bf1f8406ca748f0e1325c84179",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/guides/localization/Locales.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport TablePagination from '@mui/material/TablePagination';\nimport Autocomplete from '@mui/material/Autocomplete';\nimport Box from '@mui/material/Box';\nimport TextField from '@mui/material/TextField';\nimport { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';\nimport * as locales from '@mui/material/locale';\n\ntype SupportedLocales = keyof typeof locales;\n\nexport default function Locales() {\n  const [locale, setLocale] = React.useState<SupportedLocales>('zhCN');\n\n  const theme = useTheme();\n\n  const themeWithLocale = React.useMemo(\n    () => createTheme(theme, locales[locale]),\n    [locale, theme],\n  );\n\n  return (\n    <Box sx={{ width: '100%' }}>\n      <ThemeProvider theme={themeWithLocale}>\n        <Autocomplete\n          options={Object.keys(locales)}\n          getOptionLabel={(key) => `${key.substring(0, 2)}-${key.substring(2, 4)}`}\n          style={{ width: 300 }}\n          value={locale}\n          disableClearable\n          onChange={(event: any, newValue: string | null) => {\n            setLocale(newValue as SupportedLocales);\n          }}\n          renderInput={(params) => (\n            <TextField {...params} label=\"Locale\" fullWidth />\n          )}\n        />\n        <TablePagination\n          count={2000}\n          rowsPerPage={10}\n          page={1}\n          component=\"div\"\n          onPageChange={() => {}}\n        />\n      </ThemeProvider>\n    </Box>\n  );\n}\n",
+      "sha256": "3eea8fdbc7d9de64a9cf6cea44e92617f52f6ebca89fb030b07f87269720576e",
+      "upstreamPath": "docs/data/material/guides/localization/Locales.tsx",
+      "upstreamSha256": "ea3c966fecc13af232354717348a2f340346b110fb3b900e853d39349f50e6f8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-guides-localization/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/guides/localization/Locales\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "876e6dbe32313ba2547f08a5b83ef4c3f16be68101f39a34fc0c1a5a274414cd",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "material-guides-localization",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/guides/localization",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/guides/localization/Locales.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/guides/localization/Locales.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI material guides localization\n\n1 published Material UI material guides localization examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/guides/localization\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/guides/localization/Locales.tsx\n"
+}

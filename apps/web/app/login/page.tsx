@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim breaks hydrated navigation on this auth boundary. */
+import { BrandMark } from '@/app/components/brand-mark';
+import '../globals.css';
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { firstQueryValue, safeReturnTo } from '@/lib/auth/inputs';
@@ -50,7 +52,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
     <main className={styles.loginPage}>
       <section className={styles.loginCard} aria-labelledby="login-title">
         <a className={styles.loginBrand} href="/" aria-label="Rendyn home">
-          <span className={styles.loginBrandMark} aria-hidden="true">R</span>
+          <BrandMark className={styles.loginBrandMark} />
           <span>Rendyn</span>
         </a>
 

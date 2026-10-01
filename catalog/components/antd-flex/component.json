@@ -1,0 +1,174 @@
+{
+  "id": "antd:flex",
+  "sourceId": "antd",
+  "slug": "antd-flex",
+  "name": "Ant Design flex",
+  "description": "6 published Ant Design flex examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "antd@6.6.5"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "flex",
+    "tags": [
+      "file",
+      "form"
+    ],
+    "aliases": [
+      "flex",
+      "ant design flex"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "6 published Ant Design flex examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "flex:file:form",
+    "searchText": "Ant Design flex\nflex\n6 published Ant Design flex examples with complete pinned source and MIT attribution.\nant design flex\nfile\nform\nAnt Design flex 6 published Ant Design flex examples with complete pinned source and MIT attribution. Installation Complete MIT example compositions using the pinned antd npm package. Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/ant design/ant design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/flex/demo Pinned source: https://github.com/ant design/ant design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/flex/demo/align.tsx"
+  },
+  "previewPath": "/preview/blocks/antd-flex",
+  "manifestPath": "components/antd-flex/component.json",
+  "integrity": "sha256:eb69a709187da81d1f2f2674a67034fc7eaf212c0982fa6c32d005dd28520c99",
+  "source": {
+    "id": "antd",
+    "name": "Ant Design",
+    "repository": "https://github.com/ant-design/ant-design",
+    "commit": "bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a",
+    "registrySha256": "7df4386dc63323dd6235edee9c52694b28d573a6d2765ac59719a52e1c259ab0",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2015-present Ant UED, https://xtech.antfin.com/",
+      "textPath": "source/antd/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/antd/upstream/flex/demo/align.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Button, Flex, Segmented } from 'antd';\nimport type { FlexProps } from 'antd';\n\nconst boxStyle: React.CSSProperties = {\n  width: '100%',\n  height: 120,\n  borderRadius: 6,\n  border: '1px solid #40a9ff',\n};\n\nconst justifyOptions = [\n  'flex-start',\n  'center',\n  'flex-end',\n  'space-between',\n  'space-around',\n  'space-evenly',\n];\n\nconst alignOptions = ['flex-start', 'center', 'flex-end'];\n\nconst App: React.FC = () => {\n  const [justify, setJustify] = React.useState<FlexProps['justify']>(justifyOptions[0]);\n  const [alignItems, setAlignItems] = React.useState<FlexProps['align']>(alignOptions[0]);\n  return (\n    <Flex gap=\"medium\" align=\"start\" vertical>\n      <p>Select justify :</p>\n      <Segmented options={justifyOptions} onChange={setJustify} />\n      <p>Select align :</p>\n      <Segmented options={alignOptions} onChange={setAlignItems} />\n      <Flex style={boxStyle} justify={justify} align={alignItems}>\n        <Button type=\"primary\">Primary</Button>\n        <Button type=\"primary\">Primary</Button>\n        <Button type=\"primary\">Primary</Button>\n        <Button type=\"primary\">Primary</Button>\n      </Flex>\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "be9a65e484fe8a7eba8c3e0191e402502a7ca0077d09741d914fc0f1c7608b25",
+      "upstreamPath": "components/flex/demo/align.tsx",
+      "upstreamSha256": "5f1ba0dd2956d0a2cf96313c77877563f2c287f7127ed8d90224de389144aaee",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/flex/demo/basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\n/* eslint-disable react/no-array-index-key */\nimport React from 'react';\nimport { Flex, Radio } from 'antd';\n\nconst baseStyle: React.CSSProperties = {\n  width: '25%',\n  height: 54,\n};\n\nconst App: React.FC = () => {\n  const [value, setValue] = React.useState<string>('horizontal');\n  return (\n    <Flex gap=\"medium\" vertical>\n      <Radio.Group value={value} onChange={(e) => setValue(e.target.value)}>\n        <Radio value=\"horizontal\">horizontal</Radio>\n        <Radio value=\"vertical\">vertical</Radio>\n      </Radio.Group>\n      <Flex vertical={value === 'vertical'}>\n        {Array.from({ length: 4 }).map((_, i) => (\n          <div key={i} style={{ ...baseStyle, backgroundColor: i % 2 ? '#1677ff' : '#1677ffbf' }} />\n        ))}\n      </Flex>\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "8ccc3bccdcca72b2bdf13ee7dcabf7c5afa1368c94c7e525a7082ebae78851a9",
+      "upstreamPath": "components/flex/demo/basic.tsx",
+      "upstreamSha256": "b659c3617b225412758ebc2a089017f6c3328849b80b54ca10958dbaa63ff9dd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/flex/demo/combination.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Button, Card, Flex, Typography } from 'antd';\n\nconst cardStyle: React.CSSProperties = {\n  width: 620,\n};\n\nconst imgStyle: React.CSSProperties = {\n  display: 'block',\n  width: 273,\n};\n\nconst App: React.FC = () => (\n  <Card hoverable style={cardStyle} styles={{ body: { padding: 0, overflow: 'hidden' } }}>\n    <Flex justify=\"space-between\">\n      <img\n        draggable={false}\n        alt=\"avatar\"\n        src=\"https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png\"\n        style={imgStyle}\n      />\n      <Flex vertical align=\"flex-end\" justify=\"space-between\" style={{ padding: 32 }}>\n        <Typography.Title level={3}>\n          “antd is an enterprise-class UI design language and React UI library.”\n        </Typography.Title>\n        <Button type=\"primary\" href=\"https://ant.design\" target=\"_blank\">\n          Get Started\n        </Button>\n      </Flex>\n    </Flex>\n  </Card>\n);\n\nexport default App;\n",
+      "sha256": "7a938329a0b4dd2e6c383ca2fa63b1880db2963a409f7042a6c3f7a7690c0ac6",
+      "upstreamPath": "components/flex/demo/combination.tsx",
+      "upstreamSha256": "42a3395657ade48d6a29bd7ff32a301518dd5502b7d9e6fdc743db23c419208d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/flex/demo/debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\n/* eslint-disable react/no-array-index-key */\nimport React from 'react';\nimport { Flex } from 'antd';\n\nconst App: React.FC = () => (\n  <>\n    <Flex vertical>\n      {Array.from({ length: 4 }).map((_, i) => (\n        <div\n          key={i}\n          style={{\n            height: 60,\n            backgroundColor: i % 2 ? '#1677ff' : '#1677ffbf',\n          }}\n        />\n      ))}\n    </Flex>\n    <Flex style={{ marginTop: 20 }}>\n      {Array.from({ length: 4 }).map((_, i) => (\n        <div\n          key={i}\n          style={{\n            width: '25%',\n            height: i % 2 ? 60 : 40,\n            backgroundColor: i % 2 ? '#1677ff' : '#1677ffbf',\n          }}\n        />\n      ))}\n    </Flex>\n  </>\n);\n\nexport default App;\n",
+      "sha256": "439554b8e75360b733b4f6585f1c3acd94a85708f87bd90a6ea6ad1ba821a95d",
+      "upstreamPath": "components/flex/demo/debug.tsx",
+      "upstreamSha256": "154f8c8a07161b56a14cb4c833e9da046e7bce3bbec00e600dadff9015f8823d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/flex/demo/gap.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Button, Flex, Radio, Slider } from 'antd';\nimport type { FlexProps } from 'antd';\n\nconst App: React.FC = () => {\n  const [gapSize, setGapSize] = React.useState<FlexProps['gap']>('small');\n  const [customGapSize, setCustomGapSize] = React.useState<number>(0);\n  return (\n    <Flex gap=\"medium\" vertical>\n      <Radio.Group value={gapSize} onChange={(e) => setGapSize(e.target.value)}>\n        {['small', 'medium', 'large', 'customize'].map((size) => (\n          <Radio key={size} value={size}>\n            {size}\n          </Radio>\n        ))}\n      </Radio.Group>\n      {gapSize === 'customize' && <Slider value={customGapSize} onChange={setCustomGapSize} />}\n      <Flex gap={gapSize !== 'customize' ? gapSize : customGapSize}>\n        <Button type=\"primary\">Primary</Button>\n        <Button>Default</Button>\n        <Button type=\"dashed\">Dashed</Button>\n        <Button type=\"link\">Link</Button>\n      </Flex>\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "f31a48bf4a9a333771f2ff70ebcdeebea1092bcdaa1c05d7ae63c373da491fda",
+      "upstreamPath": "components/flex/demo/gap.tsx",
+      "upstreamSha256": "c813bf72580c1466b07f0bd92e433838de6ceaaedee725d394dc5a2c5b5abbe5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/flex/demo/wrap.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Button, Flex } from 'antd';\n\nconst Demo: React.FC = () => (\n  <Flex wrap gap=\"small\">\n    {Array.from({ length: 24 }, (_, i) => (\n      <Button key={i} type=\"primary\">\n        Button\n      </Button>\n    ))}\n  </Flex>\n);\n\nexport default Demo;\n",
+      "sha256": "29aac8e1e7398042b2acef1853102dec2c74c03a34a4d623148d86758e656e9b",
+      "upstreamPath": "components/flex/demo/wrap.tsx",
+      "upstreamSha256": "2367ad715ceb9950192344578c5962e4ca7ade30098339488a5f162df31bcfb9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/flex/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/flex/demo/align\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0a7ec01d08e9f9f98e60396fed93189dea014b7eba828350f5dcb5067255d2ca",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/flex/previews/basic.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/flex/demo/basic\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "9f69a96f64afcc3829422719db7c57efb61efd782c808a0f75aa0719b102942b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/flex/previews/combination.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/flex/demo/combination\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "58f03dc3d089e6bb4dd35bee46d58528e2a0e8b184014ca6f8f92d3bad8687ba",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/flex/previews/debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/flex/demo/debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "7884afb5fc659d4b4db215dc9f9e9a003703d85cdcde49d6d8c7867a14625cf0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/flex/previews/gap.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/flex/demo/gap\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "f45bfe1d5a9058349ef39dfb9f132580f16ba747fd033137118456c4efe2f3aa",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/flex/previews/wrap.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/flex/demo/wrap\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2bb94fe1f052bfbaeffc5918eed0ad458028e7f87d8c329a33b7a92976da0be0",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add antd@6.6.5",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add antd@6.6.5",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example compositions using the pinned antd npm package.",
+      "Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "flex",
+    "upstreamPageUrl": "https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/flex/demo",
+    "upstreamDetailUrl": "https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/flex/demo/align.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/ant-design/ant-design/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/flex/demo/align.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Ant Design flex\n\n6 published Ant Design flex examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example compositions using the pinned antd npm package.\n- Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/flex/demo\nPinned source: https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/flex/demo/align.tsx\n"
+}

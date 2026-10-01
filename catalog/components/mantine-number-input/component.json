@@ -1,0 +1,419 @@
+{
+  "id": "mantine:number-input",
+  "sourceId": "mantine",
+  "slug": "mantine-number-input",
+  "name": "Mantine number input",
+  "description": "21 published Mantine number input examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@phosphor-icons/react@2.1.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "input",
+    "tags": [
+      "code",
+      "file",
+      "input",
+      "number"
+    ],
+    "aliases": [
+      "number input",
+      "mantine number input",
+      "input"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "21 published Mantine number input examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "input:code:file:number",
+    "searchText": "Mantine number input\nnumber input\n21 published Mantine number input examples with complete pinned source and MIT attribution.\nmantine number input\ninput\ncode\nfile\nnumber\nMantine number input 21 published Mantine number input examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/NumberInput Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.allowDecimal.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-number-input",
+  "manifestPath": "components/mantine-number-input/component.json",
+  "integrity": "sha256:76bc4ed57000df0cfc9551494e6eb0dcea689bc832ab55df6b6993c6cd102cf5",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.allowDecimal.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <NumberInput\n      label=\"Decimals are not allowed\"\n      placeholder=\"Do not enter decimal numbers\"\n      allowDecimal={false}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "d36f72606256aa8c463b5aafabe84c93c2ff205da6674956c663d7bdbdd7b1c9",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.allowDecimal.tsx",
+      "upstreamSha256": "4dd42ef3b47c34c2bd7ac83b29c3cdee45fc7b0c709d9c3c8584dde538a9bd67",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.allowNegative.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <NumberInput\n      label=\"Negative number are not allowed\"\n      placeholder=\"Do not enter negative numbers\"\n      allowNegative={false}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "d8c137ad978c4a8fd81f8d6aa2e1e90d355eae58efc76659bf0febc8d979215e",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.allowNegative.tsx",
+      "upstreamSha256": "2d9674f005bb8fc12e5415ee74f0a3d17985b4a45bad68957bd52b0fc6ef30cd",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.bigInt.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  const [value, setValue] = useState<bigint | string>(BigInt('12345678901234567890'));\n\n  return (\n    <NumberInput\n      label=\"BigInt value\"\n      description=\"BigInt mode is inferred from defaultValue/value\"\n      value={value}\n      onChange={setValue}\n      step={BigInt(10)}\n      min={BigInt(0)}\n      thousandSeparator=\",\"\n      prefix=\"$\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "3e0fc048d552f09c9da72c295e18e7b7d2355b0f3be128e1e94a2a70a2d0aab5",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.bigInt.tsx",
+      "upstreamSha256": "e640d57a79d9751f18fee246f5b48cc7755ef8460c8a053137c6f1a2d961df70",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.decimalScale.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <NumberInput\n      label=\"You can enter only 2 digits after decimal point\"\n      placeholder=\"Do not enter more than 2\"\n      decimalScale={2}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "79993f16b8a99a82ddd44308381536427c105e38c528bd162f9df5eb4e6d42ee",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.decimalScale.tsx",
+      "upstreamSha256": "ed6cd539b89657bb6f7664031a8a9b0a4deddee9356f78f7e5bcc8238b3c859b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.decimalSeparator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <NumberInput\n      label=\"Custom decimal separator\"\n      placeholder=\"You can change it\"\n      decimalSeparator=\",\"\n      defaultValue={20.573}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "514b9ae39709ff836d85630c5227fef9e715d352b600dc33471492a216bc6e3d",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.decimalSeparator.tsx",
+      "upstreamSha256": "4a4dc7b6386c02326164bb59961f1525bc2e082d35a61ef4a11a355e8b7ba75f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.disabled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  return <NumberInput disabled label=\"Disabled input\" placeholder=\"Disabled input\" />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "cd1eab5990ff3b89e2d096e6a36a0bc3d6d8c424b1fa2fd0efd909ec60ee3f45",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.disabled.tsx",
+      "upstreamSha256": "3fd34b5af4c1111d63e578cfd01082cc59da42a2d541558f2e4a3033a98c2c3e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.error.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <>\n      <NumberInput label=\"Boolean error\" placeholder=\"Boolean error\" error />\n      <NumberInput\n        mt=\"md\"\n        label=\"With error message\"\n        placeholder=\"With error message\"\n        error=\"Invalid name\"\n      />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "faa51281ea9e6f69ef1109250f6bb43149ded5c22817a05ab0afa43b12fe95a1",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.error.tsx",
+      "upstreamSha256": "347b02e91569a68b63d0e02fb701f876c1a6797560fd74db3fa76e433934463b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.fixedDecimalScale.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <NumberInput\n      label=\"Always show 2 digits after decimal point\"\n      placeholder=\"Do not enter more that 2\"\n      decimalScale={2}\n      fixedDecimalScale\n      defaultValue={2.2}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "82e90bed9c95d7a1b0469ac9c8f70ce2e7553aeb9efdb7e5c8022b8af30ee5da",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.fixedDecimalScale.tsx",
+      "upstreamSha256": "59cdece7aed6f05ee38e112a9ad653059d03b445cca1caa145486f58149dd903",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.handlers.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useRef } from 'react';\n\nimport { Button, Group, NumberInput, NumberInputHandlers } from '@mantine/core';\n\nfunction Demo() {\n  const handlersRef = useRef<NumberInputHandlers>(null);\n  return (\n    <>\n      <NumberInput\n        label=\"Click buttons to change value\"\n        placeholder=\"Click the buttons\"\n        handlersRef={handlersRef}\n        step={2}\n        min={10}\n        max={20}\n        defaultValue={15}\n      />\n\n      <Group mt=\"md\" justify=\"center\">\n        <Button onClick={() => handlersRef.current?.decrement()} variant=\"default\">\n          Decrement by 2\n        </Button>\n\n        <Button onClick={() => handlersRef.current?.increment()} variant=\"default\">\n          Increment by 2\n        </Button>\n      </Group>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "63ff89cb4158399ae15c0bc6aee20a00e6998ab45a212bb856840e7c20014b7f",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.handlers.tsx",
+      "upstreamSha256": "ccdfe8feb5f4c459b0db096759938d56a2b9422b0fed795e2e60631711915f5d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.hold.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <>\n      <NumberInput\n        label=\"Step on hold\"\n        description=\"Step value when clicking and holding increment/decrement buttons\"\n        placeholder=\"Hold mouse down on control button\"\n        stepHoldDelay={500}\n        stepHoldInterval={100}\n      />\n      <NumberInput\n        mt=\"md\"\n        label=\"Step the value with interval function\"\n        description=\"Steps get faster over time when holding the control button\"\n        placeholder=\"Hold mouse down on control button\"\n        stepHoldDelay={500}\n        stepHoldInterval={(t) => Math.max(1000 / t ** 2, 25)}\n      />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "c70795311675629a461d0e909c0d92e99fb86faacbecb8a68e291c7131067407",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.hold.tsx",
+      "upstreamSha256": "bedd9ec4e0fccf5d3e9484e4144f88491fec07881249530dec2fd75fce8c8113",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.loading.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  return <NumberInput placeholder=\"Age\" loading />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b88454b37487118f4bb82f1f2c0fc82d2597b9729291ee38ca21826027e999a9",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.loading.tsx",
+      "upstreamSha256": "de7d72f2d68ae9c6548ef15ecc31bbd289e1938621d5999606f8c527263765fb",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.minMax.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <NumberInput\n      label=\"Enter value between 10 and 20\"\n      placeholder=\"Don't enter more than 20 and less than 10\"\n      min={10}\n      max={20}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "feca24b8596aa91ca49cc6142e0450e7e41a18b2480dddb05f1384601c10f687",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.minMax.tsx",
+      "upstreamSha256": "858965a9c085bdaa87b527ba68539b2067da2a2eb54cd5ebf7f954c06221c06f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.prefixSuffix.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <>\n      <NumberInput\n        label=\"With prefix\"\n        placeholder=\"Dollars\"\n        prefix=\"$\"\n        defaultValue={100}\n        mb=\"md\"\n      />\n      <NumberInput\n        label=\"With suffix\"\n        placeholder=\"Percents\"\n        suffix=\"%\"\n        defaultValue={100}\n        mt=\"md\"\n      />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "92090d23e7f57c31fc41dd6823f3d5a9991a067711aaffee968630f47c9a2eef",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.prefixSuffix.tsx",
+      "upstreamSha256": "618a2d99a1d3f6a29ce159b70ae6b95cf1db4895431433bfd2537115ba2b3e9d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.rightSection.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ChartScatterIcon } from '@phosphor-icons/react';\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <>\n      <NumberInput label=\"Hide controls\" placeholder=\"Hide controls\" hideControls />\n      <NumberInput\n        label=\"Custom right section\"\n        placeholder=\"Custom right section\"\n        mt=\"md\"\n        rightSection={<ChartScatterIcon />}\n        rightSectionPointerEvents=\"none\"\n      />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "e23a9459b0da4eb26fe32f3f54b3c6677d2532d41ef386f9839ee6c23155314d",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.rightSection.tsx",
+      "upstreamSha256": "6b1d0ce74de52a6b6e6dbbe02a683305c0e75fc3038e094edb84d8983296df56",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.sections.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { CurrencyEthIcon } from '@phosphor-icons/react';\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  const icon = <CurrencyEthIcon size={20} />;\n  return (\n    <>\n      <NumberInput leftSection={icon} label=\"With left section\" placeholder=\"With left section\" />\n      <NumberInput\n        rightSection={icon}\n        label=\"With right section\"\n        placeholder=\"With right section\"\n        mt=\"md\"\n      />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "d2b710320660da989319b5c36f51d08392a4d7f8bec2fc920d39400cee5a3b56",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.sections.tsx",
+      "upstreamSha256": "fcbced44c3f2b6348cc34d01d1e0dc2068cfa363f24ce512b8bee211cf0327ae",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.strictClamp.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <NumberInput\n      label=\"Strict clamping between 0 and 100\"\n      placeholder=\"Enter a number\"\n      clampBehavior=\"strict\"\n      min={0}\n      max={100}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "2f71934cf1df170265f9bb58bc140805a8a4c4be72693eed2f38763d1ecd9b2b",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.strictClamp.tsx",
+      "upstreamSha256": "ba5e2236a0f54cb5d88ab36ea6a04e0cb1adfb4047b44fb75c90d2ae73e4f71a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.stylesApi.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { AtIcon } from '@phosphor-icons/react';\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo(props: any) {\n  return (\n    <NumberInput\n      label=\"Label\"\n      placeholder=\"NumberInput\"\n      description=\"Description\"\n      error=\"Error\"\n      withAsterisk\n      leftSection={<AtIcon size={18} />}\n      {...props}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "634f0d369bae6847b787381b431809da3a0b28a1f17620f830706515e2b096e7",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.stylesApi.tsx",
+      "upstreamSha256": "5954b6a01e534c430b1e9707bd3ab6317994910e4962b01b20b8819b62fbd8d7",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.success.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  return <NumberInput label=\"Number Input\" placeholder=\"Number Input\" success=\"Looks good!\" />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "c431ad8f62da952fb47430977e978875ec9e3f5e8e93dba3640b77d321bd33b7",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.success.tsx",
+      "upstreamSha256": "01040292ba684ceaf257c6025ec0f903663d984246beab5fec437d6effdddd9d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.thousandsSeparator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <>\n      <NumberInput\n        label=\"Thousands are separated with a comma\"\n        placeholder=\"Thousands are separated with a comma\"\n        thousandSeparator=\",\"\n        defaultValue={1_000_000}\n      />\n\n      <NumberInput\n        label=\"Thousands are separated with a space\"\n        placeholder=\"Thousands are separated with a space\"\n        thousandSeparator=\" \"\n        defaultValue={1_000_000}\n        mt=\"md\"\n      />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "ce27ac572d0db232f4bbf3eeed953f9dfad8ed7194a23257b13fbb954534c098",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.thousandsSeparator.tsx",
+      "upstreamSha256": "361f7e5b4f4c2d496c2b1592e4ed098de2dc5c68809242640b52eeef17a47af2",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.trimLeadingZeroes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <>\n      <NumberInput\n        label=\"Leading zeros removed on blur\"\n        placeholder=\"Type 00100 and click outside\"\n        trimLeadingZeroesOnBlur\n        defaultValue=\"00100\"\n      />\n\n      <NumberInput\n        label=\"Leading zeros preserved\"\n        placeholder=\"Type 00100 and click outside\"\n        trimLeadingZeroesOnBlur={false}\n        defaultValue=\"00100\"\n        mt=\"md\"\n      />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "7956ec545662dfcad1cbc37088bc7fd3985a8f60e8c59350290e6ed38c5123d5",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.trimLeadingZeroes.tsx",
+      "upstreamSha256": "6f4ac9ca9bac8f5a0cd663b0f880f2862692d9589f4aae549ae1dcce698ba0bc",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NumberInput } from '@mantine/core';\n\nfunction Wrapper(props: any) {\n  return <NumberInput {...props} placeholder=\"Input placeholder\" />;\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "07d7d59346677f41ed774d43522db951310a8f074cc3dbe06f6a891bc4d01e68",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.usage.tsx",
+      "upstreamSha256": "627013dcf9e357c533bbfe87a0ab5f71a15d37a33cb1ddf79bcc5b68fe5094d9",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.allowDecimal\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "da5cb309573fcebd1e5bd66f5e7d7df17aa8ee0b0075ed3fe7665bb028dde77a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/allow-negative.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.allowNegative\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e535762c0f12238251fae3b5b4b7e50225613089a635a7cbc223d5608d951c6b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/big-int.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.bigInt\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "62ef54b28167fc4b2f038895920fd3a78c600caf03cfadf1d8ec92340e9c395a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/decimal-scale.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.decimalScale\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "3a14f46661810b08b493519daabbf4949132174a54c04fe4aa4d6756d6d61c5b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/decimal-separator.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.decimalSeparator\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "707744c27b57e5ac6c879ff97367d71fcc5115b22f8e106bd388e6fbf73db1f7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.disabled\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e9347e6f2fe1625bd6d5c53dbcc5aee0e27afbdcd9184093951cdc50b413d743",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/error.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.error\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "516d9733af48fa4e2a99f56cb6f77ff1844b525695621ef8f7d58dd5f1cacdca",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/fixed-decimal-scale.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.fixedDecimalScale\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "2d750810106226b882e0819a6a779343642c2f6c021da783c1f78c74c50a3e6d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/handlers.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.handlers\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "0eaae5bf6836516360f737dd2cf64c418238deff3522716fd05e284d8594b4b8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/hold.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.hold\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "bc88cce1b4e2ed8cfa6603a4b1f3971157b0052af947568d99b7c39ca20b285b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/loading.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.loading\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7962e5f39750cea2fd7b84f46b6eb473c5102a6233ab644486544eb0832e810b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/min-max.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.minMax\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "55322af1d2b988a0d891c3f12b265ec2893e2ac307d102eec59ef49ef96b3386",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/prefix-suffix.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.prefixSuffix\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "6263d7aae09d1e0070381aa6955b3c1b0e0a07e299cdef06aa2d71e597778e02",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/right-section.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.rightSection\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "5081cf23636076fff169ebcaa3f5a052afc35f511fa57f6f9ab868bdd9018698",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/sections.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.sections\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "509e181e2ef2e0267de29b07dc23a564ef42499ff2463f08386c0f85134bf553",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/strict-clamp.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.strictClamp\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "575d2f404b8acd587bd5fe18785d6530dce5664ed64e25f315c0a175093e25a2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/styles-api.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.stylesApi\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "14085bf1ba18f06e934897784efd815913869f60eac1a97a11b445e89f8467b3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/success.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.success\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d74ceb51669d5f997d661d85f19bcf8fae8547322ad0180f36242d33cb555883",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/thousands-separator.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.thousandsSeparator\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7cc085a73ad07e67f41c4bc88e393c52e6924d611bc3805a5ddd136346904afb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/trim-leading-zeroes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.trimLeadingZeroes\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c99945c7ffb0eb6fa842995204eab699493bbeb3d6aff23207191bb725658c7e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/number-input/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NumberInput/NumberInput.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d3a1e1f2119a5ce7505ecd6e342cc40535bb9a0ac1760427f3122ee0e2a57a8e",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @phosphor-icons/react@2.1.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @phosphor-icons/react@2.1.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "number-input",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/NumberInput",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.allowDecimal.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.allowDecimal.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine number input\n\n21 published Mantine number input examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/NumberInput\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/NumberInput/NumberInput.demo.allowDecimal.tsx\n"
+}

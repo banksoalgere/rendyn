@@ -1,0 +1,164 @@
+{
+  "id": "mui:speed-dial",
+  "sourceId": "mui",
+  "slug": "mui-speed-dial",
+  "name": "Material UI speed dial",
+  "description": "5 published Material UI speed dial examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/icons-material@9.4.0",
+    "@mui/material@9.4.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "speed-dial",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file"
+    ],
+    "aliases": [
+      "speed dial",
+      "material ui speed dial",
+      "speed-dial"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "5 published Material UI speed dial examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "speed-dial:code:command:data:file",
+    "searchText": "Material UI speed dial\nspeed dial\n5 published Material UI speed dial examples with complete pinned source and MIT attribution.\nmaterial ui speed dial\nspeed-dial\ncode\ncommand\ndata\nfile\nMaterial UI speed dial 5 published Material UI speed dial examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/speed dial Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/speed dial/BasicSpeedDial.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-speed-dial",
+  "manifestPath": "components/mui-speed-dial/component.json",
+  "integrity": "sha256:f3b7d2650ddafce0fae0e98477512d0aae18ec8b88e3d4ce521a036094da992d",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/speed-dial/BasicSpeedDial.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Box from '@mui/material/Box';\nimport SpeedDial from '@mui/material/SpeedDial';\nimport SpeedDialIcon from '@mui/material/SpeedDialIcon';\nimport SpeedDialAction from '@mui/material/SpeedDialAction';\nimport FileCopyIcon from '@mui/icons-material/FileCopyOutlined';\nimport SaveIcon from '@mui/icons-material/Save';\nimport PrintIcon from '@mui/icons-material/Print';\nimport ShareIcon from '@mui/icons-material/Share';\n\nconst actions = [\n  { icon: <FileCopyIcon />, name: 'Copy' },\n  { icon: <SaveIcon />, name: 'Save' },\n  { icon: <PrintIcon />, name: 'Print' },\n  { icon: <ShareIcon />, name: 'Share' },\n];\n\nexport default function BasicSpeedDial() {\n  return (\n    <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1 }}>\n      <SpeedDial\n        ariaLabel=\"SpeedDial basic example\"\n        sx={{ position: 'absolute', bottom: 16, right: 16 }}\n        icon={<SpeedDialIcon />}\n      >\n        {actions.map((action) => (\n          <SpeedDialAction\n            key={action.name}\n            icon={action.icon}\n            slotProps={{\n              tooltip: {\n                title: action.name,\n              },\n            }}\n          />\n        ))}\n      </SpeedDial>\n    </Box>\n  );\n}\n",
+      "sha256": "40ee8f4d6016b7437570f11bd9818357e2f387ec5e042024ed0131ab1928638a",
+      "upstreamPath": "docs/data/material/components/speed-dial/BasicSpeedDial.tsx",
+      "upstreamSha256": "b4df724a59aed29ef2706adf56ec28f88c63db3d519952670b183f250b1d7168",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/speed-dial/ControlledOpenSpeedDial.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport SpeedDial from '@mui/material/SpeedDial';\nimport SpeedDialIcon from '@mui/material/SpeedDialIcon';\nimport SpeedDialAction from '@mui/material/SpeedDialAction';\nimport FileCopyIcon from '@mui/icons-material/FileCopyOutlined';\nimport SaveIcon from '@mui/icons-material/Save';\nimport PrintIcon from '@mui/icons-material/Print';\nimport ShareIcon from '@mui/icons-material/Share';\n\nconst actions = [\n  { icon: <FileCopyIcon />, name: 'Copy' },\n  { icon: <SaveIcon />, name: 'Save' },\n  { icon: <PrintIcon />, name: 'Print' },\n  { icon: <ShareIcon />, name: 'Share' },\n];\n\nexport default function ControlledOpenSpeedDial() {\n  const [open, setOpen] = React.useState(false);\n  const handleOpen = () => setOpen(true);\n  const handleClose = () => setOpen(false);\n\n  return (\n    <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1 }}>\n      <SpeedDial\n        ariaLabel=\"SpeedDial controlled open example\"\n        sx={{ position: 'absolute', bottom: 16, right: 16 }}\n        icon={<SpeedDialIcon />}\n        onClose={handleClose}\n        onOpen={handleOpen}\n        open={open}\n      >\n        {actions.map((action) => (\n          <SpeedDialAction\n            key={action.name}\n            icon={action.icon}\n            slotProps={{\n              tooltip: {\n                title: action.name,\n              },\n            }}\n            onClick={handleClose}\n          />\n        ))}\n      </SpeedDial>\n    </Box>\n  );\n}\n",
+      "sha256": "15dd9810e3c8c4e4bd1a58a101313e7c1d93b99f078d73d90f61c428418afdf7",
+      "upstreamPath": "docs/data/material/components/speed-dial/ControlledOpenSpeedDial.tsx",
+      "upstreamSha256": "703bbc2019a161794bcdf292df09cccedd2ed521805c2f3109b57eaff421e2b9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/speed-dial/OpenIconSpeedDial.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Box from '@mui/material/Box';\nimport SpeedDial from '@mui/material/SpeedDial';\nimport SpeedDialIcon from '@mui/material/SpeedDialIcon';\nimport SpeedDialAction from '@mui/material/SpeedDialAction';\nimport FileCopyIcon from '@mui/icons-material/FileCopyOutlined';\nimport SaveIcon from '@mui/icons-material/Save';\nimport PrintIcon from '@mui/icons-material/Print';\nimport ShareIcon from '@mui/icons-material/Share';\nimport EditIcon from '@mui/icons-material/Edit';\n\nconst actions = [\n  { icon: <FileCopyIcon />, name: 'Copy' },\n  { icon: <SaveIcon />, name: 'Save' },\n  { icon: <PrintIcon />, name: 'Print' },\n  { icon: <ShareIcon />, name: 'Share' },\n];\n\nexport default function OpenIconSpeedDial() {\n  return (\n    <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1 }}>\n      <SpeedDial\n        ariaLabel=\"SpeedDial openIcon example\"\n        sx={{ position: 'absolute', bottom: 16, right: 16 }}\n        icon={<SpeedDialIcon openIcon={<EditIcon />} />}\n      >\n        {actions.map((action) => (\n          <SpeedDialAction\n            key={action.name}\n            icon={action.icon}\n            slotProps={{\n              tooltip: {\n                title: action.name,\n              },\n            }}\n          />\n        ))}\n      </SpeedDial>\n    </Box>\n  );\n}\n",
+      "sha256": "c4046b132cdffa5fd5c68f019bb236e0d59222619e6542067054e09a56f277b7",
+      "upstreamPath": "docs/data/material/components/speed-dial/OpenIconSpeedDial.tsx",
+      "upstreamSha256": "9484c01ac34776cb730c20dfacbcd8384a47cac4289e45a14b7729e1c0529b25",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/speed-dial/PlaygroundSpeedDial.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport { styled } from '@mui/material/styles';\nimport Box from '@mui/material/Box';\nimport FormControl from '@mui/material/FormControl';\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport FormLabel from '@mui/material/FormLabel';\nimport Radio from '@mui/material/Radio';\nimport RadioGroup from '@mui/material/RadioGroup';\nimport Switch from '@mui/material/Switch';\nimport SpeedDial, { SpeedDialProps } from '@mui/material/SpeedDial';\nimport SpeedDialIcon from '@mui/material/SpeedDialIcon';\nimport SpeedDialAction from '@mui/material/SpeedDialAction';\nimport FileCopyIcon from '@mui/icons-material/FileCopyOutlined';\nimport SaveIcon from '@mui/icons-material/Save';\nimport PrintIcon from '@mui/icons-material/Print';\nimport ShareIcon from '@mui/icons-material/Share';\n\nconst StyledSpeedDial = styled(SpeedDial)(({ theme }) => ({\n  position: 'absolute',\n  '&.MuiSpeedDial-directionUp, &.MuiSpeedDial-directionLeft': {\n    bottom: theme.spacing(2),\n    right: theme.spacing(2),\n  },\n  '&.MuiSpeedDial-directionDown, &.MuiSpeedDial-directionRight': {\n    top: theme.spacing(2),\n    left: theme.spacing(2),\n  },\n}));\n\nconst actions = [\n  { icon: <FileCopyIcon />, name: 'Copy' },\n  { icon: <SaveIcon />, name: 'Save' },\n  { icon: <PrintIcon />, name: 'Print' },\n  { icon: <ShareIcon />, name: 'Share' },\n];\n\nexport default function PlaygroundSpeedDial() {\n  const [direction, setDirection] =\n    React.useState<SpeedDialProps['direction']>('up');\n  const [hidden, setHidden] = React.useState(false);\n\n  const handleDirectionChange = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setDirection(\n      (event.target as HTMLInputElement).value as SpeedDialProps['direction'],\n    );\n  };\n\n  const handleHiddenChange = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setHidden(event.target.checked);\n  };\n\n  return (\n    <Box sx={{ transform: 'translateZ(0px)', flexGrow: 1 }}>\n      <FormControlLabel\n        control={\n          <Switch checked={hidden} onChange={handleHiddenChange} color=\"primary\" />\n        }\n        label=\"Hidden\"\n      />\n      <FormControl component=\"fieldset\" sx={{ mt: 1, display: 'flex' }}>\n        <FormLabel component=\"legend\">Direction</FormLabel>\n        <RadioGroup\n          aria-label=\"direction\"\n          name=\"direction\"\n          value={direction}\n          onChange={handleDirectionChange}\n          row\n        >\n          <FormControlLabel value=\"up\" control={<Radio />} label=\"Up\" />\n          <FormControlLabel value=\"right\" control={<Radio />} label=\"Right\" />\n          <FormControlLabel value=\"down\" control={<Radio />} label=\"Down\" />\n          <FormControlLabel value=\"left\" control={<Radio />} label=\"Left\" />\n        </RadioGroup>\n      </FormControl>\n      <Box sx={{ position: 'relative', mt: 3, height: 320 }}>\n        <StyledSpeedDial\n          ariaLabel=\"SpeedDial playground example\"\n          hidden={hidden}\n          icon={<SpeedDialIcon />}\n          direction={direction}\n        >\n          {actions.map((action) => (\n            <SpeedDialAction\n              key={action.name}\n              icon={action.icon}\n              slotProps={{\n                tooltip: {\n                  title: action.name,\n                },\n              }}\n            />\n          ))}\n        </StyledSpeedDial>\n      </Box>\n    </Box>\n  );\n}\n",
+      "sha256": "0738e02b1db187f96de03281b7937f2d4bd3078d83ac27253ff5b4e08d6f6260",
+      "upstreamPath": "docs/data/material/components/speed-dial/PlaygroundSpeedDial.tsx",
+      "upstreamSha256": "bab933f18b834e99eca9863c4c021f10c3ff1d3dc0ec69760753adec7f0bcaf8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/speed-dial/SpeedDialTooltipOpen.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Backdrop from '@mui/material/Backdrop';\nimport SpeedDial from '@mui/material/SpeedDial';\nimport SpeedDialIcon from '@mui/material/SpeedDialIcon';\nimport SpeedDialAction from '@mui/material/SpeedDialAction';\nimport FileCopyIcon from '@mui/icons-material/FileCopyOutlined';\nimport SaveIcon from '@mui/icons-material/Save';\nimport PrintIcon from '@mui/icons-material/Print';\nimport ShareIcon from '@mui/icons-material/Share';\n\nconst actions = [\n  { icon: <FileCopyIcon />, name: 'Copy' },\n  { icon: <SaveIcon />, name: 'Save' },\n  { icon: <PrintIcon />, name: 'Print' },\n  { icon: <ShareIcon />, name: 'Share' },\n];\n\nexport default function SpeedDialTooltipOpen() {\n  const [open, setOpen] = React.useState(false);\n  const handleOpen = () => setOpen(true);\n  const handleClose = () => setOpen(false);\n\n  return (\n    <Box sx={{ height: 330, transform: 'translateZ(0px)', flexGrow: 1 }}>\n      <Backdrop open={open} />\n      <SpeedDial\n        ariaLabel=\"SpeedDial tooltip example\"\n        sx={{ position: 'absolute', bottom: 16, right: 16 }}\n        icon={<SpeedDialIcon />}\n        onClose={handleClose}\n        onOpen={handleOpen}\n        open={open}\n      >\n        {actions.map((action) => (\n          <SpeedDialAction\n            key={action.name}\n            icon={action.icon}\n            slotProps={{\n              tooltip: {\n                open: true,\n                title: action.name,\n              },\n            }}\n            onClick={handleClose}\n          />\n        ))}\n      </SpeedDial>\n    </Box>\n  );\n}\n",
+      "sha256": "6bf7f1a1f242bd5ca4a9479d37320e7576e282a0205ad4b2f0738ed43120e88b",
+      "upstreamPath": "docs/data/material/components/speed-dial/SpeedDialTooltipOpen.tsx",
+      "upstreamSha256": "b0124cac311c74424cdd6c89ffee1c3b5b0f680c98f873942a847f5fe20229ca",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/speed-dial/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/speed-dial/BasicSpeedDial\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "9461e8272f75ae0333cb3a3e662c5192988474d14f763770caa0a42819feef64",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/speed-dial/previews/controlled-open-speed-dial.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/speed-dial/ControlledOpenSpeedDial\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "729844000cfd420bc6ed59d090af885cb59cf092ffa3e76711358a107f02d4df",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/speed-dial/previews/open-icon-speed-dial.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/speed-dial/OpenIconSpeedDial\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "f398b78ea9e2ea59b347fb1345d5bf7744aa7c9d4e8202b61e298f2f8a856a7c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/speed-dial/previews/playground-speed-dial.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/speed-dial/PlaygroundSpeedDial\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "085ad31c8d66acbe84cec0294e78a14d1f87df655506dd5a74a6c98d0fa63443",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/speed-dial/previews/speed-dial-tooltip-open.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/speed-dial/SpeedDialTooltipOpen\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "b7333dbb0cd14090607e59796585d92f61554c89e095c2194530bef7ada28e82",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "speed-dial",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/speed-dial",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/speed-dial/BasicSpeedDial.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/speed-dial/BasicSpeedDial.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI speed dial\n\n5 published Material UI speed dial examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/speed-dial\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/speed-dial/BasicSpeedDial.tsx\n"
+}

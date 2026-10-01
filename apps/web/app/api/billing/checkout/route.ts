@@ -2,7 +2,7 @@ import type Stripe from 'stripe';
 import { NextResponse } from 'next/server';
 import { isSameOriginRequest, safeReturnTo } from '@/lib/auth/inputs';
 import { getBillingConfig, isBillingPlanCode } from '@/lib/billing/config';
-import { getStripe } from '@/lib/billing/stripe';
+import { checkoutSession, TrialAlreadyUsed } from '@/lib/billing/checkout-attempt';
 import { createClient } from '@/lib/supabase/server';
 
 function pricingRedirect(request: Request, error: string) {
@@ -49,8 +49,7 @@ export async function POST(request: Request) {
       .from('subscriptions')
       .select('id')
       .eq('provider', 'stripe')
-      .order('updated_at', { ascending: false })
-      .limit(20);
+      .limit(1);
     if (subscriptionError) throw new Error(`Subscription lookup failed: ${subscriptionError.code}`);
 
     const existing = subscriptions ?? [];
@@ -77,7 +76,7 @@ export async function POST(request: Request) {
     const cancelUrl = new URL('/pricing', request.url);
     cancelUrl.searchParams.set('billing', 'cancelled');
     cancelUrl.searchParams.set('next', returnTo);
-    const sessionParams: Stripe.Checkout.SessionCreateParams = {
+    const session = await checkoutSession(userId, {
       mode: 'subscription',
       client_reference_id: userId,
       // Managed Payments selects the available payment methods and checkout text.
@@ -89,18 +88,12 @@ export async function POST(request: Request) {
       success_url: successUrl.toString(),
       cancel_url: cancelUrl.toString(),
       ...(typeof email === 'string' ? { customer_email: email } : {}),
-    };
-    // Reuse identical retries, but never reuse a key with different Stripe parameters.
-    const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(JSON.stringify(sessionParams)));
-    const fingerprint = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
-    const session = await getStripe().checkout.sessions.create(sessionParams, {
-      // Start fresh after the product-tax configuration repair; Stripe also caches errors.
-      idempotencyKey: `rendyn-trial-checkout:v3:${userId}:${fingerprint}`,
     });
 
     if (!session.url) throw new Error('Stripe Checkout did not return a URL');
     return NextResponse.redirect(session.url, { status: 303 });
   } catch (error) {
+    if (error instanceof TrialAlreadyUsed) return pricingRedirect(request, 'trial_used');
     console.error('billing_checkout_failed', error instanceof Error ? error.message : 'unknown_error');
     return pricingRedirect(request, 'checkout');
   }

@@ -1,0 +1,131 @@
+{
+  "id": "mantine:file-button",
+  "sourceId": "mantine",
+  "slug": "mantine-file-button",
+  "name": "Mantine file button",
+  "description": "3 published Mantine file button examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "button",
+    "tags": [
+      "button",
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "file button",
+      "mantine file button",
+      "button",
+      "cta",
+      "action control"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "3 published Mantine file button examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "button:code:file",
+    "searchText": "Mantine file button\nfile button\n3 published Mantine file button examples with complete pinned source and MIT attribution.\nmantine file button\nbutton\ncta\naction control\ncode\nfile\nMantine file button 3 published Mantine file button examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/FileButton Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/FileButton/FileButton.demo.multiple.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-file-button",
+  "manifestPath": "components/mantine-file-button/component.json",
+  "integrity": "sha256:e82e69101b2d4fd4c836d140141dc4685548b9a01d292ab8cf5ca6d2f69d6c91",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/FileButton/FileButton.demo.multiple.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, FileButton, Group, Text } from '@mantine/core';\n\nfunction Demo() {\n  const [files, setFiles] = useState<File[]>([]);\n  return (\n    <>\n      <Group justify=\"center\">\n        <FileButton onChange={setFiles} accept=\"image/png,image/jpeg\" multiple>\n          {(props) => <Button {...props}>Upload image</Button>}\n        </FileButton>\n      </Group>\n\n      {files.length > 0 && (\n        <Text size=\"sm\" mt=\"sm\">\n          Picked files:\n        </Text>\n      )}\n\n      <ul>\n        {files.map((file, index) => (\n          <li key={index}>{file.name}</li>\n        ))}\n      </ul>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "6de7eda0335165f7a7e433e3f1838932a4330df482d58c5db241eae5285c6817",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/FileButton/FileButton.demo.multiple.tsx",
+      "upstreamSha256": "64610c68027b2bd7e954ea46500a6af15419c5d20a1019996ae84dff2540a0a5",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/FileButton/FileButton.demo.reset.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useRef, useState } from 'react';\n\nimport { Button, FileButton, Group, Text } from '@mantine/core';\n\nfunction Demo() {\n  const [file, setFile] = useState<File | null>(null);\n  const resetRef = useRef<() => void>(null);\n\n  const clearFile = () => {\n    setFile(null);\n    resetRef.current?.();\n  };\n\n  return (\n    <>\n      <Group justify=\"center\">\n        <FileButton resetRef={resetRef} onChange={setFile} accept=\"image/png,image/jpeg\">\n          {(props) => <Button {...props}>Upload image</Button>}\n        </FileButton>\n        <Button disabled={!file} color=\"red\" onClick={clearFile}>\n          Reset\n        </Button>\n      </Group>\n\n      {file && (\n        <Text size=\"sm\" ta=\"center\" mt=\"sm\">\n          Picked file: {file.name}\n        </Text>\n      )}\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "1c0551582c46a02d0c5c4f74bb1974cfa2451fbe667985499bc71bc0de157a8d",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/FileButton/FileButton.demo.reset.tsx",
+      "upstreamSha256": "f87ba56e6902dc81202d7a5fc94dfea5f6a13b2c30229fe4eecab86f03943fed",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/FileButton/FileButton.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, FileButton, Group, Text } from '@mantine/core';\n\nfunction Demo() {\n  const [file, setFile] = useState<File | null>(null);\n  return (\n    <>\n      <Group justify=\"center\">\n        <FileButton onChange={setFile} accept=\"image/png,image/jpeg\">\n          {(props) => <Button {...props}>Upload image</Button>}\n        </FileButton>\n      </Group>\n\n      {file && (\n        <Text size=\"sm\" ta=\"center\" mt=\"sm\">\n          Picked file: {file.name}\n        </Text>\n      )}\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "efa06f13439278428ded9025ae1079e547c9ea3168fb2d684080d1e9b33ccb78",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/FileButton/FileButton.demo.usage.tsx",
+      "upstreamSha256": "14f3ed4bca7b0cbce736f50402ff22c977f17a731d1ac9c0567af6c09bc6e15e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/file-button/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/FileButton/FileButton.demo.multiple\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "f0a3d9a76bc2fc1ad61ba217faf7173ccd30c9d85509419eb5fce7b85245b43e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/file-button/previews/reset.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/FileButton/FileButton.demo.reset\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "9fbdeef91b7689e2ace2e5b99db30b79441c1c4dc57215558b96d3d2546a010c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/file-button/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/FileButton/FileButton.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "f9664362f04fa41c8236c7c6caf4010d88db846956be70db1ad1fca78d9956af",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "file-button",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/FileButton",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/FileButton/FileButton.demo.multiple.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/FileButton/FileButton.demo.multiple.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine file button\n\n3 published Mantine file button examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/FileButton\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/FileButton/FileButton.demo.multiple.tsx\n"
+}

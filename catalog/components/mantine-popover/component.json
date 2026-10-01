@@ -1,0 +1,305 @@
+{
+  "id": "mantine:popover",
+  "sourceId": "mantine",
+  "slug": "mantine-popover",
+  "name": "Mantine popover",
+  "description": "14 published Mantine popover examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/dates@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "popover",
+    "tags": [
+      "code",
+      "file",
+      "popover"
+    ],
+    "aliases": [
+      "popover",
+      "mantine popover"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "14 published Mantine popover examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "popover:code:file",
+    "searchText": "Mantine popover\npopover\n14 published Mantine popover examples with complete pinned source and MIT attribution.\nmantine popover\ncode\nfile\nMantine popover 14 published Mantine popover examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Popover Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Popover/Popover.demo.arrow.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-popover",
+  "manifestPath": "components/mantine-popover/component.json",
+  "integrity": "sha256:e59cd519d796e504c98810dfa3efcbb35f01f1e37a3b870d7a61b6308a7fdb09",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.arrow.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Popover, Text } from '@mantine/core';\n\nfunction Wrapper(props: any) {\n  return (\n    <Popover width={200} opened position=\"bottom-start\" withArrow {...props}>\n      <Popover.Target>\n        <Button>Target element</Button>\n      </Popover.Target>\n      <Popover.Dropdown>\n        <Text size=\"xs\">Arrow position can be changed for *-start and *-end positions</Text>\n      </Popover.Dropdown>\n    </Popover>\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent arrowPosition={\"center\"} arrowOffset={10} arrowSize={7} arrowRadius={0} />; }\n",
+      "sha256": "f375e84ea3ed825a2d9cedcff25855b5754539b262d434c84b9a6756024ca45f",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Popover/Popover.demo.arrow.tsx",
+      "upstreamSha256": "7e79e38db6d1f3aa4756bdf057d87b8534f0b5ae85658f139b9ffe950a3bd0b5",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.clickOutsideEvents.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Popover, Text } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Popover width={200} position=\"bottom\" clickOutsideEvents={['mouseup', 'touchend']}>\n      <Popover.Target>\n        <Button>Toggle popover</Button>\n      </Popover.Target>\n      <Popover.Dropdown>\n        <Text size=\"xs\">Popover will be closed with mouseup and touchend events</Text>\n      </Popover.Dropdown>\n    </Popover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "ffcc4a4dd045533eb06ec676caea3a3de05735c28131e724420eb4c942a43017",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Popover/Popover.demo.clickOutsideEvents.tsx",
+      "upstreamSha256": "92d8ac9aaedee07f7c59232d185e1ccdb7ba3e3fdd9c047a820d2781440ed36f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.contextMenu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, Button, Group, Paper, Popover, Stack, Text } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Popover width={260} shadow=\"md\" position=\"bottom-start\" offset={0}>\n      <Popover.ContextMenu>\n        <Paper withBorder p=\"xl\" radius=\"md\" style={{ userSelect: 'none', textAlign: 'center' }}>\n          <Text fw={500}>Right-click anywhere inside this area</Text>\n          <Text c=\"dimmed\" size=\"sm\" mt={4}>\n            A popover will open at the cursor position\n          </Text>\n        </Paper>\n      </Popover.ContextMenu>\n\n      <Popover.Dropdown>\n        <Stack gap=\"xs\">\n          <Group gap=\"sm\" wrap=\"nowrap\">\n            <Avatar radius=\"xl\" color=\"blue\">\n              JD\n            </Avatar>\n            <div>\n              <Text size=\"sm\" fw={500}>\n                Jane Doe\n              </Text>\n              <Text size=\"xs\" c=\"dimmed\">\n                jane@example.com\n              </Text>\n            </div>\n          </Group>\n          <Group grow gap=\"xs\">\n            <Button size=\"xs\" variant=\"default\">\n              Message\n            </Button>\n            <Button size=\"xs\">Follow</Button>\n          </Group>\n        </Stack>\n      </Popover.Dropdown>\n    </Popover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "a4c26b50bf5a37350c78e8f09d98122a5e88ee9925d3a4463df224c98121effe",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Popover/Popover.demo.contextMenu.tsx",
+      "upstreamSha256": "7b323fafc7ecba52b78efcf12d9e41275b318cf2ffa7d54dae01a706738f600e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.disabled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Popover, Text } from '@mantine/core';\n\nfunction Wrapper(props: any) {\n  return (\n    <Popover width={200} {...props}>\n      <Popover.Target>\n        <Button>Toggle popover</Button>\n      </Popover.Target>\n      <Popover.Dropdown>\n        <Text size=\"xs\">Disabled popover dropdown is always hidden</Text>\n      </Popover.Dropdown>\n    </Popover>\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent disabled={false} />; }\n",
+      "sha256": "f87fa3b96d0d394fb91297b118491463dcb2738abfa04b41dbd85372c8acaadd",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Popover/Popover.demo.disabled.tsx",
+      "upstreamSha256": "e1ae444fe71827f7d60ba6764c674db7c6411f91b79595dd941297c3d0279a6f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.form.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Popover, TextInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Popover width={300} trapFocus position=\"bottom\" withArrow shadow=\"md\">\n      <Popover.Target>\n        <Button>Toggle popover</Button>\n      </Popover.Target>\n      <Popover.Dropdown>\n        <TextInput label=\"Name\" placeholder=\"Name\" size=\"xs\" />\n        <TextInput label=\"Email\" placeholder=\"john@doe.com\" size=\"xs\" mt=\"xs\" />\n      </Popover.Dropdown>\n    </Popover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "17586d28f8647e35aa6b2f37b8f7f0895701cf740408124e0762aac09f376124",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Popover/Popover.demo.form.tsx",
+      "upstreamSha256": "e844238b6a0b6131908fbe576ad6d6266431974a93b7ea16fc2a64ad3e47834e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.hideDetached.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Button, Group, Popover, useComputedColorScheme } from '@mantine/core';\n\nfunction Demo() {\n  const colorScheme = useComputedColorScheme();\n\n  return (\n    <Box\n      bd=\"1px solid var(--mantine-color-dimmed)\"\n      p=\"xl\"\n      w={{ base: 340, sm: 400 }}\n      h={200}\n      style={{ overflow: 'auto', colorScheme }}\n    >\n      <Box w={1000} h={400}>\n        <Group>\n          <Popover width=\"target\" position=\"bottom\" opened>\n            <Popover.Target>\n              <Button>Toggle popover</Button>\n            </Popover.Target>\n            <Popover.Dropdown>This popover dropdown is hidden when detached</Popover.Dropdown>\n          </Popover>\n\n          <Popover width=\"target\" position=\"bottom\" opened hideDetached={false}>\n            <Popover.Target>\n              <Button>Toggle popover</Button>\n            </Popover.Target>\n            <Popover.Dropdown>This popover dropdown is visible when detached</Popover.Dropdown>\n          </Popover>\n        </Group>\n      </Box>\n    </Box>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "fbca69888249784b3d3f9a99c9b3053a93be3d18cae26586d5b0dc035d1e41bd",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Popover/Popover.demo.hideDetached.tsx",
+      "upstreamSha256": "ae1fd0dde00dbc8ccc8a8b803994319176d3b5e79716c221945ae7d5bb018cda",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.hover.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Popover, Text } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { close, open }] = useDisclosure(false);\n  return (\n    <Popover width={200} position=\"bottom\" withArrow shadow=\"md\" opened={opened}>\n      <Popover.Target>\n        <Button onMouseEnter={open} onMouseLeave={close}>\n          Hover to see popover\n        </Button>\n      </Popover.Target>\n      <Popover.Dropdown style={{ pointerEvents: 'none' }}>\n        <Text size=\"sm\">This popover is shown when user hovers the target element</Text>\n      </Popover.Dropdown>\n    </Popover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "21cd55a2b1d47d578bf87d43b13dc3fe6ceabe04119208d426c4c1a06a678004",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Popover/Popover.demo.hover.tsx",
+      "upstreamSha256": "4432af6c7fd5ddfa5a28b84427bdfa581365ee2c6a0c82f33c0bdd023d0fdb48",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.inline.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Mark, Popover, Text } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Text>\n      Stantler’s magnificent antlers were traded at high prices as works of art. As a result, this\n      Pokémon was hunted close to extinction by those who were after the priceless antlers.{' '}\n      <Popover middlewares={{ flip: true, shift: true, inline: true }} position=\"top\">\n        <Popover.Target>\n          <Mark>When visiting a junkyard</Mark>\n        </Popover.Target>\n        <Popover.Dropdown>Inline dropdown</Popover.Dropdown>\n      </Popover>\n      , you may catch sight of it having an intense fight with Murkrow over shiny objects.Ho-Oh’s\n      feathers glow in seven colors depending on the angle at which they are struck by light. These\n      feathers are said to bring happiness to the bearers. This Pokémon is said to live at the foot\n      of a rainbow.\n    </Text>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "6f104935b0abbcd0e26765a66d4f25460c3719798f60508f6065b6eb20e8bf60",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Popover/Popover.demo.inline.tsx",
+      "upstreamSha256": "42129f1784221aaab2403f20f543985b0c261eecf5d4b8565589352c4726f40e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.offset.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Popover, Text } from '@mantine/core';\n\nfunction Wrapper(props: any) {\n  return (\n    <Popover width={200} opened {...props}>\n      <Popover.Target>\n        <Button>Popover target</Button>\n      </Popover.Target>\n      <Popover.Dropdown>\n        <Text size=\"xs\">\n          Change position and offset to configure dropdown offset relative to target\n        </Text>\n      </Popover.Dropdown>\n    </Popover>\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent position={\"bottom\"} offset={0} />; }\n",
+      "sha256": "701e920d4c960e0bc730bd1485dd5a835ab77224d51f937daf363de9d851836b",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Popover/Popover.demo.offset.tsx",
+      "upstreamSha256": "16ec1625ac218eb75f9370de0b16acbe9835559682ea9f86dae7af371aacaf8a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.offsetAxis.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Popover, Text } from '@mantine/core';\n\nfunction Wrapper(props: any) {\n  return (\n    <Popover\n      width={200}\n      position={props.position}\n      opened\n      offset={{ mainAxis: props.mainAxis, crossAxis: props.crossAxis }}\n    >\n      <Popover.Target>\n        <Button>Popover target</Button>\n      </Popover.Target>\n      <Popover.Dropdown>\n        <Text size=\"xs\">\n          Change position and offset to configure dropdown offset relative to target\n        </Text>\n      </Popover.Dropdown>\n    </Popover>\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent position={\"bottom\"} mainAxis={0} crossAxis={0} />; }\n",
+      "sha256": "7fa370bb9dc6f420e9719306b7ebb7f4b53d0815a80e3ff1a1cceac82158df18",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Popover/Popover.demo.offsetAxis.tsx",
+      "upstreamSha256": "fdc26e1a1f5f7bfcd8bba98771eb9fd6d68d439a89891910f682df897c23e0af",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.overlay.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Anchor, Avatar, Group, Popover, Stack, Text, UnstyledButton } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Popover\n      width={320}\n      shadow=\"md\"\n      withArrow\n      withOverlay\n      overlayProps={{ zIndex: 10000, blur: '8px' }}\n      zIndex={10001}\n    >\n      <Popover.Target>\n        <UnstyledButton style={{ zIndex: 10001, position: 'relative' }}>\n          <Avatar src=\"https://avatars.githubusercontent.com/u/79146003?s=200&v=4\" radius=\"xl\" />\n        </UnstyledButton>\n      </Popover.Target>\n      <Popover.Dropdown>\n        <Group>\n          <Avatar src=\"https://avatars.githubusercontent.com/u/79146003?s=200&v=4\" radius=\"xl\" />\n          <Stack gap={5}>\n            <Text size=\"sm\" fw={700} style={{ lineHeight: 1 }}>\n              Mantine\n            </Text>\n            <Anchor href=\"https://x.com/mantinedev\" c=\"dimmed\" size=\"xs\" style={{ lineHeight: 1 }}>\n              @mantinedev\n            </Anchor>\n          </Stack>\n        </Group>\n\n        <Text size=\"sm\" mt=\"md\">\n          Customizable React components and hooks library with focus on usability, accessibility and\n          developer experience\n        </Text>\n\n        <Group mt=\"md\" gap=\"xl\">\n          <Text size=\"sm\">\n            <b>0</b> Following\n          </Text>\n          <Text size=\"sm\">\n            <b>1,174</b> Followers\n          </Text>\n        </Group>\n      </Popover.Dropdown>\n    </Popover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "4f17df6f983cc8d6139aeba81033aa89991b6954457eb607c07c37d3e2d9155c",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Popover/Popover.demo.overlay.tsx",
+      "upstreamSha256": "6f69e2cd18b3788eb0cd20524aca83f81af058bbacba25b3824d441f00d08b02",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.portalChildren.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Popover, Select } from '@mantine/core';\n\nimport { DatePickerInput } from '@mantine/dates';\n\nfunction Demo() {\n  return (\n    <Popover width={300} position=\"bottom\" withArrow shadow=\"md\">\n      <Popover.Target>\n        <Button>Toggle popover</Button>\n      </Popover.Target>\n      <Popover.Dropdown bg=\"var(--mantine-color-body)\">\n        <Select\n          label=\"Select within Popover\"\n          placeholder=\"Select within Popover\"\n          comboboxProps={{ withinPortal: false }}\n          data={['React', 'Angular', 'Svelte', 'Vue']}\n        />\n        <DatePickerInput\n          label=\"DatePickerInput within Popover\"\n          placeholder=\"DatePickerInput within Popover\"\n          popoverProps={{ withinPortal: false }}\n          mt=\"md\"\n        />\n      </Popover.Dropdown>\n    </Popover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "05534599fbe658f7b9c66b04ac1c9373a8266839abd8f539d29e61dc09b6c264",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Popover/Popover.demo.portalChildren.tsx",
+      "upstreamSha256": "52ec5b314272721e5c5df1ff3674a3b2b0230aaf18b24d7f928b79b07a92d29e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.sameWidth.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Popover, Text } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Popover width=\"target\" position=\"bottom\" withArrow shadow=\"md\">\n      <Popover.Target>\n        <Button w={280}>Toggle popover</Button>\n      </Popover.Target>\n      <Popover.Dropdown>\n        <Text size=\"sm\">\n          This popover has same width as target, it is useful when you are building input dropdowns\n        </Text>\n      </Popover.Dropdown>\n    </Popover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "509939a5d430588c21c91eda1afe6912fbe1c6042c6ea2ca1cb1ac5fb1682e0a",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Popover/Popover.demo.sameWidth.tsx",
+      "upstreamSha256": "2e490261fd6ca66a41d500174a14769c1c70b8fcc4b922048b6f549b27f38709",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Popover, Text } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Popover width={200} position=\"bottom\" withArrow shadow=\"md\">\n      <Popover.Target>\n        <Button>Toggle popover</Button>\n      </Popover.Target>\n      <Popover.Dropdown>\n        <Text size=\"xs\">This is uncontrolled popover, it is opened when button is clicked</Text>\n      </Popover.Dropdown>\n    </Popover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "3278d5eb02ae7e2f68a240d20b48559e21fa774813213299a8ea92f6d1ac6a9f",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Popover/Popover.demo.usage.tsx",
+      "upstreamSha256": "519377efd4081cc20ce6bf9ed872cd66db603887179d0777ba65a9d6562ec41a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/popover/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.arrow\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7d56518bcbef63b2a8aa1f3de2bd77c84b63491b543ecf9b36778ade8975d73d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/popover/previews/click-outside-events.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.clickOutsideEvents\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d6c02d6a4e60096c2016a6e16753c40f8a2581bcef4b8cf3165aafa481197839",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/popover/previews/context-menu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.contextMenu\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4b2bbbfd168a7b149eff711cc7df1332d99f8cb281005c2f04aeea531ce5b8af",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/popover/previews/disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.disabled\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c9b073865ac5774cd6804fbd211fe4c6f104f6c6a0a9e2eaf85ad233da01fa1d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/popover/previews/form.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.form\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d138f75973b5d64aa27a83cd6145021bbda3b21d14360edeabc34f2c214d208c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/popover/previews/hide-detached.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.hideDetached\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "3b332e0e9f39441564baa2e2979cd1219339952f16a59bdb047f5432d0394b76",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/popover/previews/hover.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.hover\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "6b67503b12f8cf1f8642beec6ffa2867c2608d6dc92423d477a3ae8eba17390f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/popover/previews/inline.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.inline\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7204b2bfe7502bfc20020c145082e37542dcc37f719bf8aa8fac2f4ad332b249",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/popover/previews/offset.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.offset\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "52fa55da04ab02453bb4d000cb99146f9378783ad6c762ed4f18fdb7c3c5f4bb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/popover/previews/offset-axis.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.offsetAxis\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "8fd86f5c1f04d70befb33eef82686227bf0d5814bf1b0f4e531100c681cafd69",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/popover/previews/overlay.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.overlay\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7487d61a0f4cfd7f4986697801a4d2e549be863289c6f3fa1bc0b53acfc8e828",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/popover/previews/portal-children.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.portalChildren\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4ea9025059985ec0446bc253761ec9bb3edcb344f18bddf3cfde9dcee4ff917b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/popover/previews/same-width.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.sameWidth\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "cfa62d316649aa0a3c205be2ac36c11ca1f31f9e167ec5207f783fe85e03e939",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/popover/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Popover/Popover.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d25cf3cb0293afa4c72dcae656924b1ae0bcad8b9f27f581c23da7f648271a41",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/dates@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/dates@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "popover",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Popover",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Popover/Popover.demo.arrow.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Popover/Popover.demo.arrow.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine popover\n\n14 published Mantine popover examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Popover\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Popover/Popover.demo.arrow.tsx\n"
+}

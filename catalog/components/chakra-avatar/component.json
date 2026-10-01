@@ -1,0 +1,381 @@
+{
+  "id": "chakra:avatar",
+  "sourceId": "chakra",
+  "slug": "chakra-avatar",
+  "name": "Chakra UI avatar",
+  "description": "17 published Chakra UI avatar examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "avatar",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "avatar",
+      "chakra ui avatar"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "17 published Chakra UI avatar examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "avatar:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI avatar\navatar\n17 published Chakra UI avatar examples with complete pinned source and MIT attribution.\nchakra ui avatar\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI avatar 17 published Chakra UI avatar examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/avatar basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-avatar",
+  "manifestPath": "components/chakra-avatar/component.json",
+  "integrity": "sha256:a706096f67928bf7b8e23d55f0838b3f7b73f564be7ab94b13f97ac94d2df570",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar } from \"@chakra-ui/react\"\n\nexport const AvatarBasic = () => {\n  return (\n    <Avatar.Root>\n      <Avatar.Fallback name=\"Segun Adebayo\" />\n      <Avatar.Image src=\"https://bit.ly/sage-adebayo\" />\n    </Avatar.Root>\n  )\n}\n",
+      "sha256": "3ed6172168b0515abc965331a166ece4d2c9288019d75b5193a331ac2fdedefe",
+      "upstreamPath": "apps/compositions/src/examples/avatar-basic.tsx",
+      "upstreamSha256": "d7d829e3175b82e1e4bf5b6861d6e2cff0414924f4a6a1257a9a457909f6d391",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-explorer-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, HStack } from \"@chakra-ui/react\"\n\nexport const AvatarExplorerDemo = () => {\n  return (\n    <HStack gap={2}>\n      <Avatar.Root>\n        <Avatar.Fallback name=\"Segun Adebayo\" />\n        <Avatar.Image src=\"https://bit.ly/sage-adebayo\" />\n      </Avatar.Root>\n      <Avatar.Root>\n        <Avatar.Fallback name=\"Segun Adebayo\" />\n        <Avatar.Image src=\"https://bit.ly/broken-link\" />\n      </Avatar.Root>\n    </HStack>\n  )\n}\n",
+      "sha256": "4354a10a030701429957a8ffd3f407b0b26c27076090f23957e63c0513102204",
+      "upstreamPath": "apps/compositions/src/examples/avatar-explorer-demo.tsx",
+      "upstreamSha256": "e0aa59c9e44d3267237db7b5fa38cf7a00c9dccf0717fc405ec9991c1b5813fc",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-group-with-stacking.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, AvatarGroup, Stack } from \"@chakra-ui/react\"\n\nexport const AvatarGroupWithStacking = () => {\n  return (\n    <Stack>\n      <AvatarGroup size=\"lg\" stacking=\"last-on-top\">\n        {items.map((item) => (\n          <Avatar.Root key={item.name}>\n            <Avatar.Fallback name={item.name} />\n            <Avatar.Image src={item.src} />\n          </Avatar.Root>\n        ))}\n        <Avatar.Root>\n          <Avatar.Fallback>+3</Avatar.Fallback>\n        </Avatar.Root>\n      </AvatarGroup>\n\n      <AvatarGroup size=\"lg\" stacking=\"first-on-top\">\n        {items.map((item) => (\n          <Avatar.Root key={item.name}>\n            <Avatar.Fallback name={item.name} />\n            <Avatar.Image src={item.src} />\n          </Avatar.Root>\n        ))}\n        <Avatar.Root>\n          <Avatar.Fallback>+3</Avatar.Fallback>\n        </Avatar.Root>\n      </AvatarGroup>\n\n      <AvatarGroup size=\"lg\" spaceX=\"1\" borderless>\n        {items.map((item) => (\n          <Avatar.Root key={item.name}>\n            <Avatar.Fallback name={item.name} />\n            <Avatar.Image src={item.src} />\n          </Avatar.Root>\n        ))}\n        <Avatar.Root>\n          <Avatar.Fallback>+3</Avatar.Fallback>\n        </Avatar.Root>\n      </AvatarGroup>\n    </Stack>\n  )\n}\n\nconst items = [\n  {\n    src: \"https://cdn.myanimelist.net/r/84x124/images/characters/9/131317.webp?s=d4b03c7291407bde303bc0758047f6bd\",\n    name: \"Uchiha Sasuke\",\n  },\n  {\n    src: \"https://cdn.myanimelist.net/r/84x124/images/characters/7/284129.webp?s=a8998bf668767de58b33740886ca571c\",\n    name: \"Baki Ani\",\n  },\n  {\n    src: \"https://cdn.myanimelist.net/r/84x124/images/characters/9/105421.webp?s=269ff1b2bb9abe3ac1bc443d3a76e863\",\n    name: \"Uchiha Chan\",\n  },\n]\n",
+      "sha256": "563c3b6ff38967cf58bbcb32e0f74ca62eae6165acc8bb30ef4a446cd3cd7c49",
+      "upstreamPath": "apps/compositions/src/examples/avatar-group-with-stacking.tsx",
+      "upstreamSha256": "3ee75807683203ce31c7a95f1aa4087d5503e7749c76b28bdc647c1f000a2cec",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-persona.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, HStack, Stack, Text } from \"@chakra-ui/react\"\n\nexport const AvatarPersona = () => {\n  return (\n    <Stack gap=\"8\">\n      {users.map((user) => (\n        <HStack key={user.email} gap=\"4\">\n          <Avatar.Root>\n            <Avatar.Fallback name={user.name} />\n            <Avatar.Image src={user.avatar} />\n          </Avatar.Root>\n          <Stack gap=\"0\">\n            <Text fontWeight=\"medium\">{user.name}</Text>\n            <Text color=\"fg.muted\" textStyle=\"sm\">\n              {user.email}\n            </Text>\n          </Stack>\n        </HStack>\n      ))}\n    </Stack>\n  )\n}\n\nconst users = [\n  {\n    id: \"1\",\n    name: \"John Mason\",\n    email: \"john.mason@example.com\",\n    avatar: \"https://i.pravatar.cc/300?u=iu\",\n  },\n  {\n    id: \"2\",\n    name: \"Melissa Jones\",\n    email: \"melissa.jones@example.com\",\n    avatar: \"https://i.pravatar.cc/300?u=po\",\n  },\n]\n",
+      "sha256": "7afc54516b4a55d59a809233d8ce38f9ef69ae13c23a42e44c5c60d986f5b582",
+      "upstreamPath": "apps/compositions/src/examples/avatar-persona.tsx",
+      "upstreamSha256": "d323e0d867031583d5ea24c8c675929ebec981e86d4cd962f77210851df86531",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-size-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, For, HStack, Span, useSlotRecipe } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nfunction omit<T extends string | undefined>(\n  arr: T[] | undefined,\n  omit: T[],\n): T[] {\n  return arr?.filter((v) => !omit?.includes(v)) ?? []\n}\n\nexport const AvatarSizeTable = () => {\n  const recipe = useSlotRecipe({ key: \"avatar\" })\n  const sizeMap = omit(recipe.variantMap.size, [\"full\"])\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={sizeMap}>{(v) => <td key={v}>{v}</td>}</For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={sizeMap}>\n                {(v) => (\n                  <td key={v}>\n                    <HStack>\n                      <Avatar.Root colorPalette={c} size={v}>\n                        <Avatar.Image src=\"https://i.pravatar.cc/150?img=3\" />\n                        <Avatar.Fallback name=\"Chris Johnson\" />\n                      </Avatar.Root>\n                      <Avatar.Root colorPalette={c} size={v}>\n                        <Avatar.Image />\n                        <Avatar.Fallback name=\"Chris Johnson\" />\n                      </Avatar.Root>\n                      <Avatar.Root colorPalette={c} size={v}>\n                        <Avatar.Image />\n                        <Avatar.Fallback />\n                      </Avatar.Root>\n                    </HStack>\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n",
+      "sha256": "aabd523483a3c7b5d5bf2b2033372c86a795b88f3c282925ea6ef5f1bacc881f",
+      "upstreamPath": "apps/compositions/src/examples/avatar-size-table.tsx",
+      "upstreamSha256": "8cb44671a4dacd0185067850f290ea37df25c0520ce6b0e9a8f16733767c2f4d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/color-palettes.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { ColorPalette } from \"@chakra-ui/react\"\n\nexport const colorPalettes: ColorPalette[] = [\n  \"gray\",\n  \"red\",\n  \"green\",\n  \"blue\",\n  \"teal\",\n  \"pink\",\n  \"purple\",\n  \"cyan\",\n  \"orange\",\n  \"yellow\",\n]\n",
+      "sha256": "90c5e84e17059e5935c80798a833fb5ac46ea296bb8d1ee978fd7a6e8cdb15e7",
+      "upstreamPath": "apps/compositions/src/lib/color-palettes.ts",
+      "upstreamSha256": "bc209453f7e4dbfc131d92ed9c81f00e20ad5da6cab70624417dcd591e62eac1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/playground-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { chakra } from \"@chakra-ui/react\"\n\nexport const PlaygroundTable = chakra(\"table\", {\n  base: {\n    width: \"full\",\n    marginBottom: \"32px\",\n    borderCollapse: \"collapse\",\n    \"& td:not(.chakra-table__cell)\": {\n      paddingRight: \"8\",\n      paddingBottom: \"8\",\n    },\n    \"& th:not(.chakra-table__column-header)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n    \"& thead td:not(.chakra-table__cell)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n  },\n})\n",
+      "sha256": "0c8b12b7fc74b6aec643559359ca4d43afbca488faeb90424ba3f98e71e3d7e7",
+      "upstreamPath": "apps/compositions/src/lib/playground-table.tsx",
+      "upstreamSha256": "d42456810c8b507d7171df7dca2fc955f2c04f4e8e711a74de35507acf64416c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-variant-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, For, HStack, Span, useSlotRecipe } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const AvatarVariantTable = () => {\n  const recipe = useSlotRecipe({ key: \"avatar\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.variant}>\n            {(v) => <td key={v}>{v}</td>}\n          </For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.variant}>\n                {(v) => (\n                  <td key={v}>\n                    <HStack>\n                      <Avatar.Root colorPalette={c} variant={v}>\n                        <Avatar.Image src=\"https://i.pravatar.cc/150?img=4\" />\n                        <Avatar.Fallback name=\"Alex Brown\" />\n                      </Avatar.Root>\n                      <Avatar.Root colorPalette={c} variant={v}>\n                        <Avatar.Fallback name=\"Alex Brown\" />\n                      </Avatar.Root>\n                      <Avatar.Root colorPalette={c} variant={v}>\n                        <Avatar.Fallback />\n                      </Avatar.Root>\n                    </HStack>\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n",
+      "sha256": "0b046ac9fe3f29edb130d7ed99cbb3e8875e4cc5e20e35c8025f4504b08f1dc2",
+      "upstreamPath": "apps/compositions/src/examples/avatar-variant-table.tsx",
+      "upstreamSha256": "647f2bee38179ebb0de672e4766b43f6fe70597c9bc96b095ecbdcab121c9099",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-with-badge.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, Circle, Float } from \"@chakra-ui/react\"\n\nexport const AvatarWithBadge = () => {\n  return (\n    <Avatar.Root colorPalette=\"green\" variant=\"subtle\">\n      <Avatar.Fallback name=\"Dari Ann\" />\n      <Float placement=\"bottom-end\" offsetX=\"1\" offsetY=\"1\">\n        <Circle\n          bg=\"green.500\"\n          size=\"8px\"\n          outline=\"0.2em solid\"\n          outlineColor=\"bg\"\n        />\n      </Float>\n    </Avatar.Root>\n  )\n}\n",
+      "sha256": "30a39c368188885ac3333ad5344749ab9d8538ebe5b3ee99dc298a044b655828",
+      "upstreamPath": "apps/compositions/src/examples/avatar-with-badge.tsx",
+      "upstreamSha256": "c3a84fb1e0610868be8d40c00968ca151cf36b63521a9967c885111d9169f9aa",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-with-colors.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, Stack, Text } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\n\nexport const AvatarWithColors = () => {\n  return (\n    <Stack gap=\"2\" align=\"flex-start\">\n      {colorPalettes.map((colorPalette) => (\n        <Stack key={colorPalette} align=\"center\" direction=\"row\" gap=\"10\">\n          <Text minW=\"8ch\">{colorPalette}</Text>\n          <Avatar.Root colorPalette={colorPalette}>\n            <Avatar.Fallback name=\"Segun Adebayo\" />\n            <Avatar.Image src=\"https://bit.ly/sage-adebayo\" />\n          </Avatar.Root>\n          <Avatar.Root colorPalette={colorPalette}>\n            <Avatar.Fallback name=\"Segun Adebayo\" />\n          </Avatar.Root>\n          <Avatar.Root colorPalette={colorPalette}>\n            <Avatar.Fallback />\n          </Avatar.Root>\n        </Stack>\n      ))}\n    </Stack>\n  )\n}\n",
+      "sha256": "d1c2cebf2c7dd8455a1009bb0d7f96b441064e02c73954b4284b1be43cab5c4b",
+      "upstreamPath": "apps/compositions/src/examples/avatar-with-colors.tsx",
+      "upstreamSha256": "1ad373e94c895d5ccc92e6820a7535a45e2db5fbe88fc5825be24d5343ffa097",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-with-fallback.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, HStack } from \"@chakra-ui/react\"\n\nexport const AvatarWithFallback = () => {\n  return (\n    <HStack>\n      <Avatar.Root>\n        <Avatar.Fallback name=\"Oshigaki Kisame\" />\n        <Avatar.Image src=\"https://bit.ly/broken-link\" />\n      </Avatar.Root>\n      <Avatar.Root colorPalette=\"teal\">\n        <Avatar.Fallback name=\"Sasuke Uchiha\" />\n        <Avatar.Image src=\"https://bit.ly/broken-link\" />\n      </Avatar.Root>\n      <Avatar.Root colorPalette=\"red\">\n        <Avatar.Fallback />\n        <Avatar.Image src=\"https://bit.ly/broken-link\" />\n      </Avatar.Root>\n    </HStack>\n  )\n}\n",
+      "sha256": "e2360d59505755c8911002470ed5f108cf6e23d1fc923c1bcdd54f3830cac330",
+      "upstreamPath": "apps/compositions/src/examples/avatar-with-fallback.tsx",
+      "upstreamSha256": "7c52b02891aaeff339dbf41f6b0341f2d697bb0e0f6f2212c305f9a66495cb9a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-with-group.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, AvatarGroup } from \"@chakra-ui/react\"\n\nexport const AvatarWithGroup = () => {\n  return (\n    <AvatarGroup gap=\"0\" spaceX=\"-3\" size=\"lg\">\n      <Avatar.Root>\n        <Avatar.Fallback name=\"Uchiha Sasuke\" />\n        <Avatar.Image src=\"https://cdn.myanimelist.net/r/84x124/images/characters/9/131317.webp?s=d4b03c7291407bde303bc0758047f6bd\" />\n      </Avatar.Root>\n\n      <Avatar.Root>\n        <Avatar.Fallback name=\"Baki Ani\" />\n        <Avatar.Image src=\"https://cdn.myanimelist.net/r/84x124/images/characters/7/284129.webp?s=a8998bf668767de58b33740886ca571c\" />\n      </Avatar.Root>\n\n      <Avatar.Root>\n        <Avatar.Fallback name=\"Uchiha Chan\" />\n        <Avatar.Image src=\"https://cdn.myanimelist.net/r/84x124/images/characters/9/105421.webp?s=269ff1b2bb9abe3ac1bc443d3a76e863\" />\n      </Avatar.Root>\n      <Avatar.Root variant=\"solid\">\n        <Avatar.Fallback>+3</Avatar.Fallback>\n      </Avatar.Root>\n    </AvatarGroup>\n  )\n}\n",
+      "sha256": "47393fe2e4c91a1c5d7440fd49e561f6fb5c77b7f841c56c66dc1d78a6f06aaf",
+      "upstreamPath": "apps/compositions/src/examples/avatar-with-group.tsx",
+      "upstreamSha256": "205355ee5c3bac892c39d5b730200bab93405cbc69c42ee2d676b7a116c0d748",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-with-overflow.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, Group, Menu, Portal } from \"@chakra-ui/react\"\n\nconst names = [\n  \"Naruto Uzumaki\",\n  \"Sakura Haruno\",\n  \"Kakashi Hatake\",\n  \"Hinata Hyuga\",\n  \"Shikamaru Nara\",\n]\nconst maxAvatars = 3\n\nexport const AvatarWithOverflow = () => {\n  const { items, overflow } = partition(names, maxAvatars)\n  return (\n    <Group gap=\"0\" spaceX=\"2\">\n      {items.map((item) => (\n        <Avatar.Root key={item} colorPalette={pickPalette(item)}>\n          <Avatar.Fallback name={item} />\n        </Avatar.Root>\n      ))}\n      {overflow.length > 0 && (\n        <Menu.Root positioning={{ placement: \"bottom\" }}>\n          <Menu.Trigger rounded=\"full\" focusRing=\"outside\">\n            <Avatar.Root variant=\"outline\">\n              <Avatar.Fallback>+{overflow.length}</Avatar.Fallback>\n            </Avatar.Root>\n          </Menu.Trigger>\n          <Portal>\n            <Menu.Positioner>\n              <Menu.Content>\n                {overflow.map((item) => (\n                  <Menu.Item value={item} key={item}>\n                    <Avatar.Root size=\"xs\" colorPalette={pickPalette(item)}>\n                      <Avatar.Fallback name={item} />\n                    </Avatar.Root>\n                    {item}\n                  </Menu.Item>\n                ))}\n              </Menu.Content>\n            </Menu.Positioner>\n          </Portal>\n        </Menu.Root>\n      )}\n    </Group>\n  )\n}\n\nconst colorPalette = [\"red\", \"blue\", \"green\", \"yellow\", \"purple\", \"orange\"]\n\nconst pickPalette = (name: string) => {\n  const index = name.charCodeAt(0) % colorPalette.length\n  return colorPalette[index]\n}\n\nconst partition = (arr: string[], max: number) => {\n  const items = []\n  const overflow = []\n  for (const item of arr) {\n    if (items.length < max) items.push(item)\n    else overflow.push(item)\n  }\n  return { items, overflow }\n}\n",
+      "sha256": "e560559ebc0d96d8d315f8b27823579c648338b52ff3c8b625370cc5ad13b56a",
+      "upstreamPath": "apps/compositions/src/examples/avatar-with-overflow.tsx",
+      "upstreamSha256": "5ce91ba30c36ad4e9039768f672f093da4df563c1ba603ca8f9f7f98b0bd86f5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-with-random-color.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, HStack } from \"@chakra-ui/react\"\n\nconst colorPalette = [\"red\", \"blue\", \"green\", \"yellow\", \"purple\", \"orange\"]\n\nconst pickPalette = (name: string) => {\n  const index = name.charCodeAt(0) % colorPalette.length\n  return colorPalette[index]\n}\n\nexport const AvatarWithRandomColor = () => {\n  return (\n    <HStack>\n      <Avatar.Root colorPalette={pickPalette(\"Shane Nelson\")}>\n        <Avatar.Fallback name=\"Shane Nelson\" />\n      </Avatar.Root>\n      <Avatar.Root colorPalette={pickPalette(\"Brook Lesnar\")}>\n        <Avatar.Fallback name=\"Brook Lesnar\" />\n      </Avatar.Root>\n      <Avatar.Root colorPalette={pickPalette(\"John Lennon\")}>\n        <Avatar.Fallback name=\"John Lennon\" />\n      </Avatar.Root>\n    </HStack>\n  )\n}\n",
+      "sha256": "8218d69a306c423ff0c26191f7e4703495a58bee6419eb41ab1909095bf3f899",
+      "upstreamPath": "apps/compositions/src/examples/avatar-with-random-color.tsx",
+      "upstreamSha256": "ebc23285d76eb32151ee4b8b93123a7b3a5e04338dd90b6fada2c8dc56ae7b34",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-with-ring.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, HStack, defineStyle } from \"@chakra-ui/react\"\n\nconst ringCss = defineStyle({\n  outlineWidth: \"2px\",\n  outlineColor: \"colorPalette.500\",\n  outlineOffset: \"2px\",\n  outlineStyle: \"solid\",\n})\n\nexport const AvatarWithRing = () => {\n  return (\n    <HStack gap=\"4\">\n      <Avatar.Root css={ringCss} colorPalette=\"pink\">\n        <Avatar.Fallback name=\"Random\" />\n        <Avatar.Image src=\"https://randomuser.me/api/portraits/men/70.jpg\" />\n      </Avatar.Root>\n      <Avatar.Root css={ringCss} colorPalette=\"green\">\n        <Avatar.Fallback name=\"Random\" />\n        <Avatar.Image src=\"https://randomuser.me/api/portraits/men/54.jpg\" />\n      </Avatar.Root>\n      <Avatar.Root css={ringCss} colorPalette=\"blue\">\n        <Avatar.Fallback name=\"Random\" />\n        <Avatar.Image src=\"https://randomuser.me/api/portraits/men/42.jpg\" />\n      </Avatar.Root>\n    </HStack>\n  )\n}\n",
+      "sha256": "da01994f84d21261102a53329ced55155f0f2eb6fafe09e7e0c3c8d1462c7ecc",
+      "upstreamPath": "apps/compositions/src/examples/avatar-with-ring.tsx",
+      "upstreamSha256": "dcc4edd8b37ff59840a95cd446587ffb2c1daefd312c0a9692f0d4e379a331db",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-with-shape.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, HStack } from \"@chakra-ui/react\"\n\nexport const AvatarWithShape = () => {\n  return (\n    <HStack gap=\"4\">\n      <Avatar.Root shape=\"square\" size=\"lg\">\n        <Avatar.Fallback name=\"Jane Smith\" />\n        <Avatar.Image src=\"https://i.pravatar.cc/150?img=12\" />\n      </Avatar.Root>\n      <Avatar.Root shape=\"rounded\" size=\"lg\">\n        <Avatar.Fallback name=\"Segun Adebayo\" />\n        <Avatar.Image src=\"https://bit.ly/sage-adebayo\" />\n      </Avatar.Root>\n      <Avatar.Root shape=\"full\" size=\"lg\">\n        <Avatar.Fallback name=\"Random User\" />\n        <Avatar.Image src=\"https://images.unsplash.com/photo-1531746020798-e6953c6e8e04\" />\n      </Avatar.Root>\n    </HStack>\n  )\n}\n",
+      "sha256": "00147eac6ad30e390a29ce0ddd5337955c13bd3a0ceab3f8e5ca0839d857f8a8",
+      "upstreamPath": "apps/compositions/src/examples/avatar-with-shape.tsx",
+      "upstreamSha256": "b3ad1e7b24b1cbd7c97ca780a78a1b827bb71a69647e0fb2e0c215b233236b96",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-with-sizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, For, HStack } from \"@chakra-ui/react\"\n\nexport const AvatarWithSizes = () => {\n  return (\n    <HStack gap=\"3\">\n      <For each={[\"xs\", \"sm\", \"md\", \"lg\", \"xl\", \"2xl\"]}>\n        {(size) => (\n          <Avatar.Root size={size} key={size}>\n            <Avatar.Fallback name=\"Segun Adebayo\" />\n            <Avatar.Image src=\"https://bit.ly/sage-adebayo\" />\n          </Avatar.Root>\n        )}\n      </For>\n    </HStack>\n  )\n}\n",
+      "sha256": "4953e7116fb69e731b9ffc237292301d263d6e2780b19c38528dd6f1a8cb7490",
+      "upstreamPath": "apps/compositions/src/examples/avatar-with-sizes.tsx",
+      "upstreamSha256": "bbfb15ad50dabbf16fa8cc5996e566225ed41ed42aba665e4e885c4e38fbdab8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-with-store.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, Code, Stack, useAvatar } from \"@chakra-ui/react\"\n\nexport const AvatarWithStore = () => {\n  const avatar = useAvatar()\n  return (\n    <Stack align=\"flex-start\">\n      <Avatar.RootProvider value={avatar}>\n        <Avatar.Image src=\"https://bit.ly/sage-adebayo\" />\n        <Avatar.Fallback name=\"Segun Adebayo\" />\n      </Avatar.RootProvider>\n      <Code>{avatar.loaded ? \"loaded\" : \"not loaded\"}</Code>\n    </Stack>\n  )\n}\n",
+      "sha256": "bacb8578ef9c82b18401623d70cbd3bd1c2eb505b504538b750a6b5a9c0a73ae",
+      "upstreamPath": "apps/compositions/src/examples/avatar-with-store.tsx",
+      "upstreamSha256": "397aa39cfeb52eb71000603a27dc45f7c73ce649e5e2d1bb319795008709ec34",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-with-variants.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, For, HStack } from \"@chakra-ui/react\"\n\nexport const AvatarWithVariants = () => {\n  return (\n    <HStack gap=\"3\">\n      <For each={[\"solid\", \"outline\", \"subtle\"]}>\n        {(variant) => (\n          <Avatar.Root key={variant} variant={variant}>\n            <Avatar.Fallback name=\"Segun Adebayo\" />\n          </Avatar.Root>\n        )}\n      </For>\n    </HStack>\n  )\n}\n",
+      "sha256": "5af7ccc62dc798c3a9ac7509d6969eb6ebef38bb5f0f2e14af83abfde9957a18",
+      "upstreamPath": "apps/compositions/src/examples/avatar-with-variants.tsx",
+      "upstreamSha256": "2918e9a5e86b3c2f8f315c8e05bf24212efeff6c36dc9d35a3cc4979fc67557d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/avatar-closed-component.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Avatar as ChakraAvatar,\n  AvatarGroup as ChakraAvatarGroup,\n} from \"@chakra-ui/react\"\nimport * as React from \"react\"\n\ntype ImageProps = React.ImgHTMLAttributes<HTMLImageElement>\n\nexport interface AvatarProps extends ChakraAvatar.RootProps {\n  name?: string\n  src?: string\n  srcSet?: string\n  loading?: ImageProps[\"loading\"]\n  icon?: React.ReactElement\n  fallback?: React.ReactNode\n}\n\nexport const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(\n  function Avatar(props, ref) {\n    const { name, src, srcSet, loading, icon, fallback, children, ...rest } =\n      props\n    return (\n      <ChakraAvatar.Root ref={ref} {...rest}>\n        <ChakraAvatar.Fallback name={name}>\n          {fallback || icon}\n        </ChakraAvatar.Fallback>\n        <ChakraAvatar.Image src={src} srcSet={srcSet} loading={loading} />\n        {children}\n      </ChakraAvatar.Root>\n    )\n  },\n)\n\nexport const AvatarGroup = ChakraAvatarGroup\n",
+      "sha256": "0f767b1311642c59f7e5a637bb3258f7428d0b43470b2df12c6be96f3c6e6fdf",
+      "upstreamPath": "apps/compositions/src/examples/avatar-closed-component.tsx",
+      "upstreamSha256": "6605b08c1e38d52f6801b7652d02641406de22f91c7ca91b9a7b337240495787",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "1c90b33bc8c83293c5cbb19a55ea7bf50fd4c253b32a61aec1ac6144a77496bc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/previews/avatar-explorer-demo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarExplorerDemo as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-explorer-demo\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "f43bd1812dbe857764f01259c951f2d41f4236538c0b4293967b3b082ae74cc7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/previews/avatar-group-with-stacking.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarGroupWithStacking as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-group-with-stacking\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a70aee2e342f7c08d4be4c290e4296b1b0509749d369c55616905e370f54cdb8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/previews/avatar-persona.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarPersona as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-persona\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "5e06c8f577ff913753b864b5fc496b7fa7b7373cc391c4ab4d2ce684ed919e9d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/previews/avatar-size-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarSizeTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-size-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a469ce30fe3a9985da13cd057a9b4603f904d904b528a8aa8df02a54a76be3be",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/previews/avatar-variant-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarVariantTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-variant-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "dbd2f20a40870d31a6a6672ea11537411c4b2a2ccc0180bcf4e7626cbcccb790",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/previews/avatar-with-badge.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarWithBadge as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-with-badge\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "0e54c09c3f767c259783066f37b4303803e2bcc423d606978bbc6df6fe78d7f5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/previews/avatar-with-colors.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarWithColors as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-with-colors\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "bf55c763431918f45b3faf61d4fd091b8d6f615d6c6972c1f4987dfbcd62625a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/previews/avatar-with-fallback.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarWithFallback as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-with-fallback\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "b15d563287b6b9571cd0ca03a789c499349ee997bdb34ad9b84d77bc5200fef8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/previews/avatar-with-group.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarWithGroup as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-with-group\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "53256e269dd9d2b34772fbefb2be8c2709ed6610e7230b4e0795635c4c2ab522",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/previews/avatar-with-overflow.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarWithOverflow as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-with-overflow\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "c92018c91aced86833012b742b24aae92cf9e59a1323299db8e2823a668e7f9f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/previews/avatar-with-random-color.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarWithRandomColor as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-with-random-color\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a7f5a43c1f2f064eba4ca102a113f00ddd156dd2139b1c9d8e54600db563e340",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/previews/avatar-with-ring.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarWithRing as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-with-ring\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "68f39238642d616cc579d05c0242a745ce5e71d4ad7fa29c27fd8ee29a13a11a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/previews/avatar-with-shape.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarWithShape as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-with-shape\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "d3a7d809300e0f2eb35925a2c9eca68019ce6ac94f28db881d6bccd4e0dfbd18",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/previews/avatar-with-sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarWithSizes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-with-sizes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "cf5731884781eeb4db35c7b826ce4b45aee52bc5a103a6620a50733b0aab26d4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/previews/avatar-with-store.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarWithStore as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-with-store\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "8f074cc06d78f2866372779cd8205d09fe8a301b9e842dbba7fc5975dc966b1b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/avatar/previews/avatar-with-variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AvatarWithVariants as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/avatar-with-variants\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "011b40965530e1019d9cd38c3c0c9ae9a069ca8517855761777d2469b2b8fb20",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "avatar",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/avatar-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/avatar-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI avatar\n\n17 published Chakra UI avatar examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/avatar-basic.tsx\n"
+}

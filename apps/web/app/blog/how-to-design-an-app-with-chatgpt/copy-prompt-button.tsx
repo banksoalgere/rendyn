@@ -1,5 +1,7 @@
 'use client';
 
+import { trackCopy } from '../../../lib/analytics';
+
 import { useState } from 'react';
 
 export function CopyPromptButton({ text }: { text: string }) {
@@ -8,6 +10,7 @@ export function CopyPromptButton({ text }: { text: string }) {
   async function copyPrompt() {
     try {
       await navigator.clipboard.writeText(text);
+      trackCopy('prompt');
       setStatus('copied');
       window.setTimeout(() => setStatus('idle'), 1800);
     } catch {

@@ -1,3 +1,6 @@
+import '../globals.css';
+import '../styles/editorial-guides.css';
+import '../styles/editorial.css';
 import { pageMetadata } from '../../lib/seo';
 import type { Metadata } from 'next';
 import { guides } from '../../lib/guides';

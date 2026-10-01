@@ -18,9 +18,9 @@ function isSecureSupabaseUrl(value: string): boolean {
   }
 }
 
-export function getSupabasePublicConfig(): SupabasePublicConfig | null {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
-  const publishableKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY?.trim();
+export function getSupabasePublicConfig(env: Record<string, string | undefined> = process.env): SupabasePublicConfig | null {
+  const url = env.NEXT_PUBLIC_SUPABASE_URL?.trim();
+  const publishableKey = env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY?.trim();
 
   if (
     !url

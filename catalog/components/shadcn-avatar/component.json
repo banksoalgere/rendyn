@@ -1,0 +1,104 @@
+{
+  "id": "shadcn:avatar",
+  "sourceId": "shadcn",
+  "slug": "shadcn-avatar",
+  "name": "shadcn/ui avatar",
+  "description": "1 published shadcn/ui avatar examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "cn@0.4.0",
+    "radix-ui@1.4.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "avatar",
+    "tags": [
+      "file",
+      "input"
+    ],
+    "aliases": [
+      "avatar",
+      "shadcn/ui avatar"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published shadcn/ui avatar examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "avatar:file:input",
+    "searchText": "shadcn/ui avatar\navatar\n1 published shadcn/ui avatar examples with complete pinned source and MIT attribution.\nfile\ninput\nshadcn/ui avatar 1 published shadcn/ui avatar examples with complete pinned source and MIT attribution. Installation Copyable component source and official examples, not a dependency on a hosted registry. Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent). Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/shadcn ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples Pinned source: https://github.com/shadcn ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples/avatar demo.tsx"
+  },
+  "previewPath": "/preview/blocks/shadcn-avatar",
+  "manifestPath": "components/shadcn-avatar/component.json",
+  "integrity": "sha256:2ae3cf02679fd671992d420f5a92ea5b0cf76d78c68d9b3022b15f360058754b",
+  "source": {
+    "id": "shadcn",
+    "name": "shadcn/ui",
+    "repository": "https://github.com/shadcn-ui/ui",
+    "commit": "a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4",
+    "registrySha256": "0054ee914f9451ebe390d414d34264df3a61f5e264c59b25b4c8155452fff343",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 shadcn",
+      "textPath": "source/shadcn/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/avatar-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Avatar,\n  AvatarFallback,\n  AvatarImage,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/avatar\"\n\nexport default function AvatarDemo() {\n  return (\n    <div className=\"flex flex-row flex-wrap items-center gap-12\">\n      <Avatar>\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\n        <AvatarFallback>CN</AvatarFallback>\n      </Avatar>\n      <Avatar className=\"rounded-lg\">\n        <AvatarImage\n          src=\"https://github.com/evilrabbit.png\"\n          alt=\"@evilrabbit\"\n        />\n        <AvatarFallback>ER</AvatarFallback>\n      </Avatar>\n      <div className=\"flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background *:data-[slot=avatar]:grayscale\">\n        <Avatar>\n          <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\n          <AvatarFallback>CN</AvatarFallback>\n        </Avatar>\n        <Avatar>\n          <AvatarImage\n            src=\"https://github.com/maxleiter.png\"\n            alt=\"@maxleiter\"\n          />\n          <AvatarFallback>LR</AvatarFallback>\n        </Avatar>\n        <Avatar>\n          <AvatarImage\n            src=\"https://github.com/evilrabbit.png\"\n            alt=\"@evilrabbit\"\n          />\n          <AvatarFallback>ER</AvatarFallback>\n        </Avatar>\n      </div>\n    </div>\n  )\n}\n",
+      "sha256": "fecd134e88dea8ce060d9e7bb17caa9830f5a1a84168d66b4a810292d41c57c0",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/avatar-demo.tsx",
+      "upstreamSha256": "e5a08187c1161d942f4df678f1fc8641acfc2b96659a4e213f931f6f9f5440a3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/avatar.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { Avatar as AvatarPrimitive } from \"radix-ui\"\n\nfunction Avatar({\n  className,\n  size = \"default\",\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Root> & {\n  size?: \"default\" | \"sm\" | \"lg\"\n}) {\n  return (\n    <AvatarPrimitive.Root\n      data-slot=\"avatar\"\n      data-size={size}\n      className={cn(\n        \"group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction AvatarImage({\n  className,\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Image>) {\n  return (\n    <AvatarPrimitive.Image\n      data-slot=\"avatar-image\"\n      className={cn(\"aspect-square size-full\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction AvatarFallback({\n  className,\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Fallback>) {\n  return (\n    <AvatarPrimitive.Fallback\n      data-slot=\"avatar-fallback\"\n      className={cn(\n        \"flex size-full items-center justify-center rounded-full bg-muted text-sm text-muted-foreground group-data-[size=sm]/avatar:text-xs\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction AvatarBadge({ className, ...props }: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      data-slot=\"avatar-badge\"\n      className={cn(\n        \"absolute right-0 bottom-0 z-10 inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground ring-2 ring-background select-none\",\n        \"group-data-[size=sm]/avatar:size-2 group-data-[size=sm]/avatar:[&>svg]:hidden\",\n        \"group-data-[size=default]/avatar:size-2.5 group-data-[size=default]/avatar:[&>svg]:size-2\",\n        \"group-data-[size=lg]/avatar:size-3 group-data-[size=lg]/avatar:[&>svg]:size-2\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction AvatarGroup({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"avatar-group\"\n      className={cn(\n        \"group/avatar-group flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction AvatarGroupCount({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"avatar-group-count\"\n      className={cn(\n        \"relative flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-sm text-muted-foreground ring-2 ring-background group-has-data-[size=lg]/avatar-group:size-10 group-has-data-[size=sm]/avatar-group:size-6 [&>svg]:size-4 group-has-data-[size=lg]/avatar-group:[&>svg]:size-5 group-has-data-[size=sm]/avatar-group:[&>svg]:size-3\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport {\n  Avatar,\n  AvatarImage,\n  AvatarFallback,\n  AvatarBadge,\n  AvatarGroup,\n  AvatarGroupCount,\n}\n",
+      "sha256": "9df3569f8ab1d26140ae415a404ffd2ea2e9e627629bf96f5a44b6b6cdbcd270",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/avatar.tsx",
+      "upstreamSha256": "0c5c48b8a1dff4fdc5ff9b6cb79cc9cd138682b7d86868068f571befe9675e88",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/avatar/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/avatar-demo\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "72876a25c5e105848be3e36cdd0050b741202e014724ad2321dd05185ae07144",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add cn@0.4.0 radix-ui@1.4.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add cn@0.4.0 radix-ui@1.4.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable component source and official examples, not a dependency on a hosted registry.",
+      "Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent)."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "avatar",
+    "upstreamPageUrl": "https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples",
+    "upstreamDetailUrl": "https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/avatar-demo.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/shadcn-ui/ui/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/avatar-demo.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# shadcn/ui avatar\n\n1 published shadcn/ui avatar examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable component source and official examples, not a dependency on a hosted registry.\n- Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent).\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples\nPinned source: https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/avatar-demo.tsx\n"
+}

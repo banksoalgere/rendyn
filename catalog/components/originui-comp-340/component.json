@@ -1,0 +1,118 @@
+{
+  "id": "originui:comp-340",
+  "sourceId": "originui",
+  "slug": "originui-comp-340",
+  "name": "Origin UI accordion radix comp-340",
+  "description": "1 published Origin UI accordion radix comp-340 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "clsx@2.1.1",
+    "lucide-react@1.35.0",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "accordion",
+    "tags": [
+      "accordion",
+      "file",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 340",
+      "origin ui accordion radix comp-340",
+      "accordion"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI accordion radix comp-340 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "accordion:file:select:upload",
+    "searchText": "Origin UI accordion radix comp-340\ncomp 340\n1 published Origin UI accordion radix comp-340 examples with complete pinned source and MIT attribution.\norigin ui accordion radix comp-340\naccordion\nfile\nselect\nupload\nOrigin UI accordion radix comp 340 1 published Origin UI accordion radix comp 340 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 340.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-340",
+  "manifestPath": "components/originui-comp-340/component.json",
+  "integrity": "sha256:ca27db7558404019d58ac520dcb6b2816a0038941d44419b28fe0b1b4caaab00",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-340.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ChevronDownIcon } from \"lucide-react\";\nimport { Accordion as AccordionPrimitive } from \"radix-ui\";\nimport {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n} from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/accordion\";\n\nconst items = [\n  {\n    content:\n      \"Connect your accounts from Google, GitHub, or Microsoft to enable single sign-on and streamline your workflow. Connected accounts can be used for quick login and importing your preferences across platforms. You can revoke access to any connected account at any time.\",\n    id: \"1\",\n    sub: \"Manage your linked social and work accounts\",\n    title: \"Connected accounts\",\n  },\n  {\n    content:\n      \"Choose which updates you want to receive. You can get notifications for: security alerts, billing updates, newsletter and product announcements, usage reports, and scheduled maintenance. Notifications can be delivered via email, SMS, or push notifications on your devices.\",\n    id: \"2\",\n    sub: \"Customize your notification preferences\",\n    title: \"Notifications\",\n  },\n  {\n    content:\n      \"Protect your account with two-factor authentication. You can use authenticator apps like Google Authenticator or Authy, receive SMS codes, or use security keys like YubiKey. We recommend using an authenticator app for the most secure experience.\",\n    id: \"3\",\n    sub: \"Add an extra layer of security to your account\",\n    title: \"2-step verification\",\n  },\n  {\n    content:\n      \"Our support team is available around the ClockIcon to assist you. For billing inquiries, technical issues, or general questions, you can reach us through live chat, email at support@example.com, or schedule a call with our technical team. Premium support is available for enterprise customers.\",\n    id: \"4\",\n    sub: \"We're here to help 24/7\",\n    title: \"Contact support\",\n  },\n];\n\nexport default function Component() {\n  return (\n    <div className=\"space-y-4\">\n      <h2 className=\"font-bold text-xl\">W/ sub-header and chevron</h2>\n      <Accordion className=\"w-full\" collapsible defaultValue=\"3\" type=\"single\">\n        {items.map((item) => (\n          <AccordionItem className=\"py-2\" key={item.id} value={item.id}>\n            <AccordionPrimitive.Header className=\"flex\">\n              <AccordionPrimitive.Trigger className=\"flex flex-1 items-center justify-between rounded-md py-2 text-left font-semibold text-[15px] leading-6 outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 [&[data-state=open]>svg]:rotate-180\">\n                <span className=\"flex flex-col space-y-1\">\n                  <span>{item.title}</span>\n                  {item.sub && (\n                    <span className=\"font-normal text-sm\">{item.sub}</span>\n                  )}\n                </span>\n                <ChevronDownIcon\n                  aria-hidden=\"true\"\n                  className=\"pointer-events-none shrink-0 opacity-60 transition-transform duration-200\"\n                  size={16}\n                />\n              </AccordionPrimitive.Trigger>\n            </AccordionPrimitive.Header>\n            <AccordionContent className=\"pb-2 text-muted-foreground\">\n              {item.content}\n            </AccordionContent>\n          </AccordionItem>\n        ))}\n      </Accordion>\n    </div>\n  );\n}\n",
+      "sha256": "fc32e50354def2f71049d71045a3bc98f74131c8e077d945e391bfe923e6e616",
+      "upstreamPath": "apps/origin/registry/default/components/comp-340.tsx",
+      "upstreamSha256": "8b202c0e93c0ffd6f7583ea348766c3935333b5cc1471102638b72c7560af47a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/accordion.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ChevronDownIcon } from \"lucide-react\";\nimport { Accordion as AccordionPrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Accordion({\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Root>) {\n  return <AccordionPrimitive.Root data-slot=\"accordion\" {...props} />;\n}\n\nfunction AccordionItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Item>) {\n  return (\n    <AccordionPrimitive.Item\n      className={cn(\"border-b last:border-b-0\", className)}\n      data-slot=\"accordion-item\"\n      {...props}\n    />\n  );\n}\n\nfunction AccordionTrigger({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {\n  return (\n    <AccordionPrimitive.Header className=\"flex\">\n      <AccordionPrimitive.Trigger\n        className={cn(\n          \"flex flex-1 items-center justify-between gap-4 rounded-md py-4 text-left font-semibold text-sm outline-none transition-all hover:underline focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180\",\n          className,\n        )}\n        data-slot=\"accordion-trigger\"\n        {...props}\n      >\n        {children}\n        <ChevronDownIcon\n          aria-hidden=\"true\"\n          className=\"pointer-events-none shrink-0 opacity-60 transition-transform duration-200\"\n          size={16}\n        />\n      </AccordionPrimitive.Trigger>\n    </AccordionPrimitive.Header>\n  );\n}\n\nfunction AccordionContent({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Content>) {\n  return (\n    <AccordionPrimitive.Content\n      className=\"overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down\"\n      data-slot=\"accordion-content\"\n      {...props}\n    >\n      <div className={cn(\"pt-0 pb-4\", className)}>{children}</div>\n    </AccordionPrimitive.Content>\n  );\n}\n\nexport { Accordion, AccordionContent, AccordionItem, AccordionTrigger };\n",
+      "sha256": "b4c3f658028abfa31f33a4fba613b567f1a070b54ec3932b6046c6ecc01ee04d",
+      "upstreamPath": "apps/origin/registry/default/ui/accordion.tsx",
+      "upstreamSha256": "80f3ed10bf414b0bd8f34e2b78806afb9cfa4586cc96768de9b97df0e88110a5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-340/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-340\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "56a7f94c9ef5000db3b8b8514138f51c7883e5f3abde9aa93b0ee865c4445f28",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-340",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-340.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-340.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI accordion radix comp-340\n\n1 published Origin UI accordion radix comp-340 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-340.tsx\n"
+}

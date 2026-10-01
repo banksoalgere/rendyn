@@ -1,0 +1,195 @@
+{
+  "id": "mui:rating",
+  "sourceId": "mui",
+  "slug": "mui-rating",
+  "name": "Material UI rating",
+  "description": "7 published Material UI rating examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/icons-material@9.4.0",
+    "@mui/material@9.4.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "rating",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file"
+    ],
+    "aliases": [
+      "rating",
+      "material ui rating"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "7 published Material UI rating examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "rating:code:command:data:file",
+    "searchText": "Material UI rating\nrating\n7 published Material UI rating examples with complete pinned source and MIT attribution.\nmaterial ui rating\ncode\ncommand\ndata\nfile\nMaterial UI rating 7 published Material UI rating examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/rating Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/rating/BasicRating.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-rating",
+  "manifestPath": "components/mui-rating/component.json",
+  "integrity": "sha256:9e65ac1c8364e0c5321990948108e655b5f4012791a7ede159d5a07396a2e9b9",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/rating/BasicRating.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Rating from '@mui/material/Rating';\nimport Typography from '@mui/material/Typography';\n\nexport default function BasicRating() {\n  const [value, setValue] = React.useState<number | null>(2);\n\n  return (\n    <Box sx={{ '& > legend': { mt: 2 } }}>\n      <Typography component=\"legend\">Controlled</Typography>\n      <Rating\n        name=\"simple-controlled\"\n        value={value}\n        onChange={(event, newValue) => {\n          setValue(newValue);\n        }}\n      />\n      <Typography component=\"legend\">Uncontrolled</Typography>\n      <Rating\n        name=\"simple-uncontrolled\"\n        onChange={(event, newValue) => {\n          console.log(newValue);\n        }}\n        defaultValue={2}\n      />\n      <Typography component=\"legend\">Read only</Typography>\n      <Rating name=\"read-only\" value={value} readOnly />\n      <Typography component=\"legend\">Disabled</Typography>\n      <Rating name=\"disabled\" value={value} disabled />\n      <Typography component=\"legend\">No rating given</Typography>\n      <Rating name=\"no-value\" value={null} />\n    </Box>\n  );\n}\n",
+      "sha256": "384870a503e68e9bab6ba8e771f2aad1ee1a162a8db2799992bdd9a66ea821d2",
+      "upstreamPath": "docs/data/material/components/rating/BasicRating.tsx",
+      "upstreamSha256": "4c703feb0d7433b43c1ea3ce7c693a8a814bd029a7ab4561caa3db41e5f93f04",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/rating/CustomizedRating.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { styled } from '@mui/material/styles';\nimport Box from '@mui/material/Box';\nimport Rating from '@mui/material/Rating';\nimport FavoriteIcon from '@mui/icons-material/Favorite';\nimport FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';\nimport Typography from '@mui/material/Typography';\n\nconst StyledRating = styled(Rating)({\n  '& .MuiRating-iconFilled': {\n    color: '#ff6d75',\n  },\n  '& .MuiRating-iconHover': {\n    color: '#ff3d47',\n  },\n});\n\nexport default function CustomizedRating() {\n  return (\n    <Box sx={{ '& > legend': { mt: 2 } }}>\n      <Typography component=\"legend\">Custom icon and color</Typography>\n      <StyledRating\n        name=\"customized-color\"\n        defaultValue={2}\n        getLabelText={(value: number) => `${value} Heart${value !== 1 ? 's' : ''}`}\n        precision={0.5}\n        icon={<FavoriteIcon fontSize=\"inherit\" />}\n        emptyIcon={<FavoriteBorderIcon fontSize=\"inherit\" />}\n      />\n      <Typography component=\"legend\">10 stars</Typography>\n      <Rating name=\"customized-10\" defaultValue={2} max={10} />\n    </Box>\n  );\n}\n",
+      "sha256": "46e1da72f765d94c2a9d1835def2d5d24b5e9230183ee96edbc8b143ef8dd584",
+      "upstreamPath": "docs/data/material/components/rating/CustomizedRating.tsx",
+      "upstreamSha256": "99a83c607c6d357d6cd23f90dfafe2eef34a1d284a4a1c1142286eddbcd85c95",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/rating/HalfRating.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Rating from '@mui/material/Rating';\nimport Stack from '@mui/material/Stack';\n\nexport default function HalfRating() {\n  return (\n    <Stack spacing={1}>\n      <Rating name=\"half-rating\" defaultValue={2.5} precision={0.5} />\n      <Rating name=\"half-rating-read\" defaultValue={2.5} precision={0.5} readOnly />\n    </Stack>\n  );\n}\n",
+      "sha256": "1cc094b20ce18f88863560811e54034c5d6b3e43815f46daa7ba37fa7a4b923e",
+      "upstreamPath": "docs/data/material/components/rating/HalfRating.tsx",
+      "upstreamSha256": "98b21cb415fde9942776e3d04c13a90de44c6e8db026080218989c8438b1d9ad",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/rating/HoverRating.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Rating from '@mui/material/Rating';\nimport Box from '@mui/material/Box';\nimport StarIcon from '@mui/icons-material/Star';\n\nconst labels: { [index: string]: string } = {\n  0.5: 'Useless',\n  1: 'Useless+',\n  1.5: 'Poor',\n  2: 'Poor+',\n  2.5: 'Ok',\n  3: 'Ok+',\n  3.5: 'Good',\n  4: 'Good+',\n  4.5: 'Excellent',\n  5: 'Excellent+',\n};\n\nfunction getLabelText(value: number) {\n  return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;\n}\n\nexport default function HoverRating() {\n  const [value, setValue] = React.useState<number | null>(2);\n  const [hover, setHover] = React.useState(-1);\n\n  return (\n    <Box sx={{ width: 200, display: 'flex', alignItems: 'center' }}>\n      <Rating\n        name=\"hover-feedback\"\n        value={value}\n        precision={0.5}\n        getLabelText={getLabelText}\n        onChange={(event, newValue) => {\n          setValue(newValue);\n        }}\n        onChangeActive={(event, newHover) => {\n          setHover(newHover);\n        }}\n        emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize=\"inherit\" />}\n      />\n      {value !== null && (\n        <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>\n      )}\n    </Box>\n  );\n}\n",
+      "sha256": "0c296cc1f534fb0c4e60774a431aeafeba85bd57b7289830a52eef96c85b5460",
+      "upstreamPath": "docs/data/material/components/rating/HoverRating.tsx",
+      "upstreamSha256": "b822a94d9092d827bef41bca7d83afb424a23e2c2eccd63cea0a07054144836c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/rating/RadioGroupRating.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport { styled } from '@mui/material/styles';\nimport Rating, { IconContainerProps } from '@mui/material/Rating';\nimport SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';\nimport SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied';\nimport SentimentSatisfiedIcon from '@mui/icons-material/SentimentSatisfied';\nimport SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAltOutlined';\nimport SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';\n\nconst StyledRating = styled(Rating)(({ theme }) => ({\n  '& .MuiRating-iconEmpty .MuiSvgIcon-root': {\n    color: (theme.vars || theme).palette.action.disabled,\n  },\n}));\n\nconst customIcons: {\n  [index: string]: {\n    icon: React.ReactElement<unknown>;\n    label: string;\n  };\n} = {\n  1: {\n    icon: <SentimentVeryDissatisfiedIcon color=\"error\" />,\n    label: 'Very Dissatisfied',\n  },\n  2: {\n    icon: <SentimentDissatisfiedIcon color=\"error\" />,\n    label: 'Dissatisfied',\n  },\n  3: {\n    icon: <SentimentSatisfiedIcon color=\"warning\" />,\n    label: 'Neutral',\n  },\n  4: {\n    icon: <SentimentSatisfiedAltIcon color=\"success\" />,\n    label: 'Satisfied',\n  },\n  5: {\n    icon: <SentimentVerySatisfiedIcon color=\"success\" />,\n    label: 'Very Satisfied',\n  },\n};\n\nfunction IconContainer(props: IconContainerProps) {\n  const { value, ...other } = props;\n  return <span {...other}>{customIcons[value].icon}</span>;\n}\n\nexport default function RadioGroupRating() {\n  return (\n    <StyledRating\n      name=\"highlight-selected-only\"\n      defaultValue={2}\n      getLabelText={(value: number) => customIcons[value].label}\n      slotProps={{ icon: { component: IconContainer } }}\n      highlightSelectedOnly\n    />\n  );\n}\n",
+      "sha256": "938a848e5d0ee2c7f7e3e69b0c07b780671ae3fd08ce51353c3bb72868b1ad8c",
+      "upstreamPath": "docs/data/material/components/rating/RadioGroupRating.tsx",
+      "upstreamSha256": "501d3d36a8c695b305ad9427128403d4d65a5751ac9adfc509cfb6f7f83e412e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/rating/RatingSize.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Rating from '@mui/material/Rating';\nimport Stack from '@mui/material/Stack';\n\nexport default function RatingSize() {\n  return (\n    <Stack spacing={1}>\n      <Rating name=\"size-small\" defaultValue={2} size=\"small\" />\n      <Rating name=\"size-medium\" defaultValue={2} />\n      <Rating name=\"size-large\" defaultValue={2} size=\"large\" />\n    </Stack>\n  );\n}\n",
+      "sha256": "feb18deebcbb328b6097c6531c03de1b7a4fc5b098abd6b18f5211cd23e0410e",
+      "upstreamPath": "docs/data/material/components/rating/RatingSize.tsx",
+      "upstreamSha256": "c6b006feee1b2cc4baca4623cef4bc508ed633ee1e687353de0b103336ff2c3e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/rating/TextRating.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Box from '@mui/material/Box';\nimport Rating from '@mui/material/Rating';\nimport StarIcon from '@mui/icons-material/Star';\n\nconst labels: { [index: string]: string } = {\n  0.5: 'Useless',\n  1: 'Useless+',\n  1.5: 'Poor',\n  2: 'Poor+',\n  2.5: 'Ok',\n  3: 'Ok+',\n  3.5: 'Good',\n  4: 'Good+',\n  4.5: 'Excellent',\n  5: 'Excellent+',\n};\n\nexport default function TextRating() {\n  const value = 3.5;\n\n  return (\n    <Box sx={{ width: 200, display: 'flex', alignItems: 'center' }}>\n      <Rating\n        name=\"text-feedback\"\n        value={value}\n        readOnly\n        precision={0.5}\n        emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize=\"inherit\" />}\n      />\n      <Box sx={{ ml: 2 }}>{labels[value]}</Box>\n    </Box>\n  );\n}\n",
+      "sha256": "3ace97c0ce1432dd95ffec9d3c7c5c1d48b51d8f4f5cc9c4da3262cccb267ea2",
+      "upstreamPath": "docs/data/material/components/rating/TextRating.tsx",
+      "upstreamSha256": "ee47c6f051f173d2ae35bd0f0ec3c021054cb4971bc9d9379a349b97f9b862e9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/rating/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/rating/BasicRating\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "59177a4f40850d271e65bb453924cca8797c8239f386ca5638878656ac91a530",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/rating/previews/customized-rating.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/rating/CustomizedRating\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "c84922d7ba87f1ef5890d7ab25222122b8a9523851ba3059a5bd18d46982ff00",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/rating/previews/half-rating.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/rating/HalfRating\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "3dbca9928a305b646e375dcf6612bab321462282665786f1aba448eed08b196c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/rating/previews/hover-rating.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/rating/HoverRating\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "96fb718c1fe6754af7ec5dcc5495d9234128eb2e7abed23265269a917eda1cf0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/rating/previews/radio-group-rating.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/rating/RadioGroupRating\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1833ca5c086a21b9607815daf3c81a0be94989ed3a672a289f5c85c017bb2d08",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/rating/previews/rating-size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/rating/RatingSize\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "34bfc3868af50c32c2e3116f0b58564a9a4c874eca7ea6221ed92314070e3d15",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/rating/previews/text-rating.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/rating/TextRating\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d8fdce1ebcb750b0bcf32c2b3c343bb5c8bc820cbe769169e2ee55acf5c3c60b",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "rating",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/rating",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/rating/BasicRating.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/rating/BasicRating.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI rating\n\n7 published Material UI rating examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/rating\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/rating/BasicRating.tsx\n"
+}

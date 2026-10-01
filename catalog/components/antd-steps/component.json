@@ -1,0 +1,402 @@
+{
+  "id": "antd:steps",
+  "sourceId": "antd",
+  "slug": "antd-steps",
+  "name": "Ant Design steps",
+  "description": "20 published Ant Design steps examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@ant-design/icons@6.3.4",
+    "antd@6.6.5",
+    "antd-style@4.1.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "steps",
+    "tags": [
+      "file",
+      "form"
+    ],
+    "aliases": [
+      "steps",
+      "ant design steps"
+    ],
+    "interactions": [
+      "click"
+    ],
+    "useWhen": [
+      "20 published Ant Design steps examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "steps:file:form:click",
+    "searchText": "Ant Design steps\nsteps\n20 published Ant Design steps examples with complete pinned source and MIT attribution.\nant design steps\nfile\nform\nclick\nAnt Design steps 20 published Ant Design steps examples with complete pinned source and MIT attribution. Installation Complete MIT example compositions using the pinned antd npm package. Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/ant design/ant design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/steps/demo Pinned source: https://github.com/ant design/ant design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/steps/demo/clickable.tsx"
+  },
+  "previewPath": "/preview/blocks/antd-steps",
+  "manifestPath": "components/antd-steps/component.json",
+  "integrity": "sha256:ee2df4e622392f01a6e9a63f7efa047a9794bf16e18fe78478ef87cd1d7c4355",
+  "source": {
+    "id": "antd",
+    "name": "Ant Design",
+    "repository": "https://github.com/ant-design/ant-design",
+    "commit": "bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a",
+    "registrySha256": "7df4386dc63323dd6235edee9c52694b28d573a6d2765ac59719a52e1c259ab0",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2015-present Ant UED, https://xtech.antfin.com/",
+      "textPath": "source/antd/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/clickable.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Divider, Steps } from 'antd';\n\nconst App: React.FC = () => {\n  const [current, setCurrent] = useState(0);\n\n  const onChange = (value: number) => {\n    console.log('onChange:', value);\n    setCurrent(value);\n  };\n  const content = 'This is a content.';\n\n  return (\n    <>\n      <Steps\n        current={current}\n        onChange={onChange}\n        items={[\n          {\n            title: 'Step 1',\n            content,\n          },\n          {\n            title: 'Step 2',\n            content,\n          },\n          {\n            title: 'Step 3',\n            content,\n          },\n        ]}\n      />\n\n      <Divider />\n\n      <Steps\n        current={current}\n        onChange={onChange}\n        orientation=\"vertical\"\n        items={[\n          {\n            title: 'Step 1',\n            content,\n          },\n          {\n            title: 'Step 2',\n            content,\n          },\n          {\n            title: 'Step 3',\n            content,\n          },\n        ]}\n      />\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "26043f080b2ec2da15c50b62992539ec15a44e0610ea7b9fbb2fb50ab0b93f26",
+      "upstreamPath": "components/steps/demo/clickable.tsx",
+      "upstreamSha256": "4c20e5454b952b11af809344b10b1467b9dc519525c7291d26aa2d7f90bb0859",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/component-token.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { LoadingOutlined, SmileOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons';\nimport { ConfigProvider, Steps } from 'antd';\n\nconst content = 'This is a content.';\nconst App: React.FC = () => (\n  <ConfigProvider\n    theme={{\n      components: {\n        Steps: {\n          titleLineHeight: 20,\n          customIconSize: 40,\n          customIconTop: 0,\n          customIconFontSize: 32,\n          iconSize: 20,\n          iconTop: 0, // magic for ui experience\n          iconFontSize: 12,\n          iconSizeSM: 16,\n          dotSize: 20,\n          dotCurrentSize: 24,\n          navArrowColor: '#163CFF',\n          navContentMaxWidth: 100,\n          descriptionMaxWidth: 100,\n        },\n      },\n    }}\n  >\n    <Steps\n      current={1}\n      items={[\n        {\n          title: 'Finished',\n          content,\n        },\n        {\n          title: 'In Progress',\n          content,\n          subTitle: 'Left 00:00:08',\n        },\n        {\n          title: 'Waiting',\n          content,\n        },\n      ]}\n    />\n    <Steps\n      size=\"small\"\n      current={1}\n      items={[\n        {\n          title: 'Finished',\n          content,\n        },\n        {\n          title: 'In Progress',\n          content,\n          subTitle: 'Left 00:00:08',\n        },\n        {\n          title: 'Waiting',\n          content,\n        },\n      ]}\n    />\n    <Steps\n      items={[\n        {\n          title: 'Login',\n          status: 'finish',\n          icon: <UserOutlined />,\n        },\n        {\n          title: 'Verification',\n          status: 'finish',\n          icon: <SolutionOutlined />,\n        },\n        {\n          title: 'Pay',\n          status: 'process',\n          icon: <LoadingOutlined />,\n        },\n        {\n          title: 'Done',\n          status: 'wait',\n          icon: <SmileOutlined />,\n        },\n      ]}\n    />\n    <Steps\n      type=\"dot\"\n      current={1}\n      items={[\n        {\n          title: 'Finished',\n          content: 'This is a content.',\n        },\n        {\n          title: 'In Progress',\n          content: 'This is a content.',\n        },\n        {\n          title: 'Waiting',\n          content: 'This is a content.',\n        },\n      ]}\n    />\n    <Steps\n      type=\"navigation\"\n      current={1}\n      items={[\n        {\n          title: 'Step 1',\n          subTitle: '00:00:05',\n          status: 'finish',\n          content: 'This is a content.',\n        },\n        {\n          title: 'Step 2',\n          subTitle: '00:01:02',\n          status: 'process',\n          content: 'This is a content.',\n        },\n        {\n          title: 'Step 3',\n          subTitle: 'waiting for longlong time',\n          status: 'wait',\n          content: 'This is a content.',\n        },\n      ]}\n    />\n  </ConfigProvider>\n);\n\nexport default App;\n",
+      "sha256": "22fe9d7574e2e16351f7a3943fcd0a78d98e70b3826c32d75a58c897a9a4f2c1",
+      "upstreamPath": "components/steps/demo/component-token.tsx",
+      "upstreamSha256": "f27638dec2d87e81ff5d65e4b7e6995f6cde34237234cea242d8d3b5b34f5619",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/customized-progress-dot.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { StepsProps } from 'antd';\nimport { Popover, Steps } from 'antd';\n\nconst customDot: StepsProps['progressDot'] = (dot, { status, index }) => (\n  <Popover\n    content={\n      <span>\n        step {index} status: {status}\n      </span>\n    }\n  >\n    {dot}\n  </Popover>\n);\nconst content = 'You can hover on the dot.';\nconst App: React.FC = () => (\n  <Steps\n    current={1}\n    progressDot={customDot}\n    items={[\n      {\n        title: 'Finished',\n        content,\n      },\n      {\n        title: 'In Progress',\n        content,\n      },\n      {\n        title: 'Waiting',\n        content,\n      },\n      {\n        title: 'Waiting',\n        content,\n      },\n    ]}\n  />\n);\n\nexport default App;\n",
+      "sha256": "578072482e2cbe193d9139ca5e8dd22027dfac7769bc9c0ccd1fce117fdf4b03",
+      "upstreamPath": "components/steps/demo/customized-progress-dot.tsx",
+      "upstreamSha256": "e926fdd9155848b24aa077fee26cb8890572304423fa8ad9a0eabebb4807dd64",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/error.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Steps } from 'antd';\n\nconst content = 'This is a content';\nconst items = [\n  {\n    title: 'Finished',\n    content,\n  },\n  {\n    title: 'In Process',\n    content,\n  },\n  {\n    title: 'Waiting',\n    content,\n  },\n];\n\nconst App: React.FC = () => <Steps current={1} status=\"error\" items={items} />;\n\nexport default App;\n",
+      "sha256": "bee53d890862142decf0b8879c19c43dc21975a4100464caf3494bf1c7b6e45f",
+      "upstreamPath": "components/steps/demo/error.tsx",
+      "upstreamSha256": "a1082d30c8ee35e40c1a8994686c6cbb4d650173f887c8218c816c0c74584b93",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/icon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { LoadingOutlined, SmileOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons';\nimport { Steps } from 'antd';\n\nconst App: React.FC = () => (\n  <Steps\n    items={[\n      {\n        title: 'Login',\n        status: 'finish',\n        icon: <UserOutlined />,\n      },\n      {\n        title: 'Verification',\n        status: 'finish',\n        icon: <SolutionOutlined />,\n      },\n      {\n        title: 'Pay',\n        status: 'process',\n        icon: <LoadingOutlined />,\n      },\n      {\n        title: 'Done',\n        status: 'wait',\n        icon: <SmileOutlined />,\n      },\n    ]}\n  />\n);\n\nexport default App;\n",
+      "sha256": "c38c1514be593fa598216d0fcb02636cd0a9af5761fdf2813d2e38d7b821c473",
+      "upstreamPath": "components/steps/demo/icon.tsx",
+      "upstreamSha256": "a890be2e2379cfa76b3327f68fd904e839d62fd67693ec826103c060dc77abea",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/inline.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { StepsProps } from 'antd';\nimport { Avatar, Flex, Listy, Steps, Typography } from 'antd';\n\ninterface DataType {\n  title: string;\n  current: number;\n  status?: StepsProps['status'];\n}\n\nconst data: DataType[] = [\n  {\n    title: 'Ant Design Title 1',\n    current: 0,\n  },\n  {\n    title: 'Ant Design Title 2',\n    current: 1,\n    status: 'error',\n  },\n  {\n    title: 'Ant Design Title 3',\n    current: 2,\n  },\n  {\n    title: 'Ant Design Title 4',\n    current: 1,\n  },\n];\n\nconst items = [\n  {\n    title: 'Step 1',\n    content: 'This is Step 1',\n  },\n  {\n    title: 'Step 2',\n    content: 'This is Step 2',\n  },\n  {\n    title: 'Step 3',\n    content: 'This is Step 3',\n  },\n];\n\nconst App: React.FC = () => (\n  <Listy<DataType>\n    items={data}\n    rowKey=\"title\"\n    itemRender={(item, index) => (\n      <Flex gap=\"middle\" align=\"flex-start\">\n        <Avatar src={`https://api.dicebear.com/10.x/lorelei/svg?seed=${index}`} />\n        <Flex vertical flex=\"auto\" style={{ minWidth: 0 }}>\n          <a href=\"https://ant.design\">{item.title}</a>\n          <Typography.Text type=\"secondary\">\n            Ant Design, a design language for background applications, is refined by Ant UED Team\n          </Typography.Text>\n          <Steps\n            style={{ marginTop: 8 }}\n            type=\"inline\"\n            current={item.current}\n            status={item.status}\n            items={items}\n          />\n        </Flex>\n      </Flex>\n    )}\n  />\n);\n\nexport default App;\n",
+      "sha256": "01402aa03df219d03254ff919327d9041b9fdf60cdf8c085db8dfc555c0c8047",
+      "upstreamPath": "components/steps/demo/inline.tsx",
+      "upstreamSha256": "91049fade8b0cc743881e5d28030cc957ce1bbe0bfffc9cfd3f5c9430200e005",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/inline-variant.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { StepsProps } from 'antd';\nimport { Flex, Steps, theme } from 'antd';\n\nconst items: StepsProps['items'] = Array.from({ length: 5 }, (_, index) => ({\n  title: `Step ${index + 1}`,\n  subTitle: 'Sub Title',\n  content: `This is Step ${index + 1}`,\n}));\n\nconst App: React.FC = () => {\n  const { token } = theme.useToken();\n\n  return (\n    <Flex vertical>\n      <Steps type=\"inline\" current={1} items={items} />\n      <Steps\n        type=\"inline\"\n        current={4}\n        items={items}\n        status=\"finish\"\n        styles={{\n          itemTitle: {\n            color: token.colorPrimaryText,\n          },\n          itemSubtitle: {\n            color: token.colorPrimaryTextActive,\n          },\n          itemRail: {\n            background: token.colorTextDisabled,\n          },\n        }}\n      />\n      <Steps type=\"inline\" current={1} items={items.slice(2)} offset={2} />\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "0caf3665a48d45932c665bf64e90c7333648cc84baf84db4f8da5c323bc12790",
+      "upstreamPath": "components/steps/demo/inline-variant.tsx",
+      "upstreamSha256": "cd3ce0ab264cd08564ae778219bff8d4279709d03256fa3ff57495f82728b2e1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/max-count.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { LeftOutlined, RightOutlined } from '@ant-design/icons';\nimport type { InputNumberProps } from 'antd';\nimport { Button, Flex, InputNumber, Steps, Typography } from 'antd';\n\nconst genItems = (count: number) =>\n  Array.from({ length: count }, (_, index) => ({ title: `Step ${index + 1}` }));\n\nconst getMiddleCurrent = (count: number) => Math.floor((count - 1) / 2);\n\nconst App: React.FC = () => {\n  const [count, setCount] = React.useState(7);\n  const [current, setCurrent] = React.useState(() => getMiddleCurrent(7));\n  const items = React.useMemo(() => genItems(count), [count]);\n\n  const handleCountChange: InputNumberProps<number>['onChange'] = (value) => {\n    if (value === null) {\n      return;\n    }\n\n    setCount(value);\n    setCurrent(getMiddleCurrent(value));\n  };\n\n  const handlePrev = () => {\n    setCurrent((prev) => Math.max(prev - 1, 0));\n  };\n\n  const handleNext = () => {\n    setCurrent((prev) => Math.min(prev + 1, count - 1));\n  };\n\n  return (\n    <Flex vertical gap=\"middle\">\n      <Typography.Title level={5} style={{ margin: 0 }}>\n        Number of Steps\n      </Typography.Title>\n\n      <Steps current={current} maxCount={5} items={items} />\n\n      <Flex gap=\"small\" align=\"center\" style={{ alignSelf: 'center' }}>\n        <Button icon={<LeftOutlined />} onClick={handlePrev} disabled={current <= 0} />\n        <InputNumber\n          aria-label=\"Number of Steps\"\n          mode=\"spinner\"\n          min={3}\n          max={7}\n          value={count}\n          onChange={handleCountChange}\n          style={{\n            width: 120,\n          }}\n        />\n        <Button icon={<RightOutlined />} onClick={handleNext} disabled={current >= count - 1} />\n      </Flex>\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "74bec273bb0208a4ca19f66279dbcca251e4627647725a095a9d4088df658a88",
+      "upstreamPath": "components/steps/demo/max-count.tsx",
+      "upstreamSha256": "b4f237fd5aba75bac5b7b176ab4831a350716504ea9f6fde9e07185bbd9cd3c4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/nav.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Flex, Steps } from 'antd';\n\nconst App: React.FC = () => {\n  const [current, setCurrent] = useState(0);\n\n  const onChange = (value: number) => {\n    console.log('onChange:', value);\n    setCurrent(value);\n  };\n\n  return (\n    <Flex vertical gap=\"large\">\n      <Steps\n        type=\"navigation\"\n        size=\"small\"\n        current={current}\n        onChange={onChange}\n        items={[\n          {\n            title: 'Step 1',\n            subTitle: '00:00:05',\n            status: 'finish',\n            content: 'This is a content.',\n          },\n          {\n            title: 'Step 2',\n            subTitle: '00:01:02',\n            status: 'process',\n            content: 'This is a content.',\n          },\n          {\n            title: 'Step 3',\n            subTitle: 'waiting for longlong time',\n            status: 'wait',\n            content: 'This is a content.',\n          },\n        ]}\n      />\n\n      <Steps\n        type=\"navigation\"\n        current={current}\n        onChange={onChange}\n        items={[\n          {\n            status: 'finish',\n            title: 'Step 1',\n          },\n          {\n            status: 'process',\n            title: 'Step 2',\n          },\n          {\n            status: 'wait',\n            title: 'Step 3',\n          },\n          {\n            status: 'wait',\n            title: 'Step 4',\n          },\n        ]}\n      />\n\n      <Steps\n        type=\"navigation\"\n        size=\"small\"\n        current={current}\n        onChange={onChange}\n        items={[\n          {\n            status: 'finish',\n            title: 'finish 1',\n          },\n          {\n            status: 'finish',\n            title: 'finish 2',\n          },\n          {\n            status: 'process',\n            title: 'current process',\n          },\n          {\n            status: 'wait',\n            title: 'wait',\n            disabled: true,\n          },\n        ]}\n      />\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "edbed4a1bb96dfd06754c8673670681102001708ff3dec979137393a6890f43a",
+      "upstreamPath": "components/steps/demo/nav.tsx",
+      "upstreamSha256": "1faee95234a1f00f2bb05e9a59e0544febe3f3be611742b465345ad8a9e87728",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/panel.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Flex, Steps } from 'antd';\nimport type { StepsProps } from 'antd';\n\nconst App: React.FC = () => {\n  const [current, setCurrent] = useState(0);\n\n  const onChange = (value: number) => {\n    console.log('onChange:', value);\n    setCurrent(value);\n  };\n\n  const sharedProps: StepsProps = {\n    type: 'panel',\n    current,\n    onChange,\n    items: [\n      {\n        title: 'Step 1',\n        subTitle: '00:00',\n        content: 'This is a content.',\n      },\n      {\n        title: 'Step 2',\n        content: 'This is a content.',\n        status: 'error',\n      },\n      {\n        title: 'Step 3',\n        content: 'This is a content.',\n      },\n    ],\n  };\n\n  return (\n    <Flex vertical gap=\"medium\">\n      <Steps {...sharedProps} />\n      <Steps {...sharedProps} size=\"small\" variant=\"outlined\" />\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "fe35a4a3f46acb9ff1111921d66300ab419f66d66a00bbf3959b1fab18c2801e",
+      "upstreamPath": "components/steps/demo/panel.tsx",
+      "upstreamSha256": "df7ac8a9abcd9365c5b6cddf84854b4e3c16c49c8a1ec81c621d7c9f9f3c9e3c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/progress.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Steps } from 'antd';\n\nconst content = 'This is a content.';\nconst App: React.FC = () => (\n  <Steps\n    current={1}\n    percent={60}\n    items={[\n      {\n        title: 'Finished',\n        content,\n      },\n      {\n        title: 'In Progress',\n        subTitle: 'Left 00:00:08',\n        content,\n      },\n      {\n        title: 'Waiting',\n        content,\n      },\n    ]}\n  />\n);\n\nexport default App;\n",
+      "sha256": "2c6a5add84ea485812bfb3c6d799cf4e889749ce3364d9bf7c997f12fbc63dca",
+      "upstreamPath": "components/steps/demo/progress.tsx",
+      "upstreamSha256": "12591a1cccb7d85e30e4d542742c338f62a62e6c6ec56535358dceeb21dcf2de",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/progress-debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport type { StepsProps } from 'antd';\nimport { Button, Space, Steps } from 'antd';\n\nconst App: React.FC = () => {\n  const [percent, setPercent] = useState<number | undefined>(0);\n  const [current, setCurrent] = useState(1);\n  const [status, setStatus] = useState<StepsProps['status']>('process');\n  const content = 'This is a content.';\n  const items = [\n    {\n      title: 'Finished',\n      content,\n    },\n    {\n      title: 'In Progress',\n      subTitle: 'Left 00:00:08',\n      content,\n    },\n    {\n      title: 'Waiting',\n      content,\n    },\n  ];\n  return (\n    <>\n      <Space.Compact block>\n        <Button onClick={() => setPercent(undefined)}>Percentage to undefined</Button>\n        <Button\n          onClick={() =>\n            setPercent((prev) => {\n              const next = (prev ?? 0) + 10;\n              return next > 100 ? 0 : next;\n            })\n          }\n        >\n          Percentage +\n        </Button>\n        <Button onClick={() => setCurrent((prev) => (prev + 1) % 3)}>Current +</Button>\n        <Button onClick={() => setStatus('wait')}>Status Wait</Button>\n        <Button onClick={() => setStatus('process')}>Status Process</Button>\n        <Button onClick={() => setStatus('finish')}>Status Finish</Button>\n        <Button onClick={() => setStatus('error')}>Status Error</Button>\n      </Space.Compact>\n      <br />\n      <Steps current={current} percent={percent} status={status} items={items} />\n      <Steps current={current} percent={percent} status={status} size=\"small\" items={items} />\n      <Steps\n        current={current}\n        percent={percent}\n        status={status}\n        orientation=\"vertical\"\n        items={items}\n      />\n      <Steps\n        current={current}\n        percent={percent}\n        status={status}\n        size=\"small\"\n        orientation=\"vertical\"\n        items={items}\n      />\n      {percent}\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "13d1de828d8c311b167c04d55b981a15410ebe7df543506676adad38d4a581fe",
+      "upstreamPath": "components/steps/demo/progress-debug.tsx",
+      "upstreamSha256": "033088bee6594adc6c8cf49cc069cdf80e332fe329ce09163ef853bca51baf1e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/progress-dot.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Divider, Flex, Steps } from 'antd';\nimport type { StepsProps } from 'antd';\n\nconst items = [\n  {\n    title: 'Finished',\n    content: 'This is a content.',\n  },\n  {\n    title: 'In Progress',\n    content: 'This is a content.',\n  },\n  {\n    title: 'Waiting',\n    content: 'This is a content.',\n  },\n];\n\nconst sharedProps: StepsProps = {\n  type: 'dot',\n  current: 1,\n  items,\n};\n\nconst sharedVerticalProps = {\n  ...sharedProps,\n  orientation: 'vertical',\n  style: {\n    flex: 'auto',\n  },\n} as const;\n\nconst App: React.FC = () => (\n  <Flex vertical gap=\"medium\">\n    <Steps {...sharedProps} />\n    <Steps {...sharedProps} variant=\"outlined\" />\n    <Divider />\n    <Flex gap=\"medium\">\n      <Steps {...sharedVerticalProps} />\n      <Steps {...sharedVerticalProps} variant=\"outlined\" />\n    </Flex>\n  </Flex>\n);\n\nexport default App;\n",
+      "sha256": "c7de7565f32d69990a4b7fdf9bb4795c270d0d0e209492780d80b3d769f203cd",
+      "upstreamPath": "components/steps/demo/progress-dot.tsx",
+      "upstreamSha256": "bf6fe0533170243a8208ce2fad9d984092c5454c60067d28748b9dbf53227bbb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/simple.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Steps } from 'antd';\n\nconst content = 'This is a content.';\nconst items = [\n  {\n    title: 'Finished',\n    content,\n  },\n  {\n    title: 'In Progress',\n    content,\n    subTitle: 'Left 00:00:08',\n  },\n  {\n    title: 'Waiting',\n    content,\n  },\n];\n\nconst App: React.FC = () => (\n  <Flex vertical gap=\"large\">\n    <Steps current={1} items={items} />\n    <Steps current={1} items={items} variant=\"outlined\" />\n    <Steps current={1} items={items} size=\"small\" />\n    <Steps current={1} items={items} size=\"small\" variant=\"outlined\" />\n  </Flex>\n);\n\nexport default App;\n",
+      "sha256": "5136971bd210786ef0fc9f0266a0fe35b301a88a885a36bd3aa62d2b9dd1b7e3",
+      "upstreamPath": "components/steps/demo/simple.tsx",
+      "upstreamSha256": "70b3232dc6e5bd3d83b4152ea1353617b7820e2f56e20a570e0885e08b55fd8b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/step-next.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Button, message, Steps, theme } from 'antd';\n\nconst steps = [\n  {\n    title: 'First',\n    content: 'First-content',\n  },\n  {\n    title: 'Second',\n    content: 'Second-content',\n  },\n  {\n    title: 'Last',\n    content: 'Last-content',\n  },\n];\n\nconst App: React.FC = () => {\n  const [messageApi, contextHolder] = message.useMessage();\n  const { token } = theme.useToken();\n  const [current, setCurrent] = useState(0);\n\n  const next = () => {\n    setCurrent(current + 1);\n  };\n\n  const prev = () => {\n    setCurrent(current - 1);\n  };\n\n  const items = steps.map((item) => ({ key: item.title, title: item.title }));\n\n  const contentStyle: React.CSSProperties = {\n    lineHeight: '260px',\n    textAlign: 'center',\n    color: token.colorTextTertiary,\n    backgroundColor: token.colorFillAlter,\n    borderRadius: token.borderRadiusLG,\n    border: `${token.lineWidth}px dashed ${token.colorBorder}`,\n    marginTop: token.margin,\n  };\n\n  return (\n    <>\n      {contextHolder}\n      <Steps current={current} items={items} />\n      <div style={contentStyle}>{steps[current].content}</div>\n      <div style={{ marginTop: 24 }}>\n        {current < steps.length - 1 && (\n          <Button type=\"primary\" onClick={() => next()}>\n            Next\n          </Button>\n        )}\n        {current === steps.length - 1 && (\n          <Button type=\"primary\" onClick={() => messageApi.success('Processing complete!')}>\n            Done\n          </Button>\n        )}\n        {current > 0 && (\n          <Button style={{ margin: '0 8px' }} onClick={() => prev()}>\n            Previous\n          </Button>\n        )}\n      </div>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "be1bf9be589e24d25fc3e389ab1e9b07b184898c0d7e93ba70d71cba88083e2b",
+      "upstreamPath": "components/steps/demo/step-next.tsx",
+      "upstreamSha256": "45de0ca58751a8cd1f90172a4a6f617df6ba3fb0b003235d6d856a0fe479257a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/steps-in-steps.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport type { StepsProps } from 'antd';\nimport { Card, Radio, Steps } from 'antd';\n\nconst App: React.FC = () => {\n  const [size, setSize] = useState<StepsProps['size']>('medium');\n  const content = 'This is a content.';\n  const horizontalSteps = (\n    <Card>\n      <Steps\n        size={size}\n        items={[\n          {\n            title: 'Finished',\n            content,\n          },\n          {\n            title: 'In Progress',\n            content,\n          },\n          {\n            title: 'Waiting',\n            content,\n          },\n        ]}\n      />\n    </Card>\n  );\n\n  return (\n    <>\n      <Radio.Group\n        style={{ marginBottom: 16 }}\n        value={size}\n        onChange={(e) => setSize(e.target.value)}\n      >\n        <Radio value=\"small\">Small</Radio>\n        <Radio value=\"medium\">Medium</Radio>\n      </Radio.Group>\n      <Steps\n        size={size}\n        orientation=\"vertical\"\n        items={[\n          {\n            title: 'Finished',\n            content: horizontalSteps,\n          },\n          {\n            title: 'In Progress',\n            content,\n          },\n          {\n            title: 'Waiting',\n            content,\n          },\n        ]}\n      />\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "473250066080265e6a2cc270b14c935ebe91c9e96b6b4ef21918b6dab6ddb676",
+      "upstreamPath": "components/steps/demo/steps-in-steps.tsx",
+      "upstreamSha256": "f56e6fcd390d9f3376e4ec60b5ad84aa9ee81b54f2f391d3155b51b68a8f4823",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/style-class.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Steps } from 'antd';\nimport type { GetProp, StepsProps } from 'antd';\nimport { createStyles } from 'antd-style';\n\nconst useStyles = createStyles(({ token }) => ({\n  root: {\n    border: `2px dashed ${token.colorBorder}`,\n    borderRadius: token.borderRadius,\n    padding: token.padding,\n  },\n}));\n\nconst stylesObject: StepsProps['styles'] = {\n  itemIcon: { borderRadius: '30%' },\n  itemContent: { fontStyle: 'italic' },\n};\n\nconst stylesFn: StepsProps['styles'] = (info): GetProp<StepsProps, 'styles', 'Return'> => {\n  if (info.props.type === 'navigation') {\n    return {\n      root: {\n        borderColor: '#1890ff',\n      },\n    };\n  }\n  return {};\n};\n\nconst App: React.FC = () => {\n  const { styles } = useStyles();\n\n  const sharedProps: StepsProps = {\n    items: [\n      { title: 'Finished', content: 'This is a content.' },\n      { title: 'In Progress', content: 'This is a content.' },\n      { title: 'Waiting', content: 'This is a content.' },\n    ],\n    current: 1,\n    classNames: { root: styles.root },\n  };\n\n  return (\n    <Flex vertical gap=\"medium\">\n      <Steps {...sharedProps} styles={stylesObject} />\n      <Steps {...sharedProps} styles={stylesFn} type=\"navigation\" />\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "f783a7fb8e885bc53237e0ae8fa5de5ffd2175497a15e0927c8ce0e4d881eb62",
+      "upstreamPath": "components/steps/demo/style-class.tsx",
+      "upstreamSha256": "231310af4afac09b2578d1eee0693adafa471065c7e5f83d638db2d4c5c1520a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/title-placement.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Steps } from 'antd';\n\nconst content = 'This is a content.';\nconst items = [\n  {\n    title: 'Finished',\n    content,\n  },\n  {\n    title: 'In Progress',\n    content,\n  },\n  {\n    title: 'Waiting',\n    content,\n  },\n];\nconst App: React.FC = () => (\n  <>\n    <Steps current={1} titlePlacement=\"vertical\" items={items} ellipsis />\n    <br />\n    <Steps current={1} percent={60} titlePlacement=\"vertical\" items={items} />\n    <br />\n    <Steps current={1} percent={80} size=\"small\" titlePlacement=\"vertical\" items={items} />\n  </>\n);\n\nexport default App;\n",
+      "sha256": "079c6a7ca4f8b6120d5b8eaab813865ba8462ad1813627b160fab7d085017136",
+      "upstreamPath": "components/steps/demo/title-placement.tsx",
+      "upstreamSha256": "96338abacf5243e0f41208b84c4c6c93dd885baa3526e612bb97441813ef4853",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/variant-debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { ConfigProvider, Divider, Flex, Steps } from 'antd';\nimport type { StepsProps } from 'antd';\n\nconst items: StepsProps['items'] = [\n  {\n    title: 'Finished',\n    content: 'This is a content.',\n  },\n  {\n    title: 'In Progress',\n    content: 'This is a content.',\n    status: 'error',\n  },\n  {\n    title: 'Waiting',\n    content: 'This is a content.',\n  },\n];\n\nconst App: React.FC = () => {\n  const [current, setCurrent] = React.useState(1);\n\n  const sharedProps: StepsProps = {\n    current,\n    variant: 'outlined',\n    onChange: (current: number) => {\n      setCurrent(current);\n    },\n    items,\n  };\n\n  const sharedPercentProps: StepsProps = {\n    current,\n    variant: 'outlined',\n    onChange: (current: number) => {\n      setCurrent(current);\n    },\n    items: items.map(({ status, ...item }) => item),\n    percent: 60,\n  };\n\n  return (\n    <Flex vertical gap=\"medium\">\n      <Steps {...sharedProps} variant=\"filled\" />\n      <Steps {...sharedProps} />\n      <Steps {...sharedProps} size=\"small\" />\n      <Steps {...sharedPercentProps} size=\"small\" />\n      <Flex gap=\"medium\">\n        <Steps {...sharedPercentProps} orientation=\"vertical\" />\n        <Steps {...sharedPercentProps} size=\"small\" orientation=\"vertical\" />\n      </Flex>\n      <Flex gap=\"medium\">\n        <Steps {...sharedProps} orientation=\"vertical\" />\n        <Steps {...sharedProps} orientation=\"vertical\" size=\"small\" />\n      </Flex>\n      <Steps {...sharedProps} type=\"dot\" size=\"small\" />\n      <Flex gap=\"medium\">\n        <Steps {...sharedProps} type=\"dot\" size=\"small\" orientation=\"vertical\" />\n        <Steps {...sharedProps} type=\"navigation\" size=\"small\" orientation=\"vertical\" />\n      </Flex>\n      <Divider />\n      <ConfigProvider\n        theme={{\n          components: {\n            Steps: {\n              descriptionMaxWidth: 140,\n              customIconSize: 22,\n            },\n          },\n        }}\n      >\n        <Steps {...sharedProps} type=\"dot\" />\n        <Steps {...sharedProps} titlePlacement=\"vertical\" />\n        <Steps {...sharedProps} titlePlacement=\"vertical\" size=\"small\" />\n      </ConfigProvider>\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "3d6a61829bb510c228ad962458ffa086681224596ea83855ec3cb6250aeed4cf",
+      "upstreamPath": "components/steps/demo/variant-debug.tsx",
+      "upstreamSha256": "98e97dcb3da1f0b16ba9bd8c6814ac1f1a343e51127f3fc64aea3bb8ad51cbd5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/steps/demo/vertical.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Steps } from 'antd';\n\nconst content = 'This is a content.';\n\nconst items = [\n  {\n    title: 'Finished',\n    content,\n  },\n  {\n    title: 'In Progress',\n    content,\n  },\n  {\n    title: 'Waiting',\n    content,\n  },\n];\n\nconst App: React.FC = () => (\n  <Flex>\n    <div style={{ flex: 1 }}>\n      <Steps orientation=\"vertical\" current={1} items={items} />\n    </div>\n    <div style={{ flex: 1 }}>\n      <Steps orientation=\"vertical\" current={1} items={items} size=\"small\" />\n    </div>\n  </Flex>\n);\n\nexport default App;\n",
+      "sha256": "84bdf5705ede9a04b27fc364e5a3727f01932110230ca2c07c5f846e4d097e31",
+      "upstreamPath": "components/steps/demo/vertical.tsx",
+      "upstreamSha256": "4c70f948154965e376df5290c6eca678b16f6c57e2cb147261af3e7408ce573f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/clickable\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0689763ee6728fdaa62357a7dd3f9ad6ba3f81efcb09edce020f10cbf537e20b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/component-token.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/component-token\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "4e4def5e06b2aec8ac2aa0af420f8df2b51877253d2c7f761bd50eee2ee88404",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/customized-progress-dot.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/customized-progress-dot\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a2eb98ffdb020bec9ff33bda886bc74e4d71ee5e53ff79807e62b120c1f72eab",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/error.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/error\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "ec5c8502f982316833ebf7fa04b008ed48ccded3a5df314a7e11f2916c847e48",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/icon\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e3a7ef36ce05cf4e2111272b3453dfd3f375ee25d66225b3944ef41c57ac6544",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/inline.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/inline\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "dc1edbac6116841f767196d8b934461494390c3d435a16f7e775521444506be6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/inline-variant.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/inline-variant\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "320e72a82c7f1f5fe4654bf4c81cfcce230b45f4aa32af5a286a834b71e973e5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/max-count.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/max-count\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "656a35d5110455fb02f9fadc52ec007fa2600ca7ddefdfb7f6693db4a525f98a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/nav.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/nav\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "eb7324fd7eb35ae84aad6bcba369917dece7dd6eeb5bb8634e631d64f2e4e5af",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/panel.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/panel\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "6d096125a32a836127b43f0d93bd7e14e743c12c1bd404a482d4f870a6c8b39e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/progress.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/progress\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8e390fda0f0007370545b4cabc6e827e136cf196990e74498711c52bf657a070",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/progress-debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/progress-debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "79f7f71d960559dde9678d8efb579f8f81774be88e716fa4078c4ae90edeaeaa",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/progress-dot.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/progress-dot\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "24a58909b59c31de93bb77de19b53e6d6777fc6c9701dcb6770244db1311fbaf",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/simple.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/simple\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2880e41de984f746e673ff4d3bc820721e99700b2fe00eadb273117f5be4aecf",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/step-next.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/step-next\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a271ec9c00bd0d49c7389542e231a85733ab7c032abad57d179a33679c0a906d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/steps-in-steps.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/steps-in-steps\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "c57d7ed77863c9888ab813c5f019fbaf1992369755972241e740a3f201826339",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/style-class.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/style-class\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "356c26aced69f4713084f392209766e769a10276adb82d97dad6613ef99bc927",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/title-placement.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/title-placement\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "30cbb8a797e9d6f7919008d039a328484b9c4a3f0cbc9e8850964f8f330e08fd",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/variant-debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/variant-debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "eb2ce3383fa9f8cc860e270598da2e6b4f413487f33f977d57d17405ecfca5a4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/steps/previews/vertical.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/steps/demo/vertical\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "53655fa98bdd34071eec45b810973416125037faec737a5082e28ba2b04e1290",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example compositions using the pinned antd npm package.",
+      "Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "steps",
+    "upstreamPageUrl": "https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/steps/demo",
+    "upstreamDetailUrl": "https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/steps/demo/clickable.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/ant-design/ant-design/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/steps/demo/clickable.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Ant Design steps\n\n20 published Ant Design steps examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example compositions using the pinned antd npm package.\n- Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/steps/demo\nPinned source: https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/steps/demo/clickable.tsx\n"
+}

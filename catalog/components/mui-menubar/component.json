@@ -1,0 +1,197 @@
+{
+  "id": "mui:menubar",
+  "sourceId": "mui",
+  "slug": "mui-menubar",
+  "name": "Material UI menubar",
+  "description": "7 published Material UI menubar examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@base-ui/react@1.8.0",
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/icons-material@9.4.0",
+    "@mui/material@9.4.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "menubar",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file",
+      "menu"
+    ],
+    "aliases": [
+      "menubar",
+      "material ui menubar"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "7 published Material UI menubar examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "menubar:code:command:data:file:menu",
+    "searchText": "Material UI menubar\nmenubar\n7 published Material UI menubar examples with complete pinned source and MIT attribution.\nmaterial ui menubar\ncode\ncommand\ndata\nfile\nmenu\nMaterial UI menubar 7 published Material UI menubar examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/menubar Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/menubar/BasicMenubar.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-menubar",
+  "manifestPath": "components/mui-menubar/component.json",
+  "integrity": "sha256:4585f2e5da59f0f7f56f90414426e52e6bf4e356863f6fa3c266af258b0e9909",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menubar/BasicMenubar.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport {\n  Menubar,\n  MenuRoot,\n  MenuTrigger,\n  MenuPortal,\n  MenuPositioner,\n  MenuPopup,\n  MenuItem,\n  MenuSeparator,\n  MenuSubmenuRoot,\n  MenuSubmenuTrigger,\n} from '@/components/rendyn-libraries/mui/upstream/data/material/components/menubar/components/Menubar';\n\nexport default function BasicMenubar() {\n  return (\n    <Menubar>\n      <MenuRoot>\n        <MenuTrigger>File</MenuTrigger>\n        <MenuPortal>\n          <MenuPositioner sideOffset={4} alignOffset={-2}>\n            <MenuPopup>\n              <MenuItem>New</MenuItem>\n              <MenuItem>Open…</MenuItem>\n              <MenuItem>Save</MenuItem>\n              <MenuItem>Save as…</MenuItem>\n              <MenuSeparator />\n              <MenuSubmenuRoot>\n                <MenuSubmenuTrigger>Share</MenuSubmenuTrigger>\n                <MenuPortal>\n                  <MenuPositioner alignOffset={-4}>\n                    <MenuPopup>\n                      <MenuItem>Email link</MenuItem>\n                      <MenuItem>Copy link</MenuItem>\n                    </MenuPopup>\n                  </MenuPositioner>\n                </MenuPortal>\n              </MenuSubmenuRoot>\n              <MenuSeparator />\n              <MenuItem>Close</MenuItem>\n            </MenuPopup>\n          </MenuPositioner>\n        </MenuPortal>\n      </MenuRoot>\n\n      <MenuRoot>\n        <MenuTrigger>Help</MenuTrigger>\n        <MenuPortal>\n          <MenuPositioner sideOffset={4}>\n            <MenuPopup>\n              <MenuItem>Documentation</MenuItem>\n              <MenuItem>Release notes</MenuItem>\n              <MenuSeparator />\n              <MenuItem>About</MenuItem>\n            </MenuPopup>\n          </MenuPositioner>\n        </MenuPortal>\n      </MenuRoot>\n    </Menubar>\n  );\n}\n",
+      "sha256": "17a31b8707fa8813c397c2603dd82e956194adc04b01dacf403b700937bf7616",
+      "upstreamPath": "docs/data/material/components/menubar/BasicMenubar.tsx",
+      "upstreamSha256": "22adbe4845e97908c0ae2c009a5bb142fb41083d90427b47a8be750d6b44ef12",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menubar/components/Menubar.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport { Menu } from '@base-ui/react/menu';\nimport { Menubar as BaseMenubar } from '@base-ui/react/menubar';\nimport { styled } from '@mui/material/styles';\nimport Box from '@mui/material/Box';\nimport Button from '@mui/material/Button';\nimport Paper from '@mui/material/Paper';\nimport List from '@mui/material/List';\nimport ListItemButton, { ListItemButtonProps } from '@mui/material/ListItemButton';\nimport ListItemIcon from '@mui/material/ListItemIcon';\nimport ListItemText from '@mui/material/ListItemText';\nimport ListSubheader, { ListSubheaderProps } from '@mui/material/ListSubheader';\nimport ChevronRightIcon from '@mui/icons-material/ChevronRight';\nimport CheckIcon from '@mui/icons-material/Check';\nimport RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';\nimport RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';\nimport Divider, { DividerProps } from '@mui/material/Divider';\nimport Typography from '@mui/material/Typography';\n\nconst StyledMenubar = styled('div')(({ theme }) => ({\n  display: 'flex',\n  gap: '1px',\n  p: 0.25,\n  background: (theme.vars || theme).palette.grey[100],\n  ...theme.applyStyles('dark', {\n    background: (theme.vars || theme).palette.grey[800],\n  }),\n  '&[aria-orientation=\"vertical\"]': {\n    flexDirection: 'column',\n  },\n}));\nexport function Menubar(props: React.ComponentProps<typeof BaseMenubar>) {\n  return <BaseMenubar render={<StyledMenubar />} {...props} />;\n}\n\nexport function MenuRoot(props: React.ComponentProps<typeof Menu.Root>) {\n  return <Menu.Root {...props} />;\n}\n\nconst StyledTrigger = styled(Button)(({ theme }) => ({\n  paddingInline: theme.spacing(2),\n  color: (theme.vars || theme).palette.text.secondary,\n  fontWeight: 500,\n  transition: 'none',\n  textTransform: 'capitalize',\n  letterSpacing: 0,\n  fontSize: '0.875rem',\n  '&[data-popup-open]': {\n    backgroundColor: (theme.vars || theme).palette.action.focus,\n  },\n  '&.Mui-focusVisible': {\n    backgroundColor: (theme.vars || theme).palette.action.focus,\n  },\n  '[aria-orientation=\"vertical\"] &': {\n    justifyContent: 'initial',\n  },\n}));\nexport function MenuTrigger(props: React.ComponentProps<typeof Menu.Trigger>) {\n  return (\n    <Menu.Trigger\n      render={<StyledTrigger size=\"small\" color=\"inherit\" disableRipple />}\n      {...props}\n    />\n  );\n}\n\nexport function MenuPortal(props: React.ComponentProps<typeof Menu.Portal>) {\n  return <Menu.Portal {...props} />;\n}\n\nexport function MenuPositioner(props: React.ComponentProps<typeof Menu.Positioner>) {\n  return <Menu.Positioner {...props} />;\n}\n\nconst StyledPaper = styled(Paper)(({ theme }) => ({\n  minWidth: 160,\n  paddingBlock: theme.spacing(0.5),\n  transformOrigin: 'var(--transform-origin)',\n  '&[data-starting-style], &[data-ending-style]': {\n    opacity: 0,\n    transform: 'scale(0.95)',\n  },\n}));\nexport function MenuPopup(props: React.ComponentProps<typeof Menu.Popup>) {\n  return (\n    <Menu.Popup\n      render={(renderProps) => (\n        <StyledPaper elevation={8}>\n          <List\n            component=\"div\"\n            disablePadding\n            sx={{ outline: 'none' }}\n            {...renderProps}\n          >\n            {props.children}\n          </List>\n        </StyledPaper>\n      )}\n      {...props}\n    />\n  );\n}\n\ninterface MenuItemExtendedProps {\n  icon?: React.ReactNode;\n  secondary?: React.ReactNode;\n  hint?: React.ReactNode;\n}\n\nexport function MenuItem(\n  props: React.ComponentProps<typeof Menu.Item> &\n    Pick<ListItemButtonProps, 'sx'> &\n    MenuItemExtendedProps,\n) {\n  const { sx = [], icon, hint, children, secondary, ...other } = props;\n  return (\n    <Menu.Item\n      render={<ListItemButton dense sx={[{ gap: 1.5 }, ...[sx].flat()]} />}\n      {...other}\n    >\n      {icon && <ListItemIcon sx={{ minWidth: 'unset' }}>{icon}</ListItemIcon>}\n      <ListItemText secondary={secondary}>{children}</ListItemText>\n      {hint && (\n        <Typography\n          sx={{ flexShrink: 0, color: 'text.secondary', typography: 'body2' }}\n        >\n          {hint}\n        </Typography>\n      )}\n    </Menu.Item>\n  );\n}\n\nexport function MenuSubmenuRoot(\n  props: React.ComponentProps<typeof Menu.SubmenuRoot>,\n) {\n  return <Menu.SubmenuRoot {...props} />;\n}\n\nconst StyledHint = styled(Typography)(({ theme }) => ({\n  flexShrink: 0,\n  color: (theme.vars || theme).palette.text.secondary,\n  ...theme.typography.body2,\n}));\nexport function MenuSubmenuTrigger(\n  props: React.ComponentProps<typeof Menu.SubmenuTrigger> &\n    Pick<ListItemButtonProps, 'sx'> &\n    Pick<MenuItemExtendedProps, 'icon' | 'hint'>,\n) {\n  const { sx, icon, hint, children, ...other } = props;\n  return (\n    <Menu.SubmenuTrigger render={<ListItemButton dense sx={sx} />} {...other}>\n      {icon && <ListItemIcon sx={{ minWidth: 32 }}>{icon}</ListItemIcon>}\n      <ListItemText>{children}</ListItemText>\n      {hint && <StyledHint>{hint}</StyledHint>}\n      <ChevronRightIcon fontSize=\"small\" sx={{ mr: -1 }} />\n    </Menu.SubmenuTrigger>\n  );\n}\n\nexport function MenuSeparator(\n  props: React.ComponentProps<typeof Menu.Separator> & Pick<DividerProps, 'sx'>,\n) {\n  const { sx = [], ...other } = props;\n  return (\n    <Menu.Separator\n      render={<Divider sx={[{ my: 0.5 }, ...[sx].flat()]} />}\n      {...other}\n    />\n  );\n}\n\nexport function MenuCheckboxItem(\n  props: React.ComponentProps<typeof Menu.CheckboxItem> &\n    Pick<MenuItemExtendedProps, 'hint'>,\n) {\n  const { hint, children, ...other } = props;\n  return (\n    <Menu.CheckboxItem render={<ListItemButton dense />} {...other}>\n      <ListItemIcon sx={{ minWidth: 32 }}>\n        <Menu.CheckboxItemIndicator render={<CheckIcon fontSize=\"small\" />} />\n      </ListItemIcon>\n      <ListItemText>{children}</ListItemText>\n      {hint && <StyledHint>{hint}</StyledHint>}\n    </Menu.CheckboxItem>\n  );\n}\n\nexport function MenuRadioGroup(props: React.ComponentProps<typeof Menu.RadioGroup>) {\n  return <Menu.RadioGroup {...props} />;\n}\n\nexport function MenuRadioItem(\n  props: React.ComponentProps<typeof Menu.RadioItem> &\n    Pick<MenuItemExtendedProps, 'hint'>,\n) {\n  const { hint, children, ...other } = props;\n  return (\n    <Menu.RadioItem render={<ListItemButton dense />} {...other}>\n      <ListItemIcon sx={{ minWidth: 32, position: 'relative' }}>\n        <RadioButtonUncheckedIcon fontSize=\"small\" />\n        <Menu.RadioItemIndicator\n          render={\n            <RadioButtonCheckedIcon\n              fontSize=\"small\"\n              sx={{ position: 'absolute', left: 0 }}\n            />\n          }\n        />\n      </ListItemIcon>\n      <ListItemText>{children}</ListItemText>\n      {hint && <StyledHint>{hint}</StyledHint>}\n    </Menu.RadioItem>\n  );\n}\n\nexport function MenuGroup(props: React.ComponentProps<typeof Menu.Group>) {\n  return <Menu.Group render={<Box sx={{ position: 'relative' }} />} {...props} />;\n}\n\nconst StyledSubheader = styled(ListSubheader)(({ theme }) => ({\n  position: 'initial',\n  paddingBlock: theme.spacing(1),\n  backgroundColor: 'transparent',\n  ...theme.typography.overline,\n  lineHeight: '1.5',\n}));\n\nexport function MenuGroupLabel(\n  props: React.ComponentProps<typeof Menu.GroupLabel> &\n    Pick<ListSubheaderProps, 'sx'>,\n) {\n  const { sx, ...other } = props;\n  const subheaderProps: ListSubheaderProps = { sx, component: 'div' };\n  return (\n    <Menu.GroupLabel render={<StyledSubheader {...subheaderProps} />} {...other} />\n  );\n}\n",
+      "sha256": "0f38a2b6ef4f4bc403cf479aecaa57c9dfa293e98a6d963eb14b0103b8e7150b",
+      "upstreamPath": "docs/data/material/components/menubar/components/Menubar.tsx",
+      "upstreamSha256": "a8b2cde0bb3e91d32ee988f9891901cd0f6992e40b8e20da7e8a352a52f892a4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menubar/CheckboxItemsMenubar.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport {\n  Menubar,\n  MenuRoot,\n  MenuTrigger,\n  MenuPortal,\n  MenuPositioner,\n  MenuPopup,\n  MenuItem,\n  MenuCheckboxItem,\n  MenuSeparator,\n} from '@/components/rendyn-libraries/mui/upstream/data/material/components/menubar/components/Menubar';\n\nexport default function CheckboxItemsMenubar() {\n  const [showSidebar, setShowSidebar] = React.useState(true);\n  const [showToolbar, setShowToolbar] = React.useState(true);\n  const [showStatusBar, setShowStatusBar] = React.useState(false);\n  const [googleTasks, setGoogleTasks] = React.useState(true);\n  const [mail, setMail] = React.useState(false);\n  const [messages, setMessages] = React.useState(false);\n\n  return (\n    <Menubar>\n      <MenuRoot>\n        <MenuTrigger>View</MenuTrigger>\n        <MenuPortal>\n          <MenuPositioner sideOffset={4} alignOffset={-2}>\n            <MenuPopup>\n              <MenuCheckboxItem\n                checked={showSidebar}\n                onCheckedChange={setShowSidebar}\n              >\n                Show Sidebar\n              </MenuCheckboxItem>\n              <MenuCheckboxItem\n                checked={showToolbar}\n                onCheckedChange={setShowToolbar}\n              >\n                Show Toolbar\n              </MenuCheckboxItem>\n              <MenuCheckboxItem\n                checked={showStatusBar}\n                onCheckedChange={setShowStatusBar}\n              >\n                Show Status Bar\n              </MenuCheckboxItem>\n            </MenuPopup>\n          </MenuPositioner>\n        </MenuPortal>\n      </MenuRoot>\n\n      <MenuRoot>\n        <MenuTrigger>Window</MenuTrigger>\n        <MenuPortal>\n          <MenuPositioner sideOffset={4} alignOffset={-2}>\n            <MenuPopup>\n              <MenuItem hint=\"⌘M\">Minimize</MenuItem>\n              <MenuItem>Zoom</MenuItem>\n              <MenuItem hint=\"⌃⌥F\">Fill</MenuItem>\n              <MenuItem hint=\"⌃⌥C\">Center</MenuItem>\n              <MenuSeparator />\n              <MenuItem>Bring All to Front</MenuItem>\n              <MenuSeparator />\n              <MenuCheckboxItem\n                checked={googleTasks}\n                onCheckedChange={setGoogleTasks}\n              >\n                Google Tasks - Tasks\n              </MenuCheckboxItem>\n              <MenuCheckboxItem checked={mail} onCheckedChange={setMail}>\n                Mail\n              </MenuCheckboxItem>\n              <MenuCheckboxItem checked={messages} onCheckedChange={setMessages}>\n                Messages\n              </MenuCheckboxItem>\n            </MenuPopup>\n          </MenuPositioner>\n        </MenuPortal>\n      </MenuRoot>\n    </Menubar>\n  );\n}\n",
+      "sha256": "a85479984b347d05521f61f773bd5d305552c792fe7d010f1b6e96d32f51b7e6",
+      "upstreamPath": "docs/data/material/components/menubar/CheckboxItemsMenubar.tsx",
+      "upstreamSha256": "e380a9d26ef0388a287515c7a1746860817495960e6018883aee246ddbc57447",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menubar/GroupLabelMenubar.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport InfoIcon from '@mui/icons-material/Info';\nimport SettingsIcon from '@mui/icons-material/Settings';\nimport BuildIcon from '@mui/icons-material/Build';\nimport MonitorHeartIcon from '@mui/icons-material/MonitorHeart';\nimport TimelineIcon from '@mui/icons-material/Timeline';\nimport InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';\nimport ToggleOnIcon from '@mui/icons-material/ToggleOn';\nimport TuneIcon from '@mui/icons-material/Tune';\nimport VisibilityOffIcon from '@mui/icons-material/VisibilityOff';\nimport VisibilityIcon from '@mui/icons-material/Visibility';\nimport UndoIcon from '@mui/icons-material/Undo';\nimport RedoIcon from '@mui/icons-material/Redo';\nimport ContentCutIcon from '@mui/icons-material/ContentCut';\nimport ContentCopyIcon from '@mui/icons-material/ContentCopy';\nimport ContentPasteIcon from '@mui/icons-material/ContentPaste';\nimport {\n  Menubar,\n  MenuRoot,\n  MenuTrigger,\n  MenuPortal,\n  MenuPositioner,\n  MenuPopup,\n  MenuItem,\n  MenuSeparator,\n  MenuSubmenuRoot,\n  MenuSubmenuTrigger,\n  MenuGroup,\n  MenuGroupLabel,\n} from '@/components/rendyn-libraries/mui/upstream/data/material/components/menubar/components/Menubar';\n\nexport default function GroupLabelMenubar() {\n  return (\n    <Menubar>\n      <MenuRoot>\n        <MenuTrigger>App</MenuTrigger>\n        <MenuPortal>\n          <MenuPositioner sideOffset={4} alignOffset={-2}>\n            <MenuPopup>\n              <MenuGroup>\n                <MenuGroupLabel>General</MenuGroupLabel>\n                <MenuItem icon={<InfoIcon fontSize=\"small\" />}>About</MenuItem>\n                <MenuItem icon={<SettingsIcon fontSize=\"small\" />}>\n                  Settings...\n                </MenuItem>\n              </MenuGroup>\n              <MenuSeparator />\n              <MenuSubmenuRoot>\n                <MenuSubmenuTrigger icon={<BuildIcon fontSize=\"small\" />}>\n                  Services\n                </MenuSubmenuTrigger>\n                <MenuPortal>\n                  <MenuPositioner alignOffset={-4}>\n                    <MenuPopup>\n                      <MenuGroup>\n                        <MenuGroupLabel>Development</MenuGroupLabel>\n                        <MenuItem icon={<MonitorHeartIcon fontSize=\"small\" />}>\n                          Activity Monitor\n                        </MenuItem>\n                        <MenuItem icon={<TimelineIcon fontSize=\"small\" />}>\n                          System Trace\n                        </MenuItem>\n                        <MenuItem icon={<InsertDriveFileIcon fontSize=\"small\" />}>\n                          File Activity\n                        </MenuItem>\n                      </MenuGroup>\n                      <MenuSeparator />\n                      <MenuGroup>\n                        <MenuGroupLabel>Shortcuts</MenuGroupLabel>\n                        <MenuItem icon={<ToggleOnIcon fontSize=\"small\" />}>\n                          Toggle Gate\n                        </MenuItem>\n                        <MenuItem icon={<TuneIcon fontSize=\"small\" />}>\n                          Services Settings...\n                        </MenuItem>\n                      </MenuGroup>\n                    </MenuPopup>\n                  </MenuPositioner>\n                </MenuPortal>\n              </MenuSubmenuRoot>\n              <MenuSeparator />\n              <MenuGroup>\n                <MenuGroupLabel>Window</MenuGroupLabel>\n                <MenuItem icon={<VisibilityOffIcon fontSize=\"small\" />}>\n                  Hide App\n                </MenuItem>\n                <MenuItem icon={<VisibilityOffIcon fontSize=\"small\" />}>\n                  Hide Others\n                </MenuItem>\n                <MenuItem icon={<VisibilityIcon fontSize=\"small\" />}>\n                  Show All\n                </MenuItem>\n              </MenuGroup>\n            </MenuPopup>\n          </MenuPositioner>\n        </MenuPortal>\n      </MenuRoot>\n\n      <MenuRoot>\n        <MenuTrigger>Edit</MenuTrigger>\n        <MenuPortal>\n          <MenuPositioner sideOffset={4}>\n            <MenuPopup>\n              <MenuGroup>\n                <MenuGroupLabel>History</MenuGroupLabel>\n                <MenuItem icon={<UndoIcon fontSize=\"small\" />}>Undo</MenuItem>\n                <MenuItem icon={<RedoIcon fontSize=\"small\" />}>Redo</MenuItem>\n              </MenuGroup>\n              <MenuSeparator />\n              <MenuGroup>\n                <MenuGroupLabel>Clipboard</MenuGroupLabel>\n                <MenuItem icon={<ContentCutIcon fontSize=\"small\" />}>Cut</MenuItem>\n                <MenuItem icon={<ContentCopyIcon fontSize=\"small\" />}>Copy</MenuItem>\n                <MenuItem icon={<ContentPasteIcon fontSize=\"small\" />}>\n                  Paste\n                </MenuItem>\n              </MenuGroup>\n            </MenuPopup>\n          </MenuPositioner>\n        </MenuPortal>\n      </MenuRoot>\n    </Menubar>\n  );\n}\n",
+      "sha256": "e9d9808eb08c669bee3f19227bdb55b082ef95de5605a8c557e77718669e879e",
+      "upstreamPath": "docs/data/material/components/menubar/GroupLabelMenubar.tsx",
+      "upstreamSha256": "4621c87bc90a97a896ec11777d635c17ad569df9bce9adbbfe29261735bbc196",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menubar/IconItemsMenubar.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport AddIcon from '@mui/icons-material/Add';\nimport FolderOpenIcon from '@mui/icons-material/FolderOpen';\nimport SaveIcon from '@mui/icons-material/Save';\nimport PrintIcon from '@mui/icons-material/Print';\nimport UndoIcon from '@mui/icons-material/Undo';\nimport RedoIcon from '@mui/icons-material/Redo';\nimport {\n  Menubar,\n  MenuRoot,\n  MenuTrigger,\n  MenuPortal,\n  MenuPositioner,\n  MenuPopup,\n  MenuItem,\n  MenuSeparator,\n} from '@/components/rendyn-libraries/mui/upstream/data/material/components/menubar/components/Menubar';\n\nexport default function IconItemsMenubar() {\n  return (\n    <Menubar>\n      <MenuRoot>\n        <MenuTrigger>File</MenuTrigger>\n        <MenuPortal>\n          <MenuPositioner sideOffset={4} alignOffset={-2}>\n            <MenuPopup>\n              <MenuItem icon={<AddIcon fontSize=\"small\" />}>New</MenuItem>\n              <MenuItem icon={<FolderOpenIcon fontSize=\"small\" />}>Open…</MenuItem>\n              <MenuItem icon={<SaveIcon fontSize=\"small\" />}>Save</MenuItem>\n              <MenuSeparator />\n              <MenuItem icon={<PrintIcon fontSize=\"small\" />}>Print…</MenuItem>\n            </MenuPopup>\n          </MenuPositioner>\n        </MenuPortal>\n      </MenuRoot>\n\n      <MenuRoot>\n        <MenuTrigger>Edit</MenuTrigger>\n        <MenuPortal>\n          <MenuPositioner sideOffset={4} alignOffset={-2}>\n            <MenuPopup>\n              <MenuItem icon={<UndoIcon fontSize=\"small\" />}>Undo</MenuItem>\n              <MenuItem icon={<RedoIcon fontSize=\"small\" />}>Redo</MenuItem>\n            </MenuPopup>\n          </MenuPositioner>\n        </MenuPortal>\n      </MenuRoot>\n    </Menubar>\n  );\n}\n",
+      "sha256": "75f7a47717ade0fac9852e7ab7071a81b30d629bf63925b38bcedbdd1b91355a",
+      "upstreamPath": "docs/data/material/components/menubar/IconItemsMenubar.tsx",
+      "upstreamSha256": "c0a825a99ace23530f6b8859e37d3a4475d3b201efb072747124577f6d364db6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menubar/RadioGroupItemsMenubar.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport {\n  Menubar,\n  MenuRoot,\n  MenuTrigger,\n  MenuPortal,\n  MenuPositioner,\n  MenuPopup,\n  MenuRadioGroup,\n  MenuRadioItem,\n  MenuSeparator,\n  MenuSubmenuRoot,\n  MenuSubmenuTrigger,\n} from '@/components/rendyn-libraries/mui/upstream/data/material/components/menubar/components/Menubar';\n\nexport default function RadioGroupItemsMenubar() {\n  const [theme, setTheme] = React.useState('system');\n  const [density, setDensity] = React.useState('compact');\n\n  return (\n    <Menubar>\n      <MenuRoot>\n        <MenuTrigger>Appearance</MenuTrigger>\n        <MenuPortal>\n          <MenuPositioner sideOffset={4} alignOffset={-2}>\n            <MenuPopup>\n              <MenuSubmenuRoot>\n                <MenuSubmenuTrigger>Theme</MenuSubmenuTrigger>\n                <MenuPortal>\n                  <MenuPositioner alignOffset={-4}>\n                    <MenuPopup>\n                      <MenuRadioGroup value={theme} onValueChange={setTheme}>\n                        <MenuRadioItem value=\"light\">Light</MenuRadioItem>\n                        <MenuRadioItem value=\"dark\">Dark</MenuRadioItem>\n                        <MenuRadioItem value=\"system\">System</MenuRadioItem>\n                      </MenuRadioGroup>\n                    </MenuPopup>\n                  </MenuPositioner>\n                </MenuPortal>\n              </MenuSubmenuRoot>\n              <MenuSeparator />\n              <MenuRadioGroup value={density} onValueChange={setDensity}>\n                <MenuRadioItem value=\"compact\">Compact</MenuRadioItem>\n                <MenuRadioItem value=\"comfortable\">Comfortable</MenuRadioItem>\n              </MenuRadioGroup>\n            </MenuPopup>\n          </MenuPositioner>\n        </MenuPortal>\n      </MenuRoot>\n    </Menubar>\n  );\n}\n",
+      "sha256": "d34f6c93948f19aff532f626bf3809fa632844589a14d71b7cafc9da126429f5",
+      "upstreamPath": "docs/data/material/components/menubar/RadioGroupItemsMenubar.tsx",
+      "upstreamSha256": "6cd91bd0101410d0218de90a72c06bbfd6bf032d140eb2e27c4fb504ac7eb2ee",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menubar/ShortcutHintsMenubar.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport {\n  Menubar,\n  MenuRoot,\n  MenuTrigger,\n  MenuPortal,\n  MenuPositioner,\n  MenuPopup,\n  MenuItem,\n  MenuSeparator,\n} from '@/components/rendyn-libraries/mui/upstream/data/material/components/menubar/components/Menubar';\n\nexport default function ShortcutHintsMenubar() {\n  return (\n    <Menubar>\n      <MenuRoot>\n        <MenuTrigger>File</MenuTrigger>\n        <MenuPortal>\n          <MenuPositioner sideOffset={4} alignOffset={-2}>\n            <MenuPopup>\n              <MenuItem hint=\"⌘N\">New</MenuItem>\n              <MenuItem hint=\"⌘O\">Open…</MenuItem>\n              <MenuItem hint=\"⌘S\">Save</MenuItem>\n              <MenuItem hint=\"⇧⌘S\">Save As…</MenuItem>\n              <MenuSeparator />\n              <MenuItem hint=\"⌘P\">Print…</MenuItem>\n            </MenuPopup>\n          </MenuPositioner>\n        </MenuPortal>\n      </MenuRoot>\n\n      <MenuRoot>\n        <MenuTrigger>Edit</MenuTrigger>\n        <MenuPortal>\n          <MenuPositioner sideOffset={4} alignOffset={-2}>\n            <MenuPopup>\n              <MenuItem hint=\"⌘Z\">Undo</MenuItem>\n              <MenuItem hint=\"⇧⌘Z\">Redo</MenuItem>\n              <MenuSeparator />\n              <MenuItem hint=\"⌘X\">Cut</MenuItem>\n              <MenuItem hint=\"⌘C\">Copy</MenuItem>\n              <MenuItem hint=\"⌘V\">Paste</MenuItem>\n            </MenuPopup>\n          </MenuPositioner>\n        </MenuPortal>\n      </MenuRoot>\n    </Menubar>\n  );\n}\n",
+      "sha256": "b359899615812fea7cad5362928e39a6f39cc993e89cf45e1ffdd25dd32e9465",
+      "upstreamPath": "docs/data/material/components/menubar/ShortcutHintsMenubar.tsx",
+      "upstreamSha256": "a7f8426770ec309658cc7424c3f10dac4e98f99a577b491e0f118e5225f6c34c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menubar/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menubar/BasicMenubar\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "9b19f0be089d0ae8d1a2fa737de40e47a188bb43a31c578514e255801422c85a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menubar/previews/checkbox-items-menubar.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menubar/CheckboxItemsMenubar\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "5c78a6f9571582a2b7bf7d2a048f3585db8184f30ed80de593c113d69d2cc8ec",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menubar/previews/group-label-menubar.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menubar/GroupLabelMenubar\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e326bbceb72661fe148c67d3567d9e275a63e26d1d90c4a3ad320d36a9e017f0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menubar/previews/icon-items-menubar.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menubar/IconItemsMenubar\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "73ed38c0b518e01a2761029dcda002f9df75f31a6d74234b8c67160d8dd025a9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menubar/previews/menubar.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { Menubar as Example } from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menubar/components/Menubar\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "f3c2e348a9cbf443b0113cbd75a8338d0b92fde2ad6f3f3ea52b7d9925212dbb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menubar/previews/radio-group-items-menubar.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menubar/RadioGroupItemsMenubar\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "4a8c197238ca2fae8a46ccd5d46872618bc3497e64966d037f1f880cc27cfd4d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menubar/previews/shortcut-hints-menubar.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menubar/ShortcutHintsMenubar\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e36543db432bc165976c2e8fd7863dadc50b88f6965892fcf90af9259470a466",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @base-ui/react@1.8.0 @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @base-ui/react@1.8.0 @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "menubar",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/menubar",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/menubar/BasicMenubar.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/menubar/BasicMenubar.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI menubar\n\n7 published Material UI menubar examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/menubar\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/menubar/BasicMenubar.tsx\n"
+}

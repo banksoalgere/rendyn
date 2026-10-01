@@ -1,0 +1,130 @@
+{
+  "id": "mantine:dates-provider",
+  "sourceId": "mantine",
+  "slug": "mantine-dates-provider",
+  "name": "Mantine dates provider",
+  "description": "3 published Mantine dates provider examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/dates@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "dayjs@1.11.23"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "dates-provider",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "dates provider",
+      "mantine dates provider",
+      "dates-provider"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "3 published Mantine dates provider examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "dates-provider:code:file",
+    "searchText": "Mantine dates provider\ndates provider\n3 published Mantine dates provider examples with complete pinned source and MIT attribution.\nmantine dates provider\ndates-provider\ncode\nfile\nMantine dates provider 3 published Mantine dates provider examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/DatesProvider Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/DatesProvider/DatesProvider.demo.consistentWeeks.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-dates-provider",
+  "manifestPath": "components/mantine-dates-provider/component.json",
+  "integrity": "sha256:dcf749f0c6e1a5af246a71baa7fff8d5eaa6d45de0956cf292be51e077cf4323",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatesProvider/DatesProvider.demo.consistentWeeks.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { DatePicker, DatesProvider } from '@mantine/dates';\n\nfunction Demo() {\n  return (\n    <DatesProvider settings={{ consistentWeeks: true }}>\n      <DatePicker />\n    </DatesProvider>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "e8a0071d7e8dcbcfbb4438f50df780d1fa4c943452240d61dc6d446c5ab20c1e",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatesProvider/DatesProvider.demo.consistentWeeks.tsx",
+      "upstreamSha256": "2acea48001ec2961ac0db80d48a75b1cc75635858266571497d1f8e97fd9838e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatesProvider/DatesProvider.demo.intlFormatting.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { DatePickerInput, DatesProvider } from '@mantine/dates';\n\nconst locale = 'de';\n\nconst toDate = (value: string) => new Date(`${value}T00:00:00`);\n\nfunction Demo() {\n  return (\n    <DatesProvider settings={{ locale }}>\n      <DatePickerInput\n        label=\"Pick date\"\n        placeholder=\"Pick date\"\n        valueFormatter={({ date }) =>\n          typeof date === 'string'\n            ? new Intl.DateTimeFormat(locale, { dateStyle: 'long' }).format(toDate(date))\n            : ''\n        }\n        monthLabelFormat={(date) =>\n          new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' }).format(toDate(date))\n        }\n        weekdayFormat={(date) =>\n          new Intl.DateTimeFormat(locale, { weekday: 'short' }).format(toDate(date))\n        }\n        monthsListFormat={(date) =>\n          new Intl.DateTimeFormat(locale, { month: 'short' }).format(toDate(date))\n        }\n        yearsListFormat={(date) =>\n          new Intl.DateTimeFormat(locale, { year: 'numeric' }).format(toDate(date))\n        }\n      />\n    </DatesProvider>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "92d59277abc0bc6cdbed4d6f4c46635889a758bb707346cc8c3f4479b4480d95",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatesProvider/DatesProvider.demo.intlFormatting.tsx",
+      "upstreamSha256": "bf3973c292bca60482aa6d429f822ec1328fe2671a687b2606460e51c0e45ac8",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatesProvider/DatesProvider.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport 'dayjs/locale/ru';\n\nimport { DatePickerInput, DatesProvider, MonthPickerInput } from '@mantine/dates';\n\nfunction Demo() {\n  return (\n    <DatesProvider settings={{ locale: 'ru', firstDayOfWeek: 0, weekendDays: [0] }}>\n      <MonthPickerInput label=\"Pick month\" placeholder=\"Pick month\" />\n      <DatePickerInput mt=\"md\" label=\"Pick date\" placeholder=\"Pick date\" />\n    </DatesProvider>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "e397716579756ee25aefcd452d0e4fde3c56da5d31410e2c8a6a73702e8b11e8",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatesProvider/DatesProvider.demo.usage.tsx",
+      "upstreamSha256": "f6d8215a285ed3a7915682dff13522c2b02fa3518f3f99f2500178dc3f1a6ba5",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/dates-provider/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatesProvider/DatesProvider.demo.consistentWeeks\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "22360bd13cb08fcfb9fb49d359db8bac9d133201ac4b68e49ef81359834f8e82",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/dates-provider/previews/intl-formatting.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatesProvider/DatesProvider.demo.intlFormatting\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "0eac1f2c1bab3a8abf8edee3fa0b50ac77ec719becebbea6e99297e50976d61f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/dates-provider/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatesProvider/DatesProvider.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c5c74746544c8d9671605093f908b7473a439c6f3872b5dea17fb9abeff834d9",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/dates@9.6.3 @mantine/hooks@9.6.3 dayjs@1.11.23",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/dates@9.6.3 @mantine/hooks@9.6.3 dayjs@1.11.23",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "dates-provider",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/DatesProvider",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/DatesProvider/DatesProvider.demo.consistentWeeks.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/DatesProvider/DatesProvider.demo.consistentWeeks.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine dates provider\n\n3 published Mantine dates provider examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/DatesProvider\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/DatesProvider/DatesProvider.demo.consistentWeeks.tsx\n"
+}

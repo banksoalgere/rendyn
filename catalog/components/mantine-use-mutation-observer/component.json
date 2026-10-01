@@ -1,0 +1,112 @@
+{
+  "id": "mantine:use-mutation-observer",
+  "sourceId": "mantine",
+  "slug": "mantine-use-mutation-observer",
+  "name": "Mantine use mutation observer",
+  "description": "2 published Mantine use mutation observer examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "use-mutation-observer",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "use mutation observer",
+      "mantine use mutation observer",
+      "use-mutation-observer"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "2 published Mantine use mutation observer examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "use-mutation-observer:code:file",
+    "searchText": "Mantine use mutation observer\nuse mutation observer\n2 published Mantine use mutation observer examples with complete pinned source and MIT attribution.\nmantine use mutation observer\nuse-mutation-observer\ncode\nfile\nMantine use mutation observer 2 published Mantine use mutation observer examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use mutation observer Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use mutation observer/use mutation observer.demo.target.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-use-mutation-observer",
+  "manifestPath": "components/mantine-use-mutation-observer/component.json",
+  "integrity": "sha256:a233bdbe0b03fc53bdc03df84b261c42f952aeb7b1bb441371a4fd8645360477",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-mutation-observer/use-mutation-observer.demo.target.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Kbd, Text } from '@mantine/core';\n\nimport { useMutationObserverTarget } from '@mantine/hooks';\n\nfunction Demo() {\n  const [lastMutation, setLastMutation] = useState('');\n\n  useMutationObserverTarget(\n    (mutations) => {\n      mutations.forEach((mutation) => {\n        if (mutation.type === 'attributes' && mutation.attributeName === 'dir') {\n          mutation.target instanceof HTMLElement &&\n            setLastMutation(mutation.target.getAttribute('dir') || '');\n        }\n      });\n    },\n    {\n      attributes: true,\n      attributeFilter: ['dir'],\n    },\n    () => document.documentElement\n  );\n\n  return (\n    <>\n      <Text>\n        Press <Kbd>Ctrl</Kbd> + <Kbd>Shift</Kbd> + <Kbd>L</Kbd> to change direction\n      </Text>\n\n      <Text mt={10}>Direction was changed to: {lastMutation || 'Not changed yet'}</Text>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b5294756ec79f0d64c26695a3ea6ec91ab63958c9c6ffc6517f2e950f8fa2469",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-mutation-observer/use-mutation-observer.demo.target.tsx",
+      "upstreamSha256": "bb999a7df5949faf969e8e8c56890063c536b04e473a80daa7132102c598c418",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-mutation-observer/use-mutation-observer.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Text } from '@mantine/core';\n\nimport { useMutationObserver } from '@mantine/hooks';\n\nfunction Demo() {\n  const [lastMutation, setLastMutation] = useState('');\n\n  const ref = useMutationObserver<HTMLButtonElement>(\n    (mutations) => {\n      mutations.forEach((mutation) => {\n        if (mutation.type === 'attributes' && mutation.attributeName === 'data-mutation') {\n          mutation.target instanceof HTMLElement &&\n            setLastMutation(mutation.target.dataset.mutation || '');\n        }\n      });\n    },\n    {\n      attributes: true,\n      attributeFilter: ['data-mutation'],\n    }\n  );\n\n  return (\n    <>\n      <Button\n        ref={ref}\n        onClick={(event) => {\n          event.currentTarget.dataset.mutation = Math.random().toFixed(3);\n        }}\n      >\n        Click to change to data-mutation attribute\n      </Button>\n      <Text mt={10} size=\"sm\">\n        Last detected mutation: {lastMutation || 'Not mutated yet'}\n      </Text>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "14fdd7cd8377ef2bf2edd5f0b2bb365109f2a14329eec3481176bfce6509ab11",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-mutation-observer/use-mutation-observer.demo.usage.tsx",
+      "upstreamSha256": "b4e41a8cedadcca3f67c64817ffbdc56e5a53dc062df7313acb937d09ef30060",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-mutation-observer/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-mutation-observer/use-mutation-observer.demo.target\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "02d88c04b373064b671dd834ac5ff15788ac3327e6e06816067d6be1e21481b0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-mutation-observer/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-mutation-observer/use-mutation-observer.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "bc0f92c5cb3898d996eadcc11eed5a9f53104eab560e51d3d46c92468ed5a60f",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "use-mutation-observer",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-mutation-observer",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-mutation-observer/use-mutation-observer.demo.target.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-mutation-observer/use-mutation-observer.demo.target.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine use mutation observer\n\n2 published Mantine use mutation observer examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-mutation-observer\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-mutation-observer/use-mutation-observer.demo.target.tsx\n"
+}

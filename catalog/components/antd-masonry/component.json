@@ -1,0 +1,176 @@
+{
+  "id": "antd:masonry",
+  "sourceId": "antd",
+  "slug": "antd-masonry",
+  "name": "Ant Design masonry",
+  "description": "6 published Ant Design masonry examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@ant-design/icons@6.3.4",
+    "antd@6.6.5",
+    "antd-style@4.1.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "masonry",
+    "tags": [
+      "file",
+      "form"
+    ],
+    "aliases": [
+      "masonry",
+      "ant design masonry"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "6 published Ant Design masonry examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "masonry:file:form",
+    "searchText": "Ant Design masonry\nmasonry\n6 published Ant Design masonry examples with complete pinned source and MIT attribution.\nant design masonry\nfile\nform\nAnt Design masonry 6 published Ant Design masonry examples with complete pinned source and MIT attribution. Installation Complete MIT example compositions using the pinned antd npm package. Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/ant design/ant design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/masonry/demo Pinned source: https://github.com/ant design/ant design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/masonry/demo/basic.tsx"
+  },
+  "previewPath": "/preview/blocks/antd-masonry",
+  "manifestPath": "components/antd-masonry/component.json",
+  "integrity": "sha256:e6c7e86a51ad4d02502d020b74efbca511b85f5e8cd571a49322ec9b2ad5bda9",
+  "source": {
+    "id": "antd",
+    "name": "Ant Design",
+    "repository": "https://github.com/ant-design/ant-design",
+    "commit": "bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a",
+    "registrySha256": "7df4386dc63323dd6235edee9c52694b28d573a6d2765ac59719a52e1c259ab0",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2015-present Ant UED, https://xtech.antfin.com/",
+      "textPath": "source/antd/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/antd/upstream/masonry/demo/basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Card, Masonry } from 'antd';\nimport type { MasonryProps } from 'antd';\n\ntype MasonryItemType = NonNullable<MasonryProps<number>['items']>[number];\n\nconst heights = [150, 50, 90, 70, 110, 150, 130, 80, 50, 90, 100, 150, 60, 50, 80].map(\n  (height, index) => {\n    const item: MasonryItemType = {\n      key: `item-${index}`,\n      data: height,\n    };\n\n    if (index === 4) {\n      item.children = (\n        <Card\n          size=\"small\"\n          cover={\n            <img\n              alt=\"food\"\n              src=\"https://images.unsplash.com/photo-1491961865842-98f7befd1a60?w=523&auto=format\"\n            />\n          }\n        >\n          <Card.Meta title=\"I'm Special\" description=\"Let's have a meal\" />\n        </Card>\n      );\n    }\n\n    return item;\n  },\n);\n\nconst App: React.FC = () => (\n  <Masonry\n    columns={4}\n    gutter={16}\n    items={heights}\n    itemRender={({ data, index }) => (\n      <Card size=\"small\" style={{ height: data }}>\n        {index + 1}\n      </Card>\n    )}\n  />\n);\n\nexport default App;\n",
+      "sha256": "c38b073f79057b2d1186897852f00628139013fb08b9b986fdfd9e3bfb1d5a3e",
+      "upstreamPath": "components/masonry/demo/basic.tsx",
+      "upstreamSha256": "8925ba40b17e8253c3f26760e98eb3b13d9020efea54936d86d6e2c106399039",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/masonry/demo/dynamic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { CloseOutlined } from '@ant-design/icons';\nimport { Button, Card, Flex, Masonry, theme } from 'antd';\n\nconst heights = [150, 50, 90, 70, 110, 150, 130, 80, 50, 90, 100, 150, 70, 50, 80];\n\ntype ItemType = {\n  key: number;\n  column?: number;\n  data: number;\n};\n\nconst Update: React.FC = () => {\n  const { token } = theme.useToken();\n\n  const [items, setItems] = useState<ItemType[]>(() =>\n    heights.map((height, index) => ({\n      key: index,\n      column: index % 4,\n      data: height,\n    })),\n  );\n\n  const removeItem = (removeKey: React.Key) => {\n    setItems((prevItems) => prevItems.filter(({ key }) => key !== removeKey));\n  };\n\n  const addItem = () => {\n    setItems((prevItems) => [\n      ...prevItems,\n      {\n        key: prevItems.length ? prevItems[prevItems.length - 1].key + 1 : 0,\n        data: Math.floor(Math.random() * 100) + 50,\n      },\n    ]);\n  };\n\n  return (\n    <Flex vertical gap={16}>\n      <Masonry\n        columns={4}\n        gutter={16}\n        items={items}\n        itemRender={({ data, key }) => (\n          <Card size=\"small\" style={{ height: data }}>\n            {Number(key) + 1}\n            <Button\n              style={{\n                position: 'absolute',\n                insetBlockStart: token.paddingSM,\n                insetInlineEnd: token.paddingSM,\n              }}\n              size=\"small\"\n              icon={<CloseOutlined />}\n              onClick={() => removeItem(key)}\n            />\n          </Card>\n        )}\n        onLayoutChange={(sortedItems) => {\n          setItems((prevItems) =>\n            prevItems.map((item) => {\n              const matchItem = sortedItems.find((sortedItem) => sortedItem.key === item.key);\n              return matchItem\n                ? {\n                    ...item,\n                    column: matchItem.column,\n                  }\n                : item;\n            }),\n          );\n        }}\n      />\n      <Button block onClick={addItem}>\n        Add Item\n      </Button>\n    </Flex>\n  );\n};\n\nexport default Update;\n",
+      "sha256": "b2e014d8d32aa887d9d02da77ba0d6b8f74025879dc5d51045f891bdc4b6a561",
+      "upstreamPath": "components/masonry/demo/dynamic.tsx",
+      "upstreamSha256": "3e55d44377a970a96dcd189a3f10555d5fb6f0684580e8f7ba9f9ccac5edffa8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/masonry/demo/fresh.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Card, Masonry } from 'antd';\n\nfunction RandomHeightCard(props: { index: number; defaultHeight: number }) {\n  const [height, setHeight] = React.useState(props.defaultHeight);\n\n  return (\n    <Card\n      size=\"small\"\n      style={{ height, transition: 'height 0.3s' }}\n      onClick={() => {\n        setHeight(Math.floor(Math.random() * 100) + 50);\n      }}\n    >\n      {props.index + 1} - Click\n    </Card>\n  );\n}\n\nconst heights = [150, 50, 90, 70, 110, 150, 130, 80, 50, 90, 100, 150, 60, 50, 80].map(\n  (height, index) => {\n    const item: {\n      key: string;\n      data: number;\n      column?: number;\n    } = {\n      key: `item-${index}`,\n      data: height,\n    };\n\n    if (index === 4) {\n      item.column = 0;\n    }\n\n    return item;\n  },\n);\n\nconst App: React.FC = () => {\n  return (\n    <Masonry\n      fresh\n      columns={4}\n      gutter={16}\n      items={heights}\n      itemRender={({ data, index }) => <RandomHeightCard index={index} defaultHeight={data} />}\n    />\n  );\n};\n\nexport default App;\n",
+      "sha256": "9f5e237a3f774fb92a00a79a42699c2bdc929c5b63a6cdbff6f2921459fe60c1",
+      "upstreamPath": "components/masonry/demo/fresh.tsx",
+      "upstreamSha256": "cca591c1f7fdcbae7877f8a897f76190988534e1087f90bb1b65c38dbb5446fd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/masonry/demo/image.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Masonry } from 'antd';\n\nconst imageList = [\n  'https://images.unsplash.com/photo-1510001618818-4b4e3d86bf0f',\n  'https://images.unsplash.com/photo-1507513319174-e556268bb244',\n  'https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2',\n  'https://images.unsplash.com/photo-1492778297155-7be4c83960c7',\n  'https://images.unsplash.com/photo-1508062878650-88b52897f298',\n  'https://images.unsplash.com/photo-1506158278516-d720e72406fc',\n  'https://images.unsplash.com/photo-1552203274-e3c7bd771d26',\n  'https://images.unsplash.com/photo-1528163186890-de9b86b54b51',\n  'https://images.unsplash.com/photo-1727423304224-6d2fd99b864c',\n  'https://images.unsplash.com/photo-1675090391405-432434e23595',\n  'https://images.unsplash.com/photo-1554196967-97a8602084d9',\n  'https://images.unsplash.com/photo-1491961865842-98f7befd1a60',\n  'https://images.unsplash.com/photo-1721728613411-d56d2ddda959',\n  'https://images.unsplash.com/photo-1731901245099-20ac7f85dbaa',\n  'https://images.unsplash.com/photo-1617694455303-59af55af7e58',\n  'https://images.unsplash.com/photo-1709198165282-1dab551df890',\n];\n\nconst App = () => (\n  <Masonry\n    columns={4}\n    gutter={16}\n    items={imageList.map((img, index) => ({\n      key: `item-${index}`,\n      data: img,\n    }))}\n    itemRender={({ data }) => (\n      <img src={`${data}?w=523&auto=format`} alt=\"sample\" style={{ width: '100%' }} />\n    )}\n  />\n);\n\nexport default App;\n",
+      "sha256": "298da2153d230516d0c131d8d3cf4bf50b5362eb9f03b24adea90bb4e4f44f51",
+      "upstreamPath": "components/masonry/demo/image.tsx",
+      "upstreamSha256": "1909c4e8674f4dee3cb9168149303702873d3862b4b288ec7469ab78f5a1b0c5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/masonry/demo/responsive.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Card, Masonry } from 'antd';\n\nconst heights = [120, 55, 85, 160, 95, 140, 75, 110, 65, 130, 90, 145, 55, 100, 80];\n\nconst App: React.FC = () => {\n  const items = heights.map((height, index) => ({\n    key: `item-${index}`,\n    data: height,\n    index,\n  }));\n\n  return (\n    <Masonry\n      columns={{ xs: 1, sm: 2, md: 3, lg: 4 }}\n      gutter={{ xs: 8, sm: 12, md: 16 }}\n      items={items}\n      itemRender={(item) => (\n        <Card size=\"small\" style={{ height: item.data }}>\n          {item.index + 1}\n        </Card>\n      )}\n    />\n  );\n};\n\nexport default App;\n",
+      "sha256": "0ad636d7438bb8a8772a95b5675ad45750da0165983c4bb79f0c6241f22b37bb",
+      "upstreamPath": "components/masonry/demo/responsive.tsx",
+      "upstreamSha256": "47113dad6f8b57704675dcb02d72d25447857e48158596c50e5a1e32b1a5fbf2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/masonry/demo/style-class.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Card, Divider, Flex, Masonry, Typography } from 'antd';\nimport type { GetProp, MasonryProps } from 'antd';\nimport { createStaticStyles } from 'antd-style';\n\nconst { Title } = Typography;\n\nconst classNames = createStaticStyles(({ css }) => ({\n  root: css`\n    border: 1px solid #d9d9d9;\n    border-radius: 8px;\n    padding: 16px;\n    height: 260px;\n    background-color: #fafafa;\n  `,\n  item: css`\n    transform: scale(0.98);\n    transition: transform 0.2s ease;\n    border-radius: 12px;\n    border: 1px solid #ccc;\n    overflow: hidden;\n  `,\n}));\n\nconst items: MasonryProps<number>['items'] = [120, 80, 100, 60, 140, 90, 110, 70].map(\n  (height, index) => ({\n    key: `item-${index}`,\n    data: height,\n  }),\n);\n\nconst styles: MasonryProps['styles'] = {\n  root: {\n    borderRadius: 12,\n    padding: 20,\n    height: 260,\n    backgroundColor: 'rgba(250,250,250,0.5)',\n  },\n  item: {\n    transform: 'scale(0.98)',\n    transition: 'transform 0.2s ease',\n    border: '1px solid #ccc',\n  },\n};\n\nconst stylesFn: MasonryProps['styles'] = (info): GetProp<MasonryProps, 'styles', 'Return'> => {\n  const { props } = info;\n  return {\n    root: {\n      border: `2px solid ${typeof props.columns === 'number' && props.columns > 2 ? '#1890ff' : '#52c41a'}`,\n      padding: 20,\n      height: 280,\n      backgroundColor: 'rgba(240,248,255,.6)',\n    },\n    item: {\n      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',\n      border: '1px solid #1890ff',\n    },\n  };\n};\n\nconst App: React.FC = () => {\n  const sharedProps: MasonryProps = {\n    classNames,\n    itemRender: ({ data, index }) => (\n      <Card size=\"small\" style={{ height: data }}>\n        {index + 1}\n      </Card>\n    ),\n  };\n  return (\n    <Flex vertical gap={24}>\n      <div>\n        <Title level={4}>classNames and styles Object</Title>\n        <Masonry columns={4} gutter={16} items={items} {...sharedProps} styles={styles} />\n      </div>\n      <Divider />\n      <div>\n        <Title level={4}>classNames and styles Function</Title>\n        <Masonry\n          columns={3}\n          gutter={12}\n          items={items.slice(0, 6)}\n          {...sharedProps}\n          styles={stylesFn}\n        />\n      </div>\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "07874888c1effc89417d4e90f92a99c30b37cbfa817b49b7eb062faddda637d4",
+      "upstreamPath": "components/masonry/demo/style-class.tsx",
+      "upstreamSha256": "48a84f5dd99e781444554c13584f4a18b28c033476a9a70366d911e669a9a43e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/masonry/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/masonry/demo/basic\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "c270b074ab45f9aba6cd451323aaba0867763d7a670215f31ad057bbd83eae64",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/masonry/previews/dynamic.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/masonry/demo/dynamic\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "18bd4703074f481b2453d811930fccf68fa14c81c40e910399d7755b512cf56e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/masonry/previews/fresh.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/masonry/demo/fresh\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "9776c2f3dbf0d83d9e5ad79258a34150b1542f528dddee7d75df7708f329e313",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/masonry/previews/image.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/masonry/demo/image\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1809ac6c95cc0485f434809689fe9715c409ed6032c87c021cca22a7b0bd06d2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/masonry/previews/responsive.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/masonry/demo/responsive\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "df8e63a8b94bc588000faf008505f00750c033ddaf5e52aa29d63e732d7f76d6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/masonry/previews/style-class.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/masonry/demo/style-class\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a52076151343000877518ca7df0a431d79200d21f822f62be4c315d185ba21d5",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example compositions using the pinned antd npm package.",
+      "Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "masonry",
+    "upstreamPageUrl": "https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/masonry/demo",
+    "upstreamDetailUrl": "https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/masonry/demo/basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/ant-design/ant-design/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/masonry/demo/basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Ant Design masonry\n\n6 published Ant Design masonry examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example compositions using the pinned antd npm package.\n- Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/masonry/demo\nPinned source: https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/masonry/demo/basic.tsx\n"
+}

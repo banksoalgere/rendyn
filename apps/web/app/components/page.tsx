@@ -1,3 +1,4 @@
+import '../globals.css';
 import { pageMetadata, siteOrigin } from '../../lib/seo';
 import type { Metadata } from 'next';
 import { catalogueEntries } from '../../lib/catalogue';
@@ -35,6 +36,7 @@ const catalogueComponents: CatalogueComponent[] = [...catalogueEntries].sort((le
   ...getComponentPreview(component),
   tags: component.metadata.tags,
   aliases: component.metadata.aliases,
+  search: component.search,
 }));
 
 const searchIndex = createCatalogueSearchIndex(catalogueComponents);

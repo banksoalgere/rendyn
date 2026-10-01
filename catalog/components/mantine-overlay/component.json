@@ -1,0 +1,127 @@
+{
+  "id": "mantine:overlay",
+  "sourceId": "mantine",
+  "slug": "mantine-overlay",
+  "name": "Mantine overlay",
+  "description": "3 published Mantine overlay examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "overlay",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "overlay",
+      "mantine overlay"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "3 published Mantine overlay examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "overlay:code:file",
+    "searchText": "Mantine overlay\noverlay\n3 published Mantine overlay examples with complete pinned source and MIT attribution.\nmantine overlay\ncode\nfile\nMantine overlay 3 published Mantine overlay examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Overlay Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Overlay/Overlay.demo.blur.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-overlay",
+  "manifestPath": "components/mantine-overlay/component.json",
+  "integrity": "sha256:b87aae60746b849670755b53f868c42a8adb40eb76604ea90f4245099fed073d",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Overlay/Overlay.demo.blur.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { AspectRatio, Overlay } from '@mantine/core';\n\nfunction Wrapper(props: any) {\n  return (\n    <AspectRatio ratio={16 / 9} maw={400} mx=\"auto\" pos=\"relative\">\n      <img\n        src=\"https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-3.png\"\n        alt=\"Demo\"\n      />\n      <Overlay color=\"#000\" backgroundOpacity={0.35} {...props} />\n    </AspectRatio>\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent blur={15} />; }\n",
+      "sha256": "1218cdb23bdd4ec77a8fc1ca529935ddf278c71a83a9be4a0ebe38c0f4d1a67d",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Overlay/Overlay.demo.blur.tsx",
+      "upstreamSha256": "cd98a104a90a7957a7eafbc00a11d6c7d9d030bd005313c415b931cb363a309f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Overlay/Overlay.demo.gradient.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { AspectRatio, Button, Overlay } from '@mantine/core';\n\nfunction Demo() {\n  const [visible, setVisible] = useState(true);\n  return (\n    <>\n      <AspectRatio ratio={16 / 9} maw={400} mx=\"auto\" pos=\"relative\">\n        <img\n          src=\"https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png\"\n          alt=\"Demo\"\n        />\n        {visible && (\n          <Overlay\n            gradient=\"linear-gradient(145deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 100%)\"\n            opacity={0.85}\n          />\n        )}\n      </AspectRatio>\n      <Button onClick={() => setVisible((v) => !v)} fullWidth maw={200} mx=\"auto\" mt=\"xl\">\n        Toggle overlay\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "dd97f6706d9d94b21895cb7184f082ad5de578828a1c6d95b12748e1b4f5701f",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Overlay/Overlay.demo.gradient.tsx",
+      "upstreamSha256": "d524194b5a5202b1987b5507c4e7ef26b31efeafa20e56082fbdd6864f5bc21c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Overlay/Overlay.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { AspectRatio, Button, Overlay } from '@mantine/core';\n\nfunction Demo() {\n  const [visible, setVisible] = useState(true);\n  return (\n    <>\n      <AspectRatio ratio={16 / 9} maw={400} mx=\"auto\" pos=\"relative\">\n        <img\n          src=\"https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png\"\n          alt=\"Demo\"\n        />\n        {visible && <Overlay color=\"#000\" backgroundOpacity={0.85} />}\n      </AspectRatio>\n      <Button onClick={() => setVisible((v) => !v)} fullWidth maw={200} mx=\"auto\" mt=\"xl\">\n        Toggle overlay\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "6519188fcc25dd39f30acec09a2917307ed0fcf940835e442c1384b9bc2df029",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Overlay/Overlay.demo.usage.tsx",
+      "upstreamSha256": "296e3218fd6a1761ba8de4f3c7b579725d3b24d5ec924ab208f56621a92ca804",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/overlay/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Overlay/Overlay.demo.blur\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c115fdf6b10c7d277b8393f46493254a98f909e5978ae88d9a462eb54ab5f799",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/overlay/previews/gradient.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Overlay/Overlay.demo.gradient\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d8178fb5659e64048cf23adef2c468cce36ba857233448bdf3e1a07a61a7812c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/overlay/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Overlay/Overlay.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e9f205cac156947a2d42c77434bdfe891119199a9fc2fac3a5d13848a2dfeae3",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "overlay",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Overlay",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Overlay/Overlay.demo.blur.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Overlay/Overlay.demo.blur.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine overlay\n\n3 published Mantine overlay examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Overlay\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Overlay/Overlay.demo.blur.tsx\n"
+}

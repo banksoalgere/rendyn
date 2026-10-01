@@ -1,0 +1,225 @@
+{
+  "id": "antd:tour",
+  "sourceId": "antd",
+  "slug": "antd-tour",
+  "name": "Ant Design tour",
+  "description": "9 published Ant Design tour examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@ant-design/icons@6.3.4",
+    "antd@6.6.5",
+    "antd-style@4.1.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "tour",
+    "tags": [
+      "action",
+      "file",
+      "form"
+    ],
+    "aliases": [
+      "tour",
+      "ant design tour"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "9 published Ant Design tour examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "tour:action:file:form",
+    "searchText": "Ant Design tour\ntour\n9 published Ant Design tour examples with complete pinned source and MIT attribution.\nant design tour\naction\nfile\nform\nAnt Design tour 9 published Ant Design tour examples with complete pinned source and MIT attribution. Installation Complete MIT example compositions using the pinned antd npm package. Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/ant design/ant design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/tour/demo Pinned source: https://github.com/ant design/ant design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/tour/demo/actions render.tsx"
+  },
+  "previewPath": "/preview/blocks/antd-tour",
+  "manifestPath": "components/antd-tour/component.json",
+  "integrity": "sha256:47e9d3cc2e921e588687254ca25226ec15e71943b07ca025d854683e3e34549f",
+  "source": {
+    "id": "antd",
+    "name": "Ant Design",
+    "repository": "https://github.com/ant-design/ant-design",
+    "commit": "bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a",
+    "registrySha256": "7df4386dc63323dd6235edee9c52694b28d573a6d2765ac59719a52e1c259ab0",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2015-present Ant UED, https://xtech.antfin.com/",
+      "textPath": "source/antd/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/antd/upstream/tour/demo/actions-render.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useRef, useState } from 'react';\nimport { EllipsisOutlined } from '@ant-design/icons';\nimport type { GetRef, TourProps } from 'antd';\nimport { Button, Divider, Space, Tour } from 'antd';\n\nconst App: React.FC = () => {\n  const ref1 = useRef<GetRef<typeof Button>>(null);\n  const ref2 = useRef<GetRef<typeof Button>>(null);\n  const ref3 = useRef<GetRef<typeof Button>>(null);\n\n  const [open, setOpen] = useState<boolean>(false);\n\n  const steps: TourProps['steps'] = [\n    {\n      title: 'Upload File',\n      description: 'Put your files here.',\n      target: () => ref1.current!,\n    },\n    {\n      title: 'Save',\n      description: 'Save your changes.',\n      target: () => ref2.current!,\n    },\n    {\n      title: 'Other Actions',\n      description: 'Click to see other actions.',\n      target: () => ref3.current!,\n    },\n  ];\n\n  return (\n    <>\n      <Button type=\"primary\" onClick={() => setOpen(true)}>\n        Begin Tour\n      </Button>\n      <Divider />\n      <Space>\n        <Button ref={ref1}>Upload</Button>\n        <Button ref={ref2} type=\"primary\">\n          Save\n        </Button>\n        <Button ref={ref3} icon={<EllipsisOutlined />} />\n      </Space>\n      <Tour\n        open={open}\n        onClose={() => setOpen(false)}\n        steps={steps}\n        actionsRender={(originNode, { current, total }) => (\n          <>\n            {current !== total - 1 && (\n              <Button\n                size=\"small\"\n                onClick={() => {\n                  setOpen(false);\n                }}\n              >\n                Skip\n              </Button>\n            )}\n            {originNode}\n          </>\n        )}\n      />\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "b8641596c11c96cf3680a8843f0543d0ab4c01caa0a4eef9c4caed5e358306ff",
+      "upstreamPath": "components/tour/demo/actions-render.tsx",
+      "upstreamSha256": "c7ec511f4be4d61e457156a7c628932602ff2b903d8fb705a3a93dca5fd5f6d1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/tour/demo/basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useRef, useState } from 'react';\nimport { EllipsisOutlined } from '@ant-design/icons';\nimport { Button, Divider, Space, Tour } from 'antd';\nimport type { TourProps } from 'antd';\n\nconst App: React.FC = () => {\n  const ref1 = useRef(null);\n  const ref2 = useRef(null);\n  const ref3 = useRef(null);\n\n  const [open, setOpen] = useState<boolean>(false);\n\n  const steps: TourProps['steps'] = [\n    {\n      title: 'Upload File',\n      description: 'Put your files here.',\n      cover: (\n        <img\n          draggable={false}\n          alt=\"tour.png\"\n          src=\"https://user-images.githubusercontent.com/5378891/197385811-55df8480-7ff4-44bd-9d43-a7dade598d70.png\"\n        />\n      ),\n      target: () => ref1.current,\n    },\n    {\n      title: 'Save',\n      description: 'Save your changes.',\n      target: () => ref2.current,\n    },\n    {\n      title: 'Other Actions',\n      description: 'Click to see other actions.',\n      target: () => ref3.current,\n    },\n  ];\n  return (\n    <>\n      <Button type=\"primary\" onClick={() => setOpen(true)}>\n        Begin Tour\n      </Button>\n      <Divider />\n      <Space>\n        <Button ref={ref1}>Upload</Button>\n        <Button ref={ref2} type=\"primary\">\n          Save\n        </Button>\n        <Button ref={ref3} icon={<EllipsisOutlined />} />\n      </Space>\n      <Tour open={open} onClose={() => setOpen(false)} steps={steps} />\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "15a4c60012f10cc1322d55421c14d0bd38a304a964273faf24cfd6255daa308b",
+      "upstreamPath": "components/tour/demo/basic.tsx",
+      "upstreamSha256": "ac3fd7fe92424197cda8e60c4f9f1aacdecc5bba0906adeb518bfdf84d06c82d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/tour/demo/gap.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useRef, useState } from 'react';\nimport { Button, Col, Row, Slider, Space, Tour, Typography } from 'antd';\nimport type { TourProps } from 'antd';\n\nconst { Text } = Typography;\n\nconst App: React.FC = () => {\n  const tourNodeRef = useRef(null);\n  const [radius, setRadius] = useState(8);\n  const [offsetX, setOffsetX] = useState(2);\n  const [offsetY, setOffsetY] = useState(2);\n  const [offset, setOffset] = useState(2);\n  const [open, setOpen] = useState(false);\n  const [offsetDirection, setOffsetDirection] = useState<'both' | 'individual'>('individual');\n\n  const steps: TourProps['steps'] = [\n    {\n      title: 'Upload File',\n      description: 'Put your files here.',\n      cover: (\n        <img\n          draggable={false}\n          alt=\"tour.png\"\n          src=\"https://user-images.githubusercontent.com/5378891/197385811-55df8480-7ff4-44bd-9d43-a7dade598d70.png\"\n        />\n      ),\n      target: () => tourNodeRef.current,\n    },\n  ];\n\n  const offsetGap =\n    offsetDirection === 'both'\n      ? { offset }\n      : {\n          offset: [offsetX, offsetY] as [number, number],\n        };\n  return (\n    <div ref={tourNodeRef}>\n      <Button type=\"primary\" onClick={() => setOpen(true)}>\n        Begin Tour\n      </Button>\n      <Space style={{ display: 'flex', marginTop: 12 }} vertical>\n        <Row>\n          <Col span={6}>\n            <Text>Radius:</Text>\n          </Col>\n          <Col span={12}>\n            <Slider value={radius} onChange={(val) => val && setRadius(val)} />\n          </Col>\n        </Row>\n        <Row>\n          <Col span={6}>\n            <Text> offset:</Text>\n          </Col>\n          <Col span={12}>\n            <Slider\n              value={offset}\n              max={50}\n              onChange={(val) => val && setOffset(val)}\n              onFocus={() => setOffsetDirection('both')}\n            />\n          </Col>\n        </Row>\n        <Row>\n          <Col span={6}>\n            <Text>Horizontal offset:</Text>\n          </Col>\n          <Col span={12}>\n            <Slider\n              value={offsetX}\n              max={50}\n              onChange={(val) => val && setOffsetX(val)}\n              onFocus={() => setOffsetDirection('individual')}\n            />\n          </Col>\n        </Row>\n        <Row>\n          <Col span={6}>\n            <Text>Vertical offset:</Text>\n          </Col>\n          <Col span={12}>\n            <Slider\n              value={offsetY}\n              max={50}\n              onChange={(val) => val && setOffsetY(val)}\n              onFocus={() => setOffsetDirection('individual')}\n            />\n          </Col>\n        </Row>\n      </Space>\n      <Tour\n        open={open}\n        onClose={() => setOpen(false)}\n        steps={steps}\n        gap={{ ...offsetGap, radius }}\n      />\n    </div>\n  );\n};\n\nexport default App;\n",
+      "sha256": "d1a28b4776b045798802436182934105df689e3ff38b7b5694e067ab280e1153",
+      "upstreamPath": "components/tour/demo/gap.tsx",
+      "upstreamSha256": "ff35df218e4c80c7d9b0d9aed929b85bc2d786cc486872f632553959b9666b5d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/tour/demo/indicator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useRef, useState } from 'react';\nimport { EllipsisOutlined } from '@ant-design/icons';\nimport type { GetRef, TourProps } from 'antd';\nimport { Button, Divider, Space, Tour } from 'antd';\n\nconst App: React.FC = () => {\n  const ref1 = useRef<GetRef<typeof Button>>(null);\n  const ref2 = useRef<GetRef<typeof Button>>(null);\n  const ref3 = useRef<GetRef<typeof Button>>(null);\n\n  const [open, setOpen] = useState<boolean>(false);\n\n  const steps: TourProps['steps'] = [\n    {\n      title: 'Upload File',\n      description: 'Put your files here.',\n      target: () => ref1.current!,\n    },\n    {\n      title: 'Save',\n      description: 'Save your changes.',\n      target: () => ref2.current!,\n    },\n    {\n      title: 'Other Actions',\n      description: 'Click to see other actions.',\n      target: () => ref3.current!,\n    },\n  ];\n\n  return (\n    <>\n      <Button type=\"primary\" onClick={() => setOpen(true)}>\n        Begin Tour\n      </Button>\n      <Divider />\n      <Space>\n        <Button ref={ref1}>Upload</Button>\n        <Button ref={ref2} type=\"primary\">\n          Save\n        </Button>\n        <Button ref={ref3} icon={<EllipsisOutlined />} />\n      </Space>\n      <Tour\n        open={open}\n        onClose={() => setOpen(false)}\n        steps={steps}\n        indicatorsRender={(current, total) => (\n          <span>\n            {current + 1} / {total}\n          </span>\n        )}\n      />\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "3bedc5ad117d73cb0e6599496ca0b10e91de20aab343fe38f58cffa3d9919bbf",
+      "upstreamPath": "components/tour/demo/indicator.tsx",
+      "upstreamSha256": "bac45f7f353f3dd00dffb6102672cbad19a318e21ac311c33f78000a0175e204",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/tour/demo/mask.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useRef, useState } from 'react';\nimport { EllipsisOutlined } from '@ant-design/icons';\nimport { Button, Divider, Space, Tour } from 'antd';\nimport type { TourProps } from 'antd';\n\nconst App: React.FC = () => {\n  const ref1 = useRef(null);\n  const ref2 = useRef(null);\n  const ref3 = useRef(null);\n\n  const [open, setOpen] = useState<boolean>(false);\n\n  const steps: TourProps['steps'] = [\n    {\n      title: 'Upload File',\n      description: 'Put your files here.',\n      cover: (\n        <img\n          draggable={false}\n          alt=\"tour.png\"\n          src=\"https://user-images.githubusercontent.com/5378891/197385811-55df8480-7ff4-44bd-9d43-a7dade598d70.png\"\n        />\n      ),\n      target: () => ref1.current,\n    },\n    {\n      title: 'Save',\n      description: 'Save your changes.',\n      target: () => ref2.current,\n      mask: {\n        style: {\n          boxShadow: 'inset 0 0 15px #fff',\n        },\n        color: 'rgba(40, 0, 255, .4)',\n      },\n    },\n    {\n      title: 'Other Actions',\n      description: 'Click to see other actions.',\n      target: () => ref3.current,\n      mask: false,\n    },\n  ];\n\n  return (\n    <>\n      <Button type=\"primary\" onClick={() => setOpen(true)}>\n        Begin Tour\n      </Button>\n\n      <Divider />\n\n      <Space>\n        <Button ref={ref1}>Upload</Button>\n        <Button ref={ref2} type=\"primary\">\n          Save\n        </Button>\n        <Button ref={ref3} icon={<EllipsisOutlined />} />\n      </Space>\n\n      <Tour\n        open={open}\n        onClose={() => setOpen(false)}\n        steps={steps}\n        mask={{\n          style: {\n            boxShadow: 'inset 0 0 15px #333',\n          },\n          color: 'rgba(80, 255, 255, .4)',\n        }}\n      />\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "1445c6535534274c8ab22fc6ec980ef90891970186825d757242647b2461c77d",
+      "upstreamPath": "components/tour/demo/mask.tsx",
+      "upstreamSha256": "150cb90f70ec3c4878324d961cee2b0b202fe8b5551510bd80e6261c39184077",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/tour/demo/non-modal.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useRef, useState } from 'react';\nimport { EllipsisOutlined } from '@ant-design/icons';\nimport { Button, Divider, Space, Tour } from 'antd';\nimport type { TourProps } from 'antd';\n\nconst App: React.FC = () => {\n  const ref1 = useRef(null);\n  const ref2 = useRef(null);\n  const ref3 = useRef(null);\n\n  const [open, setOpen] = useState<boolean>(false);\n\n  const steps: TourProps['steps'] = [\n    {\n      title: 'Upload File',\n      description: 'Put your files here.',\n      cover: (\n        <img\n          draggable={false}\n          alt=\"tour.png\"\n          src=\"https://user-images.githubusercontent.com/5378891/197385811-55df8480-7ff4-44bd-9d43-a7dade598d70.png\"\n        />\n      ),\n      target: () => ref1.current,\n    },\n    {\n      title: 'Save',\n      description: 'Save your changes.',\n      target: () => ref2.current,\n    },\n    {\n      title: 'Other Actions',\n      description: 'Click to see other actions.',\n      target: () => ref3.current,\n    },\n  ];\n\n  return (\n    <>\n      <Button type=\"primary\" onClick={() => setOpen(true)}>\n        Begin non-modal Tour\n      </Button>\n\n      <Divider />\n\n      <Space>\n        <Button ref={ref1}>Upload</Button>\n        <Button ref={ref2} type=\"primary\">\n          Save\n        </Button>\n        <Button ref={ref3} icon={<EllipsisOutlined />} />\n      </Space>\n\n      <Tour open={open} onClose={() => setOpen(false)} mask={false} type=\"primary\" steps={steps} />\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "42b30c817f0f9120bbe63a69274b0eadc71468311e990d0b40e58599bed667e6",
+      "upstreamPath": "components/tour/demo/non-modal.tsx",
+      "upstreamSha256": "d1641517e8f1354a9d24c6173a6df13f53f4088382768ad33692565bc7d77a36",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/tour/demo/placement.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useRef, useState } from 'react';\nimport { Button, Tour } from 'antd';\nimport type { TourProps } from 'antd';\n\nconst App: React.FC = () => {\n  const ref = useRef(null);\n\n  const [open, setOpen] = useState<boolean>(false);\n\n  const steps: TourProps['steps'] = [\n    {\n      title: 'Center',\n      description: 'Displayed in the center of screen.',\n      target: null,\n    },\n    {\n      title: 'Right',\n      description: 'On the right of target.',\n      placement: 'right',\n      target: () => ref.current,\n    },\n    {\n      title: 'Top',\n      description: 'On the top of target.',\n      placement: 'top',\n      target: () => ref.current,\n    },\n  ];\n\n  return (\n    <>\n      <Button type=\"primary\" onClick={() => setOpen(true)} ref={ref}>\n        Begin Tour\n      </Button>\n\n      <Tour open={open} onClose={() => setOpen(false)} steps={steps} />\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "b07a73f04652880fdea4eeedb244d6298996fc17bdbf4ae34bad3895bdb8ee0d",
+      "upstreamPath": "components/tour/demo/placement.tsx",
+      "upstreamSha256": "ff322b85befba2d04f2a5530e4dcc270ea5725bf1cd2ecf2fbc5c5cf0dccb2a9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/tour/demo/render-panel.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Tour } from 'antd';\n\n/** Test usage. Do not use in your production. */\nconst { _InternalPanelDoNotUseOrYouWillBeFired: InternalPanel } = Tour;\n\nexport default () => (\n  <div\n    style={{\n      display: 'flex',\n      flexDirection: 'column',\n      rowGap: 16,\n      background: 'rgba(50,0,0,0.65)',\n      padding: 8,\n    }}\n  >\n    <InternalPanel title=\"Hello World!\" description=\"Hello World?!\" />\n    <InternalPanel\n      title=\"Hello World!\"\n      description=\"Hello World?!\"\n      cover={\n        <img\n          draggable={false}\n          alt=\"tour.png\"\n          src=\"https://user-images.githubusercontent.com/5378891/197385811-55df8480-7ff4-44bd-9d43-a7dade598d70.png\"\n        />\n      }\n      current={5}\n      total={7}\n    />\n    <InternalPanel\n      title=\"Hello World!\"\n      description=\"Hello World?!\"\n      type=\"primary\"\n      current={4}\n      total={5}\n    />\n  </div>\n);\n",
+      "sha256": "049bab0bed9a3370e9da95af7407c2bddfb2283f1e0f3ae3afa913eeaec1af22",
+      "upstreamPath": "components/tour/demo/render-panel.tsx",
+      "upstreamSha256": "2a19e5539055bd220c34e348b16b4e668bec82144e0f9c4b7c2d86aad022ee05",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/tour/demo/style-class.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useRef, useState } from 'react';\nimport { Button, Divider, Flex, Space, Tour } from 'antd';\nimport type { GetProp, TourProps, TourStepProps } from 'antd';\nimport { createStaticStyles } from 'antd-style';\n\nconst btnProps: {\n  nextButtonProps: TourStepProps['nextButtonProps'];\n  prevButtonProps: TourStepProps['prevButtonProps'];\n} = {\n  nextButtonProps: {\n    style: {\n      border: '1px solid #CDC1FF',\n      color: '#CDC1FF',\n    },\n  },\n  prevButtonProps: {\n    style: {\n      backgroundColor: '#CDC1FF',\n      color: '#fff',\n    },\n  },\n};\n\nconst classNames = createStaticStyles(({ css }) => ({\n  root: css`\n    border-radius: 4px;\n  `,\n  section: css`\n    border-radius: 8px;\n  `,\n}));\n\nconst stylesObject: TourProps['styles'] = {\n  mask: {\n    backgroundColor: 'rgba(0, 0, 0, 0.3)',\n  },\n  section: {\n    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',\n    border: '2px solid #4096ff',\n  },\n  cover: {\n    borderRadius: '12px 12px 0 0',\n  },\n};\n\nconst stylesFunction: TourProps['styles'] = (info): GetProp<TourProps, 'styles', 'Return'> => {\n  if (info.props.type === 'primary') {\n    return {\n      mask: {\n        backgroundColor: 'rgba(0, 0, 0, 0.3)',\n      },\n      section: {\n        backgroundColor: 'rgb(205,193,255, 0.8)',\n        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',\n      },\n      cover: {\n        borderRadius: '12px 12px 0 0',\n      },\n    };\n  }\n  return {};\n};\n\nconst App: React.FC = () => {\n  const ref1 = useRef<HTMLButtonElement | HTMLAnchorElement>(null);\n  const ref2 = useRef<HTMLButtonElement | HTMLAnchorElement>(null);\n  const ref3 = useRef<HTMLButtonElement | HTMLAnchorElement>(null);\n\n  const [open, setOpen] = useState<boolean>(false);\n  const [openFn, setOpenFn] = useState<boolean>(false);\n\n  const steps: TourProps['steps'] = [\n    {\n      title: 'Upload File',\n      description: 'Put your files here.',\n      cover: (\n        <img\n          alt=\"tour.png\"\n          src=\"https://user-images.githubusercontent.com/5378891/197385811-55df8480-7ff4-44bd-9d43-a7dade598d70.png\"\n        />\n      ),\n      target: () => ref1.current || document.body,\n      prevButtonProps: {},\n    },\n    {\n      title: 'Save',\n      description: 'Save your changes.',\n      target: () => ref2.current || document.body,\n    },\n    {\n      title: 'Other Actions',\n      description: 'Click to see other actions.',\n      target: () => ref3.current || document.body,\n    },\n  ];\n\n  const sharedProps: TourProps = {\n    steps,\n    classNames,\n    arrow: false,\n  };\n\n  return (\n    <Flex vertical gap=\"medium\">\n      <Flex gap=\"medium\">\n        <Button type=\"primary\" onClick={() => setOpen(true)}>\n          Begin Tour Object\n        </Button>\n        <Button type=\"primary\" onClick={() => setOpenFn(true)}>\n          Begin Tour Function\n        </Button>\n      </Flex>\n      <Divider />\n      <Tour {...sharedProps} open={open} onClose={() => setOpen(false)} styles={stylesObject} />\n      <Tour\n        {...sharedProps}\n        steps={steps.map((s) => ({ ...s, ...btnProps }))}\n        type=\"primary\"\n        open={openFn}\n        onClose={() => setOpenFn(false)}\n        styles={stylesFunction}\n      />\n      <Space>\n        <Button ref={ref1} type=\"primary\">\n          Upload\n        </Button>\n        <Button ref={ref2}>Save</Button>\n        <Button ref={ref3} type=\"dashed\">\n          Other Actions\n        </Button>\n      </Space>\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "20a0c189e5535b103d3f6dc5aa56a190e67a3427b6f4c8fec835a9b4bebfd119",
+      "upstreamPath": "components/tour/demo/style-class.tsx",
+      "upstreamSha256": "f072815fda0e7d09377df6b341a5ba9a3d0c76b01fd00ee6b433c1b6930c006b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/tour/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/tour/demo/actions-render\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0793afe9451cfb5ebcda7981b789968efa7ed0826abbb18dd9f587252178cbb5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/tour/previews/basic.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/tour/demo/basic\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "6f632ff1b4d97e307998aceb6c112b86caa319175d100fb886cb9ff3d1c2228d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/tour/previews/gap.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/tour/demo/gap\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "bd12d2ebc93352492d12ff1dc8b62428a0a388cfd94900a82ed7e91849f93bc8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/tour/previews/indicator.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/tour/demo/indicator\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e5b6d26919b9d2b349f9a5af35d35e65a479e95a82882787109f91d8a774dfd9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/tour/previews/mask.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/tour/demo/mask\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0e5937b4c69d0cae740edd253ab3a84235df6580fc0e1a479a8d63acd0403570",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/tour/previews/non-modal.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/tour/demo/non-modal\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "168a8a2e00eca05c7f1fa4acaaa3f170b950933bb459ee13e9ffef11b86b7602",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/tour/previews/placement.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/tour/demo/placement\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "90ba13d1e406a5123836950eabfab9926887867a909d63ce179c0be9bbc6c51c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/tour/previews/render-panel.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/tour/demo/render-panel\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "05ab30489a966c49596f8aa566606dca57f818785634395be4b9f0d9124a0782",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/tour/previews/style-class.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/tour/demo/style-class\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "b9676396e12894ee349a8bcb2d5b34a710312b41a66d3ea1bbc11cc8502eae6d",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example compositions using the pinned antd npm package.",
+      "Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "tour",
+    "upstreamPageUrl": "https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/tour/demo",
+    "upstreamDetailUrl": "https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/tour/demo/actions-render.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/ant-design/ant-design/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/tour/demo/actions-render.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Ant Design tour\n\n9 published Ant Design tour examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example compositions using the pinned antd npm package.\n- Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/tour/demo\nPinned source: https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/tour/demo/actions-render.tsx\n"
+}

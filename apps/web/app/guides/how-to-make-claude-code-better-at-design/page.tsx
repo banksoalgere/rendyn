@@ -1,3 +1,8 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Native anchors keep the MCP handoff reliable with Vinext. */
+import { BrandMark } from '@/app/components/brand-mark';
+import '../../globals.css';
+import '../../styles/editorial-guides.css';
+import '../../styles/editorial.css';
 import { GuideHeading } from '../../components/guide-heading';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -35,6 +40,7 @@ const tableOfContents = [
   ['better-design-workflow', 'The six-step workflow'],
   ['prompt-template', 'A prompt that works'],
   ['design-context-stack', 'What to put where'],
+  ['component-discovery', 'Choose a real component'],
   ['review-loop', 'The browser review loop'],
   ['mistakes', 'Mistakes to avoid'],
   ['checklist', 'Ship checklist'],
@@ -142,7 +148,7 @@ export default function ClaudeCodeDesignGuide() {
               ))}
             </nav>
             <div className="guide-sidebar-cta guide-callout">
-              <span className="brand-mark" aria-hidden="true">R</span>
+              <BrandMark />
               <p className="guide-sidebar-title">Give Claude better ingredients.</p>
               <p>Search polished interface components by product intent, then give your agent the source and context to ship them well.</p>
               <Link className="button" href="/components">Explore Rendyn <span aria-hidden="true">↗</span></Link>
@@ -254,20 +260,42 @@ Report the route, files changed, design decisions and browser evidence.`}</code>
                 <span>Useful rule of thumb</span>
                 <p>If every task needs the instruction, use CLAUDE.md. If only design work needs it, use a Skill. If only this page needs it, keep it in the prompt.</p>
               </div>
-              <div className="article-product-demo" role="group" aria-label="Example of a Rendyn component result for Claude Code">
+            </section>
+
+            <section id="component-discovery">
+              <p className="guide-section-label">Give the brief an implementation</p>
+              <h2>Use MCP to choose a real component before styling it</h2>
+              <p>
+                A design brief becomes more useful when Claude can compare concrete implementations. For a screen that reviews an AI-proposed action, start with one need: a human approval card. Ask Claude to search Rendyn, open the returned preview links and explain whether Approval Card or Tool Approval fits the decision your user is making.
+              </p>
+              <div className="article-product-demo" role="group" aria-label="Verified Rendyn Approval Card discovery example">
                 <div className="article-product-demo-top">
-                  <div><span className="brand-mark" aria-hidden="true">R</span><p><strong>Rendyn</strong><small>Component context for an agent</small></p></div>
-                  <span>Example result</span>
+                  <div><BrandMark /><p><strong>Rendyn</strong><small>Component context for Claude Code</small></p></div>
+                  <span>Catalogue example</span>
                 </div>
-                <div className="article-product-query"><span aria-hidden="true">✦</span><p>“A calm confirmation action for a high-trust workflow”</p></div>
+                <div className="article-product-query"><span aria-hidden="true">✦</span><p>“approval card”</p></div>
                 <div className="article-product-result">
                   <span>01</span>
-                  <div><strong>Signal button</strong><p>Quiet motion · clear focus · complete states</p></div>
-                  <i>Best fit</i>
+                  <div><strong>Approval Card</strong><p>Human review · choices · decision states</p></div>
+                  <i>beUI · MIT</i>
                 </div>
-                <div className="article-product-files"><span>signal-button.tsx</span><span>states.css</span><span>install.md</span></div>
-                <div className="article-product-demo-bottom"><p>A useful component handoff gives Claude a visual choice, fit reasoning and the implementation—not another adjective.</p><Link href="/components">Explore the catalogue <span aria-hidden="true">↗</span></Link></div>
+                <div className="article-product-files"><span>approval-card/index.tsx</span><span>approval-card/types.ts</span><span>lib/utils.ts</span></div>
+                <div className="article-product-demo-bottom"><p>Retrieve beui:approval-card to inspect the source, shared files, dependencies and licence notice.</p><a href="/components/approval-card">Try the preview <span aria-hidden="true">↗</span></a></div>
               </div>
+              <p>
+                Then ask Claude to map the component to your product: reuse your typography and color tokens, write the real action summary, connect the callbacks to your approval API and check pending, approved and rejected states. Keep the permission decision on the server. The UI makes the decision understandable; your backend validates and executes it.
+              </p>
+              <div className="prompt-card">
+                <div className="prompt-card-top"><span>CLAUDE CODE PROMPT</span><span>COMPONENT CHOICE</span></div>
+                <pre><code>{`Use Rendyn to search for an approval card for reviewing an AI-proposed change.
+Compare the returned previews before choosing. Retrieve the selected id with get_component.
+Inspect every required file, dependencies and licence notice.
+Adapt it to our existing tokens and approval API; preserve server authorization.
+Verify the decision states, keyboard focus and mobile layout in the browser.`}</code></pre>
+              </div>
+              <p>
+                Rendyn MCP requires OAuth and an active trial or paid subscription. Website previews are public and source is free after login. Follow the <a href="/mcp#claude-code">Claude Code MCP setup and retrieval walkthrough</a> for connection instructions, the four available tools and dependency examples.
+              </p>
             </section>
 
             <section id="review-loop">
@@ -345,7 +373,7 @@ Report the route, files changed, design decisions and browser evidence.`}</code>
               <div className="guide-related-grid">
                 <Link href="/components"><span>Component strategy</span><h3>Choose UI components by product intent</h3><p>Move from a product outcome to a focused, defensible component choice.</p><i aria-hidden="true">↗</i></Link>
                 <Link href="/#intelligence"><span>Agent-ready UI</span><h3>What a complete component handoff includes</h3><p>See the previews, reasoning, states and source files that make a result usable.</p><i aria-hidden="true">↗</i></Link>
-                <Link href="/#docs"><span>MCP workflow</span><h3>Connect design context to the coding agent</h3><p>Make interface knowledge available inside the build loop instead of another tab.</p><i aria-hidden="true">↗</i></Link>
+                <a href="/mcp#claude-code"><span>MCP workflow</span><h3>Connect Claude to component source</h3><p>Set up Rendyn, compare previews and retrieve the files your implementation needs.</p><i aria-hidden="true">↗</i></a>
               </div>
             </section>
 

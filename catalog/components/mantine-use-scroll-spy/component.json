@@ -1,0 +1,115 @@
+{
+  "id": "mantine:use-scroll-spy",
+  "sourceId": "mantine",
+  "slug": "mantine-use-scroll-spy",
+  "name": "Mantine use scroll spy",
+  "description": "2 published Mantine use scroll spy examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "use-scroll-spy",
+    "tags": [
+      "code",
+      "file",
+      "select"
+    ],
+    "aliases": [
+      "use scroll spy",
+      "mantine use scroll spy",
+      "use-scroll-spy"
+    ],
+    "interactions": [
+      "scroll"
+    ],
+    "useWhen": [
+      "2 published Mantine use scroll spy examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "use-scroll-spy:code:file:select:scroll",
+    "searchText": "Mantine use scroll spy\nuse scroll spy\n2 published Mantine use scroll spy examples with complete pinned source and MIT attribution.\nmantine use scroll spy\nuse-scroll-spy\ncode\nfile\nselect\nscroll\nMantine use scroll spy 2 published Mantine use scroll spy examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use scroll spy Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use scroll spy/use scroll spy.demo.selector.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-use-scroll-spy",
+  "manifestPath": "components/mantine-use-scroll-spy/component.json",
+  "integrity": "sha256:56596cf50f971530d421833c3ff310cdd5044044c4623ece17fc363ad2db4218",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-scroll-spy/use-scroll-spy.demo.selector.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Text, UnstyledButton } from '@mantine/core';\n\nimport { useScrollSpy } from '@mantine/hooks';\n\nfunction Demo() {\n  const spy = useScrollSpy({\n    selector: '#mdx [data-heading]',\n    getDepth: (element) => Number(element.getAttribute('data-order')),\n    getValue: (element) => element.getAttribute('data-heading') || '',\n  });\n\n  const headings = spy.data.map((heading, index) => (\n    <li\n      key={heading.id}\n      style={{\n        listStylePosition: 'inside',\n        paddingInlineStart: heading.depth * 20,\n        background: index === spy.active ? 'var(--mantine-color-blue-light)' : undefined,\n      }}\n    >\n      <UnstyledButton onClick={() => heading.getNode().scrollIntoView()}>\n        {heading.value}\n      </UnstyledButton>\n    </li>\n  ));\n\n  return (\n    <div>\n      <Text>Scroll to heading:</Text>\n      <ul style={{ margin: 0, padding: 0 }}>{headings}</ul>\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "08559b22651b9e8e6b3fcf839ce2a6c4565bce5ff77f9c731ee9cec758b19ef1",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-scroll-spy/use-scroll-spy.demo.selector.tsx",
+      "upstreamSha256": "c1877728b9561ec3b5d39ceab64102015b899fb2318419aa7e7d993744547cc5",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-scroll-spy/use-scroll-spy.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Text, UnstyledButton } from '@mantine/core';\n\nimport { useScrollSpy } from '@mantine/hooks';\n\nfunction Demo() {\n  const spy = useScrollSpy({\n    selector: '#mdx :is(h1, h2, h3, h4, h5, h6)',\n  });\n\n  const headings = spy.data.map((heading, index) => (\n    <li\n      key={heading.id}\n      style={{\n        listStylePosition: 'inside',\n        paddingInlineStart: heading.depth * 20,\n        background: index === spy.active ? 'var(--mantine-color-blue-light)' : undefined,\n      }}\n    >\n      <UnstyledButton onClick={() => heading.getNode().scrollIntoView()}>\n        {heading.value}\n      </UnstyledButton>\n    </li>\n  ));\n\n  return (\n    <div>\n      <Text>Scroll to heading:</Text>\n      <ul style={{ margin: 0, padding: 0 }}>{headings}</ul>\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "2db0de32331559d64c5f5fa9e9324b1f0e7789c0d7ec19b77414c06452c2e310",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-scroll-spy/use-scroll-spy.demo.usage.tsx",
+      "upstreamSha256": "10e441596a5a3c7828f4369ad42800460ce3889b13775cea85b511c625df3b42",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-scroll-spy/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-scroll-spy/use-scroll-spy.demo.selector\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "f0f9adb270f1e2dbe25d5eb2ae5198b259d52805163579c7f734f52c6677c148",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-scroll-spy/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-scroll-spy/use-scroll-spy.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d178cdc3a646ae5cb8b68d37e8003a55693f9c9d446989c4830dbb38a7e28bbf",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "use-scroll-spy",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-scroll-spy",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-scroll-spy/use-scroll-spy.demo.selector.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-scroll-spy/use-scroll-spy.demo.selector.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine use scroll spy\n\n2 published Mantine use scroll spy examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-scroll-spy\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-scroll-spy/use-scroll-spy.demo.selector.tsx\n"
+}

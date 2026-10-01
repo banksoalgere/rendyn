@@ -1,0 +1,118 @@
+{
+  "id": "mui:material-customization-right-to-left",
+  "sourceId": "mui",
+  "slug": "mui-material-customization-right-to-left",
+  "name": "Material UI material customization right to left",
+  "description": "2 published Material UI material customization right to left examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/cache@11.14.0",
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/material@9.4.0",
+    "@mui/stylis-plugin-rtl@9.4.0",
+    "stylis@4.4.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "material-customization-right-to-left",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file"
+    ],
+    "aliases": [
+      "material customization right to left",
+      "material ui material customization right to left",
+      "material-customization-right-to-left"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "2 published Material UI material customization right to left examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "material-customization-right-to-left:code:command:data:file",
+    "searchText": "Material UI material customization right to left\nmaterial customization right to left\n2 published Material UI material customization right to left examples with complete pinned source and MIT attribution.\nmaterial ui material customization right to left\nmaterial-customization-right-to-left\ncode\ncommand\ndata\nfile\nMaterial UI material customization right to left 2 published Material UI material customization right to left examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/right to left Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/right to left/RtlDemo.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-material-customization-right-to-left",
+  "manifestPath": "components/mui-material-customization-right-to-left/component.json",
+  "integrity": "sha256:84ec0a6bfb705c806d28d8a4009e213435c00459ad37a5141eff3561e235a829",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/customization/right-to-left/RtlDemo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createTheme, ThemeProvider, Theme } from '@mui/material/styles';\nimport TextField from '@mui/material/TextField';\nimport rtlPlugin from '@mui/stylis-plugin-rtl';\nimport { prefixer } from 'stylis';\nimport { CacheProvider } from '@emotion/react';\nimport createCache from '@emotion/cache';\n\n// Consuming the outer theme is only required with coexisting themes, like in this documentation.\n// If your app/website doesn't deal with this, you can have just:\n// const theme = createTheme({ direction: 'rtl' })\nconst theme = (outerTheme: Theme) =>\n  createTheme({\n    direction: 'rtl',\n    palette: {\n      mode: outerTheme.palette.mode,\n    },\n  });\n\nconst cacheRtl = createCache({\n  key: 'muirtl',\n  stylisPlugins: [prefixer, rtlPlugin],\n});\n\nexport default function RtlDemo() {\n  return (\n    <CacheProvider value={cacheRtl}>\n      <ThemeProvider theme={theme}>\n        <div dir=\"rtl\">\n          <TextField\n            label=\"ملصق\"\n            placeholder=\"العنصر النائب\"\n            helperText=\"هذا نص مساعد\"\n            variant=\"outlined\"\n          />\n        </div>\n      </ThemeProvider>\n    </CacheProvider>\n  );\n}\n",
+      "sha256": "6bd2bb20d396e88056f7e50bbe6faf20b34eb4c901eb93c039f9b11bf99f9bc8",
+      "upstreamPath": "docs/data/material/customization/right-to-left/RtlDemo.tsx",
+      "upstreamSha256": "0f7e954ab47b083268f8b5f9d3df83f0535455760a1bab831a8fc0d12bc1a24f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/customization/right-to-left/RtlOptOut.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport { prefixer } from 'stylis';\nimport rtlPlugin from '@mui/stylis-plugin-rtl';\nimport { CacheProvider } from '@emotion/react';\nimport createCache from '@emotion/cache';\nimport { styled } from '@mui/material/styles';\nimport Box from '@mui/material/Box';\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport Switch from '@mui/material/Switch';\n\nconst Normal = styled('div')`\n  text-align: left;\n`;\n\nconst Noflip = styled('div')`\n  /* @noflip */\n  text-align: left;\n`;\n\nconst rtlCache = createCache({\n  key: 'muirtl',\n  stylisPlugins: [prefixer, rtlPlugin],\n});\n\nconst ltrCache = createCache({\n  key: 'mui',\n});\n\nexport default function RtlOptOut() {\n  const [rtl, setRtl] = React.useState(false);\n\n  const handleChange = () => {\n    setRtl(!rtl);\n  };\n\n  return (\n    <Box sx={{ width: '100%', display: 'flex' }}>\n      <FormControlLabel\n        control={<Switch onChange={handleChange} />}\n        label=\"Toggle RTL\"\n      />\n      <CacheProvider value={rtl ? rtlCache : ltrCache}>\n        <Box sx={{ flexGrow: 1, mx: 2 }} dir={rtl ? 'rtl' : undefined}>\n          <Normal>RTL normal behavior</Normal>\n          <Noflip>RTL noflip</Noflip>\n        </Box>\n      </CacheProvider>\n    </Box>\n  );\n}\n",
+      "sha256": "4b4d3fa18c5b95d32f937c6a665648a8df53daa72d5d886ea739a2d79c91be19",
+      "upstreamPath": "docs/data/material/customization/right-to-left/RtlOptOut.tsx",
+      "upstreamSha256": "934fd0b7c418606ca5922e88d4351c85762d3bd006120faf6615c03e4cbdb2ce",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-customization-right-to-left/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/customization/right-to-left/RtlDemo\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "f02719e0df42668e1a6bc32adb966ff1b065081bc519a2a2250af1f5180341ba",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-customization-right-to-left/previews/rtl-opt-out.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/customization/right-to-left/RtlOptOut\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0e937e5b2b502724618d0bd7912c59c59fc2247ec689db0705a65e52d628e87b",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/cache@11.14.0 @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0 @mui/stylis-plugin-rtl@9.4.0 stylis@4.4.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/cache@11.14.0 @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0 @mui/stylis-plugin-rtl@9.4.0 stylis@4.4.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "material-customization-right-to-left",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/right-to-left",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/right-to-left/RtlDemo.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/right-to-left/RtlDemo.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI material customization right to left\n\n2 published Material UI material customization right to left examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/right-to-left\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/right-to-left/RtlDemo.tsx\n"
+}

@@ -1,0 +1,118 @@
+{
+  "id": "originui:comp-422",
+  "sourceId": "originui",
+  "slug": "originui-comp-422",
+  "name": "Origin UI badge chip status comp-422",
+  "description": "1 published Origin UI badge chip status comp-422 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "class-variance-authority@0.7.1",
+    "clsx@2.1.1",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "comp-422",
+    "tags": [
+      "badge",
+      "file",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 422",
+      "origin ui badge chip status comp-422",
+      "comp-422"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI badge chip status comp-422 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "comp-422:badge:file:select:upload",
+    "searchText": "Origin UI badge chip status comp-422\ncomp 422\n1 published Origin UI badge chip status comp-422 examples with complete pinned source and MIT attribution.\norigin ui badge chip status comp-422\ncomp-422\nbadge\nfile\nselect\nupload\nOrigin UI badge chip status comp 422 1 published Origin UI badge chip status comp 422 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 422.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-422",
+  "manifestPath": "components/originui-comp-422/component.json",
+  "integrity": "sha256:d2fec50648cb70d707f4ce921e888ab806050ebdc773a305719fb7250585d449",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-422.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Badge } from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/badge\";\n\nexport default function Component() {\n  return (\n    <Badge className=\"gap-1.5\" variant=\"outline\">\n      <span aria-hidden=\"true\" className=\"size-1.5 rounded-full bg-red-500\" />\n      Badge\n    </Badge>\n  );\n}\n",
+      "sha256": "8f768339dd0f4bcca4598016e2fe6a8a6edfd314ba43e6fd5f2a3e7a05152ccb",
+      "upstreamPath": "apps/origin/registry/default/components/comp-422.tsx",
+      "upstreamSha256": "abb53f7efa00b34a80a6c3a5a3e2aded44c518a89247241e040cb98156a6872d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/badge.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { Slot } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nconst badgeVariants = cva(\n  \"inline-flex w-fit shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-full border px-1.5 font-medium text-xs leading-normal transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 [&>svg]:pointer-events-none [&>svg]:shrink-0\",\n  {\n    defaultVariants: {\n      variant: \"default\",\n    },\n    variants: {\n      variant: {\n        default:\n          \"border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90\",\n        destructive:\n          \"border-transparent bg-destructive text-white focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 [a&]:hover:bg-destructive/90\",\n        outline:\n          \"text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground\",\n        secondary:\n          \"border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90\",\n      },\n    },\n  },\n);\n\nfunction Badge({\n  className,\n  variant,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"span\"> &\n  VariantProps<typeof badgeVariants> & { asChild?: boolean }) {\n  const Comp = asChild ? Slot.Root : \"span\";\n\n  return (\n    <Comp\n      className={cn(badgeVariants({ variant }), className)}\n      data-slot=\"badge\"\n      {...props}\n    />\n  );\n}\n\nexport { Badge, badgeVariants };\n",
+      "sha256": "ce70ea2443fae40712b7f0ab55131d376bb0e2c5092ec01e74913d0eb0b5bb2e",
+      "upstreamPath": "apps/origin/registry/default/ui/badge.tsx",
+      "upstreamSha256": "ed9de97940658cfe139ee17267a13c004d49ee3c1568aa2a121c427551587018",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-422/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-422\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "4f99f936835b3706262c7284a1403456060ab55fda69feae83ddd94c9feecd18",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add class-variance-authority@0.7.1 clsx@2.1.1 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add class-variance-authority@0.7.1 clsx@2.1.1 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-422",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-422.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-422.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI badge chip status comp-422\n\n1 published Origin UI badge chip status comp-422 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-422.tsx\n"
+}

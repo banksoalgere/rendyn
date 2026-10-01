@@ -1,0 +1,285 @@
+{
+  "id": "mantine:tabs",
+  "sourceId": "mantine",
+  "slug": "mantine-tabs",
+  "name": "Mantine tabs",
+  "description": "12 published Mantine tabs examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@phosphor-icons/react@2.1.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "tabs",
+    "tags": [
+      "code",
+      "file",
+      "tabs"
+    ],
+    "aliases": [
+      "tabs",
+      "mantine tabs"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "12 published Mantine tabs examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "tabs:code:file",
+    "searchText": "Mantine tabs\ntabs\n12 published Mantine tabs examples with complete pinned source and MIT attribution.\nmantine tabs\ncode\nfile\nMantine tabs 12 published Mantine tabs examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Tabs Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.colors.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-tabs",
+  "manifestPath": "components/mantine-tabs/component.json",
+  "integrity": "sha256:666727817ef9b96df287b6d7f0783ce8039a8312c436b985f676bef92c98ee1a",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.colors.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Tabs } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Tabs color=\"teal\" defaultValue=\"first\">\n      <Tabs.List>\n        <Tabs.Tab value=\"first\">Teal tab</Tabs.Tab>\n        <Tabs.Tab value=\"second\" color=\"blue\">\n          Blue tab\n        </Tabs.Tab>\n      </Tabs.List>\n\n      <Tabs.Panel value=\"first\" pt=\"xs\">\n        First tab color is teal, it gets this value from context\n      </Tabs.Panel>\n\n      <Tabs.Panel value=\"second\" pt=\"xs\">\n        Second tab color is blue, it gets this value from props, props have the priority and will\n        override context value\n      </Tabs.Panel>\n    </Tabs>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "2d99bb180f9ea3ce75458f9c3c608885ac42674f23301cc024abcf6e2a250fe3",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.colors.tsx",
+      "upstreamSha256": "8a6bdfdfc8cad09a57171fd1fca7f7dda844e0e2b1d730c410e3207f3e00fcc0",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.customize.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ChatCircleIcon, GearSixIcon, ImageIcon } from '@phosphor-icons/react';\n\nimport { Tabs } from '@mantine/core';\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.customize.module.css';\n\nfunction Demo() {\n  return (\n    <Tabs variant=\"unstyled\" defaultValue=\"settings\" classNames={classes}>\n      <Tabs.List grow>\n        <Tabs.Tab value=\"settings\" leftSection={<GearSixIcon size={16} />}>\n          Settings\n        </Tabs.Tab>\n        <Tabs.Tab value=\"messages\" leftSection={<ChatCircleIcon size={16} />}>\n          Messages\n        </Tabs.Tab>\n        <Tabs.Tab value=\"gallery\" leftSection={<ImageIcon size={16} />}>\n          Gallery\n        </Tabs.Tab>\n      </Tabs.List>\n    </Tabs>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "51250f6dd40d994804950fdd1a40928ff72c5f83c9b523453f87f22f93b24504",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.customize.tsx",
+      "upstreamSha256": "47d86e2bb597eff930ea37c4c72049f1399723ad9aa50164b1410bb3fafb23e0",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.customize.module.css",
+      "type": "style",
+      "content": ".tab {\n  position: relative;\n  border: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));\n  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));\n\n  &:first-of-type {\n    border-radius: 4px 0 0 4px;\n\n    @mixin rtl {\n      border-radius: 0 4px 4px 0;\n    }\n  }\n\n  &:last-of-type {\n    border-radius: 0 4px 4px 0;\n\n    @mixin rtl {\n      border-radius: 4px 0 0 4px;\n    }\n  }\n\n  & + & {\n    border-left-width: 0;\n\n    @mixin rtl {\n      border-right-width: 0;\n      border-left-width: 1px;\n    }\n  }\n\n  @mixin hover {\n    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));\n  }\n\n  &[data-active] {\n    z-index: 1;\n    background-color: var(--mantine-color-blue-filled);\n    border-color: var(--mantine-color-blue-filled);\n    color: var(--mantine-color-white);\n\n    @mixin hover {\n      background-color: var(--mantine-color-blue-filled-hover);\n    }\n  }\n}\n",
+      "sha256": "bed3164d3c19585617e9a8fc1649b11cf9edeffa8439a8bec2287a51b9ee8444",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.customize.module.css",
+      "upstreamSha256": "bed3164d3c19585617e9a8fc1649b11cf9edeffa8439a8bec2287a51b9ee8444",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.deactivate.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Tabs } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Tabs defaultValue=\"chat\" allowTabDeactivation>\n      <Tabs.List>\n        <Tabs.Tab value=\"chat\">Chat</Tabs.Tab>\n        <Tabs.Tab value=\"gallery\">Gallery</Tabs.Tab>\n        <Tabs.Tab value=\"account\">Account</Tabs.Tab>\n      </Tabs.List>\n\n      <Tabs.Panel value=\"chat\" pt=\"xs\">\n        Chat panel\n      </Tabs.Panel>\n      <Tabs.Panel value=\"gallery\" pt=\"xs\">\n        Gallery panel\n      </Tabs.Panel>\n      <Tabs.Panel value=\"account\" pt=\"xs\">\n        Account panel\n      </Tabs.Panel>\n    </Tabs>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "838c1c3c81bf590b97e427b588a53e319019a7b19298444c37f98ff7a52fd945",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.deactivate.tsx",
+      "upstreamSha256": "815472ba3a8123eea8cbdda9410567ead289c1ae1b417dffa5fb6d6789a475e1",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.disabled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Tabs } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Tabs defaultValue=\"chat\">\n      <Tabs.List>\n        <Tabs.Tab value=\"chat\">Chat</Tabs.Tab>\n        <Tabs.Tab value=\"gallery\">Gallery</Tabs.Tab>\n        <Tabs.Tab value=\"settings\" disabled>\n          Settings\n        </Tabs.Tab>\n        <Tabs.Tab value=\"account\">Account</Tabs.Tab>\n      </Tabs.List>\n    </Tabs>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "78b298f5e889ecd228f6183dd16c54ee12b5347be5f575cc6e2427c9b1a5b9b6",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.disabled.tsx",
+      "upstreamSha256": "2333228f68fae48696a67a6b6643860e320bc122b45d15d2694601ec88bf899f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.inverted.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Tabs } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Tabs defaultValue=\"chat\" inverted>\n      <Tabs.Panel value=\"chat\" pb=\"xs\">\n        Chat panel\n      </Tabs.Panel>\n      <Tabs.Panel value=\"gallery\" pb=\"xs\">\n        Gallery panel\n      </Tabs.Panel>\n      <Tabs.Panel value=\"account\" pb=\"xs\">\n        Account panel\n      </Tabs.Panel>\n\n      <Tabs.List>\n        <Tabs.Tab value=\"chat\">Chat</Tabs.Tab>\n        <Tabs.Tab value=\"gallery\">Gallery</Tabs.Tab>\n        <Tabs.Tab value=\"account\">Account</Tabs.Tab>\n      </Tabs.List>\n    </Tabs>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "0a3bbdf00d80e3e7808bcd9e7701778c4ea911a7c30b09729dacad765990ebd3",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.inverted.tsx",
+      "upstreamSha256": "52f64e91ac42888f7400bf8f1059ea50c2f68d9f4bce73e63b78d934fd060b82",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.keyboardActivation.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Tabs } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Tabs defaultValue=\"chat\" activateTabWithKeyboard={false}>\n      <Tabs.List>\n        <Tabs.Tab value=\"chat\">Chat</Tabs.Tab>\n        <Tabs.Tab value=\"gallery\">Gallery</Tabs.Tab>\n        <Tabs.Tab value=\"account\">Account</Tabs.Tab>\n      </Tabs.List>\n\n      <Tabs.Panel value=\"chat\" pt=\"xs\">\n        Chat panel\n      </Tabs.Panel>\n      <Tabs.Panel value=\"gallery\" pt=\"xs\">\n        Gallery panel\n      </Tabs.Panel>\n      <Tabs.Panel value=\"account\" pt=\"xs\">\n        Account panel\n      </Tabs.Panel>\n    </Tabs>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "d6f69fe15b84fefca0dd56efabeafe6c943bfd546c02535a9330050074eb37d2",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.keyboardActivation.tsx",
+      "upstreamSha256": "3506d345f518efeaea89371774a39cdf446253633fbc3e846a94a85cb7179766",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.placement.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Tabs, TabsProps } from '@mantine/core';\n\nfunction Wrapper(props: TabsProps) {\n  const panelProps = props.placement === 'left' ? { pl: 'xs' } : { pr: 'xs' };\n  return (\n    <Tabs defaultValue=\"gallery\" orientation=\"vertical\" {...props}>\n      <Tabs.List>\n        <Tabs.Tab value=\"gallery\">Gallery</Tabs.Tab>\n        <Tabs.Tab value=\"messages\">Messages</Tabs.Tab>\n        <Tabs.Tab value=\"settings\">Settings</Tabs.Tab>\n      </Tabs.List>\n\n      <Tabs.Panel value=\"gallery\" {...panelProps}>\n        Gallery tab content\n      </Tabs.Panel>\n      <Tabs.Panel value=\"messages\" {...panelProps}>\n        Messages tab content\n      </Tabs.Panel>\n      <Tabs.Panel value=\"settings\" {...panelProps}>\n        Settings tab content\n      </Tabs.Panel>\n    </Tabs>\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent placement={\"left\"} />; }\n",
+      "sha256": "547f80101b5e3e4dfbf1552301d2967549cad8b42b811a25423510bb7b90ede1",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.placement.tsx",
+      "upstreamSha256": "2b117cd363780a6d66fd16a8b0cfd212a261091f470fa7320ba93b4824e6c00c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.position.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Tabs, TabsListProps } from '@mantine/core';\n\nfunction Wrapper(props: TabsListProps) {\n  return (\n    <Tabs defaultValue=\"first\">\n      <Tabs.List {...props}>\n        <Tabs.Tab value=\"first\">First tab</Tabs.Tab>\n        <Tabs.Tab value=\"second\">Second tab</Tabs.Tab>\n        <Tabs.Tab value=\"third\">Third tab</Tabs.Tab>\n      </Tabs.List>\n    </Tabs>\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent grow={false} justify={\"flex-start\"} />; }\n",
+      "sha256": "eba3cfae4561869d180240593fcab0e3ca012fd6d3369ad080d53d2058f657a8",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.position.tsx",
+      "upstreamSha256": "b8b27e1aea069615717f2a46f7877be535d4b5415f9b38de8279d0d0f00daec4",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.pull.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Tabs } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Tabs defaultValue=\"chat\">\n      <Tabs.List>\n        <Tabs.Tab value=\"chat\">Chat</Tabs.Tab>\n        <Tabs.Tab value=\"gallery\">Gallery</Tabs.Tab>\n        <Tabs.Tab value=\"settings\">Settings</Tabs.Tab>\n        <Tabs.Tab value=\"account\" ml=\"auto\">\n          Account\n        </Tabs.Tab>\n      </Tabs.List>\n    </Tabs>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "df1c8afe17e835935ba8507c9eef392b50c62609b090de1998797a5d52b79aa6",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.pull.tsx",
+      "upstreamSha256": "5a44bc1cfa0842d7eef647dc655dcfc7e9f32fcff34d589b5a87ba59aaac55bb",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.scroller.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Scroller, Tabs } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Tabs defaultValue=\"tab-1\">\n      <Tabs.List>\n        <Scroller>\n          <Tabs.Tab value=\"tab-1\">First tab</Tabs.Tab>\n          <Tabs.Tab value=\"tab-2\">Second tab</Tabs.Tab>\n          <Tabs.Tab value=\"tab-3\">Third tab</Tabs.Tab>\n          <Tabs.Tab value=\"tab-4\">Fourth tab</Tabs.Tab>\n          <Tabs.Tab value=\"tab-5\">Fifth tab</Tabs.Tab>\n          <Tabs.Tab value=\"tab-6\">Sixth tab</Tabs.Tab>\n          <Tabs.Tab value=\"tab-7\">Seventh tab</Tabs.Tab>\n          <Tabs.Tab value=\"tab-8\">Eighth tab</Tabs.Tab>\n          <Tabs.Tab value=\"tab-9\">Ninth tab</Tabs.Tab>\n          <Tabs.Tab value=\"tab-10\">Tenth tab</Tabs.Tab>\n        </Scroller>\n      </Tabs.List>\n    </Tabs>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "390015e280da42ff1b4ade51ee1d9e6122ed870bc3a470290629dab41e82943b",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.scroller.tsx",
+      "upstreamSha256": "f7223a7accd0a7a6615888503671ebf27d1f739ba3c8e9c2db077bc8425632a6",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.stylesApi.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ChatCircleIcon, GearSixIcon, ImageIcon } from '@phosphor-icons/react';\n\nimport { Tabs, TabsProps } from '@mantine/core';\n\nfunction Demo(props: TabsProps) {\n  return (\n    <Tabs defaultValue=\"gallery\" {...props}>\n      <Tabs.List>\n        <Tabs.Tab value=\"gallery\" leftSection={<ImageIcon size={12} />}>\n          Gallery\n        </Tabs.Tab>\n        <Tabs.Tab value=\"messages\" leftSection={<ChatCircleIcon size={12} />}>\n          Messages\n        </Tabs.Tab>\n        <Tabs.Tab value=\"settings\" rightSection={<GearSixIcon size={12} />}>\n          Settings\n        </Tabs.Tab>\n      </Tabs.List>\n\n      <Tabs.Panel value=\"gallery\" pt=\"xs\">\n        Gallery tab content\n      </Tabs.Panel>\n\n      <Tabs.Panel value=\"messages\" pt=\"xs\">\n        Messages tab content\n      </Tabs.Panel>\n\n      <Tabs.Panel value=\"settings\" pt=\"xs\">\n        Settings tab content\n      </Tabs.Panel>\n    </Tabs>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "df97b2c7be646fdf809bb00fb2b3349521118c9d667d7708f061bd5881f004e2",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.stylesApi.tsx",
+      "upstreamSha256": "5a5d7d3e454ea378ec63892bb1bffcfbbe1b077c845a4542e2d3e35a2123f1a1",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ChatCircleIcon, GearSixIcon, ImageIcon } from '@phosphor-icons/react';\n\nimport { Tabs, TabsProps, useDirection } from '@mantine/core';\n\nfunction Wrapper(props: TabsProps) {\n  const { dir } = useDirection();\n  const panelProps =\n    props.orientation === 'vertical' ? { [dir === 'rtl' ? 'pr' : 'pl']: 'xs' } : { pt: 'xs' };\n\n  return (\n    <Tabs defaultValue=\"gallery\" {...props}>\n      <Tabs.List>\n        <Tabs.Tab value=\"gallery\" leftSection={<ImageIcon size={12} />}>\n          Gallery\n        </Tabs.Tab>\n        <Tabs.Tab value=\"messages\" leftSection={<ChatCircleIcon size={12} />}>\n          Messages\n        </Tabs.Tab>\n        <Tabs.Tab value=\"settings\" leftSection={<GearSixIcon size={12} />}>\n          Settings\n        </Tabs.Tab>\n      </Tabs.List>\n\n      <Tabs.Panel value=\"gallery\" {...panelProps}>\n        Gallery tab content\n      </Tabs.Panel>\n\n      <Tabs.Panel value=\"messages\" {...panelProps}>\n        Messages tab content\n      </Tabs.Panel>\n\n      <Tabs.Panel value=\"settings\" {...panelProps}>\n        Settings tab content\n      </Tabs.Panel>\n    </Tabs>\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent color={\"blue\"} variant={\"default\"} radius={\"md\"} orientation={\"horizontal\"} />; }\n",
+      "sha256": "33fb3b352c2dc12a65d74acc63fc4da0044294b430ced2ede593bb53b209c0f4",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.usage.tsx",
+      "upstreamSha256": "d624a43436a2995fe943d728312e01b221c14a4ac068866e158fc988e641022a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tabs/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.colors\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "9c3aaca4cf812ec4f9dfca48208d84decc0183fa6e61d28f16751cd06728f2f3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tabs/previews/customize.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.customize\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4061c8e85d20420241e68f7dbe1665214aa831194aafe487a471b43a7d40c52d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tabs/previews/deactivate.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.deactivate\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "fc56fdfa1602d19a1fdacc3c886582d8d0cf0c04199435b9f22ff55629e08fac",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tabs/previews/disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.disabled\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d8936472a0b95be30fd75d6a72b014a1735ae33cb614cda09a5b15cde6ac6f4f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tabs/previews/inverted.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.inverted\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e197d5a5dd2581ba3aab88aa89dea9c3258e57aba64094cf95bcaa562fa96f16",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tabs/previews/keyboard-activation.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.keyboardActivation\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d77ad27187cd70e9c642432c59fdb96af3898bcb0ce1e0ea1d5591baf576e64e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tabs/previews/placement.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.placement\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "400d8c9f972fa751cc3db79907e90aa6c91f89bc64b350b814a6656ed4e18791",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tabs/previews/position.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.position\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "0f14035b845dceb5f737517176a1da1dfb05edbb805f0d3e2e437aa984e7d86f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tabs/previews/pull.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.pull\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "dac1c783daba4dba7539027d4a631778b9ed0f651339f811249b4ac0c684c189",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tabs/previews/scroller.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.scroller\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a67d6b3b6f48ddde1f23947fcff0f9cec5e9cd6c0d906c0acf34a0ba66a57420",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tabs/previews/styles-api.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.stylesApi\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "34e33a054e1b69c624c630d7ed0f77c8bf3f7fcc09b603a331e479efe3ad8b21",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tabs/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "cccc01817807b06790b0cd324c116e8a3c202a64bec604e1e7d051cf1f9b4651",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @phosphor-icons/react@2.1.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/mantine/upstream/src/demos/core/Tabs/Tabs.demo.customize.module.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @phosphor-icons/react@2.1.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "tabs",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Tabs",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.colors.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.colors.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine tabs\n\n12 published Mantine tabs examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Tabs\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Tabs/Tabs.demo.colors.tsx\n"
+}

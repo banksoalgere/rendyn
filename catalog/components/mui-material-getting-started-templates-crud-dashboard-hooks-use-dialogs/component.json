@@ -1,0 +1,144 @@
+{
+  "id": "mui:material-getting-started-templates-crud-dashboard-hooks-use-dialogs",
+  "sourceId": "mui",
+  "slug": "mui-material-getting-started-templates-crud-dashboard-hooks-use-dialogs",
+  "name": "Material UI material getting started templates crud dashboard hooks use dialogs",
+  "description": "3 published Material UI material getting started templates crud dashboard hooks use dialogs examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/material@9.4.0",
+    "@mui/utils@9.4.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "material-getting-started-templates-crud-dashboard-hooks-use-dialogs",
+    "tags": [
+      "code",
+      "command",
+      "context",
+      "data",
+      "dialog",
+      "file",
+      "text"
+    ],
+    "aliases": [
+      "material getting started templates crud dashboard hooks use dialogs",
+      "material ui material getting started templates crud dashboard hooks use dialogs",
+      "material-getting-started-templates-crud-dashboard-hooks-use-dialogs"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "3 published Material UI material getting started templates crud dashboard hooks use dialogs examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "material-getting-started-templates-crud-dashboard-hooks-use-dialogs:code:command:context:data:dialog",
+    "searchText": "Material UI material getting started templates crud dashboard hooks use dialogs\nmaterial getting started templates crud dashboard hooks use dialogs\n3 published Material UI material getting started templates crud dashboard hooks use dialogs examples with complete pinned source and MIT attribution.\nmaterial ui material getting started templates crud dashboard hooks use dialogs\nmaterial-getting-started-templates-crud-dashboard-hooks-use-dialogs\ncode\ncommand\ncontext\ndata\ndialog\nfile\ntext\nMaterial UI material getting started templates crud dashboard hooks use dialogs 3 published Material UI material getting started templates crud dashboard hooks use dialogs examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/getting started/templates/crud dashboard/hooks/useDialogs Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/getting started/templates/crud dashboard/hooks/useDialogs/DialogsContext.js"
+  },
+  "previewPath": "/preview/blocks/mui-material-getting-started-templates-crud-dashboard-hooks-use-dialogs",
+  "manifestPath": "components/mui-material-getting-started-templates-crud-dashboard-hooks-use-dialogs/component.json",
+  "integrity": "sha256:66647387d03f47ae128237152b678427a7b6cd26b8ba2c5a1613be147813c610",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/DialogsContext.js",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\n\nconst DialogsContext = React.createContext(null);\n\nexport default DialogsContext;\n",
+      "sha256": "e0513b2e5ea801ca5123058809058bc5a8803c19b1be23891904ccc50921c496",
+      "upstreamPath": "docs/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/DialogsContext.js",
+      "upstreamSha256": "bf1b1bb0ce7f365520f8e350253f3a5886be0c6eb8b5102f95d3255054575113",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/DialogsProvider.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport useEventCallback from '@mui/utils/useEventCallback';\nimport DialogsContext from '@/components/rendyn-libraries/mui/upstream/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/DialogsContext';\nimport type { DialogComponent, OpenDialog, OpenDialogOptions } from '@/components/rendyn-libraries/mui/upstream/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/useDialogs';\n\ninterface DialogStackEntry<P, R> {\n  key: string;\n  open: boolean;\n  promise: Promise<R>;\n  Component: DialogComponent<P, R>;\n  payload: P;\n  onClose: (result: R) => Promise<void>;\n  resolve: (result: R) => void;\n}\n\nexport interface DialogProviderProps {\n  children?: React.ReactNode;\n  unmountAfter?: number;\n}\n\n/**\n * Provider for Dialog stacks. The subtree of this component can use the `useDialogs` hook to\n * access the dialogs API. The dialogs are rendered in the order they are requested.\n */\nexport default function DialogsProvider(props: DialogProviderProps) {\n  const { children, unmountAfter = 1000 } = props;\n  const [stack, setStack] = React.useState<DialogStackEntry<any, any>[]>([]);\n  const keyPrefix = React.useId();\n  const nextId = React.useRef(0);\n  const dialogMetadata = React.useRef(\n    new WeakMap<Promise<any>, DialogStackEntry<any, any>>(),\n  );\n\n  const requestDialog = useEventCallback<OpenDialog>(function open<P, R>(\n    Component: DialogComponent<P, R>,\n    payload: P,\n    options: OpenDialogOptions<R> = {},\n  ) {\n    const { onClose = async () => {} } = options;\n    let resolve: ((result: R) => void) | undefined;\n    const promise = new Promise<R>((resolveImpl) => {\n      resolve = resolveImpl;\n    });\n\n    if (!resolve) {\n      throw new Error('resolve not set.');\n    }\n\n    const key = `${keyPrefix}-${nextId.current}`;\n    nextId.current += 1;\n\n    const newEntry: DialogStackEntry<P, R> = {\n      key,\n      open: true,\n      promise,\n      Component,\n      payload,\n      onClose,\n      resolve,\n    };\n\n    // Store metadata for reliable access during close\n    dialogMetadata.current.set(promise, newEntry);\n\n    setStack((prevStack) => [...prevStack, newEntry]);\n    return promise;\n  });\n\n  const closeDialogUi = useEventCallback(function closeDialogUi<R>(\n    dialog: Promise<R>,\n  ) {\n    setStack((prevStack) =>\n      prevStack.map((entry) =>\n        entry.promise === dialog ? { ...entry, open: false } : entry,\n      ),\n    );\n    setTimeout(() => {\n      // wait for closing animation\n      setStack((prevStack) => prevStack.filter((entry) => entry.promise !== dialog));\n      // WeakMap automatically cleans up when promise is garbage collected\n    }, unmountAfter);\n  });\n\n  const closeDialog = useEventCallback(async function closeDialog<R>(\n    dialog: Promise<R>,\n    result: R,\n  ) {\n    const entryToClose = dialogMetadata.current.get(dialog);\n    if (!entryToClose) {\n      throw new Error('Dialog not found.');\n    }\n\n    try {\n      await entryToClose.onClose(result);\n    } finally {\n      entryToClose.resolve(result);\n      closeDialogUi(dialog);\n    }\n    return dialog;\n  });\n\n  const contextValue = React.useMemo(\n    () => ({ open: requestDialog, close: closeDialog }),\n    [requestDialog, closeDialog],\n  );\n\n  return (\n    <DialogsContext.Provider value={contextValue}>\n      {children}\n      {stack.map(({ key, open, Component, payload, promise }) => (\n        <Component\n          key={key}\n          payload={payload}\n          open={open}\n          onClose={async (result) => {\n            await closeDialog(promise, result);\n          }}\n        />\n      ))}\n    </DialogsContext.Provider>\n  );\n}\n",
+      "sha256": "6283aad765376d9a22d424ba93911c245f0808a5c79528fa1cd33f27bba1f4b9",
+      "upstreamPath": "docs/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/DialogsProvider.tsx",
+      "upstreamSha256": "71dc0ff5f01ecd22305dc6f635a94e71ee30f3a768550f0f758239986121e90f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/DialogsContext.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport { OpenDialog, CloseDialog } from '@/components/rendyn-libraries/mui/upstream/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/useDialogs';\n\nconst DialogsContext = React.createContext<{\n  open: OpenDialog;\n  close: CloseDialog;\n} | null>(null);\n\nexport default DialogsContext;\n",
+      "sha256": "11410f873f7632575042353b8ab1c9fbc9944d341c81a1b65f5b455a7d8d1ded",
+      "upstreamPath": "docs/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/DialogsContext.ts",
+      "upstreamSha256": "651066de19fbaf4e58ca06bbe6a470c405c2dcd499efd9ef8b521dd98457a395",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/useDialogs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport Dialog from '@mui/material/Dialog';\nimport DialogActions from '@mui/material/DialogActions';\nimport DialogContent from '@mui/material/DialogContent';\nimport DialogContentText from '@mui/material/DialogContentText';\nimport DialogTitle from '@mui/material/DialogTitle';\nimport TextField from '@mui/material/TextField';\nimport useEventCallback from '@mui/utils/useEventCallback';\nimport DialogsContext from '@/components/rendyn-libraries/mui/upstream/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/DialogsContext';\n\nexport interface OpenDialogOptions<R> {\n  /**\n   * A function that is called before closing the dialog closes. The dialog\n   * stays open as long as the returned promise is not resolved. Use this if\n   * you want to perform an async action on close and show a loading state.\n   *\n   * @param result The result that the dialog will return after closing.\n   * @returns A promise that resolves when the dialog can be closed.\n   */\n  onClose?: (result: R) => Promise<void>;\n}\n\nexport interface AlertOptions extends OpenDialogOptions<void> {\n  /**\n   * A title for the dialog. Defaults to `'Alert'`.\n   */\n  title?: React.ReactNode;\n  /**\n   * The text to show in the \"Ok\" button. Defaults to `'Ok'`.\n   */\n  okText?: React.ReactNode;\n}\n\nexport interface ConfirmOptions extends OpenDialogOptions<boolean> {\n  /**\n   * A title for the dialog. Defaults to `'Confirm'`.\n   */\n  title?: React.ReactNode;\n  /**\n   * The text to show in the \"Ok\" button. Defaults to `'Ok'`.\n   */\n  okText?: React.ReactNode;\n  /**\n   * Denotes the purpose of the dialog. This will affect the color of the\n   * \"Ok\" button. Defaults to `undefined`.\n   */\n  severity?: 'error' | 'info' | 'success' | 'warning';\n  /**\n   * The text to show in the \"Cancel\" button. Defaults to `'Cancel'`.\n   */\n  cancelText?: React.ReactNode;\n}\n\nexport interface PromptOptions extends OpenDialogOptions<string | null> {\n  /**\n   * A title for the dialog. Defaults to `'Prompt'`.\n   */\n  title?: React.ReactNode;\n  /**\n   * The text to show in the \"Ok\" button. Defaults to `'Ok'`.\n   */\n  okText?: React.ReactNode;\n  /**\n   * The text to show in the \"Cancel\" button. Defaults to `'Cancel'`.\n   */\n  cancelText?: React.ReactNode;\n}\n\n/**\n * The props that are passed to a dialog component.\n */\nexport interface DialogProps<P = undefined, R = void> {\n  /**\n   * The payload that was passed when the dialog was opened.\n   */\n  payload: P;\n  /**\n   * Whether the dialog is open.\n   */\n  open: boolean;\n  /**\n   * A function to call when the dialog should be closed. If the dialog has a return\n   * value, it should be passed as an argument to this function. You should use the promise\n   * that is returned to show a loading state while the dialog is performing async actions\n   * on close.\n   * @param result The result to return from the dialog.\n   * @returns A promise that resolves when the dialog can be fully closed.\n   */\n  onClose: (result: R) => Promise<void>;\n}\n\nexport interface OpenAlertDialog {\n  /**\n   * Open an alert dialog. Returns a promise that resolves when the user\n   * closes the dialog.\n   *\n   * @param msg The message to show in the dialog.\n   * @param options Additional options for the dialog.\n   * @returns A promise that resolves when the dialog is closed.\n   */\n  (msg: React.ReactNode, options?: AlertOptions): Promise<void>;\n}\n\nexport interface OpenConfirmDialog {\n  /**\n   * Open a confirmation dialog. Returns a promise that resolves to true if\n   * the user confirms, false if the user cancels.\n   *\n   * @param msg The message to show in the dialog.\n   * @param options Additional options for the dialog.\n   * @returns A promise that resolves to true if the user confirms, false if the user cancels.\n   */\n  (msg: React.ReactNode, options?: ConfirmOptions): Promise<boolean>;\n}\n\nexport interface OpenPromptDialog {\n  /**\n   * Open a prompt dialog to request user input. Returns a promise that resolves to the input\n   * if the user confirms, null if the user cancels.\n   *\n   * @param msg The message to show in the dialog.\n   * @param options Additional options for the dialog.\n   * @returns A promise that resolves to the user input if the user confirms, null if the user cancels.\n   */\n  (msg: React.ReactNode, options?: PromptOptions): Promise<string | null>;\n}\n\nexport type DialogComponent<P, R> = React.ComponentType<DialogProps<P, R>>;\n\nexport interface OpenDialog {\n  /**\n   * Open a dialog without payload.\n   * @param Component The dialog component to open.\n   * @param options Additional options for the dialog.\n   */\n  <P extends undefined, R>(\n    Component: DialogComponent<P, R>,\n    payload?: P,\n    options?: OpenDialogOptions<R>,\n  ): Promise<R>;\n  /**\n   * Open a dialog and pass a payload.\n   * @param Component The dialog component to open.\n   * @param payload The payload to pass to the dialog.\n   * @param options Additional options for the dialog.\n   */\n  <P, R>(\n    Component: DialogComponent<P, R>,\n    payload: P,\n    options?: OpenDialogOptions<R>,\n  ): Promise<R>;\n}\n\nexport interface CloseDialog {\n  /**\n   * Close a dialog and return a result.\n   * @param dialog The dialog to close. The promise returned by `open`.\n   * @param result The result to return from the dialog.\n   * @returns A promise that resolves when the dialog is fully closed.\n   */\n  <R>(dialog: Promise<R>, result: R): Promise<R>;\n}\n\nexport interface DialogHook {\n  alert: OpenAlertDialog;\n  confirm: OpenConfirmDialog;\n  prompt: OpenPromptDialog;\n  open: OpenDialog;\n  close: CloseDialog;\n}\n\nfunction useDialogLoadingButton(onClose: () => Promise<void>) {\n  const [loading, setLoading] = React.useState(false);\n  const handleClick = async () => {\n    try {\n      setLoading(true);\n      await onClose();\n    } finally {\n      setLoading(false);\n    }\n  };\n  return {\n    onClick: handleClick,\n    loading,\n  };\n}\n\nexport interface AlertDialogPayload extends AlertOptions {\n  msg: React.ReactNode;\n}\n\nexport interface AlertDialogProps extends DialogProps<AlertDialogPayload, void> {}\n\nexport function AlertDialog({ open, payload, onClose }: AlertDialogProps) {\n  const okButtonProps = useDialogLoadingButton(() => onClose());\n\n  return (\n    <Dialog maxWidth=\"xs\" fullWidth open={open} onClose={() => onClose()}>\n      <DialogTitle>{payload.title ?? 'Alert'}</DialogTitle>\n      <DialogContent>{payload.msg}</DialogContent>\n      <DialogActions>\n        <Button disabled={!open} {...okButtonProps}>\n          {payload.okText ?? 'Ok'}\n        </Button>\n      </DialogActions>\n    </Dialog>\n  );\n}\n\nexport interface ConfirmDialogPayload extends ConfirmOptions {\n  msg: React.ReactNode;\n}\n\nexport interface ConfirmDialogProps extends DialogProps<\n  ConfirmDialogPayload,\n  boolean\n> {}\n\nexport function ConfirmDialog({ open, payload, onClose }: ConfirmDialogProps) {\n  const cancelButtonProps = useDialogLoadingButton(() => onClose(false));\n  const okButtonProps = useDialogLoadingButton(() => onClose(true));\n\n  return (\n    <Dialog maxWidth=\"xs\" fullWidth open={open} onClose={() => onClose(false)}>\n      <DialogTitle>{payload.title ?? 'Confirm'}</DialogTitle>\n      <DialogContent>{payload.msg}</DialogContent>\n      <DialogActions>\n        <Button autoFocus disabled={!open} {...cancelButtonProps}>\n          {payload.cancelText ?? 'Cancel'}\n        </Button>\n        <Button color={payload.severity} disabled={!open} {...okButtonProps}>\n          {payload.okText ?? 'Ok'}\n        </Button>\n      </DialogActions>\n    </Dialog>\n  );\n}\n\nexport interface PromptDialogPayload extends PromptOptions {\n  msg: React.ReactNode;\n}\n\nexport interface PromptDialogProps extends DialogProps<\n  PromptDialogPayload,\n  string | null\n> {}\n\nexport function PromptDialog({ open, payload, onClose }: PromptDialogProps) {\n  const [input, setInput] = React.useState('');\n  const cancelButtonProps = useDialogLoadingButton(() => onClose(null));\n\n  const [loading, setLoading] = React.useState(false);\n\n  const name = 'input';\n  return (\n    <Dialog\n      maxWidth=\"xs\"\n      fullWidth\n      open={open}\n      onClose={() => onClose(null)}\n      slotProps={{\n        paper: {\n          component: 'form',\n          onSubmit: async (event: React.SubmitEvent<HTMLFormElement>) => {\n            event.preventDefault();\n            try {\n              setLoading(true);\n              const formData = new FormData(event.currentTarget);\n              const value = formData.get(name) ?? '';\n\n              if (typeof value !== 'string') {\n                throw new Error('Value must come from a text input.');\n              }\n\n              await onClose(value);\n            } finally {\n              setLoading(false);\n            }\n          },\n        },\n      }}\n    >\n      <DialogTitle>{payload.title ?? 'Confirm'}</DialogTitle>\n      <DialogContent>\n        <DialogContentText>{payload.msg} </DialogContentText>\n        <TextField\n          autoFocus\n          required\n          margin=\"dense\"\n          id=\"name\"\n          name={name}\n          type=\"text\"\n          fullWidth\n          variant=\"standard\"\n          value={input}\n          onChange={(event) => setInput(event.target.value)}\n        />\n      </DialogContent>\n      <DialogActions>\n        <Button disabled={!open} {...cancelButtonProps}>\n          {payload.cancelText ?? 'Cancel'}\n        </Button>\n        <Button disabled={!open} loading={loading} type=\"submit\">\n          {payload.okText ?? 'Ok'}\n        </Button>\n      </DialogActions>\n    </Dialog>\n  );\n}\n\nexport function useDialogs(): DialogHook {\n  const dialogsContext = React.useContext(DialogsContext);\n  if (!dialogsContext) {\n    throw new Error('Dialogs context was used without a provider.');\n  }\n  const { open, close } = dialogsContext;\n\n  const alert = useEventCallback<OpenAlertDialog>(\n    (msg, { onClose, ...options }: AlertOptions = {}) =>\n      open(AlertDialog, { ...options, msg }, { onClose }),\n  );\n\n  const confirm = useEventCallback<OpenConfirmDialog>(\n    (msg, { onClose, ...options }: ConfirmOptions = {}) =>\n      open(ConfirmDialog, { ...options, msg }, { onClose }),\n  );\n\n  const prompt = useEventCallback<OpenPromptDialog>(\n    (msg, { onClose, ...options }: PromptOptions = {}) =>\n      open(PromptDialog, { ...options, msg }, { onClose }),\n  );\n\n  return React.useMemo(\n    () => ({\n      alert,\n      confirm,\n      prompt,\n      open,\n      close,\n    }),\n    [alert, close, confirm, open, prompt],\n  );\n}\n",
+      "sha256": "5db90ccc68a1ef0e2fb9191b5ae77a11d2ad5c5bdecbc54dd469964700a980ae",
+      "upstreamPath": "docs/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/useDialogs.tsx",
+      "upstreamSha256": "3384cffc3a61256f88eb42a7a57831dd5d54197bfd33b635d98627237908fbe6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-getting-started-templates-crud-dashboard-hooks-use-dialogs/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/DialogsContext\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "6fdcb9f35e42acce08626b45805b7a5587ca02e92cd5e1307b44b40892befc9f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-getting-started-templates-crud-dashboard-hooks-use-dialogs/previews/dialogs-provider.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/DialogsProvider\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "31132bb6cffc4c4c3039d52bb1400dd36c701998b2b747e1f8b3bc3e09771b6b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-getting-started-templates-crud-dashboard-hooks-use-dialogs/previews/use-dialogs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { AlertDialog as Example } from \"@/components/rendyn-libraries/mui/upstream/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/useDialogs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1d6b4681bc5c5bc9469397fb415f2403d7ab001343b075f6e013149362f39a52",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0 @mui/utils@9.4.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0 @mui/utils@9.4.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "material-getting-started-templates-crud-dashboard-hooks-use-dialogs",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/DialogsContext.js",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/DialogsContext.js",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI material getting started templates crud dashboard hooks use dialogs\n\n3 published Material UI material getting started templates crud dashboard hooks use dialogs examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/getting-started/templates/crud-dashboard/hooks/useDialogs/DialogsContext.js\n"
+}

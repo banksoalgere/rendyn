@@ -1,0 +1,342 @@
+{
+  "id": "mui:tooltips",
+  "sourceId": "mui",
+  "slug": "mui-tooltips",
+  "name": "Material UI tooltips",
+  "description": "16 published Material UI tooltips examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/icons-material@9.4.0",
+    "@mui/material@9.4.0",
+    "@popperjs/core@2.11.8"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "tooltip",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file",
+      "tooltip"
+    ],
+    "aliases": [
+      "tooltips",
+      "material ui tooltips",
+      "tooltip"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "16 published Material UI tooltips examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "tooltip:code:command:data:file",
+    "searchText": "Material UI tooltips\ntooltips\n16 published Material UI tooltips examples with complete pinned source and MIT attribution.\nmaterial ui tooltips\ntooltip\ncode\ncommand\ndata\nfile\nMaterial UI tooltips 16 published Material UI tooltips examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/tooltips Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/tooltips/AccessibilityTooltips.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-tooltips",
+  "manifestPath": "components/mui-tooltips/component.json",
+  "integrity": "sha256:955ef7a244fcfb952a929040145b42a1671d96af2e6ad9b135015697a7225bad",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tooltips/AccessibilityTooltips.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport DeleteIcon from '@mui/icons-material/Delete';\nimport Button from '@mui/material/Button';\nimport IconButton from '@mui/material/IconButton';\nimport Tooltip from '@mui/material/Tooltip';\n\nexport default function AccessibilityTooltips() {\n  return (\n    <div>\n      <Tooltip title=\"Delete\">\n        <IconButton>\n          <DeleteIcon />\n        </IconButton>\n      </Tooltip>\n      <Tooltip describeChild title=\"Does not add if it already exists.\">\n        <Button>Add</Button>\n      </Tooltip>\n    </div>\n  );\n}\n",
+      "sha256": "e822ef62bb6afb3e03c17cb9276b38a6cd834f3c001b68e135126a1751bd67d0",
+      "upstreamPath": "docs/data/material/components/tooltips/AccessibilityTooltips.tsx",
+      "upstreamSha256": "54e9c4a1c6d2cd953ab541bce985d17fc37417ef0705638a5a241b8e37dbf3ba",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tooltips/AnchorElTooltips.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Tooltip from '@mui/material/Tooltip';\nimport { Instance } from '@popperjs/core';\n\nexport default function AnchorElTooltips() {\n  const positionRef = React.useRef<{ x: number; y: number }>({\n    x: 0,\n    y: 0,\n  });\n  const popperRef = React.useRef<Instance>(null);\n  const areaRef = React.useRef<HTMLDivElement>(null);\n\n  const handleMouseMove = (event: React.MouseEvent) => {\n    positionRef.current = { x: event.clientX, y: event.clientY };\n\n    if (popperRef.current != null) {\n      popperRef.current.update();\n    }\n  };\n\n  return (\n    <Tooltip\n      describeChild\n      title=\"Add\"\n      placement=\"top\"\n      arrow\n      slotProps={{\n        popper: {\n          popperRef,\n          anchorEl: {\n            getBoundingClientRect: () => {\n              return new DOMRect(\n                positionRef.current.x,\n                areaRef.current!.getBoundingClientRect().y,\n                0,\n                0,\n              );\n            },\n          },\n        },\n      }}\n    >\n      <Box\n        ref={areaRef}\n        onMouseMove={handleMouseMove}\n        sx={{ bgcolor: 'primary.main', color: 'primary.contrastText', p: 2 }}\n      >\n        Hover\n      </Box>\n    </Tooltip>\n  );\n}\n",
+      "sha256": "53a0bf598d893c48d1a8736db71b115ef074c4ef743300783f6d0cb5d9fc5c19",
+      "upstreamPath": "docs/data/material/components/tooltips/AnchorElTooltips.tsx",
+      "upstreamSha256": "f5aa2812a965c7ca1eaecdc2e86794a5c1144e1488cada21e13888993b868e04",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tooltips/ArrowTooltips.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Button from '@mui/material/Button';\nimport Tooltip from '@mui/material/Tooltip';\n\nexport default function ArrowTooltips() {\n  return (\n    <Tooltip describeChild title=\"Add\" arrow>\n      <Button>Arrow</Button>\n    </Tooltip>\n  );\n}\n",
+      "sha256": "55eddc9690357e4447456654db0929c0e7f811d7c1ba5428d3b4293be20e2b77",
+      "upstreamPath": "docs/data/material/components/tooltips/ArrowTooltips.tsx",
+      "upstreamSha256": "be9f5c8d127eb2f42c73b98954174176c4b59b0083ceec7e7b14f7d860dfd349",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tooltips/BasicTooltip.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport DeleteIcon from '@mui/icons-material/Delete';\nimport IconButton from '@mui/material/IconButton';\nimport Tooltip from '@mui/material/Tooltip';\n\nexport default function BasicTooltip() {\n  return (\n    <Tooltip title=\"Delete\">\n      <IconButton>\n        <DeleteIcon />\n      </IconButton>\n    </Tooltip>\n  );\n}\n",
+      "sha256": "9063583c96e30790f1ddd989ab1e1940fc472085025836a7cad0dd31d38ae20e",
+      "upstreamPath": "docs/data/material/components/tooltips/BasicTooltip.tsx",
+      "upstreamSha256": "cc6ede1cb4f9d4b36ddcb84bd41b9c946cc906ec6d090139684789eaaff762a4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tooltips/ControlledTooltips.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport Tooltip from '@mui/material/Tooltip';\n\nexport default function ControlledTooltips() {\n  const [open, setOpen] = React.useState(false);\n\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  const handleOpen = () => {\n    setOpen(true);\n  };\n\n  return (\n    <Tooltip\n      describeChild\n      open={open}\n      onClose={handleClose}\n      onOpen={handleOpen}\n      title=\"Add\"\n    >\n      <Button>Controlled</Button>\n    </Tooltip>\n  );\n}\n",
+      "sha256": "dd730442d72e30dfaccd05efefd64b25a2c11bcfe590918e31c39ebe4ec0fd37",
+      "upstreamPath": "docs/data/material/components/tooltips/ControlledTooltips.tsx",
+      "upstreamSha256": "d99d7bc97972f6147b9784a243c25730ebb7fd6ea8ea5387c52d7e716434e61b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tooltips/CustomizedTooltips.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport { styled } from '@mui/material/styles';\nimport Button from '@mui/material/Button';\nimport Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';\nimport Typography from '@mui/material/Typography';\n\nconst LightTooltip = styled(({ className, ...props }: TooltipProps) => (\n  <Tooltip describeChild {...props} classes={{ popper: className }} />\n))(({ theme }) => ({\n  [`& .${tooltipClasses.tooltip}`]: {\n    backgroundColor: theme.palette.common.white,\n    color: 'rgba(0, 0, 0, 0.87)',\n    boxShadow: theme.shadows[1],\n    fontSize: 11,\n  },\n}));\n\nconst BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (\n  <Tooltip describeChild {...props} arrow classes={{ popper: className }} />\n))(({ theme }) => ({\n  [`& .${tooltipClasses.arrow}`]: {\n    color: theme.palette.common.black,\n  },\n  [`& .${tooltipClasses.tooltip}`]: {\n    backgroundColor: theme.palette.common.black,\n  },\n}));\n\nconst HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (\n  <Tooltip describeChild {...props} classes={{ popper: className }} />\n))(({ theme }) => ({\n  [`& .${tooltipClasses.tooltip}`]: {\n    backgroundColor: '#f5f5f9',\n    color: 'rgba(0, 0, 0, 0.87)',\n    maxWidth: 220,\n    fontSize: theme.typography.pxToRem(12),\n    border: '1px solid #dadde9',\n  },\n}));\n\nexport default function CustomizedTooltips() {\n  return (\n    <div>\n      <LightTooltip title=\"Add\">\n        <Button>Light</Button>\n      </LightTooltip>\n      <BootstrapTooltip title=\"Add\">\n        <Button>Bootstrap</Button>\n      </BootstrapTooltip>\n      <HtmlTooltip\n        title={\n          <React.Fragment>\n            <Typography\n              sx={{\n                color: 'inherit',\n              }}\n            >\n              Tooltip with HTML\n            </Typography>\n            <em>{\"And here's\"}</em> <b>{'some'}</b> <u>{'amazing content'}</u>.{' '}\n            {\"It's very engaging. Right?\"}\n          </React.Fragment>\n        }\n      >\n        <Button>HTML</Button>\n      </HtmlTooltip>\n    </div>\n  );\n}\n",
+      "sha256": "35c4430848e1a0527b8e4cfffda0f0f104cdf1e38cdb74724a8a08cca6a694ff",
+      "upstreamPath": "docs/data/material/components/tooltips/CustomizedTooltips.tsx",
+      "upstreamSha256": "c7970bfe070c290705a6fa0e3a5c3045381495d81da6a79133c3253a2eb17633",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tooltips/DelayTooltips.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Button from '@mui/material/Button';\nimport Tooltip from '@mui/material/Tooltip';\n\nexport default function DelayTooltips() {\n  return (\n    <Tooltip describeChild title=\"Add\" enterDelay={500} leaveDelay={200}>\n      <Button>[500ms, 200ms]</Button>\n    </Tooltip>\n  );\n}\n",
+      "sha256": "38c3253b1074c8da348e0d1d8ce288ea0dc4d84630496b10fa6b32c28a596417",
+      "upstreamPath": "docs/data/material/components/tooltips/DelayTooltips.tsx",
+      "upstreamSha256": "24e09a91df171f509903a5df2fcfa5234ef3b2f4d3604b193579cd474012a7ba",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tooltips/DisabledTooltips.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Button from '@mui/material/Button';\nimport Tooltip from '@mui/material/Tooltip';\n\nexport default function DisabledTooltips() {\n  return (\n    <Tooltip describeChild title=\"You don't have permission to do this\">\n      <span>\n        <Button disabled>A Disabled Button</Button>\n      </span>\n    </Tooltip>\n  );\n}\n",
+      "sha256": "fbd6a134d569f0818684a09f5d40c578cae31bff5ae15fba7b262033f63c7643",
+      "upstreamPath": "docs/data/material/components/tooltips/DisabledTooltips.tsx",
+      "upstreamSha256": "8466c44f04380bb8a8b7f4a311027564f8d879c53a74c3b109b0ca901b227277",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tooltips/FollowCursorTooltips.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Box from '@mui/material/Box';\nimport Tooltip from '@mui/material/Tooltip';\n\nexport default function FollowCursorTooltips() {\n  return (\n    <Tooltip describeChild title=\"You don't have permission to do this\" followCursor>\n      <Box sx={{ bgcolor: 'text.disabled', color: 'background.paper', p: 2 }}>\n        Disabled Action\n      </Box>\n    </Tooltip>\n  );\n}\n",
+      "sha256": "cde4d92bf42898efc57a5d2f7e4b2b1a902c13a2293ab4ba655e10b5e6c19b5f",
+      "upstreamPath": "docs/data/material/components/tooltips/FollowCursorTooltips.tsx",
+      "upstreamSha256": "fabe81075cec0c44e77f8c0e497aaeab1a99b54105f616aa296c7c9f6953ba40",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tooltips/NonInteractiveTooltips.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Button from '@mui/material/Button';\nimport Tooltip from '@mui/material/Tooltip';\n\nexport default function NonInteractiveTooltips() {\n  return (\n    <Tooltip describeChild title=\"Add\" disableInteractive>\n      <Button>Not interactive</Button>\n    </Tooltip>\n  );\n}\n",
+      "sha256": "b33c19b74a23a5fc7faa32384479958fc707f8cfb8dc739d9a01b8ddc04e55c4",
+      "upstreamPath": "docs/data/material/components/tooltips/NonInteractiveTooltips.tsx",
+      "upstreamSha256": "27db3c10df896d7fbe2643cc3806e711f421af4fe28fcb2a30156923c05908c1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tooltips/PositionedTooltips.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Box from '@mui/material/Box';\nimport Stack from '@mui/material/Stack';\nimport Button from '@mui/material/Button';\nimport Tooltip from '@mui/material/Tooltip';\n\nexport default function PositionedTooltips() {\n  return (\n    <Box sx={{ width: 500 }}>\n      <Stack direction=\"row\" sx={{ justifyContent: 'center' }}>\n        <Tooltip describeChild title=\"Add\" placement=\"top-start\">\n          <Button>top-start</Button>\n        </Tooltip>\n        <Tooltip describeChild title=\"Add\" placement=\"top\">\n          <Button>top</Button>\n        </Tooltip>\n        <Tooltip describeChild title=\"Add\" placement=\"top-end\">\n          <Button>top-end</Button>\n        </Tooltip>\n      </Stack>\n      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>\n        <Stack direction=\"column\" sx={{ alignItems: 'flex-start' }}>\n          <Tooltip describeChild title=\"Add\" placement=\"left-start\">\n            <Button>left-start</Button>\n          </Tooltip>\n          <Tooltip describeChild title=\"Add\" placement=\"left\">\n            <Button>left</Button>\n          </Tooltip>\n          <Tooltip describeChild title=\"Add\" placement=\"left-end\">\n            <Button>left-end</Button>\n          </Tooltip>\n        </Stack>\n        <Stack direction=\"column\" sx={{ alignItems: 'flex-end' }}>\n          <Tooltip describeChild title=\"Add\" placement=\"right-start\">\n            <Button>right-start</Button>\n          </Tooltip>\n          <Tooltip describeChild title=\"Add\" placement=\"right\">\n            <Button>right</Button>\n          </Tooltip>\n          <Tooltip describeChild title=\"Add\" placement=\"right-end\">\n            <Button>right-end</Button>\n          </Tooltip>\n        </Stack>\n      </Box>\n      <Stack direction=\"row\" sx={{ justifyContent: 'center' }}>\n        <Tooltip title=\"Add\" placement=\"bottom-start\">\n          <Button>bottom-start</Button>\n        </Tooltip>\n        <Tooltip title=\"Add\" placement=\"bottom\">\n          <Button>bottom</Button>\n        </Tooltip>\n        <Tooltip title=\"Add\" placement=\"bottom-end\">\n          <Button>bottom-end</Button>\n        </Tooltip>\n      </Stack>\n    </Box>\n  );\n}\n",
+      "sha256": "1c122f155b37f16d35336f218961b8fb9243263f546bedf952843a3f1ebda2d6",
+      "upstreamPath": "docs/data/material/components/tooltips/PositionedTooltips.tsx",
+      "upstreamSha256": "f6ba1537db0c5d0f9f30d63c93fca880fbf275f961540bb8152de26ee86db97d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tooltips/TooltipMargin.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Button from '@mui/material/Button';\nimport Tooltip, { tooltipClasses } from '@mui/material/Tooltip';\n\nexport default function TooltipMargin() {\n  return (\n    <Tooltip\n      title=\"Add\"\n      describeChild\n      slotProps={{\n        popper: {\n          sx: {\n            [`&.${tooltipClasses.popper}[data-popper-placement*=\"bottom\"] .${tooltipClasses.tooltip}`]:\n              {\n                marginTop: '0px',\n              },\n            [`&.${tooltipClasses.popper}[data-popper-placement*=\"top\"] .${tooltipClasses.tooltip}`]:\n              {\n                marginBottom: '0px',\n              },\n            [`&.${tooltipClasses.popper}[data-popper-placement*=\"right\"] .${tooltipClasses.tooltip}`]:\n              {\n                marginLeft: '0px',\n              },\n            [`&.${tooltipClasses.popper}[data-popper-placement*=\"left\"] .${tooltipClasses.tooltip}`]:\n              {\n                marginRight: '0px',\n              },\n          },\n        },\n      }}\n    >\n      <Button>Margin</Button>\n    </Tooltip>\n  );\n}\n",
+      "sha256": "4290decdc0624c540564212d8df08273a25f4beae5765c20bc47ceb47051a3e0",
+      "upstreamPath": "docs/data/material/components/tooltips/TooltipMargin.tsx",
+      "upstreamSha256": "97522362f6ffc1f28e118f1a7b8a8b9748aede5c7bc278ab19875ea28c69d8b0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tooltips/TooltipOffset.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Button from '@mui/material/Button';\nimport Tooltip from '@mui/material/Tooltip';\n\nexport default function TooltipOffset() {\n  return (\n    <Tooltip\n      describeChild\n      title=\"Add\"\n      slotProps={{\n        popper: {\n          modifiers: [\n            {\n              name: 'offset',\n              options: {\n                offset: [0, -14],\n              },\n            },\n          ],\n        },\n      }}\n    >\n      <Button>Offset</Button>\n    </Tooltip>\n  );\n}\n",
+      "sha256": "82497dcac9584b48ef29b7ea28d67565f396ab2b28d907a4ba4f1b66111021bc",
+      "upstreamPath": "docs/data/material/components/tooltips/TooltipOffset.tsx",
+      "upstreamSha256": "d39441ac1fe6e9f82c59169194be198e51a13e20741aca2b8c5e3ef226765c19",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tooltips/TransitionsTooltips.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Button from '@mui/material/Button';\nimport Tooltip from '@mui/material/Tooltip';\nimport Fade from '@mui/material/Fade';\nimport Zoom from '@mui/material/Zoom';\n\nexport default function TransitionsTooltips() {\n  return (\n    <div>\n      <Tooltip describeChild title=\"Add\">\n        <Button>Grow</Button>\n      </Tooltip>\n      <Tooltip\n        describeChild\n        title=\"Add\"\n        slots={{\n          transition: Fade,\n        }}\n        slotProps={{\n          transition: { timeout: 600 },\n        }}\n      >\n        <Button>Fade</Button>\n      </Tooltip>\n      <Tooltip\n        describeChild\n        title=\"Add\"\n        slots={{\n          transition: Zoom,\n        }}\n      >\n        <Button>Zoom</Button>\n      </Tooltip>\n    </div>\n  );\n}\n",
+      "sha256": "d5a8a0f70ec3325c0ab63425a988fe16c542a20e7ec4538c87306ff0fa0c7a4d",
+      "upstreamPath": "docs/data/material/components/tooltips/TransitionsTooltips.tsx",
+      "upstreamSha256": "9466105ce6edb02ad9a7fbb5d7633313e45296e7bede5f9169f0861fac99caa9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tooltips/TriggersTooltips.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Grid from '@mui/material/Grid';\nimport Button from '@mui/material/Button';\nimport Tooltip from '@mui/material/Tooltip';\nimport ClickAwayListener from '@mui/material/ClickAwayListener';\n\nexport default function TriggersTooltips() {\n  const [open, setOpen] = React.useState(false);\n\n  const handleTooltipClose = () => {\n    setOpen(false);\n  };\n\n  const handleTooltipOpen = () => {\n    setOpen(true);\n  };\n\n  return (\n    <div>\n      <Grid container sx={{ justifyContent: 'center' }}>\n        <Grid>\n          <Tooltip describeChild disableFocusListener title=\"Add\">\n            <Button>Hover or touch</Button>\n          </Tooltip>\n        </Grid>\n        <Grid>\n          <Tooltip describeChild disableHoverListener title=\"Add\">\n            <Button>Focus or touch</Button>\n          </Tooltip>\n        </Grid>\n        <Grid>\n          <Tooltip\n            describeChild\n            disableFocusListener\n            disableTouchListener\n            title=\"Add\"\n          >\n            <Button>Hover</Button>\n          </Tooltip>\n        </Grid>\n        <Grid>\n          <ClickAwayListener onClickAway={handleTooltipClose}>\n            <div>\n              <Tooltip\n                describeChild\n                onClose={handleTooltipClose}\n                open={open}\n                disableFocusListener\n                disableHoverListener\n                disableTouchListener\n                title=\"Add\"\n                slotProps={{\n                  popper: {\n                    disablePortal: true,\n                  },\n                }}\n              >\n                <Button onClick={handleTooltipOpen}>Click</Button>\n              </Tooltip>\n            </div>\n          </ClickAwayListener>\n        </Grid>\n      </Grid>\n    </div>\n  );\n}\n",
+      "sha256": "ac4c276a538f9082112ed77bdaa0e5c10986e657423038474974308b9d4df700",
+      "upstreamPath": "docs/data/material/components/tooltips/TriggersTooltips.tsx",
+      "upstreamSha256": "a298fbf4158d8f512152c37f84cf0e109d716429a674b48d184f3b01d5b9ad70",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tooltips/VariableWidth.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { styled } from '@mui/material/styles';\nimport Button from '@mui/material/Button';\nimport Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';\n\nconst CustomWidthTooltip = styled(({ className, ...props }: TooltipProps) => (\n  <Tooltip describeChild {...props} classes={{ popper: className }} />\n))({\n  [`& .${tooltipClasses.tooltip}`]: {\n    maxWidth: 500,\n  },\n});\n\nconst NoMaxWidthTooltip = styled(({ className, ...props }: TooltipProps) => (\n  <Tooltip describeChild {...props} classes={{ popper: className }} />\n))({\n  [`& .${tooltipClasses.tooltip}`]: {\n    maxWidth: 'none',\n  },\n});\n\nconst longText = `\nAliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim est, vel aliquam tellus.\nPraesent non nunc mollis, fermentum neque at, semper arcu.\nNullam eget est sed sem iaculis gravida eget vitae justo.\n`;\n\nexport default function VariableWidth() {\n  return (\n    <div>\n      <Tooltip describeChild title={longText}>\n        <Button sx={{ m: 1 }}>Default Width [300px]</Button>\n      </Tooltip>\n      <CustomWidthTooltip title={longText}>\n        <Button sx={{ m: 1 }}>Custom Width [500px]</Button>\n      </CustomWidthTooltip>\n      <NoMaxWidthTooltip title={longText}>\n        <Button sx={{ m: 1 }}>No wrapping</Button>\n      </NoMaxWidthTooltip>\n    </div>\n  );\n}\n",
+      "sha256": "f13798dfd3903e9e4647d3e798c435ec6748b433056842afc9abbfdfa5bcd806",
+      "upstreamPath": "docs/data/material/components/tooltips/VariableWidth.tsx",
+      "upstreamSha256": "5b1113afa7de98e7c5607a05df46b750211b31866d43ec8ee33fb642d5775e6b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tooltips/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tooltips/AccessibilityTooltips\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "39ca796a3ca901702c459f62d1c6dfd9942efb3a54fc2441cdd4ead48308f0d1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tooltips/previews/anchor-el-tooltips.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tooltips/AnchorElTooltips\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "443f4651a0d4bf959ff9a01fd235018a60db2aca1f5901fe4d8a552238a1cde4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tooltips/previews/arrow-tooltips.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tooltips/ArrowTooltips\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "db04adbf46873698b8eab01e80561ef7bd9c23a0fa850a3a6dca702e82006c76",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tooltips/previews/basic-tooltip.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tooltips/BasicTooltip\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d062a82f9de986b0f77b54ec9ffcb397db426ecb9d6e139923660eac1464fffc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tooltips/previews/controlled-tooltips.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tooltips/ControlledTooltips\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "9a52adab8b0ceb69178e851f99489793dd0bb42bce5b4631392a896fa671a316",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tooltips/previews/customized-tooltips.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tooltips/CustomizedTooltips\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "38b6ca5684b935a2cd7385d8c930c1f258f0a243c82d4d2a3216ea0c18c7c6e4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tooltips/previews/delay-tooltips.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tooltips/DelayTooltips\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "21dfde3c00716875dba5721e620611fac68cc333af02e88dfd2096f4320513f8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tooltips/previews/disabled-tooltips.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tooltips/DisabledTooltips\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "75b18f2e4a0f70e51941bc533a4132a231e04da41e9fd83fb28bc73fc510747d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tooltips/previews/follow-cursor-tooltips.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tooltips/FollowCursorTooltips\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e48a315fad7b33f1092d8b4555da7d86458f4e01b1fc38cd920ea58b76153edb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tooltips/previews/non-interactive-tooltips.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tooltips/NonInteractiveTooltips\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "f688f5f45040e82c3071241d4a799b747bbb22c56f703b9cb235b9ef54de9fca",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tooltips/previews/positioned-tooltips.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tooltips/PositionedTooltips\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "c4d7747fe877ec3ca637726382fdedfb654120760399193ebb64fc19f710cc02",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tooltips/previews/tooltip-margin.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tooltips/TooltipMargin\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "fd7d6612968288a9407e04af4c9c479b091670144e177576e6d4696ed230fde4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tooltips/previews/tooltip-offset.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tooltips/TooltipOffset\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "97310607c23cffff86e929addf124844a6d806d5c9d16b7faef62c709bbcb190",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tooltips/previews/transitions-tooltips.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tooltips/TransitionsTooltips\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "09fa97a6bba93d7a197f12c0e35dbc48f311ada2b705f068bc708a246d0350ff",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tooltips/previews/triggers-tooltips.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tooltips/TriggersTooltips\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "45124e6e32ef8b93adce65a950118cefee404a46cd67b41ba1e80e7d6a75b98d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tooltips/previews/variable-width.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tooltips/VariableWidth\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "048d842a37b6e6f9e79b58037ab41bd25860991701079a0d0fb4b8f7eeec6c7a",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0 @popperjs/core@2.11.8",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0 @popperjs/core@2.11.8",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "tooltips",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/tooltips",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/tooltips/AccessibilityTooltips.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/tooltips/AccessibilityTooltips.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI tooltips\n\n16 published Material UI tooltips examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/tooltips\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/tooltips/AccessibilityTooltips.tsx\n"
+}

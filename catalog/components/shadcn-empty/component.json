@@ -1,0 +1,257 @@
+{
+  "id": "shadcn:empty",
+  "sourceId": "shadcn",
+  "slug": "shadcn-empty",
+  "name": "shadcn/ui empty",
+  "description": "7 published shadcn/ui empty examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@tabler/icons-react@3.48.0",
+    "class-variance-authority@0.7.1",
+    "cn@0.4.0",
+    "lucide-react@1.35.0",
+    "radix-ui@1.4.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "empty",
+    "tags": [
+      "file",
+      "input"
+    ],
+    "aliases": [
+      "empty",
+      "shadcn/ui empty"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "7 published shadcn/ui empty examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "empty:file:input",
+    "searchText": "shadcn/ui empty\nempty\n7 published shadcn/ui empty examples with complete pinned source and MIT attribution.\nfile\ninput\nshadcn/ui empty 7 published shadcn/ui empty examples with complete pinned source and MIT attribution. Installation Copyable component source and official examples, not a dependency on a hosted registry. Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent). Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/shadcn ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples Pinned source: https://github.com/shadcn ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples/empty avatar.tsx"
+  },
+  "previewPath": "/preview/blocks/shadcn-empty",
+  "manifestPath": "components/shadcn-empty/component.json",
+  "integrity": "sha256:90cfe8258ab10c7e90a9d9b05c95cdf5a60434e10c100da1557ce3b21264575c",
+  "source": {
+    "id": "shadcn",
+    "name": "shadcn/ui",
+    "repository": "https://github.com/shadcn-ui/ui",
+    "commit": "a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4",
+    "registrySha256": "0054ee914f9451ebe390d414d34264df3a61f5e264c59b25b4c8155452fff343",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 shadcn",
+      "textPath": "source/shadcn/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/empty-avatar.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Avatar,\n  AvatarFallback,\n  AvatarImage,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/avatar\"\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\nimport {\n  Empty,\n  EmptyContent,\n  EmptyDescription,\n  EmptyHeader,\n  EmptyMedia,\n  EmptyTitle,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/empty\"\n\nexport default function EmptyAvatar() {\n  return (\n    <Empty>\n      <EmptyHeader>\n        <EmptyMedia variant=\"default\">\n          <Avatar className=\"size-12\">\n            <AvatarImage\n              src=\"https://github.com/shadcn.png\"\n              className=\"grayscale\"\n            />\n            <AvatarFallback>LR</AvatarFallback>\n          </Avatar>\n        </EmptyMedia>\n        <EmptyTitle>User Offline</EmptyTitle>\n        <EmptyDescription>\n          This user is currently offline. You can leave a message to notify them\n          or try again later.\n        </EmptyDescription>\n      </EmptyHeader>\n      <EmptyContent>\n        <Button size=\"sm\">Leave Message</Button>\n      </EmptyContent>\n    </Empty>\n  )\n}\n",
+      "sha256": "f9fa36b9ffd0c4e8b68df77ddc4735d5f8b68c9722dd7bb64c78f5360e149a09",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/empty-avatar.tsx",
+      "upstreamSha256": "8f5859f0b51ac2de7437a120c37c6fbb782e025d9a8e3778d0e464e95aa8bba6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/avatar.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { Avatar as AvatarPrimitive } from \"radix-ui\"\n\nfunction Avatar({\n  className,\n  size = \"default\",\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Root> & {\n  size?: \"default\" | \"sm\" | \"lg\"\n}) {\n  return (\n    <AvatarPrimitive.Root\n      data-slot=\"avatar\"\n      data-size={size}\n      className={cn(\n        \"group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction AvatarImage({\n  className,\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Image>) {\n  return (\n    <AvatarPrimitive.Image\n      data-slot=\"avatar-image\"\n      className={cn(\"aspect-square size-full\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction AvatarFallback({\n  className,\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Fallback>) {\n  return (\n    <AvatarPrimitive.Fallback\n      data-slot=\"avatar-fallback\"\n      className={cn(\n        \"flex size-full items-center justify-center rounded-full bg-muted text-sm text-muted-foreground group-data-[size=sm]/avatar:text-xs\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction AvatarBadge({ className, ...props }: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      data-slot=\"avatar-badge\"\n      className={cn(\n        \"absolute right-0 bottom-0 z-10 inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground ring-2 ring-background select-none\",\n        \"group-data-[size=sm]/avatar:size-2 group-data-[size=sm]/avatar:[&>svg]:hidden\",\n        \"group-data-[size=default]/avatar:size-2.5 group-data-[size=default]/avatar:[&>svg]:size-2\",\n        \"group-data-[size=lg]/avatar:size-3 group-data-[size=lg]/avatar:[&>svg]:size-2\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction AvatarGroup({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"avatar-group\"\n      className={cn(\n        \"group/avatar-group flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction AvatarGroupCount({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"avatar-group-count\"\n      className={cn(\n        \"relative flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-sm text-muted-foreground ring-2 ring-background group-has-data-[size=lg]/avatar-group:size-10 group-has-data-[size=sm]/avatar-group:size-6 [&>svg]:size-4 group-has-data-[size=lg]/avatar-group:[&>svg]:size-5 group-has-data-[size=sm]/avatar-group:[&>svg]:size-3\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport {\n  Avatar,\n  AvatarImage,\n  AvatarFallback,\n  AvatarBadge,\n  AvatarGroup,\n  AvatarGroupCount,\n}\n",
+      "sha256": "9df3569f8ab1d26140ae415a404ffd2ea2e9e627629bf96f5a44b6b6cdbcd270",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/avatar.tsx",
+      "upstreamSha256": "0c5c48b8a1dff4fdc5ff9b6cb79cc9cd138682b7d86868068f571befe9675e88",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/ui/button.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { cn } from \"cn\"\nimport { Slot } from \"radix-ui\"\n\nconst buttonVariants = cva(\n  \"inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground hover:bg-primary/90\",\n        destructive:\n          \"bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:bg-destructive/60 dark:focus-visible:ring-destructive/40\",\n        outline:\n          \"border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50\",\n        secondary:\n          \"bg-secondary text-secondary-foreground hover:bg-secondary/80\",\n        ghost:\n          \"hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n      },\n      size: {\n        default: \"h-9 px-4 py-2 has-[>svg]:px-3\",\n        xs: \"h-6 gap-1 rounded-md px-2 text-xs has-[>svg]:px-1.5 [&_svg:not([class*='size-'])]:size-3\",\n        sm: \"h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5\",\n        lg: \"h-10 rounded-md px-6 has-[>svg]:px-4\",\n        icon: \"size-9\",\n        \"icon-xs\": \"size-6 rounded-md [&_svg:not([class*='size-'])]:size-3\",\n        \"icon-sm\": \"size-8\",\n        \"icon-lg\": \"size-10\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n)\n\nfunction Button({\n  className,\n  variant = \"default\",\n  size = \"default\",\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean\n  }) {\n  const Comp = asChild ? Slot.Root : \"button\"\n\n  return (\n    <Comp\n      data-slot=\"button\"\n      data-variant={variant}\n      data-size={size}\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  )\n}\n\nexport { Button, buttonVariants }\n",
+      "sha256": "3763472684dc688736e821e59003cac5ef8d753447f399abae7809fa3571c6c0",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/button.tsx",
+      "upstreamSha256": "79dd6f75f8136394442202d6b8b922fb269eaad0a5dba579397c9d5b41f893bb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/empty.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { cn } from \"cn\"\n\nfunction Empty({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"empty\"\n      className={cn(\n        \"flex min-w-0 flex-1 flex-col items-center justify-center gap-6 rounded-lg border-dashed p-6 text-center text-balance md:p-12\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction EmptyHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"empty-header\"\n      className={cn(\n        \"flex max-w-sm flex-col items-center gap-2 text-center\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nconst emptyMediaVariants = cva(\n  \"mb-2 flex shrink-0 items-center justify-center [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-transparent\",\n        icon: \"flex size-10 shrink-0 items-center justify-center rounded-lg bg-muted text-foreground [&_svg:not([class*='size-'])]:size-6\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n)\n\nfunction EmptyMedia({\n  className,\n  variant = \"default\",\n  ...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof emptyMediaVariants>) {\n  return (\n    <div\n      data-slot=\"empty-icon\"\n      data-variant={variant}\n      className={cn(emptyMediaVariants({ variant, className }))}\n      {...props}\n    />\n  )\n}\n\nfunction EmptyTitle({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"empty-title\"\n      className={cn(\"text-lg font-medium tracking-tight\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction EmptyDescription({ className, ...props }: React.ComponentProps<\"p\">) {\n  return (\n    <div\n      data-slot=\"empty-description\"\n      className={cn(\n        \"text-sm/relaxed text-muted-foreground [&>a]:underline [&>a]:underline-offset-4 [&>a:hover]:text-primary\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction EmptyContent({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"empty-content\"\n      className={cn(\n        \"flex w-full max-w-sm min-w-0 flex-col items-center gap-4 text-sm text-balance\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport {\n  Empty,\n  EmptyHeader,\n  EmptyTitle,\n  EmptyDescription,\n  EmptyContent,\n  EmptyMedia,\n}\n",
+      "sha256": "c35abef5f43782d788ef2c6a38dcf52fe2f9eccbded88544e8994b75da809724",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/empty.tsx",
+      "upstreamSha256": "54f529ccf72c18c4b5abd5586a7cf1f2a4c8d207aac366029d66ed095cb2965d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/empty-avatar-group.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { PlusIcon } from \"lucide-react\"\n\nimport {\n  Avatar,\n  AvatarFallback,\n  AvatarImage,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/avatar\"\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\nimport {\n  Empty,\n  EmptyContent,\n  EmptyDescription,\n  EmptyHeader,\n  EmptyMedia,\n  EmptyTitle,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/empty\"\n\nexport default function EmptyAvatarGroup() {\n  return (\n    <Empty>\n      <EmptyHeader>\n        <EmptyMedia>\n          <div className=\"flex -space-x-2 *:data-[slot=avatar]:size-12 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background *:data-[slot=avatar]:grayscale\">\n            <Avatar>\n              <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\n              <AvatarFallback>CN</AvatarFallback>\n            </Avatar>\n            <Avatar>\n              <AvatarImage\n                src=\"https://github.com/maxleiter.png\"\n                alt=\"@maxleiter\"\n              />\n              <AvatarFallback>LR</AvatarFallback>\n            </Avatar>\n            <Avatar>\n              <AvatarImage\n                src=\"https://github.com/evilrabbit.png\"\n                alt=\"@evilrabbit\"\n              />\n              <AvatarFallback>ER</AvatarFallback>\n            </Avatar>\n          </div>\n        </EmptyMedia>\n        <EmptyTitle>No Team Members</EmptyTitle>\n        <EmptyDescription>\n          Invite your team to collaborate on this project.\n        </EmptyDescription>\n      </EmptyHeader>\n      <EmptyContent>\n        <Button size=\"sm\">\n          <PlusIcon />\n          Invite Members\n        </Button>\n      </EmptyContent>\n    </Empty>\n  )\n}\n",
+      "sha256": "26909e46826abd1d372dd8953bfe357ff84e2cbb764270a7b87ac20877d24eb2",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/empty-avatar-group.tsx",
+      "upstreamSha256": "fb6b7b812f38bcc0ea07ac8f25ae6e786d949540b0b05ce7f17c49a1cc023c3b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/empty-background.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { IconBell } from \"@tabler/icons-react\"\nimport { RefreshCcwIcon } from \"lucide-react\"\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\nimport {\n  Empty,\n  EmptyContent,\n  EmptyDescription,\n  EmptyHeader,\n  EmptyMedia,\n  EmptyTitle,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/empty\"\n\nexport default function EmptyMuted() {\n  return (\n    <Empty className=\"h-full bg-gradient-to-b from-muted/50 from-30% to-background\">\n      <EmptyHeader>\n        <EmptyMedia variant=\"icon\">\n          <IconBell />\n        </EmptyMedia>\n        <EmptyTitle>No Notifications</EmptyTitle>\n        <EmptyDescription>\n          You&apos;re all caught up. New notifications will appear here.\n        </EmptyDescription>\n      </EmptyHeader>\n      <EmptyContent>\n        <Button variant=\"outline\" size=\"sm\">\n          <RefreshCcwIcon />\n          Refresh\n        </Button>\n      </EmptyContent>\n    </Empty>\n  )\n}\n",
+      "sha256": "9c0743e39acff46c9d9bb1efe592c16b8cd217772cf24478504fc9328c035782",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/empty-background.tsx",
+      "upstreamSha256": "8e1b085ca17b2d79d53dfa6d32f35b74ecd540ba00bf42c48a4346c1afc8e08b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/empty-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { IconFolderCode } from \"@tabler/icons-react\"\nimport { ArrowUpRightIcon } from \"lucide-react\"\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\nimport {\n  Empty,\n  EmptyContent,\n  EmptyDescription,\n  EmptyHeader,\n  EmptyMedia,\n  EmptyTitle,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/empty\"\n\nexport default function EmptyDemo() {\n  return (\n    <Empty>\n      <EmptyHeader>\n        <EmptyMedia variant=\"icon\">\n          <IconFolderCode />\n        </EmptyMedia>\n        <EmptyTitle>No Projects Yet</EmptyTitle>\n        <EmptyDescription>\n          You haven&apos;t created any projects yet. Get started by creating\n          your first project.\n        </EmptyDescription>\n      </EmptyHeader>\n      <EmptyContent>\n        <div className=\"flex gap-2\">\n          <Button>Create Project</Button>\n          <Button variant=\"outline\">Import Project</Button>\n        </div>\n      </EmptyContent>\n      <Button\n        variant=\"link\"\n        asChild\n        className=\"text-muted-foreground\"\n        size=\"sm\"\n      >\n        <a href=\"#\">\n          Learn More <ArrowUpRightIcon />\n        </a>\n      </Button>\n    </Empty>\n  )\n}\n",
+      "sha256": "dcd61e6cdb11707b8beced8e6a5ec4ef125fd97a1f7a267137a40c86ac9b702b",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/empty-demo.tsx",
+      "upstreamSha256": "256fafa66022abe16cbd45c715da901d8002da003898e8dd0fe781e101360d70",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/empty-icon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  IconBookmark,\n  IconHeart,\n  IconInbox,\n  IconStar,\n} from \"@tabler/icons-react\"\n\nimport {\n  Empty,\n  EmptyDescription,\n  EmptyHeader,\n  EmptyMedia,\n  EmptyTitle,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/empty\"\n\nexport default function EmptyIcon() {\n  return (\n    <div className=\"grid gap-8 md:grid-cols-2\">\n      <Empty>\n        <EmptyHeader>\n          <EmptyMedia variant=\"icon\">\n            <IconInbox />\n          </EmptyMedia>\n          <EmptyTitle>No messages</EmptyTitle>\n          <EmptyDescription>\n            Your inbox is empty. New messages will appear here.\n          </EmptyDescription>\n        </EmptyHeader>\n      </Empty>\n\n      <Empty>\n        <EmptyHeader>\n          <EmptyMedia variant=\"icon\">\n            <IconStar />\n          </EmptyMedia>\n          <EmptyTitle>No favorites</EmptyTitle>\n          <EmptyDescription>\n            Items you mark as favorites will appear here.\n          </EmptyDescription>\n        </EmptyHeader>\n      </Empty>\n\n      <Empty>\n        <EmptyHeader>\n          <EmptyMedia variant=\"icon\">\n            <IconHeart />\n          </EmptyMedia>\n          <EmptyTitle>No likes yet</EmptyTitle>\n          <EmptyDescription>\n            Content you like will be saved here for easy access.\n          </EmptyDescription>\n        </EmptyHeader>\n      </Empty>\n\n      <Empty>\n        <EmptyHeader>\n          <EmptyMedia variant=\"icon\">\n            <IconBookmark />\n          </EmptyMedia>\n          <EmptyTitle>No bookmarks</EmptyTitle>\n          <EmptyDescription>\n            Save interesting content by bookmarking it.\n          </EmptyDescription>\n        </EmptyHeader>\n      </Empty>\n    </div>\n  )\n}\n",
+      "sha256": "78bab11f9de978b7aee1e578e48c57f54deabbd2c7a67d606264e79e80e72d86",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/empty-icon.tsx",
+      "upstreamSha256": "85ac7ab340d85b531fa30efac011074c595aa241ab40fb66483bdba3897beca8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/empty-input-group.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SearchIcon } from \"lucide-react\"\n\nimport {\n  Empty,\n  EmptyContent,\n  EmptyDescription,\n  EmptyHeader,\n  EmptyTitle,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/empty\"\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/input-group\"\nimport { Kbd } from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/kbd\"\n\nexport default function EmptyInputGroup() {\n  return (\n    <Empty>\n      <EmptyHeader>\n        <EmptyTitle>404 - Not Found</EmptyTitle>\n        <EmptyDescription>\n          The page you&apos;re looking for doesn&apos;t exist. Try searching for\n          what you need below.\n        </EmptyDescription>\n      </EmptyHeader>\n      <EmptyContent>\n        <InputGroup className=\"sm:w-3/4\">\n          <InputGroupInput placeholder=\"Try searching for pages...\" />\n          <InputGroupAddon>\n            <SearchIcon />\n          </InputGroupAddon>\n          <InputGroupAddon align=\"inline-end\">\n            <Kbd>/</Kbd>\n          </InputGroupAddon>\n        </InputGroup>\n        <EmptyDescription>\n          Need help? <a href=\"#\">Contact support</a>\n        </EmptyDescription>\n      </EmptyContent>\n    </Empty>\n  )\n}\n",
+      "sha256": "13e292b7e894972b7ca72498ad7076d1585dce67737456005d2914a47a8adcf7",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/empty-input-group.tsx",
+      "upstreamSha256": "314a193bca1792dac6e044db23cd6968ea641fd48a0e8622ab60f6710b135e3d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/input-group.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { cn } from \"cn\"\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\nimport { Input } from \"@/components/rendyn-libraries/shadcn/ui/input\"\nimport { Textarea } from \"@/components/rendyn-libraries/shadcn/ui/textarea\"\n\nfunction InputGroup({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"input-group\"\n      role=\"group\"\n      className={cn(\n        \"group/input-group relative flex w-full items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none dark:bg-input/30\",\n        \"h-9 min-w-0 has-[>textarea]:h-auto\",\n\n        // Variants based on alignment.\n        \"has-[>[data-align=inline-start]]:[&>input]:pl-2\",\n        \"has-[>[data-align=inline-end]]:[&>input]:pr-2\",\n        \"has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>[data-align=block-start]]:[&>input]:pb-3\",\n        \"has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-end]]:[&>input]:pt-3\",\n\n        // Focus state.\n        \"has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-[3px] has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50\",\n\n        // Error state.\n        \"has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-destructive/20 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40\",\n\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nconst inputGroupAddonVariants = cva(\n  \"flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4\",\n  {\n    variants: {\n      align: {\n        \"inline-start\":\n          \"order-first pl-3 has-[>button]:ml-[-0.45rem] has-[>kbd]:ml-[-0.35rem]\",\n        \"inline-end\":\n          \"order-last pr-3 has-[>button]:mr-[-0.45rem] has-[>kbd]:mr-[-0.35rem]\",\n        \"block-start\":\n          \"order-first w-full justify-start px-3 pt-3 group-has-[>input]/input-group:pt-2.5 [.border-b]:pb-3\",\n        \"block-end\":\n          \"order-last w-full justify-start px-3 pb-3 group-has-[>input]/input-group:pb-2.5 [.border-t]:pt-3\",\n      },\n    },\n    defaultVariants: {\n      align: \"inline-start\",\n    },\n  }\n)\n\nfunction InputGroupAddon({\n  className,\n  align = \"inline-start\",\n  ...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof inputGroupAddonVariants>) {\n  return (\n    <div\n      role=\"group\"\n      data-slot=\"input-group-addon\"\n      data-align={align}\n      className={cn(inputGroupAddonVariants({ align }), className)}\n      onClick={(e) => {\n        if ((e.target as HTMLElement).closest(\"button\")) {\n          return\n        }\n        e.currentTarget.parentElement?.querySelector(\"input\")?.focus()\n      }}\n      {...props}\n    />\n  )\n}\n\nconst inputGroupButtonVariants = cva(\n  \"flex items-center gap-2 text-sm shadow-none\",\n  {\n    variants: {\n      size: {\n        xs: \"h-6 gap-1 rounded-[calc(var(--radius)-5px)] px-2 has-[>svg]:px-2 [&>svg:not([class*='size-'])]:size-3.5\",\n        sm: \"h-8 gap-1.5 rounded-md px-2.5 has-[>svg]:px-2.5\",\n        \"icon-xs\":\n          \"size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0\",\n        \"icon-sm\": \"size-8 p-0 has-[>svg]:p-0\",\n      },\n    },\n    defaultVariants: {\n      size: \"xs\",\n    },\n  }\n)\n\nfunction InputGroupButton({\n  className,\n  type = \"button\",\n  variant = \"ghost\",\n  size = \"xs\",\n  ...props\n}: Omit<React.ComponentProps<typeof Button>, \"size\"> &\n  VariantProps<typeof inputGroupButtonVariants>) {\n  return (\n    <Button\n      type={type}\n      data-size={size}\n      variant={variant}\n      className={cn(inputGroupButtonVariants({ size }), className)}\n      {...props}\n    />\n  )\n}\n\nfunction InputGroupText({ className, ...props }: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      className={cn(\n        \"flex items-center gap-2 text-sm text-muted-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction InputGroupInput({\n  className,\n  ...props\n}: React.ComponentProps<\"input\">) {\n  return (\n    <Input\n      data-slot=\"input-group-control\"\n      className={cn(\n        \"flex-1 rounded-none border-0 bg-transparent shadow-none focus-visible:ring-0 dark:bg-transparent\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction InputGroupTextarea({\n  className,\n  ...props\n}: React.ComponentProps<\"textarea\">) {\n  return (\n    <Textarea\n      data-slot=\"input-group-control\"\n      className={cn(\n        \"flex-1 resize-none rounded-none border-0 bg-transparent py-3 shadow-none focus-visible:ring-0 dark:bg-transparent\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupButton,\n  InputGroupText,\n  InputGroupInput,\n  InputGroupTextarea,\n}\n",
+      "sha256": "6adce9270d85dbc3002ac3d38a898f1ea72add552b965575cb2288ef2cdbf078",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/input-group.tsx",
+      "upstreamSha256": "e379899ac50d6cabc9d9eb1668f265176951c62b1fe83a6f23ee97fe8074d526",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/ui/input.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\n\nfunction Input({ className, type, ...props }: React.ComponentProps<\"input\">) {\n  return (\n    <input\n      type={type}\n      data-slot=\"input\"\n      className={cn(\n        \"h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none selection:bg-primary selection:text-primary-foreground file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm dark:bg-input/30\",\n        \"focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n        \"aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Input }\n",
+      "sha256": "6eeb51e5be0f5dcf8cd92527d8c42c6eadd8fb9354df069f88b91b044b3b0b35",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/input.tsx",
+      "upstreamSha256": "0c9457181f6ddc80969bcf854e92c362903a55b6e889fbef3fd85343ecc4af5b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/ui/textarea.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\n\nfunction Textarea({ className, ...props }: React.ComponentProps<\"textarea\">) {\n  return (\n    <textarea\n      data-slot=\"textarea\"\n      className={cn(\n        \"flex field-sizing-content min-h-16 w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:aria-invalid:ring-destructive/40\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Textarea }\n",
+      "sha256": "8e0665eff2d0d040ed6f2c78b6cd0fb798af58a85d9e5d90ff0c8be37fdf252e",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/textarea.tsx",
+      "upstreamSha256": "5cafcfeeee29534f449387a16b585f5923d2faab1a0cdc50a874416b175f59ce",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/kbd.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { cn } from \"cn\"\n\nfunction Kbd({ className, ...props }: React.ComponentProps<\"kbd\">) {\n  return (\n    <kbd\n      data-slot=\"kbd\"\n      className={cn(\n        \"pointer-events-none inline-flex h-5 w-fit min-w-5 items-center justify-center gap-1 rounded-sm bg-muted px-1 font-sans text-xs font-medium text-muted-foreground select-none\",\n        \"[&_svg:not([class*='size-'])]:size-3\",\n        \"[[data-slot=tooltip-content]_&]:bg-background/20 [[data-slot=tooltip-content]_&]:text-background dark:[[data-slot=tooltip-content]_&]:bg-background/10\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction KbdGroup({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <kbd\n      data-slot=\"kbd-group\"\n      className={cn(\"inline-flex items-center gap-1\", className)}\n      {...props}\n    />\n  )\n}\n\nexport { Kbd, KbdGroup }\n",
+      "sha256": "eec7cb865cfa8305330ddc68eda86bcde9b4ca63725b8c43ed19a47369f1d2fa",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/kbd.tsx",
+      "upstreamSha256": "c0c0ae6a7d1adb7749b9b34cab8f4d2f5caf333e819b64c2051e77f918d3661f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/empty-outline.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { IconCloud } from \"@tabler/icons-react\"\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\nimport {\n  Empty,\n  EmptyContent,\n  EmptyDescription,\n  EmptyHeader,\n  EmptyMedia,\n  EmptyTitle,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/empty\"\n\nexport default function EmptyOutline() {\n  return (\n    <Empty className=\"border border-dashed\">\n      <EmptyHeader>\n        <EmptyMedia variant=\"icon\">\n          <IconCloud />\n        </EmptyMedia>\n        <EmptyTitle>Cloud Storage Empty</EmptyTitle>\n        <EmptyDescription>\n          Upload files to your cloud storage to access them anywhere.\n        </EmptyDescription>\n      </EmptyHeader>\n      <EmptyContent>\n        <Button variant=\"outline\" size=\"sm\">\n          Upload Files\n        </Button>\n      </EmptyContent>\n    </Empty>\n  )\n}\n",
+      "sha256": "6946782345221081c9ef32de22e544bd9c6be79427382603bfef8e8cf4de22f9",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/empty-outline.tsx",
+      "upstreamSha256": "c44fd1bd17b9aa1c15a6f7cc7b699f14abc25b618074bc55020eadf6d041b8d8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/empty/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/empty-avatar\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "b67010ceaec69d454e10d54a3bb4d54f15e3b128315872f005f22c77e2e925ef",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/empty/previews/empty-avatar-group.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/empty-avatar-group\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "55301e0d0fe6f2dda61aa43ce2f2bfed3a7de0462cc2c77579bd2a4ed612c3ad",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/empty/previews/empty-background.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/empty-background\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a3ef26dcb48eedec610275b75541d41d0dcf6cbc5604b4e9907ed38c8e46fa5c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/empty/previews/empty-demo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/empty-demo\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8eef07b327c2dea86d13ff73b47825bfe1de68894dc540c57fa8740147cf44f2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/empty/previews/empty-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/empty-icon\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "3e4ccb88074547e74016baea3db4685c21181103d772f80c71e44af77e97c64d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/empty/previews/empty-input-group.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/empty-input-group\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "630bf64fa81392d755c84c5864a771a48e9c20939ea6b73fb3be95439c249640",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/empty/previews/empty-outline.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/empty-outline\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "86e5435cddeec54dfb124b734517969f8f7571dca22ee6fe48616e140028a45d",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @tabler/icons-react@3.48.0 class-variance-authority@0.7.1 cn@0.4.0 lucide-react@1.35.0 radix-ui@1.4.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @tabler/icons-react@3.48.0 class-variance-authority@0.7.1 cn@0.4.0 lucide-react@1.35.0 radix-ui@1.4.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable component source and official examples, not a dependency on a hosted registry.",
+      "Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent)."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "empty",
+    "upstreamPageUrl": "https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples",
+    "upstreamDetailUrl": "https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/empty-avatar.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/shadcn-ui/ui/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/empty-avatar.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# shadcn/ui empty\n\n7 published shadcn/ui empty examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable component source and official examples, not a dependency on a hosted registry.\n- Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent).\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples\nPinned source: https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/empty-avatar.tsx\n"
+}

@@ -1,0 +1,161 @@
+{
+  "id": "mantine:use-roving-index",
+  "sourceId": "mantine",
+  "slug": "mantine-use-roving-index",
+  "name": "Mantine use roving index",
+  "description": "5 published Mantine use roving index examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantinex/demo@2.0.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "use-roving-index",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "use roving index",
+      "mantine use roving index",
+      "use-roving-index"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "5 published Mantine use roving index examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "use-roving-index:code:file",
+    "searchText": "Mantine use roving index\nuse roving index\n5 published Mantine use roving index examples with complete pinned source and MIT attribution.\nmantine use roving index\nuse-roving-index\ncode\nfile\nMantine use roving index 5 published Mantine use roving index examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use roving index Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use roving index/use roving index.demo.disabled.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-use-roving-index",
+  "manifestPath": "components/mantine-use-roving-index/component.json",
+  "integrity": "sha256:d799b22ee9c42e69f313aef9d23e0ec364bb37dcc568fc3b243b62387288a763",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-roving-index/use-roving-index.demo.disabled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Group } from '@mantine/core';\n\nimport { useRovingIndex } from '@mantine/hooks';\n\nconst items = ['Cut', 'Copy', 'Paste', 'Delete', 'Select All'];\n\nconst disabledIndices = new Set([1, 3]);\n\nfunction Demo() {\n  const { getItemProps } = useRovingIndex({\n    total: items.length,\n    orientation: 'horizontal',\n    loop: true,\n    isItemDisabled: (index) => disabledIndices.has(index),\n  });\n\n  return (\n    <Group gap=\"xs\">\n      {items.map((item, index) => (\n        <Button\n          key={item}\n          variant=\"default\"\n          disabled={disabledIndices.has(index)}\n          {...getItemProps({ index })}\n        >\n          {item}\n        </Button>\n      ))}\n    </Group>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "60da41c15559f77b9ef13e0f4b4a72c4d0e6b1b817f52438044bbb0c794f16f3",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-roving-index/use-roving-index.demo.disabled.tsx",
+      "upstreamSha256": "fd9dfea136c94c2df3c89c28ff22e2a6de7e3923e74c955fa6239036ed1b7866",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-roving-index/use-roving-index.demo.grid.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SimpleGrid, UnstyledButton } from '@mantine/core';\n\nimport { useRovingIndex } from '@mantine/hooks';\n\nfunction Demo() {\n  const total = 9;\n  const columns = 3;\n\n  const { getItemProps, focusedIndex } = useRovingIndex({\n    total,\n    columns,\n  });\n\n  return (\n    <SimpleGrid cols={columns} w={300} spacing=\"xs\">\n      {Array.from({ length: total }, (_, index) => (\n        <UnstyledButton\n          key={index}\n          {...getItemProps({ index })}\n          p=\"md\"\n          ta=\"center\"\n          style={{\n            borderRadius: 'var(--mantine-radius-sm)',\n            border: '1px solid var(--mantine-color-default-border)',\n            backgroundColor: focusedIndex === index ? 'var(--mantine-color-blue-light)' : undefined,\n          }}\n        >\n          Cell {index + 1}\n        </UnstyledButton>\n      ))}\n    </SimpleGrid>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "986cdadea571eb10ac5c48203a48225062831b84f31617cc15215c2fc9e5a3d7",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-roving-index/use-roving-index.demo.grid.tsx",
+      "upstreamSha256": "f6c73fc8b6c3ab5fa98374a3d9c99a9392d8a27ee3ca3a8cb702e60b1283e906",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-roving-index/use-roving-index.demo.loop.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Checkbox, Group, Stack } from '@mantine/core';\n\nimport { useRovingIndex } from '@mantine/hooks';\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst code = `\nimport { useState } from 'react';\nimport { Button, Checkbox, Group, Stack } from '@mantine/core';\nimport { useRovingIndex } from '@mantine/hooks';\n\nconst items = ['First', 'Second', 'Third', 'Fourth', 'Fifth'];\n\nfunction Demo() {\n  const [loop, setLoop] = useState(true);\n  const { getItemProps } = useRovingIndex({\n    total: items.length,\n    orientation: 'horizontal',\n    loop,\n  });\n\n  return (\n    <Stack>\n      <Checkbox\n        label=\"Loop navigation\"\n        checked={loop}\n        onChange={(event) => setLoop(event.currentTarget.checked)}\n      />\n      <Group gap=\"xs\">\n        {items.map((item, index) => (\n          <Button key={item} variant=\"default\" {...getItemProps({ index })}>\n            {item}\n          </Button>\n        ))}\n      </Group>\n    </Stack>\n  );\n}\n`;\n\nconst items = ['First', 'Second', 'Third', 'Fourth', 'Fifth'];\n\nfunction Demo() {\n  const [loop, setLoop] = useState(true);\n  const { getItemProps } = useRovingIndex({\n    total: items.length,\n    orientation: 'horizontal',\n    loop,\n  });\n\n  return (\n    <Stack>\n      <Checkbox\n        label=\"Loop navigation\"\n        checked={loop}\n        onChange={(event) => setLoop(event.currentTarget.checked)}\n      />\n      <Group gap=\"xs\">\n        {items.map((item, index) => (\n          <Button key={item} variant=\"default\" {...getItemProps({ index })}>\n            {item}\n          </Button>\n        ))}\n      </Group>\n    </Stack>\n  );\n}\n\nexport const loop: MantineDemo = {\n  type: 'code',\n  component: Demo,\n  code,\n};\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "17da5e2ddbf2a65f9df5ddd714b6e7aa2863216903f41ac491225fb2d633b4d0",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-roving-index/use-roving-index.demo.loop.tsx",
+      "upstreamSha256": "3a9a3f146ebf8c201ef7ca6eaa46210b295bb7e658d34f79c713e4e2f622c1f3",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-roving-index/use-roving-index.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Group } from '@mantine/core';\n\nimport { useRovingIndex } from '@mantine/hooks';\n\nconst items = ['Bold', 'Italic', 'Underline', 'Strikethrough', 'Code'];\n\nfunction Demo() {\n  const { getItemProps } = useRovingIndex({\n    total: items.length,\n    orientation: 'horizontal',\n    loop: true,\n  });\n\n  return (\n    <Group gap=\"xs\">\n      {items.map((item, index) => (\n        <Button key={item} variant=\"default\" {...getItemProps({ index })}>\n          {item}\n        </Button>\n      ))}\n    </Group>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "0c95969d6e555560eb37288afa7979dc0e5bf5130e7e5244c39fb5456f610418",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-roving-index/use-roving-index.demo.usage.tsx",
+      "upstreamSha256": "a833ab4420d214c500d456152931394852355b6479dc6fe4de0cc86eba02e923",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-roving-index/use-roving-index.demo.vertical.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Stack, UnstyledButton } from '@mantine/core';\n\nimport { useRovingIndex } from '@mantine/hooks';\n\nconst items = ['General', 'Account', 'Security', 'Notifications', 'Privacy'];\n\nfunction Demo() {\n  const { getItemProps, focusedIndex } = useRovingIndex({\n    total: items.length,\n    orientation: 'vertical',\n    loop: true,\n  });\n\n  return (\n    <Stack gap={4} w={200}>\n      {items.map((item, index) => (\n        <UnstyledButton\n          key={item}\n          {...getItemProps({ index })}\n          p=\"xs\"\n          style={{\n            borderRadius: 'var(--mantine-radius-sm)',\n            backgroundColor: focusedIndex === index ? 'var(--mantine-color-blue-light)' : undefined,\n          }}\n        >\n          {item}\n        </UnstyledButton>\n      ))}\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "030bcf1e90baa2cb02fe9b3b9cbd28140d5b73e1597b10679131fd0cc231fd1d",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-roving-index/use-roving-index.demo.vertical.tsx",
+      "upstreamSha256": "6d46d081039a803cf6e8046307282dc3a192c28ff9db027731c12d6a5f5c8151",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-roving-index/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-roving-index/use-roving-index.demo.disabled\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "374c30f1f19a4d4327a362fc319e0fa0176baed22ce43ea4e2c86dad1a8eaf4d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-roving-index/previews/grid.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-roving-index/use-roving-index.demo.grid\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "0b26fc2401d49590e2f9ab552273d82713a4f23d8544fece50e2d4a9f68eab57",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-roving-index/previews/loop.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-roving-index/use-roving-index.demo.loop\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c92b1504d03e91d5ee595ead938bad591d0ac3d298c903a6f5216208ab373aeb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-roving-index/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-roving-index/use-roving-index.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "8166957c6f8e66db01ea886f2140a546d5242c5a700f6198ab558399ff8f88b3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-roving-index/previews/vertical.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-roving-index/use-roving-index.demo.vertical\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "8ba53a165e4782815b6ed56d9b870cc596ef98ca931096934a05008e5d0f44ef",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "use-roving-index",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-roving-index",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-roving-index/use-roving-index.demo.disabled.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-roving-index/use-roving-index.demo.disabled.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine use roving index\n\n5 published Mantine use roving index examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-roving-index\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-roving-index/use-roving-index.demo.disabled.tsx\n"
+}

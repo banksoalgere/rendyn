@@ -1,0 +1,287 @@
+{
+  "id": "chakra:tag",
+  "sourceId": "chakra",
+  "slug": "chakra-tag",
+  "name": "Chakra UI tag",
+  "description": "11 published Chakra UI tag examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "react-icons@5.5.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "tag",
+    "tags": [
+      "button",
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "tag",
+      "chakra ui tag"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "11 published Chakra UI tag examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "tag:button:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI tag\ntag\n11 published Chakra UI tag examples with complete pinned source and MIT attribution.\nchakra ui tag\nbutton\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI tag 11 published Chakra UI tag examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/tag as button.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-tag",
+  "manifestPath": "components/chakra-tag/component.json",
+  "integrity": "sha256:2bed368b2f31095f8735fd1ab5e4287a927c59ae43877e0907550a53f3a6ad17",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/tag-as-button.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Tag } from \"@chakra-ui/react\"\nimport { LuCheck } from \"react-icons/lu\"\n\nexport const TagAsButton = () => {\n  return (\n    <Tag.Root asChild variant=\"solid\">\n      <button type=\"submit\">\n        <Tag.Label>Fish </Tag.Label>\n        <LuCheck />\n      </button>\n    </Tag.Root>\n  )\n}\n",
+      "sha256": "d292f51c42309c70f3fd435cd0bc375b94d16ec66a38d7fb864fe42d973ac751",
+      "upstreamPath": "apps/compositions/src/examples/tag-as-button.tsx",
+      "upstreamSha256": "3fcb2d502821afc61cf1b66827aa22811d86fd2941fd178f71117b206d292446",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/tag-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HStack, Tag } from \"@chakra-ui/react\"\n\nexport const TagBasic = () => {\n  return (\n    <HStack>\n      <Tag.Root>\n        <Tag.Label>Plain Tag</Tag.Label>\n      </Tag.Root>\n      <Tag.Root>\n        <Tag.Label>Closable Tag</Tag.Label>\n        <Tag.EndElement>\n          <Tag.CloseTrigger />\n        </Tag.EndElement>\n      </Tag.Root>\n    </HStack>\n  )\n}\n",
+      "sha256": "ba9b07122d6caa5b1dfa80ef47a90d7ebe83e98d5fddade17b9f42d572e520c9",
+      "upstreamPath": "apps/compositions/src/examples/tag-basic.tsx",
+      "upstreamSha256": "217fb0bb0884715b21f2ac13877fbe8d6833b124be8dcc037e36e9934563511c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/tag-size-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { For, Span, Tag, useSlotRecipe } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const TagSizeTable = () => {\n  const recipe = useSlotRecipe({ key: \"tag\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.size}>{(v) => <td key={v}>{v}</td>}</For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.size}>\n                {(v) => (\n                  <td key={v}>\n                    <Tag.Root size={v} colorPalette={c}>\n                      <Tag.Label>Gray</Tag.Label>\n                      <Tag.EndElement>\n                        <Tag.CloseTrigger />\n                      </Tag.EndElement>\n                    </Tag.Root>\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n",
+      "sha256": "b83c80f26a292569a9f160e018148e4e3b96211c51192f70c73e4c99d877f739",
+      "upstreamPath": "apps/compositions/src/examples/tag-size-table.tsx",
+      "upstreamSha256": "3d4ae74df51666f54f0a148303327255baaea320b5e73353eb1d7eb6a0e77407",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/color-palettes.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { ColorPalette } from \"@chakra-ui/react\"\n\nexport const colorPalettes: ColorPalette[] = [\n  \"gray\",\n  \"red\",\n  \"green\",\n  \"blue\",\n  \"teal\",\n  \"pink\",\n  \"purple\",\n  \"cyan\",\n  \"orange\",\n  \"yellow\",\n]\n",
+      "sha256": "90c5e84e17059e5935c80798a833fb5ac46ea296bb8d1ee978fd7a6e8cdb15e7",
+      "upstreamPath": "apps/compositions/src/lib/color-palettes.ts",
+      "upstreamSha256": "bc209453f7e4dbfc131d92ed9c81f00e20ad5da6cab70624417dcd591e62eac1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/playground-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { chakra } from \"@chakra-ui/react\"\n\nexport const PlaygroundTable = chakra(\"table\", {\n  base: {\n    width: \"full\",\n    marginBottom: \"32px\",\n    borderCollapse: \"collapse\",\n    \"& td:not(.chakra-table__cell)\": {\n      paddingRight: \"8\",\n      paddingBottom: \"8\",\n    },\n    \"& th:not(.chakra-table__column-header)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n    \"& thead td:not(.chakra-table__cell)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n  },\n})\n",
+      "sha256": "0c8b12b7fc74b6aec643559359ca4d43afbca488faeb90424ba3f98e71e3d7e7",
+      "upstreamPath": "apps/compositions/src/lib/playground-table.tsx",
+      "upstreamSha256": "d42456810c8b507d7171df7dca2fc955f2c04f4e8e711a74de35507acf64416c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/tag-variant-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, For, Span, Stack, Tag, useSlotRecipe } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\nimport { HiCheck, HiOutlineBriefcase } from \"react-icons/hi\"\n\nexport const TagVariantTable = () => {\n  const recipe = useSlotRecipe({ key: \"tag\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.variant}>\n            {(v) => <td key={v}>{v}</td>}\n          </For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.variant}>\n                {(v) => (\n                  <td key={v}>\n                    <Stack align=\"flex-start\">\n                      <Tag.Root variant={v} colorPalette={c}>\n                        <Tag.Label>Gray</Tag.Label>\n                      </Tag.Root>\n\n                      <Tag.Root variant={v} colorPalette={c}>\n                        <Tag.Label>Gray</Tag.Label>\n                        <Tag.EndElement>\n                          <Tag.CloseTrigger />\n                        </Tag.EndElement>\n                      </Tag.Root>\n\n                      <Tag.Root variant={v} colorPalette={c}>\n                        <Tag.StartElement>\n                          <HiCheck />\n                        </Tag.StartElement>\n                        <Tag.Label>Gray</Tag.Label>\n                      </Tag.Root>\n\n                      <Tag.Root variant={v} colorPalette={c}>\n                        <Tag.StartElement>\n                          <HiOutlineBriefcase />\n                        </Tag.StartElement>\n                        <Tag.Label>Projects</Tag.Label>\n                      </Tag.Root>\n\n                      <Tag.Root\n                        variant={v}\n                        colorPalette={c}\n                        borderRadius=\"full\"\n                      >\n                        <Tag.StartElement>\n                          <Avatar.Root size=\"full\">\n                            <Avatar.Image src=\"https://i.pravatar.cc/150?img=6\" />\n                            <Avatar.Fallback name=\"Sarah Miller\" />\n                          </Avatar.Root>\n                        </Tag.StartElement>\n                        <Tag.Label>Sarah Miller</Tag.Label>\n                      </Tag.Root>\n                    </Stack>\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n",
+      "sha256": "f949deb6590bfe67a0241473246f5a39369bac33f7b34c49e1ec7c2d63df6cd4",
+      "upstreamPath": "apps/compositions/src/examples/tag-variant-table.tsx",
+      "upstreamSha256": "7a23ce01e1d23e8bd2715a9d99e39d919addb2f48ec12badc6a65d4337d542e8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/tag-with-avatar.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, For, HStack, Tag } from \"@chakra-ui/react\"\n\nexport const TagWithAvatar = () => {\n  return (\n    <HStack>\n      <For each={[\"sm\", \"md\", \"lg\", \"xl\"]}>\n        {(size) => (\n          <Tag.Root key={size} size={size} rounded=\"full\">\n            <Tag.StartElement>\n              <Avatar.Root size=\"full\">\n                <Avatar.Image src=\"https://i.pravatar.cc/300?u=1\" />\n                <Avatar.Fallback name=\"John Doe\" />\n              </Avatar.Root>\n            </Tag.StartElement>\n            <Tag.Label>Emily {size}</Tag.Label>\n          </Tag.Root>\n        )}\n      </For>\n    </HStack>\n  )\n}\n",
+      "sha256": "5ba039439e46ccb2feec963e53eee3fa1ec6bfc90098c966896864537c9a9300",
+      "upstreamPath": "apps/compositions/src/examples/tag-with-avatar.tsx",
+      "upstreamSha256": "862b27dfb4aefc978a4eeda3d3acde5f610cc09ff6886c90d98d19df1a1e9769",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/tag-with-close.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HStack, Tag } from \"@chakra-ui/react\"\nimport { LuActivity } from \"react-icons/lu\"\n\nexport const TagWithClose = () => {\n  return (\n    <HStack>\n      <Tag.Root>\n        <Tag.StartElement>\n          <LuActivity />\n        </Tag.StartElement>\n        <Tag.Label>Tag 1</Tag.Label>\n        <Tag.EndElement>\n          <Tag.CloseTrigger />\n        </Tag.EndElement>\n      </Tag.Root>\n      <Tag.Root>\n        <Tag.Label>Tag 2</Tag.Label>\n        <Tag.EndElement>\n          <Tag.CloseTrigger />\n        </Tag.EndElement>\n      </Tag.Root>\n    </HStack>\n  )\n}\n",
+      "sha256": "a31196f0ebfae014c2b6f2e5030d0776ac958bc558aad8c7064d42c34bb9becc",
+      "upstreamPath": "apps/compositions/src/examples/tag-with-close.tsx",
+      "upstreamSha256": "8b8e3906c99b142369dd8b43469fdd42d1da0696cbc20e1ed0f6d77a6567777a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/tag-with-colors.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Stack, Tag, Text } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { HiPlus } from \"react-icons/hi\"\n\nexport const TagWithColors = () => {\n  return (\n    <Stack gap=\"2\" align=\"flex-start\">\n      {colorPalettes.map((colorPalette) => (\n        <Stack\n          align=\"center\"\n          key={colorPalette}\n          direction=\"row\"\n          gap=\"10\"\n          px=\"4\"\n        >\n          <Text minW=\"8ch\">{colorPalette}</Text>\n\n          <Tag.Root size=\"sm\" colorPalette={colorPalette}>\n            <Tag.Label>Content</Tag.Label>\n          </Tag.Root>\n          <Tag.Root size=\"sm\" colorPalette={colorPalette}>\n            <Tag.StartElement>\n              <HiPlus />\n            </Tag.StartElement>\n            <Tag.Label>Content</Tag.Label>\n          </Tag.Root>\n          <Tag.Root colorPalette={colorPalette} variant=\"solid\">\n            <Tag.Label>Content</Tag.Label>\n            <Tag.EndElement>\n              <Tag.CloseTrigger />\n            </Tag.EndElement>\n          </Tag.Root>\n        </Stack>\n      ))}\n    </Stack>\n  )\n}\n",
+      "sha256": "ea6d8afa18b21024d4988bfc7e6c9070c3146a53c95e5601db4c22b086c448e4",
+      "upstreamPath": "apps/compositions/src/examples/tag-with-colors.tsx",
+      "upstreamSha256": "99bdfb6cd15e1ca710ada7478caf1a7605d938126ee2baabeac83cacfd3820d4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/tag-with-icon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HStack, Tag } from \"@chakra-ui/react\"\nimport { LuCircleUser, LuFileBadge } from \"react-icons/lu\"\n\nexport const TagWithIcon = () => {\n  return (\n    <HStack>\n      <Tag.Root>\n        <Tag.StartElement>\n          <LuCircleUser />\n        </Tag.StartElement>\n        <Tag.Label>Tag 1</Tag.Label>\n      </Tag.Root>\n      <Tag.Root>\n        <Tag.StartElement>\n          <LuFileBadge />\n        </Tag.StartElement>\n        <Tag.Label>Top Rated</Tag.Label>\n      </Tag.Root>\n      <Tag.Root>\n        <Tag.Label>Tag 2</Tag.Label>\n        <Tag.EndElement>\n          <LuCircleUser />\n        </Tag.EndElement>\n      </Tag.Root>\n    </HStack>\n  )\n}\n",
+      "sha256": "443989b0dbd0b360111088eccba8d6b73aca492a259f6136ba07deec284788e4",
+      "upstreamPath": "apps/compositions/src/examples/tag-with-icon.tsx",
+      "upstreamSha256": "12ddb97af071559bbb7dde2f17a551c705675b378c86e066d7983bd4d93cbcf3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/tag-with-overflow.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Tag } from \"@chakra-ui/react\"\n\nexport const TagWithOverflow = () => {\n  return (\n    <Tag.Root size=\"sm\" colorPalette=\"blue\" maxW=\"200px\">\n      <Tag.Label>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam\n        molestias, laboriosam, quod, quia quidem quae voluptatem natus\n        exercitationem autem quibusdam\n      </Tag.Label>\n      <Tag.EndElement>\n        <Tag.CloseTrigger />\n      </Tag.EndElement>\n    </Tag.Root>\n  )\n}\n",
+      "sha256": "7c4559653c12c2397506e8ad7d284a1fe3e182eded5b260959c27a68170a5413",
+      "upstreamPath": "apps/compositions/src/examples/tag-with-overflow.tsx",
+      "upstreamSha256": "e3e740861e61e89045157efe0739ac7e0faa806a44c312e527a40f0e36f4d75b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/tag-with-sizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { For, HStack, Stack, Tag } from \"@chakra-ui/react\"\nimport { HiCheck } from \"react-icons/hi\"\n\nexport const TagWithSizes = () => {\n  return (\n    <Stack gap=\"8\">\n      <For each={[\"sm\", \"md\", \"lg\"]}>\n        {(size) => (\n          <HStack key={size}>\n            <Tag.Root size={size}>\n              <Tag.Label>Gray</Tag.Label>\n            </Tag.Root>\n            <Tag.Root size={size}>\n              <Tag.Label>Gray</Tag.Label>\n              <Tag.EndElement>\n                <Tag.CloseTrigger />\n              </Tag.EndElement>\n            </Tag.Root>\n            <Tag.Root size={size}>\n              <Tag.Label>Gray</Tag.Label>\n              <Tag.EndElement>\n                <HiCheck />\n              </Tag.EndElement>\n            </Tag.Root>\n          </HStack>\n        )}\n      </For>\n    </Stack>\n  )\n}\n",
+      "sha256": "d9f7f9dc511f3587d02b2e0cfe629dc1e96aafe33f8e71c63cc2b425c61e954a",
+      "upstreamPath": "apps/compositions/src/examples/tag-with-sizes.tsx",
+      "upstreamSha256": "4b8ddae14d8efdd97a7b7e5655fe8fa732ea3911b168d6b93ddcde6aed4a0f1d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/tag-with-variants.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { For, HStack, Stack, Tag } from \"@chakra-ui/react\"\nimport { HiCheck } from \"react-icons/hi\"\n\nexport const TagWithVariants = () => {\n  return (\n    <Stack gap=\"8\">\n      <For each={[\"subtle\", \"solid\", \"outline\", \"surface\"]}>\n        {(variant) => (\n          <HStack key={variant}>\n            <Tag.Root variant={variant}>\n              <Tag.Label>Gray</Tag.Label>\n            </Tag.Root>\n            <Tag.Root variant={variant}>\n              <Tag.Label>Gray</Tag.Label>\n              <Tag.EndElement>\n                <Tag.CloseTrigger />\n              </Tag.EndElement>\n            </Tag.Root>\n            <Tag.Root variant={variant}>\n              <Tag.Label>Gray</Tag.Label>\n              <Tag.EndElement>\n                <HiCheck />\n              </Tag.EndElement>\n            </Tag.Root>\n          </HStack>\n        )}\n      </For>\n    </Stack>\n  )\n}\n",
+      "sha256": "3624e37895f2e37013d9798d06c242182fd8fb609bdd0d8a174b781954cb19ef",
+      "upstreamPath": "apps/compositions/src/examples/tag-with-variants.tsx",
+      "upstreamSha256": "75fcf6dd48267a9fe7b3f3d65d992eeafa7fd2640bbb2a46e86da02f7ad2dea4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/tag-closed-component.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Tag as ChakraTag } from \"@chakra-ui/react\"\nimport * as React from \"react\"\n\nexport interface TagProps extends ChakraTag.RootProps {\n  startElement?: React.ReactNode\n  endElement?: React.ReactNode\n  onClose?: VoidFunction\n  closable?: boolean\n}\n\nexport const Tag = React.forwardRef<HTMLSpanElement, TagProps>(\n  function Tag(props, ref) {\n    const {\n      startElement,\n      endElement,\n      onClose,\n      closable = !!onClose,\n      children,\n      ...rest\n    } = props\n\n    return (\n      <ChakraTag.Root ref={ref} {...rest}>\n        {startElement && (\n          <ChakraTag.StartElement>{startElement}</ChakraTag.StartElement>\n        )}\n        <ChakraTag.Label>{children}</ChakraTag.Label>\n        {endElement && (\n          <ChakraTag.EndElement>{endElement}</ChakraTag.EndElement>\n        )}\n        {closable && (\n          <ChakraTag.EndElement>\n            <ChakraTag.CloseTrigger onClick={onClose} />\n          </ChakraTag.EndElement>\n        )}\n      </ChakraTag.Root>\n    )\n  },\n)\n",
+      "sha256": "a9384cd1fa7964c56f6f46a11264ed538e6dc122a64a143f477f200f5a5e0b1b",
+      "upstreamPath": "apps/compositions/src/examples/tag-closed-component.tsx",
+      "upstreamSha256": "4f4abdc4f8b2934eb930260f31811c87980a8c97874b3d73cbea8d752b68bb98",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/tag/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TagAsButton as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/tag-as-button\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "c7f80821739b4a2edef8b9b0d6b0e9cf753c484966557bafa86e52e3f10ff2fe",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/tag/previews/tag-basic.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TagBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/tag-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "b5746a5aac860fb1cf64d9a1863b6b17679cf348a1bfeda85db8674752bac6a9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/tag/previews/tag-size-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TagSizeTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/tag-size-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "b424c07b2b73a3641b2df1d9a0c057c674e59c62e1844acda5ae920b9dfab7c8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/tag/previews/tag-variant-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TagVariantTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/tag-variant-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "8855de2781c1f293ad957d90f8df8345095552015bc413f28e8034c8158b81cd",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/tag/previews/tag-with-avatar.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TagWithAvatar as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/tag-with-avatar\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "168a06f7b4f724cc45d626e186e8c457bb9b95239b4a0e7924d228b6a51ac0cc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/tag/previews/tag-with-close.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TagWithClose as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/tag-with-close\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "406cbfaf5e41c05e796c84d2801eade3da369193e7e95e22e7a7209a32e7b076",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/tag/previews/tag-with-colors.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TagWithColors as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/tag-with-colors\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "ad0a4267d4f051b0f6a3aba7c0859ec94e8a8b630742d21eab4705090df78734",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/tag/previews/tag-with-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TagWithIcon as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/tag-with-icon\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "2d642a096940309f16fcc6dee9f8d8048445a02443add97f2edc3e8564570fc8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/tag/previews/tag-with-overflow.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TagWithOverflow as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/tag-with-overflow\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "63b8ef0c67507a21c2ef8f75924824f1b6544da54a833cf8f66648d3efd53916",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/tag/previews/tag-with-sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TagWithSizes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/tag-with-sizes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "c73488aa035c1f2a02a1dd29cf384137ad785ad9cc43aa8b89a4643ae16828c2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/tag/previews/tag-with-variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TagWithVariants as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/tag-with-variants\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "1ab3ba84fbf894c051cac140d66193c07fe24b2b5362e8e3c33b71ca7e8d691d",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "tag",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/tag-as-button.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/tag-as-button.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI tag\n\n11 published Chakra UI tag examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/tag-as-button.tsx\n"
+}

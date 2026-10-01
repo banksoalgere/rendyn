@@ -1,0 +1,308 @@
+{
+  "id": "chakra:marquee",
+  "sourceId": "chakra",
+  "slug": "chakra-marquee",
+  "name": "Chakra UI marquee",
+  "description": "14 published Chakra UI marquee examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "react-icons@5.5.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "marquee",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input",
+      "marquee"
+    ],
+    "aliases": [
+      "marquee",
+      "chakra ui marquee"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "14 published Chakra UI marquee examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "marquee:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI marquee\nmarquee\n14 published Chakra UI marquee examples with complete pinned source and MIT attribution.\nchakra ui marquee\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI marquee 14 published Chakra UI marquee examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/marquee auto fill.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-marquee",
+  "manifestPath": "components/chakra-marquee/component.json",
+  "integrity": "sha256:0faa422e5f3c310bfc4e116186c38d4c40ab65011dd650aeb46da62488e0da82",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/marquee-auto-fill.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Marquee } from \"@chakra-ui/react\"\nimport {\n  IoLogoFigma,\n  IoLogoGitlab,\n  IoLogoJavascript,\n  IoLogoLinkedin,\n  IoLogoTwitter,\n  IoLogoVimeo,\n} from \"react-icons/io5\"\n\nexport const MarqueeAutoFill = () => (\n  <Marquee.Root autoFill spacing=\"2rem\">\n    <Marquee.Viewport>\n      <Marquee.Content>\n        {items.map((item, i) => (\n          <Marquee.Item key={i} px=\"2rem\">\n            {item.icon && (\n              <item.icon\n                size=\"3rem\"\n                aria-label={item.label}\n                color={item.color}\n              />\n            )}\n          </Marquee.Item>\n        ))}\n      </Marquee.Content>\n    </Marquee.Viewport>\n  </Marquee.Root>\n)\n\nconst items = [\n  { icon: IoLogoFigma, label: \"Figma\", color: \"#F24E1E\" },\n  { icon: IoLogoTwitter, label: \"Twitter\", color: \"#1da1f2\" },\n  { icon: IoLogoLinkedin, label: \"LinkedIn\", color: \"#0077b5\" },\n  { icon: IoLogoGitlab, label: \"GitLab\", color: \"#fc6d26\" },\n  { icon: IoLogoVimeo, label: \"Vimeo\", color: \"#1ab7ea\" },\n  { icon: IoLogoJavascript, label: \"JavaScript\", color: \"#f7df1e\" },\n]\n",
+      "sha256": "fc47b88201f48a4810eec741e45acc21b5254826bc0d8fa0dcd6e2157c2ad06b",
+      "upstreamPath": "apps/compositions/src/examples/marquee-auto-fill.tsx",
+      "upstreamSha256": "a08ffe118e6fe5e43f0111e82da4e1de622aa4ddfcf82b9ec29659ff40a03e27",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/marquee-diagonal.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Circle, HStack, Marquee } from \"@chakra-ui/react\"\n\nexport const MarqueeDiagonal = () => {\n  return (\n    <Marquee.Root\n      position=\"relative\"\n      top=\"25%\"\n      overflow=\"hidden\"\n      transform=\"rotate(-2deg)\"\n      bg=\"bg.emphasized\"\n      py=\"4\"\n    >\n      <Marquee.Viewport>\n        <Marquee.Content>\n          {[...Array(10)].map((_, i) => (\n            <Marquee.Item key={i} pr=\"4\">\n              <HStack gap=\"8\" textStyle=\"3xl\" fontWeight=\"medium\">\n                Chakra Conf 2026\n                <Circle size=\"1.5\" bg=\"colorPalette.solid\" />\n              </HStack>\n            </Marquee.Item>\n          ))}\n        </Marquee.Content>\n      </Marquee.Viewport>\n    </Marquee.Root>\n  )\n}\n",
+      "sha256": "51b56fe4934dfa35297b1cd478b7050f5c318788bb977a9f95f8987e8db2b87d",
+      "upstreamPath": "apps/compositions/src/examples/marquee-diagonal.tsx",
+      "upstreamSha256": "3b3d6e551130e1d6e2d753e4f1d2d97fcbaf0f64ab713efded2d7cad767d0c4f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/marquee-edge-gradient.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Marquee } from \"@chakra-ui/react\"\nimport {\n  IoLogoFigma,\n  IoLogoGitlab,\n  IoLogoJavascript,\n  IoLogoLinkedin,\n  IoLogoTwitter,\n  IoLogoVimeo,\n} from \"react-icons/io5\"\n\nexport const MarqueeEdgeGradient = () => (\n  <Marquee.Root>\n    <Marquee.Edge side=\"start\" />\n    <Marquee.Viewport>\n      <Marquee.Content>\n        {items.map((item, i) => (\n          <Marquee.Item key={i} px=\"2rem\">\n            {item.icon && (\n              <item.icon\n                size=\"3rem\"\n                aria-label={item.label}\n                color={item.color}\n              />\n            )}\n          </Marquee.Item>\n        ))}\n      </Marquee.Content>\n    </Marquee.Viewport>\n    <Marquee.Edge side=\"end\" />\n  </Marquee.Root>\n)\n\nconst items = [\n  { icon: IoLogoFigma, label: \"Figma\", color: \"#F24E1E\" },\n  { icon: IoLogoTwitter, label: \"Twitter\", color: \"#1da1f2\" },\n  { icon: IoLogoLinkedin, label: \"LinkedIn\", color: \"#0077b5\" },\n  { icon: IoLogoGitlab, label: \"GitLab\", color: \"#fc6d26\" },\n  { icon: IoLogoVimeo, label: \"Vimeo\", color: \"#1ab7ea\" },\n  { icon: IoLogoJavascript, label: \"JavaScript\", color: \"#f7df1e\" },\n]\n",
+      "sha256": "8d7176af2139d40d9f916c6cbe8afd98e796a2fe76c321e501bf97980857ede7",
+      "upstreamPath": "apps/compositions/src/examples/marquee-edge-gradient.tsx",
+      "upstreamSha256": "70d45b6b3c029bbb84eb92c4a89a799bbcd42831e2a0a931612d4c62ee72e848",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/marquee-finite-loop.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Marquee, Stack } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\nimport {\n  IoLogoFigma,\n  IoLogoGitlab,\n  IoLogoJavascript,\n  IoLogoLinkedin,\n  IoLogoTwitter,\n  IoLogoVimeo,\n} from \"react-icons/io5\"\n\nexport const MarqueeFiniteLoop = () => {\n  const [loopCount, setLoopCount] = useState(0)\n  const [completedCount, setCompletedCount] = useState(0)\n\n  return (\n    <>\n      <Marquee.Root\n        loopCount={3}\n        onLoopComplete={() => setLoopCount((prev) => prev + 1)}\n        onComplete={() => setCompletedCount((prev) => prev + 1)}\n      >\n        <Marquee.Viewport>\n          <Marquee.Content>\n            {items.map((item, i) => (\n              <Marquee.Item key={i} px=\"2rem\">\n                {item.icon && (\n                  <item.icon\n                    size=\"3rem\"\n                    aria-label={item.label}\n                    color={item.color}\n                  />\n                )}\n              </Marquee.Item>\n            ))}\n          </Marquee.Content>\n        </Marquee.Viewport>\n      </Marquee.Root>\n\n      <Stack m=\"4\" textStyle=\"sm\">\n        <p>Loop completed: {loopCount} times</p>\n        <p>Animation completed: {completedCount} times</p>\n      </Stack>\n    </>\n  )\n}\n\nconst items = [\n  { icon: IoLogoFigma, label: \"Figma\", color: \"#F24E1E\" },\n  { icon: IoLogoTwitter, label: \"Twitter\", color: \"#1da1f2\" },\n  { icon: IoLogoLinkedin, label: \"LinkedIn\", color: \"#0077b5\" },\n  { icon: IoLogoGitlab, label: \"GitLab\", color: \"#fc6d26\" },\n  { icon: IoLogoVimeo, label: \"Vimeo\", color: \"#1ab7ea\" },\n  { icon: IoLogoJavascript, label: \"JavaScript\", color: \"#f7df1e\" },\n]\n",
+      "sha256": "eef89eb635a84416e34d38428c72c3e52fc62f24abe5e0fd6ce662a75acfba49",
+      "upstreamPath": "apps/compositions/src/examples/marquee-finite-loop.tsx",
+      "upstreamSha256": "059fa157275396b1c19daee23ad995c1ea8b5fea5d58f0a807eb28eeec93ed68",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/marquee-image-gallery.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, HStack, Image, Marquee } from \"@chakra-ui/react\"\n\nexport const MarqueeImageGallery = () => (\n  <Box height=\"500px\" overflow=\"hidden\" perspective=\"500px\">\n    <HStack\n      gap=\"4\"\n      height=\"700px\"\n      transform=\"rotateX(20deg)\"\n      transformOrigin=\"center top\"\n    >\n      <Marquee.Root side=\"top\" flex=\"1\" autoFill>\n        <Marquee.Viewport>\n          <Marquee.Content>\n            <MarqueeItems images={imagesColumn1} />\n          </Marquee.Content>\n        </Marquee.Viewport>\n      </Marquee.Root>\n\n      <Marquee.Root side=\"bottom\" flex=\"1\" autoFill>\n        <Marquee.Viewport>\n          <Marquee.Content>\n            <MarqueeItems images={imagesColumn2} />\n          </Marquee.Content>\n        </Marquee.Viewport>\n      </Marquee.Root>\n\n      <Marquee.Root side=\"top\" flex=\"1\" autoFill>\n        <Marquee.Viewport>\n          <Marquee.Content>\n            <MarqueeItems images={imagesColumn3} />\n          </Marquee.Content>\n        </Marquee.Viewport>\n      </Marquee.Root>\n    </HStack>\n  </Box>\n)\n\nconst MarqueeItems = (props: { images: string[] }) => {\n  return (\n    <>\n      {props.images.map((src, i) => (\n        <Marquee.Item key={i} py=\"2\">\n          <Image\n            src={src}\n            alt={`Gallery image ${i + 1}`}\n            width=\"full\"\n            height=\"200px\"\n            objectFit=\"cover\"\n            rounded=\"lg\"\n            shadow=\"md\"\n          />\n        </Marquee.Item>\n      ))}\n    </>\n  )\n}\n\nconst imagesColumn1 = [\n  \"https://picsum.photos/seed/img1/280/200\",\n  \"https://picsum.photos/seed/img2/280/200\",\n  \"https://picsum.photos/seed/img3/280/200\",\n  \"https://picsum.photos/seed/img4/280/200\",\n]\n\nconst imagesColumn2 = [\n  \"https://picsum.photos/seed/img5/280/200\",\n  \"https://picsum.photos/seed/img6/280/200\",\n  \"https://picsum.photos/seed/img7/280/200\",\n  \"https://picsum.photos/seed/img8/280/200\",\n]\n\nconst imagesColumn3 = [\n  \"https://picsum.photos/seed/img9/280/200\",\n  \"https://picsum.photos/seed/img10/280/200\",\n  \"https://picsum.photos/seed/img11/280/200\",\n  \"https://picsum.photos/seed/img12/280/200\",\n]\n",
+      "sha256": "a9e0b0f0a19aea1de6fcb61a022f094259a0c9f8bd3857f2e4af19e5c4122237",
+      "upstreamPath": "apps/compositions/src/examples/marquee-image-gallery.tsx",
+      "upstreamSha256": "3c973ab66f3a966500fd117c487f7222d3ebed1bb799ec37c2f56eac82aa7743",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/marquee-multiple.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Marquee, Stack } from \"@chakra-ui/react\"\nimport {\n  IoLogoFigma,\n  IoLogoGitlab,\n  IoLogoJavascript,\n  IoLogoLinkedin,\n  IoLogoTwitter,\n  IoLogoVimeo,\n} from \"react-icons/io5\"\nimport type { IconType } from \"react-icons/lib\"\n\ninterface Item {\n  icon: IconType\n  color: string\n}\n\nconst items: Item[] = [\n  { icon: IoLogoFigma, color: \"#F24E1E\" },\n  { icon: IoLogoTwitter, color: \"#1da1f2\" },\n  { icon: IoLogoLinkedin, color: \"#0077b5\" },\n  { icon: IoLogoGitlab, color: \"#fc6d26\" },\n  { icon: IoLogoVimeo, color: \"#1ab7ea\" },\n  { icon: IoLogoJavascript, color: \"#f7df1e\" },\n]\n\nexport const MarqueeMultiple = () => {\n  return (\n    <Stack gap=\"8\" py=\"8\">\n      <MarqueeRow items={items} />\n      <MarqueeRow items={items} reverse />\n    </Stack>\n  )\n}\n\ninterface MarqueeRowProps {\n  items: Item[]\n  reverse?: boolean\n}\n\nconst MarqueeRow = (props: MarqueeRowProps) => {\n  const { items, reverse = false } = props\n  return (\n    <Marquee.Root reverse={reverse} autoFill>\n      <Marquee.Viewport>\n        <Marquee.Content>\n          {items.map((item, i) => (\n            <Marquee.Item key={i} px=\"2rem\">\n              <item.icon size=\"3rem\" color={item.color} />\n            </Marquee.Item>\n          ))}\n        </Marquee.Content>\n      </Marquee.Viewport>\n    </Marquee.Root>\n  )\n}\n",
+      "sha256": "7409b6e66a63c121a2ec21c817b0e00b4509741ca6bbf8fc7cc0f237024fe0e6",
+      "upstreamPath": "apps/compositions/src/examples/marquee-multiple.tsx",
+      "upstreamSha256": "fea6ecef57a851698bce3e6827210bc8e1de188f55da5213739464ca01ba7801",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/marquee-news-ticker.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Circle, Flex, HStack, Marquee } from \"@chakra-ui/react\"\n\nconst newsItems = [\n  \"Bitcoin hits all-time high\",\n  \"New React version released\",\n  \"SpaceX successfully lands rocket\",\n  \"Global markets rally today\",\n  \"AI regulation talks begin in EU\",\n]\n\nexport const MarqueeNewsTicker = () => {\n  return (\n    <Flex align=\"center\" bg=\"bg.muted\">\n      <Box\n        bg=\"teal.solid\"\n        color=\"teal.contrast\"\n        px=\"4\"\n        py=\"2\"\n        whiteSpace=\"nowrap\"\n        textStyle=\"sm\"\n        fontWeight=\"medium\"\n      >\n        LATEST NEWS\n      </Box>\n\n      <Marquee.Root css={{ \"--marquee-duration\": \"40s\" }}>\n        <Marquee.Viewport>\n          <Marquee.Content textStyle=\"sm\">\n            {newsItems.map((item, i) => (\n              <Marquee.Item key={i} pr=\"4\">\n                <HStack\n                  align=\"center\"\n                  gap=\"8\"\n                  fontWeight=\"medium\"\n                  textTransform=\"uppercase\"\n                >\n                  {item}\n                  <Circle size=\"1\" bg=\"colorPalette.solid\" />\n                </HStack>\n              </Marquee.Item>\n            ))}\n          </Marquee.Content>\n        </Marquee.Viewport>\n      </Marquee.Root>\n    </Flex>\n  )\n}\n",
+      "sha256": "9836e491c625187705d5bcffe6899c7605be68c190cee273bf000c11eec9d78e",
+      "upstreamPath": "apps/compositions/src/examples/marquee-news-ticker.tsx",
+      "upstreamSha256": "0869b32e2756d8018f52780d23332a151ceccf45e6c238f53a19435ad7bd5b21",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/marquee-pause-interactions.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Marquee } from \"@chakra-ui/react\"\nimport {\n  IoLogoFigma,\n  IoLogoGitlab,\n  IoLogoJavascript,\n  IoLogoLinkedin,\n  IoLogoTwitter,\n  IoLogoVimeo,\n} from \"react-icons/io5\"\n\nexport const MarqueePauseInteractions = () => (\n  <Marquee.Root pauseOnInteraction>\n    <Marquee.Viewport>\n      <Marquee.Content>\n        {items.map((item, i) => (\n          <Marquee.Item key={i} px=\"2rem\">\n            {item.icon && (\n              <item.icon\n                size=\"3rem\"\n                aria-label={item.label}\n                color={item.color}\n              />\n            )}\n          </Marquee.Item>\n        ))}\n      </Marquee.Content>\n    </Marquee.Viewport>\n  </Marquee.Root>\n)\n\nconst items = [\n  { icon: IoLogoFigma, label: \"Figma\", color: \"#F24E1E\" },\n  { icon: IoLogoTwitter, label: \"Twitter\", color: \"#1da1f2\" },\n  { icon: IoLogoLinkedin, label: \"LinkedIn\", color: \"#0077b5\" },\n  { icon: IoLogoGitlab, label: \"GitLab\", color: \"#fc6d26\" },\n  { icon: IoLogoVimeo, label: \"Vimeo\", color: \"#1ab7ea\" },\n  { icon: IoLogoJavascript, label: \"JavaScript\", color: \"#f7df1e\" },\n]\n",
+      "sha256": "2e5ed112829c684d0a5ae2e2d36a6e4fb3d6316c3f478b28a60f107a2f2264b2",
+      "upstreamPath": "apps/compositions/src/examples/marquee-pause-interactions.tsx",
+      "upstreamSha256": "1fc8643e111f0f748aaa186f4f6fe3e89fa9b71f6b36f439c52f29bc0bbf51e1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/marquee-reverse-direction.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Marquee } from \"@chakra-ui/react\"\nimport {\n  IoLogoFigma,\n  IoLogoGitlab,\n  IoLogoJavascript,\n  IoLogoLinkedin,\n  IoLogoTwitter,\n  IoLogoVimeo,\n} from \"react-icons/io5\"\n\nexport const MarqueeReverseDirection = () => (\n  <Marquee.Root reverse autoFill>\n    <Marquee.Viewport>\n      <Marquee.Content>\n        {items.map((item, i) => (\n          <Marquee.Item key={i} px=\"2rem\">\n            {item.icon && (\n              <item.icon\n                size=\"3rem\"\n                aria-label={item.label}\n                color={item.color}\n              />\n            )}\n          </Marquee.Item>\n        ))}\n      </Marquee.Content>\n    </Marquee.Viewport>\n  </Marquee.Root>\n)\n\nconst items = [\n  { icon: IoLogoFigma, label: \"Figma\", color: \"#F24E1E\" },\n  { icon: IoLogoTwitter, label: \"Twitter\", color: \"#1da1f2\" },\n  { icon: IoLogoLinkedin, label: \"LinkedIn\", color: \"#0077b5\" },\n  { icon: IoLogoGitlab, label: \"GitLab\", color: \"#fc6d26\" },\n  { icon: IoLogoVimeo, label: \"Vimeo\", color: \"#1ab7ea\" },\n  { icon: IoLogoJavascript, label: \"JavaScript\", color: \"#f7df1e\" },\n]\n",
+      "sha256": "e311facd3a1fd05380c94660fa082ed8b28bcee403fcaecce13d8a223e5807dc",
+      "upstreamPath": "apps/compositions/src/examples/marquee-reverse-direction.tsx",
+      "upstreamSha256": "843a10aadc0713ab777792891ab8f372248d3295359eccd25cbc86ed7696bff5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/marquee-rtl.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Circle, HStack, LocaleProvider, Marquee } from \"@chakra-ui/react\"\n\nexport const MarqueeRtl = () => (\n  <LocaleProvider locale=\"ar-AE\">\n    <Marquee.Root>\n      <Marquee.Viewport>\n        <Marquee.Content>\n          {items.map((item, i) => (\n            <Marquee.Item key={i} ps=\"8\">\n              <HStack gap=\"8\" textStyle=\"xl\" fontWeight=\"medium\">\n                <Box>{item}</Box>\n                <Circle size=\"1.5\" bg=\"fg.muted\" />\n              </HStack>\n            </Marquee.Item>\n          ))}\n        </Marquee.Content>\n      </Marquee.Viewport>\n    </Marquee.Root>\n  </LocaleProvider>\n)\n\nconst items = [\n  \"مرحبا بكم\",\n  \"تصميم جميل\",\n  \"سهل الاستخدام\",\n  \"مكونات قابلة للوصول\",\n  \"أداء عالي\",\n  \"تجربة مستخدم رائعة\",\n]\n",
+      "sha256": "1252043415da3af6f72f7775e3d90e54b8c31916c7ab3a5155e30b2ea109d777",
+      "upstreamPath": "apps/compositions/src/examples/marquee-rtl.tsx",
+      "upstreamSha256": "37d9768efee25fe7b163c7ffc67c6c0137f40efe9919f85da5cb7b0bf91c9586",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/marquee-vertical-animation.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Marquee } from \"@chakra-ui/react\"\nimport {\n  IoLogoFigma,\n  IoLogoGitlab,\n  IoLogoJavascript,\n  IoLogoLinkedin,\n  IoLogoTwitter,\n  IoLogoVimeo,\n} from \"react-icons/io5\"\n\nexport const MarqueeVerticalAnimation = () => (\n  <Marquee.Root side=\"bottom\" height=\"300px\" spacing=\"2rem\">\n    <Marquee.Viewport>\n      <Marquee.Content>\n        {items.map((item, i) => (\n          <Marquee.Item key={i} px=\"2rem\">\n            {item.icon && (\n              <item.icon\n                size=\"3rem\"\n                aria-label={item.label}\n                color={item.color}\n              />\n            )}\n          </Marquee.Item>\n        ))}\n      </Marquee.Content>\n    </Marquee.Viewport>\n  </Marquee.Root>\n)\n\nconst items = [\n  { icon: IoLogoFigma, label: \"Figma\", color: \"#F24E1E\" },\n  { icon: IoLogoTwitter, label: \"Twitter\", color: \"#1da1f2\" },\n  { icon: IoLogoLinkedin, label: \"LinkedIn\", color: \"#0077b5\" },\n  { icon: IoLogoGitlab, label: \"GitLab\", color: \"#fc6d26\" },\n  { icon: IoLogoVimeo, label: \"Vimeo\", color: \"#1ab7ea\" },\n  { icon: IoLogoJavascript, label: \"JavaScript\", color: \"#f7df1e\" },\n]\n",
+      "sha256": "97cf25badda2a9d4abd45ab0af698162e444d601941859988469d210b35e83e0",
+      "upstreamPath": "apps/compositions/src/examples/marquee-vertical-animation.tsx",
+      "upstreamSha256": "7a23c5c5e0081318db18a6fb81c842bbc31245976e5b4060edfb338c8c82c9bf",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/marquee-with-speed.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { For, Marquee, Span, Stack } from \"@chakra-ui/react\"\nimport {\n  IoLogoFigma,\n  IoLogoGitlab,\n  IoLogoJavascript,\n  IoLogoLinkedin,\n  IoLogoTwitter,\n  IoLogoVimeo,\n} from \"react-icons/io5\"\n\nconst speeds = [\n  { value: 25, label: \"Slow (25px/s)\" },\n  { value: 50, label: \"Normal (50px/s)\" },\n  { value: 100, label: \"Fast (100px/s)\" },\n]\n\nexport const MarqueeWithSpeed = () => (\n  <Stack gap=\"12\">\n    <For each={speeds}>\n      {(speed) => (\n        <Stack key={speed.value} gap=\"4\">\n          <Span fontWeight=\"medium\" textStyle=\"sm\">\n            {speed.label}\n          </Span>\n          <Marquee.Root speed={speed.value}>\n            <Marquee.Viewport>\n              <Marquee.Content>\n                {items.map((item, i) => (\n                  <Marquee.Item key={i} px=\"2rem\">\n                    {item.icon && (\n                      <item.icon\n                        size=\"3rem\"\n                        aria-label={item.label}\n                        color={item.color}\n                      />\n                    )}\n                  </Marquee.Item>\n                ))}\n              </Marquee.Content>\n            </Marquee.Viewport>\n          </Marquee.Root>\n        </Stack>\n      )}\n    </For>\n  </Stack>\n)\n\nconst items = [\n  { icon: IoLogoFigma, label: \"Figma\", color: \"#F24E1E\" },\n  { icon: IoLogoTwitter, label: \"Twitter\", color: \"#1da1f2\" },\n  { icon: IoLogoLinkedin, label: \"LinkedIn\", color: \"#0077b5\" },\n  { icon: IoLogoGitlab, label: \"GitLab\", color: \"#fc6d26\" },\n  { icon: IoLogoVimeo, label: \"Vimeo\", color: \"#1ab7ea\" },\n  { icon: IoLogoJavascript, label: \"JavaScript\", color: \"#f7df1e\" },\n]\n",
+      "sha256": "dba317d26cfdf67a0ed9ab4ca08144a70ba329977ebdc0e375c1b5e229ba118f",
+      "upstreamPath": "apps/compositions/src/examples/marquee-with-speed.tsx",
+      "upstreamSha256": "089915f6967fcdced43187431890019a526ab4390c9f8291e7803beb4d33bb11",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/marquee-with-store.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  ButtonGroup,\n  Marquee,\n  Stack,\n  useMarquee,\n} from \"@chakra-ui/react\"\nimport {\n  IoLogoFigma,\n  IoLogoGitlab,\n  IoLogoJavascript,\n  IoLogoLinkedin,\n  IoLogoTwitter,\n  IoLogoVimeo,\n} from \"react-icons/io5\"\nimport { LuPause, LuPlay } from \"react-icons/lu\"\n\nexport const MarqueeWithStore = () => {\n  const marquee = useMarquee()\n\n  return (\n    <Stack gap=\"8\">\n      <Marquee.RootProvider value={marquee}>\n        <Marquee.Viewport>\n          <Marquee.Content>\n            {items.map((item, i) => (\n              <Marquee.Item key={i} px=\"2rem\">\n                {item.icon && (\n                  <item.icon\n                    size=\"3rem\"\n                    aria-label={item.label}\n                    color={item.color}\n                  />\n                )}\n              </Marquee.Item>\n            ))}\n          </Marquee.Content>\n        </Marquee.Viewport>\n      </Marquee.RootProvider>\n\n      <ButtonGroup size=\"sm\" variant=\"outline\">\n        <Button hidden={marquee.paused} onClick={() => marquee.pause()}>\n          <LuPause /> Pause\n        </Button>\n        <Button hidden={!marquee.paused} onClick={() => marquee.resume()}>\n          <LuPlay />\n          Resume\n        </Button>\n      </ButtonGroup>\n    </Stack>\n  )\n}\n\nconst items = [\n  { icon: IoLogoFigma, label: \"Figma\", color: \"#F24E1E\" },\n  { icon: IoLogoTwitter, label: \"Twitter\", color: \"#1da1f2\" },\n  { icon: IoLogoLinkedin, label: \"LinkedIn\", color: \"#0077b5\" },\n  { icon: IoLogoGitlab, label: \"GitLab\", color: \"#fc6d26\" },\n  { icon: IoLogoVimeo, label: \"Vimeo\", color: \"#1ab7ea\" },\n  { icon: IoLogoJavascript, label: \"JavaScript\", color: \"#f7df1e\" },\n]\n",
+      "sha256": "c7af2b3052c351415bf9a31198a42ef3942693d3302b62e3bebef48ff77116ce",
+      "upstreamPath": "apps/compositions/src/examples/marquee-with-store.tsx",
+      "upstreamSha256": "4e433986085020e693f3fb15123fd1b0af0ddafc7c0407d0e2de13ca59cd0fe9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/marquee-with-testimonials.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Avatar, Box, Card, HStack, Marquee, Stack } from \"@chakra-ui/react\"\nimport { IoStar } from \"react-icons/io5\"\n\nexport const MarqueeWithTestimonials = () => (\n  <Marquee.Root pauseOnInteraction py=\"10\">\n    <Marquee.Edge side=\"start\" />\n    <Marquee.Viewport>\n      <Marquee.Content>\n        {testimonials.map((item, i) => (\n          <Marquee.Item key={i} px=\"1rem\">\n            <TestimonialCard item={item} />\n          </Marquee.Item>\n        ))}\n      </Marquee.Content>\n    </Marquee.Viewport>\n    <Marquee.Edge side=\"end\" />\n  </Marquee.Root>\n)\n\nconst TestimonialCard = ({ item }: { item: Testimonial }) => {\n  return (\n    <Card.Root maxW=\"sm\" h=\"full\">\n      <Card.Body>\n        <Stack gap=\"3\">\n          <HStack gap=\"1\">\n            {[...Array(5)].map((_, i) => (\n              <Box as={IoStar} key={i} color=\"orange.solid\" />\n            ))}\n          </HStack>\n\n          <Card.Description color=\"fg.muted\" textStyle=\"md\" minH=\"16\">\n            \"{item.content}\"\n          </Card.Description>\n\n          <HStack gap=\"3\" mt=\"1\">\n            <Avatar.Root size=\"sm\">\n              <Avatar.Image src={item.avatar} />\n              <Avatar.Fallback name={item.name} />\n            </Avatar.Root>\n            <Box textStyle=\"sm\">\n              <Box fontWeight=\"medium\" color=\"fg\">\n                {item.name}\n              </Box>\n              <Box color=\"fg.muted\">{item.role}</Box>\n            </Box>\n          </HStack>\n        </Stack>\n      </Card.Body>\n    </Card.Root>\n  )\n}\n\ninterface Testimonial {\n  name: string\n  role: string\n  rating: number\n  avatar: string\n  content: string\n}\n\nconst testimonials: Testimonial[] = [\n  {\n    name: \"Sarah Chen\",\n    role: \"Product Designer\",\n    rating: 5,\n    avatar: \"https://i.pravatar.cc/150?u=a042581f4e29026024d\",\n    content:\n      \"This library saved me weeks of work. The components are accessible and easy to customize.\",\n  },\n  {\n    name: \"Michael Torres\",\n    role: \"Frontend Dev\",\n    rating: 4,\n    avatar: \"https://i.pravatar.cc/150?u=a042581f4e29026704d\",\n    content:\n      \"The animations are buttery smooth. I love how easy it is to implement the marquee.\",\n  },\n  {\n    name: \"Emily Wang\",\n    role: \"CTO\",\n    rating: 5,\n    avatar: \"https://i.pravatar.cc/150?u=a04258114e29026302d\",\n    content:\n      \"Scalable, reliable, and beautiful. Highly recommended for any modern web project.\",\n  },\n  {\n    name: \"David Smith\",\n    role: \"Marketing Lead\",\n    rating: 5,\n    avatar: \"https://i.pravatar.cc/150?u=a042581f4e29026024d\",\n    content:\n      \"Our conversion rates increased by 15% after switching to this UI system.\",\n  },\n  {\n    name: \"Jessica Lee\",\n    role: \"Indie Hacker\",\n    rating: 4,\n    avatar: \"https://i.pravatar.cc/150?u=a04258a2462d826712d\",\n    content:\n      \"Documentation is top-notch. I was able to build my MVP in a single weekend.\",\n  },\n]\n",
+      "sha256": "cd10b5254dd3df45e6a957e88ff00632788fee4ae9089933fa24d0c14e0e1a18",
+      "upstreamPath": "apps/compositions/src/examples/marquee-with-testimonials.tsx",
+      "upstreamSha256": "77820bb95e26e96dfce3a54221686e722df1cfad0dc7b0c3cba719c3944d1ce0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/marquee/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MarqueeAutoFill as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/marquee-auto-fill\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "4452143b7e2ce467cb30b203081b9509891c7a2c6e9ac31a06034017da3de192",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/marquee/previews/marquee-diagonal.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MarqueeDiagonal as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/marquee-diagonal\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "58d4aa96aa682bedaaa365f0ceb057211707be97b748a6259ee6756cdefe4f62",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/marquee/previews/marquee-edge-gradient.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MarqueeEdgeGradient as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/marquee-edge-gradient\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "1e16cb190fad69f3c43bbdd0672ce40c66da27ac47c64eda883211e69cdaa87e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/marquee/previews/marquee-finite-loop.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MarqueeFiniteLoop as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/marquee-finite-loop\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "e3455383dd1b9f313b0df78f7a37c30b9ce245babad0c67c577b9ae88c07380e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/marquee/previews/marquee-image-gallery.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MarqueeImageGallery as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/marquee-image-gallery\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "f56aade2bca1eedcd71dd30fdd54034492f41501d5cf5b7162132ea20490c993",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/marquee/previews/marquee-multiple.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MarqueeMultiple as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/marquee-multiple\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a43435d4938ebbb0586ff3c34ee9180024322e90ef6350cee2f24ed87354fe93",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/marquee/previews/marquee-news-ticker.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MarqueeNewsTicker as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/marquee-news-ticker\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "f885df966774d7d84438d8862f1ec0ecef7f636890696c57e99a0bbf12488097",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/marquee/previews/marquee-pause-interactions.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MarqueePauseInteractions as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/marquee-pause-interactions\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "0e3262a03c64666dd8741026e6905e5c0deb5ecb598c98037fe2ad9755d04481",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/marquee/previews/marquee-reverse-direction.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MarqueeReverseDirection as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/marquee-reverse-direction\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "f72230d701d869900702c8c620d9864a42bc5612948358694b0a8be80c68c337",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/marquee/previews/marquee-rtl.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MarqueeRtl as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/marquee-rtl\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "6a5689abbf0a2e12d1c28c5e78888544a2af7da9b97bbfe479a0c2958b1e9226",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/marquee/previews/marquee-vertical-animation.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MarqueeVerticalAnimation as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/marquee-vertical-animation\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "8d2d5187ab902cc0e45cfbe49334320062e7f19f9344fb961976f734caed0d62",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/marquee/previews/marquee-with-speed.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MarqueeWithSpeed as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/marquee-with-speed\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "d68e8870cc29f59de894dd94e5287880de8ef1c82b10f68769994d5bc7ca55e4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/marquee/previews/marquee-with-store.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MarqueeWithStore as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/marquee-with-store\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "fc5911a38bc4b30f700a983917b4c60a8e1e1d58ff56068287167202991422a1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/marquee/previews/marquee-with-testimonials.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { MarqueeWithTestimonials as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/marquee-with-testimonials\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a7198e92026563bc3b044c4927090bed9ce9f79ca287279cbd314ed17d83be33",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "marquee",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/marquee-auto-fill.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/marquee-auto-fill.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI marquee\n\n14 published Chakra UI marquee examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/marquee-auto-fill.tsx\n"
+}

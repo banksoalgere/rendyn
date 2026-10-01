@@ -1,0 +1,193 @@
+{
+  "id": "mantine:emotion",
+  "sourceId": "mantine",
+  "slug": "mantine-emotion",
+  "name": "Mantine emotion",
+  "description": "7 published Mantine emotion examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/emotion@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantinex/demo@2.0.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "emotion",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "emotion",
+      "mantine emotion"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "7 published Mantine emotion examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "emotion:code:file",
+    "searchText": "Mantine emotion\nemotion\n7 published Mantine emotion examples with complete pinned source and MIT attribution.\nmantine emotion\ncode\nfile\nMantine emotion 7 published Mantine emotion examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/emotion Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/emotion/Emotion.demo.composition.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-emotion",
+  "manifestPath": "components/mantine-emotion/component.json",
+  "integrity": "sha256:3931676b6dcbf32a8deffcd347de517b020e6aca5021ca35d34e9abeb3efd51a",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/emotion/Emotion.demo.composition.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createStyles } from '@mantine/emotion';\n\nconst useStyles = createStyles((theme, _, u) => ({\n  button: {\n    // Assign reference to selector\n    ref: u.ref('button'),\n\n    // And add any other properties\n    backgroundColor: theme.colors.blue[6],\n    color: theme.white,\n    padding: `${theme.spacing.sm} ${theme.spacing.lg}`,\n    borderRadius: theme.radius.md,\n    cursor: 'pointer',\n    border: 0,\n  },\n\n  container: {\n    display: 'flex',\n    justifyContent: 'center',\n    padding: theme.spacing.xl,\n\n    [u.light]: {\n      backgroundColor: theme.colors.gray[1],\n    },\n\n    [u.dark]: {\n      backgroundColor: theme.colors.dark[8],\n    },\n\n    // Reference button with nested selector\n    [`&:hover .${u.ref('button')}`]: {\n      backgroundColor: theme.colors.violet[6],\n    },\n  },\n}));\n\nfunction Demo() {\n  const { classes } = useStyles();\n\n  return (\n    <div className={classes.container}>\n      <button className={classes.button} type=\"button\">\n        Hover container to change button color\n      </button>\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "d005ee7789211d410e52c937279d87d476aa76a3a6a8f2dd6dd7f6af85effaea",
+      "upstreamPath": "packages/@docs/demos/src/demos/emotion/Emotion.demo.composition.tsx",
+      "upstreamSha256": "139cbce86dada616d142674250024a44a3755163f5afeab867dd56973d74a417",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/emotion/Emotion.demo.cx.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { createStyles } from '@mantine/emotion';\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst code = `\nimport { useState } from 'react';\nimport { createStyles } from '@mantine/emotion';\n\nconst useStyles = createStyles((theme, _, u) => ({\n  button: {\n    border: 0,\n    borderRadius: theme.radius.md,\n    padding: theme.spacing.md,\n    cursor: 'pointer',\n    margin: theme.spacing.md,\n    lineHeight: 1,\n\n    [u.light]: {\n      backgroundColor: theme.colors.gray[1],\n    },\n\n    [u.dark]: {\n      backgroundColor: theme.colors.dark[5],\n    },\n  },\n\n  active: {\n    color: theme.white,\n\n    [u.light]: {\n      backgroundColor: theme.colors.blue[6],\n    },\n    [u.dark]: {\n      backgroundColor: theme.colors.blue[8],\n    },\n  },\n}));\n\nfunction Demo() {\n  const [active, setActive] = useState(0);\n  const { classes, cx } = useStyles();\n\n  return (\n    <div>\n      <button\n        className={cx(classes.button, { [classes.active]: active === 0 })}\n        onClick={() => setActive(0)}\n        type=\"button\"\n      >\n        First\n      </button>\n      <button\n        className={cx(classes.button, { [classes.active]: active === 1 })}\n        onClick={() => setActive(1)}\n        type=\"button\"\n      >\n        Second\n      </button>\n    </div>\n  );\n}\n`;\n\nconst useStyles = createStyles((theme, _, u) => ({\n  button: {\n    border: 0,\n    borderRadius: theme.radius.md,\n    padding: theme.spacing.md,\n    cursor: 'pointer',\n    margin: theme.spacing.md,\n    lineHeight: 1,\n\n    [u.light]: {\n      backgroundColor: theme.colors.gray[1],\n    },\n\n    [u.dark]: {\n      backgroundColor: theme.colors.dark[5],\n    },\n  },\n\n  active: {\n    color: theme.white,\n\n    [u.light]: {\n      backgroundColor: theme.colors.blue[6],\n    },\n    [u.dark]: {\n      backgroundColor: theme.colors.blue[8],\n    },\n  },\n}));\n\nfunction Demo() {\n  const [active, setActive] = useState(0);\n  const { classes, cx } = useStyles();\n\n  return (\n    <div>\n      <button\n        className={cx(classes.button, { [classes.active]: active === 0 })}\n        onClick={() => setActive(0)}\n        type=\"button\"\n      >\n        First\n      </button>\n      <button\n        className={cx(classes.button, { [classes.active]: active === 1 })}\n        onClick={() => setActive(1)}\n        type=\"button\"\n      >\n        Second\n      </button>\n    </div>\n  );\n}\n\nexport const cx: MantineDemo = {\n  type: 'code',\n  component: Demo,\n  code,\n  defaultExpanded: false,\n};\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "63ab38b32a6af42eac1834c38229eb59aece7f1dfa786a77d1b795e5831d7670",
+      "upstreamPath": "packages/@docs/demos/src/demos/emotion/Emotion.demo.cx.tsx",
+      "upstreamSha256": "38afe0853848553bbe29981d7bedadd3c58a7c0a30632c332af43b61598f5ab0",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/emotion/Emotion.demo.keyframes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createStyles, keyframes } from '@mantine/emotion';\n\nconst bounce = keyframes({\n  'from, 20%, 53%, 80%, to': { transform: 'translate3d(0, 0, 0)' },\n  '40%, 43%': { transform: 'translate3d(0, -30px, 0)' },\n  '70%': { transform: 'translate3d(0, -15px, 0)' },\n  '90%': { transform: 'translate3d(0, -4px, 0)' },\n});\n\nconst useStyles = createStyles((theme, _, u) => ({\n  container: {\n    textAlign: 'center',\n    padding: theme.spacing.xl,\n    animation: `${bounce} 3s ease-in-out infinite`,\n\n    [u.light]: { color: theme.black },\n\n    [u.dark]: { color: theme.white },\n  },\n}));\n\nfunction Demo() {\n  const { classes } = useStyles();\n  return <div className={classes.container}>Keyframes demo</div>;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "5c8f0977a6d84d2d0847f3766ec19a3470b543f7570d94ffa6c5e3209122ae6f",
+      "upstreamPath": "packages/@docs/demos/src/demos/emotion/Emotion.demo.keyframes.tsx",
+      "upstreamSha256": "fc7b092a00832a6cd7eddbdc0bb3827737dc99a9ef4371b0b2c0223b14d3c654",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/emotion/Emotion.demo.media.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { em, getBreakpointValue } from '@mantine/core';\n\nimport { createStyles } from '@mantine/emotion';\n\nconst useStyles = createStyles((theme, _, u) => ({\n  container: {\n    height: 100,\n    backgroundColor: theme.colors.blue[6],\n\n    // Media query with value from theme\n    [`@media (max-width: ${em(getBreakpointValue(theme.breakpoints.xl, theme.breakpoints) - 1)})`]:\n      {\n        backgroundColor: theme.colors.pink[6],\n      },\n\n    // Simplify media query writing with theme functions\n    [u.smallerThan('lg')]: {\n      backgroundColor: theme.colors.yellow[6],\n    },\n\n    // Static media query\n    [`@media (max-width: ${em(800)})`]: {\n      backgroundColor: theme.colors.orange[6],\n    },\n  },\n}));\n\nfunction Demo() {\n  const { classes } = useStyles();\n  return <div className={classes.container} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "46c974a11e61e3ad482a4d9b4854b31f4b37967d124abece21bc4fafe0823f6e",
+      "upstreamPath": "packages/@docs/demos/src/demos/emotion/Emotion.demo.media.tsx",
+      "upstreamSha256": "163f2643a363a248881ff6f79e81a0bfc49144899564166893a753fabd413861",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/emotion/Emotion.demo.parameters.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createStyles } from '@mantine/emotion';\n\ninterface ButtonProps {\n  color: 'blue' | 'violet';\n  radius: number;\n}\n\nconst useStyles = createStyles((theme, { color, radius }: ButtonProps) => ({\n  button: {\n    color: theme.white,\n    backgroundColor: theme.colors[color][6],\n    borderRadius: radius,\n    padding: theme.spacing.md,\n    margin: theme.spacing.md,\n    border: 0,\n    cursor: 'pointer',\n  },\n}));\n\nfunction Button({ color, radius }: ButtonProps) {\n  const { classes } = useStyles({ color, radius });\n  return (\n    <button type=\"button\" className={classes.button}>\n      {color} button with {radius} radius\n    </button>\n  );\n}\n\nfunction Demo() {\n  return (\n    <>\n      <Button color=\"blue\" radius={5} />\n      <Button color=\"violet\" radius={50} />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "45dd3b44a63acef6bf9d9b598d8032c5cdb0d48b1d470c8935bd17fb08908c31",
+      "upstreamPath": "packages/@docs/demos/src/demos/emotion/Emotion.demo.parameters.tsx",
+      "upstreamSha256": "64a24a3a2b8dfb863db9d20cd857148948ac7f7498654ff732bd655ed3864a89",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/emotion/Emotion.demo.pseudo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createStyles } from '@mantine/emotion';\n\nconst useStyles = createStyles((theme) => ({\n  button: {\n    color: theme.white,\n    backgroundColor: theme.colors.blue[6],\n    border: 0,\n    borderRadius: theme.radius.md,\n    padding: `${theme.spacing.sm} ${theme.spacing.lg}`,\n    cursor: 'pointer',\n    margin: theme.spacing.md,\n\n    // Use pseudo-classes just like you would in Sass\n    '&:hover': {\n      backgroundColor: theme.colors.blue[9],\n    },\n\n    '&:not(:first-of-type)': {\n      backgroundColor: theme.colors.violet[6],\n\n      // Pseudo-classes can be nested\n      '&:hover': {\n        backgroundColor: theme.colors.violet[9],\n      },\n    },\n  },\n}));\n\nfunction Demo() {\n  const { classes } = useStyles();\n  return (\n    <div>\n      <button type=\"button\" className={classes.button}>\n        First\n      </button>\n      <button type=\"button\" className={classes.button}>\n        Second\n      </button>\n      <button type=\"button\" className={classes.button}>\n        Third\n      </button>\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "3d75a9cc7356ee9e4b66c1decf8169fa4f2f8e45c87fa0a93add24a1debf7ddd",
+      "upstreamPath": "packages/@docs/demos/src/demos/emotion/Emotion.demo.pseudo.tsx",
+      "upstreamSha256": "701cdf463311e454874d54ff2a5f5fff1991a660a4bbc1a202a48c0320323028",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/emotion/Emotion.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createStyles } from '@mantine/emotion';\n\nconst useStyles = createStyles((theme, _, u) => ({\n  wrapper: {\n    maxWidth: 400,\n    width: '100%',\n    height: 180,\n    display: 'flex',\n    alignItems: 'center',\n    justifyContent: 'center',\n    marginLeft: 'auto',\n    marginRight: 'auto',\n    borderRadius: theme.radius.sm,\n\n    // Use light and dark selectors to change styles based on color scheme\n    [u.light]: {\n      backgroundColor: theme.colors.gray[1],\n    },\n\n    [u.dark]: {\n      backgroundColor: theme.colors.dark[5],\n    },\n\n    // Reference theme.breakpoints in smallerThan and largerThan functions\n    [u.smallerThan('sm')]: {\n      // Child reference in nested selectors via ref\n      [`& .${u.ref('child')}`]: {\n        fontSize: theme.fontSizes.xs,\n      },\n    },\n  },\n\n  child: {\n    // Assign selector to a ref to reference it in other styles\n    ref: u.ref('child'),\n    padding: theme.spacing.md,\n    borderRadius: theme.radius.sm,\n    boxShadow: theme.shadows.md,\n\n    [u.light]: {\n      backgroundColor: theme.white,\n      color: theme.black,\n    },\n\n    [u.dark]: {\n      backgroundColor: theme.colors.dark[8],\n      color: theme.white,\n    },\n  },\n}));\n\nfunction Demo() {\n  const { classes } = useStyles();\n\n  return (\n    <div className={classes.wrapper}>\n      <div className={classes.child}>createStyles demo</div>\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "54defa5c5a9d6e49a69e125afbb3daec7f7c1fa68c642689e8904138b5b81ae0",
+      "upstreamPath": "packages/@docs/demos/src/demos/emotion/Emotion.demo.usage.tsx",
+      "upstreamSha256": "bab092d1548910a4d4bc1628647f1d1a72ec5336a52f45cfe855e89de7816e8d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/emotion/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/emotion/Emotion.demo.composition\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "42cdb848d22cc9a5a59dc26a8bbf793d23e428ddf882951f7d6414f088371a7d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/emotion/previews/cx.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/emotion/Emotion.demo.cx\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "2a26abfc9a92f52a703a69b2e02b9e14d0126013b957cebf49ab7a159eae5f26",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/emotion/previews/keyframes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/emotion/Emotion.demo.keyframes\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "5ff684c4b45f7e9ea4bf5dbfa8d716cdd061b667cc5b3480241b4d70e6255e36",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/emotion/previews/media.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/emotion/Emotion.demo.media\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b9e4a1151c560276078be44d07cb18feb6057cfc4f2204ff2e6f0ad37e62a590",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/emotion/previews/parameters.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/emotion/Emotion.demo.parameters\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "25eec6bc157ce378c821bc5b7f4bd63d800df387248cb93507dd24a758852e93",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/emotion/previews/pseudo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/emotion/Emotion.demo.pseudo\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d3bd52247c1c7e95eda0a9f0150119adbbef89498025e201828e42096b6ae468",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/emotion/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/emotion/Emotion.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "2f895e74f61c49c607109d819e7bdd68bd9a0ae403c47a69eb0e37f55c2ce5dd",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/emotion@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/emotion@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "emotion",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/emotion",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/emotion/Emotion.demo.composition.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/emotion/Emotion.demo.composition.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine emotion\n\n7 published Mantine emotion examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/emotion\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/emotion/Emotion.demo.composition.tsx\n"
+}

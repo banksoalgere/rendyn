@@ -1,0 +1,39 @@
+"use client";
+
+export const data = [
+  'Apple',
+  'Banana',
+  'Cherry',
+  'Date',
+  'Elderberry',
+  'Fig',
+  'Grape',
+  'Honeydew',
+  'Indian Fig',
+  'Jackfruit',
+  'Kiwi',
+  'Lemon',
+  'Mango',
+  'Nectarine',
+  'Orange',
+  'Papaya',
+];
+
+export const dataCode = `export const data = [
+  'Apple',
+  'Banana',
+  'Cherry',
+  'Date',
+  'Elderberry',
+  'Fig',
+  'Grape',
+  'Honeydew',
+  'Indian Fig',
+  'Jackfruit',
+  'Kiwi',
+  'Lemon',
+  'Mango',
+  'Nectarine',
+  'Orange',
+  'Papaya',
+];`;

@@ -1,0 +1,332 @@
+{
+  "id": "heroui:button",
+  "sourceId": "heroui",
+  "slug": "heroui-button",
+  "name": "HeroUI Button",
+  "description": "15 published HeroUI button examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@heroui/react@2.8.10",
+    "@heroui/theme@2.4.26"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "button",
+    "tags": [
+      "button",
+      "file",
+      "theme"
+    ],
+    "aliases": [
+      "button",
+      "heroui button",
+      "cta",
+      "action control"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "15 published HeroUI button examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "button:file:theme",
+    "searchText": "HeroUI Button\nbutton\n15 published HeroUI button examples with complete pinned source and MIT attribution.\nheroui button\ncta\naction control\nfile\ntheme\nHeroUI Button 15 published HeroUI button examples with complete pinned source and MIT attribution. Installation Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3. Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node modules/@heroui/theme/dist/ / .{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://www.heroui.com/docs/components/button Pinned source: https://github.com/heroui inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/button/usage.raw.jsx"
+  },
+  "previewPath": "/preview/blocks/heroui-button",
+  "manifestPath": "components/heroui-button/component.json",
+  "integrity": "sha256:9a7589613677350e2b103da397bbab3d96f7332a3a1a2be2fe1a46c996186184",
+  "source": {
+    "id": "heroui",
+    "name": "HeroUI",
+    "repository": "https://github.com/heroui-inc/heroui",
+    "commit": "46e1f1f78e7777bc8639399e4f5fd913de046d33",
+    "registrySha256": "2db50391dcfd10fb02a7c56444a6c806bef67c80441bab4b7b59aa78038b75fd",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2020 Next UI Inc.",
+      "textPath": "source/heroui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/heroui/button/example.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Button} from \"@heroui/react\";\n\nexport default function App() {\n  return <Button color=\"primary\">Button</Button>;\n}\n",
+      "sha256": "3778a87ee39665f789b411e3098cda46c01ef0c0130d4f95f5791c383116d00f",
+      "upstreamPath": "apps/docs/content/components/button/usage.raw.jsx",
+      "upstreamSha256": "dc75a829e2cba286c5ebeb9e6c92a8c95337a2325e1a842fb3c514e8efdfa0a1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/button/colors.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex flex-wrap gap-4 items-center\">\n      <Button color=\"default\">Default</Button>\n      <Button color=\"primary\">Primary</Button>\n      <Button color=\"secondary\">Secondary</Button>\n      <Button color=\"success\">Success</Button>\n      <Button color=\"warning\">Warning</Button>\n      <Button color=\"danger\">Danger</Button>\n    </div>\n  );\n}\n",
+      "sha256": "bc06439ff5ca8939d85585e2d9f205e3cd786b95a5784677ecc70bf7084249b9",
+      "upstreamPath": "apps/docs/content/components/button/colors.raw.jsx",
+      "upstreamSha256": "c1a3e81a3406dae180f530ba6dc4b77fbbf6522f2f8bd421d0108345edfc7991",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/button/custom-impl.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type {ButtonProps as BaseButtonProps} from \"@heroui/react\";\n\nimport {forwardRef} from \"react\";\nimport {useButton, Ripple, Spinner} from \"@heroui/react\";\n\nexport interface ButtonProps extends BaseButtonProps {}\n\nconst MyButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {\n  const {\n    domRef,\n    children,\n    spinnerSize,\n    spinner = <Spinner color=\"current\" size={spinnerSize} />,\n    spinnerPlacement,\n    startContent,\n    endContent,\n    isLoading,\n    disableRipple,\n    getButtonProps,\n    getRippleProps,\n  } = useButton({\n    ref,\n    ...props,\n  });\n\n  const {ripples, onClear} = getRippleProps();\n\n  return (\n    <button ref={domRef} {...getButtonProps()}>\n      {startContent}\n      {isLoading && spinnerPlacement === \"start\" && spinner}\n      {children}\n      {isLoading && spinnerPlacement === \"end\" && spinner}\n      {endContent}\n      {!disableRipple && <Ripple ripples={ripples} onClear={onClear} />}\n    </button>\n  );\n});\n\nMyButton.displayName = \"MyButton\";\n\nexport default MyButton;\n",
+      "sha256": "f604f9b16d386683296e9ba0a084ede4b8d3b6112917e841a182c770e5d18496",
+      "upstreamPath": "apps/docs/content/components/button/custom-impl.raw.tsx",
+      "upstreamSha256": "913d988e02ca7cd7f4ec677ec7ab31600cb8e4cc492b64378f0087ea84ddbfce",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/button/custom-styles.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Button\n      className=\"bg-linear-to-tr from-pink-500 to-yellow-500 text-white shadow-lg\"\n      radius=\"full\"\n    >\n      Button\n    </Button>\n  );\n}\n",
+      "sha256": "dfa704981f7b90f1f81a18c9f5556d07bb72696596fcfdd9dd052f9f9ef9f3ae",
+      "upstreamPath": "apps/docs/content/components/button/custom-styles.raw.jsx",
+      "upstreamSha256": "1b6703fff0f12aafc6265288b8b716b8a3fd194c15f218d2fbd203b7aa238265",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/button/disabled.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Button isDisabled color=\"primary\">\n      Button\n    </Button>\n  );\n}\n",
+      "sha256": "0d55e1f2f5c81e4b2538d535dc59f0c5d604bd3bf7e495ac9da7c86e66114a6e",
+      "upstreamPath": "apps/docs/content/components/button/disabled.raw.jsx",
+      "upstreamSha256": "8d29f08dd8b2f101047c73e0fc2a2c7e7e628e8a83c25fc6c24c5d0c5e4ec1ca",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/button/group.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Button, ButtonGroup} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <ButtonGroup>\n      <Button>One</Button>\n      <Button>Two</Button>\n      <Button>Three</Button>\n    </ButtonGroup>\n  );\n}\n",
+      "sha256": "a241efd95abc702483632b99ff44b4808e781c6b0ca96190aa8f7e614b99a765",
+      "upstreamPath": "apps/docs/content/components/button/group.raw.jsx",
+      "upstreamSha256": "248c605108dc3216adc1ba9f49889e7b4e9417bf2dfdeef2c3d9876691baa492",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/button/group-disabled.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Button, ButtonGroup} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <ButtonGroup isDisabled>\n      <Button>One</Button>\n      <Button>Two</Button>\n      <Button>Three</Button>\n    </ButtonGroup>\n  );\n}\n",
+      "sha256": "b69735f9178055a088608262ba964dea91376ad127ef1954a339917dfad2fca7",
+      "upstreamPath": "apps/docs/content/components/button/group-disabled.raw.jsx",
+      "upstreamSha256": "51a181f2099f6e5fbac5f76f4ccb830548f05c51e3abe3bedcd60ec49de753cf",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/button/group-use-case.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  ButtonGroup,\n  Dropdown,\n  DropdownTrigger,\n  DropdownMenu,\n  DropdownItem,\n} from \"@heroui/react\";\n\nexport const ChevronDownIcon = () => {\n  return (\n    <svg fill=\"none\" height=\"14\" viewBox=\"0 0 24 24\" width=\"14\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path\n        d=\"M17.9188 8.17969H11.6888H6.07877C5.11877 8.17969 4.63877 9.33969 5.31877 10.0197L10.4988 15.1997C11.3288 16.0297 12.6788 16.0297 13.5088 15.1997L15.4788 13.2297L18.6888 10.0197C19.3588 9.33969 18.8788 8.17969 17.9188 8.17969Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport default function App() {\n  const [selectedOption, setSelectedOption] = React.useState(new Set([\"merge\"]));\n\n  const descriptionsMap = {\n    merge:\n      \"All commits from the source branch are added to the destination branch via a merge commit.\",\n    squash:\n      \"All commits from the source branch are added to the destination branch as a single commit.\",\n    rebase: \"All commits from the source branch are added to the destination branch individually.\",\n  };\n\n  const labelsMap = {\n    merge: \"Create a merge commit\",\n    squash: \"Squash and merge\",\n    rebase: \"Rebase and merge\",\n  };\n\n  // Convert the Set to an Array and get the first value.\n  const selectedOptionValue = Array.from(selectedOption)[0];\n\n  return (\n    <ButtonGroup variant=\"flat\">\n      <Button>{labelsMap[selectedOptionValue]}</Button>\n      <Dropdown placement=\"bottom-end\">\n        <DropdownTrigger>\n          <Button isIconOnly>\n            <ChevronDownIcon />\n          </Button>\n        </DropdownTrigger>\n        <DropdownMenu\n          disallowEmptySelection\n          aria-label=\"Merge options\"\n          className=\"max-w-[300px]\"\n          selectedKeys={selectedOption}\n          selectionMode=\"single\"\n          onSelectionChange={setSelectedOption}\n        >\n          <DropdownItem key=\"merge\" description={descriptionsMap[\"merge\"]}>\n            {labelsMap[\"merge\"]}\n          </DropdownItem>\n          <DropdownItem key=\"squash\" description={descriptionsMap[\"squash\"]}>\n            {labelsMap[\"squash\"]}\n          </DropdownItem>\n          <DropdownItem key=\"rebase\" description={descriptionsMap[\"rebase\"]}>\n            {labelsMap[\"rebase\"]}\n          </DropdownItem>\n        </DropdownMenu>\n      </Dropdown>\n    </ButtonGroup>\n  );\n}\n",
+      "sha256": "d396313ee89880b903492337da64780672d6bef8b495136f71238595e9f17fd2",
+      "upstreamPath": "apps/docs/content/components/button/group-use-case.raw.jsx",
+      "upstreamSha256": "11b4c91c26acf34bd869c8a1f320781854ec2ae65e79303616da7204fc9d35e7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/button/icon-only.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Button} from \"@heroui/react\";\n\nexport const HeartIcon = ({fill = \"currentColor\", filled, size, height, width, ...props}) => {\n  return (\n    <svg\n      fill={filled ? fill : \"none\"}\n      height={size || height || 24}\n      viewBox=\"0 0 24 24\"\n      width={size || width || 24}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...props}\n    >\n      <path\n        d=\"M12.62 20.81c-.34.12-.9.12-1.24 0C8.48 19.82 2 15.69 2 8.69 2 5.6 4.49 3.1 7.56 3.1c1.82 0 3.43.88 4.44 2.24a5.53 5.53 0 0 1 4.44-2.24C19.51 3.1 22 5.6 22 8.69c0 7-6.48 11.13-9.38 12.12Z\"\n        stroke={fill}\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        strokeWidth={1.5}\n      />\n    </svg>\n  );\n};\n\nexport const CameraIcon = ({fill = \"currentColor\", size, height, width, ...props}) => {\n  return (\n    <svg\n      fill=\"none\"\n      height={size || height || 24}\n      viewBox=\"0 0 24 24\"\n      width={size || width || 24}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...props}\n    >\n      <path\n        clipRule=\"evenodd\"\n        d=\"M17.44 6.236c.04.07.11.12.2.12 2.4 0 4.36 1.958 4.36 4.355v5.934A4.368 4.368 0 0117.64 21H6.36A4.361 4.361 0 012 16.645V10.71a4.361 4.361 0 014.36-4.355c.08 0 .16-.04.19-.12l.06-.12.106-.222a97.79 97.79 0 01.714-1.486C7.89 3.51 8.67 3.01 9.64 3h4.71c.97.01 1.76.51 2.22 1.408.157.315.397.822.629 1.31l.141.299.1.22zm-.73 3.836c0 .5.4.9.9.9s.91-.4.91-.9-.41-.909-.91-.909-.9.41-.9.91zm-6.44 1.548c.47-.47 1.08-.719 1.73-.719.65 0 1.26.25 1.72.71.46.459.71 1.068.71 1.717A2.438 2.438 0 0112 15.756c-.65 0-1.26-.25-1.72-.71a2.408 2.408 0 01-.71-1.717v-.01c-.01-.63.24-1.24.7-1.699zm4.5 4.485a3.91 3.91 0 01-2.77 1.15 3.921 3.921 0 01-3.93-3.926 3.865 3.865 0 011.14-2.767A3.921 3.921 0 0112 9.402c1.05 0 2.04.41 2.78 1.15.74.749 1.15 1.738 1.15 2.777a3.958 3.958 0 01-1.16 2.776z\"\n        fill={fill}\n        fillRule=\"evenodd\"\n      />\n    </svg>\n  );\n};\n\nexport default function App() {\n  return (\n    <div className=\"flex gap-4 items-center\">\n      <Button isIconOnly aria-label=\"Like\" color=\"danger\">\n        <HeartIcon />\n      </Button>\n      <Button isIconOnly aria-label=\"Take a photo\" color=\"warning\" variant=\"faded\">\n        <CameraIcon />\n      </Button>\n    </div>\n  );\n}\n",
+      "sha256": "97656a33744cd2f4794f6c081aec1242ab42ab396abe9c5dd92c3f372d23f28d",
+      "upstreamPath": "apps/docs/content/components/button/icon-only.raw.jsx",
+      "upstreamSha256": "1556b2168233b15eddf267657a3621b73e8423b0dbc61c08280d31dcd90b1021",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/button/icons.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Button} from \"@heroui/react\";\n\nexport const UserIcon = ({fill = \"currentColor\", size, height, width, ...props}) => {\n  return (\n    <svg\n      data-name=\"Iconly/Curved/Profile\"\n      height={size || height || 24}\n      viewBox=\"0 0 24 24\"\n      width={size || width || 24}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...props}\n    >\n      <g\n        fill=\"none\"\n        stroke={fill}\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        strokeMiterlimit={10}\n        strokeWidth={1.5}\n      >\n        <path\n          d=\"M11.845 21.662C8.153 21.662 5 21.088 5 18.787s3.133-4.425 6.845-4.425c3.692 0 6.845 2.1 6.845 4.4s-3.134 2.9-6.845 2.9z\"\n          data-name=\"Stroke 1\"\n        />\n        <path d=\"M11.837 11.174a4.372 4.372 0 10-.031 0z\" data-name=\"Stroke 3\" />\n      </g>\n    </svg>\n  );\n};\n\nexport const CameraIcon = ({fill = \"currentColor\", size, height, width, ...props}) => {\n  return (\n    <svg\n      fill=\"none\"\n      height={size || height || 24}\n      viewBox=\"0 0 24 24\"\n      width={size || width || 24}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...props}\n    >\n      <path\n        clipRule=\"evenodd\"\n        d=\"M17.44 6.236c.04.07.11.12.2.12 2.4 0 4.36 1.958 4.36 4.355v5.934A4.368 4.368 0 0117.64 21H6.36A4.361 4.361 0 012 16.645V10.71a4.361 4.361 0 014.36-4.355c.08 0 .16-.04.19-.12l.06-.12.106-.222a97.79 97.79 0 01.714-1.486C7.89 3.51 8.67 3.01 9.64 3h4.71c.97.01 1.76.51 2.22 1.408.157.315.397.822.629 1.31l.141.299.1.22zm-.73 3.836c0 .5.4.9.9.9s.91-.4.91-.9-.41-.909-.91-.909-.9.41-.9.91zm-6.44 1.548c.47-.47 1.08-.719 1.73-.719.65 0 1.26.25 1.72.71.46.459.71 1.068.71 1.717A2.438 2.438 0 0112 15.756c-.65 0-1.26-.25-1.72-.71a2.408 2.408 0 01-.71-1.717v-.01c-.01-.63.24-1.24.7-1.699zm4.5 4.485a3.91 3.91 0 01-2.77 1.15 3.921 3.921 0 01-3.93-3.926 3.865 3.865 0 011.14-2.767A3.921 3.921 0 0112 9.402c1.05 0 2.04.41 2.78 1.15.74.749 1.15 1.738 1.15 2.777a3.958 3.958 0 01-1.16 2.776z\"\n        fill={fill}\n        fillRule=\"evenodd\"\n      />\n    </svg>\n  );\n};\n\nexport default function App() {\n  return (\n    <div className=\"flex gap-4 items-center\">\n      <Button color=\"success\" endContent={<CameraIcon />}>\n        Take a photo\n      </Button>\n      <Button color=\"danger\" startContent={<UserIcon />} variant=\"bordered\">\n        Delete user\n      </Button>\n    </div>\n  );\n}\n",
+      "sha256": "03c83114bb1c1da3d5b159157398610d91668964bae7b11c8018367688914b5a",
+      "upstreamPath": "apps/docs/content/components/button/icons.raw.jsx",
+      "upstreamSha256": "67b76dda3abd72d082663c57651c2f858b61356862a913346c7fcdde0dff6f31",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/button/loading.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Button isLoading color=\"primary\">\n      Loading\n    </Button>\n  );\n}\n",
+      "sha256": "6ab5fcb0e0da952d2f932c43bcdf1a7fbb8f47502c914feaa4aa4bdbbdb4185e",
+      "upstreamPath": "apps/docs/content/components/button/loading.raw.jsx",
+      "upstreamSha256": "c128eb2523ccd398ec6bd6651c6a50aa3a0245e2ff1659e001d8928a31dce460",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/button/loading-custom.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Button\n      isLoading\n      color=\"secondary\"\n      spinner={\n        <svg\n          className=\"animate-spin h-5 w-5 text-current\"\n          fill=\"none\"\n          viewBox=\"0 0 24 24\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <circle\n            className=\"opacity-25\"\n            cx=\"12\"\n            cy=\"12\"\n            r=\"10\"\n            stroke=\"currentColor\"\n            strokeWidth=\"4\"\n          />\n          <path\n            className=\"opacity-75\"\n            d=\"M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z\"\n            fill=\"currentColor\"\n          />\n        </svg>\n      }\n    >\n      Loading\n    </Button>\n  );\n}\n",
+      "sha256": "5c944d5b3867b57463e5ee1584ef8924b13b499e0895f49f455cef20f3f65361",
+      "upstreamPath": "apps/docs/content/components/button/loading-custom.raw.jsx",
+      "upstreamSha256": "d297c0a4e0de71b243e1c90e75a9157e6cda0e6da4968747b77b97d33cd9ea33",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/button/radius.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex gap-4 items-center\">\n      <Button radius=\"full\">Full</Button>\n      <Button radius=\"lg\">Large</Button>\n      <Button radius=\"md\">Medium</Button>\n      <Button radius=\"sm\">Small</Button>\n      <Button radius=\"none\">None</Button>\n    </div>\n  );\n}\n",
+      "sha256": "73345cbc45ac02c44cf8b4b442cd0577bd223b473fc35092347f5e0fb45b8be7",
+      "upstreamPath": "apps/docs/content/components/button/radius.raw.jsx",
+      "upstreamSha256": "88de223bfa6cd086061d333ce98af1ac6ecf6fe2c33e67020ffe215722ef45d8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/button/sizes.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex gap-4 items-center\">\n      <Button size=\"sm\">Small</Button>\n      <Button size=\"md\">Medium</Button>\n      <Button size=\"lg\">Large</Button>\n    </div>\n  );\n}\n",
+      "sha256": "76924957b9dfc53949de6a6ae772518c3fcabbfa0708efea146bfff879424163",
+      "upstreamPath": "apps/docs/content/components/button/sizes.raw.jsx",
+      "upstreamSha256": "4243dd95581a9c72770f0b4fe09f37606512cec5df3053cfc0973794cdec9b58",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/button/variants.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex flex-wrap gap-4 items-center\">\n      <Button color=\"primary\" variant=\"solid\">\n        Solid\n      </Button>\n      <Button color=\"primary\" variant=\"faded\">\n        Faded\n      </Button>\n      <Button color=\"primary\" variant=\"bordered\">\n        Bordered\n      </Button>\n      <Button color=\"primary\" variant=\"light\">\n        Light\n      </Button>\n      <Button color=\"primary\" variant=\"flat\">\n        Flat\n      </Button>\n      <Button color=\"primary\" variant=\"ghost\">\n        Ghost\n      </Button>\n      <Button color=\"primary\" variant=\"shadow\">\n        Shadow\n      </Button>\n    </div>\n  );\n}\n",
+      "sha256": "f6ebac45743ff24b9e051307767e34233230a90e25be09bde51b7a814f2eb0e6",
+      "upstreamPath": "apps/docs/content/components/button/variants.raw.jsx",
+      "upstreamSha256": "1e6b8405dbaf3b66af77eb00ac91235b8a7acf2e9cfc3e9ba1698b8e70124907",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/button/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/button/example\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "a87db54c7d5db0943b7012c6adba6efa9830019e3d9588bd80dc71d447486410",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/button/previews/colors.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/button/colors.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "8d7b324b46f175c8f235a666d9eb1932e6571e12bfc13be167f9185736fd086c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/button/previews/custom-impl.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/button/custom-impl.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "a1b97347e0cc8109572805be49cc896ad437da19905033a0482860152c96a20c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/button/previews/custom-styles.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/button/custom-styles.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "d31ba6e8da0f12fd9dc8065325f258be3547a6628d56cad1f2cb78998a2000da",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/button/previews/disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/button/disabled.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "dee7b0d3c112c1d16420b7fc6dec07e523add2ed528f541799d250f6de090e28",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/button/previews/group.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/button/group.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "3c713163ad1a53d0174ca936712b68d99bc3d54a38a60a25baac5cd672752d24",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/button/previews/group-disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/button/group-disabled.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "eba070147501baf9babf63d3768cda19c0326acf403964f08d6b88f8a147b15e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/button/previews/group-use-case.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/button/group-use-case.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "3057a7faf11484a689b91533f9e3b9e15343756008d70a3dd0ba2192275cab65",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/button/previews/icon-only.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/button/icon-only.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "2c41b0728dfc7d899bfe9ac23b9a84af2efd3dc1fe1d4d972e0b935f10931983",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/button/previews/icons.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/button/icons.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "77b0adfc5e58964b33c82560314a8de89e9044f4d25461e00201d349f84c36c3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/button/previews/loading.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/button/loading.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "1d9ef7ef9a63c1aabb19ac72c6d47a86b10f46045427086e07706f1083af0b48",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/button/previews/loading-custom.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/button/loading-custom.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "4e2c2c7f924be02182d083f0bf9a24f0ea02de320f9a5122ac794dc0917cf594",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/button/previews/radius.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/button/radius.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "9c6d00b70f3b4f05d0e64995e58dd1c5c6841512c9ace2a3f1cb87297446ff67",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/button/previews/sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/button/sizes.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "0c2b4dfecf23b87256e021fd79f69732298d65523a3c64947789616fd73892c4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/button/previews/variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/button/variants.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "4fb1b83ced82c4ab7d11cac5612951dfd9c6e79be31619edcdbcdbb5c5d56e06",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/theme.css",
+      "type": "style",
+      "content": ".heroui-preview {\n  --primary: hsl(var(--heroui-primary));\n  --primary-foreground: hsl(var(--heroui-primary-foreground));\n  --background: hsl(var(--heroui-background));\n  --foreground: hsl(var(--heroui-foreground));\n  --border: hsl(var(--heroui-divider));\n}\n",
+      "sha256": "d7e90a5ed4780fbf5df6328631a4420ee099f07d345a8f509fce6937bd3e67c0",
+      "transformation": "Authored scoped mapping to official HeroUI semantic tokens."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/heroui/theme.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.",
+      "Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "button",
+    "upstreamPageUrl": "https://www.heroui.com/docs/components/button",
+    "upstreamDetailUrl": "https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/button/usage.raw.jsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/heroui-inc/heroui/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/button/usage.raw.jsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition.",
+      "Authored scoped mapping to official HeroUI semantic tokens."
+    ]
+  },
+  "documentation": "# HeroUI Button\n\n15 published HeroUI button examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.\n- Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://www.heroui.com/docs/components/button\nPinned source: https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/button/usage.raw.jsx\n"
+}

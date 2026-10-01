@@ -1,0 +1,345 @@
+{
+  "id": "heroui:breadcrumbs",
+  "sourceId": "heroui",
+  "slug": "heroui-breadcrumbs",
+  "name": "HeroUI breadcrumbs",
+  "description": "16 published HeroUI breadcrumbs examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@heroui/react@2.8.10",
+    "@heroui/theme@2.4.26"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "breadcrumbs",
+    "tags": [
+      "file",
+      "theme"
+    ],
+    "aliases": [
+      "breadcrumbs",
+      "heroui breadcrumbs"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "16 published HeroUI breadcrumbs examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "breadcrumbs:file:theme",
+    "searchText": "HeroUI breadcrumbs\nbreadcrumbs\n16 published HeroUI breadcrumbs examples with complete pinned source and MIT attribution.\nheroui breadcrumbs\nfile\ntheme\nHeroUI breadcrumbs 16 published HeroUI breadcrumbs examples with complete pinned source and MIT attribution. Installation Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3. Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node modules/@heroui/theme/dist/ / .{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/heroui inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/breadcrumbs Pinned source: https://github.com/heroui inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/breadcrumbs/collapsing items.raw.jsx"
+  },
+  "previewPath": "/preview/blocks/heroui-breadcrumbs",
+  "manifestPath": "components/heroui-breadcrumbs/component.json",
+  "integrity": "sha256:2baeda3b740688cd972f89a0ea7f7209ef45170805373f431a41658a9483b588",
+  "source": {
+    "id": "heroui",
+    "name": "HeroUI",
+    "repository": "https://github.com/heroui-inc/heroui",
+    "commit": "46e1f1f78e7777bc8639399e4f5fd913de046d33",
+    "registrySha256": "2db50391dcfd10fb02a7c56444a6c806bef67c80441bab4b7b59aa78038b75fd",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2020 Next UI Inc.",
+      "textPath": "source/heroui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/breadcrumbs/collapsing-items.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Breadcrumbs, BreadcrumbItem} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Breadcrumbs itemsAfterCollapse={2} itemsBeforeCollapse={1} maxItems={3}>\n      <BreadcrumbItem href=\"#home\">Home</BreadcrumbItem>\n      <BreadcrumbItem href=\"#music\">Music</BreadcrumbItem>\n      <BreadcrumbItem href=\"#artist\">Artist</BreadcrumbItem>\n      <BreadcrumbItem href=\"#album\">Album</BreadcrumbItem>\n      <BreadcrumbItem href=\"#song\">Song</BreadcrumbItem>\n    </Breadcrumbs>\n  );\n}\n",
+      "sha256": "6e6a8ad852a53e8a8290960a108a0f71b9326f5c0aaf4280b4a30d362886941e",
+      "upstreamPath": "apps/docs/content/components/breadcrumbs/collapsing-items.raw.jsx",
+      "upstreamSha256": "692fad794f8cee676dcb27d83520efa92091b888c472d4a08fa1038ca6461b4f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/breadcrumbs/colors.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Breadcrumbs, BreadcrumbItem} from \"@heroui/react\";\n\nexport default function App() {\n  const colors = [\"foreground\", \"primary\", \"secondary\", \"success\", \"warning\", \"danger\"];\n\n  return (\n    <div className=\"flex flex-col flex-wrap gap-4\">\n      {colors.map((color) => (\n        <Breadcrumbs key={color} color={color}>\n          <BreadcrumbItem>Home</BreadcrumbItem>\n          <BreadcrumbItem>Music</BreadcrumbItem>\n          <BreadcrumbItem>Artist</BreadcrumbItem>\n          <BreadcrumbItem>Album</BreadcrumbItem>\n          <BreadcrumbItem>Song</BreadcrumbItem>\n        </Breadcrumbs>\n      ))}\n    </div>\n  );\n}\n",
+      "sha256": "068f42fc533b21ccef0d0cc5174efacab0573b2c99dad712bb0698bdc604c892",
+      "upstreamPath": "apps/docs/content/components/breadcrumbs/colors.raw.jsx",
+      "upstreamSha256": "26a9433a48caec6205e4281ee19ef817bfd9127c2cef0027cf6d4803b03a902e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/breadcrumbs/controlled.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from \"react\";\nimport {Breadcrumbs, BreadcrumbItem} from \"@heroui/react\";\n\nexport default function App() {\n  const [currentPage, setCurrentPage] = React.useState<React.Key>(\"song\");\n\n  return (\n    <Breadcrumbs underline=\"active\" onAction={(key) => setCurrentPage(key)}>\n      <BreadcrumbItem key=\"home\" isCurrent={currentPage === \"home\"}>\n        Home\n      </BreadcrumbItem>\n      <BreadcrumbItem key=\"music\" isCurrent={currentPage === \"music\"}>\n        Music\n      </BreadcrumbItem>\n      <BreadcrumbItem key=\"artist\" isCurrent={currentPage === \"artist\"}>\n        Artist\n      </BreadcrumbItem>\n      <BreadcrumbItem key=\"album\" isCurrent={currentPage === \"album\"}>\n        Album\n      </BreadcrumbItem>\n      <BreadcrumbItem key=\"song\" isCurrent={currentPage === \"song\"}>\n        Song\n      </BreadcrumbItem>\n    </Breadcrumbs>\n  );\n}\n",
+      "sha256": "841237b95aa7ddf09f01596cf58b30bd3482e4edcec7ed76b916b795c6a3599b",
+      "upstreamPath": "apps/docs/content/components/breadcrumbs/controlled.raw.tsx",
+      "upstreamSha256": "bd62cb3509a29abe2c69f43b3e9c9de4b33394a1113b4e71e00a5389112c6c51",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/breadcrumbs/custom-items.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Breadcrumbs,\n  BreadcrumbItem,\n  Dropdown,\n  DropdownTrigger,\n  DropdownMenu,\n  DropdownItem,\n  Button,\n} from \"@heroui/react\";\n\nexport const ChevronDownIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      stroke=\"currentColor\"\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      strokeWidth=\"1.5\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path d=\"m6 9 6 6 6-6\" />\n    </svg>\n  );\n};\n\nexport default function App() {\n  return (\n    <Breadcrumbs\n      itemClasses={{\n        item: \"px-2\",\n        separator: \"px-0\",\n      }}\n    >\n      <BreadcrumbItem href=\"#home\">Home</BreadcrumbItem>\n      <BreadcrumbItem href=\"#music\">Music</BreadcrumbItem>\n      <BreadcrumbItem href=\"#artist\">Artist</BreadcrumbItem>\n      <BreadcrumbItem href=\"#album\">Album</BreadcrumbItem>\n      <BreadcrumbItem\n        classNames={{\n          item: \"px-0\",\n        }}\n      >\n        <Dropdown>\n          <DropdownTrigger>\n            <Button\n              className=\"h-6 pr-2 text-small\"\n              endContent={<ChevronDownIcon className=\"text-default-500\" />}\n              radius=\"full\"\n              size=\"sm\"\n              variant=\"light\"\n            >\n              Songs\n            </Button>\n          </DropdownTrigger>\n          <DropdownMenu aria-label=\"Routes\">\n            <DropdownItem href=\"#song-1\">Song 1</DropdownItem>\n            <DropdownItem href=\"#song2\">Song 2</DropdownItem>\n            <DropdownItem href=\"#song3\">Song 3</DropdownItem>\n          </DropdownMenu>\n        </Dropdown>\n      </BreadcrumbItem>\n    </Breadcrumbs>\n  );\n}\n",
+      "sha256": "6085091fdfff246a3c5a6c907535761800031857a3c8f2a42951d6ee8d3ca6cd",
+      "upstreamPath": "apps/docs/content/components/breadcrumbs/custom-items.raw.jsx",
+      "upstreamSha256": "2ecfb23796a6bb1e080a4bdce40828286e5a8af8c3cb19ac81df2d9e4b9fbb9d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/breadcrumbs/custom-styles.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Breadcrumbs, BreadcrumbItem} from \"@heroui/react\";\n\nexport const ShoppingCartIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M16.25 22.5C17.2165 22.5 18 21.7165 18 20.75C18 19.7835 17.2165 19 16.25 19C15.2835 19 14.5 19.7835 14.5 20.75C14.5 21.7165 15.2835 22.5 16.25 22.5Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M8.25 22.5C9.2165 22.5 10 21.7165 10 20.75C10 19.7835 9.2165 19 8.25 19C7.2835 19 6.5 19.7835 6.5 20.75C6.5 21.7165 7.2835 22.5 8.25 22.5Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M4.84 3.94L4.64 6.39C4.6 6.86 4.97 7.25 5.44 7.25H20.75C21.17 7.25 21.52 6.93 21.55 6.51C21.68 4.74 20.33 3.3 18.56 3.3H6.27C6.17 2.86 5.97 2.44 5.66 2.09C5.16 1.56 4.46 1.25 3.74 1.25H2C1.59 1.25 1.25 1.59 1.25 2C1.25 2.41 1.59 2.75 2 2.75H3.74C4.05 2.75 4.34 2.88 4.55 3.1C4.76 3.33 4.86 3.63 4.84 3.94Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M20.5101 8.75H5.17005C4.75005 8.75 4.41005 9.07 4.37005 9.48L4.01005 13.83C3.87005 15.54 5.21005 17 6.92005 17H18.0401C19.5401 17 20.8601 15.77 20.9701 14.27L21.3001 9.6C21.3401 9.14 20.9801 8.75 20.5101 8.75Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport default function App() {\n  return (\n    <Breadcrumbs\n      classNames={{\n        list: \"bg-linear-to-br from-violet-500 to-fuchsia-500 shadow-small\",\n      }}\n      itemClasses={{\n        item: \"text-white/60 data-[current=true]:text-white\",\n        separator: \"text-white/40\",\n      }}\n      underline=\"hover\"\n      variant=\"solid\"\n    >\n      <BreadcrumbItem href=\"#shopping-cart\">\n        <ShoppingCartIcon />\n      </BreadcrumbItem>\n      <BreadcrumbItem href=\"#checkout\">Checkout</BreadcrumbItem>\n      <BreadcrumbItem href=\"#payment\">Payment</BreadcrumbItem>\n      <BreadcrumbItem href=\"#delivery-address\">Delivery Address</BreadcrumbItem>\n    </Breadcrumbs>\n  );\n}\n",
+      "sha256": "db7774186fce53a2dc694acc979b8897ff516d0c7655eb9220cb419436e68a89",
+      "upstreamPath": "apps/docs/content/components/breadcrumbs/custom-styles.raw.jsx",
+      "upstreamSha256": "1907b9f153996c2fe4a0886238665a3465ad9bfedcf1d859054b17950777400e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/breadcrumbs/customizing-ellipsis.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Breadcrumbs,\n  BreadcrumbItem,\n  Dropdown,\n  DropdownTrigger,\n  DropdownMenu,\n  DropdownItem,\n  Button,\n} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Breadcrumbs\n      itemsAfterCollapse={2}\n      itemsBeforeCollapse={1}\n      maxItems={3}\n      renderEllipsis={({items, ellipsisIcon, separator}) => (\n        <div className=\"flex items-center\">\n          <Dropdown>\n            <DropdownTrigger>\n              <Button isIconOnly className=\"min-w-6 w-6 h-6\" size=\"sm\" variant=\"flat\">\n                {ellipsisIcon}\n              </Button>\n            </DropdownTrigger>\n            <DropdownMenu aria-label=\"Routes\">\n              {items.map((item, index) => (\n                <DropdownItem key={index} href={item.href}>\n                  {item.children}\n                </DropdownItem>\n              ))}\n            </DropdownMenu>\n          </Dropdown>\n          {separator}\n        </div>\n      )}\n    >\n      <BreadcrumbItem href=\"#home\">Home</BreadcrumbItem>\n      <BreadcrumbItem href=\"#music\">Music</BreadcrumbItem>\n      <BreadcrumbItem href=\"#artist\">Artist</BreadcrumbItem>\n      <BreadcrumbItem href=\"#album\">Album</BreadcrumbItem>\n      <BreadcrumbItem href=\"#featured\">Featured</BreadcrumbItem>\n      <BreadcrumbItem href=\"#song\">Song</BreadcrumbItem>\n    </Breadcrumbs>\n  );\n}\n",
+      "sha256": "350f4601dd2d4ecd75b0486d9a879af59cdf8d1f5334b1f2b0dc2c693d11cccc",
+      "upstreamPath": "apps/docs/content/components/breadcrumbs/customizing-ellipsis.raw.jsx",
+      "upstreamSha256": "fb5207f2b118bf2aa29841b54955f72d205f9fdb0b9cdf0c91adb6524d5f0a51",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/breadcrumbs/disabled.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Breadcrumbs, BreadcrumbItem} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Breadcrumbs isDisabled>\n      <BreadcrumbItem>Home</BreadcrumbItem>\n      <BreadcrumbItem>Music</BreadcrumbItem>\n      <BreadcrumbItem>Artist</BreadcrumbItem>\n      <BreadcrumbItem>Album</BreadcrumbItem>\n      <BreadcrumbItem>Song</BreadcrumbItem>\n    </Breadcrumbs>\n  );\n}\n",
+      "sha256": "ff4a030c311b30232bbc8e4ff76e71e399b8e2266e4011cfd01c3bf26b31c027",
+      "upstreamPath": "apps/docs/content/components/breadcrumbs/disabled.raw.jsx",
+      "upstreamSha256": "711d2273bb474f55335256d14f8431907702e0e22f7074632c0b99ca007440eb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/breadcrumbs/menu-type.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from \"react\";\nimport {Breadcrumbs, BreadcrumbItem} from \"@heroui/react\";\n\nexport default function App() {\n  const [currentPage, setCurrentPage] = React.useState<React.Key>(\"music\");\n\n  return (\n    <Breadcrumbs\n      hideSeparator\n      classNames={{\n        list: \"gap-2\",\n      }}\n      itemClasses={{\n        item: [\n          \"px-2 py-0.5 border-small border-default-400 rounded-small\",\n          \"data-[current=true]:border-default-800 data-[current=true]:bg-foreground data-[current=true]:text-background transition-colors\",\n          \"data-[disabled=true]:border-default-400 data-[disabled=true]:bg-default-100\",\n        ],\n      }}\n      onAction={(key) => setCurrentPage(key)}\n    >\n      <BreadcrumbItem key=\"home\" isCurrent={currentPage === \"home\"}>\n        Home\n      </BreadcrumbItem>\n      <BreadcrumbItem key=\"music\" isCurrent={currentPage === \"music\"}>\n        Music\n      </BreadcrumbItem>\n      <BreadcrumbItem key=\"artist\" isCurrent={currentPage === \"artist\"}>\n        Artist\n      </BreadcrumbItem>\n      <BreadcrumbItem key=\"album\" isCurrent={currentPage === \"album\"}>\n        Album\n      </BreadcrumbItem>\n      <BreadcrumbItem key=\"song\" isDisabled isCurrent={currentPage === \"song\"}>\n        Song\n      </BreadcrumbItem>\n    </Breadcrumbs>\n  );\n}\n",
+      "sha256": "020a2d54765e35cc75274c85dcc5657aba445dfa130c1b67c83cfd1bc4f56323",
+      "upstreamPath": "apps/docs/content/components/breadcrumbs/menu-type.raw.tsx",
+      "upstreamSha256": "b62c7b1af3bb883ba9efbe7caafbf978445c8236780dadecbd6f7cd57bedb8c4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/breadcrumbs/radius.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Breadcrumbs, BreadcrumbItem} from \"@heroui/react\";\n\nexport default function App() {\n  const radius = [\"full\", \"lg\", \"md\", \"sm\", \"none\"];\n\n  return (\n    <div className=\"flex flex-col flex-wrap gap-4\">\n      {radius.map((r) => (\n        <Breadcrumbs key={r} radius={r} variant=\"solid\">\n          <BreadcrumbItem>Home</BreadcrumbItem>\n          <BreadcrumbItem>Music</BreadcrumbItem>\n          <BreadcrumbItem>Artist</BreadcrumbItem>\n          <BreadcrumbItem>Album</BreadcrumbItem>\n          <BreadcrumbItem>Song</BreadcrumbItem>\n        </Breadcrumbs>\n      ))}\n    </div>\n  );\n}\n",
+      "sha256": "a69e055cb232ee2bcc7780f98aebb5292cfbd3dad6a58673ed9f8f10bc00e802",
+      "upstreamPath": "apps/docs/content/components/breadcrumbs/radius.raw.jsx",
+      "upstreamSha256": "4d25b1ea25e3b83fba9d38f4bac5a10d9e9faf383cd55cd19df71e99cd0d901d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/breadcrumbs/routing.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Breadcrumbs, BreadcrumbItem} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Breadcrumbs>\n      <BreadcrumbItem href=\"/docs/components/button\">Button</BreadcrumbItem>\n      <BreadcrumbItem href=\"/docs/components/breadcrumbs\">Breadcrumbs</BreadcrumbItem>\n      <BreadcrumbItem href=\"/docs/components/card\">Card</BreadcrumbItem>\n      <BreadcrumbItem href=\"/docs/components/checkbox\">Checkbox</BreadcrumbItem>\n      <BreadcrumbItem href=\"/docs/components/code\">Code</BreadcrumbItem>\n    </Breadcrumbs>\n  );\n}\n",
+      "sha256": "f45cf896c03a7d34ee694fded3427a6978ef97d29f2d465fccfb7b1590e4710d",
+      "upstreamPath": "apps/docs/content/components/breadcrumbs/routing.raw.jsx",
+      "upstreamSha256": "b3aba5f0ba59c82ac4ce725c85cecf9de7bd16915392d77ccb9c2c310a5a7ece",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/breadcrumbs/separator.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Breadcrumbs, BreadcrumbItem} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Breadcrumbs\n      itemClasses={{\n        separator: \"px-2\",\n      }}\n      separator=\"/\"\n    >\n      <BreadcrumbItem>Home</BreadcrumbItem>\n      <BreadcrumbItem>Music</BreadcrumbItem>\n      <BreadcrumbItem>Artist</BreadcrumbItem>\n      <BreadcrumbItem>Album</BreadcrumbItem>\n      <BreadcrumbItem>Song</BreadcrumbItem>\n    </Breadcrumbs>\n  );\n}\n",
+      "sha256": "fdf35f75091cd30833f8c315b3d53851da65b9ce5e609b92d50ba3e054816156",
+      "upstreamPath": "apps/docs/content/components/breadcrumbs/separator.raw.jsx",
+      "upstreamSha256": "ac2cdb599cfef84e962067164089d8d13ca54480bc1a9d570bf9237102260fc6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/breadcrumbs/sizes.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Breadcrumbs, BreadcrumbItem} from \"@heroui/react\";\n\nexport default function App() {\n  const sizes = [\"sm\", \"md\", \"lg\"];\n\n  return (\n    <div className=\"flex flex-col flex-wrap gap-4\">\n      {sizes.map((size) => (\n        <Breadcrumbs key={size} size={size}>\n          <BreadcrumbItem>Home</BreadcrumbItem>\n          <BreadcrumbItem>Music</BreadcrumbItem>\n          <BreadcrumbItem>Artist</BreadcrumbItem>\n          <BreadcrumbItem>Album</BreadcrumbItem>\n          <BreadcrumbItem>Song</BreadcrumbItem>\n        </Breadcrumbs>\n      ))}\n    </div>\n  );\n}\n",
+      "sha256": "9775108c36c95da2327b845775e430f4fb2cd827e7871fa5976b49160afdfb90",
+      "upstreamPath": "apps/docs/content/components/breadcrumbs/sizes.raw.jsx",
+      "upstreamSha256": "6c28199dd28d147716dc0e926896b7cd952b551a156cec97195be6d063827c93",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/breadcrumbs/start-end-content.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Breadcrumbs, BreadcrumbItem} from \"@heroui/react\";\n\nexport const HomeIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M20.0402 6.82165L14.2802 2.79165C12.7102 1.69165 10.3002 1.75165 8.79023 2.92165L3.78023 6.83165C2.78023 7.61165 1.99023 9.21165 1.99023 10.4716V17.3716C1.99023 19.9216 4.06023 22.0016 6.61023 22.0016H17.3902C19.9402 22.0016 22.0102 19.9316 22.0102 17.3816V10.6016C22.0102 9.25165 21.1402 7.59165 20.0402 6.82165ZM12.7502 18.0016C12.7502 18.4116 12.4102 18.7516 12.0002 18.7516C11.5902 18.7516 11.2502 18.4116 11.2502 18.0016V15.0016C11.2502 14.5916 11.5902 14.2516 12.0002 14.2516C12.4102 14.2516 12.7502 14.5916 12.7502 15.0016V18.0016Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const MusicIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M14.5406 13.6719C14.1806 13.6719 13.8906 13.9619 13.8906 14.3219C13.8906 14.6819 14.1806 14.9719 14.5406 14.9719C14.9006 14.9719 15.1906 14.6819 15.1906 14.3219C15.1806 13.9619 14.8906 13.6719 14.5406 13.6719Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M9.06016 14.6602C8.70016 14.6602 8.41016 14.9502 8.41016 15.3102C8.41016 15.6702 8.70016 15.9602 9.06016 15.9602C9.42016 15.9602 9.71016 15.6702 9.71016 15.3102C9.71016 14.9502 9.42016 14.6602 9.06016 14.6602Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM16.88 9.55V14.31C16.88 15.6 15.83 16.65 14.54 16.65C13.25 16.65 12.2 15.6 12.2 14.31C12.2 13.02 13.25 11.97 14.54 11.97C14.77 11.97 14.98 12.01 15.19 12.07V10.65L11.41 11.68V15.3C11.41 15.31 11.4 15.32 11.4 15.33C11.39 16.61 10.34 17.64 9.06 17.64C7.77 17.64 6.72 16.59 6.72 15.3C6.72 14.01 7.77 12.96 9.06 12.96C9.29 12.96 9.5 13 9.71 13.06V11.03V9.29C9.71 8.32 10.31 7.53 11.25 7.28L14.24 6.46C15.2 6.2 15.8 6.45 16.14 6.71C16.47 6.97 16.88 7.48 16.88 8.48V9.55Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const ArtistIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M19.5119 5.85L13.5719 2.42C12.6019 1.86 11.4019 1.86 10.4219 2.42L4.49187 5.85C3.52187 6.41 2.92188 7.45 2.92188 8.58V15.42C2.92188 16.54 3.52187 17.58 4.49187 18.15L10.4319 21.58C11.4019 22.14 12.6019 22.14 13.5819 21.58L19.5219 18.15C20.4919 17.59 21.0919 16.55 21.0919 15.42V8.58C21.0819 7.45 20.4819 6.42 19.5119 5.85ZM12.0019 7.34C13.2919 7.34 14.3319 8.38 14.3319 9.67C14.3319 10.96 13.2919 12 12.0019 12C10.7119 12 9.67188 10.96 9.67188 9.67C9.67188 8.39 10.7119 7.34 12.0019 7.34ZM14.6819 16.66H9.32187C8.51187 16.66 8.04187 15.76 8.49187 15.09C9.17187 14.08 10.4919 13.4 12.0019 13.4C13.5119 13.4 14.8319 14.08 15.5119 15.09C15.9619 15.75 15.4819 16.66 14.6819 16.66Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const AlbumIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M18 5.25H6C5.59 5.25 5.25 4.91 5.25 4.5C5.25 4.09 5.59 3.75 6 3.75H18C18.41 3.75 18.75 4.09 18.75 4.5C18.75 4.91 18.41 5.25 18 5.25Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M15 2.75H9C8.59 2.75 8.25 2.41 8.25 2C8.25 1.59 8.59 1.25 9 1.25H15C15.41 1.25 15.75 1.59 15.75 2C15.75 2.41 15.41 2.75 15 2.75Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M13.9091 16.2109C13.5691 16.2109 13.2891 16.4909 13.2891 16.8309C13.2891 17.1709 13.5691 17.4509 13.9091 17.4509C14.2491 17.4509 14.5291 17.1709 14.5291 16.8309C14.5291 16.4909 14.2491 16.2109 13.9091 16.2109Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M9.50953 17.7389C9.50953 17.3989 9.22953 17.1289 8.88953 17.1289C8.54953 17.1289 8.26953 17.4089 8.26953 17.7489C8.26953 18.0889 8.54953 18.3689 8.88953 18.3689C9.22953 18.3589 9.50953 18.0789 9.50953 17.7389Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M18 7H6C3.8 7 2 8.8 2 11V18C2 20.2 3.8 22 6 22H18C20.2 22 22 20.2 22 18V11C22 8.8 20.2 7 18 7ZM16.03 12.46V16.83C16.03 16.85 16.02 16.86 16.02 16.88C15.99 18.02 15.06 18.95 13.91 18.95C12.74 18.95 11.79 18 11.79 16.83C11.79 15.66 12.74 14.71 13.91 14.71C14.13 14.71 14.33 14.75 14.53 14.81V13.44L11.01 14.4V17.73V17.74C11.01 18.91 10.06 19.86 8.89 19.86C7.72 19.86 6.77 18.91 6.77 17.74C6.77 16.57 7.72 15.62 8.89 15.62C9.11 15.62 9.31 15.66 9.51 15.72V13.82V12.22C9.51 11.33 10.06 10.61 10.91 10.39L13.64 9.64C14.52 9.41 15.06 9.64 15.37 9.88C15.67 10.11 16.03 10.58 16.03 11.47V12.46Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const SongIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M21.7188 6.27879V7.44879C21.7188 8.42879 21.3288 9.26879 20.6388 9.75879C20.2087 10.0788 19.6787 10.2288 19.1287 10.2288C18.7887 10.2288 18.4488 10.1788 18.0988 10.0588L12.7188 8.26879V17.9988C12.7188 20.6188 10.5887 22.7488 7.96875 22.7488C5.34875 22.7488 3.21875 20.6188 3.21875 17.9988C3.21875 15.3788 5.34875 13.2488 7.96875 13.2488C9.22875 13.2488 10.3688 13.7488 11.2188 14.5488V3.99879C11.2188 3.02879 11.6188 2.18879 12.3088 1.68879C12.9987 1.19879 13.9187 1.08879 14.8387 1.38879L19.2588 2.86879C20.6188 3.31879 21.7188 4.84879 21.7188 6.27879Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport default function App() {\n  return (\n    <Breadcrumbs>\n      <BreadcrumbItem startContent={<HomeIcon />}>Home</BreadcrumbItem>\n      <BreadcrumbItem startContent={<MusicIcon />}>Music</BreadcrumbItem>\n      <BreadcrumbItem startContent={<ArtistIcon />}>Artist</BreadcrumbItem>\n      <BreadcrumbItem startContent={<AlbumIcon />}>Album</BreadcrumbItem>\n      <BreadcrumbItem startContent={<SongIcon />}>Song</BreadcrumbItem>\n    </Breadcrumbs>\n  );\n}\n",
+      "sha256": "8fccacf69c06be3be8241567e30d1d6f9eca5bd4907f8cf2583d3a34f6081cac",
+      "upstreamPath": "apps/docs/content/components/breadcrumbs/start-end-content.raw.jsx",
+      "upstreamSha256": "d5fe0484b7e4c55db13522cac847a0fa0e2def0e05949aa609090a745a9f07bb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/breadcrumbs/underlines.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Breadcrumbs, BreadcrumbItem} from \"@heroui/react\";\n\nexport default function App() {\n  const underlines = [\"none\", \"hover\", \"always\", \"active\", \"focus\"];\n  const descriptions = {\n    none: \"No underline\",\n    hover: \"Underline on hover\",\n    always: \"Always underline\",\n    active: \"Underline on active\",\n    focus: \"Underline on focus\",\n  };\n\n  return (\n    <div className=\"flex flex-col flex-wrap gap-4\">\n      {underlines.map((u) => (\n        <div key={u}>\n          <p className=\"mb-1 text-small text-default-600 capitalize\">\n            {descriptions[u]} ({u})\n          </p>\n          <Breadcrumbs underline={u}>\n            <BreadcrumbItem>Home</BreadcrumbItem>\n            <BreadcrumbItem>Music</BreadcrumbItem>\n            <BreadcrumbItem>Artist</BreadcrumbItem>\n            <BreadcrumbItem>Album</BreadcrumbItem>\n            <BreadcrumbItem>Song</BreadcrumbItem>\n          </Breadcrumbs>\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "sha256": "97a6ebd150ea05c7dc8d4ac301a9e246d72eadaab08deec66be5bbc5b9656dbe",
+      "upstreamPath": "apps/docs/content/components/breadcrumbs/underlines.raw.jsx",
+      "upstreamSha256": "8f6213cc5e3f532bf2ec8b9de0dac03b8e4610804cf1d1c35875d306335bde5f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/breadcrumbs/usage.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Breadcrumbs, BreadcrumbItem} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Breadcrumbs>\n      <BreadcrumbItem>Home</BreadcrumbItem>\n      <BreadcrumbItem>Music</BreadcrumbItem>\n      <BreadcrumbItem>Artist</BreadcrumbItem>\n      <BreadcrumbItem>Album</BreadcrumbItem>\n      <BreadcrumbItem>Song</BreadcrumbItem>\n    </Breadcrumbs>\n  );\n}\n",
+      "sha256": "1a6712fa7f958f5bda1f67aaa397abdaa26f40f41693d0bbc9402d82bce38bf0",
+      "upstreamPath": "apps/docs/content/components/breadcrumbs/usage.raw.jsx",
+      "upstreamSha256": "f35d0b2026ef98a4a9aa4b9a87466c13a89b073e76e7741c58fbf9b4306d806a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/breadcrumbs/variants.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Breadcrumbs, BreadcrumbItem} from \"@heroui/react\";\n\nexport default function App() {\n  const variants = [\"solid\", \"bordered\", \"light\"];\n\n  return (\n    <div className=\"flex flex-col flex-wrap gap-4\">\n      {variants.map((variant) => (\n        <Breadcrumbs key={variant} variant={variant}>\n          <BreadcrumbItem>Home</BreadcrumbItem>\n          <BreadcrumbItem>Music</BreadcrumbItem>\n          <BreadcrumbItem>Artist</BreadcrumbItem>\n          <BreadcrumbItem>Album</BreadcrumbItem>\n          <BreadcrumbItem>Song</BreadcrumbItem>\n        </Breadcrumbs>\n      ))}\n    </div>\n  );\n}\n",
+      "sha256": "6df03b510810d0b0d9fbfef3d3231b7a3d7a8f954906deab9da7e5d6162ed461",
+      "upstreamPath": "apps/docs/content/components/breadcrumbs/variants.raw.jsx",
+      "upstreamSha256": "b52cc0919ab9d11bb10cce66e9c5f606037c72fc493a298340fbc9cb9600f54b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/breadcrumbs/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/breadcrumbs/collapsing-items.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "43fd11753304c5e7a36026a8291fcf3807e090f801dee0b52d2e738452a68338",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/breadcrumbs/previews/colors.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/breadcrumbs/colors.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "5dfe08aceef26dd7c932960bf894ad1145bf86035ae35ea6e4b6a4348980c1dd",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/breadcrumbs/previews/controlled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/breadcrumbs/controlled.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "d01262fc16d6808922df50b31d7197c634e4e0fa11acc3296eddda11af87229c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/breadcrumbs/previews/custom-items.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/breadcrumbs/custom-items.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "2ac1cf70ec4ee72658260054fdf7e977728e6e2d21102c60253d74d8595a79f2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/breadcrumbs/previews/custom-styles.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/breadcrumbs/custom-styles.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "a63b6ac167077ecd979220090013a7faaf2627042f4cee210c2b57683f1c3c66",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/breadcrumbs/previews/customizing-ellipsis.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/breadcrumbs/customizing-ellipsis.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "411d660ce28d158240f53e3ea8cc2e719a43332f7e60a2e94db5a3576b21b1fa",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/breadcrumbs/previews/disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/breadcrumbs/disabled.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "31240c827a44f78b30b1236617c4c3ca05ef659e35617d7ae38166b862d3a9db",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/breadcrumbs/previews/menu-type.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/breadcrumbs/menu-type.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "c2f9804c223c70e112f328f6a896cc3615a07ae48511e7e95f6d8106602e77b9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/breadcrumbs/previews/radius.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/breadcrumbs/radius.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "e9e48763cc3d94f00266a5d156d215c914d11448cf952041477ba8f8e59e394a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/breadcrumbs/previews/routing.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/breadcrumbs/routing.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "fb06a904f263fb47dd0dc92f5d0ad1d3d35d6ad8cefdb063bde504087db7d72a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/breadcrumbs/previews/separator.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/breadcrumbs/separator.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "572b62094860797a93a1188ead0b6d4f91aeabf2104ad710d3dafd26da138a21",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/breadcrumbs/previews/sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/breadcrumbs/sizes.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "4d048024ef05e346e7e226d3f430f1ed0b59ea8b0b7dcc30bae3ae961b755741",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/breadcrumbs/previews/start-end-content.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/breadcrumbs/start-end-content.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "d73808dbe13d75a1b971964819c35ef74eb300ec2ba92552712aa4cb2f6af4ad",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/breadcrumbs/previews/underlines.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/breadcrumbs/underlines.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "5c46865008b6084d980e352f3c5504424fd9508c68b99d8c797dc02d696a5bb3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/breadcrumbs/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/breadcrumbs/usage.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "7a4a4a70a5688bb3f2eced36c69ef2ed1896444fb8fc674bf6c11cd017d6aad5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/breadcrumbs/previews/variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/breadcrumbs/variants.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "b848cc7d3d52803db3d2c3a2ad65064de8b00c570189ed1135414d418c7383f1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/theme.css",
+      "type": "style",
+      "content": ".heroui-preview {\n  --primary: hsl(var(--heroui-primary));\n  --primary-foreground: hsl(var(--heroui-primary-foreground));\n  --background: hsl(var(--heroui-background));\n  --foreground: hsl(var(--heroui-foreground));\n  --border: hsl(var(--heroui-divider));\n}\n",
+      "sha256": "d7e90a5ed4780fbf5df6328631a4420ee099f07d345a8f509fce6937bd3e67c0",
+      "transformation": "Authored scoped mapping to official HeroUI semantic tokens."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/heroui/theme.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.",
+      "Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "breadcrumbs",
+    "upstreamPageUrl": "https://github.com/heroui-inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/breadcrumbs",
+    "upstreamDetailUrl": "https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/breadcrumbs/collapsing-items.raw.jsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/heroui-inc/heroui/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/breadcrumbs/collapsing-items.raw.jsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition.",
+      "Authored scoped mapping to official HeroUI semantic tokens."
+    ]
+  },
+  "documentation": "# HeroUI breadcrumbs\n\n16 published HeroUI breadcrumbs examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.\n- Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/heroui-inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/breadcrumbs\nPinned source: https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/breadcrumbs/collapsing-items.raw.jsx\n"
+}

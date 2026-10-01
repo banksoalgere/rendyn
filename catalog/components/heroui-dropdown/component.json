@@ -1,0 +1,331 @@
+{
+  "id": "heroui:dropdown",
+  "sourceId": "heroui",
+  "slug": "heroui-dropdown",
+  "name": "HeroUI dropdown",
+  "description": "15 published HeroUI dropdown examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@heroui/react@2.8.10",
+    "@heroui/theme@2.4.26"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "dropdown",
+    "tags": [
+      "action",
+      "dropdown",
+      "file",
+      "theme"
+    ],
+    "aliases": [
+      "dropdown",
+      "heroui dropdown"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "15 published HeroUI dropdown examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "dropdown:action:file:theme",
+    "searchText": "HeroUI dropdown\ndropdown\n15 published HeroUI dropdown examples with complete pinned source and MIT attribution.\nheroui dropdown\naction\nfile\ntheme\nHeroUI dropdown 15 published HeroUI dropdown examples with complete pinned source and MIT attribution. Installation Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3. Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node modules/@heroui/theme/dist/ / .{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/heroui inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/dropdown Pinned source: https://github.com/heroui inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/dropdown/action.raw.jsx"
+  },
+  "previewPath": "/preview/blocks/heroui-dropdown",
+  "manifestPath": "components/heroui-dropdown/component.json",
+  "integrity": "sha256:735af49981ab98b5db46e99970734712d48c9e970bd27cff2443e1afde2249d6",
+  "source": {
+    "id": "heroui",
+    "name": "HeroUI",
+    "repository": "https://github.com/heroui-inc/heroui",
+    "commit": "46e1f1f78e7777bc8639399e4f5fd913de046d33",
+    "registrySha256": "2db50391dcfd10fb02a7c56444a6c806bef67c80441bab4b7b59aa78038b75fd",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2020 Next UI Inc.",
+      "textPath": "source/heroui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/dropdown/action.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Dropdown>\n      <DropdownTrigger>\n        <Button variant=\"bordered\">Open Menu</Button>\n      </DropdownTrigger>\n      <DropdownMenu aria-label=\"Action event example\" onAction={(key) => alert(key)}>\n        <DropdownItem key=\"new\">New file</DropdownItem>\n        <DropdownItem key=\"copy\">Copy link</DropdownItem>\n        <DropdownItem key=\"edit\">Edit file</DropdownItem>\n        <DropdownItem key=\"delete\" className=\"text-danger\" color=\"danger\">\n          Delete file\n        </DropdownItem>\n      </DropdownMenu>\n    </Dropdown>\n  );\n}\n",
+      "sha256": "843b0814379080089af9d8935ce2722f9fbe8e94ac20fa9cc19170031253acaf",
+      "upstreamPath": "apps/docs/content/components/dropdown/action.raw.jsx",
+      "upstreamSha256": "479b0c5ab7a061b111deb5bbbc6a07be4bc2fd0ba0856dcd5dbe1e53474b8b88",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/dropdown/backdrop.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Dropdown backdrop=\"blur\">\n      <DropdownTrigger>\n        <Button variant=\"bordered\">Open Menu</Button>\n      </DropdownTrigger>\n      <DropdownMenu aria-label=\"Static Actions\" variant=\"faded\">\n        <DropdownItem key=\"new\">New file</DropdownItem>\n        <DropdownItem key=\"copy\">Copy link</DropdownItem>\n        <DropdownItem key=\"edit\">Edit file</DropdownItem>\n        <DropdownItem key=\"delete\" className=\"text-danger\" color=\"danger\">\n          Delete file\n        </DropdownItem>\n      </DropdownMenu>\n    </Dropdown>\n  );\n}\n",
+      "sha256": "30e008cb9ada49a7bd0e0691523d94698cbebd4d70389f89cefb549219b1f86c",
+      "upstreamPath": "apps/docs/content/components/dropdown/backdrop.raw.jsx",
+      "upstreamSha256": "b87e4fb2ad61655f9f5244dea439a91684d4b6781dacdf1fc018ac4254a01639",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/dropdown/custom-items-styles.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Dropdown,\n  DropdownTrigger,\n  DropdownMenu,\n  DropdownSection,\n  DropdownItem,\n  Button,\n  User,\n} from \"@heroui/react\";\n\nexport const PlusIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <g\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        strokeWidth={1.5}\n      >\n        <path d=\"M6 12h12\" />\n        <path d=\"M12 18V6\" />\n      </g>\n    </svg>\n  );\n};\n\nexport default function App() {\n  return (\n    <Dropdown\n      showArrow\n      classNames={{\n        base: \"before:bg-default-200\", // change arrow background\n        content: \"p-0 border-small border-divider bg-background\",\n      }}\n      radius=\"sm\"\n    >\n      <DropdownTrigger>\n        <Button disableRipple variant=\"ghost\">\n          Open Menu\n        </Button>\n      </DropdownTrigger>\n      <DropdownMenu\n        aria-label=\"Custom item styles\"\n        className=\"p-3\"\n        disabledKeys={[\"profile\"]}\n        itemClasses={{\n          base: [\n            \"rounded-md\",\n            \"text-default-500\",\n            \"transition-opacity\",\n            \"data-[hover=true]:text-foreground\",\n            \"data-[hover=true]:bg-default-100\",\n            \"dark:data-[hover=true]:bg-default-50\",\n            \"data-[selectable=true]:focus:bg-default-50\",\n            \"data-[pressed=true]:opacity-70\",\n            \"data-[focus-visible=true]:ring-default-500\",\n          ],\n        }}\n      >\n        <DropdownSection showDivider aria-label=\"Profile & Actions\">\n          <DropdownItem key=\"profile\" isReadOnly className=\"h-14 gap-2 opacity-100\">\n            <User\n              avatarProps={{\n                size: \"sm\",\n                src: \"https://avatars.githubusercontent.com/u/30373425?v=4\",\n              }}\n              classNames={{\n                name: \"text-default-600\",\n                description: \"text-default-500\",\n              }}\n              description=\"@jrgarciadev\"\n              name=\"Junior Garcia\"\n            />\n          </DropdownItem>\n          <DropdownItem key=\"dashboard\">Dashboard</DropdownItem>\n          <DropdownItem key=\"settings\">Settings</DropdownItem>\n          <DropdownItem key=\"new_project\" endContent={<PlusIcon className=\"text-large\" />}>\n            New Project\n          </DropdownItem>\n        </DropdownSection>\n\n        <DropdownSection showDivider aria-label=\"Preferences\">\n          <DropdownItem key=\"quick_search\" shortcut=\"⌘K\">\n            Quick search\n          </DropdownItem>\n          <DropdownItem\n            key=\"theme\"\n            isReadOnly\n            className=\"cursor-default\"\n            endContent={\n              <select\n                className=\"z-10 outline-solid outline-transparent w-16 py-0.5 rounded-md text-tiny group-data-[hover=true]:border-default-500 border-small border-default-300 dark:border-default-200 bg-transparent text-default-500\"\n                id=\"theme\"\n                name=\"theme\"\n              >\n                <option>System</option>\n                <option>Dark</option>\n                <option>Light</option>\n              </select>\n            }\n          >\n            Theme\n          </DropdownItem>\n        </DropdownSection>\n\n        <DropdownSection aria-label=\"Help & Feedback\">\n          <DropdownItem key=\"help_and_feedback\">Help & Feedback</DropdownItem>\n          <DropdownItem key=\"logout\">Log Out</DropdownItem>\n        </DropdownSection>\n      </DropdownMenu>\n    </Dropdown>\n  );\n}\n",
+      "sha256": "ad5618e008326e06daf6cb7a8a787e1263e43c19e8833ae4e81d8a14241f5b1d",
+      "upstreamPath": "apps/docs/content/components/dropdown/custom-items-styles.raw.jsx",
+      "upstreamSha256": "40bc00d2046641934233726dc8d4b345cf0d575c356a4702ed18cbd73dd1745b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/dropdown/custom-popover-styles.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Dropdown,\n  DropdownSection,\n  DropdownTrigger,\n  DropdownMenu,\n  DropdownItem,\n  Button,\n  cn,\n} from \"@heroui/react\";\n\nexport const AddNoteIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M7.37 22h9.25a4.87 4.87 0 0 0 4.87-4.87V8.37a4.87 4.87 0 0 0-4.87-4.87H7.37A4.87 4.87 0 0 0 2.5 8.37v8.75c0 2.7 2.18 4.88 4.87 4.88Z\"\n        fill=\"currentColor\"\n        opacity={0.4}\n      />\n      <path\n        d=\"M8.29 6.29c-.42 0-.75-.34-.75-.75V2.75a.749.749 0 1 1 1.5 0v2.78c0 .42-.33.76-.75.76ZM15.71 6.29c-.42 0-.75-.34-.75-.75V2.75a.749.749 0 1 1 1.5 0v2.78c0 .42-.33.76-.75.76ZM12 14.75h-1.69V13c0-.41-.34-.75-.75-.75s-.75.34-.75.75v1.75H7c-.41 0-.75.34-.75.75s.34.75.75.75h1.81V18c0 .41.34.75.75.75s.75-.34.75-.75v-1.75H12c.41 0 .75-.34.75-.75s-.34-.75-.75-.75Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const CopyDocumentIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M15.5 13.15h-2.17c-1.78 0-3.23-1.44-3.23-3.23V7.75c0-.41-.33-.75-.75-.75H6.18C3.87 7 2 8.5 2 11.18v6.64C2 20.5 3.87 22 6.18 22h5.89c2.31 0 4.18-1.5 4.18-4.18V13.9c0-.42-.34-.75-.75-.75Z\"\n        fill=\"currentColor\"\n        opacity={0.4}\n      />\n      <path\n        d=\"M17.82 2H11.93C9.67 2 7.84 3.44 7.76 6.01c.06 0 .11-.01.17-.01h5.89C16.13 6 18 7.5 18 10.18V16.83c0 .06-.01.11-.01.16 2.23-.07 4.01-1.55 4.01-4.16V6.18C22 3.5 20.13 2 17.82 2Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M11.98 7.15c-.31-.31-.84-.1-.84.33v2.62c0 1.1.93 2 2.07 2 .71.01 1.7.01 2.55.01.43 0 .65-.5.35-.8-1.09-1.09-3.03-3.04-4.13-4.16Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const EditDocumentIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M15.48 3H7.52C4.07 3 2 5.06 2 8.52v7.95C2 19.94 4.07 22 7.52 22h7.95c3.46 0 5.52-2.06 5.52-5.52V8.52C21 5.06 18.93 3 15.48 3Z\"\n        fill=\"currentColor\"\n        opacity={0.4}\n      />\n      <path\n        d=\"M21.02 2.98c-1.79-1.8-3.54-1.84-5.38 0L14.51 4.1c-.1.1-.13.24-.09.37.7 2.45 2.66 4.41 5.11 5.11.03.01.08.01.11.01.1 0 .2-.04.27-.11l1.11-1.12c.91-.91 1.36-1.78 1.36-2.67 0-.9-.45-1.79-1.36-2.71ZM17.86 10.42c-.27-.13-.53-.26-.77-.41-.2-.12-.4-.25-.59-.39-.16-.1-.34-.25-.52-.4-.02-.01-.08-.06-.16-.14-.31-.25-.64-.59-.95-.96-.02-.02-.08-.08-.13-.17-.1-.11-.25-.3-.38-.51-.11-.14-.24-.34-.36-.55-.15-.25-.28-.5-.4-.76-.13-.28-.23-.54-.32-.79L7.9 10.72c-.35.35-.69 1.01-.76 1.5l-.43 2.98c-.09.63.08 1.22.47 1.61.33.33.78.5 1.28.5.11 0 .22-.01.33-.02l2.97-.42c.49-.07 1.15-.4 1.5-.76l5.38-5.38c-.25-.08-.5-.19-.78-.31Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const DeleteDocumentIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M21.07 5.23c-1.61-.16-3.22-.28-4.84-.37v-.01l-.22-1.3c-.15-.92-.37-2.3-2.71-2.3h-2.62c-2.33 0-2.55 1.32-2.71 2.29l-.21 1.28c-.93.06-1.86.12-2.79.21l-2.04.2c-.42.04-.72.41-.68.82.04.41.4.71.82.67l2.04-.2c5.24-.52 10.52-.32 15.82.21h.08c.38 0 .71-.29.75-.68a.766.766 0 0 0-.69-.82Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M19.23 8.14c-.24-.25-.57-.39-.91-.39H5.68c-.34 0-.68.14-.91.39-.23.25-.36.59-.34.94l.62 10.26c.11 1.52.25 3.42 3.74 3.42h6.42c3.49 0 3.63-1.89 3.74-3.42l.62-10.25c.02-.36-.11-.7-.34-.95Z\"\n        fill=\"currentColor\"\n        opacity={0.399}\n      />\n      <path\n        clipRule=\"evenodd\"\n        d=\"M9.58 17a.75.75 0 0 1 .75-.75h3.33a.75.75 0 0 1 0 1.5h-3.33a.75.75 0 0 1-.75-.75ZM8.75 13a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75Z\"\n        fill=\"currentColor\"\n        fillRule=\"evenodd\"\n      />\n    </svg>\n  );\n};\n\nexport default function App() {\n  const iconClasses = \"text-xl text-default-500 pointer-events-none shrink-0\";\n\n  return (\n    <Dropdown\n      showArrow\n      classNames={{\n        base: \"before:bg-default-200\", // change arrow background\n        content:\n          \"py-1 px-1 border border-default-200 bg-linear-to-br from-white to-default-200 dark:from-default-50 dark:to-black\",\n      }}\n    >\n      <DropdownTrigger>\n        <Button variant=\"bordered\">Open Menu</Button>\n      </DropdownTrigger>\n      <DropdownMenu aria-label=\"Dropdown menu with description\" variant=\"faded\">\n        <DropdownSection title=\"Actions\">\n          <DropdownItem\n            key=\"new\"\n            description=\"Create a new file\"\n            shortcut=\"⌘N\"\n            startContent={<AddNoteIcon className={iconClasses} />}\n          >\n            New file\n          </DropdownItem>\n          <DropdownItem\n            key=\"copy\"\n            description=\"Copy the file link\"\n            shortcut=\"⌘C\"\n            startContent={<CopyDocumentIcon className={iconClasses} />}\n          >\n            Copy link\n          </DropdownItem>\n          <DropdownItem\n            key=\"edit\"\n            description=\"Allows you to edit the file\"\n            shortcut=\"⌘⇧E\"\n            startContent={<EditDocumentIcon className={iconClasses} />}\n          >\n            Edit file\n          </DropdownItem>\n        </DropdownSection>\n        <DropdownSection title=\"Danger zone\">\n          <DropdownItem\n            key=\"delete\"\n            className=\"text-danger\"\n            color=\"danger\"\n            description=\"Permanently delete the file\"\n            shortcut=\"⌘⇧D\"\n            startContent={<DeleteDocumentIcon className={cn(iconClasses, \"text-danger\")} />}\n          >\n            Delete file\n          </DropdownItem>\n        </DropdownSection>\n      </DropdownMenu>\n    </Dropdown>\n  );\n}\n",
+      "sha256": "291a4f17f7934ae26365699bd927ed7df0030307767ca89763c599018cd18811",
+      "upstreamPath": "apps/docs/content/components/dropdown/custom-popover-styles.raw.jsx",
+      "upstreamSha256": "9daf1b3353dd258e0493d0b849da14bdb3bcc895f85631dc74d0ceb701d56713",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/dropdown/custom-trigger.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Avatar, User} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Dropdown placement=\"bottom-end\">\n        <DropdownTrigger>\n          <Avatar\n            isBordered\n            as=\"button\"\n            className=\"transition-transform\"\n            src=\"https://i.pravatar.cc/150?u=a042581f4e29026704d\"\n          />\n        </DropdownTrigger>\n        <DropdownMenu aria-label=\"Profile Actions\" variant=\"flat\">\n          <DropdownItem key=\"profile\" className=\"h-14 gap-2\">\n            <p className=\"font-semibold\">Signed in as</p>\n            <p className=\"font-semibold\">zoey@example.com</p>\n          </DropdownItem>\n          <DropdownItem key=\"settings\">My Settings</DropdownItem>\n          <DropdownItem key=\"team_settings\">Team Settings</DropdownItem>\n          <DropdownItem key=\"analytics\">Analytics</DropdownItem>\n          <DropdownItem key=\"system\">System</DropdownItem>\n          <DropdownItem key=\"configurations\">Configurations</DropdownItem>\n          <DropdownItem key=\"help_and_feedback\">Help & Feedback</DropdownItem>\n          <DropdownItem key=\"logout\" color=\"danger\">\n            Log Out\n          </DropdownItem>\n        </DropdownMenu>\n      </Dropdown>\n      <Dropdown placement=\"bottom-start\">\n        <DropdownTrigger>\n          <User\n            as=\"button\"\n            avatarProps={{\n              isBordered: true,\n              src: \"https://i.pravatar.cc/150?u=a042581f4e29026024d\",\n            }}\n            className=\"transition-transform\"\n            description=\"@tonyreichert\"\n            name=\"Tony Reichert\"\n          />\n        </DropdownTrigger>\n        <DropdownMenu aria-label=\"User Actions\" variant=\"flat\">\n          <DropdownItem key=\"profile\" className=\"h-14 gap-2\">\n            <p className=\"font-bold\">Signed in as</p>\n            <p className=\"font-bold\">@tonyreichert</p>\n          </DropdownItem>\n          <DropdownItem key=\"settings\">My Settings</DropdownItem>\n          <DropdownItem key=\"team_settings\">Team Settings</DropdownItem>\n          <DropdownItem key=\"analytics\">Analytics</DropdownItem>\n          <DropdownItem key=\"system\">System</DropdownItem>\n          <DropdownItem key=\"configurations\">Configurations</DropdownItem>\n          <DropdownItem key=\"help_and_feedback\">Help & Feedback</DropdownItem>\n          <DropdownItem key=\"logout\" color=\"danger\">\n            Log Out\n          </DropdownItem>\n        </DropdownMenu>\n      </Dropdown>\n    </div>\n  );\n}\n",
+      "sha256": "10e530ea46407dc8a67ef648850869a2e46d4ab27e8aee595ddf354b7d9af466",
+      "upstreamPath": "apps/docs/content/components/dropdown/custom-trigger.raw.jsx",
+      "upstreamSha256": "16b22fba2a8fd15a8a6af5f8291e4f0f5acce07b9d221d8880b4f6da7da9afa9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/dropdown/description.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button, cn} from \"@heroui/react\";\n\nexport const AddNoteIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M7.37 22h9.25a4.87 4.87 0 0 0 4.87-4.87V8.37a4.87 4.87 0 0 0-4.87-4.87H7.37A4.87 4.87 0 0 0 2.5 8.37v8.75c0 2.7 2.18 4.88 4.87 4.88Z\"\n        fill=\"currentColor\"\n        opacity={0.4}\n      />\n      <path\n        d=\"M8.29 6.29c-.42 0-.75-.34-.75-.75V2.75a.749.749 0 1 1 1.5 0v2.78c0 .42-.33.76-.75.76ZM15.71 6.29c-.42 0-.75-.34-.75-.75V2.75a.749.749 0 1 1 1.5 0v2.78c0 .42-.33.76-.75.76ZM12 14.75h-1.69V13c0-.41-.34-.75-.75-.75s-.75.34-.75.75v1.75H7c-.41 0-.75.34-.75.75s.34.75.75.75h1.81V18c0 .41.34.75.75.75s.75-.34.75-.75v-1.75H12c.41 0 .75-.34.75-.75s-.34-.75-.75-.75Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const CopyDocumentIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M15.5 13.15h-2.17c-1.78 0-3.23-1.44-3.23-3.23V7.75c0-.41-.33-.75-.75-.75H6.18C3.87 7 2 8.5 2 11.18v6.64C2 20.5 3.87 22 6.18 22h5.89c2.31 0 4.18-1.5 4.18-4.18V13.9c0-.42-.34-.75-.75-.75Z\"\n        fill=\"currentColor\"\n        opacity={0.4}\n      />\n      <path\n        d=\"M17.82 2H11.93C9.67 2 7.84 3.44 7.76 6.01c.06 0 .11-.01.17-.01h5.89C16.13 6 18 7.5 18 10.18V16.83c0 .06-.01.11-.01.16 2.23-.07 4.01-1.55 4.01-4.16V6.18C22 3.5 20.13 2 17.82 2Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M11.98 7.15c-.31-.31-.84-.1-.84.33v2.62c0 1.1.93 2 2.07 2 .71.01 1.7.01 2.55.01.43 0 .65-.5.35-.8-1.09-1.09-3.03-3.04-4.13-4.16Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const EditDocumentIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M15.48 3H7.52C4.07 3 2 5.06 2 8.52v7.95C2 19.94 4.07 22 7.52 22h7.95c3.46 0 5.52-2.06 5.52-5.52V8.52C21 5.06 18.93 3 15.48 3Z\"\n        fill=\"currentColor\"\n        opacity={0.4}\n      />\n      <path\n        d=\"M21.02 2.98c-1.79-1.8-3.54-1.84-5.38 0L14.51 4.1c-.1.1-.13.24-.09.37.7 2.45 2.66 4.41 5.11 5.11.03.01.08.01.11.01.1 0 .2-.04.27-.11l1.11-1.12c.91-.91 1.36-1.78 1.36-2.67 0-.9-.45-1.79-1.36-2.71ZM17.86 10.42c-.27-.13-.53-.26-.77-.41-.2-.12-.4-.25-.59-.39-.16-.1-.34-.25-.52-.4-.02-.01-.08-.06-.16-.14-.31-.25-.64-.59-.95-.96-.02-.02-.08-.08-.13-.17-.1-.11-.25-.3-.38-.51-.11-.14-.24-.34-.36-.55-.15-.25-.28-.5-.4-.76-.13-.28-.23-.54-.32-.79L7.9 10.72c-.35.35-.69 1.01-.76 1.5l-.43 2.98c-.09.63.08 1.22.47 1.61.33.33.78.5 1.28.5.11 0 .22-.01.33-.02l2.97-.42c.49-.07 1.15-.4 1.5-.76l5.38-5.38c-.25-.08-.5-.19-.78-.31Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const DeleteDocumentIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M21.07 5.23c-1.61-.16-3.22-.28-4.84-.37v-.01l-.22-1.3c-.15-.92-.37-2.3-2.71-2.3h-2.62c-2.33 0-2.55 1.32-2.71 2.29l-.21 1.28c-.93.06-1.86.12-2.79.21l-2.04.2c-.42.04-.72.41-.68.82.04.41.4.71.82.67l2.04-.2c5.24-.52 10.52-.32 15.82.21h.08c.38 0 .71-.29.75-.68a.766.766 0 0 0-.69-.82Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M19.23 8.14c-.24-.25-.57-.39-.91-.39H5.68c-.34 0-.68.14-.91.39-.23.25-.36.59-.34.94l.62 10.26c.11 1.52.25 3.42 3.74 3.42h6.42c3.49 0 3.63-1.89 3.74-3.42l.62-10.25c.02-.36-.11-.7-.34-.95Z\"\n        fill=\"currentColor\"\n        opacity={0.399}\n      />\n      <path\n        clipRule=\"evenodd\"\n        d=\"M9.58 17a.75.75 0 0 1 .75-.75h3.33a.75.75 0 0 1 0 1.5h-3.33a.75.75 0 0 1-.75-.75ZM8.75 13a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75Z\"\n        fill=\"currentColor\"\n        fillRule=\"evenodd\"\n      />\n    </svg>\n  );\n};\n\nexport default function App() {\n  const iconClasses = \"text-xl text-default-500 pointer-events-none shrink-0\";\n\n  return (\n    <Dropdown>\n      <DropdownTrigger>\n        <Button variant=\"bordered\">Open Menu</Button>\n      </DropdownTrigger>\n      <DropdownMenu aria-label=\"Dropdown menu with description\" variant=\"faded\">\n        <DropdownItem\n          key=\"new\"\n          description=\"Create a new file\"\n          shortcut=\"⌘N\"\n          startContent={<AddNoteIcon className={iconClasses} />}\n        >\n          New file\n        </DropdownItem>\n        <DropdownItem\n          key=\"copy\"\n          description=\"Copy the file link\"\n          shortcut=\"⌘C\"\n          startContent={<CopyDocumentIcon className={iconClasses} />}\n        >\n          Copy link\n        </DropdownItem>\n        <DropdownItem\n          key=\"edit\"\n          showDivider\n          description=\"Allows you to edit the file\"\n          shortcut=\"⌘⇧E\"\n          startContent={<EditDocumentIcon className={iconClasses} />}\n        >\n          Edit file\n        </DropdownItem>\n        <DropdownItem\n          key=\"delete\"\n          className=\"text-danger\"\n          color=\"danger\"\n          description=\"Permanently delete the file\"\n          shortcut=\"⌘⇧D\"\n          startContent={<DeleteDocumentIcon className={cn(iconClasses, \"text-danger\")} />}\n        >\n          Delete file\n        </DropdownItem>\n      </DropdownMenu>\n    </Dropdown>\n  );\n}\n",
+      "sha256": "fb856d407b851d2237ae03edce2c03973ca24942673c400b3e8c8631e1a4a243",
+      "upstreamPath": "apps/docs/content/components/dropdown/description.raw.jsx",
+      "upstreamSha256": "51b357dc8ffc745061d7d27bf50844ce789f47aa328ccce9adaed23d0ecbd23e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/dropdown/disabled-keys.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Dropdown>\n      <DropdownTrigger>\n        <Button variant=\"bordered\">Open Menu</Button>\n      </DropdownTrigger>\n      <DropdownMenu aria-label=\"Example with disabled actions\" disabledKeys={[\"edit\", \"delete\"]}>\n        <DropdownItem key=\"new\">New file</DropdownItem>\n        <DropdownItem key=\"copy\">Copy link</DropdownItem>\n        <DropdownItem key=\"edit\">Edit file</DropdownItem>\n        <DropdownItem key=\"delete\" className=\"text-danger\" color=\"danger\">\n          Delete file\n        </DropdownItem>\n      </DropdownMenu>\n    </Dropdown>\n  );\n}\n",
+      "sha256": "a99e5081281e52606b4892160745ff155e46b1817bed78d10fa8c620a0596703",
+      "upstreamPath": "apps/docs/content/components/dropdown/disabled-keys.raw.jsx",
+      "upstreamSha256": "4bc6265cf0b77d713beb0ae7977e84dc11f57ddc552531df5ae2fac8acab6a9c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/dropdown/dynamic.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from \"@heroui/react\";\n\nexport default function App() {\n  const items = [\n    {\n      key: \"new\",\n      label: \"New file\",\n    },\n    {\n      key: \"copy\",\n      label: \"Copy link\",\n    },\n    {\n      key: \"edit\",\n      label: \"Edit file\",\n    },\n    {\n      key: \"delete\",\n      label: \"Delete file\",\n    },\n  ];\n\n  return (\n    <Dropdown>\n      <DropdownTrigger>\n        <Button variant=\"bordered\">Open Menu</Button>\n      </DropdownTrigger>\n      <DropdownMenu aria-label=\"Dynamic Actions\" items={items}>\n        {(item) => (\n          <DropdownItem\n            key={item.key}\n            className={item.key === \"delete\" ? \"text-danger\" : \"\"}\n            color={item.key === \"delete\" ? \"danger\" : \"default\"}\n          >\n            {item.label}\n          </DropdownItem>\n        )}\n      </DropdownMenu>\n    </Dropdown>\n  );\n}\n",
+      "sha256": "cefca09c100a801a1414a6f6c0f1e5102b41ef3bfaa5bbbff3de36f70ff4a3ef",
+      "upstreamPath": "apps/docs/content/components/dropdown/dynamic.raw.jsx",
+      "upstreamSha256": "a9b15b85494c9ad57d59de6fb83a91483742cd52969856b0977d03b7c27a55d7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/dropdown/icons.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button, cn} from \"@heroui/react\";\n\nexport const AddNoteIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M7.37 22h9.25a4.87 4.87 0 0 0 4.87-4.87V8.37a4.87 4.87 0 0 0-4.87-4.87H7.37A4.87 4.87 0 0 0 2.5 8.37v8.75c0 2.7 2.18 4.88 4.87 4.88Z\"\n        fill=\"currentColor\"\n        opacity={0.4}\n      />\n      <path\n        d=\"M8.29 6.29c-.42 0-.75-.34-.75-.75V2.75a.749.749 0 1 1 1.5 0v2.78c0 .42-.33.76-.75.76ZM15.71 6.29c-.42 0-.75-.34-.75-.75V2.75a.749.749 0 1 1 1.5 0v2.78c0 .42-.33.76-.75.76ZM12 14.75h-1.69V13c0-.41-.34-.75-.75-.75s-.75.34-.75.75v1.75H7c-.41 0-.75.34-.75.75s.34.75.75.75h1.81V18c0 .41.34.75.75.75s.75-.34.75-.75v-1.75H12c.41 0 .75-.34.75-.75s-.34-.75-.75-.75Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const CopyDocumentIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M15.5 13.15h-2.17c-1.78 0-3.23-1.44-3.23-3.23V7.75c0-.41-.33-.75-.75-.75H6.18C3.87 7 2 8.5 2 11.18v6.64C2 20.5 3.87 22 6.18 22h5.89c2.31 0 4.18-1.5 4.18-4.18V13.9c0-.42-.34-.75-.75-.75Z\"\n        fill=\"currentColor\"\n        opacity={0.4}\n      />\n      <path\n        d=\"M17.82 2H11.93C9.67 2 7.84 3.44 7.76 6.01c.06 0 .11-.01.17-.01h5.89C16.13 6 18 7.5 18 10.18V16.83c0 .06-.01.11-.01.16 2.23-.07 4.01-1.55 4.01-4.16V6.18C22 3.5 20.13 2 17.82 2Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M11.98 7.15c-.31-.31-.84-.1-.84.33v2.62c0 1.1.93 2 2.07 2 .71.01 1.7.01 2.55.01.43 0 .65-.5.35-.8-1.09-1.09-3.03-3.04-4.13-4.16Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const EditDocumentIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M15.48 3H7.52C4.07 3 2 5.06 2 8.52v7.95C2 19.94 4.07 22 7.52 22h7.95c3.46 0 5.52-2.06 5.52-5.52V8.52C21 5.06 18.93 3 15.48 3Z\"\n        fill=\"currentColor\"\n        opacity={0.4}\n      />\n      <path\n        d=\"M21.02 2.98c-1.79-1.8-3.54-1.84-5.38 0L14.51 4.1c-.1.1-.13.24-.09.37.7 2.45 2.66 4.41 5.11 5.11.03.01.08.01.11.01.1 0 .2-.04.27-.11l1.11-1.12c.91-.91 1.36-1.78 1.36-2.67 0-.9-.45-1.79-1.36-2.71ZM17.86 10.42c-.27-.13-.53-.26-.77-.41-.2-.12-.4-.25-.59-.39-.16-.1-.34-.25-.52-.4-.02-.01-.08-.06-.16-.14-.31-.25-.64-.59-.95-.96-.02-.02-.08-.08-.13-.17-.1-.11-.25-.3-.38-.51-.11-.14-.24-.34-.36-.55-.15-.25-.28-.5-.4-.76-.13-.28-.23-.54-.32-.79L7.9 10.72c-.35.35-.69 1.01-.76 1.5l-.43 2.98c-.09.63.08 1.22.47 1.61.33.33.78.5 1.28.5.11 0 .22-.01.33-.02l2.97-.42c.49-.07 1.15-.4 1.5-.76l5.38-5.38c-.25-.08-.5-.19-.78-.31Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const DeleteDocumentIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M21.07 5.23c-1.61-.16-3.22-.28-4.84-.37v-.01l-.22-1.3c-.15-.92-.37-2.3-2.71-2.3h-2.62c-2.33 0-2.55 1.32-2.71 2.29l-.21 1.28c-.93.06-1.86.12-2.79.21l-2.04.2c-.42.04-.72.41-.68.82.04.41.4.71.82.67l2.04-.2c5.24-.52 10.52-.32 15.82.21h.08c.38 0 .71-.29.75-.68a.766.766 0 0 0-.69-.82Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M19.23 8.14c-.24-.25-.57-.39-.91-.39H5.68c-.34 0-.68.14-.91.39-.23.25-.36.59-.34.94l.62 10.26c.11 1.52.25 3.42 3.74 3.42h6.42c3.49 0 3.63-1.89 3.74-3.42l.62-10.25c.02-.36-.11-.7-.34-.95Z\"\n        fill=\"currentColor\"\n        opacity={0.399}\n      />\n      <path\n        clipRule=\"evenodd\"\n        d=\"M9.58 17a.75.75 0 0 1 .75-.75h3.33a.75.75 0 0 1 0 1.5h-3.33a.75.75 0 0 1-.75-.75ZM8.75 13a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75Z\"\n        fill=\"currentColor\"\n        fillRule=\"evenodd\"\n      />\n    </svg>\n  );\n};\n\nexport default function App() {\n  const iconClasses = \"text-xl text-default-500 pointer-events-none shrink-0\";\n\n  return (\n    <Dropdown>\n      <DropdownTrigger>\n        <Button variant=\"bordered\">Open Menu</Button>\n      </DropdownTrigger>\n      <DropdownMenu aria-label=\"Dropdown menu with icons\" variant=\"faded\">\n        <DropdownItem\n          key=\"new\"\n          shortcut=\"⌘N\"\n          startContent={<AddNoteIcon className={iconClasses} />}\n        >\n          New file\n        </DropdownItem>\n        <DropdownItem\n          key=\"copy\"\n          shortcut=\"⌘C\"\n          startContent={<CopyDocumentIcon className={iconClasses} />}\n        >\n          Copy link\n        </DropdownItem>\n        <DropdownItem\n          key=\"edit\"\n          shortcut=\"⌘⇧E\"\n          startContent={<EditDocumentIcon className={iconClasses} />}\n        >\n          Edit file\n        </DropdownItem>\n        <DropdownItem\n          key=\"delete\"\n          className=\"text-danger\"\n          color=\"danger\"\n          shortcut=\"⌘⇧D\"\n          startContent={<DeleteDocumentIcon className={cn(iconClasses, \"text-danger\")} />}\n        >\n          Delete file\n        </DropdownItem>\n      </DropdownMenu>\n    </Dropdown>\n  );\n}\n",
+      "sha256": "5b926e6b3420e92f7011ebd116f8aee33cb25559e4f33094e0947ec163c5c665",
+      "upstreamPath": "apps/docs/content/components/dropdown/icons.raw.jsx",
+      "upstreamSha256": "273a143f71d63b23ccb2c41141915245e6332977d055643aa530068f5199f507",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/dropdown/multiple-selection.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type {Selection} from \"@heroui/react\";\n\nimport React from \"react\";\nimport {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from \"@heroui/react\";\n\nexport default function App() {\n  const [selectedKeys, setSelectedKeys] = React.useState<Selection>(new Set([\"text\"]));\n\n  const selectedValue = React.useMemo(\n    () => Array.from(selectedKeys).join(\", \").replace(/_/g, \"\"),\n    [selectedKeys],\n  );\n\n  return (\n    <Dropdown>\n      <DropdownTrigger>\n        <Button className=\"capitalize\" variant=\"bordered\">\n          {selectedValue}\n        </Button>\n      </DropdownTrigger>\n      <DropdownMenu\n        disallowEmptySelection\n        aria-label=\"Multiple selection example\"\n        closeOnSelect={false}\n        selectedKeys={selectedKeys}\n        selectionMode=\"multiple\"\n        variant=\"flat\"\n        onSelectionChange={setSelectedKeys}\n      >\n        <DropdownItem key=\"text\">Text</DropdownItem>\n        <DropdownItem key=\"number\">Number</DropdownItem>\n        <DropdownItem key=\"date\">Date</DropdownItem>\n        <DropdownItem key=\"single_date\">Single Date</DropdownItem>\n        <DropdownItem key=\"iteration\">Iteration</DropdownItem>\n      </DropdownMenu>\n    </Dropdown>\n  );\n}\n",
+      "sha256": "4b60144e6ac1a032d45c940e5d7f18e76291b400cdfdc91d55fdc36586c71dbf",
+      "upstreamPath": "apps/docs/content/components/dropdown/multiple-selection.raw.tsx",
+      "upstreamSha256": "fb8dddd887303ff3d75634974ee58fe1a612aaf63d98b3d0a94ffb0c766658f4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/dropdown/sections.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Dropdown,\n  DropdownTrigger,\n  DropdownMenu,\n  DropdownSection,\n  DropdownItem,\n  Button,\n  cn,\n} from \"@heroui/react\";\n\nexport const AddNoteIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M7.37 22h9.25a4.87 4.87 0 0 0 4.87-4.87V8.37a4.87 4.87 0 0 0-4.87-4.87H7.37A4.87 4.87 0 0 0 2.5 8.37v8.75c0 2.7 2.18 4.88 4.87 4.88Z\"\n        fill=\"currentColor\"\n        opacity={0.4}\n      />\n      <path\n        d=\"M8.29 6.29c-.42 0-.75-.34-.75-.75V2.75a.749.749 0 1 1 1.5 0v2.78c0 .42-.33.76-.75.76ZM15.71 6.29c-.42 0-.75-.34-.75-.75V2.75a.749.749 0 1 1 1.5 0v2.78c0 .42-.33.76-.75.76ZM12 14.75h-1.69V13c0-.41-.34-.75-.75-.75s-.75.34-.75.75v1.75H7c-.41 0-.75.34-.75.75s.34.75.75.75h1.81V18c0 .41.34.75.75.75s.75-.34.75-.75v-1.75H12c.41 0 .75-.34.75-.75s-.34-.75-.75-.75Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const CopyDocumentIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M15.5 13.15h-2.17c-1.78 0-3.23-1.44-3.23-3.23V7.75c0-.41-.33-.75-.75-.75H6.18C3.87 7 2 8.5 2 11.18v6.64C2 20.5 3.87 22 6.18 22h5.89c2.31 0 4.18-1.5 4.18-4.18V13.9c0-.42-.34-.75-.75-.75Z\"\n        fill=\"currentColor\"\n        opacity={0.4}\n      />\n      <path\n        d=\"M17.82 2H11.93C9.67 2 7.84 3.44 7.76 6.01c.06 0 .11-.01.17-.01h5.89C16.13 6 18 7.5 18 10.18V16.83c0 .06-.01.11-.01.16 2.23-.07 4.01-1.55 4.01-4.16V6.18C22 3.5 20.13 2 17.82 2Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M11.98 7.15c-.31-.31-.84-.1-.84.33v2.62c0 1.1.93 2 2.07 2 .71.01 1.7.01 2.55.01.43 0 .65-.5.35-.8-1.09-1.09-3.03-3.04-4.13-4.16Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const EditDocumentIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M15.48 3H7.52C4.07 3 2 5.06 2 8.52v7.95C2 19.94 4.07 22 7.52 22h7.95c3.46 0 5.52-2.06 5.52-5.52V8.52C21 5.06 18.93 3 15.48 3Z\"\n        fill=\"currentColor\"\n        opacity={0.4}\n      />\n      <path\n        d=\"M21.02 2.98c-1.79-1.8-3.54-1.84-5.38 0L14.51 4.1c-.1.1-.13.24-.09.37.7 2.45 2.66 4.41 5.11 5.11.03.01.08.01.11.01.1 0 .2-.04.27-.11l1.11-1.12c.91-.91 1.36-1.78 1.36-2.67 0-.9-.45-1.79-1.36-2.71ZM17.86 10.42c-.27-.13-.53-.26-.77-.41-.2-.12-.4-.25-.59-.39-.16-.1-.34-.25-.52-.4-.02-.01-.08-.06-.16-.14-.31-.25-.64-.59-.95-.96-.02-.02-.08-.08-.13-.17-.1-.11-.25-.3-.38-.51-.11-.14-.24-.34-.36-.55-.15-.25-.28-.5-.4-.76-.13-.28-.23-.54-.32-.79L7.9 10.72c-.35.35-.69 1.01-.76 1.5l-.43 2.98c-.09.63.08 1.22.47 1.61.33.33.78.5 1.28.5.11 0 .22-.01.33-.02l2.97-.42c.49-.07 1.15-.4 1.5-.76l5.38-5.38c-.25-.08-.5-.19-.78-.31Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const DeleteDocumentIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M21.07 5.23c-1.61-.16-3.22-.28-4.84-.37v-.01l-.22-1.3c-.15-.92-.37-2.3-2.71-2.3h-2.62c-2.33 0-2.55 1.32-2.71 2.29l-.21 1.28c-.93.06-1.86.12-2.79.21l-2.04.2c-.42.04-.72.41-.68.82.04.41.4.71.82.67l2.04-.2c5.24-.52 10.52-.32 15.82.21h.08c.38 0 .71-.29.75-.68a.766.766 0 0 0-.69-.82Z\"\n        fill=\"currentColor\"\n      />\n      <path\n        d=\"M19.23 8.14c-.24-.25-.57-.39-.91-.39H5.68c-.34 0-.68.14-.91.39-.23.25-.36.59-.34.94l.62 10.26c.11 1.52.25 3.42 3.74 3.42h6.42c3.49 0 3.63-1.89 3.74-3.42l.62-10.25c.02-.36-.11-.7-.34-.95Z\"\n        fill=\"currentColor\"\n        opacity={0.399}\n      />\n      <path\n        clipRule=\"evenodd\"\n        d=\"M9.58 17a.75.75 0 0 1 .75-.75h3.33a.75.75 0 0 1 0 1.5h-3.33a.75.75 0 0 1-.75-.75ZM8.75 13a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75Z\"\n        fill=\"currentColor\"\n        fillRule=\"evenodd\"\n      />\n    </svg>\n  );\n};\n\nexport default function App() {\n  const iconClasses = \"text-xl text-default-500 pointer-events-none shrink-0\";\n\n  return (\n    <Dropdown>\n      <DropdownTrigger>\n        <Button variant=\"bordered\">Open Menu</Button>\n      </DropdownTrigger>\n      <DropdownMenu aria-label=\"Dropdown menu with description\" variant=\"faded\">\n        <DropdownSection showDivider title=\"Actions\">\n          <DropdownItem\n            key=\"new\"\n            description=\"Create a new file\"\n            shortcut=\"⌘N\"\n            startContent={<AddNoteIcon className={iconClasses} />}\n          >\n            New file\n          </DropdownItem>\n          <DropdownItem\n            key=\"copy\"\n            description=\"Copy the file link\"\n            shortcut=\"⌘C\"\n            startContent={<CopyDocumentIcon className={iconClasses} />}\n          >\n            Copy link\n          </DropdownItem>\n          <DropdownItem\n            key=\"edit\"\n            description=\"Allows you to edit the file\"\n            shortcut=\"⌘⇧E\"\n            startContent={<EditDocumentIcon className={iconClasses} />}\n          >\n            Edit file\n          </DropdownItem>\n        </DropdownSection>\n        <DropdownSection title=\"Danger zone\">\n          <DropdownItem\n            key=\"delete\"\n            className=\"text-danger\"\n            color=\"danger\"\n            description=\"Permanently delete the file\"\n            shortcut=\"⌘⇧D\"\n            startContent={<DeleteDocumentIcon className={cn(iconClasses, \"text-danger\")} />}\n          >\n            Delete file\n          </DropdownItem>\n        </DropdownSection>\n      </DropdownMenu>\n    </Dropdown>\n  );\n}\n",
+      "sha256": "526df5d6ebbcd16051b83757cfd364deb7f4d69d3e2cf5aa6b342a202c6bc9c6",
+      "upstreamPath": "apps/docs/content/components/dropdown/sections.raw.jsx",
+      "upstreamSha256": "f20c9a16625190a030136c0ac8a5175c4734986f7f7ab3bf5bff738790e6a24e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/dropdown/shortcut.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Dropdown>\n      <DropdownTrigger>\n        <Button variant=\"bordered\">Open Menu</Button>\n      </DropdownTrigger>\n      <DropdownMenu aria-label=\"Dropdown menu with shortcut\" variant=\"flat\">\n        <DropdownItem key=\"new\" shortcut=\"⌘N\">\n          New file\n        </DropdownItem>\n        <DropdownItem key=\"copy\" shortcut=\"⌘C\">\n          Copy link\n        </DropdownItem>\n        <DropdownItem key=\"edit\" shortcut=\"⌘⇧E\">\n          Edit file\n        </DropdownItem>\n        <DropdownItem key=\"delete\" className=\"text-danger\" color=\"danger\" shortcut=\"⌘⇧D\">\n          Delete file\n        </DropdownItem>\n      </DropdownMenu>\n    </Dropdown>\n  );\n}\n",
+      "sha256": "29bcc33eadd8a053c4d6ec3d98f3a0aa4f525a22a3b5eba826472ad950c425a5",
+      "upstreamPath": "apps/docs/content/components/dropdown/shortcut.raw.jsx",
+      "upstreamSha256": "5cb97f196e39fbc6021c170b67760c866d5994baab50ecddb5bf6959975a5506",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/dropdown/single-selection.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type {Selection} from \"@heroui/react\";\n\nimport React from \"react\";\nimport {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from \"@heroui/react\";\n\nexport default function App() {\n  const [selectedKeys, setSelectedKeys] = React.useState<Selection>(new Set([\"text\"]));\n\n  const selectedValue = React.useMemo(\n    () => Array.from(selectedKeys).join(\", \").replace(/_/g, \"\"),\n    [selectedKeys],\n  );\n\n  return (\n    <Dropdown>\n      <DropdownTrigger>\n        <Button className=\"capitalize\" variant=\"bordered\">\n          {selectedValue}\n        </Button>\n      </DropdownTrigger>\n      <DropdownMenu\n        disallowEmptySelection\n        aria-label=\"Single selection example\"\n        selectedKeys={selectedKeys}\n        selectionMode=\"single\"\n        variant=\"flat\"\n        onSelectionChange={setSelectedKeys}\n      >\n        <DropdownItem key=\"text\">Text</DropdownItem>\n        <DropdownItem key=\"number\">Number</DropdownItem>\n        <DropdownItem key=\"date\">Date</DropdownItem>\n        <DropdownItem key=\"single_date\">Single Date</DropdownItem>\n        <DropdownItem key=\"iteration\">Iteration</DropdownItem>\n      </DropdownMenu>\n    </Dropdown>\n  );\n}\n",
+      "sha256": "771b511960071015e393d2c7f2f870bad315bb50765ba378a64ae262a8a824ae",
+      "upstreamPath": "apps/docs/content/components/dropdown/single-selection.raw.tsx",
+      "upstreamSha256": "11c57df56144446a75dbd66fbdebfcf0fcf59af6b9dfb72581ec1732331b3d6f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/dropdown/usage.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Dropdown>\n      <DropdownTrigger>\n        <Button variant=\"bordered\">Open Menu</Button>\n      </DropdownTrigger>\n      <DropdownMenu aria-label=\"Static Actions\">\n        <DropdownItem key=\"new\">New file</DropdownItem>\n        <DropdownItem key=\"copy\">Copy link</DropdownItem>\n        <DropdownItem key=\"edit\">Edit file</DropdownItem>\n        <DropdownItem key=\"delete\" className=\"text-danger\" color=\"danger\">\n          Delete file\n        </DropdownItem>\n      </DropdownMenu>\n    </Dropdown>\n  );\n}\n",
+      "sha256": "2ac1b6180c8d2d8f74d3d499ca96be042f6e4de930b4b7f280e2cfde63e30e2f",
+      "upstreamPath": "apps/docs/content/components/dropdown/usage.raw.jsx",
+      "upstreamSha256": "d2833d3fb39ac3e7c810f915871077272cab85b85b4a83ae63b6ee91f0152a60",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/dropdown/variants.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Dropdown,\n  DropdownTrigger,\n  DropdownMenu,\n  DropdownItem,\n  Button,\n  RadioGroup,\n  Radio,\n} from \"@heroui/react\";\n\nexport default function App() {\n  const [selectedColor, setSelectedColor] = React.useState(\"default\");\n\n  const variants = [\"solid\", \"bordered\", \"light\", \"flat\", \"faded\", \"shadow\"];\n\n  const DropdownContent = ({variant, color}) => (\n    <Dropdown>\n      <DropdownTrigger>\n        <Button className=\"capitalize\" color={color} variant={variant}>\n          {variant}\n        </Button>\n      </DropdownTrigger>\n      <DropdownMenu aria-label=\"Dropdown Variants\" color={color} variant={variant}>\n        <DropdownItem key=\"new\">New file</DropdownItem>\n        <DropdownItem key=\"copy\">Copy link</DropdownItem>\n        <DropdownItem key=\"edit\">Edit file</DropdownItem>\n        <DropdownItem key=\"delete\" className=\"text-danger\" color=\"danger\">\n          Delete file\n        </DropdownItem>\n      </DropdownMenu>\n    </Dropdown>\n  );\n\n  return (\n    <div className=\"flex flex-wrap gap-4\">\n      {variants.map((variant) => (\n        <DropdownContent key={variant} color={selectedColor} variant={variant} />\n      ))}\n      <RadioGroup\n        color={selectedColor}\n        defaultValue=\"default\"\n        label=\"Select dropdown color\"\n        orientation=\"horizontal\"\n        onValueChange={setSelectedColor}\n      >\n        <Radio value=\"default\">Default</Radio>\n        <Radio value=\"primary\">Primary</Radio>\n        <Radio value=\"secondary\">Secondary</Radio>\n        <Radio value=\"success\">Success</Radio>\n        <Radio value=\"warning\">Warning</Radio>\n        <Radio value=\"danger\">Danger</Radio>\n      </RadioGroup>\n    </div>\n  );\n}\n",
+      "sha256": "7755c2a29b47d48cf4229118e4201daf1d81974263c59b489a6d1426be28780d",
+      "upstreamPath": "apps/docs/content/components/dropdown/variants.raw.jsx",
+      "upstreamSha256": "84e3cc2f54e4380fd6e79ecd9cdf9d06d865c1e6171fb5b2d60d9315a75b7b92",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/dropdown/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/dropdown/action.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "d4ca18ecb223edff67dad7647bac5f078a15c1bc446ac3ed8bc61ddd163beddc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/dropdown/previews/backdrop.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/dropdown/backdrop.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "f186a255a9348d5ccca4c107a5455930aeb08b12ef2874fbd49523794be7a13c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/dropdown/previews/custom-items-styles.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/dropdown/custom-items-styles.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "157d159dc09f8e7d5dd9866ce5244a79f9b72bbea8db0b994a829b3a5e8b65a8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/dropdown/previews/custom-popover-styles.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/dropdown/custom-popover-styles.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "7455d62d78a43cc8348d756c7b3a00bd9d7481135499b99da37bb98d91734532",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/dropdown/previews/custom-trigger.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/dropdown/custom-trigger.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "fd6165dd5eb82eb775f8c977582ae4f44475513371fdb385b05a181197389a13",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/dropdown/previews/description.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/dropdown/description.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "89a2dce5226a6a206436e7baa66d5f958d8e84852ee597eb7f1ca79e5b8c7c66",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/dropdown/previews/disabled-keys.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/dropdown/disabled-keys.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "00872fa8c60e9ff1890e4c02914f42f67bd3514e05382ef838aa3146da56e2f4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/dropdown/previews/dynamic.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/dropdown/dynamic.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "c1e29b5659c63012b991bf6da4b95ca60e7a893645d041de51c37261dcf44b02",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/dropdown/previews/icons.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/dropdown/icons.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "d8b200b1542db5bb4d68829163d2e743f07e0210cc33b07b2c4060ca59400795",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/dropdown/previews/multiple-selection.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/dropdown/multiple-selection.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "890fb8e52a1035f6d137739128a59fa674b5979bbf39a20a6f703485f5ac01f6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/dropdown/previews/sections.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/dropdown/sections.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "0441e005f9a423a0c542fe7bed36fcd60d0c1a5768aafbd44da1942ce3d2df4a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/dropdown/previews/shortcut.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/dropdown/shortcut.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "a09bc197513f6a72e7433dd4e20d1089a4e5d5048907c8a6d8b20cd06a98b480",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/dropdown/previews/single-selection.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/dropdown/single-selection.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "32946db524b11a9efc4d146202dee014c61a58bf25082e6d3e64774c177c45f1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/dropdown/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/dropdown/usage.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "bf84d67f918117f2a7f4dd5ad57ab090961ed79ce44b00e48164ef619042954c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/dropdown/previews/variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/dropdown/variants.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "8cdf25bc384403b352fdcc79c413fdc927ffa2df2842dfcd1778d894c5845e0a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/theme.css",
+      "type": "style",
+      "content": ".heroui-preview {\n  --primary: hsl(var(--heroui-primary));\n  --primary-foreground: hsl(var(--heroui-primary-foreground));\n  --background: hsl(var(--heroui-background));\n  --foreground: hsl(var(--heroui-foreground));\n  --border: hsl(var(--heroui-divider));\n}\n",
+      "sha256": "d7e90a5ed4780fbf5df6328631a4420ee099f07d345a8f509fce6937bd3e67c0",
+      "transformation": "Authored scoped mapping to official HeroUI semantic tokens."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/heroui/theme.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.",
+      "Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "dropdown",
+    "upstreamPageUrl": "https://github.com/heroui-inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/dropdown",
+    "upstreamDetailUrl": "https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/dropdown/action.raw.jsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/heroui-inc/heroui/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/dropdown/action.raw.jsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition.",
+      "Authored scoped mapping to official HeroUI semantic tokens."
+    ]
+  },
+  "documentation": "# HeroUI dropdown\n\n15 published HeroUI dropdown examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.\n- Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/heroui-inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/dropdown\nPinned source: https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/dropdown/action.raw.jsx\n"
+}

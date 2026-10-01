@@ -2,6 +2,7 @@
 
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
 
+import librarySummary from '../../../preview/generated/library-summary.json';
 import { useState } from 'react';
 import {
   MorphPopover,
@@ -143,7 +144,7 @@ export function ProductMenu() {
       <MorphPopoverContent align="start" radius={12} className="product-menu__content">
         <div className="product-menu__heading">
           <span>Component catalogue</span>
-          <p>Explore all 189 components by category.</p>
+          <p>Explore all {189 + librarySummary.reduce((n,library)=>n+library.familyCount,0)} components by category.</p>
         </div>
 
         <Tabs

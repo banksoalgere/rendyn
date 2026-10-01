@@ -1,0 +1,130 @@
+{
+  "id": "originui:comp-110",
+  "sourceId": "originui",
+  "slug": "originui-comp-110",
+  "name": "Origin UI button toggle group comp-110",
+  "description": "1 published Origin UI button toggle group comp-110 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "class-variance-authority@0.7.1",
+    "clsx@2.1.1",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "button",
+    "tags": [
+      "button",
+      "file",
+      "select",
+      "toggle",
+      "upload"
+    ],
+    "aliases": [
+      "comp 110",
+      "origin ui button toggle group comp-110",
+      "button",
+      "cta",
+      "action control"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI button toggle group comp-110 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "button:file:select:toggle:upload",
+    "searchText": "Origin UI button toggle group comp-110\ncomp 110\n1 published Origin UI button toggle group comp-110 examples with complete pinned source and MIT attribution.\norigin ui button toggle group comp-110\nbutton\ncta\naction control\nfile\nselect\ntoggle\nupload\nOrigin UI button toggle group comp 110 1 published Origin UI button toggle group comp 110 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 110.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-110",
+  "manifestPath": "components/originui-comp-110/component.json",
+  "integrity": "sha256:96dacca5a76f3884c7d6e5b68edea78b6fdedad09d886958dc13c21ac5650ab2",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-110.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  ToggleGroup,\n  ToggleGroupItem,\n} from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/toggle-group\";\n\nexport default function Component() {\n  const [value, setValue] = useState<string>(\"left\");\n\n  return (\n    <ToggleGroup\n      onValueChange={(value) => {\n        if (value) setValue(value);\n      }}\n      type=\"single\"\n      value={value}\n      variant=\"outline\"\n    >\n      <ToggleGroupItem className=\"flex-1\" value=\"left\">\n        Left\n      </ToggleGroupItem>\n      <ToggleGroupItem className=\"flex-1\" value=\"center\">\n        Center\n      </ToggleGroupItem>\n      <ToggleGroupItem className=\"flex-1\" value=\"right\">\n        Right\n      </ToggleGroupItem>\n    </ToggleGroup>\n  );\n}\n",
+      "sha256": "d77f6d1d1ac031738191faa05d3e2f6e75edc85173dbd286da297bc1453368de",
+      "upstreamPath": "apps/origin/registry/default/components/comp-110.tsx",
+      "upstreamSha256": "9741b7c5ce1599c0eeaa8c80ed81f2c9ac1309dd483be2aa086f4f97cd94d044",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/toggle-group.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { VariantProps } from \"class-variance-authority\";\nimport { ToggleGroup as ToggleGroupPrimitive } from \"radix-ui\";\nimport * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\nimport { toggleVariants } from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/toggle\";\n\nconst ToggleGroupContext = React.createContext<\n  VariantProps<typeof toggleVariants>\n>({\n  size: \"default\",\n  variant: \"default\",\n});\n\nfunction ToggleGroup({\n  className,\n  variant,\n  size,\n  children,\n  ...props\n}: React.ComponentProps<typeof ToggleGroupPrimitive.Root> &\n  VariantProps<typeof toggleVariants>) {\n  return (\n    <ToggleGroupPrimitive.Root\n      className={cn(\n        \"group/toggle-group flex items-center rounded-md data-[variant=outline]:shadow-xs\",\n        className,\n      )}\n      data-size={size}\n      data-slot=\"toggle-group\"\n      data-variant={variant}\n      {...props}\n    >\n      <ToggleGroupContext.Provider value={{ size, variant }}>\n        {children}\n      </ToggleGroupContext.Provider>\n    </ToggleGroupPrimitive.Root>\n  );\n}\n\nfunction ToggleGroupItem({\n  className,\n  children,\n  variant,\n  size,\n  ...props\n}: React.ComponentProps<typeof ToggleGroupPrimitive.Item> &\n  VariantProps<typeof toggleVariants>) {\n  const context = React.useContext(ToggleGroupContext);\n\n  return (\n    <ToggleGroupPrimitive.Item\n      className={cn(\n        toggleVariants({\n          size: context.size || size,\n          variant: context.variant || variant,\n        }),\n        \"min-w-0 shrink-0 rounded-none shadow-none first:rounded-l-md last:rounded-r-md focus:z-10 focus-visible:z-10 data-[variant=outline]:border-l-0 data-[variant=outline]:first:border-l\",\n        className,\n      )}\n      data-size={context.size || size}\n      data-slot=\"toggle-group-item\"\n      data-variant={context.variant || variant}\n      {...props}\n    >\n      {children}\n    </ToggleGroupPrimitive.Item>\n  );\n}\n\nexport { ToggleGroup, ToggleGroupItem };\n",
+      "sha256": "a0f78dd139661a54d94dde19813b1edb5eb7cbd9b30d56a437cb9abd843a3081",
+      "upstreamPath": "apps/origin/registry/default/ui/toggle-group.tsx",
+      "upstreamSha256": "9e394354e8122097e1a5f64b75290cdc15da58cddf60e980c26b4ce24bea215d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/toggle.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { Toggle as TogglePrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nconst toggleVariants = cva(\n  \"inline-flex items-center justify-center gap-2 rounded-md font-medium text-sm outline-none transition-[color,box-shadow] hover:bg-muted hover:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground dark:aria-invalid:ring-destructive/40 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n  {\n    defaultVariants: {\n      size: \"default\",\n      variant: \"default\",\n    },\n    variants: {\n      size: {\n        default: \"h-9 px-3\",\n        lg: \"h-10 px-3\",\n        sm: \"h-8 px-2\",\n      },\n      variant: {\n        default: \"bg-transparent\",\n        outline:\n          \"border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground\",\n      },\n    },\n  },\n);\n\nfunction Toggle({\n  className,\n  variant,\n  size,\n  ...props\n}: React.ComponentProps<typeof TogglePrimitive.Root> &\n  VariantProps<typeof toggleVariants>) {\n  return (\n    <TogglePrimitive.Root\n      className={cn(toggleVariants({ className, size, variant }))}\n      data-slot=\"toggle\"\n      {...props}\n    />\n  );\n}\n\nexport { Toggle, toggleVariants };\n",
+      "sha256": "bc570ca40cafc1fc7e70cc18ecfce041205acc2d6cddd3d50224ef2b24691d8c",
+      "upstreamPath": "apps/origin/registry/default/ui/toggle.tsx",
+      "upstreamSha256": "85cac22445377e4c07c5c35f66bf9ecf7f23f33e8f0b912651ab9aaed8222021",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-110/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-110\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8482a652e2fb9061fb4b39d5dc4586f423453e087f23769bf077fddd04e093ca",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add class-variance-authority@0.7.1 clsx@2.1.1 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add class-variance-authority@0.7.1 clsx@2.1.1 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-110",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-110.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-110.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI button toggle group comp-110\n\n1 published Origin UI button toggle group comp-110 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-110.tsx\n"
+}

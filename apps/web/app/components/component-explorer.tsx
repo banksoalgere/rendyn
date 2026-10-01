@@ -5,6 +5,7 @@ import {
   catalogueHref, categoryLabels, createCatalogueSearchIndex, getCatalogueFilters,
   getCataloguePage, MAX_SEARCH_LENGTH, type CatalogueComponent, type CatalogueFilters,
 } from '../../lib/catalogue-search';
+import { trackSearch } from '../../lib/analytics';
 import { ComponentPreview } from './component-preview';
 import styles from './components.module.css';
 
@@ -17,7 +18,7 @@ interface ComponentExplorerProps {
   initialPage?: number;
 }
 
-const suggestedSearches = ['Buttons', 'Navigation', 'AI chat', 'Data tables'];
+const suggestedSearches = ['Subtle hover button', 'Keyboard command menu', 'AI chat', 'Data tables'];
 
 export function ComponentExplorer({
   components, initialCategory, initialQuery = '', initialPage = 1,
@@ -66,6 +67,11 @@ export function ComponentExplorer({
     return () => window.clearTimeout(timer);
   }, [currentHref]);
 
+  useEffect(() => {
+    const timer = window.setTimeout(() => trackSearch(filters.query, filters.category, results.total), 600);
+    return () => window.clearTimeout(timer);
+  }, [filters.query, filters.category, results.total]);
+
   return (
     <section className={styles.explorer} aria-label="Interactive component catalogue" ref={explorerRef}>
       <div className={styles.controlBar}>
@@ -86,12 +92,15 @@ export function ComponentExplorer({
             autoComplete="off"
             spellCheck={false}
             aria-controls="component-results"
+            aria-describedby="component-search-hint"
             value={filters.query}
           />
           {filters.category !== 'all' && <input name="category" type="hidden" value={filters.category} />}
           <kbd aria-hidden="true">⌘ K</kbd>
           <button className={styles.searchSubmit} type="submit">Search</button>
         </form>
+
+        <p className={styles.searchHint} id="component-search-hint">Describe the interaction you need, or search by name.</p>
 
         <div className={styles.suggestions} aria-label="Suggested searches">
           <span>Try</span>
@@ -129,7 +138,7 @@ export function ComponentExplorer({
           {results.components.map((component, index) => (
             <article className={styles.componentLink} key={component.publicSlug}>
               <div className={styles.cardToolbar}>
-                <span>{categoryLabels[component.category]}</span>
+                <span>{categoryLabels[component.category]}{filters.query.trim() && results.page === 1 && index === 0 && <span className={styles.bestMatch}>Best match</span>}</span>
                 <a href={`/components/${component.publicSlug}`} aria-label={`Open ${component.name} details`}>
                   <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M14 4h6v6M20 4l-8 8M10 4H4v16h16v-6" /></svg>
                 </a>
@@ -156,8 +165,12 @@ export function ComponentExplorer({
         {results.total === 0 && (
           <div className={styles.emptyState}>
             <h3>No components found</h3>
-            <p>Try a shorter search, such as “button”, “chat” or “table”.</p>
-            <button data-analytics-action="clear-search" onClick={() => updateFilters('', 'all')} type="button">Clear search and filters</button>
+            <p>{results.otherCategoryMatches
+              ? `${results.otherCategoryMatches} ${results.otherCategoryMatches === 1 ? 'match is' : 'matches are'} available in other categories.`
+              : 'Try a component name or a single interaction, such as “approval before an agent acts”. Some patterns are not in the collection yet.'}</p>
+            {results.otherCategoryMatches > 0
+              ? <button onClick={() => updateFilters(filters.query, 'all')} type="button">Search all categories</button>
+              : <button data-analytics-action="clear-search" onClick={() => updateFilters('', 'all')} type="button">Clear search and filters</button>}
           </div>
         )}
       </div>

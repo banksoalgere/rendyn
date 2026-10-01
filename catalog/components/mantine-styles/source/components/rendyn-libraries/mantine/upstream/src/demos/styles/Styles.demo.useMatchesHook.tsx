@@ -1,0 +1,19 @@
+"use client";
+
+import { Box, useMatches } from '@mantine/core';
+
+function Demo() {
+  const color = useMatches({
+    base: 'blue.9',
+    sm: 'orange.9',
+    lg: 'red.9',
+  });
+
+  return (
+    <Box bg={color} c="white" p="xl">
+      Box with color that changes based on screen size
+    </Box>
+  );
+}
+const RendynExampleComponent = Demo;
+export function RendynExample() { return <RendynExampleComponent  />; }

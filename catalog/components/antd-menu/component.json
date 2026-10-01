@@ -1,0 +1,369 @@
+{
+  "id": "antd:menu",
+  "sourceId": "antd",
+  "slug": "antd-menu",
+  "name": "Ant Design menu",
+  "description": "18 published Ant Design menu examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@ant-design/icons@6.3.4",
+    "antd@6.6.5",
+    "antd-style@4.1.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "menu",
+    "tags": [
+      "file",
+      "form",
+      "menu"
+    ],
+    "aliases": [
+      "menu",
+      "ant design menu"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "18 published Ant Design menu examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "menu:file:form",
+    "searchText": "Ant Design menu\nmenu\n18 published Ant Design menu examples with complete pinned source and MIT attribution.\nant design menu\nfile\nform\nAnt Design menu 18 published Ant Design menu examples with complete pinned source and MIT attribution. Installation Complete MIT example compositions using the pinned antd npm package. Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/ant design/ant design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/menu/demo Pinned source: https://github.com/ant design/ant design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/menu/demo/collapsed icon debug.tsx"
+  },
+  "previewPath": "/preview/blocks/antd-menu",
+  "manifestPath": "components/antd-menu/component.json",
+  "integrity": "sha256:14e29c5030a01fea6cab3ee1bef4a8fed6a64caef8fa66ad5cbc5ef56a59b5cd",
+  "source": {
+    "id": "antd",
+    "name": "Ant Design",
+    "repository": "https://github.com/ant-design/ant-design",
+    "commit": "bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a",
+    "registrySha256": "7df4386dc63323dd6235edee9c52694b28d573a6d2765ac59719a52e1c259ab0",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2015-present Ant UED, https://xtech.antfin.com/",
+      "textPath": "source/antd/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/collapsed-icon-debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { ConfigProvider, Menu } from 'antd';\n\ntype MenuItem = Required<MenuProps>['items'][number];\n\nconst items: MenuItem[] = [\n  {\n    key: 'sub1',\n    label: 'Navigation One',\n    icon: <MailOutlined />,\n    children: [\n      {\n        key: 'g1',\n        label: 'Item 1',\n        type: 'group',\n        children: [\n          { key: '1', label: 'Option 1' },\n          { key: '2', label: 'Option 2' },\n        ],\n      },\n      {\n        key: 'g2',\n        label: 'Item 2',\n        type: 'group',\n        children: [\n          { key: '3', label: 'Option 3' },\n          { key: '4', label: 'Option 4' },\n        ],\n      },\n    ],\n  },\n  {\n    key: 'sub2',\n    label: 'Navigation Two',\n    icon: <AppstoreOutlined />,\n    children: [\n      { key: '5', label: 'Option 5' },\n      { key: '6', label: 'Option 6' },\n      {\n        key: 'sub3',\n        label: 'Submenu',\n        children: [\n          { key: '7', label: 'Option 7' },\n          { key: '8', label: 'Option 8' },\n        ],\n      },\n    ],\n  },\n  {\n    type: 'divider',\n  },\n  {\n    key: 'sub4',\n    label: 'Navigation Three',\n    icon: <SettingOutlined />,\n    children: [\n      { key: '9', label: 'Option 9' },\n      { key: '10', label: 'Option 10' },\n      { key: '11', label: 'Option 11' },\n      { key: '12', label: 'Option 12' },\n    ],\n  },\n  {\n    key: 'grp',\n    label: 'Group',\n    type: 'group',\n    children: [\n      { key: '13', label: 'Option 13' },\n      { key: '14', label: 'Option 14' },\n    ],\n  },\n];\n\nconst App: React.FC = () => {\n  const onClick: MenuProps['onClick'] = (e) => {\n    console.log('click ', e);\n  };\n\n  return (\n    <ConfigProvider\n      theme={{\n        components: {\n          Menu: {\n            collapsedIconSize: 30,\n          },\n        },\n      }}\n    >\n      <style>{`\n        .menu-collapsed-icon-debug .ant-menu-item,\n        .menu-collapsed-icon-debug .ant-menu-submenu-title {\n          background: rgba(22, 119, 255, 0.06);\n        }\n\n        .menu-collapsed-icon-debug .ant-menu-item-icon {\n          outline: 1px solid #ff4d4f;\n          background: rgba(255, 77, 79, 0.12);\n        }\n\n        .menu-collapsed-icon-debug .ant-menu-item-icon svg,\n        .menu-collapsed-icon-debug .ant-menu-submenu-title .anticon svg {\n          outline: 1px solid #1677ff;\n          background: rgba(22, 119, 255, 0.16);\n        }\n\n        .menu-collapsed-icon-debug .ant-menu-title-content {\n          outline: 1px dashed #52c41a;\n          background: rgba(82, 196, 26, 0.12);\n        }\n      `}</style>\n      <div className=\"menu-collapsed-icon-debug\">\n        <Menu onClick={onClick} mode=\"inline\" inlineCollapsed items={items} />\n      </div>\n    </ConfigProvider>\n  );\n};\n\nexport default App;\n",
+      "sha256": "0bddabaf9f75199ed7aa3d433a7b182720afe8c912b65ea8e07d3b7a2f41d16d",
+      "upstreamPath": "components/menu/demo/collapsed-icon-debug.tsx",
+      "upstreamSha256": "18cae3b49352d5a8169ac651685ce1f3e7121b3bcd7636d0ac5caa36a2f612a1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/component-token.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport {\n  AppstoreOutlined,\n  ContainerOutlined,\n  DesktopOutlined,\n  MailOutlined,\n  PieChartOutlined,\n  SettingOutlined,\n} from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { ConfigProvider, Menu, Space, theme } from 'antd';\n\ntype MenuItem = Required<MenuProps>['items'][number];\n\nconst items: MenuItem[] = [\n  {\n    label: 'Navigation One',\n    key: 'mail',\n    icon: <MailOutlined />,\n  },\n  {\n    label: 'Navigation Two',\n    key: 'app',\n    icon: <AppstoreOutlined />,\n    disabled: true,\n  },\n  {\n    label: 'Navigation Three - Submenu',\n    key: 'SubMenu',\n    icon: <SettingOutlined />,\n    children: [\n      {\n        type: 'group',\n        label: 'Item 1',\n        children: [\n          { label: 'Option 1', key: 'setting:1' },\n          { label: 'Option 2', key: 'setting:2' },\n        ],\n      },\n      {\n        type: 'group',\n        label: 'Item 2',\n        children: [\n          { label: 'Option 3', key: 'setting:3' },\n          { label: 'Option 4', key: 'setting:4' },\n        ],\n      },\n    ],\n  },\n  {\n    key: 'alipay',\n    label: (\n      <a href=\"https://ant.design\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Navigation Four - Link\n      </a>\n    ),\n  },\n];\n\nconst items2: MenuItem[] = [\n  {\n    key: '1',\n    icon: <PieChartOutlined />,\n    label: 'Option 1',\n  },\n  {\n    key: '2',\n    icon: <DesktopOutlined />,\n    label: 'Option 2',\n  },\n  {\n    key: '3',\n    icon: <ContainerOutlined />,\n    label: 'Option 3',\n  },\n  {\n    key: 'sub1',\n    label: 'Navigation One',\n    icon: <MailOutlined />,\n    children: [\n      { key: '5', label: 'Option 5' },\n      { key: '6', label: 'Option 6' },\n      { key: '7', label: 'Option 7' },\n      { key: '8', label: 'Option 8' },\n    ],\n  },\n  {\n    key: 'sub2',\n    label: 'Navigation Two',\n    icon: <AppstoreOutlined />,\n    children: [\n      { key: '9', label: 'Option 9' },\n      { key: '10', label: 'Option 10' },\n      {\n        key: 'sub3',\n        label: 'Submenu',\n        children: [\n          { key: '11', label: 'Option 11' },\n          { key: '12', label: 'Option 12' },\n        ],\n      },\n    ],\n  },\n];\n\nconst App: React.FC = () => {\n  const [current, setCurrent] = useState('mail');\n\n  const onClick: MenuProps['onClick'] = (e) => {\n    console.log('click ', e);\n    setCurrent(e.key);\n  };\n\n  return (\n    <Space vertical>\n      <ConfigProvider\n        theme={{\n          algorithm: [theme.darkAlgorithm],\n          components: {\n            Menu: {\n              popupBg: 'yellow',\n              darkPopupBg: 'red',\n            },\n          },\n        }}\n      >\n        <Menu onClick={onClick} selectedKeys={[current]} mode=\"horizontal\" items={items} />\n        <Menu\n          defaultSelectedKeys={['1']}\n          defaultOpenKeys={['sub1']}\n          mode=\"inline\"\n          theme=\"dark\"\n          inlineCollapsed\n          items={items2}\n          style={{\n            width: 56,\n          }}\n        />\n      </ConfigProvider>\n      <ConfigProvider\n        theme={{\n          components: {\n            Menu: {\n              horizontalItemBorderRadius: 6,\n              popupBg: 'red',\n              horizontalItemHoverBg: '#f5f5f5',\n            },\n          },\n        }}\n      >\n        <Menu onClick={onClick} selectedKeys={[current]} mode=\"horizontal\" items={items} />\n      </ConfigProvider>\n      <ConfigProvider\n        theme={{\n          components: {\n            Menu: {\n              darkItemColor: '#91daff',\n              darkItemBg: '#d48806',\n              darkSubMenuItemBg: '#faad14',\n              darkItemSelectedColor: '#ffccc7',\n              darkItemSelectedBg: '#52c41a',\n            },\n          },\n        }}\n      >\n        <Menu\n          defaultSelectedKeys={['1']}\n          defaultOpenKeys={['sub1']}\n          mode=\"inline\"\n          theme=\"dark\"\n          items={items2}\n          style={{\n            width: 256,\n          }}\n        />\n      </ConfigProvider>\n    </Space>\n  );\n};\n\nexport default App;\n",
+      "sha256": "98197692519b4ccfa7105514228993aacc56451f00136bc4b40624fe125b8c2d",
+      "upstreamPath": "components/menu/demo/component-token.tsx",
+      "upstreamSha256": "e0952b3051a17bedfb268c72f5160db24f8e65f0a064b4ac23ff5f8dfebdd01b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/custom-popup-render.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { MenuProps } from 'antd';\nimport { Col, ConfigProvider, Flex, Menu, Row, Space, Typography } from 'antd';\nimport { createStyles } from 'antd-style';\n\nconst { Title, Paragraph } = Typography;\n\nconst useStyles = createStyles(({ token }) => ({\n  navigationPopup: {\n    padding: token.padding,\n    minWidth: 480,\n    background: token.colorBgElevated,\n    borderRadius: token.borderRadiusLG,\n    boxShadow: token.boxShadowSecondary,\n  },\n  menuItem: {\n    borderRadius: token.borderRadius,\n    transition: `all ${token.motionDurationSlow}`,\n    cursor: 'pointer',\n    '&:hover': {\n      background: 'rgba(0, 0, 0, 0.02)',\n    },\n  },\n  menuItemSpace: {\n    padding: token.paddingSM,\n  },\n  leadingHeader: {\n    margin: '0 !important',\n    paddingBottom: token.paddingXS,\n    borderBottom: `${token.lineWidth}px ${token.lineType} ${token.colorSplit}`,\n  },\n  marginLess: {\n    margin: '0 !important',\n  },\n}));\n\nconst MenuItem = ({ title, description }: { title: string; description: string }) => {\n  const { styles } = useStyles();\n  return (\n    <div className={styles.menuItem}>\n      <Space vertical size={4} className={styles.menuItemSpace}>\n        <Title level={5} className={styles.marginLess}>\n          {title}\n        </Title>\n        <Paragraph type=\"secondary\" className={styles.marginLess}>\n          {description}\n        </Paragraph>\n      </Space>\n    </div>\n  );\n};\n\nconst menuItems = [\n  {\n    key: 'home',\n    label: 'Home',\n  },\n  {\n    key: 'features',\n    label: 'Features',\n    children: [\n      {\n        key: 'getting-started',\n        label: (\n          <MenuItem title=\"Getting Started\" description=\"Quick start guide and learn the basics.\" />\n        ),\n      },\n      {\n        key: 'components',\n        label: <MenuItem title=\"Components\" description=\"Explore our component library.\" />,\n      },\n      {\n        key: 'templates',\n        label: <MenuItem title=\"Templates\" description=\"Ready-to-use template designs.\" />,\n      },\n    ],\n  },\n  {\n    key: 'resources',\n    label: 'Resources',\n    children: [\n      {\n        key: 'blog',\n        label: <MenuItem title=\"Blog\" description=\"Latest updates and articles.\" />,\n      },\n      {\n        key: 'community',\n        label: <MenuItem title=\"Community\" description=\"Join our developer community.\" />,\n      },\n    ],\n  },\n];\n\nconst App: React.FC = () => {\n  const { styles } = useStyles();\n  const popupRender: MenuProps['popupRender'] = (_, { item }) => {\n    return (\n      <Flex className={styles.navigationPopup} vertical gap=\"medium\">\n        <Typography.Title level={3} className={styles.leadingHeader}>\n          {item.title}\n        </Typography.Title>\n        <Row gutter={16}>\n          {React.Children.map(item.children as React.ReactNode, (child) => {\n            if (!React.isValidElement(child)) {\n              return null;\n            }\n            return (\n              <Col span={12} key={child.key}>\n                {child}\n              </Col>\n            );\n          })}\n        </Row>\n      </Flex>\n    );\n  };\n\n  return (\n    <ConfigProvider\n      theme={{\n        components: {\n          Menu: {\n            popupBg: '#fff',\n            horizontalItemSelectedColor: '#1677ff',\n            horizontalItemHoverColor: '#1677ff',\n          },\n          Typography: {\n            titleMarginBottom: 0,\n            titleMarginTop: 0,\n          },\n        },\n      }}\n    >\n      <Menu mode=\"horizontal\" items={menuItems} popupRender={popupRender} />\n    </ConfigProvider>\n  );\n};\n\nexport default App;\n",
+      "sha256": "dce3754bb8468348a30140bcb8b64baa8b008652636fb92380ff3de7df9f097f",
+      "upstreamPath": "components/menu/demo/custom-popup-render.tsx",
+      "upstreamSha256": "6e260fc2c3283baf2f3c6a39787dfd91a2b867f9cf1d0ddffc7211184cb96463",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/extra-collapsed-debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport {\n  AppstoreOutlined,\n  ContainerOutlined,\n  DesktopOutlined,\n  MailOutlined,\n  MenuFoldOutlined,\n  MenuUnfoldOutlined,\n  PieChartOutlined,\n} from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { Badge, Button, Menu, Space, Switch } from 'antd';\n\ntype MenuItem = Required<MenuProps>['items'][number];\n\nconst items: MenuItem[] = [\n  {\n    key: '1',\n    icon: <PieChartOutlined />,\n    label: 'Option 1Option 1Option 1Option 1Option 1Option 1Option 1',\n    extra: <Badge count=\"123\" />,\n  },\n  { key: '2', icon: <DesktopOutlined />, label: 'Option 2' },\n  { key: '3', icon: <ContainerOutlined />, label: 'Option 3' },\n  {\n    key: 'sub1',\n    label: 'Navigation One',\n    icon: <MailOutlined />,\n    children: [\n      {\n        key: '5',\n        label: 'Option 5Option 5Option 5Option 5Option 5Option 5',\n        icon: <MailOutlined />,\n        extra: <Badge />,\n      },\n      {\n        key: '6',\n        label: 'Option 6',\n        icon: <MailOutlined />,\n        extra: <Badge />,\n      },\n      { key: '7', label: 'Option 7' },\n      { key: '8', label: 'Option 8' },\n    ],\n  },\n  {\n    key: 'sub2',\n    label: 'Navigation Two',\n    icon: <AppstoreOutlined />,\n    children: [\n      { key: '9', label: 'Option 9' },\n      { key: '10', label: 'Option 10' },\n      {\n        key: 'sub3',\n        label: 'Submenu',\n        children: [\n          { key: '11', label: 'Option 11' },\n          { key: '12', label: 'Option 12' },\n        ],\n      },\n    ],\n  },\n];\n\nconst Demo: React.FC = () => {\n  const [collapsed, setCollapsed] = useState(false);\n  const [tooltipEnabled, setTooltipEnabled] = useState(true);\n\n  return (\n    <div style={{ width: 256 }}>\n      <Space style={{ marginBottom: 16 }}>\n        <Button\n          type=\"primary\"\n          onClick={() => setCollapsed((prev) => !prev)}\n          icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}\n        />\n        <Switch\n          checked={tooltipEnabled}\n          onChange={setTooltipEnabled}\n          checkedChildren=\"Tooltip On\"\n          unCheckedChildren=\"Tooltip Off\"\n        />\n      </Space>\n      <Menu\n        defaultSelectedKeys={['1']}\n        defaultOpenKeys={['sub1']}\n        mode=\"inline\"\n        theme=\"dark\"\n        inlineCollapsed={collapsed}\n        tooltip={tooltipEnabled ? { placement: 'left' } : false}\n        items={items}\n      />\n    </div>\n  );\n};\n\nexport default Demo;\n",
+      "sha256": "b6c3f09d7b3e40b8245a829c61f12fbcbbf547649f7e87ad28c39b46542fe969",
+      "upstreamPath": "components/menu/demo/extra-collapsed-debug.tsx",
+      "upstreamSha256": "789971270877770bc4211a6e8eb14df19561410287fe3de83c933a40cfe1e519",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/extra-style.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DownOutlined, MailOutlined } from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { Flex, Menu, Space } from 'antd';\n\ntype MenuItem = Required<MenuProps>['items'][number];\n\nconst items1: MenuItem[] = [\n  {\n    key: 'sub1',\n    icon: <MailOutlined />,\n    label: 'Navigation One',\n    children: [\n      {\n        key: '1',\n        label: (\n          <Flex justify=\"space-between\">\n            <span>Option 1</span>\n            <DownOutlined />\n          </Flex>\n        ),\n      },\n      {\n        key: '2',\n        label: 'Option 2',\n        extra: '⌘P',\n      },\n      {\n        key: '3',\n        label: <a href=\"https://www.baidu.com\">Link Option</a>,\n        disabled: true,\n      },\n    ],\n  },\n];\n\nconst items2: MenuItem[] = [\n  { key: '1', label: 'Users', extra: '⌘U' },\n  { key: '2', label: 'Profile', extra: '⌘P' },\n];\n\nconst App: React.FC = () => (\n  <Space vertical>\n    <Menu\n      mode=\"inline\"\n      defaultOpenKeys={['sub1']}\n      defaultSelectedKeys={['1']}\n      style={{ width: 256 }}\n      items={items1}\n    />\n    <Menu theme=\"dark\" style={{ width: 256 }} items={items2} />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "33ae15c999e68e2b5f13257c177d83b18882ce501a155cb0875eb683ba1fe906",
+      "upstreamPath": "components/menu/demo/extra-style.tsx",
+      "upstreamSha256": "e58f1b1822a13f8fdbefe258dd93862b53ddae56a0cd5b88ea4d0c6f97da049d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/horizontal.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { Menu } from 'antd';\n\ntype MenuItem = Required<MenuProps>['items'][number];\n\nconst items: MenuItem[] = [\n  {\n    label: 'Navigation One',\n    key: 'mail',\n    icon: <MailOutlined />,\n  },\n  {\n    label: 'Navigation Two',\n    key: 'app',\n    icon: <AppstoreOutlined />,\n    disabled: true,\n  },\n  {\n    label: 'Navigation Three - Submenu',\n    key: 'SubMenu',\n    icon: <SettingOutlined />,\n    children: [\n      {\n        type: 'group',\n        label: 'Item 1',\n        children: [\n          { label: 'Option 1', key: 'setting:1' },\n          { label: 'Option 2', key: 'setting:2' },\n        ],\n      },\n      {\n        type: 'group',\n        label: 'Item 2',\n        children: [\n          { label: 'Option 3', key: 'setting:3' },\n          { label: 'Option 4', key: 'setting:4' },\n        ],\n      },\n    ],\n  },\n  {\n    key: 'alipay',\n    label: (\n      <a href=\"https://ant.design\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Navigation Four - Link\n      </a>\n    ),\n  },\n];\n\nconst App: React.FC = () => {\n  const [current, setCurrent] = useState('mail');\n\n  const onClick: MenuProps['onClick'] = (e) => {\n    console.log('click ', e);\n    setCurrent(e.key);\n  };\n\n  return <Menu onClick={onClick} selectedKeys={[current]} mode=\"horizontal\" items={items} />;\n};\n\nexport default App;\n",
+      "sha256": "62328c3ac04aed5328e96721ed288095157a3027cc30404a6402fda30904c088",
+      "upstreamPath": "components/menu/demo/horizontal.tsx",
+      "upstreamSha256": "89e6bf8fc8785a892b424bc736240fd860d3df2c3b6d8bff1bb8fa0ee3e5dc3f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/horizontal-dark.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { Menu } from 'antd';\n\ntype MenuItem = Required<MenuProps>['items'][number];\n\nconst items: MenuItem[] = [\n  {\n    label: 'Navigation One',\n    key: 'mail',\n    icon: <MailOutlined />,\n  },\n  {\n    label: 'Navigation Two',\n    key: 'app',\n    icon: <AppstoreOutlined />,\n    disabled: true,\n  },\n  {\n    label: 'Navigation Three - Submenu',\n    key: 'SubMenu',\n    icon: <SettingOutlined />,\n    children: [\n      {\n        type: 'group',\n        label: 'Item 1',\n        children: [\n          { label: 'Option 1', key: 'setting:1' },\n          { label: 'Option 2', key: 'setting:2' },\n        ],\n      },\n      {\n        type: 'group',\n        label: 'Item 2',\n        children: [\n          { label: 'Option 3', key: 'setting:3' },\n          { label: 'Option 4', key: 'setting:4' },\n        ],\n      },\n    ],\n  },\n  {\n    key: 'alipay',\n    label: (\n      <a href=\"https://ant.design\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Navigation Four - Link\n      </a>\n    ),\n  },\n];\n\nconst App: React.FC = () => {\n  const [current, setCurrent] = useState('mail');\n\n  const onClick: MenuProps['onClick'] = (e) => {\n    console.log('click ', e);\n    setCurrent(e.key);\n  };\n\n  return (\n    <Menu onClick={onClick} selectedKeys={[current]} mode=\"horizontal\" items={items} theme=\"dark\" />\n  );\n};\n\nexport default App;\n",
+      "sha256": "f0cc0de78281fe44ea566901f45f05f3aedbecc37fb88348095deaa3e90843db",
+      "upstreamPath": "components/menu/demo/horizontal-dark.tsx",
+      "upstreamSha256": "92cd429d1c460434f6b46a6e6f88210328844775caa5f057d2cf559516aa9bf3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/inline.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { Menu } from 'antd';\n\ntype MenuItem = Required<MenuProps>['items'][number];\n\nconst items: MenuItem[] = [\n  {\n    key: 'sub1',\n    label: 'Navigation One',\n    icon: <MailOutlined />,\n    children: [\n      {\n        key: 'g1',\n        label: 'Item 1',\n        type: 'group',\n        children: [\n          { key: '1', label: 'Option 1' },\n          { key: '2', label: 'Option 2' },\n        ],\n      },\n      {\n        key: 'g2',\n        label: 'Item 2',\n        type: 'group',\n        children: [\n          { key: '3', label: 'Option 3' },\n          { key: '4', label: 'Option 4' },\n        ],\n      },\n    ],\n  },\n  {\n    key: 'sub2',\n    label: 'Navigation Two',\n    icon: <AppstoreOutlined />,\n    children: [\n      { key: '5', label: 'Option 5' },\n      { key: '6', label: 'Option 6' },\n      {\n        key: 'sub3',\n        label: 'Submenu',\n        children: [\n          { key: '7', label: 'Option 7' },\n          { key: '8', label: 'Option 8' },\n        ],\n      },\n    ],\n  },\n  {\n    type: 'divider',\n  },\n  {\n    key: 'sub4',\n    label: 'Navigation Three',\n    icon: <SettingOutlined />,\n    children: [\n      { key: '9', label: 'Option 9' },\n      { key: '10', label: 'Option 10' },\n      { key: '11', label: 'Option 11' },\n      { key: '12', label: 'Option 12' },\n    ],\n  },\n  {\n    key: 'grp',\n    label: 'Group',\n    type: 'group',\n    children: [\n      { key: '13', label: 'Option 13' },\n      { key: '14', label: 'Option 14' },\n    ],\n  },\n];\n\nconst App: React.FC = () => {\n  const onClick: MenuProps['onClick'] = (e) => {\n    console.log('click ', e);\n  };\n\n  return (\n    <Menu\n      onClick={onClick}\n      style={{ width: 256 }}\n      defaultSelectedKeys={['1']}\n      defaultOpenKeys={['sub1']}\n      mode=\"inline\"\n      items={items}\n    />\n  );\n};\n\nexport default App;\n",
+      "sha256": "fa5674e27c676942a8a5616b3e71f31b67b3b76f2a98d8ee837782440a6b6698",
+      "upstreamPath": "components/menu/demo/inline.tsx",
+      "upstreamSha256": "bd34a74c31b60ab0a9be186177b549d05b80888b0e92f91d8a49fc9a876935e4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/inline-collapsed.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport {\n  AppstoreOutlined,\n  ContainerOutlined,\n  DesktopOutlined,\n  MailOutlined,\n  MenuFoldOutlined,\n  MenuUnfoldOutlined,\n  PieChartOutlined,\n} from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { Button, Menu } from 'antd';\n\ntype MenuItem = Required<MenuProps>['items'][number];\n\nconst items: MenuItem[] = [\n  { key: '1', icon: <PieChartOutlined />, label: 'Option 1' },\n  { key: '2', icon: <DesktopOutlined />, label: 'Option 2' },\n  { key: '3', icon: <ContainerOutlined />, label: 'Option 3' },\n  {\n    key: 'sub1',\n    label: 'Navigation One',\n    icon: <MailOutlined />,\n    children: [\n      { key: '5', label: 'Option 5' },\n      { key: '6', label: 'Option 6' },\n      { key: '7', label: 'Option 7' },\n      { key: '8', label: 'Option 8' },\n    ],\n  },\n  {\n    key: 'sub2',\n    label: 'Navigation Two',\n    icon: <AppstoreOutlined />,\n    children: [\n      { key: '9', label: 'Option 9' },\n      { key: '10', label: 'Option 10' },\n      {\n        key: 'sub3',\n        label: 'Submenu',\n        children: [\n          { key: '11', label: 'Option 11' },\n          { key: '12', label: 'Option 12' },\n        ],\n      },\n    ],\n  },\n];\n\nconst App: React.FC = () => {\n  const [collapsed, setCollapsed] = useState(false);\n\n  const toggleCollapsed = () => {\n    setCollapsed(!collapsed);\n  };\n\n  return (\n    <div style={{ width: 256 }}>\n      <Button type=\"primary\" onClick={toggleCollapsed} style={{ marginBottom: 16 }}>\n        {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}\n      </Button>\n      <Menu\n        defaultSelectedKeys={['1']}\n        defaultOpenKeys={['sub1']}\n        mode=\"inline\"\n        theme=\"dark\"\n        inlineCollapsed={collapsed}\n        items={items}\n      />\n    </div>\n  );\n};\n\nexport default App;\n",
+      "sha256": "0f72172e5a5e80bc552f9cc7c945f31b6b5b80a7c09e524e57c587c17faf3104",
+      "upstreamPath": "components/menu/demo/inline-collapsed.tsx",
+      "upstreamSha256": "685e797536960f11bcc5cfecf6dfd45ad229b28e44fb9fd70ed5202eda03fd2e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/menu-v4.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport {\n  AppstoreOutlined,\n  CalendarOutlined,\n  LinkOutlined,\n  MailOutlined,\n  SettingOutlined,\n} from '@ant-design/icons';\nimport { ConfigProvider, Menu, Switch, Typography } from 'antd';\nimport type { MenuProps } from 'antd';\n\ntype MenuItem = Required<MenuProps>['items'][number];\n\nconst items: MenuItem[] = [\n  {\n    key: '1',\n    icon: <MailOutlined />,\n    label: 'Navigation One',\n  },\n  {\n    key: '2',\n    icon: <CalendarOutlined />,\n    label: 'Navigation Two',\n  },\n  {\n    key: 'sub1',\n    icon: <AppstoreOutlined />,\n    label: 'Navigation Two',\n    children: [\n      {\n        key: '3',\n        label: (\n          <Typography.Text ellipsis>\n            Ant Design, a design language for background applications, is refined by Ant UED Team\n          </Typography.Text>\n        ),\n      },\n      {\n        key: '4',\n        label: 'Option 4',\n      },\n      {\n        key: 'sub1-2',\n        label: 'Submenu',\n        children: [\n          { key: '5', label: 'Option 5' },\n          { key: '6', label: 'Option 6' },\n        ],\n      },\n    ],\n  },\n  {\n    key: 'sub2',\n    label: 'Navigation Three',\n    icon: <SettingOutlined />,\n    children: [\n      { label: 'Option 7', key: '7' },\n      { label: 'Option 8', key: '8' },\n      { label: 'Option 9', key: '9' },\n      { label: 'Option 10', key: '10' },\n    ],\n  },\n  {\n    key: 'link',\n    icon: <LinkOutlined />,\n    label: (\n      <a href=\"https://ant.design\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Ant Design\n      </a>\n    ),\n  },\n];\n\nconst App: React.FC = () => {\n  const [mode, setMode] = useState<'vertical' | 'inline'>('inline');\n\n  const changeMode = (value: boolean) => {\n    setMode(value ? 'vertical' : 'inline');\n  };\n\n  return (\n    <>\n      <Switch onChange={changeMode} /> Change Mode\n      <br />\n      <br />\n      <ConfigProvider\n        theme={{\n          components: {\n            Menu: {\n              itemBorderRadius: 0,\n              subMenuItemBorderRadius: 0,\n              itemHoverColor: '#1890ff',\n              itemSelectedColor: '#1890ff',\n              itemSelectedBg: '#e6f7ff',\n              activeBarWidth: 3,\n              itemMarginInline: 0,\n              itemHoverBg: 'transparent',\n            },\n          },\n        }}\n      >\n        <Menu\n          style={{ width: 256 }}\n          defaultSelectedKeys={['1']}\n          defaultOpenKeys={['sub1']}\n          mode={mode}\n          items={items}\n        />\n      </ConfigProvider>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "40844c24fe6f7c77ced0ffff1e07c066d31890dd0fc36e853500bfcd6fa45b2b",
+      "upstreamPath": "components/menu/demo/menu-v4.tsx",
+      "upstreamSha256": "9ae487114ee78ebcee54e3f0315e8e9da35a470e5525b564132e2e10819fa5ef",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/sider-current.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { Menu } from 'antd';\n\ntype MenuItem = Required<MenuProps>['items'][number];\n\nconst items: MenuItem[] = [\n  {\n    key: '1',\n    icon: <MailOutlined />,\n    label: 'Navigation One',\n    children: [\n      { key: '11', label: 'Option 1' },\n      { key: '12', label: 'Option 2' },\n      { key: '13', label: 'Option 3' },\n      { key: '14', label: 'Option 4' },\n    ],\n  },\n  {\n    key: '2',\n    icon: <AppstoreOutlined />,\n    label: 'Navigation Two',\n    children: [\n      { key: '21', label: 'Option 1' },\n      { key: '22', label: 'Option 2' },\n      {\n        key: '23',\n        label: 'Submenu',\n        children: [\n          { key: '231', label: 'Option 1' },\n          { key: '232', label: 'Option 2' },\n          { key: '233', label: 'Option 3' },\n        ],\n      },\n      {\n        key: '24',\n        label: 'Submenu 2',\n        children: [\n          { key: '241', label: 'Option 1' },\n          { key: '242', label: 'Option 2' },\n          { key: '243', label: 'Option 3' },\n        ],\n      },\n    ],\n  },\n  {\n    key: '3',\n    icon: <SettingOutlined />,\n    label: 'Navigation Three',\n    children: [\n      { key: '31', label: 'Option 1' },\n      { key: '32', label: 'Option 2' },\n      { key: '33', label: 'Option 3' },\n      { key: '34', label: 'Option 4' },\n    ],\n  },\n];\n\ninterface LevelKeysProps {\n  key?: string;\n  children?: LevelKeysProps[];\n}\n\nconst getLevelKeys = (items1: LevelKeysProps[]) => {\n  const key: Record<string, number> = {};\n  const func = (items2: LevelKeysProps[], level = 1) => {\n    items2.forEach((item) => {\n      if (item.key) {\n        key[item.key] = level;\n      }\n      if (item.children) {\n        func(item.children, level + 1);\n      }\n    });\n  };\n  func(items1);\n  return key;\n};\n\nconst levelKeys = getLevelKeys(items as LevelKeysProps[]);\n\nconst App: React.FC = () => {\n  const [stateOpenKeys, setStateOpenKeys] = useState(['2', '23']);\n\n  const onOpenChange: MenuProps['onOpenChange'] = (openKeys) => {\n    const currentOpenKey = openKeys.find((key) => !stateOpenKeys.includes(key));\n    // open\n    if (currentOpenKey !== undefined) {\n      const repeatIndex = openKeys\n        .filter((key) => key !== currentOpenKey)\n        .findIndex((key) => levelKeys[key] === levelKeys[currentOpenKey]);\n\n      setStateOpenKeys(\n        openKeys\n          // remove repeat key\n          .filter((_, index) => index !== repeatIndex)\n          // remove current level all child\n          .filter((key) => levelKeys[key] <= levelKeys[currentOpenKey]),\n      );\n    } else {\n      // close\n      setStateOpenKeys(openKeys);\n    }\n  };\n\n  return (\n    <Menu\n      mode=\"inline\"\n      defaultSelectedKeys={['231']}\n      openKeys={stateOpenKeys}\n      onOpenChange={onOpenChange}\n      style={{ width: 256 }}\n      items={items}\n    />\n  );\n};\n\nexport default App;\n",
+      "sha256": "b9e124949a466d57226fa4d7105fba875e7fa35ed317999b23ac24768247499a",
+      "upstreamPath": "components/menu/demo/sider-current.tsx",
+      "upstreamSha256": "fe0f367fecc201cefa46416b5d8d98f654b9aea16817241618240d5344224efd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/style-class.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Menu } from 'antd';\nimport type { GetProp, MenuProps } from 'antd';\nimport { createStaticStyles } from 'antd-style';\n\nconst classNames = createStaticStyles(({ css }) => ({\n  root: css`\n    border: 1px solid #f0f0f0;\n    max-width: 600px;\n    padding: 8px;\n    border-radius: 4px;\n  `,\n  item: css`\n    color: #1677ff;\n  `,\n}));\n\nconst items: Required<MenuProps>['items'] = [\n  {\n    key: 'SubMenu',\n    label: 'Navigation One',\n    children: [\n      {\n        key: 'g1',\n        label: 'Item 1',\n        type: 'group',\n        children: [\n          { key: '1', label: 'Option 1' },\n          { key: '2', label: 'Option 2' },\n        ],\n      },\n    ],\n  },\n  { key: 'mail', label: 'Navigation Two' },\n];\n\nconst styles: MenuProps['styles'] = {\n  root: { border: '1px solid #f0f0f0', padding: 8, borderRadius: 4 },\n  item: { color: '#1677ff' },\n  subMenu: { list: { color: '#fa541c' } },\n};\n\nconst stylesFn: MenuProps['styles'] = (info): GetProp<MenuProps, 'styles', 'Return'> => {\n  const hasSub = info.props.items?.[0];\n  return {\n    root: {\n      backgroundColor: hasSub ? 'rgba(240,249,255, 0.6)' : 'rgba(255,255,255)',\n    },\n  };\n};\n\nconst App: React.FC = () => {\n  const shareProps: MenuProps = {\n    classNames,\n    items,\n  };\n\n  return (\n    <Flex vertical gap=\"medium\">\n      <Menu {...shareProps} styles={styles} />\n      <Menu mode=\"inline\" {...shareProps} styles={stylesFn} />\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "7ea675f9d1a3852cb189c3ad3c07abeace919820a357634440aae046433aab66",
+      "upstreamPath": "components/menu/demo/style-class.tsx",
+      "upstreamSha256": "b3c7b18621826d5c3fd802efe6611bee9d1ae92020717823cf73eb924f0ee204",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/style-debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { AppstoreOutlined, MailOutlined } from '@ant-design/icons';\nimport type { MenuProps, MenuTheme } from 'antd';\nimport { Menu, Switch } from 'antd';\n\ntype MenuItem = Required<MenuProps>['items'][number];\n\nconst items: MenuItem[] = [\n  {\n    key: 'sub1',\n    label: 'Navigation One Long Long Long Long',\n    icon: <MailOutlined />,\n    children: [\n      { key: '1', label: 'Option 1' },\n      { key: '2', label: 'Option 2' },\n      { key: '3', label: 'Option 3' },\n      { key: '4', label: 'Option 4' },\n    ],\n  },\n  {\n    key: 'sub2',\n    label: 'Navigation Two',\n    icon: <AppstoreOutlined />,\n    children: [\n      { key: '5', label: 'Option 5' },\n      { key: '6', label: 'Option 6' },\n      {\n        key: 'sub3',\n        label: 'Submenu',\n        children: [\n          { key: '7', label: 'Option 7' },\n          { key: '8', label: 'Option 8' },\n        ],\n      },\n    ],\n  },\n  { key: '11', label: 'Option 11' },\n  { key: '12', label: 'Option 12' },\n];\n\nconst App: React.FC = () => {\n  const [menuTheme, setMenuTheme] = useState<MenuTheme>('dark');\n  const [current, setCurrent] = useState('1');\n\n  const changeTheme = (value: boolean) => {\n    setMenuTheme(value ? 'dark' : 'light');\n  };\n\n  const onClick: MenuProps['onClick'] = (e) => {\n    console.log('click ', e);\n    setCurrent(e.key);\n  };\n\n  return (\n    <>\n      <Switch\n        checked={menuTheme === 'dark'}\n        onChange={changeTheme}\n        checkedChildren=\"Dark\"\n        unCheckedChildren=\"Light\"\n      />\n      <br />\n      <br />\n      <Menu\n        theme={menuTheme}\n        onClick={onClick}\n        selectedKeys={[current]}\n        mode=\"inline\"\n        items={items}\n        inlineCollapsed\n        // Test only. Remove in future.\n        _internalRenderMenuItem={(node) =>\n          React.cloneElement<any>(node, {\n            style: {\n              ...(node as any).props.style,\n              textDecoration: 'underline',\n            },\n          })\n        }\n        // Test only. Remove in future.\n        _internalRenderSubMenuItem={(node) =>\n          React.cloneElement<any>(node, {\n            style: {\n              ...(node as any).props.style,\n              background: 'rgba(255, 255, 255, 0.3)',\n            },\n          })\n        }\n        // Test only. Remove in future.\n        _internalDisableMenuItemTitleTooltip\n      />\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "4260fc6a0b55f9a257fe83c2dd0a6d0371a992fce603982d35e27d6f56bebe03",
+      "upstreamPath": "components/menu/demo/style-debug.tsx",
+      "upstreamSha256": "c710e7031a0878d16e355a3318cb98ca7d42735ee4e4bdd8e010e24ea119f7d5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/submenu-theme.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { MailOutlined } from '@ant-design/icons';\nimport type { MenuProps, MenuTheme } from 'antd';\nimport { Menu, Switch } from 'antd';\n\ntype MenuItem = Required<MenuProps>['items'][number];\n\nconst App: React.FC = () => {\n  const [menuTheme, setMenuTheme] = useState<MenuTheme>('light');\n  const [current, setCurrent] = useState('1');\n\n  const changeTheme = (value: boolean) => {\n    setMenuTheme(value ? 'dark' : 'light');\n  };\n\n  const onClick: MenuProps['onClick'] = (e) => {\n    setCurrent(e.key);\n  };\n\n  const items: MenuItem[] = [\n    {\n      key: 'sub1',\n      icon: <MailOutlined />,\n      label: 'Navigation One',\n      theme: menuTheme,\n      children: [\n        { key: '1', label: 'Option 1' },\n        { key: '2', label: 'Option 2' },\n        { key: '3', label: 'Option 3' },\n      ],\n    },\n    { key: '5', label: 'Option 5' },\n    { key: '6', label: 'Option 6' },\n  ];\n\n  return (\n    <>\n      <Switch\n        checked={menuTheme === 'dark'}\n        onChange={changeTheme}\n        checkedChildren=\"Dark\"\n        unCheckedChildren=\"Light\"\n      />\n      <br />\n      <br />\n      <Menu\n        onClick={onClick}\n        style={{ width: 256 }}\n        openKeys={['sub1']}\n        selectedKeys={[current]}\n        mode=\"vertical\"\n        theme=\"dark\"\n        items={items}\n        getPopupContainer={(node) => node.parentNode as HTMLElement}\n      />\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "6de7278e65382aa59dc01c6639e34c443474067de3b6ae9d0ed39b489d45726a",
+      "upstreamPath": "components/menu/demo/submenu-theme.tsx",
+      "upstreamSha256": "e6761a8d7bfb54c28cc041f911083b72662f13af12efa580f0c340ef54dd9ab5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/switch-mode.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport {\n  AppstoreOutlined,\n  CalendarOutlined,\n  LinkOutlined,\n  MailOutlined,\n  SettingOutlined,\n} from '@ant-design/icons';\nimport { Divider, Menu, Switch } from 'antd';\nimport type { GetProp, MenuProps } from 'antd';\n\ntype MenuTheme = GetProp<MenuProps, 'theme'>;\n\ntype MenuItem = GetProp<MenuProps, 'items'>[number];\n\nconst items: MenuItem[] = [\n  {\n    key: '1',\n    icon: <MailOutlined />,\n    label: 'Navigation One',\n  },\n  {\n    key: '2',\n    icon: <CalendarOutlined />,\n    label: 'Navigation Two',\n  },\n  {\n    key: 'sub1',\n    label: 'Navigation Two',\n    icon: <AppstoreOutlined />,\n    children: [\n      { key: '3', label: 'Option 3' },\n      { key: '4', label: 'Option 4' },\n      {\n        key: 'sub1-2',\n        label: 'Submenu',\n        children: [\n          { key: '5', label: 'Option 5' },\n          { key: '6', label: 'Option 6' },\n        ],\n      },\n    ],\n  },\n  {\n    key: 'sub2',\n    label: 'Navigation Three',\n    icon: <SettingOutlined />,\n    children: [\n      { key: '7', label: 'Option 7' },\n      { key: '8', label: 'Option 8' },\n      { key: '9', label: 'Option 9' },\n      { key: '10', label: 'Option 10' },\n    ],\n  },\n  {\n    key: 'link',\n    icon: <LinkOutlined />,\n    label: (\n      <a href=\"https://ant.design\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Ant Design\n      </a>\n    ),\n  },\n];\n\nconst App: React.FC = () => {\n  const [mode, setMode] = useState<'vertical' | 'inline'>('inline');\n  const [theme, setTheme] = useState<MenuTheme>('light');\n\n  const changeMode = (value: boolean) => {\n    setMode(value ? 'vertical' : 'inline');\n  };\n\n  const changeTheme = (value: boolean) => {\n    setTheme(value ? 'dark' : 'light');\n  };\n\n  return (\n    <>\n      <Switch onChange={changeMode} /> Change Mode\n      <Divider vertical />\n      <Switch onChange={changeTheme} /> Change Style\n      <br />\n      <br />\n      <Menu\n        style={{ width: 256 }}\n        defaultSelectedKeys={['1']}\n        defaultOpenKeys={['sub1']}\n        mode={mode}\n        theme={theme}\n        items={items}\n      />\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "dcaa881c828ea6d0d2698abfa63771ca20dbd9cf1aebe3c876d0f179c50df2b6",
+      "upstreamPath": "components/menu/demo/switch-mode.tsx",
+      "upstreamSha256": "68825dc11587dad3b2fd905d71fa43e38f9cefc85a7347eda61d771483a9106e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/theme.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';\nimport type { MenuProps, MenuTheme } from 'antd';\nimport { Menu, Switch } from 'antd';\n\ntype MenuItem = Required<MenuProps>['items'][number];\n\nconst items: MenuItem[] = [\n  {\n    key: 'sub1',\n    label: 'Navigation One',\n    icon: <MailOutlined />,\n    children: [\n      { key: '1', label: 'Option 1' },\n      { key: '2', label: 'Option 2' },\n      { key: '3', label: 'Option 3' },\n      { key: '4', label: 'Option 4' },\n    ],\n  },\n  {\n    key: 'sub2',\n    label: 'Navigation Two',\n    icon: <AppstoreOutlined />,\n    children: [\n      { key: '5', label: 'Option 5' },\n      { key: '6', label: 'Option 6' },\n      {\n        key: 'sub3',\n        label: 'Submenu',\n        children: [\n          { key: '7', label: 'Option 7' },\n          { key: '8', label: 'Option 8' },\n        ],\n      },\n    ],\n  },\n  {\n    key: 'sub4',\n    label: 'Navigation Three',\n    icon: <SettingOutlined />,\n    children: [\n      { key: '9', label: 'Option 9' },\n      { key: '10', label: 'Option 10' },\n      { key: '11', label: 'Option 11' },\n      { key: '12', label: 'Option 12' },\n    ],\n  },\n];\n\nconst App: React.FC = () => {\n  const [theme, setTheme] = useState<MenuTheme>('dark');\n  const [current, setCurrent] = useState('1');\n\n  const changeTheme = (value: boolean) => {\n    setTheme(value ? 'dark' : 'light');\n  };\n\n  const onClick: MenuProps['onClick'] = (e) => {\n    console.log('click ', e);\n    setCurrent(e.key);\n  };\n\n  return (\n    <>\n      <Switch\n        checked={theme === 'dark'}\n        onChange={changeTheme}\n        checkedChildren=\"Dark\"\n        unCheckedChildren=\"Light\"\n      />\n      <br />\n      <br />\n      <Menu\n        theme={theme}\n        onClick={onClick}\n        style={{ width: 256 }}\n        defaultOpenKeys={['sub1']}\n        selectedKeys={[current]}\n        mode=\"inline\"\n        items={items}\n      />\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "9159d1d0bdcca85eac77a605ed6f64ead764c5838e940df384a3878c0e532cad",
+      "upstreamPath": "components/menu/demo/theme.tsx",
+      "upstreamSha256": "b15bcd76d4a58410a9f57cd3776191401d69d8e1e27a34937998ff127c42a9ef",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/tooltip.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport {\n  AppstoreOutlined,\n  ContainerOutlined,\n  DesktopOutlined,\n  MailOutlined,\n  MenuFoldOutlined,\n  MenuUnfoldOutlined,\n  PieChartOutlined,\n} from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { Button, Menu, Space, Switch } from 'antd';\n\ntype MenuItem = Required<MenuProps>['items'][number];\n\nconst items: MenuItem[] = [\n  { key: '1', icon: <PieChartOutlined />, label: 'Option 1' },\n  { key: '2', icon: <DesktopOutlined />, label: 'Option 2' },\n  { key: '3', icon: <ContainerOutlined />, label: 'Option 3' },\n  {\n    key: 'sub1',\n    label: 'Navigation One',\n    icon: <MailOutlined />,\n    children: [\n      { key: '5', label: 'Option 5' },\n      { key: '6', label: 'Option 6' },\n      { key: '7', label: 'Option 7' },\n      { key: '8', label: 'Option 8' },\n    ],\n  },\n  {\n    key: 'sub2',\n    label: 'Navigation Two',\n    icon: <AppstoreOutlined />,\n    children: [\n      { key: '9', label: 'Option 9' },\n      { key: '10', label: 'Option 10' },\n      {\n        key: 'sub3',\n        label: 'Submenu',\n        children: [\n          { key: '11', label: 'Option 11' },\n          { key: '12', label: 'Option 12' },\n        ],\n      },\n    ],\n  },\n];\n\nconst App: React.FC = () => {\n  const [collapsed, setCollapsed] = useState(false);\n  const [tooltipEnabled, setTooltipEnabled] = useState(true);\n\n  return (\n    <div style={{ width: 256 }}>\n      <Space style={{ marginBottom: 16 }}>\n        <Button\n          type=\"primary\"\n          onClick={() => setCollapsed((prev) => !prev)}\n          icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}\n        />\n        <Switch\n          checked={tooltipEnabled}\n          onChange={setTooltipEnabled}\n          checkedChildren=\"Tooltip On\"\n          unCheckedChildren=\"Tooltip Off\"\n        />\n      </Space>\n      <Menu\n        defaultSelectedKeys={['1']}\n        defaultOpenKeys={['sub1']}\n        mode=\"inline\"\n        theme=\"dark\"\n        inlineCollapsed={collapsed}\n        tooltip={tooltipEnabled ? { placement: 'left' } : false}\n        items={items}\n      />\n    </div>\n  );\n};\n\nexport default App;\n",
+      "sha256": "fb97da6ab6eb1f138480be881f48b5e18f64c0d0817986b470d9f7640330d699",
+      "upstreamPath": "components/menu/demo/tooltip.tsx",
+      "upstreamSha256": "319a57f726f7eb2788a9303f7ce35b201501eee436433e31dd963067698b6a23",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/menu/demo/vertical.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { Menu } from 'antd';\n\ntype MenuItem = Required<MenuProps>['items'][number];\n\nconst items: MenuItem[] = [\n  {\n    key: 'sub1',\n    icon: <MailOutlined />,\n    label: 'Navigation One',\n    children: [\n      {\n        key: '1-1',\n        label: 'Item 1',\n        type: 'group',\n        children: [\n          { key: '1', label: 'Option 1' },\n          { key: '2', label: 'Option 2' },\n        ],\n      },\n      {\n        key: '1-2',\n        label: 'Item 2',\n        type: 'group',\n        children: [\n          { key: '3', label: 'Option 3' },\n          { key: '4', label: 'Option 4' },\n        ],\n      },\n    ],\n  },\n  {\n    key: 'sub2',\n    icon: <AppstoreOutlined />,\n    label: 'Navigation Two',\n    children: [\n      { key: '5', label: 'Option 5' },\n      { key: '6', label: 'Option 6' },\n      {\n        key: 'sub3',\n        label: 'Submenu',\n        children: [\n          { key: '7', label: 'Option 7' },\n          { key: '8', label: 'Option 8' },\n        ],\n      },\n    ],\n  },\n  {\n    key: 'sub4',\n    label: 'Navigation Three',\n    icon: <SettingOutlined />,\n    children: [\n      { key: '9', label: 'Option 9' },\n      { key: '10', label: 'Option 10' },\n      { key: '11', label: 'Option 11' },\n      { key: '12', label: 'Option 12' },\n    ],\n  },\n];\n\nconst onClick: MenuProps['onClick'] = (e) => {\n  console.log('click', e);\n};\n\nconst App: React.FC = () => (\n  <Menu onClick={onClick} style={{ width: 256 }} mode=\"vertical\" items={items} />\n);\n\nexport default App;\n",
+      "sha256": "e33706a5c371bec5753c10d8a079000120154ba19f405a44f98e641fc76b981f",
+      "upstreamPath": "components/menu/demo/vertical.tsx",
+      "upstreamSha256": "f6bbebfd9076b3c8fa3e54a5b97de18a74d83db696af3f174a8b0cd250fd406c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/collapsed-icon-debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "6f26a6f05880763e4a0e9535cd1f4fc80d00dde212d5b0fe8c0bfbbbba262be2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/component-token.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/component-token\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "9bf60f17bfe3071bcb71d0f8755056f8976ca3d4a2e80d527c4cb332f4614dcb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/custom-popup-render.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/custom-popup-render\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d629c2861c86746f12b3254147c428ae64cf1ffc3da54fe87340a75f8547a459",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/extra-collapsed-debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/extra-collapsed-debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "65d9aea362ff36cf296a516d5c1086a369af435c0c7ca80989c3da75c6b2836a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/extra-style.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/extra-style\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "fafb14d79708956282e022f2bb6f2cf92f9a0909de6343b0faee36355b43666b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/horizontal.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/horizontal\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "3af4a1de2e423877014dec7a69c6fd6521be70159e56e97597e8757bffbfc12b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/horizontal-dark.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/horizontal-dark\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8bb2483915c535546c4e49d56915447e367caea884ef7fec843a251e8b63cf00",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/inline.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/inline\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1348fbe2b19ff3970ba56724a853df448c6bb4fc3e4bacb85e0a59dba782af1b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/inline-collapsed.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/inline-collapsed\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "3702810cd48e56ba04ee8f0eff59eada12f99abb83309b273a40070e4bf843a3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/menu-v4.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/menu-v4\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1e930bc06080edfcf4561a24ca5e0c9c7c3293feecbd84a08c84810abb2d0351",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/sider-current.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/sider-current\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "25b8126c5641e407678c2213c124c68778c483c8e1806a3f7e20e784f54afe2e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/style-class.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/style-class\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "f12e499ffe03bed80a3621a174ad21de37eda8e7289d11bad0e99f88548e303d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/style-debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/style-debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e229917f0e83390bd9c2ac0a5a27b479aba41a91a9814ceff04b0f7bb57c79c9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/submenu-theme.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/submenu-theme\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "f84ae3d08efe61d1a609b06dab927194dd73f0796dfb83d0adf2fce7dc6fe8c3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/switch-mode.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/switch-mode\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2bd73c3affff9143117c158b04598c28ff45853753cdfb5cd783c1a0d8ba8ae6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/theme.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/theme\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e0c1b806780222bcaca2f033db526015c087945734f24c97a88574bddcfb033f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/tooltip.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/tooltip\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "9f1d928d65efe00e9d2f81b11a750e299fb330d9884c80dae3725fb6e48905b3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/menu/previews/vertical.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/menu/demo/vertical\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "830c9e876768d48282fb3ac48c5e2f6d0580aa235b5f498fa3a1751098cc3153",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example compositions using the pinned antd npm package.",
+      "Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "menu",
+    "upstreamPageUrl": "https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/menu/demo",
+    "upstreamDetailUrl": "https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/menu/demo/collapsed-icon-debug.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/ant-design/ant-design/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/menu/demo/collapsed-icon-debug.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Ant Design menu\n\n18 published Ant Design menu examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example compositions using the pinned antd npm package.\n- Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/menu/demo\nPinned source: https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/menu/demo/collapsed-icon-debug.tsx\n"
+}

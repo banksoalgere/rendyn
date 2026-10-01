@@ -1,0 +1,116 @@
+{
+  "id": "mui:material-customization-css-layers",
+  "sourceId": "mui",
+  "slug": "mui-material-customization-css-layers",
+  "name": "Material UI material customization css layers",
+  "description": "2 published Material UI material customization css layers examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/icons-material@9.4.0",
+    "@mui/material@9.4.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "material-customization-css-layers",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file"
+    ],
+    "aliases": [
+      "material customization css layers",
+      "material ui material customization css layers",
+      "material-customization-css-layers"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "2 published Material UI material customization css layers examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "material-customization-css-layers:code:command:data:file",
+    "searchText": "Material UI material customization css layers\nmaterial customization css layers\n2 published Material UI material customization css layers examples with complete pinned source and MIT attribution.\nmaterial ui material customization css layers\nmaterial-customization-css-layers\ncode\ncommand\ndata\nfile\nMaterial UI material customization css layers 2 published Material UI material customization css layers examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/css layers Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/css layers/CssLayersCaveat.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-material-customization-css-layers",
+  "manifestPath": "components/mui-material-customization-css-layers/component.json",
+  "integrity": "sha256:06b8a901709dd3225fdddaa9174a77fc6fc583da8025f190a75993dcf485c510",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/customization/css-layers/CssLayersCaveat.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport { createTheme, ThemeProvider } from '@mui/material/styles';\nimport Accordion from '@mui/material/Accordion';\nimport AccordionSummary from '@mui/material/AccordionSummary';\nimport AccordionDetails from '@mui/material/AccordionDetails';\nimport Typography from '@mui/material/Typography';\nimport ExpandMoreIcon from '@mui/icons-material/ExpandMore';\nimport Box from '@mui/material/Box';\nimport Switch from '@mui/material/Switch';\n\nexport default function CssLayersCaveat() {\n  const [cssLayers, setCssLayers] = React.useState(false);\n  const theme = React.useMemo(() => {\n    return createTheme({\n      modularCssLayers: cssLayers,\n      cssVariables: true,\n      components: {\n        MuiAccordion: {\n          styleOverrides: {\n            root: {\n              margin: 0,\n            },\n          },\n        },\n      },\n    });\n  }, [cssLayers]);\n  return (\n    <div>\n      <Box\n        sx={{\n          display: 'flex',\n          alignItems: 'center',\n          justifyContent: 'center',\n          marginBottom: '16px',\n        }}\n      >\n        <Typography\n          component=\"span\"\n          sx={{ marginRight: '8px', fontSize: '14px', color: 'text.secondary' }}\n        >\n          No CSS Layers\n        </Typography>\n        <Switch checked={cssLayers} onChange={() => setCssLayers(!cssLayers)} />\n        <Typography\n          component=\"span\"\n          sx={{ marginLeft: '8px', fontSize: '14px', color: 'text.secondary' }}\n        >\n          With CSS Layers\n        </Typography>\n      </Box>\n      <ThemeProvider theme={theme}>\n        <div>\n          <Accordion defaultExpanded>\n            <AccordionSummary\n              expandIcon={<ExpandMoreIcon />}\n              aria-controls=\"panel1-content\"\n              id=\"panel1-header\"\n            >\n              <Typography component=\"span\">Accordion 1</Typography>\n            </AccordionSummary>\n            <AccordionDetails>\n              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse\n              malesuada lacus ex, sit amet blandit leo lobortis eget.\n            </AccordionDetails>\n          </Accordion>\n          <Accordion>\n            <AccordionSummary\n              expandIcon={<ExpandMoreIcon />}\n              aria-controls=\"panel2-content\"\n              id=\"panel2-header\"\n            >\n              <Typography component=\"span\">Accordion 2</Typography>\n            </AccordionSummary>\n            <AccordionDetails>\n              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse\n              malesuada lacus ex, sit amet blandit leo lobortis eget.\n            </AccordionDetails>\n          </Accordion>\n        </div>\n      </ThemeProvider>\n    </div>\n  );\n}\n",
+      "sha256": "f5507d99d8dc7f265d3e96feaf263a910732b47069ea2d4d47b47657acd71998",
+      "upstreamPath": "docs/data/material/customization/css-layers/CssLayersCaveat.tsx",
+      "upstreamSha256": "9cf750cae0fd2e06acb04b90ad2d64c997d29bab4684e5b2c4f418add1fd7045",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/customization/css-layers/CssLayersInput.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createTheme, ThemeProvider } from '@mui/material/styles';\nimport FormControl from '@mui/material/FormControl';\nimport InputLabel from '@mui/material/InputLabel';\nimport OutlinedInput from '@mui/material/OutlinedInput';\nimport FormHelperText from '@mui/material/FormHelperText';\n\nconst theme = createTheme({\n  modularCssLayers: true,\n  cssVariables: true,\n});\n\nexport default function CssLayersInput() {\n  return (\n    <ThemeProvider theme={theme}>\n      <FormControl variant=\"outlined\">\n        <InputLabel\n          shrink\n          htmlFor=\"css-layers-input\"\n          sx={{\n            width: 'fit-content',\n            transform: 'none',\n            position: 'relative',\n            mb: 0.25,\n            fontWeight: 'medium',\n            pointerEvents: 'auto',\n          }}\n        >\n          Label\n        </InputLabel>\n        <OutlinedInput\n          id=\"css-layers-input\"\n          placeholder=\"Type something\"\n          slotProps={{\n            input: {\n              sx: { py: 1.5, height: '2.5rem', boxSizing: 'border-box' },\n            },\n          }}\n        />\n        <FormHelperText sx={{ marginLeft: 0 }}>Helper text goes here</FormHelperText>\n      </FormControl>\n    </ThemeProvider>\n  );\n}\n",
+      "sha256": "b2864de7ece57c5a7cdda41907033141797ca0cd7fcc1d5687913e7d0de2cc40",
+      "upstreamPath": "docs/data/material/customization/css-layers/CssLayersInput.tsx",
+      "upstreamSha256": "5d73487464b2bcbbae7b6c3ca60a020543831d32aead030f82ebce927b0ee8b6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-customization-css-layers/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/customization/css-layers/CssLayersCaveat\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "44b4e3bdccc4b2dc1b51e594a75f66262fa24721f462e7cdb7a076d2da76e768",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-customization-css-layers/previews/css-layers-input.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/customization/css-layers/CssLayersInput\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "c58763fec63a34d65a5388a34a3f626d279c7d0f22b1ffc3ecf40fff57fe5fc6",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "material-customization-css-layers",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/css-layers",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/css-layers/CssLayersCaveat.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/css-layers/CssLayersCaveat.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI material customization css layers\n\n2 published Material UI material customization css layers examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/css-layers\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/css-layers/CssLayersCaveat.tsx\n"
+}

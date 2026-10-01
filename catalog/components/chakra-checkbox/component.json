@@ -1,0 +1,433 @@
+{
+  "id": "chakra:checkbox",
+  "sourceId": "chakra",
+  "slug": "chakra-checkbox",
+  "name": "Chakra UI Checkbox",
+  "description": "20 published Chakra UI checkbox examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "@hookform/resolvers@5.9.1",
+    "react-hook-form@7.87.0",
+    "react-icons@5.5.0",
+    "zod@4.5.4"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "checkbox",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "checkbox",
+      "chakra ui checkbox"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "20 published Chakra UI checkbox examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI Checkbox\ncheckbox\n20 published Chakra UI checkbox examples with complete pinned source and MIT attribution.\nchakra ui checkbox\nfile\nform\ninput\nkeyboard\nChakra UI Checkbox 20 published Chakra UI checkbox examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://chakra ui.com/docs/components/checkbox Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/checkbox basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-checkbox",
+  "manifestPath": "components/chakra-checkbox/component.json",
+  "integrity": "sha256:22962333e707cff13541f60d4d9a3baa239ef101acde0a1035ba4e881eb9c059",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/example.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox } from \"@chakra-ui/react\"\n\nexport const CheckboxBasic = () => {\n  return (\n    <Checkbox.Root>\n      <Checkbox.HiddenInput />\n      <Checkbox.Control />\n      <Checkbox.Label>Accept terms and conditions</Checkbox.Label>\n    </Checkbox.Root>\n  )\n}\n",
+      "sha256": "8681917cdd8bce3a0c74c9ee48245057c3657439190dd617611504305426d8c7",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-basic.tsx",
+      "upstreamSha256": "6d058dad0996a1647d176facaee3ab1f49993496ea36b0e8cf3d8671f21e65c7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-controlled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\nexport const CheckboxControlled = () => {\n  const [checked, setChecked] = useState(false)\n  return (\n    <Checkbox.Root\n      checked={checked}\n      onCheckedChange={(e) => setChecked(!!e.checked)}\n    >\n      <Checkbox.HiddenInput />\n      <Checkbox.Control />\n      <Checkbox.Label>Accept terms and conditions</Checkbox.Label>\n    </Checkbox.Root>\n  )\n}\n",
+      "sha256": "104423ed82b6e8b438453b063d96dbcd4b51bba47a6b48bcc9b2ce2b6dd69ff6",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-controlled.tsx",
+      "upstreamSha256": "325cf35830e1c1b07321fdcd50549631a8c731f02e30e882feb41d612f87be61",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-explorer-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox } from \"@chakra-ui/react\"\n\nexport const CheckboxExplorerDemo = () => {\n  return (\n    <Checkbox.Group defaultValue={[\"terms\"]} gap=\"4\" flexDirection=\"column\">\n      <Checkbox.Root value=\"terms\">\n        <Checkbox.HiddenInput />\n        <Checkbox.Control>\n          <Checkbox.Indicator />\n        </Checkbox.Control>\n        <Checkbox.Label>Accept terms and conditions</Checkbox.Label>\n      </Checkbox.Root>\n\n      <Checkbox.Root value=\"newsletter\">\n        <Checkbox.HiddenInput />\n        <Checkbox.Control>\n          <Checkbox.Indicator />\n        </Checkbox.Control>\n        <Checkbox.Label>Subscribe to newsletter</Checkbox.Label>\n      </Checkbox.Root>\n\n      <Checkbox.Root value=\"updates\">\n        <Checkbox.HiddenInput />\n        <Checkbox.Control>\n          <Checkbox.Indicator />\n        </Checkbox.Control>\n        <Checkbox.Label>Receive product updates</Checkbox.Label>\n      </Checkbox.Root>\n    </Checkbox.Group>\n  )\n}\n",
+      "sha256": "85988d0d536b4cb66adc5e5f60a4c9c6e1a0a9769c637af4ea34857bbdd22b37",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-explorer-demo.tsx",
+      "upstreamSha256": "44a469ba8fc5490d28417099b2229729a8e59ddb7a479f277a1bdc92bdad9126",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-indeterminate.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, Stack } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\nconst initialValues = [\n  { label: \"Monday\", checked: false, value: \"monday\" },\n  { label: \"Tuesday\", checked: false, value: \"tuesday\" },\n  { label: \"Wednesday\", checked: false, value: \"wednesday\" },\n  { label: \"Thursday\", checked: false, value: \"thursday\" },\n]\n\nexport const CheckboxIndeterminate = () => {\n  const [values, setValues] = useState(initialValues)\n\n  const allChecked = values.every((value) => value.checked)\n  const indeterminate = values.some((value) => value.checked) && !allChecked\n\n  const items = values.map((item, index) => (\n    <Checkbox.Root\n      ms=\"6\"\n      key={item.value}\n      checked={item.checked}\n      onCheckedChange={(e) => {\n        setValues((current) => {\n          const newValues = [...current]\n          newValues[index] = { ...newValues[index], checked: !!e.checked }\n          return newValues\n        })\n      }}\n    >\n      <Checkbox.HiddenInput />\n      <Checkbox.Control />\n      <Checkbox.Label>{item.label}</Checkbox.Label>\n    </Checkbox.Root>\n  ))\n\n  return (\n    <Stack align=\"flex-start\">\n      <Checkbox.Root\n        checked={indeterminate ? \"indeterminate\" : allChecked}\n        onCheckedChange={(e) => {\n          setValues((current) =>\n            current.map((value) => ({ ...value, checked: !!e.checked })),\n          )\n        }}\n      >\n        <Checkbox.HiddenInput />\n        <Checkbox.Control>\n          <Checkbox.Indicator />\n        </Checkbox.Control>\n        <Checkbox.Label>Weekdays</Checkbox.Label>\n      </Checkbox.Root>\n      {items}\n    </Stack>\n  )\n}\n",
+      "sha256": "5b30c27609d5f032145798043c59754406b08ed356e485245b5e73df7a7778f0",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-indeterminate.tsx",
+      "upstreamSha256": "70c7bf9a04d1f5ae5cd72e8081d3ee44c1169abb9acf642e711befbc68a10f80",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-size-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, For, Span, Stack, useSlotRecipe } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const CheckboxSizeTable = () => {\n  const recipe = useSlotRecipe({ key: \"checkbox\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.size}>{(v) => <td key={v}>{v}</td>}</For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.size}>\n                {(v) => (\n                  <td key={v}>\n                    <Stack>\n                      <DemoCheckbox colorPalette={c} size={v}>\n                        Checkbox\n                      </DemoCheckbox>\n                      <DemoCheckbox colorPalette={c} size={v} defaultChecked>\n                        Checkbox\n                      </DemoCheckbox>\n                    </Stack>\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n\nconst DemoCheckbox = (props: Checkbox.RootProps) => {\n  return (\n    <Checkbox.Root {...props}>\n      <Checkbox.HiddenInput />\n      <Checkbox.Control />\n      <Checkbox.Label>{props.children}</Checkbox.Label>\n    </Checkbox.Root>\n  )\n}\n",
+      "sha256": "4c73be7480488e6367099e33f56d32c9f8dc6c87f28f3725d3139d2e96e48234",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-size-table.tsx",
+      "upstreamSha256": "359c44f30dfda0c12cf6d217dfebac6356f22abfe7f7b55ff1c956216a5e6fa4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/color-palettes.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { ColorPalette } from \"@chakra-ui/react\"\n\nexport const colorPalettes: ColorPalette[] = [\n  \"gray\",\n  \"red\",\n  \"green\",\n  \"blue\",\n  \"teal\",\n  \"pink\",\n  \"purple\",\n  \"cyan\",\n  \"orange\",\n  \"yellow\",\n]\n",
+      "sha256": "90c5e84e17059e5935c80798a833fb5ac46ea296bb8d1ee978fd7a6e8cdb15e7",
+      "upstreamPath": "apps/compositions/src/lib/color-palettes.ts",
+      "upstreamSha256": "bc209453f7e4dbfc131d92ed9c81f00e20ad5da6cab70624417dcd591e62eac1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/playground-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { chakra } from \"@chakra-ui/react\"\n\nexport const PlaygroundTable = chakra(\"table\", {\n  base: {\n    width: \"full\",\n    marginBottom: \"32px\",\n    borderCollapse: \"collapse\",\n    \"& td:not(.chakra-table__cell)\": {\n      paddingRight: \"8\",\n      paddingBottom: \"8\",\n    },\n    \"& th:not(.chakra-table__column-header)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n    \"& thead td:not(.chakra-table__cell)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n  },\n})\n",
+      "sha256": "0c8b12b7fc74b6aec643559359ca4d43afbca488faeb90424ba3f98e71e3d7e7",
+      "upstreamPath": "apps/compositions/src/lib/playground-table.tsx",
+      "upstreamSha256": "d42456810c8b507d7171df7dca2fc955f2c04f4e8e711a74de35507acf64416c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-variant-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, For, Span, Stack, useSlotRecipe } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const CheckboxVariantTable = () => {\n  const recipe = useSlotRecipe({ key: \"checkbox\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.variant}>\n            {(v) => <td key={v}>{v}</td>}\n          </For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.variant}>\n                {(v) => (\n                  <td key={v}>\n                    <Stack>\n                      <DemoCheckbox colorPalette={c} variant={v}>\n                        Checkbox\n                      </DemoCheckbox>\n                      <DemoCheckbox colorPalette={c} variant={v} defaultChecked>\n                        Checkbox\n                      </DemoCheckbox>\n                      <DemoCheckbox\n                        colorPalette={c}\n                        variant={v}\n                        disabled\n                        defaultChecked\n                      >\n                        Checkbox\n                      </DemoCheckbox>\n                    </Stack>\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n\nconst DemoCheckbox = (props: Checkbox.RootProps) => {\n  return (\n    <Checkbox.Root {...props}>\n      <Checkbox.HiddenInput />\n      <Checkbox.Control />\n      <Checkbox.Label>{props.children}</Checkbox.Label>\n    </Checkbox.Root>\n  )\n}\n",
+      "sha256": "1b247613669b6b0bb29606022636e0b398ea4f6aa8957747081b40f488163263",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-variant-table.tsx",
+      "upstreamSha256": "0da74a63262e1b1fd008bca42d1faa30a12bc075e8e879d9a13e1f6c2da988a2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-with-colors.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, For, Stack, Text } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\n\nexport const CheckboxWithColors = () => {\n  return (\n    <Stack gap=\"2\" align=\"flex-start\">\n      {colorPalettes.map((colorPalette) => (\n        <Stack\n          align=\"center\"\n          key={colorPalette}\n          direction=\"row\"\n          gap=\"10\"\n          width=\"full\"\n        >\n          <Text minW=\"8ch\">{colorPalette}</Text>\n          <For each={[\"outline\", \"subtle\", \"solid\"]}>\n            {(variant) => (\n              <Stack key={variant} mb=\"4\">\n                <Checkbox.Root variant={variant} colorPalette={colorPalette}>\n                  <Checkbox.HiddenInput />\n                  <Checkbox.Control />\n                  <Checkbox.Label>Checkbox</Checkbox.Label>\n                </Checkbox.Root>\n\n                <Checkbox.Root\n                  defaultChecked\n                  variant={variant}\n                  colorPalette={colorPalette}\n                >\n                  <Checkbox.HiddenInput />\n                  <Checkbox.Control />\n                  <Checkbox.Label>Checkbox</Checkbox.Label>\n                </Checkbox.Root>\n              </Stack>\n            )}\n          </For>\n        </Stack>\n      ))}\n    </Stack>\n  )\n}\n",
+      "sha256": "b370b32b5c192be2c57a762be7b082b74ef373d1d05c921f2c27817afad0ab86",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-with-colors.tsx",
+      "upstreamSha256": "7f1e5a444849dfdc04dc92b97d83b3d7837e9fc5e8500eda584c9088ed560fcb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-with-custom-icon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox } from \"@chakra-ui/react\"\nimport { HiOutlinePlus } from \"react-icons/hi\"\n\nexport const CheckboxWithCustomIcon = () => {\n  return (\n    <Checkbox.Root defaultChecked>\n      <Checkbox.HiddenInput />\n      <Checkbox.Control>\n        <HiOutlinePlus />\n      </Checkbox.Control>\n      <Checkbox.Label>With Custom Icon</Checkbox.Label>\n    </Checkbox.Root>\n  )\n}\n",
+      "sha256": "d13101a7071ba9a676eb27057580e81a7a1db72913b9fde545c1cf2b3698f1db",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-with-custom-icon.tsx",
+      "upstreamSha256": "e6f570193db622f6d11493208fd07d20320f0bab9d6ac43ca959fd43ed04e5ee",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-with-description.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Checkbox, Stack } from \"@chakra-ui/react\"\n\nexport const CheckboxWithDescription = () => {\n  return (\n    <Checkbox.Root gap=\"4\" alignItems=\"flex-start\">\n      <Checkbox.HiddenInput />\n      <Checkbox.Control />\n      <Stack gap=\"1\">\n        <Checkbox.Label>I agree to the terms and conditions</Checkbox.Label>\n        <Box textStyle=\"sm\" color=\"fg.muted\">\n          By clicking this, you agree to our Terms and Privacy Policy.\n        </Box>\n      </Stack>\n    </Checkbox.Root>\n  )\n}\n",
+      "sha256": "de9d281d8291262526c77d34b9293eb256430ffca102d5fe27d5be2ed25ec2f2",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-with-description.tsx",
+      "upstreamSha256": "4e57500a9d33f578a897b2f5d151e445728114aa04a20ceb5bfc944f2bbd9695",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-with-form.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Checkbox, Field, Input, Stack } from \"@chakra-ui/react\"\n\nexport const CheckboxWithForm = () => {\n  return (\n    <form\n      onSubmit={(e) => {\n        e.preventDefault()\n        console.log(e.currentTarget.elements)\n      }}\n    >\n      <Stack maxW=\"sm\" gap=\"4\" align=\"flex-start\">\n        <Field.Root>\n          <Field.Label>Username</Field.Label>\n          <Input placeholder=\"username\" />\n        </Field.Root>\n        <Field.Root>\n          <Field.Label>Password</Field.Label>\n          <Input placeholder=\"password\" />\n        </Field.Root>\n\n        <Checkbox.Root mt=\"2\" value=\"remember me\">\n          <Checkbox.HiddenInput />\n          <Checkbox.Control />\n          <Checkbox.Label>Remember me</Checkbox.Label>\n        </Checkbox.Root>\n\n        <Button type=\"submit\" variant=\"solid\" mt=\"3\">\n          Submit\n        </Button>\n      </Stack>\n    </form>\n  )\n}\n",
+      "sha256": "837683659ec864722de798f5c5e89be9136b264dd1102ef02cb6d0a24ec8d9cb",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-with-form.tsx",
+      "upstreamSha256": "e65587380c3bea318a981a352c19c2639c575635ee086b9e7602459eedde3627",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-with-group.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, CheckboxGroup, Fieldset, For } from \"@chakra-ui/react\"\n\nexport const CheckboxWithGroup = () => {\n  return (\n    <Fieldset.Root>\n      <CheckboxGroup defaultValue={[\"react\"]} name=\"framework\">\n        <Fieldset.Legend fontSize=\"sm\" mb=\"2\">\n          Select framework\n        </Fieldset.Legend>\n        <Fieldset.Content>\n          <For each={[\"React\", \"Svelte\", \"Vue\", \"Angular\"]}>\n            {(value) => (\n              <Checkbox.Root key={value} value={value}>\n                <Checkbox.HiddenInput />\n                <Checkbox.Control />\n                <Checkbox.Label>{value}</Checkbox.Label>\n              </Checkbox.Root>\n            )}\n          </For>\n        </Fieldset.Content>\n      </CheckboxGroup>\n    </Fieldset.Root>\n  )\n}\n",
+      "sha256": "701601ea3eece227ec0d60c0b6fe8d595be810a755de38b94a7528a9db6ae112",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-with-group.tsx",
+      "upstreamSha256": "30f8bbde81aab5248dd8e24e908ae2ce93d3de5c729797f507f3b92d792eb188",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-with-group-hook-form.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  Checkbox,\n  CheckboxGroup,\n  Code,\n  Fieldset,\n} from \"@chakra-ui/react\"\nimport { standardSchemaResolver } from \"@hookform/resolvers/standard-schema\"\nimport { useController, useForm } from \"react-hook-form\"\nimport { z } from \"zod\"\n\nconst formSchema = z.object({\n  framework: z.array(z.string()).min(1, {\n    message: \"You must select at least one framework.\",\n  }),\n})\n\ntype FormData = z.infer<typeof formSchema>\n\nconst items = [\n  { label: \"React\", value: \"react\" },\n  { label: \"Svelte\", value: \"svelte\" },\n  { label: \"Vue\", value: \"vue\" },\n  { label: \"Angular\", value: \"angular\" },\n]\n\nexport const CheckboxWithGroupHookForm = () => {\n  const {\n    handleSubmit,\n    control,\n    formState: { errors },\n  } = useForm<FormData>({\n    resolver: standardSchemaResolver(formSchema),\n  })\n\n  const framework = useController({\n    control,\n    name: \"framework\",\n    defaultValue: [],\n  })\n\n  const invalid = !!errors.framework\n\n  return (\n    <form onSubmit={handleSubmit((data) => console.log(data))}>\n      <Fieldset.Root invalid={invalid}>\n        <Fieldset.Legend>Select your framework</Fieldset.Legend>\n        <CheckboxGroup\n          invalid={invalid}\n          value={framework.field.value}\n          onValueChange={framework.field.onChange}\n          name={framework.field.name}\n        >\n          <Fieldset.Content>\n            {items.map((item) => (\n              <Checkbox.Root key={item.value} value={item.value}>\n                <Checkbox.HiddenInput />\n                <Checkbox.Control />\n                <Checkbox.Label>{item.label}</Checkbox.Label>\n              </Checkbox.Root>\n            ))}\n          </Fieldset.Content>\n        </CheckboxGroup>\n\n        {errors.framework && (\n          <Fieldset.ErrorText>{errors.framework.message}</Fieldset.ErrorText>\n        )}\n\n        <Button size=\"sm\" type=\"submit\" alignSelf=\"flex-start\">\n          Submit\n        </Button>\n\n        <Code>Values: {JSON.stringify(framework.field.value, null, 2)}</Code>\n      </Fieldset.Root>\n    </form>\n  )\n}\n",
+      "sha256": "663b8c5c4f31031e7f6773efa8ce6db32caee33696bb1277c40df5778fc136f3",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-with-group-hook-form.tsx",
+      "upstreamSha256": "91f101fab843af3fdd9d17a75111e07bd550281d8779b0bb488bbc68555eb12e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-with-hook-form.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Checkbox, Code, Field, HStack, Stack } from \"@chakra-ui/react\"\nimport { standardSchemaResolver } from \"@hookform/resolvers/standard-schema\"\nimport { Controller, useController, useForm } from \"react-hook-form\"\nimport { z } from \"zod\"\n\nconst formSchema = z.object({\n  enabled: z.boolean(),\n})\n\ntype FormData = z.infer<typeof formSchema>\n\nexport const CheckboxWithHookForm = () => {\n  const form = useForm<FormData>({\n    resolver: standardSchemaResolver(formSchema),\n    defaultValues: { enabled: false },\n  })\n\n  const enabled = useController({\n    control: form.control,\n    name: \"enabled\",\n  })\n\n  const invalid = !!form.formState.errors.enabled\n\n  return (\n    <form onSubmit={form.handleSubmit((data) => console.log(data))}>\n      <Stack align=\"flex-start\">\n        <Controller\n          control={form.control}\n          name=\"enabled\"\n          render={({ field }) => (\n            <Field.Root invalid={invalid} disabled={field.disabled}>\n              <Checkbox.Root\n                checked={field.value}\n                onCheckedChange={({ checked }) => field.onChange(checked)}\n              >\n                <Checkbox.HiddenInput />\n                <Checkbox.Control />\n                <Checkbox.Label>Checkbox</Checkbox.Label>\n              </Checkbox.Root>\n              <Field.ErrorText>\n                {form.formState.errors.enabled?.message}\n              </Field.ErrorText>\n            </Field.Root>\n          )}\n        />\n\n        <HStack>\n          <Button\n            size=\"xs\"\n            variant=\"outline\"\n            onClick={() => form.setValue(\"enabled\", !enabled.field.value)}\n          >\n            Toggle\n          </Button>\n          <Button size=\"xs\" variant=\"outline\" onClick={() => form.reset()}>\n            Reset\n          </Button>\n        </HStack>\n\n        <Button size=\"sm\" type=\"submit\" alignSelf=\"flex-start\">\n          Submit\n        </Button>\n\n        <Code>Checked: {JSON.stringify(enabled.field.value, null, 2)}</Code>\n      </Stack>\n    </form>\n  )\n}\n",
+      "sha256": "2a099ceaa0cf9728514861fcb55794bbf497088d726333b585cb25c9bb3dfb35",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-with-hook-form.tsx",
+      "upstreamSha256": "e08e25a810540cf2844f55a2af3bbe4f96ac6af8047ea55f816c8920feaa3a6d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-with-indeterminate.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, For, Stack } from \"@chakra-ui/react\"\n\nexport const CheckboxWithIndeterminate = () => {\n  return (\n    <Stack>\n      <For each={[\"subtle\", \"outline\"]}>\n        {(variant) => (\n          <Checkbox.Root\n            defaultChecked=\"indeterminate\"\n            variant={variant}\n            key={variant}\n          >\n            <Checkbox.HiddenInput />\n            <Checkbox.Control />\n            <Checkbox.Label>{variant}</Checkbox.Label>\n          </Checkbox.Root>\n        )}\n      </For>\n    </Stack>\n  )\n}\n",
+      "sha256": "ea2236d463ff8d31598ce1ab255a4fb4aeebd26121a4915c687e7feb3ca8186f",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-with-indeterminate.tsx",
+      "upstreamSha256": "1a2db1a9d5085352b32b66646d527435747318d12f0a97756350c152374e8477",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-with-label-position.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox } from \"@chakra-ui/react\"\n\nexport const CheckboxWithLabelPosition = () => {\n  return (\n    <Checkbox.Root>\n      <Checkbox.HiddenInput />\n      <Checkbox.Label>Accept terms and conditions</Checkbox.Label>\n      <Checkbox.Control />\n    </Checkbox.Root>\n  )\n}\n",
+      "sha256": "69d691f685dd2ecd5f022faa860830855805dbef5a71d4879af81a53a42679eb",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-with-label-position.tsx",
+      "upstreamSha256": "bf7c58bd24bed92fb28c341a7c871b024e47658bfd17173824b5d824f3d756b0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-with-link.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, Link } from \"@chakra-ui/react\"\n\nexport const CheckboxWithLink = () => {\n  return (\n    <Checkbox.Root>\n      <Checkbox.HiddenInput />\n      <Checkbox.Control />\n      <Checkbox.Label>\n        I agree to the{\" \"}\n        <Link colorPalette=\"teal\" href=\"https://google.com\">\n          terms and conditions\n        </Link>\n      </Checkbox.Label>\n    </Checkbox.Root>\n  )\n}\n",
+      "sha256": "08e5f809a7396ef83607c5e3651a798bc557aba3f03a3d00dccd68a276a5d440",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-with-link.tsx",
+      "upstreamSha256": "e25c60defba16fe7958bb6bdac5547e34b844c854b85a7cb5199b03e4ba1a10e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-with-sizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, For, Stack } from \"@chakra-ui/react\"\n\nexport const CheckboxWithSizes = () => {\n  return (\n    <Stack align=\"flex-start\" flex=\"1\" gap=\"4\">\n      <For each={[\"sm\", \"md\", \"lg\"]}>\n        {(size) => (\n          <Checkbox.Root defaultChecked size={size} key={size}>\n            <Checkbox.HiddenInput />\n            <Checkbox.Control />\n            <Checkbox.Label>Checkbox</Checkbox.Label>\n          </Checkbox.Root>\n        )}\n      </For>\n    </Stack>\n  )\n}\n",
+      "sha256": "acbc3cf7cc3d1606edefb650635f1dfd4f5fcc6d8f7f47b711dd2304a22b29bc",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-with-sizes.tsx",
+      "upstreamSha256": "c8d70b93c48a3267f32002fa9c0454d88ebccc987b976df5d9d5bfdcf855c86d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-with-states.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, Stack } from \"@chakra-ui/react\"\n\nexport const CheckboxWithStates = () => {\n  return (\n    <Stack>\n      <Checkbox.Root disabled>\n        <Checkbox.HiddenInput />\n        <Checkbox.Control />\n        <Checkbox.Label>Disabled</Checkbox.Label>\n      </Checkbox.Root>\n\n      <Checkbox.Root defaultChecked disabled>\n        <Checkbox.HiddenInput />\n        <Checkbox.Control />\n        <Checkbox.Label>Disabled</Checkbox.Label>\n      </Checkbox.Root>\n\n      <Checkbox.Root readOnly>\n        <Checkbox.HiddenInput />\n        <Checkbox.Control />\n        <Checkbox.Label>Readonly</Checkbox.Label>\n      </Checkbox.Root>\n\n      <Checkbox.Root invalid>\n        <Checkbox.HiddenInput />\n        <Checkbox.Control />\n        <Checkbox.Label>Invalid</Checkbox.Label>\n      </Checkbox.Root>\n    </Stack>\n  )\n}\n",
+      "sha256": "06e557fe329ce0b96beba5db3ee4224eba0cc1c2d71bc3465f3bde8a4eae5d20",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-with-states.tsx",
+      "upstreamSha256": "38b1e985e3aeb15b639393eb0b630f238e57e1bf8dcb396708696248104ab32d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-with-store.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, useCheckbox } from \"@chakra-ui/react\"\n\nexport const CheckboxWithStore = () => {\n  const checkbox = useCheckbox()\n  return (\n    <Checkbox.RootProvider value={checkbox}>\n      <Checkbox.HiddenInput />\n      <Checkbox.Control />\n      <Checkbox.Label>Accept terms and conditions</Checkbox.Label>\n    </Checkbox.RootProvider>\n  )\n}\n",
+      "sha256": "42a8cf87480ec8ca367c703a2b2f7ec52f315bec81f9b3823d2a67b617bc1bb7",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-with-store.tsx",
+      "upstreamSha256": "5c70d9b2295958cef70823fe82672db2045be50dd5837d688e3e44768598de78",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-with-variants.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, For, HStack, Stack, Text } from \"@chakra-ui/react\"\n\nexport const CheckboxWithVariants = () => {\n  return (\n    <HStack align=\"flex-start\">\n      <For each={[\"outline\", \"subtle\", \"solid\"]}>\n        {(variant) => (\n          <Stack align=\"flex-start\" flex=\"1\" key={variant}>\n            <Text>{variant}</Text>\n            <Checkbox.Root defaultChecked variant={variant}>\n              <Checkbox.HiddenInput />\n              <Checkbox.Control />\n              <Checkbox.Label>Checkbox</Checkbox.Label>\n            </Checkbox.Root>\n          </Stack>\n        )}\n      </For>\n    </HStack>\n  )\n}\n",
+      "sha256": "d94713ab5a0cd22706fcd67c0a44757d3d598de249b349b77feaf26e3c5f9667",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-with-variants.tsx",
+      "upstreamSha256": "ae782051fd634d495453b6f3ac2edcba50b4bace98e2c95e783cdc01e5080c32",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/checkbox-closed-component.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox as ChakraCheckbox } from \"@chakra-ui/react\"\nimport * as React from \"react\"\n\nexport interface CheckboxProps extends ChakraCheckbox.RootProps {\n  icon?: React.ReactNode\n  inputProps?: React.InputHTMLAttributes<HTMLInputElement>\n  rootRef?: React.RefObject<HTMLLabelElement | null>\n}\n\nexport const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(\n  function Checkbox(props, ref) {\n    const { icon, children, inputProps, rootRef, ...rest } = props\n    return (\n      <ChakraCheckbox.Root ref={rootRef} {...rest}>\n        <ChakraCheckbox.HiddenInput ref={ref} {...inputProps} />\n        <ChakraCheckbox.Control>\n          {icon || <ChakraCheckbox.Indicator />}\n        </ChakraCheckbox.Control>\n        {children != null && (\n          <ChakraCheckbox.Label>{children}</ChakraCheckbox.Label>\n        )}\n      </ChakraCheckbox.Root>\n    )\n  },\n)\n",
+      "sha256": "46fe9cb288e45126458b64306441f29cdee425f0d1e92933c1e00341c45887ce",
+      "upstreamPath": "apps/compositions/src/examples/checkbox-closed-component.tsx",
+      "upstreamSha256": "6a799b578dd052711316fd3d93e377eeb4d9dffc0873f397a928005d0c944c57",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxBasic as Example } from \"@/components/rendyn-libraries/chakra/checkbox/example\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "548da30674d62c445004160d9f7fae3f0a535ba57608a9e1c5d52d3bd8c6c46d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-controlled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxControlled as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-controlled\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "2d63f68f400e41aabd6ff4ac0361511aa44234f4ba4d787499af46c37ac11462",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-explorer-demo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxExplorerDemo as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-explorer-demo\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "b6edfda1ec7e81ac77136c803c6c74a64868eb81a9e2a109f1621cc4594c2fab",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-indeterminate.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxIndeterminate as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-indeterminate\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "841b29df22db9ebd47944792b36d54c27443645786ae9fe9a7b06670fc71b19a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-size-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxSizeTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-size-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "1ef779d332867d33ab91960798f70ae5721216480125f36f6ef7af099f3bb545",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-variant-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxVariantTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-variant-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "538e6108a6d780a2e372f27595ed19f332e89953bccb5ce054e60c9d258ab47f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-with-colors.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxWithColors as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-with-colors\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "4c9e516c72e972b3ae924699881f5c7e49d83f21671f93d9fdabc5d85363fcb6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-with-custom-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxWithCustomIcon as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-with-custom-icon\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "92f474759ae7dc99b3113a9288a90a2fa3c3fe33d3e108dd24d402657e7a8464",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-with-description.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxWithDescription as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-with-description\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "2c6738ff45fc5c6aef94cea6e1c8085eaab780efdf7df5d0f17d6338e0e521b3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-with-form.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxWithForm as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-with-form\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "21ade1fedf66e8ca5ae87c55b18981f62d059ec396ce65195729214fd848effb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-with-group.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxWithGroup as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-with-group\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "fc151fff320773b4eb704e6c454561a839ec5c2c0509c3b1350e5d46b04e385c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-with-group-hook-form.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxWithGroupHookForm as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-with-group-hook-form\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "2f852e0a51e844bc612e6a132f32b6bc014c45524126d7690830ad94c545e079",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-with-hook-form.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxWithHookForm as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-with-hook-form\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "6206c324779a9a7cdf5a1f509326aa5035819f993d72cbc0892f1addce411f39",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-with-indeterminate.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxWithIndeterminate as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-with-indeterminate\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "fca9f0fa63f773a1c79bd8610191a43e256c8dda199b8f54615053c8f383a6b1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-with-label-position.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxWithLabelPosition as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-with-label-position\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "41a101b1237657fe472581ef6738e0521f1f481820a024c0af22697addd7ec77",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-with-link.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxWithLink as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-with-link\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "fe6a654a9c93c1dd6ac298d4c39591f6e2a70a0257a01fff2a76848a2f8d6e16",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-with-sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxWithSizes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-with-sizes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "b41b0e15fc72f2297abd23c76b2a9b81c4adbc4b6ca2a482e81c89d7a68d70b8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-with-states.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxWithStates as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-with-states\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "ea5fde683cdad65e8fd9bc4db4be97f88df4f4a7d67e7511c725fce6c7a8f374",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-with-store.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxWithStore as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-with-store\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "2d9d3a641d8687362988ea15b199ca230ed5abe75015da15db688120f099d764",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/checkbox/previews/checkbox-with-variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CheckboxWithVariants as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/checkbox-with-variants\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "dd8265657a51384de5f2a76df5a2436e1d6b22373f47b919d40e40e77915292a",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 @hookform/resolvers@5.9.1 react-hook-form@7.87.0 react-icons@5.5.0 zod@4.5.4",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 @hookform/resolvers@5.9.1 react-hook-form@7.87.0 react-icons@5.5.0 zod@4.5.4",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "checkbox",
+    "upstreamPageUrl": "https://chakra-ui.com/docs/components/checkbox",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/checkbox-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/checkbox-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI Checkbox\n\n20 published Chakra UI checkbox examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://chakra-ui.com/docs/components/checkbox\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/checkbox-basic.tsx\n"
+}

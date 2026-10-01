@@ -1,4 +1,5 @@
 import type Stripe from 'stripe';
+import { BodyTooLargeError, readBoundedBody } from '../../../../../../packages/catalog/src/bounded-body';
 import { planCodeForPriceId, type BillingPlanCode, getBillingConfig } from '@/lib/billing/config';
 import { getStripe, getStripeCryptoProvider } from '@/lib/billing/stripe';
 import { createAdminClient } from '@/lib/supabase/admin';
@@ -51,14 +52,16 @@ function subscriptionPlanCode(subscription: Stripe.Subscription): BillingPlanCod
   return priceId ? planCodeForPriceId(priceId) : null;
 }
 
-async function syncSubscription(subscription: Stripe.Subscription, eventCreatedAt: number) {
+async function syncSubscription(subscription: Stripe.Subscription, event: Stripe.Event, leaseToken: string) {
   const userId = subscription.metadata.rendyn_user_id;
   const planCode = subscriptionPlanCode(subscription);
   if (!USER_ID_PATTERN.test(userId) || !planCode) {
     throw new Error('Stripe subscription is missing valid Rendyn metadata');
   }
 
-  const { error } = await createAdminClient().rpc('sync_stripe_subscription', {
+  const { error } = await createAdminClient().rpc('apply_stripe_event', {
+    p_event_id: event.id,
+    p_lease_token: leaseToken,
     p_user_id: userId,
     p_provider_customer_id: customerId(subscription),
     p_provider_subscription_id: subscription.id,
@@ -67,31 +70,29 @@ async function syncSubscription(subscription: Stripe.Subscription, eventCreatedA
     p_trial_end: unixTimestamp(subscription.trial_end),
     p_current_period_end: currentPeriodEnd(subscription),
     p_cancel_at_period_end: subscription.cancel_at_period_end,
-    p_event_created_at: unixTimestamp(eventCreatedAt),
+    p_event_created_at: unixTimestamp(event.created),
   });
   if (error) throw new Error(`Subscription sync failed: ${error.code}`);
 }
 
 export async function POST(request: Request) {
-  const declaredLength = Number(request.headers.get('content-length') ?? '0');
-  if (!Number.isFinite(declaredLength) || declaredLength < 0 || declaredLength > MAX_WEBHOOK_BYTES) {
-    return Response.json({ error: 'payload_too_large' }, { status: 413 });
-  }
-
   const signature = request.headers.get('stripe-signature');
   if (!signature || signature.length > 2_048) {
     return Response.json({ error: 'invalid_signature' }, { status: 400 });
   }
 
-  const body = await request.text();
-  if (new TextEncoder().encode(body).byteLength > MAX_WEBHOOK_BYTES) {
-    return Response.json({ error: 'payload_too_large' }, { status: 413 });
+  let body: Uint8Array;
+  try {
+    body = await readBoundedBody(request, MAX_WEBHOOK_BYTES);
+  } catch (error) {
+    return Response.json({ error: error instanceof BodyTooLargeError ? 'payload_too_large' : 'invalid_body' },
+      { status: error instanceof BodyTooLargeError ? 413 : 400 });
   }
 
   let event: Stripe.Event;
   try {
     event = await getStripe().webhooks.constructEventAsync(
-      body,
+      new TextDecoder('utf-8', { fatal: true, ignoreBOM: true }).decode(body),
       signature,
       getBillingConfig().stripeWebhookSecret,
       undefined,
@@ -101,24 +102,42 @@ export async function POST(request: Request) {
     return Response.json({ error: 'invalid_signature' }, { status: 400 });
   }
 
+  let subscriptionId: string | undefined;
+  const leaseToken = crypto.randomUUID();
+  let claimed = false;
   try {
     if (
       event.type === 'customer.subscription.created'
       || event.type === 'customer.subscription.updated'
       || event.type === 'customer.subscription.deleted'
     ) {
-      await syncSubscription(event.data.object, event.created);
+      subscriptionId = event.data.object.id;
     } else if (event.type === 'checkout.session.completed') {
-      const subscriptionId = typeof event.data.object.subscription === 'string'
+      subscriptionId = typeof event.data.object.subscription === 'string'
         ? event.data.object.subscription
         : event.data.object.subscription?.id;
-      if (subscriptionId) {
-        await syncSubscription(await getStripe().subscriptions.retrieve(subscriptionId), event.created);
-      }
+    }
+    if (subscriptionId) {
+      const { data: status, error } = await createAdminClient().rpc('claim_stripe_event', {
+        p_event_id: event.id, p_subscription_id: subscriptionId, p_lease_token: leaseToken,
+      });
+      if (error) throw new Error(`Event claim failed: ${error.code}`);
+      if (status === 'processed') return Response.json({ received: true });
+      if (status !== 'claimed') return Response.json({ error: 'subscription_busy' }, { status: 503, headers: { 'Retry-After': '5' } });
+      claimed = true;
+      // Reconcile current provider state under the lease, even for old/same-second events.
+      await syncSubscription(await getStripe().subscriptions.retrieve(subscriptionId), event, leaseToken);
     }
   } catch (error) {
     console.error('stripe_webhook_sync_failed', error instanceof Error ? error.message : 'unknown_error');
     return Response.json({ error: 'webhook_sync_failed' }, { status: 500 });
+  } finally {
+    if (claimed && subscriptionId) {
+      const { error } = await createAdminClient().rpc('release_stripe_event', {
+        p_subscription_id: subscriptionId, p_lease_token: leaseToken,
+      });
+      if (error) console.error('stripe_lease_release_failed', error.code);
+    }
   }
 
   return Response.json({ received: true });

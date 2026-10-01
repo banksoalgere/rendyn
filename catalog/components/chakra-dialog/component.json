@@ -1,0 +1,453 @@
+{
+  "id": "chakra:dialog",
+  "sourceId": "chakra",
+  "slug": "chakra-dialog",
+  "name": "Chakra UI dialog",
+  "description": "23 published Chakra UI dialog examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "react-icons@5.5.0",
+    "react-lorem-ipsum@1.4.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "dialog",
+    "tags": [
+      "checkbox",
+      "dialog",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "dialog",
+      "chakra ui dialog"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "23 published Chakra UI dialog examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "dialog:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI dialog\ndialog\n23 published Chakra UI dialog examples with complete pinned source and MIT attribution.\nchakra ui dialog\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI dialog 23 published Chakra UI dialog examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/dialog basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-dialog",
+  "manifestPath": "components/chakra-dialog/component.json",
+  "integrity": "sha256:75ad0759a1bc92406d7326e45bb808627a9c98bd4283d304a0a8a903385ba8e0",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CloseButton, Dialog, Portal } from \"@chakra-ui/react\"\n\nexport const DialogBasic = () => {\n  return (\n    <Dialog.Root>\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Dialog\n        </Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Header>\n              <Dialog.Title>Dialog Title</Dialog.Title>\n            </Dialog.Header>\n            <Dialog.Body>\n              <p>\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do\n                eiusmod tempor incididunt ut labore et dolore magna aliqua.\n              </p>\n            </Dialog.Body>\n            <Dialog.Footer>\n              <Dialog.ActionTrigger asChild>\n                <Button variant=\"outline\">Cancel</Button>\n              </Dialog.ActionTrigger>\n              <Button>Save</Button>\n            </Dialog.Footer>\n            <Dialog.CloseTrigger asChild>\n              <CloseButton size=\"sm\" />\n            </Dialog.CloseTrigger>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "2dbef96e9bbc494908ebc77e688d60ba9f3d1b2e639c49818726c11584df2c4a",
+      "upstreamPath": "apps/compositions/src/examples/dialog-basic.tsx",
+      "upstreamSha256": "c592395287ecc7685619934fac0c895355287db2b6242d1348c6047f236fbae8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-controlled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CloseButton, Dialog, Portal } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\nimport Lorem from \"react-lorem-ipsum\"\n\nexport const DialogControlled = () => {\n  const [open, setOpen] = useState(false)\n  return (\n    <Dialog.Root lazyMount open={open} onOpenChange={(e) => setOpen(e.open)}>\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\">Open</Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Header>\n              <Dialog.Title>Dialog Title</Dialog.Title>\n            </Dialog.Header>\n            <Dialog.Body>\n              <Lorem p={2} />\n            </Dialog.Body>\n            <Dialog.Footer>\n              <Dialog.ActionTrigger asChild>\n                <Button variant=\"outline\">Cancel</Button>\n              </Dialog.ActionTrigger>\n              <Button>Save</Button>\n            </Dialog.Footer>\n            <Dialog.CloseTrigger asChild>\n              <CloseButton size=\"sm\" />\n            </Dialog.CloseTrigger>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "42833bc77d54cd5ac20b98ba1235cd1bb998017918c4ecb941994a4b83482e5d",
+      "upstreamPath": "apps/compositions/src/examples/dialog-controlled.tsx",
+      "upstreamSha256": "b341a74e53857fd55de2d9362cd32e3998bda124089c29b32c811ad610804556",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-nested.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Dialog, Portal } from \"@chakra-ui/react\"\nimport Lorem from \"react-lorem-ipsum\"\n\nexport const DialogNested = () => {\n  return (\n    <Dialog.Root>\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\">Open</Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Header>\n              <Dialog.Title>Dialog Title</Dialog.Title>\n            </Dialog.Header>\n            <Dialog.Body>\n              <Lorem p={2} />\n            </Dialog.Body>\n            <Dialog.Footer>\n              <Button variant=\"outline\">Button 2</Button>\n\n              <Dialog.Root>\n                <Dialog.Trigger asChild>\n                  <Button>Open Nested</Button>\n                </Dialog.Trigger>\n                <Portal>\n                  <Dialog.Backdrop />\n                  <Dialog.Positioner>\n                    <Dialog.Content>\n                      <Dialog.Header>\n                        <Dialog.Title>Dialog Title</Dialog.Title>\n                      </Dialog.Header>\n                      <Dialog.Body>\n                        <Lorem p={1} />\n                      </Dialog.Body>\n                    </Dialog.Content>\n                  </Dialog.Positioner>\n                </Portal>\n              </Dialog.Root>\n            </Dialog.Footer>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "61d1995f377ea43356d88bbfca5511fb6a53cb90ee53a16ec2c6b771cf3a1473",
+      "upstreamPath": "apps/compositions/src/examples/dialog-nested.tsx",
+      "upstreamSha256": "7b017e8b94433439bf642eb72b03217a16d62e090007bab4aee06124653eb58b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-non-modal.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CloseButton, Dialog, Portal } from \"@chakra-ui/react\"\n\nexport const DialogNonModal = () => {\n  return (\n    <Dialog.Root closeOnInteractOutside={false} modal={false}>\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Dialog\n        </Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Positioner pointerEvents=\"none\">\n          <Dialog.Content>\n            <Dialog.Header>\n              <Dialog.Title>Dialog Title</Dialog.Title>\n            </Dialog.Header>\n            <Dialog.Body>\n              <p>\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do\n                eiusmod tempor incididunt ut labore et dolore magna aliqua.\n              </p>\n            </Dialog.Body>\n            <Dialog.Footer>\n              <Dialog.ActionTrigger asChild>\n                <Button variant=\"outline\">Cancel</Button>\n              </Dialog.ActionTrigger>\n              <Button>Save</Button>\n            </Dialog.Footer>\n            <Dialog.CloseTrigger asChild>\n              <CloseButton size=\"sm\" />\n            </Dialog.CloseTrigger>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "55c4114bbd8ca394e6d34eae13a3b414ffcd954c180f41b90a5876a8eddea63e",
+      "upstreamPath": "apps/compositions/src/examples/dialog-non-modal.tsx",
+      "upstreamSha256": "7b90bf0f53444cd0c5a58b0bc97e01c930e4cc3dd67fd6e00defe471ba342c14",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-open-from-menu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  CloseButton,\n  Dialog,\n  Menu,\n  Portal,\n  Text,\n} from \"@chakra-ui/react\"\nimport { useState } from \"react\"\nimport { LuChevronDown } from \"react-icons/lu\"\n\nexport const DialogOpenFromMenu = () => {\n  const [open, setOpen] = useState(false)\n  return (\n    <>\n      <Menu.Root>\n        <Menu.Trigger asChild>\n          <Button variant=\"outline\">\n            Actions <LuChevronDown />\n          </Button>\n        </Menu.Trigger>\n        <Portal>\n          <Menu.Positioner>\n            <Menu.Content>\n              <Menu.Item value=\"edit\">Edit</Menu.Item>\n              <Menu.Item value=\"duplicate\">Duplicate</Menu.Item>\n              <Menu.Separator />\n              <Menu.Item value=\"delete\" onClick={() => setOpen(true)}>\n                Delete...\n              </Menu.Item>\n            </Menu.Content>\n          </Menu.Positioner>\n        </Portal>\n      </Menu.Root>\n\n      <Dialog.Root\n        role=\"alertdialog\"\n        open={open}\n        size=\"sm\"\n        onOpenChange={(e) => setOpen(e.open)}\n      >\n        <Portal>\n          <Dialog.Backdrop />\n          <Dialog.Positioner>\n            <Dialog.Content>\n              <Dialog.CloseTrigger asChild>\n                <CloseButton />\n              </Dialog.CloseTrigger>\n              <Dialog.Header>\n                <Dialog.Title>Confirm Delete</Dialog.Title>\n              </Dialog.Header>\n              <Dialog.Body>\n                <Text>\n                  Are you sure you want to delete this item? This action cannot\n                  be undone.\n                </Text>\n              </Dialog.Body>\n              <Dialog.Footer>\n                <Button variant=\"outline\" onClick={() => setOpen(false)}>\n                  Cancel\n                </Button>\n                <Button colorPalette=\"red\">Delete</Button>\n              </Dialog.Footer>\n            </Dialog.Content>\n          </Dialog.Positioner>\n        </Portal>\n      </Dialog.Root>\n    </>\n  )\n}\n",
+      "sha256": "0503f5d44e43f1f2fc1511850be1b1bdf074dd47f8ec65d168811b0eca5b6b8f",
+      "upstreamPath": "apps/compositions/src/examples/dialog-open-from-menu.tsx",
+      "upstreamSha256": "68295a370d558ee711a46979da1a491acab7c2505e94142b6b0ded947426d14b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-open-from-popover.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  CloseButton,\n  Dialog,\n  Popover,\n  Portal,\n  Text,\n} from \"@chakra-ui/react\"\n\nexport const DialogOpenFromPopover = () => {\n  return (\n    <Popover.Root>\n      <Popover.Trigger asChild>\n        <Button variant=\"outline\">Open Popover</Button>\n      </Popover.Trigger>\n      <Portal>\n        <Popover.Positioner>\n          <Popover.Content>\n            <Popover.Arrow />\n            <Popover.Body>\n              <Popover.Title fontWeight=\"medium\">Popover Title</Popover.Title>\n              <Text my=\"4\">\n                This popover contains a button that opens a dialog. The dialog\n                should appear above the popover.\n              </Text>\n              <PopoverDialog />\n            </Popover.Body>\n          </Popover.Content>\n        </Popover.Positioner>\n      </Portal>\n    </Popover.Root>\n  )\n}\n\nfunction PopoverDialog() {\n  return (\n    <Dialog.Root>\n      <Dialog.Trigger asChild>\n        <Button size=\"sm\" variant=\"solid\" colorPalette=\"blue\">\n          Open Dialog\n        </Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.CloseTrigger asChild>\n              <CloseButton />\n            </Dialog.CloseTrigger>\n            <Dialog.Header>\n              <Dialog.Title>Dialog from Popover</Dialog.Title>\n            </Dialog.Header>\n            <Dialog.Body>\n              <Text>\n                This dialog was opened from within a popover. It should appear\n                above the popover thanks to the unified z-index system.\n              </Text>\n            </Dialog.Body>\n            <Dialog.Footer>\n              <Dialog.ActionTrigger asChild>\n                <Button variant=\"outline\">Cancel</Button>\n              </Dialog.ActionTrigger>\n              <Button colorPalette=\"blue\">Save</Button>\n            </Dialog.Footer>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "7ccffdc38e4414cb3bac8c554328e62133c2f661c011505687cdcbe924f7b426",
+      "upstreamPath": "apps/compositions/src/examples/dialog-open-from-popover.tsx",
+      "upstreamSha256": "0146bc8a1ffac37461fbea1d61ca7da959ac3e78a456b9a5dbe4ab11927341a5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-backdrop-blur.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Dialog, Portal } from \"@chakra-ui/react\"\n\nexport const DialogWithBackdropBlur = () => {\n  return (\n    <Dialog.Root>\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\">Open Dialog (backdrop blur)</Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop\n          backdropFilter=\"auto\"\n          backdropBlur=\"md\"\n          bg=\"blackAlpha.600\"\n        />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Body pt=\"4\" spaceY=\"4\">\n              <Dialog.Title>Backdrop blur example</Dialog.Title>\n              <Dialog.Description>\n                This dialog uses backdropFilter=\"auto\" and backdropBlur so the\n                content behind is blurred. The backdrop vars use valid no-op\n                fallbacks so the property stays valid when only some are set.\n              </Dialog.Description>\n            </Dialog.Body>\n            <Dialog.CloseTrigger />\n            <Dialog.Footer>\n              <Dialog.ActionTrigger asChild>\n                <Button>Close</Button>\n              </Dialog.ActionTrigger>\n            </Dialog.Footer>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "506e86106db1ce9be1a3930522e04fbf78f81c247d0a67c2ba54bf7f11c00c26",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-backdrop-blur.tsx",
+      "upstreamSha256": "b694f6f6ed9f4290738fb4a7d821a526f39d385d7c66b7e84f89d3222d006b99",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-close-outside.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  AspectRatio,\n  Button,\n  CloseButton,\n  Dialog,\n  Portal,\n} from \"@chakra-ui/react\"\n\nexport const DialogWithCloseOutside = () => {\n  return (\n    <Dialog.Root placement=\"center\">\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Dialog\n        </Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Body pt=\"4\">\n              <Dialog.Title>Dialog Title</Dialog.Title>\n              <Dialog.Description mb=\"4\">\n                This is a dialog with some content and a video.\n              </Dialog.Description>\n              <AspectRatio ratio={4 / 3} rounded=\"lg\" overflow=\"hidden\">\n                <iframe\n                  title=\"naruto\"\n                  src=\"https://www.youtube.com/embed/QhBnZ6NPOY0\"\n                  allowFullScreen\n                />\n              </AspectRatio>\n            </Dialog.Body>\n            <Dialog.CloseTrigger top=\"0\" insetEnd=\"-12\" asChild>\n              <CloseButton bg=\"bg\" size=\"sm\" />\n            </Dialog.CloseTrigger>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "da182ba513d6b5dbee517ad1a26e1a41f9bd74452783ea99159979a810e90287",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-close-outside.tsx",
+      "upstreamSha256": "6a7a3e6b3ed849f964264746419ea192763add11a78087d966cf8be747f7596b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-context.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CloseButton, Dialog, Portal } from \"@chakra-ui/react\"\n\nexport const DialogWithContext = () => {\n  return (\n    <Dialog.Root>\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Dialog\n        </Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Context>\n              {(store) => (\n                <Dialog.Body pt=\"6\" spaceY=\"3\">\n                  <p>Dialog is open: {store.open ? \"true\" : \"false\"}</p>\n                  <p>\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed\n                    do eiusmod tempor incididunt ut labore et dolore magna\n                    aliqua.\n                  </p>\n                  <button onClick={() => store.setOpen(false)}>Close</button>\n                </Dialog.Body>\n              )}\n            </Dialog.Context>\n            <Dialog.CloseTrigger asChild>\n              <CloseButton size=\"sm\" />\n            </Dialog.CloseTrigger>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "ebdac96503b72530eabd80ece2652f91374967fe0ad1ee3e37acd3063ec3cd15",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-context.tsx",
+      "upstreamSha256": "93380e2a22e9c532eedb00d340c77f87e7b9e972d7aaf9eee2e58db61d31f9dc",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-cover.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CloseButton, Dialog, Portal } from \"@chakra-ui/react\"\n\nexport const DialogWithCover = () => {\n  return (\n    <Dialog.Root size=\"cover\" placement=\"center\" motionPreset=\"slide-in-bottom\">\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Dialog\n        </Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Header>\n              <Dialog.Title>Dialog Title</Dialog.Title>\n              <Dialog.CloseTrigger asChild>\n                <CloseButton size=\"sm\" />\n              </Dialog.CloseTrigger>\n            </Dialog.Header>\n            <Dialog.Body>\n              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do\n              eiusmod tempor incididunt ut labore et dolore magna aliqua.\n            </Dialog.Body>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "e11c69954bd3412955aad86b4bdf12c96390d42e372294d1e8eba288c6eb698d",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-cover.tsx",
+      "upstreamSha256": "84b875e3a8d8bc2b5e0e06ef310e23e3cd48c7ab58e417fe97567f429628ea5d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-datalist.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Avatar,\n  Badge,\n  Button,\n  CloseButton,\n  DataList,\n  Dialog,\n  HStack,\n  Portal,\n  Textarea,\n  VStack,\n} from \"@chakra-ui/react\"\n\nexport const DialogWithDatalist = () => {\n  return (\n    <VStack alignItems=\"start\">\n      <Dialog.Root>\n        <Dialog.Trigger asChild>\n          <Button variant=\"outline\">Open Dialog</Button>\n        </Dialog.Trigger>\n        <Portal>\n          <Dialog.Backdrop />\n          <Dialog.Positioner>\n            <Dialog.Content>\n              <Dialog.Header>\n                <Dialog.Title>Prepare Chakra V3</Dialog.Title>\n              </Dialog.Header>\n              <Dialog.Body pb=\"8\">\n                <DataList.Root orientation=\"horizontal\">\n                  <DataList.Item>\n                    <DataList.ItemLabel>Status</DataList.ItemLabel>\n                    <DataList.ItemValue>\n                      <Badge colorPalette=\"green\">Completed</Badge>\n                    </DataList.ItemValue>\n                  </DataList.Item>\n                  <DataList.Item>\n                    <DataList.ItemLabel>Assigned to</DataList.ItemLabel>\n                    <DataList.ItemValue>\n                      <HStack>\n                        <Avatar.Root size=\"xs\">\n                          <Avatar.Image src=\"https://bit.ly/sage-adebayo\" />\n                          <Avatar.Fallback name=\"Segun Adebayo\" />\n                        </Avatar.Root>\n                        Segun Adebayo\n                      </HStack>\n                    </DataList.ItemValue>\n                  </DataList.Item>\n                  <DataList.Item>\n                    <DataList.ItemLabel>Due date</DataList.ItemLabel>\n                    <DataList.ItemValue>12th August 2024</DataList.ItemValue>\n                  </DataList.Item>\n                </DataList.Root>\n\n                <Textarea placeholder=\"Add a note\" mt=\"8\" />\n              </Dialog.Body>\n              <Dialog.CloseTrigger asChild>\n                <CloseButton size=\"sm\" />\n              </Dialog.CloseTrigger>\n            </Dialog.Content>\n          </Dialog.Positioner>\n        </Portal>\n      </Dialog.Root>\n    </VStack>\n  )\n}\n",
+      "sha256": "8164ac3785078a523176a2c488b9eb8408b03bfe79dbbd5a6ea62ac3aca57fd2",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-datalist.tsx",
+      "upstreamSha256": "1bb5a55628fcf37e6d48d7caac1c711d641cd400fde728f1655234e7e44249bf",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-final-focus.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Box,\n  Button,\n  CloseButton,\n  Dialog,\n  Portal,\n  Stack,\n} from \"@chakra-ui/react\"\nimport { useRef } from \"react\"\nimport Lorem from \"react-lorem-ipsum\"\n\nexport const DialogWithFinalFocus = () => {\n  const finalRef = useRef<HTMLDivElement | null>(null)\n  return (\n    <Stack align=\"start\">\n      <Dialog.Root finalFocusEl={() => finalRef.current}>\n        <Dialog.Trigger asChild>\n          <Button variant=\"outline\">Open</Button>\n        </Dialog.Trigger>\n        <Portal>\n          <Dialog.Backdrop />\n          <Dialog.Positioner>\n            <Dialog.Content>\n              <Dialog.Header>\n                <Dialog.Title>Dialog Title</Dialog.Title>\n              </Dialog.Header>\n              <Dialog.CloseTrigger asChild>\n                <CloseButton size=\"sm\" />\n              </Dialog.CloseTrigger>\n              <Dialog.Body>\n                <Lorem p={1} />\n              </Dialog.Body>\n            </Dialog.Content>\n          </Dialog.Positioner>\n        </Portal>\n      </Dialog.Root>\n      <Box\n        padding=\"4\"\n        borderWidth=\"2px\"\n        borderStyle=\"dashed\"\n        ref={finalRef}\n        tabIndex={-1}\n        aria-label=\"Focus moved to this box\"\n        _focus={{ outline: \"2px solid red\" }}\n      >\n        Some other content that will receive focus on close.\n      </Box>\n    </Stack>\n  )\n}\n",
+      "sha256": "33b0d4c05b549fe6f4ddd09af704f9ecb6b26ecd7f5b8be3fceabd34ff5c03b1",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-final-focus.tsx",
+      "upstreamSha256": "7f645d8386e954a04bbbaa3503dc34183359c2733e597285bf7741ecc58e4939",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-fullscreen.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CloseButton, Dialog, Portal } from \"@chakra-ui/react\"\n\nexport const DialogWithFullscreen = () => {\n  return (\n    <Dialog.Root size=\"full\" motionPreset=\"slide-in-bottom\">\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Dialog\n        </Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Header>\n              <Dialog.Title>Dialog Title</Dialog.Title>\n            </Dialog.Header>\n            <Dialog.Body>\n              <p>\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do\n                eiusmod tempor incididunt ut labore et dolore magna aliqua.\n              </p>\n            </Dialog.Body>\n            <Dialog.Footer>\n              <Dialog.ActionTrigger asChild>\n                <Button variant=\"outline\">Cancel</Button>\n              </Dialog.ActionTrigger>\n              <Button>Save</Button>\n            </Dialog.Footer>\n            <Dialog.CloseTrigger asChild>\n              <CloseButton size=\"sm\" />\n            </Dialog.CloseTrigger>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "44d56527334b3e9b2cfd4eb705f87b16f16da515b3f052795b58c7b737ab30e1",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-fullscreen.tsx",
+      "upstreamSha256": "f60ae9ab3427de917b26e19c5887b5d6a9453f868a9d1382b0f05f654a2e9a7e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-initial-focus.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Dialog, Field, Input, Portal, Stack } from \"@chakra-ui/react\"\nimport { useRef } from \"react\"\n\nexport const DialogWithInitialFocus = () => {\n  const ref = useRef<HTMLInputElement | null>(null)\n  return (\n    <Dialog.Root initialFocusEl={() => ref.current}>\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\">Open</Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Header>\n              <Dialog.Title>Dialog Header</Dialog.Title>\n            </Dialog.Header>\n            <Dialog.Body pb=\"4\">\n              <Stack gap=\"4\">\n                <Field.Root>\n                  <Field.Label>First Name</Field.Label>\n                  <Input placeholder=\"First Name\" />\n                </Field.Root>\n                <Field.Root>\n                  <Field.Label>Last Name</Field.Label>\n                  <Input ref={ref} placeholder=\"Focus First\" />\n                </Field.Root>\n              </Stack>\n            </Dialog.Body>\n            <Dialog.Footer>\n              <Dialog.ActionTrigger asChild>\n                <Button variant=\"outline\">Cancel</Button>\n              </Dialog.ActionTrigger>\n              <Button>Save</Button>\n            </Dialog.Footer>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "30d8be5669faf2ab5db282c6c6fb849891665fb3c3fe7187bd09f09b5737c74c",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-initial-focus.tsx",
+      "upstreamSha256": "c45d9be0a4369958089d20bf1bb3e525e5a3e08372e7fc9c766011fe9cb4debf",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-inside-scroll.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CloseButton, Dialog, Portal } from \"@chakra-ui/react\"\nimport Lorem from \"react-lorem-ipsum\"\n\nexport const DialogWithInsideScroll = () => {\n  return (\n    <Dialog.Root scrollBehavior=\"inside\" size=\"sm\">\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\">Inside Scroll</Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Header>\n              <Dialog.Title>With Inside Scroll</Dialog.Title>\n            </Dialog.Header>\n            <Dialog.CloseTrigger asChild>\n              <CloseButton size=\"sm\" />\n            </Dialog.CloseTrigger>\n            <Dialog.Body>\n              <Lorem p={8} />\n            </Dialog.Body>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "932b3a19e4037855a2c706fb704ea371c8fb237cd20d5791f8dabdc6e2dbe6db",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-inside-scroll.tsx",
+      "upstreamSha256": "703cca2b1efc1465df308f06b18fc2575ac78ced8c97cb8a433ea82f3fa56fba",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-motion-preset.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CloseButton, Dialog, Portal } from \"@chakra-ui/react\"\n\nexport const DialogWithMotionPreset = () => {\n  return (\n    <Dialog.Root motionPreset=\"slide-in-bottom\">\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\">Slide in Bottom</Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Header>\n              <Dialog.Title>Dialog Title</Dialog.Title>\n            </Dialog.Header>\n            <Dialog.Body>\n              <p>\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do\n                eiusmod tempor incididunt ut labore et dolore magna aliqua.\n              </p>\n            </Dialog.Body>\n            <Dialog.Footer>\n              <Dialog.ActionTrigger asChild>\n                <Button variant=\"outline\">Cancel</Button>\n              </Dialog.ActionTrigger>\n              <Button>Save</Button>\n            </Dialog.Footer>\n            <Dialog.CloseTrigger asChild>\n              <CloseButton size=\"sm\" />\n            </Dialog.CloseTrigger>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "d8b63bd606b976bb49c0d83f65334ec14cdcfee0da10640ca47131404e698fe3",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-motion-preset.tsx",
+      "upstreamSha256": "1a3fccc3ef3774b5b3b7f8b2aa5c5bfdfa8f3b0bc92c2147714b84c76315f7ba",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-multiple-triggers.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CloseButton, Dialog, HStack, Portal } from \"@chakra-ui/react\"\n\nconst people = {\n  alice: \"Alice Chen\",\n  bob: \"Bob Okonkwo\",\n  cara: \"Cara Singh\",\n}\n\nexport const DialogWithMultipleTriggers = () => {\n  return (\n    <Dialog.Root>\n      <HStack>\n        {Object.entries(people).map(([id, name]) => (\n          <Dialog.Trigger asChild key={id} value={id}>\n            <Button variant=\"outline\" size=\"sm\">\n              Edit {name}\n            </Button>\n          </Dialog.Trigger>\n        ))}\n      </HStack>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Context>\n              {(api) => {\n                const name = people[api.triggerValue as keyof typeof people]\n                return (\n                  <>\n                    <Dialog.Header>\n                      <Dialog.Title>Edit {name}</Dialog.Title>\n                    </Dialog.Header>\n                    <Dialog.Body>\n                      This dialog opened from the {name} trigger.\n                    </Dialog.Body>\n                  </>\n                )\n              }}\n            </Dialog.Context>\n            <Dialog.Footer>\n              <Dialog.ActionTrigger asChild>\n                <Button variant=\"outline\">Cancel</Button>\n              </Dialog.ActionTrigger>\n              <Button>Save</Button>\n            </Dialog.Footer>\n            <Dialog.CloseTrigger asChild>\n              <CloseButton size=\"sm\" />\n            </Dialog.CloseTrigger>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "971a45efe1540e00c8973a3885c3f6bd380733296cf1e7f7641d07db553c0d77",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-multiple-triggers.tsx",
+      "upstreamSha256": "187354ecd2214cf337a3850459b9baa0fed37f885a6d2e9e5b0ab9514d6b25d8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-outside-scroll.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CloseButton, Dialog, Portal } from \"@chakra-ui/react\"\nimport Lorem from \"react-lorem-ipsum\"\n\nexport const DialogWithOutsideScroll = () => {\n  return (\n    <Dialog.Root size=\"sm\" scrollBehavior=\"outside\">\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\">Outside Scroll</Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Header>\n              <Dialog.Title>With Outside Scroll</Dialog.Title>\n            </Dialog.Header>\n            <Dialog.CloseTrigger asChild>\n              <CloseButton size=\"sm\" />\n            </Dialog.CloseTrigger>\n            <Dialog.Body>\n              <Lorem p={8} />\n            </Dialog.Body>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "261858424969cb4029c84e8190d51c828531846dba893c62c93620b12972f8a2",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-outside-scroll.tsx",
+      "upstreamSha256": "b122211b5eabfc0c71280f063dec43c708960b67ce4d5d7ec13db43c4d35ea82",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-placement.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  CloseButton,\n  Dialog,\n  For,\n  HStack,\n  Portal,\n} from \"@chakra-ui/react\"\n\nexport const DialogWithPlacement = () => {\n  return (\n    <HStack wrap=\"wrap\" gap=\"4\">\n      <For each={[\"top\", \"center\", \"bottom\"]}>\n        {(placement) => (\n          <Dialog.Root\n            key={placement}\n            placement={placement}\n            motionPreset=\"slide-in-bottom\"\n          >\n            <Dialog.Trigger asChild>\n              <Button variant=\"outline\">Open Dialog ({placement}) </Button>\n            </Dialog.Trigger>\n            <Portal>\n              <Dialog.Backdrop />\n              <Dialog.Positioner>\n                <Dialog.Content>\n                  <Dialog.Header>\n                    <Dialog.Title>Dialog Title</Dialog.Title>\n                  </Dialog.Header>\n                  <Dialog.Body>\n                    <p>\n                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                      Sed do eiusmod tempor incididunt ut labore et dolore magna\n                      aliqua.\n                    </p>\n                  </Dialog.Body>\n                  <Dialog.Footer>\n                    <Dialog.ActionTrigger asChild>\n                      <Button variant=\"outline\">Cancel</Button>\n                    </Dialog.ActionTrigger>\n                    <Button>Save</Button>\n                  </Dialog.Footer>\n                  <Dialog.CloseTrigger asChild>\n                    <CloseButton size=\"sm\" />\n                  </Dialog.CloseTrigger>\n                </Dialog.Content>\n              </Dialog.Positioner>\n            </Portal>\n          </Dialog.Root>\n        )}\n      </For>\n    </HStack>\n  )\n}\n",
+      "sha256": "0d8c20147b32045d9205f0a6d654e221c66831cf749c56aa9001c64ca100492f",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-placement.tsx",
+      "upstreamSha256": "1b88e6355db3dbee989ab891fc983771f821f5c747782b34775593498c6517fb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-responsive-size.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CloseButton, Dialog, Portal } from \"@chakra-ui/react\"\n\nexport const DialogWithResponsiveSize = () => {\n  return (\n    <Dialog.Root size={{ mdDown: \"full\", md: \"lg\" }}>\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Dialog\n        </Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Header>\n              <Dialog.Title>Dialog Title</Dialog.Title>\n            </Dialog.Header>\n            <Dialog.Body>\n              <p>\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do\n                eiusmod tempor incididunt ut labore et dolore magna aliqua.\n              </p>\n            </Dialog.Body>\n            <Dialog.Footer>\n              <Dialog.ActionTrigger asChild>\n                <Button variant=\"outline\">Cancel</Button>\n              </Dialog.ActionTrigger>\n              <Button>Save</Button>\n            </Dialog.Footer>\n            <Dialog.CloseTrigger asChild>\n              <CloseButton size=\"sm\" />\n            </Dialog.CloseTrigger>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "b1ffd379d3b9fee1d01a53c14b66efcd9f9b2a282a95e60152b638de1f3a16a1",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-responsive-size.tsx",
+      "upstreamSha256": "7706268df15d3da8697f38adf468b384d115356638e73768fb767891c2041857",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-role.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CloseButton, Dialog, Portal } from \"@chakra-ui/react\"\n\nexport const DialogWithRole = () => {\n  return (\n    <Dialog.Root role=\"alertdialog\">\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          Open Dialog\n        </Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Header>\n              <Dialog.Title>Are you sure?</Dialog.Title>\n            </Dialog.Header>\n            <Dialog.Body>\n              <p>\n                This action cannot be undone. This will permanently delete your\n                account and remove your data from our systems.\n              </p>\n            </Dialog.Body>\n            <Dialog.Footer>\n              <Dialog.ActionTrigger asChild>\n                <Button variant=\"outline\">Cancel</Button>\n              </Dialog.ActionTrigger>\n              <Button colorPalette=\"red\">Delete</Button>\n            </Dialog.Footer>\n            <Dialog.CloseTrigger asChild>\n              <CloseButton size=\"sm\" />\n            </Dialog.CloseTrigger>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.Root>\n  )\n}\n",
+      "sha256": "a2552b2aeb7cd69caaa6ab0a1ec98725a0cf2d7b30933411f20f9ad614abec00",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-role.tsx",
+      "upstreamSha256": "20ef155830733215771196abd592631d0c8734598cc98851f7712dca8cf58a7e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-sizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  CloseButton,\n  Dialog,\n  For,\n  HStack,\n  Portal,\n} from \"@chakra-ui/react\"\n\nexport const DialogWithSizes = () => {\n  return (\n    <HStack>\n      <For each={[\"xs\", \"sm\", \"md\", \"lg\"]}>\n        {(size) => (\n          <Dialog.Root key={size} size={size}>\n            <Dialog.Trigger asChild>\n              <Button variant=\"outline\" size={size}>\n                Open ({size})\n              </Button>\n            </Dialog.Trigger>\n            <Portal>\n              <Dialog.Backdrop />\n              <Dialog.Positioner>\n                <Dialog.Content>\n                  <Dialog.Header>\n                    <Dialog.Title>Dialog Title</Dialog.Title>\n                  </Dialog.Header>\n                  <Dialog.Body>\n                    <p>\n                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                      Sed do eiusmod tempor incididunt ut labore et dolore magna\n                      aliqua.\n                    </p>\n                  </Dialog.Body>\n                  <Dialog.Footer>\n                    <Dialog.ActionTrigger asChild>\n                      <Button variant=\"outline\">Cancel</Button>\n                    </Dialog.ActionTrigger>\n                    <Button>Save</Button>\n                  </Dialog.Footer>\n                  <Dialog.CloseTrigger asChild>\n                    <CloseButton size=\"sm\" />\n                  </Dialog.CloseTrigger>\n                </Dialog.Content>\n              </Dialog.Positioner>\n            </Portal>\n          </Dialog.Root>\n        )}\n      </For>\n    </HStack>\n  )\n}\n",
+      "sha256": "4713eb3b05fb11530c1f9afd91dc078c9562ee283b827dfe7f7aac8f104ec727",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-sizes.tsx",
+      "upstreamSha256": "4370bb5e205a3acf73315b1b37f0178e1015cd07439dcc19d60b43ca7888d309",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/dialog-with-store.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Button,\n  CloseButton,\n  Dialog,\n  Portal,\n  useDialog,\n} from \"@chakra-ui/react\"\n\nexport const DialogWithStore = () => {\n  const dialog = useDialog()\n  return (\n    <Dialog.RootProvider value={dialog}>\n      <Dialog.Trigger asChild>\n        <Button variant=\"outline\" size=\"sm\">\n          {dialog.open ? \"Close\" : \"Open\"} Dialog\n        </Button>\n      </Dialog.Trigger>\n      <Portal>\n        <Dialog.Backdrop />\n        <Dialog.Positioner>\n          <Dialog.Content>\n            <Dialog.Header>\n              <Dialog.Title>Dialog Title</Dialog.Title>\n            </Dialog.Header>\n            <Dialog.Body>\n              <p>\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do\n                eiusmod tempor incididunt ut labore et dolore magna aliqua.\n              </p>\n            </Dialog.Body>\n            <Dialog.Footer>\n              <Dialog.ActionTrigger asChild>\n                <Button variant=\"outline\">Cancel</Button>\n              </Dialog.ActionTrigger>\n              <Button>Save</Button>\n            </Dialog.Footer>\n            <Dialog.CloseTrigger asChild>\n              <CloseButton size=\"sm\" />\n            </Dialog.CloseTrigger>\n          </Dialog.Content>\n        </Dialog.Positioner>\n      </Portal>\n    </Dialog.RootProvider>\n  )\n}\n",
+      "sha256": "7bfc028166122f897fb70b1aac79995437cd18b7b075210a87d8482e79e111ac",
+      "upstreamPath": "apps/compositions/src/examples/dialog-with-store.tsx",
+      "upstreamSha256": "cc08473a23d4c649694058119cafcd34c42e44c9998aa71e37c1b20c75bf3647",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "732ad725d9fe9eada03c29a8d73001dce94933c1ccbbb37dfd0192656f9f3b63",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-controlled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogControlled as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-controlled\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "4bb85e8e31940c045cda57a59832cf36107528cdd5359537d362c8eb1173a4e5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-nested.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogNested as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-nested\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "3555879f392afc2b2a444715b5c96d7ade47a99852b4c4eb410c16eced6ff92a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-non-modal.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogNonModal as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-non-modal\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "cf6abdffbe085678db17410cba93220ba41370fdba703893d897e0df12af705d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-open-from-menu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogOpenFromMenu as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-open-from-menu\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "5d1db18454c2161fc7c72762b9428368bf97c569e1443d773cf0e375d49b6dfe",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-open-from-popover.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogOpenFromPopover as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-open-from-popover\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "9d4ffe92d930e0e95ec9e670aeb4dd3de2c7bf419f706908342e44c37f73c4ed",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-backdrop-blur.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithBackdropBlur as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-backdrop-blur\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "20523468d955dd3a2888c0006410d7a8ae05996a9f8dae68167228965df862c7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-close-outside.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithCloseOutside as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-close-outside\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "f94d8cec1521b62386aea196f679da3ae07e8227c38cf42af0d9274ffbf85a00",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-context.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithContext as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-context\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "7c2eadf79805f03fe5d333d008fc4aedba879d46cf41a6e8f6f39e07ea7bada2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-cover.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithCover as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-cover\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "4454de63d423142beec45c95ed4075bc07c2084a841aa5130c12bd27847f62db",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-datalist.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithDatalist as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-datalist\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "150874b62cb7d24f2190933e27b01c8d63d5bccbccf8f39853054d6f265b2fa9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-final-focus.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithFinalFocus as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-final-focus\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "26ca66f84f263f5d6f9d802d190b13fb78827aa67d653fd30cd60d843ca30c5d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-fullscreen.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithFullscreen as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-fullscreen\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "761bf2c03dd8af73b4d1785d9148d3aedc19eb1ac5e66cec8523761c5750023f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-initial-focus.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithInitialFocus as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-initial-focus\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a0ee19c752f6ae3b2b4665e21e5d99a1fb8d0336ebc8c77002671cd662cdf2ca",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-inside-scroll.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithInsideScroll as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-inside-scroll\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a62f30b0f17b72dd1924f54731398a2eb8ec0cb75f62e7acef034b1c7998a966",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-motion-preset.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithMotionPreset as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-motion-preset\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "9b17d848a6fe718ea815a75cf3c62727e7c0a2c48d270779d054348623b74c6f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-multiple-triggers.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithMultipleTriggers as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-multiple-triggers\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "f88055e17819aa9cb53b8feb68b6f67387dc8f67f9321f5e31c51576058c839b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-outside-scroll.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithOutsideScroll as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-outside-scroll\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "76cb60f69966b199238c0b51d51d74a7d762a6e6e5cc8b10eabd7020add8aa38",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-placement.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithPlacement as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-placement\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "32560cc94c13ee7f840146f221ec2b44a2704668c8bdc3f73abe4eb3a7ad2942",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-responsive-size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithResponsiveSize as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-responsive-size\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "1428b2b9500540c80492455f6d774fa6b89b1c250b71ab6df09a2af44f2f2c9f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-role.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithRole as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-role\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "23b69008e88851fd51b9e1b405a37059324f8779fd730814cbb9005b962e751f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithSizes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-sizes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "d6e179a9abe6075e746e03c73416a3a14e6edbf2e9793b6c88f4bac6da20a626",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/dialog/previews/dialog-with-store.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { DialogWithStore as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/dialog-with-store\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "5d2510a29213c5bdd73e7ec1c6a4560f5af4ad64c0b973319c75429d27a1c266",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0 react-lorem-ipsum@1.4.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0 react-lorem-ipsum@1.4.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "dialog",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/dialog-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/dialog-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI dialog\n\n23 published Chakra UI dialog examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/dialog-basic.tsx\n"
+}

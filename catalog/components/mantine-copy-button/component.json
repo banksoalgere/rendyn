@@ -1,0 +1,116 @@
+{
+  "id": "mantine:copy-button",
+  "sourceId": "mantine",
+  "slug": "mantine-copy-button",
+  "name": "Mantine copy button",
+  "description": "2 published Mantine copy button examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@phosphor-icons/react@2.1.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "button",
+    "tags": [
+      "button",
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "copy button",
+      "mantine copy button",
+      "button",
+      "cta",
+      "action control"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "2 published Mantine copy button examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "button:code:file",
+    "searchText": "Mantine copy button\ncopy button\n2 published Mantine copy button examples with complete pinned source and MIT attribution.\nmantine copy button\nbutton\ncta\naction control\ncode\nfile\nMantine copy button 2 published Mantine copy button examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/CopyButton Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/CopyButton/CopyButton.demo.timeout.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-copy-button",
+  "manifestPath": "components/mantine-copy-button/component.json",
+  "integrity": "sha256:5b0703f166281a305fab6fbeab82cb23bfe61a57c3932ae0a647bd15b57eb762",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/CopyButton/CopyButton.demo.timeout.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { CheckIcon, CopyIcon } from '@phosphor-icons/react';\n\nimport { ActionIcon, CopyButton, Tooltip } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <CopyButton value=\"https://mantine.dev\" timeout={2000}>\n      {({ copied, copy }) => (\n        <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position=\"right\">\n          <ActionIcon color={copied ? 'teal' : 'gray'} variant=\"subtle\" onClick={copy}>\n            {copied ? <CheckIcon size={16} /> : <CopyIcon size={16} />}\n          </ActionIcon>\n        </Tooltip>\n      )}\n    </CopyButton>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "33eaff43fac715c76af67d8f6930d2ecaf865427aca493d6cf869515856905c3",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/CopyButton/CopyButton.demo.timeout.tsx",
+      "upstreamSha256": "d58dd9c59a23717dacfcca38c5397e6969a37a7acc69838b67147b1251737763",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/CopyButton/CopyButton.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CopyButton } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <CopyButton value=\"https://mantine.dev\">\n      {({ copied, copy }) => (\n        <Button color={copied ? 'teal' : 'blue'} onClick={copy}>\n          {copied ? 'Copied url' : 'Copy url'}\n        </Button>\n      )}\n    </CopyButton>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "9a31a9db13ce5f8c4cf20cec5e70864486627d1cf9239d246441ef282a531754",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/CopyButton/CopyButton.demo.usage.tsx",
+      "upstreamSha256": "e6678d17ed1fb8a2884b40c0774bf655f8a5ec5a66b8ad90829d310ac797f1e7",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/copy-button/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/CopyButton/CopyButton.demo.timeout\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "864dc752f8df9121750881670f15fe1f978c634cca90efc4c126eeed7ce71c15",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/copy-button/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/CopyButton/CopyButton.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c811ee421b545d92423f50a7ff51fca3f4e3160b6baa303cb7385d4a520a73ca",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @phosphor-icons/react@2.1.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @phosphor-icons/react@2.1.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "copy-button",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/CopyButton",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/CopyButton/CopyButton.demo.timeout.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/CopyButton/CopyButton.demo.timeout.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine copy button\n\n2 published Mantine copy button examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/CopyButton\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/CopyButton/CopyButton.demo.timeout.tsx\n"
+}

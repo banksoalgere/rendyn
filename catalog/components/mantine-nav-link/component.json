@@ -1,0 +1,146 @@
+{
+  "id": "mantine:nav-link",
+  "sourceId": "mantine",
+  "slug": "mantine-nav-link",
+  "name": "Mantine nav link",
+  "description": "4 published Mantine nav link examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantinex/demo@2.0.0",
+    "@phosphor-icons/react@2.1.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "nav-link",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "nav link",
+      "mantine nav link",
+      "nav-link"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "4 published Mantine nav link examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "nav-link:code:file",
+    "searchText": "Mantine nav link\nnav link\n4 published Mantine nav link examples with complete pinned source and MIT attribution.\nmantine nav link\nnav-link\ncode\nfile\nMantine nav link 4 published Mantine nav link examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/NavLink Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/NavLink/NavLink.demo.active.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-nav-link",
+  "manifestPath": "components/mantine-nav-link/component.json",
+  "integrity": "sha256:7feca62df371dbe06b463ce0d75c024a6a22d89d701870653b0982d1c9828388",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NavLink/NavLink.demo.active.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { CaretRightIcon, FingerprintIcon, GaugeIcon, HeartbeatIcon } from '@phosphor-icons/react';\n\nimport { Box, Group, NavLink } from '@mantine/core';\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst code = `\nimport { useState } from 'react';\nimport { GaugeIcon, FingerprintIcon, HeartbeatIcon, CaretRightIcon } from '@phosphor-icons/react';\nimport { Box, NavLink } from '@mantine/core';\n\nconst data = [\n  { icon: GaugeIcon, label: 'Dashboard', description: 'Item with description' },\n  {\n    icon: FingerprintIcon,\n    label: 'Security',\n    rightSection: <CaretRightIcon size={16} />,\n  },\n  { icon: HeartbeatIcon, label: 'Activity' },\n];\n\nfunction Demo() {\n  const [active, setActive] = useState(0);\n\n  const items = data.map((item, index) => (\n    <NavLink\n      href=\"#required-for-focus\"\n      key={item.label}\n      active={index === active}\n      label={item.label}\n      description={item.description}\n      rightSection={item.rightSection}\n      leftSection={<item.icon size={16} />}\n      onClick={() => setActive(index)}\n      {{props}}\n    />\n  ));\n\n  return <Box w={220}>{items}</Box>;\n}\n`;\n\nconst data = [\n  { icon: GaugeIcon, label: 'Dashboard', description: 'Item with description' },\n  {\n    icon: FingerprintIcon,\n    label: 'Security',\n    rightSection: <CaretRightIcon size={16} className=\"mantine-rotate-rtl\" />,\n  },\n  { icon: HeartbeatIcon, label: 'Activity' },\n];\n\nfunction Demo(props: any) {\n  const [active, setActive] = useState(0);\n\n  const items = data.map((item, index) => (\n    <NavLink\n      href=\"#required-for-focus\"\n      key={item.label}\n      active={index === active}\n      label={item.label}\n      description={item.description}\n      rightSection={item.rightSection}\n      leftSection={<item.icon size={16} />}\n      onClick={() => setActive(index)}\n      {...props}\n    />\n  ));\n\n  return (\n    <Group justify=\"center\">\n      <Box w={220}>{items}</Box>\n    </Group>\n  );\n}\n\nexport const active: MantineDemo = {\n  type: 'configurator',\n  component: Demo,\n  code,\n  controls: [\n    { prop: 'color', type: 'color', initialValue: 'blue', libraryValue: 'blue' },\n    {\n      prop: 'variant',\n      type: 'segmented',\n      data: [\n        { value: 'subtle', label: 'Subtle' },\n        { value: 'light', label: 'Light' },\n        { value: 'filled', label: 'Filled' },\n      ],\n\n      libraryValue: 'light',\n      initialValue: 'light',\n    },\n  ],\n};\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent color={\"blue\"} variant={\"light\"} />; }\n",
+      "sha256": "d8a3416cc0269c5c4f99a607098664eb406a92f9343c624eea1b180d2bbdd397",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NavLink/NavLink.demo.active.tsx",
+      "upstreamSha256": "d48cb92eca85062ff88fa3937a88ca324eac3ae13fd32791de29f0fbe311714e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NavLink/NavLink.demo.autoContrast.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NavLink } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <>\n      <NavLink color=\"lime.4\" variant=\"filled\" active label=\"Default\" />\n      <NavLink color=\"lime.4\" variant=\"filled\" active autoContrast label=\"Auto contrast\" />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "a2c7c1bcb2793287307affb42ed72893e552b64b9c1044c1a8eedd6b409099fa",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NavLink/NavLink.demo.autoContrast.tsx",
+      "upstreamSha256": "ff4023d3c8f80139422054fc152d0ccfdfcb346898a6e16f533ba99fbf9f64d0",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NavLink/NavLink.demo.nested.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { FingerprintIcon, GaugeIcon } from '@phosphor-icons/react';\n\nimport { NavLink } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <>\n      <NavLink\n        href=\"#required-for-focus\"\n        label=\"First parent link\"\n        leftSection={<GaugeIcon size={16} />}\n        childrenOffset={28}\n      >\n        <NavLink href=\"#required-for-focus\" label=\"First child link\" />\n        <NavLink label=\"Second child link\" href=\"#required-for-focus\" />\n        <NavLink label=\"Nested parent link\" childrenOffset={28} href=\"#required-for-focus\">\n          <NavLink label=\"First child link\" href=\"#required-for-focus\" />\n          <NavLink label=\"Second child link\" href=\"#required-for-focus\" />\n          <NavLink label=\"Third child link\" href=\"#required-for-focus\" />\n        </NavLink>\n      </NavLink>\n\n      <NavLink\n        href=\"#required-for-focus\"\n        label=\"Second parent link\"\n        leftSection={<FingerprintIcon size={16} />}\n        childrenOffset={28}\n        defaultOpened\n      >\n        <NavLink label=\"First child link\" href=\"#required-for-focus\" />\n        <NavLink label=\"Second child link\" href=\"#required-for-focus\" />\n        <NavLink label=\"Third child link\" href=\"#required-for-focus\" />\n      </NavLink>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "7047de8ac67c5580e4f3e75dd032edd02b3f526bc1f7fdf11461f5b47d03175a",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NavLink/NavLink.demo.nested.tsx",
+      "upstreamSha256": "54066da713a8f170384d7f7565d67e1b9e58894ad05b276f449aca0dcacf8787",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/NavLink/NavLink.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  CaretRightIcon,\n  GaugeIcon,\n  HeartbeatIcon,\n  HouseIcon,\n  ProhibitIcon,\n} from '@phosphor-icons/react';\n\nimport { Badge, NavLink } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <>\n      <NavLink href=\"#required-for-focus\" label=\"With icon\" leftSection={<HouseIcon size={16} />} />\n      <NavLink\n        href=\"#required-for-focus\"\n        label=\"With right section\"\n        leftSection={<GaugeIcon size={16} />}\n        rightSection={<CaretRightIcon size={12} className=\"mantine-rotate-rtl\" />}\n      />\n      <NavLink\n        href=\"#required-for-focus\"\n        label=\"Disabled\"\n        leftSection={<ProhibitIcon size={16} />}\n        disabled\n      />\n      <NavLink\n        href=\"#required-for-focus\"\n        label=\"With description\"\n        description=\"Additional information\"\n        leftSection={\n          <Badge size=\"xs\" color=\"red\" circle>\n            3\n          </Badge>\n        }\n      />\n      <NavLink\n        href=\"#required-for-focus\"\n        label=\"Active subtle\"\n        leftSection={<HeartbeatIcon size={16} />}\n        rightSection={<CaretRightIcon size={12} className=\"mantine-rotate-rtl\" />}\n        variant=\"subtle\"\n        active\n      />\n      <NavLink\n        href=\"#required-for-focus\"\n        label=\"Active light\"\n        leftSection={<HeartbeatIcon size={16} />}\n        rightSection={<CaretRightIcon size={12} className=\"mantine-rotate-rtl\" />}\n        active\n      />\n      <NavLink\n        href=\"#required-for-focus\"\n        label=\"Active filled\"\n        leftSection={<HeartbeatIcon size={16} />}\n        rightSection={<CaretRightIcon size={12} className=\"mantine-rotate-rtl\" />}\n        variant=\"filled\"\n        active\n      />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "2a71e7963a88f2895619f9c147ec0c78d4129cbcca0f5a351704fdddf4837878",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/NavLink/NavLink.demo.usage.tsx",
+      "upstreamSha256": "49697a27a816dbe2ee530283fc2b49aedbcfc1a742f17e73af93e94b154a209b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/nav-link/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NavLink/NavLink.demo.active\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d30e660fb5bccbf81344ec61f5e6f9cdb396828582b2512be9f5f64a965d3415",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/nav-link/previews/auto-contrast.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NavLink/NavLink.demo.autoContrast\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4ad5271bf5678dd94391a7a11193a5442e285b40e5c91542656729c8593ea1b0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/nav-link/previews/nested.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NavLink/NavLink.demo.nested\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "1d580849ff81ea31981d16b83f54fd7be75ec4b45a8abf3a29acbd9e95f10b47",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/nav-link/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/NavLink/NavLink.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "5ae72bc8fb168471330c818dd2e2a9b96cd5c4a13ab5da8f6ef5c3327bc539bc",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @phosphor-icons/react@2.1.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @phosphor-icons/react@2.1.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "nav-link",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/NavLink",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/NavLink/NavLink.demo.active.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/NavLink/NavLink.demo.active.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine nav link\n\n4 published Mantine nav link examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/NavLink\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/NavLink/NavLink.demo.active.tsx\n"
+}

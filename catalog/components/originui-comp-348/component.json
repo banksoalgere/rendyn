@@ -1,0 +1,118 @@
+{
+  "id": "originui:comp-348",
+  "sourceId": "originui",
+  "slug": "originui-comp-348",
+  "name": "Origin UI accordion radix comp-348",
+  "description": "1 published Origin UI accordion radix comp-348 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "clsx@2.1.1",
+    "lucide-react@1.35.0",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "accordion",
+    "tags": [
+      "accordion",
+      "file",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 348",
+      "origin ui accordion radix comp-348",
+      "accordion"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI accordion radix comp-348 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "accordion:file:select:upload",
+    "searchText": "Origin UI accordion radix comp-348\ncomp 348\n1 published Origin UI accordion radix comp-348 examples with complete pinned source and MIT attribution.\norigin ui accordion radix comp-348\naccordion\nfile\nselect\nupload\nOrigin UI accordion radix comp 348 1 published Origin UI accordion radix comp 348 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 348.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-348",
+  "manifestPath": "components/originui-comp-348/component.json",
+  "integrity": "sha256:4031bab5aa46b3a9b25e3d54fb047398637b0edd88a363efad1a251ab1eaf917",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-348.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/accordion\";\n\nconst items = [\n  {\n    content:\n      \"coss ui focuses on developer experience and performance. Built with TypeScript, it offers excellent type safety, follows accessibility standards, and provides comprehensive documentation with regular updates.\",\n    id: \"1\",\n    title: \"What makes coss ui different?\",\n  },\n  {\n    content:\n      \"Use our CSS variables for global styling, or className and style props for component-specific changes. We support CSS modules, Tailwind, and dark mode out of the box.\",\n    id: \"2\",\n    title: \"How can I customize the components?\",\n  },\n  {\n    content:\n      \"Yes, with tree-shaking, code splitting, and minimal runtime overhead. Most components are under 5KB gzipped.\",\n    id: \"3\",\n    title: \"Is coss ui optimized for performance?\",\n  },\n  {\n    content:\n      \"All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.\",\n    id: \"4\",\n    title: \"How accessible are the components?\",\n  },\n];\n\nexport default function Component() {\n  return (\n    <div className=\"space-y-4\">\n      <h2 className=\"font-bold text-xl\">Table w/ chevron</h2>\n      <Accordion\n        className=\"w-full -space-y-px\"\n        collapsible\n        defaultValue=\"3\"\n        type=\"single\"\n      >\n        {items.map((item) => (\n          <AccordionItem\n            className=\"relative border bg-background px-4 py-1 outline-none first:rounded-t-md last:rounded-b-md last:border-b has-focus-visible:z-10 has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50\"\n            key={item.id}\n            value={item.id}\n          >\n            <AccordionTrigger className=\"py-2 text-[15px] leading-6 hover:no-underline focus-visible:ring-0\">\n              {item.title}\n            </AccordionTrigger>\n            <AccordionContent className=\"pb-2 text-muted-foreground\">\n              {item.content}\n            </AccordionContent>\n          </AccordionItem>\n        ))}\n      </Accordion>\n    </div>\n  );\n}\n",
+      "sha256": "91b7507043f21de539e2dc1ec9e1583aab97d848654aefa57f6efeeb77934caf",
+      "upstreamPath": "apps/origin/registry/default/components/comp-348.tsx",
+      "upstreamSha256": "fbbcca9c7d448305be52b2fb8477dfee84abe9fda17e02616ab9d4cfeda898ea",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/accordion.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ChevronDownIcon } from \"lucide-react\";\nimport { Accordion as AccordionPrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Accordion({\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Root>) {\n  return <AccordionPrimitive.Root data-slot=\"accordion\" {...props} />;\n}\n\nfunction AccordionItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Item>) {\n  return (\n    <AccordionPrimitive.Item\n      className={cn(\"border-b last:border-b-0\", className)}\n      data-slot=\"accordion-item\"\n      {...props}\n    />\n  );\n}\n\nfunction AccordionTrigger({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {\n  return (\n    <AccordionPrimitive.Header className=\"flex\">\n      <AccordionPrimitive.Trigger\n        className={cn(\n          \"flex flex-1 items-center justify-between gap-4 rounded-md py-4 text-left font-semibold text-sm outline-none transition-all hover:underline focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180\",\n          className,\n        )}\n        data-slot=\"accordion-trigger\"\n        {...props}\n      >\n        {children}\n        <ChevronDownIcon\n          aria-hidden=\"true\"\n          className=\"pointer-events-none shrink-0 opacity-60 transition-transform duration-200\"\n          size={16}\n        />\n      </AccordionPrimitive.Trigger>\n    </AccordionPrimitive.Header>\n  );\n}\n\nfunction AccordionContent({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Content>) {\n  return (\n    <AccordionPrimitive.Content\n      className=\"overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down\"\n      data-slot=\"accordion-content\"\n      {...props}\n    >\n      <div className={cn(\"pt-0 pb-4\", className)}>{children}</div>\n    </AccordionPrimitive.Content>\n  );\n}\n\nexport { Accordion, AccordionContent, AccordionItem, AccordionTrigger };\n",
+      "sha256": "b4c3f658028abfa31f33a4fba613b567f1a070b54ec3932b6046c6ecc01ee04d",
+      "upstreamPath": "apps/origin/registry/default/ui/accordion.tsx",
+      "upstreamSha256": "80f3ed10bf414b0bd8f34e2b78806afb9cfa4586cc96768de9b97df0e88110a5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-348/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-348\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d2eb15023d076704c87b155b54e33c139f145c01c285085ebd3d16b636ed1baf",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-348",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-348.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-348.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI accordion radix comp-348\n\n1 published Origin UI accordion radix comp-348 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-348.tsx\n"
+}

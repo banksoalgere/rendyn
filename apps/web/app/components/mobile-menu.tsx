@@ -13,11 +13,11 @@ export interface MobileComponentGroup {
 }
 
 const primaryLinks = [
-  { href: '/components', label: 'Browse components', number: '01' },
-  { href: '/#how-it-works', label: 'How it works', number: '02' },
-  { href: '/pricing', label: 'Pricing', number: '03' },
-  { href: '/#for-teams', label: 'For teams', number: '04' },
-  { href: '/guides', label: 'Guides', number: '05' },
+  { href: '/components', label: 'Browse components' },
+  { href: '/#how-it-works', label: 'How it works' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/#for-teams', label: 'For teams' },
+  { href: '/guides', label: 'Guides' },
 ] as const;
 
 const SIGN_UP_HREF = '/pricing';
@@ -65,7 +65,6 @@ export function MobileMenu({ groups }: { groups: MobileComponentGroup[] }) {
           <nav aria-label="Primary navigation" className="mobile-menu__links">
             {primaryLinks.map((link) => (
               <a href={link.href} key={link.href} onClick={closeMenu}>
-                <span>{link.number}</span>
                 <strong>{link.label}</strong>
                 <b aria-hidden="true">→</b>
               </a>
@@ -97,9 +96,8 @@ export function MobileMenu({ groups }: { groups: MobileComponentGroup[] }) {
               <span>{activeGroup.detail}</span>
             </div>
             <div className="mobile-menu__components">
-              {activeGroup.components.map(({ publicSlug, name }, index) => (
+              {activeGroup.components.map(({ publicSlug, name }) => (
                 <a href={`/components/${publicSlug}`} key={publicSlug} onClick={closeMenu}>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
                   <strong>{name}</strong>
                   <b aria-hidden="true">↗</b>
                 </a>

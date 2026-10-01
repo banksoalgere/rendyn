@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim breaks hydrated navigation on this auth boundary. */
+import { BrandMark } from '@/app/components/brand-mark';
+import '../globals.css';
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { getSubscriptionAccess, type SubscriptionAccess } from '@/lib/billing/access';
@@ -59,7 +61,7 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
     <main className={styles.page}>
       <header className={styles.topbar}>
         <a className={styles.brand} href="/" aria-label="Rendyn home">
-          <span className={styles.brandMark} aria-hidden="true">R</span>
+          <BrandMark className={styles.brandMark} />
           <span>Rendyn</span>
         </a>
         <a className={styles.backLink} href="/">Back to home</a>

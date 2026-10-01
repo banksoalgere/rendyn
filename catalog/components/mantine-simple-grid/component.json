@@ -1,0 +1,198 @@
+{
+  "id": "mantine:simple-grid",
+  "sourceId": "mantine",
+  "slug": "mantine-simple-grid",
+  "name": "Mantine simple grid",
+  "description": "6 published Mantine simple grid examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "clsx@2.1.1"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "simple-grid",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "simple grid",
+      "mantine simple grid",
+      "simple-grid"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "6 published Mantine simple grid examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "simple-grid:code:file",
+    "searchText": "Mantine simple grid\nsimple grid\n6 published Mantine simple grid examples with complete pinned source and MIT attribution.\nmantine simple grid\nsimple-grid\ncode\nfile\nMantine simple grid 6 published Mantine simple grid examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/SimpleGrid Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/SimpleGrid/SimpleGrid.demo.autoFlow.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-simple-grid",
+  "manifestPath": "components/mantine-simple-grid/component.json",
+  "integrity": "sha256:7c56c78bfc9ed27cbb351b09dcbe681ced7271088c3af7c151e82dce4f2eae79",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/SimpleGrid.demo.autoFlow.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SimpleGrid, Stack, Text } from '@mantine/core';\n\nimport { GridItem } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/_demo-item';\n\nconst items = Array(3)\n  .fill(0)\n  .map((_, index) => <GridItem key={index}>{index + 1}</GridItem>);\n\nfunction Demo() {\n  return (\n    <Stack>\n      <div>\n        <Text mb=\"xs\" fw={500}>\n          auto-fill\n        </Text>\n        <SimpleGrid minColWidth=\"200px\" autoFlow=\"auto-fill\">\n          {items}\n        </SimpleGrid>\n      </div>\n      <div>\n        <Text mb=\"xs\" fw={500}>\n          auto-fit\n        </Text>\n        <SimpleGrid minColWidth=\"200px\" autoFlow=\"auto-fit\">\n          {items}\n        </SimpleGrid>\n      </div>\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "de74bac230bdf358c03dfde73b7ea25098d656369f58e504721bdfc7e8d1861b",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/SimpleGrid/SimpleGrid.demo.autoFlow.tsx",
+      "upstreamSha256": "bb793541a3bfd334a5ef6666b97a37b2c9e613ea3dd0a9e90e127a7f71a2d05c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/_demo-item.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport cx from 'clsx';\nimport { Box, BoxProps, ElementProps, Text } from '@mantine/core';\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/_item.module.css';\n\ninterface GridItemProps extends BoxProps, ElementProps<'div'> {}\n\nexport function GridItem({ className, children, ...others }: GridItemProps) {\n  return (\n    <Box className={cx(classes.item, className)} {...others}>\n      <Text className={classes.label}>{children}</Text>\n    </Box>\n  );\n}\n\nexport const defaultItems = Array(5)\n  .fill(0)\n  .map((_, index) => <GridItem key={index}>{index + 1}</GridItem>);\n",
+      "sha256": "e918ac83181744035138b33ed7997446e8069d2197b8d9233c39aa979f526f6d",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/SimpleGrid/_demo-item.tsx",
+      "upstreamSha256": "da025ed63aab730382915c6d660147f1eb10ff29c1d5d93724b8bfcbb9779ba3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/_item.module.css",
+      "type": "style",
+      "content": ".item {\n  background-color: light-dark(var(--mantine-color-blue-0), var(--mantine-color-dark-4));\n  padding: var(--mantine-spacing-md);\n}\n\n.label {\n  color: light-dark(var(--mantine-color-blue-6), var(--mantine-color-dimmed));\n  font-size: var(--mantine-font-size-xl);\n  font-weight: bold;\n  text-align: center;\n}\n",
+      "sha256": "5cf8e19ed174a81ba85e3954679cc5aeea0c2eb0e78735de0faf67654dbf222b",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/SimpleGrid/_item.module.css",
+      "upstreamSha256": "5cf8e19ed174a81ba85e3954679cc5aeea0c2eb0e78735de0faf67654dbf222b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/SimpleGrid.demo.autoRows.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SimpleGrid } from '@mantine/core';\n\nimport { defaultItems } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/_demo-item';\n\nfunction Demo() {\n  return (\n    <SimpleGrid cols={3} autoRows=\"minmax(100px, auto)\">\n      {defaultItems}\n    </SimpleGrid>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "bff0d8c426b07781aa938b53cf64c6d109957ef41a8496fb00bc151bdb1593e4",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/SimpleGrid/SimpleGrid.demo.autoRows.tsx",
+      "upstreamSha256": "cbd8f3e036576e9eeb0ec5e647594d69588d735da1bcd12a7533212687eb597a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/SimpleGrid.demo.container.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SimpleGrid } from '@mantine/core';\n\nimport { defaultItems } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/_demo-item';\n\nfunction Demo() {\n  return (\n    // Wrapper div is added for demonstration purposes only,\n    // It is not required in real projects\n    <div style={{ resize: 'horizontal', overflow: 'hidden', maxWidth: '100%' }}>\n      <SimpleGrid\n        type=\"container\"\n        cols={{ base: 1, '300px': 2, '500px': 5 }}\n        spacing={{ base: 10, '300px': 'xl' }}\n      >\n        {defaultItems}\n      </SimpleGrid>\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "056bf8199b3f09927cd3882ce744d469f906ae0b9cd0e1b0ace52899206a8167",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/SimpleGrid/SimpleGrid.demo.container.tsx",
+      "upstreamSha256": "074b054166dd351ef3fa8acee8e497b59fb7bf1ab50f762fc443eda46d6e5f3c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/SimpleGrid.demo.minColWidth.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SimpleGrid } from '@mantine/core';\n\nimport { defaultItems } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/_demo-item';\n\nfunction Demo() {\n  return <SimpleGrid minColWidth=\"200px\">{defaultItems}</SimpleGrid>;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "93eb50d0ae7fa97cec123993231355bc4fa02bd5c5e4c5df01ba74c30b637da9",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/SimpleGrid/SimpleGrid.demo.minColWidth.tsx",
+      "upstreamSha256": "867479c41d0aaab5db53179e057a998cf213b68d4213bbdf0534f5ac3772299c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/SimpleGrid.demo.responsive.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SimpleGrid } from '@mantine/core';\n\nimport { defaultItems } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/_demo-item';\n\nfunction Demo() {\n  return (\n    <SimpleGrid\n      cols={{ base: 1, sm: 2, lg: 5 }}\n      spacing={{ base: 10, sm: 'xl' }}\n      verticalSpacing={{ base: 'md', sm: 'xl' }}\n    >\n      {defaultItems}\n    </SimpleGrid>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "df3ec5ddd95a1d7ad3108e6d27bc588218f11295bc39d904c8b9e2b03cf70b9a",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/SimpleGrid/SimpleGrid.demo.responsive.tsx",
+      "upstreamSha256": "6d789979ac08d2c89000094828a0549b1504e233190025f13f22b91e75cb137d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/SimpleGrid.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SimpleGrid, SimpleGridProps } from '@mantine/core';\n\nimport { defaultItems } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/_demo-item';\n\nfunction Demo(props: SimpleGridProps) {\n  return (\n    <SimpleGrid {...props} id=\"grid-configurator\">\n      {defaultItems}\n    </SimpleGrid>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent cols={3} spacing={\"md\"} verticalSpacing={\"md\"} />; }\n",
+      "sha256": "19f246f899f58c4d923034da42143696fca2b684a129307d09acb9329b1196e9",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/SimpleGrid/SimpleGrid.demo.usage.tsx",
+      "upstreamSha256": "ae48b36592f7e96709fd7a5069dc608f93c2538fed278109d55ad9c8d5741d7f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/simple-grid/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/SimpleGrid.demo.autoFlow\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "1c4a883e26a34cd6789f561d63f545160be92573e71c14360f9208ac4119acaf",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/simple-grid/previews/auto-rows.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/SimpleGrid.demo.autoRows\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "3e4d850d03ece29cbc7cdc7c13992d8047b7b0f1967f4c07747a11850c670bd8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/simple-grid/previews/container.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/SimpleGrid.demo.container\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "cb601481dabf6ced94bedb8f16f617457780fbe1a2a32280a14f4ad307066c82",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/simple-grid/previews/min-col-width.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/SimpleGrid.demo.minColWidth\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "017ad9e4121a911832db86accb39ac1c184bd3aad9b10a223d0de6818170856f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/simple-grid/previews/responsive.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/SimpleGrid.demo.responsive\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e3718aaa3730bc5c9fc1cc95907692cfb409e6c94c23cedea9b8da1e06fee318",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/simple-grid/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/SimpleGrid.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b4eecb41a1cdab7f96edad285634f009f6039330f0688d60aa469df6ff01b68b",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 clsx@2.1.1",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/mantine/upstream/src/demos/core/SimpleGrid/_item.module.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 clsx@2.1.1",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "simple-grid",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/SimpleGrid",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/SimpleGrid/SimpleGrid.demo.autoFlow.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/SimpleGrid/SimpleGrid.demo.autoFlow.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine simple grid\n\n6 published Mantine simple grid examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/SimpleGrid\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/SimpleGrid/SimpleGrid.demo.autoFlow.tsx\n"
+}

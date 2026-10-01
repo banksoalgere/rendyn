@@ -1,0 +1,212 @@
+{
+  "id": "chakra:pie",
+  "sourceId": "chakra",
+  "slug": "chakra-pie",
+  "name": "Chakra UI pie",
+  "description": "8 published Chakra UI pie examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/charts@3.37.0",
+    "@chakra-ui/react@3.37.0",
+    "recharts@3.8.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "pie",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "pie",
+      "chakra ui pie"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "8 published Chakra UI pie examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "pie:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI pie\npie\n8 published Chakra UI pie examples with complete pinned source and MIT attribution.\nchakra ui pie\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI pie 8 published Chakra UI pie examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts/pie chart basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-pie",
+  "manifestPath": "components/chakra-pie/component.json",
+  "integrity": "sha256:fabd83b1f23cbabd3200faf6f2bf1557991f2d883d88153d54c879a8403da4d5",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/pie-chart-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { Pie, PieChart, Sector } from \"recharts\"\n\nexport const PieChartBasic = () => {\n  const chart = useChart({\n    data: [\n      { name: \"windows\", value: 400, color: \"blue.solid\" },\n      { name: \"mac\", value: 300, color: \"orange.solid\" },\n      { name: \"linux\", value: 300, color: \"pink.solid\" },\n      { name: \"other\", value: 200, color: \"green.solid\" },\n    ],\n  })\n\n  return (\n    <Chart.Root boxSize=\"200px\" mx=\"auto\" chart={chart}>\n      <PieChart responsive>\n        <Pie\n          isAnimationActive={false}\n          data={chart.data}\n          dataKey={chart.key(\"value\")}\n          shape={(props) => (\n            <Sector {...props} fill={chart.color(props.payload!.color)} />\n          )}\n        />\n      </PieChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "d752c2f81bd96d873f0e17b7288d006d02c2e7fd83836bbcb691f088bba683f5",
+      "upstreamPath": "apps/compositions/src/examples/charts/pie-chart-basic.tsx",
+      "upstreamSha256": "3063ba2eaa03e92164aa8da4fe8b455a9e900a17d7607f21e854ae0d4c6a3427",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/pie-chart-no-stroke.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { Pie, PieChart, Sector, Tooltip } from \"recharts\"\n\nexport const PieChartNoStroke = () => {\n  const chart = useChart({\n    data: [\n      { name: \"windows\", value: 400, color: \"blue.solid\" },\n      { name: \"mac\", value: 300, color: \"orange.solid\" },\n      { name: \"linux\", value: 300, color: \"pink.solid\" },\n      { name: \"other\", value: 200, color: \"green.solid\" },\n    ],\n  })\n\n  return (\n    <Chart.Root boxSize=\"200px\" mx=\"auto\" chart={chart}>\n      <PieChart responsive>\n        <Tooltip\n          cursor={false}\n          animationDuration={100}\n          content={<Chart.Tooltip hideLabel />}\n        />\n        <Pie\n          isAnimationActive={false}\n          data={chart.data}\n          dataKey={chart.key(\"value\")}\n          nameKey=\"name\"\n          stroke=\"none\"\n          shape={(props) => (\n            <Sector {...props} fill={chart.color(props.payload!.color)} />\n          )}\n        />\n      </PieChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "38bc06d041ab2a47e9334fa6d51b0b0b71c21e84fd16f21b10ab14cb4ec0e40c",
+      "upstreamPath": "apps/compositions/src/examples/charts/pie-chart-no-stroke.tsx",
+      "upstreamSha256": "433028e5e805f943605999e0c2bba516709e496754d6e403908051c75a4b8324",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/pie-chart-with-label-inside.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { LabelList, Pie, PieChart, Sector, Tooltip } from \"recharts\"\n\nexport const PieChartWithLabelInside = () => {\n  const chart = useChart({\n    data: [\n      { name: \"windows\", value: 400, color: \"blue.solid\" },\n      { name: \"mac\", value: 300, color: \"orange.solid\" },\n      { name: \"linux\", value: 300, color: \"pink.solid\" },\n      { name: \"other\", value: 200, color: \"green.solid\" },\n    ],\n  })\n\n  return (\n    <Chart.Root boxSize=\"320px\" mx=\"auto\" chart={chart}>\n      <PieChart responsive>\n        <Tooltip\n          cursor={false}\n          animationDuration={100}\n          content={<Chart.Tooltip hideLabel />}\n        />\n        <Pie\n          isAnimationActive={false}\n          data={chart.data}\n          dataKey={chart.key(\"value\")}\n          shape={(props) => (\n            <Sector {...props} fill={chart.color(props.payload!.color)} />\n          )}\n        >\n          <LabelList position=\"inside\" fill=\"white\" stroke=\"none\" />\n        </Pie>\n      </PieChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "05db9007324f57972815b9c3e6811f56f3dc4aa61d8d5a4561610de7cb3eccae",
+      "upstreamPath": "apps/compositions/src/examples/charts/pie-chart-with-label-inside.tsx",
+      "upstreamSha256": "dc33a78a441712ebb6ae7e7c21c64bc5717de2655239c90eb9d1169ca4ff44fd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/pie-chart-with-label-outside.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { Pie, PieChart, Sector } from \"recharts\"\n\nexport const PieChartWithLabelOutside = () => {\n  const chart = useChart({\n    data: [\n      { name: \"windows\", value: 400, color: \"blue.solid\" },\n      { name: \"mac\", value: 300, color: \"orange.solid\" },\n      { name: \"linux\", value: 300, color: \"pink.solid\" },\n      { name: \"other\", value: 200, color: \"green.solid\" },\n    ],\n  })\n\n  return (\n    <Chart.Root boxSize=\"200px\" mx=\"auto\" chart={chart}>\n      <PieChart responsive>\n        <Pie\n          isAnimationActive={false}\n          data={chart.data}\n          dataKey={chart.key(\"value\")}\n          outerRadius={100}\n          innerRadius={0}\n          labelLine={false}\n          label={({ name, index }) => {\n            const { value } = chart.data[index ?? -1]\n            const percent = value / chart.getTotal(\"value\")\n            return `${name}: ${(percent * 100).toFixed(1)}%`\n          }}\n          shape={(props) => (\n            <Sector {...props} fill={chart.color(props.payload!.color)} />\n          )}\n        />\n      </PieChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "e372ef35bb3e5c621a8b50cdcc6d8dc31879a0a1e01253d84df0267d28397d27",
+      "upstreamPath": "apps/compositions/src/examples/charts/pie-chart-with-label-outside.tsx",
+      "upstreamSha256": "f7603ffa13672d5f2ff9e6dba8fbea8d87d5a86557d7ca675fe5293376d86d66",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/pie-chart-with-legend.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { Legend, Pie, PieChart, Sector } from \"recharts\"\n\nexport const PieChartWithLegend = () => {\n  const chart = useChart({\n    data: [\n      { name: \"windows\", value: 400, color: \"teal.solid\" },\n      { name: \"mac\", value: 300, color: \"orange.solid\" },\n      { name: \"linux\", value: 300, color: \"blue.solid\" },\n    ],\n  })\n\n  return (\n    <Chart.Root boxSize=\"200px\" mx=\"auto\" chart={chart}>\n      <PieChart responsive>\n        <Legend content={<Chart.Legend />} />\n        <Pie\n          isAnimationActive={false}\n          data={chart.data}\n          dataKey={chart.key(\"value\")}\n          nameKey=\"name\"\n          shape={(props) => (\n            <Sector {...props} fill={chart.color(props.payload!.color)} />\n          )}\n        />\n      </PieChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "9946a3dacb749be11bb9e1a424707f924c88c140f2ca43df7d6481b7baac2e63",
+      "upstreamPath": "apps/compositions/src/examples/charts/pie-chart-with-legend.tsx",
+      "upstreamSha256": "01b67ff58a3c16d067fd7c80ed2f82108547c2e2b385ef2dd70de74a4b634c3a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/pie-chart-with-point-label.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { Pie, PieChart, Sector, Tooltip } from \"recharts\"\n\nexport const PieChartWithPointLabel = () => {\n  const chart = useChart({\n    data: [\n      { name: \"windows\", value: 400, color: \"blue.solid\" },\n      { name: \"mac\", value: 300, color: \"orange.solid\" },\n      { name: \"linux\", value: 300, color: \"pink.solid\" },\n      { name: \"other\", value: 200, color: \"green.solid\" },\n    ],\n  })\n\n  return (\n    <Chart.Root boxSize=\"320px\" mx=\"auto\" chart={chart}>\n      <PieChart responsive>\n        <Tooltip\n          cursor={false}\n          animationDuration={100}\n          content={<Chart.Tooltip hideLabel />}\n        />\n        <Pie\n          isAnimationActive={false}\n          data={chart.data}\n          dataKey={chart.key(\"value\")}\n          labelLine={{ stroke: chart.color(\"border.emphasized\") }}\n          label={{\n            fill: chart.color(\"fg.muted\"),\n            style: { fontWeight: \"600\" },\n          }}\n          shape={(props) => (\n            <Sector {...props} fill={chart.color(props.payload!.color)} />\n          )}\n        />\n      </PieChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "978631cba4188bd69e0b2cc9db5fe878b59542bf68cc702706bfa1f273df3319",
+      "upstreamPath": "apps/compositions/src/examples/charts/pie-chart-with-point-label.tsx",
+      "upstreamSha256": "2ef71da8852cd4453c2cc8103946d4b9cef7a3e71c5ead5ca984a2a786d2a7c2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/pie-chart-with-start-angle.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { Pie, PieChart, Sector, Tooltip } from \"recharts\"\n\nexport const PieChartWithStartAngle = () => {\n  const chart = useChart({\n    data: [\n      { name: \"typescript\", value: 400, color: \"blue.solid\" },\n      { name: \"javascript\", value: 120, color: \"orange.solid\" },\n      { name: \"python\", value: 300, color: \"pink.solid\" },\n      { name: \"rust\", value: 278, color: \"purple.solid\" },\n    ],\n  })\n\n  return (\n    <Chart.Root boxSize=\"320px\" mx=\"auto\" chart={chart}>\n      <PieChart responsive>\n        <Tooltip\n          cursor={false}\n          animationDuration={100}\n          content={<Chart.Tooltip hideLabel />}\n        />\n        <Pie\n          isAnimationActive={false}\n          data={chart.data}\n          dataKey={chart.key(\"value\")}\n          nameKey=\"name\"\n          startAngle={180}\n          endAngle={0}\n          shape={(props) => (\n            <Sector {...props} fill={chart.color(props.payload!.color)} />\n          )}\n        />\n      </PieChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "62c75a81270502c63b30771585a0bb72f50c9ba23153cdbf92b05c5e7cf01284",
+      "upstreamPath": "apps/compositions/src/examples/charts/pie-chart-with-start-angle.tsx",
+      "upstreamSha256": "a15f8ec01806e7ba1df960539b11236b022d45c8a83a3dcb5f18acdf5c2b9fc2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/pie-chart-with-tooltip.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { Pie, PieChart, Sector, Tooltip } from \"recharts\"\n\nexport const PieChartWithTooltip = () => {\n  const chart = useChart({\n    data: [\n      { name: \"windows\", value: 400, color: \"blue.solid\" },\n      { name: \"mac\", value: 300, color: \"orange.solid\" },\n      { name: \"linux\", value: 300, color: \"pink.solid\" },\n      { name: \"other\", value: 200, color: \"green.solid\" },\n    ],\n  })\n\n  return (\n    <Chart.Root boxSize=\"200px\" chart={chart}>\n      <PieChart responsive>\n        <Pie\n          isAnimationActive={false}\n          data={chart.data}\n          dataKey={chart.key(\"value\")}\n          shape={(props) => (\n            <Sector {...props} fill={chart.color(props.payload!.color)} />\n          )}\n        />\n        <Tooltip\n          cursor={false}\n          animationDuration={100}\n          content={<Chart.Tooltip hideLabel />}\n        />\n      </PieChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "f8ead5ee42d20eedc87415c911afe6c4f56728d1089da467401f8fcf910b90f3",
+      "upstreamPath": "apps/compositions/src/examples/charts/pie-chart-with-tooltip.tsx",
+      "upstreamSha256": "5459d4b4875d334d02703553af8d832665c004fea4d9e7ca6a63d788b682d7c3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/pie/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { PieChartBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/pie-chart-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "bdb05f3d2469a71e0a7209316575bb6a0d868790eecc943948548128c5ef5a1a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/pie/previews/pie-chart-no-stroke.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { PieChartNoStroke as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/pie-chart-no-stroke\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "13006fcbc4d9b9b4f1be5b1e41b1bd17397eaa5e5c1e63818cd633715efce2ab",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/pie/previews/pie-chart-with-label-inside.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { PieChartWithLabelInside as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/pie-chart-with-label-inside\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "0e2df8c75e6f7651bf40a3aad7a0be1447104b10f426c281607094abeaa27957",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/pie/previews/pie-chart-with-label-outside.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { PieChartWithLabelOutside as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/pie-chart-with-label-outside\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "1a0e39adf13582d8d71b54fec4ee6cc996da0713db5a8f13b752467d583d86c6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/pie/previews/pie-chart-with-legend.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { PieChartWithLegend as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/pie-chart-with-legend\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "574d918cd0db059c2a84488aed8ebe58cd61d140415579be6161db1b10f74a55",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/pie/previews/pie-chart-with-point-label.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { PieChartWithPointLabel as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/pie-chart-with-point-label\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "e1e86ca025fc86cd43627c77166fac309b60f0fdac71689342a1446807b4f101",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/pie/previews/pie-chart-with-start-angle.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { PieChartWithStartAngle as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/pie-chart-with-start-angle\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "5d6b33a1d741587568c652e084b6fb04084acf6e7da7e3c5d45b8991c7e4ee83",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/pie/previews/pie-chart-with-tooltip.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { PieChartWithTooltip as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/pie-chart-with-tooltip\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "4a0dce970b7abe9563d5e62d22da4dfc42f7ee6f4fcf4e2fd6273edd8ede2390",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/charts@3.37.0 @chakra-ui/react@3.37.0 recharts@3.8.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/charts@3.37.0 @chakra-ui/react@3.37.0 recharts@3.8.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "pie",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts/pie-chart-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts/pie-chart-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI pie\n\n8 published Chakra UI pie examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts/pie-chart-basic.tsx\n"
+}

@@ -1,0 +1,212 @@
+{
+  "id": "chakra:collapsible",
+  "sourceId": "chakra",
+  "slug": "chakra-collapsible",
+  "name": "Chakra UI collapsible",
+  "description": "8 published Chakra UI collapsible examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "react-icons@5.5.0",
+    "react-lorem-ipsum@1.4.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "collapsible",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "collapsible",
+      "chakra ui collapsible"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "8 published Chakra UI collapsible examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "collapsible:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI collapsible\ncollapsible\n8 published Chakra UI collapsible examples with complete pinned source and MIT attribution.\nchakra ui collapsible\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI collapsible 8 published Chakra UI collapsible examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/collapsible basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-collapsible",
+  "manifestPath": "components/chakra-collapsible/component.json",
+  "integrity": "sha256:b5e2fa6c04ec533ed9011fd603e2b7f9269c1a4b6fe1e2c79a952635a8355076",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/collapsible-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Collapsible } from \"@chakra-ui/react\"\n\nexport const CollapsibleBasic = () => (\n  <Collapsible.Root>\n    <Collapsible.Trigger paddingY=\"3\">Toggle Collapsible</Collapsible.Trigger>\n    <Collapsible.Content>\n      <Box padding=\"4\" borderWidth=\"1px\">\n        <strong>Chakra UI</strong> embraces this philosophy in the world of\n        design and development. Just like chakras align energy in the body,\n        Chakra UI aligns your design system — bringing flow, consistency, and\n        peace of mind to your codebase. It helps developers focus on creating\n        beautiful, accessible UIs without friction.\n        <br />\n        <br />\n        Think of each component as a wheel in your app’s UI — smooth, connected,\n        and full of potential. Build with harmony. Build with\n        <strong>Chakra UI</strong>.\n      </Box>\n    </Collapsible.Content>\n  </Collapsible.Root>\n)\n",
+      "sha256": "29f9a60ab772b0118b70b5b86724afb7951a031617786340d927668077414853",
+      "upstreamPath": "apps/compositions/src/examples/collapsible-basic.tsx",
+      "upstreamSha256": "bab608e52e39be78dea85e6cb3127174dc0689bbe91f1ce2c868c18173eda446",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/collapsible-controlled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Collapsible, Stack } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\nexport const CollapsibleControlled = () => {\n  const [open, setOpen] = useState(false)\n\n  return (\n    <Stack gap=\"4\">\n      <Box fontWeight=\"medium\">Status: {open ? \"Open\" : \"Closed\"}</Box>\n      <Collapsible.Root open={open} onOpenChange={(e) => setOpen(e.open)}>\n        <Collapsible.Trigger paddingY=\"3\">\n          Toggle Collapsible\n        </Collapsible.Trigger>\n        <Collapsible.Content>\n          <Box padding=\"4\" borderWidth=\"1px\">\n            This collapsible is controlled by external state. You can open and\n            close it using the buttons above or by clicking the trigger.\n          </Box>\n        </Collapsible.Content>\n      </Collapsible.Root>\n    </Stack>\n  )\n}\n",
+      "sha256": "3f1a3b26ce58089c16d9cd4c2e48f4ada06da273f77afe946b86d23217830884",
+      "upstreamPath": "apps/compositions/src/examples/collapsible-controlled.tsx",
+      "upstreamSha256": "0dfc79b6ecd1e504cfd8caa85a408437cf4efc1bacb3095db6172f8b94ce4b6d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/collapsible-initial-open.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Collapsible, Stack } from \"@chakra-ui/react\"\nimport { LuChevronRight } from \"react-icons/lu\"\nimport LoremIpsum from \"react-lorem-ipsum\"\n\nexport const CollapsibleInitialOpen = () => (\n  <Collapsible.Root defaultOpen>\n    <Collapsible.Trigger\n      paddingY=\"3\"\n      display=\"flex\"\n      gap=\"2\"\n      alignItems=\"center\"\n    >\n      <Collapsible.Indicator\n        transition=\"transform 0.2s\"\n        _open={{ transform: \"rotate(90deg)\" }}\n      >\n        <LuChevronRight />\n      </Collapsible.Indicator>\n      Toggle\n    </Collapsible.Trigger>\n    <Collapsible.Content>\n      <Stack padding=\"4\" borderWidth=\"1px\">\n        <LoremIpsum p={2} />\n      </Stack>\n    </Collapsible.Content>\n  </Collapsible.Root>\n)\n",
+      "sha256": "7c77d35aea59830de4d6c5721882a638aac3d8ae4c0c2569ed139846204e30b9",
+      "upstreamPath": "apps/compositions/src/examples/collapsible-initial-open.tsx",
+      "upstreamSha256": "2ad687f8da9251e82e0286cd4f143058e810b97584003789623b22ccb782b037",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/collapsible-lazy-mounted.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Collapsible } from \"@chakra-ui/react\"\n\nexport const CollapsibleLazyMounted = () => (\n  <Collapsible.Root unmountOnExit>\n    <Collapsible.Trigger paddingY=\"3\">\n      Toggle Collapse (Unmount on exit)\n    </Collapsible.Trigger>\n    <Collapsible.Content>\n      <Box padding=\"4\" borderWidth=\"1px\">\n        If you inspect the DOM, you'll notice that the content is unmounted when\n        collapsed. This is useful for performance reasons when you have a lot of\n        collapsible content.\n      </Box>\n    </Collapsible.Content>\n  </Collapsible.Root>\n)\n",
+      "sha256": "05f4e14a03c3dbc4bbeb14a322b281bafcd60f8434bd62db5aa41d5a21035247",
+      "upstreamPath": "apps/compositions/src/examples/collapsible-lazy-mounted.tsx",
+      "upstreamSha256": "0120da4300ba22289aa63f0a818e2f99f6da7567e9560b5fdbbdbffb5c6cccde",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/collapsible-partial-height.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Collapsible, Stack } from \"@chakra-ui/react\"\nimport { LuChevronDown } from \"react-icons/lu\"\nimport { LoremIpsum } from \"react-lorem-ipsum\"\n\nexport const CollapsiblePartialHeight = () => (\n  <Collapsible.Root collapsedHeight=\"100px\">\n    <Collapsible.Content\n      _closed={{\n        shadow: \"inset 0 -12px 12px -12px var(--shadow-color)\",\n        shadowColor: \"blackAlpha.500\",\n      }}\n    >\n      <Stack padding=\"4\" borderWidth=\"1px\" rounded=\"l2\">\n        <LoremIpsum p={1} />\n        <LoremIpsum p={1} />\n      </Stack>\n    </Collapsible.Content>\n    <Collapsible.Trigger asChild mt=\"4\">\n      <Button variant=\"outline\" size=\"sm\">\n        <Collapsible.Context>\n          {(api) => (api.open ? \"Show Less\" : \"Show More\")}\n        </Collapsible.Context>\n        <Collapsible.Indicator\n          transition=\"transform 0.2s\"\n          _open={{ transform: \"rotate(180deg)\" }}\n        >\n          <LuChevronDown />\n        </Collapsible.Indicator>\n      </Button>\n    </Collapsible.Trigger>\n  </Collapsible.Root>\n)\n",
+      "sha256": "1c29a5d9ad0e7be7416835d0f3e6f8d0e054c03283be9280b60aa1337ab2e354",
+      "upstreamPath": "apps/compositions/src/examples/collapsible-partial-height.tsx",
+      "upstreamSha256": "ade3791135e75fef59496f8c69e7b7774a93179efd4a07180801fe9106a5cbab",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/collapsible-with-disabled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Collapsible } from \"@chakra-ui/react\"\n\nexport const CollapsibleWithDisabled = () => (\n  <Collapsible.Root disabled>\n    <Collapsible.Trigger _disabled={{ opacity: \"0.5\" }}>\n      Toggle (Disabled)\n    </Collapsible.Trigger>\n    <Collapsible.Content>\n      <Box padding=\"4\" borderWidth=\"1px\">\n        This content cannot be toggled because the collapsible is disabled using\n        the <code>disabled</code> prop.\n      </Box>\n    </Collapsible.Content>\n  </Collapsible.Root>\n)\n",
+      "sha256": "dfcdf162fc1397d0358105b14e8550e4fcf8d0aca7b1760e684f8764d4b1aa9e",
+      "upstreamPath": "apps/compositions/src/examples/collapsible-with-disabled.tsx",
+      "upstreamSha256": "1a7532f44b436be1bffc908de568df77c1cad5fbd979802eee73f7016936e678",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/collapsible-with-hide-mode.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Button, Collapsible, Stack, Text } from \"@chakra-ui/react\"\nimport { useEffect, useState } from \"react\"\n\nexport const CollapsibleWithHideMode = () => {\n  return (\n    <Collapsible.Root defaultOpen hideMode=\"activity\">\n      <Stack align=\"flex-start\" gap=\"3\">\n        <Collapsible.Trigger asChild>\n          <Button size=\"sm\" variant=\"outline\">\n            Toggle content\n          </Button>\n        </Collapsible.Trigger>\n        <Text color=\"fg.muted\" textStyle=\"sm\">\n          Collapse this for a few seconds, then reopen it. The counter pauses\n          while collapsed and resumes from where it stopped.\n        </Text>\n        <Collapsible.Content width=\"full\">\n          <Box borderWidth=\"1px\" borderRadius=\"md\" p=\"4\">\n            <EffectCounter />\n          </Box>\n        </Collapsible.Content>\n      </Stack>\n    </Collapsible.Root>\n  )\n}\n\nconst EffectCounter = () => {\n  const [count, setCount] = useState(0)\n\n  useEffect(() => {\n    const interval = window.setInterval(() => {\n      setCount((current) => current + 1)\n    }, 1000)\n\n    return () => window.clearInterval(interval)\n  }, [])\n\n  return <Text>Effect ticks: {count}</Text>\n}\n",
+      "sha256": "04ea21f3ebcb60b11732cde5f77c1ae410aa998881d01f767926ed8e870f186a",
+      "upstreamPath": "apps/compositions/src/examples/collapsible-with-hide-mode.tsx",
+      "upstreamSha256": "771b8eff872479ec8ee05092bbbfacec1d9e3bc5a4c190fb85c6af74375beec3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/collapsible-with-store.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Box,\n  Button,\n  Collapsible,\n  Icon,\n  Stack,\n  useCollapsible,\n} from \"@chakra-ui/react\"\nimport { LuChevronDown, LuChevronRight } from \"react-icons/lu\"\n\nexport const CollapsibleWithStore = () => {\n  const collapsible = useCollapsible()\n\n  return (\n    <Stack gap=\"4\" align=\"flex-start\">\n      <Box fontWeight=\"medium\">\n        State: {collapsible.visible ? \"Expanded\" : \"Collapsed\"}\n      </Box>\n\n      <Button\n        size=\"sm\"\n        variant=\"subtle\"\n        onClick={() => collapsible.setOpen(!collapsible.open)}\n      >\n        Toggle\n        <Icon>{collapsible.open ? <LuChevronRight /> : <LuChevronDown />}</Icon>\n      </Button>\n\n      <Collapsible.RootProvider value={collapsible}>\n        <Collapsible.Content>\n          <Box padding=\"4\" borderWidth=\"1px\" rounded=\"l3\">\n            Using the <code>useCollapsible</code> hook and{\" \"}\n            <code>RootProvider</code> allows you to access the collapsible store\n            and control the state from anywhere in your component.\n          </Box>\n        </Collapsible.Content>\n      </Collapsible.RootProvider>\n    </Stack>\n  )\n}\n",
+      "sha256": "dca78436d4ece8bf793127d8e36ad2442d6bb3e7dd74982f9e4b7d675e903e2f",
+      "upstreamPath": "apps/compositions/src/examples/collapsible-with-store.tsx",
+      "upstreamSha256": "3778eb42feca686b22fc9e7fa745a9cb2de93aebed7f54d57af966d17e4db712",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/collapsible/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CollapsibleBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/collapsible-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "4cf2849f5d19120bab08d799ec32e091f1e8f9f3ace74378fd0fc1d34144ecb8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/collapsible/previews/collapsible-controlled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CollapsibleControlled as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/collapsible-controlled\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "d6713bf1df6f0bd559ad59391e49276d964d73349e8a327f13c0fdefa14518d3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/collapsible/previews/collapsible-initial-open.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CollapsibleInitialOpen as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/collapsible-initial-open\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "6deae5316595a227f41abe5b5a8fc873f61236461ff38bf4d40ceb6e10683bd9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/collapsible/previews/collapsible-lazy-mounted.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CollapsibleLazyMounted as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/collapsible-lazy-mounted\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "eafa7462ab10061d363d97ebfd8c1f4f1c9c958176a5b35d012095ab32df706c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/collapsible/previews/collapsible-partial-height.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CollapsiblePartialHeight as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/collapsible-partial-height\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "77f0bcbc18e5f7576d2f8b676c3c5173bcf6cd2f0c7250336c2af8368c38facf",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/collapsible/previews/collapsible-with-disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CollapsibleWithDisabled as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/collapsible-with-disabled\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a354bfa1fae6b94f4017a301c5b6e2a8bee648b48d8e14498632f193a52746c9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/collapsible/previews/collapsible-with-hide-mode.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CollapsibleWithHideMode as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/collapsible-with-hide-mode\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "e314512a8bb54b20804e55976e7a9087d5f74167d69640bdb746d43e38dc14d7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/collapsible/previews/collapsible-with-store.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { CollapsibleWithStore as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/collapsible-with-store\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "9e956fa65682272893fe15a665bfb4ff61a946f7d3195d52642fe083acb22a87",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0 react-lorem-ipsum@1.4.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0 react-lorem-ipsum@1.4.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "collapsible",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/collapsible-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/collapsible-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI collapsible\n\n8 published Chakra UI collapsible examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/collapsible-basic.tsx\n"
+}

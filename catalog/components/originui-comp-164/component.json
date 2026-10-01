@@ -1,0 +1,118 @@
+{
+  "id": "originui:comp-164",
+  "sourceId": "originui",
+  "slug": "originui-comp-164",
+  "name": "Origin UI radio label card comp-164",
+  "description": "1 published Origin UI radio label card comp-164 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "clsx@2.1.1",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "card",
+    "tags": [
+      "card",
+      "file",
+      "radio",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 164",
+      "origin ui radio label card comp-164",
+      "card"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI radio label card comp-164 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "card:file:radio:select:upload",
+    "searchText": "Origin UI radio label card comp-164\ncomp 164\n1 published Origin UI radio label card comp-164 examples with complete pinned source and MIT attribution.\norigin ui radio label card comp-164\ncard\nfile\nradio\nselect\nupload\nOrigin UI radio label card comp 164 1 published Origin UI radio label card comp 164 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 164.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-164",
+  "manifestPath": "components/originui-comp-164/component.json",
+  "integrity": "sha256:afc535ab38141cbc47e66a9e672244c596ab60e2e1f92897c990453b85057af6",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-164.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useId } from \"react\";\nimport { RadioGroup, RadioGroupItem } from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/radio-group\";\n\nexport default function Component() {\n  const id = useId();\n\n  const items = [\n    { label: \"2 CPU\", value: \"1\" },\n    { label: \"4 CPU\", value: \"2\" },\n    { label: \"6 CPU\", value: \"3\" },\n    { label: \"8 CPU\", value: \"4\" },\n    { label: \"12 CPU\", value: \"5\" },\n    { disabled: true, label: \"16 CPU\", value: \"6\" },\n  ];\n\n  return (\n    <fieldset className=\"space-y-4\">\n      <legend className=\"font-medium text-foreground text-sm leading-none\">\n        CPU Cores\n      </legend>\n      <RadioGroup className=\"grid grid-cols-3 gap-2\" defaultValue=\"1\">\n        {items.map((item) => (\n          <label\n            className=\"relative flex cursor-pointer flex-col items-center gap-3 rounded-md border border-input px-2 py-3 text-center shadow-xs outline-none transition-[color,box-shadow] has-data-disabled:cursor-not-allowed has-data-[state=checked]:border-primary/50 has-focus-visible:border-ring has-data-disabled:opacity-50 has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50\"\n            key={`${id}-${item.value}`}\n          >\n            <RadioGroupItem\n              className=\"sr-only after:absolute after:inset-0\"\n              disabled={item.disabled}\n              id={`${id}-${item.value}`}\n              value={item.value}\n            />\n            <p className=\"font-medium text-foreground text-sm leading-none\">\n              {item.label}\n            </p>\n          </label>\n        ))}\n      </RadioGroup>\n    </fieldset>\n  );\n}\n",
+      "sha256": "a2582dd0ca425adb6445a045391d42e689fc9286a0a5cc936bb3e57238ca2fda",
+      "upstreamPath": "apps/origin/registry/default/components/comp-164.tsx",
+      "upstreamSha256": "5a058cfce21049a3420f13a08b04d9b6ae48c7616a16e1f89092892041b40cd9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/radio-group.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { RadioGroup as RadioGroupPrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction RadioGroup({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {\n  return (\n    <RadioGroupPrimitive.Root\n      className={cn(\"grid gap-3\", className)}\n      data-slot=\"radio-group\"\n      {...props}\n    />\n  );\n}\n\nfunction RadioGroupItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Item>) {\n  return (\n    <RadioGroupPrimitive.Item\n      className={cn(\n        \"aspect-square size-4 shrink-0 rounded-full border border-input shadow-xs outline-none transition-shadow focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground dark:aria-invalid:ring-destructive/40\",\n        className,\n      )}\n      data-slot=\"radio-group-item\"\n      {...props}\n    >\n      <RadioGroupPrimitive.Indicator className=\"flex items-center justify-center text-current\">\n        <svg\n          fill=\"currentcolor\"\n          height=\"6\"\n          viewBox=\"0 0 6 6\"\n          width=\"6\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <circle cx=\"3\" cy=\"3\" r=\"3\" />\n        </svg>\n      </RadioGroupPrimitive.Indicator>\n    </RadioGroupPrimitive.Item>\n  );\n}\n\nexport { RadioGroup, RadioGroupItem };\n",
+      "sha256": "c1137bc45005aa44aa7b2b709d493cc8329b860a0b66d1b79fc70019d2231a6e",
+      "upstreamPath": "apps/origin/registry/default/ui/radio-group.tsx",
+      "upstreamSha256": "02985359b05f2b77d8eb5134a730aa91fa5a2f97e7a9b1ef9de0e90b2ae8d21f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-164/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-164\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8f9bdd1e82a0f58c86f7e575c1eb635b8edecbba4243f868f40b07cc02a533e7",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add clsx@2.1.1 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add clsx@2.1.1 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-164",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-164.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-164.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI radio label card comp-164\n\n1 published Origin UI radio label card comp-164 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-164.tsx\n"
+}

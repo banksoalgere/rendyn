@@ -1,0 +1,175 @@
+{
+  "id": "mantine:loader",
+  "sourceId": "mantine",
+  "slug": "mantine-loader",
+  "name": "Mantine loader",
+  "description": "4 published Mantine loader examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "clsx@2.1.1"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "loader",
+    "tags": [
+      "code",
+      "file",
+      "loader"
+    ],
+    "aliases": [
+      "loader",
+      "mantine loader"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "4 published Mantine loader examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "loader:code:file",
+    "searchText": "Mantine loader\nloader\n4 published Mantine loader examples with complete pinned source and MIT attribution.\nmantine loader\ncode\nfile\nMantine loader 4 published Mantine loader examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Loader Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Loader/Loader.demo.configurator.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-loader",
+  "manifestPath": "components/mantine-loader/component.json",
+  "integrity": "sha256:0d5a6836a193fe029bf652bab6d49f3accdb38fefcacba0c3985b43db7a80013",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Loader/Loader.demo.configurator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Loader } from '@mantine/core';\nconst RendynExampleComponent = Loader;\nexport function RendynExample() { return <RendynExampleComponent color={\"blue\"} size={\"md\"} type={\"oval\"} />; }\n",
+      "sha256": "fe54cf39d1d9ad18b2960a523c5435eef7f46dbd53e4090f0c2fbf3a132e9ff7",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Loader/Loader.demo.configurator.tsx",
+      "upstreamSha256": "1fcb68f32a4244b68606b85762e4e53d1a3355889be70c54ff3b04e8c57a121a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Loader/Loader.demo.cssLoader.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createTheme, Loader, MantineThemeProvider } from '@mantine/core';\n\nimport { CssLoader, cssLoaderModuleCssCode, cssLoaderTsxCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Loader/_CssLoader';\n\nconst theme = createTheme({\n  components: {\n    Loader: Loader.extend({\n      defaultProps: {\n        loaders: { ...Loader.defaultLoaders, custom: CssLoader },\n        type: 'custom',\n      },\n    }),\n  },\n});\n\nfunction Demo() {\n  return (\n    <MantineThemeProvider theme={theme}>\n      <Loader />\n    </MantineThemeProvider>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "017e5c6b2cdc420fe5b98bdffb7ede1b5b1acecd36fe8554520942eaa44f81a1",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Loader/Loader.demo.cssLoader.tsx",
+      "upstreamSha256": "23c08fece796d3f608383119594e6ed3ae8616dfd1db141182f5a42d615c658b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Loader/_CssLoader.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport cx from 'clsx';\nimport { Box, MantineLoaderComponent } from '@mantine/core';\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Loader/CssLoader.module.css';\n\nexport const CssLoader: MantineLoaderComponent = ({ className, ...others }) => (\n  <Box component=\"span\" className={cx(classes.loader, className)} {...others} />\n);\n\nexport const cssLoaderTsxCode = `\nimport cx from 'clsx';\nimport { Box, MantineLoaderComponent } from '@mantine/core';\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Loader/CssLoader.module.css';\n\nexport const CssLoader: MantineLoaderComponent = ({ className, ...others }) => (\n  <Box component=\"span\" className={cx(classes.loader, className)} {...others} />\n);\n`;\n\nexport const cssLoaderModuleCssCode = `\n@keyframes loader-animation {\n  0% {\n    transform: rotateY(0deg);\n    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n  }\n\n  50% {\n    transform: rotateY(1800deg);\n    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n  }\n\n  100% {\n    transform: rotateY(3600deg);\n    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n  }\n}\n\n.loader {\n  display: inline-block;\n  width: var(--loader-size);\n  height: var(--loader-size);\n  border-radius: var(--loader-size);\n  background: var(--loader-color);\n  animation: loader-animation 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;\n}\n`;\n",
+      "sha256": "13fba47998e8505bd68c35d022d1be00920b0d6f10d7c95abc464b557c725cff",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Loader/_CssLoader.tsx",
+      "upstreamSha256": "a3973e1cc41589153ae2a8689dd098a7ed5b3f99e407d64915f2c8fd3fc5656d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Loader/CssLoader.module.css",
+      "type": "style",
+      "content": "@keyframes loader-animation {\n  0% {\n    transform: rotateY(0deg);\n    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n  }\n\n  50% {\n    transform: rotateY(1800deg);\n    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);\n  }\n\n  100% {\n    transform: rotateY(3600deg);\n    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);\n  }\n}\n\n.loader {\n  display: inline-block;\n  width: var(--loader-size);\n  height: var(--loader-size);\n  border-radius: var(--loader-size);\n  background: var(--loader-color);\n  animation: loader-animation 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;\n}\n",
+      "sha256": "cffcb58f72b676a9b7cbc4577021d4e7f7540d30a98a53417bd610326cc66857",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Loader/CssLoader.module.css",
+      "upstreamSha256": "cffcb58f72b676a9b7cbc4577021d4e7f7540d30a98a53417bd610326cc66857",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Loader/Loader.demo.customType.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createTheme, Loader, MantineThemeProvider } from '@mantine/core';\n\nimport { RingLoader, ringLoaderCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Loader/_RingLoader';\n\nconst theme = createTheme({\n  components: {\n    Loader: Loader.extend({\n      defaultProps: {\n        loaders: { ...Loader.defaultLoaders, ring: RingLoader },\n        type: 'ring',\n      },\n    }),\n  },\n});\n\nfunction Demo() {\n  return (\n    <MantineThemeProvider theme={theme}>\n      <Loader />\n    </MantineThemeProvider>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "65ff55d7ef973cf58b59ff9c7aafc2c4d8d495394cf9394f13d05a857fd96fa9",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Loader/Loader.demo.customType.tsx",
+      "upstreamSha256": "ef767f41b11f575193e4913aeae140a6f363ace369acac47f1ca75df466bf61b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Loader/_RingLoader.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { MantineLoaderComponent } from '@mantine/core';\n\nexport const RingLoader: MantineLoaderComponent = ({ style, ...others }) => (\n  <svg\n    {...others}\n    style={{\n      width: 'var(--loader-size)',\n      height: 'var(--loader-size)',\n      stroke: 'var(--loader-color)',\n      ...style,\n    }}\n    viewBox=\"0 0 45 45\"\n    xmlns=\"http://www.w3.org/2000/svg\"\n    stroke=\"#fff\"\n  >\n    <g fill=\"none\" fillRule=\"evenodd\" transform=\"translate(1 1)\" strokeWidth=\"2\">\n      <circle cx=\"22\" cy=\"22\" r=\"6\" strokeOpacity=\"0\">\n        <animate\n          attributeName=\"r\"\n          begin=\"1.5s\"\n          dur=\"3s\"\n          values=\"6;22\"\n          calcMode=\"linear\"\n          repeatCount=\"indefinite\"\n        />\n        <animate\n          attributeName=\"stroke-opacity\"\n          begin=\"1.5s\"\n          dur=\"3s\"\n          values=\"1;0\"\n          calcMode=\"linear\"\n          repeatCount=\"indefinite\"\n        />\n        <animate\n          attributeName=\"stroke-width\"\n          begin=\"1.5s\"\n          dur=\"3s\"\n          values=\"2;0\"\n          calcMode=\"linear\"\n          repeatCount=\"indefinite\"\n        />\n      </circle>\n      <circle cx=\"22\" cy=\"22\" r=\"6\" strokeOpacity=\"0\">\n        <animate\n          attributeName=\"r\"\n          begin=\"3s\"\n          dur=\"3s\"\n          values=\"6;22\"\n          calcMode=\"linear\"\n          repeatCount=\"indefinite\"\n        />\n        <animate\n          attributeName=\"stroke-opacity\"\n          begin=\"3s\"\n          dur=\"3s\"\n          values=\"1;0\"\n          calcMode=\"linear\"\n          repeatCount=\"indefinite\"\n        />\n        <animate\n          attributeName=\"stroke-width\"\n          begin=\"3s\"\n          dur=\"3s\"\n          values=\"2;0\"\n          calcMode=\"linear\"\n          repeatCount=\"indefinite\"\n        />\n      </circle>\n      <circle cx=\"22\" cy=\"22\" r=\"8\">\n        <animate\n          attributeName=\"r\"\n          begin=\"0s\"\n          dur=\"1.5s\"\n          values=\"6;1;2;3;4;5;6\"\n          calcMode=\"linear\"\n          repeatCount=\"indefinite\"\n        />\n      </circle>\n    </g>\n  </svg>\n);\n\nexport const ringLoaderCode = `\nimport { MantineLoaderComponent } from '@mantine/core';\n\nexport const RingLoader: MantineLoaderComponent = ({ style, ...others }) => (\n  <svg\n    {...others}\n    style={{\n      width: 'var(--loader-size)',\n      height: 'var(--loader-size)',\n      stroke: 'var(--loader-color)',\n      ...style,\n    }}\n    viewBox=\"0 0 45 45\"\n    xmlns=\"http://www.w3.org/2000/svg\"\n    stroke=\"#fff\"\n  >\n    <g fill=\"none\" fillRule=\"evenodd\" transform=\"translate(1 1)\" strokeWidth=\"2\">\n      <circle cx=\"22\" cy=\"22\" r=\"6\" strokeOpacity=\"0\">\n        <animate\n          attributeName=\"r\"\n          begin=\"1.5s\"\n          dur=\"3s\"\n          values=\"6;22\"\n          calcMode=\"linear\"\n          repeatCount=\"indefinite\"\n        />\n        <animate\n          attributeName=\"stroke-opacity\"\n          begin=\"1.5s\"\n          dur=\"3s\"\n          values=\"1;0\"\n          calcMode=\"linear\"\n          repeatCount=\"indefinite\"\n        />\n        <animate\n          attributeName=\"stroke-width\"\n          begin=\"1.5s\"\n          dur=\"3s\"\n          values=\"2;0\"\n          calcMode=\"linear\"\n          repeatCount=\"indefinite\"\n        />\n      </circle>\n      <circle cx=\"22\" cy=\"22\" r=\"6\" strokeOpacity=\"0\">\n        <animate\n          attributeName=\"r\"\n          begin=\"3s\"\n          dur=\"3s\"\n          values=\"6;22\"\n          calcMode=\"linear\"\n          repeatCount=\"indefinite\"\n        />\n        <animate\n          attributeName=\"stroke-opacity\"\n          begin=\"3s\"\n          dur=\"3s\"\n          values=\"1;0\"\n          calcMode=\"linear\"\n          repeatCount=\"indefinite\"\n        />\n        <animate\n          attributeName=\"stroke-width\"\n          begin=\"3s\"\n          dur=\"3s\"\n          values=\"2;0\"\n          calcMode=\"linear\"\n          repeatCount=\"indefinite\"\n        />\n      </circle>\n      <circle cx=\"22\" cy=\"22\" r=\"8\">\n        <animate\n          attributeName=\"r\"\n          begin=\"0s\"\n          dur=\"1.5s\"\n          values=\"6;1;2;3;4;5;6\"\n          calcMode=\"linear\"\n          repeatCount=\"indefinite\"\n        />\n      </circle>\n    </g>\n  </svg>\n);`;\n",
+      "sha256": "b8542b05171e9314dfd249fad5180f9d224eb4a7a9d2f992aa7eaadede0de105",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Loader/_RingLoader.tsx",
+      "upstreamSha256": "4e390bf6e8135697f6e9acd7ef2255f56f50acdf60a2040b6eb400c8d0a2a963",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Loader/Loader.demo.size.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Loader } from '@mantine/core';\n\nfunction Wrapper(props: any) {\n  return <Loader {...props} />;\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent size={30} />; }\n",
+      "sha256": "2ac02af110fa35d1e69c08808b3e1e562e6d8117bb27683a6cc6a8dd74b28a38",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Loader/Loader.demo.size.tsx",
+      "upstreamSha256": "93f2a77db5e38cb6b1fd9ed760e443b31bcfdda5da360fa329fb6c0b7b27bb3a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/loader/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Loader/Loader.demo.configurator\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "34644de05bac607910c201b37275355407c16c17d25cb8339aacf2d66b37d734",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/loader/previews/css-loader.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Loader/Loader.demo.cssLoader\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "df6586a619a668caacc3513cab240fa8d7914ab91071eff233fc14e2c91dc16b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/loader/previews/custom-type.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Loader/Loader.demo.customType\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "5017d6798cd9cb3debbebbc5b5bb6477aec84f2021966246413fd93df6a7992b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/loader/previews/size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Loader/Loader.demo.size\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "0ec8ed8fb35d374f284245c8c10bf91841846f4372b36479091cd71aec4b0ee6",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 clsx@2.1.1",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/mantine/upstream/src/demos/core/Loader/CssLoader.module.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 clsx@2.1.1",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "loader",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Loader",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Loader/Loader.demo.configurator.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Loader/Loader.demo.configurator.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine loader\n\n4 published Mantine loader examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Loader\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Loader/Loader.demo.configurator.tsx\n"
+}

@@ -1,0 +1,421 @@
+{
+  "id": "mui:tabs",
+  "sourceId": "mui",
+  "slug": "mui-tabs",
+  "name": "Material UI tabs",
+  "description": "21 published Material UI tabs examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/icons-material@9.4.0",
+    "@mui/lab@9.0.0-beta.9",
+    "@mui/material@9.4.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "tabs",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file",
+      "tabs"
+    ],
+    "aliases": [
+      "tabs",
+      "material ui tabs"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "21 published Material UI tabs examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "tabs:code:command:data:file",
+    "searchText": "Material UI tabs\ntabs\n21 published Material UI tabs examples with complete pinned source and MIT attribution.\nmaterial ui tabs\ncode\ncommand\ndata\nfile\nMaterial UI tabs 21 published Material UI tabs examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/tabs Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/tabs/AccessibleTabs1.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-tabs",
+  "manifestPath": "components/mui-tabs/component.json",
+  "integrity": "sha256:8ce79cbb7167d95ffffeeb0cd6932763af2b252f035835960becfa9b369102bf",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/AccessibleTabs1.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\nimport Box from '@mui/material/Box';\n\nexport default function AccessibleTabs1() {\n  const [value, setValue] = React.useState(0);\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Box sx={{ width: '100%' }}>\n      <Tabs\n        onChange={handleChange}\n        value={value}\n        aria-label=\"Tabs where selection follows focus\"\n        selectionFollowsFocus\n      >\n        <Tab label=\"Item One\" />\n        <Tab label=\"Item Two\" />\n        <Tab label=\"Item Three\" />\n      </Tabs>\n    </Box>\n  );\n}\n",
+      "sha256": "a624b5be1edf130733586aff8ead4a0c7c72dd582b60933130ad93d89cf749fc",
+      "upstreamPath": "docs/data/material/components/tabs/AccessibleTabs1.tsx",
+      "upstreamSha256": "9dcecf234b8f4bb54b288664ce0dcf636f07e2ae7502223a69736456546ae9ed",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/AccessibleTabs2.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\nimport Box from '@mui/material/Box';\n\nexport default function AccessibleTabs2() {\n  const [value, setValue] = React.useState(0);\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Box sx={{ width: '100%' }}>\n      <Tabs\n        onChange={handleChange}\n        value={value}\n        aria-label=\"Tabs where each tab needs to be selected manually\"\n      >\n        <Tab label=\"Item One\" />\n        <Tab label=\"Item Two\" />\n        <Tab label=\"Item Three\" />\n      </Tabs>\n    </Box>\n  );\n}\n",
+      "sha256": "7d93f9639b0675f28756861726ce68f0711508e1c3b264bd589165ab3936d1f7",
+      "upstreamPath": "docs/data/material/components/tabs/AccessibleTabs2.tsx",
+      "upstreamSha256": "65d6261d367e10fafa27b10e2657f833255fd4f3d153b3100bdc6542063bf8b2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/BasicTabs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\nimport Box from '@mui/material/Box';\n\ninterface TabPanelProps {\n  children?: React.ReactNode;\n  index: number;\n  value: number;\n}\n\nfunction CustomTabPanel(props: TabPanelProps) {\n  const { children, value, index, ...other } = props;\n\n  return (\n    <div\n      role=\"tabpanel\"\n      hidden={value !== index}\n      tabIndex={0}\n      id={`simple-tabpanel-${index}`}\n      aria-labelledby={`simple-tab-${index}`}\n      {...other}\n    >\n      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}\n    </div>\n  );\n}\n\nfunction a11yProps(index: number) {\n  return {\n    id: `simple-tab-${index}`,\n    'aria-controls': `simple-tabpanel-${index}`,\n  };\n}\n\nexport default function BasicTabs() {\n  const [value, setValue] = React.useState(0);\n\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Box sx={{ width: '100%' }}>\n      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>\n        <Tabs value={value} onChange={handleChange} aria-label=\"basic tabs example\">\n          <Tab label=\"Item One\" {...a11yProps(0)} />\n          <Tab label=\"Item Two\" {...a11yProps(1)} />\n          <Tab label=\"Item Three\" {...a11yProps(2)} />\n        </Tabs>\n      </Box>\n      <CustomTabPanel value={value} index={0}>\n        Item One\n      </CustomTabPanel>\n      <CustomTabPanel value={value} index={1}>\n        Item Two\n      </CustomTabPanel>\n      <CustomTabPanel value={value} index={2}>\n        Item Three\n      </CustomTabPanel>\n    </Box>\n  );\n}\n",
+      "sha256": "1c08bcb5ab45feb16bdc51794922a8297f163e618bda17431ced544b5ad96eee",
+      "upstreamPath": "docs/data/material/components/tabs/BasicTabs.tsx",
+      "upstreamSha256": "2bebfe67f1527bc530a6197c7924026413ede8e1bdf2778112d0f1a549bf832e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/CenteredTabs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\n\nexport default function CenteredTabs() {\n  const [value, setValue] = React.useState(0);\n\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>\n      <Tabs value={value} onChange={handleChange} centered>\n        <Tab label=\"Item One\" />\n        <Tab label=\"Item Two\" />\n        <Tab label=\"Item Three\" />\n      </Tabs>\n    </Box>\n  );\n}\n",
+      "sha256": "4e0f5bcce85318c1681b2f7665f3d64650fc13dd07f67a09f69b5109cc770982",
+      "upstreamPath": "docs/data/material/components/tabs/CenteredTabs.tsx",
+      "upstreamSha256": "4b6d94a04935a162429eb34a6a294dace50c7c98384c6b3c0f9a96402d709bc5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/ColorTabs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\nimport Box from '@mui/material/Box';\n\nexport default function ColorTabs() {\n  const [value, setValue] = React.useState('one');\n\n  const handleChange = (event: React.SyntheticEvent, newValue: string) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Box sx={{ width: '100%' }}>\n      <Tabs\n        value={value}\n        onChange={handleChange}\n        textColor=\"secondary\"\n        indicatorColor=\"secondary\"\n        aria-label=\"secondary tabs example\"\n      >\n        <Tab value=\"one\" label=\"Item One\" />\n        <Tab value=\"two\" label=\"Item Two\" />\n        <Tab value=\"three\" label=\"Item Three\" />\n      </Tabs>\n    </Box>\n  );\n}\n",
+      "sha256": "5287770b9b05ea88df620ecd5b282b53959a72f1889e4b43336333b27d080ff6",
+      "upstreamPath": "docs/data/material/components/tabs/ColorTabs.tsx",
+      "upstreamSha256": "9436f54379aaca40ad98c7d44fd76199c66f3e0096cd5d3221b62404d813869f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/CustomizedTabs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport { styled } from '@mui/material/styles';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\nimport Box from '@mui/material/Box';\n\nconst AntTabs = styled(Tabs)({\n  borderBottom: '1px solid #e8e8e8',\n  '& .MuiTabs-indicator': {\n    backgroundColor: '#1890ff',\n  },\n});\n\nconst AntTab = styled((props: StyledTabProps) => <Tab disableRipple {...props} />)(\n  ({ theme }) => ({\n    textTransform: 'none',\n    minWidth: 0,\n    [theme.breakpoints.up('sm')]: {\n      minWidth: 0,\n    },\n    fontWeight: theme.typography.fontWeightRegular,\n    marginRight: theme.spacing(1),\n    color: 'rgba(0, 0, 0, 0.85)',\n    fontFamily: [\n      '-apple-system',\n      'BlinkMacSystemFont',\n      '\"Segoe UI\"',\n      'Roboto',\n      '\"Helvetica Neue\"',\n      'Arial',\n      'sans-serif',\n      '\"Apple Color Emoji\"',\n      '\"Segoe UI Emoji\"',\n      '\"Segoe UI Symbol\"',\n    ].join(','),\n    '&:hover': {\n      color: '#40a9ff',\n      opacity: 1,\n    },\n    '&.Mui-selected': {\n      color: '#1890ff',\n      fontWeight: theme.typography.fontWeightMedium,\n    },\n    '&.Mui-focusVisible': {\n      backgroundColor: '#d1eaff',\n    },\n  }),\n);\n\ninterface StyledTabsProps {\n  children?: React.ReactNode;\n  value: number;\n  onChange: (event: React.SyntheticEvent, newValue: number) => void;\n}\n\nconst StyledTabs = styled((props: StyledTabsProps) => (\n  <Tabs\n    {...props}\n    slotProps={{\n      indicator: { children: <span className=\"MuiTabs-indicatorSpan\" /> },\n    }}\n  />\n))({\n  '& .MuiTabs-indicator': {\n    display: 'flex',\n    justifyContent: 'center',\n    backgroundColor: 'transparent',\n  },\n  '& .MuiTabs-indicatorSpan': {\n    maxWidth: 40,\n    width: '100%',\n    backgroundColor: '#635ee7',\n  },\n});\n\ninterface StyledTabProps {\n  label: string;\n}\n\nconst StyledTab = styled((props: StyledTabProps) => (\n  <Tab disableRipple {...props} />\n))(({ theme }) => ({\n  textTransform: 'none',\n  fontWeight: theme.typography.fontWeightRegular,\n  fontSize: theme.typography.pxToRem(15),\n  marginRight: theme.spacing(1),\n  color: 'rgba(255, 255, 255, 0.7)',\n  '&.Mui-selected': {\n    color: '#fff',\n  },\n  '&.Mui-focusVisible': {\n    backgroundColor: 'rgba(100, 95, 228, 0.32)',\n  },\n}));\n\nexport default function CustomizedTabs() {\n  const [value, setValue] = React.useState(0);\n\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Box sx={{ width: '100%' }}>\n      <Box sx={{ bgcolor: '#fff' }}>\n        <AntTabs value={value} onChange={handleChange} aria-label=\"ant example\">\n          <AntTab label=\"Tab 1\" />\n          <AntTab label=\"Tab 2\" />\n          <AntTab label=\"Tab 3\" />\n        </AntTabs>\n        <Box sx={{ p: 3 }} />\n      </Box>\n      <Box sx={{ bgcolor: '#2e1534' }}>\n        <StyledTabs\n          value={value}\n          onChange={handleChange}\n          aria-label=\"styled tabs example\"\n        >\n          <StyledTab label=\"Workflows\" />\n          <StyledTab label=\"Datasets\" />\n          <StyledTab label=\"Connections\" />\n        </StyledTabs>\n        <Box sx={{ p: 3 }} />\n      </Box>\n    </Box>\n  );\n}\n",
+      "sha256": "6eb9621425081f7a840777da9c9a44ccfe8564eed8ba1c8e803b7e08f63e1ab7",
+      "upstreamPath": "docs/data/material/components/tabs/CustomizedTabs.tsx",
+      "upstreamSha256": "b32a1d2eea8d910319ee15964b175ddd9f4a5f27a2aeba917d3d6a8ebc3d6dfa",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/DisabledTabs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\n\nexport default function DisabledTabs() {\n  const [value, setValue] = React.useState(2);\n\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Tabs value={value} onChange={handleChange} aria-label=\"disabled tabs example\">\n      <Tab label=\"Active\" />\n      <Tab label=\"Disabled\" disabled />\n      <Tab label=\"Active\" />\n    </Tabs>\n  );\n}\n",
+      "sha256": "bb51f575643e4ca119a2980894e5246f9ef1420af4a0125fb05b31393bfc913a",
+      "upstreamPath": "docs/data/material/components/tabs/DisabledTabs.tsx",
+      "upstreamSha256": "77f92051fec8cabe2a9542220084bce202ffd66718d74652336afcc3b886fb7d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/FullWidthTabs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport { useTheme } from '@mui/material/styles';\nimport AppBar from '@mui/material/AppBar';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\nimport Typography from '@mui/material/Typography';\nimport Box from '@mui/material/Box';\n\ninterface TabPanelProps {\n  children?: React.ReactNode;\n  dir?: string;\n  index: number;\n  value: number;\n}\n\nfunction TabPanel(props: TabPanelProps) {\n  const { children, value, index, ...other } = props;\n\n  return (\n    <div\n      role=\"tabpanel\"\n      hidden={value !== index}\n      tabIndex={0}\n      id={`full-width-tabpanel-${index}`}\n      aria-labelledby={`full-width-tab-${index}`}\n      {...other}\n    >\n      {value === index && (\n        <Box sx={{ p: 3 }}>\n          <Typography>{children}</Typography>\n        </Box>\n      )}\n    </div>\n  );\n}\n\nfunction a11yProps(index: number) {\n  return {\n    id: `full-width-tab-${index}`,\n    'aria-controls': `full-width-tabpanel-${index}`,\n  };\n}\n\nexport default function FullWidthTabs() {\n  const theme = useTheme();\n  const [value, setValue] = React.useState(0);\n\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Box sx={{ bgcolor: 'background.paper', width: 500 }}>\n      <AppBar position=\"static\">\n        <Tabs\n          value={value}\n          onChange={handleChange}\n          indicatorColor=\"secondary\"\n          textColor=\"inherit\"\n          variant=\"fullWidth\"\n          aria-label=\"full width tabs example\"\n        >\n          <Tab label=\"Item One\" {...a11yProps(0)} />\n          <Tab label=\"Item Two\" {...a11yProps(1)} />\n          <Tab label=\"Item Three\" {...a11yProps(2)} />\n        </Tabs>\n      </AppBar>\n      <TabPanel value={value} index={0} dir={theme.direction}>\n        Item One\n      </TabPanel>\n      <TabPanel value={value} index={1} dir={theme.direction}>\n        Item Two\n      </TabPanel>\n      <TabPanel value={value} index={2} dir={theme.direction}>\n        Item Three\n      </TabPanel>\n    </Box>\n  );\n}\n",
+      "sha256": "2de4e823aa8734e13eb816a4b16e2140c863243123d84e5609cde4998c1b4d67",
+      "upstreamPath": "docs/data/material/components/tabs/FullWidthTabs.tsx",
+      "upstreamSha256": "def7836877e2a061ac9f1a089cba920aebf7a22a341b747e295c056cef0d03ec",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/IconLabelTabs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\nimport PhoneIcon from '@mui/icons-material/Phone';\nimport FavoriteIcon from '@mui/icons-material/Favorite';\nimport PersonPinIcon from '@mui/icons-material/PersonPin';\n\nexport default function IconLabelTabs() {\n  const [value, setValue] = React.useState(0);\n\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Tabs value={value} onChange={handleChange} aria-label=\"icon label tabs example\">\n      <Tab icon={<PhoneIcon />} label=\"RECENTS\" />\n      <Tab icon={<FavoriteIcon />} label=\"FAVORITES\" />\n      <Tab icon={<PersonPinIcon />} label=\"NEARBY\" />\n    </Tabs>\n  );\n}\n",
+      "sha256": "7e061f7216066ece273a6e5aa6e98576150101a87d215845b2f7a2339004d1cf",
+      "upstreamPath": "docs/data/material/components/tabs/IconLabelTabs.tsx",
+      "upstreamSha256": "95e456c513d0ecdfd268c69ddda959408a3afe6f782b6efec058b2f16a22edd8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/IconPositionTabs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\nimport PhoneIcon from '@mui/icons-material/Phone';\nimport FavoriteIcon from '@mui/icons-material/Favorite';\nimport PersonPinIcon from '@mui/icons-material/PersonPin';\nimport PhoneMissedIcon from '@mui/icons-material/PhoneMissed';\n\nexport default function IconPositionTabs() {\n  const [value, setValue] = React.useState(0);\n\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Tabs\n      value={value}\n      onChange={handleChange}\n      aria-label=\"icon position tabs example\"\n    >\n      <Tab icon={<PhoneIcon />} label=\"top\" />\n      <Tab icon={<PhoneMissedIcon />} iconPosition=\"start\" label=\"start\" />\n      <Tab icon={<FavoriteIcon />} iconPosition=\"end\" label=\"end\" />\n      <Tab icon={<PersonPinIcon />} iconPosition=\"bottom\" label=\"bottom\" />\n    </Tabs>\n  );\n}\n",
+      "sha256": "1c57cdb087b7c5e15202a00ee37ad27ef10107300103a1722e74987a6b22b01b",
+      "upstreamPath": "docs/data/material/components/tabs/IconPositionTabs.tsx",
+      "upstreamSha256": "ce16f3211ac2d8c1b16cfacbf0b8c5c48af84cbaa1d15bc58d6a0822323bcc1c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/IconTabs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\nimport PhoneIcon from '@mui/icons-material/Phone';\nimport FavoriteIcon from '@mui/icons-material/Favorite';\nimport PersonPinIcon from '@mui/icons-material/PersonPin';\n\nexport default function IconTabs() {\n  const [value, setValue] = React.useState(0);\n\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Tabs value={value} onChange={handleChange} aria-label=\"icon tabs example\">\n      <Tab icon={<PhoneIcon />} aria-label=\"phone\" />\n      <Tab icon={<FavoriteIcon />} aria-label=\"favorite\" />\n      <Tab icon={<PersonPinIcon />} aria-label=\"person\" />\n    </Tabs>\n  );\n}\n",
+      "sha256": "b25c56e7d8837afa909d7b130571adf03c28bfe8d247311b46667d93b661c763",
+      "upstreamPath": "docs/data/material/components/tabs/IconTabs.tsx",
+      "upstreamSha256": "39f5003e515324d55dd578ed5342707603a18c5330a8caf1b1cc5eb8be28096a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/KeepMountedLabTabs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Tab from '@mui/material/Tab';\nimport TextField from '@mui/material/TextField';\nimport TabContext from '@mui/lab/TabContext';\nimport TabList from '@mui/lab/TabList';\nimport TabPanel from '@mui/lab/TabPanel';\n\nexport default function KeepMountedLabTabs() {\n  const [value, setValue] = React.useState('1');\n\n  const handleChange = (event: React.SyntheticEvent, newValue: string) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Box sx={{ width: '100%' }}>\n      <TabContext value={value}>\n        <TabList\n          onChange={handleChange}\n          aria-label=\"keep mounted tabs example\"\n          sx={{ borderBottom: 1, borderColor: 'divider' }}\n        >\n          <Tab label=\"Item One\" value=\"1\" />\n          <Tab label=\"Item Two\" value=\"2\" />\n        </TabList>\n        <TabPanel value=\"1\" keepMounted>\n          <TextField label=\"Item One input\" />\n        </TabPanel>\n        <TabPanel value=\"2\" keepMounted>\n          <TextField label=\"Item Two input\" />\n        </TabPanel>\n      </TabContext>\n    </Box>\n  );\n}\n",
+      "sha256": "380b2deabd813eaf09fdb9112c5f00848bf37b2aabf5dbdf01c8ec31f4e72994",
+      "upstreamPath": "docs/data/material/components/tabs/KeepMountedLabTabs.tsx",
+      "upstreamSha256": "cda66d494e6f0b9a538eeaf7d931e4f44d3608d2c18bffb60ff7f810a4872554",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/KeepMountedStandardTabs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Tab from '@mui/material/Tab';\nimport Tabs from '@mui/material/Tabs';\nimport TextField from '@mui/material/TextField';\n\ninterface TabPanelProps {\n  children?: React.ReactNode;\n  index: number;\n  value: number;\n}\n\nfunction CustomTabPanel(props: TabPanelProps) {\n  const { children, value, index, ...other } = props;\n\n  return (\n    <div\n      role=\"tabpanel\"\n      hidden={value !== index}\n      id={`keep-mounted-tabpanel-${index}`}\n      aria-labelledby={`keep-mounted-tab-${index}`}\n      {...other}\n    >\n      <Box sx={{ p: 3 }}>{children}</Box>\n    </div>\n  );\n}\n\nfunction a11yProps(index: number) {\n  return {\n    id: `keep-mounted-tab-${index}`,\n    'aria-controls': `keep-mounted-tabpanel-${index}`,\n  };\n}\n\nexport default function KeepMountedStandardTabs() {\n  const [value, setValue] = React.useState(0);\n\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Box sx={{ width: '100%' }}>\n      <Tabs\n        value={value}\n        onChange={handleChange}\n        aria-label=\"keep mounted tabs example\"\n        sx={{ borderBottom: 1, borderColor: 'divider' }}\n      >\n        <Tab label=\"Item One\" {...a11yProps(0)} />\n        <Tab label=\"Item Two\" {...a11yProps(1)} />\n      </Tabs>\n      <CustomTabPanel value={value} index={0}>\n        <TextField label=\"Item One input\" />\n      </CustomTabPanel>\n      <CustomTabPanel value={value} index={1}>\n        <TextField label=\"Item Two input\" />\n      </CustomTabPanel>\n    </Box>\n  );\n}\n",
+      "sha256": "f184b93758b2c9a9fdec87577d7010ac1eaa2950c7fbe7b382ad6d914e80cd4d",
+      "upstreamPath": "docs/data/material/components/tabs/KeepMountedStandardTabs.tsx",
+      "upstreamSha256": "3c5b3238714aaef7af3ba225221a678d5defccc3f4aa04072b1508a593c8d592",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/LabTabs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Tab from '@mui/material/Tab';\nimport TabContext from '@mui/lab/TabContext';\nimport TabList from '@mui/lab/TabList';\nimport TabPanel from '@mui/lab/TabPanel';\n\nexport default function LabTabs() {\n  const [value, setValue] = React.useState('1');\n\n  const handleChange = (event: React.SyntheticEvent, newValue: string) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Box sx={{ width: '100%', typography: 'body1' }}>\n      <TabContext value={value}>\n        <TabList\n          onChange={handleChange}\n          aria-label=\"lab tabs\"\n          sx={{ borderBottom: 1, borderColor: 'divider' }}\n        >\n          <Tab label=\"Item One\" value=\"1\" />\n          <Tab label=\"Item Two\" value=\"2\" />\n        </TabList>\n        <TabPanel value=\"1\" tabIndex={0}>\n          Item One\n        </TabPanel>\n        <TabPanel value=\"2\" tabIndex={0}>\n          Item Two\n        </TabPanel>\n      </TabContext>\n    </Box>\n  );\n}\n",
+      "sha256": "760e402ffdf0a2c385622ca9117d9778aa417d9fe352dae997ab3261752bd355",
+      "upstreamPath": "docs/data/material/components/tabs/LabTabs.tsx",
+      "upstreamSha256": "ef1da67404175d52b34179ad5dd4fa5241ed955fe280ebf002bbd745477774ee",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/NavTabs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\n\nfunction samePageLinkNavigation(\n  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,\n) {\n  if (\n    event.defaultPrevented ||\n    event.button !== 0 || // ignore everything but left-click\n    event.metaKey ||\n    event.ctrlKey ||\n    event.altKey ||\n    event.shiftKey\n  ) {\n    return false;\n  }\n  return true;\n}\n\ninterface LinkTabProps {\n  label?: string;\n  href?: string;\n  selected?: boolean;\n}\n\nfunction LinkTab(props: LinkTabProps) {\n  return (\n    <Tab\n      component=\"a\"\n      onClick={(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {\n        // Routing libraries handle this, you can remove the onClick handle when using them.\n        if (samePageLinkNavigation(event)) {\n          event.preventDefault();\n        }\n      }}\n      aria-current={props.selected && 'page'}\n      {...props}\n    />\n  );\n}\n\nexport default function NavTabs() {\n  const [value, setValue] = React.useState(0);\n\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    // event.type can be equal to focus with selectionFollowsFocus.\n    if (\n      event.type !== 'click' ||\n      (event.type === 'click' &&\n        samePageLinkNavigation(\n          event as React.MouseEvent<HTMLAnchorElement, MouseEvent>,\n        ))\n    ) {\n      setValue(newValue);\n    }\n  };\n\n  return (\n    <Box sx={{ width: '100%' }}>\n      <Tabs\n        value={value}\n        onChange={handleChange}\n        aria-label=\"nav tabs example\"\n        role=\"navigation\"\n      >\n        <LinkTab label=\"Page One\" href=\"/drafts\" />\n        <LinkTab label=\"Page Two\" href=\"/trash\" />\n        <LinkTab label=\"Page Three\" href=\"/spam\" />\n      </Tabs>\n    </Box>\n  );\n}\n",
+      "sha256": "758f420a14395a2c76c137d866bcf05b158f807df210810b469f0aa50becfb7f",
+      "upstreamPath": "docs/data/material/components/tabs/NavTabs.tsx",
+      "upstreamSha256": "21a486f1af9345cc38b0dabbe7aca27fbcdd0c472148291bf4a0c6bdb8e2bb13",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/ScrollableTabsButtonAuto.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\nimport Box from '@mui/material/Box';\n\nexport default function ScrollableTabsButtonAuto() {\n  const [value, setValue] = React.useState(0);\n\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Box sx={{ maxWidth: { xs: 320, sm: 480 }, bgcolor: 'background.paper' }}>\n      <Tabs\n        value={value}\n        onChange={handleChange}\n        variant=\"scrollable\"\n        scrollButtons=\"auto\"\n        aria-label=\"scrollable auto tabs example\"\n      >\n        <Tab label=\"Item One\" />\n        <Tab label=\"Item Two\" />\n        <Tab label=\"Item Three\" />\n        <Tab label=\"Item Four\" />\n        <Tab label=\"Item Five\" />\n        <Tab label=\"Item Six\" />\n        <Tab label=\"Item Seven\" />\n      </Tabs>\n    </Box>\n  );\n}\n",
+      "sha256": "141b9c1ba2aeb6fa53141b71bad085e534c2570975483abb53cbba4a9e85e7e2",
+      "upstreamPath": "docs/data/material/components/tabs/ScrollableTabsButtonAuto.tsx",
+      "upstreamSha256": "65586174c7bbdfd71414b7fe98140711c527231dc272cd4e653f68e2070fa615",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/ScrollableTabsButtonForce.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\nimport Box from '@mui/material/Box';\n\nexport default function ScrollableTabsButtonForce() {\n  const [value, setValue] = React.useState(0);\n\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Box sx={{ maxWidth: { xs: 320, sm: 480 }, bgcolor: 'background.paper' }}>\n      <Tabs\n        value={value}\n        onChange={handleChange}\n        variant=\"scrollable\"\n        scrollButtons\n        allowScrollButtonsMobile\n        aria-label=\"scrollable force tabs example\"\n      >\n        <Tab label=\"Item One\" />\n        <Tab label=\"Item Two\" />\n        <Tab label=\"Item Three\" />\n        <Tab label=\"Item Four\" />\n        <Tab label=\"Item Five\" />\n        <Tab label=\"Item Six\" />\n        <Tab label=\"Item Seven\" />\n      </Tabs>\n    </Box>\n  );\n}\n",
+      "sha256": "b4a6d119e9b7a556429128d31f30a6825db603e3301db9ba65be5dade8d90a90",
+      "upstreamPath": "docs/data/material/components/tabs/ScrollableTabsButtonForce.tsx",
+      "upstreamSha256": "df8a5e9f2f02f3c332ba4eb023d1d9d979b697bdcfa0da2e6fb0d03875d3d956",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/ScrollableTabsButtonPrevent.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\nimport Box from '@mui/material/Box';\n\nexport default function ScrollableTabsButtonPrevent() {\n  const [value, setValue] = React.useState(0);\n\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Box sx={{ maxWidth: { xs: 320, sm: 480 }, bgcolor: 'background.paper' }}>\n      <Tabs\n        value={value}\n        onChange={handleChange}\n        variant=\"scrollable\"\n        scrollButtons={false}\n        aria-label=\"scrollable prevent tabs example\"\n      >\n        <Tab label=\"Item One\" />\n        <Tab label=\"Item Two\" />\n        <Tab label=\"Item Three\" />\n        <Tab label=\"Item Four\" />\n        <Tab label=\"Item Five\" />\n        <Tab label=\"Item Six\" />\n        <Tab label=\"Item Seven\" />\n      </Tabs>\n    </Box>\n  );\n}\n",
+      "sha256": "db76cc8160061136ac9e8280e402ecb1420ffb5107b603c79bc4550d40c7e9c1",
+      "upstreamPath": "docs/data/material/components/tabs/ScrollableTabsButtonPrevent.tsx",
+      "upstreamSha256": "76b70a81347c83ced37dca79e5cb3ec4a4b582f18570ba21274271bba3363bab",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/ScrollableTabsButtonVisible.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Tabs, { tabsClasses } from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\n\nexport default function ScrollableTabsButtonVisible() {\n  const [value, setValue] = React.useState(0);\n\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Box\n      sx={{\n        flexGrow: 1,\n        maxWidth: { xs: 320, sm: 480 },\n        bgcolor: 'background.paper',\n      }}\n    >\n      <Tabs\n        value={value}\n        onChange={handleChange}\n        variant=\"scrollable\"\n        scrollButtons\n        aria-label=\"visible arrows tabs example\"\n        sx={{\n          [`& .${tabsClasses.scrollButtons}`]: {\n            '&.Mui-disabled': { opacity: 0.3 },\n          },\n        }}\n      >\n        <Tab label=\"Item One\" />\n        <Tab label=\"Item Two\" />\n        <Tab label=\"Item Three\" />\n        <Tab label=\"Item Four\" />\n        <Tab label=\"Item Five\" />\n        <Tab label=\"Item Six\" />\n        <Tab label=\"Item Seven\" />\n      </Tabs>\n    </Box>\n  );\n}\n",
+      "sha256": "f4a30f830ed5a8a74fe3c1b1db20ac9236c560e9adf9e84bd0a7c24ceb886966",
+      "upstreamPath": "docs/data/material/components/tabs/ScrollableTabsButtonVisible.tsx",
+      "upstreamSha256": "f7861b50825339572802be529a34a12baeffd6d907821023d5ec58a7b394d505",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/TabsWrappedLabel.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\nimport Box from '@mui/material/Box';\n\nexport default function TabsWrappedLabel() {\n  const [value, setValue] = React.useState('one');\n\n  const handleChange = (event: React.SyntheticEvent, newValue: string) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Box sx={{ width: '100%' }}>\n      <Tabs\n        value={value}\n        onChange={handleChange}\n        aria-label=\"wrapped label tabs example\"\n      >\n        <Tab\n          value=\"one\"\n          label=\"New Arrivals in the Longest Text of Nonfiction that should appear in the next line\"\n          wrapped\n        />\n        <Tab value=\"two\" label=\"Item Two\" />\n        <Tab value=\"three\" label=\"Item Three\" />\n      </Tabs>\n    </Box>\n  );\n}\n",
+      "sha256": "7541f9c8eeb02251a6e94542b6b4c6859535b7443bd8f53db0e2a45627d2ac80",
+      "upstreamPath": "docs/data/material/components/tabs/TabsWrappedLabel.tsx",
+      "upstreamSha256": "e70939cd61503754349a8a0fbdb22a2ed95fbca2c68870ad5e52e157a61f2a58",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/tabs/VerticalTabs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\nimport Typography from '@mui/material/Typography';\nimport Box from '@mui/material/Box';\n\ninterface TabPanelProps {\n  children?: React.ReactNode;\n  index: number;\n  value: number;\n}\n\nfunction TabPanel(props: TabPanelProps) {\n  const { children, value, index, ...other } = props;\n\n  return (\n    <div\n      role=\"tabpanel\"\n      hidden={value !== index}\n      tabIndex={0}\n      id={`vertical-tabpanel-${index}`}\n      aria-labelledby={`vertical-tab-${index}`}\n      {...other}\n    >\n      {value === index && (\n        <Box sx={{ p: 3 }}>\n          <Typography>{children}</Typography>\n        </Box>\n      )}\n    </div>\n  );\n}\n\nfunction a11yProps(index: number) {\n  return {\n    id: `vertical-tab-${index}`,\n    'aria-controls': `vertical-tabpanel-${index}`,\n  };\n}\n\nexport default function VerticalTabs() {\n  const [value, setValue] = React.useState(0);\n\n  const handleChange = (event: React.SyntheticEvent, newValue: number) => {\n    setValue(newValue);\n  };\n\n  return (\n    <Box\n      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 224 }}\n    >\n      <Tabs\n        orientation=\"vertical\"\n        variant=\"scrollable\"\n        value={value}\n        onChange={handleChange}\n        aria-label=\"Vertical tabs example\"\n        sx={{ borderRight: 1, borderColor: 'divider' }}\n      >\n        <Tab label=\"Item One\" {...a11yProps(0)} />\n        <Tab label=\"Item Two\" {...a11yProps(1)} />\n        <Tab label=\"Item Three\" {...a11yProps(2)} />\n        <Tab label=\"Item Four\" {...a11yProps(3)} />\n        <Tab label=\"Item Five\" {...a11yProps(4)} />\n        <Tab label=\"Item Six\" {...a11yProps(5)} />\n        <Tab label=\"Item Seven\" {...a11yProps(6)} />\n      </Tabs>\n      <TabPanel value={value} index={0}>\n        Item One\n      </TabPanel>\n      <TabPanel value={value} index={1}>\n        Item Two\n      </TabPanel>\n      <TabPanel value={value} index={2}>\n        Item Three\n      </TabPanel>\n      <TabPanel value={value} index={3}>\n        Item Four\n      </TabPanel>\n      <TabPanel value={value} index={4}>\n        Item Five\n      </TabPanel>\n      <TabPanel value={value} index={5}>\n        Item Six\n      </TabPanel>\n      <TabPanel value={value} index={6}>\n        Item Seven\n      </TabPanel>\n    </Box>\n  );\n}\n",
+      "sha256": "5bfa1f27005bdc7039c242a558b104b82bcd72b317e687bfdddc3cbf4c6ad571",
+      "upstreamPath": "docs/data/material/components/tabs/VerticalTabs.tsx",
+      "upstreamSha256": "643ada3a5e4e4df9dc01538a73e23901636d18344ac68606331bcdf10aa69c1c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/AccessibleTabs1\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "acdce29c38fbe7afafd8781f68611611508a0fc68df6742d66b27dc77e0b512b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/accessible-tabs2.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/AccessibleTabs2\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "fd83811f040ffaacdb1ed9e625bc55e805deb641f443e69ee6b76ad3db5f3dba",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/basic-tabs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/BasicTabs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2df68bb8fabaac7eaab105cafce7deef3f07c2d99306a8599ab555afae7a40d3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/centered-tabs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/CenteredTabs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "7b5f5a5fa5af189cee7a70ed3b7b25586e71e4c826a687a87b62432f0ed76845",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/color-tabs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/ColorTabs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8147776fd35e6dd9e2a4588af8c8e10305181e03e8a6233fb6a52243ca37d7b5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/customized-tabs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/CustomizedTabs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a7f47b22f47cf7b6a9df54c02b15b68228b6bed298b9c455a006b836a37432f8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/disabled-tabs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/DisabledTabs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "4cb1f6933f06b9e5856e6a646ab9e94c3491ecb7286ab94f90d6fe4d91f6799a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/full-width-tabs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/FullWidthTabs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "bcb5595c45e1ff7c5b5cb6fe2820b8bb22d0230e4b138a4a8abfb0c5b8c2c1db",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/icon-label-tabs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/IconLabelTabs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e5123d95722981c8df2fd9f18254e1641dc7810408d95070252663f030fb45c1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/icon-position-tabs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/IconPositionTabs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "18f530d531e7f8aa207c054587d307d1a8a449d6c50da5788f863241bba10648",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/icon-tabs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/IconTabs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "985c1b0353d2e86b1cfde10cb558b89e1b31220adae29c408ed6706d32f6c2af",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/keep-mounted-lab-tabs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/KeepMountedLabTabs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a56d91c6566d23e4e3f741854fde1f790a2a61040ad40793b5e126824fd8370f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/keep-mounted-standard-tabs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/KeepMountedStandardTabs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "f36333ef226412ae71918b99cf14e2c1c36035330d3ab8546a6848b619b5aff2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/lab-tabs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/LabTabs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "b915e545f6fe3f9994d03b8f63c63eeb586b9f9997641591fd835f516add5da6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/nav-tabs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/NavTabs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0326f4e0aad82f19fe1b819f1441efd80216bae1302f6953ea82099a486de26d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/scrollable-tabs-button-auto.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/ScrollableTabsButtonAuto\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "03cb47c664993e046c449e820a7bc7b7ac4abbdd51f74a02fca572c4da0a5649",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/scrollable-tabs-button-force.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/ScrollableTabsButtonForce\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "849bb1db39f7eb64e17e833cd2f1b9477b6c9ec8ca526cb5b6fa458495cfa716",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/scrollable-tabs-button-prevent.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/ScrollableTabsButtonPrevent\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "49d51799656e4fba341e2145ea018e3b06735e12ee7ac5d94e114982d99c902e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/scrollable-tabs-button-visible.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/ScrollableTabsButtonVisible\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "b639b7bd16312b7e929acd7d7b0d9548a38e0c16caa7b818bb4323dde7e5297a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/tabs-wrapped-label.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/TabsWrappedLabel\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e3bf0d34ac9be6dc9824551dd6a1b30156bdbe3604c33cf9ce6aa0fc6bbe5f8c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/tabs/previews/vertical-tabs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/tabs/VerticalTabs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "921b5408b0820c3d0ed93aceed3f70628c5e4adcaf8fc48722134cd1fad0b5ed",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/lab@9.0.0-beta.9 @mui/material@9.4.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/lab@9.0.0-beta.9 @mui/material@9.4.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "tabs",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/tabs",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/tabs/AccessibleTabs1.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/tabs/AccessibleTabs1.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI tabs\n\n21 published Material UI tabs examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/tabs\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/tabs/AccessibleTabs1.tsx\n"
+}

@@ -17,6 +17,7 @@ export function presentSearchResults(
     results: results.map((result) => ({
       ...result,
       preview_url: catalog.previewUrl(result.previewPath),
+      retrieve: { tool: 'get_component', arguments: { id: result.id } },
     })),
     contact_sheet_url: results.length
       ? new URL(
@@ -30,6 +31,7 @@ export function presentSearchResults(
 export function presentBrowsePage(page: BrowsePage, catalog: CatalogService) {
   return {
     ...page,
+    next_page: page.nextCursor ? { tool: 'browse_category', arguments: { category: page.items[0]?.category, cursor: page.nextCursor } } : null,
     items: page.items.map((item) => presentComponentSummary(item, catalog)),
   };
 }

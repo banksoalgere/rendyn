@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { resolveCatalogPath } from "./path.js";
+import { prepareSearchIndex } from './search/prepared.js';
 import { parseCatalogComponent, parseCatalogIndex, parseEmbeddingIndex } from "./schema.js";
 import type {
   BrowsePage,
@@ -153,6 +154,7 @@ export class CatalogStore {
   ) {
     this.root = root;
     this.index = index;
+    prepareSearchIndex(index);
     this.embeddings = embeddings;
     this.summariesBySlug = new Map(
       index.components.map((component) => [component.slug, component]),

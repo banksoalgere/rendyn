@@ -1,0 +1,165 @@
+{
+  "id": "mui:use-media-query",
+  "sourceId": "mui",
+  "slug": "mui-use-media-query",
+  "name": "Material UI use media query",
+  "description": "5 published Material UI use media query examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/material@9.4.0",
+    "css-mediaquery@0.1.2",
+    "json2mq@0.2.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "use-media-query",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file"
+    ],
+    "aliases": [
+      "use media query",
+      "material ui use media query",
+      "use-media-query"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "5 published Material UI use media query examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "use-media-query:code:command:data:file",
+    "searchText": "Material UI use media query\nuse media query\n5 published Material UI use media query examples with complete pinned source and MIT attribution.\nmaterial ui use media query\nuse-media-query\ncode\ncommand\ndata\nfile\nMaterial UI use media query 5 published Material UI use media query examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/use media query Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/use media query/JavaScriptMedia.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-use-media-query",
+  "manifestPath": "components/mui-use-media-query/component.json",
+  "integrity": "sha256:279ef989261731012ddfdc37d729041321b7cd1d9b81a894daf3b1acf9e0e261",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/use-media-query/JavaScriptMedia.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport json2mq from 'json2mq';\nimport useMediaQuery from '@mui/material/useMediaQuery';\n\nexport default function JavaScriptMedia() {\n  const matches = useMediaQuery(\n    json2mq({\n      minWidth: 600,\n    }),\n  );\n\n  return <span>{`{ minWidth: 600 } matches: ${matches}`}</span>;\n}\n",
+      "sha256": "0625ca441f3a2f56a9d79675fe4507e8e91781f5fcafee213d46ddcabf7a9ad4",
+      "upstreamPath": "docs/data/material/components/use-media-query/JavaScriptMedia.tsx",
+      "upstreamSha256": "06d7e706b2a68bfc545583a987c50eab6f748de8cbac09c65daf85d14ad4275d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/use-media-query/ServerSide.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport mediaQuery from 'css-mediaquery';\nimport { ThemeProvider, Theme } from '@mui/material/styles';\nimport useMediaQuery from '@mui/material/useMediaQuery';\n\nfunction MyComponent() {\n  const matches = useMediaQuery('(min-width:600px)');\n\n  return <span>{`(min-width:600px) matches: ${matches}`}</span>;\n}\n\nexport default function ServerSide() {\n  const ssrMatchMedia = (query: string) => ({\n    matches: mediaQuery.match(query, {\n      // The estimated CSS width of the browser.\n      width: 800,\n    }),\n  });\n\n  return (\n    <ThemeProvider<Theme>\n      theme={{\n        components: {\n          MuiUseMediaQuery: {\n            // Change the default options of useMediaQuery\n            defaultProps: { ssrMatchMedia },\n          },\n        },\n      }}\n    >\n      <MyComponent />\n    </ThemeProvider>\n  );\n}\n",
+      "sha256": "0d9d288e3ae2df0b179c3bcfd5c0a0a2ece0c0bf7fafaa35ddb719aec7a4da68",
+      "upstreamPath": "docs/data/material/components/use-media-query/ServerSide.tsx",
+      "upstreamSha256": "2f768df2841b11b3bac4a81c4cff20ab5e6ef0b1435e3f5d43258eedaf80962f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/use-media-query/SimpleMediaQuery.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport useMediaQuery from '@mui/material/useMediaQuery';\n\nexport default function SimpleMediaQuery() {\n  const matches = useMediaQuery('(min-width:600px)');\n\n  return <span>{`(min-width:600px) matches: ${matches}`}</span>;\n}\n",
+      "sha256": "97749826229b4087fc6011e2acda791b688c5df20de77466b33d2755f7fd335b",
+      "upstreamPath": "docs/data/material/components/use-media-query/SimpleMediaQuery.tsx",
+      "upstreamSha256": "2bd8c25f1c09bb390a6ad7699c8eb976f1b5758d40e74087d34ee30daf4b1888",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/use-media-query/ThemeHelper.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';\nimport useMediaQuery from '@mui/material/useMediaQuery';\n\nfunction MyComponent() {\n  const theme = useTheme();\n  const matches = useMediaQuery(theme.breakpoints.up('sm'));\n\n  return <span>{`theme.breakpoints.up('sm') matches: ${matches}`}</span>;\n}\n\nconst theme = createTheme();\n\nexport default function ThemeHelper() {\n  return (\n    <ThemeProvider theme={theme}>\n      <MyComponent />\n    </ThemeProvider>\n  );\n}\n",
+      "sha256": "bc4681fd3d409ed031425e83d9967f7ce3155c7f9b4568309ea706cfe4763afb",
+      "upstreamPath": "docs/data/material/components/use-media-query/ThemeHelper.tsx",
+      "upstreamSha256": "6ea683f670e84a59b9f55e9f7961a9cf2111e8bc7597e90760034b7eef2a38c2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/use-media-query/UseWidth.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Breakpoint,\n  Theme,\n  ThemeProvider,\n  useTheme,\n  createTheme,\n} from '@mui/material/styles';\nimport useMediaQuery from '@mui/material/useMediaQuery';\n\ntype BreakpointOrNull = Breakpoint | null;\n\n/**\n * Be careful using this hook. It only works because the number of\n * breakpoints in theme is static. It will break once you change the number of\n * breakpoints. See https://legacy.reactjs.org/docs/hooks-rules.html#only-call-hooks-at-the-top-level\n */\nfunction useWidth() {\n  const theme: Theme = useTheme();\n  const keys: readonly Breakpoint[] = [...theme.breakpoints.keys].reverse();\n  return (\n    keys.reduce((output: BreakpointOrNull, key: Breakpoint) => {\n      // TODO: uncomment once we enable eslint-plugin-react-compiler // eslint-disable-next-line react-compiler/react-compiler -- useMediaQuery is called inside callback\n      // eslint-disable-next-line react-hooks/rules-of-hooks\n      const matches = useMediaQuery(theme.breakpoints.up(key));\n      return !output && matches ? key : output;\n    }, null) || 'xs'\n  );\n}\n\nfunction MyComponent() {\n  const width = useWidth();\n  return <span>{`width: ${width}`}</span>;\n}\n\nconst theme = createTheme();\n\nexport default function UseWidth() {\n  return (\n    <ThemeProvider theme={theme}>\n      <MyComponent />\n    </ThemeProvider>\n  );\n}\n",
+      "sha256": "e25179ea68867da86c1c550918aed00ddb2fcfd16f35353a10226c763267d3e9",
+      "upstreamPath": "docs/data/material/components/use-media-query/UseWidth.tsx",
+      "upstreamSha256": "61b97e720c45ae610cd8aeab60256b7e3e45eb69140477cc0c70e83f57381ffe",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/use-media-query/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/use-media-query/JavaScriptMedia\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "5ddc4d81e535430bc7d46803afb472537b0bd736a38e79f11cef0a4f64ab19f5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/use-media-query/previews/server-side.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/use-media-query/ServerSide\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "59c90cf36697b217a9b3949c1b38be4abffe55bbb81f73d2116e012e2030bb40",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/use-media-query/previews/simple-media-query.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/use-media-query/SimpleMediaQuery\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "db9018ace779bca03adbfb037c1b562dd5cc23cba7b8b5d9c59b95d29881fa34",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/use-media-query/previews/theme-helper.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/use-media-query/ThemeHelper\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "435a341fc7240fb0acd62a0f48fcd8291f9a525edcb36693097fba88bad9f093",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/use-media-query/previews/use-width.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/use-media-query/UseWidth\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0e9bc3d276461031f9207b43ab7c14f57b1a5e6c8f4116640500c017f1e4ad12",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0 css-mediaquery@0.1.2 json2mq@0.2.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0 css-mediaquery@0.1.2 json2mq@0.2.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "use-media-query",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/use-media-query",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/use-media-query/JavaScriptMedia.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/use-media-query/JavaScriptMedia.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI use media query\n\n5 published Material UI use media query examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/use-media-query\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/use-media-query/JavaScriptMedia.tsx\n"
+}

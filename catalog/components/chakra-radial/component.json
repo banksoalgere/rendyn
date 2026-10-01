@@ -1,0 +1,132 @@
+{
+  "id": "chakra:radial",
+  "sourceId": "chakra",
+  "slug": "chakra-radial",
+  "name": "Chakra UI radial",
+  "description": "3 published Chakra UI radial examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/charts@3.37.0",
+    "@chakra-ui/react@3.37.0",
+    "recharts@3.8.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "radial",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "radial",
+      "chakra ui radial"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "3 published Chakra UI radial examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "radial:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI radial\nradial\n3 published Chakra UI radial examples with complete pinned source and MIT attribution.\nchakra ui radial\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI radial 3 published Chakra UI radial examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts/radial chart basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-radial",
+  "manifestPath": "components/chakra-radial/component.json",
+  "integrity": "sha256:71ccf5d8419cae5f32fb0f30bc0e4e6c55ef9c94a8128a940a9cfb0d238b971f",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/radial-chart-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { RadialBar, RadialBarChart, Sector, Tooltip } from \"recharts\"\n\nexport const RadialChartBasic = () => {\n  const chart = useChart({\n    data: [\n      { value: 165, month: \"January\", color: \"teal.solid\" },\n      { value: 190, month: \"February\", color: \"purple.solid\" },\n      { value: 195, month: \"March\", color: \"blue.solid\" },\n      { value: 182, month: \"May\", color: \"teal.solid\" },\n    ],\n  })\n\n  return (\n    <Chart.Root maxW=\"sm\" chart={chart} mx=\"auto\">\n      <RadialBarChart\n        data={chart.data}\n        barSize={20}\n        startAngle={90}\n        endAngle={-270}\n        responsive\n      >\n        <Tooltip cursor={false} content={<Chart.Tooltip nameKey=\"month\" />} />\n        <RadialBar\n          isAnimationActive={false}\n          dataKey={chart.key(\"value\")}\n          background\n          shape={(props: any) => (\n            <Sector\n              {...props}\n              fill={chart.color(props.payload!.color)}\n              stroke=\"none\"\n            />\n          )}\n        />\n      </RadialBarChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "03c3be004d5f9de1694370e402bb57c86adc7846978c8ab5103f194ba57cfb68",
+      "upstreamPath": "apps/compositions/src/examples/charts/radial-chart-basic.tsx",
+      "upstreamSha256": "99834111a3b4837e43c1bb2eabced706601170de1320605684fcdd3ed7bbaaa1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/radial-chart-with-label.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { RadialBar, RadialBarChart, Sector } from \"recharts\"\n\nexport const RadialChartWithLabel = () => {\n  const chart = useChart({\n    data: [\n      { value: 165, month: \"January\", color: \"teal.solid\" },\n      { value: 190, month: \"February\", color: \"purple.solid\" },\n      { value: 195, month: \"March\", color: \"blue.solid\" },\n      { value: 182, month: \"May\", color: \"teal.solid\" },\n    ],\n  })\n\n  return (\n    <Chart.Root maxW=\"sm\" chart={chart} mx=\"auto\">\n      <RadialBarChart\n        data={chart.data}\n        innerRadius={30}\n        outerRadius={100}\n        startAngle={90}\n        endAngle={-270}\n        responsive\n      >\n        <RadialBar\n          isAnimationActive={false}\n          dataKey={chart.key(\"value\")}\n          background\n          label={{\n            position: \"insideStart\",\n            fill: \"white\",\n            fontSize: \"12px\",\n          }}\n          shape={(props: any) => (\n            <Sector\n              {...props}\n              fill={chart.color(props.payload!.color)}\n              stroke=\"none\"\n            />\n          )}\n        />\n      </RadialBarChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "61b9164d25679935086ec8ea81eec3c58b67a79f9099894695bf743c4709a8cf",
+      "upstreamPath": "apps/compositions/src/examples/charts/radial-chart-with-label.tsx",
+      "upstreamSha256": "d288615f90cfb6900aba8fe0b74304e66383d19d3f7631f15618449d231240f9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/charts/radial-chart-with-legend.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Chart, useChart } from \"@chakra-ui/charts\"\nimport { Legend, RadialBar, RadialBarChart, Sector, Tooltip } from \"recharts\"\n\nexport const RadialChartWithLegend = () => {\n  const chart = useChart({\n    data: [\n      { value: 165, month: \"January\", color: \"teal.solid\" },\n      { value: 190, month: \"February\", color: \"purple.solid\" },\n      { value: 195, month: \"March\", color: \"blue.solid\" },\n      { value: 182, month: \"May\", color: \"teal.solid\" },\n    ],\n  })\n\n  return (\n    <Chart.Root maxW=\"sm\" chart={chart} mx=\"auto\">\n      <RadialBarChart\n        data={chart.data}\n        barSize={20}\n        startAngle={90}\n        endAngle={-270}\n        responsive\n      >\n        <Tooltip cursor={false} content={<Chart.Tooltip nameKey=\"month\" />} />\n        <Legend content={<Chart.Legend nameKey=\"month\" />} />\n        <RadialBar\n          isAnimationActive={false}\n          dataKey={chart.key(\"value\")}\n          background\n          shape={(props: any) => (\n            <Sector\n              {...props}\n              fill={chart.color(props.payload!.color)}\n              stroke=\"none\"\n            />\n          )}\n        />\n      </RadialBarChart>\n    </Chart.Root>\n  )\n}\n",
+      "sha256": "b4d93e1eb0ac059e409450014af0900e78553e5e6e465f0a5107369eb4a44f3a",
+      "upstreamPath": "apps/compositions/src/examples/charts/radial-chart-with-legend.tsx",
+      "upstreamSha256": "d57c94ae8283f88f93a3d1a809a16f491a7c3d85df090757782ca337e1644cfd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/radial/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RadialChartBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/radial-chart-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "c6a3701cf029e661177bbde4bd83632fdbe2ea161f9e1d907d20b55a88061085",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/radial/previews/radial-chart-with-label.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RadialChartWithLabel as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/radial-chart-with-label\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "3ce73ba2ce69ec906cadb93d4f3111df7c26cd050a5c40264e23d57acd25dad8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/radial/previews/radial-chart-with-legend.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RadialChartWithLegend as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/charts/radial-chart-with-legend\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "655806db50e7a3e2b7678f0b854170856cad770783bc84650b63f97196501fdf",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/charts@3.37.0 @chakra-ui/react@3.37.0 recharts@3.8.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/charts@3.37.0 @chakra-ui/react@3.37.0 recharts@3.8.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "radial",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts/radial-chart-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts/radial-chart-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI radial\n\n3 published Chakra UI radial examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts/radial-chart-basic.tsx\n"
+}

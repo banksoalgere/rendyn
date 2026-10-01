@@ -1,0 +1,365 @@
+{
+  "id": "heroui:date-input",
+  "sourceId": "heroui",
+  "slug": "heroui-date-input",
+  "name": "HeroUI date input",
+  "description": "17 published HeroUI date input examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@heroui/react@2.8.10",
+    "@heroui/theme@2.4.26",
+    "@internationalized/date@3.12.4",
+    "@react-aria/i18n@3.13.1"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "input",
+    "tags": [
+      "file",
+      "input",
+      "theme"
+    ],
+    "aliases": [
+      "date input",
+      "heroui date input",
+      "input"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "17 published HeroUI date input examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "input:file:theme",
+    "searchText": "HeroUI date input\ndate input\n17 published HeroUI date input examples with complete pinned source and MIT attribution.\nheroui date input\ninput\nfile\ntheme\nHeroUI date input 17 published HeroUI date input examples with complete pinned source and MIT attribution. Installation Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3. Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node modules/@heroui/theme/dist/ / .{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/heroui inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/date input Pinned source: https://github.com/heroui inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/date input/controlled.raw.tsx"
+  },
+  "previewPath": "/preview/blocks/heroui-date-input",
+  "manifestPath": "components/heroui-date-input/component.json",
+  "integrity": "sha256:4742ac9cd5b3a82ce3614456dd7de0e24288d2ad29044beed931a696ea70574c",
+  "source": {
+    "id": "heroui",
+    "name": "HeroUI",
+    "repository": "https://github.com/heroui-inc/heroui",
+    "commit": "46e1f1f78e7777bc8639399e4f5fd913de046d33",
+    "registrySha256": "2db50391dcfd10fb02a7c56444a6c806bef67c80441bab4b7b59aa78038b75fd",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2020 Next UI Inc.",
+      "textPath": "source/heroui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/controlled.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type {DateValue} from \"@internationalized/date\";\n\nimport React from \"react\";\nimport {DateInput} from \"@heroui/react\";\nimport {parseDate, getLocalTimeZone} from \"@internationalized/date\";\nimport {useDateFormatter} from \"@react-aria/i18n\";\n\nexport default function App() {\n  const [value, setValue] = React.useState<DateValue | null>(parseDate(\"2024-04-04\"));\n\n  let formatter = useDateFormatter({dateStyle: \"full\"});\n\n  return (\n    <div className=\"w-full flex flex-row gap-2\">\n      <div className=\"w-full flex flex-col gap-y-2\">\n        <DateInput label=\"Date (controlled)\" value={value} onChange={setValue} />\n        <p className=\"text-default-500 text-sm\">\n          Selected date: {value ? formatter.format(value.toDate(getLocalTimeZone())) : \"--\"}\n        </p>\n      </div>\n    </div>\n  );\n}\n",
+      "sha256": "aae6ddbee4dddb7aba39b9d65f8222308a6f2af1db8ea48d172bbcd5dd4f325e",
+      "upstreamPath": "apps/docs/content/components/date-input/controlled.raw.tsx",
+      "upstreamSha256": "61c84daf44f169e889a1c58c9ce3e6c9feb9b9fa0b11d14bf7af3982de46f16e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/description.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DateInput} from \"@heroui/react\";\nimport {CalendarDate} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DateInput\n        description={\"This is my birth date.\"}\n        label={\"Birth date\"}\n        placeholderValue={new CalendarDate(1995, 11, 6)}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "42a9bf3d1461f118193ef258db923ef4dbe1ea17c2c9d7f2482437a9ee9b7210",
+      "upstreamPath": "apps/docs/content/components/date-input/description.raw.jsx",
+      "upstreamSha256": "ce9a460a0906646dbde02d4b9684e8c4d6043fd1e66cf69a49846a58a131f0b7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/disabled.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DateInput} from \"@heroui/react\";\nimport {CalendarDate, parseDate} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DateInput\n        isDisabled\n        defaultValue={parseDate(\"2024-04-04\")}\n        label={\"Birth date\"}\n        placeholderValue={new CalendarDate(1995, 11, 6)}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "e7291dad53ba7c845a0ef7844bd1b962d7f746b7eea560454a96395bb9e0ce7f",
+      "upstreamPath": "apps/docs/content/components/date-input/disabled.raw.jsx",
+      "upstreamSha256": "ed185179b478675b415480aeca33aa99609c5d0b0c8c980945dd3cf23bb7a826",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/error-message.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DateInput} from \"@heroui/react\";\nimport {CalendarDate, parseDate} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DateInput\n        isInvalid\n        className=\"max-w-xs\"\n        defaultValue={parseDate(\"2024-04-04\")}\n        description={\"This is my birth date.\"}\n        errorMessage=\"Please enter a valid date.\"\n        label={\"Birth date\"}\n        placeholderValue={new CalendarDate(1995, 11, 6)}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "013ff946d5809516a3a456de99598f028c17a5efe1bce651b6820dfc0fe1b383",
+      "upstreamPath": "apps/docs/content/components/date-input/error-message.raw.jsx",
+      "upstreamSha256": "bff4807e486b1dfb88af04ca409a182e406bf0bef6843ad9699099e531c59f11",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/error-message-function.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DateInput} from \"@heroui/react\";\nimport {CalendarDate, parseDate} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DateInput\n        isInvalid\n        className=\"max-w-xs\"\n        defaultValue={parseDate(\"2024-04-04\")}\n        description={\"This is my birth date.\"}\n        errorMessage={(value) => {\n          if (value.isInvalid) {\n            return \"Please enter a valid date.\";\n          }\n        }}\n        label={\"Birth date\"}\n        placeholderValue={new CalendarDate(1995, 11, 6)}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "7bc0a3698d7dd458947a8ae17870f72e2abd00764d2713e94e5c5ae38c845583",
+      "upstreamPath": "apps/docs/content/components/date-input/error-message-function.raw.jsx",
+      "upstreamSha256": "946c4e29e4a7829df6924b69236f035bf774ac1fa40f6008b8404f6af913269e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/granularity.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type {DateValue} from \"@internationalized/date\";\n\nimport React from \"react\";\nimport {DateInput} from \"@heroui/react\";\nimport {now, parseAbsoluteToLocal} from \"@internationalized/date\";\n\nexport default function App() {\n  let [date, setDate] = React.useState<DateValue | null>(\n    parseAbsoluteToLocal(\"2021-04-07T18:45:22Z\"),\n  );\n\n  return (\n    <div className=\"w-full max-w-xl flex flex-col items-start gap-4\">\n      <DateInput granularity=\"second\" label=\"Date and time\" value={date} onChange={setDate} />\n      <DateInput granularity=\"day\" label=\"Date\" value={date} onChange={setDate} />\n      <DateInput granularity=\"second\" label=\"Event date\" />\n      <DateInput\n        granularity=\"second\"\n        label=\"Event date\"\n        placeholderValue={now(\"America/New_York\")}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "250e434f36fa3ddf96816e2baec9ba67c3f4f40c809e137abf9a647d2fd521d5",
+      "upstreamPath": "apps/docs/content/components/date-input/granularity.raw.tsx",
+      "upstreamSha256": "287bfe713a7d5c80b6e0db4108e924209c52f3f8b68794168870c6251ad16ffb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/hide-timezone.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DateInput} from \"@heroui/react\";\nimport {parseZonedDateTime} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <div className=\"w-full max-w-xl flex flex-row gap-4\">\n      <DateInput\n        hideTimeZone\n        defaultValue={parseZonedDateTime(\"2022-11-07T00:45[America/Los_Angeles]\")}\n        label=\"Appointment time\"\n      />\n    </div>\n  );\n}\n",
+      "sha256": "da470776d9ced31575e81aa8993b525b720825cd5e4b4b85b8b8093d255dd97d",
+      "upstreamPath": "apps/docs/content/components/date-input/hide-timezone.raw.jsx",
+      "upstreamSha256": "0cb02a0cdce7fbb4a262f7f55328e74a876827f51622aafa7e3bea2980625dbc",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/hourly-cycle.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DateInput} from \"@heroui/react\";\nimport {parseZonedDateTime} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <div className=\"w-full max-w-xl flex flex-row gap-4\">\n      <DateInput\n        defaultValue={parseZonedDateTime(\"2022-11-07T00:45[America/Los_Angeles]\")}\n        granularity={\"minute\"}\n        hourCycle={24}\n        label=\"Appointment time\"\n      />\n    </div>\n  );\n}\n",
+      "sha256": "6a09492c9b06abeba12485bc18bb0f1ccda58a9e2287b15da52d76c43d4a0d6d",
+      "upstreamPath": "apps/docs/content/components/date-input/hourly-cycle.raw.jsx",
+      "upstreamSha256": "0b4217907a128b9e29e90f2b530782ae0c65b8c18a84633be8e1b61234f65d3c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/international-calendar.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type {DateValue} from \"@internationalized/date\";\n\nimport React from \"react\";\nimport {DateInput} from \"@heroui/react\";\nimport {parseAbsoluteToLocal} from \"@internationalized/date\";\nimport {I18nProvider} from \"@react-aria/i18n\";\n\nexport default function App() {\n  const [date, setDate] = React.useState<DateValue | null>(\n    parseAbsoluteToLocal(\"2021-04-07T18:45:22Z\"),\n  );\n\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <I18nProvider locale=\"hi-IN-u-ca-indian\">\n        <DateInput label=\"Appointment date\" value={date} onChange={setDate} />\n      </I18nProvider>\n    </div>\n  );\n}\n",
+      "sha256": "8de6374124c2e55578ba23bbbad5af0e80530d0588827615fff6342cb0ceda66",
+      "upstreamPath": "apps/docs/content/components/date-input/international-calendar.raw.tsx",
+      "upstreamSha256": "3df39c2d986ca803ddf5adbe903409ced01272cc734ba447f3a6a53b418fc7d0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/label-placements.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DateInput} from \"@heroui/react\";\nimport {CalendarDate} from \"@internationalized/date\";\n\nexport default function App() {\n  const placements = [\"inside\", \"outside\", \"outside-left\", \"outside-top\"];\n\n  return (\n    <div className=\"w-full flex flex-col max-w-sm gap-4\">\n      {placements.map((placement) => (\n        <DateInput\n          key={placement}\n          description={placement}\n          label=\"Birth date\"\n          labelPlacement={placement}\n          placeholderValue={new CalendarDate(1995, 11, 6)}\n        />\n      ))}\n    </div>\n  );\n}\n",
+      "sha256": "948dc9e542038bb2fac56eaa8f8367edc2f224f631e4989f2eea6beae4b2469f",
+      "upstreamPath": "apps/docs/content/components/date-input/label-placements.raw.jsx",
+      "upstreamSha256": "17844be8fd4debd93e7616ec3f74ea7ac5a38927bc5427ffa4bce920afec87f2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/min-and-max-date.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DateInput} from \"@heroui/react\";\nimport {getLocalTimeZone, today} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <div className=\"w-full max-w-xl flex flex-row gap-4\">\n      <div className=\"w-full flex flex-col gap-1\">\n        <h3>Min date</h3>\n        <DateInput\n          defaultValue={today(getLocalTimeZone()).subtract({days: 1})}\n          label=\"Date and time\"\n          minValue={today(getLocalTimeZone())}\n        />\n      </div>\n      <div className=\"w-full flex flex-col gap-2\">\n        <h3>Max date</h3>\n        <DateInput\n          defaultValue={today(getLocalTimeZone()).add({days: 1})}\n          label=\"Date and time\"\n          maxValue={today(getLocalTimeZone())}\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "sha256": "2204d655d9151d443d11cb0cd437c50c8264c41f1d054fc8b6d069e743dea3db",
+      "upstreamPath": "apps/docs/content/components/date-input/min-and-max-date.raw.jsx",
+      "upstreamSha256": "12c8876913106ea24376c45dd9aed2d3279be5902801f7d5f299e470399f6b5e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/readonly.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DateInput} from \"@heroui/react\";\nimport {CalendarDate, parseDate} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DateInput\n        isReadOnly\n        defaultValue={parseDate(\"2024-04-04\")}\n        label={\"Birth date\"}\n        placeholderValue={new CalendarDate(1995, 11, 6)}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "60997bcb442e76f3bcceb9a17ce6c0a265dfe0a9a4fa46dc9c66316800694add",
+      "upstreamPath": "apps/docs/content/components/date-input/readonly.raw.jsx",
+      "upstreamSha256": "1031a74483636765d4155ff87d4ef2df6a973690aec3a318b4e15047abd18f7a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/required.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DateInput} from \"@heroui/react\";\nimport {CalendarDate, parseDate} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DateInput\n        isRequired\n        defaultValue={parseDate(\"2024-04-04\")}\n        label={\"Birth date\"}\n        placeholderValue={new CalendarDate(1995, 11, 6)}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "64a4792a6d0e61f8cfb4cdec3334171ff6d46036062b7e40bed8ea64c25831ba",
+      "upstreamPath": "apps/docs/content/components/date-input/required.raw.jsx",
+      "upstreamSha256": "5df8cf30a02bad7d30951b30c29fea456cd2fd2dde33df1d09f85e99b00f8af9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/start-end-content.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DateInput} from \"@heroui/react\";\nimport {CalendarDate, parseDate} from \"@internationalized/date\";\n\nexport const CalendarIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path\n        d=\"M7.75 2.5a.75.75 0 0 0-1.5 0v1.58c-1.44.115-2.384.397-3.078 1.092c-.695.694-.977 1.639-1.093 3.078h19.842c-.116-1.44-.398-2.384-1.093-3.078c-.694-.695-1.639-.977-3.078-1.093V2.5a.75.75 0 0 0-1.5 0v1.513C15.585 4 14.839 4 14 4h-4c-.839 0-1.585 0-2.25.013z\"\n        fill=\"currentColor\"\n      />\n      <path\n        clipRule=\"evenodd\"\n        d=\"M2 12c0-.839 0-1.585.013-2.25h19.974C22 10.415 22 11.161 22 12v2c0 3.771 0 5.657-1.172 6.828C19.657 22 17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.172C2 19.657 2 17.771 2 14zm15 2a1 1 0 1 0 0-2a1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2a1 1 0 0 0 0 2m-4-5a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-6-3a1 1 0 1 0 0-2a1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2a1 1 0 0 0 0 2\"\n        fill=\"currentColor\"\n        fillRule=\"evenodd\"\n      />\n    </svg>\n  );\n};\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-col gap-4\">\n      <div className=\"flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4\">\n        <DateInput\n          defaultValue={parseDate(\"2024-04-04\")}\n          label=\"Date Input\"\n          labelPlacement=\"outside\"\n          placeholderValue={new CalendarDate(1995, 11, 6)}\n          startContent={\n            <CalendarIcon className=\"text-2xl text-default-400 pointer-events-none shrink-0\" />\n          }\n        />\n        <DateInput\n          defaultValue={parseDate(\"2024-04-04\")}\n          endContent={\n            <CalendarIcon className=\"text-2xl text-default-400 pointer-events-none shrink-0\" />\n          }\n          label=\"Date Input\"\n          labelPlacement=\"outside\"\n          placeholderValue={new CalendarDate(1995, 11, 6)}\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "sha256": "d527bcd8aec548525ba6ce9a954a4df1eb45427e29732a082ea55dcbbf349bb2",
+      "upstreamPath": "apps/docs/content/components/date-input/start-end-content.raw.jsx",
+      "upstreamSha256": "abc85ef00df14f24468ccc6e88b944e4a4c9673d00c144a89aae82ffd8da080b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/time-zones.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DateInput} from \"@heroui/react\";\nimport {parseZonedDateTime, parseAbsoluteToLocal} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <div className=\"w-full max-w-xl flex flex-col items-end gap-4\">\n      <DateInput\n        defaultValue={parseZonedDateTime(\"2022-11-07T00:45[America/Los_Angeles]\")}\n        label={\"Event date\"}\n        labelPlacement=\"outside\"\n      />\n      <DateInput\n        defaultValue={parseAbsoluteToLocal(\"2021-11-07T07:45:00Z\")}\n        label={\"Event date\"}\n        labelPlacement=\"outside\"\n      />\n    </div>\n  );\n}\n",
+      "sha256": "b3d0fa129700ba9d707d979991e5934957ffa2f7b91f3d5d50973ec7270a45b4",
+      "upstreamPath": "apps/docs/content/components/date-input/time-zones.raw.jsx",
+      "upstreamSha256": "485b688f1eec2da57ea72ad265fe5901155d729f9cfe63322cbf5fb96b6142cb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/usage.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DateInput} from \"@heroui/react\";\nimport {CalendarDate} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DateInput\n        className=\"max-w-sm\"\n        label={\"Birth date\"}\n        placeholderValue={new CalendarDate(1995, 11, 6)}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "d9bd19cd5c8b4a1e486216cc507ff0a346bc568417a3f461720a80df4000ba47",
+      "upstreamPath": "apps/docs/content/components/date-input/usage.raw.jsx",
+      "upstreamSha256": "303c5090d86fa04813d0a07cbe73a3c3e25c13a9697e99f77d75d775c2cd2e25",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-input/variants.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DateInput} from \"@heroui/react\";\nimport {CalendarDate} from \"@internationalized/date\";\n\nexport default function App() {\n  const variants = [\"flat\", \"bordered\", \"underlined\", \"faded\"];\n\n  return (\n    <div className=\"w-full flex flex-col gap-4\">\n      {variants.map((variant) => (\n        <div key={variant} className=\"flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4\">\n          <DateInput\n            label={\"Birth date\"}\n            placeholderValue={new CalendarDate(1995, 11, 6)}\n            variant={variant}\n          />\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "sha256": "386d539eb4eba3c737da9e5a0bb9b690d2b2b7368b2c93a62130a465ce001ca5",
+      "upstreamPath": "apps/docs/content/components/date-input/variants.raw.jsx",
+      "upstreamSha256": "be5142484a9b75b624b1c580e3288a3198cc0778f8b9d141d1129a3229042e76",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/controlled.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "c7f3a9369b166f56b0ab73bca4d194f3491643fe886a4f274676665cd4b7a080",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/previews/description.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/description.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "3d2cf15809d08b134865a5afe20cb33bc727dce8ae57fb318e9cf000185229db",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/previews/disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/disabled.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "ab451702c16365519d20577eb9ce0e142ff2ad7e04d77841ded4257a176e71c7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/previews/error-message.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/error-message.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "2db6ef23d8d918513b8afac117e4a88bf4cc563b84107c5739271f75ab08683f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/previews/error-message-function.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/error-message-function.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "6f19fbf4560d88670d393c845830a2de10c4f4352f455d7c2a3ed618f0d19756",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/previews/granularity.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/granularity.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "55794e185e5917468fb8f4d5ef0856a42f4e3f0d2f3e750bd4098424c1a59fa2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/previews/hide-timezone.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/hide-timezone.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "9c02e90a8c7acde7f6788d82a52129a3bcccf6d5aab0ed36270cda1642a39fe0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/previews/hourly-cycle.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/hourly-cycle.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "25a9da6c7dc3fbc6beaf7cd635f1eecc6fc77bb28dbb14067f9d0255e5c8174f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/previews/international-calendar.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/international-calendar.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "cb16e8d49654cb98b009f4073ee2a48da6272226a972b38f5a9243f390382403",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/previews/label-placements.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/label-placements.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "9a54dd4faf9f7a9911513247b5bad043a2251638da5f6ca319841b86caac943e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/previews/min-and-max-date.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/min-and-max-date.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "1b5ceb110a2e848140c83e5bcf679fdc228146c3aa913842340f9b219cdd6911",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/previews/readonly.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/readonly.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "6919f03e943044f60a306502fe05e96331ba8ee6d58b7da534761e14500f30e7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/previews/required.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/required.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "993a1884f6be4b19177c923dced6c4ff74a4bb3ee944e68aa21974a3a4f663a0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/previews/start-end-content.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/start-end-content.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "8442cc796a244c60f6223a84aebd38aa0af3c4ce8294014b3065a24b09828733",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/previews/time-zones.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/time-zones.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "a0f30ce657cb6981d0989957dacff76066c9f721f742002f6e6378c8d6451a3d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/usage.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "4bd6207eb63e76d357439f0a2f97fdf022af45373077b5b7343cfa5de4007387",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-input/previews/variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-input/variants.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "83f8195e0ac59e56e098d12da3645f0910d2eaa96436da6a81985fc272ad7304",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/theme.css",
+      "type": "style",
+      "content": ".heroui-preview {\n  --primary: hsl(var(--heroui-primary));\n  --primary-foreground: hsl(var(--heroui-primary-foreground));\n  --background: hsl(var(--heroui-background));\n  --foreground: hsl(var(--heroui-foreground));\n  --border: hsl(var(--heroui-divider));\n}\n",
+      "sha256": "d7e90a5ed4780fbf5df6328631a4420ee099f07d345a8f509fce6937bd3e67c0",
+      "transformation": "Authored scoped mapping to official HeroUI semantic tokens."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26 @internationalized/date@3.12.4 @react-aria/i18n@3.13.1",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/heroui/theme.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26 @internationalized/date@3.12.4 @react-aria/i18n@3.13.1",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.",
+      "Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "date-input",
+    "upstreamPageUrl": "https://github.com/heroui-inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/date-input",
+    "upstreamDetailUrl": "https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/date-input/controlled.raw.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/heroui-inc/heroui/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/date-input/controlled.raw.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition.",
+      "Authored scoped mapping to official HeroUI semantic tokens."
+    ]
+  },
+  "documentation": "# HeroUI date input\n\n17 published HeroUI date input examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.\n- Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/heroui-inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/date-input\nPinned source: https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/date-input/controlled.raw.tsx\n"
+}

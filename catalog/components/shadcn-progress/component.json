@@ -1,0 +1,105 @@
+{
+  "id": "shadcn:progress",
+  "sourceId": "shadcn",
+  "slug": "shadcn-progress",
+  "name": "shadcn/ui progress",
+  "description": "1 published shadcn/ui progress examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "cn@0.4.0",
+    "radix-ui@1.4.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "progress",
+    "tags": [
+      "file",
+      "input",
+      "progress"
+    ],
+    "aliases": [
+      "progress",
+      "shadcn/ui progress"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published shadcn/ui progress examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "progress:file:input",
+    "searchText": "shadcn/ui progress\nprogress\n1 published shadcn/ui progress examples with complete pinned source and MIT attribution.\nfile\ninput\nshadcn/ui progress 1 published shadcn/ui progress examples with complete pinned source and MIT attribution. Installation Copyable component source and official examples, not a dependency on a hosted registry. Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent). Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/shadcn ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples Pinned source: https://github.com/shadcn ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples/progress demo.tsx"
+  },
+  "previewPath": "/preview/blocks/shadcn-progress",
+  "manifestPath": "components/shadcn-progress/component.json",
+  "integrity": "sha256:61a270b2e65c766dc16717e2cd478706c8f4fa088d25a3efd207800a200a301b",
+  "source": {
+    "id": "shadcn",
+    "name": "shadcn/ui",
+    "repository": "https://github.com/shadcn-ui/ui",
+    "commit": "a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4",
+    "registrySha256": "0054ee914f9451ebe390d414d34264df3a61f5e264c59b25b4c8155452fff343",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 shadcn",
+      "textPath": "source/shadcn/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/progress-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\n\nimport { Progress } from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/progress\"\n\nexport default function ProgressDemo() {\n  const [progress, setProgress] = React.useState(13)\n\n  React.useEffect(() => {\n    const timer = setTimeout(() => setProgress(66), 500)\n    return () => clearTimeout(timer)\n  }, [])\n\n  return <Progress value={progress} className=\"w-[60%]\" />\n}\n",
+      "sha256": "0fe3c288627821f59f74534b632f04fd7002a8a1c616e389874d4ebe006555b0",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/progress-demo.tsx",
+      "upstreamSha256": "0c712ef88df3e3c953c8e4ef42bd2ebbc6736605484031b97334501ac130529c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/progress.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { Progress as ProgressPrimitive } from \"radix-ui\"\n\nfunction Progress({\n  className,\n  value,\n  ...props\n}: React.ComponentProps<typeof ProgressPrimitive.Root>) {\n  return (\n    <ProgressPrimitive.Root\n      data-slot=\"progress\"\n      className={cn(\n        \"relative h-2 w-full overflow-hidden rounded-full bg-primary/20\",\n        className\n      )}\n      {...props}\n    >\n      <ProgressPrimitive.Indicator\n        data-slot=\"progress-indicator\"\n        className=\"h-full w-full flex-1 bg-primary transition-all\"\n        style={{ transform: `translateX(-${100 - (value || 0)}%)` }}\n      />\n    </ProgressPrimitive.Root>\n  )\n}\n\nexport { Progress }\n",
+      "sha256": "b1d3207598c0b1569290498ac2f357fcaa749b23cbd0338352738e34574c9617",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/progress.tsx",
+      "upstreamSha256": "e012e1f7e6e66d11229d1233eccf91954edcd9179b418ff1d114dc651b86fd35",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/progress/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/progress-demo\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "107ed979d7b2e85203188e497c822facf420084a28e7b6e001118d68046a34e0",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add cn@0.4.0 radix-ui@1.4.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add cn@0.4.0 radix-ui@1.4.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable component source and official examples, not a dependency on a hosted registry.",
+      "Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent)."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "progress",
+    "upstreamPageUrl": "https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples",
+    "upstreamDetailUrl": "https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/progress-demo.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/shadcn-ui/ui/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/progress-demo.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# shadcn/ui progress\n\n1 published shadcn/ui progress examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable component source and official examples, not a dependency on a hosted registry.\n- Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent).\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples\nPinned source: https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/progress-demo.tsx\n"
+}

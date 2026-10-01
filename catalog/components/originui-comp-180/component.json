@@ -1,0 +1,116 @@
+{
+  "id": "originui:comp-180",
+  "sourceId": "originui",
+  "slug": "originui-comp-180",
+  "name": "Origin UI switch label radix comp-180",
+  "description": "1 published Origin UI switch label radix comp-180 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "clsx@2.1.1",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "comp-180",
+    "tags": [
+      "file",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 180",
+      "origin ui switch label radix comp-180",
+      "comp-180"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI switch label radix comp-180 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "comp-180:file:select:upload",
+    "searchText": "Origin UI switch label radix comp-180\ncomp 180\n1 published Origin UI switch label radix comp-180 examples with complete pinned source and MIT attribution.\norigin ui switch label radix comp-180\ncomp-180\nfile\nselect\nupload\nOrigin UI switch label radix comp 180 1 published Origin UI switch label radix comp 180 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 180.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-180",
+  "manifestPath": "components/originui-comp-180/component.json",
+  "integrity": "sha256:35b87825f957fb63623f4e58fad7b3a4b63309fff74163d2aed82e12d6ab921c",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-180.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useId, useState } from \"react\";\nimport { Switch } from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/switch\";\n\nexport default function Component() {\n  const id = useId();\n  const [checked, setChecked] = useState(false);\n\n  const toggleSwitch = () => setChecked((prev) => !prev);\n\n  return (\n    <div\n      className=\"group inline-flex items-center gap-2\"\n      data-state={checked ? \"checked\" : \"unchecked\"}\n    >\n      <span\n        aria-controls={id}\n        className=\"flex-1 cursor-pointer text-right font-medium text-sm group-data-[state=checked]:text-muted-foreground/70\"\n        id={`${id}-off`}\n        onClick={() => setChecked(false)}\n      >\n        Off\n      </span>\n      <Switch\n        aria-labelledby={`${id}-off ${id}-on`}\n        checked={checked}\n        id={id}\n        onCheckedChange={toggleSwitch}\n      />\n      <span\n        aria-controls={id}\n        className=\"flex-1 cursor-pointer text-left font-medium text-sm group-data-[state=unchecked]:text-muted-foreground/70\"\n        id={`${id}-on`}\n        onClick={() => setChecked(true)}\n      >\n        On\n      </span>\n    </div>\n  );\n}\n",
+      "sha256": "984f7836010b59535013c749768f9406df30bb6685ae57d06a2412370323daa7",
+      "upstreamPath": "apps/origin/registry/default/components/comp-180.tsx",
+      "upstreamSha256": "22816bd7847a6822ec782e328763e250bdf7fd60c7764c0415f5b058e5f57c96",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/switch.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Switch as SwitchPrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Switch({\n  className,\n  ...props\n}: React.ComponentProps<typeof SwitchPrimitive.Root>) {\n  return (\n    <SwitchPrimitive.Root\n      className={cn(\n        \"peer inline-flex h-6 w-10 shrink-0 items-center rounded-full border-2 border-transparent outline-none transition-all focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input\",\n        className,\n      )}\n      data-slot=\"switch\"\n      {...props}\n    >\n      <SwitchPrimitive.Thumb\n        className={cn(\n          \"pointer-events-none block size-5 rounded-full bg-background shadow-xs ring-0 transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0 data-[state=checked]:rtl:-translate-x-4\",\n        )}\n        data-slot=\"switch-thumb\"\n      />\n    </SwitchPrimitive.Root>\n  );\n}\n\nexport { Switch };\n",
+      "sha256": "a4d6540a064fbafd0bbce57f77c7ac41ec68fc0bc7374f181e0ed25b40f2f3c7",
+      "upstreamPath": "apps/origin/registry/default/ui/switch.tsx",
+      "upstreamSha256": "074a5a95974dfe139ce5a43eae683916e76f5124d5a847aca884e0e670d3dd1f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-180/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-180\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "36305abacfd6db565233ce65ab74cba5f3bfbf82122e3954516bea2482c472b4",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add clsx@2.1.1 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add clsx@2.1.1 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-180",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-180.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-180.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI switch label radix comp-180\n\n1 published Origin UI switch label radix comp-180 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-180.tsx\n"
+}

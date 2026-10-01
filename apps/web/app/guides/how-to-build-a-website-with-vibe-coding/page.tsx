@@ -1,3 +1,6 @@
+import '../../globals.css';
+import '../../styles/editorial-guides.css';
+import '../../styles/editorial.css';
 import { GuideHeading } from '../../components/guide-heading';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim breaks client hydration. */
 import type { Metadata } from 'next';

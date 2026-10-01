@@ -1,0 +1,146 @@
+{
+  "id": "mantine:action-bar",
+  "sourceId": "mantine",
+  "slug": "mantine-action-bar",
+  "name": "Mantine action bar",
+  "description": "4 published Mantine action bar examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@phosphor-icons/react@2.1.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "action-bar",
+    "tags": [
+      "action",
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "action bar",
+      "mantine action bar",
+      "action-bar"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "4 published Mantine action bar examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "action-bar:action:code:file",
+    "searchText": "Mantine action bar\naction bar\n4 published Mantine action bar examples with complete pinned source and MIT attribution.\nmantine action bar\naction-bar\naction\ncode\nfile\nMantine action bar 4 published Mantine action bar examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/ActionBar Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/ActionBar/ActionBar.demo.closeOnEscape.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-action-bar",
+  "manifestPath": "components/mantine-action-bar/component.json",
+  "integrity": "sha256:d36bc1404eb00a7e5f2e8fedaca55a106506e86c460be7cd859faf240f36576f",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ActionBar/ActionBar.demo.closeOnEscape.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ActionBar, Button, Group, Text } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { toggle, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Group justify=\"center\">\n        <Button onClick={toggle}>Toggle action bar</Button>\n      </Group>\n\n      <ActionBar opened={opened} onClose={close} closeOnEscape>\n        <Text size=\"sm\">Press Escape to close this bar</Text>\n        <ActionBar.Divider />\n        <Button variant=\"default\" size=\"compact-sm\" onClick={close}>\n          Close\n        </Button>\n      </ActionBar>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "572d52a60ea1c69764659e2fbdf31fe2862f14bd96bea9d2f29a8908bc66bb83",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ActionBar/ActionBar.demo.closeOnEscape.tsx",
+      "upstreamSha256": "c397bc68fdb369d56ab1c9625d70501f4792496ffcae066a94d5f962cd5f9f90",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ActionBar/ActionBar.demo.placement.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ActionBar, Button, Group, Text } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [center, centerHandlers] = useDisclosure(false);\n  const [left, leftHandlers] = useDisclosure(false);\n  const [right, rightHandlers] = useDisclosure(false);\n\n  return (\n    <>\n      <Group justify=\"center\">\n        <Button onClick={centerHandlers.toggle}>Center (default)</Button>\n        <Button onClick={leftHandlers.toggle}>Left</Button>\n        <Button onClick={rightHandlers.toggle}>Right</Button>\n      </Group>\n\n      <ActionBar opened={center} onClose={centerHandlers.close}>\n        <Text size=\"sm\">Center position (default)</Text>\n        <ActionBar.CloseButton />\n      </ActionBar>\n\n      <ActionBar\n        opened={left}\n        onClose={leftHandlers.close}\n        position={{ bottom: 30, left: 30 }}\n        styles={{ root: { marginInline: 0 } }}\n      >\n        <Text size=\"sm\">Left position</Text>\n        <ActionBar.CloseButton />\n      </ActionBar>\n\n      <ActionBar\n        opened={right}\n        onClose={rightHandlers.close}\n        position={{ bottom: 30, right: 30 }}\n        styles={{ root: { marginInline: 0 } }}\n      >\n        <Text size=\"sm\">Right position</Text>\n        <ActionBar.CloseButton />\n      </ActionBar>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "42660868609dd88302fe838dfea3c334d9b397471986fb561bff603e0f8f9dce",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ActionBar/ActionBar.demo.placement.tsx",
+      "upstreamSha256": "612596914b0b146aaa30c0bbe41daff44aa7a4e3ab865555875119569000dfd1",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ActionBar/ActionBar.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { ActionBar, Button, Checkbox, Table, Text } from '@mantine/core';\n\nconst elements = [\n  { position: 6, mass: 12.011, symbol: 'C', name: 'Carbon' },\n  { position: 7, mass: 14.007, symbol: 'N', name: 'Nitrogen' },\n  { position: 39, mass: 88.906, symbol: 'Y', name: 'Yttrium' },\n  { position: 56, mass: 137.33, symbol: 'Ba', name: 'Barium' },\n  { position: 58, mass: 140.12, symbol: 'Ce', name: 'Cerium' },\n];\n\nfunction Demo() {\n  const [selection, setSelection] = useState<number[]>([]);\n\n  const toggleRow = (position: number) =>\n    setSelection((current) =>\n      current.includes(position)\n        ? current.filter((item) => item !== position)\n        : [...current, position]\n    );\n\n  const toggleAll = () =>\n    setSelection((current) =>\n      current.length === elements.length ? [] : elements.map((element) => element.position)\n    );\n\n  const rows = elements.map((element) => (\n    <Table.Tr\n      key={element.position}\n      bg={selection.includes(element.position) ? 'var(--mantine-color-blue-light)' : undefined}\n    >\n      <Table.Td>\n        <Checkbox\n          aria-label=\"Select row\"\n          checked={selection.includes(element.position)}\n          onChange={() => toggleRow(element.position)}\n        />\n      </Table.Td>\n      <Table.Td>{element.position}</Table.Td>\n      <Table.Td>{element.name}</Table.Td>\n      <Table.Td>{element.symbol}</Table.Td>\n      <Table.Td>{element.mass}</Table.Td>\n    </Table.Tr>\n  ));\n\n  return (\n    <>\n      <Table>\n        <Table.Thead>\n          <Table.Tr>\n            <Table.Th>\n              <Checkbox\n                aria-label=\"Select all\"\n                checked={selection.length === elements.length}\n                indeterminate={selection.length > 0 && selection.length !== elements.length}\n                onChange={toggleAll}\n              />\n            </Table.Th>\n            <Table.Th>Element position</Table.Th>\n            <Table.Th>Element name</Table.Th>\n            <Table.Th>Symbol</Table.Th>\n            <Table.Th>Atomic mass</Table.Th>\n          </Table.Tr>\n        </Table.Thead>\n        <Table.Tbody>{rows}</Table.Tbody>\n      </Table>\n\n      <ActionBar opened={selection.length > 0} onClose={() => setSelection([])} shadow=\"md\">\n        <Text size=\"sm\">{selection.length} selected</Text>\n        <ActionBar.Divider />\n        <Button variant=\"default\" size=\"compact-sm\">\n          Delete\n        </Button>\n        <Button variant=\"default\" size=\"compact-sm\">\n          Move\n        </Button>\n        <Button variant=\"default\" size=\"compact-sm\">\n          Archive\n        </Button>\n        <ActionBar.CloseButton />\n      </ActionBar>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "83a53e637f2ceeda3101316208a8e50f1913a33c05a415856f954056c18cc5b3",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ActionBar/ActionBar.demo.usage.tsx",
+      "upstreamSha256": "73a7970427e7c79ee2a0ee09ec45da4573e8245b237e88a6d7b3d70a9f02a7ae",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ActionBar/ActionBar.demo.withActions.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { ArchiveIcon, FolderIcon, TrashIcon } from '@phosphor-icons/react';\n\nimport { ActionBar, ActionIcon, Checkbox, Group, Table, Text, Tooltip } from '@mantine/core';\n\nconst elements = [\n  { position: 6, mass: 12.011, symbol: 'C', name: 'Carbon' },\n  { position: 7, mass: 14.007, symbol: 'N', name: 'Nitrogen' },\n  { position: 39, mass: 88.906, symbol: 'Y', name: 'Yttrium' },\n  { position: 56, mass: 137.33, symbol: 'Ba', name: 'Barium' },\n  { position: 58, mass: 140.12, symbol: 'Ce', name: 'Cerium' },\n];\n\nfunction Demo() {\n  const [selection, setSelection] = useState<number[]>([]);\n\n  const toggleRow = (position: number) =>\n    setSelection((current) =>\n      current.includes(position)\n        ? current.filter((item) => item !== position)\n        : [...current, position]\n    );\n\n  const toggleAll = () =>\n    setSelection((current) =>\n      current.length === elements.length ? [] : elements.map((element) => element.position)\n    );\n\n  const rows = elements.map((element) => (\n    <Table.Tr\n      key={element.position}\n      bg={selection.includes(element.position) ? 'var(--mantine-color-blue-light)' : undefined}\n    >\n      <Table.Td>\n        <Checkbox\n          aria-label=\"Select row\"\n          checked={selection.includes(element.position)}\n          onChange={() => toggleRow(element.position)}\n        />\n      </Table.Td>\n      <Table.Td>{element.position}</Table.Td>\n      <Table.Td>{element.name}</Table.Td>\n      <Table.Td>{element.symbol}</Table.Td>\n      <Table.Td>{element.mass}</Table.Td>\n    </Table.Tr>\n  ));\n\n  return (\n    <>\n      <Table>\n        <Table.Thead>\n          <Table.Tr>\n            <Table.Th>\n              <Checkbox\n                aria-label=\"Select all\"\n                checked={selection.length === elements.length}\n                indeterminate={selection.length > 0 && selection.length !== elements.length}\n                onChange={toggleAll}\n              />\n            </Table.Th>\n            <Table.Th>Element position</Table.Th>\n            <Table.Th>Element name</Table.Th>\n            <Table.Th>Symbol</Table.Th>\n            <Table.Th>Atomic mass</Table.Th>\n          </Table.Tr>\n        </Table.Thead>\n        <Table.Tbody>{rows}</Table.Tbody>\n      </Table>\n\n      <ActionBar opened={selection.length > 0} onClose={() => setSelection([])}>\n        <Text size=\"sm\" fw={500}>\n          {selection.length} rows selected\n        </Text>\n        <ActionBar.Divider />\n        <Tooltip.Group openDelay={300} closeDelay={100}>\n          <Group gap=\"xs\">\n            <Tooltip label=\"Delete\">\n              <ActionIcon variant=\"default\" color=\"red\" size=\"lg\">\n                <TrashIcon size={16} />\n              </ActionIcon>\n            </Tooltip>\n            <Tooltip label=\"Move to folder\">\n              <ActionIcon variant=\"default\" size=\"lg\">\n                <FolderIcon size={16} />\n              </ActionIcon>\n            </Tooltip>\n            <Tooltip label=\"Archive\">\n              <ActionIcon variant=\"default\" size=\"lg\">\n                <ArchiveIcon size={16} />\n              </ActionIcon>\n            </Tooltip>\n          </Group>\n        </Tooltip.Group>\n        <ActionBar.Divider />\n        <ActionBar.CloseButton />\n      </ActionBar>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "fd83df3256a7c298a35e7f46b2c904edab6ffadfbb4c806da1610cb692697ec4",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ActionBar/ActionBar.demo.withActions.tsx",
+      "upstreamSha256": "0d704077796d0cab78613ab7e6d483f41d84b7835afdbfe72bbaee0ed1882e30",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/action-bar/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ActionBar/ActionBar.demo.closeOnEscape\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "917d807a5e047dec86838e761c3fb88c8945889728f9cbd68b14887a71848591",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/action-bar/previews/placement.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ActionBar/ActionBar.demo.placement\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "94f4550ce07bff6ffdc9c99e42587b778747439a24c7b1574e7769945fba75ad",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/action-bar/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ActionBar/ActionBar.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "9ba1dc33922068df001c14752742c2dd213b6c9ab436b214e0fbc03da73a672f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/action-bar/previews/with-actions.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ActionBar/ActionBar.demo.withActions\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "34e869246c999aa994139c283e02fa6dc79a77f8b8beff53c2b712866b0dd207",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @phosphor-icons/react@2.1.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @phosphor-icons/react@2.1.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "action-bar",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/ActionBar",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/ActionBar/ActionBar.demo.closeOnEscape.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/ActionBar/ActionBar.demo.closeOnEscape.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine action bar\n\n4 published Mantine action bar examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/ActionBar\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/ActionBar/ActionBar.demo.closeOnEscape.tsx\n"
+}

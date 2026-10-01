@@ -1,0 +1,138 @@
+{
+  "id": "originui:comp-464",
+  "sourceId": "originui",
+  "slug": "originui-comp-464",
+  "name": "Origin UI pagination select radix comp-464",
+  "description": "1 published Origin UI pagination select radix comp-464 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "class-variance-authority@0.7.1",
+    "clsx@2.1.1",
+    "lucide-react@1.35.0",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "select",
+    "tags": [
+      "file",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 464",
+      "origin ui pagination select radix comp-464",
+      "select",
+      "dropdown",
+      "picker"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI pagination select radix comp-464 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "select:file:upload",
+    "searchText": "Origin UI pagination select radix comp-464\ncomp 464\n1 published Origin UI pagination select radix comp-464 examples with complete pinned source and MIT attribution.\norigin ui pagination select radix comp-464\nselect\ndropdown\npicker\nfile\nupload\nOrigin UI pagination select radix comp 464 1 published Origin UI pagination select radix comp 464 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 464.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-464",
+  "manifestPath": "components/originui-comp-464/component.json",
+  "integrity": "sha256:363a0494e56a88d0ee2a45573aeb9dd64c3daf41f2bb145a78b580fb1c36c5bf",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-464.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  ChevronFirstIcon,\n  ChevronLastIcon,\n  ChevronLeftIcon,\n  ChevronRightIcon,\n} from \"lucide-react\";\nimport {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n  PaginationLink,\n} from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/pagination\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/select\";\n\ntype PaginationProps = {\n  currentPage: number;\n  totalPages: number;\n  paginationItemsToDisplay?: number;\n};\n\nexport default function Component({\n  currentPage,\n  totalPages,\n}: PaginationProps) {\n  return (\n    <Pagination>\n      <PaginationContent>\n        {/* First page button */}\n        <PaginationItem>\n          <PaginationLink\n            aria-disabled={currentPage === 1 ? true : undefined}\n            aria-label=\"Go to first page\"\n            className=\"aria-disabled:pointer-events-none aria-disabled:opacity-50\"\n            href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}\n            role={currentPage === 1 ? \"link\" : undefined}\n          >\n            <ChevronFirstIcon aria-hidden=\"true\" size={16} />\n          </PaginationLink>\n        </PaginationItem>\n\n        {/* Previous page button */}\n        <PaginationItem>\n          <PaginationLink\n            aria-disabled={currentPage === 1 ? true : undefined}\n            aria-label=\"Go to previous page\"\n            className=\"aria-disabled:pointer-events-none aria-disabled:opacity-50\"\n            href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}\n            role={currentPage === 1 ? \"link\" : undefined}\n          >\n            <ChevronLeftIcon aria-hidden=\"true\" size={16} />\n          </PaginationLink>\n        </PaginationItem>\n\n        {/* Page number select */}\n        <PaginationItem>\n          <Select aria-label=\"Select page\" defaultValue={String(currentPage)}>\n            <SelectTrigger className=\"w-fit whitespace-nowrap\" id=\"select-page\">\n              <SelectValue placeholder=\"Select page\" />\n            </SelectTrigger>\n            <SelectContent>\n              {Array.from({ length: totalPages }, (_, i) => i + 1).map(\n                (page) => (\n                  <SelectItem key={page} value={String(page)}>\n                    Page {page}\n                  </SelectItem>\n                ),\n              )}\n            </SelectContent>\n          </Select>\n        </PaginationItem>\n\n        {/* Next page button */}\n        <PaginationItem>\n          <PaginationLink\n            aria-disabled={currentPage === totalPages ? true : undefined}\n            aria-label=\"Go to next page\"\n            className=\"aria-disabled:pointer-events-none aria-disabled:opacity-50\"\n            href={\n              currentPage === totalPages\n                ? undefined\n                : `#/page/${currentPage + 1}`\n            }\n            role={currentPage === totalPages ? \"link\" : undefined}\n          >\n            <ChevronRightIcon aria-hidden=\"true\" size={16} />\n          </PaginationLink>\n        </PaginationItem>\n\n        {/* Last page button */}\n        <PaginationItem>\n          <PaginationLink\n            aria-disabled={currentPage === totalPages ? true : undefined}\n            aria-label=\"Go to last page\"\n            className=\"aria-disabled:pointer-events-none aria-disabled:opacity-50\"\n            href={\n              currentPage === totalPages ? undefined : `#/page/${totalPages}`\n            }\n            role={currentPage === totalPages ? \"link\" : undefined}\n          >\n            <ChevronLastIcon aria-hidden=\"true\" size={16} />\n          </PaginationLink>\n        </PaginationItem>\n      </PaginationContent>\n    </Pagination>\n  );\n}\n",
+      "sha256": "0cb3fb513fb68ffe3371e8edd75ae04439d8f61ba0770d3f11dcb73f898e35e3",
+      "upstreamPath": "apps/origin/registry/default/components/comp-464.tsx",
+      "upstreamSha256": "dcebaa58a90f1b9b6093b52b469fca33e4c45833a8b5e92d5caca284bcd5025f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/pagination.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  ChevronLeftIcon,\n  ChevronRightIcon,\n  MoreHorizontalIcon,\n} from \"lucide-react\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\nimport { type Button, buttonVariants } from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/button\";\n\nfunction Pagination({ className, ...props }: React.ComponentProps<\"nav\">) {\n  return (\n    <nav\n      aria-label=\"pagination\"\n      className={cn(\"mx-auto flex w-full justify-center\", className)}\n      data-slot=\"pagination\"\n      {...props}\n    />\n  );\n}\n\nfunction PaginationContent({\n  className,\n  ...props\n}: React.ComponentProps<\"ul\">) {\n  return (\n    <ul\n      className={cn(\"flex flex-row items-center gap-1\", className)}\n      data-slot=\"pagination-content\"\n      {...props}\n    />\n  );\n}\n\nfunction PaginationItem({ ...props }: React.ComponentProps<\"li\">) {\n  return <li data-slot=\"pagination-item\" {...props} />;\n}\n\ntype PaginationLinkProps = {\n  isActive?: boolean;\n  isDisabled?: boolean;\n} & Pick<React.ComponentProps<typeof Button>, \"size\"> &\n  React.ComponentProps<\"a\">;\n\nfunction PaginationLink({\n  className,\n  isActive,\n  size = \"icon\",\n  ...props\n}: PaginationLinkProps) {\n  return (\n    <a\n      aria-current={isActive ? \"page\" : undefined}\n      className={cn(\n        buttonVariants({\n          size,\n          variant: isActive ? \"outline\" : \"ghost\",\n        }),\n        className,\n      )}\n      data-active={isActive}\n      data-slot=\"pagination-link\"\n      {...props}\n    />\n  );\n}\n\nfunction PaginationPrevious({\n  className,\n  ...props\n}: React.ComponentProps<typeof PaginationLink>) {\n  return (\n    <PaginationLink\n      aria-label=\"Go to previous page\"\n      className={cn(\"gap-1 px-2.5 sm:pe-4\", className)}\n      size=\"default\"\n      {...props}\n    >\n      <ChevronLeftIcon size={16} />\n      <span>Previous</span>\n    </PaginationLink>\n  );\n}\n\nfunction PaginationNext({\n  className,\n  ...props\n}: React.ComponentProps<typeof PaginationLink>) {\n  return (\n    <PaginationLink\n      aria-label=\"Go to next page\"\n      className={cn(\"gap-1 px-2.5 sm:ps-4\", className)}\n      size=\"default\"\n      {...props}\n    >\n      <span>Next</span>\n      <ChevronRightIcon size={16} />\n    </PaginationLink>\n  );\n}\n\nfunction PaginationEllipsis({\n  className,\n  ...props\n}: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      aria-hidden\n      className={cn(\"flex size-9 items-center justify-center\", className)}\n      data-slot=\"pagination-ellipsis\"\n      {...props}\n    >\n      <MoreHorizontalIcon size={16} />\n      <span className=\"sr-only\">More pages</span>\n    </span>\n  );\n}\n\nexport {\n  Pagination,\n  PaginationContent,\n  PaginationEllipsis,\n  PaginationItem,\n  PaginationLink,\n  PaginationNext,\n  PaginationPrevious,\n};\n",
+      "sha256": "23bda5023230bf4d776ce438b1b95d745eb3eefc6edd385d1781469bfe22b836",
+      "upstreamPath": "apps/origin/registry/default/ui/pagination.tsx",
+      "upstreamSha256": "536a3bce5af5aba02817e964d6ecc5cad06f875612fd6fc7a63dd09864ac5315",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/button.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { Slot } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nconst buttonVariants = cva(\n  \"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium text-sm outline-none transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n  {\n    defaultVariants: {\n      size: \"default\",\n      variant: \"default\",\n    },\n    variants: {\n      size: {\n        default: \"h-9 px-4 py-2\",\n        icon: \"size-9\",\n        lg: \"h-10 rounded-md px-8\",\n        sm: \"h-8 rounded-md px-3 text-xs\",\n      },\n      variant: {\n        default:\n          \"bg-primary text-primary-foreground shadow-sm hover:bg-primary/90\",\n        destructive:\n          \"bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40\",\n        ghost: \"hover:bg-accent hover:text-accent-foreground\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n        outline:\n          \"border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground\",\n        secondary:\n          \"bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80\",\n      },\n    },\n  },\n);\n\nfunction Button({\n  className,\n  variant,\n  size,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean;\n  }) {\n  const Comp = asChild ? Slot.Root : \"button\";\n\n  return (\n    <Comp\n      className={cn(buttonVariants({ className, size, variant }))}\n      data-slot=\"button\"\n      {...props}\n    />\n  );\n}\n\nexport { Button, buttonVariants };\n",
+      "sha256": "f15a7a2b32b90ad280810e03b3f18805686836d956825068fa614978975837aa",
+      "upstreamPath": "apps/origin/registry/default/ui/button.tsx",
+      "upstreamSha256": "00c5b5d0afad82b368cfa34ae4abdaf1e0851dfa49adeb836d9a69747ef4bc49",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/select.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { CheckIcon, ChevronDownIcon, ChevronUpIcon } from \"lucide-react\";\nimport { Select as SelectPrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Select({\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.Root>) {\n  return <SelectPrimitive.Root data-slot=\"select\" {...props} />;\n}\n\nfunction SelectGroup({\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.Group>) {\n  return <SelectPrimitive.Group data-slot=\"select-group\" {...props} />;\n}\n\nfunction SelectValue({\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.Value>) {\n  return <SelectPrimitive.Value data-slot=\"select-value\" {...props} />;\n}\n\nfunction SelectTrigger({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.Trigger>) {\n  return (\n    <SelectPrimitive.Trigger\n      className={cn(\n        \"flex h-9 w-full items-center justify-between gap-2 rounded-md border border-input bg-transparent px-3 py-2 text-foreground text-sm shadow-xs outline-none transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 data-[placeholder]:text-muted-foreground *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 dark:aria-invalid:ring-destructive/40 [&>span]:line-clamp-1 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n        className,\n      )}\n      data-slot=\"select-trigger\"\n      {...props}\n    >\n      {children}\n      <SelectPrimitive.Icon asChild>\n        <ChevronDownIcon\n          className=\"shrink-0 in-aria-invalid:text-destructive/80 text-muted-foreground/80\"\n          size={16}\n        />\n      </SelectPrimitive.Icon>\n    </SelectPrimitive.Trigger>\n  );\n}\n\nfunction SelectContent({\n  className,\n  children,\n  position = \"popper\",\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.Content>) {\n  return (\n    <SelectPrimitive.Portal>\n      <SelectPrimitive.Content\n        className={cn(\n          \"data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 relative z-50 max-h-[min(24rem,var(--radix-select-content-available-height))] min-w-32 overflow-hidden rounded-md border border-input bg-popover text-popover-foreground shadow-lg data-[state=closed]:animate-out data-[state=open]:animate-in [&_[role=group]]:py-1\",\n          position === \"popper\" &&\n            \"w-full min-w-[var(--radix-select-trigger-width)] data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=bottom]:translate-y-1 data-[side=top]:-translate-y-1\",\n          className,\n        )}\n        data-slot=\"select-content\"\n        position={position}\n        {...props}\n      >\n        <SelectScrollUpButton />\n        <SelectPrimitive.Viewport\n          className={cn(\n            \"p-1\",\n            position === \"popper\" && \"h-[var(--radix-select-trigger-height)]\",\n          )}\n        >\n          {children}\n        </SelectPrimitive.Viewport>\n        <SelectScrollDownButton />\n      </SelectPrimitive.Content>\n    </SelectPrimitive.Portal>\n  );\n}\n\nfunction SelectLabel({\n  className,\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.Label>) {\n  return (\n    <SelectPrimitive.Label\n      className={cn(\n        \"py-1.5 ps-8 pe-2 font-medium text-muted-foreground text-xs\",\n        className,\n      )}\n      data-slot=\"select-label\"\n      {...props}\n    />\n  );\n}\n\nfunction SelectItem({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.Item>) {\n  return (\n    <SelectPrimitive.Item\n      className={cn(\n        \"relative flex w-full cursor-default select-none items-center rounded py-1.5 ps-8 pe-2 text-sm outline-hidden focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50\",\n        className,\n      )}\n      data-slot=\"select-item\"\n      {...props}\n    >\n      <span className=\"absolute start-2 flex size-3.5 items-center justify-center\">\n        <SelectPrimitive.ItemIndicator>\n          <CheckIcon size={16} />\n        </SelectPrimitive.ItemIndicator>\n      </span>\n      <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>\n    </SelectPrimitive.Item>\n  );\n}\n\nfunction SelectSeparator({\n  className,\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.Separator>) {\n  return (\n    <SelectPrimitive.Separator\n      className={cn(\"-mx-1 my-1 h-px bg-border\", className)}\n      data-slot=\"select-separator\"\n      {...props}\n    />\n  );\n}\n\nfunction SelectScrollUpButton({\n  className,\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.ScrollUpButton>) {\n  return (\n    <SelectPrimitive.ScrollUpButton\n      className={cn(\n        \"flex cursor-default items-center justify-center py-1 text-muted-foreground/80\",\n        className,\n      )}\n      data-slot=\"select-scroll-up-button\"\n      {...props}\n    >\n      <ChevronUpIcon size={16} />\n    </SelectPrimitive.ScrollUpButton>\n  );\n}\n\nfunction SelectScrollDownButton({\n  className,\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.ScrollDownButton>) {\n  return (\n    <SelectPrimitive.ScrollDownButton\n      className={cn(\n        \"flex cursor-default items-center justify-center py-1 text-muted-foreground/80\",\n        className,\n      )}\n      data-slot=\"select-scroll-down-button\"\n      {...props}\n    >\n      <ChevronDownIcon size={16} />\n    </SelectPrimitive.ScrollDownButton>\n  );\n}\n\nexport {\n  Select,\n  SelectContent,\n  SelectGroup,\n  SelectItem,\n  SelectLabel,\n  SelectScrollDownButton,\n  SelectScrollUpButton,\n  SelectSeparator,\n  SelectTrigger,\n  SelectValue,\n};\n",
+      "sha256": "b5a60b8ca12bfb9f45813927c9e877e011459b39a8cb2d9ae0b00a05a372187c",
+      "upstreamPath": "apps/origin/registry/default/ui/select.tsx",
+      "upstreamSha256": "8f9e2b4a0c93843cb73035e268db127ed32385ee62bb21c9324cf4e6f5ad4da6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-464/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-464\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2ccfd63d28bd27ea410d3e349766dd2ea15edb387136290126866d7dbad52b5c",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add class-variance-authority@0.7.1 clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add class-variance-authority@0.7.1 clsx@2.1.1 lucide-react@1.35.0 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-464",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-464.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-464.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI pagination select radix comp-464\n\n1 published Origin UI pagination select radix comp-464 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-464.tsx\n"
+}

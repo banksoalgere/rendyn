@@ -1,5 +1,7 @@
 'use client';
 
+import { trackCopy } from '../../../lib/analytics';
+
 import { useState } from 'react';
 
 interface CopyPromptButtonProps {
@@ -12,6 +14,7 @@ export function CopyPromptButton({ text }: CopyPromptButtonProps) {
   async function copyPrompt() {
     try {
       await navigator.clipboard.writeText(text);
+      trackCopy('prompt');
       setCopyState('copied');
     } catch {
       setCopyState('failed');

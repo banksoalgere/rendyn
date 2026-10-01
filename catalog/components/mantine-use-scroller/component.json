@@ -1,0 +1,132 @@
+{
+  "id": "mantine:use-scroller",
+  "sourceId": "mantine",
+  "slug": "mantine-use-scroller",
+  "name": "Mantine use scroller",
+  "description": "3 published Mantine use scroller examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "use-scroller",
+    "tags": [
+      "code",
+      "drag",
+      "file"
+    ],
+    "aliases": [
+      "use scroller",
+      "mantine use scroller",
+      "use-scroller"
+    ],
+    "interactions": [
+      "drag",
+      "scroll"
+    ],
+    "useWhen": [
+      "3 published Mantine use scroller examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "use-scroller:code:drag:file:scroll",
+    "searchText": "Mantine use scroller\nuse scroller\n3 published Mantine use scroller examples with complete pinned source and MIT attribution.\nmantine use scroller\nuse-scroller\ncode\ndrag\nfile\nscroll\nMantine use scroller 3 published Mantine use scroller examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use scroller Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use scroller/use scroller.demo.draggable.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-use-scroller",
+  "manifestPath": "components/mantine-use-scroller/component.json",
+  "integrity": "sha256:1b6c21995d0276a494ab3aaf6cf7401846c136b6cfb2f40b510b8a23cbcc23bf",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-scroller/use-scroller.demo.draggable.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Button, Group, Text } from '@mantine/core';\n\nimport { useScroller } from '@mantine/hooks';\n\nfunction Demo() {\n  const scroller = useScroller({ draggable: false });\n\n  return (\n    <Box>\n      <Group mb=\"md\" justify=\"space-between\">\n        <Group>\n          <Button\n            onClick={scroller.scrollStart}\n            disabled={!scroller.canScrollStart}\n            variant=\"default\"\n            size=\"xs\"\n          >\n            ← Scroll left\n          </Button>\n          <Button\n            onClick={scroller.scrollEnd}\n            disabled={!scroller.canScrollEnd}\n            variant=\"default\"\n            size=\"xs\"\n          >\n            Scroll right →\n          </Button>\n        </Group>\n        <Text size=\"sm\" c=\"dimmed\">\n          draggable: false\n        </Text>\n      </Group>\n\n      <div\n        ref={scroller.ref}\n        style={{\n          overflow: 'auto',\n        }}\n      >\n        <Group wrap=\"nowrap\" gap=\"md\">\n          {Array.from({ length: 20 }).map((_, index) => (\n            <Box\n              key={index}\n              style={{\n                minWidth: 100,\n                height: 80,\n                backgroundColor: 'var(--mantine-color-blue-filled)',\n                borderRadius: 'var(--mantine-radius-md)',\n                display: 'flex',\n                alignItems: 'center',\n                justifyContent: 'center',\n                color: 'white',\n                fontWeight: 500,\n              }}\n            >\n              {index + 1}\n            </Box>\n          ))}\n        </Group>\n      </div>\n    </Box>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "a112b3f551236f8ff98e9b2c659b0805e88d6afd46a523c02b1fefc2aa9f6aa9",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-scroller/use-scroller.demo.draggable.tsx",
+      "upstreamSha256": "28bd192ac0f3c74540e5fc11a7c04af010b23261d884c0af87e7e265e673741f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-scroller/use-scroller.demo.scrollAmount.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Button, Group, Text } from '@mantine/core';\n\nimport { useScroller } from '@mantine/hooks';\n\nfunction Demo() {\n  const scroller = useScroller({ scrollAmount: 400 });\n\n  return (\n    <Box>\n      <Group mb=\"md\" justify=\"space-between\">\n        <Group>\n          <Button\n            onClick={scroller.scrollStart}\n            disabled={!scroller.canScrollStart}\n            variant=\"default\"\n            size=\"xs\"\n          >\n            ← Scroll left\n          </Button>\n          <Button\n            onClick={scroller.scrollEnd}\n            disabled={!scroller.canScrollEnd}\n            variant=\"default\"\n            size=\"xs\"\n          >\n            Scroll right →\n          </Button>\n        </Group>\n        <Text size=\"sm\" c=\"dimmed\">\n          scrollAmount: 400px\n        </Text>\n      </Group>\n\n      <div\n        ref={scroller.ref}\n        {...scroller.dragHandlers}\n        style={{\n          overflow: 'auto',\n          cursor: scroller.isDragging ? 'grabbing' : 'grab',\n        }}\n      >\n        <Group wrap=\"nowrap\" gap=\"md\">\n          {Array.from({ length: 20 }).map((_, index) => (\n            <Box\n              key={index}\n              style={{\n                minWidth: 100,\n                height: 80,\n                backgroundColor: 'var(--mantine-color-blue-filled)',\n                borderRadius: 'var(--mantine-radius-md)',\n                display: 'flex',\n                alignItems: 'center',\n                justifyContent: 'center',\n                color: 'white',\n                fontWeight: 500,\n              }}\n            >\n              {index + 1}\n            </Box>\n          ))}\n        </Group>\n      </div>\n    </Box>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "91834b208d544a34467bac890e29dd64cbe76ab7e933322d9389bed161d85e5a",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-scroller/use-scroller.demo.scrollAmount.tsx",
+      "upstreamSha256": "9bc12a922cede94493af477265db7b0e3c6168706253c701cc42b7de55f252f3",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-scroller/use-scroller.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Button, Group } from '@mantine/core';\n\nimport { useScroller } from '@mantine/hooks';\n\nfunction Demo() {\n  const scroller = useScroller();\n\n  return (\n    <Box>\n      <Group mb=\"md\">\n        <Button\n          onClick={scroller.scrollStart}\n          disabled={!scroller.canScrollStart}\n          variant=\"default\"\n          size=\"xs\"\n        >\n          ← Scroll left\n        </Button>\n        <Button\n          onClick={scroller.scrollEnd}\n          disabled={!scroller.canScrollEnd}\n          variant=\"default\"\n          size=\"xs\"\n        >\n          Scroll right →\n        </Button>\n      </Group>\n\n      <div\n        ref={scroller.ref}\n        {...scroller.dragHandlers}\n        style={{\n          overflow: 'auto',\n          cursor: scroller.isDragging ? 'grabbing' : 'grab',\n        }}\n      >\n        <Group wrap=\"nowrap\" gap=\"md\">\n          {Array.from({ length: 20 }).map((_, index) => (\n            <Box\n              key={index}\n              style={{\n                minWidth: 100,\n                height: 80,\n                backgroundColor: 'var(--mantine-color-blue-filled)',\n                borderRadius: 'var(--mantine-radius-md)',\n                display: 'flex',\n                alignItems: 'center',\n                justifyContent: 'center',\n                color: 'white',\n                fontWeight: 500,\n              }}\n            >\n              {index + 1}\n            </Box>\n          ))}\n        </Group>\n      </div>\n    </Box>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "8f6fd754bfa84ee9563a2c57a9aa6ef8e4bba0db38baff652b4b6f06c6b6238b",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-scroller/use-scroller.demo.usage.tsx",
+      "upstreamSha256": "f1aedc3717b4dfe9ba87fdb1701fe40a850bf96e1c78ff4cc591dfbb7d20b1d5",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-scroller/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-scroller/use-scroller.demo.draggable\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "84e95e4a65fdacc3a72baa17455e8f77ceac52b17b040aa6973f7d9ff69f5cb7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-scroller/previews/scroll-amount.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-scroller/use-scroller.demo.scrollAmount\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e0e7f98b9a4cb2f4a9ce5256fa3aa5cb4691371041c086a41d280390d40df062",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-scroller/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-scroller/use-scroller.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "3797b84974ae56e3e463c049c4957735d3633f40d259aeacc282a6a9a3c1b531",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "use-scroller",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-scroller",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-scroller/use-scroller.demo.draggable.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-scroller/use-scroller.demo.draggable.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine use scroller\n\n3 published Mantine use scroller examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-scroller\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-scroller/use-scroller.demo.draggable.tsx\n"
+}

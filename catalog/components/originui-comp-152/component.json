@@ -1,0 +1,126 @@
+{
+  "id": "originui:comp-152",
+  "sourceId": "originui",
+  "slug": "originui-comp-152",
+  "name": "Origin UI radio label radix comp-152",
+  "description": "1 published Origin UI radio label radix comp-152 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "clsx@2.1.1",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "radio",
+    "tags": [
+      "file",
+      "radio",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 152",
+      "origin ui radio label radix comp-152",
+      "radio"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI radio label radix comp-152 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "radio:file:select:upload",
+    "searchText": "Origin UI radio label radix comp-152\ncomp 152\n1 published Origin UI radio label radix comp-152 examples with complete pinned source and MIT attribution.\norigin ui radio label radix comp-152\nradio\nfile\nselect\nupload\nOrigin UI radio label radix comp 152 1 published Origin UI radio label radix comp 152 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 152.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-152",
+  "manifestPath": "components/originui-comp-152/component.json",
+  "integrity": "sha256:c406dddcb2e290c0ec9aa59dfb649be3075d2a0b4fe974e1c7b3f1c770c55222",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-152.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useId } from \"react\";\nimport { Label } from \"@/components/rendyn-libraries/originui/ui/label\";\nimport { RadioGroup, RadioGroupItem } from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/radio-group\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <RadioGroup defaultValue=\"1\">\n      <div className=\"flex items-center gap-2\">\n        <RadioGroupItem id={`${id}-1`} value=\"1\" />\n        <Label htmlFor={`${id}-1`}>Option 1</Label>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <RadioGroupItem id={`${id}-2`} value=\"2\" />\n        <Label htmlFor={`${id}-2`}>Option 2</Label>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <RadioGroupItem id={`${id}-3`} value=\"3\" />\n        <Label htmlFor={`${id}-3`}>Option 3</Label>\n      </div>\n    </RadioGroup>\n  );\n}\n",
+      "sha256": "bf5ab8de46f1c1c7ff1f970851a212721a19e8f57aa3c0da5af02386bb40b964",
+      "upstreamPath": "apps/origin/registry/default/components/comp-152.tsx",
+      "upstreamSha256": "561e72429d9177c37bc372af8e8bf548142747d0b6c25ce3930c70733bc298dc",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/ui/label.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Label as LabelPrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Label({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      className={cn(\n        \"select-none font-medium text-foreground text-sm leading-4 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50\",\n        className,\n      )}\n      data-slot=\"label\"\n      {...props}\n    />\n  );\n}\n\nexport { Label };\n",
+      "sha256": "41c807094258a1323781107184a31dfb2e1ec87fb686e9e98de204b9cd3c841f",
+      "upstreamPath": "apps/origin/registry/default/ui/label.tsx",
+      "upstreamSha256": "5bc1af43d7f8acd46ba7bdd2ddadd3ac42ba5d86300fce320f687d84f6595ed3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/radio-group.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { RadioGroup as RadioGroupPrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction RadioGroup({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {\n  return (\n    <RadioGroupPrimitive.Root\n      className={cn(\"grid gap-3\", className)}\n      data-slot=\"radio-group\"\n      {...props}\n    />\n  );\n}\n\nfunction RadioGroupItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Item>) {\n  return (\n    <RadioGroupPrimitive.Item\n      className={cn(\n        \"aspect-square size-4 shrink-0 rounded-full border border-input shadow-xs outline-none transition-shadow focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground dark:aria-invalid:ring-destructive/40\",\n        className,\n      )}\n      data-slot=\"radio-group-item\"\n      {...props}\n    >\n      <RadioGroupPrimitive.Indicator className=\"flex items-center justify-center text-current\">\n        <svg\n          fill=\"currentcolor\"\n          height=\"6\"\n          viewBox=\"0 0 6 6\"\n          width=\"6\"\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <circle cx=\"3\" cy=\"3\" r=\"3\" />\n        </svg>\n      </RadioGroupPrimitive.Indicator>\n    </RadioGroupPrimitive.Item>\n  );\n}\n\nexport { RadioGroup, RadioGroupItem };\n",
+      "sha256": "c1137bc45005aa44aa7b2b709d493cc8329b860a0b66d1b79fc70019d2231a6e",
+      "upstreamPath": "apps/origin/registry/default/ui/radio-group.tsx",
+      "upstreamSha256": "02985359b05f2b77d8eb5134a730aa91fa5a2f97e7a9b1ef9de0e90b2ae8d21f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-152/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-152\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "aca4f769f57d3a587fd4a947180f4aac33d8301ba4d4fcf89de14b642725c14b",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add clsx@2.1.1 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add clsx@2.1.1 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-152",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-152.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-152.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI radio label radix comp-152\n\n1 published Origin UI radio label radix comp-152 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-152.tsx\n"
+}

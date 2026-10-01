@@ -1,0 +1,14 @@
+# Chakra UI area
+
+14 published Chakra UI area examples with complete pinned source and MIT attribution.
+
+## Installation
+
+- Complete MIT examples with a ChakraProvider using defaultSystem.
+- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.
+
+- Copy every returned file and preserve the MIT licence notice.
+- Render the returned preview.tsx example, or integrate the example into your existing provider.
+
+Upstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts
+Pinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/charts/area-chart-basic.tsx

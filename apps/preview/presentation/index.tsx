@@ -1,6 +1,6 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import dynamic from '../runtime/preview-dynamic';
 import type { ComponentType } from 'react';
 
 // Authored demo compositions live outside vendor-root so catalogue imports

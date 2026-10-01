@@ -1,0 +1,9 @@
+"use client";
+
+import { Button } from '@mantine/core';
+
+function Demo() {
+  return <Button disabled>Disabled button</Button>;
+}
+const RendynExampleComponent = Demo;
+export function RendynExample() { return <RendynExampleComponent  />; }

@@ -1,0 +1,126 @@
+{
+  "id": "originui:comp-05",
+  "sourceId": "originui",
+  "slug": "originui-comp-05",
+  "name": "Origin UI input label comp-05",
+  "description": "1 published Origin UI input label comp-05 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "clsx@2.1.1",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "input",
+    "tags": [
+      "file",
+      "input",
+      "select",
+      "upload"
+    ],
+    "aliases": [
+      "comp 05",
+      "origin ui input label comp-05",
+      "input"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI input label comp-05 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "input:file:select:upload",
+    "searchText": "Origin UI input label comp-05\ncomp 05\n1 published Origin UI input label comp-05 examples with complete pinned source and MIT attribution.\norigin ui input label comp-05\ninput\nfile\nselect\nupload\nOrigin UI input label comp 05 1 published Origin UI input label comp 05 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 05.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-05",
+  "manifestPath": "components/originui-comp-05/component.json",
+  "integrity": "sha256:d730a3494f26719568b770343ae9172dc717debc708e2d760cdf839829227aaf",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-05.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useId } from \"react\";\nimport { Input } from \"@/components/rendyn-libraries/originui/ui/input\";\nimport { Label } from \"@/components/rendyn-libraries/originui/ui/label\";\n\nexport default function Component() {\n  const id = useId();\n  return (\n    <div className=\"[--ring:var(--color-indigo-300)] in-[.dark]:[--ring:var(--color-indigo-900)] *:not-first:mt-2\">\n      <Label htmlFor={id}>Input with colored border and ring</Label>\n      <Input id={id} placeholder=\"Email\" type=\"email\" />\n    </div>\n  );\n}\n",
+      "sha256": "76e76d647604a82fcbac0eddd2db2e24e9a440080d48751adfa2fc7f31931395",
+      "upstreamPath": "apps/origin/registry/default/components/comp-05.tsx",
+      "upstreamSha256": "fe807c27bf9b58e3928f49cb19343a5cd6945ef16b58872698d8f1089dc6f0e6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/ui/input.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Input({ className, type, ...props }: React.ComponentProps<\"input\">) {\n  return (\n    <input\n      className={cn(\n        \"flex h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow] file:inline-flex file:h-7 file:border-0 file:bg-transparent file:font-medium file:text-foreground file:text-sm placeholder:text-muted-foreground/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\",\n        \"focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n        \"aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40\",\n        type === \"search\" &&\n          \"[&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none\",\n        type === \"file\" &&\n          \"p-0 pr-3 text-muted-foreground/70 italic file:me-3 file:h-full file:border-0 file:border-input file:border-r file:border-solid file:bg-transparent file:px-3 file:font-medium file:text-foreground file:text-sm file:not-italic\",\n        className,\n      )}\n      data-slot=\"input\"\n      type={type}\n      {...props}\n    />\n  );\n}\n\nexport { Input };\n",
+      "sha256": "0321f74dc6b5ef9b8f14442db7633918d408c2b153919967755a0f89b19ce260",
+      "upstreamPath": "apps/origin/registry/default/ui/input.tsx",
+      "upstreamSha256": "b756e956e0884c781c249642b5052c185cd0501200769dba76365943bea3000a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/ui/label.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Label as LabelPrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Label({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      className={cn(\n        \"select-none font-medium text-foreground text-sm leading-4 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50\",\n        className,\n      )}\n      data-slot=\"label\"\n      {...props}\n    />\n  );\n}\n\nexport { Label };\n",
+      "sha256": "41c807094258a1323781107184a31dfb2e1ec87fb686e9e98de204b9cd3c841f",
+      "upstreamPath": "apps/origin/registry/default/ui/label.tsx",
+      "upstreamSha256": "5bc1af43d7f8acd46ba7bdd2ddadd3ac42ba5d86300fce320f687d84f6595ed3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-05/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-05\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0c7139b6ccd4871aa72d0c138fe49147e0d3ee61207b7b0aaeda853217e4706b",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add clsx@2.1.1 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add clsx@2.1.1 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-05",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-05.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-05.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI input label comp-05\n\n1 published Origin UI input label comp-05 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-05.tsx\n"
+}

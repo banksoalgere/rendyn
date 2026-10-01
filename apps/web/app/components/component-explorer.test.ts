@@ -10,6 +10,12 @@ const components: CatalogueComponent[] = Array.from({ length: 30 }, (_, index) =
   category: index < 20 ? 'motion' : 'agents',
   description: `Example ${index}`,
   tags: [],
+  search: {
+    id: `beui:demo-${index}`, sourceId: 'beui', slug: `demo-${index}`, name: `Demo ${index}`,
+    description: `Example ${index}`, category: index < 20 ? 'motion' : 'agents', previewPath: `/preview/motion/demo-${index}`,
+    metadata: { kind: 'component', family: `demo-${index}`, tags: [], aliases: [], interactions: [],
+      useWhen: [], notIdealWhen: [], visualSignature: `demo-${index}` },
+  },
 }));
 
 describe('initial catalogue rendering', () => {

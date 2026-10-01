@@ -1,0 +1,96 @@
+{
+  "id": "mantine:dialog",
+  "sourceId": "mantine",
+  "slug": "mantine-dialog",
+  "name": "Mantine dialog",
+  "description": "1 published Mantine dialog examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "dialog",
+    "tags": [
+      "code",
+      "dialog",
+      "file"
+    ],
+    "aliases": [
+      "dialog",
+      "mantine dialog"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Mantine dialog examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "dialog:code:file",
+    "searchText": "Mantine dialog\ndialog\n1 published Mantine dialog examples with complete pinned source and MIT attribution.\nmantine dialog\ncode\nfile\nMantine dialog 1 published Mantine dialog examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Dialog Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Dialog/Dialog.demo.usage.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-dialog",
+  "manifestPath": "components/mantine-dialog/component.json",
+  "integrity": "sha256:98b14f48cedb472b20d1450833fe31cdba01e54396ac0813651c6c0459886fc1",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Dialog/Dialog.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Dialog, Group, Text, TextInput } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { toggle, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Group justify=\"center\">\n        <Button onClick={toggle}>Toggle dialog</Button>\n      </Group>\n\n      <Dialog\n        opened={opened}\n        withCloseButton\n        onClose={close}\n        size=\"lg\"\n        position={{ bottom: 20, left: 20 }}\n      >\n        <Text size=\"sm\" mb=\"xs\" fw={500}>\n          Subscribe to email newsletter\n        </Text>\n\n        <Group align=\"flex-end\">\n          <TextInput placeholder=\"hello@gluesticker.com\" style={{ flex: 1 }} />\n          <Button onClick={close}>Subscribe</Button>\n        </Group>\n      </Dialog>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "86dd9a218389ae2f8745f873450a36c0b53a0f3dff680a685009fe0337d22421",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Dialog/Dialog.demo.usage.tsx",
+      "upstreamSha256": "a42a31f5dca14b09df13eefa51dffc426e6aa13e187ae3fc7a63a15f54f83201",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/dialog/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Dialog/Dialog.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "3bd25a720997d127e32494c09a3ee56ae394debab7e61390b3e60f124281a6b7",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "dialog",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Dialog",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Dialog/Dialog.demo.usage.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Dialog/Dialog.demo.usage.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine dialog\n\n1 published Mantine dialog examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Dialog\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Dialog/Dialog.demo.usage.tsx\n"
+}

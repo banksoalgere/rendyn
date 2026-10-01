@@ -1,0 +1,285 @@
+{
+  "id": "chakra:toaster",
+  "sourceId": "chakra",
+  "slug": "chakra-toaster",
+  "name": "Chakra UI toaster",
+  "description": "12 published Chakra UI toaster examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0",
+    "react-icons@5.5.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "toaster",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input",
+      "toast"
+    ],
+    "aliases": [
+      "toaster",
+      "chakra ui toaster"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "12 published Chakra UI toaster examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "toaster:checkbox:file:form:input:toast:keyboard",
+    "searchText": "Chakra UI toaster\ntoaster\n12 published Chakra UI toaster examples with complete pinned source and MIT attribution.\nchakra ui toaster\ncheckbox\nfile\nform\ninput\ntoast\nkeyboard\nChakra UI toaster 12 published Chakra UI toaster examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/toaster basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-toaster",
+  "manifestPath": "components/chakra-toaster/component.json",
+  "integrity": "sha256:fd9daceeea57e607b24989ca5dcf6a08d03479b04eea84cda3e600658c05b292",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/toaster-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from \"@chakra-ui/react\"\nimport { toaster } from \"@/components/rendyn-libraries/chakra/upstream/ui/toaster\"\n\nexport const ToasterBasic = () => {\n  return (\n    <Button\n      variant=\"outline\"\n      size=\"sm\"\n      onClick={() =>\n        toaster.create({\n          description: \"File saved successfully\",\n          type: \"info\",\n        })\n      }\n    >\n      Show Toast\n    </Button>\n  )\n}\n",
+      "sha256": "be345b604214987d864268ab8c4bfb52ed7bfe43472817ee6e121122bb304efd",
+      "upstreamPath": "apps/compositions/src/examples/toaster-basic.tsx",
+      "upstreamSha256": "9babdb6c1c24be482b0dcd47319135dc4d35d046de2861c95dfca8a835547a1b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/ui/toaster.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  Toaster as ChakraToaster,\n  Portal,\n  Spinner,\n  Stack,\n  Toast,\n  createToaster,\n} from \"@chakra-ui/react\"\n\nexport const toaster = createToaster({\n  placement: \"bottom-end\",\n  pauseOnPageIdle: true,\n})\n\nexport const Toaster = () => {\n  return (\n    <Portal>\n      <ChakraToaster toaster={toaster} insetInline={{ mdDown: \"4\" }}>\n        {(toast) => (\n          <Toast.Root width={{ md: \"sm\" }}>\n            {toast.type === \"loading\" ? (\n              <Spinner size=\"sm\" color=\"blue.solid\" />\n            ) : (\n              <Toast.Indicator />\n            )}\n            <Stack gap=\"1\" flex=\"1\" maxWidth=\"100%\">\n              {toast.title && <Toast.Title>{toast.title}</Toast.Title>}\n              {toast.description && (\n                <Toast.Description>{toast.description}</Toast.Description>\n              )}\n            </Stack>\n            {toast.action && (\n              <Toast.ActionTrigger>{toast.action.label}</Toast.ActionTrigger>\n            )}\n            {toast.closable && <Toast.CloseTrigger />}\n          </Toast.Root>\n        )}\n      </ChakraToaster>\n    </Portal>\n  )\n}\n",
+      "sha256": "c9270ed8d5bd3cea58c03e7f32520188b792ab2e21149e775b38ae70d268f722",
+      "upstreamPath": "apps/compositions/src/ui/toaster.tsx",
+      "upstreamSha256": "2b68c0cf2eddca7b7d9be82e46a96f982cb86e5c88562add7e8451c312d19d0e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/toaster-closable.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from \"@chakra-ui/react\"\nimport { toaster } from \"@/components/rendyn-libraries/chakra/upstream/ui/toaster\"\n\nexport const ToasterClosable = () => {\n  return (\n    <Button\n      variant=\"outline\"\n      size=\"sm\"\n      onClick={() =>\n        toaster.create({\n          description: \"File saved successfully\",\n          type: \"info\",\n          closable: true,\n        })\n      }\n    >\n      Show Toast\n    </Button>\n  )\n}\n",
+      "sha256": "a834a1690ca5d3cf2e2ad02e120194651c63d189f37f4d019f8ee862988029b9",
+      "upstreamPath": "apps/compositions/src/examples/toaster-closable.tsx",
+      "upstreamSha256": "a2fc91ba835dd529ee39674c3009249108fa9d7069efc69fdf8c1cb60373a917",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/toaster-lifecycle.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, HStack, Stack, Text } from \"@chakra-ui/react\"\nimport { toaster } from \"@/components/rendyn-libraries/chakra/upstream/ui/toaster\"\nimport { useState } from \"react\"\n\nexport const ToasterLifecycle = () => {\n  const [statusLog, setStatusLog] = useState<[number, string][]>([])\n  const [dismissed, setDismissed] = useState(true)\n\n  return (\n    <Stack align=\"flex-start\">\n      <Button\n        disabled={!dismissed}\n        variant=\"outline\"\n        size=\"sm\"\n        onClick={() =>\n          toaster.create({\n            description: \"This is a toast\",\n            type: \"info\",\n            onStatusChange({ status }) {\n              setDismissed(status === \"unmounted\")\n              setStatusLog((prev) => [[Date.now(), status], ...prev])\n            },\n          })\n        }\n      >\n        Show Toast\n      </Button>\n\n      <Stack padding=\"2\" width=\"full\" role=\"log\" borderWidth=\"1px\" minH=\"100px\">\n        {statusLog.map(([time, toastStatus], i) => {\n          const date = new Date(time)\n          return (\n            <HStack as=\"pre\" fontFamily=\"mono\" textStyle=\"sm\" key={i}>\n              {date.toLocaleTimeString()}{\" \"}\n              <Text fontWeight=\"bold\">{toastStatus}</Text>\n            </HStack>\n          )\n        })}\n      </Stack>\n    </Stack>\n  )\n}\n",
+      "sha256": "a35d4d3752e3cc95087b3ff34ac2575072a8254b51b17800845e0084c7019c16",
+      "upstreamPath": "apps/compositions/src/examples/toaster-lifecycle.tsx",
+      "upstreamSha256": "510a8dc19de66314b65306e77646c94261059a5704076463118db1f7b4b16dfa",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/toaster-pause-and-play.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, HStack } from \"@chakra-ui/react\"\nimport { toaster } from \"@/components/rendyn-libraries/chakra/upstream/ui/toaster\"\nimport { useId, useState } from \"react\"\nimport { HiPause, HiPlay } from \"react-icons/hi\"\n\nexport const ToasterPauseAndPlay = () => {\n  const id = useId()\n  const [paused, setPaused] = useState(false)\n  const [shown, setShown] = useState(false)\n\n  const show = () => {\n    toaster.success({\n      id,\n      title: \"This is a success toast\",\n      onStatusChange: (details) => {\n        if (details.status === \"visible\") {\n          setShown(true)\n        } else if (details.status === \"dismissing\") {\n          setShown(false)\n        }\n      },\n    })\n  }\n\n  const pause = () => {\n    toaster.pause(id)\n    setPaused(true)\n  }\n\n  const play = () => {\n    toaster.resume(id)\n    setPaused(false)\n  }\n\n  return (\n    <HStack>\n      <Button variant=\"outline\" size=\"sm\" onClick={show} disabled={shown}>\n        Show Toast\n      </Button>\n      <Button\n        variant=\"outline\"\n        size=\"sm\"\n        onClick={pause}\n        disabled={!shown || paused}\n      >\n        <HiPause />\n        Pause Toast\n      </Button>\n      <Button\n        variant=\"outline\"\n        size=\"sm\"\n        onClick={play}\n        disabled={!shown || !paused}\n      >\n        <HiPlay />\n        Play Toast\n      </Button>\n    </HStack>\n  )\n}\n",
+      "sha256": "71f7de3acc1822b49414e7c078774e3d65b76421b6b4cf50d291940bc0f67e77",
+      "upstreamPath": "apps/compositions/src/examples/toaster-pause-and-play.tsx",
+      "upstreamSha256": "f365410c4e5f33276463bf4ef72722065fadbc0ebc339f798c1f57360d685dce",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/toaster-persistent.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from \"@chakra-ui/react\"\nimport { toaster } from \"@/components/rendyn-libraries/chakra/upstream/ui/toaster\"\n\nexport const ToasterPersistent = () => {\n  return (\n    <Button\n      variant=\"outline\"\n      size=\"sm\"\n      onClick={() =>\n        toaster.create({\n          description: \"File saved successfully\",\n          type: \"loading\",\n        })\n      }\n    >\n      Show Toast\n    </Button>\n  )\n}\n",
+      "sha256": "237273b4bbbf5e39ace4d1c9dfc176f9b9764af44fe7fa35367add5c3ae759ba",
+      "upstreamPath": "apps/compositions/src/examples/toaster-persistent.tsx",
+      "upstreamSha256": "f9e4ac98ad28b1587a709539b9e947d1309718a1644b6f7597fb639576daf22e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/toaster-static.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Spinner, Stack, useSlotRecipe } from \"@chakra-ui/react\"\nimport {\n  HiCheckCircle,\n  HiExclamationCircle,\n  HiX,\n  HiXCircle,\n} from \"react-icons/hi\"\n\nexport const ToasterStatic = () => {\n  const recipe = useSlotRecipe({ key: \"toast\" })\n  const styles = recipe()\n\n  return (\n    <Stack gap=\"8\">\n      <Box width=\"420px\" css={styles.root}>\n        <Spinner size=\"sm\" color=\"red\" />\n        <Stack gap=\"1\" flex=\"1\" maxWidth=\"100%\">\n          <Box css={styles.title}>Loading...</Box>\n          <Box css={styles.description}>Some description of the loading.</Box>\n        </Stack>\n        <Box as=\"button\" css={styles.actionTrigger}>\n          Retry\n        </Box>\n        <Box\n          as=\"button\"\n          css={styles.closeTrigger}\n          className=\"chakra-toast__closeTrigger\"\n        >\n          <HiX />\n        </Box>\n      </Box>\n\n      <Box data-type=\"error\" width=\"420px\" css={styles.root}>\n        <Box css={styles.indicator} asChild>\n          <HiXCircle />\n        </Box>\n        <Stack gap=\"1\" flex=\"1\" maxWidth=\"100%\">\n          <Box css={styles.title}>Error</Box>\n          <Box css={styles.description}>Some description of the error</Box>\n        </Stack>\n        <Box as=\"button\" css={styles.actionTrigger}>\n          Retry\n        </Box>\n        <Box\n          as=\"button\"\n          css={styles.closeTrigger}\n          className=\"chakra-toast__closeTrigger\"\n        >\n          <HiX />\n        </Box>\n      </Box>\n\n      <Box data-type=\"success\" width=\"420px\" css={styles.root}>\n        <Box css={styles.indicator} asChild>\n          <HiCheckCircle />\n        </Box>\n        <Stack gap=\"1\" flex=\"1\" maxWidth=\"100%\">\n          <Box css={styles.title}>Success</Box>\n          <Box css={styles.description}>Some description of the success</Box>\n        </Stack>\n        <Box as=\"button\" css={styles.actionTrigger}>\n          Retry\n        </Box>\n        <Box\n          as=\"button\"\n          css={styles.closeTrigger}\n          className=\"chakra-toast__closeTrigger\"\n        >\n          <HiX />\n        </Box>\n      </Box>\n\n      <Box data-type=\"warning\" width=\"420px\" css={styles.root}>\n        <Box css={styles.indicator} asChild>\n          <HiExclamationCircle />\n        </Box>\n        <Stack gap=\"1\" flex=\"1\" maxWidth=\"100%\">\n          <Box css={styles.title}>Warning</Box>\n          <Box css={styles.description}>Some description of the warning</Box>\n        </Stack>\n        <Box as=\"button\" css={styles.actionTrigger}>\n          Retry\n        </Box>\n        <Box\n          as=\"button\"\n          css={styles.closeTrigger}\n          className=\"chakra-toast__closeTrigger\"\n        >\n          <HiX />\n        </Box>\n      </Box>\n    </Stack>\n  )\n}\n",
+      "sha256": "927a1caba44c19a72060deb8d203b5beb1ea5fb5879db08cb6bcda1c597c73c2",
+      "upstreamPath": "apps/compositions/src/examples/toaster-static.tsx",
+      "upstreamSha256": "dfe4d47e72518f3649ee5da40a53e41176229f3615694ba4a51281d6d08ac83b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/toaster-with-action.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from \"@chakra-ui/react\"\nimport { toaster } from \"@/components/rendyn-libraries/chakra/upstream/ui/toaster\"\n\nexport const ToasterWithAction = () => {\n  return (\n    <Button\n      variant=\"outline\"\n      size=\"sm\"\n      onClick={() =>\n        toaster.success({\n          title: \"Update successful\",\n          description: \"File saved successfully to the server\",\n          action: {\n            label: \"Undo\",\n            onClick: () => console.log(\"Undo\"),\n          },\n        })\n      }\n    >\n      Click me\n    </Button>\n  )\n}\n",
+      "sha256": "662286cfaf82b6c74f8c6e24a31244ce05790b7e1e607528c35828cc6065babc",
+      "upstreamPath": "apps/compositions/src/examples/toaster-with-action.tsx",
+      "upstreamSha256": "4713027006a060ddc3efc870092e195d7bd28b12118d0757cbcd9428ebaa73d5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/toaster-with-duration.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from \"@chakra-ui/react\"\nimport { toaster } from \"@/components/rendyn-libraries/chakra/upstream/ui/toaster\"\n\nexport const ToasterWithDuration = () => {\n  return (\n    <Button\n      variant=\"outline\"\n      size=\"sm\"\n      onClick={() =>\n        toaster.create({\n          description: \"File saved successfully\",\n          duration: 6000,\n        })\n      }\n    >\n      Show Toast\n    </Button>\n  )\n}\n",
+      "sha256": "e000fb7b489fbe30dcc79bffd5f8d2de2b0bb8aaa59d5f31c832c45fa20ff9e3",
+      "upstreamPath": "apps/compositions/src/examples/toaster-with-duration.tsx",
+      "upstreamSha256": "2be1a8115839e44e820194ca287bab3bc6136d18063460ff70df7d87d7d587fe",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/toaster-with-external-close.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, HStack } from \"@chakra-ui/react\"\nimport { toaster } from \"@/components/rendyn-libraries/chakra/upstream/ui/toaster\"\n\nexport const ToasterWithExternalClose = () => {\n  return (\n    <HStack>\n      <Button\n        variant=\"outline\"\n        size=\"sm\"\n        onClick={() =>\n          toaster.create({\n            description: \"File saved successfully\",\n            type: \"info\",\n          })\n        }\n      >\n        Show Toast\n      </Button>\n\n      <Button variant=\"outline\" size=\"sm\" onClick={() => toaster.dismiss()}>\n        Close Toasts\n      </Button>\n    </HStack>\n  )\n}\n",
+      "sha256": "5060c2fe2496949125f554f5dfc296a217247b730976d13b13dd06dc67a6bde0",
+      "upstreamPath": "apps/compositions/src/examples/toaster-with-external-close.tsx",
+      "upstreamSha256": "55a8eaef9528416491dc60aa191fa05e1302d6a03a9cb2fdac7add3170b3ade6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/toaster-with-promise.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from \"@chakra-ui/react\"\nimport { toaster } from \"@/components/rendyn-libraries/chakra/upstream/ui/toaster\"\n\nexport const ToasterWithPromise = () => {\n  return (\n    <Button\n      variant=\"outline\"\n      size=\"sm\"\n      onClick={() => {\n        const promise = new Promise<void>((resolve) => {\n          setTimeout(() => resolve(), 5000)\n        })\n\n        toaster.promise(promise, {\n          success: {\n            title: \"Successfully uploaded!\",\n            description: \"Looks great\",\n          },\n          error: {\n            title: \"Upload failed\",\n            description: \"Something wrong with the upload\",\n          },\n          loading: { title: \"Uploading...\", description: \"Please wait\" },\n        })\n      }}\n    >\n      Show Toast\n    </Button>\n  )\n}\n",
+      "sha256": "724767e74da9db14638a43c0e4a1fa63ceff0e6d2108703d5c23cbb067c519b9",
+      "upstreamPath": "apps/compositions/src/examples/toaster-with-promise.tsx",
+      "upstreamSha256": "8c04a8b091b77132a1815a345e255949cd20f3047a1572fd27fb020b63425823",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/toaster-with-status.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, For, HStack } from \"@chakra-ui/react\"\nimport { toaster } from \"@/components/rendyn-libraries/chakra/upstream/ui/toaster\"\n\nexport const ToasterWithStatus = () => {\n  return (\n    <HStack>\n      <For each={[\"success\", \"error\", \"warning\", \"info\"]}>\n        {(type) => (\n          <Button\n            size=\"sm\"\n            variant=\"outline\"\n            key={type}\n            onClick={() =>\n              toaster.create({\n                title: `Toast status is ${type}`,\n                type: type,\n              })\n            }\n          >\n            {type}\n          </Button>\n        )}\n      </For>\n    </HStack>\n  )\n}\n",
+      "sha256": "2942d73549cf3a0afec9e624e0d69e80f62d5ac6b9b6b443d7ffa7393a4189c9",
+      "upstreamPath": "apps/compositions/src/examples/toaster-with-status.tsx",
+      "upstreamSha256": "1d504ced49bf3cba86a802d8ef51f4e3f3cce2046a05fa9fd00bc81a13256381",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/toaster-with-update.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, HStack } from \"@chakra-ui/react\"\nimport { toaster } from \"@/components/rendyn-libraries/chakra/upstream/ui/toaster\"\n\nexport const ToasterWithUpdate = () => {\n  const id = \"login-error-toast\"\n\n  const show = () => {\n    if (toaster.isVisible(id)) return\n    toaster.loading({\n      id,\n      title: \"Error Connecting...\",\n      description: \"You do not have permissions to perform this action.\",\n    })\n  }\n\n  const update = () => {\n    toaster.update(id, {\n      title: \"Hooray 🥳🥳🥳!!!\",\n      description: \"You now have permissions to perform this action.\",\n      type: \"success\",\n      duration: 3000,\n    })\n  }\n\n  return (\n    <HStack>\n      <Button variant=\"outline\" size=\"sm\" onClick={show}>\n        Show Toast\n      </Button>\n      <Button variant=\"outline\" size=\"sm\" onClick={update}>\n        Update Toast\n      </Button>\n    </HStack>\n  )\n}\n",
+      "sha256": "73af797a0541dabfab72b3dfbc8322d5d40bb4d4daf8a521fe7dd3038e97e0b6",
+      "upstreamPath": "apps/compositions/src/examples/toaster-with-update.tsx",
+      "upstreamSha256": "c412ed5f695e99993c8594b99d42465c0f6526b228e4c33ae3e9cfeda1179a99",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/toaster/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ToasterBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/toaster-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "919e420d1882fba5285457f2531f6c038efee4c69be160a2a7a103ae62768636",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/toaster/previews/toaster-closable.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ToasterClosable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/toaster-closable\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "77b4a691c594269493cf4d0b3f5dfa2b55244fbb59495578be057949392fec07",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/toaster/previews/toaster-lifecycle.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ToasterLifecycle as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/toaster-lifecycle\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "db67e5db5e83ecc4df9b14d695495ae0254683d7896abb9e2487493258276e8b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/toaster/previews/toaster-pause-and-play.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ToasterPauseAndPlay as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/toaster-pause-and-play\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "2f93e479384e1cf7f6992b20f65210d35939e5dcd0495de30a7a3ec93d63b47f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/toaster/previews/toaster-persistent.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ToasterPersistent as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/toaster-persistent\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a5e2d77c7f7322f7631fe94d73aeb65265a9038ba573c8e5d74f326bc6da3f4b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/toaster/previews/toaster-static.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ToasterStatic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/toaster-static\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "07e91311cbdc0cbedf5312a35811c4619e85a44ac379063f60d48ef324ffa03b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/toaster/previews/toaster-with-action.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ToasterWithAction as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/toaster-with-action\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "1943ced2fadf341469de52841d57ad05a7814456df2d539e751852ae456a693e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/toaster/previews/toaster-with-duration.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ToasterWithDuration as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/toaster-with-duration\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "c9a47a7f321243896fe5d9e9d0c5b9307bead25cd1aba837513c70acfcc8df5f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/toaster/previews/toaster-with-external-close.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ToasterWithExternalClose as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/toaster-with-external-close\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "87841eb31869bd31132842c5a0ef7e18e5788b3f17eaf47ff9fc9ce5a7b8f74f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/toaster/previews/toaster-with-promise.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ToasterWithPromise as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/toaster-with-promise\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "603d5c4d2bb1db6108fe2b2e6739d306ee3629c25fa141414f68caf2ea0185ac",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/toaster/previews/toaster-with-status.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ToasterWithStatus as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/toaster-with-status\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "b964fbe10fb09a818fd0d6ced96511181ce923f291b47cb50fd722f039388bc9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/toaster/previews/toaster-with-update.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { ToasterWithUpdate as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/toaster-with-update\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "a0272d1d4b0e3fb84ca048883f21873aa8a45ef26e48e9b083b6c683c8a9cd12",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0 react-icons@5.5.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "toaster",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/toaster-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/toaster-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI toaster\n\n12 published Chakra UI toaster examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/toaster-basic.tsx\n"
+}

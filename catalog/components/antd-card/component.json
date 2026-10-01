@@ -1,0 +1,305 @@
+{
+  "id": "antd:card",
+  "sourceId": "antd",
+  "slug": "antd-card",
+  "name": "Ant Design card",
+  "description": "14 published Ant Design card examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@ant-design/icons@6.3.4",
+    "antd@6.6.5",
+    "antd-style@4.1.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "card",
+    "tags": [
+      "card",
+      "file",
+      "form"
+    ],
+    "aliases": [
+      "card",
+      "ant design card"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "14 published Ant Design card examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "card:file:form",
+    "searchText": "Ant Design card\ncard\n14 published Ant Design card examples with complete pinned source and MIT attribution.\nant design card\nfile\nform\nAnt Design card 14 published Ant Design card examples with complete pinned source and MIT attribution. Installation Complete MIT example compositions using the pinned antd npm package. Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/ant design/ant design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/card/demo Pinned source: https://github.com/ant design/ant design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/card/demo/basic.tsx"
+  },
+  "previewPath": "/preview/blocks/antd-card",
+  "manifestPath": "components/antd-card/component.json",
+  "integrity": "sha256:9253dad688ef57d8aeaeb106212f1489656c11ec6bcfea56d503e03a092a0f03",
+  "source": {
+    "id": "antd",
+    "name": "Ant Design",
+    "repository": "https://github.com/ant-design/ant-design",
+    "commit": "bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a",
+    "registrySha256": "7df4386dc63323dd6235edee9c52694b28d573a6d2765ac59719a52e1c259ab0",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2015-present Ant UED, https://xtech.antfin.com/",
+      "textPath": "source/antd/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/antd/upstream/card/demo/basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Card, Space } from 'antd';\n\nconst App: React.FC = () => (\n  <Space vertical size={16}>\n    <Card title=\"Default size card\" extra={<a href=\"#\">More</a>} style={{ width: 300 }}>\n      <p>Card content</p>\n      <p>Card content</p>\n      <p>Card content</p>\n    </Card>\n    <Card size=\"small\" title=\"Small size card\" extra={<a href=\"#\">More</a>} style={{ width: 300 }}>\n      <p>Card content</p>\n      <p>Card content</p>\n      <p>Card content</p>\n    </Card>\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "26abbbce2d5bb80a5b9a43e6e7427135feae403917e2f7ccffbbcc0c94d05e95",
+      "upstreamPath": "components/card/demo/basic.tsx",
+      "upstreamSha256": "29c8b4e00596924212f299716268c3521640bc98a12d34592a5fc75211947482",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/card/demo/border-less.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Card } from 'antd';\n\nconst App: React.FC = () => (\n  <Card title=\"Card title\" variant=\"borderless\" style={{ width: 300 }}>\n    <p>Card content</p>\n    <p>Card content</p>\n    <p>Card content</p>\n  </Card>\n);\n\nexport default App;\n",
+      "sha256": "8e8d271864707e7664f5057ccab9dc1e299209b08043623e480f9bdc02549e80",
+      "upstreamPath": "components/card/demo/border-less.tsx",
+      "upstreamSha256": "8f4caa609c64d585f6c24eda3885434b64f54777fd2760db62bdb6c8f23773c8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/card/demo/button-alignment-debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { SmileOutlined } from '@ant-design/icons';\nimport { Button, Card, ConfigProvider, Flex, Popconfirm } from 'antd';\nimport type { GetProp } from 'antd';\nimport { createStyles } from 'antd-style';\n\nconst { _InternalPanelDoNotUseOrYouWillBeFired: InternalPopconfirm } = Popconfirm;\n\nconst useStyle = createStyles(({ css }) => ({\n  icon: css`\n    background: rgba(255, 0, 0, 0.1);\n\n    span {\n      background: rgba(0, 255, 0, 0.5);\n    }\n  `,\n  content: css`\n    background: rgba(0, 0, 255, 0.1);\n  `,\n}));\n\nconst App: React.FC = () => {\n  const { styles } = useStyle();\n\n  const btnCls: GetProp<typeof Button, 'classNames'> = {\n    icon: styles.icon,\n    content: styles.content,\n  };\n\n  return (\n    <ConfigProvider button={{ classNames: btnCls }}>\n      <Flex vertical gap=\"middle\">\n        <Card\n          className=\"line-card\"\n          title=\"#57727 Card extra\"\n          extra={<Button icon={<SmileOutlined />}>Test</Button>}\n        >\n          Button in Card extra should be vertically centered with the title.\n        </Card>\n\n        <Card title=\"#57896 regression minimum case\">\n          <div className=\"simulate-57896\">\n            <div className=\"inline-buttons\">\n              <Button>Cancel</Button>\n              <Button type=\"primary\" icon={<SmileOutlined />}>\n                Confirm\n              </Button>\n            </div>\n          </div>\n        </Card>\n\n        <InternalPopconfirm\n          title=\"Are you OK?\"\n          okButtonProps={{\n            icon: <SmileOutlined />,\n          }}\n        />\n      </Flex>\n    </ConfigProvider>\n  );\n};\n\nexport default App;\n",
+      "sha256": "7beddaac9fcbd8544dc51c529344e89f0caa5f654e13c586d06f5d7b58ddce04",
+      "upstreamPath": "components/card/demo/button-alignment-debug.tsx",
+      "upstreamSha256": "b7606aea0c9c3b8da371369d307e817af13405fe483ebf71f81a4ccfa143205e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/card/demo/component-token.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';\nimport { Card, ConfigProvider } from 'antd';\n\nexport default () => (\n  <ConfigProvider\n    theme={{\n      components: {\n        Card: {\n          headerBg: '#e6f4ff',\n          bodyPaddingSM: 22,\n          headerPaddingSM: 20,\n          headerPadding: 18,\n          bodyPadding: 26,\n          headerFontSize: 20,\n          headerFontSizeSM: 20,\n          headerHeight: 60,\n          headerHeightSM: 60,\n          actionsBg: '#e6f4ff',\n          actionsLiMargin: `2px 0`,\n          tabsMarginBottom: 0,\n          extraColor: 'rgba(0,0,0,0.25)',\n        },\n      },\n    }}\n  >\n    <Card\n      title=\"Card title\"\n      actions={[\n        <SettingOutlined key=\"setting\" />,\n        <EditOutlined key=\"edit\" />,\n        <EllipsisOutlined key=\"ellipsis\" />,\n      ]}\n      extra=\"More\"\n      tabList={[\n        {\n          key: 'tab1',\n          label: 'tab1',\n        },\n        {\n          key: 'tab2',\n          label: 'tab2',\n        },\n      ]}\n    >\n      <p>Card content</p>\n      <p>Card content</p>\n      <p>Card content</p>\n    </Card>\n    <Card size=\"small\" title=\"Small size card\" extra={<a href=\"#\">More</a>} style={{ width: 300 }}>\n      <p>Card content</p>\n      <p>Card content</p>\n      <p>Card content</p>\n    </Card>\n  </ConfigProvider>\n);\n",
+      "sha256": "746f16d7cdb328d3e9598f354d4a1e29a62a4a4d8ad8108a154404606e8f70c0",
+      "upstreamPath": "components/card/demo/component-token.tsx",
+      "upstreamSha256": "dda074f65636474f616e661edfe6255e45101fe7f0b7742378af018fae0346a8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/card/demo/flexible-content.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Card } from 'antd';\n\nconst { Meta } = Card;\n\nconst App: React.FC = () => (\n  <Card\n    hoverable\n    variant=\"borderless\"\n    style={{ width: 240 }}\n    cover={\n      <img\n        draggable={false}\n        alt=\"example\"\n        src=\"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png\"\n      />\n    }\n  >\n    <Meta title=\"Europe Street beat\" description=\"www.instagram.com\" />\n  </Card>\n);\n\nexport default App;\n",
+      "sha256": "ea16ebce84714f11b598575f981d644323b96d56495f3f794ca18e76d135a3a3",
+      "upstreamPath": "components/card/demo/flexible-content.tsx",
+      "upstreamSha256": "b07d6d850bead60d25d262a3f8843d3a22b6f51439c91a0e16cd27dad451c636",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/card/demo/grid-card.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Card } from 'antd';\n\nconst gridStyle: React.CSSProperties = {\n  width: '25%',\n  textAlign: 'center',\n};\n\nconst App: React.FC = () => (\n  <Card title=\"Card Title\">\n    <Card.Grid style={gridStyle}>Content</Card.Grid>\n    <Card.Grid hoverable={false} style={gridStyle}>\n      Content\n    </Card.Grid>\n    <Card.Grid style={gridStyle}>Content</Card.Grid>\n    <Card.Grid style={gridStyle}>Content</Card.Grid>\n    <Card.Grid style={gridStyle}>Content</Card.Grid>\n    <Card.Grid style={gridStyle}>Content</Card.Grid>\n    <Card.Grid style={gridStyle}>Content</Card.Grid>\n  </Card>\n);\n\nexport default App;\n",
+      "sha256": "572c16d435bf5ffe246e17b498185116bf4a1041d1934a81dda62278a30272e2",
+      "upstreamPath": "components/card/demo/grid-card.tsx",
+      "upstreamSha256": "08192c0106da2bcf65a0f9af5fc2b060f03147224201e21c0884dad7c2800ac5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/card/demo/in-column.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Card, Col, Row } from 'antd';\n\nconst App: React.FC = () => (\n  <Row gutter={16}>\n    <Col span={8}>\n      <Card title=\"Card title\" variant=\"borderless\">\n        Card content\n      </Card>\n    </Col>\n    <Col span={8}>\n      <Card title=\"Card title\" variant=\"borderless\">\n        Card content\n      </Card>\n    </Col>\n    <Col span={8}>\n      <Card title=\"Card title\" variant=\"borderless\">\n        Card content\n      </Card>\n    </Col>\n  </Row>\n);\n\nexport default App;\n",
+      "sha256": "f65adde8070658c6926d7b0816f5a32be8e9fed36ad5e0802612db44978e6fd5",
+      "upstreamPath": "components/card/demo/in-column.tsx",
+      "upstreamSha256": "18d944a96d7e2caa79ae5f0a1d4059b82e4a6222549f82ecc91b1a193ec2eaa0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/card/demo/inner.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Card } from 'antd';\n\nconst App: React.FC = () => (\n  <Card title=\"Card title\">\n    <Card type=\"inner\" title=\"Inner Card title\" extra={<a href=\"#\">More</a>}>\n      Inner Card content\n    </Card>\n    <Card\n      style={{ marginTop: 16 }}\n      type=\"inner\"\n      title=\"Inner Card title\"\n      extra={<a href=\"#\">More</a>}\n    >\n      Inner Card content\n    </Card>\n  </Card>\n);\n\nexport default App;\n",
+      "sha256": "c771c766ea43eddb8f7961e74a2cac5868534781bebb4e7fbfbb3b79c10b12d2",
+      "upstreamPath": "components/card/demo/inner.tsx",
+      "upstreamSha256": "7eb42aeefa7f97476892b37301d05830e7e9791d7d1546538f8b19fd863deb7e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/card/demo/loading.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';\nimport { Avatar, Card, Flex, Switch } from 'antd';\n\nconst actions: React.ReactNode[] = [\n  <EditOutlined key=\"edit\" />,\n  <SettingOutlined key=\"setting\" />,\n  <EllipsisOutlined key=\"ellipsis\" />,\n];\n\nconst App: React.FC = () => {\n  const [loading, setLoading] = useState<boolean>(true);\n  return (\n    <Flex gap=\"medium\" align=\"start\" vertical>\n      <Switch\n        aria-label=\"Show card content\"\n        checked={!loading}\n        onChange={(checked) => setLoading(!checked)}\n      />\n      <Card loading={loading} actions={actions} style={{ minWidth: 300 }}>\n        <Card.Meta\n          avatar={<Avatar src=\"https://api.dicebear.com/10.x/lorelei/svg?seed=1\" />}\n          title=\"Card title\"\n          description={\n            <>\n              <p>This is the description</p>\n              <p>This is the description</p>\n            </>\n          }\n        />\n      </Card>\n      <Card loading={loading} actions={actions} style={{ minWidth: 300 }}>\n        <Card.Meta\n          avatar={<Avatar src=\"https://api.dicebear.com/10.x/lorelei/svg?seed=2\" />}\n          title=\"Card title\"\n          description={\n            <>\n              <p>This is the description</p>\n              <p>This is the description</p>\n            </>\n          }\n        />\n      </Card>\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "a5497c44d52dc3a217df9a25613fab2a6a1479dafed6402ce9ce0e23a9a591fc",
+      "upstreamPath": "components/card/demo/loading.tsx",
+      "upstreamSha256": "3cc28244146c0045c9684356e303fbdab1454f37fe0260a425ae6e707651c4cd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/card/demo/meta.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';\nimport { Avatar, Card } from 'antd';\n\nconst { Meta } = Card;\n\nconst App: React.FC = () => (\n  <Card\n    style={{ width: 300 }}\n    cover={\n      <img\n        draggable={false}\n        alt=\"example\"\n        src=\"https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png\"\n      />\n    }\n    actions={[\n      <SettingOutlined key=\"setting\" />,\n      <EditOutlined key=\"edit\" />,\n      <EllipsisOutlined key=\"ellipsis\" />,\n    ]}\n  >\n    <Meta\n      avatar={<Avatar src=\"https://api.dicebear.com/10.x/lorelei/svg?seed=8\" />}\n      title=\"Card title\"\n      description=\"This is the description\"\n    />\n  </Card>\n);\n\nexport default App;\n",
+      "sha256": "c18d0e1a085c6c3e5197619782ae97ae033af51df98a0777e0441cc65e60a159",
+      "upstreamPath": "components/card/demo/meta.tsx",
+      "upstreamSha256": "9cb49527bd87dc48e3cbf6aa5b13554dd8630724e5db4c0b45729c6c2a1487ab",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/card/demo/no-body-debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Card } from 'antd';\n\nconst App: React.FC = () => (\n  <Card\n    style={{ width: 300 }}\n    cover={<img alt=\"example\" src=\"https://api.dicebear.com/10.x/lorelei/svg?seed=8\" />}\n    actions={[<span key=\"setting\">setting</span>, <span key=\"edit\">edit</span>]}\n  />\n);\n\nexport default App;\n",
+      "sha256": "e32ca10d273870f8e8752717b0b782a846929d15a905691515a7d732309a05a9",
+      "upstreamPath": "components/card/demo/no-body-debug.tsx",
+      "upstreamSha256": "2b77eeeb25755b52c7a32ad34101a83f1aa4e1f677d16fa5335e46ddad47f00a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/card/demo/simple.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Card } from 'antd';\n\nconst App: React.FC = () => (\n  <Card style={{ width: 300 }}>\n    <p>Card content</p>\n    <p>Card content</p>\n    <p>Card content</p>\n  </Card>\n);\n\nexport default App;\n",
+      "sha256": "19e6c5b922ca4ef09974a49f59e2623f6b8427c7cc3347c298764dda5f17489c",
+      "upstreamPath": "components/card/demo/simple.tsx",
+      "upstreamSha256": "e86d94404e554741353e12218364a4c842a5ad6c61493283d1ba54ef94b7cbde",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/card/demo/style-class.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { EditOutlined, HeartOutlined, ShareAltOutlined } from '@ant-design/icons';\nimport { Avatar, Button, Card, Flex } from 'antd';\nimport type { CardMetaProps, CardProps, GetProp } from 'antd';\nimport { createStyles } from 'antd-style';\n\nconst { Meta } = Card;\n\nconst useStyles = createStyles(({ token }) => ({\n  root: {\n    width: 300,\n    backgroundColor: token.colorBgContainer,\n    borderRadius: token.borderRadius,\n    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',\n    border: `${token.lineWidth}px ${token.lineType} ${token.colorBorderSecondary}`,\n  },\n  header: {\n    borderBottom: 'none',\n    paddingBottom: token.paddingXS,\n  },\n  body: {\n    paddingTop: 0,\n  },\n}));\n\nconst stylesCard: CardProps['styles'] = {\n  root: {\n    boxShadow: '0 2px 8px rgba(0,0,0,0.06)',\n    borderRadius: 8,\n  },\n  title: {\n    fontSize: 16,\n    fontWeight: 500,\n  },\n};\n\nconst stylesCardFn: CardProps['styles'] = (info): GetProp<CardProps, 'styles', 'Return'> => {\n  if (info.props.variant === 'outlined') {\n    return {\n      root: {\n        borderColor: '#696FC7',\n        boxShadow: '0 2px 8px #A7AAE1',\n        borderRadius: 8,\n      },\n      extra: {\n        color: '#696FC7',\n      },\n      title: {\n        fontSize: 16,\n        fontWeight: 500,\n        color: '#A7AAE1',\n      },\n    };\n  }\n};\n\nconst stylesCardMeta: CardMetaProps['styles'] = {\n  title: {\n    color: '#A7AAE1',\n  },\n  description: {\n    color: '#A7AAE1',\n  },\n};\n\nconst actions = [\n  <HeartOutlined key=\"heart\" style={{ color: '#ff6b6b' }} />,\n  <ShareAltOutlined key=\"share\" style={{ color: '#4ecdc4' }} />,\n  <EditOutlined key=\"edit\" style={{ color: '#45b7d1' }} />,\n];\n\nconst App: React.FC = () => {\n  const { styles: classNames } = useStyles();\n\n  const sharedCardProps: CardProps = {\n    classNames,\n    actions,\n  };\n\n  const sharedCardMetaProps: CardMetaProps = {\n    avatar: <Avatar src=\"https://api.dicebear.com/10.x/lorelei/svg?seed=1\" />,\n    description: 'This is the description',\n  };\n\n  return (\n    <Flex gap=\"medium\">\n      <Card\n        {...sharedCardProps}\n        title=\"Object Card\"\n        styles={stylesCard}\n        extra={<Button type=\"link\">More</Button>}\n        variant=\"borderless\"\n      >\n        <Meta {...sharedCardMetaProps} title=\"Object Card Meta title\" />\n      </Card>\n      <Card\n        {...sharedCardProps}\n        title=\"Function Card\"\n        styles={stylesCardFn}\n        extra={\n          <Button type=\"link\" styles={{ root: { color: '#A7AAE1' } }}>\n            More\n          </Button>\n        }\n      >\n        <Meta {...sharedCardMetaProps} styles={stylesCardMeta} title=\"Function Card Meta title\" />\n      </Card>\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "2bf1944a86756824aeae975f288c5226291bedb6dc4584ddddebf7a639f207bd",
+      "upstreamPath": "components/card/demo/style-class.tsx",
+      "upstreamSha256": "4641b27e4f75d38294187f1191a8bf28f9aaa3120e5aa24606ebc800153d1c2e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/card/demo/tabs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Card } from 'antd';\n\nconst tabList = [\n  {\n    key: 'tab1',\n    tab: 'tab1',\n  },\n  {\n    key: 'tab2',\n    tab: 'tab2',\n  },\n];\n\nconst contentList: Record<string, React.ReactNode> = {\n  tab1: <p>content1</p>,\n  tab2: <p>content2</p>,\n};\n\nconst tabListNoTitle = [\n  {\n    key: 'article',\n    label: 'article',\n  },\n  {\n    key: 'app',\n    label: 'app',\n  },\n  {\n    key: 'project',\n    label: 'project',\n  },\n];\n\nconst contentListNoTitle: Record<string, React.ReactNode> = {\n  article: <p>article content</p>,\n  app: <p>app content</p>,\n  project: <p>project content</p>,\n};\n\nconst App: React.FC = () => {\n  const [activeTabKey1, setActiveTabKey1] = useState<string>('tab1');\n  const [activeTabKey2, setActiveTabKey2] = useState<string>('app');\n\n  const onTab1Change = (key: string) => {\n    setActiveTabKey1(key);\n  };\n  const onTab2Change = (key: string) => {\n    setActiveTabKey2(key);\n  };\n\n  return (\n    <>\n      <Card\n        style={{ width: '100%' }}\n        title=\"Card title\"\n        extra={<a href=\"#\">More</a>}\n        tabList={tabList}\n        activeTabKey={activeTabKey1}\n        onTabChange={onTab1Change}\n      >\n        {contentList[activeTabKey1]}\n      </Card>\n      <br />\n      <br />\n      <Card\n        style={{ width: '100%' }}\n        tabList={tabListNoTitle}\n        activeTabKey={activeTabKey2}\n        tabBarExtraContent={<a href=\"#\">More</a>}\n        onTabChange={onTab2Change}\n        tabProps={{ size: 'medium' }}\n      >\n        {contentListNoTitle[activeTabKey2]}\n      </Card>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "ce145c11d5f9cbc104fdb6412d45d46c0e2fe8c9955b7dc39846112ecd63b87c",
+      "upstreamPath": "components/card/demo/tabs.tsx",
+      "upstreamSha256": "bf40f35da949735f6ef337a54f862b055fe03e60159222e90a7ec3260cde0815",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/card/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/card/demo/basic\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "55dec8705139608c9c4e3295fbbdb26df942ffa9d9a2d8e624bf52f18454d5d1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/card/previews/border-less.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/card/demo/border-less\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a2d49a871db9a22c13b419784619c1d57e64547c556ce23d61cb085994bbc3c7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/card/previews/button-alignment-debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/card/demo/button-alignment-debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a59a08278a58a4c74f86e4b1f11bfbec48f05fc36d612661d0482f4706f8559d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/card/previews/component-token.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/card/demo/component-token\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e84e5f4237328936c0413d21ee897e98412430cfa606ca704f61e5f837da6475",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/card/previews/flexible-content.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/card/demo/flexible-content\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d74eb63f1acb83d5d215df2f7bed28f8353000ed54d5339b43607a6e88e04e3d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/card/previews/grid-card.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/card/demo/grid-card\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e64b96559970f7edbfd0ccc7199aa9f74d024776ad9357bd336ab30373c9fd41",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/card/previews/in-column.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/card/demo/in-column\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "3f4fa94d00e8f2d54a06b012775d3db1c8e257befc2f6278c2180db5fa2431c2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/card/previews/inner.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/card/demo/inner\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "883fbd3c6a2a98bf26b2ec421ed73e63785db28f9006f40f3c92efc2f3771737",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/card/previews/loading.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/card/demo/loading\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e8d31f5ddc4cc1a55353921bfafac0035f58e31036f513bca3534ef8252bdba1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/card/previews/meta.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/card/demo/meta\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2cb0ffcb4c0a12818fbfcb90c5a63bbf2780aae47ac825a6d475cd5ce52f85ef",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/card/previews/no-body-debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/card/demo/no-body-debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "7f72e5b554147e54a0476d9244c4f4f893e6e358d50f65eaec46ba1b6144f20e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/card/previews/simple.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/card/demo/simple\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "279817e82c69ab3ed932dd0ec4be355514a4d28080b2caaef07cbda1a899550f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/card/previews/style-class.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/card/demo/style-class\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "666b7736041dbf32785ba200c2a519361fc9299b88a2d7dc817097a553a41405",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/card/previews/tabs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/card/demo/tabs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "220c7ebbacaa340451268af780b9af6644dc5b281f87214f1af93bb5095a8fb6",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example compositions using the pinned antd npm package.",
+      "Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "card",
+    "upstreamPageUrl": "https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/card/demo",
+    "upstreamDetailUrl": "https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/card/demo/basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/ant-design/ant-design/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/card/demo/basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Ant Design card\n\n14 published Ant Design card examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example compositions using the pinned antd npm package.\n- Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/card/demo\nPinned source: https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/card/demo/basic.tsx\n"
+}

@@ -1,0 +1,130 @@
+{
+  "id": "mantine:use-scroll-into-view",
+  "sourceId": "mantine",
+  "slug": "mantine-use-scroll-into-view",
+  "name": "Mantine use scroll into view",
+  "description": "3 published Mantine use scroll into view examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "use-scroll-into-view",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "use scroll into view",
+      "mantine use scroll into view",
+      "use-scroll-into-view"
+    ],
+    "interactions": [
+      "scroll"
+    ],
+    "useWhen": [
+      "3 published Mantine use scroll into view examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "use-scroll-into-view:code:file:scroll",
+    "searchText": "Mantine use scroll into view\nuse scroll into view\n3 published Mantine use scroll into view examples with complete pinned source and MIT attribution.\nmantine use scroll into view\nuse-scroll-into-view\ncode\nfile\nscroll\nMantine use scroll into view 3 published Mantine use scroll into view examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use scroll into view Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use scroll into view/use scroll into view.demo.axis.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-use-scroll-into-view",
+  "manifestPath": "components/mantine-use-scroll-into-view/component.json",
+  "integrity": "sha256:5e6f57340c41884397a93a571e9a023b934558e54e3b6952a24b5e120f7a6b03",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-scroll-into-view/use-scroll-into-view.demo.axis.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Button, Group, Paper, Text } from '@mantine/core';\n\nimport { useScrollIntoView } from '@mantine/hooks';\n\nfunction Demo() {\n  const { scrollIntoView, targetRef, scrollableRef } = useScrollIntoView<\n    HTMLDivElement,\n    HTMLDivElement\n  >({ axis: 'x' });\n\n  return (\n    <Group justify=\"center\">\n      <Paper ref={scrollableRef} h={150} w={300} style={{ overflowX: 'scroll' }}>\n        <Box pl={260} pr={450}>\n          <Paper\n            ref={targetRef}\n            p=\"md\"\n            style={{\n              backgroundColor: 'var(--mantine-color-blue-light)',\n              width: 'max-content',\n            }}\n          >\n            <Text>Scroll me into view</Text>\n          </Paper>\n        </Box>\n      </Paper>\n      <Button onClick={() => scrollIntoView()}>Scroll to target</Button>\n    </Group>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "cf275763c0e59d072ee93f564bc49ea5045a453f5bf96cc70672a384ca8ea62b",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-scroll-into-view/use-scroll-into-view.demo.axis.tsx",
+      "upstreamSha256": "128a25098ae4d746e7aa698179748cc48b176075eee1691083021cb0949afe8d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-scroll-into-view/use-scroll-into-view.demo.parent.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Button, Group, Paper, Text } from '@mantine/core';\n\nimport { useScrollIntoView } from '@mantine/hooks';\n\nfunction Demo() {\n  const { scrollIntoView, targetRef, scrollableRef } = useScrollIntoView<\n    HTMLDivElement,\n    HTMLDivElement\n  >();\n\n  return (\n    <Group justify=\"center\">\n      <Paper ref={scrollableRef} h={300} style={{ overflowY: 'scroll', flex: 1 }}>\n        <Box pt={260} pb={450}>\n          <Paper\n            ref={targetRef}\n            p=\"xl\"\n            style={{\n              backgroundColor: 'var(--mantine-color-blue-light)',\n              width: '100%',\n            }}\n          >\n            <Text>Scroll me into view</Text>\n          </Paper>\n        </Box>\n      </Paper>\n      <Button onClick={() => scrollIntoView()}>Scroll to target</Button>\n    </Group>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "f8980ef0229af28ae6cdf4340f470a91034a5240ad14040d15f4fb79967df790",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-scroll-into-view/use-scroll-into-view.demo.parent.tsx",
+      "upstreamSha256": "3a08457b6ed86e381da3da2f271c3933ad99616ae581715c70510bd67ad1f547",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-scroll-into-view/use-scroll-into-view.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Button, Group, Text } from '@mantine/core';\n\nimport { useScrollIntoView } from '@mantine/hooks';\n\nfunction Demo() {\n  const { scrollIntoView, targetRef } = useScrollIntoView<HTMLDivElement>({\n    offset: 60,\n  });\n\n  return (\n    <Group justify=\"center\">\n      <Button\n        onClick={() =>\n          scrollIntoView({\n            alignment: 'center',\n          })\n        }\n      >\n        Scroll to target\n      </Button>\n      <Box\n        style={{\n          width: '100%',\n          height: '50vh',\n          backgroundColor: 'var(--mantine-color-blue-light)',\n        }}\n      />\n      <Text ref={targetRef}>Hello there</Text>\n    </Group>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b269f1722dddd4128212afb6416eda1e65238621cdc74ffec2e47bdc68adf74d",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-scroll-into-view/use-scroll-into-view.demo.usage.tsx",
+      "upstreamSha256": "cc316fea67fee17532f89f12c4e187da37150bdfbe699761507d2e60af10a9e8",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-scroll-into-view/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-scroll-into-view/use-scroll-into-view.demo.axis\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "ff5248c1fa9ca449ed22c392421bb87e306e3b94e1fb25dc21e45d2cde4299c0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-scroll-into-view/previews/parent.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-scroll-into-view/use-scroll-into-view.demo.parent\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b0b1d86ee2d53ab6568944eb8c1e130ee78ea27700a9b1618bdd3c9cba371522",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-scroll-into-view/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-scroll-into-view/use-scroll-into-view.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "8537ec1deaa12530b17940cebc92bdd0c589972196425d90e40bdc9165391620",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "use-scroll-into-view",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-scroll-into-view",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-scroll-into-view/use-scroll-into-view.demo.axis.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-scroll-into-view/use-scroll-into-view.demo.axis.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine use scroll into view\n\n3 published Mantine use scroll into view examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-scroll-into-view\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-scroll-into-view/use-scroll-into-view.demo.axis.tsx\n"
+}

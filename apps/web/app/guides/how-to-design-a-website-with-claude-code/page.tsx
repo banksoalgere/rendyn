@@ -1,3 +1,7 @@
+import { BrandMark } from '@/app/components/brand-mark';
+import '../../globals.css';
+import '../../styles/editorial-guides.css';
+import '../../styles/editorial.css';
 import { GuideHeading } from '../../components/guide-heading';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -224,7 +228,7 @@ export default function ClaudeCodeWebsiteDesignGuide() {
               <div className="workspace-status"><span><i /> Browser checked</span><span>1440</span><span>768</span><span>390</span></div>
             </div>
             <aside className="article-hero-cta">
-              <span className="brand-mark" aria-hidden="true">R</span>
+              <BrandMark />
               <p className="article-cta-title">Give Claude Code better building blocks.</p>
               <p>Search polished components by product intent, compare visual options, then get the complete source.</p>
               <Link className="button" href="/pricing">Start Rendyn trial <span aria-hidden="true">↗</span></Link>
@@ -419,7 +423,7 @@ export default function ClaudeCodeWebsiteDesignGuide() {
               {contents.map(([id, label]) => <Link href={`#${id}`} key={id}>{label}</Link>)}
             </nav>
             <div className="sidebar-cta guide-callout">
-              <span className="brand-mark" aria-hidden="true">R</span>
+              <BrandMark />
               <p className="sidebar-cta-title">Better choices in, better interfaces out.</p>
               <p>Give your coding agent polished component options and complete code.</p>
               <Link className="button" href="/pricing">Start 7-day trial <span aria-hidden="true">↗</span></Link>

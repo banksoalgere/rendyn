@@ -1,0 +1,198 @@
+{
+  "id": "mui:material-integrations-routing",
+  "sourceId": "mui",
+  "slug": "mui-material-integrations-routing",
+  "name": "Material UI material integrations routing",
+  "description": "7 published Material UI material integrations routing examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/icons-material@9.4.0",
+    "@mui/material@9.4.0",
+    "react-router@8.4.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "material-integrations-routing",
+    "tags": [
+      "button",
+      "code",
+      "command",
+      "data",
+      "file"
+    ],
+    "aliases": [
+      "material integrations routing",
+      "material ui material integrations routing",
+      "material-integrations-routing"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "7 published Material UI material integrations routing examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "material-integrations-routing:button:code:command:data:file",
+    "searchText": "Material UI material integrations routing\nmaterial integrations routing\n7 published Material UI material integrations routing examples with complete pinned source and MIT attribution.\nmaterial ui material integrations routing\nmaterial-integrations-routing\nbutton\ncode\ncommand\ndata\nfile\nMaterial UI material integrations routing 7 published Material UI material integrations routing examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/integrations/routing Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/integrations/routing/ButtonDemo.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-material-integrations-routing",
+  "manifestPath": "components/mui-material-integrations-routing/component.json",
+  "integrity": "sha256:a17871a2cccd6eaeaa5d58c4813f4fff4c806c6d323aa989df8a12bbd207e87c",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/integrations/routing/ButtonDemo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Button from '@mui/material/Button';\n\nexport default function ButtonDemo() {\n  return (\n    <Button href=\"/\" variant=\"contained\">\n      Link\n    </Button>\n  );\n}\n",
+      "sha256": "2e32a3fa3fdf4883976cc13fee3d0cd61dffe97a478900e7b9e507824127c9c2",
+      "upstreamPath": "docs/data/material/integrations/routing/ButtonDemo.tsx",
+      "upstreamSha256": "e7a4b02a6ea83364262f6fa60972ef04d7b6b7f2133997c133fe8d3efdd7f023",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/integrations/routing/ButtonRouter.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport {\n  Link as RouterLink,\n  LinkProps as RouterLinkProps,\n  MemoryRouter,\n  StaticRouter,\n} from 'react-router';\nimport Button from '@mui/material/Button';\n\nconst LinkBehavior = React.forwardRef<any, Omit<RouterLinkProps, 'to'>>(\n  (props, ref) => <RouterLink ref={ref} to=\"/\" {...props} role={undefined} />,\n);\n\nfunction Router(props: { children?: React.ReactNode }) {\n  const { children } = props;\n  if (typeof window === 'undefined') {\n    return <StaticRouter location=\"/\">{children}</StaticRouter>;\n  }\n\n  return <MemoryRouter>{children}</MemoryRouter>;\n}\n\nexport default function ButtonRouter() {\n  return (\n    <div>\n      <Router>\n        <Button component={RouterLink} to=\"/\">\n          With prop forwarding\n        </Button>\n        <br />\n        <Button component={LinkBehavior}>With inlining</Button>\n      </Router>\n    </div>\n  );\n}\n",
+      "sha256": "648e8a544d00ab3bcec72cc31691fd1e06a7739c3a767e10e71520798a4039b7",
+      "upstreamPath": "docs/data/material/integrations/routing/ButtonRouter.tsx",
+      "upstreamSha256": "3399a4be2763ba7f675f84224ba7a405d0f0637b3c22fc86c9dd776328ee2646",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/integrations/routing/LinkDemo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Link from '@mui/material/Link';\nimport Box from '@mui/material/Box';\n\nexport default function LinkDemo() {\n  return (\n    <Box sx={{ typography: 'body1' }}>\n      <Link href=\"/\">Link</Link>\n    </Box>\n  );\n}\n",
+      "sha256": "0b1ddfe015109007d69a02fcd5b77c5439f6fada0849f5030ed9bde160c519fb",
+      "upstreamPath": "docs/data/material/integrations/routing/LinkDemo.tsx",
+      "upstreamSha256": "2f3995f9d7419ece637c98ea5df99e6b996e76b37b013876c57edf2c519fcc56",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/integrations/routing/LinkRouter.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport {\n  Link as RouterLink,\n  LinkProps as RouterLinkProps,\n  MemoryRouter,\n  StaticRouter,\n} from 'react-router';\nimport Link from '@mui/material/Link';\nimport Box from '@mui/material/Box';\n\nconst LinkBehavior = React.forwardRef<any, Omit<RouterLinkProps, 'to'>>(\n  (props, ref) => (\n    <RouterLink\n      ref={ref}\n      to=\"/material-ui/getting-started/installation/\"\n      {...props}\n    />\n  ),\n);\n\nfunction Router(props: { children?: React.ReactNode }) {\n  const { children } = props;\n  if (typeof window === 'undefined') {\n    return <StaticRouter location=\"/\">{children}</StaticRouter>;\n  }\n\n  return <MemoryRouter>{children}</MemoryRouter>;\n}\n\nexport default function LinkRouter() {\n  return (\n    <Box sx={{ typography: 'body1' }}>\n      <Router>\n        <Link component={RouterLink} to=\"/\">\n          With prop forwarding\n        </Link>\n        <br />\n        <Link component={LinkBehavior}>Without prop forwarding</Link>\n      </Router>\n    </Box>\n  );\n}\n",
+      "sha256": "b2c73753e9376278554031c52c7dee96b79cbe39a3acb6ead61bf1c42fb32f45",
+      "upstreamPath": "docs/data/material/integrations/routing/LinkRouter.tsx",
+      "upstreamSha256": "22c3bb97fe4b46c2d3da6622d0abefdce9cd6a53c9b673c4905eac86f4002bf6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/integrations/routing/LinkRouterWithTheme.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport {\n  Link as RouterLink,\n  LinkProps as RouterLinkProps,\n  MemoryRouter,\n  StaticRouter,\n} from 'react-router';\nimport { ThemeProvider, createTheme } from '@mui/material/styles';\nimport Button from '@mui/material/Button';\nimport Stack from '@mui/material/Stack';\nimport Link, { LinkProps } from '@mui/material/Link';\n\nconst LinkBehavior = React.forwardRef<\n  HTMLAnchorElement,\n  Omit<RouterLinkProps, 'to'> & { href: RouterLinkProps['to'] }\n>((props, ref) => {\n  const { href, ...other } = props;\n  // Map href (MUI) -> to (react-router)\n  return <RouterLink data-testid=\"custom-link\" ref={ref} to={href} {...other} />;\n});\n\nfunction Router(props: { children?: React.ReactNode }) {\n  const { children } = props;\n  if (typeof window === 'undefined') {\n    return <StaticRouter location=\"/\">{children}</StaticRouter>;\n  }\n\n  return <MemoryRouter>{children}</MemoryRouter>;\n}\n\nconst theme = createTheme({\n  components: {\n    MuiLink: {\n      defaultProps: {\n        component: LinkBehavior,\n      } as LinkProps,\n    },\n    MuiButtonBase: {\n      defaultProps: {\n        LinkComponent: LinkBehavior,\n      },\n    },\n  },\n});\n\nexport default function LinkRouterWithTheme() {\n  return (\n    <Stack spacing={1} sx={{ alignItems: 'center', typography: 'body1' }}>\n      <ThemeProvider theme={theme}>\n        <Router>\n          <Link href=\"/\">Link</Link>\n          <Button href=\"/\" variant=\"contained\">\n            Link\n          </Button>\n        </Router>\n      </ThemeProvider>\n    </Stack>\n  );\n}\n",
+      "sha256": "d3b4d9106d4d6984329816baee7d2632c61b6e7bbd9446c61f22a42291da0d30",
+      "upstreamPath": "docs/data/material/integrations/routing/LinkRouterWithTheme.tsx",
+      "upstreamSha256": "5903e52b61af7676a8b7e34d56a61c280fc9f4233cf8c110612f78d6f9b4bef9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/integrations/routing/ListRouter.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport List from '@mui/material/List';\nimport ListItem from '@mui/material/ListItem';\nimport Box from '@mui/material/Box';\nimport ListItemButton from '@mui/material/ListItemButton';\nimport Paper from '@mui/material/Paper';\nimport ListItemIcon from '@mui/material/ListItemIcon';\nimport ListItemText from '@mui/material/ListItemText';\nimport Divider from '@mui/material/Divider';\nimport InboxIcon from '@mui/icons-material/Inbox';\nimport DraftsIcon from '@mui/icons-material/Drafts';\nimport Typography from '@mui/material/Typography';\nimport {\n  Link,\n  Route,\n  Routes,\n  MemoryRouter,\n  useLocation,\n  StaticRouter,\n} from 'react-router';\n\nfunction Router(props: { children?: React.ReactNode }) {\n  const { children } = props;\n  if (typeof window === 'undefined') {\n    return <StaticRouter location=\"/drafts\">{children}</StaticRouter>;\n  }\n\n  return (\n    <MemoryRouter initialEntries={['/drafts']} initialIndex={0}>\n      {children}\n    </MemoryRouter>\n  );\n}\n\ninterface ListItemLinkProps {\n  icon?: React.ReactElement<unknown>;\n  primary: string;\n  to: string;\n}\n\nfunction ListItemLink(props: ListItemLinkProps) {\n  const { icon, primary, to } = props;\n\n  return (\n    <ListItemButton component={Link} to={to}>\n      {icon ? <ListItemIcon>{icon}</ListItemIcon> : null}\n      <ListItemText primary={primary} />\n    </ListItemButton>\n  );\n}\n\nfunction Content() {\n  const location = useLocation();\n  return (\n    <Typography variant=\"body2\" sx={{ color: 'text.secondary', pb: 2 }}>\n      Current route: {location.pathname}\n    </Typography>\n  );\n}\n\nexport default function ListRouter() {\n  return (\n    <Router>\n      <Box sx={{ width: 360 }}>\n        <Routes>\n          <Route path=\"*\" element={<Content />} />\n        </Routes>\n\n        <Paper elevation={0}>\n          <List aria-label=\"main mailbox folders\">\n            <ListItem disablePadding>\n              <ListItemLink to=\"/inbox\" primary=\"Inbox\" icon={<InboxIcon />} />\n            </ListItem>\n            <ListItem disablePadding>\n              <ListItemLink to=\"/drafts\" primary=\"Drafts\" icon={<DraftsIcon />} />\n            </ListItem>\n          </List>\n          <Divider />\n          <List aria-label=\"secondary mailbox folders\">\n            <ListItem disablePadding>\n              <ListItemLink to=\"/trash\" primary=\"Trash\" />\n            </ListItem>\n            <ListItem disablePadding>\n              <ListItemLink to=\"/spam\" primary=\"Spam\" />\n            </ListItem>\n          </List>\n        </Paper>\n      </Box>\n    </Router>\n  );\n}\n",
+      "sha256": "147dac8d9625b541e8a53c3d5faa9dd4d9a62ce139ed60dfa44b3f6b8edebed9",
+      "upstreamPath": "docs/data/material/integrations/routing/ListRouter.tsx",
+      "upstreamSha256": "1e46d8b0bff28205020ea2f40cb35d8b06660b17c4ec38c16c335b2da08d02b5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/integrations/routing/TabsRouter.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Tabs from '@mui/material/Tabs';\nimport Tab from '@mui/material/Tab';\nimport Typography from '@mui/material/Typography';\nimport {\n  MemoryRouter,\n  Route,\n  Routes,\n  Link,\n  matchPath,\n  useLocation,\n  StaticRouter,\n} from 'react-router';\n\nfunction Router(props: { children?: React.ReactNode }) {\n  const { children } = props;\n  if (typeof window === 'undefined') {\n    return <StaticRouter location=\"/drafts\">{children}</StaticRouter>;\n  }\n\n  return (\n    <MemoryRouter initialEntries={['/drafts']} initialIndex={0}>\n      {children}\n    </MemoryRouter>\n  );\n}\n\nfunction useRouteMatch(patterns: readonly string[]) {\n  const { pathname } = useLocation();\n\n  for (let i = 0; i < patterns.length; i += 1) {\n    const pattern = patterns[i];\n    const possibleMatch = matchPath(pattern, pathname);\n    if (possibleMatch !== null) {\n      return possibleMatch;\n    }\n  }\n\n  return null;\n}\n\nfunction MyTabs() {\n  // You need to provide the routes in descendant order.\n  // This means that if you have nested routes like:\n  // users, users/new, users/edit.\n  // Then the order should be ['users/add', 'users/edit', 'users'].\n  const routeMatch = useRouteMatch(['/inbox/:id', '/drafts', '/trash']);\n  const currentTab = routeMatch?.pattern?.path;\n\n  return (\n    <Tabs value={currentTab}>\n      <Tab label=\"Inbox\" value=\"/inbox/:id\" to=\"/inbox/1\" component={Link} />\n      <Tab label=\"Drafts\" value=\"/drafts\" to=\"/drafts\" component={Link} />\n      <Tab label=\"Trash\" value=\"/trash\" to=\"/trash\" component={Link} />\n    </Tabs>\n  );\n}\n\nfunction CurrentRoute() {\n  const location = useLocation();\n\n  return (\n    <Typography variant=\"body2\" sx={{ color: 'text.secondary', pb: 2 }}>\n      Current route: {location.pathname}\n    </Typography>\n  );\n}\n\nexport default function TabsRouter() {\n  return (\n    <Router>\n      <Box sx={{ width: '100%' }}>\n        <Routes>\n          <Route path=\"*\" element={<CurrentRoute />} />\n        </Routes>\n        <MyTabs />\n      </Box>\n    </Router>\n  );\n}\n",
+      "sha256": "cacbf434bcdd7ff32a6ee4b96f1dfcb4d86ac73fbf1414c0636d9873b0769fb8",
+      "upstreamPath": "docs/data/material/integrations/routing/TabsRouter.tsx",
+      "upstreamSha256": "69a9e5db9edc911abbea6c2d54c32491e283d7b7014919d5181e739caeb80890",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-integrations-routing/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/integrations/routing/ButtonDemo\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "eeacf2bacbf94d28d00c7c541868763510af1889954c63225465729bd7a2c31e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-integrations-routing/previews/button-router.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/integrations/routing/ButtonRouter\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "291d7728cefcd4af74ffa0c5b68a12200a18395edd3bdcfb28a4227775399766",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-integrations-routing/previews/link-demo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/integrations/routing/LinkDemo\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e8cf0250938a947dc98c7c6f741d0047b186ed198ad7b5c6889091dd4c25e912",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-integrations-routing/previews/link-router.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/integrations/routing/LinkRouter\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "db73033c3bdffcb05d9ab23ac39eb2e7e652225acf3ba40a13f2468e42b48f46",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-integrations-routing/previews/link-router-with-theme.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/integrations/routing/LinkRouterWithTheme\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e3ed57e61335d206e456ec90e026c858aeb5bda63d86252bebbce484925d2097",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-integrations-routing/previews/list-router.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/integrations/routing/ListRouter\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "047888a415facb0755845bdd172d5c5c3f29dca2d4879aface7c32de85e4263d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-integrations-routing/previews/tabs-router.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/integrations/routing/TabsRouter\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "3fe45e14c82d5b87d0732497ca8f03275b2aca1af4035073367e2d2fed733b05",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0 react-router@8.4.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0 react-router@8.4.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "material-integrations-routing",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/integrations/routing",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/integrations/routing/ButtonDemo.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/integrations/routing/ButtonDemo.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI material integrations routing\n\n7 published Material UI material integrations routing examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/integrations/routing\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/integrations/routing/ButtonDemo.tsx\n"
+}

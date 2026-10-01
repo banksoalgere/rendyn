@@ -1,0 +1,145 @@
+{
+  "id": "mui:system-styled",
+  "sourceId": "mui",
+  "slug": "mui-system-styled",
+  "name": "Material UI system styled",
+  "description": "4 published Material UI system styled examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mui/system@9.4.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "system-styled",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file"
+    ],
+    "aliases": [
+      "system styled",
+      "material ui system styled",
+      "system-styled"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "4 published Material UI system styled examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "system-styled:code:command:data:file",
+    "searchText": "Material UI system styled\nsystem styled\n4 published Material UI system styled examples with complete pinned source and MIT attribution.\nmaterial ui system styled\nsystem-styled\ncode\ncommand\ndata\nfile\nMaterial UI system styled 4 published Material UI system styled examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/system/styled Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/system/styled/BasicUsage.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-system-styled",
+  "manifestPath": "components/mui-system-styled/component.json",
+  "integrity": "sha256:a38d09f66eee8c7b689d721081ab945e2351c59d682d80de720b49f39fcab461",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/system/styled/BasicUsage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { styled } from '@mui/system';\n\nconst MyComponent = styled('div')({\n  color: 'darkslategray',\n  backgroundColor: 'aliceblue',\n  padding: 8, // will be converted to `8px`\n  borderRadius: 4, // will be converted to `4px`\n});\n\nexport default function BasicUsage() {\n  return <MyComponent>Styled div</MyComponent>;\n}\n",
+      "sha256": "671355d38412031bfe3d16f3f26c180fa8cc9bfe5196d555c73ca400f602b345",
+      "upstreamPath": "docs/data/system/styled/BasicUsage.tsx",
+      "upstreamSha256": "ac266e54a210af20a80d7afd57095611f93bcadd96bec8c5579f33f8438d0c69",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/system/styled/ThemeUsage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { styled, createTheme, ThemeProvider } from '@mui/system';\n\nconst customTheme = createTheme({\n  palette: {\n    primary: {\n      main: '#1976d2',\n      contrastText: 'white',\n    },\n  },\n});\n\nconst MyThemeComponent = styled('div')(({ theme }) => ({\n  color: theme.palette.primary.contrastText,\n  backgroundColor: theme.palette.primary.main,\n  padding: theme.spacing(1),\n  borderRadius: theme.shape.borderRadius,\n}));\n\nexport default function ThemeUsage() {\n  return (\n    <ThemeProvider theme={customTheme}>\n      <MyThemeComponent>Styled div with theme</MyThemeComponent>\n    </ThemeProvider>\n  );\n}\n",
+      "sha256": "cff18d47313a796130ad333ba1f3dff4014e26c8e4bbb3f89002c7c70cb2182d",
+      "upstreamPath": "docs/data/system/styled/ThemeUsage.tsx",
+      "upstreamSha256": "698211fde9407213db733973ade446020910a69b13d7462f73e9c6bb1fa9fe65",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/system/styled/UsingOptions.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { styled, createTheme, ThemeProvider } from '@mui/system';\n\ninterface MyThemeComponentProps {\n  color?: 'primary' | 'secondary';\n  variant?: 'normal' | 'dashed';\n}\n\nconst customTheme = createTheme({\n  components: {\n    MyThemeComponent: {\n      styleOverrides: {\n        root: {\n          color: 'darkslategray',\n        },\n        primary: {\n          color: 'darkblue',\n        },\n        secondary: {\n          color: 'darkred',\n          backgroundColor: 'pink',\n        },\n      },\n      variants: [\n        {\n          props: { variant: 'dashed', color: 'primary' },\n          style: {\n            border: '1px dashed darkblue',\n          },\n        },\n        {\n          props: { variant: 'dashed', color: 'secondary' },\n          style: {\n            border: '1px dashed darkred',\n          },\n        },\n      ],\n    },\n  },\n});\n\nconst MyThemeComponent = styled('div', {\n  // Configure which props should be forwarded on DOM\n  shouldForwardProp: (prop) =>\n    prop !== 'color' && prop !== 'variant' && prop !== 'sx',\n  name: 'MyThemeComponent',\n  slot: 'Root',\n  // We are specifying here how the styleOverrides are being applied based on props\n  overridesResolver: (props, styles) => [\n    styles.root,\n    props.color === 'primary' && styles.primary,\n    props.color === 'secondary' && styles.secondary,\n  ],\n})<MyThemeComponentProps>(({ theme }) => ({\n  backgroundColor: 'aliceblue',\n  padding: theme.spacing(1),\n}));\n\nexport default function UsingOptions() {\n  return (\n    <ThemeProvider theme={customTheme}>\n      <MyThemeComponent sx={{ m: 1 }} color=\"primary\" variant=\"dashed\">\n        Primary\n      </MyThemeComponent>\n      <MyThemeComponent sx={{ m: 1 }} color=\"secondary\">\n        Secondary\n      </MyThemeComponent>\n    </ThemeProvider>\n  );\n}\n",
+      "sha256": "7b21a073a33352d34452b33a1bfa9d7efaa9532decfc3afeeed3c626d7e3e545",
+      "upstreamPath": "docs/data/system/styled/UsingOptions.tsx",
+      "upstreamSha256": "8d7f5dd41b91dd6f6d95fcc90c65d88372f1f1c4455377762b8c5df829f2ff5c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/system/styled/UsingWithSx.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { styled, createTheme, ThemeProvider } from '@mui/system';\n\nconst customTheme = createTheme({\n  palette: {\n    primary: {\n      main: '#1976d2',\n      contrastText: 'white',\n    },\n  },\n});\n\nconst MyThemeComponent = styled('div')(({ theme }) =>\n  theme.unstable_sx({\n    color: 'primary.contrastText',\n    backgroundColor: 'primary.main',\n    padding: 1,\n    borderRadius: 1,\n  }),\n);\n\nexport default function UsingWithSx() {\n  return (\n    <ThemeProvider theme={customTheme}>\n      <MyThemeComponent>Styled div with theme</MyThemeComponent>\n    </ThemeProvider>\n  );\n}\n",
+      "sha256": "f2d54cb705a6d90b4d2146aee430fea90290e7028c770b79cc370201ffb0a1fc",
+      "upstreamPath": "docs/data/system/styled/UsingWithSx.tsx",
+      "upstreamSha256": "8193ffcc15d42e777c49ae80364455117a94f19781be9979e6a50dfbd799efe8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/system-styled/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/system/styled/BasicUsage\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "b85e21ad230894c015b635513c542d34cf9ccfb4bbd05c1c54b79865bedee839",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/system-styled/previews/theme-usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/system/styled/ThemeUsage\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "32ac36a23cc0441d2f2b281f99e78cb78c5f2d10a489f2fc0ed4936496694e8e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/system-styled/previews/using-options.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/system/styled/UsingOptions\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "13b627b0f8508fba96e50063ad8d35d3524f2e7e36c0cdde498f3712f65d8c35",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/system-styled/previews/using-with-sx.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/system/styled/UsingWithSx\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1c5ad9aae6da732ac4bb8fd0a628c31ba2a54fe27eff6cafb41cd3c85675c857",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mui/system@9.4.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mui/system@9.4.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "system-styled",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/system/styled",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/system/styled/BasicUsage.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/system/styled/BasicUsage.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI system styled\n\n4 published Material UI system styled examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/system/styled\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/system/styled/BasicUsage.tsx\n"
+}

@@ -1,0 +1,135 @@
+{
+  "id": "originui:comp-74",
+  "sourceId": "originui",
+  "slug": "originui-comp-74",
+  "name": "Origin UI label textarea comp-74",
+  "description": "1 published Origin UI label textarea comp-74 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "clsx@2.1.1",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "comp-74",
+    "tags": [
+      "file",
+      "select",
+      "text",
+      "upload"
+    ],
+    "aliases": [
+      "comp 74",
+      "origin ui label textarea comp-74",
+      "comp-74"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Origin UI label textarea comp-74 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "comp-74:file:select:text:upload",
+    "searchText": "Origin UI label textarea comp-74\ncomp 74\n1 published Origin UI label textarea comp-74 examples with complete pinned source and MIT attribution.\norigin ui label textarea comp-74\ncomp-74\nfile\nselect\ntext\nupload\nOrigin UI label textarea comp 74 1 published Origin UI label textarea comp 74 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 74.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-74",
+  "manifestPath": "components/originui-comp-74/component.json",
+  "integrity": "sha256:69fbed8b6c9b1405e0ac08ec740802374b466301d1556c4967c323c1e2378ec1",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-74.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useId } from \"react\";\nimport { useCharacterLimit } from \"@/components/rendyn-libraries/originui/upstream/registry/default/hooks/use-character-limit\";\nimport { Label } from \"@/components/rendyn-libraries/originui/ui/label\";\nimport { Textarea } from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/textarea\";\n\nexport default function Component() {\n  const id = useId();\n  const maxLength = 180;\n  const {\n    value,\n    characterCount,\n    handleChange,\n    maxLength: limit,\n  } = useCharacterLimit({ maxLength });\n\n  return (\n    <div className=\"*:not-first:mt-2\">\n      <Label htmlFor={id}>Textarea with characters left</Label>\n      <Textarea\n        aria-describedby={`${id}-description`}\n        id={id}\n        maxLength={maxLength}\n        onChange={handleChange}\n        value={value}\n      />\n      <p\n        aria-live=\"polite\"\n        className=\"mt-2 text-right text-muted-foreground text-xs\"\n        id={`${id}-description`}\n        role=\"status\"\n      >\n        <span className=\"tabular-nums\">{limit - characterCount}</span>{\" \"}\n        characters left\n      </p>\n    </div>\n  );\n}\n",
+      "sha256": "1214d822d29c1f85f884f732c608a58edbd176c5b09d806b15572911acd283cd",
+      "upstreamPath": "apps/origin/registry/default/components/comp-74.tsx",
+      "upstreamSha256": "f1399880b4651e0ed4286d3c19fd6ce8aad9d362aad2403f9c96fd7abcb46b29",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/hooks/use-character-limit.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ChangeEvent, useState } from \"react\";\n\ntype UseCharacterLimitProps = {\n  maxLength: number;\n  initialValue?: string;\n};\n\nexport function useCharacterLimit({\n  maxLength,\n  initialValue = \"\",\n}: UseCharacterLimitProps) {\n  const [value, setValue] = useState(initialValue);\n  const [characterCount, setCharacterCount] = useState(initialValue.length);\n\n  const handleChange = (\n    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,\n  ) => {\n    const newValue = e.target.value;\n    if (newValue.length <= maxLength) {\n      setValue(newValue);\n      setCharacterCount(newValue.length);\n    }\n  };\n\n  return {\n    characterCount,\n    handleChange,\n    maxLength,\n    value,\n  };\n}\n",
+      "sha256": "a0ae20dbfd9c71211e1c14c9c9b257bd368777ca3a3c98ce55774efc5648fedf",
+      "upstreamPath": "apps/origin/registry/default/hooks/use-character-limit.ts",
+      "upstreamSha256": "a0ae20dbfd9c71211e1c14c9c9b257bd368777ca3a3c98ce55774efc5648fedf",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/ui/label.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Label as LabelPrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Label({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      className={cn(\n        \"select-none font-medium text-foreground text-sm leading-4 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50\",\n        className,\n      )}\n      data-slot=\"label\"\n      {...props}\n    />\n  );\n}\n\nexport { Label };\n",
+      "sha256": "41c807094258a1323781107184a31dfb2e1ec87fb686e9e98de204b9cd3c841f",
+      "upstreamPath": "apps/origin/registry/default/ui/label.tsx",
+      "upstreamSha256": "5bc1af43d7f8acd46ba7bdd2ddadd3ac42ba5d86300fce320f687d84f6595ed3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/textarea.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction Textarea({ className, ...props }: React.ComponentProps<\"textarea\">) {\n  return (\n    <textarea\n      className={cn(\n        \"flex min-h-19.5 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs outline-none transition-[color,box-shadow] placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40\",\n        className,\n      )}\n      data-slot=\"textarea\"\n      {...props}\n    />\n  );\n}\nTextarea.displayName = \"Textarea\";\n\nexport { Textarea };\n",
+      "sha256": "5c973b523cdd7ab815579a814c617025a7afe7d223cfa194aa5f00ba876de656",
+      "upstreamPath": "apps/origin/registry/default/ui/textarea.tsx",
+      "upstreamSha256": "bb58ddd09d7c1d6a1d99c3f15468859a390b691376416fc58f623cdb1461b5cc",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-74/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-74\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "283e670283915c65d6e20654de9991a418193a0a0cc4a459403b7731316eccbb",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add clsx@2.1.1 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add clsx@2.1.1 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-74",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-74.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-74.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI label textarea comp-74\n\n1 published Origin UI label textarea comp-74 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-74.tsx\n"
+}

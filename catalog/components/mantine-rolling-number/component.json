@@ -1,0 +1,129 @@
+{
+  "id": "mantine:rolling-number",
+  "sourceId": "mantine",
+  "slug": "mantine-rolling-number",
+  "name": "Mantine rolling number",
+  "description": "3 published Mantine rolling number examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "rolling-number",
+    "tags": [
+      "code",
+      "file",
+      "number"
+    ],
+    "aliases": [
+      "rolling number",
+      "mantine rolling number",
+      "rolling-number"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "3 published Mantine rolling number examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "rolling-number:code:file:number",
+    "searchText": "Mantine rolling number\nrolling number\n3 published Mantine rolling number examples with complete pinned source and MIT attribution.\nmantine rolling number\nrolling-number\ncode\nfile\nnumber\nMantine rolling number 3 published Mantine rolling number examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/RollingNumber Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/RollingNumber/RollingNumber.demo.duration.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-rolling-number",
+  "manifestPath": "components/mantine-rolling-number/component.json",
+  "integrity": "sha256:23ebce26ee0bff3b89bdd69dff3c109b1c17c28fa536c459db7bac881fe4f6e7",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/RollingNumber/RollingNumber.demo.duration.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Group, RollingNumber, Stack, Text } from '@mantine/core';\n\nfunction Demo() {\n  const [value, setValue] = useState(500);\n\n  return (\n    <Stack>\n      <div>\n        <Text size=\"sm\" c=\"dimmed\">\n          200ms\n        </Text>\n        <RollingNumber value={value} animationDuration={200} fz=\"28px\" />\n      </div>\n      <div>\n        <Text size=\"sm\" c=\"dimmed\">\n          600ms (default)\n        </Text>\n        <RollingNumber value={value} animationDuration={600} fz=\"28px\" />\n      </div>\n      <div>\n        <Text size=\"sm\" c=\"dimmed\">\n          1200ms\n        </Text>\n        <RollingNumber value={value} animationDuration={1200} fz=\"28px\" />\n      </div>\n      <Group>\n        <Button onClick={() => setValue(Math.floor(Math.random() * 1000))}>Random</Button>\n      </Group>\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "1f6e754ae1140fc63d27b5ae2e7c432bf213fc048d92bde6b7fbc0c4cdef2112",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/RollingNumber/RollingNumber.demo.duration.tsx",
+      "upstreamSha256": "2c085d30ec5faeb62dd16c7ef97eda962f91a24b0bf70f6f9b04a91bfd83790c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/RollingNumber/RollingNumber.demo.prefix.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Group, RollingNumber } from '@mantine/core';\n\nfunction Demo() {\n  const [value, setValue] = useState(99.99);\n\n  return (\n    <>\n      <RollingNumber\n        value={value}\n        prefix=\"$ \"\n        suffix=\" USD\"\n        decimalScale={2}\n        fixedDecimalScale\n        thousandSeparator\n        fz=\"32px\"\n      />\n      <Group mt=\"md\">\n        <Button onClick={() => setValue((v) => +(v + 10.5).toFixed(2))}>+10.50</Button>\n        <Button onClick={() => setValue((v) => +(v - 10.5).toFixed(2))}>-10.50</Button>\n        <Button onClick={() => setValue(+(Math.random() * 10000).toFixed(2))}>Random</Button>\n      </Group>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "bfb7857cc43e0ed70f7311ac6b998f8e3db52e909c48b4eec2acd71b295b5957",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/RollingNumber/RollingNumber.demo.prefix.tsx",
+      "upstreamSha256": "7a4ad76697ea2f57e0074ed275f2277c5d30fc27090ed67a52671362c77fab5c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/RollingNumber/RollingNumber.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Group, RollingNumber } from '@mantine/core';\n\nfunction Demo() {\n  const [value, setValue] = useState(1234);\n\n  return (\n    <>\n      <RollingNumber value={value} fz=\"36px\" />\n      <Group mt=\"md\">\n        <Button onClick={() => setValue((v) => v + 1)}>Increment</Button>\n        <Button onClick={() => setValue((v) => v - 1)}>Decrement</Button>\n        <Button onClick={() => setValue(Math.floor(Math.random() * 10000))}>Random</Button>\n      </Group>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "44e82e1c8acfc9491196db59474bf91257b206031ce3f5c392dad866e988e591",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/RollingNumber/RollingNumber.demo.usage.tsx",
+      "upstreamSha256": "304e57994a7fa19a3f04be1ad9fa7eca94b23e30a9a978c29ab954ef0c40f2cc",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/rolling-number/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/RollingNumber/RollingNumber.demo.duration\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "83e3bdd658e3a630b64e4067d73bffebeb709b05bbac3f20e7a0a8b0283cb586",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/rolling-number/previews/prefix.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/RollingNumber/RollingNumber.demo.prefix\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "996a425a1884e9d93746888fa50ab9bebbc7c5753eacbc6a303d766d5fade862",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/rolling-number/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/RollingNumber/RollingNumber.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b7692b73efc3ad5fe7e6e79f00538df696c3aec94c2d12ad8553c6aa9dd521e4",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "rolling-number",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/RollingNumber",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/RollingNumber/RollingNumber.demo.duration.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/RollingNumber/RollingNumber.demo.duration.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine rolling number\n\n3 published Mantine rolling number examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/RollingNumber\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/RollingNumber/RollingNumber.demo.duration.tsx\n"
+}

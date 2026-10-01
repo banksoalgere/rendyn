@@ -1,0 +1,228 @@
+{
+  "id": "chakra:kbd",
+  "sourceId": "chakra",
+  "slug": "chakra-kbd",
+  "name": "Chakra UI kbd",
+  "description": "8 published Chakra UI kbd examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "kbd",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "kbd",
+      "chakra ui kbd"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "8 published Chakra UI kbd examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "kbd:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI kbd\nkbd\n8 published Chakra UI kbd examples with complete pinned source and MIT attribution.\nchakra ui kbd\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI kbd 8 published Chakra UI kbd examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/kbd basic.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-kbd",
+  "manifestPath": "components/chakra-kbd/component.json",
+  "integrity": "sha256:c867a9a02d6b7c43ad2df8bb502be6f1f89a83eeb90fea2a007430c4cb39b341",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/kbd-basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Kbd } from \"@chakra-ui/react\"\n\nexport const KbdBasic = () => {\n  return <Kbd>Shift + Tab</Kbd>\n}\n",
+      "sha256": "c0cad49774a79fa5ed8d4701fc02895d2a3f77670488dbb1f8a289be580c5aaf",
+      "upstreamPath": "apps/compositions/src/examples/kbd-basic.tsx",
+      "upstreamSha256": "f8cb4d165a7fbccaa6ca8a6662974be3db05a1baf19cc1dd63a86fbf8ff0d1ae",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/kbd-function-keys.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HStack, Kbd } from \"@chakra-ui/react\"\n\nexport const KbdFunctionKeys = () => {\n  return (\n    <HStack>\n      <Kbd>⌘</Kbd>\n      <Kbd>⌥</Kbd>\n      <Kbd>⇧</Kbd>\n      <Kbd>⌃</Kbd>\n    </HStack>\n  )\n}\n",
+      "sha256": "cc717803bb9747eedb23b5cce49b9373a82e0975bacb22ba6a471e16fa4871b2",
+      "upstreamPath": "apps/compositions/src/examples/kbd-function-keys.tsx",
+      "upstreamSha256": "19396eeebf23b9d4abfa0aa0e5290681621a9dc11d16dba514fa4a379c3487d2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/kbd-size-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { For, Kbd, Span, useRecipe } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const KbdSizeTable = () => {\n  const recipe = useRecipe({ key: \"kbd\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.size}>{(v) => <td key={v}>{v}</td>}</For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.size}>\n                {(v) => (\n                  <td key={v}>\n                    <Kbd size={v} colorPalette={c}>\n                      ⌘ C\n                    </Kbd>\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n",
+      "sha256": "86781bb0e06c64178448b5982ed0c9eda86c493377ef36372190f55afde1d457",
+      "upstreamPath": "apps/compositions/src/examples/kbd-size-table.tsx",
+      "upstreamSha256": "eabf33d3187a809f8b17ccc7ba1358a8579fe4c8951adcb9d1b5fb0df596f6e7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/color-palettes.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { ColorPalette } from \"@chakra-ui/react\"\n\nexport const colorPalettes: ColorPalette[] = [\n  \"gray\",\n  \"red\",\n  \"green\",\n  \"blue\",\n  \"teal\",\n  \"pink\",\n  \"purple\",\n  \"cyan\",\n  \"orange\",\n  \"yellow\",\n]\n",
+      "sha256": "90c5e84e17059e5935c80798a833fb5ac46ea296bb8d1ee978fd7a6e8cdb15e7",
+      "upstreamPath": "apps/compositions/src/lib/color-palettes.ts",
+      "upstreamSha256": "bc209453f7e4dbfc131d92ed9c81f00e20ad5da6cab70624417dcd591e62eac1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/lib/playground-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { chakra } from \"@chakra-ui/react\"\n\nexport const PlaygroundTable = chakra(\"table\", {\n  base: {\n    width: \"full\",\n    marginBottom: \"32px\",\n    borderCollapse: \"collapse\",\n    \"& td:not(.chakra-table__cell)\": {\n      paddingRight: \"8\",\n      paddingBottom: \"8\",\n    },\n    \"& th:not(.chakra-table__column-header)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n    \"& thead td:not(.chakra-table__cell)\": {\n      fontSize: \"sm\",\n      color: \"fg.muted\",\n    },\n  },\n})\n",
+      "sha256": "0c8b12b7fc74b6aec643559359ca4d43afbca488faeb90424ba3f98e71e3d7e7",
+      "upstreamPath": "apps/compositions/src/lib/playground-table.tsx",
+      "upstreamSha256": "d42456810c8b507d7171df7dca2fc955f2c04f4e8e711a74de35507acf64416c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/kbd-variant-table.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { For, Kbd, Span, useRecipe } from \"@chakra-ui/react\"\nimport { colorPalettes } from \"@/components/rendyn-libraries/chakra/upstream/lib/color-palettes\"\nimport { PlaygroundTable } from \"@/components/rendyn-libraries/chakra/upstream/lib/playground-table\"\n\nexport const KbdVariantTable = () => {\n  const recipe = useRecipe({ key: \"kbd\" })\n  return (\n    <PlaygroundTable>\n      <thead>\n        <tr>\n          <td />\n          <For each={recipe.variantMap.variant}>\n            {(v) => <td key={v}>{v}</td>}\n          </For>\n        </tr>\n      </thead>\n      <tbody>\n        <For each={colorPalettes}>\n          {(c) => (\n            <tr key={c}>\n              <td>\n                <Span fontSize=\"sm\" color=\"fg.muted\" minW=\"8ch\">\n                  {c}\n                </Span>\n              </td>\n              <For each={recipe.variantMap.variant}>\n                {(v) => (\n                  <td key={v}>\n                    <Kbd variant={v} colorPalette={c}>\n                      ⌘ C\n                    </Kbd>\n                  </td>\n                )}\n              </For>\n            </tr>\n          )}\n        </For>\n      </tbody>\n    </PlaygroundTable>\n  )\n}\n",
+      "sha256": "e2b50ab9d4c31f46606248a354d7998db185f1446a8469a349c9aff5d1c7d61a",
+      "upstreamPath": "apps/compositions/src/examples/kbd-variant-table.tsx",
+      "upstreamSha256": "091e28be8e46db2f7ab00c7bbdf0ccd3dbbcdec89b2802c84c2794fc0051e852",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/kbd-with-combinations.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HStack, Kbd } from \"@chakra-ui/react\"\n\nexport const KbdWithCombinations = () => {\n  return (\n    <HStack gap=\"1\">\n      <Kbd>ctrl</Kbd>+<Kbd>shift</Kbd>+<Kbd>del</Kbd>\n    </HStack>\n  )\n}\n",
+      "sha256": "1793c4e469a15b8273147a6082eca3ce67e8d548bc7a66c4ec9ccfb3bb9d7e0d",
+      "upstreamPath": "apps/compositions/src/examples/kbd-with-combinations.tsx",
+      "upstreamSha256": "43c8003377c4ccbb06f27655ee914dd6336145b3fe23bcb6894eb1f66dd5b743",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/kbd-with-sizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HStack, Kbd } from \"@chakra-ui/react\"\n\nexport const KbdWithSizes = () => {\n  return (\n    <HStack gap=\"4\">\n      <Kbd size=\"sm\">Shift + Tab</Kbd>\n      <Kbd size=\"md\">Shift + Tab</Kbd>\n      <Kbd size=\"lg\">Shift + Tab</Kbd>\n    </HStack>\n  )\n}\n",
+      "sha256": "5e7847190ecb542951dc9acfaa2229a84e35d12adbc21e5fd3e40db953304219",
+      "upstreamPath": "apps/compositions/src/examples/kbd-with-sizes.tsx",
+      "upstreamSha256": "accb31737d03c8028ec7a1909a0f8598e9aba1ae98be8c917a87f6da1834b9b2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/kbd-with-variants.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HStack, Kbd } from \"@chakra-ui/react\"\n\nexport const KbdWithVariants = () => {\n  return (\n    <HStack gap=\"4\">\n      <Kbd variant=\"raised\">Shift + Tab</Kbd>\n      <Kbd variant=\"outline\">Shift + Tab</Kbd>\n      <Kbd variant=\"subtle\">Shift + Tab</Kbd>\n      <Kbd variant=\"plain\">Shift + Tab</Kbd>\n    </HStack>\n  )\n}\n",
+      "sha256": "b221f07a7086b6e8cd154212de2dd06e6d611451331b6a7c53bb256e9c7449f0",
+      "upstreamPath": "apps/compositions/src/examples/kbd-with-variants.tsx",
+      "upstreamSha256": "097e7e2d639e5de295791cc398977bafec4ff639cf22162146c0f24ab297563a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/kbd-within-text.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Kbd, Text } from \"@chakra-ui/react\"\n\nexport const KbdWithinText = () => {\n  return (\n    <Text>\n      Press <Kbd>F12</Kbd> to open DevTools\n    </Text>\n  )\n}\n",
+      "sha256": "17b7daf0473cced725221402faad1c52e1f1a016d809a8f010bb9b0a0f8cb0ba",
+      "upstreamPath": "apps/compositions/src/examples/kbd-within-text.tsx",
+      "upstreamSha256": "e01ee932ed79b47a36290cce1802e5b5fadec515ba8b007a5c819cf4fcdd37e5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/kbd/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { KbdBasic as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/kbd-basic\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "d03a9fc584a038dcbb35c9658d3bc603357de0a9333e57a35f6047818620aa5b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/kbd/previews/kbd-function-keys.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { KbdFunctionKeys as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/kbd-function-keys\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "8cceeb4a3f501409ebaea247d535d065648390c8115748c5f12e68450a55e389",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/kbd/previews/kbd-size-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { KbdSizeTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/kbd-size-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "c17ea4add60d4dac4c70a556fb9ed71077ec9f7fc2b4e6a65194e179c84e9ff2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/kbd/previews/kbd-variant-table.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { KbdVariantTable as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/kbd-variant-table\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "da01908d8a68aa8ccbfc4ed4485feb50d844d8940f126a1147d72fc162001242",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/kbd/previews/kbd-with-combinations.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { KbdWithCombinations as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/kbd-with-combinations\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "5b85000ff27fa342335ca17fa3e6b509aea5f5909e88c53be1acd796d365b76b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/kbd/previews/kbd-with-sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { KbdWithSizes as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/kbd-with-sizes\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "14da5c00f25fd12acf183c746419dde488cf94b650be35b891a6eb6738da5c38",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/kbd/previews/kbd-with-variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { KbdWithVariants as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/kbd-with-variants\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "1d9ea6588a9731dff5a6248415a0474b873dc7ea3c3148b0a467234caa591c97",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/kbd/previews/kbd-within-text.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { KbdWithinText as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/kbd-within-text\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "6dd444ed7bed9c76d5262c2896df24b77332c8b0b85bb14da22b7cb7b890c41c",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "kbd",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/kbd-basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/kbd-basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI kbd\n\n8 published Chakra UI kbd examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/kbd-basic.tsx\n"
+}

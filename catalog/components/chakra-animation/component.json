@@ -1,0 +1,98 @@
+{
+  "id": "chakra:animation",
+  "sourceId": "chakra",
+  "slug": "chakra-animation",
+  "name": "Chakra UI animation",
+  "description": "1 published Chakra UI animation examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@chakra-ui/react@3.37.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "animation",
+    "tags": [
+      "checkbox",
+      "file",
+      "form",
+      "input"
+    ],
+    "aliases": [
+      "animation",
+      "chakra ui animation"
+    ],
+    "interactions": [
+      "keyboard"
+    ],
+    "useWhen": [
+      "1 published Chakra UI animation examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "animation:checkbox:file:form:input:keyboard",
+    "searchText": "Chakra UI animation\nanimation\n1 published Chakra UI animation examples with complete pinned source and MIT attribution.\nchakra ui animation\ncheckbox\nfile\nform\ninput\nkeyboard\nChakra UI animation 1 published Chakra UI animation examples with complete pinned source and MIT attribution. Installation Complete MIT examples with a ChakraProvider using defaultSystem. Reuse the application level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/chakra ui/chakra ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/tokens Pinned source: https://github.com/chakra ui/chakra ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/tokens/animation style.tsx"
+  },
+  "previewPath": "/preview/blocks/chakra-animation",
+  "manifestPath": "components/chakra-animation/component.json",
+  "integrity": "sha256:5afdf96659b92f5820212a6522525e1ce1ff03d0c5e7c16090e51b9bf9f7269e",
+  "source": {
+    "id": "chakra",
+    "name": "Chakra UI",
+    "repository": "https://github.com/chakra-ui/chakra-ui",
+    "commit": "961161428b8c59157ad921dd23303b73c294d73f",
+    "registrySha256": "cc289587811da0c4bcff1251b6fb50f78cbd47129875c7465d392fafd7a66862",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2019 Chakra Systems Inc.",
+      "textPath": "source/chakra/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/chakra/upstream/examples/tokens/animation-style.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Center, For, HStack, Stack } from \"@chakra-ui/react\"\nimport { useState } from \"react\"\n\nexport const TokensAnimationStyle = () => {\n  const [animation, setAnimation] = useState<string | undefined>(undefined)\n  return (\n    <Stack gap=\"8\" mb=\"8\" align=\"flex-start\">\n      <HStack wrap=\"wrap\">\n        <For\n          each={[\n            \"slide-fade-in\",\n            \"slide-fade-out\",\n            \"scale-fade-in\",\n            \"scale-fade-out\",\n          ]}\n        >\n          {(animation) => (\n            <Button\n              size=\"sm\"\n              variant=\"outline\"\n              key={animation}\n              onClick={() => setAnimation(animation)}\n            >\n              {animation}\n            </Button>\n          )}\n        </For>\n      </HStack>\n\n      <Center\n        width=\"240px\"\n        height=\"240px\"\n        animationDuration=\"slowest\"\n        animationStyle={animation}\n        onAnimationEnd={() => setAnimation(undefined)}\n        bg=\"bg\"\n        data-placement=\"bottom\"\n        borderWidth=\"1px\"\n        p=\"4\"\n      >\n        Animation\n      </Center>\n    </Stack>\n  )\n}\n",
+      "sha256": "ff85ad9fd42a783efeac415ceb052c01f8e4e7a5b3c792c1f1c46b2397d4fb67",
+      "upstreamPath": "apps/compositions/src/examples/tokens/animation-style.tsx",
+      "upstreamSha256": "5425483176da2299e32239f184a5d67202bc28192fce17fcbefc8d7af3208a23",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/chakra/animation/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { TokensAnimationStyle as Example } from \"@/components/rendyn-libraries/chakra/upstream/examples/tokens/animation-style\";\nimport { ChakraProvider, defaultSystem } from \"@chakra-ui/react\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><ChakraProvider value={defaultSystem}><Example /></ChakraProvider></div>;\n}\n",
+      "sha256": "670cb2029e9bdf0347a3371c3bac2afa49f18cf04a9b75b55f18431eda10a5d7",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @chakra-ui/react@3.37.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @chakra-ui/react@3.37.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples with a ChakraProvider using defaultSystem.",
+      "Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "animation",
+    "upstreamPageUrl": "https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/tokens",
+    "upstreamDetailUrl": "https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/tokens/animation-style.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/chakra-ui/chakra-ui/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/tokens/animation-style.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/chakra/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Chakra UI animation\n\n1 published Chakra UI animation examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples with a ChakraProvider using defaultSystem.\n- Reuse the application-level ChakraProvider when integrating; keep HiddenInput in checkbox and switch compositions for keyboard and form semantics.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/chakra-ui/chakra-ui/tree/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/tokens\nPinned source: https://github.com/chakra-ui/chakra-ui/blob/961161428b8c59157ad921dd23303b73c294d73f/apps/compositions/src/examples/tokens/animation-style.tsx\n"
+}

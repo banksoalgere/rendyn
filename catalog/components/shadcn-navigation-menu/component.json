@@ -1,0 +1,119 @@
+{
+  "id": "shadcn:navigation-menu",
+  "sourceId": "shadcn",
+  "slug": "shadcn-navigation-menu",
+  "name": "shadcn/ui navigation menu",
+  "description": "1 published shadcn/ui navigation menu examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "class-variance-authority@0.7.1",
+    "cn@0.4.0",
+    "lucide-react@1.35.0",
+    "next@16.3.5",
+    "radix-ui@1.4.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "menu",
+    "tags": [
+      "file",
+      "input",
+      "menu",
+      "navigation"
+    ],
+    "aliases": [
+      "navigation menu",
+      "shadcn/ui navigation menu",
+      "menu"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published shadcn/ui navigation menu examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "menu:file:input:navigation",
+    "searchText": "shadcn/ui navigation menu\nnavigation menu\n1 published shadcn/ui navigation menu examples with complete pinned source and MIT attribution.\nmenu\nfile\ninput\nnavigation\nshadcn/ui navigation menu 1 published shadcn/ui navigation menu examples with complete pinned source and MIT attribution. Installation Copyable component source and official examples, not a dependency on a hosted registry. Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent). Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/shadcn ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples Pinned source: https://github.com/shadcn ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples/navigation menu demo.tsx"
+  },
+  "previewPath": "/preview/blocks/shadcn-navigation-menu",
+  "manifestPath": "components/shadcn-navigation-menu/component.json",
+  "integrity": "sha256:d36f48f78c2a6d6d36c9102b6a09b5bd380f169ed0681d173e9457d028ffee14",
+  "source": {
+    "id": "shadcn",
+    "name": "shadcn/ui",
+    "repository": "https://github.com/shadcn-ui/ui",
+    "commit": "a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4",
+    "registrySha256": "0054ee914f9451ebe390d414d34264df3a61f5e264c59b25b4c8155452fff343",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 shadcn",
+      "textPath": "source/shadcn/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/navigation-menu-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport Link from \"next/link\"\nimport { CircleCheckIcon, CircleHelpIcon, CircleIcon } from \"lucide-react\"\n\nimport { useIsMobile } from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/hooks/use-mobile\"\nimport {\n  NavigationMenu,\n  NavigationMenuContent,\n  NavigationMenuItem,\n  NavigationMenuLink,\n  NavigationMenuList,\n  NavigationMenuTrigger,\n  navigationMenuTriggerStyle,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/navigation-menu\"\n\nconst components: { title: string; href: string; description: string }[] = [\n  {\n    title: \"Alert Dialog\",\n    href: \"/docs/primitives/alert-dialog\",\n    description:\n      \"A modal dialog that interrupts the user with important content and expects a response.\",\n  },\n  {\n    title: \"Hover Card\",\n    href: \"/docs/primitives/hover-card\",\n    description:\n      \"For sighted users to preview content available behind a link.\",\n  },\n  {\n    title: \"Progress\",\n    href: \"/docs/primitives/progress\",\n    description:\n      \"Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.\",\n  },\n  {\n    title: \"Scroll-area\",\n    href: \"/docs/primitives/scroll-area\",\n    description: \"Visually or semantically separates content.\",\n  },\n  {\n    title: \"Tabs\",\n    href: \"/docs/primitives/tabs\",\n    description:\n      \"A set of layered sections of content—known as tab panels—that are displayed one at a time.\",\n  },\n  {\n    title: \"Tooltip\",\n    href: \"/docs/primitives/tooltip\",\n    description:\n      \"A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.\",\n  },\n]\n\nexport default function NavigationMenuDemo() {\n  const isMobile = useIsMobile()\n\n  return (\n    <NavigationMenu viewport={isMobile}>\n      <NavigationMenuList className=\"flex-wrap\">\n        <NavigationMenuItem>\n          <NavigationMenuTrigger>Home</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <ul className=\"grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]\">\n              <li className=\"row-span-3\">\n                <NavigationMenuLink asChild>\n                  <a\n                    className=\"flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-4 no-underline outline-hidden transition-all duration-200 select-none focus:shadow-md md:p-6\"\n                    href=\"/\"\n                  >\n                    <div className=\"mb-2 text-lg font-medium sm:mt-4\">\n                      shadcn/ui\n                    </div>\n                    <p className=\"text-sm leading-tight text-muted-foreground\">\n                      Beautifully designed components built with Tailwind CSS.\n                    </p>\n                  </a>\n                </NavigationMenuLink>\n              </li>\n              <ListItem href=\"/docs\" title=\"Introduction\">\n                Re-usable components built using Radix UI and Tailwind CSS.\n              </ListItem>\n              <ListItem href=\"/docs/installation\" title=\"Installation\">\n                How to install dependencies and structure your app.\n              </ListItem>\n              <ListItem href=\"/docs/primitives/typography\" title=\"Typography\">\n                Styles for headings, paragraphs, lists...etc\n              </ListItem>\n            </ul>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n        <NavigationMenuItem>\n          <NavigationMenuTrigger>Components</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <ul className=\"grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]\">\n              {components.map((component) => (\n                <ListItem\n                  key={component.title}\n                  title={component.title}\n                  href={component.href}\n                >\n                  {component.description}\n                </ListItem>\n              ))}\n            </ul>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n        <NavigationMenuItem>\n          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>\n            <Link href=\"/docs\">Docs</Link>\n          </NavigationMenuLink>\n        </NavigationMenuItem>\n        <NavigationMenuItem className=\"hidden md:block\">\n          <NavigationMenuTrigger>List</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <ul className=\"grid w-[300px] gap-4\">\n              <li>\n                <NavigationMenuLink asChild>\n                  <Link href=\"#\">\n                    <div className=\"font-medium\">Components</div>\n                    <div className=\"text-muted-foreground\">\n                      Browse all components in the library.\n                    </div>\n                  </Link>\n                </NavigationMenuLink>\n                <NavigationMenuLink asChild>\n                  <Link href=\"#\">\n                    <div className=\"font-medium\">Documentation</div>\n                    <div className=\"text-muted-foreground\">\n                      Learn how to use the library.\n                    </div>\n                  </Link>\n                </NavigationMenuLink>\n                <NavigationMenuLink asChild>\n                  <Link href=\"#\">\n                    <div className=\"font-medium\">Blog</div>\n                    <div className=\"text-muted-foreground\">\n                      Read our latest blog posts.\n                    </div>\n                  </Link>\n                </NavigationMenuLink>\n              </li>\n            </ul>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n        <NavigationMenuItem className=\"hidden md:block\">\n          <NavigationMenuTrigger>Simple</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <ul className=\"grid w-[200px] gap-4\">\n              <li>\n                <NavigationMenuLink asChild>\n                  <Link href=\"#\">Components</Link>\n                </NavigationMenuLink>\n                <NavigationMenuLink asChild>\n                  <Link href=\"#\">Documentation</Link>\n                </NavigationMenuLink>\n                <NavigationMenuLink asChild>\n                  <Link href=\"#\">Blocks</Link>\n                </NavigationMenuLink>\n              </li>\n            </ul>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n        <NavigationMenuItem className=\"hidden md:block\">\n          <NavigationMenuTrigger>With Icon</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <ul className=\"grid w-[200px] gap-4\">\n              <li>\n                <NavigationMenuLink asChild>\n                  <Link href=\"#\" className=\"flex-row items-center gap-2\">\n                    <CircleHelpIcon />\n                    Backlog\n                  </Link>\n                </NavigationMenuLink>\n                <NavigationMenuLink asChild>\n                  <Link href=\"#\" className=\"flex-row items-center gap-2\">\n                    <CircleIcon />\n                    To Do\n                  </Link>\n                </NavigationMenuLink>\n                <NavigationMenuLink asChild>\n                  <Link href=\"#\" className=\"flex-row items-center gap-2\">\n                    <CircleCheckIcon />\n                    Done\n                  </Link>\n                </NavigationMenuLink>\n              </li>\n            </ul>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n      </NavigationMenuList>\n    </NavigationMenu>\n  )\n}\n\nfunction ListItem({\n  title,\n  children,\n  href,\n  ...props\n}: React.ComponentPropsWithoutRef<\"li\"> & { href: string }) {\n  return (\n    <li {...props}>\n      <NavigationMenuLink asChild>\n        <Link href={href}>\n          <div className=\"text-sm leading-none font-medium\">{title}</div>\n          <p className=\"line-clamp-2 text-sm leading-snug text-muted-foreground\">\n            {children}\n          </p>\n        </Link>\n      </NavigationMenuLink>\n    </li>\n  )\n}\n",
+      "sha256": "74b91c0406f959e2e032809ab54acc20fad21054535b93ee48c313267ff9d52b",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/navigation-menu-demo.tsx",
+      "upstreamSha256": "17464911daa88a84345fbc6c1485d0f346b5417f0bb3370f623ee435fb50265d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/hooks/use-mobile.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\n\nconst MOBILE_BREAKPOINT = 768\n\nexport function useIsMobile() {\n  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined)\n\n  React.useEffect(() => {\n    const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`)\n    const onChange = () => {\n      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)\n    }\n    mql.addEventListener(\"change\", onChange)\n    setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)\n    return () => mql.removeEventListener(\"change\", onChange)\n  }, [])\n\n  return !!isMobile\n}\n",
+      "sha256": "fb1bc01eef9a76135f351303f9bac8ce8fb672c9be86f9250ca2f4dc13b10e70",
+      "upstreamPath": "apps/v4/registry/new-york-v4/hooks/use-mobile.ts",
+      "upstreamSha256": "ad0936f84f1df79d3697bfbff9c18f8ad58431c1cbaf2359c6a853b0fcc9f28b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/navigation-menu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cva } from \"class-variance-authority\"\nimport { cn } from \"cn\"\nimport { ChevronDownIcon } from \"lucide-react\"\nimport { NavigationMenu as NavigationMenuPrimitive } from \"radix-ui\"\n\nfunction NavigationMenu({\n  className,\n  children,\n  viewport = true,\n  ...props\n}: React.ComponentProps<typeof NavigationMenuPrimitive.Root> & {\n  viewport?: boolean\n}) {\n  return (\n    <NavigationMenuPrimitive.Root\n      data-slot=\"navigation-menu\"\n      data-viewport={viewport}\n      className={cn(\n        \"group/navigation-menu relative flex max-w-max flex-1 items-center justify-center\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n      {viewport && <NavigationMenuViewport />}\n    </NavigationMenuPrimitive.Root>\n  )\n}\n\nfunction NavigationMenuList({\n  className,\n  ...props\n}: React.ComponentProps<typeof NavigationMenuPrimitive.List>) {\n  return (\n    <NavigationMenuPrimitive.List\n      data-slot=\"navigation-menu-list\"\n      className={cn(\n        \"group flex flex-1 list-none items-center justify-center gap-1\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction NavigationMenuItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof NavigationMenuPrimitive.Item>) {\n  return (\n    <NavigationMenuPrimitive.Item\n      data-slot=\"navigation-menu-item\"\n      className={cn(\"relative\", className)}\n      {...props}\n    />\n  )\n}\n\nconst navigationMenuTriggerStyle = cva(\n  \"group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-[color,box-shadow] outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-accent/50 data-[state=open]:text-accent-foreground data-[state=open]:hover:bg-accent data-[state=open]:focus:bg-accent\"\n)\n\nfunction NavigationMenuTrigger({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof NavigationMenuPrimitive.Trigger>) {\n  return (\n    <NavigationMenuPrimitive.Trigger\n      data-slot=\"navigation-menu-trigger\"\n      className={cn(navigationMenuTriggerStyle(), \"group\", className)}\n      {...props}\n    >\n      {children}{\" \"}\n      <ChevronDownIcon\n        className=\"relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180\"\n        aria-hidden=\"true\"\n      />\n    </NavigationMenuPrimitive.Trigger>\n  )\n}\n\nfunction NavigationMenuContent({\n  className,\n  ...props\n}: React.ComponentProps<typeof NavigationMenuPrimitive.Content>) {\n  return (\n    <NavigationMenuPrimitive.Content\n      data-slot=\"navigation-menu-content\"\n      className={cn(\n        \"top-0 left-0 w-full p-2 pr-2.5 data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 data-[motion^=from-]:animate-in data-[motion^=from-]:fade-in data-[motion^=to-]:animate-out data-[motion^=to-]:fade-out md:absolute md:w-auto\",\n        \"group-data-[viewport=false]/navigation-menu:top-full group-data-[viewport=false]/navigation-menu:mt-1.5 group-data-[viewport=false]/navigation-menu:overflow-hidden group-data-[viewport=false]/navigation-menu:rounded-md group-data-[viewport=false]/navigation-menu:border group-data-[viewport=false]/navigation-menu:bg-popover group-data-[viewport=false]/navigation-menu:text-popover-foreground group-data-[viewport=false]/navigation-menu:shadow group-data-[viewport=false]/navigation-menu:duration-200 **:data-[slot=navigation-menu-link]:focus:ring-0 **:data-[slot=navigation-menu-link]:focus:outline-none group-data-[viewport=false]/navigation-menu:data-[state=closed]:animate-out group-data-[viewport=false]/navigation-menu:data-[state=closed]:fade-out-0 group-data-[viewport=false]/navigation-menu:data-[state=closed]:zoom-out-95 group-data-[viewport=false]/navigation-menu:data-[state=open]:animate-in group-data-[viewport=false]/navigation-menu:data-[state=open]:fade-in-0 group-data-[viewport=false]/navigation-menu:data-[state=open]:zoom-in-95\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction NavigationMenuViewport({\n  className,\n  ...props\n}: React.ComponentProps<typeof NavigationMenuPrimitive.Viewport>) {\n  return (\n    <div\n      className={cn(\n        \"absolute top-full left-0 isolate z-50 flex justify-center\"\n      )}\n    >\n      <NavigationMenuPrimitive.Viewport\n        data-slot=\"navigation-menu-viewport\"\n        className={cn(\n          \"origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border bg-popover text-popover-foreground shadow data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]\",\n          className\n        )}\n        {...props}\n      />\n    </div>\n  )\n}\n\nfunction NavigationMenuLink({\n  className,\n  ...props\n}: React.ComponentProps<typeof NavigationMenuPrimitive.Link>) {\n  return (\n    <NavigationMenuPrimitive.Link\n      data-slot=\"navigation-menu-link\"\n      className={cn(\n        \"flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground data-[active=true]:hover:bg-accent data-[active=true]:focus:bg-accent [&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction NavigationMenuIndicator({\n  className,\n  ...props\n}: React.ComponentProps<typeof NavigationMenuPrimitive.Indicator>) {\n  return (\n    <NavigationMenuPrimitive.Indicator\n      data-slot=\"navigation-menu-indicator\"\n      className={cn(\n        \"top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:animate-in data-[state=visible]:fade-in\",\n        className\n      )}\n      {...props}\n    >\n      <div className=\"relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-border shadow-md\" />\n    </NavigationMenuPrimitive.Indicator>\n  )\n}\n\nexport {\n  NavigationMenu,\n  NavigationMenuList,\n  NavigationMenuItem,\n  NavigationMenuContent,\n  NavigationMenuTrigger,\n  NavigationMenuLink,\n  NavigationMenuIndicator,\n  NavigationMenuViewport,\n  navigationMenuTriggerStyle,\n}\n",
+      "sha256": "d22f89028998f4b4ab7cffef29b52bec4899e8fc5f410871f662efcc03874824",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/navigation-menu.tsx",
+      "upstreamSha256": "fbe81d7c358df0d21e49b03174ef53be7d66226a3dce1a97ff3d4a260ed833a3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/navigation-menu/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/navigation-menu-demo\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "9e2a1d690f2a3139b623a05240b477d8dead49bbf9b38eda626c2c1ec3c00af7",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add class-variance-authority@0.7.1 cn@0.4.0 lucide-react@1.35.0 next@16.3.5 radix-ui@1.4.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add class-variance-authority@0.7.1 cn@0.4.0 lucide-react@1.35.0 next@16.3.5 radix-ui@1.4.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable component source and official examples, not a dependency on a hosted registry.",
+      "Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent)."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "navigation-menu",
+    "upstreamPageUrl": "https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples",
+    "upstreamDetailUrl": "https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/navigation-menu-demo.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/shadcn-ui/ui/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/navigation-menu-demo.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# shadcn/ui navigation menu\n\n1 published shadcn/ui navigation menu examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable component source and official examples, not a dependency on a hosted registry.\n- Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent).\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples\nPinned source: https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/navigation-menu-demo.tsx\n"
+}

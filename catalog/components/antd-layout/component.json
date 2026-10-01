@@ -1,0 +1,272 @@
+{
+  "id": "antd:layout",
+  "sourceId": "antd",
+  "slug": "antd-layout",
+  "name": "Ant Design layout",
+  "description": "12 published Ant Design layout examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@ant-design/icons@6.3.4",
+    "antd@6.6.5"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "layout",
+    "tags": [
+      "file",
+      "form",
+      "layout"
+    ],
+    "aliases": [
+      "layout",
+      "ant design layout"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "12 published Ant Design layout examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "layout:file:form",
+    "searchText": "Ant Design layout\nlayout\n12 published Ant Design layout examples with complete pinned source and MIT attribution.\nant design layout\nfile\nform\nAnt Design layout 12 published Ant Design layout examples with complete pinned source and MIT attribution. Installation Complete MIT example compositions using the pinned antd npm package. Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/ant design/ant design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/layout/demo Pinned source: https://github.com/ant design/ant design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/layout/demo/basic.tsx"
+  },
+  "previewPath": "/preview/blocks/antd-layout",
+  "manifestPath": "components/antd-layout/component.json",
+  "integrity": "sha256:5fef850349a6fc7bf437c837d062d22edcd00e27ff46de45ceb1689cf9de1465",
+  "source": {
+    "id": "antd",
+    "name": "Ant Design",
+    "repository": "https://github.com/ant-design/ant-design",
+    "commit": "bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a",
+    "registrySha256": "7df4386dc63323dd6235edee9c52694b28d573a6d2765ac59719a52e1c259ab0",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2015-present Ant UED, https://xtech.antfin.com/",
+      "textPath": "source/antd/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/antd/upstream/layout/demo/basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Layout } from 'antd';\n\nconst { Header, Footer, Sider, Content } = Layout;\n\nconst headerStyle: React.CSSProperties = {\n  textAlign: 'center',\n  color: '#fff',\n  height: 64,\n  paddingInline: 48,\n  lineHeight: '64px',\n  backgroundColor: '#4096ff',\n};\n\nconst contentStyle: React.CSSProperties = {\n  textAlign: 'center',\n  minHeight: 120,\n  lineHeight: '120px',\n  color: '#fff',\n  backgroundColor: '#0958d9',\n};\n\nconst siderStyle: React.CSSProperties = {\n  textAlign: 'center',\n  lineHeight: '120px',\n  color: '#fff',\n  backgroundColor: '#1677ff',\n};\n\nconst footerStyle: React.CSSProperties = {\n  textAlign: 'center',\n  color: '#fff',\n  backgroundColor: '#4096ff',\n};\n\nconst layoutStyle = {\n  borderRadius: 8,\n  overflow: 'hidden',\n  width: 'calc(50% - 8px)',\n  maxWidth: 'calc(50% - 8px)',\n};\n\nconst App: React.FC = () => (\n  <Flex gap=\"medium\" wrap>\n    <Layout style={layoutStyle}>\n      <Header style={headerStyle}>Header</Header>\n      <Content style={contentStyle}>Content</Content>\n      <Footer style={footerStyle}>Footer</Footer>\n    </Layout>\n\n    <Layout style={layoutStyle}>\n      <Header style={headerStyle}>Header</Header>\n      <Layout>\n        <Sider width=\"25%\" style={siderStyle}>\n          Sider\n        </Sider>\n        <Content style={contentStyle}>Content</Content>\n      </Layout>\n      <Footer style={footerStyle}>Footer</Footer>\n    </Layout>\n\n    <Layout style={layoutStyle}>\n      <Header style={headerStyle}>Header</Header>\n      <Layout>\n        <Content style={contentStyle}>Content</Content>\n        <Sider width=\"25%\" style={siderStyle}>\n          Sider\n        </Sider>\n      </Layout>\n      <Footer style={footerStyle}>Footer</Footer>\n    </Layout>\n\n    <Layout style={layoutStyle}>\n      <Sider width=\"25%\" style={siderStyle}>\n        Sider\n      </Sider>\n      <Layout>\n        <Header style={headerStyle}>Header</Header>\n        <Content style={contentStyle}>Content</Content>\n        <Footer style={footerStyle}>Footer</Footer>\n      </Layout>\n    </Layout>\n  </Flex>\n);\n\nexport default App;\n",
+      "sha256": "e2e68fb2e1837470f2f982dc0cd6a6b5dd5dbc94ee912c314b5336d9658ee7e2",
+      "upstreamPath": "components/layout/demo/basic.tsx",
+      "upstreamSha256": "05725cf50671448a998587158ca177484bb570128072a633b97b41d46955d6cb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/layout/demo/collapsible-overlay.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport {\n  DesktopOutlined,\n  FileOutlined,\n  MenuFoldOutlined,\n  MenuUnfoldOutlined,\n  PieChartOutlined,\n  TeamOutlined,\n} from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { Layout, Menu, theme } from 'antd';\n\nconst { Header, Content, Footer, Sider } = Layout;\n\nconst layoutStyle: React.CSSProperties = {\n  position: 'relative',\n  minHeight: 360,\n};\n\nconst siderStyle: React.CSSProperties = {\n  position: 'absolute',\n  top: 0,\n  bottom: 0,\n  insetInlineStart: 0,\n  zIndex: 10,\n};\n\nconst items: MenuProps['items'] = [\n  PieChartOutlined,\n  DesktopOutlined,\n  TeamOutlined,\n  FileOutlined,\n].map((icon, index) => ({\n  key: String(index + 1),\n  icon: React.createElement(icon),\n  label: `nav ${index + 1}`,\n}));\n\nconst App: React.FC = () => {\n  const [collapsed, setCollapsed] = React.useState(false);\n  const {\n    token: { colorBgContainer, borderRadiusLG },\n  } = theme.useToken();\n\n  const currentYear = new Date().getFullYear();\n\n  return (\n    <Layout style={layoutStyle}>\n      <Sider\n        collapsible\n        collapsed={collapsed}\n        collapsedWidth=\"0\"\n        style={siderStyle}\n        trigger={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}\n        onCollapse={setCollapsed}\n      >\n        <div className=\"demo-logo-vertical\" />\n        <Menu theme=\"dark\" mode=\"inline\" defaultSelectedKeys={['1']} items={items} />\n      </Sider>\n      <Layout>\n        <Header\n          style={{\n            padding: 0,\n            background: colorBgContainer,\n          }}\n        />\n        <Content style={{ margin: '24px 16px 0' }}>\n          <div\n            style={{\n              padding: 24,\n              minHeight: 240,\n              background: colorBgContainer,\n              borderRadius: borderRadiusLG,\n            }}\n          >\n            Content keeps its full width when the sider overlays it.\n          </div>\n        </Content>\n        <Footer style={{ textAlign: 'center' }}>\n          Ant Design ©{currentYear} Created by Ant UED\n        </Footer>\n      </Layout>\n    </Layout>\n  );\n};\n\nexport default App;\n",
+      "sha256": "b45ed6a46866925e6118c33a3cbeca8f7cd6f87c73b00baf369d332969363ed3",
+      "upstreamPath": "components/layout/demo/collapsible-overlay.tsx",
+      "upstreamSha256": "30c89d676ba069dbd8d04f7c2f14ca5eb67a8135bf09a84719f132b78aba7324",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/layout/demo/component-token.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { Breadcrumb, ConfigProvider, Layout, Menu, theme } from 'antd';\n\nconst { Header, Content, Sider } = Layout;\n\nconst items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOutlined].map(\n  (icon, index) => {\n    const key = String(index + 1);\n\n    return {\n      key: `sub${key}`,\n      icon: React.createElement(icon),\n      label: `subnav ${key}`,\n      children: Array.from({ length: 4 }).map((_, j) => {\n        const subKey = index * 4 + j + 1;\n        return {\n          key: subKey,\n          label: `option${subKey}`,\n        };\n      }),\n    };\n  },\n);\n\nconst App: React.FC = () => {\n  const {\n    token: { colorBgContainer, colorBgLayout, borderRadiusLG },\n  } = theme.useToken();\n\n  return (\n    <ConfigProvider\n      theme={{\n        components: {\n          Layout: {\n            bodyBg: '#fff',\n            headerBg: '#1677ff',\n            headerHeight: 64,\n            headerPadding: `0 24px`,\n            headerColor: colorBgContainer,\n            siderBg: '#800080',\n          },\n        },\n      }}\n    >\n      <Layout>\n        <Header style={{ display: 'flex', alignItems: 'center' }}>\n          <div className=\"demo-logo\" />\n          <div style={{ marginInlineStart: 24, fontSize: 24 }}>Ant Design</div>\n        </Header>\n        <Layout>\n          <ConfigProvider\n            theme={{\n              components: {\n                Layout: {\n                  siderBg: 'red',\n                },\n              },\n            }}\n          >\n            <Sider width={32} />\n          </ConfigProvider>\n          <Sider width={200}>\n            <Menu\n              mode=\"inline\"\n              defaultSelectedKeys={['1']}\n              defaultOpenKeys={['sub1']}\n              style={{ borderInlineEnd: 0 }}\n              items={items2}\n            />\n          </Sider>\n          <Layout style={{ padding: '0 24px 24px' }}>\n            <Breadcrumb style={{ margin: '16px 0' }}>\n              <Breadcrumb.Item>Home</Breadcrumb.Item>\n              <Breadcrumb.Item>List</Breadcrumb.Item>\n              <Breadcrumb.Item>App</Breadcrumb.Item>\n            </Breadcrumb>\n            <Content\n              style={{\n                padding: 24,\n                margin: 0,\n                minHeight: 280,\n                background: colorBgLayout,\n                borderRadius: borderRadiusLG,\n              }}\n            >\n              Content\n            </Content>\n          </Layout>\n        </Layout>\n      </Layout>\n    </ConfigProvider>\n  );\n};\n\nexport default App;\n",
+      "sha256": "f2328dce0f17830a13fd852f8706b68e25401bb9f96979e615fa895f6b1c0070",
+      "upstreamPath": "components/layout/demo/component-token.tsx",
+      "upstreamSha256": "7c702def590194f8a0764eec590049b5ed78afd30dd23cc9ab97d2a8a19badf3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/layout/demo/custom-trigger.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport {\n  MenuFoldOutlined,\n  MenuUnfoldOutlined,\n  UploadOutlined,\n  UserOutlined,\n  VideoCameraOutlined,\n} from '@ant-design/icons';\nimport { Button, Layout, Menu, theme } from 'antd';\n\nconst { Header, Sider, Content } = Layout;\n\nconst App: React.FC = () => {\n  const [collapsed, setCollapsed] = useState(false);\n  const {\n    token: { colorBgContainer, borderRadiusLG },\n  } = theme.useToken();\n\n  return (\n    <Layout>\n      <Sider trigger={null} collapsible collapsed={collapsed}>\n        <div className=\"demo-logo-vertical\" />\n        <Menu\n          theme=\"dark\"\n          mode=\"inline\"\n          defaultSelectedKeys={['1']}\n          items={[\n            {\n              key: '1',\n              icon: <UserOutlined />,\n              label: 'nav 1',\n            },\n            {\n              key: '2',\n              icon: <VideoCameraOutlined />,\n              label: 'nav 2',\n            },\n            {\n              key: '3',\n              icon: <UploadOutlined />,\n              label: 'nav 3',\n            },\n          ]}\n        />\n      </Sider>\n      <Layout>\n        <Header style={{ padding: 0, background: colorBgContainer }}>\n          <Button\n            type=\"text\"\n            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}\n            onClick={() => setCollapsed(!collapsed)}\n            style={{\n              fontSize: '16px',\n              width: 64,\n              height: 64,\n            }}\n          />\n        </Header>\n        <Content\n          style={{\n            margin: '24px 16px',\n            padding: 24,\n            minHeight: 280,\n            background: colorBgContainer,\n            borderRadius: borderRadiusLG,\n          }}\n        >\n          Content\n        </Content>\n      </Layout>\n    </Layout>\n  );\n};\n\nexport default App;\n",
+      "sha256": "f9ee269099e8157096e40c640a03e2fd662b89b6d6f48576de23e9e1fc03bb7d",
+      "upstreamPath": "components/layout/demo/custom-trigger.tsx",
+      "upstreamSha256": "db63549247c125fe18ef7478b7ea057293af4760b93e516ee71450c20f8dc7f2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/layout/demo/custom-trigger-debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport {\n  DesktopOutlined,\n  FileOutlined,\n  MenuFoldOutlined,\n  MenuUnfoldOutlined,\n  PieChartOutlined,\n  TeamOutlined,\n  UserOutlined,\n} from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { Button, Layout, Menu, theme } from 'antd';\n\nconst { Header, Sider, Content } = Layout;\n\nconst items: MenuProps['items'] = [\n  {\n    key: '1',\n    icon: <PieChartOutlined />,\n    label: 'Option 1',\n  },\n  {\n    key: '2',\n    icon: <DesktopOutlined />,\n    label: 'Option 2',\n  },\n  {\n    key: 'sub1',\n    icon: <UserOutlined />,\n    label: 'User',\n    children: [\n      {\n        key: '3',\n        label: 'Tom',\n      },\n      {\n        key: '4',\n        label: 'Bill',\n      },\n      {\n        key: '5',\n        label: 'Alex',\n      },\n    ],\n  },\n  {\n    key: 'sub2',\n    icon: <TeamOutlined />,\n    label: 'Team',\n    children: [\n      {\n        key: '6',\n        label: 'Team 1',\n      },\n      {\n        key: '7',\n        label: 'Team 2',\n      },\n    ],\n  },\n  {\n    key: '9',\n    icon: <FileOutlined />,\n  },\n];\n\nconst App: React.FC = () => {\n  const [collapsed, setCollapsed] = useState(true);\n  const {\n    token: { colorBgContainer, borderRadiusLG },\n  } = theme.useToken();\n\n  return (\n    <Layout>\n      <Sider trigger={null} collapsible collapsed={collapsed}>\n        <div className=\"demo-logo-vertical\" />\n        <Menu\n          theme=\"dark\"\n          mode=\"inline\"\n          defaultSelectedKeys={['3']}\n          defaultOpenKeys={['sub1']}\n          items={items}\n        />\n      </Sider>\n      <Layout>\n        <Header style={{ padding: 0, background: colorBgContainer }}>\n          <Button\n            type=\"text\"\n            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}\n            onClick={() => setCollapsed(!collapsed)}\n            style={{\n              fontSize: '16px',\n              width: 64,\n              height: 64,\n            }}\n          />\n        </Header>\n        <Content\n          style={{\n            margin: '24px 16px',\n            padding: 24,\n            minHeight: 280,\n            background: colorBgContainer,\n            borderRadius: borderRadiusLG,\n          }}\n        >\n          Content\n        </Content>\n      </Layout>\n    </Layout>\n  );\n};\n\nexport default App;\n",
+      "sha256": "e60e73f42470bfd0e24dab976c59828e5ae5ab74382f1bf003e136e08f1f3d2a",
+      "upstreamPath": "components/layout/demo/custom-trigger-debug.tsx",
+      "upstreamSha256": "6a4c1454619ea3823d48943145d3b43f8fd75306d41965118a5b7640db2e73a1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/layout/demo/fixed.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Breadcrumb, Layout, Menu, theme } from 'antd';\n\nconst { Header, Content, Footer } = Layout;\n\nconst items = Array.from({ length: 3 }).map((_, index) => ({\n  key: String(index + 1),\n  label: `nav ${index + 1}`,\n}));\n\nconst App: React.FC = () => {\n  const {\n    token: { colorBgContainer, borderRadiusLG },\n  } = theme.useToken();\n\n  const currentYear = new Date().getFullYear();\n\n  return (\n    <Layout>\n      <Header\n        style={{\n          position: 'sticky',\n          top: 0,\n          zIndex: 1,\n          width: '100%',\n          display: 'flex',\n          alignItems: 'center',\n        }}\n      >\n        <div className=\"demo-logo\" />\n        <Menu\n          theme=\"dark\"\n          mode=\"horizontal\"\n          defaultSelectedKeys={['2']}\n          items={items}\n          style={{ flex: 1, minWidth: 0 }}\n        />\n      </Header>\n      <Content style={{ padding: '0 48px' }}>\n        <Breadcrumb\n          style={{ margin: '16px 0' }}\n          items={[{ title: 'Home' }, { title: 'List' }, { title: 'App' }]}\n        />\n        <div\n          style={{\n            padding: 24,\n            minHeight: 380,\n            background: colorBgContainer,\n            borderRadius: borderRadiusLG,\n          }}\n        >\n          Content\n        </div>\n      </Content>\n      <Footer style={{ textAlign: 'center' }}>Ant Design ©{currentYear} Created by Ant UED</Footer>\n    </Layout>\n  );\n};\n\nexport default App;\n",
+      "sha256": "6c159216a2fd50b5f74adf144b6303b37f9f4a35edf713ce92d7196c2c93567e",
+      "upstreamPath": "components/layout/demo/fixed.tsx",
+      "upstreamSha256": "1dacb1ea7e1be4c90ea4c6044121f731b67a82524371958b5a7f9cac712a85e6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/layout/demo/fixed-sider.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport {\n  AppstoreOutlined,\n  BarChartOutlined,\n  CloudOutlined,\n  ShopOutlined,\n  TeamOutlined,\n  UploadOutlined,\n  UserOutlined,\n  VideoCameraOutlined,\n} from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { Layout, Menu, theme } from 'antd';\n\nconst { Header, Content, Footer, Sider } = Layout;\n\nconst siderStyle: React.CSSProperties = {\n  overflow: 'auto',\n  height: '100vh',\n  position: 'sticky',\n  insetInlineStart: 0,\n  top: 0,\n  scrollbarWidth: 'thin',\n  scrollbarGutter: 'stable',\n};\n\nconst items: MenuProps['items'] = [\n  UserOutlined,\n  VideoCameraOutlined,\n  UploadOutlined,\n  BarChartOutlined,\n  CloudOutlined,\n  AppstoreOutlined,\n  TeamOutlined,\n  ShopOutlined,\n].map((icon, index) => ({\n  key: String(index + 1),\n  icon: React.createElement(icon),\n  label: `nav ${index + 1}`,\n}));\n\nconst App: React.FC = () => {\n  const {\n    token: { colorBgContainer, borderRadiusLG },\n  } = theme.useToken();\n  const currentYear = new Date().getFullYear();\n\n  return (\n    <Layout hasSider>\n      <Sider style={siderStyle}>\n        <div className=\"demo-logo-vertical\" />\n        <Menu theme=\"dark\" mode=\"inline\" defaultSelectedKeys={['4']} items={items} />\n      </Sider>\n      <Layout>\n        <Header style={{ padding: 0, background: colorBgContainer }} />\n        <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>\n          <div\n            style={{\n              padding: 24,\n              textAlign: 'center',\n              background: colorBgContainer,\n              borderRadius: borderRadiusLG,\n            }}\n          >\n            <p>long content</p>\n            {\n              // indicates very long content\n              Array.from({ length: 100 }, (_, index) => (\n                <React.Fragment key={index}>\n                  {index % 20 === 0 && index ? 'more' : '...'}\n                  <br />\n                </React.Fragment>\n              ))\n            }\n          </div>\n        </Content>\n        <Footer style={{ textAlign: 'center' }}>\n          Ant Design ©{currentYear} Created by Ant UED\n        </Footer>\n      </Layout>\n    </Layout>\n  );\n};\n\nexport default App;\n",
+      "sha256": "ee07c96b2f3ed841f6eb7c4209a702e484f04c3059138e88f4319f01e5a4b75b",
+      "upstreamPath": "components/layout/demo/fixed-sider.tsx",
+      "upstreamSha256": "80636811156068c2aa46d4ab5890823a2fba4357c3e52e22148feef9d5c073e9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/layout/demo/responsive.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';\nimport { Layout, Menu, theme } from 'antd';\n\nconst { Header, Content, Footer, Sider } = Layout;\n\nconst items = [UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].map(\n  (icon, index) => ({\n    key: String(index + 1),\n    icon: React.createElement(icon),\n    label: `nav ${index + 1}`,\n  }),\n);\n\nconst App: React.FC = () => {\n  const {\n    token: { colorBgContainer, borderRadiusLG },\n  } = theme.useToken();\n\n  const currentYear = new Date().getFullYear();\n\n  return (\n    <Layout>\n      <Sider\n        breakpoint=\"lg\"\n        collapsedWidth=\"0\"\n        onBreakpoint={(broken) => {\n          console.log(broken);\n        }}\n        onCollapse={(collapsed, type) => {\n          console.log(collapsed, type);\n        }}\n      >\n        <div className=\"demo-logo-vertical\" />\n        <Menu theme=\"dark\" mode=\"inline\" defaultSelectedKeys={['4']} items={items} />\n      </Sider>\n      <Layout>\n        <Header style={{ padding: 0, background: colorBgContainer }} />\n        <Content style={{ margin: '24px 16px 0' }}>\n          <div\n            style={{\n              padding: 24,\n              minHeight: 360,\n              background: colorBgContainer,\n              borderRadius: borderRadiusLG,\n            }}\n          >\n            content\n          </div>\n        </Content>\n        <Footer style={{ textAlign: 'center' }}>\n          Ant Design ©{currentYear} Created by Ant UED\n        </Footer>\n      </Layout>\n    </Layout>\n  );\n};\n\nexport default App;\n",
+      "sha256": "4c2ef2029b7b99fca9838b47a657ab9a6e1ce09e7816d3a632d5b5750d69ee79",
+      "upstreamPath": "components/layout/demo/responsive.tsx",
+      "upstreamSha256": "03f4080addb2ca273a146f998f2b7fa0ec2ed1a5e829948d6788b8c1b34b32cb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/layout/demo/side.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport {\n  DesktopOutlined,\n  FileOutlined,\n  PieChartOutlined,\n  TeamOutlined,\n  UserOutlined,\n} from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { Breadcrumb, Layout, Menu, theme } from 'antd';\n\nconst { Header, Content, Footer, Sider } = Layout;\n\ntype MenuItem = Required<MenuProps>['items'][number];\n\nfunction getItem(\n  label: React.ReactNode,\n  key: React.Key,\n  icon?: React.ReactNode,\n  children?: MenuItem[],\n): MenuItem {\n  return {\n    key,\n    icon,\n    children,\n    label,\n  } as MenuItem;\n}\n\nconst items: MenuItem[] = [\n  getItem('Option 1', '1', <PieChartOutlined />),\n  getItem('Option 2', '2', <DesktopOutlined />),\n  getItem('User', 'sub1', <UserOutlined />, [\n    getItem('Tom', '3'),\n    getItem('Bill', '4'),\n    getItem('Alex', '5'),\n  ]),\n  getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),\n  getItem('Files', '9', <FileOutlined />),\n];\n\nconst App: React.FC = () => {\n  const [collapsed, setCollapsed] = useState(false);\n  const {\n    token: { colorBgContainer, borderRadiusLG },\n  } = theme.useToken();\n\n  const currentYear = new Date().getFullYear();\n\n  return (\n    <Layout style={{ minHeight: '100vh' }}>\n      <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>\n        <div className=\"demo-logo-vertical\" />\n        <Menu theme=\"dark\" defaultSelectedKeys={['1']} mode=\"inline\" items={items} />\n      </Sider>\n      <Layout>\n        <Header style={{ padding: 0, background: colorBgContainer }} />\n        <Content style={{ margin: '0 16px' }}>\n          <Breadcrumb style={{ margin: '16px 0' }} items={[{ title: 'User' }, { title: 'Bill' }]} />\n          <div\n            style={{\n              padding: 24,\n              minHeight: 360,\n              background: colorBgContainer,\n              borderRadius: borderRadiusLG,\n            }}\n          >\n            Bill is a cat.\n          </div>\n        </Content>\n        <Footer style={{ textAlign: 'center' }}>\n          Ant Design ©{currentYear} Created by Ant UED\n        </Footer>\n      </Layout>\n    </Layout>\n  );\n};\n\nexport default App;\n",
+      "sha256": "376a7587c1ac767b4f5cb561985a70eb35827408f9b99358478d5619851cee46",
+      "upstreamPath": "components/layout/demo/side.tsx",
+      "upstreamSha256": "ca81e9ef606878fd190494ac6d2087e66e4838d47d8096d98711884aa773254d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/layout/demo/top.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Breadcrumb, Layout, Menu, theme } from 'antd';\n\nconst { Header, Content, Footer } = Layout;\n\nconst items = Array.from({ length: 15 }).map((_, index) => ({\n  key: index + 1,\n  label: `nav ${index + 1}`,\n}));\n\nconst App: React.FC = () => {\n  const {\n    token: { colorBgContainer, borderRadiusLG },\n  } = theme.useToken();\n\n  const currentYear = new Date().getFullYear();\n\n  return (\n    <Layout>\n      <Header style={{ display: 'flex', alignItems: 'center' }}>\n        <div className=\"demo-logo\" />\n        <Menu\n          theme=\"dark\"\n          mode=\"horizontal\"\n          defaultSelectedKeys={['2']}\n          items={items}\n          style={{ flex: 1, minWidth: 0 }}\n        />\n      </Header>\n      <Content style={{ padding: '0 48px' }}>\n        <Breadcrumb\n          style={{ margin: '16px 0' }}\n          items={[{ title: 'Home' }, { title: 'List' }, { title: 'App' }]}\n        />\n        <div\n          style={{\n            background: colorBgContainer,\n            minHeight: 280,\n            padding: 24,\n            borderRadius: borderRadiusLG,\n          }}\n        >\n          Content\n        </div>\n      </Content>\n      <Footer style={{ textAlign: 'center' }}>Ant Design ©{currentYear} Created by Ant UED</Footer>\n    </Layout>\n  );\n};\n\nexport default App;\n",
+      "sha256": "0fcc163bbdf234d7eb0b02e06645adfb1d5b2137f8d98a7c5221b5b2f6d7b2ba",
+      "upstreamPath": "components/layout/demo/top.tsx",
+      "upstreamSha256": "75f2d95352854d444c92e8a6a5946acd5a36a294c7d5e8105a5ee0c665a583c4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/layout/demo/top-side.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { Breadcrumb, Layout, Menu, theme } from 'antd';\n\nconst { Header, Content, Footer, Sider } = Layout;\n\nconst items1: MenuProps['items'] = ['1', '2', '3'].map((key) => ({\n  key,\n  label: `nav ${key}`,\n}));\n\nconst items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOutlined].map(\n  (icon, index) => {\n    const key = String(index + 1);\n\n    return {\n      key: `sub${key}`,\n      icon: React.createElement(icon),\n      label: `subnav ${key}`,\n      children: Array.from({ length: 4 }).map((_, j) => {\n        const subKey = index * 4 + j + 1;\n        return {\n          key: subKey,\n          label: `option${subKey}`,\n        };\n      }),\n    };\n  },\n);\n\nconst App: React.FC = () => {\n  const {\n    token: { colorBgContainer, borderRadiusLG },\n  } = theme.useToken();\n\n  const currentYear = new Date().getFullYear();\n\n  return (\n    <Layout>\n      <Header style={{ display: 'flex', alignItems: 'center' }}>\n        <div className=\"demo-logo\" />\n        <Menu\n          theme=\"dark\"\n          mode=\"horizontal\"\n          defaultSelectedKeys={['2']}\n          items={items1}\n          style={{ flex: 1, minWidth: 0 }}\n        />\n      </Header>\n      <div style={{ padding: '0 48px' }}>\n        <Breadcrumb\n          style={{ margin: '16px 0' }}\n          items={[{ title: 'Home' }, { title: 'List' }, { title: 'App' }]}\n        />\n        <Layout\n          style={{ padding: '24px 0', background: colorBgContainer, borderRadius: borderRadiusLG }}\n        >\n          <Sider style={{ background: colorBgContainer }} width={200}>\n            <Menu\n              mode=\"inline\"\n              defaultSelectedKeys={['1']}\n              defaultOpenKeys={['sub1']}\n              style={{ height: '100%' }}\n              items={items2}\n            />\n          </Sider>\n          <Content style={{ padding: '0 24px', minHeight: 280 }}>Content</Content>\n        </Layout>\n      </div>\n      <Footer style={{ textAlign: 'center' }}>Ant Design ©{currentYear} Created by Ant UED</Footer>\n    </Layout>\n  );\n};\n\nexport default App;\n",
+      "sha256": "961fa198b1cc0d71b491323cbb46f9d7f081ecc634edab2ac8648d4770362c54",
+      "upstreamPath": "components/layout/demo/top-side.tsx",
+      "upstreamSha256": "e828790833ad6061b434961bc41ac752aff0a9a7a2482d822493c0f67451e3b0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/layout/demo/top-side-2.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';\nimport type { MenuProps } from 'antd';\nimport { Breadcrumb, Layout, Menu, theme } from 'antd';\n\nconst { Header, Content, Sider } = Layout;\n\nconst items1: MenuProps['items'] = ['1', '2', '3'].map((key) => ({\n  key,\n  label: `nav ${key}`,\n}));\n\nconst items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOutlined].map(\n  (icon, index) => {\n    const key = String(index + 1);\n\n    return {\n      key: `sub${key}`,\n      icon: React.createElement(icon),\n      label: `subnav ${key}`,\n      children: Array.from({ length: 4 }).map((_, j) => {\n        const subKey = index * 4 + j + 1;\n        return {\n          key: subKey,\n          label: `option${subKey}`,\n        };\n      }),\n    };\n  },\n);\n\nconst App: React.FC = () => {\n  const {\n    token: { colorBgContainer, borderRadiusLG },\n  } = theme.useToken();\n\n  return (\n    <Layout>\n      <Header style={{ display: 'flex', alignItems: 'center' }}>\n        <div className=\"demo-logo\" />\n        <Menu\n          theme=\"dark\"\n          mode=\"horizontal\"\n          defaultSelectedKeys={['2']}\n          items={items1}\n          style={{ flex: 1, minWidth: 0 }}\n        />\n      </Header>\n      <Layout>\n        <Sider width={200} style={{ background: colorBgContainer }}>\n          <Menu\n            mode=\"inline\"\n            defaultSelectedKeys={['1']}\n            defaultOpenKeys={['sub1']}\n            style={{ height: '100%', borderInlineEnd: 0 }}\n            items={items2}\n          />\n        </Sider>\n        <Layout style={{ padding: '0 24px 24px' }}>\n          <Breadcrumb\n            items={[{ title: 'Home' }, { title: 'List' }, { title: 'App' }]}\n            style={{ margin: '16px 0' }}\n          />\n          <Content\n            style={{\n              padding: 24,\n              margin: 0,\n              minHeight: 280,\n              background: colorBgContainer,\n              borderRadius: borderRadiusLG,\n            }}\n          >\n            Content\n          </Content>\n        </Layout>\n      </Layout>\n    </Layout>\n  );\n};\n\nexport default App;\n",
+      "sha256": "d9739e506e834c74e7f955653aed7b1a8540cf620d408b43efb95cad5ae57837",
+      "upstreamPath": "components/layout/demo/top-side-2.tsx",
+      "upstreamSha256": "37de35489ca2fde6556963f2548dda3037606d7420ffec6a428c0f54252bba37",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/layout/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/layout/demo/basic\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8e5fa6b1e354bd9e7b59cf81446dc8f9df71b3a113532416feee02ec3d5959c4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/layout/previews/collapsible-overlay.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/layout/demo/collapsible-overlay\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "ae5fbcb6c08b08f3f12daa75c71e79320c7e5358d8ab8aa2b0fc13c3f2069e4c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/layout/previews/component-token.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/layout/demo/component-token\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2ea6f1cc0b136f37868d7fb8db8deafbdbf65ff406d01b94828ae744410c56d5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/layout/previews/custom-trigger.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/layout/demo/custom-trigger\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "39af2d33c4efaecf4160bde4865e098157491b5bd298569c3b77154891354344",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/layout/previews/custom-trigger-debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/layout/demo/custom-trigger-debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e9d2ca603a0fa0f6f8369747c6817c24c5c8e109b85dc2ea915a9e889fed35e2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/layout/previews/fixed.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/layout/demo/fixed\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0d10b23a4d0ddb47dc9afd17c9c0d1e278feb126880418a2ac6bc26d00c24e71",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/layout/previews/fixed-sider.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/layout/demo/fixed-sider\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "7413a84646e129746900da0babbc256ab0fcc3aa2c8e0ce9357ee42b3dbc72d6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/layout/previews/responsive.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/layout/demo/responsive\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "bf9938be8e5b9a1d9c2aa774494cea5c84487696c49c2d6d4765c3cae8bf3e44",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/layout/previews/side.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/layout/demo/side\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "5d29f285bf3364275b6c92c3b9f97d860ec61e7dd62609679bbccd12b55e2a5f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/layout/previews/top.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/layout/demo/top\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a15c01fb2d8838812354e148657ee7c31b02661d69501233ecee375f7f5136f0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/layout/previews/top-side.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/layout/demo/top-side\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "38e04bc1adf23acd9550245e30bcb50894e5760e951ccdd6630030b552f89a03",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/layout/previews/top-side-2.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/layout/demo/top-side-2\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1cd2977e8c5814f2c51626a2a0c20c5e4c0b76a25556ba2b93a99dc453e0716f",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @ant-design/icons@6.3.4 antd@6.6.5",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @ant-design/icons@6.3.4 antd@6.6.5",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example compositions using the pinned antd npm package.",
+      "Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "layout",
+    "upstreamPageUrl": "https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/layout/demo",
+    "upstreamDetailUrl": "https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/layout/demo/basic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/ant-design/ant-design/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/layout/demo/basic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Ant Design layout\n\n12 published Ant Design layout examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example compositions using the pinned antd npm package.\n- Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/layout/demo\nPinned source: https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/layout/demo/basic.tsx\n"
+}

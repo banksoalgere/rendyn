@@ -1,0 +1,383 @@
+{
+  "id": "mantine:modal",
+  "sourceId": "mantine",
+  "slug": "mantine-modal",
+  "name": "Mantine modal",
+  "description": "18 published Mantine modal examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/form@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantinex/demo@2.0.0",
+    "@phosphor-icons/react@2.1.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "modal",
+    "tags": [
+      "code",
+      "file",
+      "modal"
+    ],
+    "aliases": [
+      "modal",
+      "mantine modal",
+      "dialog",
+      "overlay"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "18 published Mantine modal examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "modal:code:file",
+    "searchText": "Mantine modal\nmodal\n18 published Mantine modal examples with complete pinned source and MIT attribution.\nmantine modal\ndialog\noverlay\ncode\nfile\nMantine modal 18 published Mantine modal examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Modal Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Modal/Modal.demo.centered.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-modal",
+  "manifestPath": "components/mantine-modal/component.json",
+  "integrity": "sha256:d0416d26ca09628b04f9c8757e4e2bcb73ee40a341670656efe7843bd8adbb37",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.centered.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Modal } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nimport { AuthenticationForm } from '@/components/rendyn-libraries/mantine/upstream/src/shared/AuthenticationForm/AuthenticationForm';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Modal opened={opened} onClose={close} title=\"Authentication\" centered>\n        <AuthenticationForm noPadding noShadow />\n      </Modal>\n\n      <Button variant=\"default\" onClick={open}>\n        Open centered Modal\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "97b8149d72e0c2e97fb5f9d532f8f4c94ff9dbae53fd4fd4521b2ac53821aafd",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.centered.tsx",
+      "upstreamSha256": "c73ce5eed38910439552cd914ddd7fde5bb2542faa7a60cb69088615bc69e6f3",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/shared/AuthenticationForm/AuthenticationForm.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\nimport { AtIcon, LockIcon } from '@phosphor-icons/react';\nimport {\n  Anchor,\n  Button,\n  Checkbox,\n  Group,\n  LoadingOverlay,\n  Paper,\n  PasswordInput,\n  Text,\n  TextInput,\n} from '@mantine/core';\nimport { useForm } from '@mantine/form';\n\nexport interface AuthenticationFormProps {\n  noShadow?: boolean;\n  noPadding?: boolean;\n  noSubmit?: boolean;\n  style?: React.CSSProperties;\n}\n\nexport function AuthenticationForm({\n  noShadow,\n  noPadding,\n  noSubmit,\n  style,\n}: AuthenticationFormProps) {\n  const [formType, setFormType] = useState<'register' | 'login'>('register');\n  const [loading, setLoading] = useState(false);\n  const [error, setError] = useState<string | null>(null);\n\n  const toggleFormType = () => {\n    setFormType((current) => (current === 'register' ? 'login' : 'register'));\n    setError(null);\n  };\n\n  const form = useForm({\n    initialValues: {\n      firstName: '',\n      lastName: '',\n      email: '',\n      password: '',\n      confirmPassword: '',\n      termsOfService: true,\n    },\n  });\n\n  const handleSubmit = () => {\n    setLoading(true);\n    setError(null);\n    setTimeout(() => {\n      setLoading(false);\n      setError(\n        formType === 'register'\n          ? 'User with this email already exists'\n          : 'User with this email does not exist'\n      );\n    }, 3000);\n  };\n\n  return (\n    <Paper\n      p={noPadding ? 0 : 'lg'}\n      shadow={noShadow ? 'none' : 'sm'}\n      style={{\n        ...style,\n        position: 'relative',\n        backgroundColor: 'var(--mantine-color-body)',\n      }}\n    >\n      <form onSubmit={form.onSubmit(handleSubmit)}>\n        <LoadingOverlay visible={loading} />\n        {formType === 'register' && (\n          <Group grow>\n            <TextInput\n              data-autofocus\n              required\n              placeholder=\"Your first name\"\n              label=\"First name\"\n              {...form.getInputProps('firstName')}\n            />\n\n            <TextInput\n              required\n              placeholder=\"Your last name\"\n              label=\"Last name\"\n              {...form.getInputProps('lastName')}\n            />\n          </Group>\n        )}\n\n        <TextInput\n          mt=\"md\"\n          required\n          placeholder=\"Your email\"\n          label=\"Email\"\n          leftSection={<AtIcon size={16} />}\n          {...form.getInputProps('email')}\n        />\n\n        <PasswordInput\n          mt=\"md\"\n          required\n          placeholder=\"Password\"\n          label=\"Password\"\n          leftSection={<LockIcon size={16} />}\n          {...form.getInputProps('password')}\n        />\n\n        {formType === 'register' && (\n          <PasswordInput\n            mt=\"md\"\n            required\n            label=\"Confirm Password\"\n            placeholder=\"Confirm password\"\n            leftSection={<LockIcon size={16} />}\n            {...form.getInputProps('confirmPassword')}\n          />\n        )}\n\n        {formType === 'register' && (\n          <Checkbox\n            mt=\"xl\"\n            label=\"I agree to sell my soul and privacy to this corporation\"\n            {...form.getInputProps('termsOfService', { type: 'checkbox' })}\n          />\n        )}\n\n        {error && (\n          <Text c=\"red\" size=\"sm\" mt=\"sm\">\n            {error}\n          </Text>\n        )}\n\n        {!noSubmit && (\n          <Group justify=\"space-between\" mt=\"xl\">\n            <Anchor component=\"button\" type=\"button\" c=\"dimmed\" onClick={toggleFormType} size=\"sm\">\n              {formType === 'register'\n                ? 'Have an account? Login'\n                : \"Don't have an account? Register\"}\n            </Anchor>\n\n            <Button color=\"blue\" type=\"submit\">\n              {formType === 'register' ? 'Register' : 'Login'}\n            </Button>\n          </Group>\n        )}\n      </form>\n    </Paper>\n  );\n}\n",
+      "sha256": "31195272c7bdad3fa4619fde05def03ef5ba01a50c8fa78fe32dbe9c35f85e13",
+      "upstreamPath": "packages/@docs/demos/src/shared/AuthenticationForm/AuthenticationForm.tsx",
+      "upstreamSha256": "b88e8ddd5750b39862b0fd594259c0f3c90d50edab53ae87de8014d76089cccd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.closeIcon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { XCircleIcon } from '@phosphor-icons/react';\n\nimport { Button, Modal } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nimport { AuthenticationForm } from '@/components/rendyn-libraries/mantine/upstream/src/shared/AuthenticationForm/AuthenticationForm';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Modal\n        opened={opened}\n        onClose={close}\n        title=\"Authentication\"\n        closeButtonProps={{\n          icon: <XCircleIcon size={20} />,\n        }}\n      >\n        <AuthenticationForm noShadow noPadding />\n      </Modal>\n\n      <Button variant=\"default\" onClick={open}>\n        Open modal\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "4946a3851d48340e204cbd4de20aa2321e5f9f57f1959f077072cf5770a14d6f",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.closeIcon.tsx",
+      "upstreamSha256": "61718c0fd4d3527330854414424f71fc858d9c534ccc0fece748198a9c32bf4e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.composition.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Modal } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Modal.Root opened={opened} onClose={close}>\n        <Modal.Overlay />\n        <Modal.Content>\n          <Modal.Header>\n            <Modal.Title>Modal title</Modal.Title>\n            <Modal.CloseButton />\n          </Modal.Header>\n          <Modal.Body>Modal content</Modal.Body>\n        </Modal.Content>\n      </Modal.Root>\n\n      <Button variant=\"default\" onClick={open}>\n        Open modal\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "638ea8b267a5b6a2c7f9062cc5fcbd6cb71a31a4d8d4eb4b28308da5f48f14f4",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.composition.tsx",
+      "upstreamSha256": "d152fe348fecf17629d668b30b994c6ddc30013ba861dfc3415d59808ad1c11b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.fullScreen.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Modal, Text } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nimport { AuthenticationForm } from '@/components/rendyn-libraries/mantine/upstream/src/shared/AuthenticationForm/AuthenticationForm';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Modal\n        opened={opened}\n        onClose={close}\n        title=\"This is a fullscreen modal\"\n        fullScreen\n        radius={0}\n        transitionProps={{ transition: 'fade', duration: 200 }}\n      >\n        <Text mb=\"xl\">\n          It takes the entire screen and does not have overlay and border-radius, you can use it\n          small screens to save up some space. It also has fade transition by default, but you can\n          change that with transition prop. Now here is an authentication form used in previous\n          examples to see the difference.\n        </Text>\n        <AuthenticationForm noPadding noShadow />\n      </Modal>\n\n      <Button variant=\"default\" onClick={open}>\n        Open modal\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "5cd87d5b8de4a4ad9e0f7d049035d558a72e8039be8a48a5bfe3278102e50199",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.fullScreen.tsx",
+      "upstreamSha256": "68430311a7f62faa6b2dbfc28ea6da7555b9a566139351004541388a227a8c20",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.fullScreenMobile.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, em, Modal } from '@mantine/core';\n\nimport { useDisclosure, useMediaQuery } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n  const isMobile = useMediaQuery(`(max-width: ${em(800)})`);\n\n  return (\n    <>\n      <Modal\n        opened={opened}\n        onClose={close}\n        title=\"This is a fullscreen modal\"\n        fullScreen={isMobile}\n        transitionProps={{ transition: 'fade', duration: 200 }}\n      >\n        The Modal will be full screen only on mobile\n      </Modal>\n\n      <Button variant=\"default\" onClick={open}>\n        Open modal\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "c8475dddce459b162da9cd5a1d9b84a5035e06e466d169d8c5a517e25ac424eb",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.fullScreenMobile.tsx",
+      "upstreamSha256": "88e1a1a0e688fc0a2ac60bff45086681630f6b161730624f8357caf67f4f88e0",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.header.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Modal } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Modal opened={opened} onClose={close} withCloseButton={false}>\n        Modal without header, press escape or click on overlay to close\n      </Modal>\n\n      <Button variant=\"default\" onClick={open}>\n        Open modal\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "394f7e6a95d1602bebceabdee605e9587dfb66bfbbcc35be21194aeed338abae",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.header.tsx",
+      "upstreamSha256": "730359575918545c65c64e9905863d5421e2e8919edb53a03c3ca174053cc362",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.initialFocus.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Modal, TextInput } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Modal opened={opened} onClose={close} title=\"Focus demo\">\n        <TextInput label=\"First input\" placeholder=\"First input\" />\n        <TextInput\n          data-autofocus\n          label=\"Input with initial focus\"\n          placeholder=\"It has data-autofocus attribute\"\n          mt=\"md\"\n        />\n      </Modal>\n\n      <Button variant=\"default\" onClick={open}>\n        Open modal\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "3e43f00d7ba10711655bf07e5817062c03de77573d339aeda1fee350b20ead4c",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.initialFocus.tsx",
+      "upstreamSha256": "415e9b586ab87b2463b3f2552733f5533b011acd055c36f4924582ad919fdeda",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.initialFocusTrap.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, FocusTrap, Modal, TextInput } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Modal opened={opened} onClose={close} title=\"Focus demo\">\n        <FocusTrap.InitialFocus />\n        <TextInput label=\"First input\" placeholder=\"First input\" />\n        <TextInput\n          data-autofocus\n          label=\"Input with initial focus\"\n          placeholder=\"It has data-autofocus attribute\"\n          mt=\"md\"\n        />\n      </Modal>\n\n      <Button variant=\"default\" onClick={open}>\n        Open modal\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "3c65a106e9c2b7c189f254beddbdc3755e0d0fe800756e009d82377dc9769d08",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.initialFocusTrap.tsx",
+      "upstreamSha256": "c579a3e0079b8e88263d9815221164c84437590f28d9944362a9c6f5e09c7397",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.offset.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Modal } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nimport { AuthenticationForm } from '@/components/rendyn-libraries/mantine/upstream/src/shared/AuthenticationForm/AuthenticationForm';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Modal opened={opened} onClose={close} title=\"Authentication\" yOffset=\"1vh\" xOffset={0}>\n        <AuthenticationForm noPadding noShadow />\n      </Modal>\n\n      <Button variant=\"default\" onClick={open}>\n        Open modal\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "623b60633dde5cd0947e1b9f8e3ffac5337b8bb490d57a7a3a8340185a4f8758",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.offset.tsx",
+      "upstreamSha256": "d03d44b970d9ded7d0d3cb8d1d7e695781ab487bfa9b8cdb4e6e9a1a962b124b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.overflow.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Modal } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  const content = Array(100)\n    .fill(0)\n    .map((_, index) => <p key={index}>Modal with scroll</p>);\n\n  return (\n    <>\n      <Modal opened={opened} onClose={close} title=\"Header is sticky\">\n        {content}\n      </Modal>\n\n      <Button variant=\"default\" onClick={open}>\n        Open modal\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b9fcccfa95c0d998408367a08f2eaff92a8d8eefcd5130d250cab52074bcd6c2",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.overflow.tsx",
+      "upstreamSha256": "0fdf025414865c0896c125cb1341a2331fc40b816dbdce2443cbf443f396bf3f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.overlay.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Modal } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nimport { AuthenticationForm } from '@/components/rendyn-libraries/mantine/upstream/src/shared/AuthenticationForm/AuthenticationForm';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Modal\n        opened={opened}\n        onClose={close}\n        title=\"Authentication\"\n        overlayProps={{\n          backgroundOpacity: 0.55,\n          blur: 3,\n        }}\n      >\n        <AuthenticationForm noShadow noPadding />\n      </Modal>\n\n      <Button variant=\"default\" onClick={open}>\n        Open modal\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "53854b0d0767b7435b955cfadb3bada464f760722739a1e3f96b6696f09972cf",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.overlay.tsx",
+      "upstreamSha256": "578add49de20e0cb09c5ad179de8b609522e8a3960fff0f1616393c1365d08ab",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.scrollarea.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Modal, ScrollArea } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  const content = Array(100)\n    .fill(0)\n    .map((_, index) => <p key={index}>Modal with scroll</p>);\n\n  return (\n    <>\n      <Modal\n        opened={opened}\n        onClose={close}\n        title=\"Header is sticky\"\n        scrollAreaComponent={ScrollArea.Autosize}\n      >\n        {content}\n      </Modal>\n\n      <Button variant=\"default\" onClick={open}>\n        Open modal\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "6df778e8dbd70f5fd243cdee51a3249d68435c8efc94cf9dce52b00d962c145a",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.scrollarea.tsx",
+      "upstreamSha256": "4938d37d222b8e8a77bc1fc7241954fd126a9a12936a6eb4cfb499c53342c207",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.sizeAuto.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Badge, Button, Group, Modal, Text } from '@mantine/core';\n\nimport { useCounter, useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { close, open }] = useDisclosure(false);\n  const [count, { increment, decrement }] = useCounter(3, { min: 0 });\n\n  const badges = Array(count)\n    .fill(0)\n    .map((_, index) => <Badge key={index}>Badge {index}</Badge>);\n\n  return (\n    <>\n      <Modal opened={opened} onClose={close} size=\"auto\" title=\"Modal size auto\">\n        <Text>Modal with size auto will fits its content</Text>\n\n        <Group wrap=\"nowrap\" mt=\"md\">\n          {badges}\n        </Group>\n\n        <Group mt=\"xl\">\n          <Button onClick={increment}>Add badge</Button>\n          <Button onClick={decrement}>Remove badge</Button>\n        </Group>\n      </Modal>\n\n      <Button variant=\"default\" onClick={open}>\n        Open modal\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "a77c91f4c74a73ed49614a77b454d38dde5b674ade03fb4e7ee1e9584a9d3b46",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.sizeAuto.tsx",
+      "upstreamSha256": "9929816b2ded0eafa1162b0c5dfc1567f177f2616da188f07c9d7056b8a22a36",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.sizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Group, Modal } from '@mantine/core';\n\nimport { AuthenticationForm } from '@/components/rendyn-libraries/mantine/upstream/src/shared/AuthenticationForm/AuthenticationForm';\n\nconst SIZES = ['xs', 'sm', 'md', 'lg', 'xl', '55rem', '70%', '100%'];\n\nfunction Demo() {\n  const [opened, setOpened] = useState(false);\n  const [size, setSize] = useState<string | number>('md');\n\n  const buttons = SIZES.map((s) => (\n    <Button\n      key={s}\n      variant=\"default\"\n      onClick={() => {\n        setSize(s);\n        setOpened(true);\n      }}\n    >\n      {s}\n    </Button>\n  ));\n\n  return (\n    <>\n      <Modal\n        opened={opened}\n        onClose={() => setOpened(false)}\n        title=\"Introduce yourself!\"\n        size={size}\n      >\n        <AuthenticationForm noPadding noShadow />\n      </Modal>\n\n      <Group justify=\"center\">{buttons}</Group>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "158b82b6be9e61fce412122d1ec5b4caec31def322d26ba1ffbe6c7b08ff2c29",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.sizes.tsx",
+      "upstreamSha256": "fc6aa26041616673699674a5a9eb105d37f40f8930af95c9a2ece9722480e408",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.stack.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Group, Modal, useModalsStack } from '@mantine/core';\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst code = `\nimport { Button, Group, Modal, useModalsStack } from '@mantine/core';\n\nfunction Demo() {\n  const stack = useModalsStack(['delete-page', 'confirm-action', 'really-confirm-action']);\n\n  return (\n    <>\n      <Modal.Stack>\n        <Modal {...stack.register('delete-page')} title=\"Delete this page?\">\n          Are you sure you want to delete this page? This action cannot be undone.\n          <Group mt=\"lg\" justify=\"flex-end\">\n            <Button onClick={stack.closeAll} variant=\"default\">\n              Cancel\n            </Button>\n            <Button onClick={() => stack.open('confirm-action')} color=\"red\">\n              Delete\n            </Button>\n          </Group>\n        </Modal>\n\n        <Modal {...stack.register('confirm-action')} title=\"Confirm action\">\n          Are you sure you want to perform this action? This action cannot be undone. If you are\n          sure, press confirm button below.\n          <Group mt=\"lg\" justify=\"flex-end\">\n            <Button onClick={stack.closeAll} variant=\"default\">\n              Cancel\n            </Button>\n            <Button onClick={() => stack.open('really-confirm-action')} color=\"red\">\n              Confirm\n            </Button>\n          </Group>\n        </Modal>\n\n        <Modal {...stack.register('really-confirm-action')} title=\"Really confirm action\">\n          Jokes aside. You have confirmed this action. This is your last chance to cancel it. After\n          you press confirm button below, action will be performed and cannot be undone. For real\n          this time. Are you sure you want to proceed?\n          <Group mt=\"lg\" justify=\"flex-end\">\n            <Button onClick={stack.closeAll} variant=\"default\">\n              Cancel\n            </Button>\n            <Button onClick={stack.closeAll} color=\"red\">\n              Confirm\n            </Button>\n          </Group>\n        </Modal>\n      </Modal.Stack>\n\n      <Button variant=\"default\" onClick={() => stack.open('delete-page')}>\n        Open modal\n      </Button>\n    </>\n  );\n}\n`;\n\nfunction Demo() {\n  const stack = useModalsStack(['delete-page', 'confirm-action', 'really-confirm-action']);\n\n  return (\n    <>\n      <Modal.Stack>\n        <Modal {...stack.register('delete-page')} title=\"Delete this page?\">\n          Are you sure you want to delete this page? This action cannot be undone.\n          <Group mt=\"lg\" justify=\"flex-end\">\n            <Button onClick={stack.closeAll} variant=\"default\">\n              Cancel\n            </Button>\n            <Button onClick={() => stack.open('confirm-action')} color=\"red\">\n              Delete\n            </Button>\n          </Group>\n        </Modal>\n\n        <Modal {...stack.register('confirm-action')} title=\"Confirm action\">\n          Are you sure you want to perform this action? This action cannot be undone. If you are\n          sure, press confirm button below.\n          <Group mt=\"lg\" justify=\"flex-end\">\n            <Button onClick={stack.closeAll} variant=\"default\">\n              Cancel\n            </Button>\n            <Button onClick={() => stack.open('really-confirm-action')} color=\"red\">\n              Confirm\n            </Button>\n          </Group>\n        </Modal>\n\n        <Modal {...stack.register('really-confirm-action')} title=\"Really confirm action\">\n          Jokes aside. You have confirmed this action. This is your last chance to cancel it. After\n          you press confirm button below, action will be performed and cannot be undone. For real\n          this time. Are you sure you want to proceed?\n          <Group mt=\"lg\" justify=\"flex-end\">\n            <Button onClick={stack.closeAll} variant=\"default\">\n              Cancel\n            </Button>\n            <Button onClick={stack.closeAll} color=\"red\">\n              Confirm\n            </Button>\n          </Group>\n        </Modal>\n      </Modal.Stack>\n\n      <Button variant=\"default\" onClick={() => stack.open('delete-page')}>\n        Open modal\n      </Button>\n    </>\n  );\n}\n\nexport const stack: MantineDemo = {\n  type: 'code',\n  code,\n  centered: true,\n  component: Demo,\n};\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "62fef923f5ac932dd4bd1c09c76daca3c35c4c294c9e0018d3cfd04a868f9eb6",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.stack.tsx",
+      "upstreamSha256": "3790701f9a3c08a2df97e6c572781e1b35a5cb8099135feb89bc301281c8778d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.transitionEnd.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Group, Modal } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [firstOpened, firstHandlers] = useDisclosure(false);\n  const [secondOpened, secondHandlers] = useDisclosure(false);\n  const [modalData, setModalData] = useState({\n    title: '',\n    message: '',\n  });\n\n  return (\n    <>\n      <Modal\n        opened={firstOpened}\n        onClose={() => {\n          firstHandlers.close();\n          setModalData({ title: '', message: '' });\n        }}\n        transitionProps={{ duration: 300, exitDuration: 1000, transition: 'fade-down' }}\n        title={modalData.title}\n      >\n        {modalData.message}\n      </Modal>\n      <Modal\n        opened={secondOpened}\n        onClose={secondHandlers.close}\n        transitionProps={{ duration: 300, exitDuration: 1000, transition: 'fade-down' }}\n        onExitTransitionEnd={() => setModalData({ title: '', message: '' })}\n        title={modalData.title}\n      >\n        {modalData.message}\n      </Modal>\n\n      <Group>\n        <Button\n          onClick={() => {\n            firstHandlers.open();\n            setModalData({ title: 'Edit your profile', message: 'Imagine a form here' });\n          }}\n          variant=\"default\"\n        >\n          Clear data in onClose\n        </Button>\n\n        <Button\n          onClick={() => {\n            secondHandlers.open();\n            setModalData({ title: 'Edit your profile', message: 'Imagine a form here' });\n          }}\n          variant=\"default\"\n        >\n          Clear data in onExitTransitionEnd\n        </Button>\n      </Group>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "7b30e8ed485a3eb2d4f925c53a8b6a3ef58bf6905a736649708492152081ab2f",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.transitionEnd.tsx",
+      "upstreamSha256": "6d95ac1abcd6d6279a66b2524f14a8915f3ddf4acff14fe898c4bea7299ffe6e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.transitions.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Group, Modal } from '@mantine/core';\n\nfunction Demo() {\n  const [noTransitionOpened, setNoTransitionOpened] = useState(false);\n  const [slowTransitionOpened, setSlowTransitionOpened] = useState(false);\n\n  return (\n    <>\n      <Modal\n        opened={slowTransitionOpened}\n        onClose={() => setSlowTransitionOpened(false)}\n        title=\"Please consider this\"\n        transitionProps={{ transition: 'rotate-left' }}\n      >\n        rotate-left transition\n      </Modal>\n\n      <Modal\n        opened={noTransitionOpened}\n        onClose={() => setNoTransitionOpened(false)}\n        title=\"Please consider this\"\n        transitionProps={{ transition: 'fade', duration: 600, timingFunction: 'linear' }}\n      >\n        fade transition 600ms linear transition\n      </Modal>\n\n      <Group justify=\"center\">\n        <Button onClick={() => setSlowTransitionOpened(true)} variant=\"default\">\n          Rotate left transition\n        </Button>\n        <Button onClick={() => setNoTransitionOpened(true)} variant=\"default\">\n          Fade transition\n        </Button>\n      </Group>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "75a4143cd04154db3d704246aa59664ed0f53d6ec2c819897c6cfb59f9f5570e",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.transitions.tsx",
+      "upstreamSha256": "e8fb2cc01ac543bda0e91a273cbaa3f09a36f827b975be267284b19ae542e3ad",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Modal } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nimport { AuthenticationForm } from '@/components/rendyn-libraries/mantine/upstream/src/shared/AuthenticationForm/AuthenticationForm';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Modal opened={opened} onClose={close} title=\"Authentication\">\n        <AuthenticationForm noShadow noPadding />\n      </Modal>\n\n      <Button variant=\"default\" onClick={open}>\n        Open modal\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "aff378f97cf8b8a606d68758421eaf4734895c887765c4cdeef846d38bc2ca90",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Modal/Modal.demo.usage.tsx",
+      "upstreamSha256": "935687941a8afe15b99b84b1c03cb4e79720f26cdf070d5d5514e5cbba17bd9a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.centered\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "62076b9633e299fd4ca3200b8c99fc2dd5d3db9941bc02939938cc3ce56c7196",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/close-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.closeIcon\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a3dd4edd32c8a9327e6dc9b895e67c524ef497afa495ade80c67c011198b4aab",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/composition.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.composition\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "31fe8c81753225e9e50d31a94bd37f437472187f2aba7aa2a776970a9e0b5c8b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/full-screen.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.fullScreen\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "85bcdbe7168dbd9de7e411549a467aa6113fb27a3e9b0533aae6079c8f0ebf52",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/full-screen-mobile.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.fullScreenMobile\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "0f7221860c87b8113b88f344c99af02506217443c54760fc8bca4fc6b8cfcfa6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/header.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.header\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "9dee11c4c925b98dfd71d7a2fb78de267f1e987efea233baee643b4b5129b7d1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/initial-focus.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.initialFocus\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "1cc7eb3b65aa06c5a09fe1e297cec02bacde2d2fcde5c517cafe00e18837e023",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/initial-focus-trap.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.initialFocusTrap\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "0a40245c00d24633691227190c089efe55cf2cde1e5c28c940e35e3b3fefc241",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/offset.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.offset\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "74d9b3378e05057f9382cdbd569c8a8442202414eb8093fd13f44c3704dccc4f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/overflow.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.overflow\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4fd5cf421bf286e196f3d06b69436019874d1d65baf0305fc701b4faa48a88de",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/overlay.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.overlay\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "86f6b7a425a4b24d04c7436e732ab747e4b72b71db53787a71f594722c87983f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/scrollarea.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.scrollarea\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "5b63de92137e6638834b452b87d48184b6f5def1f2d9d92a2db348240fd3aec4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/size-auto.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.sizeAuto\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "f925713e709e2721f90538ff3753f9bb1eea4dc8c961407d260edf176f7ddfbe",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.sizes\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "f6f3feffe8e6c15769cba7641925b26d9902195769aa53f4b420feb7f3209e92",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/stack.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.stack\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "079c83f7d24b3aa04a3eb7d8451254f7baf07001672a4ecc682d05340363363f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/transition-end.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.transitionEnd\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "49384a8b0fb4528959eefff89da417d4e026f5feec692ea580373f39fb3865c7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/transitions.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.transitions\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "bd62c8c4a5060933f7629e164f5b9e7107a68221a19242db442a4660ef989dfc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/modal/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Modal/Modal.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "3076b4180ffbca14265ade9b6c264715cf400cea0254b89be1bfadd8063cf1f6",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/form@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @phosphor-icons/react@2.1.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/form@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @phosphor-icons/react@2.1.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "modal",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Modal",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Modal/Modal.demo.centered.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Modal/Modal.demo.centered.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine modal\n\n18 published Mantine modal examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Modal\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Modal/Modal.demo.centered.tsx\n"
+}

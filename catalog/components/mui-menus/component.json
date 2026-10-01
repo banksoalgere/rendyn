@@ -1,0 +1,342 @@
+{
+  "id": "mui:menus",
+  "sourceId": "mui",
+  "slug": "mui-menus",
+  "name": "Material UI menus",
+  "description": "16 published Material UI menus examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/icons-material@9.4.0",
+    "@mui/material@9.4.0",
+    "material-ui-popup-state@5.3.7"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "menu",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file",
+      "menu"
+    ],
+    "aliases": [
+      "menus",
+      "material ui menus",
+      "menu"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "16 published Material UI menus examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "menu:code:command:data:file",
+    "searchText": "Material UI menus\nmenus\n16 published Material UI menus examples with complete pinned source and MIT attribution.\nmaterial ui menus\nmenu\ncode\ncommand\ndata\nfile\nMaterial UI menus 16 published Material UI menus examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/menus Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/menus/AccountMenu.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-menus",
+  "manifestPath": "components/mui-menus/component.json",
+  "integrity": "sha256:8bf56b0cb990112a42d165d78ee178965bd2a1e7c95cdfbfc23654a695a5c5cf",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menus/AccountMenu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Avatar from '@mui/material/Avatar';\nimport Menu from '@mui/material/Menu';\nimport MenuItem from '@mui/material/MenuItem';\nimport ListItemIcon from '@mui/material/ListItemIcon';\nimport Divider from '@mui/material/Divider';\nimport IconButton from '@mui/material/IconButton';\nimport Typography from '@mui/material/Typography';\nimport Tooltip from '@mui/material/Tooltip';\nimport PersonAdd from '@mui/icons-material/PersonAdd';\nimport Settings from '@mui/icons-material/Settings';\nimport Logout from '@mui/icons-material/Logout';\n\nexport default function AccountMenu() {\n  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);\n  const open = Boolean(anchorEl);\n  const handleClick = (event: React.MouseEvent<HTMLElement>) => {\n    setAnchorEl(event.currentTarget);\n  };\n  const handleClose = () => {\n    setAnchorEl(null);\n  };\n  return (\n    <React.Fragment>\n      <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>\n        <Typography sx={{ minWidth: 100 }}>Contact</Typography>\n        <Typography sx={{ minWidth: 100 }}>Profile</Typography>\n        <Tooltip title=\"Account settings\">\n          <IconButton\n            onClick={handleClick}\n            size=\"small\"\n            sx={{ ml: 2 }}\n            aria-controls={open ? 'account-menu' : undefined}\n            aria-haspopup=\"true\"\n            aria-expanded={open}\n          >\n            <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>\n          </IconButton>\n        </Tooltip>\n      </Box>\n      <Menu\n        anchorEl={anchorEl}\n        id=\"account-menu\"\n        open={open}\n        onClose={handleClose}\n        onClick={handleClose}\n        slotProps={{\n          paper: {\n            elevation: 0,\n            sx: {\n              overflow: 'visible',\n              filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',\n              mt: 1.5,\n              '& .MuiAvatar-root': {\n                width: 32,\n                height: 32,\n                ml: -0.5,\n                mr: 1,\n              },\n              '&::before': {\n                content: '\"\"',\n                display: 'block',\n                position: 'absolute',\n                top: 0,\n                right: 14,\n                width: 10,\n                height: 10,\n                bgcolor: 'background.paper',\n                transform: 'translateY(-50%) rotate(45deg)',\n                zIndex: 0,\n              },\n            },\n          },\n        }}\n        transformOrigin={{ horizontal: 'right', vertical: 'top' }}\n        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}\n      >\n        <MenuItem onClick={handleClose}>\n          <Avatar /> Profile\n        </MenuItem>\n        <MenuItem onClick={handleClose}>\n          <Avatar /> My account\n        </MenuItem>\n        <Divider />\n        <MenuItem onClick={handleClose}>\n          <ListItemIcon>\n            <PersonAdd fontSize=\"small\" />\n          </ListItemIcon>\n          Add another account\n        </MenuItem>\n        <MenuItem onClick={handleClose}>\n          <ListItemIcon>\n            <Settings fontSize=\"small\" />\n          </ListItemIcon>\n          Settings\n        </MenuItem>\n        <MenuItem onClick={handleClose}>\n          <ListItemIcon>\n            <Logout fontSize=\"small\" />\n          </ListItemIcon>\n          Logout\n        </MenuItem>\n      </Menu>\n    </React.Fragment>\n  );\n}\n",
+      "sha256": "decc659059960ef5243cdc9fbf696791709e8503db6f66b09ab43060aa82f9c0",
+      "upstreamPath": "docs/data/material/components/menus/AccountMenu.tsx",
+      "upstreamSha256": "cd4b9fd39415388996f624ead2eda6a24dd072e4d8242b77196fb91c484bb595",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menus/BasicMenu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport Menu from '@mui/material/Menu';\nimport MenuItem from '@mui/material/MenuItem';\n\nexport default function BasicMenu() {\n  const id = React.useId();\n  const buttonId = `${id}-button`;\n  const menuId = `${id}-menu`;\n  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);\n  const open = Boolean(anchorEl);\n  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {\n    setAnchorEl(event.currentTarget);\n  };\n  const handleClose = () => {\n    setAnchorEl(null);\n  };\n\n  return (\n    <div>\n      <Button\n        id={buttonId}\n        aria-controls={open ? menuId : undefined}\n        aria-haspopup=\"true\"\n        aria-expanded={open}\n        onClick={handleClick}\n      >\n        Dashboard\n      </Button>\n      <Menu\n        id={menuId}\n        anchorEl={anchorEl}\n        open={open}\n        onClose={handleClose}\n        slotProps={{\n          list: {\n            'aria-labelledby': buttonId,\n          },\n        }}\n      >\n        <MenuItem onClick={handleClose}>Profile</MenuItem>\n        <MenuItem onClick={handleClose}>My account</MenuItem>\n        <MenuItem onClick={handleClose}>Logout</MenuItem>\n      </Menu>\n    </div>\n  );\n}\n",
+      "sha256": "49debbbe02ba05e4ab8929045701454da70b21a20881f9935c30dff1d49a101b",
+      "upstreamPath": "docs/data/material/components/menus/BasicMenu.tsx",
+      "upstreamSha256": "ab6b1d968e202f7fd7a1cd5f3bb21798c4afe3fe5340593f37b52d3ab805c363",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menus/CheckboxMenu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Paper from '@mui/material/Paper';\nimport MenuList from '@mui/material/MenuList';\nimport MenuItem from '@mui/material/MenuItem';\nimport ListItemText from '@mui/material/ListItemText';\nimport ListItemIcon from '@mui/material/ListItemIcon';\nimport Check from '@mui/icons-material/Check';\n\nconst options = ['Show toolbar', 'Show sidebar', 'Show status bar'];\n\nexport default function CheckboxMenu() {\n  const [checked, setChecked] = React.useState<Record<string, boolean>>({\n    'Show toolbar': true,\n  });\n\n  const handleToggle = (option: string) => () => {\n    setChecked((prev) => ({ ...prev, [option]: !prev[option] }));\n  };\n\n  return (\n    <Paper sx={{ width: 320, maxWidth: '100%' }}>\n      <MenuList>\n        {options.map((option) => (\n          <MenuItem\n            key={option}\n            role=\"menuitemcheckbox\"\n            selected={Boolean(checked[option])}\n            onClick={handleToggle(option)}\n          >\n            <ListItemIcon>\n              {checked[option] ? <Check fontSize=\"small\" /> : null}\n            </ListItemIcon>\n            <ListItemText>{option}</ListItemText>\n          </MenuItem>\n        ))}\n      </MenuList>\n    </Paper>\n  );\n}\n",
+      "sha256": "5e6df5013c4cc504d829ededb4d1832e772b1e1642b247c1a9f033990bddce3d",
+      "upstreamPath": "docs/data/material/components/menus/CheckboxMenu.tsx",
+      "upstreamSha256": "77ea46716217ee2be3b2d229bc03b9384ea90c62893ae186b3997ecc5e61229e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menus/ContextMenu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Menu from '@mui/material/Menu';\nimport MenuItem from '@mui/material/MenuItem';\nimport Typography from '@mui/material/Typography';\n\nexport default function ContextMenu() {\n  const [contextMenu, setContextMenu] = React.useState<{\n    mouseX: number;\n    mouseY: number;\n  } | null>(null);\n\n  const handleContextMenu = (event: React.MouseEvent) => {\n    event.preventDefault();\n\n    setContextMenu(\n      contextMenu === null\n        ? {\n            mouseX: event.clientX + 2,\n            mouseY: event.clientY - 6,\n          }\n        : // repeated contextmenu when it is already open closes it with Chrome 84 on Ubuntu\n          // Other native context menus might behave different.\n          // With this behavior we prevent contextmenu from the backdrop to re-locale existing context menus.\n          null,\n    );\n\n    // Prevent text selection lost after opening the context menu on Safari and Firefox\n    const selection = document.getSelection();\n    if (selection && selection.rangeCount > 0) {\n      const range = selection.getRangeAt(0);\n\n      setTimeout(() => {\n        selection.addRange(range);\n      });\n    }\n  };\n\n  const handleClose = () => {\n    setContextMenu(null);\n  };\n\n  return (\n    <div onContextMenu={handleContextMenu} style={{ cursor: 'context-menu' }}>\n      <Typography>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ipsum purus,\n        bibendum sit amet vulputate eget, porta semper ligula. Donec bibendum\n        vulputate erat, ac fringilla mi finibus nec. Donec ac dolor sed dolor\n        porttitor blandit vel vel purus. Fusce vel malesuada ligula. Nam quis\n        vehicula ante, eu finibus est. Proin ullamcorper fermentum orci, quis finibus\n        massa. Nunc lobortis, massa ut rutrum ultrices, metus metus finibus ex, sit\n        amet facilisis neque enim sed neque. Quisque accumsan metus vel maximus\n        consequat. Suspendisse lacinia tellus a libero volutpat maximus.\n      </Typography>\n      <Menu\n        open={contextMenu !== null}\n        onClose={handleClose}\n        anchorReference=\"anchorPosition\"\n        anchorPosition={\n          contextMenu !== null\n            ? { top: contextMenu.mouseY, left: contextMenu.mouseX }\n            : undefined\n        }\n      >\n        <MenuItem onClick={handleClose}>Copy</MenuItem>\n        <MenuItem onClick={handleClose}>Print</MenuItem>\n        <MenuItem onClick={handleClose}>Highlight</MenuItem>\n        <MenuItem onClick={handleClose}>Email</MenuItem>\n      </Menu>\n    </div>\n  );\n}\n",
+      "sha256": "91153ee6788f9b2c07666b5be99e3af72f028a71c42e23170d003ddd521d12ed",
+      "upstreamPath": "docs/data/material/components/menus/ContextMenu.tsx",
+      "upstreamSha256": "77bea2d0744fa98c30e44b2e71bec901388d041445b4f470b261dfbec1a13c38",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menus/CustomizedMenus.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport { styled, alpha } from '@mui/material/styles';\nimport Button from '@mui/material/Button';\nimport Menu, { MenuProps } from '@mui/material/Menu';\nimport MenuItem from '@mui/material/MenuItem';\nimport EditIcon from '@mui/icons-material/Edit';\nimport Divider from '@mui/material/Divider';\nimport ArchiveIcon from '@mui/icons-material/Archive';\nimport FileCopyIcon from '@mui/icons-material/FileCopy';\nimport MoreHorizIcon from '@mui/icons-material/MoreHoriz';\nimport KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';\n\nconst StyledMenu = styled((props: MenuProps) => (\n  <Menu\n    elevation={0}\n    anchorOrigin={{\n      vertical: 'bottom',\n      horizontal: 'right',\n    }}\n    transformOrigin={{\n      vertical: 'top',\n      horizontal: 'right',\n    }}\n    {...props}\n  />\n))(({ theme }) => ({\n  '& .MuiPaper-root': {\n    borderRadius: 6,\n    marginTop: theme.spacing(1),\n    minWidth: 180,\n    color: 'rgb(55, 65, 81)',\n    boxShadow:\n      'rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',\n    '& .MuiMenu-list': {\n      padding: '4px 0',\n    },\n    '& .MuiMenuItem-root': {\n      '& .MuiSvgIcon-root': {\n        fontSize: 18,\n        color: theme.palette.text.secondary,\n        marginRight: theme.spacing(1.5),\n        ...theme.applyStyles('dark', {\n          color: 'inherit',\n        }),\n      },\n      '&:active': {\n        backgroundColor: alpha(\n          theme.palette.primary.main,\n          theme.palette.action.selectedOpacity,\n        ),\n      },\n    },\n    ...theme.applyStyles('dark', {\n      color: theme.palette.grey[300],\n    }),\n  },\n}));\n\nexport default function CustomizedMenus() {\n  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);\n  const open = Boolean(anchorEl);\n  const handleClick = (event: React.MouseEvent<HTMLElement>) => {\n    setAnchorEl(event.currentTarget);\n  };\n  const handleClose = () => {\n    setAnchorEl(null);\n  };\n\n  return (\n    <div>\n      <Button\n        id=\"demo-customized-button\"\n        aria-controls={open ? 'demo-customized-menu' : undefined}\n        aria-haspopup=\"true\"\n        aria-expanded={open}\n        variant=\"contained\"\n        disableElevation\n        onClick={handleClick}\n        endIcon={<KeyboardArrowDownIcon />}\n      >\n        Options\n      </Button>\n      <StyledMenu\n        id=\"demo-customized-menu\"\n        slotProps={{\n          list: {\n            'aria-labelledby': 'demo-customized-button',\n          },\n        }}\n        anchorEl={anchorEl}\n        open={open}\n        onClose={handleClose}\n      >\n        <MenuItem onClick={handleClose} disableRipple>\n          <EditIcon />\n          Edit\n        </MenuItem>\n        <MenuItem onClick={handleClose} disableRipple>\n          <FileCopyIcon />\n          Duplicate\n        </MenuItem>\n        <Divider sx={{ my: 0.5 }} />\n        <MenuItem onClick={handleClose} disableRipple>\n          <ArchiveIcon />\n          Archive\n        </MenuItem>\n        <MenuItem onClick={handleClose} disableRipple>\n          <MoreHorizIcon />\n          More\n        </MenuItem>\n      </StyledMenu>\n    </div>\n  );\n}\n",
+      "sha256": "af4bc5772ee49795b9e42dcdec84172e5d76eb4bcc2db1b74a98fb200a9f0874",
+      "upstreamPath": "docs/data/material/components/menus/CustomizedMenus.tsx",
+      "upstreamSha256": "58befe1f408e40c69db7a78f70fe36bdd9b5c9c666b55e5849379274d3e8efba",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menus/DenseMenu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Paper from '@mui/material/Paper';\nimport Divider from '@mui/material/Divider';\nimport MenuList from '@mui/material/MenuList';\nimport MenuItem from '@mui/material/MenuItem';\nimport ListItemIcon from '@mui/material/ListItemIcon';\nimport ListItemText from '@mui/material/ListItemText';\nimport Check from '@mui/icons-material/Check';\n\nexport default function DenseMenu() {\n  return (\n    <Paper sx={{ width: 320 }}>\n      <MenuList dense>\n        <MenuItem>\n          <ListItemText inset>Single</ListItemText>\n        </MenuItem>\n        <MenuItem>\n          <ListItemText inset>1.15</ListItemText>\n        </MenuItem>\n        <MenuItem>\n          <ListItemText inset>Double</ListItemText>\n        </MenuItem>\n        <MenuItem>\n          <ListItemIcon>\n            <Check />\n          </ListItemIcon>\n          Custom: 1.2\n        </MenuItem>\n        <Divider />\n        <MenuItem>\n          <ListItemText>Add space before paragraph</ListItemText>\n        </MenuItem>\n        <MenuItem>\n          <ListItemText>Add space after paragraph</ListItemText>\n        </MenuItem>\n        <Divider />\n        <MenuItem>\n          <ListItemText>Custom spacing…</ListItemText>\n        </MenuItem>\n      </MenuList>\n    </Paper>\n  );\n}\n",
+      "sha256": "84f12161b886ca1be6e40d14204fb50ed04875ee859b700c06233a04c017f685",
+      "upstreamPath": "docs/data/material/components/menus/DenseMenu.tsx",
+      "upstreamSha256": "8adfea8c923bbb167ab73b64e2333fc61003f571e5d06e9a51ca4f7109f4a1bf",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menus/FadeMenu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport Menu from '@mui/material/Menu';\nimport MenuItem from '@mui/material/MenuItem';\nimport Fade from '@mui/material/Fade';\n\nexport default function FadeMenu() {\n  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);\n  const open = Boolean(anchorEl);\n  const handleClick = (event: React.MouseEvent<HTMLElement>) => {\n    setAnchorEl(event.currentTarget);\n  };\n  const handleClose = () => {\n    setAnchorEl(null);\n  };\n\n  return (\n    <div>\n      <Button\n        id=\"fade-button\"\n        aria-controls={open ? 'fade-menu' : undefined}\n        aria-haspopup=\"true\"\n        aria-expanded={open}\n        onClick={handleClick}\n      >\n        Dashboard\n      </Button>\n      <Menu\n        id=\"fade-menu\"\n        slotProps={{\n          list: {\n            'aria-labelledby': 'fade-button',\n          },\n        }}\n        slots={{ transition: Fade }}\n        anchorEl={anchorEl}\n        open={open}\n        onClose={handleClose}\n      >\n        <MenuItem onClick={handleClose}>Profile</MenuItem>\n        <MenuItem onClick={handleClose}>My account</MenuItem>\n        <MenuItem onClick={handleClose}>Logout</MenuItem>\n      </Menu>\n    </div>\n  );\n}\n",
+      "sha256": "ba19100dab9e5a9b52f082c419c919c3ebdba3524fd8562c862eee0db1849d62",
+      "upstreamPath": "docs/data/material/components/menus/FadeMenu.tsx",
+      "upstreamSha256": "a4024f916ebe5f72d459e7694607f5afca49a4121c274b3496fdc2341796dfaf",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menus/GroupedMenu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport ListSubheader from '@mui/material/ListSubheader';\nimport Menu from '@mui/material/Menu';\nimport MenuItem from '@mui/material/MenuItem';\nimport { styled } from '@mui/material/styles';\n\nconst StyledListHeader = styled(ListSubheader)({\n  backgroundImage: 'var(--Paper-overlay)',\n});\n\nexport default function GroupedMenu() {\n  const id = React.useId();\n  const buttonId = `${id}-button`;\n  const menuId = `${id}-menu`;\n  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);\n  const open = Boolean(anchorEl);\n  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {\n    setAnchorEl(event.currentTarget);\n  };\n  const handleClose = () => {\n    setAnchorEl(null);\n  };\n\n  return (\n    <div>\n      <Button\n        id={buttonId}\n        aria-controls={open ? menuId : undefined}\n        aria-haspopup=\"true\"\n        aria-expanded={open}\n        onClick={handleClick}\n      >\n        Dashboard\n      </Button>\n      <Menu\n        id={menuId}\n        anchorEl={anchorEl}\n        open={open}\n        onClose={handleClose}\n        slotProps={{\n          list: {\n            'aria-labelledby': buttonId,\n            sx: {\n              py: 0,\n            },\n          },\n        }}\n      >\n        <StyledListHeader>Category 1</StyledListHeader>\n        <MenuItem onClick={handleClose}>Option 1</MenuItem>\n        <MenuItem onClick={handleClose}>Option 2</MenuItem>\n        <StyledListHeader>Category 2</StyledListHeader>\n        <MenuItem onClick={handleClose}>Option 3</MenuItem>\n        <MenuItem onClick={handleClose}>Option 4</MenuItem>\n      </Menu>\n    </div>\n  );\n}\n",
+      "sha256": "2bb5e3f50ac1d0da31988c96caf0ff253c3dde871cfb9fbe1b8dfe7fdb6da069",
+      "upstreamPath": "docs/data/material/components/menus/GroupedMenu.tsx",
+      "upstreamSha256": "1dee912b625e510afa159851a089b3606dd5c2dc49934506f9b6fc9333ae7a3b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menus/IconMenu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Divider from '@mui/material/Divider';\nimport Paper from '@mui/material/Paper';\nimport MenuList from '@mui/material/MenuList';\nimport MenuItem from '@mui/material/MenuItem';\nimport ListItemText from '@mui/material/ListItemText';\nimport ListItemIcon from '@mui/material/ListItemIcon';\nimport Typography from '@mui/material/Typography';\nimport ContentCut from '@mui/icons-material/ContentCut';\nimport ContentCopy from '@mui/icons-material/ContentCopy';\nimport ContentPaste from '@mui/icons-material/ContentPaste';\nimport Cloud from '@mui/icons-material/Cloud';\n\nexport default function IconMenu() {\n  return (\n    <Paper sx={{ width: 320, maxWidth: '100%' }}>\n      <MenuList>\n        <MenuItem>\n          <ListItemIcon>\n            <ContentCut fontSize=\"small\" />\n          </ListItemIcon>\n          <ListItemText>Cut</ListItemText>\n          <Typography variant=\"body2\" sx={{ color: 'text.secondary' }}>\n            ⌘X\n          </Typography>\n        </MenuItem>\n        <MenuItem>\n          <ListItemIcon>\n            <ContentCopy fontSize=\"small\" />\n          </ListItemIcon>\n          <ListItemText>Copy</ListItemText>\n          <Typography variant=\"body2\" sx={{ color: 'text.secondary' }}>\n            ⌘C\n          </Typography>\n        </MenuItem>\n        <MenuItem>\n          <ListItemIcon>\n            <ContentPaste fontSize=\"small\" />\n          </ListItemIcon>\n          <ListItemText>Paste</ListItemText>\n          <Typography variant=\"body2\" sx={{ color: 'text.secondary' }}>\n            ⌘V\n          </Typography>\n        </MenuItem>\n        <Divider />\n        <MenuItem>\n          <ListItemIcon>\n            <Cloud fontSize=\"small\" />\n          </ListItemIcon>\n          <ListItemText>Web Clipboard</ListItemText>\n        </MenuItem>\n      </MenuList>\n    </Paper>\n  );\n}\n",
+      "sha256": "455d2381cbf719f0a0e76d9210a2882a20d345105fa3d5b844969b2276d34c24",
+      "upstreamPath": "docs/data/material/components/menus/IconMenu.tsx",
+      "upstreamSha256": "107d2aec8e2d356709f5bfef2ba175361bc2a1d60f543c3754811ccdcdb0be42",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menus/LongMenu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport IconButton from '@mui/material/IconButton';\nimport Menu from '@mui/material/Menu';\nimport MenuItem from '@mui/material/MenuItem';\nimport MoreVertIcon from '@mui/icons-material/MoreVert';\n\nconst options = [\n  'None',\n  'Atria',\n  'Callisto',\n  'Dione',\n  'Ganymede',\n  'Hangouts Call',\n  'Luna',\n  'Oberon',\n  'Phobos',\n  'Pyxis',\n  'Sedna',\n  'Titania',\n  'Triton',\n  'Umbriel',\n];\n\nconst ITEM_HEIGHT = 48;\n\nexport default function LongMenu() {\n  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);\n  const open = Boolean(anchorEl);\n  const handleClick = (event: React.MouseEvent<HTMLElement>) => {\n    setAnchorEl(event.currentTarget);\n  };\n  const handleClose = () => {\n    setAnchorEl(null);\n  };\n\n  return (\n    <div>\n      <IconButton\n        aria-label=\"more\"\n        id=\"long-button\"\n        aria-controls={open ? 'long-menu' : undefined}\n        aria-expanded={open}\n        aria-haspopup=\"true\"\n        onClick={handleClick}\n      >\n        <MoreVertIcon />\n      </IconButton>\n      <Menu\n        id=\"long-menu\"\n        anchorEl={anchorEl}\n        open={open}\n        onClose={handleClose}\n        slotProps={{\n          paper: {\n            style: {\n              maxHeight: ITEM_HEIGHT * 4.5,\n              width: '20ch',\n            },\n          },\n          list: {\n            'aria-labelledby': 'long-button',\n          },\n        }}\n      >\n        {options.map((option) => (\n          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>\n            {option}\n          </MenuItem>\n        ))}\n      </Menu>\n    </div>\n  );\n}\n",
+      "sha256": "1ee269008dedc0d130d1bb8b25d383f8bc781cd3cf4dbacacec898a8509ab84f",
+      "upstreamPath": "docs/data/material/components/menus/LongMenu.tsx",
+      "upstreamSha256": "db26634d9e92131cb52b9734a5d0b1f4e5118deb0d6babfbb9151d6658e7e778",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menus/MenuListComposition.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport ClickAwayListener from '@mui/material/ClickAwayListener';\nimport Grow from '@mui/material/Grow';\nimport Paper from '@mui/material/Paper';\nimport Popper from '@mui/material/Popper';\nimport MenuItem from '@mui/material/MenuItem';\nimport MenuList from '@mui/material/MenuList';\nimport Stack from '@mui/material/Stack';\n\nexport default function MenuListComposition() {\n  const [open, setOpen] = React.useState(false);\n  const anchorRef = React.useRef<HTMLButtonElement>(null);\n\n  const handleToggle = () => {\n    setOpen((prevOpen) => !prevOpen);\n  };\n\n  const handleClose = (event: Event | React.SyntheticEvent) => {\n    if (\n      anchorRef.current &&\n      anchorRef.current.contains(event.target as HTMLElement)\n    ) {\n      return;\n    }\n\n    setOpen(false);\n  };\n\n  function handleListKeyDown(event: React.KeyboardEvent) {\n    if (event.key === 'Tab') {\n      event.preventDefault();\n      setOpen(false);\n    } else if (event.key === 'Escape') {\n      setOpen(false);\n    }\n  }\n\n  // return focus to the button when we transitioned from !open -> open\n  const prevOpen = React.useRef(open);\n  React.useEffect(() => {\n    if (prevOpen.current === true && open === false) {\n      anchorRef.current!.focus();\n    }\n\n    prevOpen.current = open;\n  }, [open]);\n\n  return (\n    <Stack direction=\"row\" spacing={2}>\n      <Paper>\n        <MenuList>\n          <MenuItem>Profile</MenuItem>\n          <MenuItem>My account</MenuItem>\n          <MenuItem>Logout</MenuItem>\n        </MenuList>\n      </Paper>\n      <div>\n        <Button\n          ref={anchorRef}\n          id=\"composition-button\"\n          aria-controls={open ? 'composition-menu' : undefined}\n          aria-expanded={open}\n          aria-haspopup=\"true\"\n          onClick={handleToggle}\n        >\n          Dashboard\n        </Button>\n        <Popper\n          open={open}\n          anchorEl={anchorRef.current}\n          role={undefined}\n          placement=\"bottom-start\"\n          transition\n          disablePortal\n        >\n          {({ TransitionProps, placement }) => (\n            <Grow\n              {...TransitionProps}\n              style={{\n                transformOrigin:\n                  placement === 'bottom-start' ? 'left top' : 'left bottom',\n              }}\n            >\n              <Paper>\n                <ClickAwayListener onClickAway={handleClose}>\n                  <MenuList\n                    autoFocusItem={open}\n                    id=\"composition-menu\"\n                    aria-labelledby=\"composition-button\"\n                    onKeyDown={handleListKeyDown}\n                  >\n                    <MenuItem onClick={handleClose}>Profile</MenuItem>\n                    <MenuItem onClick={handleClose}>My account</MenuItem>\n                    <MenuItem onClick={handleClose}>Logout</MenuItem>\n                  </MenuList>\n                </ClickAwayListener>\n              </Paper>\n            </Grow>\n          )}\n        </Popper>\n      </div>\n    </Stack>\n  );\n}\n",
+      "sha256": "dedc39c553b5704ea9f14bccbc5690f7d4893853ede3a3d0690347ec8cf8a818",
+      "upstreamPath": "docs/data/material/components/menus/MenuListComposition.tsx",
+      "upstreamSha256": "270ae20b5f766aea63141f969fab9bc3c18be6618eb2d0b0f830c90bc0db7eca",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menus/MenuPopupState.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport Menu from '@mui/material/Menu';\nimport MenuItem from '@mui/material/MenuItem';\nimport PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';\n\nexport default function MenuPopupState() {\n  return (\n    <PopupState variant=\"popover\" popupId=\"demo-popup-menu\">\n      {(popupState) => (\n        <React.Fragment>\n          <Button variant=\"contained\" {...bindTrigger(popupState)}>\n            Dashboard\n          </Button>\n          <Menu {...bindMenu(popupState)}>\n            <MenuItem onClick={popupState.close}>Profile</MenuItem>\n            <MenuItem onClick={popupState.close}>My account</MenuItem>\n            <MenuItem onClick={popupState.close}>Logout</MenuItem>\n          </Menu>\n        </React.Fragment>\n      )}\n    </PopupState>\n  );\n}\n",
+      "sha256": "0921368d9b9291cfd48ebc18ee3a8729560038bb5d20de2b348bebf44c21cd04",
+      "upstreamPath": "docs/data/material/components/menus/MenuPopupState.tsx",
+      "upstreamSha256": "21a9c3e39dd6ea840b4aeafe26e39598021ecaaf76969ae8087d252247af8782",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menus/PositionedMenu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport Menu from '@mui/material/Menu';\nimport MenuItem from '@mui/material/MenuItem';\n\nexport default function PositionedMenu() {\n  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);\n  const open = Boolean(anchorEl);\n  const handleClick = (event: React.MouseEvent<HTMLElement>) => {\n    setAnchorEl(event.currentTarget);\n  };\n  const handleClose = () => {\n    setAnchorEl(null);\n  };\n\n  return (\n    <div>\n      <Button\n        id=\"demo-positioned-button\"\n        aria-controls={open ? 'demo-positioned-menu' : undefined}\n        aria-haspopup=\"true\"\n        aria-expanded={open}\n        onClick={handleClick}\n      >\n        Dashboard\n      </Button>\n      <Menu\n        id=\"demo-positioned-menu\"\n        aria-labelledby=\"demo-positioned-button\"\n        anchorEl={anchorEl}\n        open={open}\n        onClose={handleClose}\n        anchorOrigin={{\n          vertical: 'top',\n          horizontal: 'left',\n        }}\n        transformOrigin={{\n          vertical: 'top',\n          horizontal: 'left',\n        }}\n      >\n        <MenuItem onClick={handleClose}>Profile</MenuItem>\n        <MenuItem onClick={handleClose}>My account</MenuItem>\n        <MenuItem onClick={handleClose}>Logout</MenuItem>\n      </Menu>\n    </div>\n  );\n}\n",
+      "sha256": "7d7acd22e5b3671b7b2bdbd0163afb4b68db4b3f35c6e356d33ccb16bcf31512",
+      "upstreamPath": "docs/data/material/components/menus/PositionedMenu.tsx",
+      "upstreamSha256": "358e69d0aca02e9cdd2e79091817b587dc94c1d6315a3782ced75a02b63adc97",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menus/RadioMenu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Paper from '@mui/material/Paper';\nimport MenuList from '@mui/material/MenuList';\nimport MenuItem from '@mui/material/MenuItem';\nimport ListItemText from '@mui/material/ListItemText';\nimport ListItemIcon from '@mui/material/ListItemIcon';\nimport RadioButtonChecked from '@mui/icons-material/RadioButtonChecked';\nimport RadioButtonUnchecked from '@mui/icons-material/RadioButtonUnchecked';\n\nconst options = ['Name', 'Date modified', 'Size'];\n\nexport default function RadioMenu() {\n  const [selected, setSelected] = React.useState('Name');\n\n  return (\n    <Paper sx={{ width: 320, maxWidth: '100%' }}>\n      <MenuList>\n        {options.map((option) => (\n          <MenuItem\n            key={option}\n            role=\"menuitemradio\"\n            selected={selected === option}\n            onClick={() => setSelected(option)}\n          >\n            <ListItemIcon>\n              {selected === option ? (\n                <RadioButtonChecked fontSize=\"small\" />\n              ) : (\n                <RadioButtonUnchecked fontSize=\"small\" />\n              )}\n            </ListItemIcon>\n            <ListItemText>{option}</ListItemText>\n          </MenuItem>\n        ))}\n      </MenuList>\n    </Paper>\n  );\n}\n",
+      "sha256": "418550b604e01dcbc3c7302645dee28ee9ee4c62f3df31dfb885f602c4707d06",
+      "upstreamPath": "docs/data/material/components/menus/RadioMenu.tsx",
+      "upstreamSha256": "967e27fe1d20104ccf02d9d1aa48a9d4abe64d126934dc9543cb2ed9f45e2815",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menus/SimpleListMenu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport List from '@mui/material/List';\nimport ListItemButton from '@mui/material/ListItemButton';\nimport ListItemText from '@mui/material/ListItemText';\nimport MenuItem from '@mui/material/MenuItem';\nimport Menu from '@mui/material/Menu';\n\nconst options = [\n  'Show some love to MUI',\n  'Show all notification content',\n  'Hide sensitive notification content',\n  'Hide all notification content',\n];\n\nexport default function SimpleListMenu() {\n  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);\n  const [selectedIndex, setSelectedIndex] = React.useState(1);\n  const open = Boolean(anchorEl);\n  const handleClickListItem = (event: React.MouseEvent<HTMLElement>) => {\n    setAnchorEl(event.currentTarget);\n  };\n\n  const handleMenuItemClick = (\n    event: React.MouseEvent<HTMLElement>,\n    index: number,\n  ) => {\n    setSelectedIndex(index);\n    setAnchorEl(null);\n  };\n\n  const handleClose = () => {\n    setAnchorEl(null);\n  };\n\n  return (\n    <div>\n      <List\n        component=\"nav\"\n        aria-label=\"Device settings\"\n        sx={{ bgcolor: 'background.paper' }}\n      >\n        <ListItemButton\n          id=\"lock-button\"\n          aria-haspopup=\"listbox\"\n          aria-controls=\"lock-menu\"\n          aria-label=\"when device is locked\"\n          aria-expanded={open}\n          onClick={handleClickListItem}\n        >\n          <ListItemText\n            primary=\"When device is locked\"\n            secondary={options[selectedIndex]}\n          />\n        </ListItemButton>\n      </List>\n      <Menu\n        id=\"lock-menu\"\n        anchorEl={anchorEl}\n        open={open}\n        onClose={handleClose}\n        slotProps={{\n          list: {\n            'aria-labelledby': 'lock-button',\n            role: 'listbox',\n          },\n        }}\n      >\n        {options.map((option, index) => (\n          <MenuItem\n            key={option}\n            disabled={index === 0}\n            selected={index === selectedIndex}\n            onClick={(event) => handleMenuItemClick(event, index)}\n          >\n            {option}\n          </MenuItem>\n        ))}\n      </Menu>\n    </div>\n  );\n}\n",
+      "sha256": "145beedc32749f03e11df1c50d91a640c8d38f2174cd01ff50cb001b334693d9",
+      "upstreamPath": "docs/data/material/components/menus/SimpleListMenu.tsx",
+      "upstreamSha256": "638b7d148514dcdf05cf0f1993b5af05524167ec0cd8395c7043f63e5bf5c470",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/menus/TypographyMenu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport MenuList from '@mui/material/MenuList';\nimport MenuItem from '@mui/material/MenuItem';\nimport Paper from '@mui/material/Paper';\nimport ListItemIcon from '@mui/material/ListItemIcon';\nimport Typography from '@mui/material/Typography';\nimport DraftsIcon from '@mui/icons-material/Drafts';\nimport SendIcon from '@mui/icons-material/Send';\nimport PriorityHighIcon from '@mui/icons-material/PriorityHigh';\n\nexport default function TypographyMenu() {\n  return (\n    <Paper sx={{ width: 230 }}>\n      <MenuList>\n        <MenuItem>\n          <ListItemIcon>\n            <SendIcon fontSize=\"small\" />\n          </ListItemIcon>\n          <Typography variant=\"inherit\">A short message</Typography>\n        </MenuItem>\n        <MenuItem>\n          <ListItemIcon>\n            <PriorityHighIcon fontSize=\"small\" />\n          </ListItemIcon>\n          <Typography variant=\"inherit\">A very long text that overflows</Typography>\n        </MenuItem>\n        <MenuItem>\n          <ListItemIcon>\n            <DraftsIcon fontSize=\"small\" />\n          </ListItemIcon>\n          <Typography variant=\"inherit\" noWrap>\n            A very long text that overflows\n          </Typography>\n        </MenuItem>\n      </MenuList>\n    </Paper>\n  );\n}\n",
+      "sha256": "7f0cb767ede2d75c82ce764a925bbfe4687513a3a6d106b3c51b6fdf44e29090",
+      "upstreamPath": "docs/data/material/components/menus/TypographyMenu.tsx",
+      "upstreamSha256": "33e258ca7abf674f00a57c5d5abeae0923bee63c85887e3b6206779962dacd66",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menus/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menus/AccountMenu\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "aef0985bc822b7dd0c2933ca412841a33661c43a5732e9fd14abdbb25c8dab81",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menus/previews/basic-menu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menus/BasicMenu\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "f0ff04d690d42f8f051b336bd07de22f7b852d5dc1ffa5b00e0fc9e5fab9568b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menus/previews/checkbox-menu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menus/CheckboxMenu\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a696adab910c00e41f8dd2460bec479ed98caacd853dbeba048bd4a9670be7cc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menus/previews/context-menu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menus/ContextMenu\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8e9ed9b96218e09eedb187e46fce5cd619b962d87b8742b510136cf3ce345c73",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menus/previews/customized-menus.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menus/CustomizedMenus\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "5ed88e22900212b8a7cf466e39636471f22d983dc037869c11d3f5306c93d0bf",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menus/previews/dense-menu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menus/DenseMenu\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1595e8dbc48d7ace153ba3948b69ea442c058fb190aca756e228b7d087464c34",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menus/previews/fade-menu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menus/FadeMenu\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "59ade1c6acc8bc86ef03b4b1e001ca8f2539d1e3b3812a96474b95029505656b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menus/previews/grouped-menu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menus/GroupedMenu\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2114cef7c52c48b8859e362ffbab60b1b8a4f8fa18fe9abcfd99e07f74b651f1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menus/previews/icon-menu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menus/IconMenu\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "9f308d0e400d07aa9996a7d6fa27262a485edaec303da06bde037ef90f30fa80",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menus/previews/long-menu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menus/LongMenu\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "f0971a6ef0c7bb97d9536c8773af5f4bbcbe4c6d3b36e7c5acdf2e77843c74a5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menus/previews/menu-list-composition.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menus/MenuListComposition\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0859ed4246f48cb512f5ac8098ab3b151c2358afe756de2e3a1f63b97087075f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menus/previews/menu-popup-state.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menus/MenuPopupState\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "08086d43a4dad817d44eb1779f25361e57d2414a2d3b39bc2187b0f0957be389",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menus/previews/positioned-menu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menus/PositionedMenu\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "16abb3807da5a3fb13b35fbe7c8d461bbafbe279eb7cc0964e0ea90fbc314c27",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menus/previews/radio-menu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menus/RadioMenu\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "7c7bc8d550a7c7623cb1c1d9f78723c3b8a0417e1952df46571fe99a2f266562",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menus/previews/simple-list-menu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menus/SimpleListMenu\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e0ac0a1509cca15a7b602b267ebdf9c2c5afb531d843a9e74fce955aed5d2fcc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/menus/previews/typography-menu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/menus/TypographyMenu\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0e6d41c1361d68434f5bd3f883b1646babb8f5067d5f02b8a2503151a8a16ac8",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0 material-ui-popup-state@5.3.7",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0 material-ui-popup-state@5.3.7",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "menus",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/menus",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/menus/AccountMenu.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/menus/AccountMenu.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI menus\n\n16 published Material UI menus examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/menus\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/menus/AccountMenu.tsx\n"
+}

@@ -1,0 +1,369 @@
+{
+  "id": "shadcn:input-group",
+  "sourceId": "shadcn",
+  "slug": "shadcn-input-group",
+  "name": "shadcn/ui input group",
+  "description": "11 published shadcn/ui input group examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@tabler/icons-react@3.48.0",
+    "class-variance-authority@0.7.1",
+    "cn@0.4.0",
+    "lucide-react@1.35.0",
+    "radix-ui@1.4.3",
+    "react-textarea-autosize@8.5.9"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "input",
+    "tags": [
+      "button",
+      "file",
+      "input"
+    ],
+    "aliases": [
+      "input group",
+      "shadcn/ui input group",
+      "input"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "11 published shadcn/ui input group examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "input:button:file",
+    "searchText": "shadcn/ui input group\ninput group\n11 published shadcn/ui input group examples with complete pinned source and MIT attribution.\ninput\nbutton\nfile\nshadcn/ui input group 11 published shadcn/ui input group examples with complete pinned source and MIT attribution. Installation Copyable component source and official examples, not a dependency on a hosted registry. Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent). Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/shadcn ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples Pinned source: https://github.com/shadcn ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples/input group button.tsx"
+  },
+  "previewPath": "/preview/blocks/shadcn-input-group",
+  "manifestPath": "components/shadcn-input-group/component.json",
+  "integrity": "sha256:6542e828c63f717bf1737bdc3bfa9359c7df0cbf8300b0c3c16f84e8b62d6d91",
+  "source": {
+    "id": "shadcn",
+    "name": "shadcn/ui",
+    "repository": "https://github.com/shadcn-ui/ui",
+    "commit": "a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4",
+    "registrySha256": "0054ee914f9451ebe390d414d34264df3a61f5e264c59b25b4c8155452fff343",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 shadcn",
+      "textPath": "source/shadcn/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-button.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport {\n  IconCheck,\n  IconCopy,\n  IconInfoCircle,\n  IconStar,\n} from \"@tabler/icons-react\"\n\nimport { useCopyToClipboard } from \"@/components/rendyn-libraries/shadcn/upstream/hooks/use-copy-to-clipboard\"\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupButton,\n  InputGroupInput,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/input-group\"\nimport {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/popover\"\n\nexport default function InputGroupButtonExample() {\n  const { copyToClipboard, isCopied } = useCopyToClipboard()\n  const [isFavorite, setIsFavorite] = React.useState(false)\n\n  return (\n    <div className=\"grid w-full max-w-sm gap-6\">\n      <InputGroup>\n        <InputGroupInput placeholder=\"https://x.com/shadcn\" readOnly />\n        <InputGroupAddon align=\"inline-end\">\n          <InputGroupButton\n            aria-label=\"Copy\"\n            title=\"Copy\"\n            size=\"icon-xs\"\n            onClick={() => {\n              copyToClipboard(\"https://x.com/shadcn\")\n            }}\n          >\n            {isCopied ? <IconCheck /> : <IconCopy />}\n          </InputGroupButton>\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup className=\"[--radius:9999px]\">\n        <Popover>\n          <PopoverTrigger asChild>\n            <InputGroupAddon>\n              <InputGroupButton variant=\"secondary\" size=\"icon-xs\">\n                <IconInfoCircle />\n              </InputGroupButton>\n            </InputGroupAddon>\n          </PopoverTrigger>\n          <PopoverContent\n            align=\"start\"\n            className=\"flex flex-col gap-1 rounded-xl text-sm\"\n          >\n            <p className=\"font-medium\">Your connection is not secure.</p>\n            <p>You should not enter any sensitive information on this site.</p>\n          </PopoverContent>\n        </Popover>\n        <InputGroupAddon className=\"pl-1.5 text-muted-foreground\">\n          https://\n        </InputGroupAddon>\n        <InputGroupInput id=\"input-secure-19\" />\n        <InputGroupAddon align=\"inline-end\">\n          <InputGroupButton\n            onClick={() => setIsFavorite(!isFavorite)}\n            size=\"icon-xs\"\n          >\n            <IconStar\n              data-favorite={isFavorite}\n              className=\"data-[favorite=true]:fill-blue-600 data-[favorite=true]:stroke-blue-600\"\n            />\n          </InputGroupButton>\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupInput placeholder=\"Type to search...\" />\n        <InputGroupAddon align=\"inline-end\">\n          <InputGroupButton variant=\"secondary\">Search</InputGroupButton>\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  )\n}\n",
+      "sha256": "b074442c08b5c15152635377c3d2e010e42c3bfbf0026dc208d4a75d4557140e",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/input-group-button.tsx",
+      "upstreamSha256": "04adaf9d5dc35a628c7078d0d93ac3a2441f3bdfec5bd5bf7d2ed5e1617d781e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/hooks/use-copy-to-clipboard.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\n\nfunction legacyCopyToClipboard(value: string) {\n  const textArea = document.createElement(\"textarea\")\n  textArea.value = value\n  textArea.setAttribute(\"readonly\", \"\")\n  textArea.style.position = \"fixed\"\n  textArea.style.opacity = \"0\"\n  textArea.style.pointerEvents = \"none\"\n\n  document.body.appendChild(textArea)\n  textArea.focus()\n  textArea.select()\n  textArea.setSelectionRange(0, value.length)\n\n  let hasCopied = false\n  try {\n    hasCopied = document.execCommand(\"copy\")\n  } catch {\n    hasCopied = false\n  }\n\n  document.body.removeChild(textArea)\n  return hasCopied\n}\n\nexport function useCopyToClipboard({\n  timeout = 2000,\n  onCopy,\n}: {\n  timeout?: number\n  onCopy?: () => void\n} = {}) {\n  const [isCopied, setIsCopied] = React.useState(false)\n\n  const copyToClipboard = async (value: string) => {\n    if (typeof window === \"undefined\") {\n      return false\n    }\n\n    if (!value) {\n      return false\n    }\n\n    let hasCopied = false\n\n    if (navigator.clipboard?.writeText) {\n      try {\n        await navigator.clipboard.writeText(value)\n        hasCopied = true\n      } catch {\n        hasCopied = legacyCopyToClipboard(value)\n      }\n    } else {\n      hasCopied = legacyCopyToClipboard(value)\n    }\n\n    if (!hasCopied) {\n      return false\n    }\n\n    setIsCopied(true)\n\n    if (onCopy) {\n      onCopy()\n    }\n\n    if (timeout !== 0) {\n      setTimeout(() => {\n        setIsCopied(false)\n      }, timeout)\n    }\n\n    return true\n  }\n\n  return { isCopied, copyToClipboard }\n}\n",
+      "sha256": "87eb68e8423fbb02292adc35cc9d2b2c0c11d3fd7768c4ac0a3af0b69f4f7b3d",
+      "upstreamPath": "apps/v4/hooks/use-copy-to-clipboard.ts",
+      "upstreamSha256": "d518ba358b8f1b5de78c403f92b57d4e0e7bb6058a4f06edb00c3b5df29e2851",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/input-group.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { cn } from \"cn\"\n\nimport { Button } from \"@/components/rendyn-libraries/shadcn/ui/button\"\nimport { Input } from \"@/components/rendyn-libraries/shadcn/ui/input\"\nimport { Textarea } from \"@/components/rendyn-libraries/shadcn/ui/textarea\"\n\nfunction InputGroup({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"input-group\"\n      role=\"group\"\n      className={cn(\n        \"group/input-group relative flex w-full items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none dark:bg-input/30\",\n        \"h-9 min-w-0 has-[>textarea]:h-auto\",\n\n        // Variants based on alignment.\n        \"has-[>[data-align=inline-start]]:[&>input]:pl-2\",\n        \"has-[>[data-align=inline-end]]:[&>input]:pr-2\",\n        \"has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>[data-align=block-start]]:[&>input]:pb-3\",\n        \"has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-end]]:[&>input]:pt-3\",\n\n        // Focus state.\n        \"has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-[3px] has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50\",\n\n        // Error state.\n        \"has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-destructive/20 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40\",\n\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nconst inputGroupAddonVariants = cva(\n  \"flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4\",\n  {\n    variants: {\n      align: {\n        \"inline-start\":\n          \"order-first pl-3 has-[>button]:ml-[-0.45rem] has-[>kbd]:ml-[-0.35rem]\",\n        \"inline-end\":\n          \"order-last pr-3 has-[>button]:mr-[-0.45rem] has-[>kbd]:mr-[-0.35rem]\",\n        \"block-start\":\n          \"order-first w-full justify-start px-3 pt-3 group-has-[>input]/input-group:pt-2.5 [.border-b]:pb-3\",\n        \"block-end\":\n          \"order-last w-full justify-start px-3 pb-3 group-has-[>input]/input-group:pb-2.5 [.border-t]:pt-3\",\n      },\n    },\n    defaultVariants: {\n      align: \"inline-start\",\n    },\n  }\n)\n\nfunction InputGroupAddon({\n  className,\n  align = \"inline-start\",\n  ...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof inputGroupAddonVariants>) {\n  return (\n    <div\n      role=\"group\"\n      data-slot=\"input-group-addon\"\n      data-align={align}\n      className={cn(inputGroupAddonVariants({ align }), className)}\n      onClick={(e) => {\n        if ((e.target as HTMLElement).closest(\"button\")) {\n          return\n        }\n        e.currentTarget.parentElement?.querySelector(\"input\")?.focus()\n      }}\n      {...props}\n    />\n  )\n}\n\nconst inputGroupButtonVariants = cva(\n  \"flex items-center gap-2 text-sm shadow-none\",\n  {\n    variants: {\n      size: {\n        xs: \"h-6 gap-1 rounded-[calc(var(--radius)-5px)] px-2 has-[>svg]:px-2 [&>svg:not([class*='size-'])]:size-3.5\",\n        sm: \"h-8 gap-1.5 rounded-md px-2.5 has-[>svg]:px-2.5\",\n        \"icon-xs\":\n          \"size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0\",\n        \"icon-sm\": \"size-8 p-0 has-[>svg]:p-0\",\n      },\n    },\n    defaultVariants: {\n      size: \"xs\",\n    },\n  }\n)\n\nfunction InputGroupButton({\n  className,\n  type = \"button\",\n  variant = \"ghost\",\n  size = \"xs\",\n  ...props\n}: Omit<React.ComponentProps<typeof Button>, \"size\"> &\n  VariantProps<typeof inputGroupButtonVariants>) {\n  return (\n    <Button\n      type={type}\n      data-size={size}\n      variant={variant}\n      className={cn(inputGroupButtonVariants({ size }), className)}\n      {...props}\n    />\n  )\n}\n\nfunction InputGroupText({ className, ...props }: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      className={cn(\n        \"flex items-center gap-2 text-sm text-muted-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction InputGroupInput({\n  className,\n  ...props\n}: React.ComponentProps<\"input\">) {\n  return (\n    <Input\n      data-slot=\"input-group-control\"\n      className={cn(\n        \"flex-1 rounded-none border-0 bg-transparent shadow-none focus-visible:ring-0 dark:bg-transparent\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction InputGroupTextarea({\n  className,\n  ...props\n}: React.ComponentProps<\"textarea\">) {\n  return (\n    <Textarea\n      data-slot=\"input-group-control\"\n      className={cn(\n        \"flex-1 resize-none rounded-none border-0 bg-transparent py-3 shadow-none focus-visible:ring-0 dark:bg-transparent\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupButton,\n  InputGroupText,\n  InputGroupInput,\n  InputGroupTextarea,\n}\n",
+      "sha256": "6adce9270d85dbc3002ac3d38a898f1ea72add552b965575cb2288ef2cdbf078",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/input-group.tsx",
+      "upstreamSha256": "e379899ac50d6cabc9d9eb1668f265176951c62b1fe83a6f23ee97fe8074d526",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/ui/button.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { cn } from \"cn\"\nimport { Slot } from \"radix-ui\"\n\nconst buttonVariants = cva(\n  \"inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground hover:bg-primary/90\",\n        destructive:\n          \"bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:bg-destructive/60 dark:focus-visible:ring-destructive/40\",\n        outline:\n          \"border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50\",\n        secondary:\n          \"bg-secondary text-secondary-foreground hover:bg-secondary/80\",\n        ghost:\n          \"hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n      },\n      size: {\n        default: \"h-9 px-4 py-2 has-[>svg]:px-3\",\n        xs: \"h-6 gap-1 rounded-md px-2 text-xs has-[>svg]:px-1.5 [&_svg:not([class*='size-'])]:size-3\",\n        sm: \"h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5\",\n        lg: \"h-10 rounded-md px-6 has-[>svg]:px-4\",\n        icon: \"size-9\",\n        \"icon-xs\": \"size-6 rounded-md [&_svg:not([class*='size-'])]:size-3\",\n        \"icon-sm\": \"size-8\",\n        \"icon-lg\": \"size-10\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n)\n\nfunction Button({\n  className,\n  variant = \"default\",\n  size = \"default\",\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean\n  }) {\n  const Comp = asChild ? Slot.Root : \"button\"\n\n  return (\n    <Comp\n      data-slot=\"button\"\n      data-variant={variant}\n      data-size={size}\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  )\n}\n\nexport { Button, buttonVariants }\n",
+      "sha256": "3763472684dc688736e821e59003cac5ef8d753447f399abae7809fa3571c6c0",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/button.tsx",
+      "upstreamSha256": "79dd6f75f8136394442202d6b8b922fb269eaad0a5dba579397c9d5b41f893bb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/ui/input.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\n\nfunction Input({ className, type, ...props }: React.ComponentProps<\"input\">) {\n  return (\n    <input\n      type={type}\n      data-slot=\"input\"\n      className={cn(\n        \"h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none selection:bg-primary selection:text-primary-foreground file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm dark:bg-input/30\",\n        \"focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n        \"aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Input }\n",
+      "sha256": "6eeb51e5be0f5dcf8cd92527d8c42c6eadd8fb9354df069f88b91b044b3b0b35",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/input.tsx",
+      "upstreamSha256": "0c9457181f6ddc80969bcf854e92c362903a55b6e889fbef3fd85343ecc4af5b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/ui/textarea.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\n\nfunction Textarea({ className, ...props }: React.ComponentProps<\"textarea\">) {\n  return (\n    <textarea\n      data-slot=\"textarea\"\n      className={cn(\n        \"flex field-sizing-content min-h-16 w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:aria-invalid:ring-destructive/40\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Textarea }\n",
+      "sha256": "8e0665eff2d0d040ed6f2c78b6cd0fb798af58a85d9e5d90ff0c8be37fdf252e",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/textarea.tsx",
+      "upstreamSha256": "5cafcfeeee29534f449387a16b585f5923d2faab1a0cdc50a874416b175f59ce",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/popover.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { Popover as PopoverPrimitive } from \"radix-ui\"\n\nfunction Popover({\n  ...props\n}: React.ComponentProps<typeof PopoverPrimitive.Root>) {\n  return <PopoverPrimitive.Root data-slot=\"popover\" {...props} />\n}\n\nfunction PopoverTrigger({\n  ...props\n}: React.ComponentProps<typeof PopoverPrimitive.Trigger>) {\n  return <PopoverPrimitive.Trigger data-slot=\"popover-trigger\" {...props} />\n}\n\nfunction PopoverContent({\n  className,\n  align = \"center\",\n  sideOffset = 4,\n  ...props\n}: React.ComponentProps<typeof PopoverPrimitive.Content>) {\n  return (\n    <PopoverPrimitive.Portal>\n      <PopoverPrimitive.Content\n        data-slot=\"popover-content\"\n        align={align}\n        sideOffset={sideOffset}\n        className={cn(\n          \"z-50 w-72 origin-(--radix-popover-content-transform-origin) rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-hidden data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95\",\n          className\n        )}\n        {...props}\n      />\n    </PopoverPrimitive.Portal>\n  )\n}\n\nfunction PopoverAnchor({\n  ...props\n}: React.ComponentProps<typeof PopoverPrimitive.Anchor>) {\n  return <PopoverPrimitive.Anchor data-slot=\"popover-anchor\" {...props} />\n}\n\nfunction PopoverHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"popover-header\"\n      className={cn(\"flex flex-col gap-1 text-sm\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction PopoverTitle({ className, ...props }: React.ComponentProps<\"h2\">) {\n  return (\n    <div\n      data-slot=\"popover-title\"\n      className={cn(\"font-medium\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction PopoverDescription({\n  className,\n  ...props\n}: React.ComponentProps<\"p\">) {\n  return (\n    <p\n      data-slot=\"popover-description\"\n      className={cn(\"text-muted-foreground\", className)}\n      {...props}\n    />\n  )\n}\n\nexport {\n  Popover,\n  PopoverTrigger,\n  PopoverContent,\n  PopoverAnchor,\n  PopoverHeader,\n  PopoverTitle,\n  PopoverDescription,\n}\n",
+      "sha256": "1d336d50b0ff4c4fb36ae45875aa2b67b0a08f5e4eaff3cde0b691217734b5a0",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/popover.tsx",
+      "upstreamSha256": "3f99d3add6c9fa4f03721e81297ee10e1310785ee1d9d9d4c82a114d84ab0757",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-button-group.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Link2Icon } from \"lucide-react\"\n\nimport {\n  ButtonGroup,\n  ButtonGroupText,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/button-group\"\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/input-group\"\nimport { Label } from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/label\"\n\nexport default function InputGroupButtonGroup() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-6\">\n      <ButtonGroup>\n        <ButtonGroupText asChild>\n          <Label htmlFor=\"url\">https://</Label>\n        </ButtonGroupText>\n        <InputGroup>\n          <InputGroupInput id=\"url\" />\n          <InputGroupAddon align=\"inline-end\">\n            <Link2Icon />\n          </InputGroupAddon>\n        </InputGroup>\n        <ButtonGroupText>.com</ButtonGroupText>\n      </ButtonGroup>\n    </div>\n  )\n}\n",
+      "sha256": "1cfbdb41b8c19ff16a84d110aaa9ef6a095a271ada8784fa2c5935a70479550a",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/input-group-button-group.tsx",
+      "upstreamSha256": "5e8b8e7c421ce5235e9e8cac445c9a750c6945aa9b7dccfb9c657309eb663638",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/button-group.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { cn } from \"cn\"\nimport { Slot } from \"radix-ui\"\n\nimport { Separator } from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/separator\"\n\nconst buttonGroupVariants = cva(\n  \"flex w-fit items-stretch has-[>[data-slot=button-group]]:gap-2 [&>*]:focus-visible:relative [&>*]:focus-visible:z-10 has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-md [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1\",\n  {\n    variants: {\n      orientation: {\n        horizontal:\n          \"[&>*:not(:first-child)]:rounded-l-none [&>*:not(:first-child)]:border-l-0 [&>*:not(:last-child)]:rounded-r-none\",\n        vertical:\n          \"flex-col [&>*:not(:first-child)]:rounded-t-none [&>*:not(:first-child)]:border-t-0 [&>*:not(:last-child)]:rounded-b-none\",\n      },\n    },\n    defaultVariants: {\n      orientation: \"horizontal\",\n    },\n  }\n)\n\nfunction ButtonGroup({\n  className,\n  orientation,\n  ...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof buttonGroupVariants>) {\n  return (\n    <div\n      role=\"group\"\n      data-slot=\"button-group\"\n      data-orientation={orientation}\n      className={cn(buttonGroupVariants({ orientation }), className)}\n      {...props}\n    />\n  )\n}\n\nfunction ButtonGroupText({\n  className,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  asChild?: boolean\n}) {\n  const Comp = asChild ? Slot.Root : \"div\"\n\n  return (\n    <Comp\n      className={cn(\n        \"flex items-center gap-2 rounded-md border bg-muted px-4 text-sm font-medium shadow-xs [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction ButtonGroupSeparator({\n  className,\n  orientation = \"vertical\",\n  ...props\n}: React.ComponentProps<typeof Separator>) {\n  return (\n    <Separator\n      data-slot=\"button-group-separator\"\n      orientation={orientation}\n      className={cn(\n        \"relative m-0! self-stretch bg-input data-[orientation=vertical]:h-auto\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport {\n  ButtonGroup,\n  ButtonGroupSeparator,\n  ButtonGroupText,\n  buttonGroupVariants,\n}\n",
+      "sha256": "8503c79b3b52fc3177e6f587c0e650e6f51687084ded284da11edc4ce0018a01",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/button-group.tsx",
+      "upstreamSha256": "a9ac862707ff8d78255f2696baf48f9a87d9e92e21eb476f8f9e9361313c1761",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/separator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { Separator as SeparatorPrimitive } from \"radix-ui\"\n\nfunction Separator({\n  className,\n  orientation = \"horizontal\",\n  decorative = true,\n  ...props\n}: React.ComponentProps<typeof SeparatorPrimitive.Root>) {\n  return (\n    <SeparatorPrimitive.Root\n      data-slot=\"separator\"\n      decorative={decorative}\n      orientation={orientation}\n      className={cn(\n        \"shrink-0 bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Separator }\n",
+      "sha256": "182ca281d2ec1135bd18b00a22ef1f0b79efef6de42379c807bd69bd7a5b4727",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/separator.tsx",
+      "upstreamSha256": "ad7d5403fe337160e41dbf04147896e448ae3a747b8d06660d627d74d60021bc",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/label.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { Label as LabelPrimitive } from \"radix-ui\"\n\nfunction Label({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      data-slot=\"label\"\n      className={cn(\n        \"flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Label }\n",
+      "sha256": "6f607dba73c5065d02f42532bb2debb4b2d825074a77f137438a86b21cfcdc1a",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/label.tsx",
+      "upstreamSha256": "344bde38b8531615dbf8e14af3895517c24d8ef6ce56ddeda7e2e6fe4b5d0c00",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-custom.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport TextareaAutosize from \"react-textarea-autosize\"\n\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupButton,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/input-group\"\n\nexport default function InputGroupCustom() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-6\">\n      <InputGroup>\n        <TextareaAutosize\n          data-slot=\"input-group-control\"\n          className=\"flex field-sizing-content min-h-16 w-full resize-none rounded-md bg-transparent px-3 py-2.5 text-base transition-[color,box-shadow] outline-none md:text-sm\"\n          placeholder=\"Autoresize textarea...\"\n        />\n        <InputGroupAddon align=\"block-end\">\n          <InputGroupButton className=\"ml-auto\" size=\"sm\" variant=\"default\">\n            Submit\n          </InputGroupButton>\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  )\n}\n",
+      "sha256": "8e61aa8aeaf2268577b2e4bb09cf3bce0eb93181f7dcb59dd1befa436c6e5b7b",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/input-group-custom.tsx",
+      "upstreamSha256": "a92e9f1aa877d85564a6e566e2b7b50ab2244a6d8153a1c2c5077770311e42eb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { IconCheck, IconInfoCircle, IconPlus } from \"@tabler/icons-react\"\nimport { ArrowUpIcon, Search } from \"lucide-react\"\n\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuTrigger,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/dropdown-menu\"\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupButton,\n  InputGroupInput,\n  InputGroupText,\n  InputGroupTextarea,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/input-group\"\nimport { Separator } from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/separator\"\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/tooltip\"\n\nexport default function InputGroupDemo() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-6\">\n      <InputGroup>\n        <InputGroupInput placeholder=\"Search...\" />\n        <InputGroupAddon>\n          <Search />\n        </InputGroupAddon>\n        <InputGroupAddon align=\"inline-end\">12 results</InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupInput placeholder=\"example.com\" className=\"pl-1!\" />\n        <InputGroupAddon>\n          <InputGroupText>https://</InputGroupText>\n        </InputGroupAddon>\n        <InputGroupAddon align=\"inline-end\">\n          <Tooltip>\n            <TooltipTrigger asChild>\n              <InputGroupButton className=\"rounded-full\" size=\"icon-xs\">\n                <IconInfoCircle />\n              </InputGroupButton>\n            </TooltipTrigger>\n            <TooltipContent>This is content in a tooltip.</TooltipContent>\n          </Tooltip>\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupTextarea placeholder=\"Ask, Search or Chat...\" />\n        <InputGroupAddon align=\"block-end\">\n          <InputGroupButton\n            variant=\"outline\"\n            className=\"rounded-full\"\n            size=\"icon-xs\"\n          >\n            <IconPlus />\n          </InputGroupButton>\n          <DropdownMenu>\n            <DropdownMenuTrigger asChild>\n              <InputGroupButton variant=\"ghost\">Auto</InputGroupButton>\n            </DropdownMenuTrigger>\n            <DropdownMenuContent\n              side=\"top\"\n              align=\"start\"\n              className=\"[--radius:0.95rem]\"\n            >\n              <DropdownMenuItem>Auto</DropdownMenuItem>\n              <DropdownMenuItem>Agent</DropdownMenuItem>\n              <DropdownMenuItem>Manual</DropdownMenuItem>\n            </DropdownMenuContent>\n          </DropdownMenu>\n          <InputGroupText className=\"ml-auto\">52% used</InputGroupText>\n          <Separator orientation=\"vertical\" className=\"h-4!\" />\n          <InputGroupButton\n            variant=\"default\"\n            className=\"rounded-full\"\n            size=\"icon-xs\"\n            disabled\n          >\n            <ArrowUpIcon />\n            <span className=\"sr-only\">Send</span>\n          </InputGroupButton>\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupInput placeholder=\"@shadcn\" />\n        <InputGroupAddon align=\"inline-end\">\n          <div className=\"flex size-4 items-center justify-center rounded-full bg-primary text-primary-foreground\">\n            <IconCheck className=\"size-3\" />\n          </div>\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  )\n}\n",
+      "sha256": "88bd486be88b7c831f4894a500fe7b946dcf52477ae4f79c4f3712a1c0671137",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/input-group-demo.tsx",
+      "upstreamSha256": "6c9ba44ea7d78cd632f8f88c15d10b527709a4b648fa27a38741b1cc52199040",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/dropdown-menu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { CheckIcon, ChevronRightIcon, CircleIcon } from \"lucide-react\"\nimport { DropdownMenu as DropdownMenuPrimitive } from \"radix-ui\"\n\nfunction DropdownMenu({\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Root>) {\n  return <DropdownMenuPrimitive.Root data-slot=\"dropdown-menu\" {...props} />\n}\n\nfunction DropdownMenuPortal({\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Portal>) {\n  return (\n    <DropdownMenuPrimitive.Portal data-slot=\"dropdown-menu-portal\" {...props} />\n  )\n}\n\nfunction DropdownMenuTrigger({\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Trigger>) {\n  return (\n    <DropdownMenuPrimitive.Trigger\n      data-slot=\"dropdown-menu-trigger\"\n      {...props}\n    />\n  )\n}\n\nfunction DropdownMenuContent({\n  className,\n  sideOffset = 4,\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Content>) {\n  return (\n    <DropdownMenuPrimitive.Portal>\n      <DropdownMenuPrimitive.Content\n        data-slot=\"dropdown-menu-content\"\n        sideOffset={sideOffset}\n        className={cn(\n          \"z-50 max-h-(--radix-dropdown-menu-content-available-height) min-w-[8rem] origin-(--radix-dropdown-menu-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95\",\n          className\n        )}\n        {...props}\n      />\n    </DropdownMenuPrimitive.Portal>\n  )\n}\n\nfunction DropdownMenuGroup({\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Group>) {\n  return (\n    <DropdownMenuPrimitive.Group data-slot=\"dropdown-menu-group\" {...props} />\n  )\n}\n\nfunction DropdownMenuItem({\n  className,\n  inset,\n  variant = \"default\",\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Item> & {\n  inset?: boolean\n  variant?: \"default\" | \"destructive\"\n}) {\n  return (\n    <DropdownMenuPrimitive.Item\n      data-slot=\"dropdown-menu-item\"\n      data-inset={inset}\n      data-variant={variant}\n      className={cn(\n        \"relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-8 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:text-destructive dark:data-[variant=destructive]:focus:bg-destructive/20 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground data-[variant=destructive]:*:[svg]:text-destructive!\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction DropdownMenuCheckboxItem({\n  className,\n  children,\n  checked,\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.CheckboxItem>) {\n  return (\n    <DropdownMenuPrimitive.CheckboxItem\n      data-slot=\"dropdown-menu-checkbox-item\"\n      className={cn(\n        \"relative flex cursor-default items-center gap-2 rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n        className\n      )}\n      checked={checked}\n      {...props}\n    >\n      <span className=\"pointer-events-none absolute left-2 flex size-3.5 items-center justify-center\">\n        <DropdownMenuPrimitive.ItemIndicator>\n          <CheckIcon className=\"size-4\" />\n        </DropdownMenuPrimitive.ItemIndicator>\n      </span>\n      {children}\n    </DropdownMenuPrimitive.CheckboxItem>\n  )\n}\n\nfunction DropdownMenuRadioGroup({\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.RadioGroup>) {\n  return (\n    <DropdownMenuPrimitive.RadioGroup\n      data-slot=\"dropdown-menu-radio-group\"\n      {...props}\n    />\n  )\n}\n\nfunction DropdownMenuRadioItem({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.RadioItem>) {\n  return (\n    <DropdownMenuPrimitive.RadioItem\n      data-slot=\"dropdown-menu-radio-item\"\n      className={cn(\n        \"relative flex cursor-default items-center gap-2 rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n        className\n      )}\n      {...props}\n    >\n      <span className=\"pointer-events-none absolute left-2 flex size-3.5 items-center justify-center\">\n        <DropdownMenuPrimitive.ItemIndicator>\n          <CircleIcon className=\"size-2 fill-current\" />\n        </DropdownMenuPrimitive.ItemIndicator>\n      </span>\n      {children}\n    </DropdownMenuPrimitive.RadioItem>\n  )\n}\n\nfunction DropdownMenuLabel({\n  className,\n  inset,\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Label> & {\n  inset?: boolean\n}) {\n  return (\n    <DropdownMenuPrimitive.Label\n      data-slot=\"dropdown-menu-label\"\n      data-inset={inset}\n      className={cn(\n        \"px-2 py-1.5 text-sm font-medium data-[inset]:pl-8\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction DropdownMenuSeparator({\n  className,\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Separator>) {\n  return (\n    <DropdownMenuPrimitive.Separator\n      data-slot=\"dropdown-menu-separator\"\n      className={cn(\"-mx-1 my-1 h-px bg-border\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction DropdownMenuShortcut({\n  className,\n  ...props\n}: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      data-slot=\"dropdown-menu-shortcut\"\n      className={cn(\n        \"ml-auto text-xs tracking-widest text-muted-foreground\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction DropdownMenuSub({\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.Sub>) {\n  return <DropdownMenuPrimitive.Sub data-slot=\"dropdown-menu-sub\" {...props} />\n}\n\nfunction DropdownMenuSubTrigger({\n  className,\n  inset,\n  children,\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.SubTrigger> & {\n  inset?: boolean\n}) {\n  return (\n    <DropdownMenuPrimitive.SubTrigger\n      data-slot=\"dropdown-menu-sub-trigger\"\n      data-inset={inset}\n      className={cn(\n        \"flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-[inset]:pl-8 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n      <ChevronRightIcon className=\"ml-auto size-4\" />\n    </DropdownMenuPrimitive.SubTrigger>\n  )\n}\n\nfunction DropdownMenuSubContent({\n  className,\n  ...props\n}: React.ComponentProps<typeof DropdownMenuPrimitive.SubContent>) {\n  return (\n    <DropdownMenuPrimitive.SubContent\n      data-slot=\"dropdown-menu-sub-content\"\n      className={cn(\n        \"z-50 min-w-[8rem] origin-(--radix-dropdown-menu-content-transform-origin) overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport {\n  DropdownMenu,\n  DropdownMenuPortal,\n  DropdownMenuTrigger,\n  DropdownMenuContent,\n  DropdownMenuGroup,\n  DropdownMenuLabel,\n  DropdownMenuItem,\n  DropdownMenuCheckboxItem,\n  DropdownMenuRadioGroup,\n  DropdownMenuRadioItem,\n  DropdownMenuSeparator,\n  DropdownMenuShortcut,\n  DropdownMenuSub,\n  DropdownMenuSubTrigger,\n  DropdownMenuSubContent,\n}\n",
+      "sha256": "caa4843e47f34c8d72728c3fc67b0d87f00889ec91c9d720a4b75557649ed63f",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/dropdown-menu.tsx",
+      "upstreamSha256": "d954efb735f13734751207ad22cb0cddd7f6ec53c59d16675d103dae08cb61fb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/tooltip.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { Tooltip as TooltipPrimitive } from \"radix-ui\"\n\nfunction TooltipProvider({\n  delayDuration = 0,\n  ...props\n}: React.ComponentProps<typeof TooltipPrimitive.Provider>) {\n  return (\n    <TooltipPrimitive.Provider\n      data-slot=\"tooltip-provider\"\n      delayDuration={delayDuration}\n      {...props}\n    />\n  )\n}\n\nfunction Tooltip({\n  ...props\n}: React.ComponentProps<typeof TooltipPrimitive.Root>) {\n  return <TooltipPrimitive.Root data-slot=\"tooltip\" {...props} />\n}\n\nfunction TooltipTrigger({\n  ...props\n}: React.ComponentProps<typeof TooltipPrimitive.Trigger>) {\n  return <TooltipPrimitive.Trigger data-slot=\"tooltip-trigger\" {...props} />\n}\n\nfunction TooltipContent({\n  className,\n  sideOffset = 0,\n  children,\n  ...props\n}: React.ComponentProps<typeof TooltipPrimitive.Content>) {\n  return (\n    <TooltipPrimitive.Portal>\n      <TooltipPrimitive.Content\n        data-slot=\"tooltip-content\"\n        sideOffset={sideOffset}\n        className={cn(\n          \"z-50 w-fit origin-(--radix-tooltip-content-transform-origin) animate-in rounded-md bg-foreground px-3 py-1.5 text-xs text-balance text-background fade-in-0 zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95\",\n          className\n        )}\n        {...props}\n      >\n        {children}\n        <TooltipPrimitive.Arrow className=\"z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px] bg-foreground fill-foreground\" />\n      </TooltipPrimitive.Content>\n    </TooltipPrimitive.Portal>\n  )\n}\n\nexport { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }\n",
+      "sha256": "1f5bb8f38617657952fffb39b8edfd4f5c4df225747ef122e233d829ff81468f",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/tooltip.tsx",
+      "upstreamSha256": "611e4305879b2773eafe76bf3c5caa69d8e47367fd97887a71634a27828f4433",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-dropdown.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ChevronDownIcon, MoreHorizontal } from \"lucide-react\"\n\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuTrigger,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/dropdown-menu\"\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupButton,\n  InputGroupInput,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/input-group\"\n\nexport default function InputGroupDropdown() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-4\">\n      <InputGroup>\n        <InputGroupInput placeholder=\"Enter file name\" />\n        <InputGroupAddon align=\"inline-end\">\n          <DropdownMenu>\n            <DropdownMenuTrigger asChild>\n              <InputGroupButton\n                variant=\"ghost\"\n                aria-label=\"More\"\n                size=\"icon-xs\"\n              >\n                <MoreHorizontal />\n              </InputGroupButton>\n            </DropdownMenuTrigger>\n            <DropdownMenuContent align=\"end\">\n              <DropdownMenuItem>Settings</DropdownMenuItem>\n              <DropdownMenuItem>Copy path</DropdownMenuItem>\n              <DropdownMenuItem>Open location</DropdownMenuItem>\n            </DropdownMenuContent>\n          </DropdownMenu>\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup className=\"[--radius:1rem]\">\n        <InputGroupInput placeholder=\"Enter search query\" />\n        <InputGroupAddon align=\"inline-end\">\n          <DropdownMenu>\n            <DropdownMenuTrigger asChild>\n              <InputGroupButton variant=\"ghost\" className=\"pr-1.5! text-xs\">\n                Search In... <ChevronDownIcon className=\"size-3\" />\n              </InputGroupButton>\n            </DropdownMenuTrigger>\n            <DropdownMenuContent align=\"end\" className=\"[--radius:0.95rem]\">\n              <DropdownMenuItem>Documentation</DropdownMenuItem>\n              <DropdownMenuItem>Blog Posts</DropdownMenuItem>\n              <DropdownMenuItem>Changelog</DropdownMenuItem>\n            </DropdownMenuContent>\n          </DropdownMenu>\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  )\n}\n",
+      "sha256": "896479e94f9b1a620e51ee13d3ec082cb8d201b1c1951b6b6e1c08c587fa80f6",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/input-group-dropdown.tsx",
+      "upstreamSha256": "7bba4bf351140e00ce7d3ee0935db6ad985b541d4bd72749cfcbe1d1e7774133",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-icon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  CheckIcon,\n  CreditCardIcon,\n  InfoIcon,\n  MailIcon,\n  SearchIcon,\n  StarIcon,\n} from \"lucide-react\"\n\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/input-group\"\n\nexport default function InputGroupIcon() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-6\">\n      <InputGroup>\n        <InputGroupInput placeholder=\"Search...\" />\n        <InputGroupAddon>\n          <SearchIcon />\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupInput type=\"email\" placeholder=\"Enter your email\" />\n        <InputGroupAddon>\n          <MailIcon />\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupInput placeholder=\"Card number\" />\n        <InputGroupAddon>\n          <CreditCardIcon />\n        </InputGroupAddon>\n        <InputGroupAddon align=\"inline-end\">\n          <CheckIcon />\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupInput placeholder=\"Card number\" />\n        <InputGroupAddon align=\"inline-end\">\n          <StarIcon />\n          <InfoIcon />\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  )\n}\n",
+      "sha256": "6137aa8da600a51e48250f47a52f07f62f8c37b961e9de7929b55cc72aa0d2c4",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/input-group-icon.tsx",
+      "upstreamSha256": "80e8f6a2298e726ad36975aa7c1720ce5c245a7247499155571b6c6f055bebd0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-label.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { InfoIcon } from \"lucide-react\"\n\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupButton,\n  InputGroupInput,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/input-group\"\nimport { Label } from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/label\"\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/tooltip\"\n\nexport default function InputGroupLabel() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-4\">\n      <InputGroup>\n        <InputGroupInput id=\"email\" placeholder=\"shadcn\" />\n        <InputGroupAddon>\n          <Label htmlFor=\"email\">@</Label>\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupInput id=\"email-2\" placeholder=\"shadcn@vercel.com\" />\n        <InputGroupAddon align=\"block-start\">\n          <Label htmlFor=\"email-2\" className=\"text-foreground\">\n            Email\n          </Label>\n          <Tooltip>\n            <TooltipTrigger asChild>\n              <InputGroupButton\n                variant=\"ghost\"\n                aria-label=\"Help\"\n                className=\"ml-auto rounded-full\"\n                size=\"icon-xs\"\n              >\n                <InfoIcon />\n              </InputGroupButton>\n            </TooltipTrigger>\n            <TooltipContent>\n              <p>We&apos;ll use this to send you notifications</p>\n            </TooltipContent>\n          </Tooltip>\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  )\n}\n",
+      "sha256": "12b17dae539792c3b800a6384301b070b332a2035550c76e46189d8f6b0f215e",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/input-group-label.tsx",
+      "upstreamSha256": "16d4592179820214dd4f84f4f0c9f92e54cea4c4427cced621792b9be4768970",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-spinner.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { LoaderIcon } from \"lucide-react\"\n\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n  InputGroupText,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/input-group\"\nimport { Spinner } from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/spinner\"\n\nexport default function InputGroupSpinner() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-4\">\n      <InputGroup data-disabled>\n        <InputGroupInput placeholder=\"Searching...\" disabled />\n        <InputGroupAddon align=\"inline-end\">\n          <Spinner />\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup data-disabled>\n        <InputGroupInput placeholder=\"Processing...\" disabled />\n        <InputGroupAddon>\n          <Spinner />\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup data-disabled>\n        <InputGroupInput placeholder=\"Saving changes...\" disabled />\n        <InputGroupAddon align=\"inline-end\">\n          <InputGroupText>Saving...</InputGroupText>\n          <Spinner />\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup data-disabled>\n        <InputGroupInput placeholder=\"Refreshing data...\" disabled />\n        <InputGroupAddon>\n          <LoaderIcon className=\"animate-spin\" />\n        </InputGroupAddon>\n        <InputGroupAddon align=\"inline-end\">\n          <InputGroupText className=\"text-muted-foreground\">\n            Please wait...\n          </InputGroupText>\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  )\n}\n",
+      "sha256": "a3765e3df7df2bc7df30bdc073cf40235a95c84d3bdbf4bdef65772695f8619a",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/input-group-spinner.tsx",
+      "upstreamSha256": "1240babb7fe55629b1f7e9acad24afa269ef4bbbea4fb5a1365a17398f6be0c5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/spinner.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { cn } from \"cn\"\nimport { Loader2Icon } from \"lucide-react\"\n\nfunction Spinner({ className, ...props }: React.ComponentProps<\"svg\">) {\n  return (\n    <Loader2Icon\n      role=\"status\"\n      aria-label=\"Loading\"\n      className={cn(\"size-4 animate-spin\", className)}\n      {...props}\n    />\n  )\n}\n\nexport { Spinner }\n",
+      "sha256": "b441998c1c2dad04bdf7d6ad0788fc3a8690f47e936135c7afae0447759b5e20",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/spinner.tsx",
+      "upstreamSha256": "5d040fc49cb54c0296070644053b5a8840ddbfca89a430546bf308df3fffad65",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-text.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupInput,\n  InputGroupText,\n  InputGroupTextarea,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/input-group\"\n\nexport default function InputGroupTextExample() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-6\">\n      <InputGroup>\n        <InputGroupAddon>\n          <InputGroupText>$</InputGroupText>\n        </InputGroupAddon>\n        <InputGroupInput placeholder=\"0.00\" />\n        <InputGroupAddon align=\"inline-end\">\n          <InputGroupText>USD</InputGroupText>\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupAddon>\n          <InputGroupText>https://</InputGroupText>\n        </InputGroupAddon>\n        <InputGroupInput placeholder=\"example.com\" className=\"pl-0.5!\" />\n        <InputGroupAddon align=\"inline-end\">\n          <InputGroupText>.com</InputGroupText>\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupInput placeholder=\"Enter your username\" />\n        <InputGroupAddon align=\"inline-end\">\n          <InputGroupText>@company.com</InputGroupText>\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupTextarea placeholder=\"Enter your message\" />\n        <InputGroupAddon align=\"block-end\">\n          <InputGroupText className=\"text-xs text-muted-foreground\">\n            120 characters left\n          </InputGroupText>\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  )\n}\n",
+      "sha256": "3d943575627723cbbcda3114dd262de9d41fb227b5d117ae0eb60bb2a02e33b6",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/input-group-text.tsx",
+      "upstreamSha256": "236fd41f71a4cc2b2f41010935a4d5768a306c5317611340b4c7a95138c20f28",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-textarea.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  IconBrandJavascript,\n  IconCopy,\n  IconCornerDownLeft,\n  IconRefresh,\n} from \"@tabler/icons-react\"\n\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupButton,\n  InputGroupText,\n  InputGroupTextarea,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/input-group\"\n\nexport default function InputGroupTextareaExample() {\n  return (\n    <div className=\"grid w-full max-w-md gap-4\">\n      <InputGroup>\n        <InputGroupTextarea\n          id=\"textarea-code-32\"\n          placeholder=\"console.log('Hello, world!');\"\n          className=\"min-h-[200px]\"\n        />\n        <InputGroupAddon align=\"block-end\" className=\"border-t\">\n          <InputGroupText>Line 1, Column 1</InputGroupText>\n          <InputGroupButton size=\"sm\" className=\"ml-auto\" variant=\"default\">\n            Run <IconCornerDownLeft />\n          </InputGroupButton>\n        </InputGroupAddon>\n        <InputGroupAddon align=\"block-start\" className=\"border-b\">\n          <InputGroupText className=\"font-mono font-medium\">\n            <IconBrandJavascript />\n            script.js\n          </InputGroupText>\n          <InputGroupButton className=\"ml-auto\" size=\"icon-xs\">\n            <IconRefresh />\n          </InputGroupButton>\n          <InputGroupButton variant=\"ghost\" size=\"icon-xs\">\n            <IconCopy />\n          </InputGroupButton>\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  )\n}\n",
+      "sha256": "1584e062e5a9c44a3d2132abf2594596da3fbfed7e2c33ce843f22ecd5fee2d9",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/input-group-textarea.tsx",
+      "upstreamSha256": "f243f0f38cf7e725ee21e21c695bef2f9cbdb57fc6d63042843e6a364231a4fc",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-tooltip.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HelpCircle, InfoIcon } from \"lucide-react\"\n\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupButton,\n  InputGroupInput,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/input-group\"\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/tooltip\"\n\nexport default function InputGroupTooltip() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-4\">\n      <InputGroup>\n        <InputGroupInput placeholder=\"Enter password\" type=\"password\" />\n        <InputGroupAddon align=\"inline-end\">\n          <Tooltip>\n            <TooltipTrigger asChild>\n              <InputGroupButton\n                variant=\"ghost\"\n                aria-label=\"Info\"\n                size=\"icon-xs\"\n              >\n                <InfoIcon />\n              </InputGroupButton>\n            </TooltipTrigger>\n            <TooltipContent>\n              <p>Password must be at least 8 characters</p>\n            </TooltipContent>\n          </Tooltip>\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupInput placeholder=\"Your email address\" />\n        <InputGroupAddon align=\"inline-end\">\n          <Tooltip>\n            <TooltipTrigger asChild>\n              <InputGroupButton\n                variant=\"ghost\"\n                aria-label=\"Help\"\n                size=\"icon-xs\"\n              >\n                <HelpCircle />\n              </InputGroupButton>\n            </TooltipTrigger>\n            <TooltipContent>\n              <p>We&apos;ll use this to send you notifications</p>\n            </TooltipContent>\n          </Tooltip>\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupInput placeholder=\"Enter API key\" />\n        <Tooltip>\n          <TooltipTrigger asChild>\n            <InputGroupAddon>\n              <InputGroupButton\n                variant=\"ghost\"\n                aria-label=\"Help\"\n                size=\"icon-xs\"\n              >\n                <HelpCircle />\n              </InputGroupButton>\n            </InputGroupAddon>\n          </TooltipTrigger>\n          <TooltipContent side=\"left\">\n            <p>Click for help with API keys</p>\n          </TooltipContent>\n        </Tooltip>\n      </InputGroup>\n    </div>\n  )\n}\n",
+      "sha256": "0329464ad26f59093c515e2c98ff7f9711566f4cb256ad9b0dceb6169d070f98",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/input-group-tooltip.tsx",
+      "upstreamSha256": "3a865fc4f857f8257efd161832be04b06d6610aa684bae66b60722c0774e63ce",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/input-group/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-button\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2d7a31a5adbaea0dbfcbc7b2425675206fcb0a8493fd40bf45922fd342a0a380",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/input-group/previews/input-group-button-group.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-button-group\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0eda13de2aa76261f8f93521af06220a8ad7851a13d8943007c7325ce14c976d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/input-group/previews/input-group-custom.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-custom\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "5dfb1d7fd5139beaf18c5ea1bcea4698e4c3744c28f6eff2785f657c59282c59",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/input-group/previews/input-group-demo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-demo\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "83155a605aa6824817a7b73b4cc7e65b64b5d2a26794619df670e716d9613fe2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/input-group/previews/input-group-dropdown.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-dropdown\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "7a605553758e1646f5a8df87dd7077ead20fc86f05ad250d100146d076140a63",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/input-group/previews/input-group-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-icon\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "68263dbaa8c9c1274ed74daff260230cec53096ca824ecbcf70faac5347a3791",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/input-group/previews/input-group-label.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-label\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "bcb42cf59db1a9b7a67d53137947f1ba22f8130180c7a850d84b15a0eeef6786",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/input-group/previews/input-group-spinner.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-spinner\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8f77d4217392a19ed3a79ddf108fc46d03c8f984cac95654f7d9513d4d85459f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/input-group/previews/input-group-text.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-text\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "37a6434048f6afa884fe7b5ca042ca1c2d353d1664e9911a271f21e1d3725319",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/input-group/previews/input-group-textarea.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-textarea\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "dfe216f9cf9c98ce5f39b517c0d467a269930c70b7f964162957e34e2205ef5f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/input-group/previews/input-group-tooltip.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/input-group-tooltip\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "c3323ffcdd75aa255925eb7462388b264847ed9a4263270bed20968e4df74666",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @tabler/icons-react@3.48.0 class-variance-authority@0.7.1 cn@0.4.0 lucide-react@1.35.0 radix-ui@1.4.3 react-textarea-autosize@8.5.9",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @tabler/icons-react@3.48.0 class-variance-authority@0.7.1 cn@0.4.0 lucide-react@1.35.0 radix-ui@1.4.3 react-textarea-autosize@8.5.9",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable component source and official examples, not a dependency on a hosted registry.",
+      "Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent)."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "input-group",
+    "upstreamPageUrl": "https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples",
+    "upstreamDetailUrl": "https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/input-group-button.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/shadcn-ui/ui/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/input-group-button.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# shadcn/ui input group\n\n11 published shadcn/ui input group examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable component source and official examples, not a dependency on a hosted registry.\n- Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent).\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples\nPinned source: https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/input-group-button.tsx\n"
+}

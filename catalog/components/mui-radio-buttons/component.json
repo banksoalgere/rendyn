@@ -1,0 +1,247 @@
+{
+  "id": "mui:radio-buttons",
+  "sourceId": "mui",
+  "slug": "mui-radio-buttons",
+  "name": "Material UI radio buttons",
+  "description": "10 published Material UI radio buttons examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/material@9.4.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "button",
+    "tags": [
+      "button",
+      "code",
+      "command",
+      "data",
+      "file",
+      "radio"
+    ],
+    "aliases": [
+      "radio buttons",
+      "material ui radio buttons",
+      "button",
+      "cta",
+      "action control"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "10 published Material UI radio buttons examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "button:code:command:data:file",
+    "searchText": "Material UI radio buttons\nradio buttons\n10 published Material UI radio buttons examples with complete pinned source and MIT attribution.\nmaterial ui radio buttons\nbutton\ncta\naction control\ncode\ncommand\ndata\nfile\nradio\nMaterial UI radio buttons 10 published Material UI radio buttons examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/radio buttons Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/radio buttons/ColorRadioButtons.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-radio-buttons",
+  "manifestPath": "components/mui-radio-buttons/component.json",
+  "integrity": "sha256:2b5cb8eb906ced2efa3400870bb2d4b6a4f7d29519493394a38fd1c0c3e0e97b",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/ColorRadioButtons.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport { pink } from '@mui/material/colors';\nimport Radio from '@mui/material/Radio';\n\nexport default function ColorRadioButtons() {\n  const [selectedValue, setSelectedValue] = React.useState('a');\n\n  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setSelectedValue(event.target.value);\n  };\n\n  const controlProps = (item: string) => ({\n    checked: selectedValue === item,\n    onChange: handleChange,\n    value: item,\n    name: 'color-radio-button-demo',\n    slotProps: { input: { 'aria-label': item } },\n  });\n\n  return (\n    <div>\n      <Radio {...controlProps('a')} />\n      <Radio {...controlProps('b')} color=\"secondary\" />\n      <Radio {...controlProps('c')} color=\"success\" />\n      <Radio {...controlProps('d')} color=\"default\" />\n      <Radio\n        {...controlProps('e')}\n        sx={{\n          color: pink[800],\n          '&.Mui-checked': {\n            color: pink[600],\n          },\n        }}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "824b94f0d0a1aa196a43be1001a0ceec8b7c2b2a372ee2ee7bc74a435c6ab55d",
+      "upstreamPath": "docs/data/material/components/radio-buttons/ColorRadioButtons.tsx",
+      "upstreamSha256": "7ce7e87176c7d9a737cdcc89c62c59681bbfa36068e61f37d463a9d8b587b884",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/ControlledRadioButtonsGroup.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Radio from '@mui/material/Radio';\nimport RadioGroup from '@mui/material/RadioGroup';\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport FormControl from '@mui/material/FormControl';\nimport FormLabel from '@mui/material/FormLabel';\n\nexport default function ControlledRadioButtonsGroup() {\n  const id = React.useId();\n  const [value, setValue] = React.useState('female');\n\n  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setValue((event.target as HTMLInputElement).value);\n  };\n\n  return (\n    <FormControl>\n      <FormLabel id={`${id}-label`}>Gender</FormLabel>\n      <RadioGroup\n        aria-labelledby={`${id}-label`}\n        name=\"controlled-radio-buttons-group\"\n        value={value}\n        onChange={handleChange}\n      >\n        <FormControlLabel value=\"female\" control={<Radio />} label=\"Female\" />\n        <FormControlLabel value=\"male\" control={<Radio />} label=\"Male\" />\n      </RadioGroup>\n    </FormControl>\n  );\n}\n",
+      "sha256": "f4ec4ef0b221a7b6a88c181d03df5eaabb333d3e0970b11bdaa29fae4fcc1a6f",
+      "upstreamPath": "docs/data/material/components/radio-buttons/ControlledRadioButtonsGroup.tsx",
+      "upstreamSha256": "7ceb39f629a40cf806d0f64123d7075ffb5debb07ed5749472e80d4632e8d6ab",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/CustomizedRadios.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport { styled } from '@mui/material/styles';\nimport Radio, { RadioProps } from '@mui/material/Radio';\nimport RadioGroup from '@mui/material/RadioGroup';\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport FormControl from '@mui/material/FormControl';\nimport FormLabel from '@mui/material/FormLabel';\n\nconst BpIcon = styled('span')(({ theme }) => ({\n  borderRadius: '50%',\n  width: 16,\n  height: 16,\n  boxShadow: 'inset 0 0 0 1px rgba(16,22,26,.2), inset 0 -1px 0 rgba(16,22,26,.1)',\n  backgroundColor: '#f5f8fa',\n  backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0))',\n  '.Mui-focusVisible &': {\n    outline: '2px auto rgba(19,124,189,.6)',\n    outlineOffset: 2,\n  },\n  'input:hover ~ &': {\n    backgroundColor: '#ebf1f5',\n    ...theme.applyStyles('dark', {\n      backgroundColor: '#30404d',\n    }),\n  },\n  'input:disabled ~ &': {\n    boxShadow: 'none',\n    background: 'rgba(206,217,224,.5)',\n    ...theme.applyStyles('dark', {\n      background: 'rgba(57,75,89,.5)',\n    }),\n    '@media (forced-colors: active)': {\n      outline: '1px solid GrayText',\n    },\n  },\n  '@media (forced-colors: active)': {\n    outline: '1px solid ButtonText',\n  },\n  ...theme.applyStyles('dark', {\n    boxShadow: '0 0 0 1px rgb(16 22 26 / 40%)',\n    backgroundColor: '#394b59',\n    backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.05),hsla(0,0%,100%,0))',\n  }),\n}));\n\nconst BpCheckedIcon = styled(BpIcon)({\n  backgroundColor: '#137cbd',\n  backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))',\n  '&::before': {\n    display: 'block',\n    width: 16,\n    height: 16,\n    backgroundImage: 'radial-gradient(#fff,#fff 28%,transparent 32%)',\n    content: '\"\"',\n    '@media (forced-colors: active)': {\n      backgroundImage: 'none',\n      backgroundColor: 'ButtonText',\n      borderRadius: '50%',\n      width: 8,\n      height: 8,\n      margin: 4,\n    },\n  },\n  'input:hover ~ &': {\n    backgroundColor: '#106ba3',\n  },\n  '@media (forced-colors: active)': {\n    outline: '2px solid ButtonText',\n  },\n});\n\n// Inspired by blueprintjs\nfunction BpRadio(props: RadioProps) {\n  return (\n    <Radio\n      disableRipple\n      color=\"default\"\n      checkedIcon={<BpCheckedIcon />}\n      icon={<BpIcon />}\n      {...props}\n    />\n  );\n}\n\nexport default function CustomizedRadios() {\n  const id = React.useId();\n  return (\n    <FormControl>\n      <FormLabel id={`${id}-label`}>Gender</FormLabel>\n      <RadioGroup\n        defaultValue=\"female\"\n        aria-labelledby={`${id}-label`}\n        name=\"customized-radios\"\n      >\n        <FormControlLabel value=\"female\" control={<BpRadio />} label=\"Female\" />\n        <FormControlLabel value=\"male\" control={<BpRadio />} label=\"Male\" />\n        <FormControlLabel value=\"other\" control={<BpRadio />} label=\"Other\" />\n        <FormControlLabel\n          value=\"disabled\"\n          disabled\n          control={<BpRadio />}\n          label=\"(Disabled option)\"\n        />\n      </RadioGroup>\n    </FormControl>\n  );\n}\n",
+      "sha256": "e2a8e7498a5b1bdaa2a495ec2aeb9890a35063360cd6efaba0cb3dbf4918d518",
+      "upstreamPath": "docs/data/material/components/radio-buttons/CustomizedRadios.tsx",
+      "upstreamSha256": "c54509915db6f2b521a317fa203f4f409f633d17c4edff142c0f9d772f88d724",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/ErrorRadios.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Radio from '@mui/material/Radio';\nimport RadioGroup from '@mui/material/RadioGroup';\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport FormControl from '@mui/material/FormControl';\nimport FormHelperText from '@mui/material/FormHelperText';\nimport FormLabel from '@mui/material/FormLabel';\nimport Button from '@mui/material/Button';\n\nexport default function ErrorRadios() {\n  const id = React.useId();\n  const [value, setValue] = React.useState('');\n  const [error, setError] = React.useState(false);\n  const [helperText, setHelperText] = React.useState('Choose wisely');\n\n  const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setValue(event.target.value);\n    setError(false);\n    setHelperText('Choose wisely');\n  };\n\n  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {\n    event.preventDefault();\n\n    if (value === 'best') {\n      setHelperText('You got it!');\n      setError(false);\n    } else if (value === 'worst') {\n      setHelperText('Sorry, wrong answer!');\n      setError(true);\n    } else {\n      setHelperText('Please select an option.');\n      setError(true);\n    }\n  };\n\n  return (\n    <form onSubmit={handleSubmit}>\n      <FormControl sx={{ m: 3 }} error={error} variant=\"standard\">\n        <FormLabel id={`${id}-label`}>Pop quiz: MUI is…</FormLabel>\n        <RadioGroup\n          aria-labelledby={`${id}-label`}\n          name=\"quiz\"\n          value={value}\n          onChange={handleRadioChange}\n        >\n          <FormControlLabel value=\"best\" control={<Radio />} label=\"The best!\" />\n          <FormControlLabel value=\"worst\" control={<Radio />} label=\"The worst.\" />\n        </RadioGroup>\n        <FormHelperText>{helperText}</FormHelperText>\n        <Button sx={{ mt: 1, mr: 1 }} type=\"submit\" variant=\"outlined\">\n          Check Answer\n        </Button>\n      </FormControl>\n    </form>\n  );\n}\n",
+      "sha256": "a9f26d1e51e4c8d8eaca8051af435bbfacd52b5257e6457fe3cc0b3e032db8bc",
+      "upstreamPath": "docs/data/material/components/radio-buttons/ErrorRadios.tsx",
+      "upstreamSha256": "a1f2ff6a57a28923e467d8ddb265dafe56585fd62d3221f52855bbcdd40b9826",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/FormControlLabelPlacement.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Radio from '@mui/material/Radio';\nimport RadioGroup from '@mui/material/RadioGroup';\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport FormControl from '@mui/material/FormControl';\nimport FormLabel from '@mui/material/FormLabel';\n\nexport default function FormControlLabelPlacement() {\n  const id = React.useId();\n  return (\n    <FormControl>\n      <FormLabel id={`${id}-label`}>Label placement</FormLabel>\n      <RadioGroup\n        row\n        aria-labelledby={`${id}-label`}\n        name=\"position\"\n        defaultValue=\"top\"\n      >\n        <FormControlLabel\n          value=\"bottom\"\n          control={<Radio />}\n          label=\"Bottom\"\n          labelPlacement=\"bottom\"\n        />\n        <FormControlLabel value=\"end\" control={<Radio />} label=\"End\" />\n      </RadioGroup>\n    </FormControl>\n  );\n}\n",
+      "sha256": "b7d7381f136054f95e5d8666cb9477f447e6075f5111446bbbb28721d149f259",
+      "upstreamPath": "docs/data/material/components/radio-buttons/FormControlLabelPlacement.tsx",
+      "upstreamSha256": "5751ae16915ed0d891530a910437ffa7a070c00eee83569818776cc54f05e7db",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/RadioButtons.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Radio from '@mui/material/Radio';\n\nexport default function RadioButtons() {\n  const [selectedValue, setSelectedValue] = React.useState('a');\n\n  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setSelectedValue(event.target.value);\n  };\n\n  return (\n    <div>\n      <Radio\n        checked={selectedValue === 'a'}\n        onChange={handleChange}\n        value=\"a\"\n        name=\"radio-buttons\"\n        slotProps={{ input: { 'aria-label': 'A' } }}\n      />\n      <Radio\n        checked={selectedValue === 'b'}\n        onChange={handleChange}\n        value=\"b\"\n        name=\"radio-buttons\"\n        slotProps={{ input: { 'aria-label': 'B' } }}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "226c185c9794b8c65c344ef7f1e5eff0b36af51f6c2ddf555aa24099861e649d",
+      "upstreamPath": "docs/data/material/components/radio-buttons/RadioButtons.tsx",
+      "upstreamSha256": "e761c9b85dd3c737eb5418167e67b6d44a444e4f50d778c026a296ec08b230f1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/RadioButtonsGroup.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Radio from '@mui/material/Radio';\nimport RadioGroup from '@mui/material/RadioGroup';\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport FormControl from '@mui/material/FormControl';\nimport FormLabel from '@mui/material/FormLabel';\n\nexport default function RadioButtonsGroup() {\n  const id = React.useId();\n  return (\n    <FormControl>\n      <FormLabel id={`${id}-label`}>Gender</FormLabel>\n      <RadioGroup\n        aria-labelledby={`${id}-label`}\n        defaultValue=\"female\"\n        name=\"radio-buttons-group\"\n      >\n        <FormControlLabel value=\"female\" control={<Radio />} label=\"Female\" />\n        <FormControlLabel value=\"male\" control={<Radio />} label=\"Male\" />\n        <FormControlLabel value=\"other\" control={<Radio />} label=\"Other\" />\n      </RadioGroup>\n    </FormControl>\n  );\n}\n",
+      "sha256": "7cfc5dde3d7bcd431e0eee63a7dd6314ce3ed8f6668fe27e361efe23c26c4e32",
+      "upstreamPath": "docs/data/material/components/radio-buttons/RadioButtonsGroup.tsx",
+      "upstreamSha256": "5174dd22e6272f4a4d326fcd7fe0b311a213df1a2be49ff3d9cb230a38a38f84",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/RowRadioButtonsGroup.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Radio from '@mui/material/Radio';\nimport RadioGroup from '@mui/material/RadioGroup';\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport FormControl from '@mui/material/FormControl';\nimport FormLabel from '@mui/material/FormLabel';\n\nexport default function RowRadioButtonsGroup() {\n  const id = React.useId();\n  return (\n    <FormControl>\n      <FormLabel id={`${id}-label`}>Gender</FormLabel>\n      <RadioGroup row aria-labelledby={`${id}-label`} name=\"row-radio-buttons-group\">\n        <FormControlLabel value=\"female\" control={<Radio />} label=\"Female\" />\n        <FormControlLabel value=\"male\" control={<Radio />} label=\"Male\" />\n        <FormControlLabel value=\"other\" control={<Radio />} label=\"Other\" />\n        <FormControlLabel\n          value=\"disabled\"\n          disabled\n          control={<Radio />}\n          label=\"other\"\n        />\n      </RadioGroup>\n    </FormControl>\n  );\n}\n",
+      "sha256": "0894cfc6a009146387f2cdfc08d1e39b66a478abd8f6b7c1765de56023a868f2",
+      "upstreamPath": "docs/data/material/components/radio-buttons/RowRadioButtonsGroup.tsx",
+      "upstreamSha256": "2888933d8dba0180e682491964d386b0c3af6c6d56e51d13bf4277fdb598fa02",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/SizeRadioButtons.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Radio from '@mui/material/Radio';\n\nexport default function SizeRadioButtons() {\n  const [selectedValue, setSelectedValue] = React.useState('a');\n  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setSelectedValue(event.target.value);\n  };\n\n  const controlProps = (item: string) => ({\n    checked: selectedValue === item,\n    onChange: handleChange,\n    value: item,\n    name: 'size-radio-button-demo',\n    slotProps: { input: { 'aria-label': item } },\n  });\n\n  return (\n    <div>\n      <Radio {...controlProps('a')} size=\"small\" />\n      <Radio {...controlProps('b')} />\n      <Radio\n        {...controlProps('c')}\n        sx={{\n          '& .MuiSvgIcon-root': {\n            fontSize: 28,\n          },\n        }}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "2b00c086198edde034843ed68dc8739a7eb4ffe27f596ad42e0423e767261456",
+      "upstreamPath": "docs/data/material/components/radio-buttons/SizeRadioButtons.tsx",
+      "upstreamSha256": "845471db8deead5f260c461c78f3f1338b173696f5fd152c9b58ddef53fc5b9d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/UseRadioGroup.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { styled } from '@mui/material/styles';\nimport RadioGroup, { useRadioGroup } from '@mui/material/RadioGroup';\nimport FormControlLabel, {\n  FormControlLabelProps,\n} from '@mui/material/FormControlLabel';\nimport Radio from '@mui/material/Radio';\n\ninterface StyledFormControlLabelProps extends FormControlLabelProps {\n  checked: boolean;\n}\n\nconst StyledFormControlLabel = styled((props: StyledFormControlLabelProps) => (\n  <FormControlLabel {...props} />\n))(({ theme }) => ({\n  variants: [\n    {\n      props: { checked: true },\n      style: {\n        '.MuiFormControlLabel-label': {\n          color: theme.palette.primary.main,\n        },\n      },\n    },\n  ],\n}));\n\nfunction MyFormControlLabel(props: FormControlLabelProps) {\n  const radioGroup = useRadioGroup();\n\n  let checked = false;\n\n  if (radioGroup) {\n    checked = radioGroup.value === props.value;\n  }\n\n  return <StyledFormControlLabel checked={checked} {...props} />;\n}\n\nexport default function UseRadioGroup() {\n  return (\n    <RadioGroup name=\"use-radio-group\" defaultValue=\"first\">\n      <MyFormControlLabel value=\"first\" label=\"First\" control={<Radio />} />\n      <MyFormControlLabel value=\"second\" label=\"Second\" control={<Radio />} />\n    </RadioGroup>\n  );\n}\n",
+      "sha256": "4d9b5141dc8694994f442db8e7cfe6e5eb3a4bcc2c9e26f40bd00e9e262b47b2",
+      "upstreamPath": "docs/data/material/components/radio-buttons/UseRadioGroup.tsx",
+      "upstreamSha256": "5a8660d3cb49a19d842c4b54b5b32efbabbee059b3a1b0656bda1d6154364437",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/radio-buttons/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/ColorRadioButtons\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "4ee2ad1c3d5d8c000d43000e1b96a60bfda641f5af839fcaa0d907e5224b8a58",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/radio-buttons/previews/controlled-radio-buttons-group.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/ControlledRadioButtonsGroup\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "6f06bd9f1230c93b66bd16d7c559f2c479cb91e6c202c8d1468d16bad3863a2b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/radio-buttons/previews/customized-radios.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/CustomizedRadios\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "04592d962fe207e469391565ec31d550e439068b41d1afb10d7f3e9475327fea",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/radio-buttons/previews/error-radios.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/ErrorRadios\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "476a2d8a052a858604e20375ecaf10beee63adcd2598f1caf972616cf3c4a252",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/radio-buttons/previews/form-control-label-placement.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/FormControlLabelPlacement\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "bad3f7e659aa77bdfe087029f444900a0321f99114587b3fde954b003ab865b4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/radio-buttons/previews/radio-buttons.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/RadioButtons\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "67d67095e61d610e232a783965a71dfad42b760755fd348b76e8850aea573e33",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/radio-buttons/previews/radio-buttons-group.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/RadioButtonsGroup\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "28355b67fd2ab65a8630320ef1c2bfb646a186fe2b9bfa88a0c1ebd5c8667826",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/radio-buttons/previews/row-radio-buttons-group.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/RowRadioButtonsGroup\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "38c42ce62ed057d822cd1450f61be7d8f8e4e0ec7d7fd77e7e68c98d871f9cac",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/radio-buttons/previews/size-radio-buttons.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/SizeRadioButtons\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a7333ef4b321862bfb74661f2dc099db0ec8e0e9795618cb53d15be7827b40b1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/radio-buttons/previews/use-radio-group.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/radio-buttons/UseRadioGroup\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "38a7917457ffa489b43342da7c8d9b36817723f3d39aa6762aefb9c6d4be3ff6",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "radio-buttons",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/radio-buttons",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/radio-buttons/ColorRadioButtons.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/radio-buttons/ColorRadioButtons.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI radio buttons\n\n10 published Material UI radio buttons examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/radio-buttons\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/radio-buttons/ColorRadioButtons.tsx\n"
+}

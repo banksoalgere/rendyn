@@ -1,0 +1,114 @@
+{
+  "id": "shadcn:label",
+  "sourceId": "shadcn",
+  "slug": "shadcn-label",
+  "name": "shadcn/ui label",
+  "description": "1 published shadcn/ui label examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "cn@0.4.0",
+    "lucide-react@1.35.0",
+    "radix-ui@1.4.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "label",
+    "tags": [
+      "file",
+      "input"
+    ],
+    "aliases": [
+      "label",
+      "shadcn/ui label"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published shadcn/ui label examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "label:file:input",
+    "searchText": "shadcn/ui label\nlabel\n1 published shadcn/ui label examples with complete pinned source and MIT attribution.\nfile\ninput\nshadcn/ui label 1 published shadcn/ui label examples with complete pinned source and MIT attribution. Installation Copyable component source and official examples, not a dependency on a hosted registry. Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent). Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/shadcn ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples Pinned source: https://github.com/shadcn ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new york v4/examples/label demo.tsx"
+  },
+  "previewPath": "/preview/blocks/shadcn-label",
+  "manifestPath": "components/shadcn-label/component.json",
+  "integrity": "sha256:da0ddce4dc0466d9b7707fe95bf2a58695b2c6a6ef243fab9f6ef3b5490d2097",
+  "source": {
+    "id": "shadcn",
+    "name": "shadcn/ui",
+    "repository": "https://github.com/shadcn-ui/ui",
+    "commit": "a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4",
+    "registrySha256": "0054ee914f9451ebe390d414d34264df3a61f5e264c59b25b4c8155452fff343",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2023 shadcn",
+      "textPath": "source/shadcn/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/label-demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox } from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/checkbox\"\nimport { Label } from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/label\"\n\nexport default function LabelDemo() {\n  return (\n    <div>\n      <div className=\"flex items-center space-x-2\">\n        <Checkbox id=\"terms\" />\n        <Label htmlFor=\"terms\">Accept terms and conditions</Label>\n      </div>\n    </div>\n  )\n}\n",
+      "sha256": "455ace67c27f8e8d410ea82903d5f25ce87d3c1acec140c1283be4236fe4077b",
+      "upstreamPath": "apps/v4/registry/new-york-v4/examples/label-demo.tsx",
+      "upstreamSha256": "f5a586dc0c336af069d105d2b91e6324654d3208b457cef5ee8e23bfc40e64e4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/checkbox.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { CheckIcon } from \"lucide-react\"\nimport { Checkbox as CheckboxPrimitive } from \"radix-ui\"\n\nfunction Checkbox({\n  className,\n  ...props\n}: React.ComponentProps<typeof CheckboxPrimitive.Root>) {\n  return (\n    <CheckboxPrimitive.Root\n      data-slot=\"checkbox\"\n      className={cn(\n        \"peer size-4 shrink-0 rounded-[4px] border border-input shadow-xs transition-shadow outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground dark:bg-input/30 dark:aria-invalid:ring-destructive/40 dark:data-[state=checked]:bg-primary\",\n        className\n      )}\n      {...props}\n    >\n      <CheckboxPrimitive.Indicator\n        data-slot=\"checkbox-indicator\"\n        className=\"grid place-content-center text-current transition-none\"\n      >\n        <CheckIcon className=\"size-3.5\" />\n      </CheckboxPrimitive.Indicator>\n    </CheckboxPrimitive.Root>\n  )\n}\n\nexport { Checkbox }\n",
+      "sha256": "46020504931b0362bef96f74e70542806d8091c462f99fb720adf7d0669e59ea",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/checkbox.tsx",
+      "upstreamSha256": "ba0ac64064e2d8fa7299d53e9e84b9a4772fef8dd4cf6170c56d3030a1d69941",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/ui/label.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\nimport { Label as LabelPrimitive } from \"radix-ui\"\n\nfunction Label({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root\n      data-slot=\"label\"\n      className={cn(\n        \"flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Label }\n",
+      "sha256": "6f607dba73c5065d02f42532bb2debb4b2d825074a77f137438a86b21cfcdc1a",
+      "upstreamPath": "apps/v4/registry/new-york-v4/ui/label.tsx",
+      "upstreamSha256": "344bde38b8531615dbf8e14af3895517c24d8ef6ce56ddeda7e2e6fe4b5d0c00",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/shadcn/label/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/shadcn/upstream/registry/new-york-v4/examples/label-demo\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0e4a0e3a08d5796022096bc13e4a7f3dfd258a52b6d871faf4b2f44993dbc1f4",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add cn@0.4.0 lucide-react@1.35.0 radix-ui@1.4.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add cn@0.4.0 lucide-react@1.35.0 radix-ui@1.4.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable component source and official examples, not a dependency on a hosted registry.",
+      "Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent)."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "label",
+    "upstreamPageUrl": "https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples",
+    "upstreamDetailUrl": "https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/label-demo.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/shadcn-ui/ui/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/label-demo.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/shadcn/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# shadcn/ui label\n\n1 published shadcn/ui label examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable component source and official examples, not a dependency on a hosted registry.\n- Use Tailwind CSS 4 and configure the standard shadcn semantic colour tokens (background, foreground, primary, border, input, ring, muted and accent).\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/shadcn-ui/ui/tree/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples\nPinned source: https://github.com/shadcn-ui/ui/blob/a9c1da49ec4eab488dc99c69ae20a7ffaa4897d4/apps/v4/registry/new-york-v4/examples/label-demo.tsx\n"
+}

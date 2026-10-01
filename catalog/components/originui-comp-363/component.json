@@ -1,0 +1,131 @@
+{
+  "id": "originui:comp-363",
+  "sourceId": "originui",
+  "slug": "originui-comp-363",
+  "name": "Origin UI tooltip hover card user comp-363",
+  "description": "1 published Origin UI tooltip hover card user comp-363 examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "class-variance-authority@0.7.1",
+    "clsx@2.1.1",
+    "radix-ui@1.4.3",
+    "tailwind-merge@3.6.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "card",
+    "tags": [
+      "card",
+      "file",
+      "hover",
+      "select",
+      "tooltip",
+      "upload"
+    ],
+    "aliases": [
+      "comp 363",
+      "origin ui tooltip hover card user comp-363",
+      "card"
+    ],
+    "interactions": [
+      "hover"
+    ],
+    "useWhen": [
+      "1 published Origin UI tooltip hover card user comp-363 examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "card:file:hover:select:tooltip",
+    "searchText": "Origin UI tooltip hover card user comp-363\ncomp 363\n1 published Origin UI tooltip hover card user comp-363 examples with complete pinned source and MIT attribution.\norigin ui tooltip hover card user comp-363\ncard\nfile\nhover\nselect\ntooltip\nupload\nOrigin UI tooltip hover card user comp 363 1 published Origin UI tooltip hover card user comp 363 examples with complete pinned source and MIT attribution. Installation Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported. Use Tailwind CSS 4 with shadcn compatible semantic colour tokens. File selection is presentation only: validate uploads on your server. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components Pinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp 363.tsx"
+  },
+  "previewPath": "/preview/blocks/originui-comp-363",
+  "manifestPath": "components/originui-comp-363/component.json",
+  "integrity": "sha256:a994f8f855ebefabd899460aca76567d11e20664acdeca78055ef6ce2855ad53",
+  "source": {
+    "id": "originui",
+    "name": "Origin UI",
+    "repository": "https://github.com/cosscom/coss",
+    "commit": "dd49ec9c2c268ae751724ddc64b343cb3a7e773b",
+    "registrySha256": "5289a1f01ad8fe5ca16826ad81e00770214a4ec7d8444b44d04444d2c5b49566",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2025 coss.com",
+      "textPath": "source/originui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/components/comp-363.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/button\";\nimport {\n  HoverCard,\n  HoverCardContent,\n  HoverCardTrigger,\n} from \"@/components/rendyn-libraries/originui/upstream/registry/default/ui/hover-card\";\n\nexport default function HoverCardDemo() {\n  return (\n    <HoverCard>\n      <HoverCardTrigger asChild>\n        <Button\n          aria-label=\"My profile\"\n          asChild\n          className=\"size-auto overflow-hidden rounded-full bg-transparent p-0 hover:bg-transparent\"\n        >\n          <a href=\"#\">\n            <img\n              alt=\"Avatar\"\n              height={40}\n              src=\"/origin/avatar-40-04.jpg\"\n              width={40}\n            />\n          </a>\n        </Button>\n      </HoverCardTrigger>\n      <HoverCardContent className=\"w-[340px]\">\n        <div className=\"flex items-start gap-3\">\n          <img\n            alt=\"Avatar\"\n            className=\"shrink-0 rounded-full\"\n            height={40}\n            src=\"/origin/avatar-40-04.jpg\"\n            width={40}\n          />\n          <div className=\"space-y-1\">\n            <p className=\"font-medium text-sm\">@Origin_UI</p>\n            <p className=\"text-muted-foreground text-sm\">\n              Beautiful UI components built with Tailwind CSS and Next.js.\n            </p>\n          </div>\n        </div>\n      </HoverCardContent>\n    </HoverCard>\n  );\n}\n",
+      "sha256": "ffa9ca9b95e2f0bf0e2c6bccefe940a286ce487dbbf27219048595087a91d0cd",
+      "upstreamPath": "apps/origin/registry/default/components/comp-363.tsx",
+      "upstreamSha256": "07a8a6e1b1d21d37bafdb98ab6623baa4e23d4556a72ee7abcb124a1297ad4b2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/button.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { Slot } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nconst buttonVariants = cva(\n  \"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium text-sm outline-none transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n  {\n    defaultVariants: {\n      size: \"default\",\n      variant: \"default\",\n    },\n    variants: {\n      size: {\n        default: \"h-9 px-4 py-2\",\n        icon: \"size-9\",\n        lg: \"h-10 rounded-md px-8\",\n        sm: \"h-8 rounded-md px-3 text-xs\",\n      },\n      variant: {\n        default:\n          \"bg-primary text-primary-foreground shadow-sm hover:bg-primary/90\",\n        destructive:\n          \"bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40\",\n        ghost: \"hover:bg-accent hover:text-accent-foreground\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n        outline:\n          \"border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground\",\n        secondary:\n          \"bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80\",\n      },\n    },\n  },\n);\n\nfunction Button({\n  className,\n  variant,\n  size,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean;\n  }) {\n  const Comp = asChild ? Slot.Root : \"button\";\n\n  return (\n    <Comp\n      className={cn(buttonVariants({ className, size, variant }))}\n      data-slot=\"button\"\n      {...props}\n    />\n  );\n}\n\nexport { Button, buttonVariants };\n",
+      "sha256": "f15a7a2b32b90ad280810e03b3f18805686836d956825068fa614978975837aa",
+      "upstreamPath": "apps/origin/registry/default/ui/button.tsx",
+      "upstreamSha256": "00c5b5d0afad82b368cfa34ae4abdaf1e0851dfa49adeb836d9a69747ef4bc49",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/lib/utils.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "sha256": "926478e55fd13d5538c2528b1c0ba8fa1e917e7d86a87f62cfc1b518cc1e3efc",
+      "upstreamPath": "apps/origin/registry/default/lib/utils.ts",
+      "upstreamSha256": "4acbc7165a8d54738ff62b51414e772c08fe78434e524e6d8770180d3ba2925f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/upstream/registry/default/ui/hover-card.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { HoverCard as HoverCardPrimitive } from \"radix-ui\";\nimport type * as React from \"react\";\nimport { cn } from \"@/components/rendyn-libraries/originui/lib/utils\";\n\nfunction HoverCard({\n  ...props\n}: React.ComponentProps<typeof HoverCardPrimitive.Root>) {\n  return <HoverCardPrimitive.Root data-slot=\"hover-card\" {...props} />;\n}\n\nfunction HoverCardTrigger({\n  ...props\n}: React.ComponentProps<typeof HoverCardPrimitive.Trigger>) {\n  return (\n    <HoverCardPrimitive.Trigger data-slot=\"hover-card-trigger\" {...props} />\n  );\n}\n\nfunction HoverCardContent({\n  className,\n  align = \"center\",\n  sideOffset = 4,\n  showArrow = false,\n  ...props\n}: React.ComponentProps<typeof HoverCardPrimitive.Content> & {\n  showArrow?: boolean;\n}) {\n  return (\n    <HoverCardPrimitive.Content\n      align={align}\n      className={cn(\n        \"data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 z-50 w-64 rounded-md border bg-popover p-4 text-popover-foreground shadow-lg outline-hidden data-[state=closed]:animate-out data-[state=open]:animate-in\",\n        className,\n      )}\n      data-slot=\"hover-card-content\"\n      sideOffset={sideOffset}\n      {...props}\n    >\n      {props.children}\n      {showArrow && (\n        <HoverCardPrimitive.Arrow className=\"-my-px fill-popover drop-shadow-[0_1px_0_var(--border)]\" />\n      )}\n    </HoverCardPrimitive.Content>\n  );\n}\n\nexport { HoverCard, HoverCardContent, HoverCardTrigger };\n",
+      "sha256": "d1ba52cc938102e08e62859a2a2095a8d566cf2be13f32e45eac035b9154f474",
+      "upstreamPath": "apps/origin/registry/default/ui/hover-card.tsx",
+      "upstreamSha256": "9b234d8eb8ce33a7ad9f731134d0d5dabfc06cf84720f0378f38857de7ea805c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/originui/comp-363/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/originui/upstream/registry/default/components/comp-363\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1f0b7a26c459ea8e7e7df2c3660c24c9475947f55f4ae69be2f10f62bdd53c4f",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add class-variance-authority@0.7.1 clsx@2.1.1 radix-ui@1.4.3 tailwind-merge@3.6.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add class-variance-authority@0.7.1 clsx@2.1.1 radix-ui@1.4.3 tailwind-merge@3.6.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.",
+      "Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "comp-363",
+    "upstreamPageUrl": "https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components",
+    "upstreamDetailUrl": "https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-363.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/cosscom/coss/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-363.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/originui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Origin UI tooltip hover card user comp-363\n\n1 published Origin UI tooltip hover card user comp-363 examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Copyable Origin UI compositions and their primitives; only apps/origin MIT files are imported.\n- Use Tailwind CSS 4 with shadcn-compatible semantic colour tokens. File selection is presentation only: validate uploads on your server.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/cosscom/coss/tree/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components\nPinned source: https://github.com/cosscom/coss/blob/dd49ec9c2c268ae751724ddc64b343cb3a7e773b/apps/origin/registry/default/components/comp-363.tsx\n"
+}
