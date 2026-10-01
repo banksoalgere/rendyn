@@ -6,20 +6,20 @@ import { redirect } from 'next/navigation';
 import { firstQueryValue, safeReturnTo } from '@/lib/auth/inputs';
 import { getSupabasePublicConfig } from '@/lib/supabase/config';
 import { createClient } from '@/lib/supabase/server';
-import { GoogleSignInButton } from '../auth/google-sign-in-button';
+import { EmailSignInForm } from '../auth/email-sign-in-form';
 import styles from '../auth/auth.module.css';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Sign in | Rendyn',
-  description: 'Sign in to Rendyn with Google.',
+  description: 'Log in to Rendyn with Google or email.',
   robots: { index: false, follow: false },
 };
 
 const errorMessages: Record<string, string> = {
-  callback: 'Google sign-in could not be completed. Please try again.',
-  configuration: 'Google sign-in is not configured yet.',
+  callback: 'Sign-in could not be completed. Please try again.',
+  configuration: 'Sign-in is temporarily unavailable. Please try again later.',
   consent: 'Your connection request could not be completed. Please try again.',
 };
 
@@ -49,33 +49,21 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
   const errorMessage = errorCode ? errorMessages[errorCode] : undefined;
 
   return (
-    <main className={styles.page}>
-      <header className={styles.topbar}>
-        <a className={styles.brand} href="/" aria-label="Rendyn home">
-          <BrandMark className={styles.brandMark} />
+    <main className={styles.loginPage}>
+      <section className={styles.loginCard} aria-labelledby="login-title">
+        <a className={styles.loginBrand} href="/" aria-label="Rendyn home">
+          <BrandMark className={styles.loginBrandMark} />
           <span>Rendyn</span>
         </a>
-        <a className={styles.backLink} href="/">Back to home</a>
-      </header>
-
-      <section className={styles.card} aria-labelledby="login-title">
-        <p className={styles.eyebrow}>Your Rendyn account</p>
-        <h1 id="login-title">Welcome in.</h1>
-        <p className={styles.intro}>
-          Sign in to use one Rendyn identity for your subscription, the website and your coding agent.
-        </p>
 
         {errorMessage ? <p className={styles.error} role="alert">{errorMessage}</p> : null}
-        {!configured ? (
+        {!configured && !errorMessage ? (
           <p className={styles.notice} role="status">
-            Google sign-in will become available when the Supabase project settings are added.
+            Sign-in is temporarily unavailable. Please try again later.
           </p>
         ) : null}
 
-        <GoogleSignInButton configured={configured} returnTo={returnTo} />
-        <p className={styles.finePrint}>
-          We request your basic profile and email. Your Google password is never shared with Rendyn.
-        </p>
+        <EmailSignInForm configured={configured} returnTo={returnTo} />
       </section>
     </main>
   );

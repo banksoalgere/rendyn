@@ -35,6 +35,10 @@ export function ComponentExplorer({
   const currentHref = catalogueHref({ ...filters, page: results.page });
 
   function updateFilters(query: string, category: CatalogueFilters['category']) {
+    const explorer = explorerRef.current;
+    if (explorer && explorer.getBoundingClientRect().top < 0) {
+      explorer.scrollIntoView({ block: 'start', behavior: 'instant' });
+    }
     setFilters({ query: query.slice(0, MAX_SEARCH_LENGTH), category, page: 1 });
   }
 
