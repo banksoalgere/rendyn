@@ -14,6 +14,7 @@ import {
   searchRequestSchema,
 } from "../http.js";
 import type { PreviewMedia } from "../preview-media.js";
+import { publicJson } from '../public-cache.js';
 
 interface PublicRouteDependencies {
   config: AppConfig;
@@ -39,7 +40,7 @@ export function registerPublicRoutes(
   );
 
   app.get("/api/categories", (context) =>
-    context.json({ categories: store.index.categories }),
+    publicJson(context, { categories: store.index.categories }),
   );
 
   app.get("/api/search", async (context) => {
@@ -52,7 +53,7 @@ export function registerPublicRoutes(
       input.data.limit,
       input.data.category,
     );
-    return context.json(
+    return publicJson(context,
       presentSearchResults(input.data.q, results, catalog, config.publicBaseUrl),
     );
   });
@@ -66,7 +67,7 @@ export function registerPublicRoutes(
     if (!input.success) {
       return jsonError(context, 400, "invalid_browse_request", input.error.flatten());
     }
-    return context.json(
+    return publicJson(context,
       presentBrowsePage(
         catalog.browse(category, input.data.cursor, input.data.limit),
         catalog,
@@ -77,7 +78,7 @@ export function registerPublicRoutes(
   app.get("/api/components/:slug", (context) => {
     const component = store.find(context.req.param("slug"));
     return component
-      ? context.json(presentComponentMetadata(component, catalog))
+      ? publicJson(context, presentComponentMetadata(component, catalog))
       : jsonError(context, 404, "component_not_found");
   });
 
