@@ -1,5 +1,7 @@
 'use client';
 
+import { trackCopy } from '../../../lib/analytics';
+
 import { useEffect, useRef, useState } from 'react';
 
 interface CopyPromptProps {
@@ -18,6 +20,7 @@ export function CopyPrompt({ children, label }: CopyPromptProps) {
   async function copyPrompt() {
     try {
       await navigator.clipboard.writeText(children);
+      trackCopy('prompt');
       setStatus('copied');
       if (resetTimer.current) clearTimeout(resetTimer.current);
       resetTimer.current = setTimeout(() => setStatus('idle'), 2000);

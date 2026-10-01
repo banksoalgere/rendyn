@@ -1,5 +1,7 @@
 'use client';
 
+import { trackCopy } from '../../../lib/analytics';
+
 import { useState } from 'react';
 
 const websiteBrief = `Act as a senior product designer and frontend engineer.
@@ -30,6 +32,7 @@ export function PromptCopy() {
   async function copyPrompt() {
     try {
       await navigator.clipboard.writeText(websiteBrief);
+      trackCopy('prompt');
       setStatus('Copied');
       window.setTimeout(() => setStatus('Copy prompt'), 1800);
     } catch {
