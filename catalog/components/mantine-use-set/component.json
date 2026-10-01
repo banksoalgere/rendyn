@@ -1,0 +1,96 @@
+{
+  "id": "mantine:use-set",
+  "sourceId": "mantine",
+  "slug": "mantine-use-set",
+  "name": "Mantine use set",
+  "description": "1 published Mantine use set examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "use-set",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "use set",
+      "mantine use set",
+      "use-set"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Mantine use set examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "use-set:code:file",
+    "searchText": "Mantine use set\nuse set\n1 published Mantine use set examples with complete pinned source and MIT attribution.\nmantine use set\nuse-set\ncode\nfile\nMantine use set 1 published Mantine use set examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use set Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use set/use set.demo.usage.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-use-set",
+  "manifestPath": "components/mantine-use-set/component.json",
+  "integrity": "sha256:c08f25dab03e61f3ebac40883b03eee98ad64c65642638c218b6a55e445efaca",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-set/use-set.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Code, Stack, TextInput } from '@mantine/core';\n\nimport { useSet } from '@mantine/hooks';\n\nfunction Demo() {\n  const [input, setInput] = useState('');\n  const scopes = useSet<string>(['@mantine', '@mantine-tests', '@mantinex']);\n\n  const isDuplicate = scopes.has(input.trim().toLowerCase());\n\n  const items = Array.from(scopes).map((scope) => <Code key={scope}>{scope}</Code>);\n\n  return (\n    <>\n      <TextInput\n        label=\"Add new scope\"\n        placeholder=\"Enter scope\"\n        description=\"Duplicate scopes are not allowed\"\n        value={input}\n        onChange={(event) => setInput(event.currentTarget.value)}\n        error={isDuplicate && 'Scope already exists'}\n        onKeyDown={(event) => {\n          if (event.nativeEvent.code === 'Enter' && !isDuplicate) {\n            scopes.add(input.trim().toLowerCase());\n            setInput('');\n          }\n        }}\n      />\n\n      <Stack gap={5} align=\"flex-start\" mt=\"md\">\n        {items}\n      </Stack>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "3aa02293832085c1f6d22d1a475f6dff3ab84604e9ba17b9b420bed5a89738de",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-set/use-set.demo.usage.tsx",
+      "upstreamSha256": "0989e939747967d5048f2de51c6f56efc35be3c5c305dbb1fea666330f4112a8",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-set/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-set/use-set.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "92fd46705cac329f83376e415c1cc20ee0aab7f3eb4ca982bda4557f8a311bf1",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "use-set",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-set",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-set/use-set.demo.usage.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-set/use-set.demo.usage.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine use set\n\n1 published Mantine use set examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-set\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-set/use-set.demo.usage.tsx\n"
+}

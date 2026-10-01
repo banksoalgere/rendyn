@@ -1,0 +1,129 @@
+{
+  "id": "mantine:use-headroom",
+  "sourceId": "mantine",
+  "slug": "mantine-use-headroom",
+  "name": "Mantine use headroom",
+  "description": "3 published Mantine use headroom examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantinex/demo@2.0.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "use-headroom",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "use headroom",
+      "mantine use headroom",
+      "use-headroom"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "3 published Mantine use headroom examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "use-headroom:code:file",
+    "searchText": "Mantine use headroom\nuse headroom\n3 published Mantine use headroom examples with complete pinned source and MIT attribution.\nmantine use headroom\nuse-headroom\ncode\nfile\nMantine use headroom 3 published Mantine use headroom examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use headroom Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use headroom/use headroom.demo.callbacks.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-use-headroom",
+  "manifestPath": "components/mantine-use-headroom/component.json",
+  "integrity": "sha256:ffa39f7fd31a17dc6baa30112dfb93ed3138c4a4cebbf42df89ccf8503688e95",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-headroom/use-headroom.demo.callbacks.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Box, Button, Code, Group, Portal, Stack, Text } from '@mantine/core';\n\nimport { useDisclosure, useHeadroom } from '@mantine/hooks';\n\nfunction Demo() {\n  const [showHeader, handlers] = useDisclosure(false);\n  const [log, setLog] = useState<string[]>([]);\n\n  const addLog = (msg: string) =>\n    setLog((prev) => [`${new Date().toLocaleTimeString()} — ${msg}`, ...prev].slice(0, 10));\n\n  const { pinned } = useHeadroom({\n    fixedAt: 80,\n    onPin: () => addLog('onPin'),\n    onRelease: () => addLog('onRelease'),\n    onFix: () => addLog('onFix'),\n  });\n\n  return (\n    <>\n      {showHeader && (\n        <Portal>\n          <Box\n            style={{\n              position: 'fixed',\n              top: 0,\n              left: 0,\n              right: 0,\n              height: 60,\n              zIndex: 1000000,\n              transform: `translate3d(0, ${pinned ? 0 : '-110px'}, 0)`,\n              transition: 'transform 400ms ease',\n              backgroundColor: pinned\n                ? 'var(--mantine-color-teal-6)'\n                : 'var(--mantine-color-red-6)',\n            }}\n          >\n            <Group justify=\"center\" h=\"100%\">\n              <Text c=\"white\" fw={500}>\n                {pinned ? 'Pinned' : 'Released'}\n              </Text>\n            </Group>\n          </Box>\n        </Portal>\n      )}\n\n      <Stack>\n        <Button onClick={handlers.toggle} variant=\"default\">\n          {showHeader ? 'Hide' : 'Show'} header\n        </Button>\n        <Code block>{log.length === 0 ? 'Scroll to see callback events' : log.join('\\n')}</Code>\n      </Stack>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "ed6f325261aa1a61bc45efa6395aac61f8e1203fe5fcb85226d9c04280df0935",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-headroom/use-headroom.demo.callbacks.tsx",
+      "upstreamSha256": "b822228337c0b311d147749268f7cc8d332ec8b6648c3a51a6881f63df8bc6d1",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-headroom/use-headroom.demo.scrollProgress.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Button, Group, Portal, Text } from '@mantine/core';\n\nimport { useDisclosure, useHeadroom } from '@mantine/hooks';\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst code = `\nimport { Box, Button, Group, Portal, Text } from '@mantine/core';\nimport { useDisclosure, useHeadroom } from '@mantine/hooks';\n\nfunction Demo() {\n  const [showHeader, handlers] = useDisclosure(false);\n  const { scrollProgress } = useHeadroom({ fixedAt: 120, scrollDistance: 60 });\n\n  return (\n    <>\n      {showHeader && (\n        <Portal>\n          <Box\n            style={{\n              position: 'fixed',\n              top: 0,\n              left: 0,\n              right: 0,\n              height: 60,\n              zIndex: 1000000,\n              transform: \\`translateY(\\${(scrollProgress - 1) * 100}%)\\`,\n              backgroundColor: 'var(--mantine-color-violet-6)',\n            }}\n          >\n            <Group justify=\"center\" h=\"100%\">\n              <Text c=\"white\" fw={500}>\n                Scroll-linked — {Math.round(scrollProgress * 100)}% visible\n              </Text>\n            </Group>\n          </Box>\n        </Portal>\n      )}\n\n      <Button onClick={handlers.toggle} variant=\"default\">\n        {showHeader ? 'Hide' : 'Show'} header\n      </Button>\n    </>\n  );\n}\n`;\n\nfunction Demo() {\n  const [showHeader, handlers] = useDisclosure(false);\n  const { scrollProgress } = useHeadroom({ fixedAt: 120, scrollDistance: 60 });\n\n  return (\n    <>\n      {showHeader && (\n        <Portal>\n          <Box\n            style={{\n              position: 'fixed',\n              top: 0,\n              left: 0,\n              right: 0,\n              height: 60,\n              zIndex: 1000000,\n              transform: `translateY(${(scrollProgress - 1) * 100}%)`,\n              backgroundColor: 'var(--mantine-color-violet-6)',\n            }}\n          >\n            <Group justify=\"center\" h=\"100%\">\n              <Text c=\"white\" fw={500}>\n                Scroll-linked — {Math.round(scrollProgress * 100)}% visible\n              </Text>\n            </Group>\n          </Box>\n        </Portal>\n      )}\n\n      <Button onClick={handlers.toggle} variant=\"default\">\n        {showHeader ? 'Hide' : 'Show'} header\n      </Button>\n    </>\n  );\n}\n\nexport const scrollProgress: MantineDemo = {\n  type: 'code',\n  code,\n  component: Demo,\n  centered: true,\n};\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "9d69ceccd72e49925f4097a1f2ef535ac9489be7aae377f8383868ed0236c21c",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-headroom/use-headroom.demo.scrollProgress.tsx",
+      "upstreamSha256": "8351c151f664de5f1b3151af44ac84def2413736fcbfe48fb1ce3dacf422a7e4",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-headroom/use-headroom.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Button, Group, Portal, Text } from '@mantine/core';\n\nimport { useDisclosure, useHeadroom } from '@mantine/hooks';\n\nfunction Demo() {\n  const [showHeader, handlers] = useDisclosure(false);\n  const { pinned } = useHeadroom({ fixedAt: 120 });\n\n  return (\n    <>\n      {showHeader && (\n        <Portal>\n          <Box\n            style={{\n              position: 'fixed',\n              top: 0,\n              left: 0,\n              right: 0,\n              padding: 'var(--mantine-spacing-xs)',\n              height: 60,\n              zIndex: 1000000,\n              transform: `translate3d(0, ${pinned ? 0 : '-110px'}, 0)`,\n              transition: 'transform 400ms ease',\n              backgroundColor: 'var(--mantine-color-body)',\n            }}\n          >\n            <Group justify=\"center\" h=\"100%\">\n              <Text>Pinned header – {pinned ? 'visible' : 'hidden'}</Text>\n            </Group>\n          </Box>\n        </Portal>\n      )}\n\n      <Button onClick={handlers.toggle} variant=\"default\">\n        {showHeader ? 'Hide' : 'Show'} header\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "8679b978ffecd6587378906fb723f56f820d3a134f0811ac5aaf8bcaf44d9f3e",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-headroom/use-headroom.demo.usage.tsx",
+      "upstreamSha256": "f80bce2b3bad39ff6a92b9473501b5e992c0533eea735a2fd6c1cdcfae756dda",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-headroom/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-headroom/use-headroom.demo.callbacks\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "2eb0b7ec963a322199bcf0553b262ff27dd6f6ae77dfd662b649050f6510c82c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-headroom/previews/scroll-progress.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-headroom/use-headroom.demo.scrollProgress\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "1ea628af748231ebd2584b0fe16efd157704265d07e5d812fd975edf87094e87",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-headroom/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-headroom/use-headroom.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d5942cb4c073fe3bfc64516a08e95b0fd89216b7d0311d6ab8179a7d8193cdef",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "use-headroom",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-headroom",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-headroom/use-headroom.demo.callbacks.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-headroom/use-headroom.demo.callbacks.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine use headroom\n\n3 published Mantine use headroom examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-headroom\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-headroom/use-headroom.demo.callbacks.tsx\n"
+}

@@ -1,0 +1,111 @@
+{
+  "id": "mantine:flex",
+  "sourceId": "mantine",
+  "slug": "mantine-flex",
+  "name": "Mantine flex",
+  "description": "2 published Mantine flex examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "flex",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "flex",
+      "mantine flex"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "2 published Mantine flex examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "flex:code:file",
+    "searchText": "Mantine flex\nflex\n2 published Mantine flex examples with complete pinned source and MIT attribution.\nmantine flex\ncode\nfile\nMantine flex 2 published Mantine flex examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Flex Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Flex/Flex.demo.configurator.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-flex",
+  "manifestPath": "components/mantine-flex/component.json",
+  "integrity": "sha256:0d5f6b5e8b1f70b915f96fc5e1075228f99f592dd94aa490d8788e1197dbf29c",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Flex/Flex.demo.configurator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Flex, FlexProps } from '@mantine/core';\n\nfunction Wrapper(props: FlexProps) {\n  return (\n    <Flex mih={50} bg=\"rgba(0, 0, 0, .3)\" {...props}>\n      <Button>Button 1</Button>\n      <Button>Button 2</Button>\n      <Button>Button 3</Button>\n    </Flex>\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent gap={\"md\"} justify={\"flex-start\"} align={\"flex-start\"} direction={\"row\"} wrap={\"wrap\"} />; }\n",
+      "sha256": "c3710e74b50febfa899790db9a310e0314fd848b751f248ab1a72a7356e2b5ae",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Flex/Flex.demo.configurator.tsx",
+      "upstreamSha256": "24e0043527c568b87fc7033cf41d83226746b121d8c74a9f79c3f2da2410c124",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Flex/Flex.demo.responsive.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Flex } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Flex\n      direction={{ base: 'column', sm: 'row' }}\n      gap={{ base: 'sm', sm: 'lg' }}\n      justify={{ sm: 'center' }}\n    >\n      <Button>Button 1</Button>\n      <Button>Button 2</Button>\n      <Button>Button 3</Button>\n    </Flex>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "e430a8d564a5b86915f5b65413ed3f6a1adeffa48cd389433f27aabe168db8f0",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Flex/Flex.demo.responsive.tsx",
+      "upstreamSha256": "e27b754acaa39b86b14628eb22f9328d04ff9bbfbc582e14a7c007d7fe42b60e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/flex/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Flex/Flex.demo.configurator\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "aae1ad2178f8d2c149a5c68c8a728c9140f1478ac864cbb4f4a593a39e0b748d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/flex/previews/responsive.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Flex/Flex.demo.responsive\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "355101308cad50c22aa910e73703819f763b5744a401a0537253205fc446df2c",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "flex",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Flex",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Flex/Flex.demo.configurator.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Flex/Flex.demo.configurator.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine flex\n\n2 published Mantine flex examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Flex\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Flex/Flex.demo.configurator.tsx\n"
+}

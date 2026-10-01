@@ -1,0 +1,35 @@
+"use client";
+
+import dayjs from 'dayjs';
+
+import { useState } from 'react';
+
+import { ResourcesDayView, ScheduleEventData } from '@mantine/schedule';
+
+import { dataCode, resourceEvents, resources } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/ResourcesDayView/_data';
+
+function Demo() {
+  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));
+  const [events, setEvents] = useState<ScheduleEventData[]>(resourceEvents);
+
+  return (
+    <ResourcesDayView
+      date={date}
+      onDateChange={setDate}
+      resources={resources}
+      events={events}
+      startTime="08:00:00"
+      endTime="18:00:00"
+      withEventsDragAndDrop
+      onEventDrop={({ eventId, newStart, newEnd, resourceId }) => {
+        setEvents((current) =>
+          current.map((event) =>
+            event.id === eventId ? { ...event, start: newStart, end: newEnd, resourceId } : event
+          )
+        );
+      }}
+    />
+  );
+}
+const RendynExampleComponent = Demo;
+export function RendynExample() { return <RendynExampleComponent  />; }

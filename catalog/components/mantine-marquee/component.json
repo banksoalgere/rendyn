@@ -1,0 +1,177 @@
+{
+  "id": "mantine:marquee",
+  "sourceId": "mantine",
+  "slug": "mantine-marquee",
+  "name": "Mantine marquee",
+  "description": "6 published Mantine marquee examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantinex/mantine-logo@2.0.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "marquee",
+    "tags": [
+      "code",
+      "file",
+      "marquee"
+    ],
+    "aliases": [
+      "marquee",
+      "mantine marquee"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "6 published Mantine marquee examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "marquee:code:file",
+    "searchText": "Mantine marquee\nmarquee\n6 published Mantine marquee examples with complete pinned source and MIT attribution.\nmantine marquee\ncode\nfile\nMantine marquee 6 published Mantine marquee examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Marquee Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Marquee/Marquee.demo.configurator.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-marquee",
+  "manifestPath": "components/mantine-marquee/component.json",
+  "integrity": "sha256:55952f2dc35ec7976c69b6622073bbf722551bd5820e1fbc079bf781a84768b3",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Marquee/Marquee.demo.configurator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Marquee, MarqueeProps } from '@mantine/core';\n\nimport { MantineLogo } from '@mantinex/mantine-logo';\n\nfunction Wrapper(props: Partial<MarqueeProps>) {\n  return (\n    <Marquee {...props} mah={200} maw={400}>\n      <MantineLogo width={120} type=\"full\" color=\"blue\" />\n      <MantineLogo width={120} type=\"full\" color=\"cyan\" />\n      <MantineLogo width={120} type=\"full\" color=\"teal\" />\n      <MantineLogo width={120} type=\"full\" color=\"green\" />\n      <MantineLogo width={120} type=\"full\" color=\"lime\" />\n      <MantineLogo width={120} type=\"full\" color=\"yellow\" />\n      <MantineLogo width={120} type=\"full\" color=\"orange\" />\n      <MantineLogo width={120} type=\"full\" color=\"red\" />\n    </Marquee>\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent reverse={false} pauseOnHover={false} orientation={\"horizontal\"} repeat={4} duration={40000} gap={\"md\"} fadeEdges={true} />; }\n",
+      "sha256": "8a7bf6ce9d7b41374c17963ef078802ca2d06c7ccd842e71d31d65df065cfc57",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Marquee/Marquee.demo.configurator.tsx",
+      "upstreamSha256": "575fed558745f053e505f403b08a15c1a3b0195fbc204eb404ffe9b1905d7506",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Marquee/Marquee.demo.fadeEdges.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Marquee, Stack, Text } from '@mantine/core';\n\nimport { MantineLogo } from '@mantinex/mantine-logo';\n\nfunction Demo() {\n  return (\n    <Stack>\n      <div>\n        <Text size=\"sm\" mb=\"xs\">\n          Default fade (5%)\n        </Text>\n        <Marquee>\n          <MantineLogo width={80} type=\"full\" color=\"blue\" />\n          <MantineLogo width={80} type=\"full\" color=\"cyan\" />\n          <MantineLogo width={80} type=\"full\" color=\"teal\" />\n          <MantineLogo width={80} type=\"full\" color=\"green\" />\n        </Marquee>\n      </div>\n\n      <div>\n        <Text size=\"sm\" mb=\"xs\">\n          Larger fade (15%)\n        </Text>\n        <Marquee fadeEdgeSize=\"15%\">\n          <MantineLogo width={80} type=\"full\" color=\"lime\" />\n          <MantineLogo width={80} type=\"full\" color=\"yellow\" />\n          <MantineLogo width={80} type=\"full\" color=\"orange\" />\n          <MantineLogo width={80} type=\"full\" color=\"red\" />\n        </Marquee>\n      </div>\n\n      <div>\n        <Text size=\"sm\" mb=\"xs\">\n          Custom fade color\n        </Text>\n        <Marquee fadeEdgeColor=\"var(--mantine-color-blue-light)\">\n          <MantineLogo width={80} type=\"full\" color=\"violet\" />\n          <MantineLogo width={80} type=\"full\" color=\"grape\" />\n          <MantineLogo width={80} type=\"full\" color=\"pink\" />\n          <MantineLogo width={80} type=\"full\" color=\"red\" />\n        </Marquee>\n      </div>\n\n      <div>\n        <Text size=\"sm\" mb=\"xs\">\n          No fade\n        </Text>\n        <Marquee fadeEdges={false}>\n          <MantineLogo width={80} type=\"full\" color=\"blue\" />\n          <MantineLogo width={80} type=\"full\" color=\"teal\" />\n          <MantineLogo width={80} type=\"full\" color=\"green\" />\n          <MantineLogo width={80} type=\"full\" color=\"yellow\" />\n        </Marquee>\n      </div>\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "0ae29ee4e8b529f2939f44ae0543975df269648444c4696fe42c6aa397613705",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Marquee/Marquee.demo.fadeEdges.tsx",
+      "upstreamSha256": "81e4d3ed807aec2aad07b7f6a85da1482a9dfa03579d66dbc589634683a41fc8",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Marquee/Marquee.demo.multipleRows.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Marquee, Stack } from '@mantine/core';\n\nimport { MantineLogo } from '@mantinex/mantine-logo';\n\nfunction Demo() {\n  return (\n    <Stack>\n      <Marquee>\n        <MantineLogo height={20} type=\"full\" color=\"blue\" />\n        <MantineLogo height={20} type=\"full\" color=\"cyan\" />\n        <MantineLogo height={20} type=\"full\" color=\"teal\" />\n        <MantineLogo height={20} type=\"full\" color=\"green\" />\n      </Marquee>\n      <Marquee reverse>\n        <MantineLogo height={20} type=\"full\" color=\"lime\" />\n        <MantineLogo height={20} type=\"full\" color=\"yellow\" />\n        <MantineLogo height={20} type=\"full\" color=\"orange\" />\n        <MantineLogo height={20} type=\"full\" color=\"red\" />\n      </Marquee>\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "34a71f20b7725f6f5f47f4e919b261ec73378fcd7e156b9a22099f72fa046e00",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Marquee/Marquee.demo.multipleRows.tsx",
+      "upstreamSha256": "3269ca7c3a00ed8a7f9610b5a3211d9a2e40bdc386a7d51c3781d9216931343e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Marquee/Marquee.demo.pauseOnHover.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Marquee } from '@mantine/core';\n\nimport { MantineLogo } from '@mantinex/mantine-logo';\n\nfunction Demo() {\n  return (\n    <Marquee pauseOnHover>\n      <MantineLogo width={80} type=\"full\" color=\"blue\" />\n      <MantineLogo width={80} type=\"full\" color=\"cyan\" />\n      <MantineLogo width={80} type=\"full\" color=\"teal\" />\n      <MantineLogo width={80} type=\"full\" color=\"green\" />\n      <MantineLogo width={80} type=\"full\" color=\"lime\" />\n      <MantineLogo width={80} type=\"full\" color=\"yellow\" />\n      <MantineLogo width={80} type=\"full\" color=\"orange\" />\n      <MantineLogo width={80} type=\"full\" color=\"red\" />\n    </Marquee>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "344285268feaf853feafe77df898fc4291a4d63e3ad42c2598f3862f38ce7bf6",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Marquee/Marquee.demo.pauseOnHover.tsx",
+      "upstreamSha256": "294d1892d6956d767420ecbc261c0fd4bbb616bd42af0478ee8f978761d4ed2e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Marquee/Marquee.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Marquee } from '@mantine/core';\n\nimport { MantineLogo } from '@mantinex/mantine-logo';\n\nfunction Demo() {\n  return (\n    <Marquee gap=\"lg\">\n      <MantineLogo width={80} type=\"full\" color=\"blue\" />\n      <MantineLogo width={80} type=\"full\" color=\"cyan\" />\n      <MantineLogo width={80} type=\"full\" color=\"teal\" />\n      <MantineLogo width={80} type=\"full\" color=\"green\" />\n      <MantineLogo width={80} type=\"full\" color=\"lime\" />\n      <MantineLogo width={80} type=\"full\" color=\"yellow\" />\n      <MantineLogo width={80} type=\"full\" color=\"orange\" />\n      <MantineLogo width={80} type=\"full\" color=\"red\" />\n    </Marquee>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "0dc11c9d7d3a8d077a74697a8a4a3c053ea7a044d723611b80513e41264f11ec",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Marquee/Marquee.demo.usage.tsx",
+      "upstreamSha256": "12ca4a019e94463b6e86befe4e2e2ccfed94fb6b75d777b54bbeac92fc08051a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Marquee/Marquee.demo.vertical.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Marquee } from '@mantine/core';\n\nimport { MantineLogo } from '@mantinex/mantine-logo';\n\nfunction Demo() {\n  return (\n    <Marquee orientation=\"vertical\" h={300}>\n      <MantineLogo height={40} type=\"full\" color=\"blue\" />\n      <MantineLogo height={40} type=\"full\" color=\"cyan\" />\n      <MantineLogo height={40} type=\"full\" color=\"teal\" />\n      <MantineLogo height={40} type=\"full\" color=\"green\" />\n      <MantineLogo height={40} type=\"full\" color=\"lime\" />\n      <MantineLogo height={40} type=\"full\" color=\"yellow\" />\n      <MantineLogo height={40} type=\"full\" color=\"orange\" />\n      <MantineLogo height={40} type=\"full\" color=\"red\" />\n    </Marquee>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "8d3cc38a472ed0961ac9f9b5497bbed701e64a8b69e6acef8e3de80b024d1881",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Marquee/Marquee.demo.vertical.tsx",
+      "upstreamSha256": "055b8ec23895eacca76a4b2cedc75f281a7b63a182c5395160a4483758540ea0",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/marquee/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Marquee/Marquee.demo.configurator\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "3a2f86f9a4e9d2d8ea221a73453a774eb542deeb3bbc24fa10a10a500b103991",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/marquee/previews/fade-edges.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Marquee/Marquee.demo.fadeEdges\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "318b29389d9039a799a8ab3ad66671d600ea1dad6c593f8c9f54d81c17ce06f2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/marquee/previews/multiple-rows.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Marquee/Marquee.demo.multipleRows\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a755461f48de6ae32a77a5430be240db50a70116ffccd68a77bc5db775d71a2e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/marquee/previews/pause-on-hover.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Marquee/Marquee.demo.pauseOnHover\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c816bb7376f0c35045031fe25e87e4f3b3795ced9923e51d4dae8478b12ca593",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/marquee/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Marquee/Marquee.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "76809125a98ef91a9aa952037154161ef9871169bc1628947f8977aa2b322c9c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/marquee/previews/vertical.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Marquee/Marquee.demo.vertical\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "52f43cfa3be18a5cd35055a46a2c23c39fd3281aff3d1bfd3ac1cb9f7ff7c279",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/mantine-logo@2.0.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/mantine-logo@2.0.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "marquee",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Marquee",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Marquee/Marquee.demo.configurator.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Marquee/Marquee.demo.configurator.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine marquee\n\n6 published Mantine marquee examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Marquee\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Marquee/Marquee.demo.configurator.tsx\n"
+}

@@ -1,0 +1,660 @@
+{
+  "id": "mantine:tags-input",
+  "sourceId": "mantine",
+  "slug": "mantine-tags-input",
+  "name": "Mantine tags input",
+  "description": "36 published Mantine tags input examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantinex/demo@2.0.0",
+    "@phosphor-icons/react@2.1.10",
+    "fuse.js@7.5.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "input",
+    "tags": [
+      "code",
+      "file",
+      "input"
+    ],
+    "aliases": [
+      "tags input",
+      "mantine tags input",
+      "input"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "36 published Mantine tags input examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "input:code:file",
+    "searchText": "Mantine tags input\ntags input\n36 published Mantine tags input examples with complete pinned source and MIT attribution.\nmantine tags input\ninput\ncode\nfile\nMantine tags input 36 published Mantine tags input examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/TagsInput Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.acceptValueOnBlur.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-tags-input",
+  "manifestPath": "components/mantine-tags-input/component.json",
+  "integrity": "sha256:1279df4b9487b7c8638f3e6f26da60409f297439e7ba189be13bc9670b96a2cf",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.acceptValueOnBlur.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <>\n      <TagsInput\n        label=\"Value IS accepted on blur\"\n        placeholder=\"Enter text, then blur the field\"\n        data={['React', 'Angular', 'Svelte']}\n        acceptValueOnBlur\n      />\n      <TagsInput\n        label=\"Value IS NOT accepted on blur\"\n        placeholder=\"Enter text, then blur the field\"\n        data={['React', 'Angular', 'Svelte']}\n        acceptValueOnBlur={false}\n        mt=\"md\"\n      />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "0cbaa7e5e83850ca1f0af0d8351f9be38b17404669de0b8d291384254f2aa812",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.acceptValueOnBlur.tsx",
+      "upstreamSha256": "1e92e76ce25f9754c3d7fbcad757267de8331ba43622c2ac47fa59de872c8a34",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.allowDuplicates.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Press Enter to submit a tag\"\n      placeholder=\"Duplicates are allowed\"\n      allowDuplicates\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "25f4ab0fd578ff38a7bf075a93812a697e715eac538848fe6d552110dcfcade5",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.allowDuplicates.tsx",
+      "upstreamSha256": "22cb74e4437f29a80b4096ce2a1de3e3cf9cbfc7dd474119928e6f1e934f927e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.clearSectionMode.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { CaretDownIcon } from '@phosphor-icons/react';\n\nimport { Stack, TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Stack>\n      <TagsInput\n        label=\"clearSectionMode='both' (default)\"\n        placeholder=\"Enter tags\"\n        data={['React', 'Angular', 'Vue', 'Svelte']}\n        defaultValue={['React']}\n        clearable\n        rightSection={<CaretDownIcon size={16} />}\n        clearSectionMode=\"both\"\n      />\n\n      <TagsInput\n        label=\"clearSectionMode='rightSection'\"\n        placeholder=\"Enter tags\"\n        data={['React', 'Angular', 'Vue', 'Svelte']}\n        defaultValue={['React']}\n        clearable\n        rightSection={<CaretDownIcon size={16} />}\n        clearSectionMode=\"rightSection\"\n      />\n\n      <TagsInput\n        label=\"clearSectionMode='clear'\"\n        placeholder=\"Enter tags\"\n        data={['React', 'Angular', 'Vue', 'Svelte']}\n        defaultValue={['React']}\n        clearable\n        rightSection={<CaretDownIcon size={16} />}\n        clearSectionMode=\"clear\"\n      />\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "45d7d2506ab9ff1fd358adb6c76837e7bc981189d27b638bd921f63a18b9948b",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.clearSectionMode.tsx",
+      "upstreamSha256": "e4b61b3ff9586e50ca1508abc696a0954f746f631fef96f8696617464fa5f020",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.clearable.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Press Enter to submit a tag\"\n      placeholder=\"Enter tag\"\n      defaultValue={['React']}\n      clearable\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "cf4efc1a1dc2ebe4ca4b684cf9d5b05d348b5f521fc099f216045fae8ccfd91b",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.clearable.tsx",
+      "upstreamSha256": "51af4096de206b92e5e36e8aa22b74071195896c35bb8b839723b31fc093b655",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.configurator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Wrapper(props: any) {\n  return (\n    <TagsInput\n      {...props}\n      placeholder=\"TagsInput placeholder\"\n      value={['First', 'Second']}\n      data={['React', 'Angular', 'Vue', 'Svelte']}\n    />\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b72d81276cc7fdbd74ed614d9b4e6fe80ef213fb5c0fb4b77d77a84da77c8610",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.configurator.tsx",
+      "upstreamSha256": "487e2730cef5d7157d5ce4e52d17e3d01bb62c10cf418b38109f4d37e4c5b069",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.data.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Press Enter to submit a tag\"\n      placeholder=\"Pick tag from list\"\n      data={['React', 'Angular', 'Svelte']}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "d553e06d4576f8bf49301a2da0f4f12087090cfc38ee70c680251324b5372399",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.data.tsx",
+      "upstreamSha256": "a2f875e529ca8e1229c61b6566cda8b5125e05827458eeecefad3ccf797278d9",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.disabled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Disabled\"\n      placeholder=\"Enter tag\"\n      disabled\n      defaultValue={['First', 'Second']}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "bd29bbb564b7c5db373e06b6f22f3575547a0a9e40090a6d7a2c3a4b5b28fd55",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.disabled.tsx",
+      "upstreamSha256": "6cda26e5aaa6276dfba40c71b11d69c4f308651d5eb2b3d5b7c520e9f286b37d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.disabledOptions.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Enter tags\"\n      placeholder=\"Some tags are disabled\"\n      data={[\n        { value: 'React' },\n        { value: 'Angular' },\n        { value: 'Vue', disabled: true },\n        { value: 'Svelte', disabled: true },\n      ]}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "3fc162b3824723421b39418e44f5c3188573846c8453120e13207c018685903a",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.disabledOptions.tsx",
+      "upstreamSha256": "239a34c970880e9c9aa47b2e5d82c82cc9a45a8d7d1bf809f084391126aa3d6d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.dragReorder.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  const [value, setValue] = useState(['first', 'second', 'third']);\n\n  return (\n    <TagsInput\n      label=\"Drag pills to reorder\"\n      description=\"Tags can be reordered by dragging pills\"\n      placeholder=\"Enter tag\"\n      value={value}\n      onChange={setValue}\n      withPillsReorder\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "a5c56c8387d538cee977115b083568d489215625818d7ce01bf4a23826005481",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.dragReorder.tsx",
+      "upstreamSha256": "4ec91fff2548f0ea1b180ff802922b4629f9daf75722a1e8bb2c8618c4f26bc6",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.dropdownAnimation.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Your favorite library\"\n      placeholder=\"Pick value or enter anything\"\n      data={['React', 'Angular', 'Vue', 'Svelte']}\n      comboboxProps={{ transitionProps: { transition: 'pop', duration: 200 } }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "317d86868e95d57c700df6b922d0b2d84f18954c068995cdf204593f42a07fdf",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.dropdownAnimation.tsx",
+      "upstreamSha256": "cf484a8c22fd8f5c856f1ba972e1e4de72196e18b4150dee7bcb24e78b6482ca",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.dropdownOpened.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, TagsInput } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst code = `\nimport { TagsInput, Button } from '@mantine/core';\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [dropdownOpened, { toggle }] = useDisclosure();\n  return (\n    <>\n      <Button onClick={toggle} mb=\"md\">\n        Toggle dropdown\n      </Button>\n\n      <TagsInput\n        label=\"Your favorite library\"\n        placeholder=\"Pick value or enter anything\"\n        data={['React', 'Angular', 'Vue', 'Svelte']}\n        dropdownOpened={dropdownOpened}\n      />\n    </>\n  );\n}\n`;\n\nfunction Demo() {\n  const [dropdownOpened, { toggle }] = useDisclosure();\n  return (\n    <>\n      <Button onClick={toggle} mb=\"md\">\n        Toggle dropdown\n      </Button>\n\n      <TagsInput\n        label=\"Your favorite library\"\n        placeholder=\"Pick value or enter anything\"\n        data={['React', 'Angular', 'Vue', 'Svelte']}\n        dropdownOpened={dropdownOpened}\n      />\n    </>\n  );\n}\n\nexport const dropdownOpened: MantineDemo = {\n  type: 'code',\n  component: Demo,\n  code,\n  maxWidth: 340,\n  centered: true,\n};\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "904f8941c1898446294e3d26a9642c15d01e648fbdcddeee4ad130146f2f4b93",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.dropdownOpened.tsx",
+      "upstreamSha256": "c88f9bd46ed2833260837991ea81ad6917db5d74705cf90683a0f72f42757bf1",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.dropdownPadding.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <>\n      <TagsInput\n        label=\"Zero padding\"\n        placeholder=\"Pick value or enter anything\"\n        data={['React', 'Angular', 'Vue', 'Svelte']}\n        comboboxProps={{ dropdownPadding: 0 }}\n      />\n      <TagsInput\n        mt=\"md\"\n        label=\"10px padding\"\n        placeholder=\"Pick value or enter anything\"\n        data={['React', 'Angular', 'Vue', 'Svelte']}\n        comboboxProps={{ dropdownPadding: 10 }}\n      />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "d92a53e472a10b7223514f7d8c03cbdf8f3bf8d038f8a0585411f59c501c781a",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.dropdownPadding.tsx",
+      "upstreamSha256": "2f215cbcc0d4cc806ad5565ae203284a061f660d2c7fff4c165969da3878d78e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.dropdownPosition.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Your favorite library\"\n      placeholder=\"Pick value or enter anything\"\n      data={['React', 'Angular', 'Vue', 'Svelte']}\n      comboboxProps={{ position: 'top', middlewares: { flip: false, shift: false } }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "97e3da822dd15c6c2b00cd65e69530c02a48e35d1a56b2a6beaa02fc400c2c5a",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.dropdownPosition.tsx",
+      "upstreamSha256": "47ef8ccfe6330f0fcd0369fdf28cef17e867b9f735483f366e243956f1a5cb95",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.dropdownShadow.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Your favorite library\"\n      placeholder=\"Pick value or enter anything\"\n      data={['React', 'Angular', 'Vue', 'Svelte']}\n      comboboxProps={{ shadow: 'md' }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "0477be0aec667f1f0c45ede87cb8a55ebef17630dc4e99d1dad53e69a9b90f1a",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.dropdownShadow.tsx",
+      "upstreamSha256": "f746a46a1b1fe3dd1422db0bb3df8f897a909e121417ed2d495fed7b89a11642",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.dropdownWidth.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Your favorite library\"\n      placeholder=\"Pick value or enter anything\"\n      data={['React', 'Angular', 'Vue', 'Svelte']}\n      comboboxProps={{ width: 200, position: 'bottom-start' }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "288d87d66b5616d12a1ef1d2fd8e6dbaaed18a2ce20deebc3d29259b4c65331f",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.dropdownWidth.tsx",
+      "upstreamSha256": "bb6dc3155130fb7b408b883fa1f895161c01f39db590b3d421fb817ad12ee8a9",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.error.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <>\n      <TagsInput\n        label=\"Boolean error\"\n        placeholder=\"Boolean error\"\n        error\n        defaultValue={['React', 'Angular']}\n      />\n      <TagsInput\n        mt=\"md\"\n        label=\"With error message\"\n        placeholder=\"With error message\"\n        error=\"Invalid name\"\n        defaultValue={['React', 'Angular']}\n      />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "d5b81d0af100ea7b7e85b58503e75b5fe0668583b571f7bbe8c4dbbe178dbe04",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.error.tsx",
+      "upstreamSha256": "d309a1f3274d9c7cb1da6526b5956f8fb30d41486f1a93bb61eab7b2a60b9f30",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.floatingHeight.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nconst data = Array(100)\n  .fill(0)\n  .map((_, index) => `Option ${index}`);\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Fits viewport height\"\n      placeholder=\"Pick values\"\n      data={data}\n      floatingHeight=\"viewport\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "775892f26b5e14ae27afaada4787aa3c28204a4b9d3146cb67bc11f9c6bf4fee",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.floatingHeight.tsx",
+      "upstreamSha256": "f80f4499e47db7c3e126a50ebe9f51b47a44e0a5a3f7c2a490c301f3b78bb975",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.fuzzySearch.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Fuse from 'fuse.js';\n\nimport { ComboboxItem, OptionsFilter, TagsInput } from '@mantine/core';\n\nconst optionsFilter: OptionsFilter = ({ options, search }) => {\n  if (!search.trim()) {\n    return options;\n  }\n\n  const fuse = new Fuse(options as ComboboxItem[], {\n    keys: ['label'],\n    threshold: 0.3,\n    minMatchCharLength: 1,\n  });\n\n  return fuse.search(search).map((result) => result.item);\n};\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Favorite fruits\"\n      placeholder=\"Pick value or enter anything\"\n      data={['Apple', 'Banana', 'Kiwi', 'Mango', 'Watermelon', 'Raspberry']}\n      filter={optionsFilter}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "246d948fc2a82b0233b4fd4a2b6cc2034930b0113faa112060db11cb25527557",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.fuzzySearch.tsx",
+      "upstreamSha256": "dec465a4a14588420f5803b0a99865f8dfd8496d170e4d5a3a8e34cf5b3f6e2b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.groups.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Enter tags\"\n      placeholder=\"Enter tags\"\n      data={[\n        { group: 'Frontend', items: ['React', 'Angular'] },\n        { group: 'Backend', items: ['Express', 'Django'] },\n      ]}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "085753054d950d25c0a625fe0cbca97b5c0da8f4416a4d62ab30d6503c9903b5",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.groups.tsx",
+      "upstreamSha256": "9225830f3d42759214bb81642ca177a6c400fe136e820d49c94907ea06fa12bc",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.isDuplicate.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Press Enter to submit a tag\"\n      placeholder=\"Enter tag\"\n      isDuplicate={(tagValue, currentTags) => currentTags.some((val) => val === tagValue)}\n      defaultValue={['Tag', 'TAG', 'tag']}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "55668ef6b1226b28c4885a5c18d3a5872d722beda9fc51608d2591c6c4b2b892",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.isDuplicate.tsx",
+      "upstreamSha256": "1ed86b3ea7bdb9412a169d94690c9ac8f18e6533b171929480f13f3ed3d18b73",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.limit.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nconst largeData = Array(100_000)\n  .fill(0)\n  .map((_, index) => `Option ${index}`);\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"100 000 options tags input\"\n      placeholder=\"Use limit to optimize performance\"\n      limit={5}\n      data={largeData}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "abdd2ad536a2fa5e5ac9934b2c1c2eb1298544d7646b3b3e8c716e7f991399b8",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.limit.tsx",
+      "upstreamSha256": "6042bfe58d0e638ca4891b60effa02878d8bba79aff200b7dd07aa3c8952fd20",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.loading.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return <TagsInput placeholder=\"Enter tags\" loading />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "89ed6cc2636fbb4d20949b6455eb546b269061882d5818f7296bf844b6ae42eb",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.loading.tsx",
+      "upstreamSha256": "668527035acc27e83e16d035d2971fbdba98c609c664d9ad191c1781a8bcbd2e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.maxTags.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Press Enter to submit a tag\"\n      description=\"Add up to 3 tags\"\n      placeholder=\"Enter tag\"\n      maxTags={3}\n      defaultValue={['first', 'second']}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "79eeabec9fb230515d1a2caa5644566444708a4cca36fa228d922020f0ada7e2",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.maxTags.tsx",
+      "upstreamSha256": "84295106daeaf35c521dfdfc1affdf8441dd2d12c2156e3223aeec7c92bdb2fb",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.readOnly.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Read only\"\n      placeholder=\"Enter tag\"\n      readOnly\n      defaultValue={['First', 'Second']}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "d3af1760df521257a959061a703c5f58e30e49461f240263f0a30bb459f8e675",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.readOnly.tsx",
+      "upstreamSha256": "1c9b8567f3e65a6de06333ac0f1ea662100d40558fbbd1cf15326892851089cf",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.renderOption.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Group, TagsInput, TagsInputProps, Text } from '@mantine/core';\n\nconst data: Record<string, { emoji: string; description: string }> = {\n  Apples: {\n    emoji: '🍎',\n    description: 'Crisp and juicy snacking delight',\n  },\n  Bread: {\n    emoji: '🍞',\n    description: 'Freshly baked daily essential',\n  },\n  Bananas: {\n    emoji: '🍌',\n    description: 'Perfect for a healthy breakfast',\n  },\n  Eggs: {\n    emoji: '🥚',\n    description: 'Versatile protein source for cooking',\n  },\n  Broccoli: {\n    emoji: '🥦',\n    description: 'Nutrient-rich green vegetable',\n  },\n};\n\nconst renderTagsInputOption: TagsInputProps['renderOption'] = ({ option }) => (\n  <Group>\n    <Text span fz={24}>\n      {data[option.value].emoji}\n    </Text>\n    <div>\n      <Text>{option.value}</Text>\n      <Text size=\"xs\" opacity={0.5}>\n        {data[option.value].description}\n      </Text>\n    </div>\n  </Group>\n);\n\nfunction Demo() {\n  return (\n    <TagsInput\n      data={['Apples', 'Bread', 'Bananas', 'Eggs', 'Broccoli']}\n      renderOption={renderTagsInputOption}\n      label=\"Groceries\"\n      placeholder=\"Pick tag from list or type to add new\"\n      maxDropdownHeight={300}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "abfe96ae333ee359c069cd3ff26e944e1bd4dec003b62365ebfda5fc6d3edf50",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.renderOption.tsx",
+      "upstreamSha256": "42b69e48e5b04f7ab76188e775a64ec333d8ca84e9025e9f1d8e6f94a9763525",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.renderPill.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Pill, TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Custom pills\"\n      description=\"Tags are rendered with a star prefix\"\n      placeholder=\"Enter tag\"\n      defaultValue={['React', 'Angular']}\n      renderPill={({ value, onRemove }) => (\n        <Pill withRemoveButton onRemove={onRemove}>\n          ★ {value}\n        </Pill>\n      )}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "1b1690789c950b395e01031254a17f817558a365c1125a62973140c862b0b9e9",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.renderPill.tsx",
+      "upstreamSha256": "185ef06386a88df58349f555a55bda80c07c39328b190a05651b52fda4ce94cc",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.scrollArea.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nconst data = Array(100)\n  .fill(0)\n  .map((_, index) => `Option ${index}`);\n\nfunction Demo() {\n  return (\n    <>\n      <TagsInput\n        label=\"With scroll area (default)\"\n        placeholder=\"Pick value or enter anything\"\n        data={data}\n        maxDropdownHeight={200}\n      />\n\n      <TagsInput\n        label=\"With native scroll\"\n        placeholder=\"Pick value or enter anything\"\n        data={data}\n        withScrollArea={false}\n        styles={{ dropdown: { maxHeight: 200, overflowY: 'auto' } }}\n        mt=\"md\"\n      />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b38f0eb55ccb2b068d313ea679f533f99252cd5e3f6c5b25486ab7d41ce185c9",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.scrollArea.tsx",
+      "upstreamSha256": "b98ec6c68cd86f42688e153bfd17b7ae66e73c3c11003b4a27e4295f5e4f81cc",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.search.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ComboboxItem, OptionsFilter, TagsInput } from '@mantine/core';\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst code = `\nimport { TagsInput, ComboboxItem, OptionsFilter } from '@mantine/core';\n\nconst optionsFilter: OptionsFilter = ({ options, search }) => {\n  const splittedSearch = search.toLowerCase().trim().split(' ');\n  return (options as ComboboxItem[]).filter((option) => {\n    const words = option.label.toLowerCase().trim().split(' ');\n    return splittedSearch.every((searchWord) => words.some((word) => word.includes(searchWord)));\n  });\n};\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"What countries have you visited?\"\n      placeholder=\"Pick value or enter anything\"\n      data={['Great Britain', 'Russian Federation', 'United States']}\n      filter={optionsFilter}\n    />\n  );\n}\n`;\n\nconst optionsFilter: OptionsFilter = ({ options, search }) => {\n  const splittedSearch = search.toLowerCase().trim().split(' ');\n  return (options as ComboboxItem[]).filter((option) => {\n    const words = option.label.toLowerCase().trim().split(' ');\n    return splittedSearch.every((searchWord) => words.some((word) => word.includes(searchWord)));\n  });\n};\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"What countries have you visited?\"\n      placeholder=\"Pick value or enter anything\"\n      data={['Great Britain', 'Russian Federation', 'United States']}\n      filter={optionsFilter}\n    />\n  );\n}\n\nexport const search: MantineDemo = {\n  type: 'code',\n  component: Demo,\n  code,\n  maxWidth: 340,\n  centered: true,\n};\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "d0e7ed32b5d2c1d66728e1cc2aab9215a498141c2ee2f467dcb9f9ceb42bba9b",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.search.tsx",
+      "upstreamSha256": "e9c55188c5a045d4d5879b2a8f3d4183ef36bd91893dd5675c8ea80ad4f48b66",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.sections.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SquaresFourIcon } from '@phosphor-icons/react';\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  const icon = <SquaresFourIcon size={16} />;\n  return (\n    <>\n      <TagsInput\n        data={['React', 'Angular', 'Vue']}\n        leftSectionPointerEvents=\"none\"\n        leftSection={icon}\n        label=\"Your favorite library\"\n        placeholder=\"Your favorite library\"\n      />\n      <TagsInput\n        mt=\"md\"\n        data={['React', 'Angular', 'Vue']}\n        rightSectionPointerEvents=\"none\"\n        rightSection={icon}\n        label=\"Your favorite library\"\n        placeholder=\"Your favorite library\"\n      />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "4f9b2c2ebdaab8a0c20babf2a56ecd71c20f110d7e6c8363e853f39971e35784",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.sections.tsx",
+      "upstreamSha256": "9d27bb3b29e44bd998bc0aabb0d04a14a4d83a2e0e42f022e94c6b9dec9be80a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.selectFirst.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Enter tags\"\n      placeholder=\"Enter tags\"\n      selectFirstOptionOnChange\n      data={['Apple', 'Banana', 'Kiwi', 'Mango', 'Watermelon', 'Raspberry', 'Strawberry']}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "86db915741ecfe0e2bcbaa026f02b1945ad8432aee5a0a781e7e35e002e9e0ba",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.selectFirst.tsx",
+      "upstreamSha256": "a1006448a20df701d7ba0e3023fad6cc83b09a1d9e8c5f9ff3ecf8d1995035fb",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.sort.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ComboboxItem, OptionsFilter, TagsInput } from '@mantine/core';\n\nconst optionsFilter: OptionsFilter = ({ options, search }) => {\n  const filtered = (options as ComboboxItem[]).filter((option) =>\n    option.label.toLowerCase().trim().includes(search.toLowerCase().trim())\n  );\n\n  filtered.sort((a, b) => a.label.localeCompare(b.label));\n  return filtered;\n};\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Your favorite libraries\"\n      placeholder=\"Pick value or enter anything\"\n      data={['4 – React', '1 – Angular', '3 – Vue', '2 – Svelte']}\n      filter={optionsFilter}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "ca7a9a3b2aeaa11ccd7462f28bc28eaf382808a2106060c4eac3b67275948fa7",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.sort.tsx",
+      "upstreamSha256": "6f30f0d1d3fe032f855e1036a065ae299e3a400fc4579c01b6700838a3a3af27",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.splitChars.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Press Enter to submit a tag\"\n      placeholder=\"Enter tag\"\n      splitChars={[',', ' ', '|']}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "fd36c3f30b496cf93325b90f88466ec37ff836734707dac533ccbc85d53786e8",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.splitChars.tsx",
+      "upstreamSha256": "62fe29c6a45b1342d6bb0c74e8be3ef409025f4598e49d8b63b3d326e1836207",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.stylesApi.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { AtIcon } from '@phosphor-icons/react';\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo(props: any) {\n  return (\n    <TagsInput\n      {...props}\n      dropdownOpened\n      leftSection={<AtIcon size={18} />}\n      withAsterisk\n      label=\"TagsInput\"\n      description=\"Description\"\n      placeholder=\"TagsInput\"\n      defaultValue={['First', 'Second']}\n      comboboxProps={{ hideDetached: false }}\n      data={[\n        { group: 'Frontend', items: ['React', 'Angular'] },\n        { group: 'Backend', items: ['Node', 'Django'] },\n      ]}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "c60eadefff1f45b366ba4b05871ad3ababd01bce9512d5faca3cf13756c8c933",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.stylesApi.tsx",
+      "upstreamSha256": "57e027fb46c9c843c791b007fd31606c7764da266c23d41163955452ab4c4d7f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.success.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <TagsInput\n      label=\"Tags Input\"\n      placeholder=\"Tags Input\"\n      data={['React', 'Angular', 'Vue', 'Svelte']}\n      success=\"Looks good!\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "81c65a2e36fcd080bdcc9db08a0667d4fd4149be46a7c453af2b8c1a5e545c9d",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.success.tsx",
+      "upstreamSha256": "b7cce42ffbb9658c84ec2067ee30d2b62f3d99e8c268ac1354686bdc1bd05bfa",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return <TagsInput label=\"Press Enter to submit a tag\" placeholder=\"Enter tag\" />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "83e873ff20c4c81a2315e9c4118b6555ba11ef3866f3855a43c5fee040f8385d",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.usage.tsx",
+      "upstreamSha256": "e556764579bde1cff9db7924112ff147698651a75a5de92e8c9ab861a55ba416",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.withinPopover.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Popover, TagsInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Popover width={300} position=\"bottom\" withArrow shadow=\"md\">\n      <Popover.Target>\n        <Button>Toggle popover</Button>\n      </Popover.Target>\n      <Popover.Dropdown>\n        <TagsInput\n          label=\"Your favorite library\"\n          placeholder=\"Pick value or enter anything\"\n          data={['React', 'Angular', 'Vue', 'Svelte']}\n          comboboxProps={{ withinPortal: false }}\n        />\n      </Popover.Dropdown>\n    </Popover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "df67647cedc7bacd7ec5cb73380f7d9ba4627ea9c1e9f9ed4e37a417a65d9480",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.withinPopover.tsx",
+      "upstreamSha256": "5de6c6017f882a822a33b2d81bbf8679daf9975c4560efaa69d82e3c89b6ad63",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.acceptValueOnBlur\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "0a4399c63b367a1495069919013239094491816fc49df3fbe57b524c9989acd7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/allow-duplicates.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.allowDuplicates\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "5d95f58240035b3660d1c10fddbd3a0c3899d24e005a8ac3b1c0ab359d3ace4a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/clear-section-mode.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.clearSectionMode\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "370437c783325fac43524a9b05798e6b83caa467410970a388644d61b394bcd2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/clearable.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.clearable\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "31bbb4b4d9bc59fee550ae6626329610a1642651136cefed49d66a66745464f5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/configurator.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.configurator\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "488a4c05e4ce66a269714f6c655918213fe096863899cd3033a68346f996f033",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/data.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.data\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d0dd1d5efa44c51398b1b6fdf672c07ebe004940f29c43b0f20e159ad910bd7a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.disabled\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "1615f231810d804cf48e1be589c2631dc083b9017d6d98f3f99e54845a4dae18",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/disabled-options.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.disabledOptions\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "75a193c1ddff527d15b1bf09b8cbd97a6eeafc18902f693461a87979c7d147b1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/drag-reorder.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.dragReorder\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "0e395284f32f54ff2b669c7d70393d9e288f3746fabfbd3dc47081ea6ed0a0be",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/dropdown-animation.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.dropdownAnimation\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "9985f1f3e3ed8a0cf28fab5c5b35224c94a519b4e7c2c1526d7b1c4b818abe06",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/dropdown-opened.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.dropdownOpened\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "8c7fdaeaf534c28a1b053280411a0b3d7681a29d7820b181482389c7076bdd86",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/dropdown-padding.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.dropdownPadding\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "1eba46ba92e7f06f6a9618c13bce9ef47a1897232152791872cfc781afdef81c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/dropdown-position.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.dropdownPosition\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a7da2c68d3ecd40a62c6a18a38958223bb04d2638d98e2fac28e4d278ab38b91",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/dropdown-shadow.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.dropdownShadow\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "29c09f7e96efaeb812091a7795892a3483fd8bfc0af434b912e7741e69e67f45",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/dropdown-width.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.dropdownWidth\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "5f155f9b6f8a0eb47286d342330a8dd7b999bab9254c85ae3c5088d575840f40",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/error.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.error\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "f48d9b2f93f172e44aa469c051187600b0e9a17f9945814f93b3bff3df60dec1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/floating-height.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.floatingHeight\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "43663d02cc384f3c17d92fe9a79ab966596d88bf04a05a21a47c07ba42bf391e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/fuzzy-search.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.fuzzySearch\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "02826ae1a2f6f01ad138cc4adce0282017ee46156f2855698cfbb1da3963d6e7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/groups.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.groups\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d53fb8b0cef75539e9c9c4fbbc8e0741fc1d1456431bb5df270a1757062732ec",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/is-duplicate.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.isDuplicate\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "2dcf744a7eab63fcf8cbfff7279dd426bba646f6b24bd9d58477b08f8bb7ebf3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/limit.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.limit\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d126d2837ad90a10d0683b09d2046341eeb1a11086e63dd56b2ab89fcf4b8286",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/loading.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.loading\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "60fbbd500bc27e0d0c9a3da2cfbc8c887ef2eab74fa9b77049375041eb5205b1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/max-tags.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.maxTags\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "bebf5dd456cd29c45b42285a3cdf11e19e49b785d317ebb57c343529920ce5d5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/read-only.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.readOnly\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7c6c34ab655ee977faa6854c1e8d0a49e7b12e97d719e26c5fb57b2fee73559c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/render-option.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.renderOption\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d0c4da8a15aa6f5be48607eb2e9c4c75ff5a683674fbe19ade6760406e4c9567",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/render-pill.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.renderPill\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "1267158eda04b0f585641c9c50a24b09d0587da99ee24eb540130909928f208d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/scroll-area.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.scrollArea\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "675d009e20333bf278ddb38d6a4a0aad873038e8dbdf3f31a027530f913dded1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/search.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.search\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "833dd639603bd61ec80282549001f8dc3009c1411bfc5a4011ddc2dcbe4dcfc3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/sections.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.sections\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "5070812a1c512acbe21a7d32488cfdc69f732ff5eca55edcf5473f30fdf6f883",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/select-first.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.selectFirst\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "6a65d5795ec95ba259ceaea1a60b6943bd89a1cd77ce0c42fee8480e0d38c6c0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/sort.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.sort\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e1eb5d8ace97aaa0703ecfae089eecc6c5512d4e0ad10028ae6a1623464212ef",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/split-chars.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.splitChars\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4ffabf08e953ef3e721713b1bd0ef46175d177f7105ccfe677bbb8b289fa47d6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/styles-api.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.stylesApi\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "dd88569e360dfd6316f2830d8bda00cf1d494acd8e552eea4a4eeabed526ab79",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/success.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.success\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "5692d01d3d21c707450110ff45ba96273543f76ef17a333149aa562dde00c401",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "55eafd3ab48bc53c03d1fabdbedc872a3710ada1bb518c5d175ee1061946999b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tags-input/previews/within-popover.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/TagsInput/TagsInput.demo.withinPopover\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "09bcc5477c0eea64a893ee28a57e79ba8f0f1203ea25a1c5f2d9d97e98189ef5",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @phosphor-icons/react@2.1.10 fuse.js@7.5.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @phosphor-icons/react@2.1.10 fuse.js@7.5.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "tags-input",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/TagsInput",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.acceptValueOnBlur.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.acceptValueOnBlur.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine tags input\n\n36 published Mantine tags input examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/TagsInput\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/TagsInput/TagsInput.demo.acceptValueOnBlur.tsx\n"
+}

@@ -1,0 +1,143 @@
+{
+  "id": "mantine:collapse",
+  "sourceId": "mantine",
+  "slug": "mantine-collapse",
+  "name": "Mantine collapse",
+  "description": "4 published Mantine collapse examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "collapse",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "collapse",
+      "mantine collapse"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "4 published Mantine collapse examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "collapse:code:file",
+    "searchText": "Mantine collapse\ncollapse\n4 published Mantine collapse examples with complete pinned source and MIT attribution.\nmantine collapse\ncode\nfile\nMantine collapse 4 published Mantine collapse examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Collapse Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Collapse/Collapse.demo.horizontal.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-collapse",
+  "manifestPath": "components/mantine-collapse/component.json",
+  "integrity": "sha256:d237d915f18d245290201aa75752236b7c65ab1ea42d5d0fbb7f0c7b2180f699",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Collapse/Collapse.demo.horizontal.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Collapse, Stack, Typography } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [expanded, handlers] = useDisclosure(false);\n\n  return (\n    <Stack h={240} align=\"flex-start\">\n      <Button onClick={handlers.toggle} w=\"fit-content\">\n        {expanded ? 'Collapse' : 'Expand'}\n      </Button>\n\n      <Collapse expanded={expanded} orientation=\"horizontal\">\n        <Typography bg=\"var(--mantine-color-blue-light)\" p=\"xs\" bdrs=\"md\" w={200}>\n          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt\n          ut labore et dolore magna aliqua.\n        </Typography>\n      </Collapse>\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "46aac203d932791e0c0312bc91a17620e1f9894cb7bc755bea020ec0d8a1ea17",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Collapse/Collapse.demo.horizontal.tsx",
+      "upstreamSha256": "5bd5c45cc323f77a0f0404480360a7e41860b8b411c4426c0ad67e20ebcfb8f0",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Collapse/Collapse.demo.nested.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Box, Button, Collapse, CollapseProps, Text } from '@mantine/core';\n\nexport function CollapsedDemo({\n  children,\n  buttonProps,\n  ...others\n}: Partial<CollapseProps> & { buttonProps?: any }) {\n  const [opened, setOpened] = useState(false);\n\n  return (\n    <Box maw={400} mx=\"auto\" mt=\"md\">\n      <Button onClick={() => setOpened((o) => !o)} mb={5} {...buttonProps} />\n      <Collapse expanded={opened} {...others}>\n        {children}\n      </Collapse>\n    </Box>\n  );\n}\n\nconst lorem =\n  'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea atque in est quaerat dolore odio! Quibusdam, a nihil modi, maiores consequuntur ex quod suscipit illum ducimus doloribus odit commodi tenetur.';\n\nfunction Demo() {\n  return (\n    <CollapsedDemo buttonProps={{ children: 'Root collapse' }}>\n      <Text mt=\"md\" size=\"lg\" fw={700}>\n        This collapse contains another collapse\n      </Text>\n      <Text mt=\"xs\">{lorem}</Text>\n      <CollapsedDemo buttonProps={{ variant: 'outline', children: 'Inner collapse' }}>\n        <Text mt=\"md\" size=\"lg\" fw={700}>\n          This collapse is inside another collapse\n        </Text>\n        <Text mt=\"xs\">{lorem}</Text>\n      </CollapsedDemo>\n    </CollapsedDemo>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "38fe81ac00569577f9a4dd8a43319ef11371846343e129fc26dd484043c6e063",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Collapse/Collapse.demo.nested.tsx",
+      "upstreamSha256": "b654385dfe1a5328eed3b5a1f9989b86fde7aba8f2f47943d30a92e69fe8f115",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Collapse/Collapse.demo.transition.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Button, Collapse, Group, Text } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [expanded, { toggle }] = useDisclosure(false);\n\n  return (\n    <Box maw={400} mx=\"auto\">\n      <Group justify=\"center\" mb={5}>\n        <Button onClick={toggle}>Toggle with linear transition</Button>\n      </Group>\n\n      <Collapse expanded={expanded} transitionDuration={1000} transitionTimingFunction=\"linear\">\n        <Text>\n          From Bulbapedia: Bulbasaur is a small, quadrupedal Pokémon that has blue-green skin with\n          darker patches. It has red eyes with white pupils, pointed, ear-like structures on top of\n          its head, and a short, blunt snout with a wide mouth. A pair of small, pointed teeth are\n          visible in the upper jaw when its mouth is open. Each of its thick legs ends with three\n          sharp claws. On Bulbasaur&apos;s back is a green plant bulb, which is grown from a seed\n          planted there at birth. The bulb also conceals two slender, tentacle-like vines and\n          provides it with energy through photosynthesis as well as from the nutrient-rich seeds\n          contained within.\n        </Text>\n      </Collapse>\n    </Box>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "4367f6e66f4476eea0e7ac0518b83161ac12553e97d0b231e0db1c2b68cf90f3",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Collapse/Collapse.demo.transition.tsx",
+      "upstreamSha256": "7fa05a0ab95af62c16ac9886bc2f5b08bb62374ee89e1f6ae796ef2adfc8225b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Collapse/Collapse.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Button, Collapse, Group, Text } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [expanded, { toggle }] = useDisclosure(false);\n\n  return (\n    <Box maw={400} mx=\"auto\">\n      <Group justify=\"center\" mb={5}>\n        <Button onClick={toggle}>Toggle content</Button>\n      </Group>\n\n      <Collapse expanded={expanded}>\n        <Text>\n          From Bulbapedia: Bulbasaur is a small, quadrupedal Pokémon that has blue-green skin with\n          darker patches. It has red eyes with white pupils, pointed, ear-like structures on top of\n          its head, and a short, blunt snout with a wide mouth. A pair of small, pointed teeth are\n          visible in the upper jaw when its mouth is open. Each of its thick legs ends with three\n          sharp claws. On Bulbasaur&apos;s back is a green plant bulb, which is grown from a seed\n          planted there at birth. The bulb also conceals two slender, tentacle-like vines and\n          provides it with energy through photosynthesis as well as from the nutrient-rich seeds\n          contained within.\n        </Text>\n      </Collapse>\n    </Box>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b0978a4988ca105a425dec5469f223b246cc2cb4333441b8075ddfcb411efcd9",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Collapse/Collapse.demo.usage.tsx",
+      "upstreamSha256": "332cc19fc221d561a2fb30584b4f06e4391e8c9feb759f2abd017603ea5d0cd0",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/collapse/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Collapse/Collapse.demo.horizontal\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "43497be64451a0ad8606e3b1cf2b18dec48cac769a5be8475a5c5aaa0c598b87",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/collapse/previews/nested.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Collapse/Collapse.demo.nested\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "bc09b2e8b37e33186e069bb26e6266505b3353cfd334872fba870df88709b2b5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/collapse/previews/transition.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Collapse/Collapse.demo.transition\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4ae4d4afe5d324cd916800ec9fb8f5013dcd282943d50d7ab4797b3cac500a65",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/collapse/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Collapse/Collapse.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "5af488cc6160a00a58ba69e710ac7180bbe6124654c1463809c5765c9b680672",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "collapse",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Collapse",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Collapse/Collapse.demo.horizontal.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Collapse/Collapse.demo.horizontal.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine collapse\n\n4 published Mantine collapse examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Collapse\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Collapse/Collapse.demo.horizontal.tsx\n"
+}

@@ -1,0 +1,96 @@
+{
+  "id": "mantine:use-state-history",
+  "sourceId": "mantine",
+  "slug": "mantine-use-state-history",
+  "name": "Mantine use state history",
+  "description": "1 published Mantine use state history examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "use-state-history",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "use state history",
+      "mantine use state history",
+      "use-state-history"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Mantine use state history examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "use-state-history:code:file",
+    "searchText": "Mantine use state history\nuse state history\n1 published Mantine use state history examples with complete pinned source and MIT attribution.\nmantine use state history\nuse-state-history\ncode\nfile\nMantine use state history 1 published Mantine use state history examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use state history Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use state history/use state history.demo.usage.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-use-state-history",
+  "manifestPath": "components/mantine-use-state-history/component.json",
+  "integrity": "sha256:9c59f9de4a901045ba1853dc7d51f41b5702909853970a41f39921fb03897cde",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-state-history/use-state-history.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Code, Group, Text } from '@mantine/core';\n\nimport { useStateHistory } from '@mantine/hooks';\n\nfunction Demo() {\n  const [value, handlers, history] = useStateHistory(1);\n  return (\n    <>\n      <Text>Current value: {value}</Text>\n      <Group my=\"md\">\n        <Button onClick={() => handlers.set(Math.ceil(Math.random() * 100) + 1)}>Set value</Button>\n        <Button onClick={() => handlers.back()}>Back</Button>\n        <Button onClick={() => handlers.forward()}>Forward</Button>\n        <Button onClick={() => handlers.reset()}>Reset</Button>\n      </Group>\n      <Code block>{JSON.stringify(history, null, 2)}</Code>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "1f4293a59157b09a842309a98daefbb4ef6f1a0a358b7ba2e961219e8dd09d21",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-state-history/use-state-history.demo.usage.tsx",
+      "upstreamSha256": "bb6902b232d53399db1bb3ab72e616ee6872fa1f18031de019257b2e1b64bf71",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-state-history/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-state-history/use-state-history.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b7a2676c3887cfeda773381255c76957eb1c47d106ea0d64b844449ea2f8b258",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "use-state-history",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-state-history",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-state-history/use-state-history.demo.usage.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-state-history/use-state-history.demo.usage.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine use state history\n\n1 published Mantine use state history examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-state-history\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-state-history/use-state-history.demo.usage.tsx\n"
+}

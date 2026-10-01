@@ -1,0 +1,160 @@
+{
+  "id": "mantine:menubar",
+  "sourceId": "mantine",
+  "slug": "mantine-menubar",
+  "name": "Mantine menubar",
+  "description": "5 published Mantine menubar examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "menubar",
+    "tags": [
+      "code",
+      "file",
+      "menu"
+    ],
+    "aliases": [
+      "menubar",
+      "mantine menubar"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "5 published Mantine menubar examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "menubar:code:file:menu",
+    "searchText": "Mantine menubar\nmenubar\n5 published Mantine menubar examples with complete pinned source and MIT attribution.\nmantine menubar\ncode\nfile\nmenu\nMantine menubar 5 published Mantine menubar examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Menubar Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Menubar/Menubar.demo.controlled.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-menubar",
+  "manifestPath": "components/mantine-menubar/component.json",
+  "integrity": "sha256:4d04b76ed4e36f51dd1375148a1809f96bd7ac0a26fc8cb3b6d612eea4430e9d",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Menubar/Menubar.demo.controlled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Group, Menu, Menubar, Stack } from '@mantine/core';\n\nfunction Demo() {\n  const [openIndex, setOpenIndex] = useState<number | null>(null);\n\n  return (\n    <Stack>\n      <Group>\n        <Button variant=\"default\" onClick={() => setOpenIndex(0)}>\n          Open File\n        </Button>\n        <Button variant=\"default\" onClick={() => setOpenIndex(1)}>\n          Open Edit\n        </Button>\n        <Button variant=\"default\" onClick={() => setOpenIndex(null)}>\n          Close all\n        </Button>\n      </Group>\n\n      <Menubar openIndex={openIndex} onOpenChange={setOpenIndex}>\n        <Menubar.Menu width={220}>\n          <Menubar.Target>File</Menubar.Target>\n          <Menubar.Dropdown>\n            <Menu.Item>New file</Menu.Item>\n            <Menu.Item>Save</Menu.Item>\n          </Menubar.Dropdown>\n        </Menubar.Menu>\n\n        <Menubar.Menu width={220}>\n          <Menubar.Target>Edit</Menubar.Target>\n          <Menubar.Dropdown>\n            <Menu.Item>Undo</Menu.Item>\n            <Menu.Item>Redo</Menu.Item>\n          </Menubar.Dropdown>\n        </Menubar.Menu>\n      </Menubar>\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "2cf2175efa11fad646d9d98144b4771a889b045fa8ee5664255e68fc6561891c",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Menubar/Menubar.demo.controlled.tsx",
+      "upstreamSha256": "563bdfbeaa6709b4da117954d67132c4f2fca9dcbc3ddd5e47bcd167eebad6dc",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Menubar/Menubar.demo.hover.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Menu, Menubar } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Menubar trigger=\"hover\">\n      <Menubar.Menu width={220}>\n        <Menubar.Target>File</Menubar.Target>\n        <Menubar.Dropdown>\n          <Menu.Item>New file</Menu.Item>\n          <Menu.Item>New window</Menu.Item>\n          <Menu.Item>Save</Menu.Item>\n        </Menubar.Dropdown>\n      </Menubar.Menu>\n\n      <Menubar.Menu width={220}>\n        <Menubar.Target>Edit</Menubar.Target>\n        <Menubar.Dropdown>\n          <Menu.Item>Undo</Menu.Item>\n          <Menu.Item>Redo</Menu.Item>\n          <Menu.Item>Cut</Menu.Item>\n          <Menu.Item>Copy</Menu.Item>\n        </Menubar.Dropdown>\n      </Menubar.Menu>\n\n      <Menubar.Menu width={220}>\n        <Menubar.Target>View</Menubar.Target>\n        <Menubar.Dropdown>\n          <Menu.Item>Zoom in</Menu.Item>\n          <Menu.Item>Zoom out</Menu.Item>\n          <Menu.Item>Reset zoom</Menu.Item>\n        </Menubar.Dropdown>\n      </Menubar.Menu>\n    </Menubar>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "af65149fac98f8e557c5888e73820902d0ff86fb054a91d6cb641d3a9e8a7bef",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Menubar/Menubar.demo.hover.tsx",
+      "upstreamSha256": "410b656d049a75b75c7fe77c776bce98cee45251edbaefe74b787f04f7db1031",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Menubar/Menubar.demo.selectable.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Menu, Menubar } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Menubar>\n      <Menubar.Menu width={220}>\n        <Menubar.Target>View</Menubar.Target>\n        <Menubar.Dropdown>\n          <Menu.CheckboxItem defaultChecked>Show sidebar</Menu.CheckboxItem>\n          <Menu.CheckboxItem>Show status bar</Menu.CheckboxItem>\n          <Menu.Divider />\n          <Menu.Label>Appearance</Menu.Label>\n          <Menu.RadioGroup defaultValue=\"comfortable\">\n            <Menu.RadioItem value=\"compact\">Compact</Menu.RadioItem>\n            <Menu.RadioItem value=\"comfortable\">Comfortable</Menu.RadioItem>\n            <Menu.RadioItem value=\"spacious\">Spacious</Menu.RadioItem>\n          </Menu.RadioGroup>\n        </Menubar.Dropdown>\n      </Menubar.Menu>\n\n      <Menubar.Menu width={220}>\n        <Menubar.Target>Window</Menubar.Target>\n        <Menubar.Dropdown>\n          <Menu.Item>Minimize</Menu.Item>\n          <Menu.Item>Zoom</Menu.Item>\n          <Menu.Item>Bring all to front</Menu.Item>\n        </Menubar.Dropdown>\n      </Menubar.Menu>\n    </Menubar>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "1245f30233ae22f03202bfa230d48414a1f90cd5f94e2614e1b2507225fd2cb8",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Menubar/Menubar.demo.selectable.tsx",
+      "upstreamSha256": "6ed244c9a96eb0aedc2cc9105a02429a3b26a3ebb3b61d1ee35df0b2d5339452",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Menubar/Menubar.demo.stylesApi.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Menu, Menubar } from '@mantine/core';\n\nfunction Demo(props: any) {\n  return (\n    <Menubar {...props}>\n      <Menubar.Menu width={220}>\n        <Menubar.Target>File</Menubar.Target>\n        <Menubar.Dropdown>\n          <Menu.Item>New file</Menu.Item>\n          <Menu.Item>Save</Menu.Item>\n        </Menubar.Dropdown>\n      </Menubar.Menu>\n\n      <Menubar.Menu width={220}>\n        <Menubar.Target>Edit</Menubar.Target>\n        <Menubar.Dropdown>\n          <Menu.Item>Undo</Menu.Item>\n          <Menu.Item>Redo</Menu.Item>\n        </Menubar.Dropdown>\n      </Menubar.Menu>\n    </Menubar>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "87db51b513cf089e4b82fd1a1ec814a9e502a585232686b18ab688997f72f1b0",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Menubar/Menubar.demo.stylesApi.tsx",
+      "upstreamSha256": "73352fc822675db33b49c13897b759d77403a5690edb452595380ae19deb332c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Menubar/Menubar.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Menu, Menubar, Text } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Menubar>\n      <Menubar.Menu width={220}>\n        <Menubar.Target>File</Menubar.Target>\n        <Menubar.Dropdown>\n          <Menu.Item\n            rightSection={\n              <Text size=\"xs\" c=\"dimmed\">\n                ⌘N\n              </Text>\n            }\n          >\n            New file\n          </Menu.Item>\n          <Menu.Item\n            rightSection={\n              <Text size=\"xs\" c=\"dimmed\">\n                ⌘⇧N\n              </Text>\n            }\n          >\n            New window\n          </Menu.Item>\n          <Menu.Sub>\n            <Menu.Sub.Target>\n              <Menu.Sub.Item>Open recent</Menu.Sub.Item>\n            </Menu.Sub.Target>\n            <Menu.Sub.Dropdown>\n              <Menu.Item>project-alpha</Menu.Item>\n              <Menu.Item>project-beta</Menu.Item>\n              <Menu.Item>project-gamma</Menu.Item>\n            </Menu.Sub.Dropdown>\n          </Menu.Sub>\n          <Menu.Divider />\n          <Menu.Item\n            rightSection={\n              <Text size=\"xs\" c=\"dimmed\">\n                ⌘S\n              </Text>\n            }\n          >\n            Save\n          </Menu.Item>\n          <Menu.Item>Save as…</Menu.Item>\n        </Menubar.Dropdown>\n      </Menubar.Menu>\n\n      <Menubar.Menu width={220}>\n        <Menubar.Target>Edit</Menubar.Target>\n        <Menubar.Dropdown>\n          <Menu.Item\n            rightSection={\n              <Text size=\"xs\" c=\"dimmed\">\n                ⌘Z\n              </Text>\n            }\n          >\n            Undo\n          </Menu.Item>\n          <Menu.Item\n            rightSection={\n              <Text size=\"xs\" c=\"dimmed\">\n                ⌘⇧Z\n              </Text>\n            }\n          >\n            Redo\n          </Menu.Item>\n          <Menu.Divider />\n          <Menu.Item>Cut</Menu.Item>\n          <Menu.Item>Copy</Menu.Item>\n          <Menu.Item>Paste</Menu.Item>\n        </Menubar.Dropdown>\n      </Menubar.Menu>\n\n      <Menubar.Menu width={220}>\n        <Menubar.Target>Help</Menubar.Target>\n        <Menubar.Dropdown>\n          <Menu.Item>Documentation</Menu.Item>\n          <Menu.Item>Keyboard shortcuts</Menu.Item>\n          <Menu.Item>About</Menu.Item>\n        </Menubar.Dropdown>\n      </Menubar.Menu>\n    </Menubar>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "dbaa3c24aa3f2fbd58f1b85ebe9ca7a7eab617b0e31b05c66a6dcd9fe4dce6ca",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Menubar/Menubar.demo.usage.tsx",
+      "upstreamSha256": "ff2ce87d7ff6d629e93693ad3e699bbc80375317f9700ead2337c10f9c6a7640",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/menubar/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Menubar/Menubar.demo.controlled\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "acdf06faeffeb871fc47742d802b4b91919c60b3964ca2ce59d1f5493cf4a857",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/menubar/previews/hover.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Menubar/Menubar.demo.hover\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "40d783f248784d4e14823667c2af18055a9e037706e29b95a67652d5fd05582c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/menubar/previews/selectable.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Menubar/Menubar.demo.selectable\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "1025b2f17272f5210cee39285628ced3c9579575bfc72cdffbceac4f7f323ae3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/menubar/previews/styles-api.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Menubar/Menubar.demo.stylesApi\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "9bfbad19a22607dc1193f276a1caff34e41d8fd4bde2112f97380f5c927aef60",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/menubar/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Menubar/Menubar.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c3fc5899c2f227190833abb12b666dc531c8f7677c2527636338db8c9acbcff5",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "menubar",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Menubar",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Menubar/Menubar.demo.controlled.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Menubar/Menubar.demo.controlled.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine menubar\n\n5 published Mantine menubar examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Menubar\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Menubar/Menubar.demo.controlled.tsx\n"
+}

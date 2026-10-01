@@ -1,0 +1,419 @@
+{
+  "id": "mantine:checkbox",
+  "sourceId": "mantine",
+  "slug": "mantine-checkbox",
+  "name": "Mantine checkbox",
+  "description": "19 published Mantine checkbox examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/form@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantinex/demo@2.0.0",
+    "@phosphor-icons/react@2.1.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "checkbox",
+    "tags": [
+      "checkbox",
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "checkbox",
+      "mantine checkbox"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "19 published Mantine checkbox examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "checkbox:code:file",
+    "searchText": "Mantine checkbox\ncheckbox\n19 published Mantine checkbox examples with complete pinned source and MIT attribution.\nmantine checkbox\ncode\nfile\nMantine checkbox 19 published Mantine checkbox examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Checkbox Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.anchor.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-checkbox",
+  "manifestPath": "components/mantine-checkbox/component.json",
+  "integrity": "sha256:3d331e4923203f3895dae20f8d8013b101d0b0da465831c86bc4c045d554f57e",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.anchor.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Anchor, Checkbox } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Checkbox\n      label={\n        <>\n          I accept{' '}\n          <Anchor href=\"https://mantine.dev\" target=\"_blank\" inherit>\n            terms and conditions\n          </Anchor>\n        </>\n      }\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "656b28923f7d91b8a4aa679e417586780071a375ba4fff5d9fa25804a1fd55e5",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.anchor.tsx",
+      "upstreamSha256": "5890f8726f4021e26eea2507cfdaa6b2b1bb8a5aac9b0ec975b816e08e041b03",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.autoContrast.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, Stack } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Stack>\n      <Checkbox checked label=\"regular checkbox\" size=\"lg\" color=\"lime.4\" onChange={() => {}} />\n      <Checkbox\n        autoContrast\n        checked\n        label=\"autoContrast checkbox\"\n        size=\"lg\"\n        color=\"lime.4\"\n        onChange={() => {}}\n      />\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "da30d2f08d20f8fe5dabed1b54b769d63df6225c786e92d61a3cf09a17381913",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.autoContrast.tsx",
+      "upstreamSha256": "b05b8d9d97632ec604add975b1ab569e95b0ea47c84dc89ee771102c9fcac97b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.card.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Checkbox, Group, Text } from '@mantine/core';\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.card.module.css';\n\nfunction Demo() {\n  const [checked, setChecked] = useState(false);\n\n  return (\n    <Checkbox.Card className={classes.root} checked={checked} onClick={() => setChecked((c) => !c)}>\n      <Group wrap=\"nowrap\" align=\"flex-start\">\n        <Checkbox.Indicator />\n\n        <div>\n          <Text className={classes.label}>mantine/core</Text>\n          <Text className={classes.description}>\n            Core components library: inputs, buttons, overlays, etc.\n          </Text>\n        </div>\n      </Group>\n    </Checkbox.Card>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "5104604e0123efd02ccd615400a1198fa669aabd74b70ca4f5841e39fb7df9b8",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.card.tsx",
+      "upstreamSha256": "3f5da27585b7ebd5d50b69e1b01bbb8e44167b276dc2413a0620fe2ae1af3a03",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.card.module.css",
+      "type": "style",
+      "content": ".root {\n  position: relative;\n  padding: var(--mantine-spacing-md);\n  transition: border-color 150ms ease;\n\n  &[data-checked] {\n    border-color: var(--mantine-primary-color-filled);\n  }\n\n  @mixin hover {\n    @mixin light {\n      background-color: var(--mantine-color-gray-0);\n    }\n\n    @mixin dark {\n      background-color: var(--mantine-color-dark-6);\n    }\n  }\n}\n\n.label {\n  font-weight: 600;\n  font-size: var(--mantine-font-size-sm);\n  line-height: 1.3;\n  color: var(--mantine-color-bright);\n}\n\n.description {\n  margin-top: 4px;\n  color: var(--mantine-color-dimmed);\n  font-size: var(--mantine-font-size-xs);\n}\n",
+      "sha256": "448e9a1d1e3886e46d82349e08c0384133ac786d938989909d806801c36a4770",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.card.module.css",
+      "upstreamSha256": "448e9a1d1e3886e46d82349e08c0384133ac786d938989909d806801c36a4770",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.cardGroup.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Checkbox, Group, Stack, Text } from '@mantine/core';\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.card.module.css';\n\nconst data = [\n  {\n    name: 'mantine/core',\n    description: 'Core components library: inputs, buttons, overlays, etc.',\n  },\n  { name: 'mantine/hooks', description: 'Collection of reusable hooks for React applications.' },\n  { name: 'mantine/notifications', description: 'Notifications system' },\n];\n\nfunction Demo() {\n  const [value, setValue] = useState<string[]>([]);\n\n  const cards = data.map((item) => (\n    <Checkbox.Card className={classes.root} value={item.name} key={item.name}>\n      <Group wrap=\"nowrap\" align=\"flex-start\">\n        <Checkbox.Indicator />\n        <div>\n          <Text className={classes.label}>{item.name}</Text>\n          <Text className={classes.description}>{item.description}</Text>\n        </div>\n      </Group>\n    </Checkbox.Card>\n  ));\n\n  return (\n    <>\n      <Checkbox.Group\n        value={value}\n        onChange={setValue}\n        label=\"Pick packages to install\"\n        description=\"Choose all packages that you will need in your application\"\n      >\n        <Stack pt=\"md\" gap=\"xs\">\n          {cards}\n        </Stack>\n      </Checkbox.Group>\n\n      <Text fz=\"xs\" mt=\"md\">\n        CurrentValue: {value.join(', ') || '–'}\n      </Text>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "8120d5d4142d10ae23842f917f716975a06c4586544599724f3b8cbb2f936233",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.cardGroup.tsx",
+      "upstreamSha256": "ddb99ca75ae8419104c9ca9d20e186d6a859ff59b01e9ad722e4a0a2809b9e89",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.configurator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, CheckboxProps } from '@mantine/core';\nconst RendynExampleComponent = (props: CheckboxProps) => <Checkbox {...props} defaultChecked />;\nexport function RendynExample() { return <RendynExampleComponent labelPosition={\"right\"} label={\"I agree to sell my privacy\"} description={\"\"} error={\"\"} color={\"blue\"} variant={\"filled\"} radius={\"sm\"} size={\"sm\"} disabled={false} indeterminate={false} />; }\n",
+      "sha256": "ee03206fb8d3482d8be31da61c158830aa4ce2dc25198c3caf22221bb13df08b",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.configurator.tsx",
+      "upstreamSha256": "7dc3c5417268b14fafda586609db063d3242b9a51c00c1ab78b70df9d6b1e720",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.customSize.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, createTheme, MantineThemeProvider } from '@mantine/core';\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.customSize.module.css';\n\nconst theme = createTheme({\n  components: {\n    Checkbox: Checkbox.extend({ classNames: classes }),\n  },\n});\n\nfunction Demo() {\n  return (\n    <MantineThemeProvider theme={theme}>\n      <Checkbox size=\"xxs\" label=\"Extra small checkbox\" />\n      <Checkbox size=\"xxl\" label=\"Extra large checkbox\" mt=\"md\" />\n    </MantineThemeProvider>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "09a9ef7e59cf19fc5665367f8806b0deb08ea185e5bfc5fae3c691b3e508765d",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.customSize.tsx",
+      "upstreamSha256": "6fa60e9c62e1594e1a29175976f2cccc0de391c75532ce7d92f1d0102b12458c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.customSize.module.css",
+      "type": "style",
+      "content": ".root {\n  --checkbox-size-xxl: 42px;\n  --checkbox-size-xxs: 14px;\n\n  &[data-size='xxl'] {\n    .label {\n      font-size: 22px;\n      line-height: 40px;\n    }\n  }\n\n  &[data-size='xxs'] {\n    .label {\n      font-size: 10px;\n      line-height: 14px;\n    }\n  }\n}\n",
+      "sha256": "b04255eab5d4ff559ea289393b29ec751900399d0df9160e6921769269f92660",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.customSize.module.css",
+      "upstreamSha256": "b04255eab5d4ff559ea289393b29ec751900399d0df9160e6921769269f92660",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.customize.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Checkbox } from '@mantine/core';\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.customize.module.css';\n\nfunction Demo() {\n  const [checked, setChecked] = useState(false);\n\n  return (\n    <Checkbox\n      classNames={classes}\n      label=\"Checkbox button\"\n      checked={checked}\n      onChange={(event) => setChecked(event.currentTarget.checked)}\n      wrapperProps={{\n        onClick: () => setChecked((c) => !c),\n      }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "f5d4e7df2b41371d0f6f9d5a969f6361dbd812e96dab05f5d5e40d7f1b4a768f",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.customize.tsx",
+      "upstreamSha256": "fc6bf71369c1cd4c057b7a6770a98f11c47dfb2a61a602d18d2f81360c82e8cf",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.customize.module.css",
+      "type": "style",
+      "content": ".root {\n  border: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));\n  padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);\n  border-radius: var(--mantine-radius-md);\n  font-weight: 600;\n  transition:\n    color 100ms ease,\n    background-color 100ms ease,\n    border-color 100ms ease;\n  cursor: pointer;\n\n  &[data-checked] {\n    background-color: var(--mantine-color-blue-filled);\n    border-color: var(--mantine-color-blue-filled);\n    color: var(--mantine-color-white);\n  }\n\n  & * {\n    pointer-events: none;\n    user-select: none;\n  }\n}\n",
+      "sha256": "96fa5c6c7f29d937b1fb6e9490a165204a9e4b6115e64022d47da8ebdb2509d4",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.customize.module.css",
+      "upstreamSha256": "96fa5c6c7f29d937b1fb6e9490a165204a9e4b6115e64022d47da8ebdb2509d4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.error.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, Stack } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Stack>\n      <Checkbox label=\"With boolean error\" error />\n      <Checkbox label=\"With error message\" error=\"Must be checked\" />\n      <Checkbox label=\"With error message\" error=\"No error styles\" withErrorStyles={false} />\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "0a9553dd9cf686d98d9abe4b2864bbb80308ea8f84a4272c09e0325aeea9aa77",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.error.tsx",
+      "upstreamSha256": "a04a4aa71f95d56e31b45556567b6054a60f274fd0334c7b4d5942f0e9d1eb23",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.groupConfigurator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, CheckboxGroupProps, Group } from '@mantine/core';\n\nfunction Wrapper(props: Partial<CheckboxGroupProps>) {\n  return (\n    <Checkbox.Group defaultValue={['react']} {...props}>\n      <Group mt=\"xs\">\n        <Checkbox value=\"react\" label=\"React\" />\n        <Checkbox value=\"svelte\" label=\"Svelte\" />\n        <Checkbox value=\"ng\" label=\"Angular\" />\n        <Checkbox value=\"vue\" label=\"Vue\" />\n      </Group>\n    </Checkbox.Group>\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent label={\"Select your favorite frameworks/libraries\"} description={\"This is anonymous\"} error={\"\"} withAsterisk={true} />; }\n",
+      "sha256": "e2a7da4b9fc27eb4f6815adc7b66856c7ca52f7308f535091e2b02ad9030347a",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.groupConfigurator.tsx",
+      "upstreamSha256": "0b178bfa46204d1a087a9ecaccb7252b5a3fb71eb3cc43b788b0d538a8dbf120",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.groupWithUseForm.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Checkbox, Group } from '@mantine/core';\n\nimport { hasLength, useForm } from '@mantine/form';\n\ninterface FormValues {\n  frameworks: string[];\n}\n\nfunction Demo() {\n  const form = useForm<FormValues>({\n    mode: 'uncontrolled',\n    initialValues: { frameworks: [] },\n    validate: {\n      frameworks: hasLength({ min: 1 }, 'Select at least one framework'),\n    },\n  });\n\n  return (\n    <form onSubmit={form.onSubmit((values) => console.log(values))}>\n      <Checkbox.Group\n        {...form.getInputProps('frameworks')}\n        key={form.key('frameworks')}\n        label=\"Select your favorite frameworks/libraries\"\n        withAsterisk\n      >\n        <Group my={5}>\n          <Checkbox value=\"react\" label=\"React\" />\n          <Checkbox value=\"svelte\" label=\"Svelte\" />\n          <Checkbox value=\"ng\" label=\"Angular\" />\n          <Checkbox value=\"vue\" label=\"Vue\" />\n        </Group>\n      </Checkbox.Group>\n\n      <Button type=\"submit\" mt=\"md\">\n        Submit\n      </Button>\n    </form>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "6901f2a8beb9b1f0a8df062b7f5d2c140da2bbe94466a814a303d13371f88283",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.groupWithUseForm.tsx",
+      "upstreamSha256": "dfab3286ee8af626f282d044e10e6ec3224dddb1f404560fdf87e41f159a12e5",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.icon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { BiohazardIcon, RadioactiveIcon } from '@phosphor-icons/react';\n\nimport { Checkbox, CheckboxIconComponent } from '@mantine/core';\n\nconst CheckboxIcon: CheckboxIconComponent = ({ indeterminate, ...others }) =>\n  indeterminate ? <RadioactiveIcon {...others} /> : <BiohazardIcon {...others} />;\n\nfunction Demo() {\n  return (\n    <>\n      <Checkbox icon={CheckboxIcon} label=\"Custom icon\" defaultChecked />\n      <Checkbox icon={CheckboxIcon} label=\"Custom icon: indeterminate\" indeterminate mt=\"sm\" />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "bdc98923cc268a7f79a10e977d943268eea19e2320d0ac20bc9069c5fb629ee1",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.icon.tsx",
+      "upstreamSha256": "5afa0b01455a37254c507587f120fb9259d729cda0714cc2de9ab3d5d061eebe",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.iconColor.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Checkbox\n      defaultChecked\n      color=\"lime.4\"\n      iconColor=\"dark.8\"\n      size=\"md\"\n      label=\"Bright lime checkbox\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "3240865d832b1ac6db007e2cd4ef69aaee2ffdf84fafccfc6896ef29632828e5",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.iconColor.tsx",
+      "upstreamSha256": "898eeb4d41632c9ec0532a961c9ef35a9bb929ad57a4b82649f20ce46c313842",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.indeterminate.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Checkbox } from '@mantine/core';\n\nimport { randomId, useListState } from '@mantine/hooks';\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst code = `\nimport { useListState, randomId } from '@mantine/hooks';\nimport { Checkbox } from '@mantine/core';\n\nconst initialValues = [\n  { label: 'Receive email notifications', checked: false, key: randomId() },\n  { label: 'Receive sms notifications', checked: false, key: randomId() },\n  { label: 'Receive push notifications', checked: false, key: randomId() },\n];\n\nexport function IndeterminateCheckbox() {\n  const [values, handlers] = useListState(initialValues);\n\n  const allChecked = values.every((value) => value.checked);\n  const indeterminate = values.some((value) => value.checked) && !allChecked;\n\n  const items = values.map((value, index) => (\n    <Checkbox\n      mt=\"xs\"\n      ml={33}\n      label={value.label}\n      key={value.key}\n      checked={value.checked}\n      onChange={(event) => handlers.setItemProp(index, 'checked', event.currentTarget.checked)}\n    />\n  ));\n\n  return (\n    <>\n      <Checkbox\n        checked={allChecked}\n        indeterminate={indeterminate}\n        label=\"Receive all notifications\"\n        onChange={() =>\n          handlers.setState((current) =>\n            current.map((value) => ({ ...value, checked: !allChecked }))\n          )\n        }\n      />\n      {items}\n    </>\n  );\n}\n`;\n\nconst initialValues = [\n  { label: 'Receive email notifications', checked: false, key: randomId() },\n  { label: 'Receive sms notifications', checked: false, key: randomId() },\n  { label: 'Receive push notifications', checked: false, key: randomId() },\n];\n\nexport function Demo() {\n  const [values, handlers] = useListState(initialValues);\n  const allChecked = values.every((value) => value.checked);\n  const indeterminate = values.some((value) => value.checked) && !allChecked;\n\n  const items = values.map((value, index) => (\n    <Checkbox\n      mt=\"xs\"\n      ml={33}\n      label={value.label}\n      key={value.key}\n      checked={value.checked}\n      onChange={(event) => handlers.setItemProp(index, 'checked', event.currentTarget.checked)}\n    />\n  ));\n\n  return (\n    <Box maw={400} mx=\"auto\">\n      <Checkbox\n        checked={allChecked}\n        indeterminate={indeterminate}\n        label=\"Receive all notifications\"\n        onChange={() =>\n          handlers.setState((current) =>\n            current.map((value) => ({ ...value, checked: !allChecked }))\n          )\n        }\n      />\n      {items}\n    </Box>\n  );\n}\n\nexport const indeterminate: MantineDemo = {\n  type: 'code',\n  code,\n  component: Demo,\n};\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "fe3945d6d423d0b383fe3f311d468b9d9681f1a4d6ad91d6ba51295407e7c678",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.indeterminate.tsx",
+      "upstreamSha256": "2d192e2066f08363fc75f0636989301435241c32ccface896740cc72ef6cf4d1",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.indicator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, Group } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Group>\n      <Checkbox.Indicator />\n      <Checkbox.Indicator checked />\n      <Checkbox.Indicator indeterminate />\n      <Checkbox.Indicator disabled />\n      <Checkbox.Indicator disabled checked />\n      <Checkbox.Indicator disabled indeterminate />\n    </Group>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "51619714215772ab8dcb00830edc0d7b1ef39657bdd3407c8e42abd70aecaca0",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.indicator.tsx",
+      "upstreamSha256": "241cf90d9b3d8a802e692d2043e82ca00b26d52fe5d22c43f2360daee96da5d7",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.maxSelectedValues.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, Group } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Checkbox.Group defaultValue={['react']} maxSelectedValues={2}>\n      <Group>\n        <Checkbox value=\"react\" label=\"React\" />\n        <Checkbox value=\"svelte\" label=\"Svelte\" />\n        <Checkbox value=\"ng\" label=\"Angular\" />\n        <Checkbox value=\"vue\" label=\"Vue\" />\n      </Group>\n    </Checkbox.Group>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "d788dc0886b49153595d1d6a755252ccb268e3c253915bfcdf2c39f5865d7845",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.maxSelectedValues.tsx",
+      "upstreamSha256": "25e4784721aa6147003c22c646b73474a544f4775a43559c1a03754dc37f7279",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.states.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, Stack } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Stack>\n      <Checkbox checked={false} onChange={() => {}} label=\"Default checkbox\" />\n      <Checkbox checked={false} onChange={() => {}} indeterminate label=\"Indeterminate checkbox\" />\n      <Checkbox checked onChange={() => {}} label=\"Checked checkbox\" />\n      <Checkbox checked variant=\"outline\" onChange={() => {}} label=\"Outline checked checkbox\" />\n      <Checkbox\n        variant=\"outline\"\n        onChange={() => {}}\n        indeterminate\n        label=\"Outline indeterminate checkbox\"\n      />\n      <Checkbox disabled label=\"Disabled checkbox\" />\n      <Checkbox disabled checked onChange={() => {}} label=\"Disabled checked checkbox\" />\n      <Checkbox disabled indeterminate label=\"Disabled indeterminate checkbox\" />\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "20dad691bd84931469b391e2fc3aca98fd52ea46fd85d94a8d75e8e3f70a82ca",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.states.tsx",
+      "upstreamSha256": "ac01581afed344aeb06f4f58112fd689b53ea34be79add64c4b53d010c98e443",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.stylesApi.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox } from '@mantine/core';\n\nfunction Demo(props: any) {\n  return (\n    <Checkbox\n      label=\"Checkbox\"\n      description=\"Checkbox description\"\n      error=\"Checkbox error\"\n      defaultChecked\n      {...props}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "e1cd6633d0f870e877ed7cfbeb6e2ee16fdc38c89099bef2553b1985dfa9fa98",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.stylesApi.tsx",
+      "upstreamSha256": "c69c13020668a8176868089996544618d3218041b3e16e6f0e10dfd379fd1b50",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.tooltip.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Checkbox, Tooltip } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <>\n      <Tooltip label=\"Checkbox with tooltip\">\n        <Checkbox label=\"Tooltip on checkbox only\" />\n      </Tooltip>\n\n      <Tooltip label=\"Checkbox with tooltip\" refProp=\"rootRef\">\n        <Checkbox label=\"Tooltip the entire element\" mt=\"md\" />\n      </Tooltip>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "88de76637f282a4151244947f061a208c5638c862847167d2f7d50272766ff4e",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.tooltip.tsx",
+      "upstreamSha256": "d9643c86ca64bc7d079154ea731bfd2a57bdbbb206060b361d184fdaf41151ab",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.withUseForm.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Checkbox } from '@mantine/core';\n\nimport { isNotEmpty, useForm } from '@mantine/form';\n\nfunction Demo() {\n  const form = useForm({\n    mode: 'uncontrolled',\n    initialValues: { terms: false },\n    validate: {\n      terms: isNotEmpty('You must accept terms and conditions'),\n    },\n  });\n\n  return (\n    <form onSubmit={form.onSubmit((values) => console.log(values))}>\n      <Checkbox\n        label=\"I accept the terms and conditions\"\n        key={form.key('terms')}\n        {...form.getInputProps('terms', { type: 'checkbox' })}\n      />\n\n      <Button type=\"submit\" mt=\"md\">\n        Submit\n      </Button>\n    </form>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "8c7c7850b065c83f281b381abb0f1084564e2a9b60ac13fbaee963a69da29892",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.withUseForm.tsx",
+      "upstreamSha256": "72669b97231d1926b341fe18c53614cf26dc1449af72ebe2cd11fe32a45351fb",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.anchor\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "77b0c0956df5cd6f22025c6ace097073268357c0aa0edd711840a3c78442c844",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/auto-contrast.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.autoContrast\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "3f02f17ffd02bd1c63cf95618af65fa7a448f3b9b17a76f46347e86211a9145a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/card.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.card\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a0b0137afe8cdf0727c495724cc410ed4d68a88fc47be3a0a746250f8ad40e2f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/card-group.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.cardGroup\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c0f3f79219d69c78263b3546c380d5183deed0f49f7c873afb0bcf2b08084020",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/configurator.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.configurator\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "35789e772a6c0423cb91ea726bd40fd8d9ac71e22a4c4b4e1df3e65c1b58728b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/custom-size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.customSize\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "6a22e3604c7fdccf65aca64b6b093eff114ac193f6928122f1430c2260666780",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/customize.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.customize\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "decd0a435f53be58532bb53743a48171047b5fa0379a992b8e668799bd1e6a1f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/error.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.error\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "27caddbf2e1788ffcf0d2e6c5388c9a78b5e1dfbb469ac71b6fcc64860aed361",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/group-configurator.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.groupConfigurator\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "22659190c83d7ad11f70f2b3ecc1f4565927add39f75625f36fea088c704985d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/group-with-use-form.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.groupWithUseForm\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "335f8b0d4da06a59df2894b38a20dd2e39c6c7cabdbf2a8a8d48a52f2e7b6667",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.icon\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "6afffa0d5f4e1cb20d84009c04905b68973c73b65086136cb4bab0370d85c79b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/icon-color.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.iconColor\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e88ca45eca5efd160e17c2dacb572417f93aa53cdbbad4f8cb526efd05718ca1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/indeterminate.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.indeterminate\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b709c417885c3d61032d5148a20344185d530f54f9ad57bb04826ac6939be0b5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/indicator.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.indicator\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b2321529d1be3033a9e071c987a99a03219ae5d647527acc33b732da909f4173",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/max-selected-values.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.maxSelectedValues\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "11e86ebe21a0ce808f2e38743ec483720d6e2ed7170fa4b9e243d4d0dbf205c8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/states.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.states\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e322a5a05fbb228d73d8149604130819ea38bcd6b1faf1ec567426c22516036a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/styles-api.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.stylesApi\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "438d05300b30b76a1606b32f1a36240869ab512282b36b15408ac79c83246f82",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/tooltip.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.tooltip\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "9f261ba9d730bbe3765b10e48beab722233e2881070f6c346cc31e06daaa058d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/checkbox/previews/with-use-form.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.withUseForm\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "f630f98a167cc66f7639c25030f7606b3046b46d76393c28a68d03847412fddc",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/form@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @phosphor-icons/react@2.1.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.card.module.css",
+      "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.customSize.module.css",
+      "components/rendyn-libraries/mantine/upstream/src/demos/core/Checkbox/Checkbox.demo.customize.module.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/form@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @phosphor-icons/react@2.1.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "checkbox",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Checkbox",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.anchor.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.anchor.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine checkbox\n\n19 published Mantine checkbox examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Checkbox\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Checkbox/Checkbox.demo.anchor.tsx\n"
+}

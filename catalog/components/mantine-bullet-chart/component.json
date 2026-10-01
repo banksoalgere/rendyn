@@ -1,0 +1,204 @@
+{
+  "id": "mantine:bullet-chart",
+  "sourceId": "mantine",
+  "slug": "mantine-bullet-chart",
+  "name": "Mantine bullet chart",
+  "description": "7 published Mantine bullet chart examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/charts@9.6.3",
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "recharts@3.8.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "bullet-chart",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "bullet chart",
+      "mantine bullet chart",
+      "bullet-chart"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "7 published Mantine bullet chart examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "bullet-chart:code:file",
+    "searchText": "Mantine bullet chart\nbullet chart\n7 published Mantine bullet chart examples with complete pinned source and MIT attribution.\nmantine bullet chart\nbullet-chart\ncode\nfile\nMantine bullet chart 7 published Mantine bullet chart examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/charts/BulletChart Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/charts/BulletChart/BulletChart.demo.barColor.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-bullet-chart",
+  "manifestPath": "components/mantine-bullet-chart/component.json",
+  "integrity": "sha256:b4dffab4c46d9a7b54a0fb418ae8b1ce19181f2a6decf512e5177249b2bdc164",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/BulletChart.demo.barColor.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { BulletChart } from '@mantine/charts';\n\nimport { ranges, rangesCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/_data';\n\nfunction Demo() {\n  return (\n    <BulletChart\n      value={230000}\n      target={150000}\n      ranges={ranges}\n      barColor=\"black\"\n      targetColor=\"white\"\n      valueFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "31bf7bac5b463d2bb603050223afc704417b09a8c294d749cff94934bd8840ab",
+      "upstreamPath": "packages/@docs/demos/src/demos/charts/BulletChart/BulletChart.demo.barColor.tsx",
+      "upstreamSha256": "051f77db2aa7f9a06e64ab360caf6cf29f0cae5b38da0ce7828a9646db836c92",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/_data.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nexport const ranges = [\n  { value: 100000, color: 'red.8', label: 'Poor' },\n  { value: 200000, color: 'yellow.8', label: 'Average' },\n  { value: 300000, color: 'teal.8', label: 'Good' },\n];\n\nexport const rangesCode = `export const ranges = ${JSON.stringify(ranges, null, 2)};`;\n",
+      "sha256": "dfd212f69a3938055f5638f8eae28d8442504258946d71bb8dff7d04f79cb39c",
+      "upstreamPath": "packages/@docs/demos/src/demos/charts/BulletChart/_data.ts",
+      "upstreamSha256": "81579ced23bc67c9aaf51ec37886cf169fda68e2d98298667bd88141b4069bd6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/BulletChart.demo.barSize.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { BulletChart } from '@mantine/charts';\n\nimport { Stack } from '@mantine/core';\n\nimport { ranges, rangesCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/_data';\n\nfunction Demo() {\n  return (\n    <Stack>\n      <BulletChart\n        value={230000}\n        target={150000}\n        ranges={ranges}\n        size={20}\n        label=\"Small\"\n        valueFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}\n      />\n      <BulletChart\n        value={230000}\n        target={150000}\n        ranges={ranges}\n        size={32}\n        label=\"Default\"\n        valueFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}\n      />\n      <BulletChart\n        value={230000}\n        target={150000}\n        ranges={ranges}\n        size={48}\n        label=\"Large\"\n        valueFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}\n      />\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "627a8e1e64fa47aa12e711f53a552b8dfadef908d0c86b81f4249429b550f5bf",
+      "upstreamPath": "packages/@docs/demos/src/demos/charts/BulletChart/BulletChart.demo.barSize.tsx",
+      "upstreamSha256": "8c1d414a6e2d2fa59e692a974d0436a2204034234b3e580aeb4927f11c5e2c06",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/BulletChart.demo.label.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { BulletChart } from '@mantine/charts';\n\nimport { ranges, rangesCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/_data';\n\nfunction Demo() {\n  return (\n    <BulletChart\n      value={230000}\n      target={150000}\n      ranges={ranges}\n      label=\"Revenue\"\n      valueFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "649d0ffc6b79a6d51601534737ed94336ea0e9968d60e42991c2d4a38e041440",
+      "upstreamPath": "packages/@docs/demos/src/demos/charts/BulletChart/BulletChart.demo.label.tsx",
+      "upstreamSha256": "cc01b02e0df3f44d2cbbdc744c0497da28ba0b090fd4afc20f69bcf1b47278dc",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/BulletChart.demo.noTarget.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { BulletChart } from '@mantine/charts';\n\nimport { ranges, rangesCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/_data';\n\nfunction Demo() {\n  return (\n    <BulletChart\n      value={230000}\n      ranges={ranges}\n      valueFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "8cb39f45d90582ac6d20fce761df6a81a3b54c7aaa056b8eb1228e3bdd2c8e4b",
+      "upstreamPath": "packages/@docs/demos/src/demos/charts/BulletChart/BulletChart.demo.noTarget.tsx",
+      "upstreamSha256": "efbf61e799cbeabaae223325507fb1657ecf32ad5881a7493ff6cbd928330567",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/BulletChart.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { BulletChart } from '@mantine/charts';\n\nimport { ranges, rangesCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/_data';\n\nfunction Demo() {\n  return (\n    <BulletChart\n      value={230000}\n      target={150000}\n      ranges={ranges}\n      valueFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "161097541e83ed92f7072f9be7b9718f7fb1177579a1e219f493f007a9eec191",
+      "upstreamPath": "packages/@docs/demos/src/demos/charts/BulletChart/BulletChart.demo.usage.tsx",
+      "upstreamSha256": "8604a35b4112c881086447d7456f5787c04f615d13ce00e01851959128885c14",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/BulletChart.demo.valueFormatter.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { BulletChart } from '@mantine/charts';\n\nimport { ranges, rangesCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/_data';\n\nfunction Demo() {\n  return (\n    <BulletChart\n      value={230000}\n      target={150000}\n      ranges={ranges}\n      withTooltip\n      valueFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "5240e8ce8a7e8db383603b50dd1785c1b8f089d012f6ab01d7fa64401f03ad3b",
+      "upstreamPath": "packages/@docs/demos/src/demos/charts/BulletChart/BulletChart.demo.valueFormatter.tsx",
+      "upstreamSha256": "46f0e1c954edd2b669ee42afe4620ccd1a65465982cf59f789980af1a4d141ad",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/BulletChart.demo.vertical.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { BulletChart } from '@mantine/charts';\n\nimport { ranges, rangesCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/_data';\n\nfunction Demo() {\n  return (\n    <BulletChart\n      value={230000}\n      target={150000}\n      ranges={ranges}\n      orientation=\"vertical\"\n      valueFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}\n      h={250}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "172dbc5e78eea1ab259cf6e0f7888024760b8220c64baf43ef33b9da2ee37aa6",
+      "upstreamPath": "packages/@docs/demos/src/demos/charts/BulletChart/BulletChart.demo.vertical.tsx",
+      "upstreamSha256": "94b36f2809b51a6cd67cb4a2ecf4007238da8b02b4f30daf6622afa8f61ada67",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/bullet-chart/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/BulletChart.demo.barColor\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/charts/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "740572e04db88d5cc68bab022f565e3d41ccd63fc765b1df4fa5d79fc644394b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/bullet-chart/previews/bar-size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/BulletChart.demo.barSize\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/charts/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "0d640eb37c2e68bcd5f6db9d09fe8331f9bc354e9a259d25ba568ca7860524f3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/bullet-chart/previews/label.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/BulletChart.demo.label\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/charts/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b32f17121187d41eedfa8c5f4e838c23376a6c8a724c5f308d9f5cd5742fe00e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/bullet-chart/previews/no-target.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/BulletChart.demo.noTarget\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/charts/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "973756031cab62d6f3aa46888316d7e1c77874dd869787e48c0e189151a1efca",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/bullet-chart/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/BulletChart.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/charts/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c1986846eda3ebe71bd662cde5a035c71c016c4577b5b41c7f2d00adbb009662",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/bullet-chart/previews/value-formatter.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/BulletChart.demo.valueFormatter\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/charts/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "162f9e015d2f05ccc7cf9b149eda1af5d56c699d0d0fd2b6d62c0aa81605c7d8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/bullet-chart/previews/vertical.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/charts/BulletChart/BulletChart.demo.vertical\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/charts/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7d8f4c9155b37ea9c596a1c424ad490003c36f0cb0d1187b228f124cfb346a08",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/charts@9.6.3 @mantine/core@9.6.3 @mantine/hooks@9.6.3 recharts@3.8.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/charts@9.6.3 @mantine/core@9.6.3 @mantine/hooks@9.6.3 recharts@3.8.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "bullet-chart",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/charts/BulletChart",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/charts/BulletChart/BulletChart.demo.barColor.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/charts/BulletChart/BulletChart.demo.barColor.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine bullet chart\n\n7 published Mantine bullet chart examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/charts/BulletChart\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/charts/BulletChart/BulletChart.demo.barColor.tsx\n"
+}

@@ -1,0 +1,113 @@
+{
+  "id": "mantine:use-mouse",
+  "sourceId": "mantine",
+  "slug": "mantine-use-mouse",
+  "name": "Mantine use mouse",
+  "description": "2 published Mantine use mouse examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantinex/demo@2.0.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "use-mouse",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "use mouse",
+      "mantine use mouse",
+      "use-mouse"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "2 published Mantine use mouse examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "use-mouse:code:file",
+    "searchText": "Mantine use mouse\nuse mouse\n2 published Mantine use mouse examples with complete pinned source and MIT attribution.\nmantine use mouse\nuse-mouse\ncode\nfile\nMantine use mouse 2 published Mantine use mouse examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use mouse Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use mouse/use mouse.demo.ref.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-use-mouse",
+  "manifestPath": "components/mantine-use-mouse/component.json",
+  "integrity": "sha256:d77fa5f2dce16dc8d04206364b3e7ea910cf4880da71fd98e33e1dc391548857",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-mouse/use-mouse.demo.ref.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, Code, Group, Text } from '@mantine/core';\n\nimport { useMouse } from '@mantine/hooks';\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst code = `\nimport { Text, Code, Group, Box } from '@mantine/core';\nimport { useMouse } from '@mantine/hooks';\n\nfunction Demo() {\n  const { ref, x, y } = useMouse();\n\n  return (\n    <>\n      <Group justify=\"center\">\n        <Box ref={ref} w={300} h={180} bg=\"var(--mantine-color-blue-light)\" />\n      </Group>\n      <Text ta=\"center\">\n        Mouse coordinates <Code>{\\`{ x: \\${x}, y: \\${y} }\\`}</Code>\n      </Text>\n    </>\n  );\n}\n`;\n\nfunction Demo() {\n  const { ref, x, y } = useMouse();\n\n  return (\n    <>\n      <Group justify=\"center\">\n        <Box ref={ref} w={300} h={180} bg=\"var(--mantine-color-blue-light)\" />\n      </Group>\n      <Text ta=\"center\" mt=\"sm\">\n        Mouse coordinates <Code>{`{ x: ${x}, y: ${y} }`}</Code>\n      </Text>\n    </>\n  );\n}\n\nexport const ref: MantineDemo = {\n  type: 'code',\n  code,\n  component: Demo,\n};\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "24a7cd3f65b5534036816e67be1c54ee4f255a632e78e4ebdffbe92f89ce29b1",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-mouse/use-mouse.demo.ref.tsx",
+      "upstreamSha256": "974812612c8900361bd0eed4fd4e214285bf2f27a71aeecd01d4dc262dd5e037",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-mouse/use-mouse.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Code, Text } from '@mantine/core';\n\nimport { useMousePosition } from '@mantine/hooks';\n\nfunction Demo() {\n  const { x, y } = useMousePosition();\n\n  return (\n    <Text ta=\"center\">\n      Mouse coordinates <Code>{`{ x: ${x}, y: ${y} }`}</Code>\n    </Text>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b92d0c26afe945eecb00c36817f7543fd73dd62d32ed017f94544387c03c7399",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-mouse/use-mouse.demo.usage.tsx",
+      "upstreamSha256": "c7f810ee4d26939cc8230df00706e1adc0a3c45ccf2e33bc821c6e052eeb1f31",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-mouse/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-mouse/use-mouse.demo.ref\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4dd4ca888233b68470438dc8692429d4779142cb61c09a424e06beb2f49c3098",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-mouse/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-mouse/use-mouse.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c9530bdadd8ef1575a65d3f06226d0fd4c6c099341954ef5f0e74e9803427cd3",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "use-mouse",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-mouse",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-mouse/use-mouse.demo.ref.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-mouse/use-mouse.demo.ref.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine use mouse\n\n2 published Mantine use mouse examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-mouse\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-mouse/use-mouse.demo.ref.tsx\n"
+}

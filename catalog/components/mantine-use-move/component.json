@@ -1,0 +1,144 @@
+{
+  "id": "mantine:use-move",
+  "sourceId": "mantine",
+  "slug": "mantine-use-move",
+  "name": "Mantine use move",
+  "description": "4 published Mantine use move examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "use-move",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "use move",
+      "mantine use move",
+      "use-move"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "4 published Mantine use move examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "use-move:code:file",
+    "searchText": "Mantine use move\nuse move\n4 published Mantine use move examples with complete pinned source and MIT attribution.\nmantine use move\nuse-move\ncode\nfile\nMantine use move 4 published Mantine use move examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use move Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use move/use move.demo.color.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-use-move",
+  "manifestPath": "components/mantine-use-move/component.json",
+  "integrity": "sha256:96902b59df214754c9f2e3bf8b512f1a7d33f63b3913a8757aed92e361054c0d",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-move/use-move.demo.color.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { useMove } from '@mantine/hooks';\n\nfunction Demo() {\n  const [value, setValue] = useState({ x: 0.2, y: 0.6 });\n  const { ref } = useMove(setValue);\n\n  return (\n    <div>\n      <div\n        ref={ref}\n        style={{\n          width: 300,\n          height: 150,\n          backgroundColor: 'red',\n          position: 'relative',\n        }}\n      >\n        {/* Gradient overlays */}\n        <div\n          style={{\n            position: 'absolute',\n            top: 0,\n            left: 0,\n            right: 0,\n            bottom: 0,\n            backgroundImage: 'linear-gradient(90deg, #fff, transparent)',\n          }}\n        />\n        <div\n          style={{\n            position: 'absolute',\n            top: 0,\n            left: 0,\n            right: 0,\n            bottom: 0,\n            backgroundImage: 'linear-gradient(0deg, #000, transparent)',\n          }}\n        />\n\n        {/* Thumb */}\n        <div\n          style={{\n            position: 'absolute',\n            left: `calc(${value.x * 100}% - 8px)`,\n            top: `calc(${value.y * 100}% - 8px)`,\n            width: 16,\n            height: 16,\n            border: '2px solid #fff',\n            borderRadius: 16,\n          }}\n        />\n      </div>\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "2fee1fb9505e6c8839f54655558ac502797e7d03ffa0b7e187f8317fb7f1d542",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-move/use-move.demo.color.tsx",
+      "upstreamSha256": "4c03cc38201b6a93a8a869b1c350ee24a51576ce439b11e9473fe33597346e4d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-move/use-move.demo.horizontal.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Group, Text } from '@mantine/core';\n\nimport { useMove } from '@mantine/hooks';\n\nfunction Demo() {\n  const [value, setValue] = useState(0.2);\n  const { ref } = useMove(({ x }) => setValue(x));\n\n  return (\n    <>\n      <Group justify=\"center\">\n        <div\n          ref={ref}\n          style={{\n            width: 400,\n            height: 16,\n            backgroundColor: 'var(--mantine-color-blue-light)',\n            position: 'relative',\n          }}\n        >\n          {/* Filled bar */}\n          <div\n            style={{\n              width: `${value * 100}%`,\n              height: 16,\n              backgroundColor: 'var(--mantine-color-blue-filled)',\n              opacity: 0.7,\n            }}\n          />\n\n          {/* Thumb */}\n          <div\n            style={{\n              position: 'absolute',\n              left: `calc(${value * 100}% - 8px)`,\n              top: 0,\n              width: 16,\n              height: 16,\n              backgroundColor: 'var(--mantine-color-blue-7)',\n            }}\n          />\n        </div>\n      </Group>\n\n      <Text ta=\"center\" mt=\"sm\">\n        Value: {Math.round(value * 100)}\n      </Text>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b9ad19307ba402c50343ac28c22fa3cbc7f37216778b9adb92b53e39e08e14bc",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-move/use-move.demo.horizontal.tsx",
+      "upstreamSha256": "0f2060241e98479abc69411cc55ea644a6de6a03731736d3433d56a4da93e939",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-move/use-move.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Code, Group, Text } from '@mantine/core';\n\nimport { useMove } from '@mantine/hooks';\n\nfunction Demo() {\n  const [value, setValue] = useState({ x: 0.2, y: 0.6 });\n  const { ref, active } = useMove(setValue);\n\n  return (\n    <>\n      <Group justify=\"center\">\n        <div\n          ref={ref}\n          style={{\n            width: 400,\n            height: 120,\n            backgroundColor: 'var(--mantine-color-blue-light)',\n            position: 'relative',\n          }}\n        >\n          <div\n            style={{\n              position: 'absolute',\n              left: `calc(${value.x * 100}% - 8px)`,\n              top: `calc(${value.y * 100}% - 8px)`,\n              width: 16,\n              height: 16,\n              backgroundColor: active\n                ? 'var(--mantine-color-teal-7)'\n                : 'var(--mantine-color-blue-7)',\n            }}\n          />\n        </div>\n      </Group>\n      <Text ta=\"center\" mt=\"sm\">\n        Values <Code>{`{ x: ${Math.round(value.x * 100)}, y: ${Math.round(value.y * 100)} }`}</Code>\n      </Text>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "6c76eaad27e28e3b8b95217de65e91b43bcc9cdfca454a4986a4ed0b3b2791b7",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-move/use-move.demo.usage.tsx",
+      "upstreamSha256": "f90c1c7b9656627371f3893b4654a2353fceb633ec413d5a9e74db7e24999175",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-move/use-move.demo.vertical.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Group, Text } from '@mantine/core';\n\nimport { useMove } from '@mantine/hooks';\n\nfunction Demo() {\n  const [value, setValue] = useState(0.2);\n  const { ref } = useMove(({ y }) => setValue(1 - y));\n\n  return (\n    <>\n      <Group justify=\"center\">\n        <div\n          ref={ref}\n          style={{\n            width: 16,\n            height: 120,\n            backgroundColor: 'var(--mantine-color-blue-light)',\n            position: 'relative',\n          }}\n        >\n          {/* Filled bar */}\n          <div\n            style={{\n              position: 'absolute',\n              bottom: 0,\n              height: `${value * 100}%`,\n              width: 16,\n              backgroundColor: 'var(--mantine-color-blue-filled)',\n              opacity: 0.7,\n            }}\n          />\n\n          {/* Thumb */}\n          <div\n            style={{\n              position: 'absolute',\n              bottom: `calc(${value * 100}% - 8px)`,\n              left: 0,\n              width: 16,\n              height: 16,\n              backgroundColor: 'var(--mantine-color-blue-7)',\n            }}\n          />\n        </div>\n      </Group>\n\n      <Text ta=\"center\" mt=\"sm\">\n        Value: {Math.round(value * 100)}\n      </Text>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "aa661cc12a81414c5ba726e95b235d62f82317ca83a9e7ccfe01064059448b9c",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-move/use-move.demo.vertical.tsx",
+      "upstreamSha256": "fb2b25cdcc1eab8492e003169f16afb0df9c2117e98466deae333a2d92be6dc0",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-move/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-move/use-move.demo.color\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a7ad8c6bbe6deed4be2a9a1fecb3f9990d75d343d97370b7b5eb2792c7396c0c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-move/previews/horizontal.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-move/use-move.demo.horizontal\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "fba104750eb376146ac27fd9e2262e3d264b53d58a9b28c1789f8ce0c4a7e6e2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-move/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-move/use-move.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "587bcaa8329948b89ccef68c59ea439533fa05f194ad1f71c2928cf102c44317",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-move/previews/vertical.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-move/use-move.demo.vertical\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "cf7035b4d641d023ab9ddea109f3e5138691fa23d3e9725b92e206ff2d225f7c",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "use-move",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-move",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-move/use-move.demo.color.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-move/use-move.demo.color.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine use move\n\n4 published Mantine use move examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-move\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-move/use-move.demo.color.tsx\n"
+}

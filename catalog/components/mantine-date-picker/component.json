@@ -1,0 +1,642 @@
+{
+  "id": "mantine:date-picker",
+  "sourceId": "mantine",
+  "slug": "mantine-date-picker",
+  "name": "Mantine date picker",
+  "description": "28 published Mantine date picker examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/dates@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantinex/demo@2.0.0",
+    "@phosphor-icons/react@2.1.10",
+    "dayjs@1.11.23"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "picker",
+    "tags": [
+      "code",
+      "file",
+      "picker"
+    ],
+    "aliases": [
+      "date picker",
+      "mantine date picker",
+      "picker"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "28 published Mantine date picker examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "picker:code:file",
+    "searchText": "Mantine date picker\ndate picker\n28 published Mantine date picker examples with complete pinned source and MIT attribution.\nmantine date picker\npicker\ncode\nfile\nMantine date picker 28 published Mantine date picker examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/DatePicker Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.controlProps.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-date-picker",
+  "manifestPath": "components/mantine-date-picker/component.json",
+  "integrity": "sha256:6ff1dab86783b3c32248cad87ccda577ff491cd07fb582b1418fc30b2105077b",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.controlProps.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { DatePicker, DatePickerProps } from '@mantine/dates';\n\nconst getDayProps: DatePickerProps['getDayProps'] = (date) => {\n  const d = dayjs(date);\n\n  if (d.day() === 5 && d.date() === 13) {\n    return {\n      style: {\n        backgroundColor: 'var(--mantine-color-red-filled)',\n        color: 'var(--mantine-color-white)',\n      },\n    };\n  }\n\n  return {};\n};\n\nconst getYearControlProps: DatePickerProps['getYearControlProps'] = (date) => {\n  const d = dayjs(date);\n\n  if (d.year() === new Date().getFullYear()) {\n    return {\n      style: {\n        color: 'var(--mantine-color-blue-filled)',\n        fontWeight: 700,\n      },\n    };\n  }\n\n  if (d.year() === new Date().getFullYear() + 1) {\n    return { disabled: true };\n  }\n\n  return {};\n};\n\nconst getMonthControlProps: DatePickerProps['getMonthControlProps'] = (date) => {\n  const d = dayjs(date);\n  if (d.month() === 1) {\n    return {\n      style: {\n        color: 'var(--mantine-color-blue-filled)',\n        fontWeight: 700,\n      },\n    };\n  }\n\n  if (d.month() === 5) {\n    return { disabled: true };\n  }\n\n  return {};\n};\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n  return (\n    <DatePicker\n      value={value}\n      onChange={setValue}\n      defaultDate=\"2021-08-01\"\n      getDayProps={getDayProps}\n      getYearControlProps={getYearControlProps}\n      getMonthControlProps={getMonthControlProps}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "a8db4d885c49d537929cbd333dcfa01a5936f443f3adc250c898b5799aa198b5",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.controlProps.tsx",
+      "upstreamSha256": "8cf4faa4a5bdc006b4231271f1d583ab6799212e992a27d9b2ed481d20cf13cd",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.controlledDate.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, setValue] = useState<[string | null, string | null]>([null, null]);\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n\n  const handleChange = (val: [string | null, string | null]) => {\n    if (val[0] !== null && val[1] === null) {\n      setDate((current) => dayjs(current).add(1, 'month').format('YYYY-MM-DD'));\n    }\n\n    setValue(val);\n  };\n\n  return (\n    <DatePicker\n      date={date}\n      onDateChange={setDate}\n      type=\"range\"\n      value={value}\n      onChange={handleChange}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "dbd5cf1fc591b74b6d71e9f2e41bd1db956679428e313b2c072eb6a35c44ad8c",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.controlledDate.tsx",
+      "upstreamSha256": "5433e503de2ef1eaf5ca69523e94ed095a9ac0b7fe20195fbb12c67986ecd92e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.defaultDate.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n  return <DatePicker defaultDate=\"2015-02-01\" value={value} onChange={setValue} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "6ec0fa14434783932e4e6bda3e65832ee9b30cc2e563f8127df23fa11ea9376f",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.defaultDate.tsx",
+      "upstreamSha256": "fcd4b76c40a9850c313bbaa8db3f802c387740e915fb217f0b96a771c9c42fb0",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.defaultLevel.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Group } from '@mantine/core';\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  return (\n    <Group justify=\"center\">\n      <DatePicker defaultLevel=\"decade\" />\n      <DatePicker defaultLevel=\"year\" />\n    </Group>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "8bf722da618464f61c5351a2968b899ac450cd125bd2fa43db83ec2cbd0e9c83",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.defaultLevel.tsx",
+      "upstreamSha256": "a994ab3cce6cd961f62b55e425e7dc2ffda4b28f979a38a465cfcb4d0ee99193",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/index.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { DatePicker } from '@mantine/dates';\nimport { getSharedPickerDemos } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/index';\nexport const { usage, multiple, deselect, range, singleRange, numberOfColumns, sizeConfigurator } =\n  getSharedPickerDemos(DatePicker);\n// Rendyn variant: usage\nexport function RendynExample() {\n  const Render = usage.component;\n  const props = Object.fromEntries((usage.controls ?? []).filter(control => /^[A-Za-z][\\w-]*$/.test(control.prop)).map(control => [control.prop, control.initialValue]));\n  return <Render {...props} />;\n}\n// Rendyn variant: multiple\nexport function RendynExample2() {\n  const Render = multiple.component;\n  const props = Object.fromEntries((multiple.controls ?? []).filter(control => /^[A-Za-z][\\w-]*$/.test(control.prop)).map(control => [control.prop, control.initialValue]));\n  return <Render {...props} />;\n}\n// Rendyn variant: deselect\nexport function RendynExample3() {\n  const Render = deselect.component;\n  const props = Object.fromEntries((deselect.controls ?? []).filter(control => /^[A-Za-z][\\w-]*$/.test(control.prop)).map(control => [control.prop, control.initialValue]));\n  return <Render {...props} />;\n}\n// Rendyn variant: range\nexport function RendynExample4() {\n  const Render = range.component;\n  const props = Object.fromEntries((range.controls ?? []).filter(control => /^[A-Za-z][\\w-]*$/.test(control.prop)).map(control => [control.prop, control.initialValue]));\n  return <Render {...props} />;\n}\n// Rendyn variant: singleRange\nexport function RendynExample5() {\n  const Render = singleRange.component;\n  const props = Object.fromEntries((singleRange.controls ?? []).filter(control => /^[A-Za-z][\\w-]*$/.test(control.prop)).map(control => [control.prop, control.initialValue]));\n  return <Render {...props} />;\n}\n// Rendyn variant: numberOfColumns\nexport function RendynExample6() {\n  const Render = numberOfColumns.component;\n  const props = Object.fromEntries((numberOfColumns.controls ?? []).filter(control => /^[A-Za-z][\\w-]*$/.test(control.prop)).map(control => [control.prop, control.initialValue]));\n  return <Render {...props} />;\n}\n// Rendyn variant: sizeConfigurator\nexport function RendynExample7() {\n  const Render = sizeConfigurator.component;\n  const props = Object.fromEntries((sizeConfigurator.controls ?? []).filter(control => /^[A-Za-z][\\w-]*$/.test(control.prop)).map(control => [control.prop, control.initialValue]));\n  return <Render {...props} />;\n}",
+      "sha256": "92b3c7ecd37ed7bdde782c814234db0b4e1b9982bcfffc0d7bac3e0cc48a88b3",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/index.ts",
+      "upstreamSha256": "d74de133004364bf99d2af6bb4c6790b637271ed6a5f0fcf284cf75aa2a2ef36",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/index.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nexport { getSharedPickerDemos } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/get-shared-picker-demos';\nexport { getSharedPickerInputDemos } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/get-shared-picker-input-demos';\n",
+      "sha256": "d8ca67420a90cfffec99df274df2c3298a020d373e50512cde9836a4d15ead40",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/index.ts",
+      "upstreamSha256": "b279a80b944eb7c1571b688398a02401f7572ded251378461567e245d564ee66",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/get-shared-picker-demos.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { getPickerDeselectDemo } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-deselect.demo';\nimport { getPickerMultipleDemo } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-multiple.demo';\nimport { getPickerNumberOfColumnsDemo } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-numberOfColumns.demo';\nimport { getPickerRangeDemo } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-range.demo';\nimport { getPickerSingleRangeDemo } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-singleRange.demo';\nimport { getPickerSizeConfiguratorDemo } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-sizeConfigurator.demo';\nimport { getPickerUsageDemo } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-usage.demo';\n\nexport function getSharedPickerDemos(component: React.FC<any>) {\n  return {\n    usage: getPickerUsageDemo(component),\n    range: getPickerRangeDemo(component),\n    multiple: getPickerMultipleDemo(component),\n    deselect: getPickerDeselectDemo(component),\n    singleRange: getPickerSingleRangeDemo(component),\n    numberOfColumns: getPickerNumberOfColumnsDemo(component),\n    sizeConfigurator: getPickerSizeConfiguratorDemo(component),\n  };\n}\n",
+      "sha256": "719f090abfefe3ed9ef0180cdbceb57baa15fef73b3a5a9febb50bf253de49e2",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/get-shared-picker-demos.ts",
+      "upstreamSha256": "34f88720fa0a1251413e3ab69d023c7d56b4fbe994f2375f1522e0c4420bcbc8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-deselect.demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst getCode = (name: string) => `\nimport { useState } from 'react';\nimport { ${name} } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n  return <${name} allowDeselect value={value} onChange={setValue} />;\n}\n`;\n\nfunction getDemo(Component: React.FC<any>) {\n  return () => {\n    const [value, setValue] = useState<string | null>(null);\n    return <Component allowDeselect value={value} onChange={setValue} />;\n  };\n}\n\nexport function getPickerDeselectDemo(Component: React.FC<any>): MantineDemo {\n  return {\n    type: 'code',\n    centered: true,\n    code: getCode(Component.displayName!.replace('@mantine/dates/', '')),\n    component: getDemo(Component),\n  };\n}\n",
+      "sha256": "9dd4da95f20ccfa2088a486b739f8709d6bb9937c96c4a405503edcb5950bf8a",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/picker-deselect.demo.tsx",
+      "upstreamSha256": "5402812013fc7d1073a7f23389bf5f59fc93ff87a16b44333c531e72d318dc37",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-multiple.demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst getCode = (name: string) => `\nimport { useState } from 'react';\nimport { ${name} } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, setValue] = useState<string[]>([]);\n  return <${name} type=\"multiple\" value={value} onChange={setValue} />;\n}\n`;\n\nfunction getDemo(Component: React.FC<any>) {\n  return () => {\n    const [value, setValue] = useState<string[]>([]);\n    return <Component type=\"multiple\" value={value} onChange={setValue} />;\n  };\n}\n\nexport function getPickerMultipleDemo(Component: React.FC<any>): MantineDemo {\n  return {\n    type: 'code',\n    centered: true,\n    code: getCode(Component.displayName!.replace('@mantine/dates/', '')),\n    component: getDemo(Component),\n  };\n}\n",
+      "sha256": "f8c3ef8618b8abb5ee725619106a7c3815ffea44e8042b5eb62056bba3ba731e",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/picker-multiple.demo.tsx",
+      "upstreamSha256": "678914786efeb5a1ff6a44de06456752d04fba1499cdfaa4528807b22c398e72",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-numberOfColumns.demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\nimport { Text } from '@mantine/core';\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst getCode = (name: string) => `\nimport { useState } from 'react';\nimport { ${name} } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, setValue] = useState<[string | null, string | null]>([null, null]);\n  return (\n    <${name} type=\"range\" numberOfColumns={2} value={value} onChange={setValue} />\n  );\n}\n`;\n\nfunction getDemo(Component: React.FC<any>) {\n  return () => {\n    const [value, setValue] = useState<[string | null, string | null]>([null, null]);\n    return (\n      <>\n        <Component\n          type=\"range\"\n          numberOfColumns={2}\n          value={value}\n          onChange={setValue}\n          visibleFrom=\"sm\"\n        />\n        <Text ta=\"center\" hiddenFrom=\"sm\">\n          Demo is not available on small screens. Make your screen larger to see the demo.\n        </Text>\n      </>\n    );\n  };\n}\n\nexport function getPickerNumberOfColumnsDemo(Component: React.FC<any>): MantineDemo {\n  return {\n    type: 'code',\n    centered: true,\n    code: getCode(Component.displayName!.replace('@mantine/dates/', '')),\n    component: getDemo(Component),\n  };\n}\n",
+      "sha256": "6134bd152082ee3d0bc17a56833a22b2a544ee4ecede6c8d0798bb2fec94edea",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/picker-numberOfColumns.demo.tsx",
+      "upstreamSha256": "fdfe92fbaa3e40a43aa1d90ba7bd72d341f1f6d2705339603916333e4ba9a830",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-range.demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst getCode = (name: string) => `\nimport { useState } from 'react';\nimport { ${name} } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, setValue] = useState<[string | null, string | null]>([null, null]);\n  return <${name} type=\"range\" value={value} onChange={setValue} />;\n}\n`;\n\nfunction getDemo(Component: React.FC<any>) {\n  return () => {\n    const [value, setValue] = useState<[string | null, string | null]>([null, null]);\n    return <Component type=\"range\" value={value} onChange={setValue} />;\n  };\n}\n\nexport function getPickerRangeDemo(Component: React.FC<any>): MantineDemo {\n  return {\n    type: 'code',\n    centered: true,\n    code: getCode(Component.displayName!.replace('@mantine/dates/', '')),\n    component: getDemo(Component),\n  };\n}\n",
+      "sha256": "612e0e490a32be456230a2469d4fdeb307cadb9ebddadd45bd8bb099d438bfb0",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/picker-range.demo.tsx",
+      "upstreamSha256": "8406d94acb556655855b7c0e43b92e5a2f8f8c48bd403278a9f94aca1bbed299",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-singleRange.demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst getCode = (name: string) => `\nimport { useState } from 'react';\nimport { ${name} } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, setValue] = useState<[string | null, string | null]>([null, null]);\n  return (\n    <${name} type=\"range\" allowSingleDateInRange value={value} onChange={setValue} />\n  );\n}\n`;\n\nfunction getDemo(Component: React.FC<any>) {\n  return () => {\n    const [value, setValue] = useState<[string | null, string | null]>([null, null]);\n    return <Component type=\"range\" allowSingleDateInRange value={value} onChange={setValue} />;\n  };\n}\n\nexport function getPickerSingleRangeDemo(Component: React.FC<any>): MantineDemo {\n  return {\n    type: 'code',\n    centered: true,\n    code: getCode(Component.displayName!.replace('@mantine/dates/', '')),\n    component: getDemo(Component),\n  };\n}\n",
+      "sha256": "a1892851aafeb1778634711f4ab4cefb63434f00e294a6e73b44a446281fa20c",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/picker-singleRange.demo.tsx",
+      "upstreamSha256": "ae2c0f157995caead93fdc3d7d9deff20fa043e2d171d9ef16f455f9a07cd0db",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-sizeConfigurator.demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst getCodeTemplate = (component: string) =>\n  `import dayjs from 'dayjs';\nimport { ${component} } from '@mantine/dates';\n\nfunction Demo() {\n  return <${component} defaultValue={dayjs().format('YYYY-MM-DD')}{{props}} />;\n}\n`;\n\nfunction getDemo(Component: React.FC<any>) {\n  return (props: any) => <Component defaultValue={dayjs().format('YYYY-MM-DD')} {...props} />;\n}\n\nexport function getPickerSizeConfiguratorDemo(Component: React.FC<any>): MantineDemo {\n  return {\n    type: 'configurator',\n    centered: true,\n    code: getCodeTemplate(Component.displayName!.replace('@mantine/dates/', '')),\n    controls: [{ prop: 'size', type: 'size', initialValue: 'sm', libraryValue: 'sm' }],\n    component: getDemo(Component),\n  };\n}\n",
+      "sha256": "754db98111324de7196c4e76d4f59bfa95506bbc07088edf6cb0b4d1245f15d8",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/picker-sizeConfigurator.demo.tsx",
+      "upstreamSha256": "78681e49928dd6087097ba91e727561c879959cecb9e63d7921e198d1bca81fe",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-usage.demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst getCode = (name: string) => `\nimport { useState } from 'react';\nimport { ${name} } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n  return <${name} value={value} onChange={setValue} />;\n}\n`;\n\nfunction getDemo(Component: React.FC<any>) {\n  return () => {\n    const [value, setValue] = useState<string | null>(null);\n    return <Component value={value} onChange={setValue} />;\n  };\n}\n\nexport function getPickerUsageDemo(Component: React.FC<any>): MantineDemo {\n  return {\n    type: 'code',\n    centered: true,\n    code: getCode(Component.displayName!.replace('@mantine/dates/', '')),\n    component: getDemo(Component),\n  };\n}\n",
+      "sha256": "686e390426e02a3f0e0c96778eac77a457de0a487561fb1c982d063766a2050f",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/picker-usage.demo.tsx",
+      "upstreamSha256": "e1bbb4004cf795d55bd38c3a9c25d5619ea798c721ec7f3eba1a39f58595d100",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/get-shared-picker-input-demos.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { getPickerInputClearableDemo } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-input-clearable.demo';\nimport { getPickerInputConfiguratorDemo } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-input-configurator.demo';\nimport { getPickerInputIconDemo } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-input-icon.demo';\nimport { getPickerInputModalDemo } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-input-modal.demo';\nimport { getPickerInputMultipleDemo } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-input-multiple.demo';\nimport { getPickerInputRangeDemo } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-input-range.demo';\nimport { getPickerInputUsageDemo } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-input-usage.demo';\nimport { getPickerInputValueFormatterDemo } from '@/components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-input-value-formatter.demo';\n\nexport function getSharedPickerInputDemos(component: React.FC<any>) {\n  return {\n    usage: getPickerInputUsageDemo(component),\n    multiple: getPickerInputMultipleDemo(component),\n    range: getPickerInputRangeDemo(component),\n    configurator: getPickerInputConfiguratorDemo(component),\n    modal: getPickerInputModalDemo(component),\n    icon: getPickerInputIconDemo(component),\n    clearable: getPickerInputClearableDemo(component),\n    valueFormatter: getPickerInputValueFormatterDemo(component),\n  };\n}\n",
+      "sha256": "a5f3f9ddfd78a5faf2e75c653f50c3fb6a42e9613ef66af56116f35d926ba264",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/get-shared-picker-input-demos.ts",
+      "upstreamSha256": "94587be83c07595e926c049304e471a9d5d552fdb24a2c5eb0adb16ad006cad5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-input-clearable.demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst getCode = (name: string) => `\nimport dayjs from 'dayjs';\nimport { ${name} } from '@mantine/dates';\n\nfunction Demo() {\n  return (\n    <${name}\n      clearable\n      defaultValue={dayjs().format('YYYY-MM-DD')}\n      label=\"Pick date\"\n      placeholder=\"Pick date\"\n    />\n  );\n}\n`;\n\nfunction getDemo(Component: React.FC<any>) {\n  return () => (\n    <Component\n      clearable\n      defaultValue={dayjs().format('YYYY-MM-DD')}\n      label=\"Pick date\"\n      placeholder=\"Pick date\"\n    />\n  );\n}\n\nexport function getPickerInputClearableDemo(Component: React.FC<any>): MantineDemo {\n  return {\n    type: 'code',\n    centered: true,\n    maxWidth: 400,\n    code: getCode(Component.displayName!.replace('@mantine/dates/', '')),\n    component: getDemo(Component),\n  };\n}\n",
+      "sha256": "5c7963789c37614ad3674f88019fed5a71fb49afd0e14aa6b973ece3ae38f3f3",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/picker-input-clearable.demo.tsx",
+      "upstreamSha256": "357eca09046c538155c7b704cc512272a627abbad0b0017648a01e8b0a9140ef",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-input-configurator.demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst getCodeTemplate = (component: string) =>\n  `import { ${component} } from '@mantine/dates';\n\n\nfunction Demo() {\n  return (\n    <${component}\n      {{props}}\n    />\n  );\n}\n`;\n\nexport function getPickerInputConfiguratorDemo(Component: React.FC<any>): MantineDemo {\n  return {\n    type: 'configurator',\n    component: Component,\n    centered: true,\n    maxWidth: 400,\n    code: getCodeTemplate(Component.displayName!.replace('@mantine/dates/', '')),\n    controls: [\n      { prop: 'placeholder', type: 'string', initialValue: 'Pick date', libraryValue: '__' },\n      {\n        prop: 'label',\n        type: 'string',\n        initialValue: 'Pick date',\n        libraryValue: '',\n      },\n      {\n        prop: 'description',\n        type: 'string',\n        initialValue: '',\n        libraryValue: '',\n      },\n      {\n        prop: 'error',\n        type: 'string',\n        initialValue: '',\n        libraryValue: '',\n      },\n      {\n        prop: 'variant',\n        type: 'select',\n        data: [\n          { label: 'default', value: 'default' },\n          { label: 'filled', value: 'filled' },\n          { label: 'unstyled', value: 'unstyled' },\n        ],\n        initialValue: 'default',\n        libraryValue: 'default',\n      },\n      { prop: 'radius', type: 'size', initialValue: 'md', libraryValue: 'md' },\n      { prop: 'size', type: 'size', initialValue: 'sm', libraryValue: 'sm' },\n      { prop: 'disabled', type: 'boolean', initialValue: false, libraryValue: false },\n      {\n        prop: 'withAsterisk',\n        type: 'boolean',\n        initialValue: true,\n        libraryValue: false,\n      },\n    ],\n  };\n}\n",
+      "sha256": "068fcfc23b011622365ee0063bb7b67e944358b26786f0fce51f7d2570b20d9e",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/picker-input-configurator.demo.tsx",
+      "upstreamSha256": "01c9093900fee52f93b9815aa412a7c68c31d65eefb53345e0230698929d72d9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-input-icon.demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\nimport { CalendarBlankIcon } from '@phosphor-icons/react';\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst getCode = (name: string) => `\nimport { useState } from 'react';\nimport { CalendarBlankIcon } from '@phosphor-icons/react';\nimport { ${name} } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n  const icon = <CalendarBlankIcon size={18} />;\n  return (\n    <${name}\n      leftSection={<CalendarBlankIcon size={18} />}\n      leftSectionPointerEvents=\"none\"\n      label=\"Pick date\"\n      placeholder=\"Pick date\"\n      value={value}\n      onChange={setValue}\n    />\n  );\n}\n`;\n\nfunction getDemo(Component: React.FC<any>) {\n  return () => {\n    const [value, setValue] = useState<string | null>(null);\n    return (\n      <Component\n        leftSection={<CalendarBlankIcon size={18} />}\n        leftSectionPointerEvents=\"none\"\n        label=\"Pick date\"\n        placeholder=\"Pick date\"\n        value={value}\n        onChange={setValue}\n      />\n    );\n  };\n}\n\nexport function getPickerInputIconDemo(Component: React.FC<any>): MantineDemo {\n  return {\n    type: 'code',\n    centered: true,\n    maxWidth: 400,\n    code: getCode(Component.displayName!.replace('@mantine/dates/', '')),\n    component: getDemo(Component),\n  };\n}\n",
+      "sha256": "4ef37fffbaf23e34bb17f972c4568bb975946af092a19af7af31e041779e2433",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/picker-input-icon.demo.tsx",
+      "upstreamSha256": "64a36623c57390a7dcc96c09a1eb0516dd93b88fb8ae468630381399b9d3d357",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-input-modal.demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst getCode = (name: string) => `\nimport { useState } from 'react';\nimport { ${name} } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n  return (\n    <${name}\n      dropdownType=\"modal\"\n      label=\"Pick date\"\n      placeholder=\"Pick date\"\n      value={value}\n      onChange={setValue}\n    />\n  );\n}\n`;\n\nfunction getDemo(Component: React.FC<any>) {\n  return () => {\n    const [value, setValue] = useState<string | null>(null);\n    return (\n      <Component\n        dropdownType=\"modal\"\n        label=\"Pick date\"\n        placeholder=\"Pick date\"\n        value={value}\n        onChange={setValue}\n      />\n    );\n  };\n}\n\nexport function getPickerInputModalDemo(Component: React.FC<any>): MantineDemo {\n  return {\n    type: 'code',\n    centered: true,\n    maxWidth: 400,\n    code: getCode(Component.displayName!.replace('@mantine/dates/', '')),\n    component: getDemo(Component),\n  };\n}\n",
+      "sha256": "21ef489b9e46202290ae246894b0a139a08721c398c3d75fa0fe24f4a977b850",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/picker-input-modal.demo.tsx",
+      "upstreamSha256": "42e5b83498a4c37660a937891ed4dd01b784321b8b7b2064fb8726a2fe694f4b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-input-multiple.demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst getCode = (name: string) => `\nimport { useState } from 'react';\nimport { ${name} } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, setValue] = useState<string[]>([]);\n  return (\n    <${name}\n      type=\"multiple\"\n      label=\"Pick dates\"\n      placeholder=\"Pick dates\"\n      value={value}\n      onChange={setValue}\n    />\n  );\n}\n`;\n\nfunction getDemo(Component: React.FC<any>) {\n  return () => {\n    const [value, setValue] = useState<string[]>([]);\n    return (\n      <Component\n        type=\"multiple\"\n        label=\"Pick dates\"\n        placeholder=\"Pick dates\"\n        value={value}\n        onChange={setValue}\n      />\n    );\n  };\n}\n\nexport function getPickerInputMultipleDemo(Component: React.FC<any>): MantineDemo {\n  return {\n    type: 'code',\n    centered: true,\n    maxWidth: 400,\n    code: getCode(Component.displayName!.replace('@mantine/dates/', '')),\n    component: getDemo(Component),\n  };\n}\n",
+      "sha256": "920cd57608b4508fdd41593f3863584332a123d34d5ad07aed395d95e0265800",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/picker-input-multiple.demo.tsx",
+      "upstreamSha256": "7d34863a16ef0c35918fa6c97b6efe29a81e5850f80b4a3bb646bbbf70f0ecf1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-input-range.demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst getCode = (name: string) => `\nimport { useState } from 'react';\nimport { ${name} } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, setValue] = useState<[string | null, string | null]>([null, null]);\n  return (\n    <${name}\n      type=\"range\"\n      label=\"Pick dates range\"\n      placeholder=\"Pick dates range\"\n      value={value}\n      onChange={setValue}\n    />\n  );\n}\n`;\n\nfunction getDemo(Component: React.FC<any>) {\n  return () => {\n    const [value, setValue] = useState<[string | null, string | null]>([null, null]);\n    return (\n      <Component\n        type=\"range\"\n        label=\"Pick dates range\"\n        placeholder=\"Pick dates range\"\n        value={value}\n        onChange={setValue}\n      />\n    );\n  };\n}\n\nexport function getPickerInputRangeDemo(Component: React.FC<any>): MantineDemo {\n  return {\n    type: 'code',\n    centered: true,\n    maxWidth: 400,\n    code: getCode(Component.displayName!.replace('@mantine/dates/', '')),\n    component: getDemo(Component),\n  };\n}\n",
+      "sha256": "d54e523ae513d626361c14b5ff00be5e9df14473b017856ffab3c89a9c17e03c",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/picker-input-range.demo.tsx",
+      "upstreamSha256": "232acc2fffaac6aeffd213ff2e25be0fd97936eade095607155e69703a9449e6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-input-usage.demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst getCode = (name: string) => `\nimport { useState } from 'react';\nimport { ${name} } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n  return (\n    <${name}\n      label=\"Pick date\"\n      placeholder=\"Pick date\"\n      value={value}\n      onChange={setValue}\n    />\n  );\n}\n`;\n\nfunction getDemo(Component: React.FC<any>) {\n  return () => {\n    const [value, setValue] = useState<string | null>(null);\n    return (\n      <Component label=\"Pick date\" placeholder=\"Pick date\" value={value} onChange={setValue} />\n    );\n  };\n}\n\nexport function getPickerInputUsageDemo(Component: React.FC<any>): MantineDemo {\n  return {\n    type: 'code',\n    centered: true,\n    maxWidth: 400,\n    code: getCode(Component.displayName!.replace('@mantine/dates/', '')),\n    component: getDemo(Component),\n  };\n}\n",
+      "sha256": "360c731da680a17cbd8105bfe8f8bb77ab0a34912bcdbef842903b5a07051e68",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/picker-input-usage.demo.tsx",
+      "upstreamSha256": "1048908fca633a401fa4550507dbf0a3904a8ac904db1be9f99219ef81f25110",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/_shared/picker-input-value-formatter.demo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\nimport { useState } from 'react';\nimport { DateFormatter } from '@mantine/dates';\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst getCode = (name: string) => `\nimport dayjs from 'dayjs';\nimport { useState } from 'react';\nimport { ${name}, DateFormatter } from '@mantine/dates';\n\nconst formatter: DateFormatter = ({ type, date, locale, format }) => {\n  if (type === 'multiple' && Array.isArray(date)) {\n    if (date.length === 1) {\n      return dayjs(date[0]).locale(locale).format(format);\n    }\n\n    if (date.length > 1) {\n      return \\`\\${date.length} dates selected\\`;\n    }\n\n    return '';\n  }\n\n  return '';\n};\n\nfunction Demo() {\n  const [value, setValue] = useState<string[]>([]);\n\n  return (\n    <${name}\n      label=\"Pick 2 dates or more\"\n      placeholder=\"Pick 2 dates or more\"\n      value={value}\n      onChange={setValue}\n      type=\"multiple\"\n      valueFormatter={formatter}\n    />\n  );\n}\n`;\n\nconst formatter: DateFormatter = ({ type, date, locale, format }) => {\n  if (type === 'multiple' && Array.isArray(date)) {\n    if (date.length === 1) {\n      return dayjs(date[0]).locale(locale).format(format);\n    }\n\n    if (date.length > 1) {\n      return `${date.length} dates selected`;\n    }\n\n    return '';\n  }\n\n  return '';\n};\n\nfunction getDemo(Component: React.FC<any>) {\n  return () => {\n    const [value, setValue] = useState<string[]>([]);\n\n    return (\n      <Component\n        label=\"Pick 2 dates or more\"\n        placeholder=\"Pick 2 dates or more\"\n        value={value}\n        onChange={setValue}\n        type=\"multiple\"\n        valueFormatter={formatter}\n      />\n    );\n  };\n}\n\nexport function getPickerInputValueFormatterDemo(Component: React.FC<any>): MantineDemo {\n  return {\n    type: 'code',\n    centered: true,\n    maxWidth: 400,\n    code: getCode(Component.displayName!.replace('@mantine/dates/', '')),\n    component: getDemo(Component),\n  };\n}\n",
+      "sha256": "f8a8506114ad59c912840d35935485c1f4aa1ed07169917fa83732ab49c58857",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/_shared/picker-input-value-formatter.demo.tsx",
+      "upstreamSha256": "1d194497386b8b84a05915412029b162a0a3c87f3e5ebff2f2c2040832b5feab",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.excludeDate.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  return <DatePicker excludeDate={(date) => new Date(date).getDay() !== 5} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "fc88780c5c5deaeb9f701be781fc01752ef8b6b1028e608aa6916ade2206424f",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.excludeDate.tsx",
+      "upstreamSha256": "7d778a234f25dbd2baff106e9a6118cd31392b8d8ee56f09cb5fad72bf734655",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.firstDayOfWeek.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Group } from '@mantine/core';\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  return (\n    <Group justify=\"center\">\n      <DatePicker firstDayOfWeek={0} />\n      <DatePicker firstDayOfWeek={6} />\n    </Group>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "9b6af8fc87a2487026cba2b7a2f2a4738bd6f7d1955813ff0a00eb94aabcc862",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.firstDayOfWeek.tsx",
+      "upstreamSha256": "b2a449c9baca970ecbbf05404701d832e85377b80e6aba5331d586b0871cb9e3",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.fullWidth.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n  return <DatePicker fullWidth value={value} onChange={setValue} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "da9f39d00eb82d9a47bd83d2c090e9a43439559533c834b706fb5f23f3f9e1a4",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.fullWidth.tsx",
+      "upstreamSha256": "00b8c02dd50be634fe30872e70c0c00d242bbd2b132dfeb14213a713e1af3a9b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.headerControlsOrder.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  return (\n    <DatePicker\n      defaultDate=\"2022-02-01\"\n      headerControlsOrder={['level', 'previous', 'next']}\n      styles={{\n        calendarHeaderLevel: {\n          justifyContent: 'flex-start',\n          paddingInlineStart: 8,\n        },\n      }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "90f0cd0a957f850b2ebbe112605c5f702463ea3290715c46d25828f3d32c86c3",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.headerControlsOrder.tsx",
+      "upstreamSha256": "7d1b3f8a56f6b180cf4fcd487d5a2ba9613c3175f693f64636d6d2cc9e00befe",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.hideOutsideDates.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  return <DatePicker hideOutsideDates />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b9da26e4d9f4562a4a4a8d3c50fc3209010564d79caa651c26f5b94ee7d87f19",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.hideOutsideDates.tsx",
+      "upstreamSha256": "6e1884c2a47dbfc1f918f98fb8c7fc1be6afdb59736d70135f04f413b9cb757f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.hideWeekdays.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  return <DatePicker hideWeekdays />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "bdc70e2150d76112370d2639ea0201ee8ef4b14743a7107cd14f1b97a5736d42",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.hideWeekdays.tsx",
+      "upstreamSha256": "738f2e6fc2baa7ad892a0a1cae3c9c9b094f57e3826106940b0b9312aadd0267",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.labelFormat.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n  return (\n    <DatePicker\n      defaultLevel=\"decade\"\n      decadeLabelFormat=\"YY\"\n      yearLabelFormat=\"YYYY [year]\"\n      monthLabelFormat=\"MM/YY\"\n      value={value}\n      onChange={setValue}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "a00e3eddcdbf680d649740c55713ca7d3b18ae1248d0e377d2ff69c0193006ab",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.labelFormat.tsx",
+      "upstreamSha256": "e1f7c7b8567dfb8e9f8540065e7fd6dae31cdce3f8c2b29384f786ecc7f4680f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.listFormat.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  return <DatePicker monthsListFormat=\"MM\" yearsListFormat=\"YY\" />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "4dcb447ec868f0924e2f1f44fd6ac67b5baec2184c1a98acb9fcff526d617551",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.listFormat.tsx",
+      "upstreamSha256": "c807327436423d18c53a6fe8eac9d9afd19b9eb8f923e20e0e2a46b997cbd79a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.locale.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport 'dayjs/locale/ru';\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  return <DatePicker locale=\"ru\" />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "27c54287f3b55cc19e7d823a1a39cbbf539c063615fdc0ba10e3cb501b31a953",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.locale.tsx",
+      "upstreamSha256": "f8d4bcfefe9c3f1b2985741095d49449199a6b69a402e350540483e00df9e7c6",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.maxLevel.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Group } from '@mantine/core';\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  return (\n    <Group justify=\"center\">\n      <DatePicker maxLevel=\"year\" />\n      <DatePicker maxLevel=\"month\" />\n    </Group>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "5ca551f310e8e069595c2a9056576eb36cad4a779eabcf1cd7bcbb7f9e98fcfc",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.maxLevel.tsx",
+      "upstreamSha256": "83637bb49666a450b11d4ed409b4f8135a4dc895233e863ef4f5d0cdba4b4764",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.minMax.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n  return (\n    <DatePicker\n      value={value}\n      onChange={setValue}\n      defaultDate=\"2022-02-01\"\n      minDate=\"2022-02-10\"\n      maxDate=\"2022-02-25\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "71bff9a1ba28c693818681bf7e49d04166ff2f2aeda7adf78275eead59f5f025",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.minMax.tsx",
+      "upstreamSha256": "6df3179c2126f0f656088c27467d502dbf71ec7dd8d8ea1eb8f57d91e5575d35",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.nativeLevelSelect.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  return <DatePicker withNativeLevelSelect yearsSelectRange={[2020, 2035]} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "acc61e4b709f4d1aa471ff8a81a2a46f43abc753b3220c0b72ef77b8bf573a36",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.nativeLevelSelect.tsx",
+      "upstreamSha256": "b542241907615c8771885adc71c7d2068c993a63d891261a44b87a25724e76ab",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.presets.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  return (\n    <DatePicker\n      presets={[\n        { value: dayjs().subtract(1, 'day').format('YYYY-MM-DD'), label: 'Yesterday' },\n        { value: dayjs().format('YYYY-MM-DD'), label: 'Today' },\n        { value: dayjs().add(1, 'day').format('YYYY-MM-DD'), label: 'Tomorrow' },\n        { value: dayjs().add(1, 'month').format('YYYY-MM-DD'), label: 'Next month' },\n        { value: dayjs().add(1, 'year').format('YYYY-MM-DD'), label: 'Next year' },\n        { value: dayjs().subtract(1, 'month').format('YYYY-MM-DD'), label: 'Last month' },\n        { value: dayjs().subtract(1, 'year').format('YYYY-MM-DD'), label: 'Last year' },\n      ]}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "0de650f7e9dd535531615e5d9b3fff0830bbf636a55f5aea9ff5d9b8d649fa37",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.presets.tsx",
+      "upstreamSha256": "d2f53e4e58a63227b7f4d7735d2c81afea02412e6572a1ffdbf3429444638328",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.presetsRange.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  const today = dayjs();\n\n  return (\n    <DatePicker\n      type=\"range\"\n      presets={[\n        {\n          value: [today.subtract(2, 'day').format('YYYY-MM-DD'), today.format('YYYY-MM-DD')],\n          label: 'Last two days',\n        },\n        {\n          value: [today.subtract(7, 'day').format('YYYY-MM-DD'), today.format('YYYY-MM-DD')],\n          label: 'Last 7 days',\n        },\n        {\n          value: [today.startOf('month').format('YYYY-MM-DD'), today.format('YYYY-MM-DD')],\n          label: 'This month',\n        },\n        {\n          value: [\n            today.subtract(1, 'month').startOf('month').format('YYYY-MM-DD'),\n            today.subtract(1, 'month').endOf('month').format('YYYY-MM-DD'),\n          ],\n          label: 'Last month',\n        },\n        {\n          value: [\n            today.subtract(1, 'year').startOf('year').format('YYYY-MM-DD'),\n            today.subtract(1, 'year').endOf('year').format('YYYY-MM-DD'),\n          ],\n          label: 'Last year',\n        },\n      ]}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "c858c293013b7cca8712b5fd4177ecc44ae6e0078cb0f85be86f9c33f38c9dbe",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.presetsRange.tsx",
+      "upstreamSha256": "48e0152f7907fee4623d3dd694f1611fa008320f458f420abebb927158998d82",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.renderDay.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { Indicator } from '@mantine/core';\n\nimport { DatePicker, DatePickerProps } from '@mantine/dates';\n\nconst dayRenderer: DatePickerProps['renderDay'] = (date) => {\n  const day = dayjs(date).date();\n  return (\n    <Indicator size={6} color=\"red\" offset={-5} disabled={day !== 16}>\n      <div>{day}</div>\n    </Indicator>\n  );\n};\n\nfunction Demo() {\n  return <DatePicker renderDay={dayRenderer} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "35d1480cb0e6b217dda1263a84da53d83490dc502bc50a81785afba7d1478e51",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.renderDay.tsx",
+      "upstreamSha256": "a8134994af38ed49ecf3f6ebbef8eba06fc769a51db17f9a21b3cc5570a1700a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.weekendDays.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  return <DatePicker weekendDays={[1, 2]} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "fc06b0870536c8a8fb65c124269a839adbe8094561393486fc927175a3c33ed0",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.weekendDays.tsx",
+      "upstreamSha256": "359869295075e1fb456a277eebfb12a8672a9619f5948894addfa193a48fe94d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.withWeekNumbers.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { DatePicker } from '@mantine/dates';\n\nfunction Demo() {\n  return <DatePicker withWeekNumbers />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "32954d7f8e8db8a1118f7d787f81742f9cec7bc0314f501d1b39bf615af9f295",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.withWeekNumbers.tsx",
+      "upstreamSha256": "dfaaccdf40f805063c8997318d8b207df1868c1576b0689ead217726c99f076d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.controlProps\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b9d98eef6924d5f82ff7b1395d27dcfa3337b72e631e4f1b43d00646112279ab",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/controlled-date.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.controlledDate\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "47b8e5d920d1f77cd4818ba479e1374458345df536a6db227aa43ecdbc3e5d54",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/default-date.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.defaultDate\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "66f6dfe7a2a6646fed8a7d3212ded7e2af0ae8f4c64a16057e1cc99dae44a0c4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/default-level.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.defaultLevel\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a44144d50ade4c786bbe998d19323440cd6d2533651457a8d02cead9519e4f96",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/deselect.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample3 as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/index\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "6cbdd2ee353a06daa6102ce5d5a19d1f9ef49d50467529a8c0a83fb52a822ccd",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/exclude-date.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.excludeDate\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "cb07fcb22f69a2120d52c9344a6b0fd62dfe0d5fc5711989afe720fcd2c96129",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/first-day-of-week.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.firstDayOfWeek\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "0b85426ee5e069c1efea19fd2b575fdad4c3602acedc7c06ef14d30419d80b21",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/full-width.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.fullWidth\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "2fae2c1f1a1b4fdc155748442834b5568f04413bb8eb673019601fa22c1bae1a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/header-controls-order.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.headerControlsOrder\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "5dc96443c16614b5b3409604bd83c20ad15107ef7a737bfb9f33c96d6174e241",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/hide-outside-dates.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.hideOutsideDates\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "622bb86bf3a3386858019559c2b4855c92d4b0d85a1e44d12388a12b9c582a62",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/hide-weekdays.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.hideWeekdays\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "719285b01c94119520300edf8e353c14cb81bacfc1f8bd5beb47ea87b3997201",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/label-format.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.labelFormat\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "50f3a23def41536b8e8f6e08729a51a1c3f8a3d5afbacdc50ef2ed908ff51934",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/list-format.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.listFormat\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "f3d850a81580688eef23c2ff2ba480612cc89e8504c448c9b7516b356309f4cb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/locale.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.locale\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "349d76afe38fea4d6f9bb80beb1879cb37d30d0130c34251ab035f6cafc97c01",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/max-level.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.maxLevel\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "604cc82081e86bcf562470dced6909df00a3849557dff8eb5892c612e04cc586",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/min-max.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.minMax\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "eec4709ce59d637eef8773a3775ef40c12f11e66cdc42e32df92737b000b27b9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/multiple.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample2 as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/index\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d58d4d9c380718c2c9e24ee74744edcc77a22d6f52aaae589caef64d891c408d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/native-level-select.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.nativeLevelSelect\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "bb65decd4cdc3ba931c7a2b731fec5ec6ff8b845d2ecabf4f3f7672521e6f41e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/number-of-columns.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample6 as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/index\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "22c7ae448e65fafbc6f169e2555cdd4c418e06a5819ba54d3455f57772dcc818",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/presets.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.presets\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "112791194804ccc785de9218897be915c92aa0809784384dfa55b430e852a913",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/presets-range.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.presetsRange\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e6df392891c783931292561088fa7730c45cd9436ebbe9741c63aa8f27e4debe",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/range.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample4 as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/index\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4303c017e837ddd84761ac4b268e823a5f6e2117329cb2d77cbf3198c8e9988c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/render-day.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.renderDay\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "45819416f8b1d3b2379fc023bb003991ef5f23862751f4baf88fd9778785945d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/single-range.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample5 as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/index\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "584f5d634051866aa64d4e2085bd8febe4d55fe1ee079631aad40debba70d7d0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/size-configurator.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample7 as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/index\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "637dbee66f50527947dff77245490566edee4f537c44720c69d1f9860cf4c659",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/index\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "167a3e55ec4c5784e29432b7c80d9c29b58bc1cea9a2a5be6f9d2748df9f82ca",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/weekend-days.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.weekendDays\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "93ca21f3cb4b6f8d03aa8f8c79dda13a7a56d111d00fb396d2a2be46ef4775bb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/date-picker/previews/with-week-numbers.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/DatePicker/DatePicker.demo.withWeekNumbers\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "489d778bd573ab958b04b39699373569437f7320e1d09ec3c787b21988254c02",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/dates@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @phosphor-icons/react@2.1.10 dayjs@1.11.23",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/dates@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @phosphor-icons/react@2.1.10 dayjs@1.11.23",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "date-picker",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/DatePicker",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.controlProps.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.controlProps.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine date picker\n\n28 published Mantine date picker examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/DatePicker\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/DatePicker/DatePicker.demo.controlProps.tsx\n"
+}

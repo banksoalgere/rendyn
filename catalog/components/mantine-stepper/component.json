@@ -1,0 +1,342 @@
+{
+  "id": "mantine:stepper",
+  "sourceId": "mantine",
+  "slug": "mantine-stepper",
+  "name": "Mantine stepper",
+  "description": "15 published Mantine stepper examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@phosphor-icons/react@2.1.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "stepper",
+    "tags": [
+      "code",
+      "file",
+      "select"
+    ],
+    "aliases": [
+      "stepper",
+      "mantine stepper"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "15 published Mantine stepper examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "stepper:code:file:select",
+    "searchText": "Mantine stepper\nstepper\n15 published Mantine stepper examples with complete pinned source and MIT attribution.\nmantine stepper\ncode\nfile\nselect\nMantine stepper 15 published Mantine stepper examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Stepper Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.allowNextStepsSelect.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-stepper",
+  "manifestPath": "components/mantine-stepper/component.json",
+  "integrity": "sha256:865eb7f4dec657d61510503880cd7aee692fe3484a04e8b3f15b283d5f590ace",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.allowNextStepsSelect.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Group, Stepper } from '@mantine/core';\n\nimport { Content } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/_content';\n\nfunction Demo() {\n  const [active, setActive] = useState(1);\n  const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));\n  const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));\n\n  return (\n    <>\n      <Stepper active={active} onStepClick={setActive} allowNextStepsSelect={false}>\n        <Stepper.Step label=\"First step\" description=\"Create an account\">\n          <Content>Step 1 content: Create an account</Content>\n        </Stepper.Step>\n        <Stepper.Step label=\"Second step\" description=\"Verify email\">\n          <Content>Step 2 content: Verify email</Content>\n        </Stepper.Step>\n        <Stepper.Step label=\"Final step\" description=\"Get full access\">\n          <Content>Step 3 content: Get full access</Content>\n        </Stepper.Step>\n\n        <Stepper.Completed>\n          <Content>Completed, click back button to get to previous step</Content>\n        </Stepper.Completed>\n      </Stepper>\n\n      <Group justify=\"center\" mt=\"xl\">\n        <Button variant=\"default\" onClick={prevStep}>\n          Back\n        </Button>\n        <Button onClick={nextStep}>Next step</Button>\n      </Group>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b289e0833bb769e960020ccce00917ed474440ea9a08af3d94bcddfaf163721c",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.allowNextStepsSelect.tsx",
+      "upstreamSha256": "2846b8c8440ec639b6bcaaa3e62f08e6d4f9b17c1cd2ccc5218297dce1506b92",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/_content.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, BoxProps, ElementProps } from '@mantine/core';\n\nexport function Content(props: BoxProps & ElementProps<'div'>) {\n  return (\n    <Box\n      style={{\n        height: 60,\n        display: 'flex',\n        alignItems: 'center',\n        justifyContent: 'center',\n        fontWeight: 500,\n        fontSize: 'var(--mantine-font-size-lg)',\n      }}\n      {...props}\n    />\n  );\n}\n",
+      "sha256": "3f5fa119ccbbfc69f0b0bb30dd92c6969e140a5ce8dbec0bdc95949bc89fdc5e",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/_content.tsx",
+      "upstreamSha256": "4636d21a986de531896aadbe306e52d6b924f8b0603770ec04679ee9f84e2f19",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.allowStepSelect.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Group, Stepper } from '@mantine/core';\n\nimport { Content } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/_content';\n\nfunction Demo() {\n  const [active, setActive] = useState(1);\n  const [highestStepVisited, setHighestStepVisited] = useState(active);\n\n  const handleStepChange = (nextStep: number) => {\n    const isOutOfBounds = nextStep > 3 || nextStep < 0;\n\n    if (isOutOfBounds) {\n      return;\n    }\n\n    setActive(nextStep);\n    setHighestStepVisited((hSC) => Math.max(hSC, nextStep));\n  };\n\n  // Allow the user to freely go back and forth between visited steps.\n  const shouldAllowSelectStep = (step: number) => highestStepVisited >= step && active !== step;\n\n  return (\n    <>\n      <Stepper active={active} onStepClick={setActive}>\n        <Stepper.Step\n          label=\"First step\"\n          description=\"Create an account\"\n          allowStepSelect={shouldAllowSelectStep(0)}\n        >\n          <Content>Step 1 content: Create an account</Content>\n        </Stepper.Step>\n        <Stepper.Step\n          label=\"Second step\"\n          description=\"Verify email\"\n          allowStepSelect={shouldAllowSelectStep(1)}\n        >\n          <Content>Step 2 content: Verify email</Content>\n        </Stepper.Step>\n        <Stepper.Step\n          label=\"Final step\"\n          description=\"Get full access\"\n          allowStepSelect={shouldAllowSelectStep(2)}\n        >\n          <Content>Step 3 content: Get full access</Content>\n        </Stepper.Step>\n\n        <Stepper.Completed>\n          <Content>Completed, click back button to get to previous step</Content>\n        </Stepper.Completed>\n      </Stepper>\n\n      <Group justify=\"center\" mt=\"xl\">\n        <Button variant=\"default\" onClick={() => handleStepChange(active - 1)}>\n          Back\n        </Button>\n        <Button onClick={() => handleStepChange(active + 1)}>Next step</Button>\n      </Group>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "0a2158ea1da8ec42ea9e9d217abc487fc36969b34efa63aeb0c1b6397d81bf07",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.allowStepSelect.tsx",
+      "upstreamSha256": "5c12ced5430bcb6b3b2c21b2a4c121e1b4beb6a688568041f3d59c36a49256bf",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.configurator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Stepper, StepperProps } from '@mantine/core';\n\nfunction Wrapper(props: Partial<StepperProps>) {\n  return (\n    <Stepper {...props} active={1}>\n      <Stepper.Step label=\"Step 1\" description=\"Create an account\" />\n      <Stepper.Step label=\"Step 2\" description=\"Verify email\" />\n    </Stepper>\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent color={\"blue\"} radius={\"xl\"} size={\"md\"} />; }\n",
+      "sha256": "1dfd8726da7532a361e59382eb55589103a7e03cb39f25822c0472ade6a07e50",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.configurator.tsx",
+      "upstreamSha256": "016fe4cffbf70a79452cd5c568fcc10523cf23c38555fbdeb5fb5b8189dfc809",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.iconPosition.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Stepper } from '@mantine/core';\n\nfunction Demo() {\n  const [active, setActive] = useState(1);\n  return (\n    <Stepper active={active} onStepClick={setActive} iconPosition=\"right\">\n      <Stepper.Step label=\"Step 1\" description=\"Create an account\" />\n      <Stepper.Step label=\"Step 2\" description=\"Verify email\" />\n      <Stepper.Step label=\"Step 3\" description=\"Get full access\" />\n    </Stepper>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "44aa98d7ba28aff5a850087ac21464c31e82c919d0c77e5633b94f1e1fe5d61d",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.iconPosition.tsx",
+      "upstreamSha256": "66ea39335aff3a3d1abdc4629320e12e3dc38ce568a9b32a3f36616b87f2b0f8",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.iconSizeConfigurator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Stepper, StepperProps } from '@mantine/core';\n\nfunction Wrapper(props: Partial<StepperProps>) {\n  return (\n    <Stepper {...props} active={1}>\n      <Stepper.Step label=\"Step 1\" description=\"Create an account\" />\n      <Stepper.Step label=\"Step 2\" description=\"Verify email\" />\n    </Stepper>\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent iconSize={42} />; }\n",
+      "sha256": "7b2f17e474977fed695b8b5b52fd07cfa0329a196180f2e73cdf15e5c93de682",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.iconSizeConfigurator.tsx",
+      "upstreamSha256": "402cdfa997114ab1437b860217dfbb8131b7c44d725d9717082ee7031d8787fc",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.icons.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport {\n  CheckCircleIcon,\n  EnvelopeOpenIcon,\n  ShieldCheckIcon,\n  UserCheckIcon,\n} from '@phosphor-icons/react';\n\nimport { Stepper } from '@mantine/core';\n\nfunction Demo() {\n  const [active, setActive] = useState(1);\n\n  return (\n    <Stepper active={active} onStepClick={setActive} completedIcon={<CheckCircleIcon size={18} />}>\n      <Stepper.Step\n        icon={<UserCheckIcon size={18} />}\n        label=\"Step 1\"\n        description=\"Create an account\"\n      />\n      <Stepper.Step\n        icon={<EnvelopeOpenIcon size={18} />}\n        label=\"Step 2\"\n        description=\"Verify email\"\n      />\n      <Stepper.Step\n        icon={<ShieldCheckIcon size={18} />}\n        label=\"Step 3\"\n        description=\"Get full access\"\n      />\n    </Stepper>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "01784aa0d37e428ec6b14540782ef0167d222d2b9a0e5f991f0efabbf29de46b",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.icons.tsx",
+      "upstreamSha256": "f239ba1e8ef03b83f0c4df8faf04ce4b161b83b39dcaa6a57f4cf6ea4a948402",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.iconsOnly.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { EnvelopeOpenIcon, ShieldCheckIcon, UserCheckIcon } from '@phosphor-icons/react';\n\nimport { Stepper } from '@mantine/core';\n\nfunction Demo() {\n  const [active, setActive] = useState(0);\n  return (\n    <Stepper active={active} onStepClick={setActive}>\n      <Stepper.Step icon={<UserCheckIcon size={18} />} />\n      <Stepper.Step icon={<EnvelopeOpenIcon size={18} />} />\n      <Stepper.Step icon={<ShieldCheckIcon size={18} />} />\n    </Stepper>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "72423c2568d12a6637389743c9c2736edb3b0669f7559c733a03525686c2155f",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.iconsOnly.tsx",
+      "upstreamSha256": "f0bab34a6b73f3a44f90f3e29fb0956f5a3a926f4134ce0c66cfd6c220abf216",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.labelPosition.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Stepper } from '@mantine/core';\n\nfunction Demo() {\n  const [active, setActive] = useState(1);\n  return (\n    <Stepper active={active} onStepClick={setActive} labelPosition=\"bottom\">\n      <Stepper.Step label=\"Account\" />\n      <Stepper.Step label=\"Verification\" />\n      <Stepper.Step label=\"Access\" />\n    </Stepper>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "477a0b10a5ed5590ad31bfbe7041c9331d64691973e1f1f86ce863343802df78",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.labelPosition.tsx",
+      "upstreamSha256": "3a3f52282f698521b4600142193e96267fd5bbb132a240de3eb812e495d134e7",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.loading.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Stepper } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Stepper active={1}>\n      <Stepper.Step label=\"Step 1\" description=\"Create an account\" />\n      <Stepper.Step label=\"Step 2\" description=\"Verify email\" loading />\n      <Stepper.Step label=\"Step 3\" description=\"Get full access\" />\n    </Stepper>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "eaf2e5e7b43d4455a303deece30792102e667ee2311bb25df531757573c5418a",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.loading.tsx",
+      "upstreamSha256": "93f94e4b9a9a64e6acf560e031e2898c7ec130a35976a6c76fcebb503102c90a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.orientation.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Stepper } from '@mantine/core';\n\nfunction Demo() {\n  const [active, setActive] = useState(1);\n  return (\n    <Stepper active={active} onStepClick={setActive} orientation=\"vertical\">\n      <Stepper.Step label=\"Step 1\" description=\"Create an account\" />\n      <Stepper.Step label=\"Step 2\" description=\"Verify email\" />\n      <Stepper.Step label=\"Step 3\" description=\"Get full access\" />\n    </Stepper>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "798b582758d2d2a4b6b0a0ea6d25e797b331bb2ba53834db7ca58f6028445e74",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.orientation.tsx",
+      "upstreamSha256": "0cd0855619358f5703d032e952eed5fb6d7194e9d8294265415e1573e59d51da",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.stepColor.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { XCircleIcon } from '@phosphor-icons/react';\n\nimport { Stepper } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Stepper active={2}>\n      <Stepper.Step label=\"Step 1\" description=\"Create an account\" />\n      <Stepper.Step\n        label=\"Step 2\"\n        description=\"Verify email\"\n        color=\"red\"\n        completedIcon={<XCircleIcon size={20} />}\n      />\n      <Stepper.Step label=\"Step 3\" description=\"Get full access\" />\n    </Stepper>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "faa2b4c35f3d3dbe4323e22870784861e1b27fd8167baa0c36f4207e80f6b9f7",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.stepColor.tsx",
+      "upstreamSha256": "429cbbdd9deb8b614b46042395b65d5fb189945b3a41d5bae12e2a00506ccf52",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.stylesApi.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Group, Stepper } from '@mantine/core';\n\nimport { Content } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/_content';\n\nfunction Demo(props: any) {\n  const [active, setActive] = useState(1);\n  const nextStep = () => setActive((current) => (current < 2 ? current + 1 : current));\n  const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));\n\n  return (\n    <>\n      <Stepper active={active} onStepClick={setActive} {...props}>\n        <Stepper.Step label=\"First step\" description=\"Create an account\" loading>\n          <Content>Step 1 content: Create an account</Content>\n        </Stepper.Step>\n        <Stepper.Step label=\"Second step\" description=\"Verify email\">\n          <Content>Step 2 content: Verify email</Content>\n        </Stepper.Step>\n\n        <Stepper.Completed>\n          <Content>Completed, click back button to get to previous step</Content>\n        </Stepper.Completed>\n      </Stepper>\n\n      <Group justify=\"center\" mt=\"xl\">\n        <Button variant=\"default\" onClick={prevStep}>\n          Back\n        </Button>\n        <Button onClick={nextStep}>Next step</Button>\n      </Group>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "082c472f2f8bd2ee4ccf01915e50178452b4a16c0c176ba7f175c0e34d5a4b23",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.stylesApi.tsx",
+      "upstreamSha256": "6cb4bb1ddee10b5e519d5286038b7157fb524d1b2ae62e5d27de69e22910457d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.stylesApi2.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Stepper, StepperProps } from '@mantine/core';\n\nfunction StyledStepper(props: StepperProps) {\n  return (\n    <Stepper\n      styles={{\n        stepBody: {\n          display: 'none',\n        },\n\n        step: {\n          padding: 0,\n        },\n\n        stepIcon: {\n          borderWidth: 3,\n        },\n\n        separator: {\n          marginLeft: -2,\n          marginRight: -2,\n          height: 6,\n        },\n      }}\n      {...props}\n    />\n  );\n}\n\nfunction Demo() {\n  const [active, setActive] = useState(1);\n  return (\n    <StyledStepper active={active} onStepClick={setActive}>\n      <Stepper.Step label=\"Step 1\" description=\"Create an account\" />\n      <Stepper.Step label=\"Step 2\" description=\"Verify email\" />\n      <Stepper.Step label=\"Step 3\" description=\"Get full access\" />\n    </StyledStepper>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "575fef09ee6ca24973b03a3514b714f5df7bf75f47935d537618e2705ad581c7",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.stylesApi2.tsx",
+      "upstreamSha256": "bf2dea65c92a585db8f0ee06bd630b2419c89e65dd34d77ef84957b1a3a9d9a2",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.stylesApi3.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Stepper } from '@mantine/core';\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.stylesApi3.module.css';\n\nfunction Demo() {\n  const [active, setActive] = useState(1);\n  return (\n    <Stepper classNames={classes} active={active} onStepClick={setActive}>\n      <Stepper.Step label=\"Step 1\" description=\"Create an account\" />\n      <Stepper.Step label=\"Step 2\" description=\"Verify email\" />\n      <Stepper.Step label=\"Step 3\" description=\"Get full access\" />\n    </Stepper>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "010387a95c81e37295776057f84844516fe632bdad12573fae24ebb52e3518d3",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.stylesApi3.tsx",
+      "upstreamSha256": "8c16b78efc5ebd35837d6ce5673658c42f69597e4a136d98ffdedfc0d62e5f82",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.stylesApi3.module.css",
+      "type": "style",
+      "content": ".separator {\n  height: 2px;\n  border-top: 2px solid light-dark(var(--mantine-color-gray-4), var(--mantine-color-dark-3));\n  border-radius: var(--mantine-radius-xl);\n  background-color: transparent;\n\n  &[data-active] {\n    border-width: 0;\n    background-image: linear-gradient(\n      45deg,\n      var(--mantine-color-blue-6),\n      var(--mantine-color-cyan-6)\n    );\n  }\n}\n\n.stepIcon {\n  border-color: transparent;\n  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-4));\n  border-width: 0;\n\n  &[data-completed] {\n    border-width: 0;\n    background-color: transparent;\n    background-image: linear-gradient(\n      45deg,\n      var(--mantine-color-blue-6),\n      var(--mantine-color-cyan-6)\n    );\n  }\n}\n\n.step {\n  transition: transform 150ms ease;\n\n  &[data-progress] {\n    transform: scale(1.05);\n  }\n}\n",
+      "sha256": "34636ef43f16eda0412876d8a61dd6a9b615d5d3969e5c16fcec39df9343a897",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.stylesApi3.module.css",
+      "upstreamSha256": "34636ef43f16eda0412876d8a61dd6a9b615d5d3969e5c16fcec39df9343a897",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Group, Stepper } from '@mantine/core';\n\nimport { Content } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/_content';\n\nfunction Demo() {\n  const [active, setActive] = useState(1);\n  const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));\n  const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));\n\n  return (\n    <>\n      <Stepper active={active} onStepClick={setActive}>\n        <Stepper.Step label=\"First step\" description=\"Create an account\">\n          <Content>Step 1 content: Create an account</Content>\n        </Stepper.Step>\n        <Stepper.Step label=\"Second step\" description=\"Verify email\">\n          <Content>Step 2 content: Verify email</Content>\n        </Stepper.Step>\n        <Stepper.Step label=\"Final step\" description=\"Get full access\">\n          <Content>Step 3 content: Get full access</Content>\n        </Stepper.Step>\n\n        <Stepper.Completed>\n          <Content>Completed, click back button to get to previous step</Content>\n        </Stepper.Completed>\n      </Stepper>\n\n      <Group justify=\"center\" mt=\"xl\">\n        <Button variant=\"default\" onClick={prevStep}>\n          Back\n        </Button>\n        <Button onClick={nextStep}>Next step</Button>\n      </Group>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "86d1b900643b7c964190ca8639234c8ccffa725059e66058532b0334876f91ad",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.usage.tsx",
+      "upstreamSha256": "4b5d940dde6a30591d69eb8beda3ee3aad117b29b9d6e172cd84c7aac6cd7b40",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/stepper/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.allowNextStepsSelect\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "fe55144b0e2f69dd01c1c020fe79e059c460def4c3e486c915b29259ad454ea6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/stepper/previews/allow-step-select.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.allowStepSelect\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "18225b1416df199b482eeecb3ae0eca1dbf28e5fc11e22da3d3eec06a423055a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/stepper/previews/configurator.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.configurator\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "ba6f4f476053e3307c450401e6ed5881ab796b03356a4320cfa3a81b2ab82733",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/stepper/previews/icon-position.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.iconPosition\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b803a8a787a016928f304ecf959b93a0ef586924e36e366d9935f88baed66c2e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/stepper/previews/icon-size-configurator.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.iconSizeConfigurator\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "531f22fd77c11a8c1bc12fe32af910db53a12bec84e140d7ec8d72f77c9d3c7b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/stepper/previews/icons.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.icons\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "49adf09a65b1d5d3826511ae6d9f48e3b175590cd39fe2dfd8403c080b6ecd3b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/stepper/previews/icons-only.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.iconsOnly\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a410f8e8d23b670e07fe430cb881dd454666916e1d25b2125af8cf88cbd0602b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/stepper/previews/label-position.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.labelPosition\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "54cbb47a753a98bb5010c9e46ba593959985184b683dd4ec188bc6140e395517",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/stepper/previews/loading.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.loading\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "af9a2446de09a3669ed42126ec9e0d11811ba147dfffa23c0f96c4ca6b89d451",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/stepper/previews/orientation.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.orientation\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "740af2a1bb972c273c6de4b66c3d74ecdf569a7a19987f8f83f7f98117b9888f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/stepper/previews/step-color.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.stepColor\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "24dac7898aa5bdcee9a00249acd5d0012931947ef2f747d29b3a23d744bdb212",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/stepper/previews/styles-api.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.stylesApi\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "70da1ef26c8ec9daadc6453e99daf499286373425dab506ea598149e6edfaeaf",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/stepper/previews/styles-api2.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.stylesApi2\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "f380311408c7689223e7d5ade641e369634d3413552aadd2024b9ef8b16b14c6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/stepper/previews/styles-api3.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.stylesApi3\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "ba48b15f427477e4a2291bf405d9f22a959f2343f1e4a3601c3a80dfa03e316f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/stepper/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "433543424e6da4956f59f2ea0230aee0d3c08a4eb6e823d9456ae9d0ab879ab2",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @phosphor-icons/react@2.1.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/mantine/upstream/src/demos/core/Stepper/Stepper.demo.stylesApi3.module.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @phosphor-icons/react@2.1.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "stepper",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Stepper",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.allowNextStepsSelect.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.allowNextStepsSelect.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine stepper\n\n15 published Mantine stepper examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Stepper\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Stepper/Stepper.demo.allowNextStepsSelect.tsx\n"
+}

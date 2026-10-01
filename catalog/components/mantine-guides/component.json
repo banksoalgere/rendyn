@@ -1,0 +1,203 @@
+{
+  "id": "mantine:guides",
+  "sourceId": "mantine",
+  "slug": "mantine-guides",
+  "name": "Mantine guides",
+  "description": "7 published Mantine guides examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantinex/mantine-logo@2.0.0",
+    "@phosphor-icons/react@2.1.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "guides",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "guides",
+      "mantine guides"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "7 published Mantine guides examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "guides:code:file",
+    "searchText": "Mantine guides\nguides\n7 published Mantine guides examples with complete pinned source and MIT attribution.\nmantine guides\ncode\nfile\nMantine guides 7 published Mantine guides examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/guides Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/guides/Guides.demo.createPolymorphic.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-guides",
+  "manifestPath": "components/mantine-guides/component.json",
+  "integrity": "sha256:babe165892bba3c3a1f7fcfb46048759470be0bd403d905b5f301754f7a4ccc6",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/guides/Guides.demo.createPolymorphic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, ButtonProps, Group, polymorphic } from '@mantine/core';\n\ninterface CustomButtonProps extends ButtonProps {\n  label: string;\n}\n\nconst CustomButton = polymorphic<'button', CustomButtonProps>(\n  ({ label, ...others }: CustomButtonProps) => <Button {...others}>{label}</Button>\n);\n\nconst CustomButtonAnchor = polymorphic<'a', CustomButtonProps>(\n  ({ label, ...others }: CustomButtonProps) => (\n    <Button component=\"a\" {...others}>\n      {label}\n    </Button>\n  )\n);\n\nfunction Demo() {\n  return (\n    <Group>\n      <CustomButton label=\"Button by default\" color=\"cyan\" />\n      <CustomButtonAnchor label=\"Anchor by default\" href=\"https://mantine.dev\" target=\"_blank\" />\n    </Group>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "c224d1ac3673ed7545eaadf4c5db5aba41b1ec1c91c89d604b1c9e7b9c03b978",
+      "upstreamPath": "packages/@docs/demos/src/demos/guides/Guides.demo.createPolymorphic.tsx",
+      "upstreamSha256": "a1fb4d64dd88ce3879f4863c767d002a288411e170a44dd2e4c77d4941f5453d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/guides/Guides.demo.customIcon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from '@mantine/core';\n\nimport { AddressBookIcon } from '@/components/rendyn-libraries/mantine/upstream/src/demos/guides/_CustomIcon';\n\nfunction Demo() {\n  return <Button leftSection={<AddressBookIcon size={18} />}>Demo</Button>;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "866126ca308172d51bef1093cdde7b1b8b5612bf9ddebe33fe99418f77e27d4b",
+      "upstreamPath": "packages/@docs/demos/src/demos/guides/Guides.demo.customIcon.tsx",
+      "upstreamSha256": "2af2e20abed19472bfea28c6e2f66e2863ffa79829a91e65645f16ed01e96cd7",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/guides/_CustomIcon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\ninterface AddressBookIconProps extends React.ComponentProps<'svg'> {\n  size?: number | string;\n}\n\nexport function AddressBookIcon({ size, style, ...others }: AddressBookIconProps) {\n  return (\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      fill=\"none\"\n      stroke=\"currentColor\"\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      strokeWidth=\"1.5\"\n      viewBox=\"0 0 24 24\"\n      style={{ width: size, height: size, ...style }}\n      {...others}\n    >\n      <path stroke=\"none\" d=\"M0 0h24v24H0z\" />\n      <path d=\"M20 6v12a2 2 0 01-2 2H8a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2zM10 16h6\" />\n      <path d=\"M11 11a2 2 0 104 0 2 2 0 10-4 0M4 8h3M4 12h3M4 16h3\" />\n    </svg>\n  );\n}\n",
+      "sha256": "8b5424d3dadfaf9a9ccb7d72127d23f67be9c6385efa808b67f0fcb9e4625d2f",
+      "upstreamPath": "packages/@docs/demos/src/demos/guides/_CustomIcon.tsx",
+      "upstreamSha256": "0dc0f0c2d4898242e31198d600dc227fe4c19650e276db35cf4e1c2a3df4eacd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/guides/Guides.demo.icon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { AtomIcon } from '@phosphor-icons/react';\n\nfunction Demo() {\n  return <AtomIcon size={80} color=\"var(--mantine-color-blue-filled)\" />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "15040df73d225a8635c10a05279711e4e3bf26bec9d01ec072e800999af0217b",
+      "upstreamPath": "packages/@docs/demos/src/demos/guides/Guides.demo.icon.tsx",
+      "upstreamSha256": "2b505e60807db3a2bc26d777126b89bd2cbde7daea1fc91d416c7be581fd39fc",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/guides/Guides.demo.logo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { MantineLogo } from '@mantinex/mantine-logo';\nconst RendynExampleComponent = MantineLogo;\nexport function RendynExample() { return <RendynExampleComponent color={\"blue\"} type={\"full\"} size={30} />; }\n",
+      "sha256": "2f760793fed6270b41985cf3afc46bb39f28734eeecc1a62c11ce2f33bb928d2",
+      "upstreamPath": "packages/@docs/demos/src/demos/guides/Guides.demo.logo.tsx",
+      "upstreamSha256": "adcfa63aebdb2a8e60c3129c60e3f6a7866b214909bec77831157f7bc62cd9fb",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/guides/Guides.demo.newPolymorphic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, BoxProps, Group, polymorphic } from '@mantine/core';\n\ninterface MyButtonProps extends BoxProps {\n  label: string;\n}\n\nconst MyButton = polymorphic<'button', MyButtonProps>(({ label, ...others }: MyButtonProps) => (\n  <Box component=\"button\" {...others}>\n    {label}\n  </Box>\n));\n\nfunction Demo() {\n  return (\n    <Group>\n      <MyButton label=\"Button by default\" />\n      <MyButton\n        label=\"MyButton as anchor\"\n        component=\"a\"\n        href=\"https://mantine.dev\"\n        target=\"_blank\"\n      />\n    </Group>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "6e1f8704f7e1cb1192aed878439c2c625532e835b1fec1dc8873b32a03c5f9fb",
+      "upstreamPath": "packages/@docs/demos/src/demos/guides/Guides.demo.newPolymorphic.tsx",
+      "upstreamSha256": "80a532a32576e7f3c6147602ccf3ac3fe37b41d53177949d93a80b30e1a5fc73",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/guides/Guides.demo.polymorphic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Button component=\"a\" href=\"https://mantine.dev/\" target=\"_blank\">\n      Mantine website\n    </Button>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "26bfb8e494ebd70a677adc12f8cc422ad34b73b7ef2abb3434310b7686d3dcf5",
+      "upstreamPath": "packages/@docs/demos/src/demos/guides/Guides.demo.polymorphic.tsx",
+      "upstreamSha256": "177cc663cc354d76643307fab3b680950288f5cbe8d9055e78306ba91ef51356",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/guides/Guides.demo.staticPolymorphic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, ButtonProps, ElementProps } from '@mantine/core';\n\nconst LinkButton = (props: ButtonProps & ElementProps<'a', keyof ButtonProps>) => (\n  <Button {...props} component=\"a\" />\n);\n\nfunction Demo() {\n  return (\n    <LinkButton href=\"https://mantine.dev\" target=\"_blank\">\n      Mantine website\n    </LinkButton>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "a4499233b2d4e5eabdeff4095d098eb30daf8597036290b04014f5a805e5a516",
+      "upstreamPath": "packages/@docs/demos/src/demos/guides/Guides.demo.staticPolymorphic.tsx",
+      "upstreamSha256": "60663a637d8980f4932c9f975dfd94dbed0f55ade56801bcec85c56316bd9c53",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/guides/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/guides/Guides.demo.createPolymorphic\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "006b4b1358f9ef669eaef13833dfb21b9f4910467bb0e5a76323185b7b9f0aa1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/guides/previews/custom-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/guides/Guides.demo.customIcon\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "95df1401dd363b4921236ab15b09c8d0b8f450d4a3eb8aa2b8bb38c6cef988fc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/guides/previews/icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/guides/Guides.demo.icon\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e54beb783231ab37953b2af77115bcadfba21a49a199c42d0c19853cc477b25c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/guides/previews/logo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/guides/Guides.demo.logo\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e8180a995761fe4475fe13537bb5e2bdd8faba3bf13ade1c896387d888f9551d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/guides/previews/new-polymorphic.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/guides/Guides.demo.newPolymorphic\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b020293d5ef43a230c9aa59847183de393ef38d393cc377575d7a9f98fab8ec0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/guides/previews/polymorphic.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/guides/Guides.demo.polymorphic\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "86522856b935343aa4243e1fa615b5cd5388d1c27b4c0199a32c7d0cfe088308",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/guides/previews/static-polymorphic.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/guides/Guides.demo.staticPolymorphic\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c028232e286a64f4763870a9dbd3cbd9ece734f322d72fe16d4eafd549894a0f",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/mantine-logo@2.0.0 @phosphor-icons/react@2.1.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/mantine-logo@2.0.0 @phosphor-icons/react@2.1.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "guides",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/guides",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/guides/Guides.demo.createPolymorphic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/guides/Guides.demo.createPolymorphic.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine guides\n\n7 published Mantine guides examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/guides\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/guides/Guides.demo.createPolymorphic.tsx\n"
+}

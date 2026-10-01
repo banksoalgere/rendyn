@@ -1,0 +1,333 @@
+{
+  "id": "mantine:drawer",
+  "sourceId": "mantine",
+  "slug": "mantine-drawer",
+  "name": "Mantine drawer",
+  "description": "15 published Mantine drawer examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/form@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantinex/demo@2.0.0",
+    "@phosphor-icons/react@2.1.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "drawer",
+    "tags": [
+      "code",
+      "drawer",
+      "file"
+    ],
+    "aliases": [
+      "drawer",
+      "mantine drawer"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "15 published Mantine drawer examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "drawer:code:file",
+    "searchText": "Mantine drawer\ndrawer\n15 published Mantine drawer examples with complete pinned source and MIT attribution.\nmantine drawer\ncode\nfile\nMantine drawer 15 published Mantine drawer examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Drawer Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.closeIcon.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-drawer",
+  "manifestPath": "components/mantine-drawer/component.json",
+  "integrity": "sha256:dc79b449005c5da99275c8b7203cbe021940c77d9a689ca003e8a00800fa8e37",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.closeIcon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { XCircleIcon } from '@phosphor-icons/react';\n\nimport { Button, Drawer } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nimport { AuthenticationForm } from '@/components/rendyn-libraries/mantine/upstream/src/shared/AuthenticationForm/AuthenticationForm';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Drawer\n        opened={opened}\n        onClose={close}\n        title=\"Authentication\"\n        closeButtonProps={{\n          icon: <XCircleIcon size={20} />,\n        }}\n      >\n        <AuthenticationForm noShadow noPadding />\n      </Drawer>\n\n      <Button variant=\"default\" onClick={open}>\n        Open Drawer\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "e680816ff90b8fee2c0cc0eaf930dbf34abba3daed8a84cb4b71ae4ff640a1db",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.closeIcon.tsx",
+      "upstreamSha256": "48f3945c5f97db231de0c723530872cbce7b653fd6bfbce2b9390936164ce60f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/shared/AuthenticationForm/AuthenticationForm.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\nimport { AtIcon, LockIcon } from '@phosphor-icons/react';\nimport {\n  Anchor,\n  Button,\n  Checkbox,\n  Group,\n  LoadingOverlay,\n  Paper,\n  PasswordInput,\n  Text,\n  TextInput,\n} from '@mantine/core';\nimport { useForm } from '@mantine/form';\n\nexport interface AuthenticationFormProps {\n  noShadow?: boolean;\n  noPadding?: boolean;\n  noSubmit?: boolean;\n  style?: React.CSSProperties;\n}\n\nexport function AuthenticationForm({\n  noShadow,\n  noPadding,\n  noSubmit,\n  style,\n}: AuthenticationFormProps) {\n  const [formType, setFormType] = useState<'register' | 'login'>('register');\n  const [loading, setLoading] = useState(false);\n  const [error, setError] = useState<string | null>(null);\n\n  const toggleFormType = () => {\n    setFormType((current) => (current === 'register' ? 'login' : 'register'));\n    setError(null);\n  };\n\n  const form = useForm({\n    initialValues: {\n      firstName: '',\n      lastName: '',\n      email: '',\n      password: '',\n      confirmPassword: '',\n      termsOfService: true,\n    },\n  });\n\n  const handleSubmit = () => {\n    setLoading(true);\n    setError(null);\n    setTimeout(() => {\n      setLoading(false);\n      setError(\n        formType === 'register'\n          ? 'User with this email already exists'\n          : 'User with this email does not exist'\n      );\n    }, 3000);\n  };\n\n  return (\n    <Paper\n      p={noPadding ? 0 : 'lg'}\n      shadow={noShadow ? 'none' : 'sm'}\n      style={{\n        ...style,\n        position: 'relative',\n        backgroundColor: 'var(--mantine-color-body)',\n      }}\n    >\n      <form onSubmit={form.onSubmit(handleSubmit)}>\n        <LoadingOverlay visible={loading} />\n        {formType === 'register' && (\n          <Group grow>\n            <TextInput\n              data-autofocus\n              required\n              placeholder=\"Your first name\"\n              label=\"First name\"\n              {...form.getInputProps('firstName')}\n            />\n\n            <TextInput\n              required\n              placeholder=\"Your last name\"\n              label=\"Last name\"\n              {...form.getInputProps('lastName')}\n            />\n          </Group>\n        )}\n\n        <TextInput\n          mt=\"md\"\n          required\n          placeholder=\"Your email\"\n          label=\"Email\"\n          leftSection={<AtIcon size={16} />}\n          {...form.getInputProps('email')}\n        />\n\n        <PasswordInput\n          mt=\"md\"\n          required\n          placeholder=\"Password\"\n          label=\"Password\"\n          leftSection={<LockIcon size={16} />}\n          {...form.getInputProps('password')}\n        />\n\n        {formType === 'register' && (\n          <PasswordInput\n            mt=\"md\"\n            required\n            label=\"Confirm Password\"\n            placeholder=\"Confirm password\"\n            leftSection={<LockIcon size={16} />}\n            {...form.getInputProps('confirmPassword')}\n          />\n        )}\n\n        {formType === 'register' && (\n          <Checkbox\n            mt=\"xl\"\n            label=\"I agree to sell my soul and privacy to this corporation\"\n            {...form.getInputProps('termsOfService', { type: 'checkbox' })}\n          />\n        )}\n\n        {error && (\n          <Text c=\"red\" size=\"sm\" mt=\"sm\">\n            {error}\n          </Text>\n        )}\n\n        {!noSubmit && (\n          <Group justify=\"space-between\" mt=\"xl\">\n            <Anchor component=\"button\" type=\"button\" c=\"dimmed\" onClick={toggleFormType} size=\"sm\">\n              {formType === 'register'\n                ? 'Have an account? Login'\n                : \"Don't have an account? Register\"}\n            </Anchor>\n\n            <Button color=\"blue\" type=\"submit\">\n              {formType === 'register' ? 'Register' : 'Login'}\n            </Button>\n          </Group>\n        )}\n      </form>\n    </Paper>\n  );\n}\n",
+      "sha256": "31195272c7bdad3fa4619fde05def03ef5ba01a50c8fa78fe32dbe9c35f85e13",
+      "upstreamPath": "packages/@docs/demos/src/shared/AuthenticationForm/AuthenticationForm.tsx",
+      "upstreamSha256": "b88e8ddd5750b39862b0fd594259c0f3c90d50edab53ae87de8014d76089cccd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.composition.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Drawer } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Drawer.Root opened={opened} onClose={close}>\n        <Drawer.Overlay />\n        <Drawer.Content>\n          <Drawer.Header>\n            <Drawer.Title>Drawer title</Drawer.Title>\n            <Drawer.CloseButton />\n          </Drawer.Header>\n          <Drawer.Body>Drawer content</Drawer.Body>\n        </Drawer.Content>\n      </Drawer.Root>\n\n      <Button variant=\"default\" onClick={open}>\n        Open Drawer\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "c2468a4d10f4c2fad2ff0c62d19fdf4331b990fd8b378a4d0bb8bbaaa83feb42",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.composition.tsx",
+      "upstreamSha256": "67ef66ca7e84d39e3c90604864d1fa102cfb40c7c87f21de6b42c44f3d1e7653",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.header.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Drawer } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Drawer opened={opened} onClose={close} withCloseButton={false}>\n        Drawer without header, press escape or click on overlay to close\n      </Drawer>\n\n      <Button variant=\"default\" onClick={open}>\n        Open Drawer\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "47533415375e750d24699edaf5266a203fe5581e18e1cbf807a36533ded8def7",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.header.tsx",
+      "upstreamSha256": "d652a694ac5c4d4ef3fb6e6a00aa2b259b468a1c21c4bdff7f391d1ada8d8362",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.initialFocus.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Drawer, TextInput } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Drawer opened={opened} onClose={close} title=\"Focus demo\">\n        <TextInput label=\"First input\" placeholder=\"First input\" />\n        <TextInput\n          data-autofocus\n          label=\"Input with initial focus\"\n          placeholder=\"It has data-autofocus attribute\"\n          mt=\"md\"\n        />\n      </Drawer>\n\n      <Button variant=\"default\" onClick={open}>\n        Open Drawer\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "d622da362fbb3539daa59625eaf2aa06ec87cddee6d02dfa95d25d400ed33192",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.initialFocus.tsx",
+      "upstreamSha256": "700fd4ab289b67f2471c812471ee92de6198afa1b70cab0dba8a3d0c24d73a82",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.initialFocusTrap.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Drawer, FocusTrap, TextInput } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Drawer opened={opened} onClose={close} title=\"Focus demo\">\n        <FocusTrap.InitialFocus />\n        <TextInput label=\"First input\" placeholder=\"First input\" />\n        <TextInput\n          data-autofocus\n          label=\"Input with initial focus\"\n          placeholder=\"It has data-autofocus attribute\"\n          mt=\"md\"\n        />\n      </Drawer>\n\n      <Button variant=\"default\" onClick={open}>\n        Open Drawer\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "3e848955a3ea4a5befa295f3793b5157b4da51f63713a09af1975401d50c3a3d",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.initialFocusTrap.tsx",
+      "upstreamSha256": "7251b9ed920d02d203cf005d3a178d9d26cde333fe5e61c7fc60889f565a3f48",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.offset.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Drawer } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nimport { AuthenticationForm } from '@/components/rendyn-libraries/mantine/upstream/src/shared/AuthenticationForm/AuthenticationForm';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Drawer offset={8} radius=\"md\" opened={opened} onClose={close} title=\"Authentication\">\n        <AuthenticationForm noShadow noPadding />\n      </Drawer>\n\n      <Button variant=\"default\" onClick={open}>\n        Open Drawer\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "5039ee748a1e76f0a2281ce03f34ea50a9dfe3f920852b09009828cc666c3cc8",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.offset.tsx",
+      "upstreamSha256": "487f2f765ddab27e9a5eae7a4b5b4c6ed9072df990e5e01c1b600ffa61e3f9a3",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.overflow.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Drawer } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  const content = Array(100)\n    .fill(0)\n    .map((_, index) => <p key={index}>Drawer with scroll</p>);\n\n  return (\n    <>\n      <Drawer opened={opened} onClose={close} title=\"Header is sticky\">\n        {content}\n      </Drawer>\n\n      <Button variant=\"default\" onClick={open}>\n        Open Drawer\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "411ec9ddaf3d4f8714dee7d905a20dece8906ce9667638bfde112791fb8e60c0",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.overflow.tsx",
+      "upstreamSha256": "8baf052d678bcf5c373f6206ab7fc3c80c922ad043593a64ea720e3d95600755",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.overlay.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Drawer } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nimport { AuthenticationForm } from '@/components/rendyn-libraries/mantine/upstream/src/shared/AuthenticationForm/AuthenticationForm';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Drawer\n        opened={opened}\n        onClose={close}\n        title=\"Authentication\"\n        overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}\n      >\n        <AuthenticationForm noShadow noPadding />\n      </Drawer>\n\n      <Button variant=\"default\" onClick={open}>\n        Open Drawer\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "c9bf90ea78cadb095eb71c8e0acd87827cdbb5093b91b52ab52c9a36bc6816fe",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.overlay.tsx",
+      "upstreamSha256": "2b7c7466bffe3479481b2241779b267c58e86e716322c96379a190ada545c318",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.positions.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Drawer, Group } from '@mantine/core';\n\nfunction Demo() {\n  const [opened, setOpened] = useState(false);\n  const [position, setPosition] = useState<'top' | 'left' | 'right' | 'bottom'>('top');\n  const open = (p: typeof position) => {\n    setPosition(p);\n    setOpened(true);\n  };\n\n  return (\n    <>\n      <Drawer\n        opened={opened}\n        onClose={() => setOpened(false)}\n        padding=\"md\"\n        position={position}\n        withCloseButton={false}\n      >\n        Press escape to close the drawer\n      </Drawer>\n\n      <Group justify=\"center\">\n        <Button variant=\"default\" onClick={() => open('left')}>\n          Left\n        </Button>\n        <Button variant=\"default\" onClick={() => open('right')}>\n          Right\n        </Button>\n        <Button variant=\"default\" onClick={() => open('top')}>\n          Top\n        </Button>\n        <Button variant=\"default\" onClick={() => open('bottom')}>\n          Bottom\n        </Button>\n      </Group>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "f763a5919bb5a95e707dbf42de00533c57fb19d867908efbb0ca7b792dc4a115",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.positions.tsx",
+      "upstreamSha256": "903b3dd7eb31d97e35ab744beadce321b5908de11c786236378fc1f409a35153",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.scrollarea.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Drawer, ScrollArea } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  const content = Array(100)\n    .fill(0)\n    .map((_, index) => <p key={index}>Drawer with scroll</p>);\n\n  return (\n    <>\n      <Drawer\n        opened={opened}\n        onClose={close}\n        title=\"Header is sticky\"\n        scrollAreaComponent={ScrollArea.Autosize}\n      >\n        {content}\n      </Drawer>\n\n      <Button variant=\"default\" onClick={open}>\n        Open Drawer\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "2e62cc12cf1b2ab2ffdfb641c411f08ecf31bc4f05a0e35718cd6ac766b90101",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.scrollarea.tsx",
+      "upstreamSha256": "a7010a57d46e2e79760daa3e49a5a3093ecd239a2069af2d3c762ecd1d7ee688",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.sizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Drawer, Group } from '@mantine/core';\n\nfunction Demo() {\n  const [opened, setOpened] = useState(false);\n  const [size, setSize] = useState<number | string>('top');\n  const open = (s: typeof size) => {\n    setSize(s);\n    setOpened(true);\n  };\n\n  const controls = (['xs', 'sm', 'md', 'lg', 'xl', '100%', '40rem', '25%'] as const).map((s) => (\n    <Button variant=\"default\" onClick={() => open(s)} key={s}>\n      {s}\n    </Button>\n  ));\n\n  return (\n    <>\n      <Drawer\n        opened={opened}\n        onClose={() => setOpened(false)}\n        padding=\"md\"\n        size={size}\n        withCloseButton={false}\n      >\n        Press escape to close the drawer\n      </Drawer>\n\n      <Group justify=\"center\">{controls}</Group>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "7e77cfdb293e1dfd70d27e72bc7e203cb2aad3f8ef5a6cbab79eb1aa13720096",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.sizes.tsx",
+      "upstreamSha256": "3939705ac71ed6cfa6085941a8d426c2e5e108c667f005ee422d45cfd615251c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.stack.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Drawer, Group, useDrawersStack } from '@mantine/core';\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst code = `\nimport { Button, Group, Drawer, useDrawersStack } from '@mantine/core';\n\nfunction Demo() {\n  const stack = useDrawersStack(['delete-page', 'confirm-action', 'really-confirm-action']);\n\n  return (\n    <>\n      <Drawer.Stack>\n        <Drawer {...stack.register('delete-page')} title=\"Delete this page?\">\n          Are you sure you want to delete this page? This action cannot be undone.\n          <Group mt=\"lg\" justify=\"flex-end\">\n            <Button onClick={stack.closeAll} variant=\"default\">\n              Cancel\n            </Button>\n            <Button onClick={() => stack.open('confirm-action')} color=\"red\">\n              Delete\n            </Button>\n          </Group>\n        </Drawer>\n\n        <Drawer {...stack.register('confirm-action')} title=\"Confirm action\">\n          Are you sure you want to perform this action? This action cannot be undone. If you are\n          sure, press confirm button below.\n          <Group mt=\"lg\" justify=\"flex-end\">\n            <Button onClick={stack.closeAll} variant=\"default\">\n              Cancel\n            </Button>\n            <Button onClick={() => stack.open('really-confirm-action')} color=\"red\">\n              Confirm\n            </Button>\n          </Group>\n        </Drawer>\n\n        <Drawer {...stack.register('really-confirm-action')} title=\"Really confirm action\">\n          Jokes aside. You have confirmed this action. This is your last chance to cancel it. After\n          you press confirm button below, action will be performed and cannot be undone. For real\n          this time. Are you sure you want to proceed?\n          <Group mt=\"lg\" justify=\"flex-end\">\n            <Button onClick={stack.closeAll} variant=\"default\">\n              Cancel\n            </Button>\n            <Button onClick={stack.closeAll} color=\"red\">\n              Confirm\n            </Button>\n          </Group>\n        </Drawer>\n      </Drawer.Stack>\n\n      <Button variant=\"default\" onClick={() => stack.open('delete-page')}>\n        Open drawer\n      </Button>\n    </>\n  );\n}\n`;\n\nfunction Demo() {\n  const stack = useDrawersStack(['delete-page', 'confirm-action', 'really-confirm-action']);\n\n  return (\n    <>\n      <Drawer.Stack>\n        <Drawer {...stack.register('delete-page')} title=\"Delete this page?\">\n          Are you sure you want to delete this page? This action cannot be undone.\n          <Group mt=\"lg\" justify=\"flex-end\">\n            <Button onClick={stack.closeAll} variant=\"default\">\n              Cancel\n            </Button>\n            <Button onClick={() => stack.open('confirm-action')} color=\"red\">\n              Delete\n            </Button>\n          </Group>\n        </Drawer>\n\n        <Drawer {...stack.register('confirm-action')} title=\"Confirm action\">\n          Are you sure you want to perform this action? This action cannot be undone. If you are\n          sure, press confirm button below.\n          <Group mt=\"lg\" justify=\"flex-end\">\n            <Button onClick={stack.closeAll} variant=\"default\">\n              Cancel\n            </Button>\n            <Button onClick={() => stack.open('really-confirm-action')} color=\"red\">\n              Confirm\n            </Button>\n          </Group>\n        </Drawer>\n\n        <Drawer {...stack.register('really-confirm-action')} title=\"Really confirm action\">\n          Jokes aside. You have confirmed this action. This is your last chance to cancel it. After\n          you press confirm button below, action will be performed and cannot be undone. For real\n          this time. Are you sure you want to proceed?\n          <Group mt=\"lg\" justify=\"flex-end\">\n            <Button onClick={stack.closeAll} variant=\"default\">\n              Cancel\n            </Button>\n            <Button onClick={stack.closeAll} color=\"red\">\n              Confirm\n            </Button>\n          </Group>\n        </Drawer>\n      </Drawer.Stack>\n\n      <Button variant=\"default\" onClick={() => stack.open('delete-page')}>\n        Open drawer\n      </Button>\n    </>\n  );\n}\n\nexport const stack: MantineDemo = {\n  type: 'code',\n  code,\n  centered: true,\n  component: Demo,\n};\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b53f0ec0ba652de61c5408d61c9bf3f37bbeb329501e9553b868d00289139f4d",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.stack.tsx",
+      "upstreamSha256": "594271f2da9db137b13948155609e636a8a625cbfed85db3141d8e847be1ac4d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.transitionEnd.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Drawer, Group } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [firstOpened, firstHandlers] = useDisclosure(false);\n  const [secondOpened, secondHandlers] = useDisclosure(false);\n  const [drawerData, setDrawerData] = useState({\n    title: '',\n    message: '',\n  });\n\n  return (\n    <>\n      <Drawer\n        opened={firstOpened}\n        onClose={() => {\n          firstHandlers.close();\n          setDrawerData({ title: '', message: '' });\n        }}\n        transitionProps={{ duration: 300, exitDuration: 1000 }}\n        title={drawerData.title}\n      >\n        {drawerData.message}\n      </Drawer>\n      <Drawer\n        opened={secondOpened}\n        onClose={secondHandlers.close}\n        transitionProps={{ duration: 300, exitDuration: 1000 }}\n        onExitTransitionEnd={() => setDrawerData({ title: '', message: '' })}\n        title={drawerData.title}\n      >\n        {drawerData.message}\n      </Drawer>\n\n      <Group>\n        <Button\n          onClick={() => {\n            firstHandlers.open();\n            setDrawerData({ title: 'Edit your profile', message: 'Imagine a form here' });\n          }}\n          variant=\"default\"\n        >\n          Clear data in onClose\n        </Button>\n\n        <Button\n          onClick={() => {\n            secondHandlers.open();\n            setDrawerData({ title: 'Edit your profile', message: 'Imagine a form here' });\n          }}\n          variant=\"default\"\n        >\n          Clear data in onExitTransitionEnd\n        </Button>\n      </Group>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "16e37284dd2d7938cba876e7b96608eb8d2093edda548cd47d48cf6b59ad3917",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.transitionEnd.tsx",
+      "upstreamSha256": "3ca15ba730721f9708b8139819d829d9b483c8eac0ee03e95dd8f2f3e19204bd",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.transitions.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Drawer } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nimport { AuthenticationForm } from '@/components/rendyn-libraries/mantine/upstream/src/shared/AuthenticationForm/AuthenticationForm';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Drawer\n        opened={opened}\n        onClose={close}\n        title=\"Authentication\"\n        transitionProps={{ transition: 'rotate-left', duration: 150, timingFunction: 'linear' }}\n      >\n        <AuthenticationForm noShadow noPadding />\n      </Drawer>\n\n      <Button variant=\"default\" onClick={open}>\n        Open Drawer\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "8ee8d72543f5eef68523549ed6b9f272a03a1064c9ac03a011e02f5842d9af30",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.transitions.tsx",
+      "upstreamSha256": "8ec760725176006d1096762eb57672c1db97d3880e4bf3a65a589d842482eccc",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Drawer } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nimport { AuthenticationForm } from '@/components/rendyn-libraries/mantine/upstream/src/shared/AuthenticationForm/AuthenticationForm';\n\nfunction Demo() {\n  const [opened, { open, close }] = useDisclosure(false);\n\n  return (\n    <>\n      <Drawer opened={opened} onClose={close} title=\"Authentication\">\n        <AuthenticationForm noShadow noPadding />\n      </Drawer>\n\n      <Button variant=\"default\" onClick={open}>\n        Open Drawer\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "74d097133b48a3e1e6f3d109f39b4212ad0b045e9052aaccee8599c522b0671a",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.usage.tsx",
+      "upstreamSha256": "ef0d897dfe4389a08fbe054caf8898e8a7a85d6f3fed52a5a480575a9b751454",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/drawer/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.closeIcon\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "62395c0cda6117827f9d161f8b54e76789dc55406a533b95898ad2b4c233cba9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/drawer/previews/composition.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.composition\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "0edc76d85d9bba7079e3d7dcd4eb0afa65ee568c1cce1511047c781dfac37406",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/drawer/previews/header.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.header\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7c0db84c9829162ed08e9c71044311f5863648929397894f7bde9bb1c928df5e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/drawer/previews/initial-focus.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.initialFocus\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "bafae606026f3bbf309039d15dcd4bdf55828150eb3a7c7af1de3a3d679d62c6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/drawer/previews/initial-focus-trap.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.initialFocusTrap\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "62ef51b378890bd387709d9529922f7c4cfa553f29c4f415ebd5cea824304525",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/drawer/previews/offset.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.offset\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "acd1980e47ce145af29945c37975e54c43bf11112635d22eb81367a2a837bbae",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/drawer/previews/overflow.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.overflow\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "00fd466af63b3cbca7a5b0806116b25999b6cea3c026a5e9bb5005a7361c57c0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/drawer/previews/overlay.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.overlay\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "37196f6ad6e6710cfa7917f08bccfa98190a9e5787dfc76583d1dde5cc6e4f8d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/drawer/previews/positions.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.positions\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "35f994c6a3557e1a3eac3517601f9034686a2b7ce342644a8f022814df8d38df",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/drawer/previews/scrollarea.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.scrollarea\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4cf867289278ea9c2f7db4d4bdfad49a328fb2b477f6c5f9c20b8147bfb9d308",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/drawer/previews/sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.sizes\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "ae909941941a6f575a2d17ee25fbd7bb6319b5469a1aa74bc9806b150d5a57f6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/drawer/previews/stack.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.stack\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "bb6dec8871286ebdf5b85d685d0414835c5e34a4afb109549a0fbca0849495c1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/drawer/previews/transition-end.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.transitionEnd\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "01f89ea42af067db2a3a5f33de82827bd44b54d3b81a70401af839348196e375",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/drawer/previews/transitions.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.transitions\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7fb109d7c203172c0bf75b25d2e28cfad300bb1884276ee31eee7dbf2e65808e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/drawer/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Drawer/Drawer.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "663a41f90ecc3eedcf9498590826b3f188ed831ee729fd4ba63d6cf52740acad",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/form@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @phosphor-icons/react@2.1.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/form@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @phosphor-icons/react@2.1.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "drawer",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Drawer",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.closeIcon.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.closeIcon.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine drawer\n\n15 published Mantine drawer examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Drawer\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Drawer/Drawer.demo.closeIcon.tsx\n"
+}

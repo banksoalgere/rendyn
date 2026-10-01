@@ -1,0 +1,388 @@
+{
+  "id": "mantine:combobox-popover",
+  "sourceId": "mantine",
+  "slug": "mantine-combobox-popover",
+  "name": "Mantine combobox popover",
+  "description": "19 published Mantine combobox popover examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantinex/demo@2.0.0",
+    "@phosphor-icons/react@2.1.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "popover",
+    "tags": [
+      "code",
+      "file",
+      "popover",
+      "select"
+    ],
+    "aliases": [
+      "combobox popover",
+      "mantine combobox popover",
+      "popover"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "19 published Mantine combobox popover examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "popover:code:file:select",
+    "searchText": "Mantine combobox popover\ncombobox popover\n19 published Mantine combobox popover examples with complete pinned source and MIT attribution.\nmantine combobox popover\npopover\ncode\nfile\nselect\nMantine combobox popover 19 published Mantine combobox popover examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/ComboboxPopover Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.allowDeselect.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-combobox-popover",
+  "manifestPath": "components/mantine-combobox-popover/component.json",
+  "integrity": "sha256:8bd749412415f841cd2dd2dd4286d96b822615ccab25f5c508ce2d5461ee0e33",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.allowDeselect.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, ComboboxPopover, Stack } from '@mantine/core';\n\nfunction Demo() {\n  const [value1, setValue1] = useState<string | null>('React');\n  const [value2, setValue2] = useState<string | null>('React');\n\n  return (\n    <Stack>\n      <ComboboxPopover\n        data={['React', 'Angular', 'Vue', 'Svelte']}\n        value={value1}\n        onChange={setValue1}\n        allowDeselect={false}\n      >\n        <ComboboxPopover.Target>\n          <Button variant=\"default\" miw={200}>\n            {value1 || 'Cannot deselect'}\n          </Button>\n        </ComboboxPopover.Target>\n      </ComboboxPopover>\n\n      <ComboboxPopover\n        data={['React', 'Angular', 'Vue', 'Svelte']}\n        value={value2}\n        onChange={setValue2}\n        allowDeselect\n      >\n        <ComboboxPopover.Target>\n          <Button variant=\"default\" miw={200}>\n            {value2 || 'Can deselect (default)'}\n          </Button>\n        </ComboboxPopover.Target>\n      </ComboboxPopover>\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "8cd2186910c6b8af05ea972a568cfa0db2ac8d47e16b7e4a07298b82c096ffef",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.allowDeselect.tsx",
+      "upstreamSha256": "eff3273c2acbe3947cf040b70fbd6d4fc5a4ec859f301f5ce48f2e1a2beea39a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.checkIcon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, ComboboxPopover } from '@mantine/core';\n\nfunction Wrapper(props: any) {\n  return (\n    <ComboboxPopover\n      {...props}\n      data={['React', 'Angular', 'Svelte', 'Vue']}\n      dropdownOpened\n      defaultValue=\"React\"\n      comboboxProps={{ hideDetached: false }}\n    >\n      <ComboboxPopover.Target>\n        <Button variant=\"default\" miw={200} mb={150}>\n          Select framework\n        </Button>\n      </ComboboxPopover.Target>\n    </ComboboxPopover>\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent withCheckIcon={true} withAlignedLabels={false} checkIconPosition={\"left\"} />; }\n",
+      "sha256": "b6bb319a715d9193e2179ef84dfc0a584972611d77045512ef9575ff06bb9b22",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.checkIcon.tsx",
+      "upstreamSha256": "af8112a721f54d0999c6d2fc55ad48ebc9bfb35ef6b88304047fe1eaba375327",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.controlledSearch.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, ComboboxPopover, Text } from '@mantine/core';\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n  const [searchValue, setSearchValue] = useState('');\n\n  return (\n    <>\n      <ComboboxPopover\n        data={['React', 'Angular', 'Vue', 'Svelte']}\n        value={value}\n        onChange={setValue}\n        searchable\n        searchValue={searchValue}\n        onSearchChange={setSearchValue}\n      >\n        <ComboboxPopover.Target>\n          <Button variant=\"default\" miw={200}>\n            {value || 'Select framework'}\n          </Button>\n        </ComboboxPopover.Target>\n      </ComboboxPopover>\n\n      <Text mt=\"md\" size=\"sm\">\n        Search value: <b>{searchValue || '(empty)'}</b>\n      </Text>\n      <Text size=\"sm\">\n        Selected value: <b>{value || '(none)'}</b>\n      </Text>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "74323c79b39e7105cc7caaddc9c7e2028978ed6fd7dd143054fbd1d24b1c1598",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.controlledSearch.tsx",
+      "upstreamSha256": "3918adbbc19d06ffb0b69faa08d8979978e19bd3c5b819fb531a057ee10fe5f5",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.disabledOptions.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, ComboboxPopover } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <ComboboxPopover\n      data={[\n        { value: 'react', label: 'React' },\n        { value: 'ng', label: 'Angular' },\n        { value: 'vue', label: 'Vue', disabled: true },\n        { value: 'svelte', label: 'Svelte', disabled: true },\n      ]}\n    >\n      <ComboboxPopover.Target>\n        <Button variant=\"default\" miw={200}>\n          Select framework\n        </Button>\n      </ComboboxPopover.Target>\n    </ComboboxPopover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "ff000b873e272a65eaf2557235ce0ff7c8437dca79d11aab3ab54841c36d8154",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.disabledOptions.tsx",
+      "upstreamSha256": "63a06385f99661b6f2502e7ed45e90f1c4237a2909dc330e64178a12db56a747",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.dropdownAnimation.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, ComboboxPopover } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <ComboboxPopover\n      data={['React', 'Angular', 'Vue', 'Svelte']}\n      comboboxProps={{ transitionProps: { transition: 'pop', duration: 200 } }}\n    >\n      <ComboboxPopover.Target>\n        <Button variant=\"default\" miw={200}>\n          With animation\n        </Button>\n      </ComboboxPopover.Target>\n    </ComboboxPopover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "7160d06d65dec4caf448b13c368ff220ad6e5ade35c12152a7c885c0c7b23207",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.dropdownAnimation.tsx",
+      "upstreamSha256": "38d3040973448b92dff74d7916df786a2148c63fb34643591256f805b45b32c6",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.dropdownOpened.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, ComboboxPopover, Group } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst code = `\nimport { Button, ComboboxPopover, Group } from '@mantine/core';\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [dropdownOpened, { toggle }] = useDisclosure();\n\n  return (\n    <Group>\n      <Button onClick={toggle}>Toggle dropdown</Button>\n      <ComboboxPopover\n        data={['React', 'Angular', 'Vue', 'Svelte']}\n        dropdownOpened={dropdownOpened}\n      >\n        <ComboboxPopover.Target>\n          <Button variant=\"default\" miw={200}>Select framework</Button>\n        </ComboboxPopover.Target>\n      </ComboboxPopover>\n    </Group>\n  );\n}\n`;\n\nfunction Demo() {\n  const [dropdownOpened, { toggle }] = useDisclosure();\n\n  return (\n    <Group>\n      <Button onClick={toggle}>Toggle dropdown</Button>\n      <ComboboxPopover data={['React', 'Angular', 'Vue', 'Svelte']} dropdownOpened={dropdownOpened}>\n        <ComboboxPopover.Target>\n          <Button variant=\"default\" miw={200}>\n            Select framework\n          </Button>\n        </ComboboxPopover.Target>\n      </ComboboxPopover>\n    </Group>\n  );\n}\n\nexport const dropdownOpened: MantineDemo = {\n  type: 'code',\n  component: Demo,\n  code,\n  centered: true,\n};\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "3036c7ac319d62fe44d17cfb5584838b7a8385a0867a4637fb37c31eec988d22",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.dropdownOpened.tsx",
+      "upstreamSha256": "2937f099a466f3b272ecd87b830b14329b9ef1a42517d435bbde79f83315a33b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.dropdownPosition.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, ComboboxPopover } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <ComboboxPopover\n      data={['React', 'Angular', 'Vue', 'Svelte']}\n      comboboxProps={{ position: 'top', middlewares: { flip: false, shift: false } }}\n    >\n      <ComboboxPopover.Target>\n        <Button variant=\"default\" miw={200}>\n          Open dropdown above\n        </Button>\n      </ComboboxPopover.Target>\n    </ComboboxPopover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "ead1e7f599bff999666c3cc1d299ad4c02a8bdb2b1a54e90e73905ffd2e401a2",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.dropdownPosition.tsx",
+      "upstreamSha256": "f287584cb1a20d2e7c06ba74cfb7697aabd40c9b4ff3d40a658e3b381afa06bf",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.dropdownWidth.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, ComboboxPopover } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <ComboboxPopover\n      data={['React', 'Angular', 'Vue', 'Svelte']}\n      comboboxProps={{ width: 250, position: 'bottom-start' }}\n    >\n      <ComboboxPopover.Target>\n        <Button variant=\"default\" miw={200}>\n          Select framework\n        </Button>\n      </ComboboxPopover.Target>\n    </ComboboxPopover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "f65dd4ad30d332f7e6554c1acc985003412ca16aaf3185b8759728aa7c6c8dc0",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.dropdownWidth.tsx",
+      "upstreamSha256": "6f514b2fb2b54da063ea94dc5842c64697e672dc6b47e873e71852f92605b36e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.formSubmission.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, ComboboxPopover, Stack, Text } from '@mantine/core';\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n  const [submitted, setSubmitted] = useState('');\n\n  return (\n    <form\n      onSubmit={(event) => {\n        event.preventDefault();\n        const formData = new FormData(event.currentTarget);\n        setSubmitted(formData.get('framework') as string);\n      }}\n    >\n      <Stack>\n        <ComboboxPopover\n          data={['React', 'Angular', 'Vue', 'Svelte']}\n          value={value}\n          onChange={setValue}\n          name=\"framework\"\n        >\n          <ComboboxPopover.Target>\n            <Button variant=\"default\" miw={200} type=\"button\">\n              {value || 'Select framework'}\n            </Button>\n          </ComboboxPopover.Target>\n        </ComboboxPopover>\n\n        <Button type=\"submit\">Submit</Button>\n        {submitted && (\n          <Text size=\"sm\">\n            Submitted value: <b>{submitted}</b>\n          </Text>\n        )}\n      </Stack>\n    </form>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "473f04ef63a6d894a996367b6edcb353360b881a5b290e0bbf5c0ae018e62bc9",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.formSubmission.tsx",
+      "upstreamSha256": "9d3ee19c67e8a9b6f52a898398a0ebbfecbbbee1bcc4ea1a50b64e17a867c00d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.groups.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, ComboboxPopover } from '@mantine/core';\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n\n  return (\n    <ComboboxPopover\n      data={[\n        { group: 'Frontend', items: ['React', 'Angular', 'Vue'] },\n        { group: 'Backend', items: ['Node.js', 'Django', 'Rails'] },\n      ]}\n      value={value}\n      onChange={setValue}\n    >\n      <ComboboxPopover.Target>\n        <Button variant=\"default\" miw={200}>\n          {value || 'Select technology'}\n        </Button>\n      </ComboboxPopover.Target>\n    </ComboboxPopover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "8fa1a797f49f41c52d7323ef1de6897fdc24bb86ccf224523e352e73be2c34d1",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.groups.tsx",
+      "upstreamSha256": "cc50970e6c82be73e79c4d7eb8061773d4c47fae09d4690d90c239414b8d1fc6",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.limit.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, ComboboxPopover } from '@mantine/core';\n\nconst largeData = Array(1000)\n  .fill(0)\n  .map((_, index) => `Option ${index}`);\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n\n  return (\n    <ComboboxPopover\n      data={largeData}\n      value={value}\n      onChange={setValue}\n      searchable\n      limit={5}\n      nothingFoundMessage=\"Nothing found...\"\n    >\n      <ComboboxPopover.Target>\n        <Button variant=\"default\" miw={200}>\n          {value || 'Select option'}\n        </Button>\n      </ComboboxPopover.Target>\n    </ComboboxPopover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "ff71771f98cfe3acff4d555a8290204510c3d7940499bc7b9afed5a6f83513fd",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.limit.tsx",
+      "upstreamSha256": "64927623c670a67481d550bd6540710f077898e56b83d5a1db41f6df1e2412d5",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.multiple.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, ComboboxPopover } from '@mantine/core';\n\nfunction Demo() {\n  const [value, setValue] = useState<string[]>([]);\n\n  return (\n    <ComboboxPopover\n      data={['React', 'Angular', 'Vue', 'Svelte']}\n      value={value}\n      onChange={setValue}\n      multiple\n    >\n      <ComboboxPopover.Target>\n        <Button variant=\"default\" miw={200}>\n          {value.length > 0 ? value.join(', ') : 'Select frameworks'}\n        </Button>\n      </ComboboxPopover.Target>\n    </ComboboxPopover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "75ac64a253b47d3a47c9cf26abaac6e3939a4fbc72d523667a8c491200906523",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.multiple.tsx",
+      "upstreamSha256": "db3f8635745bad7a19f7fd77e24717d2f6406693989243999b8530411f966f38",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.nothingFound.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, ComboboxPopover } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <ComboboxPopover data={[]} nothingFoundMessage=\"No options available\">\n      <ComboboxPopover.Target>\n        <Button variant=\"default\" miw={200}>\n          Open dropdown\n        </Button>\n      </ComboboxPopover.Target>\n    </ComboboxPopover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "baa95719cfbe95198c2675aec73c6422ac2687b0f555cd3d18eac33c5207a9e3",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.nothingFound.tsx",
+      "upstreamSha256": "2959f8d73d293b8e8d0b0683a47cd38110769d7dc3ad709271ac4c96c10ed9b1",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.renderOption.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport {\n  CheckIcon,\n  TextAlignCenterIcon,\n  TextAlignJustifyIcon,\n  TextAlignLeftIcon,\n  TextAlignRightIcon,\n} from '@phosphor-icons/react';\n\nimport { Button, ComboboxPopover, ComboboxPopoverProps, Group } from '@mantine/core';\n\nconst iconProps = {\n  color: 'currentColor',\n  opacity: 0.6,\n  size: 18,\n};\n\nconst icons: Record<string, React.ReactNode> = {\n  left: <TextAlignLeftIcon {...iconProps} />,\n  center: <TextAlignCenterIcon {...iconProps} />,\n  right: <TextAlignRightIcon {...iconProps} />,\n  justify: <TextAlignJustifyIcon {...iconProps} />,\n};\n\nconst renderSelectOption: ComboboxPopoverProps['renderOption'] = ({ option, checked }) => (\n  <Group flex=\"1\" gap=\"xs\">\n    {icons[option.value]}\n    {option.label}\n    {checked && <CheckIcon style={{ marginInlineStart: 'auto' }} {...iconProps} />}\n  </Group>\n);\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n\n  return (\n    <ComboboxPopover\n      data={[\n        { value: 'left', label: 'Left' },\n        { value: 'center', label: 'Center' },\n        { value: 'right', label: 'Right' },\n        { value: 'justify', label: 'Justify' },\n      ]}\n      value={value}\n      onChange={setValue}\n      renderOption={renderSelectOption}\n    >\n      <ComboboxPopover.Target>\n        <Button variant=\"default\" miw={200}>\n          {value || 'Select alignment'}\n        </Button>\n      </ComboboxPopover.Target>\n    </ComboboxPopover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "3f82d670d993e1529a634795091691e9bba8c3954e2eceb5d2debb8d11d98583",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.renderOption.tsx",
+      "upstreamSha256": "c5109274a20d2f0ca85e55d0f01a6acf7757ad727be5d8abef93a2ebdad65f9d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.scrollArea.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, ComboboxPopover } from '@mantine/core';\n\nconst data = Array(50)\n  .fill(0)\n  .map((_, index) => `Option ${index}`);\n\nfunction Demo() {\n  return (\n    <ComboboxPopover data={data} maxDropdownHeight={200}>\n      <ComboboxPopover.Target>\n        <Button variant=\"default\" miw={200}>\n          Select option\n        </Button>\n      </ComboboxPopover.Target>\n    </ComboboxPopover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "660dc1b412efa5fc0de4254941e151c95347dc4ab6a68c092344a0049b1c829a",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.scrollArea.tsx",
+      "upstreamSha256": "38b7e00d653590cb9af4641fc97e7724bac67cb354878ef57782fecea059e888",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.searchable.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, ComboboxPopover } from '@mantine/core';\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n\n  return (\n    <ComboboxPopover\n      data={['React', 'Angular', 'Vue', 'Svelte']}\n      value={value}\n      onChange={setValue}\n      searchable\n      nothingFoundMessage=\"Nothing found...\"\n    >\n      <ComboboxPopover.Target>\n        <Button variant=\"default\" miw={200}>\n          {value || 'Select framework'}\n        </Button>\n      </ComboboxPopover.Target>\n    </ComboboxPopover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "a40cf75009f272ecc8cef15600e683d35571872546d966dc2c7974094e05f35f",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.searchable.tsx",
+      "upstreamSha256": "009ade0022b312e2e69f89e88297546cef865630ca1c179b1a80e517ce91fa35",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.sort.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, ComboboxItem, ComboboxPopover, OptionsFilter } from '@mantine/core';\n\nconst optionsFilter: OptionsFilter = ({ options, search }) => {\n  const filtered = (options as ComboboxItem[]).filter((option) =>\n    option.label.toLowerCase().trim().includes(search.toLowerCase().trim())\n  );\n\n  filtered.sort((a, b) => a.label.localeCompare(b.label));\n  return filtered;\n};\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n\n  return (\n    <ComboboxPopover\n      data={['4 – React', '1 – Angular', '3 – Vue', '2 – Svelte']}\n      value={value}\n      onChange={setValue}\n      searchable\n      filter={optionsFilter}\n      nothingFoundMessage=\"Nothing found...\"\n    >\n      <ComboboxPopover.Target>\n        <Button variant=\"default\" miw={200}>\n          {value || 'Select framework'}\n        </Button>\n      </ComboboxPopover.Target>\n    </ComboboxPopover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "a800be139f7fe033d55aa7f3adf0b1078f0a546552b47e7d0ec2170afdc0d5ad",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.sort.tsx",
+      "upstreamSha256": "5bfd056d3879b460333f879f19693c2a7d5530765ce89e2660442defc0692dd5",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.stylesApi.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, ComboboxPopover } from '@mantine/core';\n\nfunction Demo(props: any) {\n  return (\n    <ComboboxPopover\n      {...props}\n      searchable\n      dropdownOpened\n      nothingFoundMessage=\"Nothing found...\"\n      data={[\n        { group: 'Frontend', items: ['React', 'Angular'] },\n        { group: 'Backend', items: ['Node.js', 'Django'] },\n      ]}\n      comboboxProps={{ middlewares: { flip: false, shift: false } }}\n    >\n      <ComboboxPopover.Target>\n        <Button variant=\"default\" miw={200}>\n          Select technology\n        </Button>\n      </ComboboxPopover.Target>\n    </ComboboxPopover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "efc7895ae0016cb0b689d6ce8347afef53b228e420bf7e7f4e569b53b4521703",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.stylesApi.tsx",
+      "upstreamSha256": "4825693ac02bc70c3f8dd19645b8bb992ae8db729befbd6e9b9807550a808bd8",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, ComboboxPopover } from '@mantine/core';\n\nfunction Demo() {\n  const [value, setValue] = useState<string | null>(null);\n\n  return (\n    <ComboboxPopover data={['React', 'Angular', 'Vue', 'Svelte']} value={value} onChange={setValue}>\n      <ComboboxPopover.Target>\n        <Button variant=\"default\" miw={200}>\n          {value || 'Select framework'}\n        </Button>\n      </ComboboxPopover.Target>\n    </ComboboxPopover>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "c10314c7b0c5dc87165dca2f06ed697b36bb128d757793c753f293437a004322",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.usage.tsx",
+      "upstreamSha256": "35d964dcfafd7cee7e07281ea3ec063b888574523e7ea9208a51854562652a2b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.allowDeselect\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a5720545f71f47d827473c647d5e03e8358c2aca15732c93c7506ce1e7c3d864",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/check-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.checkIcon\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "3c88e1f2cf992cc911b63a456606977201546e986450b31e53e16a81dfb1575f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/controlled-search.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.controlledSearch\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7c6938bd7f7423b7fb2ea3967ff44bb66fa0c47be448cfdcac2f5a143854e119",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/disabled-options.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.disabledOptions\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "eebfd5ee3a34ca573ece09567a90c0ba87d4ec58ad333885a878edc06fb3b165",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/dropdown-animation.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.dropdownAnimation\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c8f1af164e87b741d9adffebc82d2b71824045ea783300d2fbc1321d1ac9746c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/dropdown-opened.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.dropdownOpened\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "8297c8ef17055160adbac77d67796aac1bc06f3781b218ac0e174d0600dac34f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/dropdown-position.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.dropdownPosition\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "70ce16cd7a2ff08e077ec6dbd9bb6139dbbd09a76a05ba86c3762df03fdf087b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/dropdown-width.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.dropdownWidth\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "86295878ed249ddee507d0fc9244b74345c39d7662fb1385b0a11be22ed100fa",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/form-submission.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.formSubmission\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e749ac9f6758e359115e4b6cd34d9d55b0b8d07b81c91e1e71318cf5ceea5c2d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/groups.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.groups\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "550a0f047db3d5818a4678a5a6ebb2c06a76d7f82cb983ae00e2ae457aaa2824",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/limit.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.limit\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a9c4c4884c070d8a2fc8c8703a0a7bcad92b647a7574b20da46ce70a2a766f63",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/multiple.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.multiple\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a89ecdb3e1ecca1d493eb17c77961dcc7411f3fa43a6a0cde5390ae3d238ee56",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/nothing-found.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.nothingFound\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e9de7f4f532318a5ce64fcf5a29db4a4c63bf47200760f1674b5e02056b17486",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/render-option.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.renderOption\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "678e1d77b8e8b259c719b066429c4ca82b6ea46a0dded9284e17504c4ed9d9ba",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/scroll-area.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.scrollArea\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "ffa4a8516d4a6eadeb073d0be2278edf353919fc53aab8f0ed53e19e587f9df3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/searchable.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.searchable\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "68f7b0cf3ebd2c60f0c9ccf73afcd583903f55b69c71aeeba41be70a38dacd1c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/sort.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.sort\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "3bc129f4c4e13ed81fee1bd62917c5fcd8b1183b667a33387bd5779fee137c1e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/styles-api.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.stylesApi\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "6fc4ad209e9d0d404164f04bf6ba5c26a00e9708adcb12f183628bb87409fd5e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/combobox-popover/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/ComboboxPopover/ComboboxPopover.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7a8c3e770695b755202d976bca2f8144415853bc67f80c079cba98ad7a74096b",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @phosphor-icons/react@2.1.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @phosphor-icons/react@2.1.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "combobox-popover",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/ComboboxPopover",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.allowDeselect.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.allowDeselect.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine combobox popover\n\n19 published Mantine combobox popover examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/ComboboxPopover\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/ComboboxPopover/ComboboxPopover.demo.allowDeselect.tsx\n"
+}

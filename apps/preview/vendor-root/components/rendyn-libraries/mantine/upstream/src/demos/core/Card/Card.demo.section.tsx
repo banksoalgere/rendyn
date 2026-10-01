@@ -1,0 +1,59 @@
+"use client";
+
+import { DotsThreeIcon, EyeIcon, FileZipIcon, TrashIcon } from '@phosphor-icons/react';
+
+import { ActionIcon, Card, Group, Image, Menu, SimpleGrid, Text } from '@mantine/core';
+
+const images = [
+  'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png',
+  'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-2.png',
+  'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-3.png',
+];
+
+function Demo() {
+  return (
+    <Card withBorder shadow="sm">
+      <Card.Section withBorder inheritPadding py="xs">
+        <Group justify="space-between">
+          <Text fw={500}>Review pictures</Text>
+          <Menu withinPortal position="bottom-end" shadow="sm">
+            <Menu.Target>
+              <ActionIcon variant="subtle" color="gray">
+                <DotsThreeIcon size={16} />
+              </ActionIcon>
+            </Menu.Target>
+
+            <Menu.Dropdown>
+              <Menu.Item leftSection={<FileZipIcon size={14} />}>Download zip</Menu.Item>
+              <Menu.Item leftSection={<EyeIcon size={14} />}>Preview all</Menu.Item>
+              <Menu.Item leftSection={<TrashIcon size={14} />} color="red">
+                Delete all
+              </Menu.Item>
+            </Menu.Dropdown>
+          </Menu>
+        </Group>
+      </Card.Section>
+
+      <Text mt="sm" c="dimmed" size="sm">
+        <Text span inherit c="var(--mantine-color-anchor)">
+          200+ images uploaded
+        </Text>{' '}
+        since last visit, review them to select which one should be added to your gallery
+      </Text>
+
+      <Card.Section mt="sm">
+        <Image src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-4.png" />
+      </Card.Section>
+
+      <Card.Section inheritPadding mt="sm" pb="md">
+        <SimpleGrid cols={3}>
+          {images.map((image) => (
+            <Image src={image} key={image} radius="sm" />
+          ))}
+        </SimpleGrid>
+      </Card.Section>
+    </Card>
+  );
+}
+const RendynExampleComponent = Demo;
+export function RendynExample() { return <RendynExampleComponent  />; }

@@ -1,0 +1,113 @@
+{
+  "id": "mantine:use-fullscreen",
+  "sourceId": "mantine",
+  "slug": "mantine-use-fullscreen",
+  "name": "Mantine use fullscreen",
+  "description": "2 published Mantine use fullscreen examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantinex/demo@2.0.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "use-fullscreen",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "use fullscreen",
+      "mantine use fullscreen",
+      "use-fullscreen"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "2 published Mantine use fullscreen examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "use-fullscreen:code:file",
+    "searchText": "Mantine use fullscreen\nuse fullscreen\n2 published Mantine use fullscreen examples with complete pinned source and MIT attribution.\nmantine use fullscreen\nuse-fullscreen\ncode\nfile\nMantine use fullscreen 2 published Mantine use fullscreen examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use fullscreen Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use fullscreen/use fullscreen.demo.ref.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-use-fullscreen",
+  "manifestPath": "components/mantine-use-fullscreen/component.json",
+  "integrity": "sha256:c502629d080dd8e4f11b76e114d2ba77473daac459444e5c2a71801372a3df0e",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-fullscreen/use-fullscreen.demo.ref.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Stack } from '@mantine/core';\n\nimport { useFullscreenElement } from '@mantine/hooks';\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst refCode = `\nimport { useFullscreenElement } from '@mantine/hooks';\nimport { Button, Stack } from '@mantine/core';\n\nfunction RefDemo() {\n  const { ref, toggle, fullscreen } = useFullscreenElement();\n\n  return (\n    <Stack align=\"center\">\n      <img\n        ref={ref}\n        src=\"https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-4.png\"\n        alt=\"For demo\"\n        width={200}\n      />\n      <Button onClick={toggle} color={fullscreen ? 'red' : 'blue'}>\n        {fullscreen ? 'Exit Fullscreen' : 'View Image Fullscreen'}\n      </Button>\n    </Stack>\n  );\n}\n`;\n\nfunction RefDemo() {\n  const { ref, toggle, fullscreen } = useFullscreenElement();\n\n  return (\n    <Stack align=\"center\">\n      <img\n        ref={ref}\n        src=\"https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-4.png\"\n        alt=\"For demo\"\n        width={200}\n      />\n      <Button onClick={toggle} color={fullscreen ? 'red' : 'blue'}>\n        {fullscreen ? 'Exit Fullscreen' : 'View Image Fullscreen'}\n      </Button>\n    </Stack>\n  );\n}\n\nexport const ref: MantineDemo = {\n  type: 'code',\n  code: refCode,\n  component: RefDemo,\n};\nconst RendynExampleComponent = RefDemo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "f6c3e39034a6aeb95ca814e7dfd966bc16a2933dd802947ca5ab6bb2482286f5",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-fullscreen/use-fullscreen.demo.ref.tsx",
+      "upstreamSha256": "aff38004af4b1d0f552012cab6d29243be671dbfb97a8969846ea8a199a6b97b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-fullscreen/use-fullscreen.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from '@mantine/core';\n\nimport { useFullscreenDocument } from '@mantine/hooks';\n\nfunction Demo() {\n  const { toggle, fullscreen } = useFullscreenDocument();\n\n  return (\n    <Button onClick={toggle} color={fullscreen ? 'red' : 'blue'}>\n      {fullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}\n    </Button>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "6d562d8691dd86fa3f1def8c3f0c6691d69589195fb47367503f507ee75b5279",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-fullscreen/use-fullscreen.demo.usage.tsx",
+      "upstreamSha256": "c0c46aadcbd9d35fe3714b2c8970ebabb64542ab75114c894a91d201a04a05ef",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-fullscreen/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-fullscreen/use-fullscreen.demo.ref\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "d3f6ac90ffc34c7a1a9cc281a5ea09425cc7079bf9791dd3a2ac76f803c6a9a7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-fullscreen/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-fullscreen/use-fullscreen.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b0415d818ea6f659e12d41a01deb97a95cdbfa986eec1edc7964b0ed4491d225",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "use-fullscreen",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-fullscreen",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-fullscreen/use-fullscreen.demo.ref.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-fullscreen/use-fullscreen.demo.ref.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine use fullscreen\n\n2 published Mantine use fullscreen examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-fullscreen\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-fullscreen/use-fullscreen.demo.ref.tsx\n"
+}

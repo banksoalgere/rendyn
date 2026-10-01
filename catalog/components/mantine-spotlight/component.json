@@ -1,0 +1,204 @@
+{
+  "id": "mantine:spotlight",
+  "sourceId": "mantine",
+  "slug": "mantine-spotlight",
+  "name": "Mantine spotlight",
+  "description": "7 published Mantine spotlight examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantine/spotlight@9.6.3",
+    "@phosphor-icons/react@2.1.10",
+    "fuse.js@7.5.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "spotlight",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "spotlight",
+      "mantine spotlight"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "7 published Mantine spotlight examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "spotlight:code:file",
+    "searchText": "Mantine spotlight\nspotlight\n7 published Mantine spotlight examples with complete pinned source and MIT attribution.\nmantine spotlight\ncode\nfile\nMantine spotlight 7 published Mantine spotlight examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/spotlight Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/spotlight/Spotlight.demo.compound.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-spotlight",
+  "manifestPath": "components/mantine-spotlight/component.json",
+  "integrity": "sha256:496ba124266b9efae0e6e8a73a3a3c7c658ca6a49a13dc2fd02e21b9cb719eb6",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/spotlight/Spotlight.demo.compound.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useMemo, useState } from 'react';\n\nimport { MagnifyingGlassIcon } from '@phosphor-icons/react';\n\nimport { Button } from '@mantine/core';\n\nimport { createSpotlight, Spotlight } from '@mantine/spotlight';\n\nconst data = ['Home', 'About us', 'Contacts', 'Blog', 'Careers', 'Terms of service'];\n\nfunction Demo() {\n  const [store, spotlight] = useMemo(createSpotlight, []);\n  const [query, setQuery] = useState('');\n\n  const items = data\n    .filter((item) => item.toLowerCase().includes(query.toLowerCase().trim()))\n    .map((item) => <Spotlight.Action key={item} label={item} />);\n\n  return (\n    <>\n      <Button onClick={spotlight.open}>Open spotlight</Button>\n\n      <Spotlight.Root store={store} query={query} onQueryChange={setQuery} shortcut={null}>\n        <Spotlight.Search placeholder=\"Search...\" leftSection={<MagnifyingGlassIcon />} />\n        <Spotlight.ActionsList>\n          {items.length > 0 ? items : <Spotlight.Empty>Nothing found...</Spotlight.Empty>}\n        </Spotlight.ActionsList>\n      </Spotlight.Root>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "9e5a0a8b036d8245d8dc41217b6ada2071b7b7d30c3557f07af86f599815148f",
+      "upstreamPath": "packages/@docs/demos/src/demos/spotlight/Spotlight.demo.compound.tsx",
+      "upstreamSha256": "3a6cb64f68cc52f2a8ae9693f7545f7b6837aefac03e2edd8d93a83d3d5df13c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/spotlight/Spotlight.demo.customAction.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useMemo, useState } from 'react';\n\nimport { MagnifyingGlassIcon } from '@phosphor-icons/react';\n\nimport { Badge, Button, Center, Group, Text } from '@mantine/core';\n\nimport { createSpotlight, Spotlight } from '@mantine/spotlight';\n\nconst data = [\n  {\n    image: 'https://img.icons8.com/clouds/256/000000/futurama-bender.png',\n    title: 'Bender Bending Rodríguez',\n    description: 'Fascinated with cooking, though has no sense of taste',\n    new: true,\n  },\n\n  {\n    image: 'https://img.icons8.com/clouds/256/000000/futurama-mom.png',\n    title: 'Carol Miller',\n    description: 'One of the richest people on Earth',\n    new: false,\n  },\n  {\n    image: 'https://img.icons8.com/clouds/256/000000/homer-simpson.png',\n    title: 'Homer Simpson',\n    description: 'Overweight, lazy, and often ignorant',\n    new: false,\n  },\n  {\n    image: 'https://img.icons8.com/clouds/256/000000/spongebob-squarepants.png',\n    title: 'Spongebob Squarepants',\n    description: 'Not just a sponge',\n    new: false,\n  },\n];\n\nfunction Demo() {\n  const [store, spotlight] = useMemo(createSpotlight, []);\n  const [query, setQuery] = useState('');\n\n  const items = data\n    .filter((item) => item.title.toLowerCase().includes(query.toLowerCase().trim()))\n    .map((item) => (\n      <Spotlight.Action key={item.title} onClick={() => console.log(item)}>\n        <Group wrap=\"nowrap\" w=\"100%\">\n          {item.image && (\n            <Center>\n              <img src={item.image} alt={item.title} width={50} height={50} />\n            </Center>\n          )}\n\n          <div style={{ flex: 1 }}>\n            <Text>{item.title}</Text>\n\n            {item.description && (\n              <Text opacity={0.6} size=\"xs\">\n                {item.description}\n              </Text>\n            )}\n          </div>\n\n          {item.new && <Badge variant=\"default\">new</Badge>}\n        </Group>\n      </Spotlight.Action>\n    ));\n\n  return (\n    <>\n      <Button onClick={spotlight.open}>Open spotlight</Button>\n\n      <Spotlight.Root store={store} query={query} onQueryChange={setQuery} shortcut={null}>\n        <Spotlight.Search placeholder=\"Search...\" leftSection={<MagnifyingGlassIcon />} />\n        <Spotlight.ActionsList>\n          {items.length > 0 ? items : <Spotlight.Empty>Nothing found...</Spotlight.Empty>}\n        </Spotlight.ActionsList>\n      </Spotlight.Root>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "48be71a8762e8bde3438004ee564bbbfbc14ef6845c42fe798160dccafb77aaa",
+      "upstreamPath": "packages/@docs/demos/src/demos/spotlight/Spotlight.demo.customAction.tsx",
+      "upstreamSha256": "4cda14f0763c2816235776262e43af93507725cd213c4064bc8426c58dc4416c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/spotlight/Spotlight.demo.fuzzySearch.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { FileTextIcon, GaugeIcon, HouseIcon, MagnifyingGlassIcon } from '@phosphor-icons/react';\n\nimport Fuse from 'fuse.js';\n\nimport { SpotlightActionData, SpotlightFilterFunction } from '@mantine/spotlight';\n\nimport { SpotlightDemoBase } from '@/components/rendyn-libraries/mantine/upstream/src/demos/spotlight/_demo-base';\n\nconst actions: SpotlightActionData[] = [\n  {\n    id: 'home',\n    label: 'Home',\n    description: 'Get to home page',\n    onClick: () => console.log('Home'),\n    leftSection: <HouseIcon size={24} />,\n  },\n  {\n    id: 'dashboard',\n    label: 'Dashboard',\n    description: 'Get full information about current system status',\n    onClick: () => console.log('Dashboard'),\n    leftSection: <GaugeIcon size={24} />,\n  },\n  {\n    id: 'documentation',\n    label: 'Documentation',\n    description: 'Visit documentation to learn more about all features',\n    onClick: () => console.log('Documentation'),\n    leftSection: <FileTextIcon size={24} />,\n  },\n  {\n    id: 'settings',\n    label: 'Settings',\n    description: 'Manage application preferences and configurations',\n    onClick: () => console.log('Settings'),\n    leftSection: <HouseIcon size={24} />,\n  },\n];\n\nconst fuzzySearchFilter: SpotlightFilterFunction = (query, searchActions) => {\n  if (!query.trim()) {\n    return searchActions;\n  }\n\n  const flatActions = searchActions.reduce<any[]>((acc, item) => {\n    if ('actions' in item) {\n      return [...acc, ...item.actions.map((action) => ({ ...action, group: item.group }))];\n    }\n    return [...acc, item];\n  }, []);\n\n  const fuse = new Fuse(flatActions, {\n    keys: ['label', 'description'],\n    threshold: 0.3,\n    minMatchCharLength: 1,\n  });\n\n  const results = fuse.search(query).map((result) => result.item);\n\n  const groups: Record<string, any> = {};\n  const result: any[] = [];\n\n  results.forEach((action) => {\n    if (action.group) {\n      if (!groups[action.group]) {\n        groups[action.group] = { pushed: false, data: { group: action.group, actions: [] } };\n      }\n      groups[action.group].data.actions.push(action);\n      if (!groups[action.group].pushed) {\n        groups[action.group].pushed = true;\n        result.push(groups[action.group].data);\n      }\n    } else {\n      result.push(action);\n    }\n  });\n\n  return result;\n};\n\nfunction Demo() {\n  return (\n    <SpotlightDemoBase\n      actions={actions}\n      filter={fuzzySearchFilter}\n      nothingFound=\"Nothing found...\"\n      highlightQuery\n      shortcut={null}\n      searchProps={{\n        leftSection: <MagnifyingGlassIcon size={20} />,\n        placeholder: 'Search...',\n      }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "a2cee577997f329e2082776ce599ba58c662d7c0927e30b567cf3ff1a83ed7c8",
+      "upstreamPath": "packages/@docs/demos/src/demos/spotlight/Spotlight.demo.fuzzySearch.tsx",
+      "upstreamSha256": "cbe4491fe6aa16f7445bb107f231b59c2e24dcfc92ed9f78aba9c33f1bf6ecf0",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/spotlight/_demo-base.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useMemo } from 'react';\nimport { Button, Group } from '@mantine/core';\nimport { createSpotlight, Spotlight, SpotlightProps } from '@mantine/spotlight';\n\nexport function SpotlightDemoBase(props: Partial<SpotlightProps>) {\n  const [store, actions] = useMemo(createSpotlight, []);\n  return (\n    <>\n      <Group justify=\"center\">\n        <Button onClick={actions.open}>Open spotlight</Button>\n      </Group>\n      <Spotlight actions={[]} store={store} {...props} />\n    </>\n  );\n}\n",
+      "sha256": "4c906d68c735cc646542af40b8a076a0b7f885c13660f42bfed6b941a2b31b3c",
+      "upstreamPath": "packages/@docs/demos/src/demos/spotlight/_demo-base.tsx",
+      "upstreamSha256": "266c4d76181483cba0978e8f550dd6e4cccfcc88b32b0fe5ed39be6e3aacd028",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/spotlight/Spotlight.demo.groups.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { MagnifyingGlassIcon } from '@phosphor-icons/react';\n\nimport { SpotlightActionData, SpotlightActionGroupData } from '@mantine/spotlight';\n\nimport { SpotlightDemoBase } from '@/components/rendyn-libraries/mantine/upstream/src/demos/spotlight/_demo-base';\n\nconst actions: (SpotlightActionGroupData | SpotlightActionData)[] = [\n  {\n    group: 'Pages',\n    actions: [\n      { id: 'home', label: 'Home page', description: 'Where we present the product' },\n      { id: 'careers', label: 'Careers page', description: 'Where we list open positions' },\n      { id: 'about-us', label: 'About us page', description: 'Where we tell what we do' },\n    ],\n  },\n\n  {\n    group: 'Apps',\n    actions: [\n      { id: 'svg-compressor', label: 'SVG compressor', description: 'Compress SVG images' },\n      { id: 'base64', label: 'Base 64 converter', description: 'Convert data to base 64 format' },\n      { id: 'fake-data', label: 'Fake data generator', description: 'Lorem ipsum generator' },\n    ],\n  },\n];\n\nfunction Demo() {\n  return (\n    <SpotlightDemoBase\n      actions={actions}\n      nothingFound=\"Nothing found...\"\n      highlightQuery\n      shortcut={null}\n      searchProps={{\n        leftSection: <MagnifyingGlassIcon size={20} />,\n        placeholder: 'Search...',\n      }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "5fe125c14ee9f145006d45e63d21600ec4228de0cfa136e0856469a245fca26b",
+      "upstreamPath": "packages/@docs/demos/src/demos/spotlight/Spotlight.demo.groups.tsx",
+      "upstreamSha256": "0ebeb849d726252aabd443ed5b858e80ffc7e151df2b9782d5b526e3e82f40b9",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/spotlight/Spotlight.demo.limit.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { MagnifyingGlassIcon } from '@phosphor-icons/react';\n\nimport { SpotlightActionData } from '@mantine/spotlight';\n\nimport { SpotlightDemoBase } from '@/components/rendyn-libraries/mantine/upstream/src/demos/spotlight/_demo-base';\n\nconst actions: SpotlightActionData[] = Array(3000)\n  .fill(0)\n  .map((_, index) => ({\n    id: `action-${index}`,\n    label: `Action ${index}`,\n    description: `Action ${index} description`,\n  }));\n\nfunction Demo() {\n  return (\n    <SpotlightDemoBase\n      actions={actions}\n      nothingFound=\"Nothing found...\"\n      highlightQuery\n      limit={7}\n      shortcut={null}\n      searchProps={{\n        leftSection: <MagnifyingGlassIcon size={20} />,\n        placeholder: 'Search...',\n      }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "89cf7d6810fd26eea4122fdfd8bc910860d9657e5a755df7feff3492c31775fa",
+      "upstreamPath": "packages/@docs/demos/src/demos/spotlight/Spotlight.demo.limit.tsx",
+      "upstreamSha256": "6478dbded5f912835793215a22d62934c350ddf13653cf20af9c70b63481d2de",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/spotlight/Spotlight.demo.scrollable.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { MagnifyingGlassIcon } from '@phosphor-icons/react';\n\nimport { SpotlightActionData } from '@mantine/spotlight';\n\nimport { SpotlightDemoBase } from '@/components/rendyn-libraries/mantine/upstream/src/demos/spotlight/_demo-base';\n\nconst actions: SpotlightActionData[] = Array(100)\n  .fill(0)\n  .map((_, index) => ({\n    id: `action-${index}`,\n    label: `Action ${index}`,\n    description: `Action ${index} description`,\n  }));\n\nfunction Demo() {\n  return (\n    <SpotlightDemoBase\n      actions={actions}\n      nothingFound=\"Nothing found...\"\n      highlightQuery\n      scrollable\n      maxHeight={350}\n      shortcut={null}\n      searchProps={{\n        leftSection: <MagnifyingGlassIcon size={20} />,\n        placeholder: 'Search...',\n      }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "949c1546a724097fc7674df0ed9adfed5c1af6f53e0eb57afd98be3d08eefb89",
+      "upstreamPath": "packages/@docs/demos/src/demos/spotlight/Spotlight.demo.scrollable.tsx",
+      "upstreamSha256": "4f4f85db77057b5cc65138374feff00055d2401b7fa221190177e8eee34bccfd",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/spotlight/Spotlight.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { FileTextIcon, GaugeIcon, HouseIcon, MagnifyingGlassIcon } from '@phosphor-icons/react';\n\nimport { SpotlightActionData } from '@mantine/spotlight';\n\nimport { SpotlightDemoBase } from '@/components/rendyn-libraries/mantine/upstream/src/demos/spotlight/_demo-base';\n\nconst actions: SpotlightActionData[] = [\n  {\n    id: 'home',\n    label: 'Home',\n    description: 'Get to home page',\n    onClick: () => console.log('Home'),\n    leftSection: <HouseIcon size={24} />,\n  },\n  {\n    id: 'dashboard',\n    label: 'Dashboard',\n    description: 'Get full information about current system status',\n    onClick: () => console.log('Dashboard'),\n    leftSection: <GaugeIcon size={24} />,\n  },\n  {\n    id: 'documentation',\n    label: 'Documentation',\n    description: 'Visit documentation to lean more about all features',\n    onClick: () => console.log('Documentation'),\n    leftSection: <FileTextIcon size={24} />,\n  },\n];\n\nfunction Demo() {\n  return (\n    <SpotlightDemoBase\n      actions={actions}\n      nothingFound=\"Nothing found...\"\n      highlightQuery\n      shortcut={null}\n      searchProps={{\n        leftSection: <MagnifyingGlassIcon size={20} />,\n        placeholder: 'Search...',\n      }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "64d4b3be77cb7bb367f24912ddbada20ee63e99b8be1d0175919695e3bc6bcda",
+      "upstreamPath": "packages/@docs/demos/src/demos/spotlight/Spotlight.demo.usage.tsx",
+      "upstreamSha256": "e1766ea299139818c44cd05f23b6c62857d27aa997adc0628e372656b32a3135",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/spotlight/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/spotlight/Spotlight.demo.compound\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/spotlight/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a978aab4eb0af5a3ae880f662737205e35f8ba56481e606cff741ac9aee5da7e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/spotlight/previews/custom-action.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/spotlight/Spotlight.demo.customAction\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/spotlight/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "ea0be3335dff846e5e3e812d1f26ad34d66c906720915554176a408fb64b1d43",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/spotlight/previews/fuzzy-search.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/spotlight/Spotlight.demo.fuzzySearch\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/spotlight/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "04520afd486dd0d919b75c1ccf3eddb1ce6887b7815bb46a2305415d494e0444",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/spotlight/previews/groups.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/spotlight/Spotlight.demo.groups\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/spotlight/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "06d8cce545b8ed85dd9c423e763d76fd6cced87b6970f9e15d07fd176017cf65",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/spotlight/previews/limit.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/spotlight/Spotlight.demo.limit\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/spotlight/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "05309beda03203ff0953a793a5ef120b9bc2245d1c8940d210a2a50b2dec64f6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/spotlight/previews/scrollable.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/spotlight/Spotlight.demo.scrollable\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/spotlight/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "016a8a951cc0844a8d0bd4c1b0a4bc02e9d9dd639de2404277ec6b950fbdb911",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/spotlight/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/spotlight/Spotlight.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/spotlight/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "87b640808c0d7584a273d547ab80f4bfe9a493617a94cb731262280a28382399",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantine/spotlight@9.6.3 @phosphor-icons/react@2.1.10 fuse.js@7.5.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantine/spotlight@9.6.3 @phosphor-icons/react@2.1.10 fuse.js@7.5.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "spotlight",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/spotlight",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/spotlight/Spotlight.demo.compound.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/spotlight/Spotlight.demo.compound.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine spotlight\n\n7 published Mantine spotlight examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/spotlight\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/spotlight/Spotlight.demo.compound.tsx\n"
+}

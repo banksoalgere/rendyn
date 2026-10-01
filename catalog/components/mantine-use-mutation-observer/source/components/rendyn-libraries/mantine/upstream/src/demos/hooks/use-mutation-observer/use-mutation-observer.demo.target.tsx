@@ -1,0 +1,39 @@
+"use client";
+
+import { useState } from 'react';
+
+import { Kbd, Text } from '@mantine/core';
+
+import { useMutationObserverTarget } from '@mantine/hooks';
+
+function Demo() {
+  const [lastMutation, setLastMutation] = useState('');
+
+  useMutationObserverTarget(
+    (mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'dir') {
+          mutation.target instanceof HTMLElement &&
+            setLastMutation(mutation.target.getAttribute('dir') || '');
+        }
+      });
+    },
+    {
+      attributes: true,
+      attributeFilter: ['dir'],
+    },
+    () => document.documentElement
+  );
+
+  return (
+    <>
+      <Text>
+        Press <Kbd>Ctrl</Kbd> + <Kbd>Shift</Kbd> + <Kbd>L</Kbd> to change direction
+      </Text>
+
+      <Text mt={10}>Direction was changed to: {lastMutation || 'Not changed yet'}</Text>
+    </>
+  );
+}
+const RendynExampleComponent = Demo;
+export function RendynExample() { return <RendynExampleComponent  />; }

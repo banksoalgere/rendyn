@@ -1,0 +1,96 @@
+{
+  "id": "mantine:use-pagination",
+  "sourceId": "mantine",
+  "slug": "mantine-use-pagination",
+  "name": "Mantine use pagination",
+  "description": "1 published Mantine use pagination examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "use-pagination",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "use pagination",
+      "mantine use pagination",
+      "use-pagination"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Mantine use pagination examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "use-pagination:code:file",
+    "searchText": "Mantine use pagination\nuse pagination\n1 published Mantine use pagination examples with complete pinned source and MIT attribution.\nmantine use pagination\nuse-pagination\ncode\nfile\nMantine use pagination 1 published Mantine use pagination examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use pagination Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use pagination/use pagination.demo.startValue.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-use-pagination",
+  "manifestPath": "components/mantine-use-pagination/component.json",
+  "integrity": "sha256:16bdb7a72f4241a7329725776d55f8aec39b023c14c80f315324830fa3a14dfc",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-pagination/use-pagination.demo.startValue.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Group, Text } from '@mantine/core';\n\nimport { usePagination } from '@mantine/hooks';\n\nfunction Demo() {\n  const pagination = usePagination({ total: 15, startValue: 5, initialPage: 5 });\n\n  return (\n    <>\n      <Text>Active page: {pagination.active}</Text>\n      <Text>Range: [{pagination.range.join(', ')}]</Text>\n      <Group mt=\"md\" gap={4}>\n        <Button size=\"compact-sm\" variant=\"default\" onClick={pagination.first}>\n          First\n        </Button>\n        <Button size=\"compact-sm\" variant=\"default\" onClick={pagination.previous}>\n          Previous\n        </Button>\n        {pagination.range.map((page, index) =>\n          page === 'dots' ? (\n            <span key={index}>...</span>\n          ) : (\n            <Button\n              size=\"compact-sm\"\n              key={index}\n              onClick={() => pagination.setPage(page)}\n              variant={pagination.active === page ? 'filled' : 'default'}\n              miw={34}\n            >\n              {page}\n            </Button>\n          )\n        )}\n        <Button size=\"compact-sm\" variant=\"default\" onClick={pagination.next}>\n          Next\n        </Button>\n        <Button size=\"compact-sm\" variant=\"default\" onClick={pagination.last}>\n          Last\n        </Button>\n      </Group>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "624ea1535fea64f8b929c5081ca795fc9b1d77f68bb426f938b6b5c65a2a71df",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-pagination/use-pagination.demo.startValue.tsx",
+      "upstreamSha256": "37ea412e9922bf2f51d7b1278c7e7c5294c0f4029ca5cdf6f3f9f46be04aff0a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-pagination/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-pagination/use-pagination.demo.startValue\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a5e8dd45a20ba1f92090f2f209e14c2db5c3194b69489418916d3b0b54faab20",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "use-pagination",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-pagination",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-pagination/use-pagination.demo.startValue.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-pagination/use-pagination.demo.startValue.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine use pagination\n\n1 published Mantine use pagination examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-pagination\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-pagination/use-pagination.demo.startValue.tsx\n"
+}

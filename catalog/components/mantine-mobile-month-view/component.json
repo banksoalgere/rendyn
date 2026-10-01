@@ -1,0 +1,268 @@
+{
+  "id": "mantine:mobile-month-view",
+  "sourceId": "mantine",
+  "slug": "mantine-mobile-month-view",
+  "name": "Mantine mobile month view",
+  "description": "11 published Mantine mobile month view examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantine/schedule@9.6.3",
+    "dayjs@1.11.23"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "mobile-month-view",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "mobile month view",
+      "mantine mobile month view",
+      "mobile-month-view"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "11 published Mantine mobile month view examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "mobile-month-view:code:file",
+    "searchText": "Mantine mobile month view\nmobile month view\n11 published Mantine mobile month view examples with complete pinned source and MIT attribution.\nmantine mobile month view\nmobile-month-view\ncode\nfile\nMantine mobile month view 11 published Mantine mobile month view examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/MobileMonthView Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/MobileMonthView/MobileMonthView.demo.consistentWeeks.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-mobile-month-view",
+  "manifestPath": "components/mantine-mobile-month-view/component.json",
+  "integrity": "sha256:69da616765efd3c660fd979c552e212126aca916a72779100b8d504d8a1fab97",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.consistentWeeks.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { MobileMonthView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n  const [selectedDate, setSelectedDate] = useState<string | null>(dayjs().format('YYYY-MM-DD'));\n\n  return (\n    <MobileMonthView\n      date={date}\n      onDateChange={setDate}\n      selectedDate={selectedDate}\n      onSelectedDateChange={setSelectedDate}\n      events={regularEvents}\n      consistentWeeks={false}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "fdeeb728a8851e3511710d682e7fd5a042a7fad6086599eec2eeb3d3d24bb7fe",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/MobileMonthView/MobileMonthView.demo.consistentWeeks.tsx",
+      "upstreamSha256": "49996f672227a102e6b3cdd95b6a832b3845dd3296684482163b078e0cc137e0",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/_data.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\nimport { ScheduleEventData } from '@mantine/schedule';\n\nconst thisMonth = dayjs().format('YYYY-MM');\n\nexport const regularEvents: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'Team Meeting',\n    start: `${thisMonth}-05 09:00:00`,\n    end: `${thisMonth}-05 10:00:00`,\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Project Review',\n    start: `${thisMonth}-05 14:00:00`,\n    end: `${thisMonth}-05 15:30:00`,\n    color: 'green',\n  },\n  {\n    id: 3,\n    title: 'Conference',\n    start: `${thisMonth}-10 00:00:00`,\n    end: `${thisMonth}-12 00:00:00`,\n    color: 'violet',\n  },\n  {\n    id: 4,\n    title: 'Lunch with Client',\n    start: `${thisMonth}-15 12:00:00`,\n    end: `${thisMonth}-15 13:30:00`,\n    color: 'orange',\n  },\n  {\n    id: 5,\n    title: 'Sprint Planning',\n    start: `${thisMonth}-15 15:00:00`,\n    end: `${thisMonth}-15 17:00:00`,\n    color: 'cyan',\n  },\n  {\n    id: 6,\n    title: 'Code Review',\n    start: `${thisMonth}-20 10:00:00`,\n    end: `${thisMonth}-20 11:00:00`,\n    color: 'pink',\n  },\n  {\n    id: 7,\n    title: 'Workshop Day',\n    start: `${thisMonth}-25 00:00:00`,\n    end: `${thisMonth}-25 00:00:00`,\n    color: 'yellow',\n  },\n];\n\nexport const dataCode = `\nimport dayjs from 'dayjs';\n\nconst thisMonth = dayjs().format('YYYY-MM');\n\nexport const events = [\n  {\n    id: 1,\n    title: 'Team Meeting',\n    start: \\`\\${thisMonth}-05 09:00:00\\`,\n    end: \\`\\${thisMonth}-05 10:00:00\\`,\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Project Review',\n    start: \\`\\${thisMonth}-05 14:00:00\\`,\n    end: \\`\\${thisMonth}-05 15:30:00\\`,\n    color: 'green',\n  },\n  {\n    id: 3,\n    title: 'Conference',\n    start: \\`\\${thisMonth}-10 00:00:00\\`,\n    end: \\`\\${thisMonth}-12 00:00:00\\`,\n    color: 'violet',\n  },\n  // ... more events\n];\n`;\n",
+      "sha256": "488950c8ecdc8c6181eced7a148c8395095c5c23dd6345ce50339f9f391d5a8f",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/MobileMonthView/_data.ts",
+      "upstreamSha256": "a70864f7ac02fe9fc3703a94478c8308a5c1cb32255ab4e361cf2249a0ad8a15",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.firstDayOfWeek.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { MobileMonthView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n  const [selectedDate, setSelectedDate] = useState<string | null>(dayjs().format('YYYY-MM-DD'));\n\n  return (\n    <MobileMonthView\n      date={date}\n      onDateChange={setDate}\n      selectedDate={selectedDate}\n      onSelectedDateChange={setSelectedDate}\n      events={regularEvents}\n      firstDayOfWeek={0}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "915bf3d0190ed6c0e16efb0eec34848d4836591031726ae5f7c2d96dd0b752b9",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/MobileMonthView/MobileMonthView.demo.firstDayOfWeek.tsx",
+      "upstreamSha256": "53ed29fef19d8213f95cabbe203e18b10553ad4c300fd05429ed5d911e4683d3",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.highlightToday.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { MobileMonthView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n  const [selectedDate, setSelectedDate] = useState<string | null>(dayjs().format('YYYY-MM-DD'));\n\n  return (\n    <MobileMonthView\n      date={date}\n      onDateChange={setDate}\n      selectedDate={selectedDate}\n      onSelectedDateChange={setSelectedDate}\n      events={regularEvents}\n      highlightToday={false}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "99416e8f4cf4c6d3846b2b878879e7f3f7d64515cf8ee50d8fbb0b95c92862bf",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/MobileMonthView/MobileMonthView.demo.highlightToday.tsx",
+      "upstreamSha256": "e20ced9f6aab6e785d9f5a1dde606ce5d5c3fd1e7c958390811ed15d1c6fc282",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.localization.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport 'dayjs/locale/es';\n\nimport { useState } from 'react';\n\nimport { MobileMonthView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n  const [selectedDate, setSelectedDate] = useState<string | null>(dayjs().format('YYYY-MM-DD'));\n\n  return (\n    <MobileMonthView\n      date={date}\n      onDateChange={setDate}\n      selectedDate={selectedDate}\n      onSelectedDateChange={setSelectedDate}\n      events={regularEvents}\n      locale=\"es\"\n      labels={{\n        day: 'Día',\n        week: 'Semana',\n        month: 'Mes',\n        year: 'Año',\n        today: 'Hoy',\n        previous: 'Anterior',\n        next: 'Siguiente',\n        noEvents: 'Sin eventos',\n      }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "450d28ce9562633969d8dd20d3b0737ec39a9abb2507123a82cf869138f07f2c",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/MobileMonthView/MobileMonthView.demo.localization.tsx",
+      "upstreamSha256": "8ece069cda798581fb0af48b0f9dac5316c9716ef5692333459bc7dfe256abb3",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.renderHeader.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { Badge } from '@mantine/core';\n\nimport { MobileMonthView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n  const [selectedDate, setSelectedDate] = useState<string | null>(dayjs().format('YYYY-MM-DD'));\n\n  return (\n    <MobileMonthView\n      date={date}\n      onDateChange={setDate}\n      selectedDate={selectedDate}\n      onSelectedDateChange={setSelectedDate}\n      events={regularEvents}\n      renderHeader={({ defaultHeader }) => (\n        <>\n          {defaultHeader}\n          <Badge variant=\"light\" size=\"sm\">\n            3 events today\n          </Badge>\n        </>\n      )}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "c153c1488dc56f81157a0052696340160916d5a9a6aba7b0795b2c79ecb450b3",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/MobileMonthView/MobileMonthView.demo.renderHeader.tsx",
+      "upstreamSha256": "521df3d87efecec095f3b89645fc90069912d74aceb1a426c50f24853d86a2cf",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.staticMode.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { MobileMonthView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/_data';\n\nfunction Demo() {\n  return (\n    <MobileMonthView\n      date={dayjs().format('YYYY-MM-DD')}\n      selectedDate={dayjs().format('YYYY-MM-DD')}\n      events={regularEvents}\n      mode=\"static\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "4b4ef17440885797a6d273188d283b03076907a18176d283170494a827c14a97",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/MobileMonthView/MobileMonthView.demo.staticMode.tsx",
+      "upstreamSha256": "f78ca83b0dd36c20d36fd558539f87819d58f32698c7d608d002873a03a5c747",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { MobileMonthView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n  const [selectedDate, setSelectedDate] = useState<string | null>(dayjs().format('YYYY-MM-DD'));\n\n  return (\n    <MobileMonthView\n      date={date}\n      onDateChange={setDate}\n      selectedDate={selectedDate}\n      onSelectedDateChange={setSelectedDate}\n      events={regularEvents}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "fd6c8e7fd514730eda4b9ba0c8b06c585233a424655d1f6370da503e9256919a",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/MobileMonthView/MobileMonthView.demo.usage.tsx",
+      "upstreamSha256": "13d0c1cf4d391436ec3db7979de74e9ea1da39605747a51fbf83f9eb837131c4",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.weekdayFormat.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { MobileMonthView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n  const [selectedDate, setSelectedDate] = useState<string | null>(dayjs().format('YYYY-MM-DD'));\n\n  return (\n    <MobileMonthView\n      date={date}\n      onDateChange={setDate}\n      selectedDate={selectedDate}\n      onSelectedDateChange={setSelectedDate}\n      events={regularEvents}\n      weekdayFormat=\"ddd\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "68684a3da4e88c64185453bf85c11cc1657ccfe48e2b74b972c0ef0add44a155",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/MobileMonthView/MobileMonthView.demo.weekdayFormat.tsx",
+      "upstreamSha256": "1ae2fd79b99a7ff0c02b018373ffcca08a6c3607fa3c97de84990faaaba98ec1",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.withOutsideDays.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { MobileMonthView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n  const [selectedDate, setSelectedDate] = useState<string | null>(dayjs().format('YYYY-MM-DD'));\n\n  return (\n    <MobileMonthView\n      date={date}\n      onDateChange={setDate}\n      selectedDate={selectedDate}\n      onSelectedDateChange={setSelectedDate}\n      events={regularEvents}\n      withOutsideDays\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "0006301d4f5f004ca8455799933de66773e9e1be7ca52e6de95bb68b7dd73d88",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/MobileMonthView/MobileMonthView.demo.withOutsideDays.tsx",
+      "upstreamSha256": "22537709bea32bd29819914eee79c733ae89f2521c905c9290e8362005f1c1e0",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.withWeekNumbers.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { MobileMonthView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n  const [selectedDate, setSelectedDate] = useState<string | null>(dayjs().format('YYYY-MM-DD'));\n\n  return (\n    <MobileMonthView\n      date={date}\n      onDateChange={setDate}\n      selectedDate={selectedDate}\n      onSelectedDateChange={setSelectedDate}\n      events={regularEvents}\n      withWeekNumbers\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "f03941e50d51407114eb76fde5d905efecf9719bd90f9114a585579119a48535",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/MobileMonthView/MobileMonthView.demo.withWeekNumbers.tsx",
+      "upstreamSha256": "17eb877171a2dced802fab6736944c61b81f112f6b4c7bc523cfa3baa947f7d0",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.withoutWeekDays.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { MobileMonthView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n  const [selectedDate, setSelectedDate] = useState<string | null>(dayjs().format('YYYY-MM-DD'));\n\n  return (\n    <MobileMonthView\n      date={date}\n      onDateChange={setDate}\n      selectedDate={selectedDate}\n      onSelectedDateChange={setSelectedDate}\n      events={regularEvents}\n      withWeekDays={false}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "dbab9c6bb9321c03f95c10dc6d594a879058e698c1a49c90e8f9fc96f10f6a36",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/MobileMonthView/MobileMonthView.demo.withoutWeekDays.tsx",
+      "upstreamSha256": "a2f8e9356921dbb0184fe440cdb234e94d27576c9adab7bf2610344f7b262499",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/mobile-month-view/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.consistentWeeks\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "0bc4861d752a737d906f85b0bd95d36ac51def04595684231713472892e6a175",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/mobile-month-view/previews/first-day-of-week.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.firstDayOfWeek\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "ebc49fbbe6caa6dff08377c3189855058e274f08e4c436a6cfd6bcee7a9644ae",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/mobile-month-view/previews/highlight-today.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.highlightToday\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "aa827af447b0d3f6fc3ab0813b2c3d35a66dbd61e71900e6236e5cf1b891f864",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/mobile-month-view/previews/localization.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.localization\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "47aa7ab5c90f35b1ec701eb70afab1eb0cf8f9af0adff589693e8c65b2e9ba29",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/mobile-month-view/previews/render-header.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.renderHeader\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e868552d873c237959cc95df9e69a3deffdb44965c6c84d3d72aeae27164641a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/mobile-month-view/previews/static-mode.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.staticMode\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "bd7de91da71399bdee96a574f61c4dd3b0b8442c5905bd903160565664b29184",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/mobile-month-view/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "645155afb5e270c48e00c7dc63fa3b9a095f2e94e0ca8c0dd0ee3fb63f86da7a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/mobile-month-view/previews/weekday-format.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.weekdayFormat\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "dd8f959b8c2ac29411aee272ef0746d5a385b9e75fda6633084e787764f0a61e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/mobile-month-view/previews/with-outside-days.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.withOutsideDays\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "57566f884a1eb6a5c30cfc331f9d8209d9a053742979f56a97990d3488b28663",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/mobile-month-view/previews/with-week-numbers.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.withWeekNumbers\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "9d0ea8d2ac2128bdc25d7216f7147d6b36c85d8af712fdedd0b914dfcc886d8b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/mobile-month-view/previews/without-week-days.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/MobileMonthView/MobileMonthView.demo.withoutWeekDays\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "f137bf1666c4e56abd5a7f1e1477a1927250aebd66826f92f18ccb39f71ee51a",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantine/schedule@9.6.3 dayjs@1.11.23",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantine/schedule@9.6.3 dayjs@1.11.23",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "mobile-month-view",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/MobileMonthView",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/MobileMonthView/MobileMonthView.demo.consistentWeeks.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/MobileMonthView/MobileMonthView.demo.consistentWeeks.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine mobile month view\n\n11 published Mantine mobile month view examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/MobileMonthView\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/MobileMonthView/MobileMonthView.demo.consistentWeeks.tsx\n"
+}

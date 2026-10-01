@@ -1,0 +1,226 @@
+{
+  "id": "mantine:floating-window",
+  "sourceId": "mantine",
+  "slug": "mantine-floating-window",
+  "name": "Mantine floating window",
+  "description": "9 published Mantine floating window examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantinex/demo@2.0.0",
+    "@phosphor-icons/react@2.1.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "floating-window",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "floating window",
+      "mantine floating window",
+      "floating-window"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "9 published Mantine floating window examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "floating-window:code:file",
+    "searchText": "Mantine floating window\nfloating window\n9 published Mantine floating window examples with complete pinned source and MIT attribution.\nmantine floating window\nfloating-window\ncode\nfile\nMantine floating window 9 published Mantine floating window examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/FloatingWindow Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/FloatingWindow/FloatingWindow.demo.axis.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-floating-window",
+  "manifestPath": "components/mantine-floating-window/component.json",
+  "integrity": "sha256:f4129e72a85212ac7b27dbbde40a87b0961f2aba0cefa354ab72c8bddb5877e0",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.axis.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, CloseButton, FloatingWindow, Group, SegmentedControl, Text } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst code = `\nimport { Button, CloseButton, FloatingWindow, Group, SegmentedControl, Text } from '@mantine/core';\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [visible, handlers] = useDisclosure();\n  const [axis, setAxis] = useState<'x' | 'y'>('y');\n\n  return (\n    <>\n      <Group>\n        <Button onClick={handlers.toggle} variant=\"default\">\n          {visible ? 'Hide' : 'Show'} floating window\n        </Button>\n        <SegmentedControl data={['x', 'y']} onChange={(val) => setAxis(val as 'x')} value={axis} />\n      </Group>\n\n      {visible && (\n        <FloatingWindow\n          w={280}\n          p=\"md\"\n          withBorder\n          excludeDragHandleSelector=\"button\"\n          initialPosition={{ top: 200, left: 40 }}\n          style={{ cursor: 'move' }}\n          axis={axis}\n        >\n          <Group justify=\"space-between\" mb=\"md\">\n            <Text>Axis demo</Text>\n            <CloseButton onClick={handlers.close} />\n          </Group>\n          <Text fz=\"sm\">\n            When you set axis prop, the floating window can be dragged only horizontally or\n            vertically.\n          </Text>\n        </FloatingWindow>\n      )}\n    </>\n  );\n}\n`;\n\nfunction Demo() {\n  const [visible, handlers] = useDisclosure();\n  const [axis, setAxis] = useState<'x' | 'y'>('y');\n\n  return (\n    <>\n      <Group>\n        <Button onClick={handlers.toggle} variant=\"default\">\n          {visible ? 'Hide' : 'Show'} floating window\n        </Button>\n        <SegmentedControl data={['x', 'y']} onChange={(val) => setAxis(val as 'x')} value={axis} />\n      </Group>\n\n      {visible && (\n        <FloatingWindow\n          w={280}\n          p=\"md\"\n          withBorder\n          excludeDragHandleSelector=\"button\"\n          initialPosition={{ top: 200, left: 40 }}\n          style={{ cursor: 'move' }}\n          axis={axis}\n        >\n          <Group justify=\"space-between\" mb=\"md\">\n            <Text>Axis demo</Text>\n            <CloseButton onClick={handlers.close} />\n          </Group>\n          <Text fz=\"sm\">\n            When you set axis prop, the floating window can be dragged only horizontally or\n            vertically.\n          </Text>\n        </FloatingWindow>\n      )}\n    </>\n  );\n}\n\nexport const axis: MantineDemo = {\n  type: 'code',\n  component: Demo,\n  code,\n  centered: true,\n};\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "2b37f6a367a43ca6540167813f83a3fe3c1f4b051d54d4c6358c9ddc89479b1c",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/FloatingWindow/FloatingWindow.demo.axis.tsx",
+      "upstreamSha256": "c13a4575c247e2458bc896796e598249687847107cc8a5683b171f467b95f22c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.constrainOffset.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CloseButton, FloatingWindow, Group, Text } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [visible, handlers] = useDisclosure();\n\n  return (\n    <>\n      <Button onClick={handlers.toggle} variant=\"default\">\n        {visible ? 'Hide' : 'Show'} floating window\n      </Button>\n\n      {visible && (\n        <FloatingWindow\n          w={280}\n          p=\"md\"\n          withBorder\n          excludeDragHandleSelector=\"button\"\n          initialPosition={{ top: 300, left: 30 }}\n          style={{ cursor: 'move' }}\n          constrainToViewport\n          constrainOffset={30}\n        >\n          <Group justify=\"space-between\" mb=\"md\">\n            <Text>Constrain offset demo</Text>\n            <CloseButton onClick={handlers.close} />\n          </Group>\n          <Text fz=\"sm\">\n            This floating window has 30px offset, it cannot move closer that 30px to the edge of the\n            viewport.\n          </Text>\n        </FloatingWindow>\n      )}\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "85476dc8342eabf83df80fc6b1f4e01be1d4a92e238f8fc4a0e2d66dbe6475b8",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/FloatingWindow/FloatingWindow.demo.constrainOffset.tsx",
+      "upstreamSha256": "5bf9a8f36d95e3d348cd5138b010278bedce5bd929cc1eae989f1c7232c94f5b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.constrainToViewport.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CloseButton, FloatingWindow, Group, Text } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [visible, handlers] = useDisclosure();\n  return (\n    <>\n      <Button onClick={handlers.toggle} variant=\"default\">\n        {visible ? 'Hide' : 'Show'} floating window\n      </Button>\n\n      {visible && (\n        <FloatingWindow\n          w={280}\n          p=\"md\"\n          withBorder\n          excludeDragHandleSelector=\"button\"\n          initialPosition={{ top: 300, left: 20 }}\n          style={{ cursor: 'move' }}\n          constrainToViewport={false}\n        >\n          <Group justify=\"space-between\" mb=\"md\">\n            <Text>No constrain demo</Text>\n            <CloseButton onClick={handlers.close} />\n          </Group>\n          <Text fz=\"sm\">\n            The floating window is not constrained by the viewport, it can move out of bounds.\n          </Text>\n        </FloatingWindow>\n      )}\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "c921d498c89908341613cfc3cfdc613d203e809448a7a96533870d9843d0c58f",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/FloatingWindow/FloatingWindow.demo.constrainToViewport.tsx",
+      "upstreamSha256": "56e528121a6ae3d1f0a2c8959684ffd6a012b7026536d0c43c391cbbf828b490",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.dragHandleSelector.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CloseButton, FloatingWindow, Group, Text } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [visible, handlers] = useDisclosure();\n\n  return (\n    <>\n      <Button onClick={handlers.toggle} variant=\"default\">\n        {visible ? 'Hide' : 'Show'} floating window\n      </Button>\n\n      {visible && (\n        <FloatingWindow\n          w={280}\n          withBorder\n          dragHandleSelector=\".drag-handle\"\n          excludeDragHandleSelector=\"button\"\n          initialPosition={{ top: 300, left: 20 }}\n        >\n          <Group\n            justify=\"space-between\"\n            px=\"md\"\n            py=\"sm\"\n            className=\"drag-handle\"\n            style={{ cursor: 'move' }}\n          >\n            <Text>Drag handle demo</Text>\n            <CloseButton onClick={handlers.close} />\n          </Group>\n          <Text fz=\"sm\" px=\"md\" pb=\"sm\">\n            Drag floating window around with drag handle element.\n          </Text>\n        </FloatingWindow>\n      )}\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "9d4a3ad4122f7f0144814fc17781d2e3ce72cf69a5f1eb5b6bd383fe9164ba69",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/FloatingWindow/FloatingWindow.demo.dragHandleSelector.tsx",
+      "upstreamSha256": "035258ac1c6417029cadc6c810f4df30cc57603d5b63f2dfdfd9c70e06f077d2",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.enabled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, Chip, CloseButton, FloatingWindow, Group, Text } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst code = `\nimport { Button, Chip, CloseButton, FloatingWindow, Group, Text } from '@mantine/core';\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [visible, handlers] = useDisclosure();\n  const [enabled, setEnabled] = useState(true);\n\n  return (\n    <>\n      <Group>\n        <Button variant=\"default\" onClick={handlers.toggle}>\n          {visible ? 'Hide' : 'Show'} floating window\n        </Button>\n        <Chip checked={enabled} onChange={() => setEnabled((e) => !e)}>\n          Drag {enabled ? 'enabled' : 'disabled'}\n        </Chip>\n      </Group>\n\n      {visible && (\n        <FloatingWindow\n          w={280}\n          p=\"md\"\n          withBorder\n          excludeDragHandleSelector=\"button\"\n          initialPosition={{ top: 300, left: 20 }}\n          style={{ cursor: 'move' }}\n          enabled={enabled}\n        >\n          <Group justify=\"space-between\" mb=\"md\">\n            <Text>Enabled demo</Text>\n            <CloseButton onClick={handlers.close} />\n          </Group>\n          <Text fz=\"sm\">This is a floating window. You can drag it around.</Text>\n        </FloatingWindow>\n      )}\n    </>\n  );\n}\n`;\n\nfunction Demo() {\n  const [visible, handlers] = useDisclosure();\n  const [enabled, setEnabled] = useState(true);\n\n  return (\n    <>\n      <Group>\n        <Button variant=\"default\" onClick={handlers.toggle}>\n          {visible ? 'Hide' : 'Show'} floating window\n        </Button>\n        <Chip checked={enabled} onChange={() => setEnabled((e) => !e)}>\n          Drag {enabled ? 'enabled' : 'disabled'}\n        </Chip>\n      </Group>\n\n      {visible && (\n        <FloatingWindow\n          w={280}\n          p=\"md\"\n          withBorder\n          excludeDragHandleSelector=\"button\"\n          initialPosition={{ top: 300, left: 20 }}\n          style={{ cursor: 'move' }}\n          enabled={enabled}\n        >\n          <Group justify=\"space-between\" mb=\"md\">\n            <Text>Enabled demo</Text>\n            <CloseButton onClick={handlers.close} />\n          </Group>\n          <Text fz=\"sm\">This is a floating window. You can drag it around.</Text>\n        </FloatingWindow>\n      )}\n    </>\n  );\n}\n\nexport const enabled: MantineDemo = {\n  type: 'code',\n  component: Demo,\n  code,\n  centered: true,\n};\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "fb180f50ee595377056e2aab28b3344a51a897b99c892fe35a7edbec40555b60",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/FloatingWindow/FloatingWindow.demo.enabled.tsx",
+      "upstreamSha256": "2a7102f4addcf915d93ce78bb5a69b26c597274e7f06e272b55b4865b97f9d03",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.resizeCallbacks.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { NotchesIcon } from '@phosphor-icons/react';\n\nimport { Button, CloseButton, FloatingWindow, Group, Text } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [visible, handlers] = useDisclosure();\n  const [size, setSize] = useState({ width: 260, height: 200 });\n  const [resizing, setResizing] = useState(false);\n\n  return (\n    <>\n      <Button onClick={handlers.toggle} variant=\"default\">\n        {visible ? 'Hide' : 'Show'} floating window\n      </Button>\n\n      {visible && (\n        <FloatingWindow\n          withBorder\n          constrainOffset={40}\n          dimensions={{\n            initialWidth: 260,\n            maxWidth: 500,\n            minWidth: 180,\n            initialHeight: 200,\n            maxHeight: 400,\n            minHeight: 160,\n          }}\n          dragHandleSelector=\".drag-handle\"\n          excludeDragHandleSelector=\"button\"\n          initialPosition={{ top: 300, left: 60 }}\n          onSizeChange={setSize}\n          onResizeStart={() => setResizing(true)}\n          onResizeEnd={() => setResizing(false)}\n          style={{ overflow: 'hidden' }}\n        >\n          <Group\n            justify=\"space-between\"\n            px=\"md\"\n            py=\"sm\"\n            className=\"drag-handle\"\n            style={{ cursor: 'move' }}\n          >\n            <Text fw={500} fz=\"sm\">\n              Resize callbacks\n            </Text>\n            <CloseButton onClick={handlers.close} />\n          </Group>\n          <Text fz=\"sm\" px=\"md\">\n            {Math.round(size.width)} × {Math.round(size.height)}\n          </Text>\n          <Text fz=\"sm\" px=\"md\" c=\"dimmed\">\n            {resizing ? 'Resizing…' : 'Drag the grip icon to resize'}\n          </Text>\n          <FloatingWindow.ResizeHandle\n            aria-label=\"Resize floating window\"\n            style={{\n              position: 'absolute',\n              right: 0,\n              bottom: 0,\n              width: 20,\n              height: 20,\n              display: 'flex',\n              alignItems: 'center',\n              justifyContent: 'center',\n              cursor: 'nwse-resize',\n            }}\n          >\n            <NotchesIcon size={14} style={{ opacity: 0.5 }} />\n          </FloatingWindow.ResizeHandle>\n        </FloatingWindow>\n      )}\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b2df56cf579242077a2ea6af165457c914057a30dd23e39886623e28159e630f",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/FloatingWindow/FloatingWindow.demo.resizeCallbacks.tsx",
+      "upstreamSha256": "839b9db2f8f868aa5aece5adf89a4e86fe8a5c1bb39cbf2dbe5a18d630d35c81",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.resizeHandle.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { NotchesIcon } from '@phosphor-icons/react';\n\nimport { Button, CloseButton, FloatingWindow, Group, Text } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [visible, handlers] = useDisclosure();\n\n  return (\n    <>\n      <Button onClick={handlers.toggle} variant=\"default\">\n        {visible ? 'Hide' : 'Show'} floating window\n      </Button>\n\n      {visible && (\n        <FloatingWindow\n          withBorder\n          constrainOffset={40}\n          dimensions={{\n            initialWidth: 260,\n            maxWidth: 500,\n            minWidth: 180,\n            initialHeight: 260,\n            maxHeight: 400,\n            minHeight: 220,\n          }}\n          dragHandleSelector=\".drag-handle\"\n          excludeDragHandleSelector=\"button\"\n          initialPosition={{ top: 300, left: 60 }}\n          style={{ overflow: 'hidden' }}\n        >\n          <Group\n            justify=\"space-between\"\n            px=\"md\"\n            py=\"sm\"\n            className=\"drag-handle\"\n            style={{ cursor: 'move' }}\n          >\n            <Text fw={500} fz=\"sm\">\n              Resize demo\n            </Text>\n            <CloseButton onClick={handlers.close} />\n          </Group>\n          <Text fz=\"sm\" px=\"md\" pb=\"sm\">\n            Drag the grip icon in the bottom-right corner to resize. Use Arrow keys when the handle\n            is focused: Left/Right for width, Up/Down for height.\n          </Text>\n          <FloatingWindow.ResizeHandle\n            aria-label=\"Resize floating window\"\n            style={{\n              position: 'absolute',\n              right: 0,\n              bottom: 0,\n              width: 20,\n              height: 20,\n              display: 'flex',\n              alignItems: 'center',\n              justifyContent: 'center',\n              cursor: 'nwse-resize',\n            }}\n          >\n            <NotchesIcon size={14} style={{ opacity: 0.5 }} />\n          </FloatingWindow.ResizeHandle>\n        </FloatingWindow>\n      )}\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "57170720eb9e48be0bfaa9559a0479ff57cf9be2070b077e8e4846d224555ea3",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/FloatingWindow/FloatingWindow.demo.resizeHandle.tsx",
+      "upstreamSha256": "151dffd620d7d73d55b9250f84112251529ac08343bf3429683dc299e7758ecb",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.setPosition.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useRef } from 'react';\n\nimport { Button, CloseButton, FloatingWindow, Group, Text } from '@mantine/core';\n\nimport { SetFloatingWindowPosition, useDisclosure } from '@mantine/hooks';\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nconst code = `\nimport { useRef } from 'react';\nimport { Button, CloseButton, FloatingWindow, Group, Text } from '@mantine/core';\nimport { SetFloatingWindowPosition, useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [visible, handlers] = useDisclosure();\n  const setPositionRef = useRef<SetFloatingWindowPosition | null>(null);\n  const setPosition = () => {\n    setPositionRef.current?.({ bottom: 40, right: 40 });\n  };\n\n  return (\n    <>\n      <Group>\n        <Button onClick={handlers.toggle} variant=\"default\">\n          {visible ? 'Hide' : 'Show'} floating window\n        </Button>\n        <Button onClick={setPosition} variant=\"default\">\n          Set position to bottom right corner\n        </Button>\n      </Group>\n\n      {visible && (\n        <FloatingWindow\n          w={280}\n          p=\"md\"\n          withBorder\n          excludeDragHandleSelector=\"button\"\n          initialPosition={{ top: 300, left: 20 }}\n          style={{ cursor: 'move' }}\n          setPositionRef={setPositionRef}\n        >\n          <Group justify=\"space-between\" mb=\"md\">\n            <Text>Set position demo</Text>\n            <CloseButton onClick={handlers.close} />\n          </Group>\n          <Text fz=\"sm\">\n            You can control floating window position programmatically with setPositionRef.\n          </Text>\n        </FloatingWindow>\n      )}\n    </>\n  );\n}\n`;\n\nfunction Demo() {\n  const [visible, handlers] = useDisclosure();\n  const setPositionRef = useRef<SetFloatingWindowPosition | null>(null);\n  const setPosition = () => {\n    setPositionRef.current?.({ bottom: 40, right: 40 });\n  };\n\n  return (\n    <>\n      <Group>\n        <Button onClick={handlers.toggle} variant=\"default\">\n          {visible ? 'Hide' : 'Show'} floating window\n        </Button>\n        <Button onClick={setPosition} variant=\"default\">\n          Set position to bottom right corner\n        </Button>\n      </Group>\n\n      {visible && (\n        <FloatingWindow\n          w={280}\n          p=\"md\"\n          withBorder\n          excludeDragHandleSelector=\"button\"\n          initialPosition={{ top: 300, left: 20 }}\n          style={{ cursor: 'move' }}\n          setPositionRef={setPositionRef}\n        >\n          <Group justify=\"space-between\" mb=\"md\">\n            <Text>Set position demo</Text>\n            <CloseButton onClick={handlers.close} />\n          </Group>\n          <Text fz=\"sm\">\n            You can control floating window position programmatically with setPositionRef.\n          </Text>\n        </FloatingWindow>\n      )}\n    </>\n  );\n}\n\nexport const setPosition: MantineDemo = {\n  type: 'code',\n  component: Demo,\n  code,\n  centered: true,\n};\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "af770d677f4196b742ee2cd91a724a694fa2a584eee4c818c7c277115655934b",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/FloatingWindow/FloatingWindow.demo.setPosition.tsx",
+      "upstreamSha256": "3c1ed45856dbcc3e7b0efd49da1437e280f7d431ea4e6ed43e3a7dbd1f89059c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, CloseButton, FloatingWindow, Group, Text } from '@mantine/core';\n\nimport { useDisclosure } from '@mantine/hooks';\n\nfunction Demo() {\n  const [visible, handlers] = useDisclosure();\n\n  return (\n    <>\n      <Button onClick={handlers.toggle} variant=\"default\">\n        {visible ? 'Hide' : 'Show'} floating window\n      </Button>\n\n      {visible && (\n        <FloatingWindow\n          w={280}\n          p=\"md\"\n          withBorder\n          excludeDragHandleSelector=\"button\"\n          initialPosition={{ top: 300, left: 20 }}\n          style={{ cursor: 'move' }}\n        >\n          <Group justify=\"space-between\" mb=\"md\">\n            <Text>Usage demo</Text>\n            <CloseButton onClick={handlers.close} />\n          </Group>\n          <Text fz=\"sm\">This is a floating window. You can drag it around.</Text>\n        </FloatingWindow>\n      )}\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "cb00883c2b0219c94920bbc97bd12f6c3c375beaf813f0b54f740c331951f511",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/FloatingWindow/FloatingWindow.demo.usage.tsx",
+      "upstreamSha256": "919ce2acb615e87bbe6e98dd20751d5b761e3f3f47410bb4c54dbd245da9b08e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/floating-window/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.axis\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b8d643acef321444eeb132f2e55c8ab2ddb06b1e827ab157485d673b9985730c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/floating-window/previews/constrain-offset.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.constrainOffset\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "11e24700dc0fde169510b9995ed03fe65c6624c3510ac430a21961a029533d14",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/floating-window/previews/constrain-to-viewport.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.constrainToViewport\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "6ae2d6e4888c4acb81b35b0a17d88337a07baace05937a852dcf296fb46b2dac",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/floating-window/previews/drag-handle-selector.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.dragHandleSelector\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "351e8b7aacf45a01b90e195abb7dbef3c5102f75b2c8011482a24f9c63e21eea",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/floating-window/previews/enabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.enabled\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "f56874124dd661817155ed20c33c2d175baa20a573da9b05fdf3c29c8e0bb89b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/floating-window/previews/resize-callbacks.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.resizeCallbacks\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "41bf8f3d1d0b8a806eb309c69898f34c9a872ef7638c2e9b726eb5c9dd892b2e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/floating-window/previews/resize-handle.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.resizeHandle\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4e1614d1e1725e89eb288c53d05fb9ee714efeb7e72870ce14f10eba9825d1b2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/floating-window/previews/set-position.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.setPosition\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "168972edd194dee279cdcade1991016ee94df747059bd91b1bee42878573bc55",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/floating-window/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/FloatingWindow/FloatingWindow.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e8f61138f8ecc97401c57a6d9faeb8d846ae5025928925a0f3a52437ff6df6d0",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @phosphor-icons/react@2.1.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @phosphor-icons/react@2.1.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "floating-window",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/FloatingWindow",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/FloatingWindow/FloatingWindow.demo.axis.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/FloatingWindow/FloatingWindow.demo.axis.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine floating window\n\n9 published Mantine floating window examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/FloatingWindow\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/FloatingWindow/FloatingWindow.demo.axis.tsx\n"
+}

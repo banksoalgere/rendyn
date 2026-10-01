@@ -1,0 +1,23 @@
+"use client";
+
+import { RadarChart } from '@mantine/charts';
+
+import { multiData, multiDataCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/charts/RadarChart/_data';
+
+function Demo() {
+  return (
+    <RadarChart
+      h={300}
+      data={multiData}
+      dataKey="product"
+      withPolarRadiusAxis
+      polarRadiusAxisProps={{ angle: 30, tickFormatter: (value) => `${value}$` }}
+      series={[
+        { name: 'Sales January', color: 'lime.4', opacity: 0.1 },
+        { name: 'Sales February', color: 'cyan.4', opacity: 0.1 },
+      ]}
+    />
+  );
+}
+const RendynExampleComponent = Demo;
+export function RendynExample() { return <RendynExampleComponent  />; }

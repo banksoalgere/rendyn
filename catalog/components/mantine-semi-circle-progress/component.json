@@ -1,0 +1,193 @@
+{
+  "id": "mantine:semi-circle-progress",
+  "sourceId": "mantine",
+  "slug": "mantine-semi-circle-progress",
+  "name": "Mantine semi circle progress",
+  "description": "7 published Mantine semi circle progress examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "semi-circle-progress",
+    "tags": [
+      "code",
+      "file",
+      "progress"
+    ],
+    "aliases": [
+      "semi circle progress",
+      "mantine semi circle progress",
+      "semi-circle-progress"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "7 published Mantine semi circle progress examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "semi-circle-progress:code:file:progress",
+    "searchText": "Mantine semi circle progress\nsemi circle progress\n7 published Mantine semi circle progress examples with complete pinned source and MIT attribution.\nmantine semi circle progress\nsemi-circle-progress\ncode\nfile\nprogress\nMantine semi circle progress 7 published Mantine semi circle progress examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/SemiCircleProgress Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.batteryIndicator.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-semi-circle-progress",
+  "manifestPath": "components/mantine-semi-circle-progress/component.json",
+  "integrity": "sha256:b8775836fb749ed38c4307395d68de287799cdc889bf199494fba4f2392f2a93",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.batteryIndicator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Box, SemiCircleProgress, Slider, Stack, Text } from '@mantine/core';\n\nconst getBatteryColor = (level: number) => {\n  switch (true) {\n    case level < 20:\n      return 'red';\n    case level < 50:\n      return 'yellow';\n    default:\n      return 'green';\n  }\n};\n\nfunction Demo() {\n  const [batteryLevel, setBatteryLevel] = useState(75);\n\n  return (\n    <Stack align=\"center\" gap=\"md\">\n      <div style={{ position: 'relative', width: 200, height: 120 }}>\n        <SemiCircleProgress\n          value={batteryLevel}\n          filledSegmentColor={getBatteryColor(batteryLevel)}\n          label={`${batteryLevel}%`}\n          labelPosition=\"center\"\n          size={200}\n          thickness={12}\n        />\n      </div>\n      <Text size=\"sm\" c=\"dimmed\">\n        Battery Level\n      </Text>\n      <Box w={200}>\n        <Slider min={0} max={100} value={batteryLevel} onChange={setBatteryLevel} />\n      </Box>\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "c2927b51d8e950a60c3ea2c76b5bdfa8aced368ecf4e82c12864fe725b7a1a0b",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.batteryIndicator.tsx",
+      "upstreamSha256": "746fd7e17cd9c68474e4ab7936ff178112f8975f3eca72286ec6e2a8155e474a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.emptySegmentColor.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SemiCircleProgress } from '@mantine/core';\n\nfunction Demo() {\n  return <SemiCircleProgress value={30} emptySegmentColor=\"var(--mantine-color-dimmed)\" />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "956cfe78ff4c632f7c03e6b73e1353e2e30229a10791c67f168599f927deac2d",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.emptySegmentColor.tsx",
+      "upstreamSha256": "c01c94a60f18972dbd851b94b2bcc07578bd221cdfa737e40eb365b0f1c586b5",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.labelPosition.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SemiCircleProgress } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <>\n      <SemiCircleProgress value={30} label=\"Bottom\" mb=\"xl\" />\n      <SemiCircleProgress value={30} label=\"Center\" labelPosition=\"center\" />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "07b9d98ec273514cf098250cc88c8c53d1594ccb79325a75556ea97e399a1df3",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.labelPosition.tsx",
+      "upstreamSha256": "ff9ea79730e2c6e8211ec94cc319468f6f8413b4b25a97d788fa4abcb3380ca3",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.orientations.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SemiCircleProgress, SimpleGrid } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <SimpleGrid cols={{ sm: 2 }} spacing=\"xl\">\n      <SemiCircleProgress\n        value={60}\n        orientation=\"up\"\n        fillDirection=\"left-to-right\"\n        label=\"Up, L→R\"\n        size={150}\n      />\n      <SemiCircleProgress\n        value={60}\n        orientation=\"up\"\n        fillDirection=\"right-to-left\"\n        label=\"Up, R→L\"\n        size={150}\n      />\n      <SemiCircleProgress\n        value={60}\n        orientation=\"down\"\n        fillDirection=\"left-to-right\"\n        label=\"Down, L→R\"\n        size={150}\n      />\n      <SemiCircleProgress\n        value={60}\n        orientation=\"down\"\n        fillDirection=\"right-to-left\"\n        label=\"Down, R→L\"\n        size={150}\n      />\n    </SimpleGrid>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "53b6acdb20b905298f923f8a8045f18cd5602c7aa71abfe11e0e05df86dfe690",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.orientations.tsx",
+      "upstreamSha256": "6e8ad061d67bfa36161e8a29a831175754d6b96263842e8c198d5cb2d4ba17cf",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.skillRating.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Group, SemiCircleProgress, Stack, Text, UnstyledButton } from '@mantine/core';\n\nconst colors = ['red', 'orange', 'yellow', 'lime', 'green'];\n\nfunction Demo() {\n  const [skillLevel, setSkillLevel] = useState(4);\n\n  return (\n    <Stack align=\"center\" gap=\"xs\">\n      <div style={{ position: 'relative', width: 200, height: 120 }}>\n        <SemiCircleProgress\n          value={(skillLevel / 5) * 100}\n          filledSegmentColor={colors[skillLevel - 1] || 'gray'}\n          label={<Text fz={36} fw={800} pb={30}>{`${skillLevel}/5`}</Text>}\n          labelPosition=\"center\"\n          orientation=\"down\"\n          size={200}\n          thickness={12}\n        />\n      </div>\n      <Text size=\"sm\" c=\"dimmed\">\n        Skill Rating\n      </Text>\n      <Group gap=\"xs\">\n        {[1, 2, 3, 4, 5].map((level) => (\n          <UnstyledButton\n            key={level}\n            onClick={() => setSkillLevel(level)}\n            px=\"sm\"\n            py={4}\n            bg={skillLevel === level ? '#087f5b' : '#e7f5f0'}\n            c={skillLevel === level ? 'white' : '#087f5b'}\n            style={{ borderRadius: 4 }}\n          >\n            {level}\n          </UnstyledButton>\n        ))}\n      </Group>\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "3d1bebe363bf41fb79479e69214d56f0dec5af5f6793a14a687612ce342b0265",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.skillRating.tsx",
+      "upstreamSha256": "354c770bd93f20368da9cf722d3d5d66fd818645d2eae3b87672e86eb698a430",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.transitions.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Button, SemiCircleProgress } from '@mantine/core';\n\nfunction Demo() {\n  const [value, setValue] = useState(30);\n\n  return (\n    <>\n      <SemiCircleProgress value={value} transitionDuration={250} label={`${value}%`} />\n\n      <Button onClick={() => setValue(Math.floor(Math.random() * 100))} mt=\"xl\" fullWidth>\n        Set random value\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "73e39014625fbf1e1246f64fa0996f84a4ec22214952dfea62daca491301d5d0",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.transitions.tsx",
+      "upstreamSha256": "a8367a63616b38e10ce7eec2f6b8e83ec1ddfa7c794ee7ff8d2d23666b7e3395",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { SemiCircleProgress } from '@mantine/core';\n\nfunction Wrapper(props: any) {\n  return <SemiCircleProgress label=\"Label\" {...props} />;\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent fillDirection={\"left-to-right\"} orientation={\"up\"} filledSegmentColor={\"blue\"} size={200} thickness={12} value={40} />; }\n",
+      "sha256": "ed4643dd6467e3a12566843a9f1b9167cc9ccc17c27f5ef446e3c79b6116b2d0",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.usage.tsx",
+      "upstreamSha256": "3f5a43bac3b06652aa2e1aee802b65077683e2f67638f7b44a305f0b04a06151",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/semi-circle-progress/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.batteryIndicator\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c96bc0f4596b54313f74c741b0dab849df4d02b18bf6d8decf8be68e8211c485",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/semi-circle-progress/previews/empty-segment-color.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.emptySegmentColor\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "5417a3875ac8be117cf620d271c884c4e2ace3f253df6e7f38f8e52b019dd725",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/semi-circle-progress/previews/label-position.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.labelPosition\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "11c09383c48ecb1705b6b9e74db006811a53ab5bd8429442ceb6938456f31c80",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/semi-circle-progress/previews/orientations.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.orientations\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "3b53663373e34f671eb9aed200c846af47ea20675a0c2ae800c44445872e9f09",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/semi-circle-progress/previews/skill-rating.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.skillRating\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "cbeff6f1bc0f8bccda264012e1f74a88c5315570ea6d8af89d861e4520415902",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/semi-circle-progress/previews/transitions.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.transitions\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a3470b7949d35e21fdb596686e25e9efa7dba9f9cf04a43e69a51e30df0258bf",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/semi-circle-progress/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "89c926698beced09afac0cd5ae157f6c2cfc245774aafcc2828eb419dd5bfbcf",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "semi-circle-progress",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/SemiCircleProgress",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.batteryIndicator.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.batteryIndicator.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine semi circle progress\n\n7 published Mantine semi circle progress examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/SemiCircleProgress\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/SemiCircleProgress/SemiCircleProgress.demo.batteryIndicator.tsx\n"
+}

@@ -1,0 +1,316 @@
+{
+  "id": "mantine:year-view",
+  "sourceId": "mantine",
+  "slug": "mantine-year-view",
+  "name": "Mantine year view",
+  "description": "14 published Mantine year view examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantine/schedule@9.6.3",
+    "dayjs@1.11.23"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "year-view",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "year view",
+      "mantine year view",
+      "year-view"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "14 published Mantine year view examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "year-view:code:file",
+    "searchText": "Mantine year view\nyear view\n14 published Mantine year view examples with complete pinned source and MIT attribution.\nmantine year view\nyear-view\ncode\nfile\nMantine year view 14 published Mantine year view examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/YearView Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.customHeader.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-year-view",
+  "manifestPath": "components/mantine-year-view/component.json",
+  "integrity": "sha256:1d1dd9ab6e3cde578808f09aadaa2a1d1c16ec472a209a9e571e397558a08acc",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.customHeader.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { DateStringValue, ScheduleHeader, YearView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState<DateStringValue>(\n    dayjs().format('YYYY-MM-DD') as DateStringValue\n  );\n\n  return (\n    <div>\n      <ScheduleHeader>\n        <ScheduleHeader.Previous\n          onClick={() =>\n            setDate(\n              dayjs(date)\n                .subtract(1, 'year')\n                .startOf('year')\n                .format('YYYY-MM-DD') as DateStringValue\n            )\n          }\n        />\n        <ScheduleHeader.MonthYearSelect\n          withMonths={false}\n          yearValue={dayjs(date).year()}\n          monthValue={dayjs(date).month()}\n          onYearChange={(year) =>\n            setDate(dayjs(date).year(year).startOf('year').format('YYYY-MM-DD') as DateStringValue)\n          }\n        />\n        <ScheduleHeader.Next\n          onClick={() =>\n            setDate(\n              dayjs(date).add(1, 'year').startOf('year').format('YYYY-MM-DD') as DateStringValue\n            )\n          }\n        />\n        <ScheduleHeader.Today\n          onClick={() => setDate(dayjs().format('YYYY-MM-DD') as DateStringValue)}\n        />\n        <ScheduleHeader.Control\n          style={{ marginInlineStart: 'auto' }}\n          onClick={() => window.print()}\n        >\n          Print\n        </ScheduleHeader.Control>\n      </ScheduleHeader>\n\n      <YearView date={date} onDateChange={setDate} events={regularEvents} withHeader={false} />\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "1d9fd910a0b15360497fd22580b64b80c7ed6671ee2dff91ed515751f5afba48",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.customHeader.tsx",
+      "upstreamSha256": "f012c523269d07367994855ad90f3b8d89602cfdbdfe11e44803bbc9f048b409",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/_data.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\nimport { ScheduleEventData } from '@mantine/schedule';\n\nconst thisYear = dayjs().format('YYYY');\n\nexport const regularEvents: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'New Year',\n    start: `${thisYear}-01-01 00:00:00`,\n    end: dayjs(`${thisYear}-01-01`).add(1, 'day').startOf('day').format('YYYY-MM-DD HH:mm:ss'),\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Spring Event',\n    start: `${thisYear}-03-15 00:00:00`,\n    end: dayjs(`${thisYear}-03-15`).add(1, 'day').startOf('day').format('YYYY-MM-DD HH:mm:ss'),\n    color: 'green',\n  },\n  {\n    id: 3,\n    title: 'Summer Conference',\n    start: `${thisYear}-07-20 00:00:00`,\n    end: dayjs(`${thisYear}-07-20`).add(1, 'day').startOf('day').format('YYYY-MM-DD HH:mm:ss'),\n    color: 'orange',\n  },\n  {\n    id: 4,\n    title: 'Fall Workshop',\n    start: `${thisYear}-10-10 00:00:00`,\n    end: dayjs(`${thisYear}-10-10`).add(1, 'day').startOf('day').format('YYYY-MM-DD HH:mm:ss'),\n    color: 'violet',\n  },\n  {\n    id: 5,\n    title: 'Year End Party',\n    start: `${thisYear}-12-25 00:00:00`,\n    end: dayjs(`${thisYear}-12-25`).add(1, 'day').startOf('day').format('YYYY-MM-DD HH:mm:ss'),\n    color: 'red',\n  },\n];\n\nexport const dataCode = `\nimport dayjs from 'dayjs';\n\nconst thisYear = dayjs().format('YYYY');\n\nconst events = [\n  {\n    id: 1,\n    title: 'New Year',\n    start: \\\\\\`\\\\\\${thisYear}-01-01 00:00:00\\\\\\`,\n    end: dayjs(\\\\\\`\\\\\\${thisYear}-01-01\\\\\\`).add(1, 'day').startOf('day').format('YYYY-MM-DD HH:mm:ss'),\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Spring Event',\n    start: \\\\\\`\\\\\\${thisYear}-03-15 00:00:00\\\\\\`,\n    end: dayjs(\\\\\\`\\\\\\${thisYear}-03-15\\\\\\`).add(1, 'day').startOf('day').format('YYYY-MM-DD HH:mm:ss'),\n    color: 'green',\n  },\n];\n`;\n",
+      "sha256": "f34ffe140a8e9eb2a097d18c8ffc9a2309d7b7a85f4ff15877a017561a3d3c2c",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/YearView/_data.ts",
+      "upstreamSha256": "f250f7e168367d7bdde64860a7f545f6a2fd036bac85740dbbc09abf2937bc7a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.firstDayOfWeek.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { YearView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/_data';\n\nfunction Demo() {\n  return <YearView date={new Date()} events={regularEvents} firstDayOfWeek={0} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "267582be77a0cfd5af3f81076b5087bf4d9587d3349917cd1e5a6c25bbd5afac",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.firstDayOfWeek.tsx",
+      "upstreamSha256": "3402bb9866511138c779cf49c40d23294432f7604f823df83f4ff7bbc7f5ab11",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.highlightToday.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { YearView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/_data';\n\nfunction Demo() {\n  return <YearView date={new Date()} events={regularEvents} highlightToday={false} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b6780636e71889b8927d163ae02547ba4b05fe535f2d357c4ee375478a7b06d9",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.highlightToday.tsx",
+      "upstreamSha256": "fdb95ee8e86a4e4c6544ca8820d8d373a23e2ce117382add05bc7b066f99a865",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.localization.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport 'dayjs/locale/es';\n\nimport { useState } from 'react';\n\nimport { YearView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n\n  return (\n    <YearView\n      date={date}\n      onDateChange={setDate}\n      events={regularEvents}\n      locale=\"es\"\n      labels={{\n        day: 'Día',\n        week: 'Semana',\n        month: 'Mes',\n        year: 'Año',\n        today: 'Hoy',\n        previous: 'Anterior',\n        next: 'Siguiente',\n      }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "8ec4f0da70750c3410ecf6b4df72998dd4881551bfdc4bd23b102b5d9045d834",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.localization.tsx",
+      "upstreamSha256": "31da6a73e704d2818c8ec73fe54baf0fd70e7b65642f9a2a3f731441b9e94660",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.recurringEvents.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { YearView } from '@mantine/schedule';\n\nconst year = dayjs().year();\n\nconst recurringEventsData = [\n  {\n    id: 'yearly-series',\n    title: 'Monthly architecture review (series)',\n    start: `${year}-01-10 09:00:00`,\n    end: `${year}-01-10 10:00:00`,\n    color: 'blue',\n    recurrence: {\n      rrule: 'FREQ=MONTHLY;COUNT=12',\n      exdate: [`${year}-11-10 09:00:00`],\n    },\n  },\n  {\n    id: 'yearly-series-override',\n    title: 'Monthly architecture review (moved in Nov)',\n    start: `${year}-11-10 13:00:00`,\n    end: `${year}-11-10 14:00:00`,\n    color: 'grape',\n    recurringEventId: 'yearly-series',\n    recurrenceId: `${year}-11-10 09:00:00`,\n  },\n  {\n    id: 'year-one-off',\n    title: 'One-off summit',\n    start: `${year}-12-01 00:00:00`,\n    end: `${year}-12-02 00:00:00`,\n    color: 'green',\n  },\n];\n\nfunction Demo() {\n  const [date, setDate] = useState(`${year}-01-01`);\n  return (\n    <YearView date={date} onDateChange={setDate} events={recurringEventsData} withWeekNumbers />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "8d93e124e286d3efd6729d01aa087ac7693a03ae727e50dfe8da638f81f7ec18",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.recurringEvents.tsx",
+      "upstreamSha256": "3d82fbf230eade3db6944077139632c6a0d4ab27f3a3b478d1ec2ffb41723013",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.renderDay.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { ScheduleEventData, YearView } from '@mantine/schedule';\n\nconst thisYear = dayjs().format('YYYY');\n\nconst eventDays: [date: string, count: number, color: string][] = [\n  [`${thisYear}-01-14`, 1, 'blue'],\n  [`${thisYear}-02-03`, 3, 'grape'],\n  [`${thisYear}-03-21`, 2, 'green'],\n  [`${thisYear}-05-09`, 4, 'orange'],\n  [`${thisYear}-07-16`, 2, 'cyan'],\n  [`${thisYear}-09-02`, 5, 'red'],\n  [`${thisYear}-11-27`, 1, 'violet'],\n];\n\nconst eventData: ScheduleEventData[] = eventDays.flatMap(([date, count, color]) =>\n  Array.from({ length: count }, (_, index) => ({\n    id: `${date}-${index}`,\n    title: `Event ${index + 1}`,\n    start: `${date} ${String(9 + index).padStart(2, '0')}:00:00`,\n    end: `${date} ${String(10 + index).padStart(2, '0')}:00:00`,\n    color,\n  }))\n);\n\nfunction Demo() {\n  return (\n    <YearView\n      date={new Date()}\n      events={eventData}\n      renderDay={(date, dayEvents) => (\n        <>\n          {dayjs(date).date()}\n\n          {dayEvents.length > 0 && (\n            <div\n              style={{\n                position: 'absolute',\n                bottom: 0,\n                insetInlineEnd: 0,\n                minWidth: 12,\n                height: 12,\n                borderRadius: 12,\n                fontSize: 9,\n                lineHeight: '12px',\n                fontWeight: 700,\n                textAlign: 'center',\n                color: 'var(--mantine-color-white)',\n                backgroundColor: `var(--mantine-color-${dayEvents[0].color}-filled)`,\n              }}\n            >\n              {dayEvents.length}\n            </div>\n          )}\n        </>\n      )}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "4b96ff218cc3b141a42130edc0dc15251137c1dc9884d800118aff209d37d7b6",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.renderDay.tsx",
+      "upstreamSha256": "55aa4242044d8736dd592a0973dda666f09dd32251b45100c8aa7f193c447931",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.staticMode.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { YearView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/_data';\n\nfunction Demo() {\n  return <YearView date={new Date()} events={regularEvents} mode=\"static\" />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "d3971021bf0dbf1e8f1e10fab823236f3397938586ae616b8f911507f3123d0a",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.staticMode.tsx",
+      "upstreamSha256": "3a3b9dfc279b9806b4187c308d810561899d3834644de93f12d9e399aaa8b149",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { YearView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n\n  return <YearView date={date} onDateChange={setDate} events={regularEvents} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "368a6f4c1537040cb945c6826178c694e4797e0a56ba6d097e15cc28668e3cca",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.usage.tsx",
+      "upstreamSha256": "1eb57654968140d932bd84a5e7dadc29fc97913747b2bb33e737b79e717299e5",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.weekdayFormat.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { YearView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/_data';\n\nfunction Demo() {\n  return <YearView date={new Date()} events={regularEvents} weekdayFormat=\"dd\" />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "af34a2093cf07c06fe7670958674f043cb29e72d9f60542ef9b8de34341b062f",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.weekdayFormat.tsx",
+      "upstreamSha256": "8f64e76d3fc1f8a19cb0d5273504b8b746214e9bc4d79e38aae5b37227321027",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.withOutsideDays.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { YearView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/_data';\n\nfunction Demo() {\n  return <YearView date={new Date()} events={regularEvents} withOutsideDays={false} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "612a9a6cc82ac98bda39b3da64ea373f676f65cb5470b28dbb2ecd8e35800e72",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.withOutsideDays.tsx",
+      "upstreamSha256": "613d38f9bd784b824008ff38a1e7f64cbab73f7a33aa6600f43e1f5f1a02c55a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.withWeekNumbers.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { YearView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/_data';\n\nfunction Demo() {\n  return <YearView date={new Date()} events={regularEvents} withWeekNumbers />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "e37476e09c09721f94fc6e3821d99bbf44393d4b4a3a2a9a27a58025d8d1d212",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.withWeekNumbers.tsx",
+      "upstreamSha256": "d4ec2e25e16b610c1db11069d343addb6499d42286a32444f2b083e58d9745c8",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.withoutHeader.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { YearView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/_data';\n\nfunction Demo() {\n  return <YearView date={new Date()} events={regularEvents} withHeader={false} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "f265c22127643dc1f7a6c22a98abc78007b4afface28b50e5e5c8563ded93d16",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.withoutHeader.tsx",
+      "upstreamSha256": "5f8f5c13c14822d01978f7d8c9565b05a25fe702592e49ead97cb976abba2cd2",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.withoutWeekDays.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { YearView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/_data';\n\nfunction Demo() {\n  return <YearView date={new Date()} events={regularEvents} withWeekDays={false} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "066b848281c3cb51712fb7dbcae5a891eec765211149a4178ba7d3d41906d070",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.withoutWeekDays.tsx",
+      "upstreamSha256": "087c610723a305e26be2c9f726f1a322dad63d2288f2960a983b473f23898b66",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.withoutWeekendDays.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { YearView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/_data';\n\nfunction Demo() {\n  return <YearView date={new Date()} events={regularEvents} withWeekendDays={false} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "54925f2c09589d4da90b574f85b36c5c709fad854cca8128c5fc3967f04d9b96",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.withoutWeekendDays.tsx",
+      "upstreamSha256": "3f5007fe9a3c45ca66d1958261640db7c9001ead53d4e8a6923eb5943be20b66",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/year-view/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.customHeader\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "fb50c8ec499177b731d1e6d0ebd4e1cd4321c102c3bf2585ef99da68a6143af5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/year-view/previews/first-day-of-week.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.firstDayOfWeek\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "67ecb35b6fbe44e4c063b51646561a889bf2706142d7fff63e735f88db2d39b1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/year-view/previews/highlight-today.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.highlightToday\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "2ea269f438b956b436309ad808acc1893c9ad07ae6eee9a3f8287d3349dad0fb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/year-view/previews/localization.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.localization\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b024869acddfee22b88bcfc9b26172f71f58cc4b62adbe83c4e3b8ce1bf81651",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/year-view/previews/recurring-events.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.recurringEvents\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "66c51a39cf0dd151d459b72d43160e2062c6c9c2042504ff252aaa17d2b91de5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/year-view/previews/render-day.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.renderDay\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "ad721663f8279b8718c5df2c7fa9d37bfcc7e40970881da5a186e591039be607",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/year-view/previews/static-mode.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.staticMode\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "58285fe5a6031bb26ce872bee22a65b3c73a7a11366d0c72fcff477308eb25dc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/year-view/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7f1c1196de6559bd1e0f6d094c475bd12e546036ac4bdfb617a9fe039dd6cf42",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/year-view/previews/weekday-format.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.weekdayFormat\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7acd06a1781f0878833de4f1d0e6d7116e20206476df120189f2c1bed99604a8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/year-view/previews/with-outside-days.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.withOutsideDays\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "3f87c429b16f931168fd04c8375bc5a9d54d69e69e183db6f96852d9766e7c91",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/year-view/previews/with-week-numbers.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.withWeekNumbers\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "8dea51638f7281dbfc1b051f344812213e5c2b20092983b91c5ecf2e12b6adea",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/year-view/previews/without-header.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.withoutHeader\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "9d9aa5c4e481b26c008eb01b7fb6ab6c9093bbf269e06969488e4aac0be6f606",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/year-view/previews/without-week-days.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.withoutWeekDays\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "dd1e82da669d2bb0ef6fbdf0a222a2b58a44deb6285c09d4901d05c0dbb718cc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/year-view/previews/without-weekend-days.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/YearView/YearView.demo.withoutWeekendDays\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "6a18bbf839b6792fdf14d1486554a2c32feadcbeeb520af3cb00d7d1df88d672",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantine/schedule@9.6.3 dayjs@1.11.23",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantine/schedule@9.6.3 dayjs@1.11.23",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "year-view",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/YearView",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.customHeader.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.customHeader.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine year view\n\n14 published Mantine year view examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/YearView\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/YearView/YearView.demo.customHeader.tsx\n"
+}

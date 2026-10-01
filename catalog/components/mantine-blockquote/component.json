@@ -1,0 +1,113 @@
+{
+  "id": "mantine:blockquote",
+  "sourceId": "mantine",
+  "slug": "mantine-blockquote",
+  "name": "Mantine blockquote",
+  "description": "2 published Mantine blockquote examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@phosphor-icons/react@2.1.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "blockquote",
+    "tags": [
+      "code",
+      "file",
+      "text"
+    ],
+    "aliases": [
+      "blockquote",
+      "mantine blockquote"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "2 published Mantine blockquote examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "blockquote:code:file:text",
+    "searchText": "Mantine blockquote\nblockquote\n2 published Mantine blockquote examples with complete pinned source and MIT attribution.\nmantine blockquote\ncode\nfile\ntext\nMantine blockquote 2 published Mantine blockquote examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Blockquote Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Blockquote/Blockquote.demo.textWrap.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-blockquote",
+  "manifestPath": "components/mantine-blockquote/component.json",
+  "integrity": "sha256:8ee474424d22e2bdabdf03b4d71dad9fa6127e29d002c889e09d1bde5803f08d",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Blockquote/Blockquote.demo.textWrap.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { InfoIcon } from '@phosphor-icons/react';\n\nimport { Blockquote } from '@mantine/core';\n\nfunction Wrapper(props: any) {\n  const icon = <InfoIcon />;\n  return (\n    <Blockquote icon={icon} cite=\"– Forrest Gump\" {...props}>\n      Life is like a box of chocolates. You never know what you are gonna get. But whatever you get,\n      you should make the most of it and enjoy every moment.\n    </Blockquote>\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent textWrap={\"wrap\"} />; }\n",
+      "sha256": "06f81a41c1d29aa87f5cf81c72090fcaa8502957d7665d7a482f56004b6a1c56",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Blockquote/Blockquote.demo.textWrap.tsx",
+      "upstreamSha256": "e82694787c4a29ee4cbcb84c71af18823967df1f91325e738b2052803e618338",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Blockquote/Blockquote.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { InfoIcon } from '@phosphor-icons/react';\n\nimport { Blockquote } from '@mantine/core';\n\nfunction Wrapper(props: any) {\n  const icon = <InfoIcon />;\n  return (\n    <Blockquote cite=\"– Forrest Gump\" icon={icon} mt=\"xl\" {...props}>\n      Life is like an npm install – you never know what you are going to get.\n    </Blockquote>\n  );\n}\nconst RendynExampleComponent = Wrapper;\nexport function RendynExample() { return <RendynExampleComponent color={\"blue\"} radius={\"md\"} iconSize={38} />; }\n",
+      "sha256": "ece4bfab9830907a02ea6687ba10ce284a8eafebb87f5d1e79d45098aad2a377",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Blockquote/Blockquote.demo.usage.tsx",
+      "upstreamSha256": "83848eabfbc140ab52ab0ebcdd4a25261413f475e5a39bae4cdb38ecb74dd8cf",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/blockquote/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Blockquote/Blockquote.demo.textWrap\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c97e658c28edbafadc88a3aea16a9b6186af286f8376514e2c4d37f477042d47",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/blockquote/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Blockquote/Blockquote.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b7b06d7ff3f7869d1f27f3db79b75166c7b7d14f9234c81f9f884cc88a8d465f",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @phosphor-icons/react@2.1.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @phosphor-icons/react@2.1.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "blockquote",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Blockquote",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Blockquote/Blockquote.demo.textWrap.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Blockquote/Blockquote.demo.textWrap.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine blockquote\n\n2 published Mantine blockquote examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Blockquote\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Blockquote/Blockquote.demo.textWrap.tsx\n"
+}

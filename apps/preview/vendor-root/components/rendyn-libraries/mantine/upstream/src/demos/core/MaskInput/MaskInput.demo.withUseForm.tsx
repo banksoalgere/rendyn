@@ -1,0 +1,29 @@
+"use client";
+
+import { Button, MaskInput } from '@mantine/core';
+
+import { useForm } from '@mantine/form';
+
+function Demo() {
+  const form = useForm({
+    mode: 'uncontrolled',
+    initialValues: { phone: '' },
+  });
+
+  return (
+    <form onSubmit={form.onSubmit((values) => console.log(values))}>
+      <MaskInput
+        mask="(999) 999-9999"
+        placeholder="(___) ___-____"
+        label="Phone"
+        onChangeRaw={(raw) => form.setFieldValue('phone', raw, { forceUpdate: false })}
+      />
+
+      <Button type="submit" mt="md">
+        Submit
+      </Button>
+    </form>
+  );
+}
+const RendynExampleComponent = Demo;
+export function RendynExample() { return <RendynExampleComponent  />; }

@@ -1,0 +1,24 @@
+"use client";
+
+import { Pagination, Text } from '@mantine/core';
+
+function Demo() {
+  return (
+    <>
+      <Text mb="xs">1 sibling (default)</Text>
+      <Pagination total={20} siblings={1} defaultValue={10} />
+
+      <Text mb="xs" mt="xl">
+        2 siblings
+      </Text>
+      <Pagination total={20} siblings={2} defaultValue={10} />
+
+      <Text mb="xs" mt="xl">
+        3 siblings
+      </Text>
+      <Pagination total={20} siblings={3} defaultValue={10} />
+    </>
+  );
+}
+const RendynExampleComponent = Demo;
+export function RendynExample() { return <RendynExampleComponent  />; }

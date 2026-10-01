@@ -1,0 +1,97 @@
+{
+  "id": "mantine:use-map",
+  "sourceId": "mantine",
+  "slug": "mantine-use-map",
+  "name": "Mantine use map",
+  "description": "1 published Mantine use map examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@phosphor-icons/react@2.1.10"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "use-map",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "use map",
+      "mantine use map",
+      "use-map"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Mantine use map examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "use-map:code:file",
+    "searchText": "Mantine use map\nuse map\n1 published Mantine use map examples with complete pinned source and MIT attribution.\nmantine use map\nuse-map\ncode\nfile\nMantine use map 1 published Mantine use map examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use map Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use map/use map.demo.usage.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-use-map",
+  "manifestPath": "components/mantine-use-map/component.json",
+  "integrity": "sha256:3aaab6db9123d9daf2fc943206279cd92cae5f963699e8a844db2983ba12b45c",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-map/use-map.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { PlusIcon, TrashIcon } from '@phosphor-icons/react';\n\nimport { ActionIcon, Group, Table } from '@mantine/core';\n\nimport { useMap } from '@mantine/hooks';\n\nfunction Demo() {\n  const map = useMap([\n    ['/hooks/use-media-query', 4124],\n    ['/hooks/use-clipboard', 8341],\n    ['/hooks/use-fetch', 9001],\n  ]);\n\n  const rows = Array.from(map.entries()).map(([key, value]) => (\n    <Table.Tr key={key}>\n      <Table.Td>{key}</Table.Td>\n      <Table.Td>{value}</Table.Td>\n      <Table.Td>\n        <Group>\n          <ActionIcon variant=\"default\" onClick={() => map.set(key, value + 1)} fw={500}>\n            <PlusIcon size={18} />\n          </ActionIcon>\n          <ActionIcon variant=\"default\" onClick={() => map.delete(key)} c=\"red\">\n            <TrashIcon size={18} />\n          </ActionIcon>\n        </Group>\n      </Table.Td>\n    </Table.Tr>\n  ));\n\n  return (\n    <Table layout=\"fixed\">\n      <Table.Thead>\n        <Table.Tr>\n          <Table.Th>Page</Table.Th>\n          <Table.Th>Views last month</Table.Th>\n          <Table.Th />\n        </Table.Tr>\n      </Table.Thead>\n      <Table.Tbody>{rows}</Table.Tbody>\n    </Table>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "41e94b888c1c3e438e11df7afba8b7ae9b4101d044ac579ff918f0e4da52c53f",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-map/use-map.demo.usage.tsx",
+      "upstreamSha256": "b8bef746655421cfc665f0ba4ee3b78ab49196cc263e7426d837f4a6c4104a42",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-map/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-map/use-map.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "bb4cd21673501f74c452e21cb9a97c1ef89ae304c832c0f300ed15b981b63eb0",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @phosphor-icons/react@2.1.10",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @phosphor-icons/react@2.1.10",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "use-map",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-map",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-map/use-map.demo.usage.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-map/use-map.demo.usage.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine use map\n\n1 published Mantine use map examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-map\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-map/use-map.demo.usage.tsx\n"
+}

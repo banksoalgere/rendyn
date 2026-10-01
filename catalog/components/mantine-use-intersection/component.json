@@ -1,0 +1,96 @@
+{
+  "id": "mantine:use-intersection",
+  "sourceId": "mantine",
+  "slug": "mantine-use-intersection",
+  "name": "Mantine use intersection",
+  "description": "1 published Mantine use intersection examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "use-intersection",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "use intersection",
+      "mantine use intersection",
+      "use-intersection"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "1 published Mantine use intersection examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "use-intersection:code:file",
+    "searchText": "Mantine use intersection\nuse intersection\n1 published Mantine use intersection examples with complete pinned source and MIT attribution.\nmantine use intersection\nuse-intersection\ncode\nfile\nMantine use intersection 1 published Mantine use intersection examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use intersection Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use intersection/use intersection.demo.usage.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-use-intersection",
+  "manifestPath": "components/mantine-use-intersection/component.json",
+  "integrity": "sha256:bc9bdf0bf2a8436be05ed383a9a86bdc52e243dbe2da1e20313ef7ad2030ed7a",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-intersection/use-intersection.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { Box, Paper, Text } from '@mantine/core';\n\nimport { useIntersection } from '@mantine/hooks';\n\nfunction Demo() {\n  const [container, setContainer] = useState<HTMLDivElement | null>(null);\n  const { ref, entry } = useIntersection({\n    root: container,\n    threshold: 1,\n  });\n\n  return (\n    <Paper ref={setContainer} h={300} style={{ overflowY: 'scroll' }}>\n      <Box pt={260} pb={280}>\n        <Paper\n          ref={ref}\n          p=\"xl\"\n          style={{\n            backgroundColor: entry?.isIntersecting\n              ? 'var(--mantine-color-teal-7)'\n              : 'var(--mantine-color-red-7)',\n            minWidth: '50%',\n          }}\n        >\n          <Text c=\"#fff\" fw={700}>\n            {entry?.isIntersecting ? 'Fully visible' : 'Obscured'}\n          </Text>\n        </Paper>\n      </Box>\n    </Paper>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "68e23d9a2f912b2632ec5d355ec62a3566a4a0548d26c01268683cbccd7b4efb",
+      "upstreamPath": "packages/@docs/demos/src/demos/hooks/use-intersection/use-intersection.demo.usage.tsx",
+      "upstreamSha256": "d9499c1e0abd166a78a41a971e41f1963b52e5d12454952e18e0a73f2be8977c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/use-intersection/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/hooks/use-intersection/use-intersection.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "471f96e1f572f603076061c83b4c27e23992a9de2a57fab13d8aa3287f03ff49",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "use-intersection",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-intersection",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-intersection/use-intersection.demo.usage.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-intersection/use-intersection.demo.usage.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine use intersection\n\n1 published Mantine use intersection examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-intersection\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/hooks/use-intersection/use-intersection.demo.usage.tsx\n"
+}

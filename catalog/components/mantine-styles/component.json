@@ -1,0 +1,509 @@
+{
+  "id": "mantine:styles",
+  "sourceId": "mantine",
+  "slug": "mantine-styles",
+  "name": "Mantine styles",
+  "description": "21 published Mantine styles examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@phosphor-icons/react@2.1.10",
+    "clsx@2.1.1"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "styles",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "styles",
+      "mantine styles"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "21 published Mantine styles examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "styles:code:file",
+    "searchText": "Mantine styles\nstyles\n21 published Mantine styles examples with complete pinned source and MIT attribution.\nmantine styles\ncode\nfile\nMantine styles 21 published Mantine styles examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/styles Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/styles/Styles.demo.className.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-styles",
+  "manifestPath": "components/mantine-styles/component.json",
+  "integrity": "sha256:98f9d785f575ef9dcc5f3f934cda00f99365a435f8d97e44fb842a627211d6ca",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.className.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box } from '@mantine/core';\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.className.module.css';\n\nfunction Demo() {\n  return (\n    <Box className={classes.box}>\n      Box component with <span className={classes.highlight}>some styles</span>\n    </Box>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "58414c69c553104910eb66cd2ec219daaddf3e86cb2d21a55c2637e91fd36fc3",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.className.tsx",
+      "upstreamSha256": "3497a518ff298d267ce3cffb20d92ee128a9158219e94dd3dee569e7c4927875",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.className.module.css",
+      "type": "style",
+      "content": ".box {\n  font-size: var(--mantine-font-size-xl);\n  text-align: center;\n  font-weight: 600;\n}\n\n.highlight {\n  padding: 4px 10px;\n  display: inline-block;\n  border-radius: var(--mantine-radius-md);\n  background: var(--mantine-color-blue-light);\n  color: var(--mantine-color-blue-light-color);\n}\n",
+      "sha256": "86230eb6269645d50722e5e3a5ea6cc591c41315db876ab496dce5d57250bd69",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.className.module.css",
+      "upstreamSha256": "86230eb6269645d50722e5e3a5ea6cc591c41315db876ab496dce5d57250bd69",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.classNames.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { TextInput } from '@mantine/core';\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.classNames.module.css';\n\nfunction Demo() {\n  const [value, setValue] = useState('');\n  const [focused, setFocused] = useState(false);\n  const floating = focused || value.length > 0 || undefined;\n\n  return (\n    <TextInput\n      label=\"Floating label input\"\n      labelProps={{ 'data-floating': floating }}\n      classNames={{\n        root: classes.root,\n        input: classes.input,\n        label: classes.label,\n      }}\n      onFocus={() => setFocused(true)}\n      onBlur={() => setFocused(false)}\n      value={value}\n      onChange={(event) => setValue(event.currentTarget.value)}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "f257547f72ab6b39be56abb4bc499c2d6cb060f84c7105a21b7ba29f002c96a0",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.classNames.tsx",
+      "upstreamSha256": "dafb4665d9cecb087649e92b9a1f7ba8d40936f0f0d8c6b1a21a742a8cbf5aee",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.classNames.module.css",
+      "type": "style",
+      "content": ".root {\n  position: relative;\n  margin-top: 5px;\n}\n\n.input {\n  border-top: none;\n  border-left: none;\n  border-right: none;\n  border-bottom-width: 2px;\n  border-radius: 0;\n  padding-left: 0;\n  background-color: var(--mantine-color-body);\n}\n\n.label {\n  position: absolute;\n  z-index: 1;\n  pointer-events: none;\n  top: 7px;\n  color: var(--mantine-color-placeholder);\n  font-weight: 400;\n  font-size: var(--mantine-font-size-sm);\n  transition:\n    color 100ms ease,\n    transform 100ms ease,\n    font-size 100ms ease;\n\n  &[data-floating] {\n    transform: translateY(-20px);\n    font-size: var(--mantine-font-size-xs);\n    color: var(--mantine-color-text);\n  }\n}\n",
+      "sha256": "8973e901a766cf07ce868ac217033610a575b87a1b0fb455fa0d2676491c1a27",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.classNames.module.css",
+      "upstreamSha256": "8973e901a766cf07ce868ac217033610a575b87a1b0fb455fa0d2676491c1a27",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.classNamesProps.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport cx from 'clsx';\n\nimport { createTheme, MantineThemeProvider, TextInput } from '@mantine/core';\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.classNamesProps.module.css';\n\nconst theme = createTheme({\n  components: {\n    TextInput: TextInput.extend({\n      classNames: (_theme, props) => ({\n        label: cx({ [classes.labelRequired]: props.required }),\n        input: cx({ [classes.inputError]: props.error }),\n      }),\n    }),\n  },\n});\n\nfunction Demo() {\n  return (\n    <MantineThemeProvider theme={theme}>\n      <TextInput required label=\"Required input\" placeholder=\"Required input\" />\n      <TextInput error label=\"Input with error\" placeholder=\"Input with error\" mt=\"md\" />\n    </MantineThemeProvider>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "fe86564a129fda341509b5a75afb05c09e2e0747b067f4edf77f5fb6122029a2",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.classNamesProps.tsx",
+      "upstreamSha256": "685cb2f00ad0cfecb30896fa95071553fd9ae829b56ca828b27360ee3e0f9303",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.classNamesProps.module.css",
+      "type": "style",
+      "content": ".labelRequired {\n  color: var(--mantine-color-red-filled);\n}\n\n.inputError {\n  background-color: var(--mantine-color-red-light);\n}\n",
+      "sha256": "f5500d7e83b54487a1bab07ff3295a14c3732131815765f5fb242f1aa15e2bee",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.classNamesProps.module.css",
+      "upstreamSha256": "f5500d7e83b54487a1bab07ff3295a14c3732131815765f5fb242f1aa15e2bee",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.containers.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.containers.module.css';\n\nfunction Demo() {\n  return (\n    <div className={classes.root}>\n      <div className={classes.child}>Resize parent element to see container query in action</div>\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "a81239fc74b7dd0ea7fc5605fb77b537ce8dd4d56b5603bf9da489b4cc3c52ef",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.containers.tsx",
+      "upstreamSha256": "911ebe3f46d9d423ba72aad0a6fdefec10c4c93d855f2454d3c94346716cb26f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.containers.module.css",
+      "type": "style",
+      "content": ".root {\n  min-width: 200px;\n  max-width: 100%;\n  min-height: 120px;\n  container-type: inline-size;\n  overflow: auto;\n  resize: horizontal;\n}\n\n.child {\n  background-color: var(--mantine-color-dimmed);\n  color: var(--mantine-color-white);\n  padding: var(--mantine-spacing-md);\n\n  @container (max-width: 500px) {\n    background-color: var(--mantine-color-blue-filled);\n  }\n\n  @container (max-width: 300px) {\n    background-color: var(--mantine-color-red-filled);\n  }\n}\n",
+      "sha256": "6a5e0cc3f837f628b5a00430fe9ba540daad54f9f3d3625055c07e35e65374e7",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.containers.module.css",
+      "upstreamSha256": "6a5e0cc3f837f628b5a00430fe9ba540daad54f9f3d3625055c07e35e65374e7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.customVariant.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Input } from '@mantine/core';\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.customVariant.module.css';\n\nfunction Demo() {\n  return (\n    <>\n      <Input classNames={classes} variant=\"underline\" placeholder=\"Underline input\" />\n      <Input classNames={classes} variant=\"filled\" placeholder=\"Filled input\" mt=\"md\" />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "8899a6840758d1d4f07d9582278dcdcce09866681844bd9aed5a45741b9b4f3e",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.customVariant.tsx",
+      "upstreamSha256": "5a86fcc853d2e3943fb9107d1e6782f7193b4231df661bc29808325842edd8c5",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.customVariant.module.css",
+      "type": "style",
+      "content": ".input {\n  &[data-variant='underline'] {\n    border-bottom: 2px solid;\n    border-radius: 0;\n    padding-left: 0;\n    padding-right: 0;\n\n    @mixin light {\n      border-color: var(--mantine-color-gray-3);\n    }\n\n    @mixin dark {\n      border-color: var(--mantine-color-dark-3);\n    }\n\n    &:focus {\n      border-color: var(--mantine-color-blue-filled);\n    }\n  }\n}\n",
+      "sha256": "2454a873ef87a949926cf9a8187ad77e0d87507b2b6c3d3b4eed10f537775396",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.customVariant.module.css",
+      "upstreamSha256": "2454a873ef87a949926cf9a8187ad77e0d87507b2b6c3d3b4eed10f537775396",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.dataAttributes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { ArrowRightIcon } from '@phosphor-icons/react';\n\nimport { Button, ButtonProps, Group } from '@mantine/core';\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.dataAttributes.module.css';\n\nfunction SendFilesButton(props: ButtonProps & React.ComponentProps<'button'>) {\n  return <Button {...props} classNames={classes} />;\n}\n\nfunction Demo() {\n  return (\n    <Group>\n      <SendFilesButton leftSection=\"12\" rightSection={<ArrowRightIcon size={18} />}>\n        Send files\n      </SendFilesButton>\n      <SendFilesButton leftSection=\"3\" rightSection={<ArrowRightIcon size={18} />} disabled>\n        Send files\n      </SendFilesButton>\n    </Group>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "6d7f6642b6b5e55bc96dc067eeced54ed271dbebb66c2c0109716c2cdadf6139",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.dataAttributes.tsx",
+      "upstreamSha256": "ced0dd952edc8f4be7e6d5a8b5260623123f286864365b9eda855f4649b08880",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.dataAttributes.module.css",
+      "type": "style",
+      "content": ".root {\n  border-top-left-radius: var(--mantine-radius-xl);\n  border-bottom-left-radius: var(--mantine-radius-xl);\n  padding-left: 4px;\n\n  @mixin rtl {\n    padding-left: calc(var(--button-padding-x) / 1.5);\n    padding-right: 4px;\n    border-top-left-radius: var(--mantine-radius-md);\n    border-top-right-radius: var(--mantine-radius-xl);\n    border-bottom-left-radius: var(--mantine-radius-md);\n    border-bottom-right-radius: var(--mantine-radius-xl);\n  }\n\n  /* The following styles will be applied only when button is disabled */\n  &[data-disabled] {\n    /* You can use Mantine PostCSS mixins inside data attributes */\n    @mixin light {\n      border: 1px solid var(--mantine-color-gray-2);\n    }\n\n    @mixin dark {\n      border: 1px solid var(--mantine-color-dark-4);\n    }\n\n    /* You can target child elements that are inside .root[data-disabled] */\n    & .section[data-position='left'] {\n      opacity: 0.6;\n    }\n  }\n}\n\n.section {\n  /* Apply styles only to left section */\n  &[data-position='left'] {\n    --section-size: calc(var(--button-height) - 8px);\n\n    background-color: var(--mantine-color-body);\n    color: var(--mantine-color-text);\n    height: var(--section-size);\n    width: var(--section-size);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border-radius: var(--mantine-radius-xl);\n  }\n\n  &[data-position='right'] {\n    @mixin rtl {\n      transform: rotate(180deg);\n    }\n  }\n}\n",
+      "sha256": "9d7071677733d2537aa8e4f5a3f1ab220cfe9610cf7e581b108172a4d93547cb",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.dataAttributes.module.css",
+      "upstreamSha256": "9d7071677733d2537aa8e4f5a3f1ab220cfe9610cf7e581b108172a4d93547cb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.dataSize.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createTheme, Input, MantineThemeProvider } from '@mantine/core';\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.dataSize.module.css';\n\nconst theme = createTheme({\n  components: {\n    Input: Input.extend({ classNames: classes }),\n  },\n});\n\nfunction Demo() {\n  return (\n    <MantineThemeProvider theme={theme}>\n      <Input placeholder=\"Size XXL\" size=\"xxl\" />\n      <Input placeholder=\"Size XXS\" size=\"xxs\" mt=\"md\" />\n    </MantineThemeProvider>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "930977d1ff8d0174d8fa59c07fbfb7696ac7183b20adbf0427e5c5a91e00498b",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.dataSize.tsx",
+      "upstreamSha256": "dc79428e283c4b9c9919471819244aba4f7f629211cea56113df3b4be2c72f8f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.dataSize.module.css",
+      "type": "style",
+      "content": ".wrapper {\n  &[data-size='xxl'] {\n    & .input {\n      padding-left: 28px;\n      padding-right: 28px;\n      height: 68px;\n      font-size: 28px;\n    }\n  }\n\n  &[data-size='xxs'] {\n    & .input {\n      padding-left: 10px;\n      padding-right: 10px;\n      height: 28px;\n      font-size: 10px;\n    }\n  }\n}\n",
+      "sha256": "6c227812df5144ab41d6e68a1c85eb2b7b2de3550a68be1b72e0765bf433acd3",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.dataSize.module.css",
+      "upstreamSha256": "6c227812df5144ab41d6e68a1c85eb2b7b2de3550a68be1b72e0765bf433acd3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.directionControl.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useEffect } from 'react';\n\nimport { TextAlignLeftIcon, TextAlignRightIcon } from '@phosphor-icons/react';\n\nimport { ActionIcon, useDirection } from '@mantine/core';\n\nfunction Demo() {\n  const { toggleDirection, dir, setDirection } = useDirection();\n  useEffect(() => () => setDirection('ltr'), []);\n\n  return (\n    <ActionIcon onClick={() => toggleDirection()} variant=\"default\" size=\"lg\">\n      {dir === 'rtl' ? <TextAlignLeftIcon /> : <TextAlignRightIcon />}\n    </ActionIcon>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "f18bfd25107f6b41ad4c11c71c92dc99ac891ed2516b6a51cd122e0a9f633709",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.directionControl.tsx",
+      "upstreamSha256": "ee2b55beefc675617eede3d5b1db5eca8790f618c2d4c281d64cdcb45c733c19",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.globalClasses.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Group } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Group>\n      <button type=\"button\" className=\"mantine-focus-auto\">\n        Focus auto\n      </button>\n      <button type=\"button\" className=\"mantine-focus-always\">\n        Focus always\n      </button>\n      <button type=\"button\" className=\"mantine-focus-never\">\n        Focus never\n      </button>\n      <button type=\"button\" className=\"mantine-active\">\n        Active\n      </button>\n    </Group>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "f4d7ed55f585e89af1cb5fd4affaeab005a0e1f5b819579595c773803c81820f",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.globalClasses.tsx",
+      "upstreamSha256": "6863fca5c1f9a5da2cb78b2be02da19cb6a4dc4f440301bc048f02345fb0db70",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.hiddenVisible.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, Group } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Group justify=\"center\">\n      <Button hiddenFrom=\"sm\" color=\"orange\">\n        Hidden from sm\n      </Button>\n      <Button visibleFrom=\"sm\" color=\"cyan\">\n        Visible from sm\n      </Button>\n      <Button visibleFrom=\"md\" color=\"pink\">\n        Visible from md\n      </Button>\n    </Group>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "75761c6fd8e0a3af4a69aee7124c1edf9ef0b61eb8829b45b0bfae44ea18895a",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.hiddenVisible.tsx",
+      "upstreamSha256": "9717f1f79f8fec0b1eae4417cd4e9d13b82251a1ee292f4a813c32d5e4b9ecf5",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.lightDarkHidden.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <>\n      <Button color=\"cyan\" lightHidden>\n        Visible in dark color scheme only\n      </Button>\n\n      <Button color=\"pink\" darkHidden>\n        Visible in light color scheme only\n      </Button>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "38e4a19a35d2d4f5988085e384a2816c99746107d1b739a6ba37606d0a6c1f4a",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.lightDarkHidden.tsx",
+      "upstreamSha256": "885f49ca2046b9e401e7df8120119f6c7c2d08bb97c5460f9178dd314570c924",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.remSlider.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useEffect } from 'react';\n\nimport { Slider } from '@mantine/core';\n\nfunction Demo() {\n  useEffect(\n    () => () => {\n      document.documentElement.style.fontSize = '100%';\n    },\n    []\n  );\n\n  return (\n    <Slider\n      defaultValue={100}\n      min={70}\n      max={130}\n      onChange={(value) => {\n        document.documentElement.style.fontSize = `${value}%`;\n      }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b81c467c1c0440e16d02f9a9fd72b920bfdf5463a134109ee123df120004dc92",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.remSlider.tsx",
+      "upstreamSha256": "77001c29b9912ce741ba1ee0cab6e1e36c5d7a12ca59d489df279cbf9f4ad6d4",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.responsive.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.responsive.module.css';\n\nfunction Demo() {\n  return <div className={classes.demo}>Demo</div>;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "0a69975433d5f7b4c6e30a762e5d745405657607b4f4b6de648759df49c6bf84",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.responsive.tsx",
+      "upstreamSha256": "96883154e1b671bc3b23092dcee73b16e5f2077eb7355ddaf8122a609f117e35",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.responsive.module.css",
+      "type": "style",
+      "content": ".demo {\n  background-color: var(--mantine-color-blue-filled);\n  color: var(--mantine-color-white);\n  padding: var(--mantine-spacing-md);\n  text-align: center;\n\n  @media (min-width: em(750px)) {\n    background-color: var(--mantine-color-red-filled);\n  }\n}\n",
+      "sha256": "b3433f478ab116737c974ef289192912f36a6177b9429568728f38817a187189",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.responsive.module.css",
+      "upstreamSha256": "b3433f478ab116737c974ef289192912f36a6177b9429568728f38817a187189",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.responsiveStyleProps.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Box\n      w={{ base: 200, sm: 400, lg: 500 }}\n      py={{ base: 'xs', sm: 'md', lg: 'xl' }}\n      bg={{ base: 'blue.7', sm: 'red.7', lg: 'green.7' }}\n      c=\"#fff\"\n      ta=\"center\"\n      mx=\"auto\"\n    >\n      Box with responsive style props\n    </Box>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "30765679708cf3962bc5f43530199783e5dc58641500cfa464fb4ae2ac5ad957",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.responsiveStyleProps.tsx",
+      "upstreamSha256": "d1d0b663b802cd0701d2407f90f4b2155e65a6988ff1f70e9045c5af026dbfef",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.rtlMixin.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.rtlMixin.module.css';\n\nfunction Demo() {\n  return <div className={classes.demo}>Demo</div>;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "4304a6be772368c9b4ebb6b37fa756378014e9c95c9133654465da4c3263a0bf",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.rtlMixin.tsx",
+      "upstreamSha256": "5c24c9fa2c67f04744b3bdba021e6af5b3b0c35b76d5870a5d5b16ed968c62fb",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.rtlMixin.module.css",
+      "type": "style",
+      "content": ".demo {\n  text-align: center;\n  color: var(--mantine-color-white);\n  padding: var(--mantine-spacing-md);\n\n  /* LTR styles */\n  background-color: var(--mantine-color-blue-filled);\n\n  @mixin rtl {\n    /* RTL styles override LTR styles */\n    background-color: var(--mantine-color-red-filled);\n  }\n}\n",
+      "sha256": "a58caa0d5548da76178610e4ca7935a61610168c9640d3ac76c23b615d981d41",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.rtlMixin.module.css",
+      "upstreamSha256": "a58caa0d5548da76178610e4ca7935a61610168c9640d3ac76c23b615d981d41",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.sizesMedia.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TextInput } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <>\n      <TextInput size=\"xs\" hiddenFrom=\"sm\" label=\"My input\" placeholder=\"My input\" />\n      <TextInput size=\"xl\" visibleFrom=\"sm\" label=\"My input\" placeholder=\"My input\" />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "db2bc89d6a19929499897a08f1d5a3d58fc84e8e763d993dbda736875fee0fae",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.sizesMedia.tsx",
+      "upstreamSha256": "82834beb60d8da01b348aaa659bc5e81d3bb7b0f6baa0beea8428d52d977c7b2",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.styles.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button } from '@mantine/core';\n\nfunction Demo() {\n  const gradient =\n    'linear-gradient(45deg, var(--mantine-color-pink-filled) 0%, var(--mantine-color-orange-filled) 50%, var(--mantine-color-yellow-filled) 100%)';\n\n  return (\n    <Button\n      styles={{\n        root: {\n          padding: 2,\n          border: 0,\n          backgroundImage: gradient,\n        },\n\n        inner: {\n          background: 'var(--mantine-color-body)',\n          color: 'var(--mantine-color-text)',\n          borderRadius: 'calc(var(--button-radius) - 2px)',\n          paddingLeft: 'var(--mantine-spacing-md)',\n          paddingRight: 'var(--mantine-spacing-md)',\n        },\n\n        label: {\n          backgroundImage: gradient,\n          WebkitBackgroundClip: 'text',\n          WebkitTextFillColor: 'transparent',\n        },\n      }}\n    >\n      Gradient button\n    </Button>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "4fc359f7f5a040e49e859d1262ee79fd5508983d65a8f590ffe8878a72935783",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.styles.tsx",
+      "upstreamSha256": "4675b6e42c6bfcab7069e824d3872237c145e6dafcc2a120709345a4d6fea317",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.unstyled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Tabs } from '@mantine/core';\n\nfunction Demo() {\n  return (\n    <Tabs defaultValue=\"chat\" unstyled>\n      <Tabs.List>\n        <Tabs.Tab value=\"chat\">Chat</Tabs.Tab>\n        <Tabs.Tab value=\"gallery\">Gallery</Tabs.Tab>\n        <Tabs.Tab value=\"account\">Account</Tabs.Tab>\n      </Tabs.List>\n\n      <Tabs.Panel value=\"chat\">Chat panel</Tabs.Panel>\n      <Tabs.Panel value=\"gallery\">Gallery panel</Tabs.Panel>\n      <Tabs.Panel value=\"account\">Account panel</Tabs.Panel>\n    </Tabs>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "755de90e7525bb7416a9f8fcd4e1f8bbbed4e066003ef644590503ef31fb8f8a",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.unstyled.tsx",
+      "upstreamSha256": "976b94f04a442d338df382c4dcac762ec7383b55fd7a59b6cef9c692d5d2420d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.useMatchesHook.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Box, useMatches } from '@mantine/core';\n\nfunction Demo() {\n  const color = useMatches({\n    base: 'blue.9',\n    sm: 'orange.9',\n    lg: 'red.9',\n  });\n\n  return (\n    <Box bg={color} c=\"white\" p=\"xl\">\n      Box with color that changes based on screen size\n    </Box>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "73111aa8a5f026620d55cedf06792f0e9529bd48abbc43bb886cc0467eae18d7",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.useMatchesHook.tsx",
+      "upstreamSha256": "e4d84b9e420b33efca52400f34de340d7509a41070914ed5d3c0dbb35fc75943",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.useMediaQueryHook.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, em, Tooltip } from '@mantine/core';\n\nimport { useMediaQuery } from '@mantine/hooks';\n\nfunction Demo() {\n  const isMobile = useMediaQuery(`(max-width: ${em(750)})`);\n\n  return (\n    <Tooltip label={isMobile ? 'Mobile' : 'Desktop'}>\n      <Button>Hover me</Button>\n    </Tooltip>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "2846797d1fd3287a4b788cfbcb69f47fe904f492feb2080e3169ece9ae7e8340",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.useMediaQueryHook.tsx",
+      "upstreamSha256": "5a7f7199275f3bbffdbba3738b354992885ac406ae5d7133b903ca1878cad67f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.vars.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { Button, ButtonFactory, Group, PartialVarsResolver } from '@mantine/core';\n\nconst varsResolver: PartialVarsResolver<ButtonFactory> = (_theme, props) => {\n  if (props.size === 'xxl') {\n    return {\n      root: {\n        '--button-height': '60px',\n        '--button-padding-x': '30px',\n        '--button-fz': '24px',\n      },\n    };\n  }\n\n  if (props.size === 'xxs') {\n    return {\n      root: {\n        '--button-height': '24px',\n        '--button-padding-x': '10px',\n        '--button-fz': '10px',\n      },\n    };\n  }\n\n  return { root: {} };\n};\n\nfunction Demo() {\n  return (\n    <Group>\n      <Button vars={varsResolver} size=\"xxl\">\n        XXL Button\n      </Button>\n      <Button vars={varsResolver} size=\"xxs\">\n        XXS Button\n      </Button>\n    </Group>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "157521172c61eb9eb72e6cbf00d964eea46757a6d9aa5f65a432771a2683d06f",
+      "upstreamPath": "packages/@docs/demos/src/demos/styles/Styles.demo.vars.tsx",
+      "upstreamSha256": "6eb4bb1f22c0e52dea5964e3030538933017afbb47965c939afa1493bb9abde1",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.className\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "9815762e7b0a3e8bd429b37665f9034b37f2e92b6bccf50a78c9dfd401124f03",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/class-names.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.classNames\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7327dc5c217e78d9d61d4d9fed8aec3c9cdf64a1647fec8dcf66e58904f7d7a9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/class-names-props.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.classNamesProps\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "80c0a29fc0c0efe14b333a944bf2dad876ea8d7e81f2a21d1617111dffcb5968",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/containers.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.containers\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "ad11e0a1b10ea7b675f5760cc2632adf494ccb120d2d0803fff469f2ea122b8c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/custom-variant.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.customVariant\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "ac47dd1b9de18863aefa215a4b7f5d2d8f238378a32133fe58858fff8c09cf5e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/data-attributes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.dataAttributes\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "2c5b60c4f2f8d76659204a653eeace1a62d899b2e0a9f4f675ca22d0958f78c5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/data-size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.dataSize\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "bb833525efb56cd9becb86ed65401aa2ee30b449cd279be07d6411b39ad083df",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/direction-control.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.directionControl\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7c797914524a12f0f8e2386d74ed6283cc2a749c5fc09240c6ed204a695e4f5a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/global-classes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.globalClasses\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "358d08cc58b3adfcb1604f3d01e38581ab648a5561b462a651b0541dcb00b4f6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/hidden-visible.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.hiddenVisible\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "aa593a9fd2f32fea7f0ce698f13a341559ede7ae5e04289b2261fc4cbd8ab0bc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/light-dark-hidden.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.lightDarkHidden\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "8edc209768d3e295be721a2f8cf26fe1a61494a9b283b1605bdae69bc3bee4ad",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/rem-slider.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.remSlider\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c8558039ec9812f932bd95215f26b8f41484e0c3762307445cbab06474b10461",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/responsive.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.responsive\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "24f28d78da837bd1c2e4fc83ada8d566a558ea10ba93ddd4059d53320cd5ea33",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/responsive-style-props.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.responsiveStyleProps\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7bb41561df0e4a057ea5acbc73fd1dfbb8682403575b7c24758a50937af918a3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/rtl-mixin.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.rtlMixin\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "9f6cce6747aa51f3cf701de221ee2dddc3038a0828c05ad31def1e9e4ef9caf9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/sizes-media.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.sizesMedia\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "2117e181f8f4370419136b24f308e20003ed6dbd4f903c6a1ff3740e8ac2d548",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/styles.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.styles\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "21973d318eec62df7288c9c9819f052123e148514420b007c224120511f2130a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/unstyled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.unstyled\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "6adfde5d6401011b7a8e2b3c76f709f053df9a255203b1eccfb8d946e0e38571",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/use-matches-hook.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.useMatchesHook\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "abe03cbaad96676d1f241a8ff6248833353635718407ce247ef09fc50acb4cc5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/use-media-query-hook.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.useMediaQueryHook\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "28f89b6474f23576aa867fdc791065ca9acb97e2942dbe4d92c9fb26a8113f51",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/styles/previews/vars.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.vars\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a29395fc0926b47c9397db53e12b53026106daad280dc6d0fd3ab94d5fb23c27",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @phosphor-icons/react@2.1.10 clsx@2.1.1",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.className.module.css",
+      "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.classNames.module.css",
+      "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.classNamesProps.module.css",
+      "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.containers.module.css",
+      "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.customVariant.module.css",
+      "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.dataAttributes.module.css",
+      "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.dataSize.module.css",
+      "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.responsive.module.css",
+      "components/rendyn-libraries/mantine/upstream/src/demos/styles/Styles.demo.rtlMixin.module.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @phosphor-icons/react@2.1.10 clsx@2.1.1",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "styles",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/styles",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/styles/Styles.demo.className.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/styles/Styles.demo.className.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine styles\n\n21 published Mantine styles examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/styles\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/styles/Styles.demo.className.tsx\n"
+}

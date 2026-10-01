@@ -1,0 +1,849 @@
+{
+  "id": "mantine:week-view",
+  "sourceId": "mantine",
+  "slug": "mantine-week-view",
+  "name": "Mantine week view",
+  "description": "46 published Mantine week view examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/dates@9.6.3",
+    "@mantine/form@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantine/schedule@9.6.3",
+    "@phosphor-icons/react@2.1.10",
+    "dayjs@1.11.23"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "week-view",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "week view",
+      "mantine week view",
+      "week-view"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "46 published Mantine week view examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "week-view:code:file",
+    "searchText": "Mantine week view\nweek view\n46 published Mantine week view examples with complete pinned source and MIT attribution.\nmantine week view\nweek-view\ncode\nfile\nMantine week view 46 published Mantine week view examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/WeekView Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.allDayEvents.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-week-view",
+  "manifestPath": "components/mantine-week-view/component.json",
+  "integrity": "sha256:5ff568040a18a511044d60258082f92896819172eb026c2e882f1581ded660b9",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.allDayEvents.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { ScheduleEventData, WeekView } from '@mantine/schedule';\n\nconst startOfWeek = dayjs()\n  .subtract((dayjs().day() + 6) % 7, 'day')\n  .format('YYYY-MM-DD');\n\nconst dayAfterStartOfWeek = dayjs(startOfWeek).add(1, 'day').format('YYYY-MM-DD');\n\nconst twoDaysAfter = dayjs(startOfWeek).add(2, 'day').format('YYYY-MM-DD');\n\nconst events: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'Conference Day',\n    start: `${startOfWeek} 00:00:00`,\n    end: dayjs(startOfWeek).add(1, 'day').startOf('day').format('YYYY-MM-DD HH:mm:ss'),\n    color: 'red',\n  },\n  {\n    id: 2,\n    title: 'Holiday',\n    start: `${dayAfterStartOfWeek} 00:00:00`,\n    end: dayjs(dayAfterStartOfWeek).add(1, 'day').startOf('day').format('YYYY-MM-DD HH:mm:ss'),\n    color: 'pink',\n  },\n  {\n    id: 3,\n    title: 'Team Building',\n    start: `${startOfWeek} 00:00:00`,\n    end: dayjs(twoDaysAfter).add(1, 'day').startOf('day').format('YYYY-MM-DD HH:mm:ss'),\n    color: 'orange',\n  },\n  {\n    id: 4,\n    title: 'Morning Standup',\n    start: `${startOfWeek} 09:00:00`,\n    end: `${startOfWeek} 09:30:00`,\n    color: 'blue',\n  },\n  {\n    id: 5,\n    title: 'Code Review',\n    start: `${dayAfterStartOfWeek} 14:00:00`,\n    end: `${dayAfterStartOfWeek} 15:00:00`,\n    color: 'violet',\n  },\n];\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n\n  return (\n    <WeekView\n      date={date}\n      onDateChange={setDate}\n      events={events}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "5927b73f8b87ecf5d840c889355e9e4e10ce3711f9bd582031670d8244c6f672",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.allDayEvents.tsx",
+      "upstreamSha256": "097157e411307592a2bbd68e772cd38fb5a9a3848e95353b204bef602f14efec",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.backgroundEvents.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { WeekView } from '@mantine/schedule';\n\nconst today = dayjs().format('YYYY-MM-DD');\n\nconst backgroundEventsData = [\n  {\n    id: 'lunch-block',\n    title: 'Lunch break',\n    start: `${today} 12:00:00`,\n    end: `${today} 13:00:00`,\n    color: 'gray',\n    display: 'background' as const,\n  },\n  {\n    id: 'focus-time',\n    title: 'Focus time',\n    start: `${today} 14:00:00`,\n    end: `${today} 16:00:00`,\n    color: 'blue',\n    display: 'background' as const,\n  },\n  {\n    id: 'team-meeting',\n    title: 'Team meeting',\n    start: `${today} 10:00:00`,\n    end: `${today} 11:00:00`,\n    color: 'violet',\n  },\n  {\n    id: 'code-review',\n    title: 'Code review',\n    start: `${today} 14:30:00`,\n    end: `${today} 15:30:00`,\n    color: 'green',\n  },\n];\n\nfunction Demo() {\n  const [date, setDate] = useState(today);\n\n  return (\n    <WeekView\n      date={date}\n      onDateChange={setDate}\n      events={backgroundEventsData}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b3696645ce56504c3c8e471fe07b66a133374061907653abe065b58185147ada",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.backgroundEvents.tsx",
+      "upstreamSha256": "13cf2b78c5c8137406a0c8066db0f18c197b4470bbffc383878b33dffa69aeb4",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.backgroundEventsCustomStyle.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { getStartOfWeek, ScheduleEventData, WeekView } from '@mantine/schedule';\n\nconst weekStart = dayjs(getStartOfWeek({ date: new Date(), firstDayOfWeek: 1 }));\n\nconst weekdays = Array.from({ length: 5 }, (_, i) => weekStart.add(i, 'day').format('YYYY-MM-DD'));\n\nconst initialEvents: ScheduleEventData[] = [\n  ...weekdays.map((day, i) => ({\n    id: `lunch-${i}`,\n    title: 'Lunch break',\n    start: `${day} 12:00:00`,\n    end: `${day} 13:00:00`,\n    color: 'red',\n    display: 'background' as const,\n  })),\n  {\n    id: 'team-meeting',\n    title: 'Team meeting',\n    start: `${weekdays[0]} 10:00:00`,\n    end: `${weekdays[0]} 11:00:00`,\n    color: 'violet',\n  },\n  {\n    id: 'code-review',\n    title: 'Code review',\n    start: `${weekdays[2]} 15:00:00`,\n    end: `${weekdays[2]} 16:00:00`,\n    color: 'green',\n  },\n];\n\nfunction overlapsBackground(newStart: string, newEnd: string, events: ScheduleEventData[]) {\n  return events.some((e) => e.display === 'background' && newStart < e.end && newEnd > e.start);\n}\n\nfunction Demo() {\n  const [events, setEvents] = useState(initialEvents);\n\n  const handleEventDrop = ({\n    eventId,\n    newStart,\n    newEnd,\n  }: {\n    eventId: string | number;\n    newStart: string;\n    newEnd: string;\n  }) => {\n    if (overlapsBackground(newStart, newEnd, events)) {\n      return;\n    }\n\n    setEvents((prev) =>\n      prev.map((event) =>\n        event.id === eventId ? { ...event, start: newStart, end: newEnd } : event\n      )\n    );\n  };\n\n  return (\n    <WeekView\n      date={new Date()}\n      events={events}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      withEventsDragAndDrop\n      onEventDrop={handleEventDrop}\n      styles={{\n        weekViewBackgroundEvent: {\n          background: `repeating-linear-gradient(\n            -45deg,\n            transparent,\n            transparent 10px,\n            var(--mantine-color-red-light) 10px,\n            var(--mantine-color-red-light) 12px\n          )`,\n          color: 'var(--mantine-color-red-light-color)',\n        },\n      }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "852fd16a3f26f8700019de08bb200d37921370d4481b395d4d89ccb551a5ec7e",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.backgroundEventsCustomStyle.tsx",
+      "upstreamSha256": "45fe90146b88e94c61885ec1aafd29c5896e1540ea38380f126f82a28292778a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.bidirectionalDragDrop.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useRef, useState } from 'react';\n\nimport { Box, Grid, Text } from '@mantine/core';\n\nimport { ScheduleEventData, WeekView } from '@mantine/schedule';\n\ninterface SidebarItem {\n  title: string;\n  duration: number;\n  color: string;\n}\n\nconst initialSidebarItems: SidebarItem[] = [\n  { title: 'Quick Sync', duration: 30, color: 'teal' },\n  { title: 'Workshop', duration: 120, color: 'orange' },\n  { title: 'One-on-One', duration: 60, color: 'violet' },\n];\n\nfunction Demo() {\n  const [sidebarItems, setSidebarItems] = useState(initialSidebarItems);\n  const [events, setEvents] = useState<ScheduleEventData[]>([]);\n  const [sidebarHighlight, setSidebarHighlight] = useState(false);\n  const nextId = useRef(1);\n\n  const handleExternalDrop = (dataTransfer: DataTransfer, dropDateTime: string) => {\n    const raw = dataTransfer.getData('text/plain');\n    if (!raw) {\n      return;\n    }\n\n    const data = JSON.parse(raw);\n    const start = dayjs(dropDateTime);\n    const end = start.add(data.duration, 'minutes');\n\n    setEvents((prev) => [\n      ...prev,\n      {\n        id: nextId.current++,\n        title: data.title,\n        start: start.format('YYYY-MM-DD HH:mm:ss'),\n        end: end.format('YYYY-MM-DD HH:mm:ss'),\n        color: data.color,\n      },\n    ]);\n    setSidebarItems((prev) => prev.filter((item) => item.title !== data.title));\n  };\n\n  const handleEventDrop = ({\n    eventId,\n    newStart,\n    newEnd,\n  }: {\n    eventId: string | number;\n    newStart: string;\n    newEnd: string;\n  }) => {\n    setEvents((prev) =>\n      prev.map((event) =>\n        event.id === eventId ? { ...event, start: newStart, end: newEnd } : event\n      )\n    );\n  };\n\n  const handleSidebarDrop = (e: React.DragEvent) => {\n    e.preventDefault();\n    setSidebarHighlight(false);\n    const raw = e.dataTransfer.getData('application/json');\n    if (!raw) {\n      return;\n    }\n\n    const { eventId } = JSON.parse(raw);\n    const event = events.find((ev) => String(ev.id) === String(eventId));\n    if (!event) {\n      return;\n    }\n\n    const duration = dayjs(event.end).diff(dayjs(event.start), 'minutes');\n    setSidebarItems((prev) => [\n      ...prev,\n      { title: event.title, duration, color: event.color || 'blue' },\n    ]);\n    setEvents((prev) => prev.filter((ev) => ev.id !== event.id));\n  };\n\n  return (\n    <Grid>\n      <Grid.Col span={{ base: 12, sm: 3 }}>\n        <Box\n          onDragOver={(e) => {\n            e.preventDefault();\n            e.dataTransfer.dropEffect = 'move';\n            setSidebarHighlight(true);\n          }}\n          onDragLeave={() => setSidebarHighlight(false)}\n          onDrop={handleSidebarDrop}\n          style={{\n            padding: 8,\n            borderRadius: 8,\n            border: sidebarHighlight\n              ? '2px dashed var(--mantine-color-blue-5)'\n              : '2px dashed transparent',\n            transition: 'border-color 150ms',\n          }}\n        >\n          <Text fw={500} mb=\"xs\">\n            Unscheduled\n          </Text>\n          {sidebarItems.map((item) => (\n            <Box\n              key={item.title}\n              draggable\n              onDragStart={(e) => {\n                e.dataTransfer.setData('text/plain', JSON.stringify(item));\n                e.dataTransfer.effectAllowed = 'copy';\n              }}\n              style={{\n                padding: '8px 12px',\n                marginBottom: 8,\n                borderRadius: 4,\n                cursor: 'grab',\n                backgroundColor: `var(--mantine-color-${item.color}-light)`,\n                color: `var(--mantine-color-${item.color}-light-color)`,\n              }}\n            >\n              <Text size=\"sm\" fw={500}>\n                {item.title}\n              </Text>\n              <Text size=\"xs\">{item.duration} min</Text>\n            </Box>\n          ))}\n          {sidebarItems.length === 0 && (\n            <Text size=\"xs\" c=\"dimmed\">\n              Drag events here to unschedule\n            </Text>\n          )}\n        </Box>\n      </Grid.Col>\n      <Grid.Col span={{ base: 12, sm: 9 }}>\n        <WeekView\n          date={new Date()}\n          events={events}\n          startTime=\"08:00:00\"\n          endTime=\"18:00:00\"\n          withEventsDragAndDrop\n          onEventDrop={handleEventDrop}\n          onExternalEventDrop={handleExternalDrop}\n        />\n      </Grid.Col>\n    </Grid>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "943f21eab41254d42a9f34bb8249b48ddf87a2950b3a314c4ce10fcf33e79860",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.bidirectionalDragDrop.tsx",
+      "upstreamSha256": "17bf59e4483cef95fdd23320fac0e5ac37582314549b0c1d235aa9b0391ce820",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.businessHours.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { businessEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={businessEvents}\n      highlightBusinessHours\n      businessHours={['09:00:00', '17:00:00']}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "a7ce3f37df02d9495ff95f37fb32cb86adcc94b7e0d680b5c8ddffcda59b0b5f",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.businessHours.tsx",
+      "upstreamSha256": "d6eef93a21836e891fbdd82d5f942449b05fac9139554dfc43999f31808b6ece",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\nimport { ScheduleEventData } from '@mantine/schedule';\n\nconst startOfWeek = dayjs()\n  .subtract((dayjs().day() + 6) % 7, 'day')\n  .format('YYYY-MM-DD');\nconst dayAfterStartOfWeek = dayjs(startOfWeek).add(1, 'day').format('YYYY-MM-DD');\nconst dayAfterDayAfterStartOfWeek = dayjs(startOfWeek).add(2, 'day').format('YYYY-MM-DD');\n\nexport const regularEvents: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'Morning Standup',\n    start: `${startOfWeek} 09:00:00`,\n    end: `${startOfWeek} 09:30:00`,\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Team Meeting',\n    start: `${startOfWeek} 10:00:00`,\n    end: `${startOfWeek} 11:30:00`,\n    color: 'green',\n  },\n  {\n    id: 3,\n    title: 'Lunch Break',\n    start: `${startOfWeek} 12:00:00`,\n    end: `${startOfWeek} 13:00:00`,\n    color: 'orange',\n  },\n  {\n    id: 4,\n    title: 'Code Review',\n    start: `${dayAfterStartOfWeek} 14:00:00`,\n    end: `${dayAfterStartOfWeek} 15:00:00`,\n    color: 'violet',\n  },\n  {\n    id: 5,\n    title: 'Client Call',\n    start: `${dayAfterStartOfWeek} 15:30:00`,\n    end: `${dayAfterStartOfWeek} 16:30:00`,\n    color: 'cyan',\n  },\n  {\n    id: 6,\n    title: 'Project Planning',\n    start: `${dayAfterDayAfterStartOfWeek} 10:00:00`,\n    end: `${dayAfterDayAfterStartOfWeek} 12:00:00`,\n    color: 'pink',\n  },\n  {\n    id: 7,\n    title: 'All Day Conference',\n    start: `${startOfWeek} 00:00:00`,\n    end: dayjs(startOfWeek).add(1, 'day').startOf('day').format('YYYY-MM-DD HH:mm:ss'),\n    color: 'red',\n  },\n];\n\nexport const overlappingEvents: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'Workshop Session 1',\n    start: `${startOfWeek} 10:00:00`,\n    end: `${startOfWeek} 11:30:00`,\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Workshop Session 2',\n    start: `${startOfWeek} 11:00:00`,\n    end: `${startOfWeek} 12:30:00`,\n    color: 'violet',\n  },\n  {\n    id: 3,\n    title: 'Workshop Session 3',\n    start: `${startOfWeek} 11:30:00`,\n    end: `${startOfWeek} 13:00:00`,\n    color: 'cyan',\n  },\n  {\n    id: 4,\n    title: 'Tomorrow Event 1',\n    start: `${dayAfterStartOfWeek} 09:00:00`,\n    end: `${dayAfterStartOfWeek} 10:30:00`,\n    color: 'green',\n  },\n  {\n    id: 5,\n    title: 'Tomorrow Event 2',\n    start: `${dayAfterStartOfWeek} 09:30:00`,\n    end: `${dayAfterStartOfWeek} 11:00:00`,\n    color: 'orange',\n  },\n];\n\nexport const denseOverlappingEvents: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'Product sync',\n    start: `${startOfWeek} 09:00:00`,\n    end: `${startOfWeek} 12:00:00`,\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Design review',\n    start: `${startOfWeek} 09:30:00`,\n    end: `${startOfWeek} 11:30:00`,\n    color: 'violet',\n  },\n  {\n    id: 3,\n    title: 'Customer call',\n    start: `${startOfWeek} 10:00:00`,\n    end: `${startOfWeek} 11:00:00`,\n    color: 'cyan',\n  },\n  {\n    id: 4,\n    title: 'Sprint planning',\n    start: `${startOfWeek} 10:00:00`,\n    end: `${startOfWeek} 12:30:00`,\n    color: 'teal',\n  },\n  {\n    id: 5,\n    title: 'Interview: frontend',\n    start: `${startOfWeek} 10:30:00`,\n    end: `${startOfWeek} 11:30:00`,\n    color: 'green',\n  },\n  {\n    id: 6,\n    title: 'Budget review',\n    start: `${startOfWeek} 10:45:00`,\n    end: `${startOfWeek} 12:00:00`,\n    color: 'orange',\n  },\n  {\n    id: 7,\n    title: '1:1 with Anna',\n    start: `${startOfWeek} 11:00:00`,\n    end: `${startOfWeek} 11:45:00`,\n    color: 'red',\n  },\n  {\n    id: 8,\n    title: 'Release retro',\n    start: `${startOfWeek} 11:15:00`,\n    end: `${startOfWeek} 12:45:00`,\n    color: 'grape',\n  },\n  {\n    id: 9,\n    title: 'Roadmap workshop',\n    start: `${dayAfterStartOfWeek} 09:00:00`,\n    end: `${dayAfterStartOfWeek} 11:00:00`,\n    color: 'indigo',\n  },\n  {\n    id: 10,\n    title: 'Support triage',\n    start: `${dayAfterStartOfWeek} 09:30:00`,\n    end: `${dayAfterStartOfWeek} 10:30:00`,\n    color: 'pink',\n  },\n  {\n    id: 11,\n    title: 'Marketing sync',\n    start: `${dayAfterStartOfWeek} 10:00:00`,\n    end: `${dayAfterStartOfWeek} 11:30:00`,\n    color: 'lime',\n  },\n];\n\nexport const businessEvents: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'Early Morning Meeting',\n    start: `${startOfWeek} 08:30:00`,\n    end: `${startOfWeek} 09:00:00`,\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Business Hours Task 1',\n    start: `${startOfWeek} 10:00:00`,\n    end: `${startOfWeek} 11:00:00`,\n    color: 'green',\n  },\n  {\n    id: 3,\n    title: 'Business Hours Task 2',\n    start: `${dayAfterStartOfWeek} 14:00:00`,\n    end: `${dayAfterStartOfWeek} 15:00:00`,\n    color: 'violet',\n  },\n  {\n    id: 4,\n    title: 'Evening Sync',\n    start: `${dayAfterStartOfWeek} 17:30:00`,\n    end: `${dayAfterStartOfWeek} 18:00:00`,\n    color: 'orange',\n  },\n];\n\nexport const dataCode = `\nimport dayjs from 'dayjs';\n\nconst startOfWeek = dayjs().subtract((dayjs().day() + 6) % 7, 'day').format('YYYY-MM-DD');\nconst dayAfterStartOfWeek = dayjs(startOfWeek).add(1, 'day').format('YYYY-MM-DD');\n\nconst events = [\n  {\n    id: 1,\n    title: 'Morning Standup',\n    start: \\`\\${startOfWeek} 09:00:00\\`,\n    end: \\`\\${startOfWeek} 09:30:00\\`,\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Team Meeting',\n    start: \\`\\${startOfWeek} 10:00:00\\`,\n    end: \\`\\${startOfWeek} 11:30:00\\`,\n    color: 'green',\n  },\n  {\n    id: 3,\n    title: 'Code Review',\n    start: \\`\\${dayAfterStartOfWeek} 14:00:00\\`,\n    end: \\`\\${dayAfterStartOfWeek} 15:00:00\\`,\n    color: 'violet',\n  },\n  {\n    id: 4,\n    title: 'All Day Conference',\n    start: \\`\\${startOfWeek} 00:00:00\\`,\n    end: dayjs(startOfWeek).add(1, 'day').startOf('day').format('YYYY-MM-DD HH:mm:ss'),\n    color: 'red',\n  },\n];\n`;\n",
+      "sha256": "83dc1726353ce1d17bb7a2b439fb9276612b23dbe4f0eefcb03b095f98f02dc3",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/_data.ts",
+      "upstreamSha256": "d3c53f1a34d396b33bd3cf5c03e9649fc4a8414a71b47f42768cde8c88dcdba9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.businessHoursPerDay.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { businessEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={businessEvents}\n      highlightBusinessHours\n      businessHours={{\n        1: ['09:00:00', '17:00:00'],\n        2: ['09:00:00', '17:00:00'],\n        3: ['09:00:00', '17:00:00'],\n        4: ['09:00:00', '17:00:00'],\n        5: ['09:00:00', '13:00:00'],\n      }}\n      startTime=\"07:00:00\"\n      endTime=\"20:00:00\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "4b76143ab696f07cb2f29e822ee19619f996d07552a8d559b8bc5265e5d142ed",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.businessHoursPerDay.tsx",
+      "upstreamSha256": "2cf01e72345e09da70a93a531bd0d1aababfb7340581c681230a27c03b54ced8",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.canDragEvent.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { ScheduleEventData, WeekView } from '@mantine/schedule';\n\nconst startOfWeek = dayjs()\n  .subtract((dayjs().day() + 6) % 7, 'day')\n  .format('YYYY-MM-DD');\n\nconst dayAfterStartOfWeek = dayjs(startOfWeek).add(1, 'day').format('YYYY-MM-DD');\n\nconst initialEvents: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'Draggable Event',\n    start: `${startOfWeek} 09:00:00`,\n    end: `${startOfWeek} 10:00:00`,\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Locked Event',\n    start: `${startOfWeek} 11:00:00`,\n    end: `${startOfWeek} 12:00:00`,\n    color: 'gray',\n    payload: { locked: true },\n  },\n  {\n    id: 3,\n    title: 'Another Draggable',\n    start: `${dayAfterStartOfWeek} 14:00:00`,\n    end: `${dayAfterStartOfWeek} 15:00:00`,\n    color: 'green',\n  },\n];\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n  const [events, setEvents] = useState(initialEvents);\n\n  const handleEventDrop = ({\n    eventId,\n    newStart,\n    newEnd,\n  }: {\n    eventId: string | number;\n    newStart: string;\n    newEnd: string;\n  }) => {\n    setEvents((prev) =>\n      prev.map((event) =>\n        event.id === eventId ? { ...event, start: newStart, end: newEnd } : event\n      )\n    );\n  };\n\n  return (\n    <WeekView\n      date={date}\n      onDateChange={setDate}\n      events={events}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      withEventsDragAndDrop\n      onEventDrop={handleEventDrop}\n      canDragEvent={(event) => !event.payload?.locked}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "7d7f51d968692064e247c02a6875ecb75037ad8acc0f2e7883938a780b8b1d11",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.canDragEvent.tsx",
+      "upstreamSha256": "b2872545fe46b16f71a15ace1ab043afa6836a99b335293c17236326b11f0bf8",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.canResizeEvent.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { ScheduleEventData, WeekView } from '@mantine/schedule';\n\nconst startOfWeek = dayjs()\n  .subtract((dayjs().day() + 6) % 7, 'day')\n  .format('YYYY-MM-DD');\n\nconst dayAfterStartOfWeek = dayjs(startOfWeek).add(1, 'day').format('YYYY-MM-DD');\n\nconst initialEvents: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'Resizable Event',\n    start: `${startOfWeek} 09:00:00`,\n    end: `${startOfWeek} 10:00:00`,\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Locked Event',\n    start: `${startOfWeek} 11:00:00`,\n    end: `${startOfWeek} 12:00:00`,\n    color: 'gray',\n    payload: { locked: true },\n  },\n  {\n    id: 3,\n    title: 'Another Resizable',\n    start: `${dayAfterStartOfWeek} 14:00:00`,\n    end: `${dayAfterStartOfWeek} 15:00:00`,\n    color: 'green',\n  },\n];\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n  const [events, setEvents] = useState(initialEvents);\n\n  const handleEventResize = ({\n    eventId,\n    newStart,\n    newEnd,\n  }: {\n    eventId: string | number;\n    newStart: string;\n    newEnd: string;\n  }) => {\n    setEvents((prev) =>\n      prev.map((event) =>\n        event.id === eventId ? { ...event, start: newStart, end: newEnd } : event\n      )\n    );\n  };\n\n  return (\n    <WeekView\n      date={date}\n      onDateChange={setDate}\n      events={events}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      withEventResize\n      onEventResize={handleEventResize}\n      canResizeEvent={(event) => !event.payload?.locked}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "8113e56e27af5da2762ad90085319a2455ae91131166812c3ac8f6afc9ea42f2",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.canResizeEvent.tsx",
+      "upstreamSha256": "08c0bf9c0011662f3d749ec0a435c4ac6c54daf93aa4791a81bcb1561428c163",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.controlledDate.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { Button, Group, Text } from '@mantine/core';\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n  const weekStart = dayjs(date).subtract((dayjs(date).day() + 6) % 7, 'day');\n\n  return (\n    <div>\n      <Group mb=\"md\">\n        <Button\n          onClick={() => setDate(dayjs(date).subtract(1, 'week').format('YYYY-MM-DD HH:mm:ss'))}\n        >\n          Previous Week\n        </Button>\n        <Text fw={500}>\n          {weekStart.format('MMM D')} – {weekStart.add(6, 'day').format('MMM D, YYYY')}\n        </Text>\n        <Button onClick={() => setDate(dayjs(date).add(1, 'week').format('YYYY-MM-DD HH:mm:ss'))}>\n          Next Week\n        </Button>\n      </Group>\n\n      <WeekView\n        date={date}\n        onDateChange={setDate}\n        events={regularEvents}\n        startTime=\"08:00:00\"\n        endTime=\"18:00:00\"\n      />\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "9c21ae16009fec3ae6bc197577a6b8da2bdf6107f657ed742ac82837104b33f1",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.controlledDate.tsx",
+      "upstreamSha256": "f50167fd3e7a0c75bea1de7870c437f3845e99fea9d6d0fae8c22ca1c983c9bf",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.currentTimeIndicator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={regularEvents}\n      withCurrentTimeIndicator\n      withCurrentTimeBubble\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "0885673b2d83bb665db9613fa791eccef2e150bd7acf347c63ba86a4240b8715",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.currentTimeIndicator.tsx",
+      "upstreamSha256": "a78e65b4c7903239ebd6bded39f7e49b031f857cdd693a9ff9c3eb2a603e223c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.customHeader.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { DateStringValue, getStartOfWeek, ScheduleHeader, WeekView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction getWeekRangeLabel(date: DateStringValue) {\n  const start = dayjs(getStartOfWeek({ date, firstDayOfWeek: 1 }));\n  const end = start.add(6, 'day');\n  if (start.month() === end.month()) {\n    return `${start.format('MMM D')} – ${end.format('D, YYYY')}`;\n  }\n  return `${start.format('MMM D')} – ${end.format('MMM D, YYYY')}`;\n}\n\nfunction Demo() {\n  const [date, setDate] = useState<DateStringValue>(\n    dayjs().format('YYYY-MM-DD') as DateStringValue\n  );\n\n  return (\n    <div>\n      <ScheduleHeader>\n        <ScheduleHeader.Previous\n          onClick={() =>\n            setDate(dayjs(date).subtract(1, 'week').format('YYYY-MM-DD') as DateStringValue)\n          }\n        />\n        <ScheduleHeader.Control interactive={false} miw={200}>\n          {getWeekRangeLabel(date)}\n        </ScheduleHeader.Control>\n        <ScheduleHeader.Next\n          onClick={() =>\n            setDate(dayjs(date).add(1, 'week').format('YYYY-MM-DD') as DateStringValue)\n          }\n        />\n        <ScheduleHeader.Today\n          onClick={() => setDate(dayjs().format('YYYY-MM-DD') as DateStringValue)}\n        />\n        <ScheduleHeader.Control\n          style={{ marginInlineStart: 'auto' }}\n          onClick={() => window.print()}\n        >\n          Print\n        </ScheduleHeader.Control>\n      </ScheduleHeader>\n\n      <WeekView\n        date={date}\n        onDateChange={setDate}\n        events={regularEvents}\n        startTime=\"08:00:00\"\n        endTime=\"18:00:00\"\n        withHeader={false}\n      />\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "23a801a249957f22868848f5152e02eab2c4c430c92b449f384105bf5365d94c",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.customHeader.tsx",
+      "upstreamSha256": "21ed68190005e09ea264e88912d92e43b5dcd3a6b7b9f5f7184c9554a24c7a0c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.dragDrop.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { getStartOfWeek, ScheduleEventData, WeekView } from '@mantine/schedule';\n\nconst today = dayjs().format('YYYY-MM-DD');\n\nconst tomorrow = dayjs().add(1, 'day').format('YYYY-MM-DD');\n\nconst initialEvents: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'Morning Standup',\n    start: `${today} 09:00:00`,\n    end: `${today} 09:30:00`,\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Team Meeting',\n    start: `${tomorrow} 11:00:00`,\n    end: `${tomorrow} 12:00:00`,\n    color: 'green',\n  },\n  {\n    id: 3,\n    title: 'Code Review',\n    start: `${today} 14:00:00`,\n    end: `${today} 15:00:00`,\n    color: 'violet',\n  },\n  {\n    id: 4,\n    title: 'Company Holiday',\n    start: dayjs(getStartOfWeek({ date: today, firstDayOfWeek: 1 })).format('YYYY-MM-DD HH:mm:ss'),\n    end: dayjs(getStartOfWeek({ date: today, firstDayOfWeek: 1 }))\n      .add(2, 'day')\n      .format('YYYY-MM-DD HH:mm:ss'),\n    color: 'red',\n  },\n  {\n    id: 5,\n    title: 'Release Day',\n    start: dayjs(getStartOfWeek({ date: today, firstDayOfWeek: 1 })).format('YYYY-MM-DD HH:mm:ss'),\n    end: dayjs(getStartOfWeek({ date: today, firstDayOfWeek: 1 }))\n      .add(2, 'day')\n      .format('YYYY-MM-DD HH:mm:ss'),\n    color: 'orange',\n  },\n];\n\nfunction Demo() {\n  const [events, setEvents] = useState(initialEvents);\n\n  const handleEventDrop = ({\n    eventId,\n    newStart,\n    newEnd,\n  }: {\n    eventId: string | number;\n    newStart: string;\n    newEnd: string;\n  }) => {\n    setEvents((prev) =>\n      prev.map((event) =>\n        event.id === eventId ? { ...event, start: newStart, end: newEnd } : event\n      )\n    );\n  };\n\n  return (\n    <WeekView\n      date={new Date()}\n      events={events}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      withEventsDragAndDrop\n      onEventDrop={handleEventDrop}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "9867e2ed0b104f96d0be433583a458bb17930a48dd3d73ff52c65818f06ed137",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.dragDrop.tsx",
+      "upstreamSha256": "9cb3319f0f750b9ee593ce55fe3b04f93788ef3c0ba906eef01afbef84475cb9",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.eventDragInterval.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { ScheduleEventData, WeekView } from '@mantine/schedule';\n\nconst today = dayjs().format('YYYY-MM-DD');\n\nconst tomorrow = dayjs().add(1, 'day').format('YYYY-MM-DD');\n\nconst initialEvents: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'Morning Standup',\n    start: `${today} 09:00:00`,\n    end: `${today} 09:30:00`,\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Team Meeting',\n    start: `${tomorrow} 11:00:00`,\n    end: `${tomorrow} 12:00:00`,\n    color: 'green',\n  },\n  {\n    id: 3,\n    title: 'Code Review',\n    start: `${today} 14:00:00`,\n    end: `${today} 15:00:00`,\n    color: 'violet',\n  },\n];\n\nfunction Demo() {\n  const [events, setEvents] = useState(initialEvents);\n\n  const handleEventDrop = ({\n    eventId,\n    newStart,\n    newEnd,\n  }: {\n    eventId: string | number;\n    newStart: string;\n    newEnd: string;\n  }) => {\n    setEvents((prev) =>\n      prev.map((event) =>\n        event.id === eventId ? { ...event, start: newStart, end: newEnd } : event\n      )\n    );\n  };\n\n  return (\n    <WeekView\n      date={new Date()}\n      events={events}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      intervalMinutes={30}\n      eventDragInterval={15}\n      withSubHourGridLines={false}\n      withEventsDragAndDrop\n      onEventDrop={handleEventDrop}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "771a92b176ce610dd0f3422a4c875cb2643c27c50318185af81bf553ab9781b2",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.eventDragInterval.tsx",
+      "upstreamSha256": "81f3d04040d3505ba22d1e45d0d6cb97e10b602afd1add5eaa25e55596449bde",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.eventForm.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { ScheduleEventData, WeekView } from '@mantine/schedule';\n\nimport { _eventFormCode, EventData, EventForm } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/_EventForm';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n  const [events, setEvents] = useState<ScheduleEventData[]>(regularEvents);\n  const [formOpened, setFormOpened] = useState(false);\n  const [selectedEventData, setSelectedEventData] = useState<EventData | null>(null);\n\n  const handleTimeSlotClick = ({ slotStart, slotEnd }: { slotStart: string; slotEnd: string }) => {\n    setSelectedEventData({\n      title: '',\n      start: new Date(slotStart),\n      end: new Date(slotEnd),\n      color: 'blue',\n    });\n    setFormOpened(true);\n  };\n\n  const handleAllDaySlotClick = (slotDate: string) => {\n    setSelectedEventData({\n      title: '',\n      start: dayjs(slotDate).startOf('day').toDate(),\n      end: dayjs(slotDate).endOf('day').toDate(),\n      color: 'blue',\n    });\n    setFormOpened(true);\n  };\n\n  const handleEventClick = (event: ScheduleEventData) => {\n    setSelectedEventData({\n      id: event.id,\n      title: event.title,\n      start: new Date(event.start),\n      end: new Date(event.end),\n      color: event.color || 'blue',\n    });\n    setFormOpened(true);\n  };\n\n  const handleSubmit = (values: EventData) => {\n    if (values.id) {\n      setEvents((prev) =>\n        prev.map((event) =>\n          event.id === values.id\n            ? {\n                ...event,\n                title: values.title,\n                start: dayjs(values.start).toISOString(),\n                end: dayjs(values.end).toISOString(),\n                color: values.color || 'blue',\n              }\n            : event\n        )\n      );\n    } else {\n      setEvents((prev) => [\n        ...prev,\n        {\n          id: Math.random().toString(36).substring(2, 11),\n          title: values.title,\n          start: dayjs(values.start).toISOString(),\n          end: dayjs(values.end).toISOString(),\n          color: values.color || 'blue',\n        },\n      ]);\n    }\n  };\n\n  const handleDeleteEvent = () => {\n    if (selectedEventData?.id) {\n      setEvents((prev) => prev.filter((e) => e.id !== selectedEventData.id));\n    }\n  };\n\n  const handleSlotDragEnd = (rangeStart: string, rangeEnd: string) => {\n    setSelectedEventData({\n      title: '',\n      start: new Date(rangeStart),\n      end: new Date(rangeEnd),\n      color: 'blue',\n    });\n    setFormOpened(true);\n  };\n\n  return (\n    <>\n      <WeekView\n        date={date}\n        onDateChange={setDate}\n        events={events}\n        withDragSlotSelect\n        onTimeSlotClick={handleTimeSlotClick}\n        onAllDaySlotClick={handleAllDaySlotClick}\n        onSlotDragEnd={handleSlotDragEnd}\n        onEventClick={handleEventClick}\n        startTime=\"08:00:00\"\n        endTime=\"18:00:00\"\n      />\n\n      <EventForm\n        opened={formOpened}\n        onClose={() => setFormOpened(false)}\n        onExitTransitionEnd={() => setSelectedEventData(null)}\n        values={selectedEventData}\n        onSubmit={handleSubmit}\n        onDelete={selectedEventData?.id ? handleDeleteEvent : undefined}\n      />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "fb50f124a15df18f61f984af9e90c750201e004400dd622d429181a4550a9285",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.eventForm.tsx",
+      "upstreamSha256": "dae0a145cc8ef66149bed26afe0e9c5eaed3401835b6837753e4a3d7905769e7",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/_EventForm.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\nimport { ReactNode, useEffect } from 'react';\nimport { Button, Group, Modal, ModalProps, Stack, TextInput } from '@mantine/core';\nimport { DateTimePicker, DateValue } from '@mantine/dates';\nimport { isNotEmpty, useForm } from '@mantine/form';\n\nexport interface EventData {\n  id?: string | number;\n  title: string;\n  start: DateValue;\n  end: DateValue;\n  color?: string;\n}\n\ninterface EventFormProps extends Omit<ModalProps, 'onSubmit'> {\n  values: EventData | null;\n  onSubmit: (values: EventData) => void;\n  onDelete?: () => void;\n  children?: ReactNode;\n}\n\nexport function EventForm({\n  opened,\n  onClose,\n  values,\n  onSubmit,\n  onDelete,\n  children,\n  ...others\n}: EventFormProps) {\n  const form = useForm({\n    initialValues: {\n      id: values?.id,\n      title: values?.title || '',\n      start: values?.start || new Date(),\n      end: values?.end || new Date(),\n      color: values?.color || 'blue',\n    },\n    validate: {\n      title: isNotEmpty('Event title is required'),\n      start: isNotEmpty('Start time is required'),\n      end: (value, { start }) => {\n        if (!value) {\n          return 'End time is required';\n        }\n\n        if (dayjs(value).isBefore(dayjs(start))) {\n          return 'End time must be after start time';\n        }\n\n        return null;\n      },\n    },\n  });\n\n  useEffect(() => {\n    form.setValues({\n      id: values?.id,\n      title: values?.title || '',\n      start: values?.start || new Date(),\n      end: values?.end || new Date(),\n      color: values?.color || 'blue',\n    });\n  }, [values]);\n\n  const handleSubmit = (values: EventData) => {\n    onSubmit({\n      id: values.id,\n      title: values.title,\n      start: values.start,\n      end: values.end,\n      color: values.color,\n    });\n    onClose();\n  };\n\n  const handleDelete = () => {\n    onDelete?.();\n    onClose();\n  };\n\n  return (\n    <Modal\n      opened={opened}\n      onClose={onClose}\n      title={form.values.id ? 'Edit Event' : 'Create Event'}\n      {...others}\n    >\n      <form onSubmit={form.onSubmit(handleSubmit)}>\n        <Stack gap=\"md\">\n          <TextInput\n            label=\"Event Title\"\n            placeholder=\"Enter event title\"\n            data-autofocus\n            {...form.getInputProps('title')}\n          />\n\n          <DateTimePicker label=\"Start Time\" clearable {...form.getInputProps('start')} />\n          <DateTimePicker label=\"End Time\" {...form.getInputProps('end')} clearable />\n\n          {children}\n\n          <Group justify=\"flex-end\" gap=\"sm\">\n            {form.values.id && onDelete && (\n              <Button color=\"red\" onClick={handleDelete} mie=\"auto\">\n                Delete\n              </Button>\n            )}\n\n            <Button variant=\"default\" onClick={onClose}>\n              Cancel\n            </Button>\n            <Button type=\"submit\">{form.values.id ? 'Update' : 'Create'}</Button>\n          </Group>\n        </Stack>\n      </form>\n    </Modal>\n  );\n}\n\nexport const _eventFormCode = `import { useEffect } from 'react';\nimport { Modal, TextInput, Button, Stack, Group, Checkbox } from '@mantine/core';\nimport { DateTimePicker } from '@mantine/dates';\nimport { useForm } from '@mantine/form';\n\ninterface EventData {\n  id?: string | number;\n  title: string;\n  start: Date;\n  end: Date;\n  color?: string;\n  isAllDay?: boolean;\n}\n\ninterface EventFormProps {\n  opened: boolean;\n  onClose: () => void;\n  initialData: EventData | null;\n  onSave: (data: EventData) => void;\n  onDelete?: () => void;\n}\n\nexport function EventForm({\n  opened,\n  onClose,\n  values,\n  onSubmit,\n  onDelete,\n  ...others\n}: EventFormProps) {\n  const form = useForm({\n    initialValues: {\n      id: values?.id,\n      title: values?.title || '',\n      start: values?.start || new Date(),\n      end: values?.end || new Date(),\n      color: values?.color || 'blue',\n    },\n    validate: {\n      title: isNotEmpty('Event title is required'),\n      start: isNotEmpty('Start time is required'),\n      end: (value, { start }) => {\n        if (!value) {\n          return 'End time is required';\n        }\n\n        if (dayjs(value).isBefore(dayjs(start))) {\n          return 'End time must be after start time';\n        }\n\n        return null;\n      },\n    },\n  });\n\n  useEffect(() => {\n    form.setValues({\n      id: values?.id,\n      title: values?.title || '',\n      start: values?.start || new Date(),\n      end: values?.end || new Date(),\n      color: values?.color || 'blue',\n    });\n  }, [values]);\n\n  const handleSubmit = (values: EventData) => {\n    onSubmit({\n      id: values.id,\n      title: values.title,\n      start: values.start,\n      end: values.end,\n      color: values.color,\n    });\n    onClose();\n  };\n\n  const handleDelete = () => {\n    onDelete?.();\n    onClose();\n  };\n\n  return (\n    <Modal\n      opened={opened}\n      onClose={onClose}\n      title={form.values.id ? 'Edit Event' : 'Create Event'}\n      {...others}\n    >\n      <form onSubmit={form.onSubmit(handleSubmit)}>\n        <Stack gap=\"md\">\n          <TextInput\n            label=\"Event Title\"\n            placeholder=\"Enter event title\"\n            data-autofocus\n            {...form.getInputProps('title')}\n          />\n\n          <DateTimePicker\n            label=\"Start Time\"\n            clearable\n            {...form.getInputProps('start')}\n          />\n          <DateTimePicker label=\"End Time\" {...form.getInputProps('end')} clearable />\n\n          <Group justify=\"flex-end\" gap=\"sm\">\n            {form.values.id && onDelete && (\n              <Button color=\"red\" onClick={handleDelete} mie=\"auto\">\n                Delete\n              </Button>\n            )}\n\n            <Button variant=\"default\" onClick={onClose}>\n              Cancel\n            </Button>\n            <Button type=\"submit\">\n              {form.values.id ? 'Update' : 'Create'}\n            </Button>\n          </Group>\n        </Stack>\n      </form>\n    </Modal>\n  );\n}`;\n",
+      "sha256": "9a36e985aa1179db77e1b0bc25c817421ad28183b677368f38f774030f805c22",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/_EventForm.tsx",
+      "upstreamSha256": "487e18429690d1727eb783700d9827b5e1ca99b83240ca1a8f4d8331fd0fb0b8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.eventOverlapMode.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { SegmentedControl, Stack } from '@mantine/core';\n\nimport { ScheduleEventOverlapMode, WeekView } from '@mantine/schedule';\n\nimport { denseOverlappingEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  const [mode, setMode] = useState<ScheduleEventOverlapMode>('cascade');\n\n  return (\n    <Stack>\n      <SegmentedControl\n        value={mode}\n        onChange={(value) => setMode(value as ScheduleEventOverlapMode)}\n        data={[\n          { value: 'columns', label: 'columns' },\n          { value: 'cascade', label: 'cascade' },\n        ]}\n      />\n\n      <WeekView\n        date={new Date()}\n        events={denseOverlappingEvents}\n        startTime=\"08:00:00\"\n        endTime=\"14:00:00\"\n        eventOverlapMode={mode}\n      />\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "33bb9b05c8bd8f25bb0e13170bcd2d51fbce1ee4cf75e27e8ed5cf6235af06d6",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.eventOverlapMode.tsx",
+      "upstreamSha256": "cc16bd6212ae85f85fe485a616d6d0b062c58db7a69a956d9ed56efe5dcd4ba1",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.eventResize.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { ScheduleEventData, WeekView } from '@mantine/schedule';\n\nconst today = dayjs().format('YYYY-MM-DD');\n\nconst tomorrow = dayjs().add(1, 'day').format('YYYY-MM-DD');\n\nconst initialEvents: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'Morning Standup',\n    start: `${today} 09:00:00`,\n    end: `${today} 09:30:00`,\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Team Meeting',\n    start: `${tomorrow} 11:00:00`,\n    end: `${tomorrow} 12:00:00`,\n    color: 'green',\n  },\n  {\n    id: 3,\n    title: 'Code Review',\n    start: `${today} 14:00:00`,\n    end: `${today} 15:00:00`,\n    color: 'violet',\n  },\n];\n\nfunction Demo() {\n  const [events, setEvents] = useState(initialEvents);\n\n  const handleEventResize = ({\n    eventId,\n    newStart,\n    newEnd,\n  }: {\n    eventId: string | number;\n    newStart: string;\n    newEnd: string;\n  }) => {\n    setEvents((prev) =>\n      prev.map((event) =>\n        event.id === eventId ? { ...event, start: newStart, end: newEnd } : event\n      )\n    );\n  };\n\n  return (\n    <WeekView\n      date={new Date()}\n      events={events}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      withEventResize\n      onEventResize={handleEventResize}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "82234ad252ea2e5e8f6adfa0d7dcb4a4d2b0a70db14d6d5b53603bf57857aa2e",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.eventResize.tsx",
+      "upstreamSha256": "9b2278b2fd5f5528cf25a89372b89d191bb9a019f3e74cdea40cdd9f0c41ed96",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.eventResizeInterval.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { ScheduleEventData, WeekView } from '@mantine/schedule';\n\nconst today = dayjs().format('YYYY-MM-DD');\n\nconst tomorrow = dayjs().add(1, 'day').format('YYYY-MM-DD');\n\nconst initialEvents: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'Morning Standup',\n    start: `${today} 09:00:00`,\n    end: `${today} 09:30:00`,\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Team Meeting',\n    start: `${tomorrow} 11:00:00`,\n    end: `${tomorrow} 12:00:00`,\n    color: 'green',\n  },\n  {\n    id: 3,\n    title: 'Code Review',\n    start: `${today} 14:00:00`,\n    end: `${today} 15:00:00`,\n    color: 'violet',\n  },\n];\n\nfunction Demo() {\n  const [events, setEvents] = useState(initialEvents);\n\n  const handleEventResize = ({\n    eventId,\n    newStart,\n    newEnd,\n  }: {\n    eventId: string | number;\n    newStart: string;\n    newEnd: string;\n  }) => {\n    setEvents((prev) =>\n      prev.map((event) =>\n        event.id === eventId ? { ...event, start: newStart, end: newEnd } : event\n      )\n    );\n  };\n\n  return (\n    <WeekView\n      date={new Date()}\n      events={events}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      intervalMinutes={30}\n      eventResizeInterval={15}\n      withSubHourGridLines={false}\n      withEventResize\n      onEventResize={handleEventResize}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "33f54f3f6ce478d0cae23a5dc97bcd7ffd89c728302043a8a9a7e02fe760db08",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.eventResizeInterval.tsx",
+      "upstreamSha256": "a8f1c806f0d5b8c329f1b3f3414d80b0cc5f856a0d5dd50a1e0c1697b4568ab6",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.externalDragDrop.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useRef, useState } from 'react';\n\nimport { Box, Grid, Text } from '@mantine/core';\n\nimport { ScheduleEventData, WeekView } from '@mantine/schedule';\n\nconst sidebarItems = [\n  { title: 'Quick Sync', duration: 30, color: 'teal' },\n  { title: 'Workshop', duration: 120, color: 'orange' },\n  { title: 'One-on-One', duration: 60, color: 'violet' },\n];\n\nfunction Demo() {\n  const [events, setEvents] = useState<ScheduleEventData[]>([]);\n  const nextId = useRef(1);\n\n  const handleExternalDrop = (dataTransfer: DataTransfer, dropDateTime: string) => {\n    const raw = dataTransfer.getData('text/plain');\n    if (!raw) {\n      return;\n    }\n\n    const data = JSON.parse(raw);\n    const start = dayjs(dropDateTime);\n    const end = start.add(data.duration, 'minutes');\n\n    setEvents((prev) => [\n      ...prev,\n      {\n        id: nextId.current++,\n        title: data.title,\n        start: start.format('YYYY-MM-DD HH:mm:ss'),\n        end: end.format('YYYY-MM-DD HH:mm:ss'),\n        color: data.color,\n      },\n    ]);\n  };\n\n  const handleEventDrop = ({\n    eventId,\n    newStart,\n    newEnd,\n  }: {\n    eventId: string | number;\n    newStart: string;\n    newEnd: string;\n  }) => {\n    setEvents((prev) =>\n      prev.map((event) =>\n        event.id === eventId ? { ...event, start: newStart, end: newEnd } : event\n      )\n    );\n  };\n\n  return (\n    <Grid>\n      <Grid.Col span={{ base: 12, sm: 3 }}>\n        <Text fw={500} mb=\"xs\">\n          Drag to schedule\n        </Text>\n        {sidebarItems.map((item) => (\n          <Box\n            key={item.title}\n            draggable\n            onDragStart={(e) => {\n              e.dataTransfer.setData('text/plain', JSON.stringify(item));\n              e.dataTransfer.effectAllowed = 'copy';\n            }}\n            style={{\n              padding: '8px 12px',\n              marginBottom: 8,\n              borderRadius: 4,\n              cursor: 'grab',\n              backgroundColor: `var(--mantine-color-${item.color}-light)`,\n              color: `var(--mantine-color-${item.color}-light-color)`,\n            }}\n          >\n            <Text size=\"sm\" fw={500}>\n              {item.title}\n            </Text>\n            <Text size=\"xs\">{item.duration} min</Text>\n          </Box>\n        ))}\n      </Grid.Col>\n      <Grid.Col span={{ base: 12, sm: 9 }}>\n        <WeekView\n          date={new Date()}\n          events={events}\n          startTime=\"08:00:00\"\n          endTime=\"18:00:00\"\n          withEventsDragAndDrop\n          onEventDrop={handleEventDrop}\n          onExternalEventDrop={handleExternalDrop}\n        />\n      </Grid.Col>\n    </Grid>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "85a46e7186cdbe049b9ba8890ba30f109c5318fe20bce851eb2e05157a4da449",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.externalDragDrop.tsx",
+      "upstreamSha256": "cf312bc7f01fa69522d92f977ac05a0e92a0c6761d5d3e541db144a7c04e721a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.firstDayOfWeek.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { ScheduleEventData, WeekView } from '@mantine/schedule';\n\nconst startOfWeek = dayjs().subtract(dayjs().day(), 'day').format('YYYY-MM-DD');\n\nconst dayAfterStartOfWeek = dayjs(startOfWeek).add(1, 'day').format('YYYY-MM-DD');\n\nconst twoDaysAfterStartOfWeek = dayjs(startOfWeek).add(2, 'day').format('YYYY-MM-DD');\n\nconst events: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'Morning Standup',\n    start: `${startOfWeek} 09:00:00`,\n    end: `${startOfWeek} 09:30:00`,\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Team Meeting',\n    start: `${dayAfterStartOfWeek} 10:00:00`,\n    end: `${dayAfterStartOfWeek} 11:30:00`,\n    color: 'green',\n  },\n  {\n    id: 3,\n    title: 'Code Review',\n    start: `${twoDaysAfterStartOfWeek} 14:00:00`,\n    end: `${twoDaysAfterStartOfWeek} 15:00:00`,\n    color: 'violet',\n  },\n];\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={events}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      firstDayOfWeek={0}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "fcb10c5b162b735b061e7e1330295b920f524232348171f9b84f2f35cbf88b4f",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.firstDayOfWeek.tsx",
+      "upstreamSha256": "bb7ad043e5024f982fa58c88d6a007ebe77785327090c4cbf3e97f7493792c32",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.forceCurrentTimeIndicator.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date=\"2030-06-10\"\n      events={regularEvents}\n      withCurrentTimeIndicator\n      forceCurrentTimeIndicator\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "c33f01bfe404532376ef12d89195cadb2af926e9faf6757a8f385523f03ced43",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.forceCurrentTimeIndicator.tsx",
+      "upstreamSha256": "cf70ce77eddc4bf2d6b9cbc54b7bc2b763c333702bda27d61332a8968e562bfa",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.getTimeSlotProps.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={regularEvents}\n      startScrollTime=\"07:00:00\"\n      getTimeSlotProps={({ start }) => {\n        const hour = parseInt(start.split(' ')[1], 10);\n        if (hour >= 7 && hour < 20) {\n          return { 'data-business-hours': true };\n        }\n        return { 'data-non-business-hours': true };\n      }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "7eb62f0a085b9ab4ba85adec0d82c3291b4ec04821c6aa34b4c4b38d36af61a9",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.getTimeSlotProps.tsx",
+      "upstreamSha256": "4c0b5c2b85cfc10517c8d0996329d43a4553e1daa9c192ece8f80c689f62c5f2",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.highlightToday.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={regularEvents}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      highlightToday\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "6221ad4e80d69e84fc3ac34165acd352f18189c3a089ce8ac1cb195970cf5073",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.highlightToday.tsx",
+      "upstreamSha256": "55cbf8af4c4fcb01878e7f3ec2c28cdb7483a31c40c1dc4e6268031023b0571f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.interactiveBackgroundEvents.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { Text } from '@mantine/core';\n\nimport { ScheduleEventData, WeekView } from '@mantine/schedule';\n\nconst today = dayjs().format('YYYY-MM-DD');\n\nconst tomorrow = dayjs().add(1, 'day').format('YYYY-MM-DD');\n\nconst eventsData: ScheduleEventData[] = [\n  {\n    id: 'out-of-office',\n    title: 'Out of office',\n    start: `${today} 12:00:00`,\n    end: `${today} 16:00:00`,\n    color: 'red',\n    display: 'background',\n  },\n  {\n    id: 'standup',\n    title: 'Standup',\n    start: `${today} 09:30:00`,\n    end: `${today} 10:00:00`,\n    color: 'teal',\n  },\n  {\n    id: 'team-meeting',\n    title: 'Team meeting',\n    start: `${today} 13:00:00`,\n    end: `${today} 14:00:00`,\n    color: 'violet',\n  },\n  {\n    id: 'design-review',\n    title: 'Design review',\n    start: `${today} 14:30:00`,\n    end: `${today} 15:30:00`,\n    color: 'blue',\n  },\n  {\n    id: 'retrospective',\n    title: 'Retrospective',\n    start: `${tomorrow} 13:00:00`,\n    end: `${tomorrow} 14:00:00`,\n    color: 'grape',\n  },\n];\n\nfunction Demo() {\n  const [date, setDate] = useState(today);\n  const [clicked, setClicked] = useState<ScheduleEventData | null>(null);\n\n  return (\n    <>\n      <Text size=\"sm\" mb=\"md\">\n        Last clicked:{' '}\n        {clicked\n          ? `${clicked.title} (${clicked.display === 'background' ? 'background' : 'regular'} event)`\n          : 'nothing yet'}\n      </Text>\n\n      <WeekView\n        date={date}\n        onDateChange={setDate}\n        events={eventsData}\n        withInteractiveBackgroundEvents\n        onEventClick={setClicked}\n        startTime=\"08:00:00\"\n        endTime=\"18:00:00\"\n      />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "4efb0b2ab469b33e16d81c7490ef09315921e66b0875cb4ae98ed31d4dca4708",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.interactiveBackgroundEvents.tsx",
+      "upstreamSha256": "16b88cb84046bf7b2ec15f76bfd967fd28feb0ee80154a3948eb9d76e80a4179",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.intervalMinutes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={regularEvents}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      intervalMinutes={30}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "5cd3ed93733fa41846b898db29dfdf00db97f48f9e859b9ab01f7deb99a05ed0",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.intervalMinutes.tsx",
+      "upstreamSha256": "0452d44a5b53b42a012b8ba9f60e4fd3683782550c36fc6e91a29ed012f8c61d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.localization.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport 'dayjs/locale/es';\n\nimport { useState } from 'react';\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n\n  return (\n    <WeekView\n      date={date}\n      onDateChange={setDate}\n      events={regularEvents}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      locale=\"es\"\n      labels={{\n        day: 'Día',\n        week: 'Semana',\n        month: 'Mes',\n        year: 'Año',\n        allDay: 'Todo el día',\n        weekday: 'Día de la semana',\n        timeSlot: 'Franja horaria',\n        today: 'Hoy',\n        previous: 'Anterior',\n        next: 'Siguiente',\n      }}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b94d22f81348aecc88f1d31814bba576de6ace14006d0b1b223bed3caf66a66b",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.localization.tsx",
+      "upstreamSha256": "296ec72ea5640e43b1e33baa7cc7bad8f1e31a052bab7e8f811cd687c0096182",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.overlappingEvents.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { overlappingEvents as overlappingEventsData } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={overlappingEventsData}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "60eb1a8ac941dd8a0943e53987c9113a8ce736ab659c56ba6db6a6b7a8126742",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.overlappingEvents.tsx",
+      "upstreamSha256": "1c1d7971c0255fa8d497050be7b943d3ef4f1a59138c377c48aef921f49d503c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.radius.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n\n  return (\n    <WeekView\n      date={date}\n      onDateChange={setDate}\n      events={regularEvents}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      radius={0}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "100f32a69bc23077a7f47b64a33545ed790abd664ea22df7280feb076428a26b",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.radius.tsx",
+      "upstreamSha256": "fb84738040fcb3663e38a2e3e2568e80a619494b2e60a3c940a9aece861fd358",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.recurringEvents.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { getStartOfWeek, WeekView } from '@mantine/schedule';\n\nconst weekStart = dayjs(getStartOfWeek({ date: new Date(), firstDayOfWeek: 1 })).format(\n  'YYYY-MM-DD'\n);\n\nconst recurringEventsData = [\n  {\n    id: 'weekly-sync-series',\n    title: 'Weekly sync (series)',\n    start: `${weekStart} 10:00:00`,\n    end: `${weekStart} 11:00:00`,\n    color: 'blue',\n    recurrence: {\n      rrule: 'FREQ=WEEKLY;BYDAY=MO,WE;COUNT=12',\n      exdate: [`${dayjs(weekStart).add(2, 'day').format('YYYY-MM-DD')} 10:00:00`],\n    },\n  },\n  {\n    id: 'weekly-sync-override',\n    title: 'Weekly sync (moved this week)',\n    start: `${dayjs(weekStart).add(2, 'day').format('YYYY-MM-DD')} 15:00:00`,\n    end: `${dayjs(weekStart).add(2, 'day').format('YYYY-MM-DD')} 16:00:00`,\n    color: 'grape',\n    recurringEventId: 'weekly-sync-series',\n    recurrenceId: `${dayjs(weekStart).add(2, 'day').format('YYYY-MM-DD')} 10:00:00`,\n  },\n  {\n    id: 'one-off-week',\n    title: 'One-off interview',\n    start: `${dayjs(weekStart).add(1, 'day').format('YYYY-MM-DD')} 13:00:00`,\n    end: `${dayjs(weekStart).add(1, 'day').format('YYYY-MM-DD')} 14:00:00`,\n    color: 'green',\n  },\n];\n\nfunction Demo() {\n  const [date, setDate] = useState(weekStart);\n\n  return (\n    <WeekView\n      date={date}\n      onDateChange={setDate}\n      events={recurringEventsData}\n      startTime=\"08:00:00\"\n      endTime=\"20:00:00\"\n      intervalMinutes={60}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "5e668e2aaca5e849688d1eba91427451f84218d994ee109db12bdf4a5ac85984",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.recurringEvents.tsx",
+      "upstreamSha256": "6942f4ab10fb6577dd899f3d52fa244638a3effc4166b1f26fc76fb3f64baa2c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.renderEvent.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { HoverCard, UnstyledButton } from '@mantine/core';\n\nimport { ScheduleEventData, WeekView } from '@mantine/schedule';\n\nimport { _eventDetailsCode, EventDetails } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/_EventDetails';\n\nconst today = dayjs();\n\nconst startOfWeek = today.subtract((today.day() + 6) % 7, 'day');\n\nconst eventData: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'Team Standup',\n    start: startOfWeek.add(1, 'day').hour(9).minute(0).format('YYYY-MM-DD HH:mm:ss'),\n    end: startOfWeek.add(1, 'day').hour(9).minute(30).format('YYYY-MM-DD HH:mm:ss'),\n    color: 'blue',\n    payload: {\n      description: 'Daily team sync meeting',\n      attendees: ['Alice', 'Bob', 'Charlie'],\n      location: 'Conference Room A',\n    },\n  },\n  {\n    id: 2,\n    title: 'Design Workshop',\n    start: startOfWeek.add(2, 'day').hour(10).minute(0).format('YYYY-MM-DD HH:mm:ss'),\n    end: startOfWeek.add(2, 'day').hour(12).minute(0).format('YYYY-MM-DD HH:mm:ss'),\n    color: 'grape',\n    payload: {\n      description: 'Collaborative design thinking session',\n      attendees: ['Diana', 'Eve', 'Frank'],\n      location: 'Creative Space',\n    },\n  },\n  {\n    id: 3,\n    title: 'Client Presentation',\n    start: startOfWeek.add(3, 'day').hour(14).minute(0).format('YYYY-MM-DD HH:mm:ss'),\n    end: startOfWeek.add(3, 'day').hour(15).minute(30).format('YYYY-MM-DD HH:mm:ss'),\n    color: 'green',\n    payload: {\n      description: 'Q4 progress presentation to client',\n      attendees: ['Grace', 'Henry'],\n      location: 'Zoom',\n    },\n  },\n  {\n    id: 4,\n    title: 'Sprint Planning',\n    start: startOfWeek.add(4, 'day').hour(10).minute(0).format('YYYY-MM-DD HH:mm:ss'),\n    end: startOfWeek.add(4, 'day').hour(12).minute(0).format('YYYY-MM-DD HH:mm:ss'),\n    color: 'orange',\n    payload: {\n      description: 'Plan next sprint tasks and priorities',\n      attendees: ['Alice', 'Charlie', 'Bob'],\n      location: 'Dev Lab',\n    },\n  },\n  {\n    id: 5,\n    title: 'All Day Conference',\n    start: startOfWeek.add(5, 'day').format('YYYY-MM-DD 00:00:00'),\n    end: startOfWeek.add(5, 'day').format('YYYY-MM-DD 23:59:59'),\n    color: 'pink',\n    payload: {\n      description: 'Annual tech conference',\n      attendees: ['All Team'],\n      location: 'Convention Center',\n    },\n  },\n];\n\nfunction Demo() {\n  const [events, setEvents] = useState<ScheduleEventData[]>(eventData);\n\n  return (\n    <WeekView\n      date={new Date()}\n      events={events}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      withEventsDragAndDrop\n      onEventDrop={({ eventId, newStart, newEnd }) => {\n        setEvents((current) =>\n          current.map((event) =>\n            event.id === eventId\n              ? {\n                  ...event,\n                  start: dayjs(newStart).format('YYYY-MM-DD HH:mm:ss'),\n                  end: dayjs(newEnd).format('YYYY-MM-DD HH:mm:ss'),\n                }\n              : event\n          )\n        );\n      }}\n      renderEvent={(event, props) => (\n        <HoverCard width={280} position=\"right\" closeDelay={0} transitionProps={{ duration: 0 }}>\n          <HoverCard.Target>\n            <UnstyledButton {...props} />\n          </HoverCard.Target>\n          <HoverCard.Dropdown>\n            <EventDetails event={event} />\n          </HoverCard.Dropdown>\n        </HoverCard>\n      )}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "1f3bd78e778f350044ca6dfb6e1ae86e3238a01d480d65b4aaca9913d0c5aed0",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.renderEvent.tsx",
+      "upstreamSha256": "cdb44efac7ba9322a05a084d570ac27bed50a4228edb2bda6d4036c4d40e6ba3",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/_EventDetails.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\nimport { Badge, Group, Stack, Text } from '@mantine/core';\nimport { ScheduleEventData, ScheduleResourceData } from '@mantine/schedule';\n\ninterface EventDetailsProps {\n  event: ScheduleEventData;\n  resources?: ScheduleResourceData[];\n}\n\nexport function EventDetails({ event, resources }: EventDetailsProps) {\n  const resource = resources?.find((r) => r.id === event.resourceId);\n\n  return (\n    <Stack gap=\"xs\">\n      <Text fw={600} size=\"sm\">\n        {event.title}\n      </Text>\n\n      <Text size=\"xs\" c=\"dimmed\">\n        {dayjs(event.start).format('MMM D, YYYY HH:mm')} – {dayjs(event.end).format('HH:mm')}\n      </Text>\n\n      {resource && (\n        <Text size=\"xs\" c=\"dimmed\">\n          {resource.label}\n        </Text>\n      )}\n\n      {event.payload?.description && (\n        <Text size=\"xs\" c=\"dimmed\">\n          {event.payload.description}\n        </Text>\n      )}\n\n      {event.payload?.location && (\n        <Group gap={4}>\n          <Badge size=\"sm\" variant=\"light\">\n            {event.payload.location}\n          </Badge>\n        </Group>\n      )}\n\n      {event.payload?.attendees && (\n        <div>\n          <Text size=\"xs\" fw={500} mb={4}>\n            Attendees:\n          </Text>\n          <Text size=\"xs\" c=\"dimmed\">\n            {event.payload.attendees.join(', ')}\n          </Text>\n        </div>\n      )}\n    </Stack>\n  );\n}\n\nexport const _eventDetailsCode = `import dayjs from 'dayjs';\nimport { Badge, Group, Stack, Text } from '@mantine/core';\nimport { ScheduleEventData, ScheduleResourceData } from '@mantine/schedule';\n\ninterface EventDetailsProps {\n  event: ScheduleEventData;\n  resources?: ScheduleResourceData[];\n}\n\nexport function EventDetails({ event, resources }: EventDetailsProps) {\n  const resource = resources?.find((r) => r.id === event.resourceId);\n\n  return (\n    <Stack gap=\"xs\">\n      <Text fw={600} size=\"sm\">\n        {event.title}\n      </Text>\n\n      <Text size=\"xs\" c=\"dimmed\">\n        {dayjs(event.start).format('MMM D, YYYY HH:mm')} – {dayjs(event.end).format('HH:mm')}\n      </Text>\n\n      {resource && (\n        <Text size=\"xs\" c=\"dimmed\">\n          {resource.label}\n        </Text>\n      )}\n\n      {event.payload?.description && (\n        <Text size=\"xs\" c=\"dimmed\">\n          {event.payload.description}\n        </Text>\n      )}\n\n      {event.payload?.location && (\n        <Group gap={4}>\n          <Badge size=\"sm\" variant=\"light\">\n            {event.payload.location}\n          </Badge>\n        </Group>\n      )}\n\n      {event.payload?.attendees && (\n        <div>\n          <Text size=\"xs\" fw={500} mb={4}>\n            Attendees:\n          </Text>\n          <Text size=\"xs\" c=\"dimmed\">\n            {event.payload.attendees.join(', ')}\n          </Text>\n        </div>\n      )}\n    </Stack>\n  );\n}`;\n",
+      "sha256": "9bdef30c4b7219b58df5058a3ff41a29f815cb5fd16729f5704c639842ccaab9",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/_EventDetails.tsx",
+      "upstreamSha256": "5fa0fe044a88fe0902f93e8d0566a2164f66bf1ca59b2610e40d8b28aa5e0a4a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.renderEventBody.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { ClockIcon, MapPinIcon } from '@phosphor-icons/react';\n\nimport { Group, Text } from '@mantine/core';\n\nimport { ScheduleEventData, WeekView } from '@mantine/schedule';\n\nconst startOfWeek = dayjs()\n  .subtract((dayjs().day() + 6) % 7, 'day')\n  .format('YYYY-MM-DD');\n\nconst dayAfterStartOfWeek = dayjs(startOfWeek).add(1, 'day').format('YYYY-MM-DD');\n\nconst events: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'Morning Standup',\n    start: `${startOfWeek} 09:00:00`,\n    end: `${startOfWeek} 09:30:00`,\n    color: 'blue',\n    payload: { location: 'Room A' },\n  },\n  {\n    id: 2,\n    title: 'Client Meeting',\n    start: `${startOfWeek} 11:00:00`,\n    end: `${startOfWeek} 12:00:00`,\n    color: 'green',\n    payload: { location: 'Video Call' },\n  },\n  {\n    id: 3,\n    title: 'Lunch Break',\n    start: `${dayAfterStartOfWeek} 12:30:00`,\n    end: `${dayAfterStartOfWeek} 13:30:00`,\n    color: 'orange',\n    payload: { location: 'Cafeteria' },\n  },\n];\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n\n  return (\n    <WeekView\n      date={date}\n      onDateChange={setDate}\n      events={events}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      renderEventBody={(event) => (\n        <Group>\n          <Text fz={12} fw={500}>\n            {event.title}\n          </Text>\n          <Group gap={4}>\n            <ClockIcon size={12} />\n            <Text fz={10} lh={1}>\n              {dayjs(event.start).format('h:mm A')}\n            </Text>\n          </Group>\n\n          {event.payload?.location && (\n            <Group gap={4}>\n              <MapPinIcon size={12} />\n              <Text fz={10}>{event.payload.location}</Text>\n            </Group>\n          )}\n        </Group>\n      )}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "16ea15db1cef965aa8afce441994463e300774a90e5c2f625d627b0bc1180063",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.renderEventBody.tsx",
+      "upstreamSha256": "a0aa1869ba8db7cabb4ef88bec1f3d2ac711fb1bc7a9f75c53ee7452aef14a82",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.slotHeight.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={regularEvents}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      slotHeight={80}\n      allDaySlotHeight={60}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "742ae3f24def164b4511d1b090e5f84dda923ed813df2e4ac72c3c572c126e5f",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.slotHeight.tsx",
+      "upstreamSha256": "63e91159bf4032d038c3528c92ac21e22b2351dc607d0fc83471cbe6cd63d2d2",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.slotLabelFormat.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={regularEvents}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      slotLabelFormat=\"h A\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "397601bcf240eae6068014353a81ef22e541b5d8aa7815dfbfc5a5cea71edae0",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.slotLabelFormat.tsx",
+      "upstreamSha256": "ea9ba53377d6d832f1037793de543426d48fd8986676ab05ebc3b4eaebb1c2a7",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.startScrollTime.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { ScheduleEventData, WeekView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  const [events, setEvents] = useState<ScheduleEventData[]>(regularEvents);\n\n  const handleEventDrop = ({\n    eventId,\n    newStart,\n    newEnd,\n  }: {\n    eventId: string | number;\n    newStart: string;\n    newEnd: string;\n  }) => {\n    setEvents((prev) =>\n      prev.map((event) =>\n        event.id === eventId ? { ...event, start: newStart, end: newEnd } : event\n      )\n    );\n  };\n\n  return (\n    <WeekView\n      date={new Date()}\n      events={events}\n      startScrollTime=\"09:00:00\"\n      scrollAreaProps={{ mah: 500 }}\n      withEventsDragAndDrop\n      onEventDrop={handleEventDrop}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "8f66e732889ca0a89cebeaa4040d434806381ebb9576ac5c49843f681e2f5ed1",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.startScrollTime.tsx",
+      "upstreamSha256": "7a5d9378e49357606032fc80206efe5818ca20f4c67ff459b1291f69b3ddfb8c",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.staticMode.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={regularEvents}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      mode=\"static\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "0e9efa045df1b53b2772064bbb2fb0af14e4ce6e4d4d5c2b0e3138bed4bd17fe",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.staticMode.tsx",
+      "upstreamSha256": "2e66c222204b0585f06012abd352170f02a0a8b0bc487b63149934bdc9921235",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.subHourGridLines.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { ScheduleEventData, WeekView } from '@mantine/schedule';\n\nconst today = dayjs().format('YYYY-MM-DD');\n\nconst tomorrow = dayjs().add(1, 'day').format('YYYY-MM-DD');\n\nconst initialEvents: ScheduleEventData[] = [\n  {\n    id: 1,\n    title: 'Morning Standup',\n    start: `${today} 09:00:00`,\n    end: `${today} 09:30:00`,\n    color: 'blue',\n  },\n  {\n    id: 2,\n    title: 'Team Meeting',\n    start: `${tomorrow} 11:15:00`,\n    end: `${tomorrow} 12:00:00`,\n    color: 'green',\n  },\n  {\n    id: 3,\n    title: 'Code Review',\n    start: `${today} 14:00:00`,\n    end: `${today} 14:45:00`,\n    color: 'violet',\n  },\n];\n\nfunction Demo() {\n  const [events, setEvents] = useState(initialEvents);\n\n  const handleEventResize = ({\n    eventId,\n    newStart,\n    newEnd,\n  }: {\n    eventId: string | number;\n    newStart: string;\n    newEnd: string;\n  }) => {\n    setEvents((prev) =>\n      prev.map((event) =>\n        event.id === eventId ? { ...event, start: newStart, end: newEnd } : event\n      )\n    );\n  };\n\n  return (\n    <WeekView\n      date={new Date()}\n      events={events}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      intervalMinutes={15}\n      withSubHourGridLines\n      withEventResize\n      onEventResize={handleEventResize}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "e908fa8e49e729e943668ceba4bfef1254b4e67b73006b23252d2569229d530b",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.subHourGridLines.tsx",
+      "upstreamSha256": "a8f9eb225e87d3334c6a9beecce587b503a0277db89032de9c8ba5ba203a7530",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.timeRange.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView date={new Date()} events={regularEvents} startTime=\"09:00:00\" endTime=\"17:00:00\" />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "ab5399a5480d73c743308c6876c3dfdb1fed430ea00571eaffa1c9f5c09092f1",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.timeRange.tsx",
+      "upstreamSha256": "001f0c654d3af73c8ccd7cd63990e2975d8671bc94939eefab31c9be0577f098",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.timezone.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport tz from 'dayjs/plugin/timezone';\n\nimport { useState } from 'react';\n\nimport { Select, Stack } from '@mantine/core';\n\nimport { ScheduleEventData, WeekView } from '@mantine/schedule';\n\nconst timezones = ['UTC', 'America/New_York', 'Europe/Berlin', 'Asia/Kolkata', 'Asia/Tokyo'];\n\nfunction getEvents(date: string): ScheduleEventData[] {\n  return [\n    {\n      id: 1,\n      title: 'Morning standup',\n      start: `${date} 09:00:00`,\n      end: `${date} 09:30:00`,\n      color: 'blue',\n    },\n    {\n      id: 2,\n      title: 'Team meeting',\n      start: `${date} 12:00:00`,\n      end: `${date} 13:00:00`,\n      color: 'teal',\n    },\n    {\n      id: 3,\n      title: 'Code review',\n      start: `${date} 16:00:00`,\n      end: `${date} 17:00:00`,\n      color: 'grape',\n    },\n  ];\n}\n\nfunction Demo() {\n  const [tz, setTz] = useState('UTC');\n\n  const getCurrentTime = () => dayjs().tz(tz).format('YYYY-MM-DD HH:mm:ss');\n  const currentDate = getCurrentTime().split(' ')[0];\n\n  return (\n    <Stack>\n      <Select\n        label=\"Display timezone\"\n        data={timezones}\n        value={tz}\n        onChange={(value) => setTz(value!)}\n        allowDeselect={false}\n      />\n\n      <WeekView\n        date={currentDate}\n        events={getEvents(currentDate)}\n        getCurrentTime={getCurrentTime}\n        startScrollTime={dayjs(getCurrentTime()).subtract(2, 'hour').format('HH:mm:ss')}\n        withCurrentTimeIndicator\n        withCurrentTimeBubble\n      />\n    </Stack>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "078ac29819295acd38281879a9324743de2197a5712837b1e4f591ae8f1a999a",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.timezone.tsx",
+      "upstreamSha256": "4823c1815ef3db4376b58627b1797064f2dec1f61f7df558687e39770b7fd8b5",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n\n  return (\n    <WeekView\n      date={date}\n      onDateChange={setDate}\n      events={regularEvents}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "10d731a5843d53e8aea69372bcb37ebb3c07c30c6c590c6b2375c0e7535ee313",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.usage.tsx",
+      "upstreamSha256": "073793564cc5e19fc20289a858da4ebee3c9f12708557485227f30fc7eebaa57",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.viewChange.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { Text } from '@mantine/core';\n\nimport { ScheduleViewLevel, WeekView } from '@mantine/schedule';\n\nimport { dataCode, regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));\n  const [view, setView] = useState<ScheduleViewLevel>('week');\n\n  return (\n    <div>\n      <Text mb=\"md\">Selected view: {view}</Text>\n\n      <WeekView\n        date={date}\n        onDateChange={setDate}\n        events={regularEvents}\n        startTime=\"08:00:00\"\n        endTime=\"18:00:00\"\n        onViewChange={setView}\n      />\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b9932ed345ecee1ebd30b7e9c8bebbdf69aacef9488a933c94711b148661bf17",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.viewChange.tsx",
+      "upstreamSha256": "6865426ab8426f68f8241e54bc4d4e7c39e92430a552d802f1281bd169cfe525",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.weekLabelFormat.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={regularEvents}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      weekLabelFormat=\"MMMM D, YYYY\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "ed742cd3a222f3936c88412e83c83071a25ca6d750c6e5ce71da600e7cdb561b",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.weekLabelFormat.tsx",
+      "upstreamSha256": "5312306a06167225276e2dcf230fca64b0ec30df643101c7af3d71ff9640acff",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.weekdayFormat.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={regularEvents}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      weekdayFormat=\"dd\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "6913a916cb12e01fb7848ded24567d25f81ac757700fe4bcc1e89f9d25e66cd7",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.weekdayFormat.tsx",
+      "upstreamSha256": "c46eca2bdcd15be74690a2d407c7767c6127455c0c91688d9269cff102ac3c69",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.withAgenda.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { useState } from 'react';\n\nimport { WeekView } from '@mantine/schedule';\n\nconst today = dayjs().format('YYYY-MM-DD');\n\nconst startOfWeek = dayjs().startOf('week').add(1, 'day').format('YYYY-MM-DD');\n\nconst eventsData = [\n  {\n    id: 'standup',\n    title: 'Morning Standup',\n    start: `${today} 09:00:00`,\n    end: `${today} 09:30:00`,\n    color: 'blue',\n  },\n  {\n    id: 'team-meeting',\n    title: 'Team Meeting',\n    start: `${today} 10:00:00`,\n    end: `${today} 11:30:00`,\n    color: 'green',\n  },\n  {\n    id: 'weekly-review-series',\n    title: 'Weekly review',\n    start: `${startOfWeek} 16:00:00`,\n    end: `${startOfWeek} 17:00:00`,\n    color: 'orange',\n    recurrence: {\n      rrule: 'FREQ=WEEKLY;COUNT=8',\n    },\n  },\n];\n\nfunction Demo() {\n  const [date, setDate] = useState(today);\n\n  return <WeekView date={date} onDateChange={setDate} events={eventsData} withAgenda />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "7cde6489f2ae9f468aaf4794b0e1772dd524efb8013dc9a717d28bc39a03b7ee",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.withAgenda.tsx",
+      "upstreamSha256": "836e21623f38b476f8c155de0243cc78a00452624d32c6a324de216d9d34f8a2",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.withoutAllDaySlots.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={regularEvents}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      withAllDaySlots={false}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "59624df4a91e85e88098df97ac81647ee95c058e9b07bcc54334f608b30ece34",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.withoutAllDaySlots.tsx",
+      "upstreamSha256": "4e4f5c25825a2ef928a25341c2732cf2e06a18ef2eed20b82589eaaaa5fc1833",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.withoutHeader.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={regularEvents}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      withHeader={false}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "1063cfd514e8371b697b7be7f8d28929c919d5e538ebdc9f0c771b4a79a86562",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.withoutHeader.tsx",
+      "upstreamSha256": "e7b37b5752962e0abac690f3db8591446c6d340bc43edd99cf42fb49b8dead8d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.withoutWeekNumber.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={regularEvents}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      withWeekNumber={false}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "9d28777701316e792ef7cc51acdb05ded5e7c98748bccd0f0207349fe23b8c54",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.withoutWeekNumber.tsx",
+      "upstreamSha256": "c2c91d43eb2cd6277d4c18c24808a1a239276b6319fba16cedc8dae05a1c17ab",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.withoutWeekendDays.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { WeekView } from '@mantine/schedule';\n\nimport { regularEvents } from '@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/_data';\n\nfunction Demo() {\n  return (\n    <WeekView\n      date={new Date()}\n      events={regularEvents}\n      startTime=\"08:00:00\"\n      endTime=\"18:00:00\"\n      withWeekendDays={false}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "bfa726052a6c6b1cbc4dfa306ced1b05d0345ff71a071186860d4240d25feedf",
+      "upstreamPath": "packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.withoutWeekendDays.tsx",
+      "upstreamSha256": "ab9fcf85863158e13d704f69b7cb102fb838e988e307066f34d0acb61a7c64d9",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.allDayEvents\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "85c854f67ed6906dfc0351a76e9c22a0d18744e4ecd5a7a18125ea3ea1cb1a41",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/background-events.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.backgroundEvents\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "57f2c793c9f2c06143ed3850d0884b192f5664af4c441d4386d2cdffa07065aa",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/background-events-custom-style.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.backgroundEventsCustomStyle\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "02be725a752d2c4f22dba32008ae46e74378a67a7420e2e3167f691a8b28333a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/bidirectional-drag-drop.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.bidirectionalDragDrop\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "de28766e207d251b6ee2d03784104ddfe5477d45d4528c179eaef544872a606f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/business-hours.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.businessHours\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4f7e79cd57e8ee317d86b52e333697c7eb1db3d218bb3df8615df99a62c24b63",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/business-hours-per-day.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.businessHoursPerDay\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e6ccf5ad3a19cfaa1e3d86bc71654742300115f4e617915ba51e7d8ff354e6a1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/can-drag-event.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.canDragEvent\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "60c69fe73a10a108672cf61e4ecdfec0b192bd849a379e8407c3e90f48657fc2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/can-resize-event.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.canResizeEvent\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4082decbe266cb1751a24ac4bc59a6bde6e576cceed2a92e8d63b76fa9fe45ef",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/controlled-date.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.controlledDate\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "824e325fa29bbb3a95daf9014fc359e294735110216d695ea30cf33c52394fa7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/current-time-indicator.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.currentTimeIndicator\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "5bb1da0a8a948b772cef12af6eb09a086bb3b2d7f95ae1dba9eeeefc8ae6fe38",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/custom-header.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.customHeader\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "ea87333d89cac0a0eee2f056e0c4199e83547f6291346328ae5e0e3abd3f43be",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/drag-drop.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.dragDrop\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e943d8f88bcaead6da700b3d1b8db9e083acd83351dfe9b081e0ac51ba580a72",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/event-drag-interval.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.eventDragInterval\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "dd21b9cae12f1bcfcff5f2faaf59b0b6f62b4936d9b2da49824b29641caad1ab",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/event-form.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.eventForm\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "82230e72c0531e4ab468b1f18caa6837e80b0a6e1bcb7a0b992a1214c85ee9e0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/event-overlap-mode.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.eventOverlapMode\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "f3b1a9802b0e928a324d7a4bd242dae9d84e2501f6397ca30231022e98e34e64",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/event-resize.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.eventResize\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c0d88803af5bc4cf044b397247d58d4e6bc682a17c2faddb5ae1300ad6f91f35",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/event-resize-interval.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.eventResizeInterval\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a1daec88d98cf7fe0a53305e0494da70e16d67d5dcfbbf8946c2c00de3e6f5b3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/external-drag-drop.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.externalDragDrop\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b1e3b2de7583051350707c665c9c6bf9a7553e467f7621f08f5a28e9d6221927",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/first-day-of-week.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.firstDayOfWeek\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "32a1fc113a90706a1c3ed5639a17bdc93e68e6da2286a1e4c630b288c7d89795",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/force-current-time-indicator.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.forceCurrentTimeIndicator\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "03d3401e77a59ef7d7919fd85e700668b63d9aa842693d088270803c2f2385a6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/get-time-slot-props.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.getTimeSlotProps\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "ad15c567b316527c63f776b79bf8c7aa317fdafb68d65072f4a05ecd9877daf6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/highlight-today.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.highlightToday\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7fb92b871e2e1b049e52587af606d5b7aec23dc0747e64af3ccc511a97a63e46",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/interactive-background-events.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.interactiveBackgroundEvents\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c692078d8d9395e7e5cf9483774ac72b507ab6ab415bfbe6ae4ea7662fb7f3cb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/interval-minutes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.intervalMinutes\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "5008942b201de2a8ead018f01a490f92a99343fe62640e45505165c5a8aab531",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/localization.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.localization\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "18339e5864037b4ccf424acef5c387b492a96628d70d4436924d330cd426561c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/overlapping-events.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.overlappingEvents\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "2c1e32ab6eb95c791f1d188bb1e353603c8c92bcd398ad3e8422a740270cf2ea",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/radius.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.radius\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "8a98ddb1eaa7cbb79302ca103bf8ec3d4f1c6de30c1a14ca9d54a16d5339b2f0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/recurring-events.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.recurringEvents\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "5aee71def3288a49b2752753f76db811746186e531205880de117625e320321d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/render-event.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.renderEvent\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "164222dbdb3e843e59e3faa39cdefce5876774b6baf2a45949da2fe13e6f92f1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/render-event-body.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.renderEventBody\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "e306ba77987aec1cc7ee04cf4c3625c9a2814369e20580c56af609cf0f127683",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/slot-height.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.slotHeight\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7e7061a049027785a8df8ab6bb37f7eef96de4f30f9a35f8bfac9a257e78a244",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/slot-label-format.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.slotLabelFormat\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4170d5e16f41c147971a8fe096f564b87401fe6057f5cbdd3fd012bb9125f968",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/start-scroll-time.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.startScrollTime\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "3d79020d92b878fa5f78fe975254e47dc1e956cbbe1fe3256bda62e7756b9396",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/static-mode.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.staticMode\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "fdbaed133fb0eea47192f533426b5148643845520e03e0168d48727ada2237b2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/sub-hour-grid-lines.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.subHourGridLines\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4bf88cc083bd3d00ce9daabf2d0d1e76c91095553dab2d06a3b70ba7cdba2c37",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/time-range.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.timeRange\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "567fb830c492feae6c7bfffd67022497a67b64ba3ca3ac0ea2c9f2af689ed208",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/timezone.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.timezone\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "86f57c88f3573bbd5a8e01d5eb9211dd2680ac9baf919c16e58a426c41d0f60d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "8e3d4f7165e55d0dbf9900ed00d676604e00d7a18b9ccb8cfe0f5af453473340",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/view-change.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.viewChange\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c440a231c970a408ec15a189b9300b0d54cce72e325df0e9bdefec627215efe7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/week-label-format.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.weekLabelFormat\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "88ab61044960b6e82659a1695c60d434d31b273b964af28bfa65810306dd5f5a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/weekday-format.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.weekdayFormat\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4bfbf05bceaf7cfc77253dba1e46f6b89026522895f7cf6d3cbb8ac750a0b9d8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/with-agenda.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.withAgenda\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "2f3a8779342e85c048b1097fa8c894601af59f16c86192e9480c4aee211a678f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/without-all-day-slots.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.withoutAllDaySlots\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "650392d5c9f2a653a182832ffd6e2252b1e88ac24da24a2bd6d39d5fdc71107e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/without-header.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.withoutHeader\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "0f61b993af6d080b34b74dc2e1bef1bd517bf6407ea98b0ed7613656543f3e60",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/without-week-number.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.withoutWeekNumber\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "db0f0ab9d6ea91131f124cc1285f53c1114e065b4eb844de28235527d99ca739",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/week-view/previews/without-weekend-days.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/schedule/WeekView/WeekView.demo.withoutWeekendDays\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\nimport \"@mantine/schedule/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "4288b4589439e2db7a3d4df6cf788b42ef0d2c8114b0f3b9b8a99c1a7b6a484d",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/dates@9.6.3 @mantine/form@9.6.3 @mantine/hooks@9.6.3 @mantine/schedule@9.6.3 @phosphor-icons/react@2.1.10 dayjs@1.11.23",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/dates@9.6.3 @mantine/form@9.6.3 @mantine/hooks@9.6.3 @mantine/schedule@9.6.3 @phosphor-icons/react@2.1.10 dayjs@1.11.23",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "week-view",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/WeekView",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.allDayEvents.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.allDayEvents.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine week view\n\n46 published Mantine week view examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/WeekView\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/schedule/WeekView/WeekView.demo.allDayEvents.tsx\n"
+}

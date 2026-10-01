@@ -1,0 +1,415 @@
+{
+  "id": "mantine:tree",
+  "sourceId": "mantine",
+  "slug": "mantine-tree",
+  "name": "Mantine tree",
+  "description": "18 published Mantine tree examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "@mantinex/demo@2.0.0",
+    "@mantinex/dev-icons@2.0.0",
+    "@phosphor-icons/react@2.1.10",
+    "@tanstack/react-virtual@3.14.10",
+    "clsx@2.1.1",
+    "fuse.js@7.5.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "tree",
+    "tags": [
+      "code",
+      "file",
+      "loading"
+    ],
+    "aliases": [
+      "tree",
+      "mantine tree"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "18 published Mantine tree examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "tree:code:file:loading",
+    "searchText": "Mantine tree\ntree\n18 published Mantine tree examples with complete pinned source and MIT attribution.\nmantine tree\ncode\nfile\nloading\nMantine tree 18 published Mantine tree examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Tree Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Tree/Tree.demo.asyncLoading.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-tree",
+  "manifestPath": "components/mantine-tree/component.json",
+  "integrity": "sha256:3f62626c6f2c00733bb43c155c11e3988d8350b311898f2852de7e788fe5fbb1",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.asyncLoading.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { FileTextIcon, FolderOpenIcon, FolderSimpleIcon } from '@phosphor-icons/react';\n\nimport {\n  Group,\n  mergeAsyncChildren,\n  RenderTreeNodePayload,\n  Tree,\n  TreeNodeData,\n  useTree,\n} from '@mantine/core';\n\nconst initialData: TreeNodeData[] = [\n  { label: 'Documents', value: 'documents', hasChildren: true },\n  { label: 'Photos', value: 'photos', hasChildren: true },\n  { label: 'README.md', value: 'readme' },\n];\n\nasync function fetchChildren(parentValue: string): Promise<TreeNodeData[]> {\n  await new Promise((resolve) => {\n    setTimeout(resolve, 1000);\n  });\n  return [\n    { label: `${parentValue}/file-1.txt`, value: `${parentValue}/file-1.txt` },\n    { label: `${parentValue}/file-2.txt`, value: `${parentValue}/file-2.txt` },\n    {\n      label: `${parentValue}/subfolder`,\n      value: `${parentValue}/subfolder`,\n      hasChildren: true,\n    },\n  ];\n}\n\nfunction Leaf({ node, expanded, hasChildren, elementProps }: RenderTreeNodePayload) {\n  return (\n    <Group gap={6} wrap=\"nowrap\" {...elementProps}>\n      {hasChildren ? (\n        expanded ? (\n          <FolderOpenIcon size={14} style={{ flexShrink: 0, opacity: 0.75 }} />\n        ) : (\n          <FolderSimpleIcon size={14} style={{ flexShrink: 0, opacity: 0.75 }} />\n        )\n      ) : (\n        <FileTextIcon size={14} style={{ flexShrink: 0, opacity: 0.75 }} />\n      )}\n      <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>\n        {node.label}\n      </span>\n    </Group>\n  );\n}\n\nfunction Demo() {\n  const [data, setData] = useState(initialData);\n  const tree = useTree({\n    onLoadChildren: async (value) => {\n      const children = await fetchChildren(value);\n      setData((prev) => mergeAsyncChildren(prev, value, children));\n    },\n  });\n\n  return <Tree data={data} tree={tree} withLines renderNode={(payload) => <Leaf {...payload} />} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "98f974d8f5122de38082c77cd9c08a6a52b808bd2e13483cff7559da5436aca5",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.asyncLoading.tsx",
+      "upstreamSha256": "28eb763e3251ef1814aba13789c60a00f053142f201480dc590450de923bd27f",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.checkAllNodes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { FileTextIcon, FolderOpenIcon, FolderSimpleIcon } from '@phosphor-icons/react';\n\nimport {\n  Button,\n  Checkbox,\n  getTreeExpandedState,\n  Group,\n  RenderTreeNodePayload,\n  Tree,\n  useTree,\n} from '@mantine/core';\n\nimport { data, dataCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/data';\n\nconst renderTreeNode = ({\n  node,\n  expanded,\n  hasChildren,\n  isRoot,\n  elementProps,\n  tree,\n}: RenderTreeNodePayload) => {\n  const checked = tree.isNodeChecked(node.value);\n  const indeterminate = tree.isNodeIndeterminate(node.value);\n\n  return (\n    <Group gap=\"xs\" {...elementProps}>\n      <Checkbox.Indicator\n        checked={checked}\n        size=\"xs\"\n        indeterminate={indeterminate}\n        mis={isRoot ? undefined : 2}\n        onClick={() => (!checked ? tree.checkNode(node.value) : tree.uncheckNode(node.value))}\n      />\n\n      <Group gap={6} onClick={() => tree.toggleExpanded(node.value)}>\n        {hasChildren ? (\n          expanded ? (\n            <FolderOpenIcon size={14} style={{ opacity: 0.75 }} />\n          ) : (\n            <FolderSimpleIcon size={14} style={{ opacity: 0.75 }} />\n          )\n        ) : (\n          <FileTextIcon size={14} style={{ opacity: 0.75 }} />\n        )}\n        <span>{node.label}</span>\n      </Group>\n    </Group>\n  );\n};\n\nfunction Demo() {\n  const tree = useTree({\n    initialExpandedState: getTreeExpandedState(data, '*'),\n    initialCheckedState: [\n      'node_modules',\n      'node_modules/@mantine/core/index.d.ts',\n      'node_modules/@mantine/form/package.json',\n    ],\n  });\n\n  return (\n    <>\n      <Group mb=\"md\">\n        <Button onClick={() => tree.checkAllNodes()}>Check all</Button>\n        <Button onClick={() => tree.uncheckAllNodes()}>Uncheck all</Button>\n      </Group>\n\n      <Tree\n        tree={tree}\n        data={data}\n        levelOffset={23}\n        expandOnClick={false}\n        withLines\n        renderNode={renderTreeNode}\n      />\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "e4036612f7541ace3cf6e4bdb9255e6bbd8394ae365c5f9768df238f266a4755",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.checkAllNodes.tsx",
+      "upstreamSha256": "000e00d27c22309538c534c6ebabdcbd147829f1359f28522c4e797a882feb4a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/data.ts",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { TreeNodeData } from '@mantine/core';\n\nexport const data: TreeNodeData[] = [\n  {\n    label: 'src',\n    value: 'src',\n    children: [\n      {\n        label: 'components',\n        value: 'src/components',\n        children: [\n          { label: 'Accordion.tsx', value: 'src/components/Accordion.tsx' },\n          { label: 'Tree.tsx', value: 'src/components/Tree.tsx' },\n          { label: 'Button.tsx', value: 'src/components/Button.tsx' },\n        ],\n      },\n    ],\n  },\n  {\n    label: 'node_modules',\n    value: 'node_modules',\n    children: [\n      {\n        label: 'react',\n        value: 'node_modules/react',\n        children: [\n          { label: 'index.d.ts', value: 'node_modules/react/index.d.ts' },\n          { label: 'package.json', value: 'node_modules/react/package.json' },\n        ],\n      },\n      {\n        label: '@mantine',\n        value: 'node_modules/@mantine',\n        children: [\n          {\n            label: 'core',\n            value: 'node_modules/@mantine/core',\n            children: [\n              { label: 'index.d.ts', value: 'node_modules/@mantine/core/index.d.ts' },\n              { label: 'package.json', value: 'node_modules/@mantine/core/package.json' },\n            ],\n          },\n          {\n            label: 'hooks',\n            value: 'node_modules/@mantine/hooks',\n            children: [\n              { label: 'index.d.ts', value: 'node_modules/@mantine/hooks/index.d.ts' },\n              { label: 'package.json', value: 'node_modules/@mantine/hooks/package.json' },\n            ],\n          },\n          {\n            label: 'form',\n            value: 'node_modules/@mantine/form',\n            children: [\n              { label: 'index.d.ts', value: 'node_modules/@mantine/form/index.d.ts' },\n              { label: 'package.json', value: 'node_modules/@mantine/form/package.json' },\n            ],\n          },\n        ],\n      },\n    ],\n  },\n  {\n    label: 'package.json',\n    value: 'package.json',\n  },\n  {\n    label: 'tsconfig.json',\n    value: 'tsconfig.json',\n  },\n];\n\nexport const dataCode = `import { TreeNodeData } from '@mantine/core';\n\nexport const data: TreeNodeData[] = [\n  {\n    label: 'src',\n    value: 'src',\n    children: [\n      {\n        label: 'components',\n        value: 'src/components',\n        children: [\n          { label: 'Accordion.tsx', value: 'src/components/Accordion.tsx' },\n          { label: 'Tree.tsx', value: 'src/components/Tree.tsx' },\n          { label: 'Button.tsx', value: 'src/components/Button.tsx' },\n        ],\n      },\n    ],\n  },\n  {\n    label: 'node_modules',\n    value: 'node_modules',\n    children: [\n      {\n        label: 'react',\n        value: 'node_modules/react',\n        children: [\n          { label: 'index.d.ts', value: 'node_modules/react/index.d.ts' },\n          { label: 'package.json', value: 'node_modules/react/package.json' },\n        ],\n      },\n      {\n        label: '@mantine',\n        value: 'node_modules/@mantine',\n        children: [\n          {\n            label: 'core',\n            value: 'node_modules/@mantine/core',\n            children: [\n              { label: 'index.d.ts', value: 'node_modules/@mantine/core/index.d.ts' },\n              { label: 'package.json', value: 'node_modules/@mantine/core/package.json' },\n            ],\n          },\n          {\n            label: 'hooks',\n            value: 'node_modules/@mantine/hooks',\n            children: [\n              { label: 'index.d.ts', value: 'node_modules/@mantine/hooks/index.d.ts' },\n              { label: 'package.json', value: 'node_modules/@mantine/hooks/package.json' },\n            ],\n          },\n          {\n            label: 'form',\n            value: 'node_modules/@mantine/form',\n            children: [\n              { label: 'index.d.ts', value: 'node_modules/@mantine/form/index.d.ts' },\n              { label: 'package.json', value: 'node_modules/@mantine/form/package.json' },\n            ],\n          },\n        ],\n      },\n    ],\n  },\n  {\n    label: 'package.json',\n    value: 'package.json',\n  },\n  {\n    label: 'tsconfig.json',\n    value: 'tsconfig.json',\n  },\n];`;\n",
+      "sha256": "31a6376a400a74eb38e1024df9936449745ff01f5739e6228a1a36879331e9ea",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/data.ts",
+      "upstreamSha256": "36c4e8520b7808daf94b2874f5f90651b1f1f765adfbd5f5c47d96a3c604d163",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.checkStrictly.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { FileTextIcon, FolderOpenIcon, FolderSimpleIcon } from '@phosphor-icons/react';\n\nimport { Checkbox, Group, RenderTreeNodePayload, Tree, useTree } from '@mantine/core';\n\nimport { data, dataCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/data';\n\nconst renderTreeNode = ({\n  node,\n  expanded,\n  hasChildren,\n  isRoot,\n  elementProps,\n  tree,\n}: RenderTreeNodePayload) => {\n  const checked = tree.isNodeChecked(node.value);\n\n  return (\n    <Group gap=\"xs\" {...elementProps}>\n      <Checkbox.Indicator\n        checked={checked}\n        size=\"xs\"\n        mis={isRoot ? undefined : 2}\n        onClick={() => (checked ? tree.uncheckNode(node.value) : tree.checkNode(node.value))}\n      />\n\n      <Group gap={6} onClick={() => tree.toggleExpanded(node.value)}>\n        {hasChildren ? (\n          expanded ? (\n            <FolderOpenIcon size={14} style={{ opacity: 0.75 }} />\n          ) : (\n            <FolderSimpleIcon size={14} style={{ opacity: 0.75 }} />\n          )\n        ) : (\n          <FileTextIcon size={14} style={{ opacity: 0.75 }} />\n        )}\n        <span>{node.label}</span>\n      </Group>\n    </Group>\n  );\n};\n\nfunction Demo() {\n  const tree = useTree({ checkStrictly: true });\n  return (\n    <Tree\n      data={data}\n      tree={tree}\n      levelOffset={23}\n      expandOnClick={false}\n      withLines\n      renderNode={renderTreeNode}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "d5dd261410f1b4beb4c92b0ad4e492a89fb4d8bc0ec5a0dd232853c6f089ae1f",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.checkStrictly.tsx",
+      "upstreamSha256": "c7e4c13ee26c180b2de418abda99d41d5bb4ec46d5b166d15cd7989a6e7f6e91",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.checked.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { FileTextIcon, FolderOpenIcon, FolderSimpleIcon } from '@phosphor-icons/react';\n\nimport { Checkbox, Group, RenderTreeNodePayload, Tree } from '@mantine/core';\n\nimport type { MantineDemo } from '@mantinex/demo';\n\nimport { data, dataCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/data';\n\nconst code = `\nimport { FileTextIcon, FolderOpenIcon, FolderSimpleIcon } from '@phosphor-icons/react';\nimport { Checkbox, Group, RenderTreeNodePayload, Tree } from '@mantine/core';\nimport { data } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/data';\n\nconst renderTreeNode = ({\n  node,\n  expanded,\n  hasChildren,\n  isRoot,\n  elementProps,\n  tree,\n}: RenderTreeNodePayload) => {\n  const checked = tree.isNodeChecked(node.value);\n  const indeterminate = tree.isNodeIndeterminate(node.value);\n\n  return (\n    <Group gap=\"xs\" {...elementProps}>\n      <Checkbox.Indicator\n        checked={checked}\n        size=\"xs\"\n        indeterminate={indeterminate}\n        mis={isRoot ? undefined : 2}\n        onClick={() => (!checked ? tree.checkNode(node.value) : tree.uncheckNode(node.value))}\n      />\n\n      <Group gap={6} onClick={() => tree.toggleExpanded(node.value)}>\n        {hasChildren ? (\n          expanded ? (\n            <FolderOpenIcon size={14} style={{ opacity: 0.75 }} />\n          ) : (\n            <FolderSimpleIcon size={14} style={{ opacity: 0.75 }} />\n          )\n        ) : (\n          <FileTextIcon size={14} style={{ opacity: 0.75 }} />\n        )}\n        <span>{node.label}</span>\n      </Group>\n    </Group>\n  );\n};\n\nfunction Demo() {\n  return (\n    <Tree\n      data={data}\n      levelOffset={23}\n      expandOnClick={false}\n      withLines\n      renderNode={renderTreeNode}\n    />\n  );\n}\n`;\n\nconst renderTreeNode = ({\n  node,\n  expanded,\n  hasChildren,\n  isRoot,\n  elementProps,\n  tree,\n}: RenderTreeNodePayload) => {\n  const checked = tree.isNodeChecked(node.value);\n  const indeterminate = tree.isNodeIndeterminate(node.value);\n\n  return (\n    <Group gap=\"xs\" {...elementProps}>\n      <Checkbox.Indicator\n        checked={checked}\n        size=\"xs\"\n        indeterminate={indeterminate}\n        mis={isRoot ? undefined : 2}\n        onClick={() => (!checked ? tree.checkNode(node.value) : tree.uncheckNode(node.value))}\n      />\n\n      <Group gap={6} onClick={() => tree.toggleExpanded(node.value)}>\n        {hasChildren ? (\n          expanded ? (\n            <FolderOpenIcon size={14} style={{ opacity: 0.75 }} />\n          ) : (\n            <FolderSimpleIcon size={14} style={{ opacity: 0.75 }} />\n          )\n        ) : (\n          <FileTextIcon size={14} style={{ opacity: 0.75 }} />\n        )}\n        <span>{node.label}</span>\n      </Group>\n    </Group>\n  );\n};\n\nfunction Demo() {\n  return (\n    <Tree\n      data={data}\n      levelOffset={23}\n      expandOnClick={false}\n      withLines\n      renderNode={renderTreeNode}\n    />\n  );\n}\n\nexport const checked: MantineDemo = {\n  type: 'code',\n  component: Demo,\n  code: [\n    { fileName: 'Demo.tsx', language: 'tsx', code },\n    { fileName: 'data.ts', language: 'tsx', code: dataCode },\n  ],\n};\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "af4caaa84cce96555c6cb7c2787150202da13aec420a41b1b0da69ba90cec37d",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.checked.tsx",
+      "upstreamSha256": "9a854998fafb7c5834bfde0206385b3dacd7a4ce929f4725d8b55d6ebeabb793",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.controller.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { FileTextIcon, FolderOpenIcon, FolderSimpleIcon } from '@phosphor-icons/react';\n\nimport { Button, Group, RenderTreeNodePayload, Tree, useTree } from '@mantine/core';\n\nimport { data, dataCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/data';\n\nfunction Leaf({ node, expanded, hasChildren, elementProps }: RenderTreeNodePayload) {\n  return (\n    <Group gap={6} {...elementProps}>\n      {hasChildren ? (\n        expanded ? (\n          <FolderOpenIcon size={14} style={{ opacity: 0.75 }} />\n        ) : (\n          <FolderSimpleIcon size={14} style={{ opacity: 0.75 }} />\n        )\n      ) : (\n        <FileTextIcon size={14} style={{ opacity: 0.75 }} />\n      )}\n      <span>{node.label}</span>\n    </Group>\n  );\n}\n\nfunction Demo() {\n  const tree = useTree();\n\n  return (\n    <>\n      <Tree data={data} tree={tree} withLines renderNode={(payload) => <Leaf {...payload} />} />\n      <Group mt=\"md\">\n        <Button onClick={() => tree.expandAllNodes()}>Expand all</Button>\n        <Button onClick={() => tree.collapseAllNodes()}>Collapse all</Button>\n      </Group>\n    </>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b8f175239e64f71d0651d4d8e7483b4824fa3ef22385b1ea064311c7d6af0a30",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.controller.tsx",
+      "upstreamSha256": "108585c29950d1feb9a374c8b3fc4a3b2ed83141f8b5175a09565ae531c747bf",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.docsEditor.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useMemo, useState } from 'react';\n\nimport {\n  DotsThreeIcon,\n  FileTextIcon,\n  FolderOpenIcon,\n  FolderSimpleIcon,\n  MagnifyingGlassIcon,\n  PencilSimpleIcon,\n  TrashIcon,\n} from '@phosphor-icons/react';\n\nimport cx from 'clsx';\n\nimport {\n  ActionIcon,\n  Badge,\n  filterTreeData,\n  getTreeExpandedState,\n  Group,\n  Highlight,\n  Menu,\n  moveTreeNode,\n  RenderTreeNodePayload,\n  TextInput,\n  Tree,\n  TreeNodeData,\n  useTree,\n} from '@mantine/core';\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.docsEditor.module.css';\n\nconst docsData: TreeNodeData[] = [\n  {\n    label: 'Getting started',\n    value: 'getting-started',\n    children: [\n      { label: 'Introduction', value: 'getting-started/introduction' },\n      { label: 'Installation', value: 'getting-started/installation' },\n      { label: 'Quick start', value: 'getting-started/quick-start' },\n    ],\n  },\n  {\n    label: 'Components',\n    value: 'components',\n    children: [\n      {\n        label: 'Inputs',\n        value: 'components/inputs',\n        children: [\n          { label: 'Button', value: 'components/inputs/button' },\n          { label: 'TextInput', value: 'components/inputs/text-input' },\n          { label: 'Select', value: 'components/inputs/select' },\n        ],\n      },\n      {\n        label: 'Navigation',\n        value: 'components/navigation',\n        children: [\n          { label: 'Tabs', value: 'components/navigation/tabs' },\n          { label: 'Menu', value: 'components/navigation/menu' },\n        ],\n      },\n    ],\n  },\n  {\n    label: 'Hooks',\n    value: 'hooks',\n    children: [\n      { label: 'use-toggle', value: 'hooks/use-toggle' },\n      { label: 'use-click-outside', value: 'hooks/use-click-outside' },\n    ],\n  },\n];\n\nfunction countPages(node: TreeNodeData): number {\n  if (!node.children) {\n    return 1;\n  }\n  return node.children.reduce((sum, child) => sum + countPages(child), 0);\n}\n\ninterface LeafProps extends RenderTreeNodePayload {\n  search: string;\n}\n\nfunction Leaf({ node, expanded, hasChildren, elementProps, search }: LeafProps) {\n  const label = typeof node.label === 'string' ? node.label : node.value;\n\n  return (\n    <Group gap={6} {...elementProps} className={cx(classes.row, elementProps.className)}>\n      {hasChildren ? (\n        expanded ? (\n          <FolderOpenIcon size={14} style={{ flexShrink: 0, opacity: 0.75 }} />\n        ) : (\n          <FolderSimpleIcon size={14} style={{ flexShrink: 0, opacity: 0.75 }} />\n        )\n      ) : (\n        <FileTextIcon size={14} style={{ flexShrink: 0, opacity: 0.75 }} />\n      )}\n\n      <Highlight component=\"span\" highlight={search} className={classes.label}>\n        {label}\n      </Highlight>\n\n      {hasChildren && (\n        <Badge size=\"xs\" radius=\"sm\" variant=\"default\" className={classes.count}>\n          {countPages(node)}\n        </Badge>\n      )}\n\n      <Menu position=\"bottom-end\" shadow=\"md\" width={140} withinPortal>\n        <Menu.Target>\n          <ActionIcon\n            variant=\"subtle\"\n            color=\"gray\"\n            size=\"xs\"\n            className={classes.actions}\n            onClick={(event) => event.stopPropagation()}\n            draggable={false}\n            aria-label={`Actions for ${label}`}\n          >\n            <DotsThreeIcon size={14} weight=\"bold\" />\n          </ActionIcon>\n        </Menu.Target>\n        <Menu.Dropdown>\n          <Menu.Item leftSection={<PencilSimpleIcon size={14} />}>Rename</Menu.Item>\n          <Menu.Item leftSection={<TrashIcon size={14} />} color=\"red\">\n            Delete\n          </Menu.Item>\n        </Menu.Dropdown>\n      </Menu>\n    </Group>\n  );\n}\n\nfunction Demo() {\n  const [treeData, setTreeData] = useState(docsData);\n  const [search, setSearch] = useState('');\n  const tree = useTree({\n    initialSelectedState: ['components/inputs/button'],\n    initialExpandedState: getTreeExpandedState(docsData, ['components', 'components/inputs']),\n  });\n\n  const filteredData = useMemo(\n    () => (search.trim() ? filterTreeData(treeData, search) : treeData),\n    [treeData, search]\n  );\n\n  const handleSearchChange = (value: string) => {\n    setSearch(value);\n    if (value.trim()) {\n      tree.setExpandedState(getTreeExpandedState(filterTreeData(treeData, value), '*'));\n    }\n  };\n\n  return (\n    <div>\n      <TextInput\n        leftSection={<MagnifyingGlassIcon size={14} />}\n        placeholder=\"Search docs...\"\n        mb=\"sm\"\n        value={search}\n        onChange={(event) => handleSearchChange(event.currentTarget.value)}\n      />\n      <Tree\n        classNames={{ root: classes.root }}\n        data={filteredData}\n        tree={tree}\n        withLines\n        selectOnClick\n        clearSelectionOnOutsideClick\n        onDragDrop={(payload) => setTreeData((current) => moveTreeNode(current, payload))}\n        renderNode={(payload) => <Leaf {...payload} search={search} />}\n      />\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "68b4827c23a1df3079a1006b870c7f928eb58a6e504b2a50ad7cd82233e9b300",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.docsEditor.tsx",
+      "upstreamSha256": "cc6e26fd2776320b65a0d0df581deb6b89c13584937c4adc472927ba05dd476d",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.docsEditor.module.css",
+      "type": "style",
+      "content": ".root {\n  font-size: 13px;\n}\n\n.row {\n  padding-block: 3px;\n  padding-inline-end: 4px;\n\n  &[data-selected] {\n    background-color: var(--mantine-color-blue-light) !important;\n    color: var(--mantine-color-bright);\n  }\n\n  &:hover {\n    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));\n\n    .actions {\n      opacity: 1;\n    }\n\n    .count {\n      opacity: 0;\n    }\n  }\n}\n\n.label {\n  flex: 1;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.count {\n  transition: opacity 100ms ease;\n}\n\n.actions {\n  opacity: 0;\n  transition: opacity 100ms ease;\n}\n",
+      "sha256": "04e6488f2ccdbbc931e3f87e807f2fff62973d269ee955b36c38987067cd166c",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.docsEditor.module.css",
+      "upstreamSha256": "04e6488f2ccdbbc931e3f87e807f2fff62973d269ee955b36c38987067cd166c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.dragDrop.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { FileTextIcon, FolderOpenIcon, FolderSimpleIcon } from '@phosphor-icons/react';\n\nimport { Group, moveTreeNode, RenderTreeNodePayload, Tree, TreeNodeData } from '@mantine/core';\n\nconst demoData: TreeNodeData[] = [\n  {\n    label: 'Pages',\n    value: 'pages',\n    children: [\n      { label: 'index.tsx', value: 'pages/index.tsx' },\n      { label: 'about.tsx', value: 'pages/about.tsx' },\n      { label: 'contact.tsx', value: 'pages/contact.tsx' },\n    ],\n  },\n  {\n    label: 'Components',\n    value: 'components',\n    children: [\n      { label: 'Header.tsx', value: 'components/Header.tsx' },\n      { label: 'Footer.tsx', value: 'components/Footer.tsx' },\n      { label: 'Sidebar.tsx', value: 'components/Sidebar.tsx' },\n    ],\n  },\n  { label: 'package.json', value: 'package.json' },\n  { label: 'tsconfig.json', value: 'tsconfig.json' },\n];\n\nfunction Leaf({ node, expanded, hasChildren, elementProps }: RenderTreeNodePayload) {\n  return (\n    <Group gap={6} {...elementProps}>\n      {hasChildren ? (\n        expanded ? (\n          <FolderOpenIcon size={14} style={{ opacity: 0.75 }} />\n        ) : (\n          <FolderSimpleIcon size={14} style={{ opacity: 0.75 }} />\n        )\n      ) : (\n        <FileTextIcon size={14} style={{ opacity: 0.75 }} />\n      )}\n      <span>{node.label}</span>\n    </Group>\n  );\n}\n\nfunction Demo() {\n  const [treeData, setTreeData] = useState(demoData);\n\n  return (\n    <Tree\n      data={treeData}\n      withLines\n      onDragDrop={(payload) => setTreeData((current) => moveTreeNode(current, payload))}\n      renderNode={(payload) => <Leaf {...payload} />}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "41276325062d85c631e28a6cbf00f743ad98af4dabbd1c49a8e8dc4cc474d4a8",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.dragDrop.tsx",
+      "upstreamSha256": "ac4a8394aff9d46333843384a574a98e969c1add613b2f4f93d6aed53136796a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.dragDropAllow.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { FileTextIcon, FolderOpenIcon, FolderSimpleIcon } from '@phosphor-icons/react';\n\nimport { Group, moveTreeNode, RenderTreeNodePayload, Tree, TreeNodeData } from '@mantine/core';\n\nconst demoData: TreeNodeData[] = [\n  {\n    label: 'Pages',\n    value: 'pages',\n    children: [\n      { label: 'index.tsx', value: 'pages/index.tsx' },\n      { label: 'about.tsx', value: 'pages/about.tsx' },\n    ],\n  },\n  {\n    label: 'Components (locked)',\n    value: 'components',\n    children: [\n      { label: 'Header.tsx', value: 'components/Header.tsx' },\n      { label: 'Footer.tsx', value: 'components/Footer.tsx' },\n    ],\n  },\n  { label: 'package.json', value: 'package.json' },\n];\n\nconst isLocked = (value: string) => value === 'components' || value.startsWith('components/');\n\nfunction Leaf({ node, expanded, hasChildren, elementProps }: RenderTreeNodePayload) {\n  const locked = isLocked(node.value);\n\n  return (\n    <Group gap={6} {...elementProps} draggable={!locked && elementProps.draggable}>\n      {hasChildren ? (\n        expanded ? (\n          <FolderOpenIcon size={14} style={{ opacity: 0.75 }} />\n        ) : (\n          <FolderSimpleIcon size={14} style={{ opacity: 0.75 }} />\n        )\n      ) : (\n        <FileTextIcon size={14} style={{ opacity: 0.75 }} />\n      )}\n      <span>{node.label}</span>\n    </Group>\n  );\n}\n\nfunction Demo() {\n  const [treeData, setTreeData] = useState(demoData);\n\n  return (\n    <Tree\n      data={treeData}\n      withLines\n      allowDrop={({ draggedNode, targetNode, position }) => {\n        if (isLocked(draggedNode)) {\n          return false;\n        }\n        if (targetNode === 'components' && position === 'inside') {\n          return false;\n        }\n        return !targetNode.startsWith('components/');\n      }}\n      onDragDrop={(payload) => setTreeData((current) => moveTreeNode(current, payload))}\n      renderNode={(payload) => <Leaf {...payload} />}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "344371ef3c1f9630aaee6f900a82a651f29a82fe55df4764844410019db0b577",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.dragDropAllow.tsx",
+      "upstreamSha256": "3a593fc2a5a41ffb510267194a7fdd612352b82feb759f89c6b7c65ae466b996",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.dragDropHandle.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport {\n  DotsSixVerticalIcon,\n  FileTextIcon,\n  FolderOpenIcon,\n  FolderSimpleIcon,\n} from '@phosphor-icons/react';\n\nimport { Group, moveTreeNode, RenderTreeNodePayload, Tree, TreeNodeData } from '@mantine/core';\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.dragDropHandle.module.css';\n\nconst demoData: TreeNodeData[] = [\n  {\n    label: 'Pages',\n    value: 'pages',\n    children: [\n      { label: 'index.tsx', value: 'pages/index.tsx' },\n      { label: 'about.tsx', value: 'pages/about.tsx' },\n    ],\n  },\n  {\n    label: 'Components',\n    value: 'components',\n    children: [\n      { label: 'Header.tsx', value: 'components/Header.tsx' },\n      { label: 'Footer.tsx', value: 'components/Footer.tsx' },\n    ],\n  },\n  { label: 'package.json', value: 'package.json' },\n];\n\nfunction Leaf({\n  node,\n  expanded,\n  hasChildren,\n  elementProps,\n  dragHandleProps,\n}: RenderTreeNodePayload) {\n  return (\n    <Group gap={4} {...elementProps}>\n      <button\n        type=\"button\"\n        {...dragHandleProps}\n        className={classes.handle}\n        aria-label=\"Drag to reorder\"\n      >\n        <DotsSixVerticalIcon size={14} weight=\"bold\" />\n      </button>\n      {hasChildren ? (\n        expanded ? (\n          <FolderOpenIcon size={14} style={{ opacity: 0.75 }} />\n        ) : (\n          <FolderSimpleIcon size={14} style={{ opacity: 0.75 }} />\n        )\n      ) : (\n        <FileTextIcon size={14} style={{ opacity: 0.75 }} />\n      )}\n      <span>{node.label}</span>\n    </Group>\n  );\n}\n\nfunction Demo() {\n  const [treeData, setTreeData] = useState(demoData);\n\n  return (\n    <Tree\n      data={treeData}\n      withDragHandle\n      withLines\n      onDragDrop={(payload) => setTreeData((current) => moveTreeNode(current, payload))}\n      renderNode={(payload) => <Leaf {...payload} />}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "61473f3c05db841c96557e6e87c0d89806284d58ec76b93dc0754c7b34ba0069",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.dragDropHandle.tsx",
+      "upstreamSha256": "17b9ed280db4e4cac87cd031f0da5b89d77639f3853d9d1a11832ed56a71443e",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.dragDropHandle.module.css",
+      "type": "style",
+      "content": ".handle {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 18px;\n  height: 22px;\n  padding: 0;\n  border: 0;\n  background: transparent;\n  border-radius: var(--mantine-radius-sm);\n  color: light-dark(var(--mantine-color-gray-5), var(--mantine-color-dark-3));\n  cursor: grab;\n  transition:\n    background-color 100ms ease,\n    color 100ms ease;\n}\n\n.handle:hover {\n  background-color: light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));\n  color: light-dark(var(--mantine-color-gray-9), var(--mantine-color-dark-0));\n}\n\n.handle:active {\n  cursor: grabbing;\n  background-color: light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));\n}\n",
+      "sha256": "c4c007f990cde0d57676da4d6c5e13563b55bae49a84237bdf5ee94a5e7170ec",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.dragDropHandle.module.css",
+      "upstreamSha256": "c4c007f990cde0d57676da4d6c5e13563b55bae49a84237bdf5ee94a5e7170ec",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.expandedState.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { FileTextIcon, FolderOpenIcon, FolderSimpleIcon } from '@phosphor-icons/react';\n\nimport { getTreeExpandedState, Group, RenderTreeNodePayload, Tree, useTree } from '@mantine/core';\n\nimport { data, dataCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/data';\n\nfunction Leaf({ node, expanded, hasChildren, elementProps }: RenderTreeNodePayload) {\n  return (\n    <Group gap={6} {...elementProps}>\n      {hasChildren ? (\n        expanded ? (\n          <FolderOpenIcon size={14} style={{ opacity: 0.75 }} />\n        ) : (\n          <FolderSimpleIcon size={14} style={{ opacity: 0.75 }} />\n        )\n      ) : (\n        <FileTextIcon size={14} style={{ opacity: 0.75 }} />\n      )}\n      <span>{node.label}</span>\n    </Group>\n  );\n}\n\nfunction Demo() {\n  const tree = useTree({\n    initialExpandedState: getTreeExpandedState(data, ['src', 'src/components']),\n  });\n\n  return <Tree data={data} tree={tree} withLines renderNode={(payload) => <Leaf {...payload} />} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "319d8d480387740dbb7d6437260a2309f8f9679510684eac18c4e5c3011115c9",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.expandedState.tsx",
+      "upstreamSha256": "0e5a9433b32ea0916a0da325a6ced666204b265b5577234c5e85cc52414e0938",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.files.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { FolderOpenIcon, FolderSimpleIcon } from '@phosphor-icons/react';\n\nimport cx from 'clsx';\n\nimport { Group, RenderTreeNodePayload, Tree } from '@mantine/core';\n\nimport { CssIcon, NpmIcon, TypeScriptCircleIcon } from '@mantinex/dev-icons';\n\nimport { data, dataCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/data';\n\nimport classes from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.files.module.css';\n\ninterface FileIconProps {\n  name: string;\n  isFolder: boolean;\n  expanded: boolean;\n}\n\nfunction FileIcon({ name, isFolder, expanded }: FileIconProps) {\n  if (name.endsWith('package.json')) {\n    return <NpmIcon size={14} />;\n  }\n\n  if (name.endsWith('.ts') || name.endsWith('.tsx') || name.endsWith('tsconfig.json')) {\n    return <TypeScriptCircleIcon size={14} />;\n  }\n\n  if (name.endsWith('.css')) {\n    return <CssIcon size={14} />;\n  }\n\n  if (isFolder) {\n    return expanded ? (\n      <FolderOpenIcon color=\"var(--mantine-color-yellow-9)\" size={14} />\n    ) : (\n      <FolderSimpleIcon color=\"var(--mantine-color-yellow-9)\" size={14} />\n    );\n  }\n\n  return null;\n}\n\nfunction Leaf({ node, expanded, hasChildren, elementProps }: RenderTreeNodePayload) {\n  return (\n    <Group gap={6} {...elementProps} className={cx(classes.leaf, elementProps.className)}>\n      <FileIcon name={node.value} isFolder={hasChildren} expanded={expanded} />\n      <span>{node.label}</span>\n    </Group>\n  );\n}\n\nfunction Demo() {\n  return (\n    <Tree\n      classNames={classes}\n      selectOnClick\n      clearSelectionOnOutsideClick\n      withLines\n      data={data}\n      renderNode={(payload) => <Leaf {...payload} />}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "8ec02a4bcbcc0427498ea755bbd6c319787095488144122cbf9c5434de7375bf",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.files.tsx",
+      "upstreamSha256": "fac8f61fe71d014722c187d163a033435e9ba5f3a4578996630e9dadc9dd5648",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.files.module.css",
+      "type": "style",
+      "content": ".root {\n  font-family: var(--mantine-font-family-monospace);\n  font-size: 13px;\n}\n\n.leaf {\n  padding-block: 3px;\n  padding-inline-start: calc(var(--label-offset) + 4px);\n  padding-inline-end: 4px;\n\n  &[data-selected] {\n    font-weight: 700;\n    background-color: var(--mantine-color-blue-light) !important;\n    color: var(--mantine-color-bright);\n  }\n\n  &:hover {\n    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));\n    color: var(--mantine-color-bright);\n  }\n}\n",
+      "sha256": "ffc5723e2ab83e7fac8ef366687de8bdc49fc26d1a437add914f89c2df97aa5f",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.files.module.css",
+      "upstreamSha256": "ffc5723e2ab83e7fac8ef366687de8bdc49fc26d1a437add914f89c2df97aa5f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.lines.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { FileTextIcon, FolderOpenIcon, FolderSimpleIcon } from '@phosphor-icons/react';\n\nimport { getTreeExpandedState, Group, RenderTreeNodePayload, Tree, useTree } from '@mantine/core';\n\nimport { data, dataCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/data';\n\nfunction Leaf({ node, expanded, hasChildren, elementProps }: RenderTreeNodePayload) {\n  return (\n    <Group gap={6} {...elementProps}>\n      {hasChildren ? (\n        expanded ? (\n          <FolderOpenIcon size={14} style={{ opacity: 0.75 }} />\n        ) : (\n          <FolderSimpleIcon size={14} style={{ opacity: 0.75 }} />\n        )\n      ) : (\n        <FileTextIcon size={14} style={{ opacity: 0.75 }} />\n      )}\n      <span>{node.label}</span>\n    </Group>\n  );\n}\n\nfunction Demo() {\n  const tree = useTree({\n    initialExpandedState: getTreeExpandedState(data, '*'),\n  });\n\n  return <Tree data={data} tree={tree} withLines renderNode={(payload) => <Leaf {...payload} />} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "840c31167612ef3efe2fe5dc2ed50ea4976e8ad44d7b7f5f1ba576671a3b1bc8",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.lines.tsx",
+      "upstreamSha256": "c7b3fe3609cd2a7e402259f92512f143487d64e2e787b49123f83e4c6808abf6",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.renderNode.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { FileTextIcon, FolderOpenIcon, FolderSimpleIcon } from '@phosphor-icons/react';\n\nimport { Group, RenderTreeNodePayload, Tree } from '@mantine/core';\n\nimport { data, dataCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/data';\n\nfunction Leaf({ node, expanded, hasChildren, elementProps }: RenderTreeNodePayload) {\n  return (\n    <Group gap={6} {...elementProps}>\n      {hasChildren ? (\n        expanded ? (\n          <FolderOpenIcon size={14} style={{ opacity: 0.75 }} />\n        ) : (\n          <FolderSimpleIcon size={14} style={{ opacity: 0.75 }} />\n        )\n      ) : (\n        <FileTextIcon size={14} style={{ opacity: 0.75 }} />\n      )}\n      <span>{node.label}</span>\n    </Group>\n  );\n}\n\nfunction Demo() {\n  return <Tree data={data} withLines renderNode={(payload) => <Leaf {...payload} />} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "daa4d4f5b8326c5e98e58f3974c09afb25d827fa7abb3738b8956182269ad184",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.renderNode.tsx",
+      "upstreamSha256": "f18eab14af46b8990fdc3241d73886e857d83be47ad1aa38c1a55cc8d66fb489",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.searchFilter.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useMemo, useState } from 'react';\n\nimport { FileTextIcon, FolderOpenIcon, FolderSimpleIcon } from '@phosphor-icons/react';\n\nimport {\n  filterTreeData,\n  getTreeExpandedState,\n  Group,\n  RenderTreeNodePayload,\n  TextInput,\n  Tree,\n  TreeNodeData,\n  useTree,\n} from '@mantine/core';\n\nconst data: TreeNodeData[] = [\n  {\n    label: 'src',\n    value: 'src',\n    children: [\n      {\n        label: 'components',\n        value: 'src/components',\n        children: [\n          { label: 'Accordion.tsx', value: 'src/components/Accordion.tsx' },\n          { label: 'Tree.tsx', value: 'src/components/Tree.tsx' },\n          { label: 'Button.tsx', value: 'src/components/Button.tsx' },\n          { label: 'Input.tsx', value: 'src/components/Input.tsx' },\n        ],\n      },\n      {\n        label: 'hooks',\n        value: 'src/hooks',\n        children: [\n          { label: 'use-debounce.ts', value: 'src/hooks/use-debounce.ts' },\n          { label: 'use-media-query.ts', value: 'src/hooks/use-media-query.ts' },\n        ],\n      },\n    ],\n  },\n  {\n    label: 'public',\n    value: 'public',\n    children: [\n      { label: 'favicon.ico', value: 'public/favicon.ico' },\n      { label: 'logo.svg', value: 'public/logo.svg' },\n    ],\n  },\n  { label: 'package.json', value: 'package.json' },\n  { label: 'tsconfig.json', value: 'tsconfig.json' },\n];\n\nfunction Leaf({ node, expanded, hasChildren, elementProps }: RenderTreeNodePayload) {\n  return (\n    <Group gap={6} {...elementProps}>\n      {hasChildren ? (\n        expanded ? (\n          <FolderOpenIcon size={14} style={{ opacity: 0.75 }} />\n        ) : (\n          <FolderSimpleIcon size={14} style={{ opacity: 0.75 }} />\n        )\n      ) : (\n        <FileTextIcon size={14} style={{ opacity: 0.75 }} />\n      )}\n      <span>{node.label}</span>\n    </Group>\n  );\n}\n\nfunction Demo() {\n  const [search, setSearch] = useState('');\n  const tree = useTree();\n\n  const filteredData = useMemo(() => filterTreeData(data, search), [search]);\n\n  const handleSearchChange = (value: string) => {\n    setSearch(value);\n    if (value.trim()) {\n      const next = filterTreeData(data, value);\n      tree.setExpandedState(getTreeExpandedState(next, '*'));\n    } else {\n      tree.collapseAllNodes();\n    }\n  };\n\n  return (\n    <div>\n      <TextInput\n        placeholder=\"Search...\"\n        mb=\"sm\"\n        value={search}\n        onChange={(event) => handleSearchChange(event.currentTarget.value)}\n      />\n      <Tree\n        data={filteredData}\n        tree={tree}\n        withLines\n        renderNode={(payload) => <Leaf {...payload} />}\n      />\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "840c5809fca6fc7440723ffa9cf38991f8be52cfd2a3d645a16dff90b9433e99",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.searchFilter.tsx",
+      "upstreamSha256": "265a24555b6960432ec9a687d0b749f02f4a76525523554ffae04247fc88bd9a",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.searchFuzzy.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useMemo, useState } from 'react';\n\nimport { FileTextIcon, FolderOpenIcon, FolderSimpleIcon } from '@phosphor-icons/react';\n\nimport Fuse from 'fuse.js';\n\nimport {\n  filterTreeData,\n  getTreeExpandedState,\n  Group,\n  RenderTreeNodePayload,\n  TextInput,\n  Tree,\n  TreeNodeData,\n  TreeNodeFilter,\n  useTree,\n} from '@mantine/core';\n\nconst data: TreeNodeData[] = [\n  {\n    label: 'src',\n    value: 'src',\n    children: [\n      {\n        label: 'components',\n        value: 'src/components',\n        children: [\n          { label: 'Accordion.tsx', value: 'src/components/Accordion.tsx' },\n          { label: 'Tree.tsx', value: 'src/components/Tree.tsx' },\n          { label: 'Button.tsx', value: 'src/components/Button.tsx' },\n          { label: 'Input.tsx', value: 'src/components/Input.tsx' },\n        ],\n      },\n      {\n        label: 'hooks',\n        value: 'src/hooks',\n        children: [\n          { label: 'use-debounce.ts', value: 'src/hooks/use-debounce.ts' },\n          { label: 'use-media-query.ts', value: 'src/hooks/use-media-query.ts' },\n        ],\n      },\n    ],\n  },\n  {\n    label: 'public',\n    value: 'public',\n    children: [\n      { label: 'favicon.ico', value: 'public/favicon.ico' },\n      { label: 'logo.svg', value: 'public/logo.svg' },\n    ],\n  },\n  { label: 'package.json', value: 'package.json' },\n  { label: 'tsconfig.json', value: 'tsconfig.json' },\n];\n\nfunction flattenTreeData(nodes: TreeNodeData[]): TreeNodeData[] {\n  return nodes.reduce<TreeNodeData[]>((acc, node) => {\n    acc.push(node);\n    if (node.children) {\n      acc.push(...flattenTreeData(node.children));\n    }\n    return acc;\n  }, []);\n}\n\nfunction createFuzzyFilter(nodes: TreeNodeData[]): TreeNodeFilter {\n  const flatNodes = flattenTreeData(nodes);\n  const fuse = new Fuse(flatNodes, {\n    keys: ['label'],\n    threshold: 0.3,\n  });\n\n  return (query, node) => {\n    const results = fuse.search(query);\n    return results.some((result) => result.item.value === node.value);\n  };\n}\n\nfunction Leaf({ node, expanded, hasChildren, elementProps }: RenderTreeNodePayload) {\n  return (\n    <Group gap={6} {...elementProps}>\n      {hasChildren ? (\n        expanded ? (\n          <FolderOpenIcon size={14} style={{ opacity: 0.75 }} />\n        ) : (\n          <FolderSimpleIcon size={14} style={{ opacity: 0.75 }} />\n        )\n      ) : (\n        <FileTextIcon size={14} style={{ opacity: 0.75 }} />\n      )}\n      <span>{node.label}</span>\n    </Group>\n  );\n}\n\nfunction Demo() {\n  const [search, setSearch] = useState('');\n  const tree = useTree();\n  const fuzzyFilter = useMemo(() => createFuzzyFilter(data), []);\n\n  const filteredData = useMemo(\n    () => filterTreeData(data, search, fuzzyFilter),\n    [search, fuzzyFilter]\n  );\n\n  const handleSearchChange = (value: string) => {\n    setSearch(value);\n    if (value.trim()) {\n      const next = filterTreeData(data, value, fuzzyFilter);\n      tree.setExpandedState(getTreeExpandedState(next, '*'));\n    } else {\n      tree.collapseAllNodes();\n    }\n  };\n\n  return (\n    <div>\n      <TextInput\n        placeholder=\"Fuzzy search...\"\n        mb=\"sm\"\n        value={search}\n        onChange={(event) => handleSearchChange(event.currentTarget.value)}\n      />\n      <Tree\n        data={filteredData}\n        tree={tree}\n        withLines\n        renderNode={(payload) => <Leaf {...payload} />}\n      />\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "f3b9a9eb9d6a01800062aecc597cec8a68c18ef6829c15f206aa202baa8d8afb",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.searchFuzzy.tsx",
+      "upstreamSha256": "e96c26e441ea98bbb23dcdfb9eb01cbf09387244d07ff77b9acbe491cd1f57e5",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.searchHighlight.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { FileTextIcon, FolderOpenIcon, FolderSimpleIcon } from '@phosphor-icons/react';\n\nimport {\n  defaultTreeNodeFilter,\n  getTreeExpandedState,\n  Group,\n  Highlight,\n  TextInput,\n  Tree,\n  TreeNodeData,\n  useTree,\n} from '@mantine/core';\n\nconst data: TreeNodeData[] = [\n  {\n    label: 'src',\n    value: 'src',\n    children: [\n      {\n        label: 'components',\n        value: 'src/components',\n        children: [\n          { label: 'Accordion.tsx', value: 'src/components/Accordion.tsx' },\n          { label: 'Tree.tsx', value: 'src/components/Tree.tsx' },\n          { label: 'Button.tsx', value: 'src/components/Button.tsx' },\n          { label: 'Input.tsx', value: 'src/components/Input.tsx' },\n        ],\n      },\n      {\n        label: 'hooks',\n        value: 'src/hooks',\n        children: [\n          { label: 'use-debounce.ts', value: 'src/hooks/use-debounce.ts' },\n          { label: 'use-media-query.ts', value: 'src/hooks/use-media-query.ts' },\n        ],\n      },\n    ],\n  },\n  {\n    label: 'public',\n    value: 'public',\n    children: [\n      { label: 'favicon.ico', value: 'public/favicon.ico' },\n      { label: 'logo.svg', value: 'public/logo.svg' },\n    ],\n  },\n  { label: 'package.json', value: 'package.json' },\n  { label: 'tsconfig.json', value: 'tsconfig.json' },\n];\n\nfunction getMatchingAncestors(nodes: TreeNodeData[], query: string): string[] {\n  const result: string[] = [];\n  for (const node of nodes) {\n    const childMatches = node.children ? getMatchingAncestors(node.children, query) : [];\n    if (defaultTreeNodeFilter(query, node) || childMatches.length > 0) {\n      result.push(node.value, ...childMatches);\n    }\n  }\n  return result;\n}\n\nfunction Demo() {\n  const [search, setSearch] = useState('');\n  const tree = useTree({\n    initialExpandedState: getTreeExpandedState(data, []),\n  });\n\n  const handleSearchChange = (value: string) => {\n    setSearch(value);\n    if (value.trim()) {\n      tree.setExpandedState(getTreeExpandedState(data, getMatchingAncestors(data, value)));\n    } else {\n      tree.collapseAllNodes();\n    }\n  };\n\n  return (\n    <div>\n      <TextInput\n        placeholder=\"Search...\"\n        mb=\"sm\"\n        value={search}\n        onChange={(event) => handleSearchChange(event.currentTarget.value)}\n      />\n      <Tree\n        data={data}\n        tree={tree}\n        withLines\n        renderNode={({ node, elementProps, hasChildren, expanded }) => {\n          const label = typeof node.label === 'string' ? node.label : node.value;\n          return (\n            <Group gap={6} {...elementProps}>\n              {hasChildren ? (\n                expanded ? (\n                  <FolderOpenIcon size={14} style={{ opacity: 0.75 }} />\n                ) : (\n                  <FolderSimpleIcon size={14} style={{ opacity: 0.75 }} />\n                )\n              ) : (\n                <FileTextIcon size={14} style={{ opacity: 0.75 }} />\n              )}\n              <Highlight highlight={search} component=\"span\">\n                {label}\n              </Highlight>\n            </Group>\n          );\n        }}\n      />\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "0084bd5b3a077b69fbdbb9eae22b5150cda329343c5e692bddb29bbcfc3668f4",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.searchHighlight.tsx",
+      "upstreamSha256": "3bef18924f47a0c85b6d3262f8d0c471ca07bac8440f4c57030ed0e2ff0e9d02",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { FileTextIcon, FolderOpenIcon, FolderSimpleIcon } from '@phosphor-icons/react';\n\nimport { Group, RenderTreeNodePayload, Tree } from '@mantine/core';\n\nimport { data, dataCode } from '@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/data';\n\nfunction Leaf({ node, expanded, hasChildren, elementProps }: RenderTreeNodePayload) {\n  return (\n    <Group gap={6} {...elementProps}>\n      {hasChildren ? (\n        expanded ? (\n          <FolderOpenIcon size={14} style={{ opacity: 0.75 }} />\n        ) : (\n          <FolderSimpleIcon size={14} style={{ opacity: 0.75 }} />\n        )\n      ) : (\n        <FileTextIcon size={14} style={{ opacity: 0.75 }} />\n      )}\n      <span>{node.label}</span>\n    </Group>\n  );\n}\n\nfunction Demo() {\n  return <Tree data={data} withLines renderNode={(payload) => <Leaf {...payload} />} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "daa4d4f5b8326c5e98e58f3974c09afb25d827fa7abb3738b8956182269ad184",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.usage.tsx",
+      "upstreamSha256": "0410af419cc3630e60d010377be00d84a0549d8f268dcec9a3dad2aa6c831089",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.virtualized.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useMemo, useRef } from 'react';\n\nimport { useVirtualizer } from '@tanstack/react-virtual';\n\nimport {\n  flattenTreeData,\n  FlatTreeNode,\n  getTreeExpandedState,\n  TreeNodeData,\n  useTree,\n} from '@mantine/core';\n\nconst ITEM_HEIGHT = 30;\n\nfunction generateTreeData(count: number): TreeNodeData[] {\n  const result: TreeNodeData[] = [];\n  let id = 0;\n\n  function addChildren(parent: TreeNodeData[], depth: number, remaining: { count: number }) {\n    const childCount = depth === 0 ? 20 : Math.floor(Math.random() * 8) + 2;\n\n    for (let i = 0; i < childCount && remaining.count > 0; i++) {\n      id++;\n      remaining.count--;\n      const hasChild = depth < 3 && remaining.count > 0 && Math.random() > 0.3;\n      const node: TreeNodeData = {\n        label: `${hasChild ? 'Folder' : 'File'} ${id}`,\n        value: `node-${id}`,\n        children: hasChild ? [] : undefined,\n      };\n\n      if (hasChild) {\n        addChildren(node.children!, depth + 1, remaining);\n      }\n\n      parent.push(node);\n    }\n  }\n\n  addChildren(result, 0, { count });\n  return result;\n}\n\nconst largeData = generateTreeData(2000);\n\nconst initialExpandedState = getTreeExpandedState(largeData, '*');\n\nfunction Demo() {\n  const tree = useTree({\n    initialExpandedState,\n  });\n\n  const flatList = useMemo(\n    () => flattenTreeData(largeData, tree.expandedState),\n    [tree.expandedState]\n  );\n\n  const scrollParentRef = useRef<HTMLDivElement>(null);\n\n  const virtualizer = useVirtualizer({\n    count: flatList.length,\n    getScrollElement: () => scrollParentRef.current,\n    estimateSize: () => ITEM_HEIGHT,\n    overscan: 20,\n  });\n\n  return (\n    <div ref={scrollParentRef} style={{ height: 400, overflow: 'auto' }}>\n      <div\n        data-tree-root\n        data-with-lines\n        role=\"tree\"\n        style={{ height: virtualizer.getTotalSize(), position: 'relative' }}\n      >\n        {virtualizer.getVirtualItems().map((virtualItem) => (\n          <FlatTreeNode\n            key={flatList[virtualItem.index].node.value}\n            {...flatList[virtualItem.index]}\n            tree={tree}\n            expandOnClick\n            selectOnClick\n            tabIndex={virtualItem.index === 0 ? 0 : -1}\n            style={{\n              position: 'absolute',\n              top: 0,\n              left: 0,\n              width: '100%',\n              height: virtualItem.size,\n              transform: `translateY(${virtualItem.start}px)`,\n            }}\n          />\n        ))}\n      </div>\n    </div>\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "0ac179b95131411e205730c833e5e78a455c364c8fdcae1be2dd7a43aba2d79e",
+      "upstreamPath": "packages/@docs/demos/src/demos/core/Tree/Tree.demo.virtualized.tsx",
+      "upstreamSha256": "d41a83697b5cf3ded823be0f878ab180bda34e8e98faa1edb72291fdcab9e536",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.asyncLoading\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "91aa65be44e224d6c964a3e25cf3b5adfb88374567e93506febd75d64bb3788d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/check-all-nodes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.checkAllNodes\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "83284600e7c966d74424e3e21aae911a5b571af1e270d19e641d7b0952d30ff4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/check-strictly.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.checkStrictly\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "a4cfc45ead715a47eb5be2204f21e4cee2549f4775cda69fc71b8e8323d464fb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/checked.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.checked\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "49966711c8ee95e4c45523393f9c186f017337964d728db484cfd235e06c9c17",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/controller.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.controller\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "29a8f12d5a84dda2c4940cfe3f3ce0bd5ee96450eba2e2deafd8b2ca75235d99",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/docs-editor.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.docsEditor\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "50517e28024f22e87c2609fd68752ddb91e208f7ee71e660a16593d52292892c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/drag-drop.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.dragDrop\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "371781edeb45a967fd9882c2c53e932954911a15437bca23dbd2c9768f667190",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/drag-drop-allow.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.dragDropAllow\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "7f1663abcc919a11b13439f3732139ab6e34391f1c6421486f90aa3bb79538f9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/drag-drop-handle.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.dragDropHandle\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "cebc66981d5ff823771227bc3a390f0e27e3d8b4af467cb966e0809de8e553ff",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/expanded-state.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.expandedState\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c8851eafdc529625b41f736a2fba4d0abc3f93444024e7d95184f117d93785f8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/files.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.files\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "c299b49c0b727a76086722ee07c07aeb95fc7e666d652fd5e6de8f1490dc5196",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/lines.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.lines\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "832b37b01f4c64e677ef02ade9f6b91287794f40569a7a6a8823991fd0ead311",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/render-node.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.renderNode\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "f9a79db6fcd88d2aa2d865af7768cb77b89f04bda90506ef01f9e04f1052369a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/search-filter.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.searchFilter\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "339a0539e5ea492353a0c668e767864c7cf74a4cdb6d9d59244275a9bd9b8946",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/search-fuzzy.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.searchFuzzy\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "503610e4d1ec25b26ee79d37fa4e81715584364ed7f373545e9159f73388dfe5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/search-highlight.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.searchHighlight\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "8c15d62ac8ae62f672a0f30eaad5348fdb1de14bd9b8009f75af9225991d3fba",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "b4553b759c46258b9471ee03635553d4fd8fe2d4aa1a3f374e09f838c55f7d14",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/tree/previews/virtualized.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.virtualized\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "63e599d86c4130fd9a3b3f30c412b0cb3af3499835f8df1ca7606ed9078e57bf",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @mantinex/dev-icons@2.0.0 @phosphor-icons/react@2.1.10 @tanstack/react-virtual@3.14.10 clsx@2.1.1 fuse.js@7.5.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.docsEditor.module.css",
+      "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.dragDropHandle.module.css",
+      "components/rendyn-libraries/mantine/upstream/src/demos/core/Tree/Tree.demo.files.module.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/hooks@9.6.3 @mantinex/demo@2.0.0 @mantinex/dev-icons@2.0.0 @phosphor-icons/react@2.1.10 @tanstack/react-virtual@3.14.10 clsx@2.1.1 fuse.js@7.5.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "tree",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Tree",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Tree/Tree.demo.asyncLoading.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Tree/Tree.demo.asyncLoading.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Pinned copy; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine tree\n\n18 published Mantine tree examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Tree\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/core/Tree/Tree.demo.asyncLoading.tsx\n"
+}

@@ -1,0 +1,162 @@
+{
+  "id": "mantine:mini-calendar",
+  "sourceId": "mantine",
+  "slug": "mantine-mini-calendar",
+  "name": "Mantine mini calendar",
+  "description": "5 published Mantine mini calendar examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@mantine/core@9.6.3",
+    "@mantine/dates@9.6.3",
+    "@mantine/hooks@9.6.3",
+    "dayjs@1.11.23"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "mini-calendar",
+    "tags": [
+      "code",
+      "file"
+    ],
+    "aliases": [
+      "mini calendar",
+      "mantine mini calendar",
+      "mini-calendar"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "5 published Mantine mini calendar examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "mini-calendar:code:file",
+    "searchText": "Mantine mini calendar\nmini calendar\n5 published Mantine mini calendar examples with complete pinned source and MIT attribution.\nmantine mini calendar\nmini-calendar\ncode\nfile\nMantine mini calendar 5 published Mantine mini calendar examples with complete pinned source and MIT attribution. Installation Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded. Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/MiniCalendar Pinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/MiniCalendar/MiniCalendar.demo.getDayProps.tsx"
+  },
+  "previewPath": "/preview/blocks/mantine-mini-calendar",
+  "manifestPath": "components/mantine-mini-calendar/component.json",
+  "integrity": "sha256:97c563abb0daf16fad89b3d2726c05a88846d86c48b6fe649dd91e5afca5eae1",
+  "source": {
+    "id": "mantine",
+    "name": "Mantine",
+    "repository": "https://github.com/mantinedev/mantine",
+    "commit": "f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4",
+    "registrySha256": "d91cb042a7c5802fa7db110389d523f2f77ada886cfd297b1a8f04ab66466877",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2021 Vitaly Rtishchev",
+      "textPath": "source/mantine/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/MiniCalendar/MiniCalendar.demo.getDayProps.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport dayjs from 'dayjs';\n\nimport { MiniCalendar } from '@mantine/dates';\n\nfunction Demo() {\n  return (\n    <MiniCalendar\n      numberOfDays={6}\n      getDayProps={(date) => ({\n        style: {\n          color: [0, 6].includes(dayjs(date).day()) ? 'var(--mantine-color-red-8)' : undefined,\n        },\n      })}\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "1b4499d9c72d46b5e808f5bc2d737e1f36e52c154370539acecbdb671d1c4812",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/MiniCalendar/MiniCalendar.demo.getDayProps.tsx",
+      "upstreamSha256": "a93d23e1cd4fedca335c2c9192172e1e90d32c3507783b90b30d626d3a21477b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/MiniCalendar/MiniCalendar.demo.locale.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport 'dayjs/locale/ru';\n\nimport { MiniCalendar } from '@mantine/dates';\n\nfunction Demo() {\n  return <MiniCalendar numberOfDays={6} defaultDate=\"2025-04-15\" locale=\"ru\" />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "b239cc0ff241ee25f53c1ef61dece8027519994ec95f76c58680880e1a322773",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/MiniCalendar/MiniCalendar.demo.locale.tsx",
+      "upstreamSha256": "ef8029831850910cf9d9cfb0aabc4813b1759841e5b780747909e328779133bf",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/MiniCalendar/MiniCalendar.demo.minMax.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { MiniCalendar } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, onChange] = useState<string | null>('2025-04-15');\n  return (\n    <MiniCalendar\n      value={value}\n      onChange={onChange}\n      numberOfDays={6}\n      defaultDate=\"2025-04-13\"\n      minDate=\"2025-04-14\"\n      maxDate=\"2025-04-24\"\n    />\n  );\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "c4022ec1ddd32df0b32b79f2c477a3a0e459b3ebdf14bafd6b42f42d6132bbd0",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/MiniCalendar/MiniCalendar.demo.minMax.tsx",
+      "upstreamSha256": "fa658ffa21662fea5cd612a7580211c4c1c22c00e4d7713cb28807fc573fb25b",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/MiniCalendar/MiniCalendar.demo.numberOfDays.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { MiniCalendar } from '@mantine/dates';\n\nfunction Demo() {\n  return <MiniCalendar numberOfDays={5} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "97a9b9a46d5a64b60cf607c802b3e4a6019da955c261774da83a0116f31e1ad2",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/MiniCalendar/MiniCalendar.demo.numberOfDays.tsx",
+      "upstreamSha256": "dd008552aaf8f90eb3a782d52985b6cc1430d964bd629148bcfb358dcff88da5",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/upstream/src/demos/dates/MiniCalendar/MiniCalendar.demo.usage.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\n\nimport { MiniCalendar } from '@mantine/dates';\n\nfunction Demo() {\n  const [value, onChange] = useState<string | null>('2025-04-15');\n  return <MiniCalendar value={value} onChange={onChange} numberOfDays={6} />;\n}\nconst RendynExampleComponent = Demo;\nexport function RendynExample() { return <RendynExampleComponent  />; }\n",
+      "sha256": "06694b77090cad6931696ac0576b9028d991a8836fdb8a4c7c9c3299b78edc3c",
+      "upstreamPath": "packages/@docs/demos/src/demos/dates/MiniCalendar/MiniCalendar.demo.usage.tsx",
+      "upstreamSha256": "1c84ddb89d33ca8267363849bbe21a236fc1f3f40d1e4ea894424fe96a880d91",
+      "transformation": "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/mini-calendar/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/MiniCalendar/MiniCalendar.demo.getDayProps\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "fdf862fe42e9e2372ddcd23edc348550a5672ecb9dda1a0c7282678e859de06b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/mini-calendar/previews/locale.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/MiniCalendar/MiniCalendar.demo.locale\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "0cbb0fb7d4853059dd981913da20658296152bdee969aa02009a5e1b3fef81c7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/mini-calendar/previews/min-max.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/MiniCalendar/MiniCalendar.demo.minMax\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "26827fd267546edede51d2199840442f6f10c2aeabe997c6173b742a1814c555",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/mini-calendar/previews/number-of-days.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/MiniCalendar/MiniCalendar.demo.numberOfDays\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "8779ca19e86f12cccbe958adcca223cba8b7b7900a8bccc9e82114497a2dec9e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mantine/mini-calendar/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport { RendynExample as Example } from \"@/components/rendyn-libraries/mantine/upstream/src/demos/dates/MiniCalendar/MiniCalendar.demo.usage\";\nimport { MantineProvider } from \"@mantine/core\";\nimport \"@mantine/core/styles.css\";\nimport \"@mantine/dates/styles.css\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><MantineProvider><Example /></MantineProvider></div>;\n}\n",
+      "sha256": "19a3920dce4d18ba6f526f97cf9be3f6e3103f7bc250523df1d15533659d0bd8",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @mantine/core@9.6.3 @mantine/dates@9.6.3 @mantine/hooks@9.6.3 dayjs@1.11.23",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @mantine/core@9.6.3 @mantine/dates@9.6.3 @mantine/hooks@9.6.3 dayjs@1.11.23",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.",
+      "Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "mini-calendar",
+    "upstreamPageUrl": "https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/MiniCalendar",
+    "upstreamDetailUrl": "https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/MiniCalendar/MiniCalendar.demo.getDayProps.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mantinedev/mantine/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/MiniCalendar/MiniCalendar.demo.getDayProps.tsx",
+    "transformations": [
+      "Pinned mantine-runtime; exact import rewrites recorded in source/mantine/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Mantine mini calendar\n\n5 published Mantine mini calendar examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT usage examples extracted from the upstream demo code template; documentation configurator machinery is excluded.\n- Mount MantineProvider once at your client application root and import @mantine/core/styles.css. The returned preview wrapper is a standalone example; reuse an existing provider when integrating.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mantinedev/mantine/tree/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/MiniCalendar\nPinned source: https://github.com/mantinedev/mantine/blob/f38933cb4f1c534600f4ff59ee3ddbb4685a4bc4/packages/@docs/demos/src/demos/dates/MiniCalendar/MiniCalendar.demo.getDayProps.tsx\n"
+}
