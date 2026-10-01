@@ -8,7 +8,7 @@ import catalog from '../../../catalog/index.json';
 
 const previewRoot = resolve(import.meta.dirname, '..');
 const read = (path: string) => readFile(resolve(previewRoot, path), 'utf8');
-const keys = (source: string) => [...source.matchAll(/["']([a-z0-9-]+\/[a-z0-9-]+)["']\s*:/g)].map((match) => match[1]);
+const keys = (source: string) => [...source.matchAll(/["']([a-z0-9-]+(?:\/[a-z0-9-]+){1,2})["']\s*:/g)].map((match) => match[1]);
 
 describe('live preview coverage', () => {
   it('resolves selectable variants to registered demos across the complete catalogue', async () => {

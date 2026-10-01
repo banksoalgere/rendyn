@@ -61,7 +61,7 @@ export type { Editor, JSONContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Suggestion, { type SuggestionOptions } from "@tiptap/suggestion";
 import Fuse from "fuse.js";
-import { all, createLowlight } from "lowlight";
+import { common as all, createLowlight } from "lowlight";
 import {
   ArrowDownIcon,
   ArrowLeftIcon,
@@ -449,7 +449,7 @@ const Slash = Node.create<SlashOptions>({
   },
 });
 
-// Create a lowlight instance with all languages loaded
+// Preview runtime: load the common grammars; catalogue source remains unchanged.
 const lowlight = createLowlight(all);
 
 type EditorSlashMenuProps = {
