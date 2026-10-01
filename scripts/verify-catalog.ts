@@ -4,9 +4,14 @@ import { resolve } from "node:path";
 import { CatalogStore } from "@rendyn/catalog";
 import { loadLibraryConfigs } from './import-libraries.js';
 import { assertStandardMitLicense } from './lib/catalog-import/license.js';
+import { assignPublicSlugs, publicSlugMapSchema } from '../packages/catalog/src/public-slugs.js';
 
 const catalogRoot = resolve(process.env.CATALOG_IMPORT_ROOT ?? resolve(import.meta.dirname, '..'), 'catalog');
 const store = await CatalogStore.load(catalogRoot);
+const publicSlugs = publicSlugMapSchema.parse(JSON.parse(await readFile(resolve(catalogRoot, 'public-slugs.json'), 'utf8')));
+if (JSON.stringify(assignPublicSlugs(store.index.components, publicSlugs)) !== JSON.stringify(publicSlugs)) {
+  throw new Error('Missing pinned public component URLs');
+}
 
 const libraryConfigs = await loadLibraryConfigs();
 const expectedCount = 189 + libraryConfigs.reduce((count, config) => count + config.components.length, 0);
@@ -42,6 +47,10 @@ for (const config of libraryConfigs) {
 for (const summary of store.index.components) {
   const manifest = await store.get(summary.slug);
   if (!manifest) throw new Error(`Missing component manifest: ${summary.slug}`);
+  if (manifest.name !== summary.name || manifest.description !== summary.description
+    || JSON.stringify(manifest.metadata) !== JSON.stringify(summary.metadata)) {
+    throw new Error(`Catalogue labels differ between discovery and source retrieval: ${summary.slug}`);
+  }
   for (const file of manifest.files) {
     const hash = createHash("sha256").update(file.content).digest("hex");
     if (hash !== file.sha256) {
