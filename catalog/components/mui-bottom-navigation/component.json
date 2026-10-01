@@ -1,0 +1,133 @@
+{
+  "id": "mui:bottom-navigation",
+  "sourceId": "mui",
+  "slug": "mui-bottom-navigation",
+  "name": "Material UI bottom navigation",
+  "description": "3 published Material UI bottom navigation examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/icons-material@9.4.0",
+    "@mui/material@9.4.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "bottom-navigation",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file",
+      "navigation"
+    ],
+    "aliases": [
+      "bottom navigation",
+      "material ui bottom navigation",
+      "bottom-navigation"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "3 published Material UI bottom navigation examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "bottom-navigation:code:command:data:file:navigation",
+    "searchText": "Material UI bottom navigation\nbottom navigation\n3 published Material UI bottom navigation examples with complete pinned source and MIT attribution.\nmaterial ui bottom navigation\nbottom-navigation\ncode\ncommand\ndata\nfile\nnavigation\nMaterial UI bottom navigation 3 published Material UI bottom navigation examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/bottom navigation Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/bottom navigation/FixedBottomNavigation.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-bottom-navigation",
+  "manifestPath": "components/mui-bottom-navigation/component.json",
+  "integrity": "sha256:4a1854124d30d67f3245776e4f9100db86c29a99e611fcdf7126b72a53900456",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/bottom-navigation/FixedBottomNavigation.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport CssBaseline from '@mui/material/CssBaseline';\nimport BottomNavigation from '@mui/material/BottomNavigation';\nimport BottomNavigationAction from '@mui/material/BottomNavigationAction';\nimport RestoreIcon from '@mui/icons-material/Restore';\nimport FavoriteIcon from '@mui/icons-material/Favorite';\nimport ArchiveIcon from '@mui/icons-material/Archive';\nimport Paper from '@mui/material/Paper';\nimport List from '@mui/material/List';\nimport ListItemButton from '@mui/material/ListItemButton';\nimport ListItemAvatar from '@mui/material/ListItemAvatar';\nimport ListItemText from '@mui/material/ListItemText';\nimport Avatar from '@mui/material/Avatar';\n\nfunction refreshMessages(): MessageExample[] {\n  const getRandomInt = (max: number) => Math.floor(Math.random() * Math.floor(max));\n\n  return Array.from(new Array(50)).map(\n    () => messageExamples[getRandomInt(messageExamples.length)],\n  );\n}\n\nexport default function FixedBottomNavigation() {\n  const [value, setValue] = React.useState(0);\n  const ref = React.useRef<HTMLDivElement>(null);\n  const [messages, setMessages] = React.useState(() => refreshMessages());\n\n  React.useEffect(() => {\n    (ref.current as HTMLDivElement).ownerDocument.body.scrollTop = 0;\n    setMessages(refreshMessages());\n  }, [value, setMessages]);\n\n  return (\n    <Box sx={{ pb: 7 }} ref={ref}>\n      <CssBaseline />\n      <List>\n        {messages.map(({ primary, secondary, person }, index) => (\n          <ListItemButton key={index + person}>\n            <ListItemAvatar>\n              <Avatar alt=\"Profile Picture\" src={person} />\n            </ListItemAvatar>\n            <ListItemText primary={primary} secondary={secondary} />\n          </ListItemButton>\n        ))}\n      </List>\n      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>\n        <BottomNavigation\n          showLabels\n          value={value}\n          onChange={(event, newValue) => {\n            setValue(newValue);\n          }}\n        >\n          <BottomNavigationAction label=\"Recents\" icon={<RestoreIcon />} />\n          <BottomNavigationAction label=\"Favorites\" icon={<FavoriteIcon />} />\n          <BottomNavigationAction label=\"Archive\" icon={<ArchiveIcon />} />\n        </BottomNavigation>\n      </Paper>\n    </Box>\n  );\n}\n\ninterface MessageExample {\n  primary: string;\n  secondary: string;\n  person: string;\n}\n\nconst messageExamples: readonly MessageExample[] = [\n  {\n    primary: 'Brunch this week?',\n    secondary: \"I'll be in the neighbourhood this week. Let's grab a bite to eat\",\n    person: '/static/images/avatar/5.jpg',\n  },\n  {\n    primary: 'Birthday Gift',\n    secondary: `Do you have a suggestion for a good present for John on his work\n      anniversary. I am really confused & would love your thoughts on it.`,\n    person: '/static/images/avatar/1.jpg',\n  },\n  {\n    primary: 'Recipe to try',\n    secondary: 'I am try out this new BBQ recipe, I think this might be amazing',\n    person: '/static/images/avatar/2.jpg',\n  },\n  {\n    primary: 'Yes!',\n    secondary: 'I have the tickets to the ReactConf for this year.',\n    person: '/static/images/avatar/3.jpg',\n  },\n  {\n    primary: \"Doctor's Appointment\",\n    secondary: 'My appointment for the doctor was rescheduled for next Saturday.',\n    person: '/static/images/avatar/4.jpg',\n  },\n  {\n    primary: 'Discussion',\n    secondary: `Menus that are generated by the bottom app bar (such as a bottom\n      navigation drawer or overflow menu) open as bottom sheets at a higher elevation\n      than the bar.`,\n    person: '/static/images/avatar/5.jpg',\n  },\n  {\n    primary: 'Summer BBQ',\n    secondary: `Who wants to have a cookout this weekend? I just got some furniture\n      for my backyard and would love to fire up the grill.`,\n    person: '/static/images/avatar/1.jpg',\n  },\n];\n",
+      "sha256": "41d19c1241ae036c6b3efc4f3b30bb1059860169d8624274b4260a426a93a436",
+      "upstreamPath": "docs/data/material/components/bottom-navigation/FixedBottomNavigation.tsx",
+      "upstreamSha256": "80e0f28af27714564227f15876770a13ff79f89641be559d32be6a967400f4ca",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/bottom-navigation/LabelBottomNavigation.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport BottomNavigation from '@mui/material/BottomNavigation';\nimport BottomNavigationAction from '@mui/material/BottomNavigationAction';\nimport FolderIcon from '@mui/icons-material/Folder';\nimport RestoreIcon from '@mui/icons-material/Restore';\nimport FavoriteIcon from '@mui/icons-material/Favorite';\nimport LocationOnIcon from '@mui/icons-material/LocationOn';\n\nexport default function LabelBottomNavigation() {\n  const [value, setValue] = React.useState('recents');\n\n  const handleChange = (event: React.SyntheticEvent, newValue: string) => {\n    setValue(newValue);\n  };\n\n  return (\n    <BottomNavigation sx={{ width: 500 }} value={value} onChange={handleChange}>\n      <BottomNavigationAction\n        label=\"Recents\"\n        value=\"recents\"\n        icon={<RestoreIcon />}\n      />\n      <BottomNavigationAction\n        label=\"Favorites\"\n        value=\"favorites\"\n        icon={<FavoriteIcon />}\n      />\n      <BottomNavigationAction\n        label=\"Nearby\"\n        value=\"nearby\"\n        icon={<LocationOnIcon />}\n      />\n      <BottomNavigationAction label=\"Folder\" value=\"folder\" icon={<FolderIcon />} />\n    </BottomNavigation>\n  );\n}\n",
+      "sha256": "39ccbe47cf354ea70e751ad9aa2001dc59fed06fb4353984deaf25a1767c4fb6",
+      "upstreamPath": "docs/data/material/components/bottom-navigation/LabelBottomNavigation.tsx",
+      "upstreamSha256": "e57182f7c9c38d1b859279b6a916a7398a6284f6c259856fdbb4cab1aee2eedb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/bottom-navigation/SimpleBottomNavigation.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport BottomNavigation from '@mui/material/BottomNavigation';\nimport BottomNavigationAction from '@mui/material/BottomNavigationAction';\nimport RestoreIcon from '@mui/icons-material/Restore';\nimport FavoriteIcon from '@mui/icons-material/Favorite';\nimport LocationOnIcon from '@mui/icons-material/LocationOn';\n\nexport default function SimpleBottomNavigation() {\n  const [value, setValue] = React.useState(0);\n\n  return (\n    <Box sx={{ width: 500 }}>\n      <BottomNavigation\n        showLabels\n        value={value}\n        onChange={(event, newValue) => {\n          setValue(newValue);\n        }}\n      >\n        <BottomNavigationAction label=\"Recents\" icon={<RestoreIcon />} />\n        <BottomNavigationAction label=\"Favorites\" icon={<FavoriteIcon />} />\n        <BottomNavigationAction label=\"Nearby\" icon={<LocationOnIcon />} />\n      </BottomNavigation>\n    </Box>\n  );\n}\n",
+      "sha256": "50038b97031d3743464c9589348a76875acef63783a9a46d5871b61efc13e7c4",
+      "upstreamPath": "docs/data/material/components/bottom-navigation/SimpleBottomNavigation.tsx",
+      "upstreamSha256": "8859e112b5cea6163c26896856fd6d2cfaaef146f2554d261ee60c0a1b351925",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/bottom-navigation/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/bottom-navigation/FixedBottomNavigation\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2fa1936d2f4e016c9bdb4c7b1f41907e427b3258cb77de8c2f8e141f8463e0c6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/bottom-navigation/previews/label-bottom-navigation.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/bottom-navigation/LabelBottomNavigation\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2635d5081aeca3b3bc3df2adf3c7e263e35c37bb1add6e54f20d536624874a37",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/bottom-navigation/previews/simple-bottom-navigation.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/bottom-navigation/SimpleBottomNavigation\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "fefbbb03e6fa39cf9604a4e8569a3e13d94759f18c248d4806f802f37c9e65a2",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "bottom-navigation",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/bottom-navigation",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/bottom-navigation/FixedBottomNavigation.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/bottom-navigation/FixedBottomNavigation.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI bottom navigation\n\n3 published Material UI bottom navigation examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/bottom-navigation\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/bottom-navigation/FixedBottomNavigation.tsx\n"
+}

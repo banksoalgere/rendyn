@@ -1,0 +1,228 @@
+{
+  "id": "mui:icons",
+  "sourceId": "mui",
+  "slug": "mui-icons",
+  "name": "Material UI icons",
+  "description": "9 published Material UI icons examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/icons-material@9.4.0",
+    "@mui/material@9.4.0",
+    "fg-loadcss@3.1.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "icons",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file"
+    ],
+    "aliases": [
+      "icons",
+      "material ui icons"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "9 published Material UI icons examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "icons:code:command:data:file",
+    "searchText": "Material UI icons\nicons\n9 published Material UI icons examples with complete pinned source and MIT attribution.\nmaterial ui icons\ncode\ncommand\ndata\nfile\nMaterial UI icons 9 published Material UI icons examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/icons Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/icons/CreateSvgIcon.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-icons",
+  "manifestPath": "components/mui-icons/component.json",
+  "integrity": "sha256:2ae300b1490d468a2ba754d4122fdc145bff61cebb0e41c7062334077d534831",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/icons/CreateSvgIcon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Stack from '@mui/material/Stack';\nimport { createSvgIcon } from '@mui/material/utils';\n\nconst HomeIcon = createSvgIcon(\n  <path d=\"M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z\" />,\n  'Home',\n);\n\nconst PlusIcon = createSvgIcon(\n  // credit: plus icon from https://heroicons.com\n  <svg fill=\"none\" viewBox=\"0 0 24 24\" strokeWidth={1.5} stroke=\"currentColor\">\n    <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M12 4.5v15m7.5-7.5h-15\" />\n  </svg>,\n  'Plus',\n);\n\nexport default function CreateSvgIcon() {\n  return (\n    <Stack direction=\"row\" spacing={3}>\n      <HomeIcon />\n      <HomeIcon color=\"primary\" />\n      <PlusIcon />\n      <PlusIcon color=\"secondary\" />\n    </Stack>\n  );\n}\n",
+      "sha256": "7c514646a16a8e1a49cbe5b65156a76063cf44d8ad1076e85fa264fb0bf4e49f",
+      "upstreamPath": "docs/data/material/components/icons/CreateSvgIcon.tsx",
+      "upstreamSha256": "16129b9784999a1c651a126cfbbdcf5098e29114bf362bf74bd57503d12e632d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/icons/FontAwesomeIcon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport { loadCSS } from 'fg-loadcss';\nimport Stack from '@mui/material/Stack';\nimport { green } from '@mui/material/colors';\nimport Icon from '@mui/material/Icon';\n\nexport default function FontAwesomeIcon() {\n  React.useEffect(() => {\n    const href = 'https://use.fontawesome.com/releases/v5.14.0/css/all.css';\n    if (document.querySelector(`link[href=\"${href}\"]`)) {\n      return undefined;\n    }\n\n    const node = loadCSS(\n      href,\n      // Inject before JSS\n      (document.querySelector('#font-awesome-css') ||\n        document.head.firstChild) as HTMLElement,\n    );\n\n    return () => {\n      node.parentNode!.removeChild(node);\n    };\n  }, []);\n\n  return (\n    <Stack direction=\"row\" spacing={4} sx={{ alignItems: 'flex-end' }}>\n      <Icon baseClassName=\"fas\" className=\"fa-plus-circle\" />\n      <Icon baseClassName=\"fas\" className=\"fa-plus-circle\" color=\"primary\" />\n      <Icon\n        baseClassName=\"fas\"\n        className=\"fa-plus-circle\"\n        sx={{ color: green[500] }}\n      />\n      <Icon baseClassName=\"fas\" className=\"fa-plus-circle\" fontSize=\"small\" />\n      <Icon baseClassName=\"fas\" className=\"fa-plus-circle\" sx={{ fontSize: 30 }} />\n    </Stack>\n  );\n}\n",
+      "sha256": "48308a23710a57b878fde388a9c1f3711a3f5ff53f7baf6c711f5e7f6caca553",
+      "upstreamPath": "docs/data/material/components/icons/FontAwesomeIcon.tsx",
+      "upstreamSha256": "7b56026a7a566b368ea717429c65ce8d135d0fd7405326b86a7884441bead023",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/icons/FontAwesomeIconSize.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport { loadCSS } from 'fg-loadcss';\nimport { ThemeProvider, createTheme } from '@mui/material/styles';\nimport Stack from '@mui/material/Stack';\nimport Icon from '@mui/material/Icon';\nimport MdPhone from '@mui/icons-material/Phone';\nimport Chip from '@mui/material/Chip';\n\nconst theme = createTheme({\n  colorSchemes: { light: true, dark: true },\n  components: {\n    MuiIcon: {\n      styleOverrides: {\n        root: {\n          // Match 24px = 3 * 2 + 1.125 * 16\n          boxSizing: 'content-box',\n          padding: 3,\n          fontSize: '1.125rem',\n        },\n      },\n    },\n  },\n});\n\nexport default function FontAwesomeIconSize() {\n  React.useEffect(() => {\n    const href = 'https://use.fontawesome.com/releases/v5.14.0/css/all.css';\n    if (document.querySelector(`link[href=\"${href}\"]`)) {\n      return undefined;\n    }\n\n    const node = loadCSS(\n      href,\n      // Inject before JSS\n      (document.querySelector('#font-awesome-css') ||\n        document.head.firstChild) as HTMLElement,\n    );\n\n    return () => {\n      node.parentNode!.removeChild(node);\n    };\n  }, []);\n\n  return (\n    <Stack direction=\"row\" spacing={2}>\n      <ThemeProvider theme={theme}>\n        <Chip icon={<MdPhone />} label=\"Call me\" />\n        <Chip icon={<Icon className=\"fas fa-phone-alt\" />} label=\"Call me\" />\n      </ThemeProvider>\n    </Stack>\n  );\n}\n",
+      "sha256": "b0c9d406a616cf6510a4b6888f517cb969167279367a10fc4482d0761e299017",
+      "upstreamPath": "docs/data/material/components/icons/FontAwesomeIconSize.tsx",
+      "upstreamSha256": "340e4b2c83c200eae83e5fbf874fb2dbf6d0bc753cc515cf7fa5a7dd812fd213",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/icons/Icons.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Stack from '@mui/material/Stack';\nimport { green } from '@mui/material/colors';\nimport Icon from '@mui/material/Icon';\n\nexport default function Icons() {\n  return (\n    <Stack direction=\"row\" spacing={3}>\n      <Icon>add_circle</Icon>\n      <Icon color=\"primary\">add_circle</Icon>\n      <Icon sx={{ color: green[500] }}>add_circle</Icon>\n      <Icon fontSize=\"small\">add_circle</Icon>\n      <Icon sx={{ fontSize: 30 }}>add_circle</Icon>\n    </Stack>\n  );\n}\n",
+      "sha256": "0e5ec76f90db458cb696cac0f565206a08117e07ec79cbf0dea8f62e87fb2ff9",
+      "upstreamPath": "docs/data/material/components/icons/Icons.tsx",
+      "upstreamSha256": "35b903b9d3484876f1bcebc3b3ed2d54f170f46a2db46f173ee219267781e34e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/icons/SvgIconChildren.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport SvgIcon from '@mui/material/SvgIcon';\n\nexport default function SvgIconChildren() {\n  return (\n    <SvgIcon>\n      {/* credit: cog icon from https://heroicons.com */}\n      <svg fill=\"none\" viewBox=\"0 0 24 24\" strokeWidth={1.5} stroke=\"currentColor\">\n        <path\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n          d=\"M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205L12 12m6.894 5.785l-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864l-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495\"\n        />\n      </svg>\n    </SvgIcon>\n  );\n}\n",
+      "sha256": "391674bd96b51baedc019c513d2bcdae80e12a362e384412e21aef456299eebe",
+      "upstreamPath": "docs/data/material/components/icons/SvgIconChildren.tsx",
+      "upstreamSha256": "aa7b522386cb44c1a096e449b6a6e93031245dcd8936ed9e59574d25d559912a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/icons/SvgIconsColor.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Stack from '@mui/material/Stack';\nimport { pink } from '@mui/material/colors';\nimport SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';\n\nfunction HomeIcon(props: SvgIconProps) {\n  return (\n    <SvgIcon {...props}>\n      <path d=\"M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z\" />\n    </SvgIcon>\n  );\n}\n\nexport default function SvgIconsColor() {\n  return (\n    <Stack direction=\"row\" spacing={3}>\n      <HomeIcon />\n      <HomeIcon color=\"primary\" />\n      <HomeIcon color=\"secondary\" />\n      <HomeIcon color=\"success\" />\n      <HomeIcon color=\"action\" />\n      <HomeIcon color=\"disabled\" />\n      <HomeIcon sx={{ color: pink[500] }} />\n    </Stack>\n  );\n}\n",
+      "sha256": "4bac65fac12c8f95201f235221b9292721c078b6500398d2bd38abcad7366c4a",
+      "upstreamPath": "docs/data/material/components/icons/SvgIconsColor.tsx",
+      "upstreamSha256": "695f805939efd785b9ad970f97157c090ec6b6cf06a35b72218c2160d7a2cc13",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/icons/SvgIconsSize.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Stack from '@mui/material/Stack';\nimport SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';\n\nfunction HomeIcon(props: SvgIconProps) {\n  return (\n    <SvgIcon {...props}>\n      <path d=\"M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z\" />\n    </SvgIcon>\n  );\n}\n\nexport default function SvgIconsSize() {\n  return (\n    <Stack direction=\"row\" spacing={3} sx={{ alignItems: 'flex-end' }}>\n      <HomeIcon fontSize=\"small\" />\n      <HomeIcon />\n      <HomeIcon fontSize=\"large\" />\n      <HomeIcon sx={{ fontSize: 40 }} />\n    </Stack>\n  );\n}\n",
+      "sha256": "29b2b02af8036cd19e4e01edb98d6029f52773b33001fada9174375d47338495",
+      "upstreamPath": "docs/data/material/components/icons/SvgIconsSize.tsx",
+      "upstreamSha256": "9a6668bba5855d266b824b8c0ad57baa656cea1ca4a908dd7608b3d5dc937ee9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/icons/SvgMaterialIcons.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Box from '@mui/material/Box';\nimport Grid from '@mui/material/Grid';\nimport Typography from '@mui/material/Typography';\nimport DeleteIcon from '@mui/icons-material/Delete';\nimport DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';\nimport DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';\nimport DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';\nimport DeleteSharpIcon from '@mui/icons-material/DeleteSharp';\nimport DeleteForeverIcon from '@mui/icons-material/DeleteForever';\nimport DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';\nimport DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';\nimport DeleteForeverTwoToneIcon from '@mui/icons-material/DeleteForeverTwoTone';\nimport DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';\nimport ThreeDRotationIcon from '@mui/icons-material/ThreeDRotation';\nimport FourKIcon from '@mui/icons-material/FourK';\nimport ThreeSixtyIcon from '@mui/icons-material/ThreeSixty';\n\nexport default function SvgMaterialIcons() {\n  return (\n    <Box sx={{ flexGrow: 1 }}>\n      <Grid container sx={{ color: 'text.primary' }}>\n        <Grid size={4}>\n          <Typography>Filled</Typography>\n        </Grid>\n        <Grid size={8}>\n          <DeleteIcon />\n          <DeleteForeverIcon />\n        </Grid>\n        <Grid size={4}>\n          <Typography>Outlined</Typography>\n        </Grid>\n        <Grid size={8}>\n          <DeleteOutlinedIcon />\n          <DeleteForeverOutlinedIcon />\n        </Grid>\n        <Grid size={4}>\n          <Typography>Rounded</Typography>\n        </Grid>\n        <Grid size={8}>\n          <DeleteRoundedIcon />\n          <DeleteForeverRoundedIcon />\n        </Grid>\n        <Grid size={4}>\n          <Typography>Two Tone</Typography>\n        </Grid>\n        <Grid size={8}>\n          <DeleteTwoToneIcon />\n          <DeleteForeverTwoToneIcon />\n        </Grid>\n        <Grid size={4}>\n          <Typography>Sharp</Typography>\n        </Grid>\n        <Grid size={8}>\n          <DeleteSharpIcon />\n          <DeleteForeverSharpIcon />\n        </Grid>\n        <Grid size={4}>\n          <Typography>Edge-cases</Typography>\n        </Grid>\n        <Grid size={8}>\n          <ThreeDRotationIcon />\n          <FourKIcon />\n          <ThreeSixtyIcon />\n        </Grid>\n      </Grid>\n    </Box>\n  );\n}\n",
+      "sha256": "b303f9f19a232681ab595f4f4e921ffadaafd88c55fe82868127992d3da2eb08",
+      "upstreamPath": "docs/data/material/components/icons/SvgMaterialIcons.tsx",
+      "upstreamSha256": "3fb0a1112a8704a4ca5dbb04807a4ab67e05cacf7a270fa7f1b2345139be3b2e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/icons/TwoToneIcons.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { useTheme } from '@mui/material/styles';\nimport Icon from '@mui/material/Icon';\n\nconst useIsDarkMode = () => {\n  const theme = useTheme();\n  return theme.palette.mode === 'dark';\n};\n\nexport default function TwoToneIcons() {\n  const isDarkMode = useIsDarkMode();\n\n  return (\n    <Icon\n      sx={[isDarkMode && { filter: 'invert(1)' }]}\n      baseClassName=\"material-icons-two-tone\"\n    >\n      add_circle\n    </Icon>\n  );\n}\n",
+      "sha256": "874e204dc514c675cfea22a534f8c1ea2b267222261545632f1b58b4943a61c7",
+      "upstreamPath": "docs/data/material/components/icons/TwoToneIcons.tsx",
+      "upstreamSha256": "ef1b0f4da7c3a37450cb2e514e37fd202034b3c427274d9f07259c98017354b6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/icons/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/icons/CreateSvgIcon\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "772f1190502d1310ba85ba4314fc280b938ce9380566e2ee702aca42dec8a0fe",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/icons/previews/font-awesome-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/icons/FontAwesomeIcon\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "3a3ad590d02a508009298e9734fbdac22eb75dec50e2dfa9802692e3a071bc45",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/icons/previews/font-awesome-icon-size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/icons/FontAwesomeIconSize\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a52844dea456f1ecb36d257f54bff9a4c05b496e0c85450d30c45b6ab021499a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/icons/previews/icons.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/icons/Icons\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "5447d40af0c4846f5744dd71f8824298893340dc5864227b36b0d4da89e00d28",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/icons/previews/svg-icon-children.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/icons/SvgIconChildren\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2fe32dbecaed2ceacd40e6daf714327a42f3d6fb725398acf418f23fadf2e46f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/icons/previews/svg-icons-color.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/icons/SvgIconsColor\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e55782141edc7eac7137ccb632c9312ea851529461bc3dfb5c615f4e30b5b1b7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/icons/previews/svg-icons-size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/icons/SvgIconsSize\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "b1bed95b8e9cd560e7561ac711d8d57b93108cc6b5f17e8cf257e09784922b61",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/icons/previews/svg-material-icons.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/icons/SvgMaterialIcons\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d3ffa2ced740eea5add80204d32e33047107eb5323e9895e7f17ba34987a7984",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/icons/previews/two-tone-icons.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/icons/TwoToneIcons\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "57d5b6ef58823869df0238a7b0446d36f9308bd8818ec5d67425dc7e9dc3ce55",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0 fg-loadcss@3.1.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0 fg-loadcss@3.1.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "icons",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/icons",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/icons/CreateSvgIcon.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/icons/CreateSvgIcon.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI icons\n\n9 published Material UI icons examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/icons\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/icons/CreateSvgIcon.tsx\n"
+}

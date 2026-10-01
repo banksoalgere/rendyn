@@ -1,0 +1,182 @@
+{
+  "id": "mui:modal",
+  "sourceId": "mui",
+  "slug": "mui-modal",
+  "name": "Material UI modal",
+  "description": "6 published Material UI modal examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/material@9.4.0",
+    "@react-spring/web@10.1.2"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "modal",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file",
+      "modal"
+    ],
+    "aliases": [
+      "modal",
+      "material ui modal",
+      "dialog",
+      "overlay"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "6 published Material UI modal examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "modal:code:command:data:file",
+    "searchText": "Material UI modal\nmodal\n6 published Material UI modal examples with complete pinned source and MIT attribution.\nmaterial ui modal\ndialog\noverlay\ncode\ncommand\ndata\nfile\nMaterial UI modal 6 published Material UI modal examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/modal Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/modal/BasicModal.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-modal",
+  "manifestPath": "components/mui-modal/component.json",
+  "integrity": "sha256:653d68cb440720f4e63046ea2798782d6b5c45be778a6f04241e1e0940ea54d5",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/modal/BasicModal.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Button from '@mui/material/Button';\nimport Typography from '@mui/material/Typography';\nimport Modal from '@mui/material/Modal';\n\nconst style = {\n  position: 'absolute',\n  top: '50%',\n  left: '50%',\n  transform: 'translate(-50%, -50%)',\n  width: 400,\n  bgcolor: 'background.paper',\n  border: '2px solid #000',\n  boxShadow: 24,\n  p: 4,\n};\n\nexport default function BasicModal() {\n  const [open, setOpen] = React.useState(false);\n  const handleOpen = () => setOpen(true);\n  const handleClose = () => setOpen(false);\n\n  return (\n    <div>\n      <Button onClick={handleOpen}>Open modal</Button>\n      <Modal\n        open={open}\n        onClose={handleClose}\n        aria-labelledby=\"modal-modal-title\"\n        aria-describedby=\"modal-modal-description\"\n      >\n        <Box sx={style}>\n          <Typography id=\"modal-modal-title\" variant=\"h6\" component=\"h2\">\n            Text in a modal\n          </Typography>\n          <Typography id=\"modal-modal-description\" sx={{ mt: 2 }}>\n            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.\n          </Typography>\n        </Box>\n      </Modal>\n    </div>\n  );\n}\n",
+      "sha256": "bec26d7a109333896f4d67fe2762e5b39a18686c1e7b0b1244372d63b4f20f9c",
+      "upstreamPath": "docs/data/material/components/modal/BasicModal.tsx",
+      "upstreamSha256": "2c7b79d86fc7fa8d5eca3d7517d85cac61e89ad14e4f564a9dbfc6be0a657a95",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/modal/KeepMountedModal.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Modal from '@mui/material/Modal';\nimport Button from '@mui/material/Button';\nimport Typography from '@mui/material/Typography';\n\nconst style = {\n  position: 'absolute',\n  top: '50%',\n  left: '50%',\n  transform: 'translate(-50%, -50%)',\n  width: 400,\n  bgcolor: 'background.paper',\n  border: '2px solid #000',\n  boxShadow: 24,\n  p: 4,\n};\n\nexport default function KeepMountedModal() {\n  const [open, setOpen] = React.useState(false);\n  const handleOpen = () => setOpen(true);\n  const handleClose = () => setOpen(false);\n\n  return (\n    <div>\n      <Button onClick={handleOpen}>Open modal</Button>\n      <Modal\n        keepMounted\n        open={open}\n        onClose={handleClose}\n        aria-labelledby=\"keep-mounted-modal-title\"\n        aria-describedby=\"keep-mounted-modal-description\"\n      >\n        <Box sx={style}>\n          <Typography id=\"keep-mounted-modal-title\" variant=\"h6\" component=\"h2\">\n            Text in a modal\n          </Typography>\n          <Typography id=\"keep-mounted-modal-description\" sx={{ mt: 2 }}>\n            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.\n          </Typography>\n        </Box>\n      </Modal>\n    </div>\n  );\n}\n",
+      "sha256": "16c0eca4786de6f4d8be122a60fbcd6c1713c1adef3753387208ab88d55467dd",
+      "upstreamPath": "docs/data/material/components/modal/KeepMountedModal.tsx",
+      "upstreamSha256": "1d66ea260e24d1ca92a4473f6df13d568a9a58abb6ea23fdb3af4166a5196470",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/modal/NestedModal.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Modal from '@mui/material/Modal';\nimport Button from '@mui/material/Button';\n\nconst style = {\n  position: 'absolute',\n  top: '50%',\n  left: '50%',\n  transform: 'translate(-50%, -50%)',\n  width: 400,\n  bgcolor: 'background.paper',\n  border: '2px solid #000',\n  boxShadow: 24,\n  pt: 2,\n  px: 4,\n  pb: 3,\n};\n\nfunction ChildModal() {\n  const [open, setOpen] = React.useState(false);\n  const handleOpen = () => {\n    setOpen(true);\n  };\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <React.Fragment>\n      <Button onClick={handleOpen}>Open Child Modal</Button>\n      <Modal\n        open={open}\n        onClose={handleClose}\n        aria-labelledby=\"child-modal-title\"\n        aria-describedby=\"child-modal-description\"\n      >\n        <Box sx={{ ...style, width: 200 }}>\n          <h2 id=\"child-modal-title\">Text in a child modal</h2>\n          <p id=\"child-modal-description\">\n            Lorem ipsum, dolor sit amet consectetur adipisicing elit.\n          </p>\n          <Button onClick={handleClose}>Close Child Modal</Button>\n        </Box>\n      </Modal>\n    </React.Fragment>\n  );\n}\n\nexport default function NestedModal() {\n  const [open, setOpen] = React.useState(false);\n  const handleOpen = () => {\n    setOpen(true);\n  };\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <div>\n      <Button onClick={handleOpen}>Open modal</Button>\n      <Modal\n        open={open}\n        onClose={handleClose}\n        aria-labelledby=\"parent-modal-title\"\n        aria-describedby=\"parent-modal-description\"\n      >\n        <Box sx={{ ...style, width: 400 }}>\n          <h2 id=\"parent-modal-title\">Text in a modal</h2>\n          <p id=\"parent-modal-description\">\n            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.\n          </p>\n          <ChildModal />\n        </Box>\n      </Modal>\n    </div>\n  );\n}\n",
+      "sha256": "61ac046129b4f745eb67504a0f871e5477be129e1c85fb7f05ebb44afd712357",
+      "upstreamPath": "docs/data/material/components/modal/NestedModal.tsx",
+      "upstreamSha256": "9a9c764cfd4bd17e49ed979b2991969d9c44791226a0c9179301a1326fbe8c63",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/modal/ServerModal.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Modal from '@mui/material/Modal';\nimport Typography from '@mui/material/Typography';\nimport Box from '@mui/material/Box';\n\nexport default function ServerModal() {\n  const rootRef = React.useRef<HTMLDivElement>(null);\n\n  return (\n    <Box\n      sx={{\n        height: 300,\n        flexGrow: 1,\n        minWidth: 300,\n        transform: 'translateZ(0)',\n      }}\n      ref={rootRef}\n    >\n      <Modal\n        disablePortal\n        disableEnforceFocus\n        disableAutoFocus\n        open\n        aria-labelledby=\"server-modal-title\"\n        aria-describedby=\"server-modal-description\"\n        sx={{\n          display: 'flex',\n          p: 1,\n          alignItems: 'center',\n          justifyContent: 'center',\n        }}\n        container={() => rootRef.current!}\n      >\n        <Box\n          sx={(theme) => ({\n            position: 'relative',\n            width: 400,\n            bgcolor: 'background.paper',\n            border: '2px solid #000',\n            boxShadow: theme.shadows[5],\n            p: 4,\n          })}\n        >\n          <Typography id=\"server-modal-title\" variant=\"h6\" component=\"h2\">\n            Server-side modal\n          </Typography>\n          <Typography id=\"server-modal-description\" sx={{ pt: 2 }}>\n            If you disable JavaScript, you will still see me.\n          </Typography>\n        </Box>\n      </Modal>\n    </Box>\n  );\n}\n",
+      "sha256": "b658e5841d4e7ab25ec260168e1d8d6f7ed991d3467da0a7871e2bc7123d7bb5",
+      "upstreamPath": "docs/data/material/components/modal/ServerModal.tsx",
+      "upstreamSha256": "2942340f52b70f533db9fa38d07906807560412aef283a63e5b627cd5a1c91e0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/modal/SpringModal.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Backdrop from '@mui/material/Backdrop';\nimport Box from '@mui/material/Box';\nimport Modal from '@mui/material/Modal';\nimport Button from '@mui/material/Button';\nimport Typography from '@mui/material/Typography';\nimport { useSpring, animated } from '@react-spring/web';\n\ninterface FadeProps {\n  children: React.ReactElement<any>;\n  in?: boolean;\n  onClick?: any;\n  onEnter?: (node: HTMLElement, isAppearing: boolean) => void;\n  onExited?: (node: HTMLElement, isAppearing: boolean) => void;\n  ownerState?: any;\n}\n\nconst Fade = React.forwardRef<HTMLDivElement, FadeProps>(function Fade(props, ref) {\n  const {\n    children,\n    in: open,\n    onClick,\n    onEnter,\n    onExited,\n    ownerState,\n    ...other\n  } = props;\n  const style = useSpring({\n    from: { opacity: 0 },\n    to: { opacity: open ? 1 : 0 },\n    onStart: () => {\n      if (open && onEnter) {\n        onEnter(null as any, true);\n      }\n    },\n    onRest: () => {\n      if (!open && onExited) {\n        onExited(null as any, true);\n      }\n    },\n  });\n\n  return (\n    <animated.div ref={ref} style={style} {...other}>\n      {React.cloneElement(children, { onClick })}\n    </animated.div>\n  );\n});\n\nconst style = {\n  position: 'absolute',\n  top: '50%',\n  left: '50%',\n  transform: 'translate(-50%, -50%)',\n  width: 400,\n  bgcolor: 'background.paper',\n  border: '2px solid #000',\n  boxShadow: 24,\n  p: 4,\n};\n\nexport default function SpringModal() {\n  const [open, setOpen] = React.useState(false);\n  const handleOpen = () => setOpen(true);\n  const handleClose = () => setOpen(false);\n\n  return (\n    <div>\n      <Button onClick={handleOpen}>Open modal</Button>\n      <Modal\n        aria-labelledby=\"spring-modal-title\"\n        aria-describedby=\"spring-modal-description\"\n        open={open}\n        onClose={handleClose}\n        closeAfterTransition\n        slots={{ backdrop: Backdrop }}\n        slotProps={{\n          backdrop: { slots: { transition: Fade } },\n        }}\n      >\n        <Fade in={open}>\n          <Box sx={style}>\n            <Typography id=\"spring-modal-title\" variant=\"h6\" component=\"h2\">\n              Text in a modal\n            </Typography>\n            <Typography id=\"spring-modal-description\" sx={{ mt: 2 }}>\n              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.\n            </Typography>\n          </Box>\n        </Fade>\n      </Modal>\n    </div>\n  );\n}\n",
+      "sha256": "189ba112f5910cadd983bc9a7155e0767c9121f337c290b8a6b985be46230d05",
+      "upstreamPath": "docs/data/material/components/modal/SpringModal.tsx",
+      "upstreamSha256": "ea3637be9bd1d1eda01c905868340d2c3d2cc1f9dcc45b7e63dbc92a73223aa2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/modal/TransitionsModal.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Backdrop from '@mui/material/Backdrop';\nimport Box from '@mui/material/Box';\nimport Modal from '@mui/material/Modal';\nimport Fade from '@mui/material/Fade';\nimport Button from '@mui/material/Button';\nimport Typography from '@mui/material/Typography';\n\nconst style = {\n  position: 'absolute',\n  top: '50%',\n  left: '50%',\n  transform: 'translate(-50%, -50%)',\n  width: 400,\n  bgcolor: 'background.paper',\n  border: '2px solid #000',\n  boxShadow: 24,\n  p: 4,\n};\n\nexport default function TransitionsModal() {\n  const [open, setOpen] = React.useState(false);\n  const handleOpen = () => setOpen(true);\n  const handleClose = () => setOpen(false);\n\n  return (\n    <div>\n      <Button onClick={handleOpen}>Open modal</Button>\n      <Modal\n        aria-labelledby=\"transition-modal-title\"\n        aria-describedby=\"transition-modal-description\"\n        open={open}\n        onClose={handleClose}\n        closeAfterTransition\n        slots={{ backdrop: Backdrop }}\n        slotProps={{\n          backdrop: {\n            timeout: 500,\n          },\n        }}\n      >\n        <Fade in={open}>\n          <Box sx={style}>\n            <Typography id=\"transition-modal-title\" variant=\"h6\" component=\"h2\">\n              Text in a modal\n            </Typography>\n            <Typography id=\"transition-modal-description\" sx={{ mt: 2 }}>\n              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.\n            </Typography>\n          </Box>\n        </Fade>\n      </Modal>\n    </div>\n  );\n}\n",
+      "sha256": "3ad7324861aaefe26291192aa38bdb5819bfe8271b6b1bfe4944005d50398755",
+      "upstreamPath": "docs/data/material/components/modal/TransitionsModal.tsx",
+      "upstreamSha256": "47b017f9e783cca41375ad3c8a2b7d9f7fe7d0e915f91afe90d97f2f8052af42",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/modal/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/modal/BasicModal\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "067836082cee706fcf42b816b258b12a563a6ec4db510eb8eea947e76e238c60",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/modal/previews/keep-mounted-modal.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/modal/KeepMountedModal\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0980658083ddfd608100be20cf00dbefd0dcb97920c98eeb14da21c6ff8616c5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/modal/previews/nested-modal.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/modal/NestedModal\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "c244f9bb739a28a03511caf4151bcf9f8764836be8a3948512da86943b28a9c7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/modal/previews/server-modal.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/modal/ServerModal\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1d0099028d1179a0ce5f4dbfae6cf2975662a48653f66450586fd1d0c252270a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/modal/previews/spring-modal.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/modal/SpringModal\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "910aed079003362e5a00e94f2b578fc4cefa094b7051a9ee0162aae5160d4d17",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/modal/previews/transitions-modal.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/modal/TransitionsModal\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "427248d7bf31fb73920b257c754ed988ad03e6a1b782e7fd9132f3fbeeb49169",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0 @react-spring/web@10.1.2",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0 @react-spring/web@10.1.2",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "modal",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/modal",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/modal/BasicModal.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/modal/BasicModal.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI modal\n\n6 published Material UI modal examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/modal\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/modal/BasicModal.tsx\n"
+}

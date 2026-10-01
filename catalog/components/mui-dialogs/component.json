@@ -1,0 +1,277 @@
+{
+  "id": "mui:dialogs",
+  "sourceId": "mui",
+  "slug": "mui-dialogs",
+  "name": "Material UI dialogs",
+  "description": "12 published Material UI dialogs examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/icons-material@9.4.0",
+    "@mui/material@9.4.0",
+    "react-draggable@4.7.2"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "dialogs",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "dialog",
+      "file"
+    ],
+    "aliases": [
+      "dialogs",
+      "material ui dialogs"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "12 published Material UI dialogs examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "dialogs:code:command:data:dialog:file",
+    "searchText": "Material UI dialogs\ndialogs\n12 published Material UI dialogs examples with complete pinned source and MIT attribution.\nmaterial ui dialogs\ncode\ncommand\ndata\ndialog\nfile\nMaterial UI dialogs 12 published Material UI dialogs examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/dialogs Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/dialogs/AlertDialog.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-dialogs",
+  "manifestPath": "components/mui-dialogs/component.json",
+  "integrity": "sha256:ea5fdd53d464cca4783ec2410de4ec314f37319d501d9ffa26ac4e0cf7cf627a",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/dialogs/AlertDialog.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport Dialog from '@mui/material/Dialog';\nimport DialogActions from '@mui/material/DialogActions';\nimport DialogContent from '@mui/material/DialogContent';\nimport DialogContentText from '@mui/material/DialogContentText';\nimport DialogTitle from '@mui/material/DialogTitle';\n\nexport default function AlertDialog() {\n  const [open, setOpen] = React.useState(false);\n\n  const handleClickOpen = () => {\n    setOpen(true);\n  };\n\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <React.Fragment>\n      <Button variant=\"outlined\" onClick={handleClickOpen}>\n        Open alert dialog\n      </Button>\n      <Dialog\n        open={open}\n        onClose={handleClose}\n        aria-labelledby=\"alert-dialog-title\"\n        aria-describedby=\"alert-dialog-description\"\n        role=\"alertdialog\"\n      >\n        <DialogTitle id=\"alert-dialog-title\">\n          {\"Use Google's location service?\"}\n        </DialogTitle>\n        <DialogContent>\n          <DialogContentText id=\"alert-dialog-description\">\n            Let Google help apps determine location. This means sending anonymous\n            location data to Google, even when no apps are running.\n          </DialogContentText>\n        </DialogContent>\n        <DialogActions>\n          <Button onClick={handleClose} autoFocus>\n            Disagree\n          </Button>\n          <Button onClick={handleClose}>Agree</Button>\n        </DialogActions>\n      </Dialog>\n    </React.Fragment>\n  );\n}\n",
+      "sha256": "860704fc17ff6b780a6f5f20afd6ecdc82f5095557101abec5c67f551cd86ca1",
+      "upstreamPath": "docs/data/material/components/dialogs/AlertDialog.tsx",
+      "upstreamSha256": "ac67de9bd0359cc355afef0516135e276158d76bfad60f24f72f734f88da58c8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/dialogs/AlertDialogSlide.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport Dialog from '@mui/material/Dialog';\nimport DialogActions from '@mui/material/DialogActions';\nimport DialogContent from '@mui/material/DialogContent';\nimport DialogContentText from '@mui/material/DialogContentText';\nimport DialogTitle from '@mui/material/DialogTitle';\nimport Slide from '@mui/material/Slide';\nimport { TransitionProps } from '@mui/material/transitions';\n\nconst Transition = React.forwardRef(function Transition(\n  props: TransitionProps & {\n    children: React.ReactElement<any, any>;\n  },\n  ref: React.Ref<unknown>,\n) {\n  return <Slide direction=\"up\" ref={ref} {...props} />;\n});\n\nexport default function AlertDialogSlide() {\n  const [open, setOpen] = React.useState(false);\n\n  const handleClickOpen = () => {\n    setOpen(true);\n  };\n\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <React.Fragment>\n      <Button variant=\"outlined\" onClick={handleClickOpen}>\n        Slide in alert dialog\n      </Button>\n      <Dialog\n        open={open}\n        slots={{\n          transition: Transition,\n        }}\n        keepMounted\n        onClose={handleClose}\n        aria-describedby=\"alert-dialog-slide-description\"\n        role=\"alertdialog\"\n      >\n        <DialogTitle>{\"Use Google's location service?\"}</DialogTitle>\n        <DialogContent>\n          <DialogContentText id=\"alert-dialog-slide-description\">\n            Let Google help apps determine location. This means sending anonymous\n            location data to Google, even when no apps are running.\n          </DialogContentText>\n        </DialogContent>\n        <DialogActions>\n          <Button onClick={handleClose} autoFocus>\n            Disagree\n          </Button>\n          <Button onClick={handleClose}>Agree</Button>\n        </DialogActions>\n      </Dialog>\n    </React.Fragment>\n  );\n}\n",
+      "sha256": "371dfcbc65ef42244a6d4412d190aa2293bfa934f0fa00d5667e21589ef90e97",
+      "upstreamPath": "docs/data/material/components/dialogs/AlertDialogSlide.tsx",
+      "upstreamSha256": "86f84b7d3aa48c09c12afd75692d2ae8e6d245e7cdc37df5b6bb0ce75db32e53",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/dialogs/ConfirmationDialog.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Button from '@mui/material/Button';\nimport List from '@mui/material/List';\nimport ListItemButton from '@mui/material/ListItemButton';\nimport ListItemText from '@mui/material/ListItemText';\nimport DialogTitle from '@mui/material/DialogTitle';\nimport DialogContent from '@mui/material/DialogContent';\nimport DialogActions from '@mui/material/DialogActions';\nimport Dialog from '@mui/material/Dialog';\nimport RadioGroup from '@mui/material/RadioGroup';\nimport Radio from '@mui/material/Radio';\nimport FormControlLabel from '@mui/material/FormControlLabel';\n\nconst options = [\n  'None',\n  'Atria',\n  'Callisto',\n  'Dione',\n  'Ganymede',\n  'Hangouts Call',\n  'Luna',\n  'Oberon',\n  'Phobos',\n  'Pyxis',\n  'Sedna',\n  'Titania',\n  'Triton',\n  'Umbriel',\n];\n\nexport interface ConfirmationDialogRawProps {\n  id: string;\n  keepMounted: boolean;\n  value: string;\n  open: boolean;\n  onClose: (value?: string) => void;\n}\n\nfunction ConfirmationDialogRaw(props: ConfirmationDialogRawProps) {\n  const { onClose, value: valueProp, open, ...other } = props;\n  const [value, setValue] = React.useState(valueProp);\n  const radioGroupRef = React.useRef<HTMLElement>(null);\n\n  React.useEffect(() => {\n    if (!open) {\n      setValue(valueProp);\n    }\n  }, [valueProp, open]);\n\n  const handleEntering = () => {\n    if (radioGroupRef.current != null) {\n      radioGroupRef.current.focus();\n    }\n  };\n\n  const handleCancel = () => {\n    onClose();\n  };\n\n  const handleOk = () => {\n    onClose(value);\n  };\n\n  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setValue((event.target as HTMLInputElement).value);\n  };\n\n  return (\n    <Dialog\n      sx={{ '& .MuiDialog-paper': { width: '80%', maxHeight: 435 } }}\n      maxWidth=\"xs\"\n      slotProps={{\n        transition: {\n          onEntering: handleEntering,\n        },\n      }}\n      open={open}\n      {...other}\n    >\n      <DialogTitle>Phone Ringtone</DialogTitle>\n      <DialogContent dividers>\n        <RadioGroup\n          ref={radioGroupRef}\n          aria-label=\"ringtone\"\n          name=\"ringtone\"\n          value={value}\n          onChange={handleChange}\n        >\n          {options.map((option) => (\n            <FormControlLabel\n              value={option}\n              key={option}\n              control={<Radio />}\n              label={option}\n            />\n          ))}\n        </RadioGroup>\n      </DialogContent>\n      <DialogActions>\n        <Button autoFocus onClick={handleCancel}>\n          Cancel\n        </Button>\n        <Button onClick={handleOk}>Ok</Button>\n      </DialogActions>\n    </Dialog>\n  );\n}\n\nexport default function ConfirmationDialog() {\n  const [open, setOpen] = React.useState(false);\n  const [value, setValue] = React.useState('Dione');\n\n  const handleClickListItem = () => {\n    setOpen(true);\n  };\n\n  const handleClose = (newValue?: string) => {\n    setOpen(false);\n\n    if (newValue) {\n      setValue(newValue);\n    }\n  };\n\n  return (\n    <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>\n      <List component=\"div\" role=\"group\">\n        <ListItemButton divider disabled>\n          <ListItemText primary=\"Interruptions\" />\n        </ListItemButton>\n        <ListItemButton\n          divider\n          aria-haspopup=\"true\"\n          aria-controls=\"ringtone-menu\"\n          aria-label=\"phone ringtone\"\n          onClick={handleClickListItem}\n        >\n          <ListItemText primary=\"Phone ringtone\" secondary={value} />\n        </ListItemButton>\n        <ListItemButton divider disabled>\n          <ListItemText primary=\"Default notification ringtone\" secondary=\"Tethys\" />\n        </ListItemButton>\n        <ConfirmationDialogRaw\n          id=\"ringtone-menu\"\n          keepMounted\n          open={open}\n          onClose={handleClose}\n          value={value}\n        />\n      </List>\n    </Box>\n  );\n}\n",
+      "sha256": "fe71cea055c04eb0202e79e21aa49f09e977caec834d499f8dc9497982594f98",
+      "upstreamPath": "docs/data/material/components/dialogs/ConfirmationDialog.tsx",
+      "upstreamSha256": "26661813b6bc1049a60f45dd27b55002bdadd7e6322d4c272e397db5d4e31386",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/dialogs/CookiesBanner.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Stack from '@mui/material/Stack';\nimport TrapFocus from '@mui/material/Unstable_TrapFocus';\nimport CssBaseline from '@mui/material/CssBaseline';\nimport AppBar from '@mui/material/AppBar';\nimport Toolbar from '@mui/material/Toolbar';\nimport Container from '@mui/material/Container';\nimport IconButton from '@mui/material/IconButton';\nimport MenuIcon from '@mui/icons-material/Menu';\nimport Paper from '@mui/material/Paper';\nimport Fade from '@mui/material/Fade';\nimport Button from '@mui/material/Button';\nimport Box from '@mui/material/Box';\nimport Typography from '@mui/material/Typography';\n\nexport default function CookiesBanner() {\n  const [bannerOpen, setBannerOpen] = React.useState(true);\n\n  const closeBanner = () => {\n    setBannerOpen(false);\n  };\n\n  return (\n    <React.Fragment>\n      <CssBaseline />\n      <AppBar position=\"fixed\" component=\"nav\">\n        <Toolbar>\n          <IconButton size=\"large\" edge=\"start\" color=\"inherit\" aria-label=\"menu\">\n            <MenuIcon />\n          </IconButton>\n        </Toolbar>\n      </AppBar>\n      <Container component=\"main\" sx={{ pt: 3 }}>\n        <Toolbar />\n        <Typography sx={{ marginBottom: 2 }}>\n          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non\n          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus\n          imperdiet.\n        </Typography>\n        <Typography sx={{ marginBottom: 2 }}>\n          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non\n          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus\n          imperdiet.\n        </Typography>\n      </Container>\n      <TrapFocus open disableAutoFocus disableEnforceFocus>\n        <Fade appear={false} in={bannerOpen}>\n          <Paper\n            role=\"dialog\"\n            aria-modal=\"false\"\n            aria-label=\"Cookie banner\"\n            square\n            variant=\"outlined\"\n            tabIndex={-1}\n            sx={{\n              position: 'fixed',\n              bottom: 0,\n              left: 0,\n              right: 0,\n              m: 0,\n              p: 2,\n              borderWidth: 0,\n              borderTopWidth: 1,\n            }}\n          >\n            <Stack\n              direction={{ xs: 'column', sm: 'row' }}\n              sx={{ justifyContent: 'space-between', gap: 2 }}\n            >\n              <Box\n                sx={{ flexShrink: 1, alignSelf: { xs: 'flex-start', sm: 'center' } }}\n              >\n                <Typography sx={{ fontWeight: 'bold' }}>\n                  This website uses cookies\n                </Typography>\n                <Typography variant=\"body2\">\n                  example.com relies on cookies to improve your experience.\n                </Typography>\n              </Box>\n              <Stack\n                direction={{\n                  xs: 'row-reverse',\n                  sm: 'row',\n                }}\n                sx={{\n                  gap: 2,\n                  flexShrink: 0,\n                  alignSelf: { xs: 'flex-end', sm: 'center' },\n                }}\n              >\n                <Button size=\"small\" onClick={closeBanner} variant=\"contained\">\n                  Allow all\n                </Button>\n                <Button size=\"small\" onClick={closeBanner}>\n                  Reject all\n                </Button>\n              </Stack>\n            </Stack>\n          </Paper>\n        </Fade>\n      </TrapFocus>\n    </React.Fragment>\n  );\n}\n",
+      "sha256": "f30772764376bdb0f51803f64925309af49db4385efd440380223942910f00a8",
+      "upstreamPath": "docs/data/material/components/dialogs/CookiesBanner.tsx",
+      "upstreamSha256": "dae28ef465fe598700388c1b3b746b0f49602118c25ee81eecc9d5b06866c145",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/dialogs/CustomizedDialogs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport { styled } from '@mui/material/styles';\nimport Dialog from '@mui/material/Dialog';\nimport DialogTitle from '@mui/material/DialogTitle';\nimport DialogContent from '@mui/material/DialogContent';\nimport DialogActions from '@mui/material/DialogActions';\nimport IconButton from '@mui/material/IconButton';\nimport CloseIcon from '@mui/icons-material/Close';\nimport Typography from '@mui/material/Typography';\n\nconst BootstrapDialog = styled(Dialog)(({ theme }) => ({\n  '& .MuiDialogContent-root': {\n    padding: theme.spacing(2),\n  },\n  '& .MuiDialogActions-root': {\n    padding: theme.spacing(1),\n  },\n}));\n\nexport default function CustomizedDialogs() {\n  const [open, setOpen] = React.useState(false);\n\n  const handleClickOpen = () => {\n    setOpen(true);\n  };\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <React.Fragment>\n      <Button variant=\"outlined\" onClick={handleClickOpen}>\n        Open dialog\n      </Button>\n      <BootstrapDialog\n        onClose={handleClose}\n        aria-labelledby=\"customized-dialog-title\"\n        open={open}\n      >\n        <DialogTitle sx={{ m: 0, p: 2 }} id=\"customized-dialog-title\">\n          Modal title\n        </DialogTitle>\n        <IconButton\n          aria-label=\"close\"\n          onClick={handleClose}\n          sx={(theme) => ({\n            position: 'absolute',\n            right: 8,\n            top: 8,\n            color: theme.palette.grey[500],\n          })}\n        >\n          <CloseIcon />\n        </IconButton>\n        <DialogContent dividers>\n          <Typography gutterBottom>\n            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,\n            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac\n            consectetur ac, vestibulum at eros.\n          </Typography>\n          <Typography gutterBottom>\n            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.\n            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.\n          </Typography>\n          <Typography gutterBottom>\n            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus\n            magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec\n            ullamcorper nulla non metus auctor fringilla.\n          </Typography>\n        </DialogContent>\n        <DialogActions>\n          <Button autoFocus onClick={handleClose}>\n            Save changes\n          </Button>\n        </DialogActions>\n      </BootstrapDialog>\n    </React.Fragment>\n  );\n}\n",
+      "sha256": "441d4c288d825eef086909fb1492b2d55181ab8b6da34439fc540474aa54fb81",
+      "upstreamPath": "docs/data/material/components/dialogs/CustomizedDialogs.tsx",
+      "upstreamSha256": "b9ecc16dc19828c132dc85c1c29e37cc9d226c8e53f8a3502dfd686e3bf579d4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/dialogs/DraggableDialog.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport Dialog from '@mui/material/Dialog';\nimport DialogActions from '@mui/material/DialogActions';\nimport DialogContent from '@mui/material/DialogContent';\nimport DialogContentText from '@mui/material/DialogContentText';\nimport DialogTitle from '@mui/material/DialogTitle';\nimport Paper, { PaperProps } from '@mui/material/Paper';\nimport Draggable from 'react-draggable';\n\nfunction PaperComponent(props: PaperProps) {\n  const nodeRef = React.useRef<HTMLDivElement>(null);\n  return (\n    <Draggable\n      nodeRef={nodeRef as React.RefObject<HTMLDivElement>}\n      handle=\"#draggable-dialog-title\"\n      cancel={'[class*=\"MuiDialogContent-root\"]'}\n    >\n      <Paper {...props} ref={nodeRef} />\n    </Draggable>\n  );\n}\n\nexport default function DraggableDialog() {\n  const [open, setOpen] = React.useState(false);\n\n  const handleClickOpen = () => {\n    setOpen(true);\n  };\n\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <React.Fragment>\n      <Button variant=\"outlined\" onClick={handleClickOpen}>\n        Open draggable dialog\n      </Button>\n      <Dialog\n        open={open}\n        onClose={handleClose}\n        PaperComponent={PaperComponent}\n        aria-labelledby=\"draggable-dialog-title\"\n      >\n        <DialogTitle style={{ cursor: 'move' }} id=\"draggable-dialog-title\">\n          Subscribe\n        </DialogTitle>\n        <DialogContent>\n          <DialogContentText>\n            To subscribe to this website, please enter your email address here. We\n            will send updates occasionally.\n          </DialogContentText>\n        </DialogContent>\n        <DialogActions>\n          <Button autoFocus onClick={handleClose}>\n            Cancel\n          </Button>\n          <Button onClick={handleClose}>Subscribe</Button>\n        </DialogActions>\n      </Dialog>\n    </React.Fragment>\n  );\n}\n",
+      "sha256": "a0d1c210cd7fb11dfce71055014ab43cd5b29a469c2375ab699dcef9acdcb4e0",
+      "upstreamPath": "docs/data/material/components/dialogs/DraggableDialog.tsx",
+      "upstreamSha256": "d7494f8bb1323e7e2d103c46e258811b9936e03ce3cbe165fca8ee0fbf2394ff",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/dialogs/FormDialog.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport TextField from '@mui/material/TextField';\nimport Dialog from '@mui/material/Dialog';\nimport DialogActions from '@mui/material/DialogActions';\nimport DialogContent from '@mui/material/DialogContent';\nimport DialogContentText from '@mui/material/DialogContentText';\nimport DialogTitle from '@mui/material/DialogTitle';\n\nexport default function FormDialog() {\n  const [open, setOpen] = React.useState(false);\n\n  const handleClickOpen = () => {\n    setOpen(true);\n  };\n\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {\n    event.preventDefault();\n    const formData = new FormData(event.currentTarget);\n    const formJson = Object.fromEntries((formData as any).entries());\n    const email = formJson.email;\n    console.log(email);\n    handleClose();\n  };\n\n  return (\n    <React.Fragment>\n      <Button variant=\"outlined\" onClick={handleClickOpen}>\n        Open form dialog\n      </Button>\n      <Dialog open={open} onClose={handleClose}>\n        <DialogTitle>Subscribe</DialogTitle>\n        <DialogContent>\n          <DialogContentText>\n            To subscribe to this website, please enter your email address here. We\n            will send updates occasionally.\n          </DialogContentText>\n          <form onSubmit={handleSubmit} id=\"subscription-form\">\n            <TextField\n              autoFocus\n              required\n              margin=\"dense\"\n              id=\"name\"\n              name=\"email\"\n              label=\"Email Address\"\n              type=\"email\"\n              fullWidth\n              variant=\"standard\"\n            />\n          </form>\n        </DialogContent>\n        <DialogActions>\n          <Button onClick={handleClose}>Cancel</Button>\n          <Button type=\"submit\" form=\"subscription-form\">\n            Subscribe\n          </Button>\n        </DialogActions>\n      </Dialog>\n    </React.Fragment>\n  );\n}\n",
+      "sha256": "db6ad9e1d5a14c06d7fb6ff1b517a2c90255e9c007eb3348c45314a33090fe37",
+      "upstreamPath": "docs/data/material/components/dialogs/FormDialog.tsx",
+      "upstreamSha256": "54da2bce062063b1d45e19a2054226f18845af74c759fb9d79202f44b06fea80",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/dialogs/FullScreenDialog.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport Dialog from '@mui/material/Dialog';\nimport ListItemText from '@mui/material/ListItemText';\nimport ListItemButton from '@mui/material/ListItemButton';\nimport List from '@mui/material/List';\nimport Divider from '@mui/material/Divider';\nimport AppBar from '@mui/material/AppBar';\nimport Toolbar from '@mui/material/Toolbar';\nimport IconButton from '@mui/material/IconButton';\nimport Typography from '@mui/material/Typography';\nimport CloseIcon from '@mui/icons-material/Close';\nimport Slide from '@mui/material/Slide';\nimport { TransitionProps } from '@mui/material/transitions';\n\nconst Transition = React.forwardRef(function Transition(\n  props: TransitionProps & {\n    children: React.ReactElement<unknown>;\n  },\n  ref: React.Ref<unknown>,\n) {\n  return <Slide direction=\"up\" ref={ref} {...props} />;\n});\n\nexport default function FullScreenDialog() {\n  const [open, setOpen] = React.useState(false);\n\n  const handleClickOpen = () => {\n    setOpen(true);\n  };\n\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <React.Fragment>\n      <Button variant=\"outlined\" onClick={handleClickOpen}>\n        Open full-screen dialog\n      </Button>\n      <Dialog\n        fullScreen\n        open={open}\n        onClose={handleClose}\n        slots={{\n          transition: Transition,\n        }}\n      >\n        <AppBar sx={{ position: 'relative' }}>\n          <Toolbar>\n            <IconButton\n              edge=\"start\"\n              color=\"inherit\"\n              onClick={handleClose}\n              aria-label=\"close\"\n            >\n              <CloseIcon />\n            </IconButton>\n            <Typography sx={{ ml: 2, flex: 1 }} variant=\"h6\" component=\"div\">\n              Sound\n            </Typography>\n            <Button autoFocus color=\"inherit\" onClick={handleClose}>\n              save\n            </Button>\n          </Toolbar>\n        </AppBar>\n        <List>\n          <ListItemButton>\n            <ListItemText primary=\"Phone ringtone\" secondary=\"Titania\" />\n          </ListItemButton>\n          <Divider />\n          <ListItemButton>\n            <ListItemText\n              primary=\"Default notification ringtone\"\n              secondary=\"Tethys\"\n            />\n          </ListItemButton>\n        </List>\n      </Dialog>\n    </React.Fragment>\n  );\n}\n",
+      "sha256": "f46b633cb49ded8c40b98ec8cebe9979042f2ed59b7cd9bea96d3d9f7dd362ec",
+      "upstreamPath": "docs/data/material/components/dialogs/FullScreenDialog.tsx",
+      "upstreamSha256": "c2b4cd8e9252bb7b83e68587c09de94a114b74f9e30535e217080b4f84095d0a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/dialogs/MaxWidthDialog.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Button from '@mui/material/Button';\nimport Dialog, { DialogProps } from '@mui/material/Dialog';\nimport DialogActions from '@mui/material/DialogActions';\nimport DialogContent from '@mui/material/DialogContent';\nimport DialogContentText from '@mui/material/DialogContentText';\nimport DialogTitle from '@mui/material/DialogTitle';\nimport FormControl from '@mui/material/FormControl';\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport InputLabel from '@mui/material/InputLabel';\nimport MenuItem from '@mui/material/MenuItem';\nimport Select, { SelectChangeEvent } from '@mui/material/Select';\nimport Switch from '@mui/material/Switch';\n\nexport default function MaxWidthDialog() {\n  const [open, setOpen] = React.useState(false);\n  const [fullWidth, setFullWidth] = React.useState(true);\n  const [maxWidth, setMaxWidth] = React.useState<DialogProps['maxWidth']>('sm');\n\n  const handleClickOpen = () => {\n    setOpen(true);\n  };\n\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  const handleMaxWidthChange = (event: SelectChangeEvent<typeof maxWidth>) => {\n    setMaxWidth(\n      // @ts-expect-error autofill of arbitrary value is not handled.\n      event.target.value,\n    );\n  };\n\n  const handleFullWidthChange = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setFullWidth(event.target.checked);\n  };\n\n  return (\n    <React.Fragment>\n      <Button variant=\"outlined\" onClick={handleClickOpen}>\n        Open max-width dialog\n      </Button>\n      <Dialog\n        fullWidth={fullWidth}\n        maxWidth={maxWidth}\n        open={open}\n        onClose={handleClose}\n      >\n        <DialogTitle>Optional sizes</DialogTitle>\n        <DialogContent>\n          <DialogContentText>\n            You can set my maximum width and whether to adapt or not.\n          </DialogContentText>\n          <Box\n            noValidate\n            component=\"form\"\n            sx={{\n              display: 'flex',\n              flexDirection: 'column',\n              m: 'auto',\n              width: 'fit-content',\n            }}\n          >\n            <FormControl sx={{ mt: 2, minWidth: 120 }}>\n              <InputLabel htmlFor=\"max-width\">maxWidth</InputLabel>\n              <Select\n                autoFocus\n                value={maxWidth}\n                onChange={handleMaxWidthChange}\n                label=\"maxWidth\"\n                inputProps={{\n                  name: 'max-width',\n                  id: 'max-width',\n                }}\n              >\n                <MenuItem value={false as any}>false</MenuItem>\n                <MenuItem value=\"xs\">xs</MenuItem>\n                <MenuItem value=\"sm\">sm</MenuItem>\n                <MenuItem value=\"md\">md</MenuItem>\n                <MenuItem value=\"lg\">lg</MenuItem>\n                <MenuItem value=\"xl\">xl</MenuItem>\n              </Select>\n            </FormControl>\n            <FormControlLabel\n              sx={{ mt: 1 }}\n              control={\n                <Switch checked={fullWidth} onChange={handleFullWidthChange} />\n              }\n              label=\"Full width\"\n            />\n          </Box>\n        </DialogContent>\n        <DialogActions>\n          <Button onClick={handleClose}>Close</Button>\n        </DialogActions>\n      </Dialog>\n    </React.Fragment>\n  );\n}\n",
+      "sha256": "00ae1dbea20d1702b0a5f3df9b47774036735a0c5479c4b3ef4f125998942b1d",
+      "upstreamPath": "docs/data/material/components/dialogs/MaxWidthDialog.tsx",
+      "upstreamSha256": "73ea42e869e95ca9a46f677082d60e71dd14f2c3b8a886c585827147f83bdd49",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/dialogs/ResponsiveDialog.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport Dialog from '@mui/material/Dialog';\nimport DialogActions from '@mui/material/DialogActions';\nimport DialogContent from '@mui/material/DialogContent';\nimport DialogContentText from '@mui/material/DialogContentText';\nimport DialogTitle from '@mui/material/DialogTitle';\nimport useMediaQuery from '@mui/material/useMediaQuery';\nimport { useTheme } from '@mui/material/styles';\n\nexport default function ResponsiveDialog() {\n  const [open, setOpen] = React.useState(false);\n  const theme = useTheme();\n  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));\n\n  const handleClickOpen = () => {\n    setOpen(true);\n  };\n\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <React.Fragment>\n      <Button variant=\"outlined\" onClick={handleClickOpen}>\n        Open responsive dialog\n      </Button>\n      <Dialog\n        fullScreen={fullScreen}\n        open={open}\n        onClose={handleClose}\n        aria-labelledby=\"responsive-dialog-title\"\n      >\n        <DialogTitle id=\"responsive-dialog-title\">\n          {\"Use Google's location service?\"}\n        </DialogTitle>\n        <DialogContent>\n          <DialogContentText>\n            Let Google help apps determine location. This means sending anonymous\n            location data to Google, even when no apps are running.\n          </DialogContentText>\n        </DialogContent>\n        <DialogActions>\n          <Button autoFocus onClick={handleClose}>\n            Disagree\n          </Button>\n          <Button onClick={handleClose} autoFocus>\n            Agree\n          </Button>\n        </DialogActions>\n      </Dialog>\n    </React.Fragment>\n  );\n}\n",
+      "sha256": "2599f95430e3d27a5a475975870571a11be14467015fa2c2ecdbd985455d9f5b",
+      "upstreamPath": "docs/data/material/components/dialogs/ResponsiveDialog.tsx",
+      "upstreamSha256": "ced533b3085d53e179a0e6f5d5ab4dbedbb3a8aa0497500b2b85f1bc6d5c085c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/dialogs/ScrollDialog.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport Dialog, { DialogProps } from '@mui/material/Dialog';\nimport DialogActions from '@mui/material/DialogActions';\nimport DialogContent from '@mui/material/DialogContent';\nimport DialogContentText from '@mui/material/DialogContentText';\nimport DialogTitle from '@mui/material/DialogTitle';\n\nexport default function ScrollDialog() {\n  const [open, setOpen] = React.useState(false);\n  const [scroll, setScroll] = React.useState<DialogProps['scroll']>('paper');\n\n  const handleClickOpen = (scrollType: DialogProps['scroll']) => () => {\n    setOpen(true);\n    setScroll(scrollType);\n  };\n\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  const descriptionElementRef = React.useRef<HTMLElement>(null);\n  React.useEffect(() => {\n    if (open) {\n      const { current: descriptionElement } = descriptionElementRef;\n      if (descriptionElement !== null) {\n        descriptionElement.focus();\n      }\n    }\n  }, [open]);\n\n  return (\n    <React.Fragment>\n      <Button onClick={handleClickOpen('paper')}>scroll=paper</Button>\n      <Button onClick={handleClickOpen('body')}>scroll=body</Button>\n      <Dialog\n        open={open}\n        onClose={handleClose}\n        scroll={scroll}\n        aria-labelledby=\"scroll-dialog-title\"\n        aria-describedby=\"scroll-dialog-description\"\n      >\n        <DialogTitle id=\"scroll-dialog-title\">Subscribe</DialogTitle>\n        <DialogContent dividers={scroll === 'paper'}>\n          <DialogContentText\n            id=\"scroll-dialog-description\"\n            ref={descriptionElementRef}\n            tabIndex={-1}\n          >\n            {[...new Array(50)]\n              .map(\n                () => `Cras mattis consectetur purus sit amet fermentum.\nCras justo odio, dapibus ac facilisis in, egestas eget quam.\nMorbi leo risus, porta ac consectetur ac, vestibulum at eros.\nPraesent commodo cursus magna, vel scelerisque nisl consectetur et.`,\n              )\n              .join('\\n')}\n          </DialogContentText>\n        </DialogContent>\n        <DialogActions>\n          <Button onClick={handleClose}>Cancel</Button>\n          <Button onClick={handleClose}>Subscribe</Button>\n        </DialogActions>\n      </Dialog>\n    </React.Fragment>\n  );\n}\n",
+      "sha256": "84f32a8fff8c4ecff183b6fa46c8f536e7d5d003cd4222948125583cd05dcfe6",
+      "upstreamPath": "docs/data/material/components/dialogs/ScrollDialog.tsx",
+      "upstreamSha256": "527fe34d608bd6505f39677f697ba7ed131d1e03b581d4ca344f5dddc2420536",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/dialogs/SimpleDialogDemo.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Button from '@mui/material/Button';\nimport Avatar from '@mui/material/Avatar';\nimport List from '@mui/material/List';\nimport ListItem from '@mui/material/ListItem';\nimport ListItemAvatar from '@mui/material/ListItemAvatar';\nimport ListItemButton from '@mui/material/ListItemButton';\nimport ListItemText from '@mui/material/ListItemText';\nimport DialogTitle from '@mui/material/DialogTitle';\nimport Dialog from '@mui/material/Dialog';\nimport PersonIcon from '@mui/icons-material/Person';\nimport AddIcon from '@mui/icons-material/Add';\nimport Typography from '@mui/material/Typography';\nimport { blue } from '@mui/material/colors';\n\nconst emails = ['username@gmail.com', 'user02@gmail.com'];\n\nexport interface SimpleDialogProps {\n  open: boolean;\n  selectedValue: string;\n  onClose: (value: string) => void;\n}\n\nfunction SimpleDialog(props: SimpleDialogProps) {\n  const { onClose, selectedValue, open } = props;\n\n  const handleClose = () => {\n    onClose(selectedValue);\n  };\n\n  const handleListItemClick = (value: string) => {\n    onClose(value);\n  };\n\n  return (\n    <Dialog onClose={handleClose} open={open}>\n      <DialogTitle>Set backup account</DialogTitle>\n      <List sx={{ pt: 0 }}>\n        {emails.map((email) => (\n          <ListItem disablePadding key={email}>\n            <ListItemButton onClick={() => handleListItemClick(email)}>\n              <ListItemAvatar>\n                <Avatar sx={{ bgcolor: blue[100], color: blue[600] }}>\n                  <PersonIcon />\n                </Avatar>\n              </ListItemAvatar>\n              <ListItemText primary={email} />\n            </ListItemButton>\n          </ListItem>\n        ))}\n        <ListItem disablePadding>\n          <ListItemButton\n            autoFocus\n            onClick={() => handleListItemClick('addAccount')}\n          >\n            <ListItemAvatar>\n              <Avatar>\n                <AddIcon />\n              </Avatar>\n            </ListItemAvatar>\n            <ListItemText primary=\"Add account\" />\n          </ListItemButton>\n        </ListItem>\n      </List>\n    </Dialog>\n  );\n}\n\nexport default function SimpleDialogDemo() {\n  const [open, setOpen] = React.useState(false);\n  const [selectedValue, setSelectedValue] = React.useState(emails[1]);\n\n  const handleClickOpen = () => {\n    setOpen(true);\n  };\n\n  const handleClose = (value: string) => {\n    setOpen(false);\n    setSelectedValue(value);\n  };\n\n  return (\n    <div>\n      <Typography variant=\"subtitle1\" component=\"div\">\n        Selected: {selectedValue}\n      </Typography>\n      <br />\n      <Button variant=\"outlined\" onClick={handleClickOpen}>\n        Open simple dialog\n      </Button>\n      <SimpleDialog\n        selectedValue={selectedValue}\n        open={open}\n        onClose={handleClose}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "844c4fef27da940b64f0f438cf8545fd2a991430a22816ba2f7454d899bd4788",
+      "upstreamPath": "docs/data/material/components/dialogs/SimpleDialogDemo.tsx",
+      "upstreamSha256": "3c54e368c3feb74c11e510520493607cd2b716b6847e48f4b7f416ca45cd810e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/dialogs/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/dialogs/AlertDialog\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2591d0434a90d2b4bce1d4487902cd4cdc94197f368dcf1777cb1e561d83d34b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/dialogs/previews/alert-dialog-slide.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/dialogs/AlertDialogSlide\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e2b31ed1734708676a41a2f15516dbfc61fffc8402a5139032197063f177f136",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/dialogs/previews/confirmation-dialog.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/dialogs/ConfirmationDialog\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0512f0ec29b43b95218a7fbe1bc085ef7655900d583cf24ee6b81fa3c4b585d3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/dialogs/previews/cookies-banner.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/dialogs/CookiesBanner\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "61726bc25f3fdbc271fadf4ef9dc32e5e5ea8c318ce379a8547aa546dbff9634",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/dialogs/previews/customized-dialogs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/dialogs/CustomizedDialogs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e7e8280ffe7d479262c04eb20597b70083fc4fea91a023af9193b7b18390822b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/dialogs/previews/draggable-dialog.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/dialogs/DraggableDialog\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d11b0541b074e7fff6bf8ec8891e85d69cb355b056e57938b07573eddaf5a221",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/dialogs/previews/form-dialog.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/dialogs/FormDialog\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "9c222b0404d812fe106ca99233ed1cb49ca4f1d4c3dfc6caca97b22edf701e71",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/dialogs/previews/full-screen-dialog.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/dialogs/FullScreenDialog\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d1dabbdc7a33450534b91157c64f0bcb5cf408feb05e8b5ba04557d16c993f4b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/dialogs/previews/max-width-dialog.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/dialogs/MaxWidthDialog\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8f9b29e5eeba25475944744617be980a418b34c3c5c8dd8e8a06d9762d30b185",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/dialogs/previews/responsive-dialog.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/dialogs/ResponsiveDialog\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8ac0e032e065d9d6289d41fef47b276d94327fbf8f1162be0a042ec8da7e3502",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/dialogs/previews/scroll-dialog.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/dialogs/ScrollDialog\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "496a7d6e0909cc44164592f5826e6f607d22ac3921e224d1112bf252ea7186ae",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/dialogs/previews/simple-dialog-demo.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/dialogs/SimpleDialogDemo\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "6fc9ff19442c22911fe7c4b644bccb89ca996abbc229a5319a9d2a61743718f3",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0 react-draggable@4.7.2",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0 react-draggable@4.7.2",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "dialogs",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/dialogs",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/dialogs/AlertDialog.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/dialogs/AlertDialog.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI dialogs\n\n12 published Material UI dialogs examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/dialogs\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/dialogs/AlertDialog.tsx\n"
+}

@@ -1,0 +1,210 @@
+{
+  "id": "mui:switches",
+  "sourceId": "mui",
+  "slug": "mui-switches",
+  "name": "MUI Switches",
+  "description": "8 published Material UI switches examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/material@9.4.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "switches",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file"
+    ],
+    "aliases": [
+      "switches",
+      "mui switches"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "8 published Material UI switches examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "switches:code:command:data:file",
+    "searchText": "MUI Switches\nswitches\n8 published Material UI switches examples with complete pinned source and MIT attribution.\nmui switches\ncode\ncommand\ndata\nfile\nMUI Switches 8 published Material UI switches examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://mui.com/material ui/react switches/ Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/switches/BasicSwitches.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-switches",
+  "manifestPath": "components/mui-switches/component.json",
+  "integrity": "sha256:1e09fe237383d7227159fb097dd81ba6efda9be8c28248930d8280ea0212e5b6",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/switches/example.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Switch from '@mui/material/Switch';\n\nconst label = { slotProps: { input: { 'aria-label': 'Switch demo' } } };\n\nexport default function BasicSwitches() {\n  return (\n    <div>\n      <Switch {...label} defaultChecked />\n      <Switch {...label} />\n      <Switch {...label} disabled defaultChecked />\n      <Switch {...label} disabled />\n    </div>\n  );\n}\n",
+      "sha256": "be24b9cb03b1b1cdc852a2076425dd85044092b1deba15ca3b8b38eda8ed88d3",
+      "upstreamPath": "docs/data/material/components/switches/BasicSwitches.tsx",
+      "upstreamSha256": "a16512c7eb74333ac232e80e2e7c2064452b50749ed43cd087ba5a6ef09815fb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/switches/ColorSwitches.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { alpha, styled } from '@mui/material/styles';\nimport { pink } from '@mui/material/colors';\nimport Switch from '@mui/material/Switch';\n\nconst PinkSwitch = styled(Switch)(({ theme }) => ({\n  '& .MuiSwitch-switchBase.Mui-checked': {\n    color: pink[600],\n    '&:hover': {\n      backgroundColor: alpha(pink[600], theme.palette.action.hoverOpacity),\n    },\n  },\n  '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {\n    backgroundColor: pink[600],\n  },\n}));\n\nconst label = { slotProps: { input: { 'aria-label': 'Color switch demo' } } };\n\nexport default function ColorSwitches() {\n  return (\n    <div>\n      <Switch {...label} defaultChecked />\n      <Switch {...label} defaultChecked color=\"secondary\" />\n      <Switch {...label} defaultChecked color=\"warning\" />\n      <Switch {...label} defaultChecked color=\"default\" />\n      <PinkSwitch {...label} defaultChecked />\n    </div>\n  );\n}\n",
+      "sha256": "e0a94d9c08e211137961e71db01a453029d2eac64645b1be77c546e060be2338",
+      "upstreamPath": "docs/data/material/components/switches/ColorSwitches.tsx",
+      "upstreamSha256": "6b02dd67a93dd6bf9962dccfe4aaeccc5c3d2ea68ed2c137e4b45921c258dabd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/switches/ControlledSwitches.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Switch from '@mui/material/Switch';\n\nexport default function ControlledSwitches() {\n  const [checked, setChecked] = React.useState(true);\n\n  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setChecked(event.target.checked);\n  };\n\n  return (\n    <Switch\n      checked={checked}\n      onChange={handleChange}\n      slotProps={{ input: { 'aria-label': 'controlled' } }}\n    />\n  );\n}\n",
+      "sha256": "c01cd077cf49eda6ffd9cd4cbb0a79e3a5a2ebbb3fdd3b450c6c3771208e7ef8",
+      "upstreamPath": "docs/data/material/components/switches/ControlledSwitches.tsx",
+      "upstreamSha256": "484109663ca403bffd4b9c8fcea96ad88e27a8ec188cdb0dee514ed329e37653",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/switches/CustomizedSwitches.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { styled } from '@mui/material/styles';\nimport FormGroup from '@mui/material/FormGroup';\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport Switch, { SwitchProps } from '@mui/material/Switch';\nimport Stack from '@mui/material/Stack';\nimport Typography from '@mui/material/Typography';\n\nconst MaterialUISwitch = styled(Switch)(({ theme }) => ({\n  width: 62,\n  height: 34,\n  padding: 7,\n  '& .MuiSwitch-switchBase': {\n    margin: 1,\n    padding: 0,\n    transform: 'translateX(6px)',\n    '&.Mui-checked': {\n      color: '#fff',\n      transform: 'translateX(22px)',\n      '& .MuiSwitch-thumb:before': {\n        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"20\" width=\"20\" viewBox=\"0 0 20 20\"><path fill=\"${encodeURIComponent(\n          '#fff',\n        )}\" d=\"M4.2 2.5l-.7 1.8-1.8.7 1.8.7.7 1.8.6-1.8L6.7 5l-1.9-.7-.6-1.8zm15 8.3a6.7 6.7 0 11-6.6-6.6 5.8 5.8 0 006.6 6.6z\"/></svg>')`,\n      },\n      '& + .MuiSwitch-track': {\n        opacity: 1,\n        backgroundColor: '#aab4be',\n        ...theme.applyStyles('dark', {\n          backgroundColor: '#8796A5',\n        }),\n      },\n    },\n  },\n  '& .MuiSwitch-thumb': {\n    backgroundColor: '#001e3c',\n    width: 32,\n    height: 32,\n    '&::before': {\n      content: \"''\",\n      position: 'absolute',\n      width: '100%',\n      height: '100%',\n      left: 0,\n      top: 0,\n      backgroundRepeat: 'no-repeat',\n      backgroundPosition: 'center',\n      backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"20\" width=\"20\" viewBox=\"0 0 20 20\"><path fill=\"${encodeURIComponent(\n        '#fff',\n      )}\" d=\"M9.305 1.667V3.75h1.389V1.667h-1.39zm-4.707 1.95l-.982.982L5.09 6.072l.982-.982-1.473-1.473zm10.802 0L13.927 5.09l.982.982 1.473-1.473-.982-.982zM10 5.139a4.872 4.872 0 00-4.862 4.86A4.872 4.872 0 0010 14.862 4.872 4.872 0 0014.86 10 4.872 4.872 0 0010 5.139zm0 1.389A3.462 3.462 0 0113.471 10a3.462 3.462 0 01-3.473 3.472A3.462 3.462 0 016.527 10 3.462 3.462 0 0110 6.528zM1.665 9.305v1.39h2.083v-1.39H1.666zm14.583 0v1.39h2.084v-1.39h-2.084zM5.09 13.928L3.616 15.4l.982.982 1.473-1.473-.982-.982zm9.82 0l-.982.982 1.473 1.473.982-.982-1.473-1.473zM9.305 16.25v2.083h1.389V16.25h-1.39z\"/></svg>')`,\n    },\n    ...theme.applyStyles('dark', {\n      backgroundColor: '#003892',\n    }),\n  },\n  '& .MuiSwitch-track': {\n    opacity: 1,\n    backgroundColor: '#aab4be',\n    borderRadius: 20 / 2,\n    ...theme.applyStyles('dark', {\n      backgroundColor: '#8796A5',\n    }),\n  },\n}));\n\nconst Android12Switch = styled(Switch)(({ theme }) => ({\n  padding: 8,\n  '& .MuiSwitch-track': {\n    borderRadius: 22 / 2,\n    '&::before, &::after': {\n      content: '\"\"',\n      position: 'absolute',\n      top: '50%',\n      transform: 'translateY(-50%)',\n      width: 16,\n      height: 16,\n    },\n    '&::before': {\n      backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"16\" width=\"16\" viewBox=\"0 0 24 24\"><path fill=\"${encodeURIComponent(\n        theme.palette.getContrastText(theme.palette.primary.main),\n      )}\" d=\"M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z\"/></svg>')`,\n      left: 12,\n    },\n    '&::after': {\n      backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"16\" width=\"16\" viewBox=\"0 0 24 24\"><path fill=\"${encodeURIComponent(\n        theme.palette.getContrastText(theme.palette.primary.main),\n      )}\" d=\"M19,13H5V11H19V13Z\" /></svg>')`,\n      right: 12,\n    },\n  },\n  '& .MuiSwitch-thumb': {\n    boxShadow: 'none',\n    width: 16,\n    height: 16,\n    margin: 2,\n  },\n}));\n\nconst IOSSwitch = styled((props: SwitchProps) => (\n  <Switch focusVisibleClassName=\".Mui-focusVisible\" disableRipple {...props} />\n))(({ theme }) => ({\n  width: 42,\n  height: 26,\n  padding: 0,\n  '& .MuiSwitch-switchBase': {\n    padding: 0,\n    margin: 2,\n    transitionDuration: '300ms',\n    '&.Mui-checked': {\n      transform: 'translateX(16px)',\n      color: '#fff',\n      '& + .MuiSwitch-track': {\n        backgroundColor: '#65C466',\n        opacity: 1,\n        border: 0,\n        ...theme.applyStyles('dark', {\n          backgroundColor: '#2ECA45',\n        }),\n      },\n      '&.Mui-disabled + .MuiSwitch-track': {\n        opacity: 0.5,\n      },\n    },\n    '&.Mui-focusVisible .MuiSwitch-thumb': {\n      color: '#33cf4d',\n      border: '6px solid #fff',\n    },\n    '&.Mui-disabled .MuiSwitch-thumb': {\n      color: theme.palette.grey[100],\n      ...theme.applyStyles('dark', {\n        color: theme.palette.grey[600],\n      }),\n    },\n    '&.Mui-disabled + .MuiSwitch-track': {\n      opacity: 0.7,\n      ...theme.applyStyles('dark', {\n        opacity: 0.3,\n      }),\n    },\n  },\n  '& .MuiSwitch-thumb': {\n    boxSizing: 'border-box',\n    width: 22,\n    height: 22,\n  },\n  '& .MuiSwitch-track': {\n    borderRadius: 26 / 2,\n    backgroundColor: '#E9E9EA',\n    opacity: 1,\n    transition: theme.transitions.create(['background-color'], {\n      duration: 500,\n    }),\n    ...theme.applyStyles('dark', {\n      backgroundColor: '#39393D',\n    }),\n  },\n}));\n\nconst AntSwitch = styled(Switch)(({ theme }) => ({\n  width: 28,\n  height: 16,\n  padding: 0,\n  display: 'flex',\n  '&:active': {\n    '& .MuiSwitch-thumb': {\n      width: 15,\n    },\n    '& .MuiSwitch-switchBase.Mui-checked': {\n      transform: 'translateX(9px)',\n    },\n  },\n  '& .MuiSwitch-switchBase': {\n    padding: 2,\n    '&.Mui-checked': {\n      transform: 'translateX(12px)',\n      color: '#fff',\n      '& + .MuiSwitch-track': {\n        opacity: 1,\n        backgroundColor: '#1890ff',\n        ...theme.applyStyles('dark', {\n          backgroundColor: '#177ddc',\n        }),\n      },\n    },\n  },\n  '& .MuiSwitch-thumb': {\n    boxShadow: '0 2px 4px 0 rgb(0 35 11 / 20%)',\n    width: 12,\n    height: 12,\n    borderRadius: 6,\n    transition: theme.transitions.create(['width'], {\n      duration: 200,\n    }),\n  },\n  '& .MuiSwitch-track': {\n    borderRadius: 16 / 2,\n    opacity: 1,\n    backgroundColor: 'rgba(0,0,0,.25)',\n    boxSizing: 'border-box',\n    ...theme.applyStyles('dark', {\n      backgroundColor: 'rgba(255,255,255,.35)',\n    }),\n  },\n}));\n\nexport default function CustomizedSwitches() {\n  return (\n    <FormGroup>\n      <FormControlLabel\n        control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}\n        label=\"MUI switch\"\n      />\n      <FormControlLabel\n        control={<Android12Switch defaultChecked />}\n        label=\"Android 12\"\n      />\n      <FormControlLabel\n        control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}\n        label=\"iOS style\"\n      />\n      <Stack direction=\"row\" spacing={1} sx={{ alignItems: 'center' }}>\n        <Typography>Off</Typography>\n        <AntSwitch\n          defaultChecked\n          slotProps={{ input: { 'aria-label': 'ant design' } }}\n        />\n        <Typography>On</Typography>\n      </Stack>\n    </FormGroup>\n  );\n}\n",
+      "sha256": "72f09d4aada1966edfb3a58041539f646c0f1795d385a11b5de8f5127e3560ff",
+      "upstreamPath": "docs/data/material/components/switches/CustomizedSwitches.tsx",
+      "upstreamSha256": "70a20d60be0d95685849fe6de7c80ec05617f81da009a4e6599e485bb5a22a43",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/switches/FormControlLabelPosition.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Switch from '@mui/material/Switch';\nimport FormGroup from '@mui/material/FormGroup';\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport FormControl from '@mui/material/FormControl';\nimport FormLabel from '@mui/material/FormLabel';\n\nexport default function FormControlLabelPosition() {\n  return (\n    <FormControl component=\"fieldset\">\n      <FormLabel component=\"legend\">Label placement</FormLabel>\n      <FormGroup aria-label=\"position\" row>\n        <FormControlLabel\n          value=\"bottom\"\n          control={<Switch color=\"primary\" />}\n          label=\"Bottom\"\n          labelPlacement=\"bottom\"\n        />\n        <FormControlLabel\n          value=\"end\"\n          control={<Switch color=\"primary\" />}\n          label=\"End\"\n          labelPlacement=\"end\"\n        />\n      </FormGroup>\n    </FormControl>\n  );\n}\n",
+      "sha256": "e746296b64743e66a51d8d00267dd897df6aa919e83c3a773949d4073bdc95be",
+      "upstreamPath": "docs/data/material/components/switches/FormControlLabelPosition.tsx",
+      "upstreamSha256": "0dd596b46de157d107e50a62250ad2075f287c2604b0a3bdeb568531f5b2552e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/switches/SwitchLabels.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport FormGroup from '@mui/material/FormGroup';\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport Switch from '@mui/material/Switch';\n\nexport default function SwitchLabels() {\n  return (\n    <FormGroup>\n      <FormControlLabel control={<Switch defaultChecked />} label=\"Label\" />\n      <FormControlLabel required control={<Switch />} label=\"Required\" />\n      <FormControlLabel disabled control={<Switch />} label=\"Disabled\" />\n    </FormGroup>\n  );\n}\n",
+      "sha256": "5369520941edc3540f7bf942337676785b794ec57f4d81d229bf8677578f6cd9",
+      "upstreamPath": "docs/data/material/components/switches/SwitchLabels.tsx",
+      "upstreamSha256": "7be1dc82a2adc3d9388560576a3182f7ee71e6c1b7424d929b5d3f7be375155c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/switches/SwitchesGroup.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport FormLabel from '@mui/material/FormLabel';\nimport FormControl from '@mui/material/FormControl';\nimport FormGroup from '@mui/material/FormGroup';\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport FormHelperText from '@mui/material/FormHelperText';\nimport Switch from '@mui/material/Switch';\n\nexport default function SwitchesGroup() {\n  const [state, setState] = React.useState({\n    gilad: true,\n    jason: false,\n    antoine: true,\n  });\n\n  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setState({\n      ...state,\n      [event.target.name]: event.target.checked,\n    });\n  };\n\n  return (\n    <FormControl component=\"fieldset\" variant=\"standard\">\n      <FormLabel component=\"legend\">Assign responsibility</FormLabel>\n      <FormGroup>\n        <FormControlLabel\n          control={\n            <Switch checked={state.gilad} onChange={handleChange} name=\"gilad\" />\n          }\n          label=\"Gilad Gray\"\n        />\n        <FormControlLabel\n          control={\n            <Switch checked={state.jason} onChange={handleChange} name=\"jason\" />\n          }\n          label=\"Jason Killian\"\n        />\n        <FormControlLabel\n          control={\n            <Switch checked={state.antoine} onChange={handleChange} name=\"antoine\" />\n          }\n          label=\"Antoine Llorca\"\n        />\n      </FormGroup>\n      <FormHelperText>Be careful</FormHelperText>\n    </FormControl>\n  );\n}\n",
+      "sha256": "987d2c7e84e63c5f45d59aaa13771dab99ff2c467d6c311c21663a48be1b82e1",
+      "upstreamPath": "docs/data/material/components/switches/SwitchesGroup.tsx",
+      "upstreamSha256": "8e4c0e83bde6291d71acd5f8380985aa32ad778a0cd093113d9fa18a05f431ea",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/switches/SwitchesSize.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Switch from '@mui/material/Switch';\n\nconst label = { slotProps: { input: { 'aria-label': 'Size switch demo' } } };\n\nexport default function SwitchesSize() {\n  return (\n    <div>\n      <Switch {...label} defaultChecked size=\"small\" />\n      <Switch {...label} defaultChecked />\n    </div>\n  );\n}\n",
+      "sha256": "ee6742001a33e0be3c62ccc211962be2637cf4aaf6e4d8099a5cf4ce3777d750",
+      "upstreamPath": "docs/data/material/components/switches/SwitchesSize.tsx",
+      "upstreamSha256": "bdbb72700c6947448f7b2076a97769008a306aa0e02a9bcd31c9cec6b2c6bf06",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/switches/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/switches/example\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "43a0a95e3360075e0b1e83caed83f8c1169ba1e76f0ef31e1976c8d10e115f04",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/switches/previews/color-switches.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/switches/ColorSwitches\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a6616dadb1c29548f68dbbde6b7620f199b35c7ac0ae731aa113b005e2ac2df3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/switches/previews/controlled-switches.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/switches/ControlledSwitches\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "b73161229d559c21b59d78aa89ac8ebddc3cbe56436c1b742a8b6da63418310e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/switches/previews/customized-switches.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/switches/CustomizedSwitches\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "cc4b325cbad66be27e18a73204acd6ecb0cf3756593029e56bc57e79250b1058",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/switches/previews/form-control-label-position.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/switches/FormControlLabelPosition\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "6d1c96fc8d6976dddff950a803ca0024a0141513708e5da5787011a84ea28660",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/switches/previews/switch-labels.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/switches/SwitchLabels\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "bd4d6e5002994486b973bf19e5e4ae5efee89484d5cb2c97c1290f8d2bfb7236",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/switches/previews/switches-group.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/switches/SwitchesGroup\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d44ee7606756baf87ce44a3bd4e8e25d4e1818005f1c3324791389b5218ce979",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/switches/previews/switches-size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/switches/SwitchesSize\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8d283757f3d8749ed8f6d251b3b8a9e5f6a3748238d6d340776ecbddc0996022",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "switches",
+    "upstreamPageUrl": "https://mui.com/material-ui/react-switches/",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/switches/BasicSwitches.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/switches/BasicSwitches.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# MUI Switches\n\n8 published Material UI switches examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://mui.com/material-ui/react-switches/\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/switches/BasicSwitches.tsx\n"
+}

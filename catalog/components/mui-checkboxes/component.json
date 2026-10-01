@@ -1,0 +1,244 @@
+{
+  "id": "mui:checkboxes",
+  "sourceId": "mui",
+  "slug": "mui-checkboxes",
+  "name": "MUI Checkboxes",
+  "description": "10 published Material UI checkboxes examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/icons-material@9.4.0",
+    "@mui/material@9.4.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "checkboxes",
+    "tags": [
+      "checkbox",
+      "code",
+      "command",
+      "data",
+      "file"
+    ],
+    "aliases": [
+      "checkboxes",
+      "mui checkboxes"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "10 published Material UI checkboxes examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "checkboxes:checkbox:code:command:data:file",
+    "searchText": "MUI Checkboxes\ncheckboxes\n10 published Material UI checkboxes examples with complete pinned source and MIT attribution.\nmui checkboxes\ncheckbox\ncode\ncommand\ndata\nfile\nMUI Checkboxes 10 published Material UI checkboxes examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://mui.com/material ui/react checkboxes/ Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/checkboxes/Checkboxes.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-checkboxes",
+  "manifestPath": "components/mui-checkboxes/component.json",
+  "integrity": "sha256:0f9fdce4674525a720a755b4bad222523c7056b929880898166e86e828256ea0",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/checkboxes/example.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Checkbox from '@mui/material/Checkbox';\n\nconst label = { slotProps: { input: { 'aria-label': 'Checkbox demo' } } };\n\nexport default function Checkboxes() {\n  return (\n    <div>\n      <Checkbox {...label} defaultChecked />\n      <Checkbox {...label} />\n      <Checkbox {...label} disabled />\n      <Checkbox {...label} disabled checked />\n    </div>\n  );\n}\n",
+      "sha256": "bb72886032c0b9ac451407c80c2a1ea0cac8e8de83e5db5b10f62071bbb3503b",
+      "upstreamPath": "docs/data/material/components/checkboxes/Checkboxes.tsx",
+      "upstreamSha256": "2ef9e2f563c26c4b7e1ee21754256da448c15bb76638531177960fb548f88f0d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/CheckboxLabels.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport FormGroup from '@mui/material/FormGroup';\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport Checkbox from '@mui/material/Checkbox';\n\nexport default function CheckboxLabels() {\n  return (\n    <FormGroup>\n      <FormControlLabel control={<Checkbox defaultChecked />} label=\"Label\" />\n      <FormControlLabel required control={<Checkbox />} label=\"Required\" />\n      <FormControlLabel disabled control={<Checkbox />} label=\"Disabled\" />\n    </FormGroup>\n  );\n}\n",
+      "sha256": "eed9bc05ae03c45b9e762ed71c25041153a653bc6d35df00ddfca940337d510b",
+      "upstreamPath": "docs/data/material/components/checkboxes/CheckboxLabels.tsx",
+      "upstreamSha256": "48fecdc98f815e5fd6e63c0279e40c9d6f5c292a2f5968257946a3e2bea8bfe1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/CheckboxesGroup.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport FormLabel from '@mui/material/FormLabel';\nimport FormControl from '@mui/material/FormControl';\nimport FormGroup from '@mui/material/FormGroup';\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport FormHelperText from '@mui/material/FormHelperText';\nimport Checkbox from '@mui/material/Checkbox';\n\nexport default function CheckboxesGroup() {\n  const [state, setState] = React.useState({\n    gilad: true,\n    jason: false,\n    antoine: false,\n  });\n\n  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setState({\n      ...state,\n      [event.target.name]: event.target.checked,\n    });\n  };\n\n  const { gilad, jason, antoine } = state;\n  const error = [gilad, jason, antoine].filter((v) => v).length !== 2;\n\n  return (\n    <Box sx={{ display: 'flex' }}>\n      <FormControl sx={{ m: 3 }} component=\"fieldset\" variant=\"standard\">\n        <FormLabel component=\"legend\">Assign responsibility</FormLabel>\n        <FormGroup>\n          <FormControlLabel\n            control={\n              <Checkbox checked={gilad} onChange={handleChange} name=\"gilad\" />\n            }\n            label=\"Gilad Gray\"\n          />\n          <FormControlLabel\n            control={\n              <Checkbox checked={jason} onChange={handleChange} name=\"jason\" />\n            }\n            label=\"Jason Killian\"\n          />\n          <FormControlLabel\n            control={\n              <Checkbox checked={antoine} onChange={handleChange} name=\"antoine\" />\n            }\n            label=\"Antoine Llorca\"\n          />\n        </FormGroup>\n        <FormHelperText>Be careful</FormHelperText>\n      </FormControl>\n      <FormControl\n        required\n        error={error}\n        component=\"fieldset\"\n        sx={{ m: 3 }}\n        variant=\"standard\"\n      >\n        <FormLabel component=\"legend\">Pick two</FormLabel>\n        <FormGroup>\n          <FormControlLabel\n            control={\n              <Checkbox checked={gilad} onChange={handleChange} name=\"gilad\" />\n            }\n            label=\"Gilad Gray\"\n          />\n          <FormControlLabel\n            control={\n              <Checkbox checked={jason} onChange={handleChange} name=\"jason\" />\n            }\n            label=\"Jason Killian\"\n          />\n          <FormControlLabel\n            control={\n              <Checkbox checked={antoine} onChange={handleChange} name=\"antoine\" />\n            }\n            label=\"Antoine Llorca\"\n          />\n        </FormGroup>\n        <FormHelperText>You can display an error</FormHelperText>\n      </FormControl>\n    </Box>\n  );\n}\n",
+      "sha256": "9b4b1da681ca0007a7dc6246224455a812e6059f90d32ec523eb60c328282855",
+      "upstreamPath": "docs/data/material/components/checkboxes/CheckboxesGroup.tsx",
+      "upstreamSha256": "8d3ba9528f420c5fd98147979dcfb7646176c88aebece52fa25e9edd77b4fc59",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/ColorCheckboxes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { pink } from '@mui/material/colors';\nimport Checkbox from '@mui/material/Checkbox';\n\nconst label = { slotProps: { input: { 'aria-label': 'Checkbox demo' } } };\n\nexport default function ColorCheckboxes() {\n  return (\n    <div>\n      <Checkbox {...label} defaultChecked />\n      <Checkbox {...label} defaultChecked color=\"secondary\" />\n      <Checkbox {...label} defaultChecked color=\"success\" />\n      <Checkbox {...label} defaultChecked color=\"default\" />\n      <Checkbox\n        {...label}\n        defaultChecked\n        sx={{\n          color: pink[800],\n          '&.Mui-checked': {\n            color: pink[600],\n          },\n        }}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "ad8bb4c702e619093a48a23a11282a8fbdd406ceef442732982d3f7ec780a25e",
+      "upstreamPath": "docs/data/material/components/checkboxes/ColorCheckboxes.tsx",
+      "upstreamSha256": "611c6a7a7a9761dc4bd2346cb5f8951e1224d2e5a6916f27c59e6e3e2c874ea5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/ControlledCheckbox.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Checkbox from '@mui/material/Checkbox';\n\nexport default function ControlledCheckbox() {\n  const [checked, setChecked] = React.useState(true);\n\n  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setChecked(event.target.checked);\n  };\n\n  return (\n    <Checkbox\n      checked={checked}\n      onChange={handleChange}\n      slotProps={{\n        input: { 'aria-label': 'controlled' },\n      }}\n    />\n  );\n}\n",
+      "sha256": "92f0b5f50abe966850de7f672c4adab7adcd91a21dcab608b84eca68dbb07d34",
+      "upstreamPath": "docs/data/material/components/checkboxes/ControlledCheckbox.tsx",
+      "upstreamSha256": "86360f75269b8fb69cbcba929e363ac4eba4c52b3b53335a9ed424e055c081bb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/CustomizedCheckbox.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { styled } from '@mui/material/styles';\nimport Checkbox, { CheckboxProps } from '@mui/material/Checkbox';\n\nconst BpIcon = styled('span')(({ theme }) => ({\n  borderRadius: 3,\n  width: 16,\n  height: 16,\n  boxShadow: 'inset 0 0 0 1px rgba(16,22,26,.2), inset 0 -1px 0 rgba(16,22,26,.1)',\n  backgroundColor: '#f5f8fa',\n  backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0))',\n  '.Mui-focusVisible &': {\n    outline: '2px auto rgba(19,124,189,.6)',\n    outlineOffset: 2,\n  },\n  'input:hover ~ &': {\n    backgroundColor: '#ebf1f5',\n    ...theme.applyStyles('dark', {\n      backgroundColor: '#30404d',\n    }),\n  },\n  'input:disabled ~ &': {\n    boxShadow: 'none',\n    background: 'rgba(206,217,224,.5)',\n    ...theme.applyStyles('dark', {\n      background: 'rgba(57,75,89,.5)',\n    }),\n  },\n  ...theme.applyStyles('dark', {\n    boxShadow: '0 0 0 1px rgb(16 22 26 / 40%)',\n    backgroundColor: '#394b59',\n    backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.05),hsla(0,0%,100%,0))',\n  }),\n}));\n\nconst BpCheckedIcon = styled(BpIcon)({\n  backgroundColor: '#137cbd',\n  backgroundImage: 'linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0))',\n  '&::before': {\n    display: 'block',\n    width: 16,\n    height: 16,\n    backgroundImage:\n      \"url(\\\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath\" +\n      \" fill-rule='evenodd' clip-rule='evenodd' d='M12 5c-.28 0-.53.11-.71.29L7 9.59l-2.29-2.3a1.003 \" +\n      \"1.003 0 00-1.42 1.42l3 3c.18.18.43.29.71.29s.53-.11.71-.29l5-5A1.003 1.003 0 0012 5z' fill='%23fff'/%3E%3C/svg%3E\\\")\",\n    content: '\"\"',\n  },\n  'input:hover ~ &': {\n    backgroundColor: '#106ba3',\n  },\n});\n\n// Inspired by blueprintjs\nfunction BpCheckbox(props: CheckboxProps) {\n  return (\n    <Checkbox\n      sx={{ '&:hover': { bgcolor: 'transparent' } }}\n      disableRipple\n      color=\"default\"\n      checkedIcon={<BpCheckedIcon />}\n      icon={<BpIcon />}\n      slotProps={{ input: { 'aria-label': 'Checkbox demo' } }}\n      {...props}\n    />\n  );\n}\n\nexport default function CustomizedCheckbox() {\n  return (\n    <div>\n      <BpCheckbox />\n      <BpCheckbox defaultChecked />\n      <BpCheckbox disabled />\n    </div>\n  );\n}\n",
+      "sha256": "fcc18da025e4cbb63fb80f05870bbad698249162ff913d71b305c3b4e7e9f7c5",
+      "upstreamPath": "docs/data/material/components/checkboxes/CustomizedCheckbox.tsx",
+      "upstreamSha256": "384c0d94d706be91dd7e3b7f3ba64de61363241e8278ceb7db43aa2379ff880a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/FormControlLabelPosition.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Checkbox from '@mui/material/Checkbox';\nimport FormGroup from '@mui/material/FormGroup';\nimport FormControlLabel from '@mui/material/FormControlLabel';\nimport FormControl from '@mui/material/FormControl';\nimport FormLabel from '@mui/material/FormLabel';\n\nexport default function FormControlLabelPosition() {\n  return (\n    <FormControl component=\"fieldset\">\n      <FormLabel component=\"legend\">Label placement</FormLabel>\n      <FormGroup aria-label=\"position\" row>\n        <FormControlLabel\n          value=\"bottom\"\n          control={<Checkbox />}\n          label=\"Bottom\"\n          labelPlacement=\"bottom\"\n        />\n        <FormControlLabel\n          value=\"end\"\n          control={<Checkbox />}\n          label=\"End\"\n          labelPlacement=\"end\"\n        />\n      </FormGroup>\n    </FormControl>\n  );\n}\n",
+      "sha256": "6b372e462fc2ae98895f95c9571fa4b70cfba2d08029b9e197aee336ad30f450",
+      "upstreamPath": "docs/data/material/components/checkboxes/FormControlLabelPosition.tsx",
+      "upstreamSha256": "f8ac6cf45396cc17ebf3bfa8901438979252d001c9ffe68febbb96662d182201",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/IconCheckboxes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Checkbox from '@mui/material/Checkbox';\nimport FavoriteBorder from '@mui/icons-material/FavoriteBorder';\nimport Favorite from '@mui/icons-material/Favorite';\nimport BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';\nimport BookmarkIcon from '@mui/icons-material/Bookmark';\n\nconst label = { slotProps: { input: { 'aria-label': 'Checkbox demo' } } };\n\nexport default function IconCheckboxes() {\n  return (\n    <div>\n      <Checkbox {...label} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />\n      <Checkbox\n        {...label}\n        icon={<BookmarkBorderIcon />}\n        checkedIcon={<BookmarkIcon />}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "5951508305a7be941a999c075af03e61fb22bd97ba309356929778c11150cb90",
+      "upstreamPath": "docs/data/material/components/checkboxes/IconCheckboxes.tsx",
+      "upstreamSha256": "ff4b7c649fe1d02b3cc12d3846ed9b57ebad327ef5a30e95aacf767cdb41f7bb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/IndeterminateCheckbox.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport * as React from 'react';\nimport Box from '@mui/material/Box';\nimport Checkbox from '@mui/material/Checkbox';\nimport FormControlLabel from '@mui/material/FormControlLabel';\n\nexport default function IndeterminateCheckbox() {\n  const [checked, setChecked] = React.useState([true, false]);\n\n  const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setChecked([event.target.checked, event.target.checked]);\n  };\n\n  const handleChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setChecked([event.target.checked, checked[1]]);\n  };\n\n  const handleChange3 = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setChecked([checked[0], event.target.checked]);\n  };\n\n  const children = (\n    <Box sx={{ display: 'flex', flexDirection: 'column', ml: 3 }}>\n      <FormControlLabel\n        label=\"Child 1\"\n        control={<Checkbox checked={checked[0]} onChange={handleChange2} />}\n      />\n      <FormControlLabel\n        label=\"Child 2\"\n        control={<Checkbox checked={checked[1]} onChange={handleChange3} />}\n      />\n    </Box>\n  );\n\n  return (\n    <div>\n      <FormControlLabel\n        label=\"Parent\"\n        control={\n          <Checkbox\n            checked={checked[0] && checked[1]}\n            indeterminate={checked[0] !== checked[1]}\n            onChange={handleChange1}\n          />\n        }\n      />\n      {children}\n    </div>\n  );\n}\n",
+      "sha256": "67fe0c0d0898157b934d0124b858b3927eb91d0a851bf03267a2838e700a0684",
+      "upstreamPath": "docs/data/material/components/checkboxes/IndeterminateCheckbox.tsx",
+      "upstreamSha256": "38efa19d1a8462f62a269a3fc339a44d35c4665e5e40a329f0f0d2a186e419e3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/SizeCheckboxes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Checkbox from '@mui/material/Checkbox';\n\nconst label = { slotProps: { input: { 'aria-label': 'Checkbox demo' } } };\n\nexport default function SizeCheckboxes() {\n  return (\n    <div>\n      <Checkbox {...label} defaultChecked size=\"small\" />\n      <Checkbox {...label} defaultChecked />\n      <Checkbox\n        {...label}\n        defaultChecked\n        sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "025deb05375484f7af064254cadfa2add9c87e5f93e2ad7d7c93da28898a2e92",
+      "upstreamPath": "docs/data/material/components/checkboxes/SizeCheckboxes.tsx",
+      "upstreamSha256": "6ec086c15f3fb84e192402db555696ccb852824724ccc5afcbab8c5d9a013fed",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/checkboxes/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/checkboxes/example\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "707e89ae960d9c258d3b7969236d6ee3c0068ff63984ff7a9caf36c2fb56b029",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/checkboxes/previews/checkbox-labels.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/CheckboxLabels\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "39d544229e7f8d837874fd358673bcd0f076dc644de122ebe87fad0401eb94e6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/checkboxes/previews/checkboxes-group.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/CheckboxesGroup\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "27df7d31300d8c6b7933c0a5987bb0a0805b9cb1641653664785f1eff8d30dd6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/checkboxes/previews/color-checkboxes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/ColorCheckboxes\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "433e80e1cb12e45902e5635b6a702dd9a0cdc73e692f7ccdc509edba325ccb2f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/checkboxes/previews/controlled-checkbox.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/ControlledCheckbox\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "7b2885dfd261d8217748acc6f090ca1f9e3454b654e13b1e1e3af3473e72ce21",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/checkboxes/previews/customized-checkbox.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/CustomizedCheckbox\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e408fe5be7d30e40b45ed87e2c85ca2924d7f78dac03cbcfd9dc6fe9853c49d4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/checkboxes/previews/form-control-label-position.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/FormControlLabelPosition\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "c7f528c9a4c1f9009c9577264b90ab7197a7e5169d938d6c458afa222faf426a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/checkboxes/previews/icon-checkboxes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/IconCheckboxes\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "67575b889133904f024b7f4bd85835d27d57b85b431976ccb0edf675e478694d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/checkboxes/previews/indeterminate-checkbox.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/IndeterminateCheckbox\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "fffc24ca0b4bd281110e13d12d49ab20f6c21662b8671a811e0aba9b46c4af2f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/checkboxes/previews/size-checkboxes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/checkboxes/SizeCheckboxes\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "261d496c41fa1eb1704fdd60d1b35f29d044c90a780c784fc4385b73ae4838d3",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/icons-material@9.4.0 @mui/material@9.4.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "checkboxes",
+    "upstreamPageUrl": "https://mui.com/material-ui/react-checkboxes/",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/checkboxes/Checkboxes.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/checkboxes/Checkboxes.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# MUI Checkboxes\n\n10 published Material UI checkboxes examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://mui.com/material-ui/react-checkboxes/\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/checkboxes/Checkboxes.tsx\n"
+}

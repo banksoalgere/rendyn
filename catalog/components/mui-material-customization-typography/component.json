@@ -1,0 +1,181 @@
+{
+  "id": "mui:material-customization-typography",
+  "sourceId": "mui",
+  "slug": "mui-material-customization-typography",
+  "name": "Material UI material customization typography",
+  "description": "6 published Material UI material customization typography examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/material@9.4.0",
+    "@mui/x-charts@9.14.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "material-customization-typography",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file",
+      "responsive"
+    ],
+    "aliases": [
+      "material customization typography",
+      "material ui material customization typography",
+      "material-customization-typography"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "6 published Material UI material customization typography examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "material-customization-typography:code:command:data:file:responsive",
+    "searchText": "Material UI material customization typography\nmaterial customization typography\n6 published Material UI material customization typography examples with complete pinned source and MIT attribution.\nmaterial ui material customization typography\nmaterial-customization-typography\ncode\ncommand\ndata\nfile\nresponsive\nMaterial UI material customization typography 6 published Material UI material customization typography examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/typography Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/typography/CustomResponsiveFontSizes.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-material-customization-typography",
+  "manifestPath": "components/mui-material-customization-typography/component.json",
+  "integrity": "sha256:1c85651b97ffffee66cf2be676bec0da6e8580304617ab210543df8ea6561ed1",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/customization/typography/CustomResponsiveFontSizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createTheme, ThemeProvider } from '@mui/material/styles';\nimport Typography from '@mui/material/Typography';\n\nconst theme = createTheme();\n\ntheme.typography.h3 = {\n  fontSize: '1.2rem',\n  '@media (min-width:600px)': {\n    fontSize: '1.5rem',\n  },\n  [theme.breakpoints.up('md')]: {\n    fontSize: '2rem',\n  },\n};\n\nexport default function CustomResponsiveFontSizes() {\n  return (\n    <ThemeProvider theme={theme}>\n      <Typography variant=\"h3\">Responsive h3</Typography>\n    </ThemeProvider>\n  );\n}\n",
+      "sha256": "edf96eacc10e20e9741d0697c4e6912c699283b3786cf7e5b3635f6e3efaa417",
+      "upstreamPath": "docs/data/material/customization/typography/CustomResponsiveFontSizes.tsx",
+      "upstreamSha256": "2029df5e3b5abc4914d97cd8aedc5da440a4a3dd2a40e8a0ef7acd0a4c18f057",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/customization/typography/FontSizeTheme.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createTheme, ThemeProvider } from '@mui/material/styles';\nimport Typography from '@mui/material/Typography';\n\nconst theme = createTheme({\n  typography: {\n    // Tell MUI what the font-size on the html element is.\n    htmlFontSize: 10,\n  },\n});\n\nexport default function FontSizeTheme() {\n  return (\n    <ThemeProvider theme={theme}>\n      <Typography>body1</Typography>\n    </ThemeProvider>\n  );\n}\n",
+      "sha256": "9c76a4abceec5a5994f8b4d6a69e02ddec45bffdad2b49ed04cd857641d725b9",
+      "upstreamPath": "docs/data/material/customization/typography/FontSizeTheme.tsx",
+      "upstreamSha256": "39e9a84630a49b318e447f1123144d8f1237834369c23f1b81be1a2cc90e9d24",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/customization/typography/ResponsiveFontSizes.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {\n  createTheme,\n  responsiveFontSizes,\n  ThemeProvider,\n} from '@mui/material/styles';\nimport Typography from '@mui/material/Typography';\n\nlet theme = createTheme();\ntheme = responsiveFontSizes(theme);\n\nexport default function ResponsiveFontSizes() {\n  return (\n    <div>\n      <ThemeProvider theme={theme}>\n        <Typography variant=\"h3\">Responsive h3</Typography>\n        <Typography variant=\"h4\">Responsive h4</Typography>\n        <Typography variant=\"h5\">Responsive h5</Typography>\n      </ThemeProvider>\n    </div>\n  );\n}\n",
+      "sha256": "8d6871a3e1ec98e33450665af6445aeed446b27a05d28eb7caefa7835bdc091e",
+      "upstreamPath": "docs/data/material/customization/typography/ResponsiveFontSizes.tsx",
+      "upstreamSha256": "6e282ec40a5fd4e8303fbff7a6ea2d71f2db8456b1e64e5052bc63e3f6ce2245",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/customization/typography/ResponsiveFontSizesChart.js",
+      "type": "component",
+      "content": "\"use client\";\n\n// import of a small, pure module in a private demo\n// bundle size and module duplication is negligible\n\n// eslint-disable-next-line no-restricted-imports\nimport { convertLength } from '@mui/material/styles/cssUtils';\nimport { createTheme, responsiveFontSizes } from '@mui/material/styles';\nimport Box from '@mui/material/Box';\nimport { LineChart } from '@mui/x-charts';\n\nlet theme = createTheme();\ntheme = responsiveFontSizes(theme);\n\nconst colors = [\n  '#443dc2',\n  '#2060df',\n  '#277e91',\n  '#378153',\n  '#4d811d',\n  '#63780d',\n  '#996600',\n];\nconst variants = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'subtitle1'];\n\nexport default function ResponsiveFontSizesChart() {\n  const convert = convertLength(theme.typography.htmlFontSize);\n  const toPx = (rem) => parseFloat(convert(rem, 'px'));\n\n  let dataset = theme.breakpoints.keys.map((key) => {\n    const viewport = theme.breakpoints.values[key];\n    const value = theme.breakpoints.up(key);\n\n    const rep = { viewport };\n    variants.forEach((variantName) => {\n      const variant = theme.typography[variantName];\n      if (variant[value]) {\n        const fontSize = toPx(variant[value].fontSize);\n        rep[variantName] = fontSize;\n      } else if (viewport === 0) {\n        const fontSize = toPx(variant.fontSize);\n        rep[variantName] = fontSize;\n      }\n    });\n    return rep;\n  });\n\n  dataset = [\n    ...dataset.slice(0, dataset.length - 1),\n    {\n      ...dataset[dataset.length - 2],\n      viewport: dataset[dataset.length - 1].viewport,\n\n      subtitle1: dataset[0].subtitle1,\n    },\n  ];\n\n  return (\n    <Box sx={{ height: 380, width: '100%', color: 'black' }}>\n      <LineChart\n        dataset={dataset}\n        series={variants.map((variantName) => ({\n          curve: 'stepAfter',\n          dataKey: variantName,\n          label: variantName,\n          connectNulls: true,\n        }))}\n        xAxis={[\n          {\n            scaleType: 'linear',\n            dataKey: 'viewport',\n            valueFormatter: (value) => value.toString(),\n            tickNumber: 10,\n            max: 1600,\n            tickLabelStyle: { fontSize: 15 },\n            label: 'viewport (px)',\n          },\n        ]}\n        yAxis={[\n          {\n            valueFormatter: (value) => value.toString(),\n            tickNumber: 5,\n            min: 0,\n            max: 100,\n            tickLabelStyle: { fontSize: 15 },\n            labelStyle: {\n              fontSize: 15,\n            },\n            label: 'font-size (px)',\n          },\n        ]}\n        colors={colors}\n        margin={{ left: 70 }}\n        sx={{\n          [`.MuiChartsAxis-left .MuiChartsAxis-label`]: {\n            transform: 'translateX(-5px)',\n          },\n          [`.MuiChartsAxis-bottom .MuiChartsAxis-label`]: {\n            transform: 'translateY(5px)',\n          },\n          [`.MuiChartsAxis-root text`]: {\n            fill: '#808080',\n          },\n          [`.MuiChartsAxis-root line`]: {\n            stroke: '#808080',\n          },\n        }}\n      />\n    </Box>\n  );\n}\n",
+      "sha256": "66dae71d69aed26b21a71a464bc1fb04ac8e39d95b27c93592f598260f8e2879",
+      "upstreamPath": "docs/data/material/customization/typography/ResponsiveFontSizesChart.js",
+      "upstreamSha256": "7bfb83d839971aadfea771e6aa19bf63e01757576d754a779e539c73c8eb1342",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/customization/typography/TypographyCustomVariant.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createTheme, ThemeProvider } from '@mui/material/styles';\nimport Box from '@mui/material/Box';\nimport Typography from '@mui/material/Typography';\n\nconst theme = createTheme({\n  typography: {\n    // @ts-ignore\n    poster: {\n      fontSize: '4rem',\n      color: 'indianred',\n    },\n    // Disable v3 variant\n    h3: undefined,\n  },\n  components: {\n    MuiTypography: {\n      defaultProps: {\n        variantMapping: {\n          // @ts-ignore\n          poster: 'h1', // map our new variant to render an <h1> by default\n        },\n      },\n    },\n  },\n});\n\nexport default function TypographyCustomVariant() {\n  return (\n    <ThemeProvider theme={theme}>\n      <Box sx={{ '& > *': { display: 'block' } }}>\n        {/* @ts-ignore */}\n        <Typography variant=\"poster\">poster</Typography>\n        <Typography variant=\"h3\">h3</Typography>\n      </Box>\n    </ThemeProvider>\n  );\n}\n",
+      "sha256": "17a6d2b3a369ac21b05a49960c552ae4c58bb8225270493758c00eb5b2456d4a",
+      "upstreamPath": "docs/data/material/customization/typography/TypographyCustomVariant.tsx",
+      "upstreamSha256": "60aca7912609482937b41f2a366107165c1809717535dbbda2ef4b2a65417f04",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/customization/typography/TypographyVariants.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createTheme, ThemeProvider } from '@mui/material/styles';\nimport Typography from '@mui/material/Typography';\nimport Button from '@mui/material/Button';\n\nconst theme = createTheme({\n  typography: {\n    subtitle1: {\n      fontSize: 12,\n    },\n    body1: {\n      fontWeight: 500,\n    },\n    button: {\n      fontStyle: 'italic',\n    },\n  },\n});\n\nexport default function TypographyVariants() {\n  return (\n    <div>\n      <ThemeProvider theme={theme}>\n        <Typography variant=\"subtitle1\">subtitle</Typography>\n        <Typography>body1</Typography>\n        <Button>Button</Button>\n      </ThemeProvider>\n    </div>\n  );\n}\n",
+      "sha256": "eaf8b4e7191423118dc10ef74b95357e7460618962a61c418a9467a1cbf90f14",
+      "upstreamPath": "docs/data/material/customization/typography/TypographyVariants.tsx",
+      "upstreamSha256": "70581680bf22d83bb1b9f8ff8227b9d84901fd654c55a4a78c25a605714d5165",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-customization-typography/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/customization/typography/CustomResponsiveFontSizes\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "bf83b4d653a70825aba5c0c4919ebbe3710856d529f1b86f078e6cc695158f7a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-customization-typography/previews/font-size-theme.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/customization/typography/FontSizeTheme\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a3fa274c5101d14529ed07b6c18bf7d7bd5100372e706064827bc9f3f55ed619",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-customization-typography/previews/responsive-font-sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/customization/typography/ResponsiveFontSizes\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1026d62c7ad375208b9ea7456ac601072f8b2b827d8c8d812fd2dc765f034675",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-customization-typography/previews/responsive-font-sizes-chart.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/customization/typography/ResponsiveFontSizesChart\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "4e50fdd0875bb4b9339aa4ec522da70c027aa54732289f3e86931400c5644e66",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-customization-typography/previews/typography-custom-variant.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/customization/typography/TypographyCustomVariant\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e482f1c072cec083b5c479b8f0f483eba2f7b27875bb108502b57404e5580aa0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-customization-typography/previews/typography-variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/customization/typography/TypographyVariants\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "78c9e6144dfb48ba74fddb99ed91633377d94d99c80958f3ac0adbe72a1bdde7",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0 @mui/x-charts@9.14.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0 @mui/x-charts@9.14.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "material-customization-typography",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/typography",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/typography/CustomResponsiveFontSizes.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/typography/CustomResponsiveFontSizes.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI material customization typography\n\n6 published Material UI material customization typography examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/typography\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/typography/CustomResponsiveFontSizes.tsx\n"
+}

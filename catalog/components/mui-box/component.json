@@ -1,0 +1,114 @@
+{
+  "id": "mui:box",
+  "sourceId": "mui",
+  "slug": "mui-box",
+  "name": "Material UI box",
+  "description": "2 published Material UI box examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/material@9.4.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "box",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file"
+    ],
+    "aliases": [
+      "box",
+      "material ui box"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "2 published Material UI box examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "box:code:command:data:file",
+    "searchText": "Material UI box\nbox\n2 published Material UI box examples with complete pinned source and MIT attribution.\nmaterial ui box\ncode\ncommand\ndata\nfile\nMaterial UI box 2 published Material UI box examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/box Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/box/BoxBasic.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-box",
+  "manifestPath": "components/mui-box/component.json",
+  "integrity": "sha256:209c69bd0b76681c75d041fd93695f810dd66ea7e5153fb5933acde2802ea9c1",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/box/BoxBasic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Box from '@mui/material/Box';\n\nexport default function BoxBasic() {\n  return (\n    <Box component=\"section\" sx={{ p: 2, border: '1px dashed grey' }}>\n      This Box renders as an HTML section element.\n    </Box>\n  );\n}\n",
+      "sha256": "d83a771ca5cfe4382014726aeedabdad589cc4aeb78f31927917d7045d77275f",
+      "upstreamPath": "docs/data/material/components/box/BoxBasic.tsx",
+      "upstreamSha256": "cfa6fef5605ba32bbee0917c787c5d112859a2f8cd10f2bbcdeed47de892497d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/components/box/BoxSx.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Box from '@mui/material/Box';\nimport { ThemeProvider } from '@mui/material/styles';\n\nexport default function BoxSx() {\n  return (\n    <ThemeProvider\n      theme={{\n        palette: {\n          primary: {\n            main: '#007FFF',\n            dark: '#0066CC',\n          },\n        },\n      }}\n    >\n      <Box\n        sx={{\n          width: 100,\n          height: 100,\n          borderRadius: 1,\n          bgcolor: 'primary.main',\n          '&:hover': {\n            bgcolor: 'primary.dark',\n          },\n        }}\n      />\n    </ThemeProvider>\n  );\n}\n",
+      "sha256": "9b180b4af841e7f1687dfce910389dc703608bd3a7b69eda926ee9986ad1395a",
+      "upstreamPath": "docs/data/material/components/box/BoxSx.tsx",
+      "upstreamSha256": "daae74acc41b6834979c756529747b8a7459e460510830f275932c7390fdf9f5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/box/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/box/BoxBasic\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "601c09d17b050c6c0105623cafbe706b8b10b1bd99f31ac5a0b3d1dc7724a31d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/box/previews/box-sx.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/components/box/BoxSx\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "55477811f1f5f8745c6d8298f106e28bc1b479686c7dd5796250607f9558fd55",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "box",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/box",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/box/BoxBasic.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/box/BoxBasic.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI box\n\n2 published Material UI box examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/box\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/components/box/BoxBasic.tsx\n"
+}

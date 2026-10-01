@@ -1,0 +1,131 @@
+{
+  "id": "mui:material-customization-theming",
+  "sourceId": "mui",
+  "slug": "mui-material-customization-theming",
+  "name": "Material UI material customization theming",
+  "description": "3 published Material UI material customization theming examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@emotion/react@11.14.0",
+    "@emotion/styled@11.14.1",
+    "@mui/material@9.4.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "material-customization-theming",
+    "tags": [
+      "code",
+      "command",
+      "data",
+      "file"
+    ],
+    "aliases": [
+      "material customization theming",
+      "material ui material customization theming",
+      "material-customization-theming"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "3 published Material UI material customization theming examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "material-customization-theming:code:command:data:file",
+    "searchText": "Material UI material customization theming\nmaterial customization theming\n3 published Material UI material customization theming examples with complete pinned source and MIT attribution.\nmaterial ui material customization theming\nmaterial-customization-theming\ncode\ncommand\ndata\nfile\nMaterial UI material customization theming 3 published Material UI material customization theming examples with complete pinned source and MIT attribution. Installation Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed. React and React DOM are required. The default Emotion styling engine is included in the dependency command. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/mui/material ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/theming Pinned source: https://github.com/mui/material ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/theming/CustomStyles.tsx"
+  },
+  "previewPath": "/preview/blocks/mui-material-customization-theming",
+  "manifestPath": "components/mui-material-customization-theming/component.json",
+  "integrity": "sha256:f3ddafe8862938a5a7fc5f840aa4d1dd05b0ced6bf37ecf53444719f2aa88511",
+  "source": {
+    "id": "mui",
+    "name": "Material UI",
+    "repository": "https://github.com/mui/material-ui",
+    "commit": "fc2cbd6d57a52a95121c33eb625d6cf533dd5f43",
+    "registrySha256": "43cfac36ece2f6c3fb4bae790803270a06173d0c34eacb76540b30df40dfe741",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2014 Call-Em-All",
+      "textPath": "source/mui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/customization/theming/CustomStyles.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport Checkbox from '@mui/material/Checkbox';\nimport { createTheme, ThemeProvider, styled } from '@mui/material/styles';\nimport { orange } from '@mui/material/colors';\n\ndeclare module '@mui/material/styles' {\n  interface Theme {\n    status: {\n      danger: string;\n    };\n  }\n  // allow configuration using `createTheme()`\n  interface ThemeOptions {\n    status?: {\n      danger?: string;\n    };\n  }\n}\n\nconst CustomCheckbox = styled(Checkbox)(({ theme }) => ({\n  color: theme.status.danger,\n  '&.Mui-checked': {\n    color: theme.status.danger,\n  },\n}));\n\nconst theme = createTheme({\n  status: {\n    danger: orange[500],\n  },\n});\n\nexport default function CustomStyles() {\n  return (\n    <ThemeProvider theme={theme}>\n      <CustomCheckbox defaultChecked />\n    </ThemeProvider>\n  );\n}\n",
+      "sha256": "1c3ad6727ee2ee66712aec6674bdf8542a7837222bd40a8fbc8d00b7dd6afdd2",
+      "upstreamPath": "docs/data/material/customization/theming/CustomStyles.tsx",
+      "upstreamSha256": "619eb2638b0c5fbbdb925069f4ca8e99f1b70e97fff350907aefb8b8973dae62",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/customization/theming/ThemeNesting.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createTheme, ThemeProvider } from '@mui/material/styles';\nimport Checkbox from '@mui/material/Checkbox';\nimport { green, orange } from '@mui/material/colors';\n\nconst outerTheme = createTheme({\n  palette: {\n    primary: {\n      main: orange[500],\n    },\n  },\n});\n\nconst innerTheme = createTheme({\n  palette: {\n    primary: {\n      main: green[500],\n    },\n  },\n});\n\nexport default function ThemeNesting() {\n  return (\n    <ThemeProvider theme={outerTheme}>\n      <Checkbox defaultChecked />\n      <ThemeProvider theme={innerTheme}>\n        <Checkbox defaultChecked />\n      </ThemeProvider>\n    </ThemeProvider>\n  );\n}\n",
+      "sha256": "a0953156ebfd0a2ea21eebdcb8bee0550beb287db0d4103b2016702bd66bc900",
+      "upstreamPath": "docs/data/material/customization/theming/ThemeNesting.tsx",
+      "upstreamSha256": "8aad7dac4670672e87de367486987fc3b027749212fd357cb930d8aa4e238631",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/upstream/data/material/customization/theming/ThemeNestingExtend.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport { createTheme, Theme, ThemeProvider } from '@mui/material/styles';\nimport Checkbox from '@mui/material/Checkbox';\nimport { green, orange } from '@mui/material/colors';\n\nconst outerTheme = createTheme({\n  palette: {\n    secondary: {\n      main: orange[500],\n    },\n  },\n});\n\nexport default function ThemeNestingExtend() {\n  return (\n    <ThemeProvider theme={outerTheme}>\n      <Checkbox defaultChecked color=\"secondary\" />\n      <ThemeProvider\n        theme={(theme: Theme) =>\n          createTheme({\n            ...theme,\n            palette: {\n              ...theme.palette,\n              primary: {\n                main: green[500],\n              },\n            },\n          })\n        }\n      >\n        <Checkbox defaultChecked />\n        <Checkbox defaultChecked color=\"secondary\" />\n      </ThemeProvider>\n    </ThemeProvider>\n  );\n}\n",
+      "sha256": "3f816f204ed80b175da951ecdd149a158ef8c76e9c171fbadc62b173da1c5ddb",
+      "upstreamPath": "docs/data/material/customization/theming/ThemeNestingExtend.tsx",
+      "upstreamSha256": "2c3bd80570872a5d02f72f1914a9aa9a88c158ded65797f3b937e776c0b6fac3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-customization-theming/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/customization/theming/CustomStyles\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1d059592ea83521c1ccb8b4033bb5e8ee2846be2e0321f5c610a8876357388d0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-customization-theming/previews/theme-nesting.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/customization/theming/ThemeNesting\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1f3198cc1cb1c577e6139137f2651e8a07160c19359352fddff825a2139d7aca",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/mui/material-customization-theming/previews/theme-nesting-extend.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/mui/upstream/data/material/customization/theming/ThemeNestingExtend\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "52471410671d1201f1f5c12abdcaf4be7c280f3935dab537b556c30e28f9cc1d",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @emotion/react@11.14.0 @emotion/styled@11.14.1 @mui/material@9.4.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.",
+      "React and React DOM are required. The default Emotion styling engine is included in the dependency command."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "material-customization-theming",
+    "upstreamPageUrl": "https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/theming",
+    "upstreamDetailUrl": "https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/theming/CustomStyles.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/mui/material-ui/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/theming/CustomStyles.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/mui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Material UI material customization theming\n\n3 published Material UI material customization theming examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example code using the pinned Material UI npm package; MUI internals and paid MUI X components are not redistributed.\n- React and React DOM are required. The default Emotion styling engine is included in the dependency command.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/mui/material-ui/tree/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/theming\nPinned source: https://github.com/mui/material-ui/blob/fc2cbd6d57a52a95121c33eb625d6cf533dd5f43/docs/data/material/customization/theming/CustomStyles.tsx\n"
+}
