@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import catalog from '../../../../../catalog/index.json';
+import legacyPreviewIds from '../../../lib/legacy-preview-ids.json';
 import { externalRegistry } from '../../../../preview/generated/external-registry';
 import { registry } from '../../../../preview/vendor-root/lib/registry';
 import { PreviewRenderer } from '../preview-renderer';
@@ -11,16 +12,16 @@ interface PreviewPageProps {
 }
 
 export function generateStaticParams() {
-  return catalog.components.map((_, index) => ({
-    id: String(index + 1).padStart(3, '0'),
+  return catalog.components.map((component) => ({
+    id: component.slug,
   }));
 }
 
 export default async function PreviewPage({ params, searchParams }: PreviewPageProps) {
   const { id } = await params;
-  if (!/^\d{3}$/.test(id)) notFound();
-
-  const component = catalog.components[Number(id) - 1];
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id) || id.length > 160) notFound();
+  const slug = Object.hasOwn(legacyPreviewIds, id) ? legacyPreviewIds[id as keyof typeof legacyPreviewIds] : id;
+  const component = catalog.components.find(component => component.slug === slug);
   if (!component) notFound();
   const query = await searchParams;
   const embedded = query.embed === '1';
