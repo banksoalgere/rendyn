@@ -80,6 +80,22 @@ export interface CatalogComponent extends CatalogComponentSummary {
   documentation: string;
 }
 
+/** Public search data shared by the browser and MCP; never includes source or documentation. */
+export type SearchComponent = Pick<CatalogComponentSummary,
+  'id' | 'sourceId' | 'slug' | 'name' | 'description' | 'category' | 'previewPath'
+> & { metadata: Omit<CatalogMetadata, 'searchText'> };
+
+export interface SearchIndex {
+  components: SearchComponent[];
+}
+
+export function toSearchComponent(component: CatalogComponentSummary): SearchComponent {
+  const { id, sourceId, slug, name, description, category, previewPath } = component;
+  const { family, kind, tags, aliases, interactions, useWhen, notIdealWhen, visualSignature } = component.metadata;
+  return { id, sourceId, slug, name, description, category, previewPath,
+    metadata: { family, kind, tags, aliases, interactions, useWhen, notIdealWhen, visualSignature } };
+}
+
 export interface CatalogIndex {
   schemaVersion: 2;
   generatedAt: string;
