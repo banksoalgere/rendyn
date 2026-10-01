@@ -8,7 +8,8 @@ export function getStripe(): Stripe {
   if (!stripeClient) {
     stripeClient = new Stripe(getBillingConfig().stripeSecretKey, {
       httpClient: Stripe.createFetchHttpClient(),
-      maxNetworkRetries: 2,
+      maxNetworkRetries: 1,
+      timeout: 20_000,
     });
   }
   return stripeClient;
