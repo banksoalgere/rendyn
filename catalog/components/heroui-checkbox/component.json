@@ -1,0 +1,266 @@
+{
+  "id": "heroui:checkbox",
+  "sourceId": "heroui",
+  "slug": "heroui-checkbox",
+  "name": "HeroUI Checkbox",
+  "description": "11 published HeroUI checkbox examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@heroui/react@2.8.10",
+    "@heroui/theme@2.4.26"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "checkbox",
+    "tags": [
+      "checkbox",
+      "file",
+      "theme"
+    ],
+    "aliases": [
+      "checkbox",
+      "heroui checkbox"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "11 published HeroUI checkbox examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "checkbox:file:theme",
+    "searchText": "HeroUI Checkbox\ncheckbox\n11 published HeroUI checkbox examples with complete pinned source and MIT attribution.\nheroui checkbox\nfile\ntheme\nHeroUI Checkbox 11 published HeroUI checkbox examples with complete pinned source and MIT attribution. Installation Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3. Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node modules/@heroui/theme/dist/ / .{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://www.heroui.com/docs/components/checkbox Pinned source: https://github.com/heroui inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/checkbox/usage.raw.jsx"
+  },
+  "previewPath": "/preview/blocks/heroui-checkbox",
+  "manifestPath": "components/heroui-checkbox/component.json",
+  "integrity": "sha256:d0160f29092bf6d174fe2e38a9e8b4653f33d1f7e209655700c1a3d80e295c58",
+  "source": {
+    "id": "heroui",
+    "name": "HeroUI",
+    "repository": "https://github.com/heroui-inc/heroui",
+    "commit": "46e1f1f78e7777bc8639399e4f5fd913de046d33",
+    "registrySha256": "2db50391dcfd10fb02a7c56444a6c806bef67c80441bab4b7b59aa78038b75fd",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2020 Next UI Inc.",
+      "textPath": "source/heroui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/heroui/checkbox/example.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Checkbox} from \"@heroui/react\";\n\nexport default function App() {\n  return <Checkbox defaultSelected>Option</Checkbox>;\n}\n",
+      "sha256": "c72c1516b87e7d0c678fef8c281c070a91d00566af09f1411f88161f186e34aa",
+      "upstreamPath": "apps/docs/content/components/checkbox/usage.raw.jsx",
+      "upstreamSha256": "54b16e65f1988afbbab039d6738e12e5f4377c2c45d9df68c14581f2fc0c91c6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/checkbox/colors.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Checkbox} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex gap-4\">\n      <Checkbox defaultSelected color=\"default\">\n        Default\n      </Checkbox>\n      <Checkbox defaultSelected color=\"primary\">\n        Primary\n      </Checkbox>\n      <Checkbox defaultSelected color=\"secondary\">\n        Secondary\n      </Checkbox>\n      <Checkbox defaultSelected color=\"success\">\n        Success\n      </Checkbox>\n      <Checkbox defaultSelected color=\"warning\">\n        Warning\n      </Checkbox>\n      <Checkbox defaultSelected color=\"danger\">\n        Danger\n      </Checkbox>\n    </div>\n  );\n}\n",
+      "sha256": "25923350d50aaa3578b9869cbd6ea3ef7236671861e80f41979275409656cffb",
+      "upstreamPath": "apps/docs/content/components/checkbox/colors.raw.jsx",
+      "upstreamSha256": "ca53bce5300820db8b92cf704639c18a862795198b9ee1ee0b612450f07e26b9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/checkbox/controlled.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Checkbox} from \"@heroui/react\";\n\nexport default function App() {\n  const [isSelected, setIsSelected] = React.useState(false);\n\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <Checkbox isSelected={isSelected} onValueChange={setIsSelected}>\n        Subscribe (controlled)\n      </Checkbox>\n      <p className=\"text-default-500\">Selected: {isSelected ? \"true\" : \"false\"}</p>\n    </div>\n  );\n}\n",
+      "sha256": "197f697ef3aa80c110ff7bb9888aa64de650475ad42de6a0733a0ed13830b52a",
+      "upstreamPath": "apps/docs/content/components/checkbox/controlled.raw.jsx",
+      "upstreamSha256": "ab92722af14260bad12cf1847360b870a951ebdad862382dce311ec69c957ca2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/checkbox/custom-check-icon.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Checkbox} from \"@heroui/react\";\n\nexport const HeartIcon = ({size, height, width, ...props}) => {\n  // avoid passing non-DOM attributes to svg\n  // eslint-disable-next-line @typescript-eslint/no-unused-vars\n  const {isSelected, isIndeterminate, disableAnimation, ...otherProps} = props;\n\n  return (\n    <svg\n      fill=\"fill\"\n      height={size || height || 24}\n      viewBox=\"0 0 24 24\"\n      width={size || width || 24}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...otherProps}\n    >\n      <path\n        d=\"M12.62 20.81c-.34.12-.9.12-1.24 0C8.48 19.82 2 15.69 2 8.69 2 5.6 4.49 3.1 7.56 3.1c1.82 0 3.43.88 4.44 2.24a5.53 5.53 0 0 1 4.44-2.24C19.51 3.1 22 5.6 22 8.69c0 7-6.48 11.13-9.38 12.12Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  );\n};\n\nexport const PlusIcon = ({size, height, width, ...props}) => {\n  // avoid passing non-DOM attributes to svg\n  // eslint-disable-next-line @typescript-eslint/no-unused-vars\n  const {isSelected, isIndeterminate, disableAnimation, ...otherProps} = props;\n\n  return (\n    <svg\n      fill=\"none\"\n      height={size || height || 24}\n      viewBox=\"0 0 24 24\"\n      width={size || width || 24}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...otherProps}\n    >\n      <path\n        d=\"M6 12H18\"\n        stroke=\"currentColor\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        strokeWidth=\"3\"\n      />\n      <path\n        d=\"M12 18V6\"\n        stroke=\"currentColor\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        strokeWidth=\"3\"\n      />\n    </svg>\n  );\n};\n\nexport default function App() {\n  return (\n    <div className=\"flex gap-4\">\n      <Checkbox defaultSelected icon={<HeartIcon />}>\n        Option\n      </Checkbox>\n      <Checkbox defaultSelected color=\"warning\" icon={<PlusIcon />}>\n        Option\n      </Checkbox>\n    </div>\n  );\n}\n",
+      "sha256": "f43a2a98dd94ed92be722a1199d4fd16b9ad730d9814391332758cde2033a39a",
+      "upstreamPath": "apps/docs/content/components/checkbox/custom-check-icon.raw.jsx",
+      "upstreamSha256": "d137c2678dd626ffdb9fb3150d656e3ef51f8f812cfb3949e6016b91d49bf962",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/checkbox/custom-implementation.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {useCheckbox, Chip, VisuallyHidden, tv} from \"@heroui/react\";\n\nexport const CheckIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      stroke=\"currentColor\"\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      strokeWidth={2}\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <polyline points=\"20 6 9 17 4 12\" />\n    </svg>\n  );\n};\n\nexport default function App() {\n  const {children, isSelected, isFocusVisible, getBaseProps, getLabelProps, getInputProps} =\n    useCheckbox({\n      defaultSelected: true,\n    });\n\n  const checkbox = tv({\n    slots: {\n      base: \"border-default hover:bg-default-200\",\n      content: \"text-default-500\",\n    },\n    variants: {\n      isSelected: {\n        true: {\n          base: \"border-primary bg-primary hover:bg-primary-500 hover:border-primary-500\",\n          content: \"text-primary-foreground pl-1\",\n        },\n      },\n      isFocusVisible: {\n        true: {\n          base: \"outline-solid outline-transparent ring-2 ring-focus ring-offset-2 ring-offset-background\",\n        },\n      },\n    },\n  });\n\n  const styles = checkbox({isSelected, isFocusVisible});\n\n  return (\n    <label {...getBaseProps()}>\n      <VisuallyHidden>\n        <input {...getInputProps()} />\n      </VisuallyHidden>\n      <Chip\n        classNames={{\n          base: styles.base(),\n          content: styles.content(),\n        }}\n        color=\"primary\"\n        startContent={isSelected ? <CheckIcon className=\"ml-1\" /> : null}\n        variant=\"faded\"\n        {...getLabelProps()}\n      >\n        {children ? children : isSelected ? \"Enabled\" : \"Disabled\"}\n      </Chip>\n    </label>\n  );\n}\n",
+      "sha256": "bb5c873bbf0d7533010d955cef10ea2dc8c950f75cf3584493b2004867cc97a7",
+      "upstreamPath": "apps/docs/content/components/checkbox/custom-implementation.raw.jsx",
+      "upstreamSha256": "47007d946195d4b63e7d9da3c8c014f3240361b90abc5e14b920dfdf1f49fa93",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/checkbox/custom-styles.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Checkbox, Link, User, Chip, cn} from \"@heroui/react\";\n\nexport default function App() {\n  const [isSelected, setIsSelected] = React.useState(false);\n\n  const user = {\n    name: \"Junior Garcia\",\n    avatar: \"https://avatars.githubusercontent.com/u/30373425?v=4\",\n    username: \"jrgarciadev\",\n    url: \"https://x.com/jrgarciadev\",\n    role: \"Software Developer\",\n    status: \"Active\",\n  };\n\n  return (\n    <Checkbox\n      aria-label={user.name}\n      classNames={{\n        base: cn(\n          \"inline-flex w-full max-w-md bg-content1\",\n          \"hover:bg-content2 items-center justify-start\",\n          \"cursor-pointer rounded-lg gap-2 p-4 border-2 border-transparent\",\n          \"data-[selected=true]:border-primary\",\n        ),\n        label: \"w-full\",\n      }}\n      isSelected={isSelected}\n      onValueChange={setIsSelected}\n    >\n      <div className=\"w-full flex justify-between gap-2\">\n        <User\n          avatarProps={{size: \"md\", src: user.avatar}}\n          description={\n            <Link isExternal href={user.url} size=\"sm\">\n              @{user.username}\n            </Link>\n          }\n          name={user.name}\n        />\n        <div className=\"flex flex-col items-end gap-1\">\n          <span className=\"text-tiny text-default-500\">{user.role}</span>\n          <Chip color=\"success\" size=\"sm\" variant=\"flat\">\n            {user.status}\n          </Chip>\n        </div>\n      </div>\n    </Checkbox>\n  );\n}\n",
+      "sha256": "1ee86466454765f140f06d02a57747cf5c5d9485c6957c6532588e118409c7e3",
+      "upstreamPath": "apps/docs/content/components/checkbox/custom-styles.raw.jsx",
+      "upstreamSha256": "5b90a43b580291cccffebdf190966dc14b8c9dedc99e1162dcbb5d9b9d912755",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/checkbox/disabled.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Checkbox} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex gap-4\">\n      <Checkbox isDisabled>Option</Checkbox>\n      <Checkbox defaultSelected isDisabled>\n        Option\n      </Checkbox>\n    </div>\n  );\n}\n",
+      "sha256": "760402efe7aca598e2006eda7ffe7bc96e76f3e3bd49ca69e9ee344cfea8430d",
+      "upstreamPath": "apps/docs/content/components/checkbox/disabled.raw.jsx",
+      "upstreamSha256": "9c1bd7bdbc196123ef0ebf218a82da5ce33a9c3c82b86dca81f60eeea95b8bad",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/checkbox/indeterminate.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Checkbox} from \"@heroui/react\";\n\nexport default function App() {\n  return <Checkbox isIndeterminate>Option</Checkbox>;\n}\n",
+      "sha256": "bf40184f7f7edc5a1c4b0036472febde0ee808c189a5aa042ed7be8e5f86b425",
+      "upstreamPath": "apps/docs/content/components/checkbox/indeterminate.raw.jsx",
+      "upstreamSha256": "d60c355e284d8f2a25c229dc884588ddd13bddd823e1b805d83c80660b54c530",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/checkbox/line-through.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Checkbox} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Checkbox defaultSelected lineThrough>\n      Option\n    </Checkbox>\n  );\n}\n",
+      "sha256": "ec90b72d1e7f9f73af31348bb1bd30e3b1196a1dd0176ec6033d403c388b467d",
+      "upstreamPath": "apps/docs/content/components/checkbox/line-through.raw.jsx",
+      "upstreamSha256": "0d815605c64399f09a3857a1c607bfab9cc2ff0c5a685d75135e52e1100713f8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/checkbox/radius.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Checkbox} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex gap-4\">\n      <Checkbox defaultSelected radius=\"full\">\n        Full\n      </Checkbox>\n      <Checkbox defaultSelected radius=\"lg\">\n        Large\n      </Checkbox>\n      <Checkbox defaultSelected radius=\"md\">\n        Medium\n      </Checkbox>\n      <Checkbox defaultSelected radius=\"sm\">\n        Small\n      </Checkbox>\n      <Checkbox defaultSelected radius=\"none\">\n        None\n      </Checkbox>\n    </div>\n  );\n}\n",
+      "sha256": "bd72c7bc1096e3987f921586b4442e7910255466d17ee82117ced9b79da25cdd",
+      "upstreamPath": "apps/docs/content/components/checkbox/radius.raw.jsx",
+      "upstreamSha256": "b44b88509838b41db54141e841058c25e51c22f3fbf9603468545c20af5edf70",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/checkbox/sizes.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Checkbox} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex gap-4\">\n      <Checkbox defaultSelected size=\"sm\">\n        Small\n      </Checkbox>\n      <Checkbox defaultSelected size=\"md\">\n        Medium\n      </Checkbox>\n      <Checkbox defaultSelected size=\"lg\">\n        Large\n      </Checkbox>\n    </div>\n  );\n}\n",
+      "sha256": "e8fdc1e8139219388d916e6fa4a7572da192280d1e3b73223196649fd5df3b23",
+      "upstreamPath": "apps/docs/content/components/checkbox/sizes.raw.jsx",
+      "upstreamSha256": "048d9549ad957a806ba9d612a280d11d4df347d06bb5f54658f199bd60f71b67",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/checkbox/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/checkbox/example\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "eb6dcbbdef6245ab913be0a5f508d5df054e10f69785cdf8f1fbfd5807df3687",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/checkbox/previews/colors.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/checkbox/colors.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "20cd2df10b5c133d4650c78e919300319654ff328cde77d37e14689ffdbe0824",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/checkbox/previews/controlled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/checkbox/controlled.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "4c2080da45508ab0486befacf9b77f3f8361899d74d5e31ce857c6fa543e8670",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/checkbox/previews/custom-check-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/checkbox/custom-check-icon.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "e9297bdf8aa4127768f5ee08502547fad7781c854be42109ef249219966b0ceb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/checkbox/previews/custom-implementation.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/checkbox/custom-implementation.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "dbc4582d2d19c79c99fcf3792d553f9493a7d04cca5df96364e8b4c859590344",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/checkbox/previews/custom-styles.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/checkbox/custom-styles.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "cd84c35fe1f9f3bfcf8d3e5d8e81cdc0727919b7a530875450cd0d302435c742",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/checkbox/previews/disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/checkbox/disabled.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "2e16441bfa35fdfb7b05de007bda9efe4ca6769a0cf8ca46e12a94f9e75636fa",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/checkbox/previews/indeterminate.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/checkbox/indeterminate.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "cb39091710ab3d3d5b71f46c3e1b8582da9108fb3257c434c99c5060633e1326",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/checkbox/previews/line-through.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/checkbox/line-through.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "63adf9b594facfef2463afa14715c722a00be77820686026973ddd3da7f3ed35",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/checkbox/previews/radius.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/checkbox/radius.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "f88854a2783c430f580688bc516b4f9977dc2b8fee7d4668cd96288566a7e743",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/checkbox/previews/sizes.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/checkbox/sizes.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "c7fc879e39b301fd94abc86d9f5a61db86a8646f054f97a865639beafb7d6655",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/theme.css",
+      "type": "style",
+      "content": ".heroui-preview {\n  --primary: hsl(var(--heroui-primary));\n  --primary-foreground: hsl(var(--heroui-primary-foreground));\n  --background: hsl(var(--heroui-background));\n  --foreground: hsl(var(--heroui-foreground));\n  --border: hsl(var(--heroui-divider));\n}\n",
+      "sha256": "d7e90a5ed4780fbf5df6328631a4420ee099f07d345a8f509fce6937bd3e67c0",
+      "transformation": "Authored scoped mapping to official HeroUI semantic tokens."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/heroui/theme.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.",
+      "Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "checkbox",
+    "upstreamPageUrl": "https://www.heroui.com/docs/components/checkbox",
+    "upstreamDetailUrl": "https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/checkbox/usage.raw.jsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/heroui-inc/heroui/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/checkbox/usage.raw.jsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition.",
+      "Authored scoped mapping to official HeroUI semantic tokens."
+    ]
+  },
+  "documentation": "# HeroUI Checkbox\n\n11 published HeroUI checkbox examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.\n- Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://www.heroui.com/docs/components/checkbox\nPinned source: https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/checkbox/usage.raw.jsx\n"
+}

@@ -1,0 +1,234 @@
+{
+  "id": "heroui:toast",
+  "sourceId": "heroui",
+  "slug": "heroui-toast",
+  "name": "HeroUI toast",
+  "description": "9 published HeroUI toast examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@heroui/react@2.8.10",
+    "@heroui/theme@2.4.26"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "toast",
+    "tags": [
+      "file",
+      "theme",
+      "toast"
+    ],
+    "aliases": [
+      "toast",
+      "heroui toast"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "9 published HeroUI toast examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "toast:file:theme",
+    "searchText": "HeroUI toast\ntoast\n9 published HeroUI toast examples with complete pinned source and MIT attribution.\nheroui toast\nfile\ntheme\nHeroUI toast 9 published HeroUI toast examples with complete pinned source and MIT attribution. Installation Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3. Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node modules/@heroui/theme/dist/ / .{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/heroui inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/toast Pinned source: https://github.com/heroui inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/toast/close.raw.jsx"
+  },
+  "previewPath": "/preview/blocks/heroui-toast",
+  "manifestPath": "components/heroui-toast/component.json",
+  "integrity": "sha256:3252f4513d73e4bff39f45e56abe9fb95289e38508fe21eb27ce48dbe33c12be",
+  "source": {
+    "id": "heroui",
+    "name": "HeroUI",
+    "repository": "https://github.com/heroui-inc/heroui",
+    "commit": "46e1f1f78e7777bc8639399e4f5fd913de046d33",
+    "registrySha256": "2db50391dcfd10fb02a7c56444a6c806bef67c80441bab4b7b59aa78038b75fd",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2020 Next UI Inc.",
+      "textPath": "source/heroui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/toast/close.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {addToast, Button, closeToast, closeAll, ToastProvider} from \"@heroui/react\";\nimport React from \"react\";\n\nexport default function App() {\n  const [toastKey, setToastKey] = React.useState([]);\n\n  return (\n    <>\n      <div className=\"fixed z-[100]\">\n        <ToastProvider />\n      </div>\n      <div className=\"flex flex-wrap gap-2\">\n        <Button\n          variant=\"flat\"\n          onPress={() => {\n            const key = addToast({\n              title: \"New Toast\",\n              timeout: Infinity,\n            });\n\n            if (!key) return;\n            setToastKey((prev) => [...prev, key]);\n          }}\n        >\n          Add Toast\n        </Button>\n        <Button\n          variant=\"flat\"\n          onPress={() => {\n            if (toastKey.length == 0) return;\n            closeToast(toastKey[toastKey.length - 1]);\n            setToastKey((prev) => prev.slice(0, prev.length - 1));\n          }}\n        >\n          Close The Last Toast\n        </Button>\n        <Button\n          variant=\"flat\"\n          onPress={() => {\n            closeAll();\n            setToastKey([]);\n          }}\n        >\n          Close All Toasts\n        </Button>\n      </div>\n    </>\n  );\n}\n",
+      "sha256": "3f1d3653aecf05aae8276cd402d484463b84a894c5809531740bb120d9565320",
+      "upstreamPath": "apps/docs/content/components/toast/close.raw.jsx",
+      "upstreamSha256": "d65f017b58f31086bcdf2a905e70cfda5d76a18b40b28cd2cab769ed400c7a1d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/toast/color.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {addToast, Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      {[\"Default\", \"Primary\", \"Secondary\", \"Success\", \"Warning\", \"Danger\"].map((color) => (\n        <Button\n          key={color}\n          color={color.toLowerCase()}\n          variant={\"flat\"}\n          onPress={() =>\n            addToast({\n              title: \"Toast title\",\n              description: \"Toast displayed successfully\",\n              color: color.toLowerCase(),\n            })\n          }\n        >\n          {color}\n        </Button>\n      ))}\n    </div>\n  );\n}\n",
+      "sha256": "abff556329bd7514bd713caa89e049a7ce9ab1c61308fc977b13528194c5b894",
+      "upstreamPath": "apps/docs/content/components/toast/color.raw.jsx",
+      "upstreamSha256": "7adb43c5ca7a912d7281dab4002a45e1ac7eea85b6b93166e223adc61e6fd616",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/toast/custom-close-icon.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {addToast, Button} from \"@heroui/react\";\n\nconst CustomToastComponent = () => {\n  return (\n    <Button\n      variant=\"flat\"\n      onPress={() => {\n        addToast({\n          hideIcon: true,\n          title: \"Toast Title\",\n          description: \"Toast Description\",\n          classNames: {\n            closeButton: \"opacity-100 absolute right-4 top-1/2 -translate-y-1/2\",\n          },\n          closeIcon: (\n            <svg\n              fill=\"none\"\n              height=\"32\"\n              stroke=\"currentColor\"\n              strokeLinecap=\"round\"\n              strokeLinejoin=\"round\"\n              strokeWidth=\"2\"\n              viewBox=\"0 0 24 24\"\n              width=\"32\"\n            >\n              <path d=\"M18 6 6 18\" />\n              <path d=\"m6 6 12 12\" />\n            </svg>\n          ),\n        });\n      }}\n    >\n      Show Toast\n    </Button>\n  );\n};\n\nexport default function App() {\n  return (\n    <div className=\"flex gap-2\">\n      <CustomToastComponent />\n    </div>\n  );\n}\n",
+      "sha256": "509b61a96536d15fa68b8d91a410961909fb30306128ba67c93b530b95c6b007",
+      "upstreamPath": "apps/docs/content/components/toast/custom-close-icon.raw.jsx",
+      "upstreamSha256": "fdbd44fdb0f1892b1e1389bbc63d712638d3f1154d0164d7800eb4e60d831b31",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/toast/custom-styles.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {addToast, Button, cn} from \"@heroui/react\";\n\nconst CustomToastComponent = () => {\n  return (\n    <Button\n      variant=\"flat\"\n      onPress={() => {\n        addToast({\n          title: \"Successfull!\",\n          description: \"Document uploaded to cloud successfully.\",\n          classNames: {\n            base: cn([\n              \"bg-default-50 dark:bg-background shadow-sm\",\n              \"border border-l-8 rounded-md rounded-l-none\",\n              \"flex flex-col items-start\",\n              \"border-primary-200 dark:border-primary-100 border-l-primary\",\n            ]),\n            icon: \"w-6 h-6 fill-current\",\n          },\n          endContent: (\n            <div className=\"ms-11 my-2 flex gap-x-2\">\n              <Button color={\"primary\"} size=\"sm\" variant=\"bordered\">\n                View Document\n              </Button>\n              <Button className=\"underline-offset-2\" color={\"primary\"} size=\"sm\" variant=\"light\">\n                Maybe Later\n              </Button>\n            </div>\n          ),\n          color: \"primary\",\n        });\n      }}\n    >\n      Show Toast\n    </Button>\n  );\n};\n\nexport default function App() {\n  return (\n    <div className=\"flex gap-2\">\n      <CustomToastComponent />\n    </div>\n  );\n}\n",
+      "sha256": "d881d3094c99a56ca3fa46e69751d4b12f205c1a2a6cf902be901285683035f5",
+      "upstreamPath": "apps/docs/content/components/toast/custom-styles.raw.jsx",
+      "upstreamSha256": "1690d3b2c296b64b4ae365a25d8747cbe48794e81455f9c67ec4be2b4f0ad392",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/toast/placement.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {addToast, ToastProvider, Button} from \"@heroui/react\";\nimport React from \"react\";\n\nexport default function App() {\n  const [placement, setPlacement] = React.useState(\"bottom-right\");\n\n  return (\n    <>\n      <div className=\"fixed z-[100]\">\n        <ToastProvider placement={placement} toastOffset={placement.includes(\"top\") ? 60 : 0} />\n      </div>\n\n      <div className=\"flex flex-wrap gap-2\">\n        {[\n          [\"Top Left\", \"top-left\"],\n          [\"Top Center\", \"top-center\"],\n          [\"Top Right\", \"top-right\"],\n          [\"Bottom Left\", \"bottom-left\"],\n          [\"Bottom Center\", \"bottom-center\"],\n          [\"Bottom Right\", \"bottom-right\"],\n        ].map((position) => (\n          <Button\n            key={position[1]}\n            variant={\"flat\"}\n            onPress={() => {\n              setPlacement(position[1]);\n              addToast({\n                title: \"Toast title\",\n                description: \"Toast displayed successfully\",\n              });\n            }}\n          >\n            {position[0]}\n          </Button>\n        ))}\n      </div>\n    </>\n  );\n}\n",
+      "sha256": "ecb8e35b29f6c2e34c62ba67bd562b7a2093effc6643857727126b32bfb7b4d9",
+      "upstreamPath": "apps/docs/content/components/toast/placement.raw.jsx",
+      "upstreamSha256": "280749542dccddd7c91ac24e56c9cba2a3679dab2773f3ab398cc596677a0784",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/toast/radius.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {addToast, Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      {[\n        [\"None\", \"none\"],\n        [\"Small\", \"sm\"],\n        [\"Medium\", \"md\"],\n        [\"Large\", \"lg\"],\n        [\"Full\", \"full\"],\n      ].map((radius) => (\n        <Button\n          key={radius[1]}\n          radius={radius[1]}\n          variant={\"flat\"}\n          onPress={() =>\n            addToast({\n              title: \"Toast title\",\n              description: \"Toast displayed successfully\",\n              radius: radius[1],\n            })\n          }\n        >\n          {radius[0]}\n        </Button>\n      ))}\n    </div>\n  );\n}\n",
+      "sha256": "55c5cca6e6f4b65a74e603aabd5c919748b9c216b152339db520b5ec00e590e8",
+      "upstreamPath": "apps/docs/content/components/toast/radius.raw.jsx",
+      "upstreamSha256": "79e0ab661b00a35154113dd20bb07d9b46fa2befaae6ab60af2b1a5190944986",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/toast/simple.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {addToast, Button, ToastProvider} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <>\n      <div className=\"fixed z-[100]\">\n        <ToastProvider />\n      </div>\n      <div className=\"flex flex-wrap gap-2\">\n        <Button\n          onPress={() => {\n            addToast({\n              title: \"Success\",\n              description: \"Your changes have been saved successfully.\",\n            });\n          }}\n        >\n          Show Toast\n        </Button>\n      </div>\n    </>\n  );\n}\n",
+      "sha256": "305f67c05c86602c33bc3a3c69071f2bd2af4da58cef965fb0f91e75eda9959c",
+      "upstreamPath": "apps/docs/content/components/toast/simple.raw.jsx",
+      "upstreamSha256": "fd8510737526689dbbc341ec3ca5ee3ab8984f5f3452bffa0bd0ea3640b251d5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/toast/usage.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {addToast, Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      <Button\n        variant=\"flat\"\n        onPress={() => {\n          addToast({\n            title: \"Toast Title\",\n          });\n        }}\n      >\n        Default\n      </Button>\n\n      <Button\n        variant=\"flat\"\n        onPress={() => {\n          addToast({\n            title: \"Toast Title\",\n            description: \"Toast Description\",\n          });\n        }}\n      >\n        With Description\n      </Button>\n\n      <Button\n        variant=\"flat\"\n        onPress={() => {\n          addToast({\n            title: \"Toast Title\",\n            description: \"Toast Description\",\n            hideIcon: true,\n          });\n        }}\n      >\n        Hidden Icon\n      </Button>\n\n      <Button\n        variant=\"flat\"\n        onPress={() => {\n          addToast({\n            title: \"Toast Title\",\n            description: \"Toast Description\",\n            promise: new Promise((resolve) => setTimeout(resolve, 3000)),\n          });\n        }}\n      >\n        Promise (3000ms)\n      </Button>\n\n      <Button\n        variant=\"flat\"\n        onPress={() => {\n          addToast({\n            title: \"Toast Title\",\n            description: \"Toast Description\",\n            endContent: (\n              <Button size=\"sm\" variant=\"flat\">\n                Upgrade\n              </Button>\n            ),\n          });\n        }}\n      >\n        With endContent\n      </Button>\n\n      <Button\n        variant=\"flat\"\n        onPress={() => {\n          addToast({\n            title: \"Toast Title\",\n            description: \"Toast Description\",\n            timeout: 3000,\n            shouldShowTimeoutProgress: true,\n          });\n        }}\n      >\n        Show Timeout Progress (3000ms)\n      </Button>\n\n      <Button\n        variant=\"flat\"\n        onPress={() =>\n          addToast({\n            title: \"Toast title\",\n            description: \"Toast displayed successfully\",\n            icon: (\n              <svg height={24} viewBox=\"0 0 24 24\" width={24}>\n                <g\n                  fill=\"none\"\n                  stroke=\"currentColor\"\n                  strokeLinecap=\"round\"\n                  strokeLinejoin=\"round\"\n                  strokeMiterlimit={10}\n                  strokeWidth={1.5}\n                >\n                  <path\n                    d=\"M11.845 21.662C8.153 21.662 5 21.088 5 18.787s3.133-4.425 6.845-4.425c3.692 0 6.845 2.1 6.845 4.4s-3.134 2.9-6.845 2.9z\"\n                    data-name=\"Stroke 1\"\n                  />\n                  <path d=\"M11.837 11.174a4.372 4.372 0 10-.031 0z\" data-name=\"Stroke 3\" />\n                </g>\n              </svg>\n            ),\n          })\n        }\n      >\n        Custom Icon\n      </Button>\n    </div>\n  );\n}\n",
+      "sha256": "2674b5fcb891c82b83331ead7e1fa04269ccf47536795dbda4e52022198f992b",
+      "upstreamPath": "apps/docs/content/components/toast/usage.raw.jsx",
+      "upstreamSha256": "61f4124b52cd588696326619ee89a41cb572d01994b9f3c37f3d728505d39305",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/toast/variants.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {addToast, Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      {[\n        [\"Solid\", \"solid\"],\n        [\"Bordered\", \"bordered\"],\n        [\"Flat\", \"faded\"],\n      ].map((variant) => (\n        <Button\n          key={variant[0]}\n          // @ts-ignore\n          variant={variant[1]}\n          onPress={() =>\n            addToast({\n              title: \"Toast title\",\n              description: \"Toast displayed successfully\",\n              // @ts-ignore\n              variant: variant[0].toLowerCase(),\n              color: \"secondary\",\n            })\n          }\n        >\n          {variant[0]}\n        </Button>\n      ))}\n    </div>\n  );\n}\n",
+      "sha256": "daf8a54787deec43a2f732a18d2ad95ada2752659238a1656cf2d2c39162f777",
+      "upstreamPath": "apps/docs/content/components/toast/variants.raw.jsx",
+      "upstreamSha256": "d986ef3d3064e19fa51e480c15039432ceb6824b61d4e07070eaeaf47f310fd0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/toast/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/toast/close.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "0647a5b932337a449ed6f6bdfd0f3495f250056e3dbc040844e38d69ce61ca1a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/toast/previews/color.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/toast/color.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "0e1b83a6eed0de7f5d03c103042038d5b721c11b024b04226d46988dff54de3a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/toast/previews/custom-close-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/toast/custom-close-icon.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "9e85955378140688c3ed87025d3f85acf90647044e92289719ea05e6f38604e6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/toast/previews/custom-styles.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/toast/custom-styles.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "59ff73b0e6b4f0e8dd0f8bf8b7d6f6e50f7c00490011bc6541007bcd47e99a5d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/toast/previews/placement.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/toast/placement.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "e0087978ba97e8288e0556f018540be4f5fb5a687a4b6851d9cf66301e38fd93",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/toast/previews/radius.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/toast/radius.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "acc5c07aacf1246a675a035c376d9dc5a21c31a2536d085e4894de943a0b866b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/toast/previews/simple.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/toast/simple.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "e88b2335948b85c1d75159e3b0bf9b60e5e2de04feb953b0d5c2a10c11fd748c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/toast/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/toast/usage.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "32b2e89d2c7722e3eb3467384096ab9b6ff97d68f8799fb1f42498f437e3b1d1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/toast/previews/variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/toast/variants.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "5a533e46690a30d51472b1a30870446dafda5d9ba9f4976cb64bf032f1d14ca9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/theme.css",
+      "type": "style",
+      "content": ".heroui-preview {\n  --primary: hsl(var(--heroui-primary));\n  --primary-foreground: hsl(var(--heroui-primary-foreground));\n  --background: hsl(var(--heroui-background));\n  --foreground: hsl(var(--heroui-foreground));\n  --border: hsl(var(--heroui-divider));\n}\n",
+      "sha256": "d7e90a5ed4780fbf5df6328631a4420ee099f07d345a8f509fce6937bd3e67c0",
+      "transformation": "Authored scoped mapping to official HeroUI semantic tokens."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/heroui/theme.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.",
+      "Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "toast",
+    "upstreamPageUrl": "https://github.com/heroui-inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/toast",
+    "upstreamDetailUrl": "https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/toast/close.raw.jsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/heroui-inc/heroui/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/toast/close.raw.jsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition.",
+      "Authored scoped mapping to official HeroUI semantic tokens."
+    ]
+  },
+  "documentation": "# HeroUI toast\n\n9 published HeroUI toast examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.\n- Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/heroui-inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/toast\nPinned source: https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/toast/close.raw.jsx\n"
+}

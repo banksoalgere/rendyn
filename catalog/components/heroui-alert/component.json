@@ -1,0 +1,265 @@
+{
+  "id": "heroui:alert",
+  "sourceId": "heroui",
+  "slug": "heroui-alert",
+  "name": "HeroUI alert",
+  "description": "11 published HeroUI alert examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@heroui/react@2.8.10",
+    "@heroui/theme@2.4.26"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "alert",
+    "tags": [
+      "file",
+      "theme"
+    ],
+    "aliases": [
+      "alert",
+      "heroui alert"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "11 published HeroUI alert examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "alert:file:theme",
+    "searchText": "HeroUI alert\nalert\n11 published HeroUI alert examples with complete pinned source and MIT attribution.\nheroui alert\nfile\ntheme\nHeroUI alert 11 published HeroUI alert examples with complete pinned source and MIT attribution. Installation Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3. Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node modules/@heroui/theme/dist/ / .{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/heroui inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/alert Pinned source: https://github.com/heroui inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/alert/colors.raw.jsx"
+  },
+  "previewPath": "/preview/blocks/heroui-alert",
+  "manifestPath": "components/heroui-alert/component.json",
+  "integrity": "sha256:cb1f2fd85e1a3b943992a35011ef0b5c540171f10f150b04e4e1eba10f90d87a",
+  "source": {
+    "id": "heroui",
+    "name": "HeroUI",
+    "repository": "https://github.com/heroui-inc/heroui",
+    "commit": "46e1f1f78e7777bc8639399e4f5fd913de046d33",
+    "registrySha256": "2db50391dcfd10fb02a7c56444a6c806bef67c80441bab4b7b59aa78038b75fd",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2020 Next UI Inc.",
+      "textPath": "source/heroui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/alert/colors.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Alert} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex items-center justify-center w-full\">\n      <div className=\"flex flex-col w-full\">\n        {[\"default\", \"primary\", \"secondary\", \"success\", \"warning\", \"danger\"].map((color) => (\n          <div key={color} className=\"w-full flex items-center my-3\">\n            <Alert color={color} title={`This is a ${color} alert`} />\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "sha256": "b693d93f5e4b034ae6f643b73cd7cbcc344f1737a91f5d86df746a2a17e409bf",
+      "upstreamPath": "apps/docs/content/components/alert/colors.raw.jsx",
+      "upstreamSha256": "054e88edb7f6cb21f41f8fff60c38c211bb643cd6d824eee8273bd8930537825",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/alert/controlled-alert.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Alert, Button} from \"@heroui/react\";\n\nexport default function App() {\n  const [isVisible, setIsVisible] = React.useState(true);\n\n  const title = \"Success Notification\";\n  const description =\n    \"Your action has been completed successfully. We'll notify you when updates are available.\";\n\n  return (\n    <div className=\"flex flex-col gap-4\">\n      {isVisible ? (\n        <Alert\n          color=\"success\"\n          description={description}\n          isVisible={isVisible}\n          title={title}\n          variant=\"faded\"\n          onClose={() => setIsVisible(false)}\n        />\n      ) : (\n        <Button variant=\"bordered\" onPress={() => setIsVisible(true)}>\n          Show Alert\n        </Button>\n      )}\n    </div>\n  );\n}\n",
+      "sha256": "1299d2ce5d53dd5c60386bd0a30f59c7a2ace40cb4aff2095adf7f8d28fe12f0",
+      "upstreamPath": "apps/docs/content/components/alert/controlled-alert.raw.jsx",
+      "upstreamSha256": "d22db57b39a7ef7f361d19b09ef079580680c061830ef4e54db83c28905623de",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/alert/custom-impl.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, {forwardRef, useMemo} from \"react\";\nimport {useAlert} from \"@heroui/react\";\n\nexport const InfoCircleIcon = (props) => {\n  return (\n    <svg\n      fill=\"none\"\n      height=\"24\"\n      viewBox=\"0 0 24 24\"\n      width=\"24\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...props}\n    >\n      <path d=\"M12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22ZM12.75 16C12.75 16.41 12.41 16.75 12 16.75C11.59 16.75 11.25 16.41 11.25 16L11.25 11C11.25 10.59 11.59 10.25 12 10.25C12.41 10.25 12.75 10.59 12.75 11L12.75 16ZM11.08 7.62C11.13 7.49 11.2 7.39 11.29 7.29C11.39 7.2 11.5 7.13 11.62 7.08C11.74 7.03 11.87 7 12 7C12.13 7 12.26 7.03 12.38 7.08C12.5 7.13 12.61 7.2 12.71 7.29C12.8 7.39 12.87 7.49 12.92 7.62C12.97 7.74 13 7.87 13 8C13 8.13 12.97 8.26 12.92 8.38C12.87 8.5 12.8 8.61 12.71 8.71C12.61 8.8 12.5 8.87 12.38 8.92C12.14 9.02 11.86 9.02 11.62 8.92C11.5 8.87 11.39 8.8 11.29 8.71C11.2 8.61 11.13 8.5 11.08 8.38C11.03 8.26 11 8.13 11 8C11 7.87 11.03 7.74 11.08 7.62Z\" />\n    </svg>\n  );\n};\n\nexport const CloseIcon = (props) => {\n  return (\n    <svg\n      aria-hidden=\"true\"\n      fill=\"none\"\n      focusable=\"false\"\n      height=\"1em\"\n      role=\"presentation\"\n      stroke=\"currentColor\"\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      strokeWidth={2}\n      viewBox=\"0 0 24 24\"\n      width=\"1em\"\n      {...props}\n    >\n      <path d=\"M18 6L6 18M6 6l12 12\" />\n    </svg>\n  );\n};\n\nconst styles = {\n  base: [\n    \"bg-slate-100\",\n    \"border\",\n    \"shadow-sm\",\n    \"hover:bg-slate-200\",\n    \"focus-within:bg-slate-100!\",\n    \"dark:bg-slate-900\",\n    \"dark:hover:bg-slate-800\",\n    \"dark:border-slate-800\",\n    \"dark:focus-within:bg-slate-900!\",\n    \"cursor-pointer\",\n  ],\n  title: [\"text-base\", \"text-slate-500\", \"font-bold\"],\n  description: [\"text-base\", \"text-slate-500\"],\n};\n\nconst MyAlert = forwardRef((props, ref) => {\n  const {\n    title,\n    description,\n    isClosable,\n    domRef,\n    handleClose,\n    getBaseProps,\n    getMainWrapperProps,\n    getDescriptionProps,\n    getTitleProps,\n    getCloseButtonProps,\n    color,\n    isVisible,\n    onClose,\n    getAlertIconProps,\n  } = useAlert({\n    ...props,\n    ref,\n    // this is just for the example, the props bellow should be passed by the parent component\n    title: \"Email Sent!!\",\n    description: \"You will get a reply soon\",\n    // custom styles\n    classNames: {\n      ...styles,\n    },\n  });\n\n  const mainWrapper = useMemo(() => {\n    return (\n      <div {...getMainWrapperProps()}>\n        {title && <div {...getTitleProps()}>{title}</div>}\n        <div {...getDescriptionProps()}>{description}</div>\n      </div>\n    );\n  }, [title, description, getMainWrapperProps, getTitleProps, getDescriptionProps]);\n\n  const baseWrapper = useMemo(() => {\n    return isVisible ? (\n      <div ref={domRef} {...getBaseProps()}>\n        <InfoCircleIcon {...getAlertIconProps()} />\n        {mainWrapper}\n        {(isClosable || onClose) && (\n          <button onClick={handleClose} {...getCloseButtonProps()}>\n            <CloseIcon />\n          </button>\n        )}\n      </div>\n    ) : null;\n  }, [\n    mainWrapper,\n    isClosable,\n    getCloseButtonProps,\n    isVisible,\n    domRef,\n    getBaseProps,\n    handleClose,\n    color,\n    onClose,\n    getAlertIconProps,\n  ]);\n\n  return <>{baseWrapper}</>;\n});\n\nMyAlert.displayName = \"MyAlert\";\n\nexport default MyAlert;\n",
+      "sha256": "fda55af4265cbc86ed7c69f4193bea5bd331c256d9ef5ebf3c253515366ed9b3",
+      "upstreamPath": "apps/docs/content/components/alert/custom-impl.raw.jsx",
+      "upstreamSha256": "c3371dff3e21ac7b364f8bd90848fad0f0bc59d0595c6fb9a955b5f869f8334f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/alert/custom-styles.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type {AlertProps} from \"@heroui/react\";\n\nimport React from \"react\";\nimport {Alert, Button, cn} from \"@heroui/react\";\n\nconst CustomAlert = ({children, variant, color, className, classNames, ...props}: AlertProps) => {\n  const colorClass = React.useMemo(() => {\n    switch (color) {\n      case \"default\":\n        return \"before:bg-default-300\";\n      case \"primary\":\n        return \"before:bg-primary\";\n      case \"secondary\":\n        return \"before:bg-secondary\";\n      case \"success\":\n        return \"before:bg-success\";\n      case \"warning\":\n        return \"before:bg-warning\";\n      case \"danger\":\n        return \"before:bg-danger\";\n      default:\n        return \"before:bg-default-200\";\n    }\n  }, []);\n\n  return (\n    <Alert\n      classNames={{\n        ...classNames,\n        base: cn(\n          [\n            \"bg-default-50 dark:bg-background shadow-sm\",\n            \"border-1 border-default-200 dark:border-default-100\",\n            \"relative before:content-[''] before:absolute before:z-10\",\n            \"before:left-0 before:top-[-1px] before:bottom-[-1px] before:w-1\",\n            \"rounded-l-none border-l-0\",\n            colorClass,\n          ],\n          classNames?.base,\n          className,\n        ),\n        mainWrapper: cn(\"pt-1\", classNames?.mainWrapper),\n        iconWrapper: cn(\"dark:bg-transparent\", classNames?.iconWrapper),\n      }}\n      color={color}\n      variant={variant}\n      {...props}\n    >\n      {children}\n    </Alert>\n  );\n};\n\nCustomAlert.displayName = \"CustomAlert\";\n\nexport default function App() {\n  const colors = [\"default\", \"primary\", \"secondary\", \"success\", \"warning\", \"danger\"] as any;\n\n  return (\n    <div className=\"flex flex-col w-full gap-y-6\">\n      {colors.map((color) => (\n        <CustomAlert\n          key={color}\n          color={color}\n          description=\"The documents you requested are ready to be viewed\"\n        >\n          <div className=\"flex items-center gap-1 mt-3\">\n            <Button\n              className=\"bg-background text-default-700 font-medium border-1 shadow-small\"\n              size=\"sm\"\n              variant=\"bordered\"\n            >\n              View documents\n            </Button>\n            <Button\n              className=\"text-default-500 font-medium underline underline-offset-4\"\n              size=\"sm\"\n              variant=\"light\"\n            >\n              Maybe later\n            </Button>\n          </div>\n        </CustomAlert>\n      ))}\n    </div>\n  );\n}\n",
+      "sha256": "75e0ce0bba17cb8428eb569004c785df07c98271e69bc437a883097ec1e5a24b",
+      "upstreamPath": "apps/docs/content/components/alert/custom-styles.raw.tsx",
+      "upstreamSha256": "ae52d4169e1c86ee9bdfb9c5375f94d11e0e2d402b29d6bf22fcc041275316a7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/alert/radius.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Alert} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex items-center justify-center w-full\">\n      <div className=\"flex flex-col w-full\">\n        {[\"none\", \"sm\", \"md\", \"lg\", \"full\"].map((radius) => (\n          <div key={radius} className=\"w-full flex items-center my-3\">\n            <Alert radius={radius} title={`This is a ${radius} radius alert`} />\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "sha256": "ad9f2050f5e873f4777a68083a2f610433fd6f9ad05af81f1390462865c4cee1",
+      "upstreamPath": "apps/docs/content/components/alert/radius.raw.jsx",
+      "upstreamSha256": "a096aaa353efd0764f02634c216cbeea2f12d93f93f7505fd0fd2db70bd9ae9c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/alert/usage.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Alert} from \"@heroui/react\";\n\nexport default function App() {\n  const title = \"This is an alert\";\n  const description = \"Thanks for subscribing to our newsletter!\";\n\n  return (\n    <div className=\"flex items-center justify-center w-full\">\n      <Alert description={description} title={title} />\n    </div>\n  );\n}\n",
+      "sha256": "dbc46b16c9089831d15090b235e7d0cd5f992814b83a46dc3e462fc5255e21d7",
+      "upstreamPath": "apps/docs/content/components/alert/usage.raw.jsx",
+      "upstreamSha256": "bfc326d9a11a7fa3ce755ce197fe177a61d9e2cb102061c7a87fcf74bea545ac",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/alert/variants.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Alert} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex flex-col gap-4 w-full\">\n      {[\"solid\", \"bordered\", \"flat\", \"faded\"].map((variant) => (\n        <Alert\n          key={variant}\n          color=\"secondary\"\n          title={`This is a ${variant} variant alert`}\n          variant={variant}\n        />\n      ))}\n    </div>\n  );\n}\n",
+      "sha256": "0d46a48579d0498b8da78745c6157f20b28e76b1a2c6a307dd8767294bfe6c2a",
+      "upstreamPath": "apps/docs/content/components/alert/variants.raw.jsx",
+      "upstreamSha256": "fcf71182906e8f3764bd45cf6c055d4628594eb0c2a5f03766a91340c4071ffd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/alert/with-action.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Alert, Button} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex items-center justify-center w-full\">\n      <Alert\n        color=\"warning\"\n        description=\"Upgrade to a paid plan to continue\"\n        endContent={\n          <Button color=\"warning\" size=\"sm\" variant=\"flat\">\n            Upgrade\n          </Button>\n        }\n        title=\"You have no credits left\"\n        variant=\"faded\"\n      />\n    </div>\n  );\n}\n",
+      "sha256": "19660f2586312d3a32e0a13965b6e7989216b4b07bf4577f86404dd0236cc8a2",
+      "upstreamPath": "apps/docs/content/components/alert/with-action.raw.jsx",
+      "upstreamSha256": "0b648ae7e1482cad39586e6c24ae65e97d087adff960bea4ae31fbda77d7a448",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/alert/with-icon.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Alert} from \"@heroui/react\";\n\nconst UserIcon = ({fill = \"currentColor\", size, height, width, ...props}) => {\n  return (\n    <svg\n      data-name=\"Iconly/Curved/Profile\"\n      height={size || height || 24}\n      viewBox=\"0 0 24 24\"\n      width={size || width || 24}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...props}\n    >\n      <g\n        fill=\"none\"\n        stroke={fill}\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        strokeMiterlimit={10}\n        strokeWidth={1.5}\n      >\n        <path\n          d=\"M11.845 21.662C8.153 21.662 5 21.088 5 18.787s3.133-4.425 6.845-4.425c3.692 0 6.845 2.1 6.845 4.4s-3.134 2.9-6.845 2.9z\"\n          data-name=\"Stroke 1\"\n        />\n        <path d=\"M11.837 11.174a4.372 4.372 0 10-.031 0z\" data-name=\"Stroke 3\" />\n      </g>\n    </svg>\n  );\n};\n\nexport default function App() {\n  return <Alert icon={<UserIcon />}>An alert with a custom icon</Alert>;\n}\n",
+      "sha256": "1dfbd7bcfce2b6130cb3acd6556594a0507ba079acc15267f319e8c4b941d2cd",
+      "upstreamPath": "apps/docs/content/components/alert/with-icon.raw.jsx",
+      "upstreamSha256": "b1d8107aab2386c6f63395fa1258155710bd3c9787eadd7d707b95e85043f68b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/alert/without-icon.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Alert} from \"@heroui/react\";\n\nexport default function App() {\n  const title = \"This is an alert\";\n  const description = \"Thanks for subscribing to our newsletter!\";\n\n  return (\n    <div className=\"flex items-center justify-center w-full\">\n      <Alert hideIcon color=\"success\" description={description} title={title} variant=\"faded\" />\n    </div>\n  );\n}\n",
+      "sha256": "b26f5f93914259a698ff8ac3c7833534976266d9afa5819772933aae7be33c88",
+      "upstreamPath": "apps/docs/content/components/alert/without-icon.raw.jsx",
+      "upstreamSha256": "4f22476f64db531bc720cd7dece896245ed9ad0b8965a177b864bc246f84c994",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/alert/without-icon-wrapper.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Alert} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex items-center justify-center w-full\">\n      <Alert\n        hideIconWrapper\n        color=\"secondary\"\n        description=\"This is a bordered variant alert\"\n        title=\"Bordered Alert\"\n        variant=\"bordered\"\n      />\n    </div>\n  );\n}\n",
+      "sha256": "65cffb2989f36c4558e03cf8ecf2b535724b50c855b84488fe59f2cd72820abe",
+      "upstreamPath": "apps/docs/content/components/alert/without-icon-wrapper.raw.jsx",
+      "upstreamSha256": "0eec646d915e737983e66aa17cdae1886604ab93750024de9b124d63e2ba5513",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/alert/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/alert/colors.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "7e82af4dfd9dcfbee304d9f36f2297c89d795a2dadf5ffc6fc9deaa3476a07b0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/alert/previews/controlled-alert.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/alert/controlled-alert.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "fdcd096f397b19da684e2d365f6b29e15a2380c3455616c53f45ce88d563200d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/alert/previews/custom-impl.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/alert/custom-impl.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "4ce3c6aae254e52840fea88e489e2f1eb996d98848769f375259bd0791fb37d3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/alert/previews/custom-styles.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/alert/custom-styles.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "0f2513e39e35427d3648272db879a5bdbb78eeb684b8c1697293454c57319089",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/alert/previews/radius.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/alert/radius.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "09d8c74cca55b7b0a0a83079223d3907503bed6ce85b0124a4b9770d038e423d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/alert/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/alert/usage.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "ccf2b4973b88f435ff2dc586df686f38f6e1c073ea1c6d495a2304d33a69f820",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/alert/previews/variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/alert/variants.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "f42108dc45e839987fb545c96242754d749240f60738235408496cbef68d0576",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/alert/previews/with-action.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/alert/with-action.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "8df510abca6ae4ef3d7d4671b073f62985affea18e0a810b99aed7a90ef156eb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/alert/previews/with-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/alert/with-icon.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "8fd22f5c701ed5fc939e156f61755d314de11abd9daff9ae65147ebf8229a5a2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/alert/previews/without-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/alert/without-icon.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "6bed6011aa0ae13a7a66dcb455b31a6b5e948933a835038f37b2cef4034bec1d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/alert/previews/without-icon-wrapper.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/alert/without-icon-wrapper.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "1f8323c6002a6dc534f770342aa85eefc697772cfa6e2d30aa9324dbe3c33dd3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/theme.css",
+      "type": "style",
+      "content": ".heroui-preview {\n  --primary: hsl(var(--heroui-primary));\n  --primary-foreground: hsl(var(--heroui-primary-foreground));\n  --background: hsl(var(--heroui-background));\n  --foreground: hsl(var(--heroui-foreground));\n  --border: hsl(var(--heroui-divider));\n}\n",
+      "sha256": "d7e90a5ed4780fbf5df6328631a4420ee099f07d345a8f509fce6937bd3e67c0",
+      "transformation": "Authored scoped mapping to official HeroUI semantic tokens."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/heroui/theme.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.",
+      "Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "alert",
+    "upstreamPageUrl": "https://github.com/heroui-inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/alert",
+    "upstreamDetailUrl": "https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/alert/colors.raw.jsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/heroui-inc/heroui/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/alert/colors.raw.jsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition.",
+      "Authored scoped mapping to official HeroUI semantic tokens."
+    ]
+  },
+  "documentation": "# HeroUI alert\n\n11 published HeroUI alert examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.\n- Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/heroui-inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/alert\nPinned source: https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/alert/colors.raw.jsx\n"
+}

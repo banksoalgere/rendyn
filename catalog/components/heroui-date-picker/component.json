@@ -1,0 +1,461 @@
+{
+  "id": "heroui:date-picker",
+  "sourceId": "heroui",
+  "slug": "heroui-date-picker",
+  "name": "HeroUI date picker",
+  "description": "23 published HeroUI date picker examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@heroui/react@2.8.10",
+    "@heroui/theme@2.4.26",
+    "@internationalized/date@3.12.4",
+    "@react-aria/i18n@3.13.1"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "picker",
+    "tags": [
+      "file",
+      "picker",
+      "theme"
+    ],
+    "aliases": [
+      "date picker",
+      "heroui date picker",
+      "picker"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "23 published HeroUI date picker examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "picker:file:theme",
+    "searchText": "HeroUI date picker\ndate picker\n23 published HeroUI date picker examples with complete pinned source and MIT attribution.\nheroui date picker\npicker\nfile\ntheme\nHeroUI date picker 23 published HeroUI date picker examples with complete pinned source and MIT attribution. Installation Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3. Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node modules/@heroui/theme/dist/ / .{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/heroui inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/date picker Pinned source: https://github.com/heroui inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/date picker/controlled.raw.tsx"
+  },
+  "previewPath": "/preview/blocks/heroui-date-picker",
+  "manifestPath": "components/heroui-date-picker/component.json",
+  "integrity": "sha256:98c34ef176e20b222e8659a725c3b78ebe794707b9b66b64dbfde67db4894d3e",
+  "source": {
+    "id": "heroui",
+    "name": "HeroUI",
+    "repository": "https://github.com/heroui-inc/heroui",
+    "commit": "46e1f1f78e7777bc8639399e4f5fd913de046d33",
+    "registrySha256": "2db50391dcfd10fb02a7c56444a6c806bef67c80441bab4b7b59aa78038b75fd",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2020 Next UI Inc.",
+      "textPath": "source/heroui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/controlled.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type {DateValue} from \"@internationalized/date\";\n\nimport React from \"react\";\nimport {DatePicker} from \"@heroui/react\";\nimport {parseDate, getLocalTimeZone} from \"@internationalized/date\";\nimport {useDateFormatter} from \"@react-aria/i18n\";\n\nexport default function App() {\n  const [value, setValue] = React.useState<DateValue | null>(parseDate(\"2024-04-04\"));\n\n  let formatter = useDateFormatter({dateStyle: \"full\"});\n\n  return (\n    <div className=\"flex flex-row gap-2\">\n      <div className=\"w-full flex flex-col gap-y-2\">\n        <DatePicker\n          className=\"max-w-[284px]\"\n          label=\"Date (controlled)\"\n          value={value}\n          onChange={setValue}\n        />\n        <p className=\"text-default-500 text-sm\">\n          Selected date: {value ? formatter.format(value.toDate(getLocalTimeZone())) : \"--\"}\n        </p>\n      </div>\n      <DatePicker\n        className=\"max-w-[284px]\"\n        defaultValue={parseDate(\"2024-04-04\")}\n        label=\"Date (uncontrolled)\"\n      />\n    </div>\n  );\n}\n",
+      "sha256": "501f5f5773b547c9910a6aab1b2f8173a9635901bacb072e51a155b2273ba9f1",
+      "upstreamPath": "apps/docs/content/components/date-picker/controlled.raw.tsx",
+      "upstreamSha256": "2930e08337f02a1e397172dec963ea2a00407ee5505147660424917a21a2b803",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/description.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DatePicker\n        className=\"max-w-[284px]\"\n        description={\"This is my birth date.\"}\n        label=\"Birth date\"\n      />\n    </div>\n  );\n}\n",
+      "sha256": "07c20f2917fcca1e15bb75c2652a6b4c4953afd0cbca5df8f100be6c362a3917",
+      "upstreamPath": "apps/docs/content/components/date-picker/description.raw.jsx",
+      "upstreamSha256": "03d2e4725c3aabb9cbd3be759fdbbd1903460d6c3dd25f7a9fd290a1d125486b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/disabled.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DatePicker isDisabled className=\"max-w-[284px]\" label=\"Birth date\" />\n    </div>\n  );\n}\n",
+      "sha256": "162294e5826f3baf930fbe5baa1fdc260adf92fc44bc4e2da8a55b595d381a20",
+      "upstreamPath": "apps/docs/content/components/date-picker/disabled.raw.jsx",
+      "upstreamSha256": "981303c430f5444efd1089bf93ca90c32aad3c9433b4dc3661fe832a55172bbe",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/error-message.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DatePicker\n        isInvalid\n        className=\"max-w-[284px]\"\n        errorMessage=\"Please enter a valid date.\"\n        label=\"Birth date\"\n      />\n    </div>\n  );\n}\n",
+      "sha256": "ee3408fbdec18688099c7474fc61aa73d67aad60254697936e5b4c3053a0c89c",
+      "upstreamPath": "apps/docs/content/components/date-picker/error-message.raw.jsx",
+      "upstreamSha256": "d6ede16b47eba022a67256c2bf53703823b7af05a1771ef5553079af3b6335a3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/error-message-function.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DatePicker\n        isInvalid\n        className=\"max-w-[284px]\"\n        errorMessage={(value) => {\n          if (value.isInvalid) {\n            return \"Please enter a valid date.\";\n          }\n        }}\n        label=\"Birth date\"\n      />\n    </div>\n  );\n}\n",
+      "sha256": "4eecef917dcbde775debab3786097f44b3af458820e60788893fb26d952832a8",
+      "upstreamPath": "apps/docs/content/components/date-picker/error-message-function.raw.jsx",
+      "upstreamSha256": "1de9844212a165df7dccb46024206ffac5d2d123c83b3870728e16ed4387083a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/first-day-of-week.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DatePicker\n        className=\"max-w-[284px]\"\n        description={\"This is my birth date.\"}\n        firstDayOfWeek=\"mon\"\n        label=\"Birth date\"\n      />\n    </div>\n  );\n}\n",
+      "sha256": "eb61ab27bbe8ef8655cadde95946c0ed433e998492759d3228ddc27d4c162ff0",
+      "upstreamPath": "apps/docs/content/components/date-picker/first-day-of-week.raw.jsx",
+      "upstreamSha256": "db39f79f7effe5780ea04ea5d9f2aca7fc5fd466f146ae2301dd0a2d92fbcdb1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/granularity.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type {DateValue} from \"@internationalized/date\";\n\nimport React from \"react\";\nimport {DatePicker} from \"@heroui/react\";\nimport {now, parseAbsoluteToLocal} from \"@internationalized/date\";\n\nexport default function App() {\n  let [date, setDate] = React.useState<DateValue | null>(\n    parseAbsoluteToLocal(\"2021-04-07T18:45:22Z\"),\n  );\n\n  return (\n    <div className=\"w-full max-w-xl flex flex-col items-start gap-4\">\n      <DatePicker\n        className=\"max-w-md\"\n        granularity=\"second\"\n        label=\"Date and time\"\n        value={date}\n        onChange={setDate}\n      />\n      <DatePicker\n        className=\"max-w-md\"\n        granularity=\"day\"\n        label=\"Date\"\n        value={date}\n        onChange={setDate}\n      />\n      <DatePicker className=\"max-w-md\" granularity=\"second\" label=\"Event date\" />\n      <DatePicker\n        className=\"max-w-md\"\n        granularity=\"second\"\n        label=\"Event date\"\n        placeholderValue={now(\"America/New_York\")}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "9562f63df5f6759b85d1c95b5b3dbe883529caceee96b434bd2fbf7c495be998",
+      "upstreamPath": "apps/docs/content/components/date-picker/granularity.raw.tsx",
+      "upstreamSha256": "2980b968684625abe3c9e7ce34197da52b36a5865ebdcaf423576f019684f4d0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/international-calendar.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type {DateValue} from \"@internationalized/date\";\n\nimport React from \"react\";\nimport {DatePicker} from \"@heroui/react\";\nimport {parseAbsoluteToLocal} from \"@internationalized/date\";\nimport {I18nProvider} from \"@react-aria/i18n\";\n\nexport default function App() {\n  let [date, setDate] = React.useState<DateValue | null>(\n    parseAbsoluteToLocal(\"2021-04-07T18:45:22Z\"),\n  );\n\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <I18nProvider locale=\"hi-IN-u-ca-indian\">\n        <DatePicker\n          showMonthAndYearPickers\n          className=\"max-w-md\"\n          label=\"Appointment date\"\n          value={date}\n          variant=\"bordered\"\n          onChange={setDate}\n        />\n      </I18nProvider>\n    </div>\n  );\n}\n",
+      "sha256": "f91283a53d17b76b3db9f219178d6388e0525dc06dc2020076aa366237fb4f7d",
+      "upstreamPath": "apps/docs/content/components/date-picker/international-calendar.raw.tsx",
+      "upstreamSha256": "83732093ea343d27b2098ef17d5673c1b11c1e240c2d526b41d478275b76fa84",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/label-placements.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\n\nexport default function App() {\n  const placements = [\"inside\", \"outside\", \"outside-left\", \"outside-top\"];\n\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <div className=\"flex flex-col gap-2\">\n        <div className=\"flex w-full flex-wrap items-end md:flex-nowrap mb-6 md:mb-0 gap-4\">\n          {placements.map((placement) => (\n            <DatePicker\n              key={placement}\n              className=\"max-w-[284px]\"\n              description={placement}\n              label={\"Birth date\"}\n              labelPlacement={placement}\n            />\n          ))}\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "sha256": "d5b3ff48524c7372b5a1df0f3dcb54f36f8bb5fa35041f3c532eeecf837c9945",
+      "upstreamPath": "apps/docs/content/components/date-picker/label-placements.raw.jsx",
+      "upstreamSha256": "c48c39e7f27581b97cd2dd3e30e8f71be9ffd6b7bb861c84d971a97e87f87388",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/min-and-max-date.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\nimport {getLocalTimeZone, today} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <div className=\"w-full max-w-xl flex flex-row gap-4\">\n      <div className=\"w-full flex flex-col gap-1\">\n        <h3>Min date</h3>\n        <DatePicker\n          defaultValue={today(getLocalTimeZone()).subtract({days: 1})}\n          label=\"Date\"\n          minValue={today(getLocalTimeZone())}\n        />\n      </div>\n      <div className=\"w-full flex flex-col gap-1\">\n        <h3>Max date</h3>\n        <DatePicker\n          defaultValue={today(getLocalTimeZone()).add({days: 1})}\n          label=\"Date\"\n          maxValue={today(getLocalTimeZone())}\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "sha256": "d14db5b0146c196bd84b9ec84934aa60aedae8869ef1fc89ee4784b12f02227a",
+      "upstreamPath": "apps/docs/content/components/date-picker/min-and-max-date.raw.jsx",
+      "upstreamSha256": "d30419faad9aefc5cc7b5a588a7c8a9d83ed5a92beb92ee36a0ea1112f1c0269",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/page-behavior.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DatePicker label=\"Birth date\" pageBehavior=\"single\" visibleMonths={2} />\n    </div>\n  );\n}\n",
+      "sha256": "60c0e0f6f8c3fbc6d64b4e0fae4812de5b16a73321e053a68cde05f665dc0240",
+      "upstreamPath": "apps/docs/content/components/date-picker/page-behavior.raw.jsx",
+      "upstreamSha256": "d8134f2a857f3eab4305240223e3d3f7fbd71d4b933bc7d7954a024ffa11e7a0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/preset.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type {DateValue} from \"@internationalized/date\";\n\nimport React from \"react\";\nimport {DatePicker, RadioGroup, Radio, ButtonGroup, Button, cn} from \"@heroui/react\";\nimport {startOfWeek, startOfMonth, getLocalTimeZone, today} from \"@internationalized/date\";\nimport {useLocale, useDateFormatter} from \"@react-aria/i18n\";\n\nexport default function App() {\n  let defaultDate = today(getLocalTimeZone());\n\n  const [value, setValue] = React.useState<DateValue | null>(defaultDate);\n\n  let {locale} = useLocale();\n  let formatter = useDateFormatter({dateStyle: \"full\"});\n\n  let now = today(getLocalTimeZone());\n  let nextWeek = startOfWeek(now.add({weeks: 1}), locale);\n  let nextMonth = startOfMonth(now.add({months: 1}));\n\n  const CustomRadio = (props) => {\n    const {children, ...otherProps} = props;\n\n    return (\n      <Radio\n        {...otherProps}\n        classNames={{\n          base: cn(\n            \"flex-none m-0 h-8 bg-content1 hover:bg-content2 items-center justify-between\",\n            \"cursor-pointer rounded-full border-2 border-default-200/60\",\n            \"data-[selected=true]:border-primary\",\n          ),\n          label: \"text-tiny text-default-500\",\n          labelWrapper: \"px-1 m-0\",\n          wrapper: \"hidden\",\n        }}\n      >\n        {children}\n      </Radio>\n    );\n  };\n\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-sm\">\n      <DatePicker\n        CalendarBottomContent={\n          <RadioGroup\n            aria-label=\"Date precision\"\n            classNames={{\n              base: \"w-full pb-2\",\n              wrapper: \"-my-2.5 py-2.5 px-3 gap-1 flex-nowrap max-w-[380px] overflow-x-scroll\",\n            }}\n            defaultValue=\"exact_dates\"\n            orientation=\"horizontal\"\n          >\n            <CustomRadio value=\"exact_dates\">Exact dates</CustomRadio>\n            <CustomRadio value=\"1_day\">1 day</CustomRadio>\n            <CustomRadio value=\"2_days\">2 days</CustomRadio>\n            <CustomRadio value=\"3_days\">3 days</CustomRadio>\n            <CustomRadio value=\"7_days\">7 days</CustomRadio>\n            <CustomRadio value=\"14_days\">14 days</CustomRadio>\n          </RadioGroup>\n        }\n        CalendarTopContent={\n          <ButtonGroup\n            fullWidth\n            className=\"px-3 pb-2 pt-3 bg-content1 [&>button]:text-default-500 [&>button]:border-default-200/60\"\n            radius=\"full\"\n            size=\"sm\"\n            variant=\"bordered\"\n          >\n            <Button onPress={() => setValue(now)}>Today</Button>\n            <Button onPress={() => setValue(nextWeek)}>Next week</Button>\n            <Button onPress={() => setValue(nextMonth)}>Next month</Button>\n          </ButtonGroup>\n        }\n        calendarProps={{\n          focusedValue: value,\n          onFocusChange: setValue,\n          nextButtonProps: {\n            variant: \"bordered\",\n          },\n          prevButtonProps: {\n            variant: \"bordered\",\n          },\n        }}\n        label=\"Event date\"\n        value={value}\n        onChange={setValue}\n      />\n      <p className=\"text-default-500 text-sm\">\n        Selected date: {value ? formatter.format(value.toDate(getLocalTimeZone())) : \"--\"}\n      </p>\n    </div>\n  );\n}\n",
+      "sha256": "4c2d95d76a04ac1baed3556dd34685da02c39314bef32b494e88f3cc168c4540",
+      "upstreamPath": "apps/docs/content/components/date-picker/preset.raw.tsx",
+      "upstreamSha256": "64609df2f9680a9f684c28ad12d6d0211bf6f74e05a23d85f8e5a108b0fe743c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/readonly.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DatePicker isReadOnly className=\"max-w-[284px]\" label=\"Birth date\" />\n    </div>\n  );\n}\n",
+      "sha256": "37deeef42b2aca98d6b322df8a946df8139090e427de05b1b23096cf07273b5b",
+      "upstreamPath": "apps/docs/content/components/date-picker/readonly.raw.jsx",
+      "upstreamSha256": "dd9c03ffcf640c80a9de587ff3b26ac25bc892496278700c6a6de2651c23a10c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/required.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DatePicker isRequired className=\"max-w-[284px]\" label=\"Birth date\" />\n    </div>\n  );\n}\n",
+      "sha256": "adc6c624d96c2f57add8112433f66460df0964907fb54cb02e16c3714428d0b8",
+      "upstreamPath": "apps/docs/content/components/date-picker/required.raw.jsx",
+      "upstreamSha256": "c5c8ac2671fdd3270c2fc89ff7d40268164d922fbe14752d863599914fae4d8f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/selector-button-placement.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DatePicker label=\"Placement start\" selectorButtonPlacement=\"start\" />\n      <DatePicker label=\"Placement end (default)\" selectorButtonPlacement=\"end\" />\n    </div>\n  );\n}\n",
+      "sha256": "3b47f346e60ec71a7fe8c8d705e246c454259f8f3203a93a3e6a4e8eb874ac86",
+      "upstreamPath": "apps/docs/content/components/date-picker/selector-button-placement.raw.jsx",
+      "upstreamSha256": "9a0b4dba42cc5039fe0bf86410c1aa2f83677563af57b90c4013de30001aa7d6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/selector-icon.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\n\nexport const SelectorIcon = () => {\n  return (\n    <svg height=\"1em\" viewBox=\"0 0 24 24\" width=\"1em\">\n      <g\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        strokeWidth=\"2\"\n      >\n        <path d=\"M8 2v4m8-4v4\" />\n        <rect height=\"18\" rx=\"2\" width=\"18\" x=\"3\" y=\"4\" />\n        <path d=\"M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01\" />\n      </g>\n    </svg>\n  );\n};\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DatePicker label=\"Birth date\" selectorIcon={<SelectorIcon />} />\n    </div>\n  );\n}\n",
+      "sha256": "31cc093449dbfed90fca48e590bb2af169bc88545d76ea5d354e00fb61b21b13",
+      "upstreamPath": "apps/docs/content/components/date-picker/selector-icon.raw.jsx",
+      "upstreamSha256": "6e7b920b1d207dfcad3b2e2f7a53b5bc27775a68168f76b0511213e2a85eb1de",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/time-zones.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\nimport {parseZonedDateTime, parseAbsoluteToLocal} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <div className=\"w-full max-w-xl flex flex-col items-start gap-4\">\n      <DatePicker\n        className=\"max-w-xs\"\n        defaultValue={parseZonedDateTime(\"2022-11-07T00:45[America/Los_Angeles]\")}\n        label=\"Zoned Date Time\"\n        labelPlacement=\"outside\"\n      />\n      <DatePicker\n        className=\"max-w-xs\"\n        defaultValue={parseAbsoluteToLocal(\"2021-11-07T07:45:00Z\")}\n        label=\"Zoned Date Time\"\n        labelPlacement=\"outside\"\n      />\n    </div>\n  );\n}\n",
+      "sha256": "4bb5b6741c13e04d855986f93f8f38be3fe39120e6d5577f942a055e777b4ccb",
+      "upstreamPath": "apps/docs/content/components/date-picker/time-zones.raw.jsx",
+      "upstreamSha256": "5fe9171b1d5a704c4aee8df9931b2c787a4847997bfddcd24f293ef69cb1ba17",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/unavailable-dates.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\nimport {today, isWeekend, getLocalTimeZone} from \"@internationalized/date\";\nimport {useLocale} from \"@react-aria/i18n\";\n\nexport default function App() {\n  let now = today(getLocalTimeZone());\n\n  let disabledRanges = [\n    [now, now.add({days: 5})],\n    [now.add({days: 14}), now.add({days: 16})],\n    [now.add({days: 23}), now.add({days: 24})],\n  ];\n\n  let {locale} = useLocale();\n\n  let isDateUnavailable = (date) =>\n    isWeekend(date, locale) ||\n    disabledRanges.some(\n      (interval) => date.compare(interval[0]) >= 0 && date.compare(interval[1]) <= 0,\n    );\n\n  return (\n    <DatePicker\n      aria-label=\"Appointment date\"\n      isDateUnavailable={isDateUnavailable}\n      label=\"Appointment date\"\n      minValue={today(getLocalTimeZone())}\n    />\n  );\n}\n",
+      "sha256": "5f1590a486eb19388ab5f60af93b48bb6651a86226272402f80278d6c19a33d3",
+      "upstreamPath": "apps/docs/content/components/date-picker/unavailable-dates.raw.jsx",
+      "upstreamSha256": "bed0205c3839def07585e114fd778354eaabbf210e3bd836e0db2adf51efd846",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/usage.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\n\nexport default function App() {\n  return <DatePicker className=\"max-w-[284px]\" label=\"Birth date\" />;\n}\n",
+      "sha256": "aee867ecfb4ba0a8177b78cbad14da659ac0ef829abf47011a6e15fdcab4735d",
+      "upstreamPath": "apps/docs/content/components/date-picker/usage.raw.jsx",
+      "upstreamSha256": "3e1f8057627cdc1569975f252e69f3c269f156b8c9bdd400f9b2c6cb8bddf888",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/variants.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\n\nexport default function App() {\n  const variants = [\"flat\", \"bordered\", \"underlined\", \"faded\"];\n\n  return (\n    <div className=\"w-full flex flex-col gap-4\">\n      {variants.map((variant) => (\n        <div key={variant} className=\"flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4\">\n          <DatePicker label={\"Birth date\"} variant={variant} />\n        </div>\n      ))}\n    </div>\n  );\n}\n",
+      "sha256": "6b5b6be6d62653e550ae941f3c7132ac03743377fb015aef475de23285aaa6ff",
+      "upstreamPath": "apps/docs/content/components/date-picker/variants.raw.jsx",
+      "upstreamSha256": "ac64b9d3f387e0b1f85fa4cd82a6ff21ee1146e700ad147cba585400c8a3d18f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/visible-month.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"flex w-full flex-wrap md:flex-nowrap gap-4\">\n      <DatePicker label=\"Birth date\" visibleMonths={2} />\n    </div>\n  );\n}\n",
+      "sha256": "199bbf4e161e9d53e6cfbaadcedc3e77a011b83369a60b38a1a17c1d8bce2ddb",
+      "upstreamPath": "apps/docs/content/components/date-picker/visible-month.raw.jsx",
+      "upstreamSha256": "e0d940ff493cefd76c36c74e440eacfaefbec9970c72783e4d830dce7eee6e26",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/with-month-and-year-pickers.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"w-full max-w-xl flex flex-row gap-4\">\n      <DatePicker showMonthAndYearPickers label=\"Birth Date\" variant=\"bordered\" />\n    </div>\n  );\n}\n",
+      "sha256": "0cced11a065159c56e819e717fccc69204d183808c125edd85c00040cb5373c5",
+      "upstreamPath": "apps/docs/content/components/date-picker/with-month-and-year-pickers.raw.jsx",
+      "upstreamSha256": "65f8b65885381721d1bad96fb7cbcf395c9dcb511a389e571be2c57cc0663641",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/date-picker/with-time-field.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {DatePicker} from \"@heroui/react\";\nimport {now, getLocalTimeZone} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <div className=\"w-full max-w-xl flex flex-row gap-4\">\n      <DatePicker\n        hideTimeZone\n        showMonthAndYearPickers\n        defaultValue={now(getLocalTimeZone())}\n        label=\"Event Date\"\n        variant=\"bordered\"\n      />\n    </div>\n  );\n}\n",
+      "sha256": "96d1dfee6849f6915e0035da57b74651bd41f31b576d6c8a8463695b322188bb",
+      "upstreamPath": "apps/docs/content/components/date-picker/with-time-field.raw.jsx",
+      "upstreamSha256": "a7b8d3376c2c344f1a8b2e077c23648c3978689b3dbab71d5e409a8639e7566d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/controlled.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "d2d2e181095fe20c10bab13d42edee17e57ebfafc3542f4478b9702831c2345e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/description.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/description.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "285d5d9ed343e42b3cf66d7bd34f740586e59d516165927de99283cf94e3798f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/disabled.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "88d2760956f8fe22917d5ed1da065099805fcb6bb3b1415201c18056502aa291",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/error-message.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/error-message.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "616cb056339fac73a0430d8b8d3c8b3b983e378f800072b5e9507cd02dab068c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/error-message-function.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/error-message-function.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "9797870d63c830187744ee9569fdf46299a623f6c09102b49fc4c9f56dcc729f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/first-day-of-week.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/first-day-of-week.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "27dbaf387831e4908bf34af1e5c34fa764e84982d950840fc8228a9722e29cce",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/granularity.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/granularity.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "d1592e7c2d72def3cb44f83cc1499878f2c8ffda7eff6ba8873fae5d7fce4b84",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/international-calendar.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/international-calendar.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "61c6dcbdc47f790b7a1ecf89d616f7f7c24a71c3693e15a49bee194b386a3ca8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/label-placements.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/label-placements.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "d6b3ddea6334e28dd854ee303cea67b492839da25bb79c956841026b773db140",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/min-and-max-date.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/min-and-max-date.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "69251ac4fc56779201b17b2f5df1df4de78948a308f7d05324676f4c4fc95197",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/page-behavior.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/page-behavior.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "e443bcec569281cf3f3f567540ea4420af6e40315c75b0c58eb9549db67314c6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/preset.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/preset.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "8f5497bf37d50180ca56ae0c90e627aac063cfdb66c511db49649a50ac9589d5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/readonly.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/readonly.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "7f0dea2dbc4794fb084545a0d3acc4505d1f965ec721e66873ee9afce3e81b83",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/required.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/required.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "6fa4623ac6eb0d4c855ee5c7aa1a8a5e1e529162d1a4d0fd8f12996a1aabf038",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/selector-button-placement.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/selector-button-placement.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "60d8db19ce952933cd41f18c1796dfd48ef2a8345b65d02d547eecf3d025233a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/selector-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/selector-icon.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "61f8988a9778fa1ad6616294df6edf878c7aa59b4bace4dd874f98cb920c7df7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/time-zones.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/time-zones.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "60979caaec32cc66c296d5341301b44ed4848c0a9b96f8c6371d770dd2b18374",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/unavailable-dates.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/unavailable-dates.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "c0b18b8e6b67be52b204606716f45add79b7530b5bd55450631669b05fb06ed7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/usage.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "c0d4b891abc0b2f66d0f0e1e096640d9fd1edfb2447cda08bf2189a3f725c88a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/variants.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/variants.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "92dfcee0c0b7d7d012c2b7425f9b52b5d8a4641604472d290f141f22855e7baa",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/visible-month.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/visible-month.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "6f05f8218764c1cb41b90ea1a71ce5808baab111f95e04b0a4eab66e110e20a8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/with-month-and-year-pickers.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/with-month-and-year-pickers.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "597392c10e09955397664e825b96f6b58c628d81315e8c3620679aecc8ff98a2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/date-picker/previews/with-time-field.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/date-picker/with-time-field.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "dd84e37a6ddc543fda6b79982f39cf82ae98a488cb7ffe71dc8432e9900740fc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/theme.css",
+      "type": "style",
+      "content": ".heroui-preview {\n  --primary: hsl(var(--heroui-primary));\n  --primary-foreground: hsl(var(--heroui-primary-foreground));\n  --background: hsl(var(--heroui-background));\n  --foreground: hsl(var(--heroui-foreground));\n  --border: hsl(var(--heroui-divider));\n}\n",
+      "sha256": "d7e90a5ed4780fbf5df6328631a4420ee099f07d345a8f509fce6937bd3e67c0",
+      "transformation": "Authored scoped mapping to official HeroUI semantic tokens."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26 @internationalized/date@3.12.4 @react-aria/i18n@3.13.1",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/heroui/theme.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26 @internationalized/date@3.12.4 @react-aria/i18n@3.13.1",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.",
+      "Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "date-picker",
+    "upstreamPageUrl": "https://github.com/heroui-inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/date-picker",
+    "upstreamDetailUrl": "https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/date-picker/controlled.raw.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/heroui-inc/heroui/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/date-picker/controlled.raw.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition.",
+      "Authored scoped mapping to official HeroUI semantic tokens."
+    ]
+  },
+  "documentation": "# HeroUI date picker\n\n23 published HeroUI date picker examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.\n- Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/heroui-inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/date-picker\nPinned source: https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/date-picker/controlled.raw.tsx\n"
+}

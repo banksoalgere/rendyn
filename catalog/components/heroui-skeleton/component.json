@@ -1,0 +1,137 @@
+{
+  "id": "heroui:skeleton",
+  "sourceId": "heroui",
+  "slug": "heroui-skeleton",
+  "name": "HeroUI skeleton",
+  "description": "3 published HeroUI skeleton examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@heroui/react@2.8.10",
+    "@heroui/theme@2.4.26"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "skeleton",
+    "tags": [
+      "file",
+      "theme"
+    ],
+    "aliases": [
+      "skeleton",
+      "heroui skeleton"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "3 published HeroUI skeleton examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "skeleton:file:theme",
+    "searchText": "HeroUI skeleton\nskeleton\n3 published HeroUI skeleton examples with complete pinned source and MIT attribution.\nheroui skeleton\nfile\ntheme\nHeroUI skeleton 3 published HeroUI skeleton examples with complete pinned source and MIT attribution. Installation Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3. Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node modules/@heroui/theme/dist/ / .{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/heroui inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/skeleton Pinned source: https://github.com/heroui inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/skeleton/loaded.raw.jsx"
+  },
+  "previewPath": "/preview/blocks/heroui-skeleton",
+  "manifestPath": "components/heroui-skeleton/component.json",
+  "integrity": "sha256:d9a035a3ce53359b77650f0fde2c7394c2c6ef756f6eeccc458a38545c41881b",
+  "source": {
+    "id": "heroui",
+    "name": "HeroUI",
+    "repository": "https://github.com/heroui-inc/heroui",
+    "commit": "46e1f1f78e7777bc8639399e4f5fd913de046d33",
+    "registrySha256": "2db50391dcfd10fb02a7c56444a6c806bef67c80441bab4b7b59aa78038b75fd",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2020 Next UI Inc.",
+      "textPath": "source/heroui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/skeleton/loaded.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Card, Skeleton, Button} from \"@heroui/react\";\n\nexport default function App() {\n  const [isLoaded, setIsLoaded] = React.useState(false);\n\n  const toggleLoad = () => {\n    setIsLoaded(!isLoaded);\n  };\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <Card className=\"w-[200px] space-y-5 p-4\" radius=\"lg\">\n        <Skeleton className=\"rounded-lg\" isLoaded={isLoaded}>\n          <div className=\"h-24 rounded-lg bg-secondary\" />\n        </Skeleton>\n        <div className=\"space-y-3\">\n          <Skeleton className=\"w-3/5 rounded-lg\" isLoaded={isLoaded}>\n            <div className=\"h-3 w-full rounded-lg bg-secondary\" />\n          </Skeleton>\n          <Skeleton className=\"w-4/5 rounded-lg\" isLoaded={isLoaded}>\n            <div className=\"h-3 w-full rounded-lg bg-secondary-300\" />\n          </Skeleton>\n          <Skeleton className=\"w-2/5 rounded-lg\" isLoaded={isLoaded}>\n            <div className=\"h-3 w-full rounded-lg bg-secondary-200\" />\n          </Skeleton>\n        </div>\n      </Card>\n      <Button color=\"secondary\" size=\"sm\" variant=\"flat\" onPress={toggleLoad}>\n        {isLoaded ? \"Show\" : \"Hide\"} Skeleton\n      </Button>\n    </div>\n  );\n}\n",
+      "sha256": "a2cbd92394bed7206d18c1f061b7a492eec906f1499bfbdd702c8987130959ea",
+      "upstreamPath": "apps/docs/content/components/skeleton/loaded.raw.jsx",
+      "upstreamSha256": "d7bc680008c1f7b2c81defbb22dd4006438fb607a709530aa4bb7209868427c3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/skeleton/standalone.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Skeleton} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <div className=\"max-w-[300px] w-full flex items-center gap-3\">\n      <div>\n        <Skeleton className=\"flex rounded-full w-12 h-12\" />\n      </div>\n      <div className=\"w-full flex flex-col gap-2\">\n        <Skeleton className=\"h-3 w-3/5 rounded-lg\" />\n        <Skeleton className=\"h-3 w-4/5 rounded-lg\" />\n      </div>\n    </div>\n  );\n}\n",
+      "sha256": "066ce0f81ca438e0ed192d11112a79d3c99ec355f6e0e5bffcac43002371000c",
+      "upstreamPath": "apps/docs/content/components/skeleton/standalone.raw.jsx",
+      "upstreamSha256": "bc6f0a1cad383f86c055dc85a49c683c5d13921f628db575afb5c11b296c9a6c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/skeleton/usage.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Card, Skeleton} from \"@heroui/react\";\n\nexport default function App() {\n  return (\n    <Card className=\"w-[200px] space-y-5 p-4\" radius=\"lg\">\n      <Skeleton className=\"rounded-lg\">\n        <div className=\"h-24 rounded-lg bg-default-300\" />\n      </Skeleton>\n      <div className=\"space-y-3\">\n        <Skeleton className=\"w-3/5 rounded-lg\">\n          <div className=\"h-3 w-3/5 rounded-lg bg-default-200\" />\n        </Skeleton>\n        <Skeleton className=\"w-4/5 rounded-lg\">\n          <div className=\"h-3 w-4/5 rounded-lg bg-default-200\" />\n        </Skeleton>\n        <Skeleton className=\"w-2/5 rounded-lg\">\n          <div className=\"h-3 w-2/5 rounded-lg bg-default-300\" />\n        </Skeleton>\n      </div>\n    </Card>\n  );\n}\n",
+      "sha256": "0dd9fe72bf0fce3eeb147f1a64e1acc9bb4bf8cc2f154e13abefbda629b2f48d",
+      "upstreamPath": "apps/docs/content/components/skeleton/usage.raw.jsx",
+      "upstreamSha256": "7f376955b9381e8add2000c26a534ed58f8f8839696b8bec7aebea8e76c9094a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/skeleton/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/skeleton/loaded.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "4d993f97506fc577ff707306dd04750a22943821f0320beac0d2b45c754b98f6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/skeleton/previews/standalone.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/skeleton/standalone.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "358819fcc7471f7f2fbeb4dfbc037b1f838bb1d554b27f0ced0f346e394b3372",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/skeleton/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/skeleton/usage.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "2717260f68f9481083dc15454c4996750071e48f27a24673b462260b4e75b6d8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/theme.css",
+      "type": "style",
+      "content": ".heroui-preview {\n  --primary: hsl(var(--heroui-primary));\n  --primary-foreground: hsl(var(--heroui-primary-foreground));\n  --background: hsl(var(--heroui-background));\n  --foreground: hsl(var(--heroui-foreground));\n  --border: hsl(var(--heroui-divider));\n}\n",
+      "sha256": "d7e90a5ed4780fbf5df6328631a4420ee099f07d345a8f509fce6937bd3e67c0",
+      "transformation": "Authored scoped mapping to official HeroUI semantic tokens."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/heroui/theme.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.",
+      "Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "skeleton",
+    "upstreamPageUrl": "https://github.com/heroui-inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/skeleton",
+    "upstreamDetailUrl": "https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/skeleton/loaded.raw.jsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/heroui-inc/heroui/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/skeleton/loaded.raw.jsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition.",
+      "Authored scoped mapping to official HeroUI semantic tokens."
+    ]
+  },
+  "documentation": "# HeroUI skeleton\n\n3 published HeroUI skeleton examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.\n- Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/heroui-inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/skeleton\nPinned source: https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/skeleton/loaded.raw.jsx\n"
+}

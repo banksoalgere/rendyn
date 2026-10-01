@@ -1,0 +1,332 @@
+{
+  "id": "heroui:calendar",
+  "sourceId": "heroui",
+  "slug": "heroui-calendar",
+  "name": "HeroUI calendar",
+  "description": "15 published HeroUI calendar examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@heroui/react@2.8.10",
+    "@heroui/theme@2.4.26",
+    "@internationalized/date@3.12.4",
+    "@react-aria/i18n@3.13.1",
+    "@react-types/calendar@3.9.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "calendar",
+    "tags": [
+      "file",
+      "theme"
+    ],
+    "aliases": [
+      "calendar",
+      "heroui calendar"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "15 published HeroUI calendar examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "calendar:file:theme",
+    "searchText": "HeroUI calendar\ncalendar\n15 published HeroUI calendar examples with complete pinned source and MIT attribution.\nheroui calendar\nfile\ntheme\nHeroUI calendar 15 published HeroUI calendar examples with complete pinned source and MIT attribution. Installation Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3. Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node modules/@heroui/theme/dist/ / .{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/heroui inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/calendar Pinned source: https://github.com/heroui inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/calendar/controlled.raw.tsx"
+  },
+  "previewPath": "/preview/blocks/heroui-calendar",
+  "manifestPath": "components/heroui-calendar/component.json",
+  "integrity": "sha256:4c7b3e5c296f0157205d53e2552f12cd9ab62fff7170dc60280a0cdc27ef1d61",
+  "source": {
+    "id": "heroui",
+    "name": "HeroUI",
+    "repository": "https://github.com/heroui-inc/heroui",
+    "commit": "46e1f1f78e7777bc8639399e4f5fd913de046d33",
+    "registrySha256": "2db50391dcfd10fb02a7c56444a6c806bef67c80441bab4b7b59aa78038b75fd",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2020 Next UI Inc.",
+      "textPath": "source/heroui/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/calendar/controlled.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type {DateValue} from \"@react-types/calendar\";\n\nimport React from \"react\";\nimport {Calendar} from \"@heroui/react\";\nimport {parseDate} from \"@internationalized/date\";\n\nexport default function App() {\n  let [value, setValue] = React.useState<DateValue | null>(parseDate(\"2024-03-07\"));\n\n  return <Calendar aria-label=\"Date (Controlled)\" value={value} onChange={setValue} />;\n}\n",
+      "sha256": "3fb0351da72600647642443953e75d0c514950f61f1c2ba129aa8b09e758d322",
+      "upstreamPath": "apps/docs/content/components/calendar/controlled.raw.tsx",
+      "upstreamSha256": "26a7794c5a60a36c388d522289893e9062f5926b606b06d536f986d50d39b069",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/calendar/controlled-focused-value.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type {DateValue} from \"@react-types/calendar\";\n\nimport React from \"react\";\nimport {Calendar} from \"@heroui/react\";\nimport {today, getLocalTimeZone} from \"@internationalized/date\";\n\nexport default function App() {\n  let defaultDate = today(getLocalTimeZone());\n  let [focusedDate, setFocusedDate] = React.useState<DateValue | null>(defaultDate);\n\n  return (\n    <Calendar\n      aria-label=\"Date (Controlled Focused Value)\"\n      focusedValue={focusedDate}\n      value={defaultDate}\n      onFocusChange={setFocusedDate}\n    />\n  );\n}\n",
+      "sha256": "f34c850d7f6b3f039997ab29298779a99c72c7cb13ced95569304ab7cc6cb020",
+      "upstreamPath": "apps/docs/content/components/calendar/controlled-focused-value.raw.tsx",
+      "upstreamSha256": "3f64987016141f6fa1c2117ae20c31ddd76cfb7697b3aa6359d8f4a6ade078cd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/calendar/disabled.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Calendar} from \"@heroui/react\";\n\nexport default function App() {\n  return <Calendar isDisabled aria-label=\"Date (Disabled)\" />;\n}\n",
+      "sha256": "8aabbce0343990e53fb97ccb049162a207adddf2d2de01772c56a128667c41dd",
+      "upstreamPath": "apps/docs/content/components/calendar/disabled.raw.jsx",
+      "upstreamSha256": "ea82516ab37143f5d63eb2be39e547b5da4a024d9c7da917fd586b4b75c1880d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/calendar/first-day-of-week.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Calendar} from \"@heroui/react\";\n\nexport default function App() {\n  return <Calendar aria-label=\"Date (firstDayOfWeek)\" firstDayOfWeek=\"mon\" />;\n}\n",
+      "sha256": "40a39cbf8c2aa152a2e13b317916abee1d39a8c472e9bb542ff306bc2651429f",
+      "upstreamPath": "apps/docs/content/components/calendar/first-day-of-week.raw.jsx",
+      "upstreamSha256": "6ca09ad393717fc28404d68e3c9689d49a00211eb4d9b4d06d535be0efb879a5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/calendar/international-calendars.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Calendar} from \"@heroui/react\";\nimport {I18nProvider} from \"@react-aria/i18n\";\n\nexport default function App() {\n  return (\n    <I18nProvider locale=\"zh-CN-u-ca-chinese\">\n      <Calendar aria-label=\"Date (International Calendar)\" />\n    </I18nProvider>\n  );\n}\n",
+      "sha256": "ea2997ca3411007589d8dd74402480c3b3c7f257e925ca30de51eed370d2de73",
+      "upstreamPath": "apps/docs/content/components/calendar/international-calendars.raw.jsx",
+      "upstreamSha256": "ff88f9a1101949d48344acb61a1363302c4c9f3197dd2b9f749571167b7da5ca",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/calendar/invalid-date.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type {DateValue} from \"@react-types/calendar\";\n\nimport React from \"react\";\nimport {Calendar} from \"@heroui/react\";\nimport {today, getLocalTimeZone, isWeekend} from \"@internationalized/date\";\nimport {useLocale} from \"@react-aria/i18n\";\n\nexport default function App() {\n  let [date, setDate] = React.useState<DateValue | null>(today(getLocalTimeZone()));\n  let {locale} = useLocale();\n  let isInvalid = isWeekend(date!, locale);\n\n  return (\n    <Calendar\n      aria-label=\"Date (Invalid on weekends)\"\n      errorMessage={isInvalid ? \"We are closed on weekends\" : undefined}\n      isInvalid={isInvalid}\n      value={date}\n      onChange={setDate}\n    />\n  );\n}\n",
+      "sha256": "407de7d9b42b5e5a2556216d915adb5e277294e14e6648e851b77557d057696f",
+      "upstreamPath": "apps/docs/content/components/calendar/invalid-date.raw.tsx",
+      "upstreamSha256": "03d8682d6b5c1fb082bc260285b4ef43282cd1eb7c342c317ecde93e7d70f0d5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/calendar/max-date-value.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Calendar} from \"@heroui/react\";\nimport {today, getLocalTimeZone} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <Calendar\n      aria-label=\"Date (Max Date Value)\"\n      defaultValue={today(getLocalTimeZone())}\n      maxValue={today(getLocalTimeZone())}\n    />\n  );\n}\n",
+      "sha256": "6a5752185a911bdbd08e8656906cf6faeeeb0a2b2fcd7025eded7535e78afdf7",
+      "upstreamPath": "apps/docs/content/components/calendar/max-date-value.raw.jsx",
+      "upstreamSha256": "24c248aafc0c1c4bc9f110fa6edf70effb496c65fb39bdeae376c932646b6be1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/calendar/min-date-value.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Calendar} from \"@heroui/react\";\nimport {today, getLocalTimeZone} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <Calendar\n      aria-label=\"Date (Min Date Value)\"\n      defaultValue={today(getLocalTimeZone())}\n      minValue={today(getLocalTimeZone())}\n    />\n  );\n}\n",
+      "sha256": "3c423776a603700b78b7b367ff1f5acdaa29d8e183f762394ab89d59a91e33b4",
+      "upstreamPath": "apps/docs/content/components/calendar/min-date-value.raw.jsx",
+      "upstreamSha256": "7dfc68e9d9a16ded7b5d6a66e47b9e681089a22a5347e9d00b973a2b4f59d166",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/calendar/page-behaviour.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Calendar} from \"@heroui/react\";\n\nexport default function App() {\n  return <Calendar aria-label=\"Date (Page Behaviour)\" pageBehavior=\"single\" />;\n}\n",
+      "sha256": "f51f1b601bf6825b6bce8321a3e9c7f55d55f8f910ac206fbdf367139990dd79",
+      "upstreamPath": "apps/docs/content/components/calendar/page-behaviour.raw.jsx",
+      "upstreamSha256": "383991711d5d9925cfaa8386563e5997c3cb7f189618aa6558d563b5bfee7ce0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/calendar/presets.raw.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type {DateValue} from \"@react-types/calendar\";\n\nimport React from \"react\";\nimport {Calendar, Radio, RadioGroup, Button, ButtonGroup, cn} from \"@heroui/react\";\nimport {today, getLocalTimeZone, startOfWeek, startOfMonth} from \"@internationalized/date\";\nimport {useLocale} from \"@react-aria/i18n\";\n\nexport default function App() {\n  let defaultDate = today(getLocalTimeZone());\n  let [value, setValue] = React.useState<DateValue | null>(defaultDate);\n  let {locale} = useLocale();\n\n  let now = today(getLocalTimeZone());\n  let nextWeek = startOfWeek(now.add({weeks: 1}), locale);\n  let nextMonth = startOfMonth(now.add({months: 1}));\n\n  const CustomRadio = (props) => {\n    const {children, ...otherProps} = props;\n\n    return (\n      <Radio\n        {...otherProps}\n        classNames={{\n          base: cn(\n            \"flex-none m-0 h-8 bg-content1 hover:bg-content2 items-center justify-between\",\n            \"cursor-pointer rounded-full border-2 border-default-200/60\",\n            \"data-[selected=true]:border-primary\",\n          ),\n          label: \"text-tiny text-default-500\",\n          labelWrapper: \"px-1 m-0\",\n          wrapper: \"hidden\",\n        }}\n      >\n        {children}\n      </Radio>\n    );\n  };\n\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Calendar\n        aria-label=\"Date (Presets)\"\n        bottomContent={\n          <RadioGroup\n            aria-label=\"Date precision\"\n            classNames={{\n              base: \"w-full pb-2\",\n              wrapper: \"-my-2.5 py-2.5 px-3 gap-1 flex-nowrap max-w-[280px] overflow-scroll\",\n            }}\n            defaultValue=\"exact_dates\"\n            orientation=\"horizontal\"\n          >\n            <CustomRadio value=\"exact_dates\">Exact dates</CustomRadio>\n            <CustomRadio value=\"1_day\">1 day</CustomRadio>\n            <CustomRadio value=\"2_days\">2 days</CustomRadio>\n            <CustomRadio value=\"3_days\">3 days</CustomRadio>\n            <CustomRadio value=\"7_days\">7 days</CustomRadio>\n            <CustomRadio value=\"14_days\">14 days</CustomRadio>\n          </RadioGroup>\n        }\n        classNames={{\n          content: \"w-full\",\n        }}\n        focusedValue={value}\n        nextButtonProps={{\n          variant: \"bordered\",\n        }}\n        prevButtonProps={{\n          variant: \"bordered\",\n        }}\n        topContent={\n          <ButtonGroup\n            fullWidth\n            className=\"px-3 pb-2 pt-3 bg-content1 [&>button]:text-default-500 [&>button]:border-default-200/60\"\n            radius=\"full\"\n            size=\"sm\"\n            variant=\"bordered\"\n          >\n            <Button onPress={() => setValue(now)}>Today</Button>\n            <Button onPress={() => setValue(nextWeek)}>Next week</Button>\n            <Button onPress={() => setValue(nextMonth)}>Next month</Button>\n          </ButtonGroup>\n        }\n        value={value}\n        onChange={setValue}\n        onFocusChange={setValue}\n      />\n    </div>\n  );\n}\n",
+      "sha256": "ced57583f5f9b18d05abafc493598db8a19b25735e45da8a7b87d8d8231f393e",
+      "upstreamPath": "apps/docs/content/components/calendar/presets.raw.tsx",
+      "upstreamSha256": "36ef44de7c8b4ee9c142ec3925775a483cc4019d58c07abd36e41fa5a90c22a8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/calendar/read-only.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Calendar} from \"@heroui/react\";\nimport {today, getLocalTimeZone} from \"@internationalized/date\";\n\nexport default function App() {\n  return <Calendar isReadOnly aria-label=\"Date (Read Only)\" value={today(getLocalTimeZone())} />;\n}\n",
+      "sha256": "52fe80eea0ba979b0baeefd8070ddfc7d3dbaa69411c40fb61d32f8ed7b0d7db",
+      "upstreamPath": "apps/docs/content/components/calendar/read-only.raw.jsx",
+      "upstreamSha256": "8ed654947b6901b188ae4c31074a09026fe13d07af2648b3c8f0c9e5c9de6b33",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/calendar/unavailable-dates.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Calendar} from \"@heroui/react\";\nimport {today, getLocalTimeZone, isWeekend} from \"@internationalized/date\";\nimport {useLocale} from \"@react-aria/i18n\";\n\nexport default function App() {\n  let now = today(getLocalTimeZone());\n\n  let disabledRanges = [\n    [now, now.add({days: 5})],\n    [now.add({days: 14}), now.add({days: 16})],\n    [now.add({days: 23}), now.add({days: 24})],\n  ];\n\n  let {locale} = useLocale();\n\n  let isDateUnavailable = (date) =>\n    isWeekend(date, locale) ||\n    disabledRanges.some(\n      (interval) => date.compare(interval[0]) >= 0 && date.compare(interval[1]) <= 0,\n    );\n\n  return <Calendar aria-label=\"Date (Unavailable)\" isDateUnavailable={isDateUnavailable} />;\n}\n",
+      "sha256": "865360b7225c555c6c649571fa9315f60a4359825e57fcf1507b4f68c07dcd26",
+      "upstreamPath": "apps/docs/content/components/calendar/unavailable-dates.raw.jsx",
+      "upstreamSha256": "d972883f3efed907e831bc94f816bc8100591a8bb1a53587433a654faeffa1b1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/calendar/usage.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Calendar} from \"@heroui/react\";\nimport {parseDate} from \"@internationalized/date\";\n\nexport default function App() {\n  return (\n    <div className=\"flex gap-x-4\">\n      <Calendar aria-label=\"Date (No Selection)\" />\n      <Calendar aria-label=\"Date (Uncontrolled)\" defaultValue={parseDate(\"2020-02-03\")} />\n    </div>\n  );\n}\n",
+      "sha256": "c68e8a89a2b5663e38cdf9c995d39fd5c2119aa5acbc2d31362b776058dbe111",
+      "upstreamPath": "apps/docs/content/components/calendar/usage.raw.jsx",
+      "upstreamSha256": "42ce315bc86b7cdac1508542d6318ced6b808affc5361b40982d4a1fd0aa21a3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/calendar/visible-months.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Calendar} from \"@heroui/react\";\n\nexport default function App() {\n  return <Calendar aria-label=\"Date (Visible Month)\" visibleMonths={3} />;\n}\n",
+      "sha256": "e3a29826a9b1a57ba717d2fac4ab7e7c49f067ed1b79f07089b273083c813535",
+      "upstreamPath": "apps/docs/content/components/calendar/visible-months.raw.jsx",
+      "upstreamSha256": "5f4b8103ee59091a004d0717353d0026834a8824cc5a1cf6761433afed788aaf",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/upstream/calendar/with-month-and-year-picker.raw.jsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport {Calendar} from \"@heroui/react\";\n\nexport default function App() {\n  return <Calendar showMonthAndYearPickers aria-label=\"Date (Show Month and Year Picker)\" />;\n}\n",
+      "sha256": "c9c08994819355a351df3bcaba1ad067fad826f70c8f3bc2809dc974b15ae108",
+      "upstreamPath": "apps/docs/content/components/calendar/with-month-and-year-picker.raw.jsx",
+      "upstreamSha256": "248b26a9977785137b30994b5f1475b247685f8dc22e7e287a87b8d6447d3d6a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/calendar/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/calendar/controlled.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "0feadde5b730bed13dabc0cb47a7c6183af07437986f41f9ed45736f8f1511f8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/calendar/previews/controlled-focused-value.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/calendar/controlled-focused-value.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "98c216d63f534fdb9c497d9a12a57d24333d7968f68897557a741f577b0e3e7b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/calendar/previews/disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/calendar/disabled.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "0bcad54c891b02c7f3c670a1910360369103a8f16a37d9307d6b3f237bacf76d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/calendar/previews/first-day-of-week.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/calendar/first-day-of-week.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "e049032d4043fb1df835bdcda3e59c0255e4b2db0a02fcf5612f2820b8d42d0c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/calendar/previews/international-calendars.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/calendar/international-calendars.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "5a6d28f3b64c0d32b2643b4e76d22bb1bb5df19febc3062b492e1ff646b37913",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/calendar/previews/invalid-date.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/calendar/invalid-date.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "06ea31d7f09bd6a92d8ce1d75f4b94c44f373a8a0a7e7179ebe03395fb68d74b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/calendar/previews/max-date-value.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/calendar/max-date-value.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "c958fb7101631c339fd5c65978a71e8ecc02079d7682f2297931955a0302e4e0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/calendar/previews/min-date-value.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/calendar/min-date-value.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "bd02cc15a49c7e18cc09e1d6a1f905ccb018ecff5218025c41524ad84aeda565",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/calendar/previews/page-behaviour.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/calendar/page-behaviour.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "fe2b3851c303e6a157ef3d832bda5988a81a3cca45886bb3f3b2a70b5e82f340",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/calendar/previews/presets.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/calendar/presets.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "3184d81aff0399b84cefc713639d4e00767aa7556b31d2eb69f83b2a76c0b0e2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/calendar/previews/read-only.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/calendar/read-only.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "6a27dfb211930ecfb18532dcb5f1363e09fd3f0bf67fa1c16c4909552399cefa",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/calendar/previews/unavailable-dates.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/calendar/unavailable-dates.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "224b4c53c33c11f0dcd23607dea5829f050a1020ee49a8bc1010640d77f7b72f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/calendar/previews/usage.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/calendar/usage.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "7e6368d570387a86705c0fec1574c8cfa40072356295c7b4f8b71f0322e0c4b2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/calendar/previews/visible-months.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/calendar/visible-months.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "fe9b7cbc7715c6b7c89a8910e9e909b24e019107dddbd79a1c97370ab44562f3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/calendar/previews/with-month-and-year-picker.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/heroui/upstream/calendar/with-month-and-year-picker.raw\";\nimport { HeroUIProvider } from \"@heroui/react\";\nimport \"@/components/rendyn-libraries/heroui/theme.css\";\n\nexport default function Preview() {\n  \n  return <div className=\"heroui-preview\" style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><HeroUIProvider><Example /></HeroUIProvider></div>;\n}\n",
+      "sha256": "12510860f796d31b5ac8c7ac522f9d8526a79370018bd1aa597fede3192a4626",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/heroui/theme.css",
+      "type": "style",
+      "content": ".heroui-preview {\n  --primary: hsl(var(--heroui-primary));\n  --primary-foreground: hsl(var(--heroui-primary-foreground));\n  --background: hsl(var(--heroui-background));\n  --foreground: hsl(var(--heroui-foreground));\n  --border: hsl(var(--heroui-divider));\n}\n",
+      "sha256": "d7e90a5ed4780fbf5df6328631a4420ee099f07d345a8f509fce6937bd3e67c0",
+      "transformation": "Authored scoped mapping to official HeroUI semantic tokens."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26 @internationalized/date@3.12.4 @react-aria/i18n@3.13.1 @react-types/calendar@3.9.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [
+      "components/rendyn-libraries/heroui/theme.css"
+    ],
+    "instructions": [
+      "Install external packages: pnpm add @heroui/react@2.8.10 @heroui/theme@2.4.26 @internationalized/date@3.12.4 @react-aria/i18n@3.13.1 @react-types/calendar@3.9.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.",
+      "Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "calendar",
+    "upstreamPageUrl": "https://github.com/heroui-inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/calendar",
+    "upstreamDetailUrl": "https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/calendar/controlled.raw.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/heroui-inc/heroui/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/calendar/controlled.raw.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/heroui/PROVENANCE.json.",
+      "Authored standalone provider and layout composition.",
+      "Authored scoped mapping to official HeroUI semantic tokens."
+    ]
+  },
+  "documentation": "# HeroUI calendar\n\n15 published HeroUI calendar examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT examples for HeroUI 2.8.10; these APIs do not target HeroUI 3.\n- Mount HeroUIProvider at your client root. Configure the HeroUI Tailwind plugin and scan node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}. Keep the matching Framer Motion dependency.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/heroui-inc/heroui/tree/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/calendar\nPinned source: https://github.com/heroui-inc/heroui/blob/46e1f1f78e7777bc8639399e4f5fd913de046d33/apps/docs/content/components/calendar/controlled.raw.tsx\n"
+}
