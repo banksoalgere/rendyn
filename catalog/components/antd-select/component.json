@@ -1,0 +1,644 @@
+{
+  "id": "antd:select",
+  "sourceId": "antd",
+  "slug": "antd-select",
+  "name": "Ant Design select",
+  "description": "35 published Ant Design select examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@ant-design/icons@6.3.4",
+    "antd@6.6.5",
+    "antd-style@4.1.0",
+    "lodash@4.18.1"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "select",
+    "tags": [
+      "file",
+      "form",
+      "select"
+    ],
+    "aliases": [
+      "select",
+      "ant design select",
+      "dropdown",
+      "picker"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "35 published Ant Design select examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "select:file:form",
+    "searchText": "Ant Design select\nselect\n35 published Ant Design select examples with complete pinned source and MIT attribution.\nant design select\ndropdown\npicker\nfile\nform\nAnt Design select 35 published Ant Design select examples with complete pinned source and MIT attribution. Installation Complete MIT example compositions using the pinned antd npm package. Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/ant design/ant design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/select/demo Pinned source: https://github.com/ant design/ant design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/select/demo/automatic tokenization.tsx"
+  },
+  "previewPath": "/preview/blocks/antd-select",
+  "manifestPath": "components/antd-select/component.json",
+  "integrity": "sha256:037aff3d12a22552520171a2dad71f74eff652adf2507ee751b94463ba95cf98",
+  "source": {
+    "id": "antd",
+    "name": "Ant Design",
+    "repository": "https://github.com/ant-design/ant-design",
+    "commit": "bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a",
+    "registrySha256": "7df4386dc63323dd6235edee9c52694b28d573a6d2765ac59719a52e1c259ab0",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2015-present Ant UED, https://xtech.antfin.com/",
+      "textPath": "source/antd/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/automatic-tokenization.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Select } from 'antd';\nimport type { SelectProps } from 'antd';\n\nconst options: SelectProps['options'] = [];\n\nfor (let i = 10; i < 36; i++) {\n  options.push({\n    value: i.toString(36) + i,\n    label: i.toString(36) + i,\n  });\n}\n\nconst handleChange = (value: string[]) => {\n  console.log(`selected ${value}`);\n};\n\nconst App: React.FC = () => (\n  <Select\n    mode=\"tags\"\n    style={{ width: '100%' }}\n    onChange={handleChange}\n    tokenSeparators={[',']}\n    options={options}\n  />\n);\n\nexport default App;\n",
+      "sha256": "31bb374a14616bb2f147f42aac72a5dcefa12740ebc3ce87d22425f8b70d0de7",
+      "upstreamPath": "components/select/demo/automatic-tokenization.tsx",
+      "upstreamSha256": "570069485870a1473a1e8eab3cfa4cd7d1a6284dc5f99b0d11998b202ea81966",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Select, Space } from 'antd';\n\nconst handleChange = (value: string) => {\n  console.log(`selected ${value}`);\n};\n\nconst App: React.FC = () => (\n  <Space wrap>\n    <Select\n      defaultValue=\"lucy\"\n      style={{ width: 120 }}\n      onChange={handleChange}\n      options={[\n        { value: 'jack', label: 'Jack' },\n        { value: 'lucy', label: 'Lucy' },\n        { value: 'Yiminghe', label: 'yiminghe' },\n        { value: 'disabled', label: 'Disabled', disabled: true },\n      ]}\n    />\n    <Select\n      defaultValue=\"lucy\"\n      style={{ width: 120 }}\n      disabled\n      options={[{ value: 'lucy', label: 'Lucy' }]}\n    />\n    <Select\n      defaultValue=\"lucy\"\n      style={{ width: 120 }}\n      loading\n      options={[{ value: 'lucy', label: 'Lucy' }]}\n    />\n    <Select\n      defaultValue=\"lucy\"\n      style={{ width: 120 }}\n      allowClear\n      options={[{ value: 'lucy', label: 'Lucy' }]}\n      placeholder=\"select it\"\n    />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "63d24e3c74dc0b585acc247048fc264b442aaa5647b72ab5875e4098491ef0c5",
+      "upstreamPath": "components/select/demo/basic.tsx",
+      "upstreamSha256": "925d3e5f18ead0e61b5f8490b677d4cbe6c9ebea4f23acde12a7ad65cd1e45d8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/big-data.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { SelectProps } from 'antd';\nimport { Select, Typography } from 'antd';\n\nconst { Title } = Typography;\n\nconst options: SelectProps['options'] = [];\n\nfor (let i = 0; i < 100000; i++) {\n  const value = `${i.toString(36)}${i}`;\n  options.push({\n    label: value,\n    value,\n    disabled: i === 10,\n  });\n}\n\nconst handleChange = (value: string[]) => {\n  console.log(`selected ${value}`);\n};\n\nconst App: React.FC = () => (\n  <>\n    <Title level={4}>{options.length} Items</Title>\n    <Select\n      mode=\"multiple\"\n      style={{ width: '100%' }}\n      placeholder=\"Please select\"\n      defaultValue={['a10', 'c12']}\n      onChange={handleChange}\n      options={options}\n    />\n  </>\n);\n\nexport default App;\n",
+      "sha256": "9f95f411c21ad8096fd3709e4a08be13197ee19258a14d822e9c6a906456b71d",
+      "upstreamPath": "components/select/demo/big-data.tsx",
+      "upstreamSha256": "28d79f54a3f1be326289930e025cc93cd71772aeef98a880156f4d2504cfe695",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/clear-suffix-debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Select } from 'antd';\n\nconst longLabel = 'A very very very very very very very long selected label';\n\nconst options = [\n  { value: 'long', label: longLabel },\n  { value: 'short', label: 'Short option' },\n];\n\nconst selectStyle: React.CSSProperties = { width: 280 };\n\nconst App: React.FC = () => {\n  const suffixIcon = (\n    <button\n      type=\"button\"\n      onMouseDown={(event) => event.stopPropagation()}\n      onClick={() => console.log('suffix clicked')}\n      style={{\n        border: '1px solid #d9d9d9',\n        borderRadius: 4,\n        padding: '0 8px',\n        color: 'rgba(0, 0, 0, 0.88)',\n        background: '#fff',\n        cursor: 'pointer',\n      }}\n    >\n      Suffix\n    </button>\n  );\n\n  return (\n    <Flex vertical gap=\"middle\">\n      <Flex vertical gap=\"small\">\n        <span>Interactive suffix</span>\n        <Select\n          allowClear\n          defaultValue=\"long\"\n          suffixIcon={suffixIcon}\n          options={options}\n          style={selectStyle}\n        />\n      </Flex>\n\n      <Flex vertical gap=\"small\">\n        <span>No suffix</span>\n        <Select\n          allowClear\n          defaultValue=\"long\"\n          suffixIcon={null}\n          options={options}\n          style={selectStyle}\n        />\n      </Flex>\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "1b84d5a811df8c7bfff567001ac40e063aa60f4a22ef25562343b2e9696f20bc",
+      "upstreamPath": "components/select/demo/clear-suffix-debug.tsx",
+      "upstreamSha256": "cf8c5aba11ce760b17d23603110e60911baed7ab7db14a3d99a4548a4660eefa",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/component-token.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { ConfigProvider, Select, Space } from 'antd';\nimport type { SelectProps } from 'antd';\n\nconst options: SelectProps['options'] = [];\n\nfor (let i = 10; i < 36; i++) {\n  options.push({\n    label: i.toString(36) + i,\n    value: i.toString(36) + i,\n  });\n}\n\nconst App: React.FC = () => (\n  <Space vertical>\n    <ConfigProvider\n      theme={{\n        components: {\n          Select: {\n            multipleItemBorderColor: 'rgba(0,0,0,0.06)',\n            multipleItemBorderColorDisabled: 'rgba(0,0,0,0.06)',\n            optionSelectedColor: '#1677ff',\n            hoverBorderColor: 'red',\n            activeBorderColor: 'green',\n            activeOutlineColor: 'pink',\n          },\n        },\n      }}\n    >\n      <Space style={{ width: '100%' }} vertical>\n        <Select\n          mode=\"multiple\"\n          allowClear\n          style={{ width: '100%' }}\n          placeholder=\"Please select\"\n          defaultValue={['a10', 'c12']}\n          options={options}\n        />\n        <Select\n          mode=\"multiple\"\n          disabled\n          style={{ width: '100%' }}\n          placeholder=\"Please select\"\n          defaultValue={['a10', 'c12']}\n          options={options}\n        />\n      </Space>\n    </ConfigProvider>\n    <ConfigProvider\n      theme={{\n        token: {\n          controlHeightSM: 28,\n        },\n      }}\n    >\n      <Space style={{ width: '100%' }} vertical>\n        <Select\n          mode=\"multiple\"\n          allowClear\n          size=\"small\"\n          style={{ width: '100%' }}\n          placeholder=\"Please select\"\n          defaultValue={['a10', 'c12']}\n          options={options}\n        />\n        <Select\n          mode=\"multiple\"\n          allowClear\n          style={{ width: '100%' }}\n          placeholder=\"Please select\"\n          defaultValue={['a10', 'c12']}\n          options={options}\n        />\n      </Space>\n    </ConfigProvider>\n    <ConfigProvider\n      theme={{\n        components: {\n          Select: {\n            paddingXXS: 0,\n            controlHeight: 28,\n          },\n        },\n      }}\n    >\n      <Space style={{ width: '100%' }} vertical>\n        <Select style={{ width: '100%' }} defaultValue=\"a10\" options={options} />\n        <Select\n          mode=\"multiple\"\n          style={{ width: '100%' }}\n          defaultValue={['a10', 'c12']}\n          options={options}\n        />\n      </Space>\n    </ConfigProvider>\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "d9e8e14d3226bd3cbbf4d969780c373be38550f6c420b2a0c243d2cb05c5b3c3",
+      "upstreamPath": "components/select/demo/component-token.tsx",
+      "upstreamSha256": "1b4e7c0803e16f21d787809d8882489d38c48c5a58601e389f2b9b733e726639",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/coordinate.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Select, Space } from 'antd';\n\nconst cityData = {\n  Zhejiang: ['Hangzhou', 'Ningbo', 'Wenzhou'],\n  Jiangsu: ['Nanjing', 'Suzhou', 'Zhenjiang'],\n};\n\ntype CityName = keyof typeof cityData;\n\nconst provinceData: CityName[] = ['Zhejiang', 'Jiangsu'];\n\nconst App: React.FC = () => {\n  const [cities, setCities] = useState(cityData[provinceData[0] as CityName]);\n  const [secondCity, setSecondCity] = useState(cityData[provinceData[0]][0] as CityName);\n\n  const handleProvinceChange = (value: CityName) => {\n    setCities(cityData[value]);\n    setSecondCity(cityData[value][0] as CityName);\n  };\n\n  const onSecondCityChange = (value: CityName) => {\n    setSecondCity(value);\n  };\n\n  return (\n    <Space wrap>\n      <Select\n        defaultValue={provinceData[0]}\n        style={{ width: 120 }}\n        onChange={handleProvinceChange}\n        options={provinceData.map((province) => ({ label: province, value: province }))}\n      />\n      <Select\n        style={{ width: 120 }}\n        value={secondCity}\n        onChange={onSecondCityChange}\n        options={cities.map((city) => ({ label: city, value: city }))}\n      />\n    </Space>\n  );\n};\n\nexport default App;\n",
+      "sha256": "444dfbc259d6d9f78f53a8a85fc628e5f76bf5d0a8a26167252c18010cdc9c19",
+      "upstreamPath": "components/select/demo/coordinate.tsx",
+      "upstreamSha256": "8e731e77662a89931152d2aa3385e70e1de8c7bfdd45bd3b6ea5d3309e7ecf18",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/custom-dropdown-menu.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useRef, useState } from 'react';\nimport { PlusOutlined } from '@ant-design/icons';\nimport { Button, Divider, Input, Select, Space } from 'antd';\nimport type { InputRef } from 'antd';\n\nlet index = 0;\n\nconst App: React.FC = () => {\n  const [items, setItems] = useState(['jack', 'lucy']);\n  const [name, setName] = useState('');\n  const inputRef = useRef<InputRef>(null);\n\n  const onNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {\n    setName(event.target.value);\n  };\n\n  const addItem = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {\n    e.preventDefault();\n    setItems([...items, name || `New item ${index++}`]);\n    setName('');\n    setTimeout(() => {\n      inputRef.current?.focus();\n    }, 0);\n  };\n\n  return (\n    <Select\n      style={{ width: 300 }}\n      placeholder=\"custom dropdown render\"\n      popupRender={(menu) => (\n        <>\n          {menu}\n          <Divider style={{ margin: '8px 0' }} />\n          <Space style={{ padding: '0 8px 4px' }}>\n            <Input\n              placeholder=\"Please enter item\"\n              ref={inputRef}\n              value={name}\n              onChange={onNameChange}\n              onKeyDown={(e) => e.stopPropagation()}\n            />\n            <Button type=\"text\" icon={<PlusOutlined />} onClick={addItem}>\n              Add item\n            </Button>\n          </Space>\n        </>\n      )}\n      options={items.map((item) => ({ label: item, value: item }))}\n    />\n  );\n};\n\nexport default App;\n",
+      "sha256": "2a9e8c5f9abfa5e5179f8a8fc3dbae48d11498782a3a6a639147752bf696103a",
+      "upstreamPath": "components/select/demo/custom-dropdown-menu.tsx",
+      "upstreamSha256": "3b0926c7cfa2402b3b7274752d9352bf136eb0e5ab2066d0021ce3e0a8e51748",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/custom-label-render.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Select } from 'antd';\nimport type { SelectProps } from 'antd';\n\ntype LabelRender = SelectProps['labelRender'];\n\nconst options = [\n  { label: 'gold', value: 'gold' },\n  { label: 'lime', value: 'lime' },\n  { label: 'green', value: 'green' },\n  { label: 'cyan', value: 'cyan' },\n];\n\nconst labelRender: LabelRender = (props) => {\n  const { label, value } = props;\n\n  if (label) {\n    return value;\n  }\n  return <span>No option match</span>;\n};\n\nconst App: React.FC = () => (\n  <Select labelRender={labelRender} defaultValue=\"1\" style={{ width: '100%' }} options={options} />\n);\n\nexport default App;\n",
+      "sha256": "518aad47f3dab89494213bfff39004938255430209cef3fd6e2ddf14034829d6",
+      "upstreamPath": "components/select/demo/custom-label-render.tsx",
+      "upstreamSha256": "9f8750bdd62b489fe39f48d5b3a755bf6678ec13f4aeee1993af16396323be60",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/custom-tag-render.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Select, Tag } from 'antd';\nimport type { SelectProps } from 'antd';\n\ntype TagRender = SelectProps['tagRender'];\n\nconst options: SelectProps['options'] = [\n  { value: 'gold' },\n  { value: 'lime' },\n  { value: 'green' },\n  { value: 'cyan' },\n];\n\nconst tagRender: TagRender = (props) => {\n  const { label, value, closable, onClose } = props;\n  const onPreventMouseDown = (event: React.MouseEvent<HTMLSpanElement>) => {\n    event.preventDefault();\n    event.stopPropagation();\n  };\n  return (\n    <Tag\n      color={value}\n      onMouseDown={onPreventMouseDown}\n      closable={closable}\n      onClose={onClose}\n      style={{ marginInlineEnd: 4 }}\n    >\n      {label}\n    </Tag>\n  );\n};\n\nconst App: React.FC = () => (\n  <Select\n    mode=\"multiple\"\n    tagRender={tagRender}\n    defaultValue={['gold', 'cyan']}\n    style={{ width: '100%' }}\n    options={options}\n  />\n);\n\nexport default App;\n",
+      "sha256": "4f4b4cc046fced9d0528cdf08b5a02a033713a539c91b01b4bb5da97c188cfd0",
+      "upstreamPath": "components/select/demo/custom-tag-render.tsx",
+      "upstreamSha256": "a4527ca833256f6412cfdbef77881c9c3ea589b537d3bfc6105c7406150d69ba",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/custom-tokenization.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Select } from 'antd';\n\nconst tokenize = (input: string): string[] => {\n  const tokens: string[] = [];\n  const regex = /\"([^\"]*)\"|([^,\\n]+)/g;\n  let match: RegExpExecArray | null = regex.exec(input);\n  while (match) {\n    tokens.push((match[1] ?? match[2]).trim());\n    match = regex.exec(input);\n  }\n  return tokens.filter(Boolean);\n};\n\nconst App: React.FC = () => (\n  <Select\n    mode=\"tags\"\n    style={{ width: '100%' }}\n    tokenSeparators={tokenize}\n    placeholder='Try paste: \"San Francisco, CA\", New York'\n  />\n);\n\nexport default App;\n",
+      "sha256": "6dda8a507f532da04f6c0ccc46a87a17dcac96c37fbd1dc0bea090d061a64f7c",
+      "upstreamPath": "components/select/demo/custom-tokenization.tsx",
+      "upstreamSha256": "05522c8480bcbb99b8ce594e676e8e7c5eaa5f2952bda73dee2e989931307b31",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Button, Flex, Input, Select, Space } from 'antd';\n\nconst style: React.CSSProperties = {\n  width: 500,\n  position: 'relative',\n  zIndex: 1,\n  border: '1px solid red',\n  backgroundColor: '#fff',\n};\n\nconst handleChange = (value: string | string[]) => {\n  console.log(`selected ${value}`);\n};\n\nconst App: React.FC = () => (\n  <Flex vertical gap=\"medium\">\n    <Space style={style} wrap>\n      <Input style={{ width: 100 }} value=\"222\" />\n      <Select\n        style={{ width: 120 }}\n        onChange={handleChange}\n        showSearch\n        placeholder=\"233\"\n        options={[\n          { value: 'jack', label: 'Jack' },\n          { value: 'lucy', label: 'Lucy' },\n          { value: 'disabled', disabled: true, label: 'Disabled' },\n          { value: 'Yiminghe', label: 'yiminghe' },\n          { value: 'long', label: 'I am super super long!' },\n        ]}\n      />\n      <Select\n        mode=\"multiple\"\n        style={{ width: 120 }}\n        defaultValue={['lucy']}\n        onChange={handleChange}\n        showSearch\n        placeholder=\"233\"\n        options={[\n          { value: 'jack', label: 'Jack' },\n          { value: 'lucy', label: 'Lucy' },\n          { value: 'disabled', disabled: true, label: 'Disabled' },\n          { value: 'Yiminghe', label: 'yiminghe' },\n          { value: 'long', label: 'I am super super long!' },\n        ]}\n      />\n      <span className=\"debug-align\">AntDesign</span>\n      <Button>222</Button>\n      {/* https://github.com/ant-design/ant-design/issues/56960 */}\n      <Select\n        style={{ width: 120 }}\n        defaultValue=\" \"\n        placeholder=\"Please select\"\n        options={[\n          { value: 'jack', label: 'Jack' },\n          { value: 'lucy', label: 'Lucy' },\n          { value: 'disabled', disabled: true, label: 'Disabled' },\n          { value: 'Yiminghe', label: 'yiminghe' },\n          { value: 'long', label: 'I am super super long!' },\n        ]}\n      />\n    </Space>\n    <div style={{ width: 200 }}>\n      {/* https://github.com/ant-design/ant-design/issues/54179 */}\n      <Select\n        mode=\"multiple\"\n        style={{ width: '100%' }}\n        defaultValue={[1]}\n        options={[\n          {\n            value: 1,\n            label: '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈',\n          },\n        ]}\n      />\n    </div>\n\n    <Select defaultValue=\"\" />\n  </Flex>\n);\n\nexport default App;\n",
+      "sha256": "99173e3eeeb57ab5e2ee7033a880a692f90fad06ea5c0cd1e648849be92f2090",
+      "upstreamPath": "components/select/demo/debug.tsx",
+      "upstreamSha256": "197cf407500d9a118a8f45bc38824f56bb908b0462f6b98c342a303140a828cb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/debug-flip-shift.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Select } from 'antd';\n\nconst App: React.FC = () => (\n  <Select\n    style={{ width: 120, marginTop: '50vh' }}\n    open\n    options={Array.from({ length: 100 }).map((_, index) => ({\n      value: index,\n    }))}\n  />\n);\n\nexport default App;\n",
+      "sha256": "1583124ca9180d3e6d1934c0fcc65617b6dcc255f0859d85dbf8cdc71aa78002",
+      "upstreamPath": "components/select/demo/debug-flip-shift.tsx",
+      "upstreamSha256": "7435756f070375de38cd5f7e8204f0aa50eb73b67519954cffa51a4347abe05a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/filled-debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Select } from 'antd';\nimport type { SelectProps } from 'antd';\n\nconst sharedSelectProps: SelectProps<string> = {\n  value: 'lucy',\n  variant: 'filled' as const,\n  style: { flex: '1 1 50%', minWidth: 0 },\n  options: [\n    { value: 'jack', label: 'Jack' },\n    { value: 'lucy', label: 'Lucy' },\n    { value: 'Yiminghe', label: 'yiminghe' },\n  ],\n};\n\nconst App: React.FC = () => (\n  <Flex gap={12} vertical>\n    <Flex gap={8}>\n      <Select {...sharedSelectProps} disabled />\n      <Select {...sharedSelectProps} disabled mode=\"multiple\" placeholder=\"Outlined\" />\n    </Flex>\n    <Flex gap={8}>\n      <Select {...sharedSelectProps} status=\"error\" />\n      <Select {...sharedSelectProps} status=\"error\" mode=\"multiple\" placeholder=\"Outlined\" />\n    </Flex>\n    <Flex gap={8}>\n      <Select {...sharedSelectProps} disabled status=\"error\" />\n      <Select\n        {...sharedSelectProps}\n        disabled\n        status=\"error\"\n        mode=\"multiple\"\n        placeholder=\"Outlined\"\n      />\n    </Flex>\n  </Flex>\n);\n\nexport default App;\n",
+      "sha256": "eea2694f599e462752aba969e22c1027195076541f34a44c6759612e5c582df1",
+      "upstreamPath": "components/select/demo/filled-debug.tsx",
+      "upstreamSha256": "6102e99d9c4838e5c874434ea3f67c44bf6d9323935789352ea8c0008489e620",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/hide-selected.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Select } from 'antd';\n\nconst OPTIONS = ['Apples', 'Nails', 'Bananas', 'Helicopters'];\n\nconst App: React.FC = () => {\n  const [selectedItems, setSelectedItems] = useState<string[]>([]);\n\n  const filteredOptions = OPTIONS.filter((o) => !selectedItems.includes(o));\n\n  return (\n    <Select\n      mode=\"multiple\"\n      placeholder=\"Inserted are removed\"\n      value={selectedItems}\n      onChange={setSelectedItems}\n      style={{ width: '100%' }}\n      options={filteredOptions.map((item) => ({\n        value: item,\n        label: item,\n      }))}\n    />\n  );\n};\n\nexport default App;\n",
+      "sha256": "8466f1eaccfc4c14a4d43eca09c790eb90929f67cc1880c081787932f3b5c8e2",
+      "upstreamPath": "components/select/demo/hide-selected.tsx",
+      "upstreamSha256": "24a0bdbc80159015535cd2fd5fd4027b36367cbcf82521c167d73da98cd56220",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/label-in-value.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Select } from 'antd';\n\nconst handleChange = (value: { value: string; label: React.ReactNode }) => {\n  console.log(value); // { value: \"lucy\", key: \"lucy\", label: \"Lucy (101)\" }\n};\n\nconst App: React.FC = () => (\n  <Select\n    labelInValue\n    defaultValue={{ value: 'lucy', label: 'Lucy (101)' }}\n    style={{ width: 120 }}\n    onChange={handleChange}\n    options={[\n      {\n        value: 'jack',\n        label: 'Jack (100)',\n      },\n      {\n        value: 'lucy',\n        label: 'Lucy (101)',\n      },\n    ]}\n  />\n);\n\nexport default App;\n",
+      "sha256": "10eeeace68df03b9e42a6ded3bf9a8b3252f66b393de90452bbd939eb6366502",
+      "upstreamPath": "components/select/demo/label-in-value.tsx",
+      "upstreamSha256": "de047aa433d59e09a57c5ca452b23330a9e2e238e4fcaafa7c3f70703b1f2255",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/maxCount.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DownOutlined } from '@ant-design/icons';\nimport { Select } from 'antd';\n\nconst MAX_COUNT = 3;\n\nconst App: React.FC = () => {\n  const [value, setValue] = React.useState<string[]>(['Ava Swift']);\n\n  const suffix = (\n    <>\n      <span>\n        {value.length} / {MAX_COUNT}\n      </span>\n      <DownOutlined />\n    </>\n  );\n\n  return (\n    <Select\n      mode=\"multiple\"\n      maxCount={MAX_COUNT}\n      value={value}\n      style={{ width: '100%' }}\n      onChange={setValue}\n      suffixIcon={suffix}\n      placeholder=\"Please select\"\n      options={[\n        { value: 'Ava Swift', label: 'Ava Swift' },\n        { value: 'Cole Reed', label: 'Cole Reed' },\n        { value: 'Mia Blake', label: 'Mia Blake' },\n        { value: 'Jake Stone', label: 'Jake Stone' },\n        { value: 'Lily Lane', label: 'Lily Lane' },\n        { value: 'Ryan Chase', label: 'Ryan Chase' },\n        { value: 'Zoe Fox', label: 'Zoe Fox' },\n        { value: 'Alex Grey', label: 'Alex Grey' },\n        { value: 'Elle Blair', label: 'Elle Blair' },\n      ]}\n    />\n  );\n};\n\nexport default App;\n",
+      "sha256": "2f406894e907dd04a2865b69c5d81701fd2b97bfe4019bf699c8b97c804d5875",
+      "upstreamPath": "components/select/demo/maxCount.tsx",
+      "upstreamSha256": "23e32f02489ab9beea30de748c1f33f8e09e8d16e722a9fe950e3aeb51a37947",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/multiple.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Select, Space } from 'antd';\nimport type { SelectProps } from 'antd';\n\nconst options: SelectProps['options'] = [];\n\nfor (let i = 10; i < 36; i++) {\n  options.push({\n    label: i.toString(36) + i,\n    value: i.toString(36) + i,\n  });\n}\n\nconst handleChange = (value: string[]) => {\n  console.log(`selected ${value}`);\n};\n\nconst App: React.FC = () => (\n  <Space style={{ width: '100%' }} vertical>\n    <Select\n      mode=\"multiple\"\n      allowClear\n      style={{ width: '100%' }}\n      placeholder=\"Please select\"\n      defaultValue={['a10', 'c12']}\n      onChange={handleChange}\n      options={options}\n    />\n    <Select\n      mode=\"multiple\"\n      disabled\n      style={{ width: '100%' }}\n      placeholder=\"Please select\"\n      defaultValue={['a10', 'c12']}\n      onChange={handleChange}\n      options={options}\n    />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "39ba2028a5a903aa7e2bf3f9861a243201ff2fa69fe9fb4bc3d0516fc2dc34bc",
+      "upstreamPath": "components/select/demo/multiple.tsx",
+      "upstreamSha256": "7279655fd5cf963d9184fefd233047dfcec8f4a3920b16d95f44b7cc8c1b8250",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/optgroup.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Select } from 'antd';\n\nconst handleChange = (value: string) => {\n  console.log(`selected ${value}`);\n};\n\nconst App: React.FC = () => (\n  <Select\n    defaultValue=\"lucy\"\n    style={{ width: 200 }}\n    onChange={handleChange}\n    options={[\n      {\n        label: <span>manager</span>,\n        title: 'manager',\n        options: [\n          { label: <span>Jack</span>, value: 'Jack' },\n          { label: <span>Lucy</span>, value: 'Lucy' },\n        ],\n      },\n      {\n        label: <span>engineer</span>,\n        title: 'engineer',\n        options: [\n          { label: <span>Chloe</span>, value: 'Chloe' },\n          { label: <span>Lucas</span>, value: 'Lucas' },\n        ],\n      },\n    ]}\n  />\n);\n\nexport default App;\n",
+      "sha256": "851002280ceab1959eb9b7bf13cfd82c44e47cc3019c89fb5ec291e25c745ac1",
+      "upstreamPath": "components/select/demo/optgroup.tsx",
+      "upstreamSha256": "001f6521d3e20d539dcfb07182fad3e09e53461404b567a9fa5839ba46e45548",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/option-label-center.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport {\n  AutoComplete,\n  Cascader,\n  Flex,\n  Form,\n  Input,\n  Select,\n  Space,\n  TreeSelect,\n  Typography,\n} from 'antd';\n\nconst options = [\n  { value: 'long', label: <Typography>long, long, long piece of text</Typography> },\n  { value: 'short', label: <Typography>short</Typography> },\n  { value: 'normal', label: <div>normal</div> },\n];\n\nconst App: React.FC = () => (\n  <>\n    <Space wrap>\n      <Select\n        defaultValue=\"long, long, long piece of text\"\n        style={{ width: 120 }}\n        allowClear\n        options={options}\n      />\n\n      <Select\n        placeholder=\"Select a option\"\n        style={{ width: 120, height: 60 }}\n        allowClear\n        options={options}\n      />\n\n      <Select\n        defaultValue=\"normal\"\n        placeholder=\"Select a option\"\n        style={{ width: 120 }}\n        allowClear\n        options={options}\n      />\n\n      <Select\n        defaultValue={['normal']}\n        mode=\"multiple\"\n        placeholder=\"Select a option\"\n        style={{ width: 120 }}\n        allowClear\n        options={options}\n      />\n\n      <Select\n        mode=\"multiple\"\n        placeholder=\"Select a option\"\n        style={{ width: 120, height: 60 }}\n        allowClear\n        options={options}\n      />\n\n      <Cascader\n        placeholder=\"Select a option\"\n        style={{ width: 120, height: 60 }}\n        allowClear\n        options={options}\n      />\n\n      <TreeSelect\n        showSearch\n        style={{ width: 120, height: 60 }}\n        placeholder=\"Please select\"\n        allowClear\n        popupMatchSelectWidth={false}\n        treeDefaultExpandAll\n        treeData={[\n          {\n            value: 'parent 1',\n            title: 'parent 1',\n            children: options,\n          },\n        ]}\n      />\n      <Select\n        prefix=\"Hello World\"\n        mode=\"multiple\"\n        allowClear\n        placeholder=\"Select\"\n        style={{ minWidth: 200, height: 200 }}\n        defaultValue={['long']}\n        options={options}\n      />\n      <Select\n        mode=\"multiple\"\n        style={{ width: 200 }}\n        placeholder=\"请选择\"\n        maxTagCount=\"responsive\"\n        prefix=\"城市\"\n        options={options}\n      />\n      <Select\n        style={{ width: 200 }}\n        placeholder=\"请选择\"\n        prefix=\"城市\"\n        options={options}\n        showSearch\n        allowClear\n        status=\"error\"\n      />\n      <Select\n        style={{ width: 100 }}\n        prefix=\"Hi\"\n        options={options}\n        showSearch\n        allowClear\n        status=\"warning\"\n        variant=\"filled\"\n        defaultValue=\"Bamboo\"\n      />\n      <Select\n        style={{ width: 100 }}\n        prefix=\"Hi\"\n        options={options}\n        showSearch\n        allowClear\n        status=\"error\"\n        variant=\"borderless\"\n        defaultValue=\"Bamboo\"\n      />\n      <Form style={{ width: 200 }} layout=\"vertical\">\n        <Form.Item\n          label=\"Label\"\n          name=\"bamboo\"\n          initialValue=\"Bamboo\"\n          style={{\n            boxShadow: '0 0 0 1px red',\n          }}\n        >\n          <Select options={options} allowClear placeholder=\"bamboo\" />\n        </Form.Item>\n        <Form.Item\n          label=\"Label\"\n          name=\"bamboo\"\n          initialValue=\"Bamboo\"\n          style={{\n            boxShadow: '0 0 0 1px red',\n          }}\n        >\n          <AutoComplete options={options} allowClear placeholder=\"bamboo\" />\n        </Form.Item>\n      </Form>\n    </Space>\n\n    {/* Test for align */}\n    <Flex vertical style={{ width: 200 }}>\n      {/* Single */}\n      <Input prefix=\"Hi\" placeholder=\"Input\" allowClear />\n      <Select prefix=\"Hi\" placeholder=\"Single\" options={options} allowClear showSearch />\n      <Select\n        prefix=\"Hi\"\n        placeholder=\"Single\"\n        options={options}\n        allowClear\n        showSearch\n        defaultValue=\"Bamboo\"\n      />\n      {/* Multiple */}\n      <Select placeholder=\"Multiple\" options={options} allowClear mode=\"multiple\" />\n      <Select prefix=\"Hi\" placeholder=\"Multiple\" options={options} allowClear mode=\"multiple\" />\n      <Select\n        prefix=\"Hi\"\n        placeholder=\"Multiple\"\n        options={options}\n        allowClear\n        mode=\"multiple\"\n        defaultValue={['Bamboo']}\n      />\n      <Select\n        placeholder=\"Multiple\"\n        options={options}\n        allowClear\n        mode=\"multiple\"\n        defaultValue={['Bamboo']}\n      />\n    </Flex>\n  </>\n);\n\nexport default App;\n",
+      "sha256": "80ef85cf1c256a852df2586f692b713bf2d749204e151facc576be853dad6c3c",
+      "upstreamPath": "components/select/demo/option-label-center.tsx",
+      "upstreamSha256": "ad6e3da200dd2d793d7c2af3ba97394662e4a3208bb339e593ea2ae173e29c5d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/option-render.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Select, Space } from 'antd';\n\nconst options = [\n  {\n    label: 'Happy',\n    value: 'happy',\n    emoji: '😄',\n    desc: 'Feeling Good',\n  },\n  {\n    label: 'Sad',\n    value: 'sad',\n    emoji: '😢',\n    desc: 'Feeling Blue',\n  },\n  {\n    label: 'Angry',\n    value: 'angry',\n    emoji: '😡',\n    desc: 'Furious',\n  },\n  {\n    label: 'Cool',\n    value: 'cool',\n    emoji: '😎',\n    desc: 'Chilling',\n  },\n  {\n    label: 'Sleepy',\n    value: 'sleepy',\n    emoji: '😴',\n    desc: 'Need Sleep',\n  },\n];\n\nconst App: React.FC = () => (\n  <Select\n    mode=\"multiple\"\n    style={{ width: '100%' }}\n    placeholder=\"Please select your current mood.\"\n    defaultValue={['happy']}\n    onChange={(value) => {\n      console.log(`selected ${value}`);\n    }}\n    options={options}\n    optionRender={(option) => (\n      <Space>\n        <span role=\"img\" aria-label={option.data.label}>\n          {option.data.emoji}\n        </span>\n        {`${option.data.label} (${option.data.desc})`}\n      </Space>\n    )}\n  />\n);\n\nexport default App;\n",
+      "sha256": "7b6daffc05c2e93b45a2b7dda4ba010a0da5541dc8128e62772028a965a44ba4",
+      "upstreamPath": "components/select/demo/option-render.tsx",
+      "upstreamSha256": "e3601c41d574a86b0c2004a505825bd2b7400308961e8107f41c260b770b304e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/placement.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport type { RadioChangeEvent, SelectProps } from 'antd';\nimport { Radio, Select } from 'antd';\n\ntype SelectCommonPlacement = SelectProps['placement'];\n\nconst App: React.FC = () => {\n  const [placement, setPlacement] = useState<SelectCommonPlacement>('topLeft');\n\n  const placementChange = (e: RadioChangeEvent) => {\n    setPlacement(e.target.value);\n  };\n\n  return (\n    <>\n      <Radio.Group value={placement} onChange={placementChange}>\n        <Radio.Button value=\"topLeft\">topLeft</Radio.Button>\n        <Radio.Button value=\"topRight\">topRight</Radio.Button>\n        <Radio.Button value=\"bottomLeft\">bottomLeft</Radio.Button>\n        <Radio.Button value=\"bottomRight\">bottomRight</Radio.Button>\n      </Radio.Group>\n      <br />\n      <br />\n      <Select\n        defaultValue=\"HangZhou\"\n        style={{ width: 120 }}\n        popupMatchSelectWidth={false}\n        placement={placement}\n        options={[\n          {\n            value: 'HangZhou',\n            label: 'HangZhou #310000',\n          },\n          {\n            value: 'NingBo',\n            label: 'NingBo #315000',\n          },\n          {\n            value: 'WenZhou',\n            label: 'WenZhou #325000',\n          },\n        ]}\n      />\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "f5a3e92bd7c42da84b9cf9e376f3b2ca11db5c07bd10736cdb28eab1de951d47",
+      "upstreamPath": "components/select/demo/placement.tsx",
+      "upstreamSha256": "2397a2e701b6514169bf458269f48e93f71357968c0ccfc9a819584996930131",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/placement-debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport type { RadioChangeEvent, SelectProps } from 'antd';\nimport { Button, Radio, Select, Space, Switch } from 'antd';\n\ntype SelectCommonPlacement = SelectProps['placement'];\n\nconst randomOptions = (count?: number) => {\n  const length = count ?? Math.floor(Math.random() * 5) + 1;\n\n  // Random 1 ~ 5 options\n  return Array.from({ length }).map((_, index) => ({\n    value: index,\n    label: `Option ${index}`,\n  }));\n};\n\nconst App: React.FC = () => {\n  const [placement, setPlacement] = useState<SelectCommonPlacement>('topLeft');\n  const [open, setOpen] = useState(false);\n  const [options, setOptions] = useState(() => randomOptions(3));\n\n  const placementChange = (e: RadioChangeEvent) => {\n    setPlacement(e.target.value);\n  };\n\n  return (\n    <div\n      style={{\n        height: '100%',\n        minHeight: 500,\n        display: 'flex',\n        flexDirection: 'column',\n        justifyContent: 'center',\n        alignItems: 'center',\n        position: 'relative',\n      }}\n    >\n      <Space\n        style={{\n          position: 'absolute',\n          top: 0,\n          insetInlineStart: '50%',\n          transform: 'translateX(-50%)',\n        }}\n      >\n        <Radio.Group value={placement} onChange={placementChange}>\n          <Radio.Button value=\"topLeft\">TL</Radio.Button>\n          <Radio.Button value=\"topRight\">TR</Radio.Button>\n          <Radio.Button value=\"bottomLeft\">BL</Radio.Button>\n          <Radio.Button value=\"bottomRight\">BR</Radio.Button>\n        </Radio.Group>\n\n        <Switch checked={open} onChange={() => setOpen((o) => !o)} />\n        <Button onClick={() => setOptions(randomOptions())}>Random</Button>\n      </Space>\n      <Select\n        open={open}\n        style={{ width: 120 }}\n        placement={placement}\n        options={options}\n        popupMatchSelectWidth={200}\n      />\n    </div>\n  );\n};\n\nexport default App;\n",
+      "sha256": "59ce2369e7240ba8f2d177ba2ae6ed3c4b723c79f3f2972239f75a020f3693bf",
+      "upstreamPath": "components/select/demo/placement-debug.tsx",
+      "upstreamSha256": "f2bab12765f2e6cab451e3f7c6f8eb72b7f4895d56e46deaa95f45401e4af0e1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/render-panel.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Select, Switch } from 'antd';\n\nconst { _InternalPanelDoNotUseOrYouWillBeFired: InternalSelect } = Select;\n\nconst App: React.FC = () => {\n  const [open, setOpen] = React.useState(true);\n\n  return (\n    <Flex vertical gap=\"small\" align=\"start\">\n      <Switch checked={open} onChange={() => setOpen(!open)} />\n      <InternalSelect\n        defaultValue=\"lucy\"\n        style={{ width: 120 }}\n        open={open}\n        options={[\n          { label: 'Jack', value: 'jack' },\n          { label: 'Lucy', value: 'lucy' },\n          { label: 'Disabled', value: 'disabled' },\n          { label: 'Bamboo', value: 'bamboo' },\n        ]}\n        virtual={false}\n      />\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "f68ea36403255491a9f61e7fb7661b5e10cd185f2280ead71f482359be2f7041",
+      "upstreamPath": "components/select/demo/render-panel.tsx",
+      "upstreamSha256": "988e5fb463fafd68d03579f814d0787a5522a50cc3cebb6c402dad2888e9156d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/responsive.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport type { SelectProps } from 'antd';\nimport { Select, Space, Tooltip } from 'antd';\n\ninterface ItemProps {\n  label: string;\n  value: string;\n}\n\nconst options: ItemProps[] = [];\n\nfor (let i = 10; i < 36; i++) {\n  const value = i.toString(36) + i;\n  options.push({\n    label: `Long Label: ${value}`,\n    value,\n  });\n}\n\nconst sharedProps: SelectProps = {\n  mode: 'multiple',\n  style: { width: '100%' },\n  options,\n  placeholder: 'Select Item...',\n  maxTagCount: 'responsive',\n};\n\nconst App: React.FC = () => {\n  const [value, setValue] = useState(['a10', 'c12', 'h17', 'j19', 'k20']);\n\n  const selectProps: SelectProps = {\n    value,\n    onChange: setValue,\n  };\n\n  return (\n    <Space vertical style={{ width: '100%' }}>\n      <Select {...sharedProps} {...selectProps} />\n      <Select {...sharedProps} disabled />\n      <Select\n        {...sharedProps}\n        {...selectProps}\n        maxTagPlaceholder={(omittedValues) => (\n          <Tooltip\n            styles={{ root: { pointerEvents: 'none' } }}\n            title={omittedValues.map(({ label }) => label).join(', ')}\n          >\n            <span>Hover Me</span>\n          </Tooltip>\n        )}\n      />\n    </Space>\n  );\n};\n\nexport default App;\n",
+      "sha256": "101e2486d721e260899989b496d72f29d9eb65ab006f352053439c50da61fc5d",
+      "upstreamPath": "components/select/demo/responsive.tsx",
+      "upstreamSha256": "c671a5066781e6d743a45f922496cbf3b755760a0333f91695008b380c4921e1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/search.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Select } from 'antd';\n\nconst onChange = (value: string) => {\n  console.log(`selected ${value}`);\n};\n\nconst onSearch = (value: string) => {\n  console.log('search:', value);\n};\n\nconst App: React.FC = () => (\n  <Select\n    showSearch={{ optionFilterProp: 'label', onSearch }}\n    placeholder=\"Select a person\"\n    onChange={onChange}\n    options={[\n      {\n        value: 'jack',\n        label: 'Jack',\n      },\n      {\n        value: 'lucy',\n        label: 'Lucy',\n      },\n      {\n        value: 'tom',\n        label: 'Tom',\n      },\n    ]}\n  />\n);\n\nexport default App;\n",
+      "sha256": "609f3e075a0a0161e9228052f5b0fe75c975bd87e3895f5b1c326d8e5410f95d",
+      "upstreamPath": "components/select/demo/search.tsx",
+      "upstreamSha256": "14ab4f328234f5f19f792092e8f0076721446c43119f22136d36cea80aaa6dbb",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/search-filter-option.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Select } from 'antd';\n\nconst App: React.FC = () => (\n  <Select\n    showSearch={{\n      filterOption: (input, option) =>\n        (option?.label ?? '').toLowerCase().includes(input.toLowerCase()),\n    }}\n    placeholder=\"Select a person\"\n    options={[\n      { value: '1', label: 'Jack' },\n      { value: '2', label: 'Lucy' },\n      { value: '3', label: 'Tom' },\n    ]}\n  />\n);\n\nexport default App;\n",
+      "sha256": "1f45bcffc14c1291caad9314b4560c8f9bf3561d13c20d9b70e16618af96b9af",
+      "upstreamPath": "components/select/demo/search-filter-option.tsx",
+      "upstreamSha256": "35cfff9408c57477c536dd530d3deb781196171f1e7319b7706f083702df7b8c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/search-multi-field.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Select } from 'antd';\n\nconst App: React.FC = () => (\n  <Select\n    placeholder=\"Select an option\"\n    showSearch={{\n      optionFilterProp: ['label', 'otherField'],\n    }}\n    options={[\n      { value: 'a11', label: 'a11', otherField: 'c11' },\n      { value: 'b22', label: 'b22', otherField: 'b11' },\n      { value: 'c33', label: 'c33', otherField: 'b33' },\n      { value: 'd44', label: 'd44', otherField: 'd44' },\n    ]}\n  />\n);\n\nexport default App;\n",
+      "sha256": "a45be23ab735cfaf631e12deb76def5565d00d42a40ca9f90a3e1b7b3f034cf2",
+      "upstreamPath": "components/select/demo/search-multi-field.tsx",
+      "upstreamSha256": "73e8d8a862f8f32958bc29d7051d3893322ecbfd76b5625c8d1472e8d7b81f87",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/search-sort.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Select } from 'antd';\n\nconst App: React.FC = () => (\n  <Select\n    showSearch={{\n      optionFilterProp: 'label',\n      filterSort: (optionA, optionB) =>\n        (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase()),\n    }}\n    style={{ width: 200 }}\n    placeholder=\"Search to Select\"\n    options={[\n      {\n        value: '1',\n        label: 'Not Identified',\n      },\n      {\n        value: '2',\n        label: 'Closed',\n      },\n      {\n        value: '3',\n        label: 'Communicated',\n      },\n      {\n        value: '4',\n        label: 'Identified',\n      },\n      {\n        value: '5',\n        label: 'Resolved',\n      },\n      {\n        value: '6',\n        label: 'Cancelled',\n      },\n    ]}\n  />\n);\n\nexport default App;\n",
+      "sha256": "420dc87c33eb5d1cf00ab22a0b498f962c2fe11c680bc5c69a640ce279080186",
+      "upstreamPath": "components/select/demo/search-sort.tsx",
+      "upstreamSha256": "76472ad3d02b231dc2b09ace74544bce5e20246733bbb6fa7d5d02e74683f553",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/select-users.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useMemo, useRef, useState } from 'react';\nimport { Avatar, Select, Spin } from 'antd';\nimport type { SelectProps } from 'antd';\nimport debounce from 'lodash/debounce';\n\nexport interface DebounceSelectProps<ValueType = any>\n  extends Omit<SelectProps<ValueType | ValueType[]>, 'options' | 'children'> {\n  fetchOptions: (search: string) => Promise<ValueType[]>;\n  debounceTimeout?: number;\n}\n\nfunction DebounceSelect<\n  ValueType extends {\n    key?: string;\n    label: React.ReactNode;\n    value: string | number;\n    avatar?: string;\n  } = any,\n>({ fetchOptions, debounceTimeout = 300, ...props }: DebounceSelectProps<ValueType>) {\n  const [fetching, setFetching] = useState(false);\n  const [options, setOptions] = useState<ValueType[]>([]);\n  const fetchRef = useRef(0);\n\n  const debounceFetcher = useMemo(() => {\n    const loadOptions = (value: string) => {\n      fetchRef.current += 1;\n      const fetchId = fetchRef.current;\n      setOptions([]);\n      setFetching(true);\n\n      fetchOptions(value).then((newOptions) => {\n        if (fetchId !== fetchRef.current) {\n          // for fetch callback order\n          return;\n        }\n\n        setOptions(newOptions);\n        setFetching(false);\n      });\n    };\n\n    return debounce(loadOptions, debounceTimeout);\n  }, [fetchOptions, debounceTimeout]);\n\n  return (\n    <Select\n      labelInValue\n      showSearch={{\n        autoClearSearchValue: false,\n        filterOption: false,\n        onSearch: debounceFetcher,\n      }}\n      notFoundContent={fetching ? <Spin size=\"small\" /> : 'No results found'}\n      {...props}\n      options={options}\n      optionRender={(option) => (\n        <div style={{ display: 'flex', alignItems: 'center' }}>\n          {option.data.avatar && <Avatar src={option.data.avatar} style={{ marginInlineEnd: 8 }} />}\n          {option.label}\n        </div>\n      )}\n    />\n  );\n}\n\n// Usage of DebounceSelect\ninterface UserValue {\n  label: string;\n  value: string;\n  avatar?: string;\n}\n\nasync function fetchUserList(username: string): Promise<UserValue[]> {\n  console.log('fetching user', username);\n  return fetch(`https://660d2bd96ddfa2943b33731c.mockapi.io/api/users/?search=${username}`)\n    .then((res) => res.json())\n    .then((res) => {\n      const results = Array.isArray(res) ? res : [];\n      return results.map<UserValue>((user) => ({\n        label: user.name,\n        value: user.id,\n        avatar: user.avatar,\n      }));\n    })\n    .catch(() => {\n      console.log('fetch mock data failed');\n      return [];\n    });\n}\n\nconst App: React.FC = () => {\n  const [value, setValue] = useState<UserValue[]>([]);\n\n  return (\n    <DebounceSelect\n      mode=\"multiple\"\n      value={value}\n      placeholder=\"Select users\"\n      fetchOptions={fetchUserList}\n      style={{ width: '100%' }}\n      onChange={(newValue) => {\n        if (Array.isArray(newValue)) {\n          setValue(newValue);\n        }\n      }}\n    />\n  );\n};\n\nexport default App;\n",
+      "sha256": "3b8638fe57875bd4a784ffa0b5e729dec3d57fa24a845f313ac0ca85b56e0ad6",
+      "upstreamPath": "components/select/demo/select-users.tsx",
+      "upstreamSha256": "ea149c6046f010d703013c91d03321d37b4eb95feb9c4cd5cbe7a5c5bec76e2a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/size.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Radio, Select, Space } from 'antd';\nimport type { ConfigProviderProps, RadioChangeEvent, SelectProps } from 'antd';\n\ntype SizeType = ConfigProviderProps['componentSize'];\n\nconst options: SelectProps['options'] = [];\n\nfor (let i = 10; i < 36; i++) {\n  options.push({\n    value: i.toString(36) + i,\n    label: i.toString(36) + i,\n  });\n}\n\nconst handleChange = (value: string | string[]) => {\n  console.log(`Selected: ${value}`);\n};\n\nconst App: React.FC = () => {\n  const [size, setSize] = useState<SizeType>('medium');\n\n  const handleSizeChange = (e: RadioChangeEvent) => {\n    setSize(e.target.value);\n  };\n\n  return (\n    <>\n      <Radio.Group value={size} onChange={handleSizeChange}>\n        <Radio.Button value=\"large\">Large</Radio.Button>\n        <Radio.Button value=\"medium\">Medium</Radio.Button>\n        <Radio.Button value=\"small\">Small</Radio.Button>\n      </Radio.Group>\n      <br />\n      <br />\n      <Space vertical style={{ width: '100%' }}>\n        <Select\n          size={size}\n          defaultValue=\"a1\"\n          onChange={handleChange}\n          style={{ width: 200 }}\n          options={options}\n        />\n        <Select\n          mode=\"multiple\"\n          size={size}\n          placeholder=\"Please select\"\n          defaultValue={['a10', 'c12']}\n          onChange={handleChange}\n          style={{ width: '100%' }}\n          options={options}\n        />\n        <Select\n          mode=\"tags\"\n          size={size}\n          placeholder=\"Please select\"\n          defaultValue={['a10', 'c12']}\n          onChange={handleChange}\n          style={{ width: '100%' }}\n          options={options}\n        />\n      </Space>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "e731c1dcecbe351352ab847d86fefca222b5c918efad5be8c21dad58346876f0",
+      "upstreamPath": "components/select/demo/size.tsx",
+      "upstreamSha256": "3de3ee77ed65a773649f6849c22b2ba1b41e41a49c87f60d18d8a830b66dabb7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/status.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Select, Space } from 'antd';\n\nconst App: React.FC = () => (\n  <Space vertical style={{ width: '100%' }}>\n    <Select status=\"error\" style={{ width: '100%' }} />\n    <Select status=\"warning\" style={{ width: '100%' }} />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "9aa60af16702b4fc74460c2c4538acd2fb36ab38e93461aa5d02b1cc60131b28",
+      "upstreamPath": "components/select/demo/status.tsx",
+      "upstreamSha256": "b7361b385bc16361958dc9e6d3bad03420cdf32e8827c0cc4ada54a2e9f1c918",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/style-class.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { MehOutlined } from '@ant-design/icons';\nimport { Flex, Select } from 'antd';\nimport type { GetProp, SelectProps } from 'antd';\nimport { createStaticStyles } from 'antd-style';\n\nconst classNames = createStaticStyles(({ css }) => ({\n  root: css`\n    border-radius: 8px;\n    width: 300px;\n  `,\n}));\n\nconst options: SelectProps['options'] = [\n  { value: 'GuangZhou', label: 'GuangZhou' },\n  { value: 'ShenZhen', label: 'ShenZhen' },\n];\n\nconst stylesObject: SelectProps['styles'] = {\n  prefix: {\n    color: '#1890ff',\n  },\n  suffix: {\n    color: '#1890ff',\n  },\n};\n\nconst stylesFn: SelectProps['styles'] = ({ props }): GetProp<SelectProps, 'styles', 'Return'> => {\n  if (props.variant === 'filled') {\n    return {\n      prefix: {\n        color: '#722ed1',\n      },\n      suffix: {\n        color: '#722ed1',\n      },\n      popup: {\n        root: {\n          border: '1px solid #722ed1',\n        },\n      },\n    };\n  }\n  return {};\n};\n\nconst App: React.FC = () => {\n  const sharedProps: SelectProps = {\n    options,\n    classNames,\n    prefix: <MehOutlined />,\n  };\n  return (\n    <Flex vertical gap=\"medium\">\n      <Select {...sharedProps} styles={stylesObject} placeholder=\"Object\" />\n      <Select {...sharedProps} styles={stylesFn} placeholder=\"Function\" variant=\"filled\" />\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "e43ce255f3b1d85ca914f0699f67eeaef00211dce746ade622d4ced056a377af",
+      "upstreamPath": "components/select/demo/style-class.tsx",
+      "upstreamSha256": "e410134777ae1fa5f465038454e6f1f5a4910c85042881534a2b165f0ec24a99",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/suffix.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { MehOutlined, SmileOutlined } from '@ant-design/icons';\nimport { Select, Space } from 'antd';\n\nconst smileIcon = <SmileOutlined />;\nconst mehIcon = <MehOutlined />;\n\nconst handleChange = (value: string | string[]) => {\n  console.log(`selected ${value}`);\n};\n\nconst App: React.FC = () => (\n  <Space wrap>\n    <Select\n      prefix=\"User\"\n      defaultValue=\"lucy\"\n      placeholder=\"Select User\"\n      style={{ width: 200 }}\n      onChange={handleChange}\n      options={[\n        { value: 'jack', label: 'Jack' },\n        { value: 'lucy', label: 'Lucy' },\n        { value: 'Yiminghe', label: 'yiminghe' },\n        { value: 'disabled', label: 'Disabled', disabled: true },\n      ]}\n      allowClear\n      showSearch\n    />\n    <Select\n      suffixIcon={smileIcon}\n      defaultValue=\"lucy\"\n      placeholder=\"Select\"\n      style={{ width: 120 }}\n      onChange={handleChange}\n      options={[\n        { value: 'jack', label: 'Jack' },\n        { value: 'lucy', label: 'Lucy' },\n        { value: 'Yiminghe', label: 'yiminghe' },\n        { value: 'disabled', label: 'Disabled', disabled: true },\n      ]}\n    />\n    <Select\n      suffixIcon={mehIcon}\n      defaultValue=\"lucy\"\n      placeholder=\"Select\"\n      style={{ width: 120 }}\n      disabled\n      options={[{ value: 'lucy', label: 'Lucy' }]}\n    />\n    <br />\n    <Select\n      prefix=\"User\"\n      defaultValue={['lucy']}\n      placeholder=\"Select\"\n      mode=\"multiple\"\n      style={{ width: 200 }}\n      onChange={handleChange}\n      options={[\n        { value: 'jack', label: 'Jack' },\n        { value: 'lucy', label: 'Lucy' },\n        { value: 'Yiminghe', label: 'yiminghe' },\n        { value: 'disabled', label: 'Disabled', disabled: true },\n      ]}\n    />\n    <Select\n      suffixIcon={smileIcon}\n      defaultValue={['lucy']}\n      placeholder=\"Select\"\n      mode=\"multiple\"\n      style={{ width: 120 }}\n      onChange={handleChange}\n      options={[\n        { value: 'jack', label: 'Jack' },\n        { value: 'lucy', label: 'Lucy' },\n        { value: 'Yiminghe', label: 'yiminghe' },\n        { value: 'disabled', label: 'Disabled', disabled: true },\n      ]}\n    />\n    <Select\n      suffixIcon={mehIcon}\n      defaultValue={['lucy']}\n      placeholder=\"Select\"\n      mode=\"multiple\"\n      style={{ width: 120 }}\n      disabled\n      options={[{ value: 'lucy', label: 'Lucy' }]}\n    />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "075fe3b18890fe44934b3742169f14759278eee1591351921f6b49d7704d8507",
+      "upstreamPath": "components/select/demo/suffix.tsx",
+      "upstreamSha256": "c36f669104bdecf4acc038b97130744f8845301481b73bbf0ba73b122aadd06a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/tags.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Select } from 'antd';\nimport type { SelectProps } from 'antd';\n\nconst options: SelectProps['options'] = [];\n\nfor (let i = 10; i < 36; i++) {\n  options.push({\n    value: i.toString(36) + i,\n    label: i.toString(36) + i,\n  });\n}\n\nconst handleChange = (value: string[]) => {\n  console.log(`selected ${value}`);\n};\n\nconst App: React.FC = () => (\n  <Select\n    mode=\"tags\"\n    style={{ width: '100%' }}\n    placeholder=\"Tags Mode\"\n    onChange={handleChange}\n    options={options}\n  />\n);\n\nexport default App;\n",
+      "sha256": "7a67f51460a318f1003d8f86ac87e98594720efaa5688ddb77e9d00cb2185c77",
+      "upstreamPath": "components/select/demo/tags.tsx",
+      "upstreamSha256": "6aee471cadcfb66a08fc04d48b8bad79697fbe229e7a21f7ee7d4faaac7fcc76",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/select/demo/variant.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Select } from 'antd';\n\nconst App: React.FC = () => (\n  <Flex gap={12} vertical>\n    <Flex gap={8}>\n      <Select\n        placeholder=\"Outlined\"\n        style={{ flex: 1 }}\n        options={[\n          { value: 'jack', label: 'Jack' },\n          { value: 'lucy', label: 'Lucy' },\n          { value: 'Yiminghe', label: 'yiminghe' },\n        ]}\n      />\n      <Select\n        mode=\"multiple\"\n        defaultValue={['lucy']}\n        placeholder=\"Outlined\"\n        style={{ flex: 1 }}\n        options={[\n          { value: 'jack', label: 'Jack' },\n          { value: 'lucy', label: 'Lucy' },\n          { value: 'Yiminghe', label: 'yiminghe' },\n        ]}\n      />\n    </Flex>\n    <Flex gap={8}>\n      <Select\n        placeholder=\"Filled\"\n        variant=\"filled\"\n        style={{ flex: 1 }}\n        options={[\n          { value: 'jack', label: 'Jack' },\n          { value: 'lucy', label: 'Lucy' },\n          { value: 'Yiminghe', label: 'yiminghe' },\n        ]}\n      />\n      <Select\n        mode=\"multiple\"\n        defaultValue={['lucy']}\n        placeholder=\"Filled\"\n        variant=\"filled\"\n        style={{ flex: 1 }}\n        options={[\n          { value: 'jack', label: 'Jack' },\n          { value: 'lucy', label: 'Lucy' },\n          { value: 'Yiminghe', label: 'yiminghe' },\n        ]}\n      />\n    </Flex>\n    <Flex gap={8}>\n      <Select\n        placeholder=\"Borderless\"\n        variant=\"borderless\"\n        style={{ flex: 1 }}\n        options={[\n          { value: 'jack', label: 'Jack' },\n          { value: 'lucy', label: 'Lucy' },\n          { value: 'Yiminghe', label: 'yiminghe' },\n        ]}\n      />\n      <Select\n        mode=\"multiple\"\n        defaultValue={['lucy']}\n        placeholder=\"Borderless\"\n        variant=\"borderless\"\n        style={{ flex: 1 }}\n        options={[\n          { value: 'jack', label: 'Jack' },\n          { value: 'lucy', label: 'Lucy' },\n          { value: 'Yiminghe', label: 'yiminghe' },\n        ]}\n      />\n    </Flex>\n    <Flex gap={8}>\n      <Select\n        placeholder=\"Underlined\"\n        variant=\"underlined\"\n        style={{ flex: 1 }}\n        options={[\n          { value: 'jack', label: 'Jack' },\n          { value: 'lucy', label: 'Lucy' },\n          { value: 'Yiminghe', label: 'yiminghe' },\n        ]}\n      />\n      <Select\n        mode=\"multiple\"\n        defaultValue={['lucy']}\n        placeholder=\"Underlined\"\n        variant=\"underlined\"\n        style={{ flex: 1 }}\n        options={[\n          { value: 'jack', label: 'Jack' },\n          { value: 'lucy', label: 'Lucy' },\n          { value: 'Yiminghe', label: 'yiminghe' },\n        ]}\n      />\n    </Flex>\n  </Flex>\n);\n\nexport default App;\n",
+      "sha256": "43d1886a40715bcff1687fc8badf65157c24f385dc9e96b83a2f2984ca24e2ea",
+      "upstreamPath": "components/select/demo/variant.tsx",
+      "upstreamSha256": "8abf5eaa999dbeb02d425512e039209df3c959bf03c3270865eb409a5ae96a9e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/automatic-tokenization\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "bd725e958104cab7dd7a95e873e9f081a2cb87eafe4c33c3955811d770cf925c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/basic.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/basic\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2537c5d5d7e9686d3eb44b4172724c43db43b2451f60753e744e468b28cd640d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/big-data.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/big-data\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "69d64539eb10fb7af30661b1234b416d295119be2a2e700d8f78c811f172bff1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/clear-suffix-debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/clear-suffix-debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "7b3c2a993794ad9094ca17590e4c98bfa82f209ad17a7cd12eccf2c4d12ae78c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/component-token.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/component-token\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "4aaf3358a46b5711dbd44e36416586666884ff208548cb11eb4d896168329664",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/coordinate.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/coordinate\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "5a53c2b21d479d4552b1573932cc724e1ed2306236f5cf80e041e15049b7faf2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/custom-dropdown-menu.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/custom-dropdown-menu\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0779a885b0f46837323b6801ee481a9a2b4df4ef8a05f28914478ac3e6bb0ce7",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/custom-label-render.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/custom-label-render\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "ad774dd5e456811b3d2df996239f4d757824cd558d1aa2ed49101fd841288e46",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/custom-tag-render.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/custom-tag-render\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "bf776b92efe67b924b995cc1ba0bc69c4071e4a24da3ac4d68d4e79806ccff9a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/custom-tokenization.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/custom-tokenization\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "cc70ba1ef69edf3fb85107ff400288062583cd33f0427c2b4205128dd20b9e8c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "652621270a840de364bf37d9dc44971e4515dfc726663229370193e1fe13b224",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/debug-flip-shift.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/debug-flip-shift\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "c35e989a889b507fbaa8b17678f73c1c611684c790c79a842492916b0e7b6aab",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/filled-debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/filled-debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2913b37ba7ec8bf4375b618a300b8425ab2c1fa213f6ac000e4fd29b0c209788",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/hide-selected.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/hide-selected\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2a37d0ae6d953df3f6ee1041f76fd8a60c137255b58f28b821465ea1742965f9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/label-in-value.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/label-in-value\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "be1cdcef5ef63cbc8e35a9998dfd1ce9fc0a88b6f0b9058bc64f66b831b2289d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/max-count.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/maxCount\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "9109214b688afc701d7a60a81bf9c6843b42b48b432e837f2e8c9f14875b7c7c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/multiple.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/multiple\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "99c5dedd2ea13a7195e08524e12968ff7e80e5e10d60ff22b9aa5d1aa2c6ec31",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/optgroup.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/optgroup\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8978690a2a301df693c56d792993796f5e2448c932e075a802c0c757eceaacbf",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/option-label-center.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/option-label-center\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a201aa5336994296f5d9abb98ab42817f521a7cb7b8e41fe8a7747904d4df4d0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/option-render.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/option-render\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "f162e29b9531c5613fb35037c2bf44624480e2e32726f3bb46544a60a59f8551",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/placement.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/placement\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "dda045510903f6c7c1d3657ac4c921711519c6128989cc52481e070b070e2bf4",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/placement-debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/placement-debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "f5673cef8397fa5cb0276fc9b097ccff55cef25757c84ef36bd83e651ac6a707",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/render-panel.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/render-panel\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2bd1cb2eec2da3dc10dcd3f43a4c735dd624882651774f88e1277055fbb94682",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/responsive.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/responsive\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "5c9a80349953c56aa7ac58acfdb23fef4b21373e06e71e74bad496d1f6a81a7a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/search.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/search\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "594c8ee68acd38faabc753b487c81182d126b1ac8d6123f0267349e1269b7df1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/search-filter-option.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/search-filter-option\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1ab799632b7b4ff3c9aa03c3ba5a79bfcad1c76c8a1a08385a50522cf73dbe51",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/search-multi-field.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/search-multi-field\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "3079173e41356945ed0f45ad8dbe89aff687afacbc6b2780c9ae9dc6e928aedf",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/search-sort.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/search-sort\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "23edaed3c549916344c6d3224958d12a931a673eb3473cfeb78153b34bb48b69",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/select-users.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/select-users\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "81a15ad54c2b6c5186e3c451ec6bf3b3bd8e1017f88f5ec7a10d8cea014c4e34",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/size\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a6a1c1504756224e609b2b9480fc728204e6af63bfdb98f1b00166ce890b0144",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/status.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/status\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "31fb1732d72f68eb48cafc5a4a8bdd34a49d55df1a742f2583b895c5a05852c5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/style-class.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/style-class\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "c20f063412b4013fa2b506aedd94d74568080462b51bb6e877b065de73bbcb28",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/suffix.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/suffix\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d34b271ba97cdd80b1941eb9b258c5f96b7e532ae98f970f936c2713140636d6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/tags.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/tags\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "31631e222d4e60b4394b4eeafbb9c4e9b1d0829e63f8baa5e462f19f36659dd0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/select/previews/variant.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/select/demo/variant\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "82e9acd0a78d15efbd0ff737d24b2608aaee4687d8b1f738e68dafb4b7646373",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0 lodash@4.18.1",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0 lodash@4.18.1",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example compositions using the pinned antd npm package.",
+      "Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "select",
+    "upstreamPageUrl": "https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/select/demo",
+    "upstreamDetailUrl": "https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/select/demo/automatic-tokenization.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/ant-design/ant-design/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/select/demo/automatic-tokenization.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Ant Design select\n\n35 published Ant Design select examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example compositions using the pinned antd npm package.\n- Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/select/demo\nPinned source: https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/select/demo/automatic-tokenization.tsx\n"
+}

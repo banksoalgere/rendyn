@@ -1,0 +1,355 @@
+{
+  "id": "antd:time-picker",
+  "sourceId": "antd",
+  "slug": "antd-time-picker",
+  "name": "Ant Design time picker",
+  "description": "17 published Ant Design time picker examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@ant-design/icons@6.3.4",
+    "antd@6.6.5",
+    "antd-style@4.1.0",
+    "dayjs@1.11.23"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "picker",
+    "tags": [
+      "file",
+      "form",
+      "picker"
+    ],
+    "aliases": [
+      "time picker",
+      "ant design time picker",
+      "picker"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "17 published Ant Design time picker examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "picker:file:form",
+    "searchText": "Ant Design time picker\ntime picker\n17 published Ant Design time picker examples with complete pinned source and MIT attribution.\nant design time picker\npicker\nfile\nform\nAnt Design time picker 17 published Ant Design time picker examples with complete pinned source and MIT attribution. Installation Complete MIT example compositions using the pinned antd npm package. Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/ant design/ant design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/time picker/demo Pinned source: https://github.com/ant design/ant design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/time picker/demo/12hours.tsx"
+  },
+  "previewPath": "/preview/blocks/antd-time-picker",
+  "manifestPath": "components/antd-time-picker/component.json",
+  "integrity": "sha256:a7eb2b519ebd21b33586a169bcc1b0f948eea6d2c7c5174bad63357c291bed15",
+  "source": {
+    "id": "antd",
+    "name": "Ant Design",
+    "repository": "https://github.com/ant-design/ant-design",
+    "commit": "bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a",
+    "registrySha256": "7df4386dc63323dd6235edee9c52694b28d573a6d2765ac59719a52e1c259ab0",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2015-present Ant UED, https://xtech.antfin.com/",
+      "textPath": "source/antd/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/12hours.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { TimePickerProps } from 'antd';\nimport { Space, TimePicker } from 'antd';\n\nconst onChange: TimePickerProps['onChange'] = (time, timeString) => {\n  console.log(time, timeString);\n};\n\nconst App: React.FC = () => (\n  <Space wrap>\n    <TimePicker use12Hours onChange={onChange} />\n    <TimePicker use12Hours format=\"h:mm:ss A\" onChange={onChange} />\n    <TimePicker use12Hours format=\"h:mm a\" onChange={onChange} />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "ad356eb09aedbd9c539511d65f4327528711b3c0626fa7ee487f268b8f0876e5",
+      "upstreamPath": "components/time-picker/demo/12hours.tsx",
+      "upstreamSha256": "1517f2e4003618b923a36dd880327104414caffffcbbd3daa8b12b37a8d649c8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/addon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Button, TimePicker } from 'antd';\n\nconst App: React.FC = () => {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <TimePicker\n      open={open}\n      onOpenChange={setOpen}\n      renderExtraFooter={() => (\n        <Button size=\"small\" type=\"primary\" onClick={() => setOpen(false)}>\n          OK\n        </Button>\n      )}\n    />\n  );\n};\n\nexport default App;\n",
+      "sha256": "251c22569742267e850cb85162c3460d76e42653578013e152cadc4f281534a8",
+      "upstreamPath": "components/time-picker/demo/addon.tsx",
+      "upstreamSha256": "6f2a07e58f7aad54fa9a58163925c94c71e293beb0e8d7dde1992401bf14be3f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { TimePickerProps } from 'antd';\nimport { TimePicker } from 'antd';\nimport dayjs from 'dayjs';\nimport customParseFormat from 'dayjs/plugin/customParseFormat';\n\ndayjs.extend(customParseFormat);\n\nconst onChange: TimePickerProps['onChange'] = (time, timeString) => {\n  console.log(time, timeString);\n};\n\nconst App: React.FC = () => (\n  <TimePicker onChange={onChange} defaultOpenValue={dayjs('00:00:00', 'HH:mm:ss')} />\n);\n\nexport default App;\n",
+      "sha256": "68cc4134b2bf84b29ac189b6f559efbe7e99ccdc5e28334aa73d86fd5e8b8c67",
+      "upstreamPath": "components/time-picker/demo/basic.tsx",
+      "upstreamSha256": "6ef74ad59927afb47bdacd356daeaa9c268c651719c3682f2f53aecba5a5eab2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/change-on-scroll.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { TimePickerProps } from 'antd';\nimport { TimePicker } from 'antd';\nimport dayjs from 'dayjs';\nimport customParseFormat from 'dayjs/plugin/customParseFormat';\n\ndayjs.extend(customParseFormat);\n\nconst onChange: TimePickerProps['onChange'] = (time, timeString) => {\n  console.log(time, timeString);\n};\n\nconst App: React.FC = () => <TimePicker onChange={onChange} changeOnScroll needConfirm={false} />;\n\nexport default App;\n",
+      "sha256": "eea0277e5b6c18886a5a7a40d7cdabfab151566c798cffb6bc5dd3bb14d997eb",
+      "upstreamPath": "components/time-picker/demo/change-on-scroll.tsx",
+      "upstreamSha256": "8e735b5489133ad7006e8c4c1e49480489111b2d75d612a0202e3eebf355bac9",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/colored-popup.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { TimePickerProps } from 'antd';\nimport { TimePicker } from 'antd';\nimport dayjs from 'dayjs';\nimport customParseFormat from 'dayjs/plugin/customParseFormat';\n\ndayjs.extend(customParseFormat);\n\nconst onChange: TimePickerProps['onChange'] = (time, timeString) => {\n  console.log(time, timeString);\n};\n\nconst App: React.FC = () => (\n  <TimePicker\n    onChange={onChange}\n    defaultOpenValue={dayjs('00:00:00', 'HH:mm:ss')}\n    classNames={{ popup: { root: 'myCustomClassName' } }}\n  />\n);\n\nexport default App;\n",
+      "sha256": "501f84cd1690219df0289974b5599f723e49ed6c7d7ce750cea9a8e550e5941f",
+      "upstreamPath": "components/time-picker/demo/colored-popup.tsx",
+      "upstreamSha256": "7696c5f6df7ccf54daf5780f4ad22b14d7c9c95651c3c54a0fab20ae31ce283d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/disabled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { TimePicker } from 'antd';\nimport dayjs from 'dayjs';\nimport customParseFormat from 'dayjs/plugin/customParseFormat';\n\ndayjs.extend(customParseFormat);\n\nconst App: React.FC = () => <TimePicker defaultValue={dayjs('12:08:23', 'HH:mm:ss')} disabled />;\n\nexport default App;\n",
+      "sha256": "20fa392e186da713dde3564c8dab1109e7d33de0467cfcf72c3f5d7abc4587d4",
+      "upstreamPath": "components/time-picker/demo/disabled.tsx",
+      "upstreamSha256": "91f41e9be99b7197d13559121aa4d270c4d75e442a79a2e1aa5fed8b0a321e5b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/hide-column.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { TimePicker } from 'antd';\nimport dayjs from 'dayjs';\n\nconst format = 'HH:mm';\n\nconst App: React.FC = () => <TimePicker defaultValue={dayjs('12:08', format)} format={format} />;\n\nexport default App;\n",
+      "sha256": "f21e2e3eb85a7e8415ddd5bb57977f360d024054eb234cf9a6fa1c7088051e9f",
+      "upstreamPath": "components/time-picker/demo/hide-column.tsx",
+      "upstreamSha256": "fcc0ef855876ed0401e7ef9efc51817da66198a025d837e8918baf124d557e65",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/interval-options.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { TimePicker } from 'antd';\n\nconst App: React.FC = () => <TimePicker minuteStep={15} secondStep={10} hourStep={1} />;\n\nexport default App;\n",
+      "sha256": "f0b53e95b189d14817d7e7c91d9da8ab707744b0979718513e03f43f5a0581ac",
+      "upstreamPath": "components/time-picker/demo/interval-options.tsx",
+      "upstreamSha256": "88a1b6ee3a1bcf60b76e962f0ca77ef0d397790aa093134a36fc936a00d6a5a3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/need-confirm.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { TimePickerProps } from 'antd';\nimport { TimePicker } from 'antd';\n\nconst onChange: TimePickerProps['onChange'] = (time, timeString) => {\n  console.log(time, timeString);\n};\n\nconst App: React.FC = () => <TimePicker onChange={onChange} needConfirm />;\n\nexport default App;\n",
+      "sha256": "c5cc09c9954a1d968886ccbfaa73dfa311a15fcdd29147e66310ab91f39f65ff",
+      "upstreamPath": "components/time-picker/demo/need-confirm.tsx",
+      "upstreamSha256": "89449d9ce699d431cb95bc849ddcc641c979df7e15b1e82d3707d28c9f715321",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/range-picker.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { TimePicker } from 'antd';\nimport dayjs from 'dayjs';\n\nconst format = 'HH:mm:ss';\n\nconst App: React.FC = () => {\n  const startTime = dayjs('12:08:23', 'HH:mm:ss');\n  const endTime = dayjs('12:08:23', 'HH:mm:ss');\n\n  return <TimePicker.RangePicker defaultValue={[startTime, endTime]} format={format} />;\n};\n\nexport default App;\n",
+      "sha256": "1073fcca3e98be737d7ddb96097415363d552c1dc2f61ad28ee469c7e3718cb7",
+      "upstreamPath": "components/time-picker/demo/range-picker.tsx",
+      "upstreamSha256": "c6dce7972eb55017095a88d186c3c19610474a9c9dffe30c2f4e2b5e6c0e116f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/render-panel.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { TimePicker } from 'antd';\n\nconst { _InternalPanelDoNotUseOrYouWillBeFired: InternalTimePicker } = TimePicker;\n\nconst App: React.FC = () => <InternalTimePicker />;\n\nexport default App;\n",
+      "sha256": "dcd4467de2d50527a4915c2d2aa0e08450b36af57246d57d576223c8b43762f3",
+      "upstreamPath": "components/time-picker/demo/render-panel.tsx",
+      "upstreamSha256": "49ad5cc8155cd32b147f0db3e07f6d1c34f90bb09d5001244422da409102d349",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/size.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Space, TimePicker } from 'antd';\nimport dayjs from 'dayjs';\n\nconst App: React.FC = () => (\n  <Space wrap>\n    <TimePicker defaultValue={dayjs('12:08:23', 'HH:mm:ss')} size=\"large\" />\n    <TimePicker defaultValue={dayjs('12:08:23', 'HH:mm:ss')} />\n    <TimePicker defaultValue={dayjs('12:08:23', 'HH:mm:ss')} size=\"small\" />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "5a9184f1588085f42395af70c9e72134a06ecdd00697dad83e734789c53dfb9b",
+      "upstreamPath": "components/time-picker/demo/size.tsx",
+      "upstreamSha256": "b4fff4cc5ad73f919bddce49fcb64ab7b32a8ae85da64739fb816b13afe8d6b7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/status.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Space, TimePicker } from 'antd';\n\nconst App: React.FC = () => (\n  <Space vertical>\n    <TimePicker status=\"error\" />\n    <TimePicker status=\"warning\" />\n    <TimePicker.RangePicker status=\"error\" />\n    <TimePicker.RangePicker status=\"warning\" />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "36352d3a391d9b6512cae7d4cd7425cae5747e5e92c0689f6ea327d67e6811c3",
+      "upstreamPath": "components/time-picker/demo/status.tsx",
+      "upstreamSha256": "48aee24c7de59b06d7839c42aaa7c7ae94e5e9b42d6f2f6cbe834bc83ec45e20",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/style-class.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, TimePicker } from 'antd';\nimport type { GetProp, TimePickerProps } from 'antd';\nimport { createStyles } from 'antd-style';\n\nconst useStyles = createStyles(({ token }) => ({\n  root: {\n    border: `${token.lineWidth}px ${token.lineType} ${token.colorPrimary}`,\n    width: 150,\n  },\n}));\n\nconst stylesObject: TimePickerProps['styles'] = {\n  root: {\n    borderColor: '#d9d9d9',\n  },\n};\n\nconst stylesFn: TimePickerProps['styles'] = (\n  info,\n): GetProp<TimePickerProps, 'styles', 'Return'> => {\n  if (info.props.size === 'large') {\n    return {\n      root: {\n        borderColor: '#722ed1',\n      },\n      suffix: {\n        color: '#722ed1',\n      },\n      popup: {\n        container: { border: '1px solid #722ed1', borderRadius: 8 },\n      },\n    };\n  }\n  return {};\n};\n\nconst App: React.FC = () => {\n  const { styles: classNames } = useStyles();\n  return (\n    <Flex vertical gap=\"medium\">\n      <TimePicker classNames={classNames} styles={stylesObject} placeholder=\"Object\" />\n      <TimePicker classNames={classNames} styles={stylesFn} placeholder=\"Function\" size=\"large\" />\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "2a9afdab5c20c31cf6a475ed453beff5a72025edcc45d66c5a11165d01a031b2",
+      "upstreamPath": "components/time-picker/demo/style-class.tsx",
+      "upstreamSha256": "ad0c35a5c567e29f5923c909fc22d7c94a57d6a40a7d3cff83683ee8e60ae81c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/suffix.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { SmileOutlined } from '@ant-design/icons';\nimport { Space, TimePicker } from 'antd';\nimport type { TimePickerProps } from 'antd';\nimport dayjs from 'dayjs';\nimport customParseFormat from 'dayjs/plugin/customParseFormat';\n\ndayjs.extend(customParseFormat);\n\nconst onChange: TimePickerProps['onChange'] = (time, timeString) => {\n  console.log(time, timeString);\n};\n\nconst App: React.FC = () => (\n  <Space vertical size={12}>\n    <TimePicker\n      suffixIcon={<SmileOutlined />}\n      onChange={onChange}\n      defaultOpenValue={dayjs('00:00:00', 'HH:mm:ss')}\n    />\n    <TimePicker prefix={<SmileOutlined />} />\n    <TimePicker.RangePicker prefix={<SmileOutlined />} />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "1a2dc0a2bc7022f389a9dbbf81fce8bc723e999666569f888798fd70aa1a0754",
+      "upstreamPath": "components/time-picker/demo/suffix.tsx",
+      "upstreamSha256": "f34cc4c0d9b5a70624cc88a74e26f1926c41ced79375a9aabf7fc94207338018",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/value.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { TimePicker } from 'antd';\nimport type { Dayjs } from 'dayjs';\n\nconst App: React.FC = () => {\n  const [value, setValue] = useState<Dayjs | null>(null);\n\n  const onChange = (time: Dayjs | null) => {\n    setValue(time);\n  };\n\n  return <TimePicker value={value} onChange={onChange} />;\n};\n\nexport default App;\n",
+      "sha256": "d3938353f30d6725946b4cdbebc7caa3e8cd856671ce8b5edce5942f54ac616f",
+      "upstreamPath": "components/time-picker/demo/value.tsx",
+      "upstreamSha256": "a0bdb6d94d0e19da9c834ecb49972c538a5872f9765c765d60682453ce7a99a7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/time-picker/demo/variant.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, TimePicker } from 'antd';\n\nconst { RangePicker } = TimePicker;\n\nconst App: React.FC = () => (\n  <Flex vertical gap={12}>\n    <Flex gap={8}>\n      <TimePicker placeholder=\"Outlined\" />\n      <RangePicker placeholder={['Outlined Start', 'Outlined End']} />\n    </Flex>\n    <Flex gap={8}>\n      <TimePicker variant=\"filled\" placeholder=\"Filled\" />\n      <RangePicker variant=\"filled\" placeholder={['Filled Start', 'Filled End']} />\n    </Flex>\n    <Flex gap={8}>\n      <TimePicker variant=\"borderless\" placeholder=\"Borderless\" />\n      <RangePicker variant=\"borderless\" placeholder={['Borderless Start', 'Borderless End']} />\n    </Flex>\n    <Flex gap={8}>\n      <TimePicker variant=\"underlined\" placeholder=\"Underlined\" />\n      <RangePicker variant=\"underlined\" placeholder={['Underlined Start', 'Underlined End']} />\n    </Flex>\n  </Flex>\n);\n\nexport default App;\n",
+      "sha256": "cd220b4fc28bf253130ed34b2f3c4eab7a3058537828f5985b6beb02327c9c78",
+      "upstreamPath": "components/time-picker/demo/variant.tsx",
+      "upstreamSha256": "ec1d1e5801b86d971a70214131f6e051afed1fcb3a819a4c6efbca5c215d33f1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/12hours\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "6566b7caa7121e6693f40090970fae6b17a977625cf6e8ce9a3099145d86573e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/previews/addon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/addon\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "7e39ad6352c8a112933573e242ec4ba424f3507f9142979b6ae1c5ba07cb3534",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/previews/basic.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/basic\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0ac4cb232af7b7b6b9ef82c452124bf1a4323504c93404706cc50324d24bf39b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/previews/change-on-scroll.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/change-on-scroll\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8c2147f0ba356c853db4afa7f58c36700504f09fb4d7593e40109d1ffe019e5a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/previews/colored-popup.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/colored-popup\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "418adf6f1cb44e9d938b1d447e38ce57fb8b338a0b6ad20f4d5ca9fdd4c71582",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/previews/disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/disabled\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "30d671d0cf65dae6c0874802f14f9016b0dcebe42b5904842362ebc56a43c0a0",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/previews/hide-column.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/hide-column\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "168e3e7e5e3987e2a74310f8ea13c2e7a7c181e3dd158b28ea5dc9cd078c2f32",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/previews/interval-options.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/interval-options\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "b1eeab3436b29b32be220040fed2aaf2d561a8a1f5d2f597f56c933953ed1a21",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/previews/need-confirm.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/need-confirm\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "5cc76075dfeb941087227adbb4a55fed82a8820e7acca4022b30e369acab821f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/previews/range-picker.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/range-picker\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "00cc7dcf7cf869c8d17fffa24e57ca4242a7c91c3bebd114e868a0159ae52b72",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/previews/render-panel.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/render-panel\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "dfe6b9f2cc62b9829dffc004320dd5dfe6e724d75dd5bd9f4f344bc565b0970e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/previews/size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/size\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2572a2b0d8a0a65a20e782f0f6ab7c06ded68b4a5bfddf49bb5a5516de228634",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/previews/status.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/status\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "c114b82b70c9784ef6bfd2bdb90f01ac97261043bb8a5b7132d81d764e7eb961",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/previews/style-class.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/style-class\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "7227392bac08bae4979b79f46aca2524752bfb6250b716ffbf6150c6b3763965",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/previews/suffix.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/suffix\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0b9dd0a0a3436567b6328d0ef8b6a781c5315c80cae5475a5e1e34ea227aad15",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/previews/value.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/value\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "baa45385b6a0f577e0f6b9639d0a81f5bd7274fe0ca1f5a8a9a1797be8930d1b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/time-picker/previews/variant.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/time-picker/demo/variant\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "6d1de77a9802bef2f26eec4c065bd46f917c669fc7d1bc2d490a0a5ccfa7ca1e",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0 dayjs@1.11.23",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0 dayjs@1.11.23",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example compositions using the pinned antd npm package.",
+      "Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "time-picker",
+    "upstreamPageUrl": "https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/time-picker/demo",
+    "upstreamDetailUrl": "https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/time-picker/demo/12hours.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/ant-design/ant-design/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/time-picker/demo/12hours.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Ant Design time picker\n\n17 published Ant Design time picker examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example compositions using the pinned antd npm package.\n- Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/time-picker/demo\nPinned source: https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/time-picker/demo/12hours.tsx\n"
+}

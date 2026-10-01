@@ -1,0 +1,304 @@
+{
+  "id": "antd:splitter",
+  "sourceId": "antd",
+  "slug": "antd-splitter",
+  "name": "Ant Design splitter",
+  "description": "14 published Ant Design splitter examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@ant-design/icons@6.3.4",
+    "antd@6.6.5",
+    "antd-style@4.1.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "splitter",
+    "tags": [
+      "file",
+      "form"
+    ],
+    "aliases": [
+      "splitter",
+      "ant design splitter"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "14 published Ant Design splitter examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "splitter:file:form",
+    "searchText": "Ant Design splitter\nsplitter\n14 published Ant Design splitter examples with complete pinned source and MIT attribution.\nant design splitter\nfile\nform\nAnt Design splitter 14 published Ant Design splitter examples with complete pinned source and MIT attribution. Installation Complete MIT example compositions using the pinned antd npm package. Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/ant design/ant design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/splitter/demo Pinned source: https://github.com/ant design/ant design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/splitter/demo/collapsible.tsx"
+  },
+  "previewPath": "/preview/blocks/antd-splitter",
+  "manifestPath": "components/antd-splitter/component.json",
+  "integrity": "sha256:f351b830265739819fcadb4571cd0866f136605e2e2d765780926dc0fa15b07a",
+  "source": {
+    "id": "antd",
+    "name": "Ant Design",
+    "repository": "https://github.com/ant-design/ant-design",
+    "commit": "bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a",
+    "registrySha256": "7df4386dc63323dd6235edee9c52694b28d573a6d2765ac59719a52e1c259ab0",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2015-present Ant UED, https://xtech.antfin.com/",
+      "textPath": "source/antd/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/antd/upstream/splitter/demo/collapsible.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Flex, Splitter, Switch, Typography } from 'antd';\nimport type { SplitterProps } from 'antd';\n\nconst Desc: React.FC<Readonly<{ text?: string | number }>> = (props) => (\n  <Flex justify=\"center\" align=\"center\" style={{ height: '100%' }}>\n    <Typography.Title type=\"secondary\" level={5} style={{ whiteSpace: 'nowrap' }}>\n      {props.text}\n    </Typography.Title>\n  </Flex>\n);\n\nconst CustomSplitter: React.FC<Readonly<SplitterProps>> = ({ style, ...restProps }) => (\n  <Splitter style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', ...style }} {...restProps}>\n    <Splitter.Panel collapsible min=\"20%\">\n      <Desc text=\"First\" />\n    </Splitter.Panel>\n    <Splitter.Panel collapsible>\n      <Desc text=\"Second\" />\n    </Splitter.Panel>\n  </Splitter>\n);\n\nconst App: React.FC = () => {\n  const [motion, setMotion] = useState(true);\n\n  return (\n    <Flex vertical gap=\"middle\">\n      <Flex gap=\"middle\">\n        <Switch\n          checked={motion}\n          onChange={setMotion}\n          checkedChildren=\"motion\"\n          unCheckedChildren=\"motion\"\n        />\n      </Flex>\n      <CustomSplitter style={{ height: 200 }} collapsible={{ motion }} />\n      <CustomSplitter style={{ height: 300 }} orientation=\"vertical\" collapsible={{ motion }} />\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "4116daaa16fb179ff7b70ece8852644d14b1a36b55b56bdd20053b67518244cf",
+      "upstreamPath": "components/splitter/demo/collapsible.tsx",
+      "upstreamSha256": "13910207e2778ee098ff77ede47bc0629fc434976449c12d52aa88e67a67f4df",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/splitter/demo/collapsibleIcon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Flex, Radio, Splitter, Typography } from 'antd';\nimport type { RadioChangeEvent } from 'antd';\nimport type { CheckboxGroupProps } from 'antd/es/checkbox';\n\nconst Desc: React.FC<Readonly<{ text?: string | number }>> = (props) => (\n  <Flex justify=\"center\" align=\"center\" style={{ height: '100%' }}>\n    <Typography.Title type=\"secondary\" level={5} style={{ whiteSpace: 'nowrap' }}>\n      {props.text}\n    </Typography.Title>\n  </Flex>\n);\n\nconst options: CheckboxGroupProps<'auto' | boolean>['options'] = [\n  { label: 'Auto', value: 'auto' },\n  { label: 'True', value: true },\n  { label: 'False', value: false },\n];\n\nconst App: React.FC = () => {\n  const [showIconMode, setShowIconMode] = useState<'auto' | boolean>(true);\n\n  const onChange = (e: RadioChangeEvent) => {\n    setShowIconMode(e.target.value);\n  };\n\n  return (\n    <Flex vertical gap={20}>\n      <Flex gap={5}>\n        <p>ShowCollapsibleIcon: </p>\n        <Radio.Group options={options} value={showIconMode} onChange={onChange} />\n      </Flex>\n      <Splitter style={{ height: 200, boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>\n        <Splitter.Panel\n          collapsible={{ start: true, end: true, showCollapsibleIcon: showIconMode }}\n          min=\"20%\"\n        >\n          <Desc text=\"First\" />\n        </Splitter.Panel>\n        <Splitter.Panel collapsible={{ start: true, end: true, showCollapsibleIcon: showIconMode }}>\n          <Desc text=\"Second\" />\n        </Splitter.Panel>\n        <Splitter.Panel collapsible={{ start: true, end: true, showCollapsibleIcon: showIconMode }}>\n          <Desc text=\"Third\" />\n        </Splitter.Panel>\n      </Splitter>\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "c6ab3a454ad74158150d33787ff9dae63f4eb68a361823b7e4877b4a3781d1e7",
+      "upstreamPath": "components/splitter/demo/collapsibleIcon.tsx",
+      "upstreamSha256": "d1d8c3aca439261254ee9391a22566495268588e81dbad96c95b0c5ae5778c0d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/splitter/demo/control.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Button, Flex, Splitter, Switch, Typography } from 'antd';\n\nconst Desc: React.FC<Readonly<{ text?: string | number }>> = (props) => (\n  <Flex justify=\"center\" align=\"center\" style={{ height: '100%' }}>\n    <Typography.Title type=\"secondary\" level={5} style={{ whiteSpace: 'nowrap' }}>\n      {props.text}\n    </Typography.Title>\n  </Flex>\n);\n\nconst App: React.FC = () => {\n  const [sizes, setSizes] = React.useState<(number | string)[]>(['50%', '50%']);\n  const [enabled, setEnabled] = React.useState(true);\n  return (\n    <Flex vertical gap=\"medium\">\n      <Splitter\n        onResize={setSizes}\n        style={{ height: 200, boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}\n      >\n        <Splitter.Panel size={sizes[0]} resizable={enabled}>\n          <Desc text=\"First\" />\n        </Splitter.Panel>\n        <Splitter.Panel size={sizes[1]}>\n          <Desc text=\"Second\" />\n        </Splitter.Panel>\n      </Splitter>\n      <Flex gap=\"medium\" justify=\"space-between\">\n        <Switch\n          value={enabled}\n          onChange={() => setEnabled(!enabled)}\n          checkedChildren=\"Enabled\"\n          unCheckedChildren=\"Disabled\"\n        />\n        <Button onClick={() => setSizes(['50%', '50%'])}>Reset</Button>\n      </Flex>\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "9f549f7f7f4314325dc3772f285e8544afed8d09abdcaa846fddfdc5583b5890",
+      "upstreamPath": "components/splitter/demo/control.tsx",
+      "upstreamSha256": "deb7be7272c94cee36e98edab1ec8401e35348e305fa36b8b3efd1db6aceff74",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/splitter/demo/customize.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport {\n  CaretDownOutlined,\n  CaretLeftOutlined,\n  CaretRightOutlined,\n  CaretUpOutlined,\n  ColumnWidthOutlined,\n} from '@ant-design/icons';\nimport { ConfigProvider, Divider, Flex, Splitter, Typography } from 'antd';\nimport { createStyles } from 'antd-style';\n\nconst useStyles = createStyles(({ token }) => ({\n  dragger: {\n    '&::before': {\n      backgroundColor: 'transparent !important',\n      border: `${token.lineWidth}px dashed ${token.controlItemBgHover}`,\n    },\n    '&:hover::before': {\n      border: `${token.lineWidth}px dashed ${token.colorPrimary}`,\n    },\n  },\n  draggerActive: {\n    '&::before': {\n      border: `${token.lineWidth}px dashed ${token.colorPrimary}`,\n    },\n  },\n  draggerIcon: {\n    '&:hover': {\n      color: token.colorPrimary,\n    },\n  },\n  collapsibleIcon: {\n    fontSize: token.fontSizeLG,\n    color: token.colorTextDescription,\n\n    '&:hover': {\n      color: token.colorPrimary,\n    },\n  },\n}));\n\nconst Desc: React.FC<Readonly<{ text?: string | number }>> = (props) => (\n  <Flex justify=\"center\" align=\"center\" style={{ height: '100%' }}>\n    <Typography.Title type=\"secondary\" level={5} style={{ whiteSpace: 'nowrap' }}>\n      {props.text}\n    </Typography.Title>\n  </Flex>\n);\n\nconst App: React.FC = () => {\n  const { styles } = useStyles();\n\n  return (\n    <ConfigProvider\n      theme={{\n        components: {\n          Splitter: { splitBarSize: 1, splitTriggerSize: 16 },\n        },\n      }}\n    >\n      <Splitter\n        style={{ height: 200, boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}\n        draggerIcon={<ColumnWidthOutlined className={styles.draggerIcon} />}\n        collapsible={{\n          icon: {\n            start: <CaretLeftOutlined className={styles.collapsibleIcon} />,\n            end: <CaretRightOutlined className={styles.collapsibleIcon} />,\n          },\n        }}\n      >\n        <Splitter.Panel defaultSize=\"40%\" min=\"20%\" max=\"70%\" collapsible>\n          <Desc text=\"Panel 1\" />\n        </Splitter.Panel>\n\n        <Splitter.Panel collapsible>\n          <Desc text=\"Panel 2\" />\n        </Splitter.Panel>\n\n        <Splitter.Panel resizable={false}>\n          <Desc text=\"Panel 3\" />\n        </Splitter.Panel>\n      </Splitter>\n\n      <Divider />\n\n      <Splitter\n        orientation=\"vertical\"\n        classNames={{ dragger: { default: styles.dragger, active: styles.draggerActive } }}\n        style={{ height: 200, boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}\n        draggerIcon={null}\n        collapsible={{\n          icon: {\n            start: <CaretUpOutlined className={styles.collapsibleIcon} />,\n            end: <CaretDownOutlined className={styles.collapsibleIcon} />,\n          },\n        }}\n      >\n        <Splitter.Panel defaultSize=\"40%\" min=\"30%\" max=\"70%\" collapsible>\n          <Desc text=\"First\" />\n        </Splitter.Panel>\n\n        <Splitter.Panel collapsible>\n          <Desc text=\"Second\" />\n        </Splitter.Panel>\n      </Splitter>\n    </ConfigProvider>\n  );\n};\n\nexport default App;\n",
+      "sha256": "e9d143861efbfde13caacc7d6ea2ba31aa137ba12494097bb39dd83ac75708a8",
+      "upstreamPath": "components/splitter/demo/customize.tsx",
+      "upstreamSha256": "ec2257bdea8c7523c63de65e5b9851b9860f1699ab4e115742c3702c2b8b1eb1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/splitter/demo/debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Splitter, Typography } from 'antd';\n\nconst Desc: React.FC<Readonly<{ text?: string | number }>> = (props) => (\n  <Flex justify=\"center\" align=\"center\" style={{ height: '100%' }}>\n    <Typography.Title type=\"secondary\" level={5} style={{ whiteSpace: 'nowrap' }}>\n      Panel {props.text}\n    </Typography.Title>\n  </Flex>\n);\n\nconst App: React.FC = () => (\n  <Flex vertical gap=\"medium\">\n    <Typography.Title level={3}>[true, 0, false]</Typography.Title>\n    <Splitter style={{ height: 200, boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>\n      <Splitter.Panel>\n        <Desc text={1} />\n      </Splitter.Panel>\n      <Splitter.Panel defaultSize={0}>\n        <Desc text={2} />\n      </Splitter.Panel>\n      <Splitter.Panel resizable={false}>\n        <Desc text={3} />\n      </Splitter.Panel>\n    </Splitter>\n    <Typography.Title level={3}>[false, 0, true]</Typography.Title>\n    <Splitter style={{ height: 200, boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>\n      <Splitter.Panel resizable={false}>\n        <Desc text={1} />\n      </Splitter.Panel>\n      <Splitter.Panel defaultSize={0}>\n        <Desc text={2} />\n      </Splitter.Panel>\n      <Splitter.Panel>\n        <Desc text={3} />\n      </Splitter.Panel>\n    </Splitter>\n    <Typography.Title level={3}>Start have min & max</Typography.Title>\n    <Splitter style={{ height: 200, boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>\n      <Splitter.Panel min={50} max={100}>\n        <Desc text={1} />\n      </Splitter.Panel>\n      <Splitter.Panel>\n        <Desc text={2} />\n      </Splitter.Panel>\n    </Splitter>\n    <Typography.Title level={3}>End have min & max</Typography.Title>\n    <Splitter style={{ height: 200, boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>\n      <Splitter.Panel>\n        <Desc text={1} />\n      </Splitter.Panel>\n      <Splitter.Panel min=\"20%\" max=\"70%\">\n        <Desc text={2} />\n      </Splitter.Panel>\n    </Splitter>\n  </Flex>\n);\n\nexport default App;\n",
+      "sha256": "aee7582d26c8b9a9ffecdab6a71aa8357e426c9232439dc37665a3be39434728",
+      "upstreamPath": "components/splitter/demo/debug.tsx",
+      "upstreamSha256": "a961d4f0e17e0783066d2be0335970db87862c08433fb698ee5e782f467974f6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/splitter/demo/group.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Splitter, Typography } from 'antd';\n\nconst Desc: React.FC<Readonly<{ text?: string | number }>> = (props) => (\n  <Flex justify=\"center\" align=\"center\" style={{ height: '100%' }}>\n    <Typography.Title type=\"secondary\" level={5} style={{ whiteSpace: 'nowrap' }}>\n      {props.text}\n    </Typography.Title>\n  </Flex>\n);\n\nconst App: React.FC = () => (\n  <Splitter style={{ height: 300, boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>\n    <Splitter.Panel collapsible>\n      <Desc text=\"Left\" />\n    </Splitter.Panel>\n    <Splitter.Panel>\n      <Splitter orientation=\"vertical\">\n        <Splitter.Panel>\n          <Desc text=\"Top\" />\n        </Splitter.Panel>\n        <Splitter.Panel>\n          <Desc text=\"Bottom\" />\n        </Splitter.Panel>\n      </Splitter>\n    </Splitter.Panel>\n  </Splitter>\n);\n\nexport default App;\n",
+      "sha256": "ddd8ac7fb02cdc11ec763feb82869a87989ef9dc03d0ea84d8d4ecb1a70cb4fc",
+      "upstreamPath": "components/splitter/demo/group.tsx",
+      "upstreamSha256": "67f6252977b05ecb43d290a4d211abb389b2479e75f4f16cdf692ed6ff9829dd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/splitter/demo/lazy.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Space, Splitter, Typography } from 'antd';\n\nconst Desc: React.FC<Readonly<{ text?: string | number }>> = (props) => (\n  <Flex justify=\"center\" align=\"center\" style={{ height: '100%' }}>\n    <Typography.Title type=\"secondary\" level={5} style={{ whiteSpace: 'nowrap' }}>\n      {props.text}\n    </Typography.Title>\n  </Flex>\n);\n\nconst App: React.FC = () => (\n  <Space vertical style={{ width: '100%' }}>\n    <Splitter lazy style={{ height: 200, boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>\n      <Splitter.Panel defaultSize=\"40%\" min=\"20%\" max=\"70%\">\n        <Desc text=\"First\" />\n      </Splitter.Panel>\n      <Splitter.Panel>\n        <Desc text=\"Second\" />\n      </Splitter.Panel>\n    </Splitter>\n    <Splitter\n      lazy\n      orientation=\"vertical\"\n      style={{ height: 200, boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}\n    >\n      <Splitter.Panel defaultSize=\"40%\" min=\"30%\" max=\"70%\">\n        <Desc text=\"First\" />\n      </Splitter.Panel>\n      <Splitter.Panel>\n        <Desc text=\"Second\" />\n      </Splitter.Panel>\n    </Splitter>\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "8eb82cccf9488daacb6fb74d7bd1ee3606bbf1a8e1cdc793e5bcbb4395735b40",
+      "upstreamPath": "components/splitter/demo/lazy.tsx",
+      "upstreamSha256": "d995490757916a9e67b12bff3224fdab00b370002ea3c7dfa44fad67bce01f08",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/splitter/demo/multiple.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Splitter, Typography } from 'antd';\n\nconst Desc: React.FC<Readonly<{ text?: string | number }>> = (props) => (\n  <Flex justify=\"center\" align=\"center\" style={{ height: '100%' }}>\n    <Typography.Title type=\"secondary\" level={5} style={{ whiteSpace: 'nowrap' }}>\n      Panel {props.text}\n    </Typography.Title>\n  </Flex>\n);\n\nconst App: React.FC = () => (\n  <Splitter style={{ height: 200, boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>\n    <Splitter.Panel collapsible>\n      <Desc text={1} />\n    </Splitter.Panel>\n    <Splitter.Panel collapsible={{ start: true }}>\n      <Desc text={2} />\n    </Splitter.Panel>\n    <Splitter.Panel>\n      <Desc text={3} />\n    </Splitter.Panel>\n  </Splitter>\n);\n\nexport default App;\n",
+      "sha256": "17d6005cfa157b5a99feae22cd508bfb509bff9c4f44651b4e3394ee8a98b2c5",
+      "upstreamPath": "components/splitter/demo/multiple.tsx",
+      "upstreamSha256": "3dfead16f976552c0c60761f5f3e773f329df27993380d3d6bea975b4f9ee613",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/splitter/demo/nested-in-tabs.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Splitter, Tabs, Typography } from 'antd';\n\nconst Desc: React.FC<Readonly<{ text?: string | number }>> = (props) => (\n  <Flex justify=\"center\" align=\"center\" style={{ height: '100%' }}>\n    <Typography.Title type=\"secondary\" level={5} style={{ whiteSpace: 'nowrap' }}>\n      {props.text}\n    </Typography.Title>\n  </Flex>\n);\n\nconst App: React.FC = () => {\n  const SplitterContent = (\n    <Splitter\n      style={{\n        height: 200,\n        boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',\n      }}\n    >\n      <Splitter.Panel collapsible>\n        <Desc text={1} />\n      </Splitter.Panel>\n      <Splitter.Panel\n        collapsible={{\n          start: true,\n        }}\n      >\n        <Desc text={2} />\n      </Splitter.Panel>\n      <Splitter.Panel>\n        <Desc text={3} />\n      </Splitter.Panel>\n    </Splitter>\n  );\n  return (\n    <Tabs\n      defaultActiveKey=\"1\"\n      items={[\n        {\n          key: '1',\n          label: 'General',\n          children: 'Content of Tab Pane 1',\n        },\n        {\n          key: '2',\n          label: 'Splitter Tab',\n          children: SplitterContent,\n        },\n      ]}\n    />\n  );\n};\n\nexport default App;\n",
+      "sha256": "7fac509a2bc840fa082669cd8780ea40b91e2dee92061d8a95e196a2266cad5a",
+      "upstreamPath": "components/splitter/demo/nested-in-tabs.tsx",
+      "upstreamSha256": "f151abf64f8ea85c76853a3761ea2316dd5df41ef583caf05a769f87c8e66fa3",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/splitter/demo/reset.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Flex, Splitter, Typography } from 'antd';\n\nconst defaultSizes = ['30%', '40%', '30%'];\n\nconst Desc: React.FC<Readonly<{ text?: string | number }>> = (props) => (\n  <Flex justify=\"center\" align=\"center\" style={{ height: '100%' }}>\n    <Typography.Title type=\"secondary\" level={5} style={{ whiteSpace: 'nowrap' }}>\n      Panel {props.text}\n    </Typography.Title>\n  </Flex>\n);\n\nconst App: React.FC = () => {\n  const [sizes, setSizes] = useState<(number | string)[]>(defaultSizes);\n\n  const handleDoubleClick = () => {\n    setSizes(defaultSizes);\n  };\n\n  return (\n    <Splitter\n      style={{ height: 200, boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}\n      onResize={setSizes}\n      onDraggerDoubleClick={handleDoubleClick}\n    >\n      <Splitter.Panel size={sizes[0]}>\n        <Desc text={1} />\n      </Splitter.Panel>\n\n      <Splitter.Panel size={sizes[1]}>\n        <Desc text={2} />\n      </Splitter.Panel>\n\n      <Splitter.Panel size={sizes[2]}>\n        <Desc text={3} />\n      </Splitter.Panel>\n    </Splitter>\n  );\n};\n\nexport default App;\n",
+      "sha256": "00d09f6374ba324b0da84b96c27dce9883af6e238bb73c77a2e332ae93d75206",
+      "upstreamPath": "components/splitter/demo/reset.tsx",
+      "upstreamSha256": "f581768cd9ccaa5d06eb67ac507025eec42641a8c701a0a8e4c58a2ede1af777",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/splitter/demo/size.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Splitter, Typography } from 'antd';\n\nexport const Desc: React.FC<Readonly<{ text?: string | number }>> = (props) => (\n  <Flex justify=\"center\" align=\"center\" style={{ height: '100%' }}>\n    <Typography.Title type=\"secondary\" level={5} style={{ whiteSpace: 'nowrap' }}>\n      {props.text}\n    </Typography.Title>\n  </Flex>\n);\n\nconst App: React.FC = () => (\n  <Splitter style={{ height: 200, boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>\n    <Splitter.Panel defaultSize=\"40%\" min=\"20%\" max=\"70%\">\n      <Desc text=\"First\" />\n    </Splitter.Panel>\n    <Splitter.Panel>\n      <Desc text=\"Second\" />\n    </Splitter.Panel>\n  </Splitter>\n);\n\nexport default App;\n",
+      "sha256": "92882d238ee827c527464f5b3cf3a7cdd85180d32e99fe09040d1048ebf68947",
+      "upstreamPath": "components/splitter/demo/size.tsx",
+      "upstreamSha256": "d78e78b43e0858df44e620295ea686bf4b00ad5e44f8c626446fdde54f8c5312",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/splitter/demo/size-mix.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Flex, Radio, Splitter, Typography } from 'antd';\n\nconst Desc: React.FC<Readonly<{ text?: string | number }>> = (props) => (\n  <Flex justify=\"center\" align=\"center\" style={{ height: '100%' }}>\n    <Typography.Title type=\"secondary\" level={5} style={{ whiteSpace: 'nowrap' }}>\n      {props.text}\n    </Typography.Title>\n  </Flex>\n);\n\nconst SIZE_BUCKETS_1 = [\n  {\n    defaultSize: 100,\n    min: 100,\n    max: 200,\n  },\n  {\n    min: 100,\n    max: 200,\n  },\n  {\n    min: '20%',\n  },\n] as const;\n\nconst SIZE_BUCKETS_2 = [\n  {\n    min: 300,\n  },\n  {\n    min: 100,\n    max: 200,\n  },\n  {\n    min: 600,\n  },\n] as const;\n\nconst App: React.FC = () => {\n  const [sizeBucket, setSizeBucket] = useState(1);\n\n  const SIZE_BUCKETS = sizeBucket === 1 ? SIZE_BUCKETS_1 : SIZE_BUCKETS_2;\n\n  return (\n    <>\n      <Radio.Group\n        onChange={(e) => setSizeBucket(e.target.value)}\n        value={sizeBucket}\n        style={{ marginBottom: 16 }}\n      >\n        <Radio.Button value={1}>Size Bucket 1</Radio.Button>\n        <Radio.Button value={2}>Size Bucket 2</Radio.Button>\n      </Radio.Group>\n      <Splitter\n        key={sizeBucket}\n        style={{\n          height: 300,\n          width: 1000,\n          boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',\n        }}\n      >\n        <Splitter.Panel {...SIZE_BUCKETS[0]}>\n          <Desc text=\"First\" />\n        </Splitter.Panel>\n        <Splitter.Panel {...SIZE_BUCKETS[1]}>\n          <Desc text=\"Second\" />\n        </Splitter.Panel>\n        <Splitter.Panel {...SIZE_BUCKETS[2]}>\n          <Desc text=\"Third\" />\n        </Splitter.Panel>\n      </Splitter>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "ea5f530224c8c24b729af5ac4049f2d25cfb8a728dbd7f432477a9214ec3a737",
+      "upstreamPath": "components/splitter/demo/size-mix.tsx",
+      "upstreamSha256": "ab8dfd34e1d59d9c5c90c86e930f64acc362018ae49a7d1d1683b4c3418d02b7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/splitter/demo/style-class.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Splitter, Typography } from 'antd';\nimport type { GetProp, SplitterProps } from 'antd';\nimport { createStaticStyles } from 'antd-style';\n\nconst Desc: React.FC<Readonly<{ text?: string | number; style?: React.CSSProperties }>> = (\n  props,\n) => {\n  return (\n    <Flex justify=\"center\" align=\"center\" style={{ height: '100%' }}>\n      <Typography.Title type=\"secondary\" level={5} style={props.style}>\n        {props.text}\n      </Typography.Title>\n    </Flex>\n  );\n};\n\nconst styles = createStaticStyles(({ css, cssVar }) => ({\n  boxShadow: css`\n    box-shadow: ${cssVar.boxShadowSecondary};\n  `,\n}));\n\nconst stylesObject: SplitterProps['styles'] = {\n  root: { backgroundColor: '#fffbe6' },\n  // dragger: { backgroundColor: 'rgba(194,223,252,0.4)' },\n  dragger: { default: { backgroundColor: 'rgba(194,223,252,0.4)' } },\n};\n\nconst stylesFn: SplitterProps['styles'] = ({\n  props,\n}): GetProp<SplitterProps, 'styles', 'Return'> => {\n  if (props.orientation === 'horizontal') {\n    return {\n      root: {\n        borderWidth: 2,\n        borderStyle: 'dashed',\n        marginBottom: 10,\n      },\n    };\n  }\n  return {};\n};\n\nconst App: React.FC = () => {\n  const splitSharedProps: SplitterProps = {\n    style: { height: 200 },\n    classNames: { root: styles.boxShadow },\n  };\n\n  return (\n    <Flex vertical gap=\"large\">\n      <Splitter {...splitSharedProps} styles={stylesObject}>\n        <Splitter.Panel>\n          <Desc text=\"First\" style={{ color: '#000' }} />\n        </Splitter.Panel>\n        <Splitter.Panel>\n          <Desc text=\"Second\" style={{ color: '#000' }} />\n        </Splitter.Panel>\n      </Splitter>\n      <Splitter {...splitSharedProps} styles={stylesFn}>\n        <Splitter.Panel>\n          <Desc text=\"First\" />\n        </Splitter.Panel>\n        <Splitter.Panel>\n          <Desc text=\"Second\" />\n        </Splitter.Panel>\n      </Splitter>\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "d52cb5bac849960708f4fb2061f6aedc7a4d7eea9ed70ba4b6628cdf5217226d",
+      "upstreamPath": "components/splitter/demo/style-class.tsx",
+      "upstreamSha256": "e62b3a7d1f2f609f4d7e45ed1c1c511e19a6156ef3b04c6a9172f8be4a3600bd",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/splitter/demo/vertical.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Flex, Splitter, Typography } from 'antd';\n\nconst Desc: React.FC<Readonly<{ text?: string | number }>> = (props) => (\n  <Flex justify=\"center\" align=\"center\" style={{ height: '100%' }}>\n    <Typography.Title type=\"secondary\" level={5} style={{ whiteSpace: 'nowrap' }}>\n      {props.text}\n    </Typography.Title>\n  </Flex>\n);\n\nconst App: React.FC = () => (\n  <Splitter vertical style={{ height: 300, boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>\n    <Splitter.Panel>\n      <Desc text=\"First\" />\n    </Splitter.Panel>\n    <Splitter.Panel>\n      <Desc text=\"Second\" />\n    </Splitter.Panel>\n  </Splitter>\n);\n\nexport default App;\n",
+      "sha256": "2af921bd9814fc89f7c174a27aab78be22aca36fa9b228dce3aa2c9a9e1c3e5a",
+      "upstreamPath": "components/splitter/demo/vertical.tsx",
+      "upstreamSha256": "8c59e4944ef968f5cd504c7843357c2f93d51cc5a26e79be929dcfb40037803a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/splitter/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/splitter/demo/collapsible\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "37c46d4e312ffcb1ce593a3c2a45ccb897db5978c510cbabbc8a3a20b018e160",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/splitter/previews/collapsible-icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/splitter/demo/collapsibleIcon\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "034c0bb4d2b1407a468db0b82ad957e2ca573c367eb550a6b219f8a8b04887bf",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/splitter/previews/control.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/splitter/demo/control\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "51b70858acfcf2077a022accfd7667aa78bb1657a9aab1ab80bcde88ac05a25e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/splitter/previews/customize.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/splitter/demo/customize\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8e3ba07fc701e229161c08d7c394b91d414fedc5537cb54734f661a50c83af4e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/splitter/previews/debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/splitter/demo/debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0f3e7a836a1062a193851250f4c2cb09ea9a5e375214fd043b7605b6a4fb7a16",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/splitter/previews/group.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/splitter/demo/group\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "b952f7273d5f7b8606082dc05efb17adc0925b20aae4e94ae4fd5ba75c5bdb3d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/splitter/previews/lazy.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/splitter/demo/lazy\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "c42d6eed13874588cbfd0c9930145c5ef812171c9279177bead7b7c193537d0c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/splitter/previews/multiple.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/splitter/demo/multiple\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "bd856050ad53fae23ace034dde85d3d5c5d61cc329785f7da3f773cd04908c39",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/splitter/previews/nested-in-tabs.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/splitter/demo/nested-in-tabs\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "da07ebb8489a6ff94f080974e08b4b85bc2b26512d6e957f8a4665b620437a42",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/splitter/previews/reset.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/splitter/demo/reset\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d729653c348806bf4a9ab82aced2efc93c8def2d5932fb83fea0c5040758b9cb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/splitter/previews/size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/splitter/demo/size\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "46932d2d4b5fa76a487ced18dc513ccaf51e7cb1a493db42ea64fdeb0292fb0e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/splitter/previews/size-mix.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/splitter/demo/size-mix\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "4560757a72c895a2639871bb71f4dee406c214c2db6029942276bdde5a36a33a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/splitter/previews/style-class.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/splitter/demo/style-class\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "daad8cf676abe76a8246f0daef9f761252c0610985079210e822bb1849672dec",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/splitter/previews/vertical.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/splitter/demo/vertical\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "fc8775e7fb6480d930ac9b110dc09743424f16241abc06ba5faa7d063025d8fb",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example compositions using the pinned antd npm package.",
+      "Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "splitter",
+    "upstreamPageUrl": "https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/splitter/demo",
+    "upstreamDetailUrl": "https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/splitter/demo/collapsible.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/ant-design/ant-design/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/splitter/demo/collapsible.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Ant Design splitter\n\n14 published Ant Design splitter examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example compositions using the pinned antd npm package.\n- Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/splitter/demo\nPinned source: https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/splitter/demo/collapsible.tsx\n"
+}

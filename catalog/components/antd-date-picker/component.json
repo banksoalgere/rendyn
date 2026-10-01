@@ -1,0 +1,595 @@
+{
+  "id": "antd:date-picker",
+  "sourceId": "antd",
+  "slug": "antd-date-picker",
+  "name": "Ant Design date picker",
+  "description": "32 published Ant Design date picker examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@ant-design/icons@6.3.4",
+    "antd@6.6.5",
+    "antd-style@4.1.0",
+    "dayjs@1.11.23"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "picker",
+    "tags": [
+      "file",
+      "form",
+      "picker"
+    ],
+    "aliases": [
+      "date picker",
+      "ant design date picker",
+      "picker"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "32 published Ant Design date picker examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "picker:file:form",
+    "searchText": "Ant Design date picker\ndate picker\n32 published Ant Design date picker examples with complete pinned source and MIT attribution.\nant design date picker\npicker\nfile\nform\nAnt Design date picker 32 published Ant Design date picker examples with complete pinned source and MIT attribution. Installation Complete MIT example compositions using the pinned antd npm package. Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/ant design/ant design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/date picker/demo Pinned source: https://github.com/ant design/ant design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/date picker/demo/allow empty.tsx"
+  },
+  "previewPath": "/preview/blocks/antd-date-picker",
+  "manifestPath": "components/antd-date-picker/component.json",
+  "integrity": "sha256:ff2a93744694d2397c018d779a5bece336737dfa73dfb81a4c764e0152de8aa2",
+  "source": {
+    "id": "antd",
+    "name": "Ant Design",
+    "repository": "https://github.com/ant-design/ant-design",
+    "commit": "bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a",
+    "registrySha256": "7df4386dc63323dd6235edee9c52694b28d573a6d2765ac59719a52e1c259ab0",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2015-present Ant UED, https://xtech.antfin.com/",
+      "textPath": "source/antd/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/allow-empty.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DatePicker } from 'antd';\n\nconst App: React.FC = () => (\n  <DatePicker.RangePicker\n    placeholder={['Start Date', 'Till Now']}\n    allowEmpty={[false, true]}\n    onChange={(date, dateString) => {\n      console.log(date, dateString);\n    }}\n  />\n);\n\nexport default App;\n",
+      "sha256": "2bdf0b5cb0433546976f264f331da1d07985e97cff5ffc471012f6d2cbed066a",
+      "upstreamPath": "components/date-picker/demo/allow-empty.tsx",
+      "upstreamSha256": "efb12b5e0376ba111e12f529bec3b2cb39b9ec466718809ddcea70cafad0a244",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { DatePickerProps } from 'antd';\nimport { DatePicker, Flex } from 'antd';\n\nconst onChange: DatePickerProps['onChange'] = (date, dateString) => {\n  console.log(date, dateString);\n};\n\nconst Demo: React.FC = () => (\n  <Flex gap=\"small\" justify=\"flex-start\" align=\"flex-start\" vertical>\n    <DatePicker onChange={onChange} />\n    <DatePicker onChange={onChange} picker=\"week\" />\n    <DatePicker onChange={onChange} picker=\"month\" />\n    <DatePicker onChange={onChange} picker=\"quarter\" />\n    <DatePicker onChange={onChange} picker=\"year\" />\n  </Flex>\n);\n\nexport default Demo;\n",
+      "sha256": "366c6765e727d439b59887e159bf88c9ac50dca99b720673c54f5a750cb47547",
+      "upstreamPath": "components/date-picker/demo/basic.tsx",
+      "upstreamSha256": "f64932a2a347c78fa547cefe9718d7110d137277f66f1ecd2e8544d995e3950f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/buddhist-era.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { ConfigProvider, DatePicker, Space, Typography } from 'antd';\nimport type { DatePickerProps } from 'antd';\nimport en from 'antd/es/date-picker/locale/en_US';\nimport enUS from 'antd/es/locale/en_US';\nimport dayjs from 'dayjs';\nimport buddhistEra from 'dayjs/plugin/buddhistEra';\n\ndayjs.extend(buddhistEra);\n\nconst { Title } = Typography;\n\n// Component level locale\nconst buddhistLocale: typeof en = {\n  ...en,\n  lang: {\n    ...en.lang,\n    fieldDateFormat: 'BBBB-MM-DD',\n    fieldDateTimeFormat: 'BBBB-MM-DD HH:mm:ss',\n    yearFormat: 'BBBB',\n    cellYearFormat: 'BBBB',\n  },\n};\n\n// ConfigProvider level locale\nconst globalBuddhistLocale: typeof enUS = {\n  ...enUS,\n  DatePicker: {\n    ...enUS.DatePicker!,\n    lang: buddhistLocale.lang,\n  },\n};\n\nconst defaultValue = dayjs('2024-01-01');\n\nconst App: React.FC = () => {\n  const onChange: DatePickerProps['onChange'] = (_, dateStr) => {\n    console.log('onChange:', dateStr);\n  };\n\n  return (\n    <Space vertical>\n      <Title level={4}>By locale props</Title>\n      <DatePicker defaultValue={defaultValue} locale={buddhistLocale} onChange={onChange} />\n      <DatePicker\n        defaultValue={defaultValue}\n        showTime\n        locale={buddhistLocale}\n        onChange={onChange}\n      />\n\n      <Title level={4}>By ConfigProvider</Title>\n      <ConfigProvider locale={globalBuddhistLocale}>\n        <Space vertical>\n          <DatePicker defaultValue={defaultValue} onChange={onChange} />\n          <DatePicker defaultValue={defaultValue} showTime onChange={onChange} />\n        </Space>\n      </ConfigProvider>\n    </Space>\n  );\n};\n\nexport default App;\n",
+      "sha256": "137bd97b869aa4178c4fe1f69aae0b9e076fa1e237009e225d98e8fb16b45c54",
+      "upstreamPath": "components/date-picker/demo/buddhist-era.tsx",
+      "upstreamSha256": "db0e52dff71e146d7a14c2993bc4b31e6c0602af57a4f99103dad0f61bd47d21",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/cell-render.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { DatePickerProps } from 'antd';\nimport { DatePicker, Space, theme } from 'antd';\nimport type { Dayjs } from 'dayjs';\n\nconst App: React.FC = () => {\n  const { token } = theme.useToken();\n  const style: React.CSSProperties = {\n    border: `${token.lineWidth}px ${token.lineType} ${token.colorPrimary}`,\n    borderRadius: '50%',\n  };\n  const cellRender: DatePickerProps<Dayjs>['cellRender'] = (current, info) => {\n    if (info.type !== 'date') {\n      return info.originNode;\n    }\n    if (typeof current === 'number' || typeof current === 'string') {\n      return <div className=\"ant-picker-cell-inner\">{current}</div>;\n    }\n    return (\n      <div className=\"ant-picker-cell-inner\" style={current.date() === 1 ? style : {}}>\n        {current.date()}\n      </div>\n    );\n  };\n  return (\n    <Space size={12} vertical>\n      <DatePicker cellRender={cellRender} />\n      <DatePicker.RangePicker cellRender={cellRender} />\n    </Space>\n  );\n};\n\nexport default App;\n",
+      "sha256": "7511e98cc5d084f597c80772559afde50771333915ea37716fbf06b6dc47712f",
+      "upstreamPath": "components/date-picker/demo/cell-render.tsx",
+      "upstreamSha256": "3a753580815ad772924844ad20ed905aaa004bec3c3ffc7b6ba8d07453701e66",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/component-token.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { ConfigProvider, DatePicker, Divider, Flex, Space, TimePicker } from 'antd';\nimport dayjs from 'dayjs';\n\n/** Test usage. Do not use in your production. */\n\nconst { RangePicker } = DatePicker;\n\nconst App: React.FC = () => (\n  <>\n    <ConfigProvider\n      theme={{\n        components: {\n          DatePicker: {\n            presetsWidth: 160,\n            zIndexPopup: 888,\n            cellHoverWithRangeBg: '#f0f0f0',\n            cellActiveWithRangeBg: '#e6bbff',\n            cellRangeBorderColor: 'green',\n            timeColumnWidth: 80,\n            timeColumnHeight: 250,\n            timeCellHeight: 30,\n            cellWidth: 64,\n            cellHeight: 40,\n            textHeight: 45,\n            withoutTimeCellHeight: 70,\n          },\n        },\n      }}\n    >\n      <Space vertical>\n        <DatePicker\n          presets={[\n            { label: 'Yesterday', value: dayjs().add(-1, 'd') },\n            { label: 'Last Week', value: dayjs().add(-7, 'd') },\n            { label: 'Last Month', value: dayjs().add(-1, 'month') },\n          ]}\n        />\n        <RangePicker />\n        <TimePicker />\n        <DatePicker picker=\"month\" />\n      </Space>\n    </ConfigProvider>\n\n    <Divider />\n\n    <ConfigProvider\n      theme={{\n        components: {\n          DatePicker: {\n            controlHeightSM: 32,\n            controlHeight: 40,\n          },\n        },\n      }}\n    >\n      <Flex vertical gap={8}>\n        <DatePicker multiple size=\"small\" />\n        <DatePicker multiple />\n        <DatePicker multiple size=\"large\" />\n      </Flex>\n    </ConfigProvider>\n  </>\n);\n\nexport default App;\n",
+      "sha256": "55847dd3dae54f9603c9b54d44ecb516a24646f21435f2e32bb5db46c10c139d",
+      "upstreamPath": "components/date-picker/demo/component-token.tsx",
+      "upstreamSha256": "8145938fadd837b73d1ab7a66338ca86352a2653cf117dc584d0558fd7d9e87a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/components.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { DatePickerProps } from 'antd';\nimport { Button, DatePicker, Flex, Slider, Space, Typography } from 'antd';\nimport dayjs from 'dayjs';\nimport type { Dayjs } from 'dayjs';\n\nconst onChange: DatePickerProps['onChange'] = (date, dateString) => {\n  console.log(date, dateString);\n};\n\ntype DateComponent = Required<NonNullable<DatePickerProps<Dayjs>['components']>>['date'];\ntype GetProps<T> = T extends React.ComponentType<infer P> ? P : never;\n\nconst MyDatePanel = (props: GetProps<DateComponent>) => {\n  const { value, onSelect, onHover } = props;\n\n  // Value\n  const startDate = React.useMemo(() => dayjs().date(1).month(0), []);\n  const [innerValue, setInnerValue] = React.useState(value || startDate);\n\n  React.useEffect(() => {\n    if (value) {\n      setInnerValue(value);\n    }\n  }, [value]);\n\n  // Range\n  const dateCount = React.useMemo(() => {\n    const endDate = startDate.add(1, 'year').add(-1, 'day');\n    return endDate.diff(startDate, 'day');\n  }, [startDate]);\n\n  const sliderValue = Math.min(Math.max(0, innerValue.diff(startDate, 'day')), dateCount);\n\n  // Render\n  return (\n    <Flex vertical gap=\"small\" style={{ padding: 16 }}>\n      <Typography.Title level={4} style={{ margin: 0 }} title=\"no, it's not\">\n        The BEST Picker Panel\n      </Typography.Title>\n      <Slider\n        min={0}\n        max={dateCount}\n        value={sliderValue}\n        onChange={(nextValue) => {\n          const nextDate = startDate.add(nextValue, 'day');\n          setInnerValue(nextDate);\n          onHover?.(nextDate);\n        }}\n        tooltip={{\n          formatter: (nextValue) => startDate.add(nextValue || 0, 'day').format('YYYY-MM-DD'),\n        }}\n      />\n      <Button\n        type=\"primary\"\n        onClick={() => {\n          onSelect(innerValue);\n        }}\n      >{`That's It!`}</Button>\n    </Flex>\n  );\n};\n\nconst App: React.FC = () => (\n  <Space vertical>\n    <DatePicker\n      showNow={false}\n      onChange={onChange}\n      components={{\n        date: MyDatePanel,\n      }}\n    />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "539328da1899ed741d7db7dbbad9f2c61369e977fb07f472f8eef48eea081080",
+      "upstreamPath": "components/date-picker/demo/components.tsx",
+      "upstreamSha256": "02fd3f3ab5ed356c549433ed56873f49c1bbf8188ec0ce82cd8b63294f8741a8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/date-range.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DatePicker } from 'antd';\nimport dayjs from 'dayjs';\nimport customParseFormat from 'dayjs/plugin/customParseFormat';\n\ndayjs.extend(customParseFormat);\n\nconst dateFormat = 'YYYY-MM-DD';\n\nconst App: React.FC = () => (\n  <DatePicker\n    defaultValue={dayjs('2019-09-03', dateFormat)}\n    minDate={dayjs('2019-08-01', dateFormat)}\n    maxDate={dayjs('2020-10-31', dateFormat)}\n  />\n);\n\nexport default App;\n",
+      "sha256": "4c52e4fc684f6eb1115634208cced80b76d5cc2a82fd3ae89dda296ede92c986",
+      "upstreamPath": "components/date-picker/demo/date-range.tsx",
+      "upstreamSha256": "76fed30365b744fb0ad6bcbeb4eaeeddf7791d4f1879d40ec1882cab3bf742c1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/disabled.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DatePicker, Space } from 'antd';\nimport dayjs from 'dayjs';\nimport customParseFormat from 'dayjs/plugin/customParseFormat';\n\ndayjs.extend(customParseFormat);\n\nconst { RangePicker } = DatePicker;\n\nconst dateFormat = 'YYYY-MM-DD';\n\nconst App: React.FC = () => (\n  <Space vertical size={12}>\n    <DatePicker defaultValue={dayjs('2015-06-06', dateFormat)} disabled />\n    <DatePicker picker=\"month\" defaultValue={dayjs('2015-06', 'YYYY-MM')} disabled />\n    <RangePicker\n      defaultValue={[dayjs('2015-06-06', dateFormat), dayjs('2015-06-06', dateFormat)]}\n      disabled\n    />\n    <RangePicker\n      defaultValue={[dayjs('2019-09-03', dateFormat), dayjs('2019-11-22', dateFormat)]}\n      disabled={[false, true]}\n    />\n    <DatePicker\n      defaultValue={dayjs('2019-09-03', dateFormat)}\n      minDate={dayjs('2019-06-01', dateFormat)}\n      maxDate={dayjs('2020-06-30', dateFormat)}\n    />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "34ba2d099072323b149d32dd8165cdb0c35d1430d7ae3977067001f6b91bd159",
+      "upstreamPath": "components/date-picker/demo/disabled.tsx",
+      "upstreamSha256": "3078f2c691b49f6ae1d3f4867348fca875085ad7f221fab0079f470c46ac6f75",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/disabled-date.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DatePicker, Space } from 'antd';\nimport type { GetProps } from 'antd';\nimport dayjs from 'dayjs';\nimport customParseFormat from 'dayjs/plugin/customParseFormat';\n\ntype RangePickerProps = GetProps<typeof DatePicker.RangePicker>;\n\ndayjs.extend(customParseFormat);\n\nconst { RangePicker } = DatePicker;\n\nconst range = (start: number, end: number) => {\n  const result: number[] = [];\n  for (let i = start; i < end; i++) {\n    result.push(i);\n  }\n  return result;\n};\n\nconst disabledDate: RangePickerProps['disabledDate'] = (current) => {\n  // Can not select days before today and today\n  return current && current < dayjs().endOf('day');\n};\n\nconst disabledDateForMonth: RangePickerProps['disabledDate'] = (current) => {\n  // Can not select months before this month\n  return current && current < dayjs().startOf('month');\n};\n\nconst disabledDateTime = () => ({\n  disabledHours: () => range(0, 24).splice(4, 20),\n  disabledMinutes: () => range(30, 60),\n  disabledSeconds: () => [55, 56],\n});\n\nconst disabledRangeTime: RangePickerProps['disabledTime'] = (_, type) => {\n  if (type === 'start') {\n    return {\n      disabledHours: () => range(0, 60).splice(4, 20),\n      disabledMinutes: () => range(30, 60),\n      disabledSeconds: () => [55, 56],\n    };\n  }\n  return {\n    disabledHours: () => range(0, 60).splice(20, 4),\n    disabledMinutes: () => range(0, 31),\n    disabledSeconds: () => [55, 56],\n  };\n};\n\nconst App: React.FC = () => (\n  <Space vertical size={12}>\n    <DatePicker\n      format=\"YYYY-MM-DD HH:mm:ss\"\n      disabledDate={disabledDate}\n      disabledTime={disabledDateTime}\n      showTime={{ defaultOpenValue: dayjs('00:00:00', 'HH:mm:ss') }}\n    />\n    <DatePicker picker=\"month\" disabledDate={disabledDateForMonth} />\n    <RangePicker disabledDate={disabledDate} />\n    <RangePicker\n      disabledDate={disabledDate}\n      disabledTime={disabledRangeTime}\n      showTime={{\n        hideDisabledOptions: true,\n        defaultOpenValue: [dayjs('00:00:00', 'HH:mm:ss'), dayjs('11:59:59', 'HH:mm:ss')],\n      }}\n      format=\"YYYY-MM-DD HH:mm:ss\"\n    />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "a2e867024329c946999941d2caa4db15c1cf3503bef305c3c4c848a6c5e967c4",
+      "upstreamPath": "components/date-picker/demo/disabled-date.tsx",
+      "upstreamSha256": "63c805f7c5c4800510e3876721cf0e6c968f20d5e1c8dbf1ac1540c69868a6a0",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/external-panel.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DownOutlined } from '@ant-design/icons';\nimport { DatePicker, Dropdown, Space } from 'antd';\nimport dayjs from 'dayjs';\nimport type { Dayjs } from 'dayjs';\n\nconst DatePickerDemo: React.FC = () => {\n  const [visible, setVisible] = React.useState(false);\n  const [panelVisible, setPanelVisible] = React.useState(false);\n\n  const [date, setDate] = React.useState<Dayjs | null>(() => dayjs());\n\n  return (\n    <Dropdown\n      arrow\n      open={visible}\n      trigger={['click']}\n      destroyOnHidden\n      onOpenChange={(open) => {\n        setVisible(open);\n        if (!open) {\n          setPanelVisible(false);\n        }\n      }}\n      menu={{\n        items: [\n          {\n            key: 'today',\n            label: 'Today',\n            onClick() {\n              setDate(dayjs());\n              setVisible(false);\n            },\n          },\n          {\n            key: 'tomorrow',\n            label: 'Tomorrow',\n            onClick() {\n              setDate(dayjs().add(1, 'day'));\n              setVisible(false);\n            },\n          },\n          {\n            key: 'custom-date',\n            label: (\n              <div\n                style={{ position: 'relative', overflow: 'hidden' }}\n                onClick={(e) => {\n                  e.stopPropagation();\n                  setPanelVisible(true);\n                }}\n              >\n                <div>Customize</div>\n                <div\n                  onClick={(e) => {\n                    e.stopPropagation();\n                  }}\n                >\n                  <DatePicker\n                    open={panelVisible}\n                    styles={{\n                      root: {\n                        pointerEvents: 'none',\n                        opacity: 0,\n                        position: 'absolute',\n                        bottom: -12,\n                        insetInlineStart: 0,\n                      },\n                    }}\n                    onChange={(date) => {\n                      setDate(date);\n                      setVisible(false);\n                      setPanelVisible(false);\n                    }}\n                  />\n                </div>\n              </div>\n            ),\n          },\n        ],\n      }}\n    >\n      <Space>\n        <span>{date?.format('YYYY-MM-DD')}</span>\n        <DownOutlined />\n      </Space>\n    </Dropdown>\n  );\n};\n\nconst RangePickerDemo: React.FC = () => {\n  const [visible, setVisible] = React.useState(false);\n  const [panelVisible, setPanelVisible] = React.useState(false);\n\n  const [dates, setDates] = React.useState<[Dayjs, Dayjs] | null>(() => [\n    dayjs(),\n    dayjs().add(1, 'day'),\n  ]);\n\n  return (\n    <Dropdown\n      arrow\n      open={visible}\n      trigger={['click']}\n      destroyOnHidden\n      onOpenChange={(open) => {\n        setVisible(open);\n        if (!open) {\n          setPanelVisible(false);\n        }\n      }}\n      menu={{\n        items: [\n          {\n            key: '7',\n            label: '7 days',\n            onClick() {\n              setDates([dayjs(), dayjs().add(7, 'day')]);\n              setVisible(false);\n            },\n          },\n          {\n            key: '30',\n            label: '30 days',\n            onClick() {\n              setDates([dayjs(), dayjs().add(30, 'day')]);\n              setVisible(false);\n            },\n          },\n          {\n            key: 'custom-date',\n            label: (\n              <div\n                style={{ position: 'relative', overflow: 'hidden' }}\n                onClick={(e) => {\n                  e.stopPropagation();\n                  setPanelVisible(true);\n                }}\n              >\n                <div>Customize</div>\n                <div\n                  onClick={(e) => {\n                    e.stopPropagation();\n                  }}\n                >\n                  <DatePicker.RangePicker\n                    open={panelVisible}\n                    styles={{\n                      root: {\n                        pointerEvents: 'none',\n                        opacity: 0,\n                        position: 'absolute',\n                        bottom: 0, // RangePicker use this style\n                        insetInlineStart: 0,\n                      },\n                    }}\n                    onChange={(ranges) => {\n                      if (ranges?.[0] && ranges?.[1]) {\n                        setDates([ranges[0], ranges[1]]);\n                      } else {\n                        setDates(null);\n                      }\n                      setVisible(false);\n                      setPanelVisible(false);\n                    }}\n                  />\n                </div>\n              </div>\n            ),\n          },\n        ],\n      }}\n    >\n      <Space>\n        <span>\n          {dates\n            ? `${dates[0].format('YYYY-MM-DD')} ~ ${dates[1].format('YYYY-MM-DD')}`\n            : 'Select range'}\n        </span>\n        <DownOutlined />\n      </Space>\n    </Dropdown>\n  );\n};\n\nconst Demo = () => {\n  return (\n    <div style={{ display: 'flex', gap: '20%' }}>\n      <div>\n        <div style={{ marginBottom: 12 }}>DatePicker</div>\n        <DatePickerDemo />\n      </div>\n\n      <div>\n        <div style={{ marginBottom: 12 }}>RangePicker</div>\n        <RangePickerDemo />\n      </div>\n    </div>\n  );\n};\n\nexport default Demo;\n",
+      "sha256": "35bf9521b9dd99e1162c8bb99e29a00549d13f99cce5c8ea6f42f860274a4517",
+      "upstreamPath": "components/date-picker/demo/external-panel.tsx",
+      "upstreamSha256": "1e06f20b3e4220d61402707da844f529bbf0264dfdf52a919751e3538ad3409b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/extra-footer.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DatePicker, Space } from 'antd';\n\nconst { RangePicker } = DatePicker;\n\nconst App: React.FC = () => (\n  <Space vertical size={12}>\n    <DatePicker renderExtraFooter={() => 'extra footer'} />\n    <DatePicker renderExtraFooter={() => 'extra footer'} showTime />\n    <RangePicker renderExtraFooter={() => 'extra footer'} />\n    <RangePicker renderExtraFooter={() => 'extra footer'} showTime />\n    <DatePicker renderExtraFooter={() => 'extra footer'} picker=\"month\" />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "9a461f829d763dad30f85318774d517b91680aedb053cd3512935da45c0f8484",
+      "upstreamPath": "components/date-picker/demo/extra-footer.tsx",
+      "upstreamSha256": "82c71932430e44f89b13ed9a8b8f04e63032ded7f85dc32c56a89773447fb142",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/filled-debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DatePicker, Space } from 'antd';\nimport dayjs from 'dayjs';\nimport customParseFormat from 'dayjs/plugin/customParseFormat';\n\ndayjs.extend(customParseFormat);\n\nconst { RangePicker } = DatePicker;\n\nconst dateFormat = 'YYYY-MM-DD';\n\nconst App: React.FC = () => (\n  <Space vertical size={12}>\n    <DatePicker variant=\"filled\" defaultValue={dayjs('2015-06-06', dateFormat)} disabled />\n    <DatePicker\n      variant=\"filled\"\n      picker=\"month\"\n      defaultValue={dayjs('2015-06', 'YYYY-MM')}\n      disabled\n    />\n    <RangePicker\n      variant=\"filled\"\n      defaultValue={[dayjs('2015-06-06', dateFormat), dayjs('2015-06-06', dateFormat)]}\n      disabled\n    />\n    <RangePicker\n      variant=\"filled\"\n      defaultValue={[dayjs('2019-09-03', dateFormat), dayjs('2019-11-22', dateFormat)]}\n      disabled={[false, true]}\n    />\n    <DatePicker\n      defaultValue={dayjs('2023-12-25')}\n      variant=\"filled\"\n      status=\"error\"\n      style={{ width: '100%' }}\n      previewValue={false}\n    />\n    <DatePicker variant=\"filled\" status=\"warning\" style={{ width: '100%' }} />\n    <RangePicker variant=\"filled\" status=\"error\" style={{ width: '100%' }} />\n    <RangePicker variant=\"filled\" status=\"warning\" style={{ width: '100%' }} />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "78f444628533815386c3608068a36e2d7bdbcb7a42ba8eeb848356d527c313cc",
+      "upstreamPath": "components/date-picker/demo/filled-debug.tsx",
+      "upstreamSha256": "c8ee8a16bd3a589e0755ed366644fc8cba07a0fdcda8d64ee7ca36cf8f8ced1d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/format.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { DatePickerProps } from 'antd';\nimport { DatePicker, Space } from 'antd';\nimport dayjs from 'dayjs';\nimport customParseFormat from 'dayjs/plugin/customParseFormat';\n\ndayjs.extend(customParseFormat);\n\nconst { RangePicker } = DatePicker;\n\nconst dateFormat = 'YYYY/MM/DD';\nconst weekFormat = 'MM/DD';\nconst monthFormat = 'YYYY/MM';\n\n/** Manually entering any of the following formats will perform date parsing */\nconst dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY', 'DD-MM-YYYY', 'DD-MM-YY'];\n\nconst customFormat: DatePickerProps['format'] = (value) =>\n  `custom format: ${value.format(dateFormat)}`;\n\nconst customWeekStartEndFormat: DatePickerProps['format'] = (value) =>\n  `${dayjs(value).startOf('week').format(weekFormat)} ~ ${dayjs(value)\n    .endOf('week')\n    .format(weekFormat)}`;\n\nconst App: React.FC = () => (\n  <Space vertical size={12}>\n    <DatePicker defaultValue={dayjs('2015/01/01', dateFormat)} format={dateFormat} />\n    <DatePicker defaultValue={dayjs('01/01/2015', dateFormatList[0])} format={dateFormatList} />\n    <DatePicker defaultValue={dayjs('2015/01', monthFormat)} format={monthFormat} picker=\"month\" />\n    <DatePicker defaultValue={dayjs()} format={customWeekStartEndFormat} picker=\"week\" />\n    <RangePicker\n      defaultValue={[dayjs('2015/01/01', dateFormat), dayjs('2015/01/01', dateFormat)]}\n      format={dateFormat}\n    />\n    <DatePicker defaultValue={dayjs('2015/01/01', dateFormat)} format={customFormat} />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "dcfd1942f781882404bb2801fb3e731b145cf13c42f565251c73d81d52225ff1",
+      "upstreamPath": "components/date-picker/demo/format.tsx",
+      "upstreamSha256": "23230b1751ccb7b874cfa08420973fab22e7e0d1d87e52433fc86e1058636f7d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/mask.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { DatePickerProps } from 'antd';\nimport { DatePicker, Space } from 'antd';\n\nconst onChange: DatePickerProps['onChange'] = (date, dateString) => {\n  console.log(date, dateString);\n};\n\nconst App: React.FC = () => (\n  <Space vertical>\n    <DatePicker\n      format={{\n        format: 'YYYY-MM-DD',\n        type: 'mask',\n      }}\n      onChange={onChange}\n    />\n    <DatePicker\n      format={{\n        format: 'YYYY-MM-DD HH:mm:ss',\n        type: 'mask',\n      }}\n      onChange={onChange}\n    />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "f2cbf06839599161d37f2148165da8f6f0df1aec2a25cf2b00a98c26701ebda0",
+      "upstreamPath": "components/date-picker/demo/mask.tsx",
+      "upstreamSha256": "a56bd6fcab4934dfcbbaae52db2818828c043d157c79dd2e206bac05d8abe3e2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/mode.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { DatePicker, Space } from 'antd';\nimport type { DatePickerProps, GetProps } from 'antd';\nimport type { Dayjs } from 'dayjs';\n\ntype RangePickerProps = GetProps<typeof DatePicker.RangePicker>;\n\nconst { RangePicker } = DatePicker;\n\ntype RangeValue = [Dayjs | null | undefined, Dayjs | null | undefined] | null;\n\nconst ControlledDatePicker = () => {\n  const [mode, setMode] = useState<DatePickerProps['mode']>('time');\n\n  const handleOpenChange = (open: boolean) => {\n    if (open) {\n      setMode('time');\n    }\n  };\n\n  const handlePanelChange: DatePickerProps['onPanelChange'] = (_, newMode) => {\n    setMode(newMode);\n  };\n\n  return (\n    <DatePicker\n      mode={mode}\n      showTime\n      onOpenChange={handleOpenChange}\n      onPanelChange={handlePanelChange}\n    />\n  );\n};\n\nconst ControlledRangePicker = () => {\n  const [mode, setMode] = useState<RangePickerProps['mode']>(['month', 'month']);\n  const [value, setValue] = useState<RangeValue>([null, null]);\n\n  const handlePanelChange: RangePickerProps['onPanelChange'] = (newValue, newModes) => {\n    setValue(newValue);\n    setMode([\n      newModes[0] === 'date' ? 'month' : newModes[0],\n      newModes[1] === 'date' ? 'month' : newModes[1],\n    ]);\n  };\n\n  return (\n    <RangePicker\n      placeholder={['Start month', 'End month']}\n      format=\"YYYY-MM\"\n      value={value}\n      mode={mode}\n      onChange={setValue}\n      onPanelChange={handlePanelChange}\n    />\n  );\n};\n\nconst App: React.FC = () => (\n  <Space vertical size={12}>\n    <ControlledDatePicker />\n    <ControlledRangePicker />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "f4a9afc37116ec3b9d6477d94d73fabe8b63588e1bd5107da7cb0db4e68cc655",
+      "upstreamPath": "components/date-picker/demo/mode.tsx",
+      "upstreamSha256": "737fd7c2b46fd5ac91a0a278985b4399fb5ea61c85baf757d3cd7465ca3dae0d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/multiple.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { DatePickerProps } from 'antd';\nimport { DatePicker, Flex } from 'antd';\nimport dayjs from 'dayjs';\nimport type { Dayjs } from 'dayjs';\n\nconst onChange: DatePickerProps<Dayjs, true>['onChange'] = (date, dateString) => {\n  console.log(date, dateString);\n};\n\nconst defaultValue = [dayjs('2000-01-01'), dayjs('2000-01-03'), dayjs('2000-01-05')];\n\nconst App: React.FC = () => (\n  <Flex vertical gap=\"small\">\n    <DatePicker\n      multiple\n      onChange={onChange}\n      maxTagCount=\"responsive\"\n      defaultValue={defaultValue}\n      size=\"small\"\n    />\n    <DatePicker multiple onChange={onChange} maxTagCount=\"responsive\" defaultValue={defaultValue} />\n    <DatePicker\n      multiple\n      onChange={onChange}\n      maxTagCount=\"responsive\"\n      defaultValue={defaultValue}\n      size=\"large\"\n    />\n  </Flex>\n);\n\nexport default App;\n",
+      "sha256": "4e98ca7313d23f9b4ceb759d7bf61313abccf090fdd313aeead05fff4a653ab8",
+      "upstreamPath": "components/date-picker/demo/multiple.tsx",
+      "upstreamSha256": "5c862b0a20a24e28329b0fb8bb257383cbaaac93f5628f8ae93ea79f1bf064a4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/multiple-debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DatePicker, Flex } from 'antd';\nimport dayjs from 'dayjs';\n\nconst defaultValue = Array.from({ length: 10 }).map((_, i) => dayjs('2000-01-01').add(i, 'day'));\n\nconst App: React.FC = () => (\n  <Flex vertical gap=\"small\">\n    <DatePicker multiple placeholder=\"Bamboo\" />\n    <DatePicker multiple defaultValue={defaultValue} size=\"small\" />\n    <DatePicker multiple defaultValue={defaultValue} />\n    <DatePicker multiple defaultValue={defaultValue} size=\"large\" />\n  </Flex>\n);\n\nexport default App;\n",
+      "sha256": "7c051b1c6868b66d19ff7712c537f0e9670d0679ce1703471843f19f65a554c9",
+      "upstreamPath": "components/date-picker/demo/multiple-debug.tsx",
+      "upstreamSha256": "d00db54abb86930b57e4e5fee97009cfa9462f44102a27c94b77b86ba228020a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/needConfirm.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { DatePickerProps } from 'antd';\nimport { DatePicker } from 'antd';\nimport type { Dayjs } from 'dayjs';\n\nconst onChange: DatePickerProps<Dayjs, false>['onChange'] = (date, dateString) => {\n  console.log(date, dateString);\n};\n\nconst App: React.FC = () => <DatePicker onChange={onChange} needConfirm />;\n\nexport default App;\n",
+      "sha256": "3646fce2e492c12431829488eb3afb992180108899c48579da584cedc9fb8647",
+      "upstreamPath": "components/date-picker/demo/needConfirm.tsx",
+      "upstreamSha256": "b85f61888f4a1687cc5962e63e24f6d410ba20f8d8282e3c4f085b87c8cfa4d1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/placement.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport type { DatePickerProps, RadioChangeEvent } from 'antd';\nimport { DatePicker, Radio } from 'antd';\n\nconst { RangePicker } = DatePicker;\n\nconst App: React.FC = () => {\n  const [placement, setPlacement] = useState<DatePickerProps['placement']>('topLeft');\n\n  const placementChange = (e: RadioChangeEvent) => {\n    setPlacement(e.target.value);\n  };\n\n  return (\n    <>\n      <Radio.Group value={placement} onChange={placementChange}>\n        <Radio.Button value=\"topLeft\">topLeft</Radio.Button>\n        <Radio.Button value=\"topRight\">topRight</Radio.Button>\n        <Radio.Button value=\"bottomLeft\">bottomLeft</Radio.Button>\n        <Radio.Button value=\"bottomRight\">bottomRight</Radio.Button>\n      </Radio.Group>\n      <br />\n      <br />\n      <DatePicker placement={placement} />\n      <br />\n      <br />\n      <RangePicker placement={placement} />\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "5e177018cc76e028f1d4c62011b373411984579fb06571520c73872f6883b2e8",
+      "upstreamPath": "components/date-picker/demo/placement.tsx",
+      "upstreamSha256": "28751646d1060f6472426ce31de4582bf92a905dcca5343ba1ace75c903e2b1a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/preset-ranges.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { TimeRangePickerProps } from 'antd';\nimport { DatePicker, Space } from 'antd';\nimport dayjs from 'dayjs';\nimport type { Dayjs } from 'dayjs';\n\nconst { RangePicker } = DatePicker;\n\nconst onChange = (date: Dayjs | null) => {\n  if (date) {\n    console.log('Date: ', date);\n  } else {\n    console.log('Clear');\n  }\n};\n\nconst onRangeChange = (dates: null | (Dayjs | null)[], dateStrings: string[]) => {\n  if (dates) {\n    console.log('From: ', dates[0], ', to: ', dates[1]);\n    console.log('From: ', dateStrings[0], ', to: ', dateStrings[1]);\n  } else {\n    console.log('Clear');\n  }\n};\n\nconst rangePresets: TimeRangePickerProps['presets'] = [\n  { label: 'Last 7 Days', value: [dayjs().add(-7, 'd'), dayjs()] },\n  { label: 'Last 14 Days', value: [dayjs().add(-14, 'd'), dayjs()] },\n  { label: 'Last 30 Days', value: [dayjs().add(-30, 'd'), dayjs()] },\n  { label: 'Last 90 Days', value: [dayjs().add(-90, 'd'), dayjs()] },\n];\n\nconst App: React.FC = () => (\n  <Space vertical size={12}>\n    <DatePicker\n      presets={[\n        { label: 'Yesterday', value: dayjs().add(-1, 'd') },\n        { label: 'Last Week', value: dayjs().add(-7, 'd') },\n        { label: 'Last Month', value: dayjs().add(-1, 'month') },\n      ]}\n      onChange={onChange}\n    />\n    <RangePicker presets={rangePresets} onChange={onRangeChange} />\n    <RangePicker\n      presets={[\n        {\n          label: <span aria-label=\"Current Time to End of Day\">Now ~ EOD</span>,\n          value: () => [dayjs(), dayjs().endOf('day')], // 5.8.0+ support function\n        },\n        ...rangePresets,\n      ]}\n      showTime\n      format=\"YYYY/MM/DD HH:mm:ss\"\n      onChange={onRangeChange}\n    />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "1dd43af9d301b7725c5e78f703271f9fc5f480ca3c723d2bda3843ca0dc107f6",
+      "upstreamPath": "components/date-picker/demo/preset-ranges.tsx",
+      "upstreamSha256": "c7f98e7e417976bd6ff054c2f7719075bdc60bbbdcf9c4a9d2ada5f90640b437",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/range-picker.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DatePicker, Space } from 'antd';\n\nconst { RangePicker } = DatePicker;\n\nconst App: React.FC = () => (\n  <Space vertical size={12}>\n    <RangePicker />\n    <RangePicker showTime />\n    <RangePicker picker=\"week\" />\n    <RangePicker picker=\"month\" />\n    <RangePicker picker=\"quarter\" />\n    <RangePicker\n      picker=\"year\"\n      id={{\n        start: 'startInput',\n        end: 'endInput',\n      }}\n      onFocus={(_, info) => {\n        console.log('Focus:', info.range);\n      }}\n      onBlur={(_, info) => {\n        console.log('Blur:', info.range);\n      }}\n    />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "9fbb13a8c85db9857fda61d0b4ca8ef005dcc3655bcaecfc9e3606907c1444b7",
+      "upstreamPath": "components/date-picker/demo/range-picker.tsx",
+      "upstreamSha256": "b2a15e5899c2d3447092379b41ae26342566ef9b53bcf7b3289c69a7275ae66d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/render-panel.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DatePicker } from 'antd';\n\nconst { _InternalPanelDoNotUseOrYouWillBeFired: InternalDatePicker } = DatePicker;\n\nconst App: React.FC = () => <InternalDatePicker />;\n\nexport default App;\n",
+      "sha256": "64c3346593ae30713f611edccf0a1755de62dcc28e7e1305e947631348060447",
+      "upstreamPath": "components/date-picker/demo/render-panel.tsx",
+      "upstreamSha256": "97489fa287567abb5edbf4194f972733aaf05535bd5fdbab4829206cb6ac09e1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/select-in-range.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DatePicker, Space, Typography } from 'antd';\nimport type { DatePickerProps } from 'antd';\nimport type { Dayjs } from 'dayjs';\n\nconst { RangePicker } = DatePicker;\n\nconst getYearMonth = (date: Dayjs) => date.year() * 12 + date.month();\n\n// Disabled 7 days from the selected date\nconst disabled7DaysDate: DatePickerProps['disabledDate'] = (current, { from, type }) => {\n  if (from) {\n    const minDate = from.add(-6, 'days');\n    const maxDate = from.add(6, 'days');\n\n    switch (type) {\n      case 'year':\n        return current.year() < minDate.year() || current.year() > maxDate.year();\n\n      case 'month':\n        return (\n          getYearMonth(current) < getYearMonth(minDate) ||\n          getYearMonth(current) > getYearMonth(maxDate)\n        );\n\n      default:\n        return Math.abs(current.diff(from, 'days')) >= 7;\n    }\n  }\n\n  return false;\n};\n\n// Disabled 6 months from the selected date\nconst disabled6MonthsDate: DatePickerProps['disabledDate'] = (current, { from, type }) => {\n  if (from) {\n    const minDate = from.add(-5, 'months');\n    const maxDate = from.add(5, 'months');\n\n    switch (type) {\n      case 'year':\n        return current.year() < minDate.year() || current.year() > maxDate.year();\n\n      default:\n        return (\n          getYearMonth(current) < getYearMonth(minDate) ||\n          getYearMonth(current) > getYearMonth(maxDate)\n        );\n    }\n  }\n\n  return false;\n};\n\nconst App: React.FC = () => (\n  <Space vertical>\n    <Typography.Title level={5}>7 days range</Typography.Title>\n    <RangePicker disabledDate={disabled7DaysDate} />\n\n    <Typography.Title level={5}>6 months range</Typography.Title>\n    <RangePicker disabledDate={disabled6MonthsDate} picker=\"month\" />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "eed97d544ac7301675b1cb139b0726ea79e0c59876a1f7d64e3e40a8e5868576",
+      "upstreamPath": "components/date-picker/demo/select-in-range.tsx",
+      "upstreamSha256": "e6194621aa5ad76e8cb13496b65a8d458d4989b2fad3da43aec26e184bbe16c7",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/size.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport type { ConfigProviderProps, RadioChangeEvent } from 'antd';\nimport { DatePicker, Radio, Space } from 'antd';\n\ntype SizeType = ConfigProviderProps['componentSize'];\n\nconst { RangePicker } = DatePicker;\n\nconst App: React.FC = () => {\n  const [size, setSize] = useState<SizeType>('medium');\n\n  const handleSizeChange = (e: RadioChangeEvent) => {\n    setSize(e.target.value);\n  };\n\n  return (\n    <Space vertical size={12}>\n      <Radio.Group value={size} onChange={handleSizeChange}>\n        <Radio.Button value=\"large\">Large</Radio.Button>\n        <Radio.Button value=\"medium\">Medium</Radio.Button>\n        <Radio.Button value=\"small\">Small</Radio.Button>\n      </Radio.Group>\n      <DatePicker size={size} />\n      <DatePicker size={size} picker=\"month\" />\n      <RangePicker size={size} />\n      <DatePicker size={size} picker=\"week\" />\n    </Space>\n  );\n};\n\nexport default App;\n",
+      "sha256": "6a8b85c1b8168883c287bc6fb749eae7f046a05a224e049467790d2e15e63ece",
+      "upstreamPath": "components/date-picker/demo/size.tsx",
+      "upstreamSha256": "5e2d386aceeef02db2c3c199555b6edf9d69a8ae1004e26569c46f633116b40b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/start-end.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { DatePicker, Space } from 'antd';\nimport type { Dayjs } from 'dayjs';\n\nconst App: React.FC = () => {\n  const [startValue, setStartValue] = useState<Dayjs | null>(null);\n  const [endValue, setEndValue] = useState<Dayjs | null>(null);\n  const [endOpen, setEndOpen] = useState(false);\n\n  const disabledStartDate = (startDate: Dayjs) => {\n    if (!startDate || !endValue) {\n      return false;\n    }\n    return startDate.valueOf() > endValue.valueOf();\n  };\n\n  const disabledEndDate = (endDate: Dayjs) => {\n    if (!endDate || !startValue) {\n      return false;\n    }\n    return endDate.valueOf() <= startValue.valueOf();\n  };\n\n  const handleStartOpenChange = (open: boolean) => {\n    if (!open) {\n      setEndOpen(true);\n    }\n  };\n\n  const handleEndOpenChange = (open: boolean) => {\n    setEndOpen(open);\n  };\n\n  return (\n    <Space>\n      <DatePicker\n        disabledDate={disabledStartDate}\n        showTime\n        format=\"YYYY-MM-DD HH:mm:ss\"\n        value={startValue}\n        placeholder=\"Start\"\n        onChange={setStartValue}\n        onOpenChange={handleStartOpenChange}\n      />\n      <DatePicker\n        disabledDate={disabledEndDate}\n        showTime\n        format=\"YYYY-MM-DD HH:mm:ss\"\n        value={endValue}\n        placeholder=\"End\"\n        onChange={setEndValue}\n        open={endOpen}\n        onOpenChange={handleEndOpenChange}\n      />\n    </Space>\n  );\n};\n\nexport default App;\n",
+      "sha256": "21b6bf0a5976eb02e435c6f9287148e6c45cd7dd23eefdadafa2563bc91f5ca2",
+      "upstreamPath": "components/date-picker/demo/start-end.tsx",
+      "upstreamSha256": "449e20ddd21a6d80991a30577e10a3ebd4bb917d2246b38436680374e697e08d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/status.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DatePicker, Space } from 'antd';\n\nconst App: React.FC = () => (\n  <Space vertical style={{ width: '100%' }}>\n    <DatePicker status=\"error\" style={{ width: '100%' }} />\n    <DatePicker status=\"warning\" style={{ width: '100%' }} />\n    <DatePicker.RangePicker status=\"error\" style={{ width: '100%' }} />\n    <DatePicker.RangePicker status=\"warning\" style={{ width: '100%' }} />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "74957abab5e8c6bd00c005d7d2984080ddb77ad9aa8adb4b21ba46dfa3dbfe43",
+      "upstreamPath": "components/date-picker/demo/status.tsx",
+      "upstreamSha256": "07817f201a2e87bfcc52f3a5bec0f9c27b05a5b7acc2586157b3bec02ae8ff73",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/style-class.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DatePicker, Flex } from 'antd';\nimport type { DatePickerProps, GetProp } from 'antd';\nimport { createStyles } from 'antd-style';\nimport type { Dayjs } from 'dayjs';\n\nconst useStyles = createStyles(({ token }) => ({\n  root: {\n    border: `${token.lineWidth}px ${token.lineType} ${token.colorPrimary}`,\n    width: 200,\n  },\n}));\n\nconst stylesObject: DatePickerProps<Dayjs>['styles'] = {\n  input: { fontStyle: 'italic' },\n  suffix: { opacity: 0.85 },\n};\n\nconst stylesFn: DatePickerProps<Dayjs>['styles'] = (\n  info,\n): GetProp<DatePickerProps<Dayjs>, 'styles', 'Return'> => {\n  if (info.props.size === 'large') {\n    return {\n      root: { borderColor: '#722ed1' },\n      popup: {\n        container: { border: '1px solid #722ed1', borderRadius: 8 },\n      },\n    };\n  }\n  return {};\n};\n\nconst App: React.FC = () => {\n  const { styles: classNames } = useStyles();\n  return (\n    <Flex vertical gap=\"medium\">\n      <DatePicker classNames={classNames} styles={stylesObject} placeholder=\"Object\" />\n      <DatePicker classNames={classNames} styles={stylesFn} placeholder=\"Function\" size=\"large\" />\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "526a375aeefc6a33ef70f0d13088c7dc36f70c0cd5fd1c371c625b4b4bde5d2c",
+      "upstreamPath": "components/date-picker/demo/style-class.tsx",
+      "upstreamSha256": "66cb67cb90c8a6970e5f99fe95b49a473008b9e2961a3d3ae7bab84c43608580",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/suffix.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { SmileOutlined } from '@ant-design/icons';\nimport { DatePicker, Space } from 'antd';\nimport type { Dayjs } from 'dayjs';\n\nconst smileIcon = <SmileOutlined />;\nconst { RangePicker } = DatePicker;\n\nconst onChange = (date: Dayjs | (Dayjs | null)[] | null, dateString: string | string[] | null) => {\n  console.log(date, dateString);\n};\n\nconst App: React.FC = () => (\n  <Space vertical size={12}>\n    <DatePicker suffixIcon={smileIcon} onChange={onChange} />\n    <DatePicker suffixIcon={smileIcon} onChange={onChange} picker=\"month\" />\n    <RangePicker suffixIcon={smileIcon} onChange={onChange} />\n    <DatePicker suffixIcon={smileIcon} onChange={onChange} picker=\"week\" />\n    <DatePicker suffixIcon=\"ab\" onChange={onChange} />\n    <DatePicker suffixIcon=\"ab\" onChange={onChange} picker=\"month\" />\n    <RangePicker suffixIcon=\"ab\" onChange={onChange} />\n    <DatePicker suffixIcon=\"ab\" onChange={onChange} picker=\"week\" />\n    <DatePicker prefix={smileIcon} onChange={onChange} picker=\"week\" />\n    <DatePicker prefix=\"Event Period\" onChange={onChange} picker=\"week\" />\n    <RangePicker prefix={smileIcon} onChange={onChange} picker=\"week\" />\n    <RangePicker prefix=\"Event Period\" onChange={onChange} picker=\"week\" />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "eaac5c0d883db0380f92832944c94710f8ffa3a552173755d875913f131ab971",
+      "upstreamPath": "components/date-picker/demo/suffix.tsx",
+      "upstreamSha256": "d62cde0fe7f864c096ff5c70f9e0c5041f85b60c224117b1350bc992c09a4045",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/suffixIcon-debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DatePicker, Space } from 'antd';\n\nconst App: React.FC = () => (\n  <Space orientation=\"vertical\">\n    <DatePicker suffixIcon />\n    <DatePicker suffixIcon={false} />\n    <DatePicker />\n    <DatePicker suffixIcon={null} />\n    <DatePicker suffixIcon={'123'} />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "fe72555dc77a84a906d2cd950198ff465ed936ec047c931694e45c88044b5ec3",
+      "upstreamPath": "components/date-picker/demo/suffixIcon-debug.tsx",
+      "upstreamSha256": "7e4a24f0e32c6180e91a51f06c7e127d370e429829e2f7ad5ce9f6ce9a3248cf",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/switchable.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport type { DatePickerProps, TimePickerProps } from 'antd';\nimport { DatePicker, Select, Space, TimePicker } from 'antd';\nimport type { Dayjs } from 'dayjs';\n\ntype PickerType = 'time' | 'date';\n\ninterface PickerWithTypeProps {\n  type: PickerType;\n  onChange: TimePickerProps['onChange'] | DatePickerProps<Dayjs, false>['onChange'];\n}\n\nconst PickerWithType: React.FC<PickerWithTypeProps> = ({ type, onChange }) => {\n  if (type === 'time') {\n    return <TimePicker onChange={onChange} />;\n  }\n  if (type === 'date') {\n    return <DatePicker onChange={onChange} />;\n  }\n  return <DatePicker picker={type} onChange={onChange} />;\n};\n\nconst App: React.FC = () => {\n  const [type, setType] = useState<PickerType>('time');\n\n  return (\n    <Space>\n      <Select\n        aria-label=\"Picker Type\"\n        value={type}\n        onChange={setType}\n        options={[\n          { label: 'Time', value: 'time' },\n          { label: 'Date', value: 'date' },\n          { label: 'Week', value: 'week' },\n          { label: 'Month', value: 'month' },\n          { label: 'Quarter', value: 'quarter' },\n          { label: 'Year', value: 'year' },\n        ]}\n      />\n      <PickerWithType type={type} onChange={(value) => console.log(value)} />\n    </Space>\n  );\n};\n\nexport default App;\n",
+      "sha256": "28d196ddd6d4199fb514c587c1f335ec42b3b229f921da97406ea84379acb470",
+      "upstreamPath": "components/date-picker/demo/switchable.tsx",
+      "upstreamSha256": "b235bcc9a806b5d21a6aff63b5b7558212da1686f77a60754bea5e5c89dc2c23",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/time.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DatePicker, Space } from 'antd';\nimport type { DatePickerProps, GetProps } from 'antd';\n\ntype RangePickerProps = GetProps<typeof DatePicker.RangePicker>;\n\nconst { RangePicker } = DatePicker;\n\nconst onOk = (value: DatePickerProps['value'] | RangePickerProps['value']) => {\n  console.log('onOk: ', value);\n};\n\nconst App: React.FC = () => (\n  <Space vertical size={12}>\n    <DatePicker\n      showTime\n      onChange={(value, dateString) => {\n        console.log('Selected Time: ', value);\n        console.log('Formatted Selected Time: ', dateString);\n      }}\n      onOk={onOk}\n    />\n    <RangePicker\n      showTime={{ format: 'HH:mm' }}\n      format=\"YYYY-MM-DD HH:mm\"\n      onChange={(value, dateString) => {\n        console.log('Selected Time: ', value);\n        console.log('Formatted Selected Time: ', dateString);\n      }}\n      onOk={onOk}\n    />\n  </Space>\n);\n\nexport default App;\n",
+      "sha256": "599aca42d1b4cddc87cd7c6b3839d783460f025b641b63e605b3939716d715c3",
+      "upstreamPath": "components/date-picker/demo/time.tsx",
+      "upstreamSha256": "6b089262516e8f992ce77d23cc4fb39672a2f25c5a9cea494569972962f52c70",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/date-picker/demo/variant.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { DatePicker, Flex } from 'antd';\n\nconst { RangePicker } = DatePicker;\n\nconst App: React.FC = () => (\n  <Flex vertical gap={12}>\n    <Flex gap={8}>\n      <DatePicker placeholder=\"Outlined\" />\n      <RangePicker placeholder={['Outlined Start', 'Outlined End']} />\n    </Flex>\n    <Flex gap={8}>\n      <DatePicker placeholder=\"Filled\" variant=\"filled\" />\n      <RangePicker placeholder={['Filled Start', 'Filled End']} variant=\"filled\" />\n    </Flex>\n    <Flex gap={8}>\n      <DatePicker placeholder=\"Borderless\" variant=\"borderless\" />\n      <RangePicker placeholder={['Borderless Start', 'Borderless End']} variant=\"borderless\" />\n    </Flex>\n    <Flex gap={8}>\n      <DatePicker placeholder=\"Underlined\" variant=\"underlined\" />\n      <RangePicker placeholder={['Underlined Start', 'Underlined End']} variant=\"underlined\" />\n    </Flex>\n  </Flex>\n);\n\nexport default App;\n",
+      "sha256": "97770bfc2427ee93a18e6ddbfee6edac93f7d3621ed06bee87503027797a7bed",
+      "upstreamPath": "components/date-picker/demo/variant.tsx",
+      "upstreamSha256": "71ecc2eb95c6ecd532fd1e3da9a7a330c7b0dff6c88d66c3f7312b6397f053c4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/allow-empty\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "b803d2807c7012ca2e23e644fc657a35ba9bb18b16e0c2404564a902ad0404be",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/basic.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/basic\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "767b08edf48208318c8bfd28c395844c55d24c1d0b6b7d87c94a2077ae49e719",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/buddhist-era.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/buddhist-era\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a5df99fd1cc0cb9cdc2ebc68eef89c777a7da5de949d8113487468851b55d0ea",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/cell-render.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/cell-render\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "f3fb09b4f64a13f30bdc89a6fde21414f80215074fd7b67419f110c855bfadca",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/component-token.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/component-token\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "c66e671f59088b5faf7828d0a90a84a93a21fce356d9884fd80091370e7fa90f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/components.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/components\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d4fdd01e302df9ae2b79b4daec368844c667f4ca508341f5098e4970d78707c6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/date-range.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/date-range\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "fc1495ae0f1079c7427609d9abea5f60d850d662c42338540e6873fdf6c9fd04",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/disabled.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/disabled\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "158b2f390c04e6028b159a78061fb404449b3ccb3617b718055ee796abb4baf5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/disabled-date.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/disabled-date\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "3f18c201a37e6dccca1d403bd3e42245f2df4d1010927ffb8c6d6a1ce7a117b3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/external-panel.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/external-panel\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "44425c662e7744cd03d5d519e1814b4df986f429524f10ac682fa2a165f2fc3b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/extra-footer.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/extra-footer\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "4593d97143d6ec018376da3fa49c076a571d49b662cae364a49989d8a160ed26",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/filled-debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/filled-debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d1afa877dc5aed0724c6cd67fae876001d383992eef8cbc81252744f1a79d3e8",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/format.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/format\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "5203336af644a8a8793d2be2b6d25d750a8b91432a07cf20f47f42df979676f6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/mask.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/mask\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d2e332311c45a2d7529837a1cf616d4d3d255fb4bc5457323120ea7ebc4646da",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/mode.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/mode\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "cd2d87c3e6161ac1156f02205c13753ff9a26e93be7e4354b0f1ca8d2b8d9942",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/multiple.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/multiple\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d240dc0b99aef3c4fe679fda65eb32b2da32b0efe4f7a9868642fe2d5d35dd97",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/multiple-debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/multiple-debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0c57ccb7f0b8b6ecbe275c61157f2192577ea2e0ff92249efb80ba8d8ebac920",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/need-confirm.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/needConfirm\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "480e6ca9dfe01d8fbb483a009c1607839cd5a84c0a9a3638332e29e196fafbdc",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/placement.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/placement\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8556da89b073c7459fe4155e2fcf564dd575acd456d0ef10671983f4e1f35ba5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/preset-ranges.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/preset-ranges\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "ef1d7a7b388a74e12563ac257157826d1b4873557a384f7a6abd53de1f2449df",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/range-picker.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/range-picker\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "9df87d61ffc2e2c9e10e909be8253a299ff20c4493c063eba0267aab863363c3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/render-panel.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/render-panel\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "993ed3f5a83dbe6f7be8e2aac2b87dc088f7d4f7a37794ad5ddd456fa261e4be",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/select-in-range.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/select-in-range\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e193f1c4cd675724bff24516e836e42e719957eea9f46396e5f7bf01a8febd62",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/size\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "469c4abd7b8a486e391c62c1ed492d3455ac8fc6e3dce2f72945928f7ea7a555",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/start-end.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/start-end\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "b0de2cc3a47a000f4f93b28e6b35dc992e2b6a0ad8682388eb7472db84151895",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/status.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/status\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "22114dcffa78caa75d93938df41ad9a605191a271bce90b25783c82b0e170ff5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/style-class.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/style-class\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "046a214878af1b305507c2a44085bbd78417e236ba9ae464b2e5ed0901410fb6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/suffix.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/suffix\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "84884ba8eafdd930ea8420405d575bb53ab54bbd9c51020a739373926c50a5a5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/suffix-icon-debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/suffixIcon-debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "66b9b9db7e3fba38effc679e5455dbb31a88d6283e9d729f9b3ac4ca4b1429a9",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/switchable.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/switchable\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "1ebb0878062443b4bfae60a00388ef548feb7f42ceb8e3288f465c05adcf5261",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/time.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/time\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "f38d20d1d237e67cb0d2f6cf185dd0ed7b227819a188359af801df04527772d3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/date-picker/previews/variant.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/date-picker/demo/variant\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "7ed2e545b93ded61b943da5f83b29ff5eb36783421983cd53bf037eedc02cc0d",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0 dayjs@1.11.23",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0 dayjs@1.11.23",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example compositions using the pinned antd npm package.",
+      "Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "date-picker",
+    "upstreamPageUrl": "https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/date-picker/demo",
+    "upstreamDetailUrl": "https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/date-picker/demo/allow-empty.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/ant-design/ant-design/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/date-picker/demo/allow-empty.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Ant Design date picker\n\n32 published Ant Design date picker examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example compositions using the pinned antd npm package.\n- Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/date-picker/demo\nPinned source: https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/date-picker/demo/allow-empty.tsx\n"
+}

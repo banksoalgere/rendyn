@@ -1,0 +1,256 @@
+{
+  "id": "antd:popconfirm",
+  "sourceId": "antd",
+  "slug": "antd-popconfirm",
+  "name": "Ant Design popconfirm",
+  "description": "11 published Ant Design popconfirm examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@ant-design/icons@6.3.4",
+    "antd@6.6.5",
+    "antd-style@4.1.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "popconfirm",
+    "tags": [
+      "file",
+      "form"
+    ],
+    "aliases": [
+      "popconfirm",
+      "ant design popconfirm"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "11 published Ant Design popconfirm examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "popconfirm:file:form",
+    "searchText": "Ant Design popconfirm\npopconfirm\n11 published Ant Design popconfirm examples with complete pinned source and MIT attribution.\nant design popconfirm\nfile\nform\nAnt Design popconfirm 11 published Ant Design popconfirm examples with complete pinned source and MIT attribution. Installation Complete MIT example compositions using the pinned antd npm package. Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/ant design/ant design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/popconfirm/demo Pinned source: https://github.com/ant design/ant design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/popconfirm/demo/async.tsx"
+  },
+  "previewPath": "/preview/blocks/antd-popconfirm",
+  "manifestPath": "components/antd-popconfirm/component.json",
+  "integrity": "sha256:586d2675d181ce697d204ae3a9e5f3da2e3af30799f605cc03a965b8402265fb",
+  "source": {
+    "id": "antd",
+    "name": "Ant Design",
+    "repository": "https://github.com/ant-design/ant-design",
+    "commit": "bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a",
+    "registrySha256": "7df4386dc63323dd6235edee9c52694b28d573a6d2765ac59719a52e1c259ab0",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2015-present Ant UED, https://xtech.antfin.com/",
+      "textPath": "source/antd/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/antd/upstream/popconfirm/demo/async.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Button, Popconfirm } from 'antd';\n\nconst App: React.FC = () => {\n  const [open, setOpen] = useState(false);\n  const [confirmLoading, setConfirmLoading] = useState(false);\n\n  const showPopconfirm = () => {\n    setOpen(true);\n  };\n\n  const handleOk = () => {\n    setConfirmLoading(true);\n\n    setTimeout(() => {\n      setOpen(false);\n      setConfirmLoading(false);\n    }, 2000);\n  };\n\n  const handleCancel = () => {\n    console.log('Clicked cancel button');\n    setOpen(false);\n  };\n\n  return (\n    <Popconfirm\n      title=\"Title\"\n      description=\"Open Popconfirm with async logic\"\n      open={open}\n      onConfirm={handleOk}\n      okButtonProps={{ loading: confirmLoading }}\n      onCancel={handleCancel}\n    >\n      <Button type=\"primary\" onClick={showPopconfirm}>\n        Open Popconfirm with async logic\n      </Button>\n    </Popconfirm>\n  );\n};\n\nexport default App;\n",
+      "sha256": "010b13adb591d5a1be005a0d8b8acf77ac1988e425e415fce7d20b04d3d6d37b",
+      "upstreamPath": "components/popconfirm/demo/async.tsx",
+      "upstreamSha256": "a93dd045f2fa4117f234d4604b5c5603f6e577bb4a560a268feab38f0dea015d",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/popconfirm/demo/basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { PopconfirmProps } from 'antd';\nimport { Button, message, Popconfirm } from 'antd';\n\nconst App: React.FC = () => {\n  const [messageApi, holder] = message.useMessage();\n\n  const confirm: PopconfirmProps['onConfirm'] = (e) => {\n    console.log(e);\n    messageApi.success('Click on Yes');\n  };\n\n  const cancel: PopconfirmProps['onCancel'] = (e) => {\n    console.log(e);\n    messageApi.error('Click on No');\n  };\n\n  return (\n    <>\n      {holder}\n      <Popconfirm\n        title=\"Delete the task\"\n        description=\"Are you sure to delete this task?\"\n        onConfirm={confirm}\n        onCancel={cancel}\n        okText=\"Yes\"\n        cancelText=\"No\"\n      >\n        <Button danger>Delete</Button>\n      </Popconfirm>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "f7eb192354469765d3bcdb75e3b2043d0f87781b232151d3c8d9cef3de8f6c63",
+      "upstreamPath": "components/popconfirm/demo/basic.tsx",
+      "upstreamSha256": "7e626067e6db8ddda90de268e962c5ff1c50130f85880f44d35c3ae9060d24cc",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/popconfirm/demo/dynamic-trigger.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Button, message, Popconfirm, Switch } from 'antd';\n\nconst App: React.FC = () => {\n  const [messageApi, contextHolder] = message.useMessage();\n  const [open, setOpen] = useState(false);\n  const [condition, setCondition] = useState(true);\n\n  const changeCondition = (checked: boolean) => {\n    setCondition(checked);\n  };\n\n  const confirm = () => {\n    setOpen(false);\n    messageApi.success('Next step.');\n  };\n\n  const cancel = () => {\n    setOpen(false);\n    messageApi.error('Click on cancel.');\n  };\n\n  const handleOpenChange = (newOpen: boolean) => {\n    if (!newOpen) {\n      setOpen(newOpen);\n      return;\n    }\n    // Determining condition before show the popconfirm.\n    console.log(condition);\n    if (condition) {\n      confirm(); // next step\n    } else {\n      setOpen(newOpen);\n    }\n  };\n\n  return (\n    <>\n      {contextHolder}\n      <div>\n        <Popconfirm\n          title=\"Delete the task\"\n          description=\"Are you sure to delete this task?\"\n          open={open}\n          onOpenChange={handleOpenChange}\n          onConfirm={confirm}\n          onCancel={cancel}\n          okText=\"Yes\"\n          cancelText=\"No\"\n        >\n          <Button danger>Delete a task</Button>\n        </Popconfirm>\n        <br />\n        <br />\n        Whether directly execute：\n        <Switch defaultChecked onChange={changeCondition} />\n      </div>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "c972d88d17cf6968fa4ab926be83d9f3059edc967aa2cf8e1c8ece92d954567e",
+      "upstreamPath": "components/popconfirm/demo/dynamic-trigger.tsx",
+      "upstreamSha256": "b0ecb624722bac1f930afcaaa1dd7f3b759bbcec1d248fa8dd002350be521c3e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/popconfirm/demo/icon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { QuestionCircleOutlined } from '@ant-design/icons';\nimport { Button, Popconfirm } from 'antd';\n\nconst App: React.FC = () => (\n  <Popconfirm\n    title=\"Delete the task\"\n    description=\"Are you sure to delete this task?\"\n    icon={<QuestionCircleOutlined style={{ color: 'red' }} />}\n  >\n    <Button danger>Delete</Button>\n  </Popconfirm>\n);\n\nexport default App;\n",
+      "sha256": "e0e396aab05f4192529d7465e17b517f3ca429277ca0a3e8f569eb2cc7860aa0",
+      "upstreamPath": "components/popconfirm/demo/icon.tsx",
+      "upstreamSha256": "7974af1bfc5507b9fba9b53db568a47bb697f7bad7bfd1dfa43327fcad762e38",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/popconfirm/demo/locale.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Button, Popconfirm } from 'antd';\n\nconst App: React.FC = () => (\n  <Popconfirm\n    title=\"Delete the task\"\n    description=\"Are you sure to delete this task?\"\n    okText=\"Yes\"\n    cancelText=\"No\"\n  >\n    <Button danger>Delete</Button>\n  </Popconfirm>\n);\n\nexport default App;\n",
+      "sha256": "04c43a0564f45a83b94777f237630e1ec797a78a410e116f0a1c302afec7cf70",
+      "upstreamPath": "components/popconfirm/demo/locale.tsx",
+      "upstreamSha256": "5a1efc63a4a7f17be5ee0f0df5a986ec0cd7172e6b2f86a5c1041f10b563d680",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/popconfirm/demo/placement.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Button, ConfigProvider, Flex, Popconfirm } from 'antd';\n\nconst text = 'Are you sure to delete this task?';\nconst description = 'Delete the task';\nconst buttonWidth = 80;\n\nconst App: React.FC = () => (\n  <ConfigProvider button={{ style: { width: buttonWidth, margin: 4 } }}>\n    <Flex vertical justify=\"center\" align=\"center\" className=\"demo\">\n      <Flex justify=\"center\" align=\"center\" style={{ whiteSpace: 'nowrap' }}>\n        <Popconfirm\n          placement=\"topLeft\"\n          title={text}\n          description={description}\n          okText=\"Yes\"\n          cancelText=\"No\"\n        >\n          <Button>TL</Button>\n        </Popconfirm>\n        <Popconfirm\n          placement=\"top\"\n          title={text}\n          description={description}\n          okText=\"Yes\"\n          cancelText=\"No\"\n        >\n          <Button>Top</Button>\n        </Popconfirm>\n        <Popconfirm\n          placement=\"topRight\"\n          title={text}\n          description={description}\n          okText=\"Yes\"\n          cancelText=\"No\"\n        >\n          <Button>TR</Button>\n        </Popconfirm>\n      </Flex>\n      <Flex style={{ width: buttonWidth * 5 + 32 }} justify=\"space-between\" align=\"center\">\n        <Flex align=\"center\" vertical>\n          <Popconfirm\n            placement=\"leftTop\"\n            title={text}\n            description={description}\n            okText=\"Yes\"\n            cancelText=\"No\"\n          >\n            <Button>LT</Button>\n          </Popconfirm>\n          <Popconfirm\n            placement=\"left\"\n            title={text}\n            description={description}\n            okText=\"Yes\"\n            cancelText=\"No\"\n          >\n            <Button>Left</Button>\n          </Popconfirm>\n          <Popconfirm\n            placement=\"leftBottom\"\n            title={text}\n            description={description}\n            okText=\"Yes\"\n            cancelText=\"No\"\n          >\n            <Button>LB</Button>\n          </Popconfirm>\n        </Flex>\n        <Flex align=\"center\" vertical>\n          <Popconfirm\n            placement=\"rightTop\"\n            title={text}\n            description={description}\n            okText=\"Yes\"\n            cancelText=\"No\"\n          >\n            <Button>RT</Button>\n          </Popconfirm>\n          <Popconfirm\n            placement=\"right\"\n            title={text}\n            description={description}\n            okText=\"Yes\"\n            cancelText=\"No\"\n          >\n            <Button>Right</Button>\n          </Popconfirm>\n          <Popconfirm\n            placement=\"rightBottom\"\n            title={text}\n            description={description}\n            okText=\"Yes\"\n            cancelText=\"No\"\n          >\n            <Button>RB</Button>\n          </Popconfirm>\n        </Flex>\n      </Flex>\n      <Flex justify=\"center\" align=\"center\" style={{ whiteSpace: 'nowrap' }}>\n        <Popconfirm\n          placement=\"bottomLeft\"\n          title={text}\n          description={description}\n          okText=\"Yes\"\n          cancelText=\"No\"\n        >\n          <Button>BL</Button>\n        </Popconfirm>\n        <Popconfirm\n          placement=\"bottom\"\n          title={text}\n          description={description}\n          okText=\"Yes\"\n          cancelText=\"No\"\n        >\n          <Button>Bottom</Button>\n        </Popconfirm>\n        <Popconfirm\n          placement=\"bottomRight\"\n          title={text}\n          description={description}\n          okText=\"Yes\"\n          cancelText=\"No\"\n        >\n          <Button>BR</Button>\n        </Popconfirm>\n      </Flex>\n    </Flex>\n  </ConfigProvider>\n);\n\nexport default App;\n",
+      "sha256": "4256d77f96926cc67953da01b4c1dd7da45f200a029f290778cbc3d6fb62dc34",
+      "upstreamPath": "components/popconfirm/demo/placement.tsx",
+      "upstreamSha256": "f82c93b6c3a8998bc9425946e56a096a118948b88eba3669ff622634411c5e8a",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/popconfirm/demo/promise.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Button, Popconfirm } from 'antd';\n\nconst App: React.FC = () => {\n  const confirm = () =>\n    new Promise((resolve) => {\n      setTimeout(() => resolve(null), 3000);\n    });\n\n  return (\n    <Popconfirm\n      title=\"Title\"\n      description=\"Open Popconfirm with Promise\"\n      onConfirm={confirm}\n      onOpenChange={() => console.log('open change')}\n    >\n      <Button type=\"primary\">Open Popconfirm with Promise</Button>\n    </Popconfirm>\n  );\n};\n\nexport default App;\n",
+      "sha256": "d8a09f53ee881a3319bccea88eddc0a5cfa8b7f4a2b7c7b2efe4c5ab096c7c44",
+      "upstreamPath": "components/popconfirm/demo/promise.tsx",
+      "upstreamSha256": "f640ae38c107c48a007ed8164d7af9a2ce5353a7183dec7c2908e00c33888e48",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/popconfirm/demo/render-panel.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Popconfirm } from 'antd';\n\nconst { _InternalPanelDoNotUseOrYouWillBeFired: InternalPopconfirm } = Popconfirm;\n\nconst App: React.FC = () => (\n  <>\n    <InternalPopconfirm title=\"Are you OK?\" description=\"Does this look good?\" />\n    <InternalPopconfirm\n      title=\"Are you OK?\"\n      description=\"Does this look good?\"\n      placement=\"bottomRight\"\n      style={{ width: 250 }}\n    />\n    <InternalPopconfirm icon={null} title=\"Are you OK?\" />\n    <InternalPopconfirm icon={null} title=\"Are you OK?\" description=\"Does this look good?\" />\n  </>\n);\n\nexport default App;\n",
+      "sha256": "401c17cdcb5ee2cfeee9fe445b8b29847e33ad0f374865f27a901109d61ed9ee",
+      "upstreamPath": "components/popconfirm/demo/render-panel.tsx",
+      "upstreamSha256": "fc465b8c0d755b9e6060ad3dd6bb48514f3c254c1f5da1f48143ba0f635070ed",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/popconfirm/demo/shift.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Button, Popconfirm } from 'antd';\n\nconst style: React.CSSProperties = {\n  width: '300vw',\n  height: '300vh',\n  display: 'flex',\n  alignItems: 'center',\n  justifyContent: 'center',\n};\n\nconst App: React.FC = () => {\n  React.useEffect(() => {\n    document.documentElement.scrollTop = document.documentElement.clientHeight;\n    document.documentElement.scrollLeft = document.documentElement.clientWidth;\n  }, []);\n  return (\n    <div style={style}>\n      <Popconfirm title=\"Thanks for using antd. Have a nice day !\" open>\n        <Button type=\"primary\">Scroll The Window</Button>\n      </Popconfirm>\n    </div>\n  );\n};\n\nexport default App;\n",
+      "sha256": "73edc8513f9c014f85c25798ccba804f4f1320ab4cd234f9ede2c6cce4e0e487",
+      "upstreamPath": "components/popconfirm/demo/shift.tsx",
+      "upstreamSha256": "08a91a0c0c21d34ac18b28d185d2d9fd55e9e40991a2201c5c3892b47a1d3f60",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/popconfirm/demo/style-class.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Button, Flex, Popconfirm } from 'antd';\nimport type { GetProp, PopconfirmProps } from 'antd';\nimport { createStaticStyles } from 'antd-style';\n\nconst classNames = createStaticStyles(({ css }) => ({\n  container: css`\n    padding: 10px;\n  `,\n}));\n\nconst styles: PopconfirmProps['styles'] = {\n  container: {\n    backgroundColor: '#eee',\n    boxShadow: 'inset 5px 5px 3px #fff, inset -5px -5px 3px #ddd, 0 0 3px rgba(0,0,0,0.2)',\n  },\n  title: {\n    color: '#262626',\n  },\n  content: {\n    color: '#262626',\n  },\n};\n\nconst stylesFn: PopconfirmProps['styles'] = (\n  info,\n): GetProp<PopconfirmProps, 'styles', 'Return'> => {\n  if (!info.props.arrow) {\n    return {\n      container: {\n        backgroundColor: 'rgba(53, 71, 125, 0.8)',\n        padding: 12,\n        borderRadius: 4,\n      },\n      title: {\n        color: '#fff',\n      },\n      content: {\n        color: '#fff',\n      },\n    };\n  }\n};\n\nconst App: React.FC = () => {\n  return (\n    <Flex gap=\"medium\">\n      <Popconfirm\n        title=\"Object text\"\n        description=\"Object description\"\n        classNames={classNames}\n        styles={styles}\n        arrow={false}\n      >\n        <Button>Object Style</Button>\n      </Popconfirm>\n      <Popconfirm\n        title=\"Function text\"\n        description=\"Function description\"\n        classNames={classNames}\n        styles={stylesFn}\n        arrow={false}\n        okButtonProps={{\n          styles: { root: { backgroundColor: 'rgba(53, 71, 125, 0.6)', color: '#fff' } },\n        }}\n        cancelButtonProps={{\n          styles: {\n            root: {\n              borderColor: 'rgba(53, 71, 125, 0.6)',\n              backgroundColor: '#fff',\n              color: 'rgba(53, 71, 125, 0.8)',\n            },\n          },\n        }}\n      >\n        <Button type=\"primary\">Function Style</Button>\n      </Popconfirm>\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "0415d2c8b9d2e9a181b551721660a6581ecbb89af540d143a6d0b7e72f85b6e5",
+      "upstreamPath": "components/popconfirm/demo/style-class.tsx",
+      "upstreamSha256": "d60be3e3eeaf72d6b819284687b6f6a27c6336e2635d3a0f9a1eb7d64a7982dc",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/popconfirm/demo/wireframe.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { ConfigProvider, Popconfirm } from 'antd';\n\nconst { _InternalPanelDoNotUseOrYouWillBeFired: InternalPopconfirm } = Popconfirm;\n\nconst App: React.FC = () => (\n  <ConfigProvider theme={{ token: { wireframe: true } }}>\n    <InternalPopconfirm title=\"Are you OK?\" />\n    <InternalPopconfirm title=\"Are you OK?\" placement=\"bottomRight\" style={{ width: 250 }} />\n  </ConfigProvider>\n);\n\nexport default App;\n",
+      "sha256": "a725e44b7004c1a64f04bf00656818b1244e428008e0549b381899f6395931a4",
+      "upstreamPath": "components/popconfirm/demo/wireframe.tsx",
+      "upstreamSha256": "d16d5477c82f677a47e1d8c895f0589eecb62c0718ab3aed3bfb0880b9034547",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/popconfirm/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/popconfirm/demo/async\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "5774b4f252ca381c241ce0bf7a65196e97b4d7592d68f092fd2e620f6011ae69",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/popconfirm/previews/basic.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/popconfirm/demo/basic\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "7ff0ebf02b076d45ee83d604b6f64c0aefb8623eded0165eedd79dbf0b30cd4e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/popconfirm/previews/dynamic-trigger.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/popconfirm/demo/dynamic-trigger\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "7fd504d17481099aeeb8f3e359511e3fd0fb5d5bae24728995b21ed0da3c6abe",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/popconfirm/previews/icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/popconfirm/demo/icon\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "fa3d85d947dd18cff7d8b91803fa59a991485eec57af35d6b99ca73629cc3e12",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/popconfirm/previews/locale.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/popconfirm/demo/locale\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0ae7dbc85d75d86a3440be7b5bf9b8307b92b5dfbaf35bbd6b53cb8717a6cc1e",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/popconfirm/previews/placement.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/popconfirm/demo/placement\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "0237094adbd4975402e003e42a408805d159fe32fc6478b6cca6d25f394e25ec",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/popconfirm/previews/promise.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/popconfirm/demo/promise\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "6114dc77be73e8ee4758bc35eb85c664633b12bcb54174461e5d70001aa22589",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/popconfirm/previews/render-panel.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/popconfirm/demo/render-panel\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "454097d8994e16a76f87295d1f0ee116471a66dcf19ae06d958b601995230b8c",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/popconfirm/previews/shift.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/popconfirm/demo/shift\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "4ae42fc660f7b60fa9a059c68b68a67c402ba21640929c596d6a6e376ba98cac",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/popconfirm/previews/style-class.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/popconfirm/demo/style-class\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "5a44aa9a4454765136407e1396e144a130d85cd7ed7065f02c587670278a9048",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/popconfirm/previews/wireframe.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/popconfirm/demo/wireframe\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a67bad8e8c789861d792feee39a17657eba950ead796261233c257de1cca5f69",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example compositions using the pinned antd npm package.",
+      "Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "popconfirm",
+    "upstreamPageUrl": "https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/popconfirm/demo",
+    "upstreamDetailUrl": "https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/popconfirm/demo/async.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/ant-design/ant-design/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/popconfirm/demo/async.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Ant Design popconfirm\n\n11 published Ant Design popconfirm examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example compositions using the pinned antd npm package.\n- Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/popconfirm/demo\nPinned source: https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/popconfirm/demo/async.tsx\n"
+}

@@ -1,0 +1,369 @@
+{
+  "id": "antd:drawer",
+  "sourceId": "antd",
+  "slug": "antd-drawer",
+  "name": "Ant Design drawer",
+  "description": "18 published Ant Design drawer examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@ant-design/icons@6.3.4",
+    "antd@6.6.5",
+    "antd-style@4.1.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "drawer",
+    "tags": [
+      "drawer",
+      "file",
+      "form"
+    ],
+    "aliases": [
+      "drawer",
+      "ant design drawer"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "18 published Ant Design drawer examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "drawer:file:form",
+    "searchText": "Ant Design drawer\ndrawer\n18 published Ant Design drawer examples with complete pinned source and MIT attribution.\nant design drawer\nfile\nform\nAnt Design drawer 18 published Ant Design drawer examples with complete pinned source and MIT attribution. Installation Complete MIT example compositions using the pinned antd npm package. Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/ant design/ant design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/drawer/demo Pinned source: https://github.com/ant design/ant design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/drawer/demo/basic right.tsx"
+  },
+  "previewPath": "/preview/blocks/antd-drawer",
+  "manifestPath": "components/antd-drawer/component.json",
+  "integrity": "sha256:a5de8c308154b494a34fe7a1b298f4690388206a06c1602279f80ce04cc527cb",
+  "source": {
+    "id": "antd",
+    "name": "Ant Design",
+    "repository": "https://github.com/ant-design/ant-design",
+    "commit": "bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a",
+    "registrySha256": "7df4386dc63323dd6235edee9c52694b28d573a6d2765ac59719a52e1c259ab0",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2015-present Ant UED, https://xtech.antfin.com/",
+      "textPath": "source/antd/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/basic-right.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Button, Drawer } from 'antd';\n\nconst App: React.FC = () => {\n  const [open, setOpen] = useState(false);\n\n  const showDrawer = () => {\n    setOpen(true);\n  };\n\n  const onClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <>\n      <Button type=\"primary\" onClick={showDrawer}>\n        Open\n      </Button>\n      <Drawer\n        title=\"Basic Drawer\"\n        closable={{ 'aria-label': 'Close Button' }}\n        onClose={onClose}\n        open={open}\n      >\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n      </Drawer>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "64ac5042634f3af66ecfd3540c216f3688647b97cac1e5fcc4b7eda934eb73c6",
+      "upstreamPath": "components/drawer/demo/basic-right.tsx",
+      "upstreamSha256": "48244a6bfe6223ff48067401c6148bd89b5d0bfee133df0828939529ac4ab44f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/closable-placement.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Button, Drawer } from 'antd';\n\nconst App: React.FC = () => {\n  const [open, setOpen] = useState(false);\n\n  const showDrawer = () => {\n    setOpen(true);\n  };\n\n  const onClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <>\n      <Button type=\"primary\" onClick={showDrawer}>\n        Open\n      </Button>\n      <Drawer\n        title=\"Drawer Closable Placement\"\n        closable={{ placement: 'end' }}\n        onClose={onClose}\n        open={open}\n      >\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n        <p>Take a look at the top-right corner...</p>\n      </Drawer>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "15bb1902c818cd027fef21bc404cb95fd6c39d0e12afb52610b35fb0c37d66fa",
+      "upstreamPath": "components/drawer/demo/closable-placement.tsx",
+      "upstreamSha256": "f6e9962437588c5271249318fa17688f5169d7fad4d4eb51fd12282cdd45c430",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/component-token.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { ConfigProvider, Drawer } from 'antd';\n\n/** Test usage. Do not use in your production. */\nconst { _InternalPanelDoNotUseOrYouWillBeFired: InternalDrawer } = Drawer;\n\nexport default () => (\n  <ConfigProvider\n    theme={{ components: { Drawer: { footerPaddingBlock: 0, footerPaddingInline: 0 } } }}\n  >\n    <div style={{ padding: 32, background: '#e6e6e6' }}>\n      <InternalDrawer title=\"Hello Title\" style={{ height: 300 }} footer=\"Footer!\">\n        Hello Content\n      </InternalDrawer>\n    </div>\n  </ConfigProvider>\n);\n",
+      "sha256": "63df686ebd6b4eb4375ab6001466233b46b7111c23df01b4ca68daac114e8f5f",
+      "upstreamPath": "components/drawer/demo/component-token.tsx",
+      "upstreamSha256": "c436e1dfcabaf680f0853b0791e322eccc8891567fffa35f3ef230cfa82a196f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/config-provider.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useRef, useState } from 'react';\nimport { Button, ConfigProvider, Drawer } from 'antd';\n\nconst App: React.FC = () => {\n  const domRef = useRef<HTMLDivElement>(null);\n  const [open, setOpen] = useState(false);\n\n  const showDrawer = () => {\n    setOpen(true);\n  };\n\n  const onClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <ConfigProvider getPopupContainer={() => domRef.current!}>\n      <div ref={domRef} className=\"site-drawer-render-in-current-wrapper\">\n        <Button type=\"primary\" onClick={showDrawer}>\n          Open\n        </Button>\n        <Drawer\n          rootStyle={{ position: 'absolute' }}\n          title=\"ConfigProvider\"\n          placement=\"right\"\n          onClose={onClose}\n          open={open}\n        >\n          <p>Some contents...</p>\n          <p>Some contents...</p>\n          <p>Some contents...</p>\n        </Drawer>\n      </div>\n    </ConfigProvider>\n  );\n};\n\nexport default App;\n",
+      "sha256": "430dfc087221167eb6f005dd6cea59d1d879d5c15c75407020154400c8d0d820",
+      "upstreamPath": "components/drawer/demo/config-provider.tsx",
+      "upstreamSha256": "a35f043a972983e4125c61af2de58ec693eba89de080763a9e2a28648e616566",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/extra.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Button, Drawer, Radio, Space } from 'antd';\nimport type { DrawerProps, RadioChangeEvent } from 'antd';\n\nconst App: React.FC = () => {\n  const [open, setOpen] = useState(false);\n  const [placement, setPlacement] = useState<DrawerProps['placement']>('right');\n\n  const showDrawer = () => {\n    setOpen(true);\n  };\n\n  const onChange = (e: RadioChangeEvent) => {\n    setPlacement(e.target.value);\n  };\n\n  const onClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <>\n      <Space>\n        <Radio.Group value={placement} onChange={onChange}>\n          <Radio value=\"top\">top</Radio>\n          <Radio value=\"right\">right</Radio>\n          <Radio value=\"bottom\">bottom</Radio>\n          <Radio value=\"left\">left</Radio>\n        </Radio.Group>\n        <Button type=\"primary\" onClick={showDrawer}>\n          Open\n        </Button>\n      </Space>\n      <Drawer\n        title=\"Drawer with extra actions\"\n        placement={placement}\n        size={500}\n        onClose={onClose}\n        open={open}\n        extra={\n          <Space>\n            <Button onClick={onClose}>Cancel</Button>\n            <Button type=\"primary\" onClick={onClose}>\n              OK\n            </Button>\n          </Space>\n        }\n      >\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n      </Drawer>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "474ba332c9e904370dea557c410e922751a9ae942325b2b05ebb604a422be61a",
+      "upstreamPath": "components/drawer/demo/extra.tsx",
+      "upstreamSha256": "c45969ac407d33f2e5cb02ae23a5a2399beb21dc0ba7de6204dc0800cdb3513f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/form-in-drawer.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { PlusOutlined } from '@ant-design/icons';\nimport { Button, Col, DatePicker, Drawer, Form, Input, Row, Select, Space } from 'antd';\nimport type { InputProps } from 'antd';\n\nconst UrlInput: React.FC<InputProps> = (props) => {\n  return (\n    <Space.Compact>\n      <Space.Addon>http://</Space.Addon>\n      <Input style={{ width: '100%' }} {...props} />\n      <Space.Addon>.com</Space.Addon>\n    </Space.Compact>\n  );\n};\n\nconst App: React.FC = () => {\n  const [open, setOpen] = useState(false);\n\n  const showDrawer = () => {\n    setOpen(true);\n  };\n\n  const onClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <>\n      <Button type=\"primary\" onClick={showDrawer} icon={<PlusOutlined />}>\n        New account\n      </Button>\n      <Drawer\n        title=\"Create a new account\"\n        size={720}\n        onClose={onClose}\n        open={open}\n        styles={{\n          body: {\n            paddingBottom: 80,\n          },\n        }}\n        extra={\n          <Space>\n            <Button onClick={onClose}>Cancel</Button>\n            <Button onClick={onClose} type=\"primary\">\n              Submit\n            </Button>\n          </Space>\n        }\n      >\n        <Form layout=\"vertical\" requiredMark={false}>\n          <Row gutter={16}>\n            <Col span={12}>\n              <Form.Item\n                name=\"name\"\n                label=\"Name\"\n                rules={[{ required: true, message: 'Please enter user name' }]}\n              >\n                <Input placeholder=\"Please enter user name\" />\n              </Form.Item>\n            </Col>\n            <Col span={12}>\n              <Form.Item\n                name=\"url\"\n                label=\"Url\"\n                rules={[{ required: true, message: 'Please enter url' }]}\n              >\n                <UrlInput placeholder=\"Please enter url\" />\n              </Form.Item>\n            </Col>\n          </Row>\n          <Row gutter={16}>\n            <Col span={12}>\n              <Form.Item\n                name=\"owner\"\n                label=\"Owner\"\n                rules={[{ required: true, message: 'Please select an owner' }]}\n              >\n                <Select\n                  placeholder=\"Please select an owner\"\n                  options={[\n                    { label: 'Xiaoxiao Fu', value: 'xiao' },\n                    { label: 'Maomao Zhou', value: 'mao' },\n                  ]}\n                />\n              </Form.Item>\n            </Col>\n            <Col span={12}>\n              <Form.Item\n                name=\"type\"\n                label=\"Type\"\n                rules={[{ required: true, message: 'Please choose the type' }]}\n              >\n                <Select\n                  placeholder=\"Please choose the type\"\n                  options={[\n                    { label: 'private', value: 'private' },\n                    { label: 'public', value: 'public' },\n                  ]}\n                />\n              </Form.Item>\n            </Col>\n          </Row>\n          <Row gutter={16}>\n            <Col span={12}>\n              <Form.Item\n                name=\"approver\"\n                label=\"Approver\"\n                rules={[{ required: true, message: 'Please choose the approver' }]}\n              >\n                <Select\n                  placeholder=\"Please choose the approver\"\n                  options={[\n                    { label: 'Jack Ma', value: 'jack' },\n                    { label: 'Tom Liu', value: 'tom' },\n                  ]}\n                />\n              </Form.Item>\n            </Col>\n            <Col span={12}>\n              <Form.Item\n                name=\"dateTime\"\n                label=\"DateTime\"\n                rules={[{ required: true, message: 'Please choose the dateTime' }]}\n              >\n                <DatePicker.RangePicker\n                  style={{ width: '100%' }}\n                  getPopupContainer={(trigger) => trigger.parentElement!}\n                />\n              </Form.Item>\n            </Col>\n          </Row>\n          <Row gutter={16}>\n            <Col span={24}>\n              <Form.Item\n                name=\"description\"\n                label=\"Description\"\n                rules={[\n                  {\n                    required: true,\n                    message: 'please enter url description',\n                  },\n                ]}\n              >\n                <Input.TextArea rows={4} placeholder=\"please enter url description\" />\n              </Form.Item>\n            </Col>\n          </Row>\n        </Form>\n      </Drawer>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "6baebc623d4ec26b524314a2f41bb764eda3bce6778c4f8e1ff720a7faf95bb8",
+      "upstreamPath": "components/drawer/demo/form-in-drawer.tsx",
+      "upstreamSha256": "546b167fe10a5d311289c50261a0b49af8cfe428d040dda6180cf5c66b1287ac",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/loading.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Button, Drawer } from 'antd';\n\nconst App: React.FC = () => {\n  const [open, setOpen] = React.useState<boolean>(false);\n  const [loading, setLoading] = React.useState<boolean>(true);\n\n  const showLoading = () => {\n    setOpen(true);\n    setLoading(true);\n\n    // Simple loading mock. You should add cleanup logic in real world.\n    setTimeout(() => {\n      setLoading(false);\n    }, 2000);\n  };\n\n  return (\n    <>\n      <Button type=\"primary\" onClick={showLoading}>\n        Open Drawer\n      </Button>\n      <Drawer\n        closable\n        destroyOnHidden\n        title={<p>Loading Drawer</p>}\n        placement=\"right\"\n        open={open}\n        loading={loading}\n        onClose={() => setOpen(false)}\n      >\n        <Button type=\"primary\" style={{ marginBottom: 16 }} onClick={showLoading}>\n          Reload\n        </Button>\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n      </Drawer>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "a6a87aad481b1beb4e6099a2cb3bdb0d1312e787c6ba0be7c7e5502337398e02",
+      "upstreamPath": "components/drawer/demo/loading.tsx",
+      "upstreamSha256": "a9e588886ef63045fefecc84aacb8b571c69c99ebe668a7c0da8ca35676fd494",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/mask.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Button, Drawer, Space } from 'antd';\n\ntype MaskType = 'blur' | 'dimmed' | 'none';\ntype DrawerConfig = {\n  type: MaskType;\n  mask: boolean | { blur: boolean };\n  title: string;\n};\n\nconst drawerList: DrawerConfig[] = [\n  { type: 'blur', mask: { blur: true }, title: 'blur' },\n  { type: 'dimmed', mask: true, title: 'Dimmed mask' },\n  { type: 'none', mask: false, title: 'No mask' },\n];\nconst App: React.FC = () => {\n  const [open, setOpen] = useState<false | MaskType>(false);\n\n  const showDrawer = (type: MaskType) => {\n    setOpen(type);\n  };\n\n  const onClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <Space wrap>\n      {drawerList.map((item) => (\n        <React.Fragment key={item.type}>\n          <Button\n            onClick={() => {\n              showDrawer(item.type);\n            }}\n          >\n            {item.title}\n          </Button>\n          <Drawer\n            title={item.title}\n            placement=\"right\"\n            mask={item.mask}\n            onClose={onClose}\n            open={open === item.type}\n          >\n            <p>Some contents...</p>\n            <p>Some contents...</p>\n            <p>Some contents...</p>\n          </Drawer>\n        </React.Fragment>\n      ))}\n    </Space>\n  );\n};\n\nexport default App;\n",
+      "sha256": "6eb3596e7c9832564b68dfc889847277653cadf9145345a5750ac528c166901a",
+      "upstreamPath": "components/drawer/demo/mask.tsx",
+      "upstreamSha256": "190b0b22ac81ec63aff5df89a288ee96a7f88070dcac451ab6a1dd8f59a452a5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/multi-level-drawer.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Button, Drawer } from 'antd';\n\nconst App: React.FC = () => {\n  const [open, setOpen] = useState(false);\n  const [childrenDrawer, setChildrenDrawer] = useState(false);\n\n  const showDrawer = () => {\n    setOpen(true);\n  };\n\n  const onClose = () => {\n    setOpen(false);\n  };\n\n  const showChildrenDrawer = () => {\n    setChildrenDrawer(true);\n  };\n\n  const onChildrenDrawerClose = () => {\n    setChildrenDrawer(false);\n  };\n\n  return (\n    <>\n      <Button type=\"primary\" onClick={showDrawer}>\n        Open drawer\n      </Button>\n      <Drawer title=\"Multi-level drawer\" size={520} closable={false} onClose={onClose} open={open}>\n        <Button type=\"primary\" onClick={showChildrenDrawer}>\n          Two-level drawer\n        </Button>\n        <Drawer\n          title=\"Two-level Drawer\"\n          size={320}\n          closable={false}\n          onClose={onChildrenDrawerClose}\n          open={childrenDrawer}\n        >\n          This is two-level drawer\n        </Drawer>\n      </Drawer>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "8cbdc82858fd68208a88d7609930069badb0c1a92f619d852fe19b30d60d7abe",
+      "upstreamPath": "components/drawer/demo/multi-level-drawer.tsx",
+      "upstreamSha256": "50b2adc8dc81fe39c727cdf22fcfdbbff4a1d75bfc3d5c3683d362507bba3574",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/no-mask.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Button, Drawer } from 'antd';\n\nconst App: React.FC = () => {\n  const [open, setOpen] = useState(false);\n\n  const showDrawer = () => {\n    setOpen(true);\n  };\n\n  const onClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <>\n      <Button type=\"primary\" onClick={showDrawer}>\n        Open\n      </Button>\n      <Drawer\n        title=\"Drawer without mask\"\n        placement=\"right\"\n        mask={false}\n        onClose={onClose}\n        open={open}\n        styles={{\n          mask: {\n            width: 333,\n            background: 'red',\n            borderRadius: 20,\n            boxShadow: '-5px 0 5px green',\n            overflow: 'hidden',\n          },\n        }}\n      >\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n      </Drawer>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "bd44965bad400ac5a87d214879249012228cb6b926d4efa024077e774b7a193d",
+      "upstreamPath": "components/drawer/demo/no-mask.tsx",
+      "upstreamSha256": "123e507b0ece007d9b3b9d13a3931f0fd6ecdb7b22a9fbcb864a06a11fb14cbc",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/placement.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport type { DrawerProps, RadioChangeEvent } from 'antd';\nimport { Button, Drawer, Radio, Space } from 'antd';\n\nconst App: React.FC = () => {\n  const [open, setOpen] = useState(false);\n  const [placement, setPlacement] = useState<DrawerProps['placement']>('left');\n\n  const showDrawer = () => {\n    setOpen(true);\n  };\n\n  const onClose = () => {\n    setOpen(false);\n  };\n\n  const onChange = (e: RadioChangeEvent) => {\n    setPlacement(e.target.value);\n  };\n\n  return (\n    <>\n      <Space>\n        <Radio.Group value={placement} onChange={onChange}>\n          <Radio value=\"top\">top</Radio>\n          <Radio value=\"right\">right</Radio>\n          <Radio value=\"bottom\">bottom</Radio>\n          <Radio value=\"left\">left</Radio>\n        </Radio.Group>\n        <Button type=\"primary\" onClick={showDrawer}>\n          Open\n        </Button>\n      </Space>\n      <Drawer\n        title=\"Basic Drawer\"\n        placement={placement}\n        closable={false}\n        onClose={onClose}\n        open={open}\n        key={placement}\n      >\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n      </Drawer>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "5beb3186d1c8136b280d568114ddee0935187c8b85a9ca066ef46bd523745ad4",
+      "upstreamPath": "components/drawer/demo/placement.tsx",
+      "upstreamSha256": "ebd66088abd4c3541a9b6da7aa4f6e4b90b206aacf9ba15f7b3c61c843d72ac6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/render-in-current.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Button, Drawer, theme } from 'antd';\n\nconst App: React.FC = () => {\n  const { token } = theme.useToken();\n  const [open, setOpen] = useState(false);\n\n  const showDrawer = () => {\n    setOpen(true);\n  };\n\n  const onClose = () => {\n    setOpen(false);\n  };\n\n  const containerStyle: React.CSSProperties = {\n    position: 'relative',\n    height: 200,\n    padding: 48,\n    overflow: 'hidden',\n    background: token.colorFillAlter,\n    border: `${token.lineWidth}px ${token.lineType} ${token.colorBorderSecondary}`,\n    borderRadius: token.borderRadiusLG,\n  };\n\n  return (\n    <div style={containerStyle}>\n      Render in this\n      <div style={{ marginTop: 16 }}>\n        <Button type=\"primary\" onClick={showDrawer}>\n          Open\n        </Button>\n      </div>\n      <Drawer\n        title=\"Basic Drawer\"\n        placement=\"right\"\n        closable={false}\n        onClose={onClose}\n        open={open}\n        getContainer={false}\n      >\n        <p>Some contents...</p>\n      </Drawer>\n    </div>\n  );\n};\n\nexport default App;\n",
+      "sha256": "5db8386e644aecc0f1272ad487f89e4d2905255eaa3d02e817d67f23c4262ed9",
+      "upstreamPath": "components/drawer/demo/render-in-current.tsx",
+      "upstreamSha256": "1679f0b5c1d8a8e2cff7419cba12e6b25278b8875ba1692a72cb9c650a0193c8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/render-panel.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Drawer } from 'antd';\n\n/** Test usage. Do not use in your production. */\nconst { _InternalPanelDoNotUseOrYouWillBeFired: InternalDrawer } = Drawer;\n\nexport default () => (\n  <div style={{ padding: 32, background: '#e6e6e6' }}>\n    <InternalDrawer title=\"Hello Title\" style={{ height: 300 }} footer=\"Footer!\">\n      Hello Content\n    </InternalDrawer>\n  </div>\n);\n",
+      "sha256": "3fd7b74f755ca18a11370c1d48954a5b9249ed70f6702ec0ff81260bf932631e",
+      "upstreamPath": "components/drawer/demo/render-panel.tsx",
+      "upstreamSha256": "9973385a087ded83fe01c35d3c4b38f608b14d05c553794d2dd0c371c81c1af5",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/resizable.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport type { DrawerProps, RadioChangeEvent } from 'antd';\nimport { Button, Drawer, Radio, Space } from 'antd';\n\nconst App: React.FC = () => {\n  const [open, setOpen] = useState(false);\n  const [placement, setPlacement] = useState<DrawerProps['placement']>('right');\n  const [size, setSize] = useState(256);\n\n  const onChange = (e: RadioChangeEvent) => {\n    setSize(256);\n    setPlacement(e.target.value);\n  };\n\n  return (\n    <>\n      <Space style={{ marginBottom: 16 }}>\n        <Radio.Group\n          value={placement}\n          onChange={onChange}\n          options={['top', 'right', 'bottom', 'left'].map((pos) => ({\n            label: pos,\n            value: pos,\n          }))}\n        />\n        <Button type=\"primary\" onClick={() => setOpen(true)}>\n          Open Drawer\n        </Button>\n      </Space>\n      <div>Current size: {size}px</div>\n      <Drawer\n        title=\"Resizable Drawer\"\n        placement={placement}\n        onClose={() => setOpen(false)}\n        open={open}\n        key={placement}\n        size={size}\n        resizable={{\n          onResize: (newSize) => setSize(newSize),\n        }}\n      >\n        <p>Drag the edge to resize the drawer</p>\n        <p>Current size: {size}px</p>\n      </Drawer>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "795767ee35fb99b5aa75f5b7bb843ed5c5b14a34e8ae90b8bee5406c891ff418",
+      "upstreamPath": "components/drawer/demo/resizable.tsx",
+      "upstreamSha256": "3e0fe3a3a5b066943f5e36551f276a474527f6959be1ce27bd96fb2d13b81a4c",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/scroll-debug.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Drawer, Modal, Space, Switch } from 'antd';\n\nconst App: React.FC = () => {\n  const [drawer, setDrawer] = useState(false);\n  const [drawer2, setDrawer2] = useState(false);\n  const [modal, setModal] = useState(false);\n  const [modal2, setModal2] = useState(false);\n\n  return (\n    <div style={{ position: 'relative', zIndex: 999999 }}>\n      <Space>\n        <Switch\n          checkedChildren=\"Drawer\"\n          unCheckedChildren=\"Drawer\"\n          checked={drawer}\n          onChange={() => setDrawer(!drawer)}\n        />\n        <Switch\n          checkedChildren=\"Drawer2\"\n          unCheckedChildren=\"Drawer2\"\n          checked={drawer2}\n          onChange={() => setDrawer2(!drawer2)}\n        />\n        <Switch\n          checkedChildren=\"Modal\"\n          unCheckedChildren=\"Modal\"\n          checked={modal}\n          onChange={() => setModal(!modal)}\n        />\n        <Switch\n          checkedChildren=\"Modal2\"\n          unCheckedChildren=\"Modal2\"\n          checked={modal2}\n          onChange={() => setModal2(!modal2)}\n        />\n      </Space>\n      <Drawer title=\"Drawer\" open={drawer}>\n        Some contents...\n        <Drawer title=\"Drawer Sub\" open={drawer}>\n          Sub contents...\n        </Drawer>\n      </Drawer>\n      <Drawer title=\"Drawer2\" open={drawer2}>\n        Some contents...\n      </Drawer>\n      <Modal title=\"Modal\" open={modal}>\n        Some contents...\n      </Modal>\n      <Modal title=\"Modal2\" open={modal2}>\n        Some contents...\n      </Modal>\n    </div>\n  );\n};\n\nexport default App;\n",
+      "sha256": "833377244abb59596f83ae4209870c06bf10598e42c629815c69fae4df380300",
+      "upstreamPath": "components/drawer/demo/scroll-debug.tsx",
+      "upstreamSha256": "32d8c0a6c26b03e47f1352bd26dd83a35b8422da7f22f35d7e86edf2ace7c969",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/size.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Button, Drawer, Radio, Space } from 'antd';\nimport type { DrawerProps } from 'antd';\n\nconst App: React.FC = () => {\n  const [open, setOpen] = useState(false);\n  const [size, setSize] = useState<DrawerProps['size']>();\n\n  const onClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <>\n      <Space style={{ marginBottom: 16 }}>\n        <Radio.Group\n          value={size}\n          onChange={(e) => setSize(e.target.value)}\n          options={[\n            { label: 'Large Size (736px)', value: 'large' },\n            { label: 'Default Size (378px)', value: 'default' },\n            { label: 256, value: 256 },\n            { label: '500px', value: '500px' },\n            { label: '50%', value: '50%' },\n            { label: '20vw', value: '20vw' },\n          ]}\n        />\n      </Space>\n      <Button type=\"primary\" onClick={() => setOpen(true)}>\n        Open Drawer\n      </Button>\n      <Drawer\n        title={`${size} Drawer`}\n        placement=\"right\"\n        size={size}\n        onClose={onClose}\n        open={open}\n        extra={\n          <Space>\n            <Button onClick={onClose}>Cancel</Button>\n            <Button type=\"primary\" onClick={onClose}>\n              OK\n            </Button>\n          </Space>\n        }\n      >\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n        <p>Some contents...</p>\n      </Drawer>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "e40242cf57be0665431a71718467ecc8e5daa1b05017a4f817e1a3c51ffa5102",
+      "upstreamPath": "components/drawer/demo/size.tsx",
+      "upstreamSha256": "9b79203e077ea4f3f940e9d548544cbed3d7adb2537e08496e403b36a9158b63",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/style-class.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Button, Drawer, Flex } from 'antd';\nimport type { DrawerProps, GetProp } from 'antd';\nimport { createStaticStyles } from 'antd-style';\n\nconst lineStyle: React.CSSProperties = {\n  lineHeight: '28px',\n};\n\nconst sharedContent = (\n  <>\n    <div style={lineStyle}>\n      Following the Ant Design specification, we developed a React UI library antd that contains a\n      set of high quality components and demos for building rich, interactive user interfaces.\n    </div>\n    <div style={lineStyle}>🌈 Enterprise-class UI designed for web applications.</div>\n    <div style={lineStyle}>📦 A set of high-quality React components out of the box.</div>\n    <div style={lineStyle}>🛡 Written in TypeScript with predictable static types.</div>\n    <div style={lineStyle}>⚙️ Whole package of design resources and development tools.</div>\n    <div style={lineStyle}>🌍 Internationalization support for dozens of languages.</div>\n    <div style={lineStyle}>🎨 Powerful theme customization in every detail.</div>\n  </>\n);\n\nconst classNames = createStaticStyles(\n  ({ css }): NonNullable<GetProp<DrawerProps, 'classNames', 'Return'>> => ({\n    root: css`\n      border-radius: 10px;\n      padding: 10px;\n    `,\n  }),\n);\n\nconst styles: DrawerProps['styles'] = {\n  mask: {\n    backgroundImage: `linear-gradient(to top, #18181b 0, rgba(21, 21, 22, 0.2) 100%)`,\n  },\n};\n\nconst stylesFn: DrawerProps['styles'] = (info): GetProp<DrawerProps, 'styles', 'Return'> => {\n  if (info.props.footer) {\n    return {\n      header: {\n        padding: 16,\n      },\n      body: {\n        padding: 16,\n      },\n      footer: {\n        padding: '16px 10px',\n        backgroundColor: '#fafafa',\n      },\n    };\n  }\n};\n\nconst App: React.FC = () => {\n  const [drawerOpen, setDrawerOpen] = useState(false);\n  const [drawerFnOpen, setDrawerFnOpen] = useState(false);\n\n  const sharedProps: DrawerProps = {\n    classNames,\n    size: 500,\n  };\n\n  const footer: React.ReactNode = (\n    <Flex gap=\"medium\" justify=\"flex-end\">\n      <Button\n        onClick={() => setDrawerFnOpen(false)}\n        styles={{ root: { borderColor: '#ccc', color: '#171717', backgroundColor: '#fff' } }}\n      >\n        Cancel\n      </Button>\n      <Button\n        type=\"primary\"\n        styles={{ root: { backgroundColor: '#171717' } }}\n        onClick={() => setDrawerOpen(true)}\n      >\n        Submit\n      </Button>\n    </Flex>\n  );\n\n  return (\n    <Flex gap=\"medium\">\n      <Button onClick={() => setDrawerOpen(true)}>Open Style Drawer</Button>\n      <Button type=\"primary\" onClick={() => setDrawerFnOpen(true)}>\n        Open Function Drawer\n      </Button>\n      <Drawer\n        {...sharedProps}\n        footer={null}\n        title=\"Custom Style Drawer\"\n        styles={styles}\n        open={drawerOpen}\n        onClose={() => setDrawerOpen(false)}\n      >\n        {sharedContent}\n      </Drawer>\n      <Drawer\n        {...sharedProps}\n        footer={footer}\n        title=\"Custom Function drawer\"\n        styles={stylesFn}\n        mask={{ enabled: true, blur: true }}\n        open={drawerFnOpen}\n        onClose={() => setDrawerFnOpen(false)}\n      >\n        {sharedContent}\n      </Drawer>\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "fe95652a17cffa39369835e86775d9528f7b74b36baecbf646323122b414e081",
+      "upstreamPath": "components/drawer/demo/style-class.tsx",
+      "upstreamSha256": "4e86f19afe4dc34ae528275f40621a10983a94fc78687556aeaca96dfd823a20",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/drawer/demo/user-profile.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { Avatar, Col, Divider, Drawer, Flex, Listy, Row, Typography } from 'antd';\nimport { createStyles } from 'antd-style';\n\nconst useStyles = createStyles((props) => {\n  const { css, cssVar, prefixCls } = props;\n  return {\n    list: css`\n      border: ${cssVar.lineWidth} ${cssVar.lineType} ${cssVar.colorBorder};\n      border-radius: ${cssVar.borderRadiusLG};\n      overflow: hidden;\n      .${prefixCls}-listy-item:last-child {\n        border-bottom: none;\n      }\n    `,\n    descriptionItem: css`\n      margin-bottom: ${cssVar.marginXS};\n      color: ${cssVar.colorTextLabel};\n      font-size: ${cssVar.fontSize};\n      line-height: ${cssVar.lineHeight};\n    `,\n    profileTitle: css`\n      display: block;\n      margin-bottom: ${cssVar.margin};\n      color: ${cssVar.colorTextHeading};\n      font-size: ${cssVar.fontSizeLG};\n      line-height: ${cssVar.lineHeight};\n    `,\n    label: css`\n      display: inline-block;\n      margin-inline-end: ${cssVar.marginXS};\n      color: ${cssVar.colorTextHeading};\n    `,\n  };\n});\n\ninterface DescriptionItemProps {\n  title: string;\n  content: React.ReactNode;\n}\n\nconst DescriptionItem: React.FC<DescriptionItemProps> = (props) => {\n  const { title, content } = props;\n  const { styles } = useStyles();\n  return (\n    <div className={styles.descriptionItem}>\n      <p className={styles.label}>{title}:</p>\n      {content}\n    </div>\n  );\n};\n\nconst App: React.FC = () => {\n  const { styles } = useStyles();\n  const [open, setOpen] = useState(false);\n\n  const showDrawer = () => {\n    setOpen(true);\n  };\n\n  const onClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <>\n      <Listy\n        items={[\n          { id: 1, name: 'Lily' },\n          { id: 2, name: 'Lily' },\n        ]}\n        rowKey=\"id\"\n        className={styles.list}\n        itemRender={(item) => (\n          <Flex gap=\"middle\" align=\"center\">\n            <Avatar src=\"https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png\" />\n            <Flex vertical flex=\"auto\">\n              <a href=\"https://ant.design/index-cn\">{item.name}</a>\n              <Typography.Text type=\"secondary\">Progresser XTech</Typography.Text>\n            </Flex>\n            <a onClick={showDrawer}>View Profile</a>\n          </Flex>\n        )}\n      />\n      <Drawer size={640} placement=\"right\" closable={false} onClose={onClose} open={open}>\n        <p className={styles.profileTitle} style={{ marginBottom: 24 }}>\n          User Profile\n        </p>\n        <p className={styles.profileTitle}>Personal</p>\n        <Row>\n          <Col span={12}>\n            <DescriptionItem title=\"Full Name\" content=\"Lily\" />\n          </Col>\n          <Col span={12}>\n            <DescriptionItem title=\"Account\" content=\"AntDesign@example.com\" />\n          </Col>\n        </Row>\n        <Row>\n          <Col span={12}>\n            <DescriptionItem title=\"City\" content=\"HangZhou\" />\n          </Col>\n          <Col span={12}>\n            <DescriptionItem title=\"Country\" content=\"China🇨🇳\" />\n          </Col>\n        </Row>\n        <Row>\n          <Col span={12}>\n            <DescriptionItem title=\"Birthday\" content=\"February 2,1900\" />\n          </Col>\n          <Col span={12}>\n            <DescriptionItem title=\"Website\" content=\"-\" />\n          </Col>\n        </Row>\n        <Row>\n          <Col span={24}>\n            <DescriptionItem\n              title=\"Message\"\n              content=\"Make things as simple as possible but no simpler.\"\n            />\n          </Col>\n        </Row>\n        <Divider />\n        <p className={styles.profileTitle}>Company</p>\n        <Row>\n          <Col span={12}>\n            <DescriptionItem title=\"Position\" content=\"Programmer\" />\n          </Col>\n          <Col span={12}>\n            <DescriptionItem title=\"Responsibilities\" content=\"Coding\" />\n          </Col>\n        </Row>\n        <Row>\n          <Col span={12}>\n            <DescriptionItem title=\"Department\" content=\"XTech\" />\n          </Col>\n          <Col span={12}>\n            <DescriptionItem title=\"Supervisor\" content={<a>Lin</a>} />\n          </Col>\n        </Row>\n        <Row>\n          <Col span={24}>\n            <DescriptionItem\n              title=\"Skills\"\n              content=\"C / C + +, data structures, software engineering, operating systems, computer networks, databases, compiler theory, computer architecture, Microcomputer Principle and Interface Technology, Computer English, Java, ASP, etc.\"\n            />\n          </Col>\n        </Row>\n        <Divider />\n        <p className={styles.profileTitle}>Contacts</p>\n        <Row>\n          <Col span={12}>\n            <DescriptionItem title=\"Email\" content=\"AntDesign@example.com\" />\n          </Col>\n          <Col span={12}>\n            <DescriptionItem title=\"Phone Number\" content=\"+86 181 0000 0000\" />\n          </Col>\n        </Row>\n        <Row>\n          <Col span={24}>\n            <DescriptionItem\n              title=\"GitHub\"\n              content={\n                <a\n                  href=\"https://github.com/ant-design/ant-design\"\n                  target=\"_blank\"\n                  rel=\"noopener noreferrer\"\n                >\n                  github.com/ant-design/ant-design\n                </a>\n              }\n            />\n          </Col>\n        </Row>\n      </Drawer>\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "04867373ec8312307f91e00ba6ff912b073920340c305abeb00b2fbdc5645af2",
+      "upstreamPath": "components/drawer/demo/user-profile.tsx",
+      "upstreamSha256": "2ff7ec14f00f8adbbd960c42fa183a8e5a254c2c7b3e968a97e6b0e2d497efdf",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/basic-right\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2822285dd17ce96ff3636f80932b5f75d9206845f2ee70d8864af2fa3b4a56eb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/closable-placement.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/closable-placement\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "4bc2cfec8f2e164f6df0336555d113e0768f2070ab867e050c47b49750759350",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/component-token.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/component-token\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "56b228495c64142e61cdf1a8744d1e2d64af3969bb1417c61e07f56c8bd6eedd",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/config-provider.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/config-provider\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "be4b193eefc1ed8df8008f4da37086c11efa3fdfc2c4d52499684f4cee5f318f",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/extra.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/extra\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2e83f29e9947d67cae2289fd77250022867c4f7cd36e4f90a028653767170be1",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/form-in-drawer.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/form-in-drawer\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "49bbb2c847df853bfe06af3c624e8e0f94262d0b055697a947df832eae735827",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/loading.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/loading\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "4d2ecbd03e922829a1d462da933bacf3685eaa7a89230451028ff05eddfce6e6",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/mask.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/mask\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "37e75778e0d504a9f914e5c253510d877ebe2a29db1829882d98749be2e66c7a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/multi-level-drawer.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/multi-level-drawer\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "a7dc120f34fa380b087e85b9da5a6423a1e103bd68f3b24012e70f035099b970",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/no-mask.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/no-mask\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "c30ba8059c11e9618f90458faeb071b19ad3b50f43ebdc6ebab163cec8418392",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/placement.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/placement\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "7a430fba32efd6b18cd3df86434caf7051eff4225b0f74fc1035b047f80ce6d2",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/render-in-current.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/render-in-current\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "5273477a7c50eb2af00b3b798c2ba3e0713026edeea2611a08045097f7b290b5",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/render-panel.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/render-panel\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "bc471a38159d3894286e0d574da9e32a0320cdbdf231c7eae284514c69204831",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/resizable.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/resizable\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "9635dacef1174ada9b9609e198433dc8eeb4a8320f276d4075d1fc780c6112ed",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/scroll-debug.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/scroll-debug\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "407891fcdf15f9898bb1bd335dc097891541d2769a0e3b1866ac787cec45373b",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/size\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "f3cf737e5d0c4f2dbb35552ac409252b2717b7baf1f1ac25c3caa29aa55c2d11",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/style-class.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/style-class\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "c7e52e853bfb78ecf5bf4130817426fa51b5a6a9e86cf3e9cfc85531c6423878",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/drawer/previews/user-profile.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/drawer/demo/user-profile\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "e2187a572964216e3312a98e144df964dd4270eb4acac1bb5f052f915b08622a",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example compositions using the pinned antd npm package.",
+      "Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "drawer",
+    "upstreamPageUrl": "https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/drawer/demo",
+    "upstreamDetailUrl": "https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/drawer/demo/basic-right.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/ant-design/ant-design/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/drawer/demo/basic-right.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Ant Design drawer\n\n18 published Ant Design drawer examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example compositions using the pinned antd npm package.\n- Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/drawer/demo\nPinned source: https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/drawer/demo/basic-right.tsx\n"
+}

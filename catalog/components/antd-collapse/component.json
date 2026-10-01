@@ -1,0 +1,289 @@
+{
+  "id": "antd:collapse",
+  "sourceId": "antd",
+  "slug": "antd-collapse",
+  "name": "Ant Design collapse",
+  "description": "13 published Ant Design collapse examples with complete pinned source and MIT attribution.",
+  "category": "blocks",
+  "publishedAt": "2026-09-30",
+  "updatedAt": "2026-09-30",
+  "dependencies": [
+    "@ant-design/icons@6.3.4",
+    "antd@6.6.5",
+    "antd-style@4.1.0"
+  ],
+  "internalDependencies": [],
+  "metadata": {
+    "kind": "block",
+    "family": "collapse",
+    "tags": [
+      "accordion",
+      "file",
+      "form"
+    ],
+    "aliases": [
+      "collapse",
+      "ant design collapse"
+    ],
+    "interactions": [],
+    "useWhen": [
+      "13 published Ant Design collapse examples with complete pinned source and MIT attribution."
+    ],
+    "notIdealWhen": [
+      "You need only a low-level primitive rather than a composed product pattern."
+    ],
+    "visualSignature": "collapse:accordion:file:form",
+    "searchText": "Ant Design collapse\ncollapse\n13 published Ant Design collapse examples with complete pinned source and MIT attribution.\nant design collapse\naccordion\nfile\nform\nAnt Design collapse 13 published Ant Design collapse examples with complete pinned source and MIT attribution. Installation Complete MIT example compositions using the pinned antd npm package. Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend. Copy every returned file and preserve the MIT licence notice. Render the returned preview.tsx example, or integrate the example into your existing provider. Upstream: https://github.com/ant design/ant design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/collapse/demo Pinned source: https://github.com/ant design/ant design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/collapse/demo/accordion.tsx"
+  },
+  "previewPath": "/preview/blocks/antd-collapse",
+  "manifestPath": "components/antd-collapse/component.json",
+  "integrity": "sha256:17cd5f0d1f76047e35e2aff65d0cec9f045026963c83cfae12faed9484934c57",
+  "source": {
+    "id": "antd",
+    "name": "Ant Design",
+    "repository": "https://github.com/ant-design/ant-design",
+    "commit": "bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a",
+    "registrySha256": "7df4386dc63323dd6235edee9c52694b28d573a6d2765ac59719a52e1c259ab0",
+    "importedAt": "2026-10-01T09:26:58.166Z",
+    "license": {
+      "spdx": "MIT",
+      "copyright": "Copyright (c) 2015-present Ant UED, https://xtech.antfin.com/",
+      "textPath": "source/antd/LICENSE"
+    }
+  },
+  "files": [
+    {
+      "path": "components/rendyn-libraries/antd/upstream/collapse/demo/accordion.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { CollapseProps } from 'antd';\nimport { Collapse } from 'antd';\n\nconst text = `\n  A dog is a type of domesticated animal.\n  Known for its loyalty and faithfulness,\n  it can be found as a welcome guest in many households across the world.\n`;\n\nconst items: CollapseProps['items'] = [\n  {\n    key: '1',\n    label: 'This is panel header 1',\n    children: <p>{text}</p>,\n  },\n  {\n    key: '2',\n    label: 'This is panel header 2',\n    children: <p>{text}</p>,\n  },\n  {\n    key: '3',\n    label: 'This is panel header 3',\n    children: <p>{text}</p>,\n  },\n];\n\nconst App: React.FC = () => <Collapse accordion items={items} />;\n\nexport default App;\n",
+      "sha256": "89e2ec8f8f434a06eab94fb61d5d8d648e9a34cc1e06942d77488a3ec19d18fa",
+      "upstreamPath": "components/collapse/demo/accordion.tsx",
+      "upstreamSha256": "9e7ee13f75f88de8577605a501794e8db0ff3f502e43bf7300253a18ac40bfc6",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/collapse/demo/basic.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { CollapseProps } from 'antd';\nimport { Collapse } from 'antd';\n\nconst text = `\n  A dog is a type of domesticated animal.\n  Known for its loyalty and faithfulness,\n  it can be found as a welcome guest in many households across the world.\n`;\n\nconst items: CollapseProps['items'] = [\n  {\n    key: '1',\n    label: 'This is panel header 1',\n    children: <p>{text}</p>,\n  },\n  {\n    key: '2',\n    label: 'This is panel header 2',\n    children: <p>{text}</p>,\n  },\n  {\n    key: '3',\n    label: 'This is panel header 3',\n    children: <p>{text}</p>,\n  },\n];\n\nconst App: React.FC = () => {\n  const onChange = (key: string | string[]) => {\n    console.log(key);\n  };\n\n  return <Collapse items={items} defaultActiveKey={['1']} onChange={onChange} />;\n};\n\nexport default App;\n",
+      "sha256": "cb6cd5f46173766ce8271a98ca0e7a522c05f384012a5e7874171a4e884ee62a",
+      "upstreamPath": "components/collapse/demo/basic.tsx",
+      "upstreamSha256": "30addb9f6aa854c243223878a7b5f3205ccbf7b305b3d60d9655682c8216200b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/collapse/demo/borderless.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { CollapseProps } from 'antd';\nimport { Collapse } from 'antd';\n\nconst text = (\n  <p style={{ paddingInlineStart: 24 }}>\n    A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found\n    as a welcome guest in many households across the world.\n  </p>\n);\n\nconst items: CollapseProps['items'] = [\n  {\n    key: '1',\n    label: 'This is panel header 1',\n    children: text,\n  },\n  {\n    key: '2',\n    label: 'This is panel header 2',\n    children: text,\n  },\n  {\n    key: '3',\n    label: 'This is panel header 3',\n    children: text,\n  },\n];\n\nconst App: React.FC = () => <Collapse items={items} bordered={false} defaultActiveKey={['1']} />;\n\nexport default App;\n",
+      "sha256": "c99ae648d67d32c6020a671332c429e21ab39a56a123b7373306bfd22c74c6ef",
+      "upstreamPath": "components/collapse/demo/borderless.tsx",
+      "upstreamSha256": "462b25c133eb61f25f715b5dd99bcb6970f8cab0dd3303a6ab428d3fb393025b",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/collapse/demo/collapsible.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Collapse, Space } from 'antd';\nimport { createStyles } from 'antd-style';\n\nconst text = `\n  A dog is a type of domesticated animal.\n  Known for its loyalty and faithfulness,\n  it can be found as a welcome guest in many households across the world.\n`;\n\nconst useStyles = createStyles((props) => {\n  const { css } = props;\n  return {\n    content: css`\n      width: 100%;\n    `,\n  };\n});\n\nconst App: React.FC = () => {\n  const { styles } = useStyles();\n  return (\n    <Space className={styles.content} vertical>\n      <Collapse\n        collapsible=\"header\"\n        defaultActiveKey={['1']}\n        items={[\n          {\n            key: '1',\n            label: 'This panel can be collapsed by clicking text or icon',\n            children: <p>{text}</p>,\n          },\n        ]}\n      />\n      <Collapse\n        collapsible=\"icon\"\n        defaultActiveKey={['1']}\n        items={[\n          {\n            key: '1',\n            label: 'This panel can only be collapsed by clicking icon',\n            children: <p>{text}</p>,\n          },\n        ]}\n      />\n      <Collapse\n        collapsible=\"disabled\"\n        items={[\n          {\n            key: '1',\n            label: \"This panel can't be collapsed\",\n            children: <p>{text}</p>,\n          },\n        ]}\n      />\n    </Space>\n  );\n};\n\nexport default App;\n",
+      "sha256": "11afb731979785a91cf37156a0c7b6eaa8a4482c286945fbcb6cc71b78b7c9fe",
+      "upstreamPath": "components/collapse/demo/collapsible.tsx",
+      "upstreamSha256": "7de8e57307cc9af28e7b97d61bcfd568728ac2cab873a413d9dfefc82b9e846e",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/collapse/demo/component-token.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Collapse, ConfigProvider } from 'antd';\n/** Test usage. Do not use in your production. */\nimport type { CollapseProps } from 'antd';\n\nconst text = `Ant Design! `.repeat(26);\n\nconst items: CollapseProps['items'] = [\n  { key: '1', label: `This is panel header 1, (${text})`, children: text },\n  { key: '2', label: `This is panel header 2, (${text})`, children: text },\n  { key: '3', label: `This is panel header 3, (${text})`, children: text },\n];\n\nexport default () => (\n  <ConfigProvider\n    theme={{\n      components: {\n        Collapse: {\n          headerPadding: '0px 10px 20px 30px',\n          headerBg: '#eaeeff',\n          contentPadding: '0px 10px 20px 30px',\n          contentBg: '#e6f7ff',\n        },\n      },\n    }}\n  >\n    <Collapse items={items} />\n  </ConfigProvider>\n);\n",
+      "sha256": "2fbe7fd54d288ece4d8672204e9864d02aa0a7b21be040b74fd9c82427d5f2e8",
+      "upstreamPath": "components/collapse/demo/component-token.tsx",
+      "upstreamSha256": "82cc94fdd65f6b47b980e26ef4ea682cd7d3d4b195f3fb5ed4f8f3048503e3b1",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/collapse/demo/custom.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport type { CSSProperties } from 'react';\nimport React from 'react';\nimport { CaretRightOutlined } from '@ant-design/icons';\nimport type { CollapseProps } from 'antd';\nimport { Collapse, theme } from 'antd';\n\nconst text = `\n  A dog is a type of domesticated animal.\n  Known for its loyalty and faithfulness,\n  it can be found as a welcome guest in many households across the world.\n`;\n\nconst getItems: (panelStyle: CSSProperties) => CollapseProps['items'] = (panelStyle) => [\n  {\n    key: '1',\n    label: 'This is panel header 1',\n    children: <p>{text}</p>,\n    style: panelStyle,\n  },\n  {\n    key: '2',\n    label: 'This is panel header 2',\n    children: <p>{text}</p>,\n    style: panelStyle,\n  },\n  {\n    key: '3',\n    label: 'This is panel header 3',\n    children: <p>{text}</p>,\n    style: panelStyle,\n  },\n];\n\nconst App: React.FC = () => {\n  const { token } = theme.useToken();\n\n  const panelStyle: React.CSSProperties = {\n    marginBottom: 24,\n    background: token.colorFillAlter,\n    borderRadius: token.borderRadiusLG,\n    border: 'none',\n  };\n\n  return (\n    <Collapse\n      bordered={false}\n      defaultActiveKey={['1']}\n      expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}\n      style={{ background: token.colorBgContainer }}\n      items={getItems(panelStyle)}\n    />\n  );\n};\n\nexport default App;\n",
+      "sha256": "7dc7ece6e8da9c470c6ac58729af3ff54e5a35ab73e4009a48fcb0cee0791f3e",
+      "upstreamPath": "components/collapse/demo/custom.tsx",
+      "upstreamSha256": "28a760fea747905d6381451ee14db3455a037cb5ba87b82af2a47fd16aede0d4",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/collapse/demo/extra.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React, { useState } from 'react';\nimport { SettingOutlined } from '@ant-design/icons';\nimport type { CollapseProps } from 'antd';\nimport { Collapse, Select } from 'antd';\n\nconst text = `\n  A dog is a type of domesticated animal.\n  Known for its loyalty and faithfulness,\n  it can be found as a welcome guest in many households across the world.\n`;\n\nconst App: React.FC = () => {\n  const [expandIconPlacement, setExpandIconPlacement] =\n    useState<CollapseProps['expandIconPlacement']>('start');\n\n  const onPlacementChange = (newExpandIconPlacement: CollapseProps['expandIconPlacement']) => {\n    setExpandIconPlacement(newExpandIconPlacement);\n  };\n\n  const onChange = (key: string | string[]) => {\n    console.log(key);\n  };\n\n  const genExtra = () => (\n    <SettingOutlined\n      onClick={(event) => {\n        // If you don't want click extra trigger collapse, you can prevent this:\n        event.stopPropagation();\n      }}\n    />\n  );\n\n  const items: CollapseProps['items'] = [\n    {\n      key: '1',\n      label: 'This is panel header 1',\n      children: <div>{text}</div>,\n      extra: genExtra(),\n    },\n    {\n      key: '2',\n      label: 'This is panel header 2',\n      children: <div>{text}</div>,\n      extra: genExtra(),\n    },\n    {\n      key: '3',\n      label: 'This is panel header 3',\n      children: <div>{text}</div>,\n      extra: genExtra(),\n    },\n  ];\n\n  return (\n    <>\n      <Collapse\n        defaultActiveKey={['1']}\n        onChange={onChange}\n        expandIconPlacement={expandIconPlacement}\n        items={items}\n      />\n      <br />\n      <span>Expand Icon Placement: </span>\n      <Select\n        value={expandIconPlacement}\n        style={{ margin: '0 8px' }}\n        onChange={onPlacementChange}\n        options={[\n          { label: 'start', value: 'start' },\n          { label: 'end', value: 'end' },\n        ]}\n      />\n    </>\n  );\n};\n\nexport default App;\n",
+      "sha256": "d2ca124c32ea169558bcdb7d82ba1d222d69590facaa15004953ecee8e313ee3",
+      "upstreamPath": "components/collapse/demo/extra.tsx",
+      "upstreamSha256": "b0ec2768355c87429ca9d762b2274319a1c49c31f122d49b91acde7f2ecbdd58",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/collapse/demo/ghost.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { CollapseProps } from 'antd';\nimport { Collapse } from 'antd';\n\nconst text = `\n  A dog is a type of domesticated animal.\n  Known for its loyalty and faithfulness,\n  it can be found as a welcome guest in many households across the world.\n`;\n\nconst items: CollapseProps['items'] = [\n  {\n    key: '1',\n    label: 'This is panel header 1',\n    children: <p>{text}</p>,\n  },\n  {\n    key: '2',\n    label: 'This is panel header 2',\n    children: <p>{text}</p>,\n  },\n  {\n    key: '3',\n    label: 'This is panel header 3',\n    children: <p>{text}</p>,\n  },\n];\n\nconst App: React.FC = () => <Collapse defaultActiveKey={['1']} ghost items={items} />;\n\nexport default App;\n",
+      "sha256": "b1ef914daabb82bfad2bc1feadfe68cf7ee477cbb0b96cf4fe8f5bc404fa6751",
+      "upstreamPath": "components/collapse/demo/ghost.tsx",
+      "upstreamSha256": "cd7127389084189e4d5332cd6fd53dc574a0702dc12df85a43a726b1fdeeb19f",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/collapse/demo/icon.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { SmileOutlined } from '@ant-design/icons';\nimport type { CollapseProps } from 'antd';\nimport { Collapse } from 'antd';\n\n// Icons from third-party libraries (e.g. lucide, react-icons) render as a bare `<svg>`\n// rather than an `.anticon` wrapper. It stays vertically centred with the title text.\nconst ChartIcon: React.FC = () => (\n  <svg\n    viewBox=\"0 0 24 24\"\n    width=\"1em\"\n    height=\"1em\"\n    fill=\"none\"\n    stroke=\"currentColor\"\n    strokeWidth={2}\n    aria-hidden=\"true\"\n  >\n    <path d=\"M3 3v18h18\" />\n    <path d=\"M7 14l4-4 3 3 5-6\" />\n  </svg>\n);\n\nconst text = `\n  A dog is a type of domesticated animal.\n  Known for its loyalty and faithfulness,\n  it can be found as a welcome guest in many households across the world.\n`;\n\nconst items: CollapseProps['items'] = [\n  {\n    key: '1',\n    label: (\n      <>\n        <SmileOutlined /> Panel with an Ant Design icon\n      </>\n    ),\n    children: <p>{text}</p>,\n  },\n  {\n    key: '2',\n    label: (\n      <>\n        <ChartIcon /> Panel with a third-party icon\n      </>\n    ),\n    children: <p>{text}</p>,\n  },\n];\n\nconst App: React.FC = () => <Collapse defaultActiveKey={['1']} items={items} />;\n\nexport default App;\n",
+      "sha256": "c96bd90593053da85dfe13b15cdb022612b252600923322eb65c83562eb4baab",
+      "upstreamPath": "components/collapse/demo/icon.tsx",
+      "upstreamSha256": "9582bea89c4b2abfedbdbee8040eca8b5660a4d3502d8093e3647f1fb2fc8da8",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/collapse/demo/mix.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { CollapseProps } from 'antd';\nimport { Collapse } from 'antd';\n\nconst text = `\n  A dog is a type of domesticated animal.\n  Known for its loyalty and faithfulness,\n  it can be found as a welcome guest in many households across the world.\n`;\n\nconst itemsNest: CollapseProps['items'] = [\n  {\n    key: '1',\n    label: 'This is panel nest panel',\n    children: <p>{text}</p>,\n  },\n];\n\nconst items: CollapseProps['items'] = [\n  {\n    key: '1',\n    label: 'This is panel header 1',\n    children: <Collapse defaultActiveKey=\"1\" items={itemsNest} />,\n  },\n  {\n    key: '2',\n    label: 'This is panel header 2',\n    children: <p>{text}</p>,\n  },\n  {\n    key: '3',\n    label: 'This is panel header 3',\n    children: <p>{text}</p>,\n  },\n];\n\nconst App: React.FC = () => {\n  const onChange = (key: string | string[]) => {\n    console.log(key);\n  };\n\n  return <Collapse onChange={onChange} items={items} />;\n};\n\nexport default App;\n",
+      "sha256": "7eadbb8a30c10f950ff28a31d82388efc949ca48f817f817cb7a193453a39e30",
+      "upstreamPath": "components/collapse/demo/mix.tsx",
+      "upstreamSha256": "0eaf4d2fa2f937bad0f36b8ddcdad3df9fc322c9f65fc8e50ed88df8558a67ce",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/collapse/demo/noarrow.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { CollapseProps } from 'antd';\nimport { Collapse } from 'antd';\n\nconst text = `\n  A dog is a type of domesticated animal.\n  Known for its loyalty and faithfulness,\n  it can be found as a welcome guest in many households across the world.\n`;\n\nconst items: CollapseProps['items'] = [\n  {\n    key: '1',\n    label: 'This is panel header with arrow icon',\n    children: <p>{text}</p>,\n  },\n  {\n    key: '2',\n    label: 'This is panel header with no arrow icon',\n    children: <p>{text}</p>,\n    showArrow: false,\n  },\n];\n\nconst App: React.FC = () => {\n  const onChange = (key: string | string[]) => {\n    console.log(key);\n  };\n\n  return <Collapse defaultActiveKey={['1']} onChange={onChange} items={items} />;\n};\n\nexport default App;\n",
+      "sha256": "6cb7153da62833f54d3c13f8d94e28aab6194b363d4ce4689547b35ed1b24d0d",
+      "upstreamPath": "components/collapse/demo/noarrow.tsx",
+      "upstreamSha256": "e2963205070c4340ecf006611b2626d8cd4a89e0ba2d390ebac00d182f6c8aa2",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/collapse/demo/size.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport { Collapse, Divider } from 'antd';\n\nconst text = `\n  A dog is a type of domesticated animal.\n  Known for its loyalty and faithfulness,\n  it can be found as a welcome guest in many households across the world.\n`;\n\nconst App: React.FC = () => (\n  <>\n    <Divider titlePlacement=\"start\">Medium Size</Divider>\n    <Collapse\n      items={[{ key: '1', label: 'This is medium size panel header', children: <p>{text}</p> }]}\n    />\n    <Divider titlePlacement=\"start\">Small Size</Divider>\n    <Collapse\n      size=\"small\"\n      items={[{ key: '1', label: 'This is small size panel header', children: <p>{text}</p> }]}\n    />\n    <Divider titlePlacement=\"start\">Large Size</Divider>\n    <Collapse\n      size=\"large\"\n      items={[{ key: '1', label: 'This is large size panel header', children: <p>{text}</p> }]}\n    />\n  </>\n);\n\nexport default App;\n",
+      "sha256": "e88a3d6eda96dc17667bbf18cfa5468d87a0f9903b4e20ddaf3443d19b429ac1",
+      "upstreamPath": "components/collapse/demo/size.tsx",
+      "upstreamSha256": "813f987d0bbf1a3781fa8a9406349b19c23a6ee9cc1772c573433fc8ebd09027",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/upstream/collapse/demo/style-class.tsx",
+      "type": "component",
+      "content": "\"use client\";\n\nimport React from 'react';\nimport type { CollapseProps, GetProp } from 'antd';\nimport { Collapse, Flex } from 'antd';\nimport { createStaticStyles } from 'antd-style';\n\nconst classNames = createStaticStyles(({ css }) => ({\n  root: css`\n    background-color: #fafafa;\n    border: 1px solid #e0e0e0;\n    border-radius: 8px;\n  `,\n}));\n\nconst element = (\n  <p>\n    A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found\n    as a welcome guest in many households across the world.\n  </p>\n);\n\nconst items: CollapseProps['items'] = [\n  {\n    key: '1',\n    label: 'This is panel header 1',\n    children: element,\n  },\n  {\n    key: '2',\n    label: 'This is panel header 2',\n    children: element,\n  },\n  {\n    key: '3',\n    label: 'This is panel header 3',\n    children: element,\n  },\n];\n\nconst styles: CollapseProps['styles'] = {\n  root: {\n    backgroundColor: '#fafafa',\n    border: '1px solid #e0e0e0',\n    borderRadius: 8,\n  },\n  header: {\n    backgroundColor: '#f0f0f0',\n    padding: '12px 16px',\n    color: '#141414',\n  },\n};\n\nconst stylesFn: CollapseProps['styles'] = ({\n  props,\n}): GetProp<CollapseProps, 'styles', 'Return'> => {\n  if (props.size === 'large') {\n    return {\n      root: {\n        backgroundColor: '#fff',\n        border: '1px solid #696FC7',\n        borderRadius: 8,\n      },\n      header: {\n        backgroundColor: '#F5EFFF',\n        padding: '12px 16px',\n        color: '#141414',\n      },\n    };\n  }\n};\n\nconst App: React.FC = () => {\n  const sharedProps: CollapseProps = { classNames, items };\n\n  return (\n    <Flex vertical gap=\"medium\">\n      <Collapse {...sharedProps} defaultActiveKey={['1']} styles={styles} />\n      <Collapse {...sharedProps} defaultActiveKey={['2']} styles={stylesFn} size=\"large\" />\n    </Flex>\n  );\n};\n\nexport default App;\n",
+      "sha256": "207a8fa723c4ad273cc888f4466d39839eebea7b676c6dbbafab64ef00d6e756",
+      "upstreamPath": "components/collapse/demo/style-class.tsx",
+      "upstreamSha256": "01a17327c57b7b85f1e3a0d50b270f582b7e19882f81e3d7f67bbacaf822c068",
+      "transformation": "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/collapse/preview.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/collapse/demo/accordion\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "6ed28e9ac375419a2c804da5800a8baf043d8f8c988fa470788cc9c8fcf89b2a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/collapse/previews/basic.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/collapse/demo/basic\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "ee585619ed633a543265f968b9b4076458012445b2672a8ea089ffba3fee7207",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/collapse/previews/borderless.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/collapse/demo/borderless\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "b7b137e10e91685efe839341e27e3b6a7599568ec578718ca9dc54717f664afa",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/collapse/previews/collapsible.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/collapse/demo/collapsible\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "bfe89b31b33600a13b7db46ec1de9a81656b0609e48fe948ff8240797e6a7d5a",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/collapse/previews/component-token.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/collapse/demo/component-token\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2f68181bf2631b4c050dd4c7c1dc2e510ff0e7765dcab7630d90324c638e6309",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/collapse/previews/custom.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/collapse/demo/custom\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "3d2c4f7d14ca94e97690c1865a5c315abb3ab762170986144585fb51bd7ba1bd",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/collapse/previews/extra.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/collapse/demo/extra\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "ca472666fb0bf39d0e5796f105fbc80885f2811857da97df39911954e7b3237d",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/collapse/previews/ghost.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/collapse/demo/ghost\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "d314c354441223981527ce87acda1ded8622c2461f5adccc54c8f967eda5dc07",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/collapse/previews/icon.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/collapse/demo/icon\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "300883c087de763593d04b94b52e87c1b6228640c46e1f3e8c6041a270d34a64",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/collapse/previews/mix.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/collapse/demo/mix\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "8fff637e927681061fbb7270913971bde5a9a55b14a4439542542f94375c35eb",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/collapse/previews/noarrow.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/collapse/demo/noarrow\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "2655c86cb00deb334a57556bb85abdb86d6f8fd643a122a1a8d14f19ccd55f99",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/collapse/previews/size.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/collapse/demo/size\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "65f32fce5a025f4918993a9a3f0aae92fc6bdf2e888472bc801c7ad5faa8b2f3",
+      "transformation": "Authored standalone provider and layout composition."
+    },
+    {
+      "path": "components/rendyn-libraries/antd/collapse/previews/style-class.tsx",
+      "type": "preview",
+      "content": "\"use client\";\n\nimport Example from \"@/components/rendyn-libraries/antd/upstream/collapse/demo/style-class\";\n\nexport default function Preview() {\n  \n  return <div style={{ width: \"100%\", maxWidth: \"48rem\", padding: \"1.5rem\" }}><Example /></div>;\n}\n",
+      "sha256": "dc136f232b38e845c5a84002f65103e22843949f1767a1070d3008b5669d87a7",
+      "transformation": "Authored standalone provider and layout composition."
+    }
+  ],
+  "install": {
+    "packageManager": "pnpm",
+    "dependencyCommand": "pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+    "registryDependencyCommand": null,
+    "stylePaths": [],
+    "instructions": [
+      "Install external packages: pnpm add @ant-design/icons@6.3.4 antd@6.6.5 antd-style@4.1.0",
+      "Copy every returned file to its stated project-relative path.",
+      "Preserve the MIT copyright and permission notice in your product notices.",
+      "Review imports beginning with @/ and map them to your project alias if it differs.",
+      "Complete MIT example compositions using the pinned antd npm package.",
+      "Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend."
+    ]
+  },
+  "provenance": {
+    "upstreamSlug": "collapse",
+    "upstreamPageUrl": "https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/collapse/demo",
+    "upstreamDetailUrl": "https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/collapse/demo/accordion.tsx",
+    "upstreamMarkdownUrl": "https://raw.githubusercontent.com/ant-design/ant-design/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/collapse/demo/accordion.tsx",
+    "transformations": [
+      "Pinned copy; exact import rewrites recorded in source/antd/PROVENANCE.json.",
+      "Authored standalone provider and layout composition."
+    ]
+  },
+  "documentation": "# Ant Design collapse\n\n13 published Ant Design collapse examples with complete pinned source and MIT attribution.\n\n## Installation\n\n- Complete MIT example compositions using the pinned antd npm package.\n- Ant Design supplies component styling at runtime. Add application validation and persistence when wiring form controls to your backend.\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: https://github.com/ant-design/ant-design/tree/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/collapse/demo\nPinned source: https://github.com/ant-design/ant-design/blob/bde03c864b2e9feb7f86f86d8a4b4451f8aefa6a/components/collapse/demo/accordion.tsx\n"
+}
