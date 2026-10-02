@@ -1,4 +1,7 @@
 import '../globals.css';
+import { isFreeAccessActive, FREE_ACCESS_END_LABEL } from '../../../../packages/catalog/src/free-access';
+
+export const dynamic = 'force-dynamic';
 import { pageMetadata } from '../../lib/seo';
 import styles from './pricing.module.css';
 import type { Metadata } from 'next';
@@ -7,11 +10,15 @@ import PricingPlans from './pricing-plans';
 import { SiteHeader } from '../components/site-header';
 import { SiteFooter } from '../components/site-footer';
 
-export const metadata: Metadata = pageMetadata(
-  'Pricing for React Components & MCP Access | Rendyn',
-  'Explore Rendyn Pro and Team plans. Start a 7-day trial for React component source and MCP access, then choose monthly or yearly billing.',
-  '/pricing',
-);
+export function generateMetadata(): Metadata {
+  return pageMetadata(
+    'Pricing for React Components & MCP Access | Rendyn',
+    isFreeAccessActive()
+      ? `All Rendyn components, source code and MCP access are free until ${FREE_ACCESS_END_LABEL}. Log in to get started, with no card required.`
+      : 'Explore Rendyn Pro and Team plans. Start a 7-day trial for component source and MCP access, then choose monthly or yearly billing.',
+    '/pricing',
+  );
+}
 
 const trustedAgents = [
   { name: 'Codex', logo: '/agent-logos/codex.svg' },
@@ -160,11 +167,12 @@ const pricingErrors: Record<string, string> = {
 };
 
 export default async function PricingPage({ searchParams }: PricingPageProps) {
+  const freeAccess = isFreeAccessActive();
   const query = await searchParams;
   const errorCode = Array.isArray(query.error) ? query.error[0] : query.error;
   const message = errorCode ? pricingErrors[errorCode] : null;
   const nextValue = Array.isArray(query.next) ? query.next[0] : query.next;
-  const returnTo = safeReturnTo(nextValue, '/account');
+  const returnTo = safeReturnTo(nextValue, '/app');
   const billingState = Array.isArray(query.billing) ? query.billing[0] : query.billing;
   return (
     <div className={styles.pricingPage} id="top">
@@ -173,12 +181,13 @@ export default async function PricingPage({ searchParams }: PricingPageProps) {
       <main className={styles.main}>
         <section className={styles.pricingHero} aria-labelledby="pricing-title">
           <p className={styles.eyebrow}>Rendyn</p>
-          <h1 id="pricing-title">Pricing</h1>
+          <h1 id="pricing-title">{freeAccess ? <>Full access.<br />On us.</> : 'Pricing'}</h1>
+          {freeAccess && <p className={styles.freeSubtitle}>A month to explore everything. Just bring your next idea.</p>}
           {message ? <p className={styles.pricingNotice} role="alert">{message}</p> : null}
           {billingState === 'cancelled' ? (
             <p className={styles.pricingNotice} role="status">Checkout was cancelled. No subscription was started.</p>
           ) : null}
-          <PricingPlans returnTo={returnTo} />
+          <PricingPlans returnTo={returnTo} freeAccess={freeAccess} />
         </section>
 
         <section className={styles.trustedSection} aria-label="Compatible coding agents">
@@ -190,7 +199,7 @@ export default async function PricingPage({ searchParams }: PricingPageProps) {
           </div>
         </section>
 
-        <section className={styles.compareSection} id="compare" aria-labelledby="compare-title">
+        {!freeAccess && <section className={styles.compareSection} id="compare" aria-labelledby="compare-title">
           <h2 id="compare-title">Compare features across plans</h2>
           <div className={styles.comparisonTable} role="table" aria-label="Rendyn plan comparison">
             <div className={`${styles.comparisonRow} ${styles.comparisonPlans}`} role="row">
@@ -214,12 +223,20 @@ export default async function PricingPage({ searchParams }: PricingPageProps) {
             ))}
           </div>
           <p className={styles.comparisonNote}>*Catalogue availability evolves as new components are added.</p>
-        </section>
+        </section>}
 
         <section className={styles.faqSection} aria-labelledby="faq-title">
           <h2 id="faq-title">FAQ</h2>
           <div className={styles.faqList}>
-            {faqs.map((faq, index) => (
+            {(freeAccess ? [
+              { question: 'What is included?', answer: 'Every catalogue component, interactive preview, complete source, dependencies, install instructions and MCP access. All accounts get the same catalogue access during the offer.' },
+              { question: 'How long is everything free?', answer: `The free-access period runs until ${FREE_ACCESS_END_LABEL}. It is the same end date for everyone, so log in and start exploring today.` },
+              { question: 'Do I need a card?', answer: 'No. Just log in with Google or an email code. There is no checkout and logging in does not start a subscription.' },
+              { question: 'What happens when the offer ends?', answer: 'Free MCP access ends and the normal subscription requirements return. This offer will not automatically subscribe or charge you. Source you have already copied remains subject to its listed licence.' },
+              { question: 'What if I already have a paid subscription?', answer: 'You get the same full catalogue access. This offer does not cancel an existing subscription or change its billing schedule. You can manage or cancel billing from Account in your workspace.' },
+              { question: 'Where are my saved components kept?', answer: 'In this browser, separately for each account. They remain on this device between visits; they do not sync to other browsers or devices.' },
+              { question: 'Can I use components in commercial projects?', answer: 'Follow the licence included with each component. The source and licence notices are available in your workspace alongside installation instructions.' },
+            ] : faqs).map((faq, index) => (
               <details key={faq.question} open={index === 0}>
                 <summary>{faq.question}</summary>
                 <p>{faq.answer}</p>

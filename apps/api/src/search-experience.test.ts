@@ -22,6 +22,7 @@ describe('search over the MCP transport', () => {
     app = await buildNodeApp(readConfig({ NODE_ENV: 'test', SUPABASE_URL: 'https://example.supabase.co', SUPABASE_ANON_KEY: 'test-public-key-not-a-real-secret' }));
   });
   beforeEach(() => {
+    vi.spyOn(Date, 'now').mockReturnValue(Date.parse('2026-11-03T12:00:00Z'));
     rpc.mockReset().mockResolvedValue({ data: [subscription], error: null });
     vi.spyOn(SupabaseTokenVerifier.prototype, 'verifyAccessToken').mockImplementation(async token => (
       { token, clientId: 'test-user', scopes: ['openid'], expiresAt: 4102444800 }
@@ -108,6 +109,45 @@ describe('search over the MCP transport', () => {
     expect(source.component.metadata).not.toHaveProperty('searchText');
     expect(source.component.files.length).toBeGreaterThan(0);
     expect(source.component.license.spdx).toBe('MIT');
+  });
+
+  it('gives an authenticated account full MCP source during free access without requiring or mutating a subscription', async () => {
+    vi.spyOn(Date, 'now').mockReturnValue(Date.parse('2026-10-10T12:00:00Z'));
+    rpc.mockRejectedValue(new Error('Subscription database unavailable'));
+    const client = await connect();
+    const source = payload(await client.callTool({ name: 'get_component', arguments: { id: 'beui:button' } }));
+    expect(source.component.files.length).toBeGreaterThan(0);
+    expect(source.entitlement).toMatchObject({ allowed: true, plan_code: 'free_access', access_ends_at: '2026-11-02T00:00:00.000Z' });
+    expect(rpc).not.toHaveBeenCalled();
+  });
+
+  it('gives the authenticated HTTP source route the same free access', async () => {
+    vi.spyOn(Date, 'now').mockReturnValue(Date.parse('2026-10-10T12:00:00Z'));
+    rpc.mockRejectedValue(new Error('Subscription database unavailable'));
+    const response = await app.request('http://localhost/api/components/button/source', { headers: { Host: 'localhost', Authorization: 'Bearer test-user-token' } });
+    expect(response.status).toBe(200);
+    expect(response.headers.get('Cache-Control')).toBe('private, no-store');
+    expect((await response.json()).entitlement.plan_code).toBe('free_access');
+    expect(rpc).not.toHaveBeenCalled();
+  });
+
+  it('still rejects missing or invalid bearer tokens during free access', async () => {
+    vi.spyOn(Date, 'now').mockReturnValue(Date.parse('2026-10-10T12:00:00Z'));
+    const missing = await app.request('http://localhost/mcp', { headers: { Host: 'localhost' } });
+    expect(missing.status).toBe(401);
+    vi.spyOn(SupabaseTokenVerifier.prototype, 'verifyAccessToken').mockRejectedValue(new Error('Invalid token'));
+    const invalidSource = await app.request('http://localhost/api/components/button/source', { headers: { Host: 'localhost', Authorization: 'Bearer invalid-token' } });
+    expect(invalidSource.status).toBe(401);
+    expect(await invalidSource.json()).not.toHaveProperty('component');
+  });
+
+  it('restores subscription enforcement exactly when the free window ends', async () => {
+    vi.spyOn(Date, 'now').mockReturnValue(Date.parse('2026-11-02T00:00:00.000Z'));
+    rpc.mockResolvedValue({ data: [{ ...subscription, allowed: false }], error: null });
+    const response = await app.request('http://localhost/mcp', { headers: { Host: 'localhost', Authorization: 'Bearer test-user-token' } });
+    expect(response.status).toBe(402);
+    expect((await response.json()).error).toBe('subscription_required');
+    expect(rpc).toHaveBeenCalledWith('get_subscription_access');
   });
 
   it('uses the same labels in category browsing and public HTTP metadata', async () => {

@@ -1,4 +1,5 @@
 import type Stripe from 'stripe';
+import { isFreeAccessActive } from '../../../../../../packages/catalog/src/free-access';
 import { NextResponse } from 'next/server';
 import { isSameOriginRequest, safeReturnTo } from '@/lib/auth/inputs';
 import { getBillingConfig, isBillingPlanCode } from '@/lib/billing/config';
@@ -17,12 +18,12 @@ export async function POST(request: Request) {
   }
 
   let planCode: FormDataEntryValue | null;
-  let returnTo = '/account';
+  let returnTo = '/app';
   try {
     const formData = await request.formData();
     planCode = formData.get('plan');
     const returnValue = formData.get('return_to');
-    returnTo = safeReturnTo(typeof returnValue === 'string' ? returnValue : null, '/account');
+    returnTo = safeReturnTo(typeof returnValue === 'string' ? returnValue : null, '/app');
   } catch {
     return Response.json({ error: 'invalid_request' }, { status: 400 });
   }
@@ -39,10 +40,18 @@ export async function POST(request: Request) {
     const email = claimsData?.claims?.email;
     if (typeof userId !== 'string') {
       const login = new URL('/login', request.url);
+      if (isFreeAccessActive()) {
+        login.searchParams.set('next', returnTo);
+        return NextResponse.redirect(login, { status: 303, headers: { 'Cache-Control': 'private, no-store' } });
+      }
       const pricing = new URL('/pricing', request.url);
       pricing.searchParams.set('next', returnTo);
       login.searchParams.set('next', `${pricing.pathname}${pricing.search}`);
       return NextResponse.redirect(login, { status: 303 });
+    }
+
+    if (isFreeAccessActive()) {
+      return NextResponse.redirect(new URL(returnTo, request.url), { status: 303, headers: { 'Cache-Control': 'private, no-store' } });
     }
 
     const { data: subscriptions, error: subscriptionError } = await supabase

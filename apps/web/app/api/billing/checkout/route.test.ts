@@ -15,11 +15,12 @@ function checkout(plan = 'pro_monthly', origin = 'https://rendyn.dev') {
   }));
 }
 
-afterEach(() => vi.unstubAllEnvs());
+afterEach(() => { vi.unstubAllEnvs(); vi.restoreAllMocks(); });
 
 describe('trial checkout', () => {
   beforeEach(() => {
     vi.resetAllMocks();
+    vi.spyOn(Date, 'now').mockReturnValue(Date.parse('2026-11-03T12:00:00Z'));
     vi.stubEnv('STRIPE_SECRET_KEY', 'sk_test_abcdefghijklmnopqrstuvwxyz');
     vi.stubEnv('STRIPE_WEBHOOK_SECRET', 'whsec_abcdefghijklmnopqrstuvwxyz');
     vi.stubEnv('SUPABASE_SERVICE_ROLE_KEY', 'server-only-service-role-key-value');
@@ -48,6 +49,33 @@ describe('trial checkout', () => {
     expect(params).not.toHaveProperty('custom_text');
     expect(params).not.toHaveProperty('payment_method_types');
     expect(params).not.toHaveProperty('managed_payments');
+  });
+
+  it('redirects a signed-in user to the workspace during free access without contacting Stripe or subscriptions', async () => {
+    vi.spyOn(Date, 'now').mockReturnValue(Date.parse('2026-10-10T12:00:00Z'));
+    const response = await checkout();
+    expect(response.headers.get('Location')).toBe('https://rendyn.dev/app');
+    expect(response.headers.get('Cache-Control')).toBe('private, no-store');
+    expect(createSession).not.toHaveBeenCalled();
+    expect(subscriptionLimit).not.toHaveBeenCalled();
+  });
+
+  it('sends anonymous checkout visitors through login during free access', async () => {
+    vi.spyOn(Date, 'now').mockReturnValue(Date.parse('2026-10-10T12:00:00Z'));
+    getClaims.mockResolvedValueOnce({ data: { claims: null } });
+    const response = await checkout();
+    const login = new URL(response.headers.get('Location')!);
+    expect(login.pathname).toBe('/login');
+    expect(login.searchParams.get('next')).toBe('/app');
+    expect(createSession).not.toHaveBeenCalled();
+  });
+
+  it('still validates origin and plan during free access', async () => {
+    vi.spyOn(Date, 'now').mockReturnValue(Date.parse('2026-10-10T12:00:00Z'));
+    expect((await checkout('pro_monthly', 'https://attacker.example')).status).toBe(403);
+    expect((await checkout('price_attacker')).status).toBe(400);
+    expect(getClaims).not.toHaveBeenCalled();
+    expect(createSession).not.toHaveBeenCalled();
   });
 
   it('rejects foreign origins and browser-supplied price IDs before contacting Stripe', async () => {

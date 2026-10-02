@@ -1,3 +1,4 @@
+import { isFreeAccessActive } from '../../../../packages/catalog/src/free-access';
 import '../globals.css';
 import { pageMetadata, siteOrigin } from '../../lib/seo';
 import type { Metadata } from 'next';
@@ -92,7 +93,7 @@ export default async function ComponentsPage({ searchParams }: ComponentsPagePro
           <h2>From preview to your project.</h2>
           <p>Get the source, or connect Claude Code, Codex or Cursor.</p>
         </div>
-        <a className="button" href="/pricing">Get started <span aria-hidden="true">→</span></a>
+        <a className="button" href={isFreeAccessActive() ? '/login?next=%2Fapp' : '/pricing'}>{isFreeAccessActive() ? 'Get started free' : 'Get started'} <span aria-hidden="true">→</span></a>
       </section>
       <SiteFooter />
     </main>

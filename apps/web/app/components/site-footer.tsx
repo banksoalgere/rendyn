@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
+import { isFreeAccessActive, FREE_ACCESS_END_LABEL } from '../../../../packages/catalog/src/free-access';
 import { Brand } from './brand';
 import styles from './site-shell.module.css';
 
@@ -32,15 +33,16 @@ const footerGroups = [
 ];
 
 export function FinalCallToAction() {
+  const freeAccess = isFreeAccessActive();
   return (
     <section className="final-cta grid-field" id="start-trial">
       <div className="final-cta-card">
         <p className="eyebrow">Your agent&apos;s design upgrade</p>
         <h2>Build your best<br />interface yet.</h2>
-        <p>Start with seven days of full access, then keep giving every feature polished components, complete code and the context to choose well.</p>
+        <p>{freeAccess ? `Full catalogue and MCP access, free until ${FREE_ACCESS_END_LABEL}. Log in and start building.` : 'Start with seven days of full access, then keep giving every feature polished components, complete code and the context to choose well.'}</p>
         <div>
           <a className="button" href="/components">Browse the catalogue <span aria-hidden="true">↗</span></a>
-          <a className="button button--cream" href="/pricing">Start 7-day trial</a>
+          <a className="button button--cream" href={freeAccess ? '/login?next=%2Fapp' : '/pricing'}>{freeAccess ? 'Get started free' : 'Start 7-day trial'}</a>
         </div>
       </div>
     </section>

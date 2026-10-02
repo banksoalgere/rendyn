@@ -1,3 +1,4 @@
+import { isFreeAccessActive } from '../../../../packages/catalog/src/free-access';
 import { Brand } from './brand';
 import { MobileMenu, type MobileComponentGroup } from './mobile-menu';
 import { catalogueEntries } from '../../lib/catalogue';
@@ -29,6 +30,7 @@ interface SiteHeaderProps {
 }
 
 export function SiteHeader({ activeSection }: SiteHeaderProps = {}) {
+  const freeAccess = isFreeAccessActive();
   return (
     <header className={styles.header}>
       <Brand />
@@ -44,8 +46,8 @@ export function SiteHeader({ activeSection }: SiteHeaderProps = {}) {
         ))}
       </nav>
       <div className={styles.actions}>
-        <a className={styles.signIn} href="/login?next=%2Faccount">Sign in</a>
-        <a className={styles.trial} href="/pricing">Start trial <span aria-hidden="true">↗</span></a>
+        <a className={styles.signIn} href="/login?next=%2Fapp">Sign in</a>
+        <a className={styles.trial} href={freeAccess ? '/login?next=%2Fapp' : '/pricing'}>{freeAccess ? 'Get started free' : 'Start trial'} <span aria-hidden="true">↗</span></a>
         <MobileMenu groups={mobileGroups} />
       </div>
     </header>

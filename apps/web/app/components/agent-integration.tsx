@@ -1,3 +1,4 @@
+import { isFreeAccessActive } from '../../../../packages/catalog/src/free-access';
 const matches = [
   ['01', 'Signal button', 'best match'],
   ['02', 'Quiet action', '92% match'],
@@ -14,7 +15,7 @@ export function AgentIntegration() {
           Rendyn joins your agent&apos;s existing workflow and supplies component choices,
           product-aware reasoning and complete implementation code.
         </p>
-        <a className="button button--light" href="/pricing">Start 7-day trial <span aria-hidden="true">↗</span></a>
+        <a className="button button--light" href={isFreeAccessActive() ? '/login?next=%2Fapp' : '/pricing'}>{isFreeAccessActive() ? 'Get started free' : 'Start 7-day trial'} <span aria-hidden="true">↗</span></a>
       </div>
 
       <div className="agent-console" aria-label="Example Rendyn tool response">

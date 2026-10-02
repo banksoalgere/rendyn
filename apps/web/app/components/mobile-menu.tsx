@@ -2,6 +2,7 @@
 
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
 
+import { isFreeAccessActive } from '../../../../packages/catalog/src/free-access';
 import { useState } from 'react';
 import { Drawer } from '@/components/motion/drawer';
 
@@ -20,7 +21,7 @@ const primaryLinks = [
   { href: '/guides', label: 'Guides' },
 ] as const;
 
-const SIGN_UP_HREF = '/pricing';
+const SIGN_UP_HREF = isFreeAccessActive() ? '/login?next=%2Fapp' : '/pricing';
 
 export function MobileMenu({ groups }: { groups: MobileComponentGroup[] }) {
   const [open, setOpen] = useState(false);
@@ -111,7 +112,7 @@ export function MobileMenu({ groups }: { groups: MobileComponentGroup[] }) {
 
           <div className="mobile-menu__actions">
             <a href="/login?next=%2Faccount" onClick={closeMenu}>Sign in</a>
-            <a className="button" href={SIGN_UP_HREF} onClick={closeMenu}>Start 7-day trial</a>
+            <a className="button" href={SIGN_UP_HREF} onClick={closeMenu}>{isFreeAccessActive() ? 'Get started free' : 'Start 7-day trial'}</a>
           </div>
         </div>
       </Drawer>

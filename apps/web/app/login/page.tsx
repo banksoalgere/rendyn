@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim breaks hydrated navigation on this auth boundary. */
+import { isFreeAccessActive, FREE_ACCESS_END_LABEL } from '../../../../packages/catalog/src/free-access';
 import { BrandMark } from '@/app/components/brand-mark';
 import '../globals.css';
 import type { Metadata } from 'next';
@@ -64,6 +65,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
         ) : null}
 
         <EmailSignInForm configured={configured} returnTo={returnTo} />
+        <p className={styles.finePrint}>{isFreeAccessActive() ? `Your workspace, every component and MCP access. Free until ${FREE_ACCESS_END_LABEL}. No card needed.` : 'Your components, saved favourites and coding-agent setup in one workspace.'}</p>
       </section>
     </main>
   );

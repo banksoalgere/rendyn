@@ -1,3 +1,4 @@
+import { isFreeAccessActive } from '../../../packages/catalog/src/free-access';
 import './globals.css';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
 
@@ -122,7 +123,7 @@ export default function Home() {
           <span className={styles.kicker}>Made for your workflow</span>
           <h2>Your favourite agent.<br />A better eye for design.</h2>
           <p>One connection gives you and your team the same considered collection. Complete source, ready to adapt to the way you build.</p>
-          <a className={styles.primary} href="/pricing">Find your plan <span aria-hidden="true">↗</span></a>
+          <a className={styles.primary} href={isFreeAccessActive() ? '/login?next=%2Fapp' : '/pricing'}>{isFreeAccessActive() ? 'Get started free' : 'Find your plan'} <span aria-hidden="true">↗</span></a>
         </div>
         <div className={styles.tools} aria-label="MCP-compatible coding agents">
           {codingAgents.map((agent) => (

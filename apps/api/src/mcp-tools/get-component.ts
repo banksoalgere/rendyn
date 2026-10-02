@@ -14,7 +14,7 @@ export function registerGetComponentTool(
     "get_component",
     {
       description:
-        "Return a complete component implementation for a trialing or paid subscriber: purpose and discovery labels, source-derived visual traits, every source file, dependency, install instruction, integrity hash, and license notice.",
+        "Return a complete component implementation for an authenticated user during free access, or a trialing or paid subscriber: purpose and discovery labels, source-derived visual traits, every source file, dependency, install instruction, integrity hash, and license notice.",
       inputSchema: z.object({
         id: z.string().trim().regex(COMPONENT_ID_PATTERN),
       }),

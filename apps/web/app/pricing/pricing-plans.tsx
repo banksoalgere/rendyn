@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Tabs, TabsList, TabsTrigger } from '@/components/motion/tabs';
 import styles from './pricing.module.css';
+import { FREE_ACCESS_END_LABEL } from '../../../../packages/catalog/src/free-access';
 
 const plans = [
   {
@@ -56,7 +57,7 @@ function Check() {
   return <span className={styles.check} aria-hidden="true">✓</span>;
 }
 
-export default function PricingPlans({ returnTo }: { returnTo: string }) {
+export default function PricingPlans({ returnTo, freeAccess = false }: { returnTo: string; freeAccess?: boolean }) {
   const [yearly, setYearly] = useState(false);
 
   function changeBillingPeriod(value: string) {
@@ -67,7 +68,7 @@ export default function PricingPlans({ returnTo }: { returnTo: string }) {
 
   return (
     <>
-      <Tabs
+      {!freeAccess && <Tabs
         className={styles.billingTabs}
         value={yearly ? 'yearly' : 'monthly'}
         onValueChange={changeBillingPeriod}
@@ -89,10 +90,10 @@ export default function PricingPlans({ returnTo }: { returnTo: string }) {
             Yearly <span className={styles.billingSaving}>Save 17%</span>
           </TabsTrigger>
         </TabsList>
-      </Tabs>
+      </Tabs>}
       <div className={styles.trialPromise}>
-        <strong>7 days free. Card required.</strong>
-        <span>Start with full access today. Your first subscription charge is on day 8 unless you cancel before the trial ends.</span>
+        <strong>{freeAccess ? 'Everything is free for a month.' : '7 days free. Card required.'}</strong>
+        <span>{freeAccess ? `Full catalogue, source code and MCP access until ${FREE_ACCESS_END_LABEL}. Just log in. No card needed.` : 'Start with full access today. Your first subscription charge is on day 8 unless you cancel before the trial ends.'}</span>
       </div>
       <div className={styles.planGrid}>
         {plans.map((plan) => {
@@ -109,15 +110,19 @@ export default function PricingPlans({ returnTo }: { returnTo: string }) {
               {plan.recommended && <span className={styles.recommendedLabel}>Popular</span>}
               <div className={styles.planCardBody}>
                 <h2>{plan.name}</h2>
-                <p className={styles.planDescription}>{plan.description}</p>
+                <p className={styles.planDescription}>{freeAccess ? 'For everyone building something great. The complete catalogue is yours to explore.' : plan.description}</p>
                 <div className={styles.planFooter}>
-                  {price === null ? (
+                  {freeAccess ? (
+                    <p className={styles.freePrice}><del aria-label={`Usual price: ${price === null ? 'Custom' : `$${price}${cadence}`}`}>{price === null ? 'Custom' : `$${price}`}</del><strong>Free</strong><span>until {FREE_ACCESS_END_LABEL}</span></p>
+                  ) : price === null ? (
                     <p><strong className={styles.customPrice}>Custom</strong></p>
                   ) : (
                     <p><strong>${price}</strong><span>{cadence}</span></p>
                   )}
                   <div className={styles.planActions}>
-                    {plan.name === 'Enterprise' ? (
+                    {freeAccess ? (
+                      <a href={`/login?next=${encodeURIComponent(returnTo)}`}>Log in to get started <span aria-hidden="true">↗</span></a>
+                    ) : plan.name === 'Enterprise' ? (
                       <a href="mailto:sales@rendyn.dev">Contact sales</a>
                     ) : (
                       <form action="/api/billing/checkout" method="post">
@@ -130,9 +135,9 @@ export default function PricingPlans({ returnTo }: { returnTo: string }) {
                         <button type="submit">Start 7-day trial</button>
                       </form>
                     )}
-                    {yearly && price !== null && <span>Two months included <b aria-hidden="true">›</b></span>}
+                    {!freeAccess && yearly && price !== null && <span>Two months included <b aria-hidden="true">›</b></span>}
                   </div>
-                  {price !== null ? (
+                  {freeAccess ? <p className={styles.trialTerms}>No card. No checkout. No automatic subscription when the offer ends.</p> : price !== null ? (
                     <p className={styles.trialTerms}>
                       Card collected now. No subscription charge today. Cancel before the trial ends to avoid being charged.
                     </p>
@@ -140,7 +145,7 @@ export default function PricingPlans({ returnTo }: { returnTo: string }) {
                 </div>
               </div>
               <ul className={styles.planFeatures}>
-                {plan.features.map((feature) => (
+                {(freeAccess ? ['Every component in the catalogue', 'Complete source, dependencies and install steps', 'Interactive component previews', 'MCP access for your coding agents', 'Saved components on this device', 'Source licence information included'] : plan.features).map((feature) => (
                   <li key={feature}><Check /><span>{feature}</span></li>
                 ))}
               </ul>
