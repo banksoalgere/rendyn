@@ -1,6 +1,6 @@
-# Ant Design color picker
+# Ant Design Color Picker
 
-16 published Ant Design color picker examples with complete pinned source and MIT attribution.
+Choose or inspect a color value.
 
 ## Installation
 

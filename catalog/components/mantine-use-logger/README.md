@@ -1,6 +1,6 @@
-# Mantine use logger
+# Mantine Use Logger
 
-1 published Mantine use logger examples with complete pinned source and MIT attribution.
+React hook example for logger.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI button tooltip comp-99
+# Origin UI Tooltip (Example 99)
 
-1 published Origin UI button tooltip comp-99 examples with complete pinned source and MIT attribution.
+Show a brief explanation associated with a control or item.
 
 ## Installation
 

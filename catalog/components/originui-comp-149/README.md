@@ -1,6 +1,6 @@
-# Origin UI checkbox label week comp-149
+# Origin UI Checkbox (Example 149)
 
-1 published Origin UI checkbox label week comp-149 examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

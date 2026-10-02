@@ -1,6 +1,6 @@
-# shadcn/ui radix switch
+# shadcn/ui Switch (Radix)
 
-8 published shadcn/ui radix switch examples with complete pinned source and MIT attribution.
+Turn a setting on or off.
 
 ## Installation
 

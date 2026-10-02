@@ -1,6 +1,6 @@
-# Mantine number formatter
+# Mantine Number Formatter
 
-4 published Mantine number formatter examples with complete pinned source and MIT attribution.
+Display a key metric or numeric summary.
 
 ## Installation
 

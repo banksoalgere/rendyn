@@ -1,6 +1,6 @@
-# Chakra UI prose
+# Chakra UI Prose
 
-7 published Chakra UI prose examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

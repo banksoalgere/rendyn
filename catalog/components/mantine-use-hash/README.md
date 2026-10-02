@@ -1,6 +1,6 @@
-# Mantine use hash
+# Mantine Use Hash
 
-1 published Mantine use hash examples with complete pinned source and MIT attribution.
+React hook example for hash.
 
 ## Installation
 

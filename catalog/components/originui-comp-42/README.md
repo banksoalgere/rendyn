@@ -1,6 +1,6 @@
-# Origin UI input label date comp-42
+# Origin UI Dialog (Example 42)
 
-1 published Origin UI input label date comp-42 examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

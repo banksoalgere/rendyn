@@ -1,6 +1,6 @@
-# Mantine nav link
+# Mantine Nav Link
 
-4 published Mantine nav link examples with complete pinned source and MIT attribution.
+Provide links and controls for moving between pages or sections.
 
 ## Installation
 

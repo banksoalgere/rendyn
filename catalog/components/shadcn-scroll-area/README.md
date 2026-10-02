@@ -1,6 +1,6 @@
-# shadcn/ui scroll area
+# shadcn/ui Scroll Area
 
-2 published shadcn/ui scroll area examples with complete pinned source and MIT attribution.
+Present content within a scrollable region.
 
 ## Installation
 

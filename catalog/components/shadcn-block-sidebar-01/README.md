@@ -1,6 +1,6 @@
-# shadcn/ui block sidebar 01
+# shadcn/ui Sidebar 01
 
-1 published shadcn/ui block sidebar 01 examples with complete pinned source and MIT attribution.
+Organize application navigation and supporting controls in a side panel.
 
 ## Installation
 

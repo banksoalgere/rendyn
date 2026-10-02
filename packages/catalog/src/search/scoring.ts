@@ -79,7 +79,9 @@ function buildLexicalCandidate(
   const coverage = tokenOverlap(query, new Set([...prepared.name, ...prepared.description, ...prepared.metadata]));
   const namedPattern = prepared.lowerName.split(/\W+/).filter(Boolean).length > 1
     && ` ${normalizedQuery.replace(/[^a-z0-9]+/g, " ")} `.includes(` ${prepared.lowerName.replace(/[^a-z0-9]+/g, " ")} `);
-  const phraseMatch = prepared.searchText.includes(normalizedQuery);
+  // Purpose words should rank the same regardless of plurals, context words or
+  // their order. Named patterns retain the separate exact/name phrase boost.
+  const phraseMatch = query.terms.length === 1 && prepared.searchText.includes(normalizedQuery);
   const score = clampScore(
     (exactNameMatch ? LEXICAL_WEIGHTS.exactName : 0) +
       nameScore * LEXICAL_WEIGHTS.name +
@@ -138,6 +140,11 @@ export function requestedComponentFamilies(catalog: SearchIndex, query: Prepared
     return name.includes(' ') && normalized.includes(` ${name} `);
   });
   if (named.length) return new Set(named.map(component => component.metadata.family));
+  const compoundMatches = [...knownFamilies].filter(family => {
+    const words = family.split('-');
+    return words.length > 1 && words.every(word => query.direct.includes(word));
+  });
+  if (compoundMatches.length) return new Set(compoundMatches);
   const directMatches = query.direct.filter((token) => knownFamilies.has(token));
   const matches = directMatches.length > 0
     ? directMatches

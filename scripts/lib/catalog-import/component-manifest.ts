@@ -5,6 +5,8 @@ import type {
   CatalogSource,
 } from "../../../packages/catalog/src/types.js";
 import { buildMetadata, unique } from "./metadata.js";
+import { buildVisualLabels } from './visual-labels.js';
+import { observedInteractions } from './library-labels.js';
 import type { RegistryDetail, SourceConfig } from "./schemas.js";
 import { sha256 } from "./security.js";
 
@@ -30,7 +32,7 @@ export function createComponentSummary(
     updatedAt: detail.updated_at,
     dependencies: unique(detail.dependencies).sort(),
     internalDependencies: unique(detail.internal).sort(),
-    metadata: buildMetadata(detail, markdown),
+    metadata: { ...buildMetadata(detail, markdown), interactions: observedInteractions(files), visual: buildVisualLabels(files, 'component-source'), exampleCount: 1, labelStatus: 'source-labelled' },
     previewPath: `/preview/${detail.category}/${detail.slug}`,
     manifestPath: `components/${detail.slug}/component.json`,
     integrity: componentIntegrity(files),

@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block front door
+# shadcn/ui Front Door (Radix)
 
-8 published shadcn/ui radix blocks block front door examples with complete pinned source and MIT attribution.
+Compose a front door interface from related information and controls.
 
 ## Installation
 

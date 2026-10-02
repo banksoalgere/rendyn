@@ -1,6 +1,6 @@
-# Material UI material customization css theme variables
+# Material UI Material Customization CSS Theme Variables
 
-7 published Material UI material customization css theme variables examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

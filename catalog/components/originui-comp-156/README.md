@@ -1,6 +1,6 @@
-# Origin UI radio label collapsible comp-156
+# Origin UI Radio Group (Example 156)
 
-1 published Origin UI radio label collapsible comp-156 examples with complete pinned source and MIT attribution.
+Choose one option from a set of alternatives.
 
 ## Installation
 

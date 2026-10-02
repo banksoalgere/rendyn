@@ -1,6 +1,6 @@
-# Origin UI button delete comp-82
+# Origin UI Button (Example 82)
 
-1 published Origin UI button delete comp-82 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

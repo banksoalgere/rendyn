@@ -1,6 +1,6 @@
-# Material UI icons
+# Material UI Icons
 
-9 published Material UI icons examples with complete pinned source and MIT attribution.
+Represent an interface concept with a compact symbol.
 
 ## Installation
 

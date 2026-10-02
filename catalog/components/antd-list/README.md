@@ -1,6 +1,6 @@
-# Ant Design list
+# Ant Design List
 
-16 published Ant Design list examples with complete pinned source and MIT attribution.
+Present a collection of related items.
 
 ## Installation
 

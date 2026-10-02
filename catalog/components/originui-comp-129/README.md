@@ -1,6 +1,6 @@
-# Origin UI button dropdown notification comp-129
+# Origin UI Button (Example 129)
 
-1 published Origin UI button dropdown notification comp-129 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

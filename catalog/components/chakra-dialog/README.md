@@ -1,6 +1,6 @@
-# Chakra UI dialog
+# Chakra UI Dialog
 
-23 published Chakra UI dialog examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

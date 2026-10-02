@@ -1,6 +1,6 @@
-# Origin UI breadcrumb radix comp-446
+# Origin UI Dropdown Menu (Example 446)
 
-1 published Origin UI breadcrumb radix comp-446 examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

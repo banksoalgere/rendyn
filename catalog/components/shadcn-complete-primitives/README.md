@@ -1,6 +1,6 @@
-# shadcn/ui complete primitives
+# shadcn/ui Complete Primitives
 
-8 published shadcn/ui complete primitives examples with complete pinned source and MIT attribution.
+Compare a collection of interface components or examples.
 
 ## Installation
 

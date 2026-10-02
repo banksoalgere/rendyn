@@ -1,6 +1,6 @@
-# Mantine action icon
+# Mantine Action Icon
 
-16 published Mantine action icon examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

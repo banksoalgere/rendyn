@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block savings targets
+# shadcn/ui Savings Targets (React Aria)
 
-8 published shadcn/ui aria blocks block savings targets examples with complete pinned source and MIT attribution.
+Compose a savings targets interface from related information and controls.
 
 ## Installation
 

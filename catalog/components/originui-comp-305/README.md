@@ -1,6 +1,6 @@
-# Origin UI banner comp-305
+# Origin UI Button (Example 305)
 
-1 published Origin UI banner comp-305 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

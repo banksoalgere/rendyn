@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block kitchen island
+# shadcn/ui Kitchen Island (Base UI)
 
-8 published shadcn/ui base blocks block kitchen island examples with complete pinned source and MIT attribution.
+Compose a kitchen island interface from related information and controls.
 
 ## Installation
 

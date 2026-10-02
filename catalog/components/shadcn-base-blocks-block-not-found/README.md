@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block not found
+# shadcn/ui Not Found (Base UI)
 
-8 published shadcn/ui base blocks block not found examples with complete pinned source and MIT attribution.
+Explain that the requested page or resource could not be found.
 
 ## Installation
 

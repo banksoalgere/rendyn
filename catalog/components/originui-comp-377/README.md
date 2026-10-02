@@ -1,6 +1,6 @@
-# Origin UI dropdown user avatar comp-377
+# Origin UI Dropdown Menu (Example 377)
 
-1 published Origin UI dropdown user avatar comp-377 examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

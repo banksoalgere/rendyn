@@ -1,6 +1,6 @@
-# shadcn/ui radix skeleton
+# shadcn/ui Skeleton (Radix)
 
-8 published shadcn/ui radix skeleton examples with complete pinned source and MIT attribution.
+Reserve the shape of content while it is loading.
 
 ## Installation
 

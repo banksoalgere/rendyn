@@ -1,6 +1,6 @@
 # Mantine Labelled Switches
 
-1 published Mantine labelled switches examples with complete pinned source and MIT attribution.
+Turn a setting on or off.
 
 ## Installation
 

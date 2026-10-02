@@ -1,6 +1,6 @@
-# Mantine flex
+# Mantine Flex
 
-2 published Mantine flex examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

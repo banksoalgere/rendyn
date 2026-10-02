@@ -1,6 +1,6 @@
-# Mantine resources schedule
+# Mantine Resources Schedule
 
-9 published Mantine resources schedule examples with complete pinned source and MIT attribution.
+Display appointments or resources in a time-based layout.
 
 ## Installation
 

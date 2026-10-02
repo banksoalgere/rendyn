@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block power usage
+# shadcn/ui Power Usage (React Aria)
 
-8 published shadcn/ui aria blocks block power usage examples with complete pinned source and MIT attribution.
+Compose a power usage interface from related information and controls.
 
 ## Installation
 

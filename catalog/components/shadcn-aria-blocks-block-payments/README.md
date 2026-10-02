@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block payments
+# shadcn/ui Payments (React Aria)
 
-8 published shadcn/ui aria blocks block payments examples with complete pinned source and MIT attribution.
+Present payment details, balances, or related payment controls.
 
 ## Installation
 

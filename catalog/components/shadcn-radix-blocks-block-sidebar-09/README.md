@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block sidebar 09
+# shadcn/ui Sidebar 09 (Radix)
 
-8 published shadcn/ui radix blocks block sidebar 09 examples with complete pinned source and MIT attribution.
+Organize application navigation and supporting controls in a side panel.
 
 ## Installation
 

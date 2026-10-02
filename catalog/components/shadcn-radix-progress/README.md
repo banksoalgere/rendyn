@@ -1,6 +1,6 @@
-# shadcn/ui radix progress
+# shadcn/ui Progress (Radix)
 
-8 published shadcn/ui radix progress examples with complete pinned source and MIT attribution.
+Show how far a task has progressed.
 
 ## Installation
 

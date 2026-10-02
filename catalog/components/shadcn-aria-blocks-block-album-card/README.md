@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block album card
+# shadcn/ui Album Card (React Aria)
 
-8 published shadcn/ui aria blocks block album card examples with complete pinned source and MIT attribution.
+Compose a album card interface from related information and controls.
 
 ## Installation
 

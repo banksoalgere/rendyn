@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block transfer funds
+# shadcn/ui Transfer Funds (React Aria)
 
-8 published shadcn/ui aria blocks block transfer funds examples with complete pinned source and MIT attribution.
+Present payment details, balances, or related payment controls.
 
 ## Installation
 

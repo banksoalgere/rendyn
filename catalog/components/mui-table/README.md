@@ -1,6 +1,6 @@
-# Material UI table
+# Material UI Table
 
-12 published Material UI table examples with complete pinned source and MIT attribution.
+Display related values in a row and column structure.
 
 ## Installation
 

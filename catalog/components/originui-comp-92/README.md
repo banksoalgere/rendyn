@@ -1,6 +1,6 @@
-# Origin UI button counter comp-92
+# Origin UI Button (Example 92)
 
-1 published Origin UI button counter comp-92 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI qr code
+# Chakra UI QR Code
 
-11 published Chakra UI qr code examples with complete pinned source and MIT attribution.
+Display a value in a scannable QR code.
 
 ## Installation
 

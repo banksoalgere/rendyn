@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { visualVocabulary } from './visual.js';
 import type { CatalogComponent, CatalogIndex, EmbeddingIndex } from "./types.js";
 
 const slugSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
@@ -27,6 +28,18 @@ const catalogSourceSchema = z.object({
   }).strict(),
 }).strict();
 
+export const catalogVisualSchema = z.object({
+  evidence: z.literal('source'),
+  scope: z.enum(['bundled-examples', 'component-source']),
+  layout: z.array(z.enum(visualVocabulary.layout)).max(20),
+  surface: z.array(z.enum(visualVocabulary.surface)).max(20),
+  shape: z.array(z.enum(visualVocabulary.shape)).max(20),
+  color: z.array(z.enum(visualVocabulary.color)).max(visualVocabulary.color.length),
+  typography: z.array(z.enum(visualVocabulary.typography)).max(20),
+  motion: z.array(z.enum(visualVocabulary.motion)).max(20),
+  states: z.array(z.enum(visualVocabulary.states)).max(20),
+}).strict();
+
 const catalogMetadataSchema = z.object({
   kind: z.enum(["component", "agent-ui", "block"]),
   family: slugSchema,
@@ -36,6 +49,9 @@ const catalogMetadataSchema = z.object({
   useWhen: z.array(z.string().trim().min(1).max(2_000)).max(100),
   notIdealWhen: z.array(z.string().trim().min(1).max(2_000)).max(100),
   visualSignature: z.string().max(1_000),
+  visual: catalogVisualSchema.optional(),
+  exampleCount: z.number().int().min(1).max(1_000).optional(),
+  labelStatus: z.enum(['source-labelled', 'needs-review']).optional(),
   searchText: z.string().max(100_000),
 }).strict();
 

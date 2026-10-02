@@ -1,6 +1,6 @@
-# shadcn/ui navigation menu
+# shadcn/ui Navigation Menu
 
-1 published shadcn/ui navigation menu examples with complete pinned source and MIT attribution.
+Provide links and controls for moving between pages or sections.
 
 ## Installation
 

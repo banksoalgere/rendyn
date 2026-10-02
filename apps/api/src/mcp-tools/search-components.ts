@@ -17,7 +17,7 @@ export function registerSearchComponentsTool(
     "search_components",
     {
       description:
-        "Find UI components for a design brief, such as 'a calm CTA button with hover feedback' or 'an FAQ accordion'. Search one UI need at a time; omit category unless you need a strict filter. Returns ranked matches, preview links and the next retrieval call. No match means the catalogue may not cover that need. Set include_previews=true to see images after narrowing your choices.",
+        "Find UI components for a design brief, such as 'a calm CTA button with hover feedback' or 'an FAQ accordion'. Search one UI need at a time; omit category unless you need a strict filter. Returns ranked matches with purpose, kind, family, tags, aliases, interactions, example count, source-derived visual traits, preview links and the next retrieval call. Visual traits describe source observations across examples, not a verified screenshot or guarantees about every variant. No match means the catalogue may not cover that need. Set include_previews=true to see images after narrowing your choices.",
       annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
       inputSchema: z.object({
         query: z.string().trim().min(2).max(500),

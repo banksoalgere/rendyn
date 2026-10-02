@@ -1,6 +1,6 @@
-# Origin UI checkbox label card comp-146
+# Origin UI Checkbox (Example 146)
 
-1 published Origin UI checkbox label card comp-146 examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

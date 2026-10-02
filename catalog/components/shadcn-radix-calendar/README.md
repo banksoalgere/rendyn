@@ -1,6 +1,6 @@
-# shadcn/ui radix calendar
+# shadcn/ui Calendar (Radix)
 
-8 published shadcn/ui radix calendar examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

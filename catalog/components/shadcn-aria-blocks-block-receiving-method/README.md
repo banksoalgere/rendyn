@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block receiving method
+# shadcn/ui Receiving Method (React Aria)
 
-8 published shadcn/ui aria blocks block receiving method examples with complete pinned source and MIT attribution.
+Present payment details, balances, or related payment controls.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block sleep report
+# shadcn/ui Sleep Report (Radix)
 
-8 published shadcn/ui radix blocks block sleep report examples with complete pinned source and MIT attribution.
+Compose a sleep report interface from related information and controls.
 
 ## Installation
 

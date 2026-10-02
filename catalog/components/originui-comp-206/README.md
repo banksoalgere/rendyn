@@ -1,6 +1,6 @@
-# Origin UI label select helper comp-206
+# Origin UI Select (Example 206)
 
-1 published Origin UI label select helper comp-206 examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

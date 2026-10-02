@@ -1,6 +1,6 @@
 # HeroUI Checkbox
 
-11 published HeroUI checkbox examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

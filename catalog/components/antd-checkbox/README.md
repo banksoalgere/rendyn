@@ -1,6 +1,6 @@
 # Ant Design Checkbox
 
-11 published Ant Design checkbox examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

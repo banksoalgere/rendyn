@@ -1,6 +1,6 @@
-# Origin UI radio label color comp-158
+# Origin UI Radio Group (Example 158)
 
-1 published Origin UI radio label color comp-158 examples with complete pinned source and MIT attribution.
+Choose one option from a set of alternatives.
 
 ## Installation
 

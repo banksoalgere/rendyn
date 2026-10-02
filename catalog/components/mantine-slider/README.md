@@ -1,6 +1,6 @@
-# Mantine slider
+# Mantine Slider
 
-19 published Mantine slider examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

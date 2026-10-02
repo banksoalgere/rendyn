@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block contribution history
+# shadcn/ui Contribution History (React Aria)
 
-8 published shadcn/ui aria blocks block contribution history examples with complete pinned source and MIT attribution.
+Compose a contribution history interface from related information and controls.
 
 ## Installation
 

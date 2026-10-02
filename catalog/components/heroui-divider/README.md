@@ -1,6 +1,6 @@
-# HeroUI divider
+# HeroUI Divider
 
-1 published HeroUI divider examples with complete pinned source and MIT attribution.
+Visually separate related areas of an interface.
 
 ## Installation
 

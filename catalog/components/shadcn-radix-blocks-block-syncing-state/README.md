@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block syncing state
+# shadcn/ui Syncing State (Radix)
 
-8 published shadcn/ui radix blocks block syncing state examples with complete pinned source and MIT attribution.
+Indicate that content or a task is still loading.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui dialog
+# shadcn/ui Dialog
 
-2 published shadcn/ui dialog examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

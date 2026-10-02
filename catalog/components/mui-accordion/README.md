@@ -1,6 +1,6 @@
-# Material UI accordion
+# Material UI Accordion
 
-7 published Material UI accordion examples with complete pinned source and MIT attribution.
+Expand and collapse grouped content such as frequently asked questions.
 
 ## Installation
 

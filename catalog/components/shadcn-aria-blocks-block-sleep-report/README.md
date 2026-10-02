@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block sleep report
+# shadcn/ui Sleep Report (React Aria)
 
-8 published shadcn/ui aria blocks block sleep report examples with complete pinned source and MIT attribution.
+Compose a sleep report interface from related information and controls.
 
 ## Installation
 

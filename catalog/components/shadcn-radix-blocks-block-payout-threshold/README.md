@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block payout threshold
+# shadcn/ui Payout Threshold (Radix)
 
-8 published shadcn/ui radix blocks block payout threshold examples with complete pinned source and MIT attribution.
+Present payment details, balances, or related payment controls.
 
 ## Installation
 

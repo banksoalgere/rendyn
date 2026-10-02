@@ -1,6 +1,6 @@
-# Material UI system getting started custom components
+# Material UI System Getting Started Custom Components
 
-2 published Material UI system getting started custom components examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

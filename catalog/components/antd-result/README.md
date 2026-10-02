@@ -1,6 +1,6 @@
-# Ant Design result
+# Ant Design Result
 
-10 published Ant Design result examples with complete pinned source and MIT attribution.
+Present the outcome of an action or request.
 
 ## Installation
 

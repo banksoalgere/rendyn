@@ -1,6 +1,6 @@
-# Origin UI slider label vote comp-256
+# Origin UI Slider (Example 256)
 
-1 published Origin UI slider label vote comp-256 examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

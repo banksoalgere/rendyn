@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block power usage
+# shadcn/ui Power Usage (Base UI)
 
-8 published shadcn/ui base blocks block power usage examples with complete pinned source and MIT attribution.
+Compose a power usage interface from related information and controls.
 
 ## Installation
 

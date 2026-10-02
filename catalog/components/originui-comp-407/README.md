@@ -1,6 +1,6 @@
-# Origin UI avatar avatar group comp-407
+# Origin UI Avatar (Example 407)
 
-1 published Origin UI avatar avatar group comp-407 examples with complete pinned source and MIT attribution.
+Represent a person or account with an image or initials.
 
 ## Installation
 

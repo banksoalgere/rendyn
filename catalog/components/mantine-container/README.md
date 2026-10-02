@@ -1,6 +1,6 @@
-# Mantine container
+# Mantine Container
 
-5 published Mantine container examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

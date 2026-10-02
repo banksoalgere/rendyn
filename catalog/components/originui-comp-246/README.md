@@ -1,6 +1,6 @@
-# Origin UI slider label radix comp-246
+# Origin UI Slider (Example 246)
 
-1 published Origin UI slider label radix comp-246 examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block dashboard 01
+# shadcn/ui Dashboard 01 (Radix)
 
-8 published shadcn/ui radix blocks block dashboard 01 examples with complete pinned source and MIT attribution.
+Combine application navigation with information and controls in a dashboard layout.
 
 ## Installation
 

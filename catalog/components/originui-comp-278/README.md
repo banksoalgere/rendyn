@@ -1,6 +1,6 @@
-# Origin UI alert error signup comp-278
+# Origin UI Alert (Example 278)
 
-1 published Origin UI alert error signup comp-278 examples with complete pinned source and MIT attribution.
+Display important information, warnings, or errors within the page.
 
 ## Installation
 

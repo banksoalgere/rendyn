@@ -1,6 +1,6 @@
-# Mantine sparkline
+# Mantine Sparkline
 
-3 published Mantine sparkline examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

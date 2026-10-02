@@ -1,6 +1,6 @@
-# Origin UI table checkbox card comp-473
+# Origin UI Checkbox (Example 473)
 
-1 published Origin UI table checkbox card comp-473 examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI radio label rating comp-171
+# Origin UI Rating (Example 171)
 
-1 published Origin UI radio label rating comp-171 examples with complete pinned source and MIT attribution.
+Choose or display a rating on a bounded scale.
 
 ## Installation
 

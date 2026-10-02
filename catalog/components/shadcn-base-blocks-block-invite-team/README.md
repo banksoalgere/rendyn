@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block invite team
+# shadcn/ui Invite Team (Base UI)
 
-8 published shadcn/ui base blocks block invite team examples with complete pinned source and MIT attribution.
+Compose a invite team interface from related information and controls.
 
 ## Installation
 

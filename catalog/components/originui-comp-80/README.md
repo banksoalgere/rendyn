@@ -1,6 +1,6 @@
-# Origin UI button comp-80
+# Origin UI Button (Example 80)
 
-1 published Origin UI button comp-80 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

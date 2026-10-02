@@ -1,6 +1,6 @@
-# Origin UI label select required comp-211
+# Origin UI Select (Example 211)
 
-1 published Origin UI label select required comp-211 examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

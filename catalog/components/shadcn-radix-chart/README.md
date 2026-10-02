@@ -1,6 +1,6 @@
-# shadcn/ui radix chart
+# shadcn/ui Chart (Radix)
 
-8 published shadcn/ui radix chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI radio label radix comp-152
+# Origin UI Radio Group (Example 152)
 
-1 published Origin UI radio label radix comp-152 examples with complete pinned source and MIT attribution.
+Choose one option from a set of alternatives.
 
 ## Installation
 

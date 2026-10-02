@@ -1,6 +1,6 @@
-# Origin UI notification warning comp-283
+# Origin UI Button (Example 283)
 
-1 published Origin UI notification warning comp-283 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Ant Design input number
+# Ant Design Input Number
 
-22 published Ant Design input number examples with complete pinned source and MIT attribution.
+Enter a numeric value using a number field.
 
 ## Installation
 

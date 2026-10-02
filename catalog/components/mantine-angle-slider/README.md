@@ -1,6 +1,6 @@
-# Mantine angle slider
+# Mantine Angle Slider
 
-5 published Mantine angle slider examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

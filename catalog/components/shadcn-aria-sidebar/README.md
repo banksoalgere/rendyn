@@ -1,6 +1,6 @@
-# shadcn/ui aria sidebar
+# shadcn/ui Sidebar (React Aria)
 
-32 published shadcn/ui aria sidebar examples with complete pinned source and MIT attribution.
+Organize application navigation and supporting controls in a side panel.
 
 ## Installation
 

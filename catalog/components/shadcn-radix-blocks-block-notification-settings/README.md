@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block notification settings
+# shadcn/ui Notification Settings (Radix)
 
-8 published shadcn/ui radix blocks block notification settings examples with complete pinned source and MIT attribution.
+Group controls for configuring account or application preferences.
 
 ## Installation
 

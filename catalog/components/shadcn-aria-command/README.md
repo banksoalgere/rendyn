@@ -1,6 +1,6 @@
-# shadcn/ui aria command
+# shadcn/ui Command (React Aria)
 
-8 published shadcn/ui aria command examples with complete pinned source and MIT attribution.
+Find commands and actions in a searchable command menu.
 
 ## Installation
 

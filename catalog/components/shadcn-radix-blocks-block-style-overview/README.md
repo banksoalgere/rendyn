@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block style overview
+# shadcn/ui Style Overview (Radix)
 
-8 published shadcn/ui radix blocks block style overview examples with complete pinned source and MIT attribution.
+Compose a style overview interface from related information and controls.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI alert
+# Chakra UI Alert
 
-14 published Chakra UI alert examples with complete pinned source and MIT attribution.
+Display important information, warnings, or errors within the page.
 
 ## Installation
 

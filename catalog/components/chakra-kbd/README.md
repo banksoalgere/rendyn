@@ -1,6 +1,6 @@
-# Chakra UI kbd
+# Chakra UI Kbd
 
-8 published Chakra UI kbd examples with complete pinned source and MIT attribution.
+Display a key or keyboard shortcut hint.
 
 ## Installation
 

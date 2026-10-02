@@ -17,7 +17,7 @@ type NavigationId = (typeof navigation)[number]['id'];
 const mobileGroups: MobileComponentGroup[] = [
   { id: 'motion', label: 'Interaction', detail: 'Interaction and animation' },
   { id: 'agents', label: 'Agent UI', detail: 'Interfaces for AI products' },
-  { id: 'blocks', label: 'Product blocks', detail: 'Complete product patterns' },
+  { id: 'blocks', label: 'Components & blocks', detail: 'Controls and product patterns' },
 ].map((group) => ({
   ...group,
   components: catalogueEntries.filter((entry) => entry.category === group.id)

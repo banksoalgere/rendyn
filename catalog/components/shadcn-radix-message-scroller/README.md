@@ -1,6 +1,6 @@
-# shadcn/ui radix message scroller
+# shadcn/ui Message Scroller (Radix)
 
-8 published shadcn/ui radix message scroller examples with complete pinned source and MIT attribution.
+Present a conversation with messages and related controls.
 
 ## Installation
 

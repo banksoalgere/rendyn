@@ -1,6 +1,6 @@
-# Origin UI slider label vote comp-257
+# Origin UI Slider (Example 257)
 
-1 published Origin UI slider label vote comp-257 examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block kitchen island
+# shadcn/ui Kitchen Island (Radix)
 
-8 published shadcn/ui radix blocks block kitchen island examples with complete pinned source and MIT attribution.
+Compose a kitchen island interface from related information and controls.
 
 ## Installation
 

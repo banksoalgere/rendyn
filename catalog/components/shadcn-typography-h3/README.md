@@ -1,6 +1,6 @@
-# shadcn/ui typography h3
+# shadcn/ui Typography H3
 
-1 published shadcn/ui typography h3 examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

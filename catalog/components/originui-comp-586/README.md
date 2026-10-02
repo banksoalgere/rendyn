@@ -1,6 +1,6 @@
-# Origin UI navbar, navigation comp-586
+# Origin UI Search Input (Example 586)
 
-1 published Origin UI navbar, navigation comp-586 examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

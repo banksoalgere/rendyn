@@ -1,6 +1,6 @@
-# Mantine treemap
+# Mantine Treemap
 
-6 published Mantine treemap examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

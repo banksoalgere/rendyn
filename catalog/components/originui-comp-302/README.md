@@ -1,6 +1,6 @@
-# Origin UI banner comp-302
+# Origin UI Announcement Banner (Example 302)
 
-1 published Origin UI banner comp-302 examples with complete pinned source and MIT attribution.
+Display an announcement or call to action across a page.
 
 ## Installation
 

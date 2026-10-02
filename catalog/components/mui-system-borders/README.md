@@ -1,6 +1,6 @@
-# Material UI system borders
+# Material UI System Borders
 
-4 published Material UI system borders examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

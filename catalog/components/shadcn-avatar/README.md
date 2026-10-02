@@ -1,6 +1,6 @@
-# shadcn/ui avatar
+# shadcn/ui Avatar
 
-1 published shadcn/ui avatar examples with complete pinned source and MIT attribution.
+Represent a person or account with an image or initials.
 
 ## Installation
 

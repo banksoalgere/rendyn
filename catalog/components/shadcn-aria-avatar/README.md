@@ -1,6 +1,6 @@
-# shadcn/ui aria avatar
+# shadcn/ui Avatar (React Aria)
 
-8 published shadcn/ui aria avatar examples with complete pinned source and MIT attribution.
+Represent a person or account with an image or initials.
 
 ## Installation
 

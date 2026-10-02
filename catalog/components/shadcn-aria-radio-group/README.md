@@ -1,6 +1,6 @@
-# shadcn/ui aria radio group
+# shadcn/ui Radio Group (React Aria)
 
-8 published shadcn/ui aria radio group examples with complete pinned source and MIT attribution.
+Choose one option from a set of alternatives.
 
 ## Installation
 

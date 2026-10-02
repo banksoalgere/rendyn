@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block roller shades
+# shadcn/ui Roller Shades (Radix)
 
-8 published shadcn/ui radix blocks block roller shades examples with complete pinned source and MIT attribution.
+Compose a roller shades interface from related information and controls.
 
 ## Installation
 

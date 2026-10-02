@@ -1,6 +1,6 @@
-# Origin UI input label password comp-51
+# Origin UI Text Input (Example 51)
 
-1 published Origin UI input label password comp-51 examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

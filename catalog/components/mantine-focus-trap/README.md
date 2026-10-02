@@ -1,6 +1,6 @@
-# Mantine focus trap
+# Mantine Focus Trap
 
-2 published Mantine focus trap examples with complete pinned source and MIT attribution.
+Support focus management or accessible presentation.
 
 ## Installation
 

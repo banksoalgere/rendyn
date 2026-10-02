@@ -1,6 +1,6 @@
-# Chakra UI theme
+# Chakra UI Theme
 
-3 published Chakra UI theme examples with complete pinned source and MIT attribution.
+Configure or demonstrate shared interface theme values.
 
 ## Installation
 

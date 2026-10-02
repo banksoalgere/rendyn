@@ -1,6 +1,6 @@
-# Mantine use splitter
+# Mantine Use Splitter
 
-12 published Mantine use splitter examples with complete pinned source and MIT attribution.
+React hook example for splitter.
 
 ## Installation
 

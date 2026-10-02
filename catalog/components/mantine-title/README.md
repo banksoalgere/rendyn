@@ -1,6 +1,6 @@
-# Mantine title
+# Mantine Title
 
-4 published Mantine title examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

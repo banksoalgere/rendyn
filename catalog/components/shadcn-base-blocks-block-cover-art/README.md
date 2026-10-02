@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block cover art
+# shadcn/ui Cover Art (Base UI)
 
-8 published shadcn/ui base blocks block cover art examples with complete pinned source and MIT attribution.
+Compose a cover art interface from related information and controls.
 
 ## Installation
 

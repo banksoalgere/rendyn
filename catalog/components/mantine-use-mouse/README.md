@@ -1,6 +1,6 @@
-# Mantine use mouse
+# Mantine Use Mouse
 
-2 published Mantine use mouse examples with complete pinned source and MIT attribution.
+React hook example for mouse.
 
 ## Installation
 

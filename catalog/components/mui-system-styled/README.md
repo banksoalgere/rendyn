@@ -1,6 +1,6 @@
-# Material UI system styled
+# Material UI System Styled
 
-4 published Material UI system styled examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

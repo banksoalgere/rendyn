@@ -1,6 +1,6 @@
-# Chakra UI rich text editor
+# Chakra UI Rich Text Editor
 
-19 published Chakra UI rich text editor examples with complete pinned source and MIT attribution.
+Compose and edit formatted text.
 
 ## Installation
 

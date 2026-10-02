@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block invite team
+# shadcn/ui Invite Team (React Aria)
 
-8 published shadcn/ui aria blocks block invite team examples with complete pinned source and MIT attribution.
+Compose a invite team interface from related information and controls.
 
 ## Installation
 

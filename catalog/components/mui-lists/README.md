@@ -1,6 +1,6 @@
-# Material UI lists
+# Material UI Lists
 
-14 published Material UI lists examples with complete pinned source and MIT attribution.
+Present a collection of related items.
 
 ## Installation
 

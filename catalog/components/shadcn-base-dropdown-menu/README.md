@@ -1,6 +1,6 @@
-# shadcn/ui base dropdown menu
+# shadcn/ui Dropdown Menu (Base UI)
 
-8 published shadcn/ui base dropdown menu examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

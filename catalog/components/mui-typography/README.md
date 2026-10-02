@@ -1,6 +1,6 @@
-# Material UI typography
+# Material UI Typography
 
-2 published Material UI typography examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

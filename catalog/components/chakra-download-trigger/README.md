@@ -1,6 +1,6 @@
-# Chakra UI download trigger
+# Chakra UI Download Trigger
 
-4 published Chakra UI download trigger examples with complete pinned source and MIT attribution.
+Start downloading a file or resource.
 
 ## Installation
 

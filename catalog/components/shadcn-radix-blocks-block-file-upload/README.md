@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block file upload
+# shadcn/ui File Upload (Radix)
 
-8 published shadcn/ui radix blocks block file upload examples with complete pinned source and MIT attribution.
+Select files to attach or upload.
 
 ## Installation
 

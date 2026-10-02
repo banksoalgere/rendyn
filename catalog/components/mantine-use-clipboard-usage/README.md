@@ -1,6 +1,6 @@
-# Mantine use clipboard usage
+# Mantine Use Clipboard Usage
 
-1 published Mantine use clipboard usage examples with complete pinned source and MIT attribution.
+React hook example for clipboard usage.
 
 ## Installation
 

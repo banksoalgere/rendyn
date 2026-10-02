@@ -1,6 +1,6 @@
-# shadcn/ui typography large
+# shadcn/ui Typography Large
 
-1 published shadcn/ui typography large examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

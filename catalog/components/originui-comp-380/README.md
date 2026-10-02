@@ -1,6 +1,6 @@
-# Origin UI dropdown darkmode radix comp-380
+# Origin UI Dropdown Menu (Example 380)
 
-1 published Origin UI dropdown darkmode radix comp-380 examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

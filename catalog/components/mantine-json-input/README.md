@@ -1,6 +1,6 @@
-# Mantine json input
+# Mantine JSON Input
 
-6 published Mantine json input examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI banner newsletter subscribe comp-311
+# Origin UI Announcement Banner (Example 311)
 
-1 published Origin UI banner newsletter subscribe comp-311 examples with complete pinned source and MIT attribution.
+Display an announcement or call to action across a page.
 
 ## Installation
 

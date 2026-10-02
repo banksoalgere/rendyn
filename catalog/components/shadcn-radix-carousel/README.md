@@ -1,6 +1,6 @@
-# shadcn/ui radix carousel
+# shadcn/ui Carousel (Radix)
 
-8 published shadcn/ui radix carousel examples with complete pinned source and MIT attribution.
+Move through a sequence of content items.
 
 ## Installation
 

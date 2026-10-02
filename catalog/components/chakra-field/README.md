@@ -1,6 +1,6 @@
-# Chakra UI field
+# Chakra UI Field
 
-12 published Chakra UI field examples with complete pinned source and MIT attribution.
+Collect related values through a group of form controls.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine use state history
+# Mantine Use State History
 
-1 published Mantine use state history examples with complete pinned source and MIT attribution.
+React hook example for state history.
 
 ## Installation
 

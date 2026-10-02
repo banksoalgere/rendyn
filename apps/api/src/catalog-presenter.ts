@@ -4,6 +4,7 @@ import type {
   SearchResult,
 } from "@rendyn/catalog";
 import type { CatalogService } from "./catalog-service.js";
+import { discoveryLabels } from '@rendyn/catalog';
 
 export function presentSearchResults(
   query: string,
@@ -48,6 +49,9 @@ export function presentComponentSummary(
     description: component.description,
     category: component.category,
     tags: component.metadata.tags,
+    labels: discoveryLabels(component.metadata),
+    useWhen: component.metadata.useWhen,
+    notIdealWhen: component.metadata.notIdealWhen,
     preview_url: catalog.previewUrl(component.previewPath),
   };
 }
@@ -63,7 +67,8 @@ export function presentComponentMetadata(
     name: component.name,
     description: component.description,
     category: component.category,
-    metadata: component.metadata,
+    metadata: { ...discoveryLabels(component.metadata), useWhen: component.metadata.useWhen,
+      notIdealWhen: component.metadata.notIdealWhen, visualSignature: component.metadata.visualSignature },
     dependencies: component.dependencies,
     preview_url: catalog.previewUrl(component.previewPath),
   };

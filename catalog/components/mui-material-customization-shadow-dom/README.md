@@ -1,6 +1,6 @@
-# Material UI material customization shadow dom
+# Material UI Material Customization Shadow Dom
 
-1 published Material UI material customization shadow dom examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

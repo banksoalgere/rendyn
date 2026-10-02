@@ -1,6 +1,6 @@
-# Origin UI navbar, navigation comp-589
+# Origin UI Navigation (Example 589)
 
-1 published Origin UI navbar, navigation comp-589 examples with complete pinned source and MIT attribution.
+Provide links and controls for moving between pages or sections.
 
 ## Installation
 

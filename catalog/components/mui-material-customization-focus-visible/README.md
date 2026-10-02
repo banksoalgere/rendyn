@@ -1,6 +1,6 @@
-# Material UI material customization focus visible
+# Material UI Material Customization Focus Visible
 
-7 published Material UI material customization focus visible examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

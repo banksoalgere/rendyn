@@ -1,6 +1,6 @@
-# Chakra UI tabs
+# Chakra UI Tabs
 
-18 published Chakra UI tabs examples with complete pinned source and MIT attribution.
+Switch between related panels without leaving the current view.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI floating panel
+# Chakra UI Floating Panel
 
-17 published Chakra UI floating panel examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

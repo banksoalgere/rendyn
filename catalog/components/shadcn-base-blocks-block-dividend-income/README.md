@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block dividend income
+# shadcn/ui Dividend Income (Base UI)
 
-8 published shadcn/ui base blocks block dividend income examples with complete pinned source and MIT attribution.
+Compose a dividend income interface from related information and controls.
 
 ## Installation
 

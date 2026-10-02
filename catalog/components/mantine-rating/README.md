@@ -1,6 +1,6 @@
-# Mantine rating
+# Mantine Rating
 
-6 published Mantine rating examples with complete pinned source and MIT attribution.
+Choose or display a rating on a bounded scale.
 
 ## Installation
 

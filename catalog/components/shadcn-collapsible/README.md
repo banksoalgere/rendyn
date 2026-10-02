@@ -1,6 +1,6 @@
-# shadcn/ui collapsible
+# shadcn/ui Collapsible
 
-1 published shadcn/ui collapsible examples with complete pinned source and MIT attribution.
+Reveal or hide a section of supporting content.
 
 ## Installation
 

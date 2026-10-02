@@ -1,6 +1,6 @@
-# Ant Design transfer
+# Ant Design Transfer
 
-13 published Ant Design transfer examples with complete pinned source and MIT attribution.
+Move selected items between two collections.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI tree filter search comp-572
+# Origin UI Tree View (Example 572)
 
-1 published Origin UI tree filter search comp-572 examples with complete pinned source and MIT attribution.
+Explore and select items in a hierarchical collection.
 
 ## Installation
 

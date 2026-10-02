@@ -1,6 +1,6 @@
-# shadcn/ui aria breadcrumb
+# shadcn/ui Breadcrumb (React Aria)
 
-8 published shadcn/ui aria breadcrumb examples with complete pinned source and MIT attribution.
+Show the current location within a hierarchy of pages.
 
 ## Installation
 

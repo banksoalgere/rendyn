@@ -1,6 +1,6 @@
-# Origin UI table tanstack checkbox comp-483
+# Origin UI Pagination (Example 483)
 
-1 published Origin UI table tanstack checkbox comp-483 examples with complete pinned source and MIT attribution.
+Move between pages of a collection of results.
 
 ## Installation
 

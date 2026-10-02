@@ -1,6 +1,6 @@
-# shadcn/ui base component example
+# shadcn/ui Component Example (Base UI)
 
-8 published shadcn/ui base component example examples with complete pinned source and MIT attribution.
+Compare a collection of interface components or examples.
 
 ## Installation
 

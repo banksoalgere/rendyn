@@ -1,6 +1,6 @@
-# shadcn/ui aria attachment
+# shadcn/ui Attachment (React Aria)
 
-8 published shadcn/ui aria attachment examples with complete pinned source and MIT attribution.
+Select files to attach or upload.
 
 ## Installation
 

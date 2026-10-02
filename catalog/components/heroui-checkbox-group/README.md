@@ -1,6 +1,6 @@
-# HeroUI checkbox group
+# HeroUI Checkbox Group
 
-7 published HeroUI checkbox group examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui aria switch
+# shadcn/ui Switch (React Aria)
 
-8 published shadcn/ui aria switch examples with complete pinned source and MIT attribution.
+Turn a setting on or off.
 
 ## Installation
 

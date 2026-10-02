@@ -1,6 +1,6 @@
-# Ant Design select
+# Ant Design Select
 
-35 published Ant Design select examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

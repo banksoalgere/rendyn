@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block faq
+# shadcn/ui FAQ (React Aria)
 
-8 published shadcn/ui aria blocks block faq examples with complete pinned source and MIT attribution.
+Expand and collapse grouped content such as frequently asked questions.
 
 ## Installation
 

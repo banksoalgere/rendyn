@@ -1,6 +1,6 @@
-# Material UI material customization css layers
+# Material UI Material Customization CSS Layers
 
-2 published Material UI material customization css layers examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

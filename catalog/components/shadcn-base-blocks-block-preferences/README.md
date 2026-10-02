@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block preferences
+# shadcn/ui Preferences (Base UI)
 
-8 published shadcn/ui base blocks block preferences examples with complete pinned source and MIT attribution.
+Group controls for configuring account or application preferences.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI label select user comp-228
+# Origin UI Select (Example 228)
 
-1 published Origin UI label select user comp-228 examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

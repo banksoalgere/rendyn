@@ -1,6 +1,6 @@
-# Mantine resources month view
+# Mantine Resources Month View
 
-19 published Mantine resources month view examples with complete pinned source and MIT attribution.
+Display appointments or resources in a time-based layout.
 
 ## Installation
 

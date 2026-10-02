@@ -1,6 +1,6 @@
-# Origin UI button copy comp-105
+# Origin UI Tooltip (Example 105)
 
-1 published Origin UI button copy comp-105 examples with complete pinned source and MIT attribution.
+Show a brief explanation associated with a control or item.
 
 ## Installation
 

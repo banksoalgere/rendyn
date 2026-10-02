@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block book appointment
+# shadcn/ui Book Appointment (React Aria)
 
-8 published shadcn/ui aria blocks block book appointment examples with complete pinned source and MIT attribution.
+Present controls for arranging an appointment.
 
 ## Installation
 

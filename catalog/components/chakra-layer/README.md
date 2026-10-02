@@ -1,6 +1,6 @@
-# Chakra UI layer
+# Chakra UI Layer
 
-1 published Chakra UI layer examples with complete pinned source and MIT attribution.
+Place a visual layer above the underlying interface.
 
 ## Installation
 

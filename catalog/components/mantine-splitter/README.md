@@ -1,6 +1,6 @@
-# Mantine splitter
+# Mantine Splitter
 
-10 published Mantine splitter examples with complete pinned source and MIT attribution.
+Let users adjust the space assigned to adjacent panels.
 
 ## Installation
 

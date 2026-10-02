@@ -1,6 +1,6 @@
-# Origin UI notification error comp-280
+# Origin UI Button (Example 280)
 
-1 published Origin UI notification error comp-280 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

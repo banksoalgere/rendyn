@@ -1,6 +1,6 @@
-# Material UI system flexbox
+# Material UI System Flexbox
 
-10 published Material UI system flexbox examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine data list
+# Mantine Data List
 
-4 published Mantine data list examples with complete pinned source and MIT attribution.
+Present a collection of related items.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block bar chart card
+# shadcn/ui Bar Chart Card (Radix)
 
-8 published shadcn/ui radix blocks block bar chart card examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

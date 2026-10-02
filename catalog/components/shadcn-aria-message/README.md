@@ -1,6 +1,6 @@
-# shadcn/ui aria message
+# shadcn/ui Message (React Aria)
 
-8 published shadcn/ui aria message examples with complete pinned source and MIT attribution.
+Display a transient notification about an event or action.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI heading
+# Chakra UI Heading
 
-7 published Chakra UI heading examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

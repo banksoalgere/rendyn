@@ -1,6 +1,6 @@
-# Origin UI calendar comp-542
+# Origin UI Calendar (Example 542)
 
-1 published Origin UI calendar comp-542 examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

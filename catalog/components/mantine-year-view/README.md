@@ -1,6 +1,6 @@
-# Mantine year view
+# Mantine Year View
 
-14 published Mantine year view examples with complete pinned source and MIT attribution.
+Display appointments or resources in a time-based layout.
 
 ## Installation
 

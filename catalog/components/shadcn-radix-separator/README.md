@@ -1,6 +1,6 @@
-# shadcn/ui radix separator
+# shadcn/ui Separator (Radix)
 
-8 published shadcn/ui radix separator examples with complete pinned source and MIT attribution.
+Visually separate related areas of an interface.
 
 ## Installation
 

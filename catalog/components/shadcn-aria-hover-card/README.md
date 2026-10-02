@@ -1,6 +1,6 @@
-# shadcn/ui aria hover card
+# shadcn/ui Hover Card (React Aria)
 
-8 published shadcn/ui aria hover card examples with complete pinned source and MIT attribution.
+Preview supporting content alongside a trigger.
 
 ## Installation
 

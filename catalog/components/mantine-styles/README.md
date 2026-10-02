@@ -1,6 +1,6 @@
-# Mantine styles
+# Mantine Styles
 
-21 published Mantine styles examples with complete pinned source and MIT attribution.
+Configure or demonstrate shared interface theme values.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Ant Design popover
+# Ant Design Popover
 
-12 published Ant Design popover examples with complete pinned source and MIT attribution.
+Display contextual content beside its trigger.
 
 ## Installation
 

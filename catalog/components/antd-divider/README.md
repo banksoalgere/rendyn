@@ -1,6 +1,6 @@
-# Ant Design divider
+# Ant Design Divider
 
-9 published Ant Design divider examples with complete pinned source and MIT attribution.
+Visually separate related areas of an interface.
 
 ## Installation
 

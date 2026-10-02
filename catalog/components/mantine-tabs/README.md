@@ -1,6 +1,6 @@
-# Mantine tabs
+# Mantine Tabs
 
-12 published Mantine tabs examples with complete pinned source and MIT attribution.
+Switch between related panels without leaving the current view.
 
 ## Installation
 

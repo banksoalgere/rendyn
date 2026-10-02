@@ -1,6 +1,6 @@
-# Origin UI button toggle comp-101
+# Origin UI Toggle (Example 101)
 
-1 published Origin UI button toggle comp-101 examples with complete pinned source and MIT attribution.
+Change the selected state of an option or control.
 
 ## Installation
 

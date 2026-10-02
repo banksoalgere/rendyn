@@ -1,6 +1,6 @@
-# Mantine time picker
+# Mantine Time Picker
 
-23 published Mantine time picker examples with complete pinned source and MIT attribution.
+Choose or enter a time value.
 
 ## Installation
 

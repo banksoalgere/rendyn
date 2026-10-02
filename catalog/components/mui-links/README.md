@@ -1,6 +1,6 @@
-# Material UI links
+# Material UI Links
 
-3 published Material UI links examples with complete pinned source and MIT attribution.
+Navigate to a page or resource using a link.
 
 ## Installation
 

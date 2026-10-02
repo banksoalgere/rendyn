@@ -1,6 +1,6 @@
-# Ant Design popconfirm
+# Ant Design Popconfirm
 
-11 published Ant Design popconfirm examples with complete pinned source and MIT attribution.
+Ask for confirmation before completing an important action.
 
 ## Installation
 

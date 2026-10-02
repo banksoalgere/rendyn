@@ -1,6 +1,6 @@
-# Origin UI popover filter radix comp-381
+# Origin UI Popover (Example 381)
 
-1 published Origin UI popover filter radix comp-381 examples with complete pinned source and MIT attribution.
+Display contextual content beside its trigger.
 
 ## Installation
 

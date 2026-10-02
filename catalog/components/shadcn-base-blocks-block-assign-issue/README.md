@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block assign issue
+# shadcn/ui Assign Issue (Base UI)
 
-8 published shadcn/ui base blocks block assign issue examples with complete pinned source and MIT attribution.
+Compose a assign issue interface from related information and controls.
 
 ## Installation
 

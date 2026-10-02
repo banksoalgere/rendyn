@@ -1,6 +1,6 @@
-# Material UI material getting started versions
+# Material UI Material Getting Started Versions
 
-2 published Material UI material getting started versions examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

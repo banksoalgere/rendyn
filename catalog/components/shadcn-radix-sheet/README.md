@@ -1,6 +1,6 @@
-# shadcn/ui radix sheet
+# shadcn/ui Sheet (Radix)
 
-8 published shadcn/ui radix sheet examples with complete pinned source and MIT attribution.
+Open a panel alongside the current page for details or additional controls.
 
 ## Installation
 

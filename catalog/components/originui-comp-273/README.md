@@ -1,6 +1,6 @@
-# Origin UI alert info comp-273
+# Origin UI Alert (Example 273)
 
-1 published Origin UI alert info comp-273 examples with complete pinned source and MIT attribution.
+Display important information, warnings, or errors within the page.
 
 ## Installation
 

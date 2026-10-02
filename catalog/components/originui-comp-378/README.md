@@ -1,6 +1,6 @@
-# Origin UI dropdown info radix comp-378
+# Origin UI Dropdown Menu (Example 378)
 
-1 published Origin UI dropdown info radix comp-378 examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

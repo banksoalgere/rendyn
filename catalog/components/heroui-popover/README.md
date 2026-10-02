@@ -1,6 +1,6 @@
-# HeroUI popover
+# HeroUI Popover
 
-13 published HeroUI popover examples with complete pinned source and MIT attribution.
+Display contextual content beside its trigger.
 
 ## Installation
 

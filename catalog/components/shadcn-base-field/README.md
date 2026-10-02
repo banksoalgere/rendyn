@@ -1,6 +1,6 @@
-# shadcn/ui base field
+# shadcn/ui Field (Base UI)
 
-8 published shadcn/ui base field examples with complete pinned source and MIT attribution.
+Collect related values through a group of form controls.
 
 ## Installation
 

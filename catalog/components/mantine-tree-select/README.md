@@ -1,6 +1,6 @@
-# Mantine tree select
+# Mantine Tree Select
 
-27 published Mantine tree select examples with complete pinned source and MIT attribution.
+Explore and select items in a hierarchical collection.
 
 ## Installation
 

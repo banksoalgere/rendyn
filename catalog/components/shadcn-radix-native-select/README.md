@@ -1,6 +1,6 @@
-# shadcn/ui radix native select
+# shadcn/ui Native Select (Radix)
 
-8 published shadcn/ui radix native select examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine use resize observer
+# Mantine Use Resize Observer
 
-1 published Mantine use resize observer examples with complete pinned source and MIT attribution.
+React hook example for resize observer.
 
 ## Installation
 

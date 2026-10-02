@@ -1,6 +1,6 @@
-# Origin UI input label checkout comp-50
+# Origin UI Text Input (Example 50)
 
-1 published Origin UI input label checkout comp-50 examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI label select disabled comp-215
+# Origin UI Select (Example 215)
 
-1 published Origin UI label select disabled comp-215 examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

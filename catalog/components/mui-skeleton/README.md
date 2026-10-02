@@ -1,6 +1,6 @@
-# Material UI skeleton
+# Material UI Skeleton
 
-7 published Material UI skeleton examples with complete pinned source and MIT attribution.
+Reserve the shape of content while it is loading.
 
 ## Installation
 

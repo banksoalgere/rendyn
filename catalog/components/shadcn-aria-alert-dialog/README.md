@@ -1,6 +1,6 @@
-# shadcn/ui aria alert dialog
+# shadcn/ui Alert Dialog (React Aria)
 
-8 published shadcn/ui aria alert dialog examples with complete pinned source and MIT attribution.
+Ask for confirmation before completing an important action.
 
 ## Installation
 

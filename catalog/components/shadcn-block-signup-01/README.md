@@ -1,6 +1,6 @@
-# shadcn/ui block signup 01
+# shadcn/ui Signup 01
 
-1 published shadcn/ui block signup 01 examples with complete pinned source and MIT attribution.
+Collect the information needed to create an account.
 
 ## Installation
 

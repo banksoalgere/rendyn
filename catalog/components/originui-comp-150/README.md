@@ -1,6 +1,6 @@
-# Origin UI checkbox label toggle comp-150
+# Origin UI Text Input (Example 150)
 
-1 published Origin UI checkbox label toggle comp-150 examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Material UI popper
+# Material UI Popper
 
-7 published Material UI popper examples with complete pinned source and MIT attribution.
+Display contextual content beside its trigger.
 
 ## Installation
 

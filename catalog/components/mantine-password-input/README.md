@@ -1,6 +1,6 @@
-# Mantine password input
+# Mantine Password Input
 
-11 published Mantine password input examples with complete pinned source and MIT attribution.
+Enter a password in a masked text field.
 
 ## Installation
 

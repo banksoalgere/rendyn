@@ -1,6 +1,6 @@
-# HeroUI spacer
+# HeroUI Spacer
 
-1 published HeroUI spacer examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

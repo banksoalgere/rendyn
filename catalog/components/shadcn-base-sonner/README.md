@@ -1,6 +1,6 @@
-# shadcn/ui base sonner
+# shadcn/ui Sonner (Base UI)
 
-8 published shadcn/ui base sonner examples with complete pinned source and MIT attribution.
+Display a transient notification about an event or action.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI stack
+# Chakra UI Stack
 
-8 published Chakra UI stack examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

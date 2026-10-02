@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block assign issue
+# shadcn/ui Assign Issue (React Aria)
 
-8 published shadcn/ui aria blocks block assign issue examples with complete pinned source and MIT attribution.
+Compose a assign issue interface from related information and controls.
 
 ## Installation
 

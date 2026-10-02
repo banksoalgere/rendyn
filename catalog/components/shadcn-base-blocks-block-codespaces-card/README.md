@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block codespaces card
+# shadcn/ui Codespaces Card (Base UI)
 
-8 published shadcn/ui base blocks block codespaces card examples with complete pinned source and MIT attribution.
+Compose a codespaces card interface from related information and controls.
 
 ## Installation
 

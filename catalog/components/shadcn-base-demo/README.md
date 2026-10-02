@@ -1,6 +1,6 @@
-# shadcn/ui base demo
+# shadcn/ui Demo (Base UI)
 
-8 published shadcn/ui base demo examples with complete pinned source and MIT attribution.
+Compare a collection of interface components or examples.
 
 ## Installation
 

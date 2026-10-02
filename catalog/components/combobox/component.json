@@ -31,19 +31,17 @@
     "kind": "component",
     "family": "combobox",
     "tags": [
-      "input",
-      "list",
-      "navigation",
-      "number",
-      "search",
-      "select",
-      "text"
+      "navigation"
     ],
     "aliases": [
       "combobox"
     ],
     "interactions": [
+      "press",
+      "click",
+      "focus",
       "keyboard",
+      "change",
       "type"
     ],
     "useWhen": [
@@ -52,8 +50,48 @@
     "notIdealWhen": [
       "Motion would distract from a dense or deliberately static information task."
     ],
-    "visualSignature": "combobox:input:list:navigation:number:search:keyboard:type",
-    "searchText": "Combobox\ncombobox\nSearchable combobox with a morphing portal, grouped filtering, keyboard navigation, and controlled or uncontrolled state.\ninput\nlist\nnavigation\nnumber\nsearch\nselect\ntext\nkeyboard\ntype\ntitle: \"Combobox\" description: \"Searchable combobox with a morphing portal, grouped filtering, keyboard navigation, and controlled or uncontrolled state.\" category: \"Components\" publishedAt: \"2026 08 11\" updatedAt: \"2026 08 22\" documentation: \"https://beui.dev/components/motion/combobox\" markdown: \"https://beui.dev/components/motion/combobox.md\" license: \"MIT\" Combobox Searchable combobox with a morphing portal, grouped filtering, keyboard navigation, and controlled or uncontrolled state. Install Dependencies clsx lucide react motion react react dom tailwind merge Usage API Reference ComboboxContent Prop Type Default Required Description side \"top\" \\ \"bottom\" bottom No — align \"start\" \\ \"center\" \\ \"end\" start No — sideOffset number 6 No — avoidCollisions boolean true No — className string — No — Combobox Prop Type Default Required Description value string — No — defaultValue string — No — onValueChange ((value: string) = void) — No — open boolean — No — defaultOpen boolean false No — onOpenChange ((open: boolean) = void) — No — query string — No — defaultQuery string — No — onQueryChange ((query: string) = void) — No — filter ComboboxFilter (value, query, keywords) = { const needle = query.trim().toLocaleLowerCase(); if (!needle) return true; const haystack = [value, ...keywords].join(\" \").toLocaleLowerCase(); let queryIndex = 0; for (const character of haystack) { if (character === needle[queryIndex]) queryIndex += 1; if (queryIndex === needle.length) return true; } return false; } No — disabled boolean false No — className string — No — ComboboxEmpty Prop Type Default Required Description className string — No — ComboboxGroup Prop Type Default Required Description className string — No — ComboboxItem Prop Type Default Required Description value string — Yes — textValue string — No — keywords string[] [] No — disabled boolean false No — onSelect ((value: string) = void) — No — className string — No — ComboboxLabel Prop Type Default Required Description className string — No — ComboboxList Prop Type Default Required Description ariaLabel string Options No — className string — No — ComboboxSeparator Prop Type Default Required Description className string — No — ComboboxInput Prop Type Default Required Description ref Ref — No — wrapperClassName string — No — className string — No — ComboboxTrigger Prop Type Default Required Description className string — No — ComboboxValue Prop Type Default Required Description placeholder ReactNode Select an option No — className string — No — Source Registry detail: https://beui.dev/r/combobox Raw source: https://beui.dev/r/combobox/raw GitHub: https://github.com/starc007/ui components"
+    "visualSignature": "combobox:navigation:keyboard",
+    "searchText": "Combobox\ncombobox\nSearchable combobox with a morphing portal, grouped filtering, keyboard navigation, and controlled or uncontrolled state.\nnavigation\nkeyboard\ntitle: \"Combobox\" description: \"Searchable combobox with a morphing portal, grouped filtering, keyboard navigation, and controlled or uncontrolled state.\" category: \"Components\" publishedAt: \"2026 08 11\" updatedAt: \"2026 08 22\" documentation: \"https://beui.dev/components/motion/combobox\" markdown: \"https://beui.dev/components/motion/combobox.md\" license: \"MIT\" Combobox Searchable combobox with a morphing portal, grouped filtering, keyboard navigation, and controlled or uncontrolled state. Install Dependencies clsx lucide react motion react react dom tailwind merge Usage API Reference ComboboxContent Prop Type Default Required Description side \"top\" \\ \"bottom\" bottom No — align \"start\" \\ \"center\" \\ \"end\" start No — sideOffset number 6 No — avoidCollisions boolean true No — className string — No — Combobox Prop Type Default Required Description value string — No — defaultValue string — No — onValueChange ((value: string) = void) — No — open boolean — No — defaultOpen boolean false No — onOpenChange ((open: boolean) = void) — No — query string — No — defaultQuery string — No — onQueryChange ((query: string) = void) — No — filter ComboboxFilter (value, query, keywords) = { const needle = query.trim().toLocaleLowerCase(); if (!needle) return true; const haystack = [value, ...keywords].join(\" \").toLocaleLowerCase(); let queryIndex = 0; for (const character of haystack) { if (character === needle[queryIndex]) queryIndex += 1; if (queryIndex === needle.length) return true; } return false; } No — disabled boolean false No — className string — No — ComboboxEmpty Prop Type Default Required Description className string — No — ComboboxGroup Prop Type Default Required Description className string — No — ComboboxItem Prop Type Default Required Description value string — Yes — textValue string — No — keywords string[] [] No — disabled boolean false No — onSelect ((value: string) = void) — No — className string — No — ComboboxLabel Prop Type Default Required Description className string — No — ComboboxList Prop Type Default Required Description ariaLabel string Options No — className string — No — ComboboxSeparator Prop Type Default Required Description className string — No — ComboboxInput Prop Type Default Required Description ref Ref — No — wrapperClassName string — No — className string — No — ComboboxTrigger Prop Type Default Required Description className string — No — ComboboxValue Prop Type Default Required Description placeholder ReactNode Select an option No — className string — No — Source Registry detail: https://beui.dev/r/combobox Raw source: https://beui.dev/r/combobox/raw GitHub: https://github.com/starc007/ui components\nabsolute\ncentered\nfixed\ngrid\nrow\nscrollable\nbordered\nfilled\ntransparent\nrounded\nmuted\ntruncated\nuppercase\nanimation\nreduced-motion-variant\nspring\ntransition\ndisabled-state\nfocus-state\nhover-state",
+    "visual": {
+      "evidence": "source",
+      "scope": "component-source",
+      "layout": [
+        "absolute",
+        "centered",
+        "fixed",
+        "grid",
+        "row",
+        "scrollable"
+      ],
+      "surface": [
+        "bordered",
+        "filled",
+        "transparent"
+      ],
+      "shape": [
+        "rounded"
+      ],
+      "color": [
+        "muted"
+      ],
+      "typography": [
+        "truncated",
+        "uppercase"
+      ],
+      "motion": [
+        "animation",
+        "reduced-motion-variant",
+        "spring",
+        "transition"
+      ],
+      "states": [
+        "disabled-state",
+        "focus-state",
+        "hover-state"
+      ]
+    },
+    "exampleCount": 1,
+    "labelStatus": "source-labelled"
   },
   "previewPath": "/preview/motion/combobox",
   "manifestPath": "components/combobox/component.json",

@@ -1,6 +1,6 @@
-# Material UI material customization how to customize
+# Material UI Material Customization How To Customize
 
-9 published Material UI material customization how to customize examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

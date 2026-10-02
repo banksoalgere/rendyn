@@ -1,6 +1,6 @@
-# Mantine heatmap
+# Mantine Heatmap
 
-13 published Mantine heatmap examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block weekly fitness summary
+# shadcn/ui Weekly Fitness Summary (Base UI)
 
-8 published shadcn/ui base blocks block weekly fitness summary examples with complete pinned source and MIT attribution.
+Compose a weekly fitness summary interface from related information and controls.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine use debounced callback
+# Mantine Use Debounced Callback
 
-2 published Mantine use debounced callback examples with complete pinned source and MIT attribution.
+React hook example for debounced callback.
 
 ## Installation
 

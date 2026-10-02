@@ -1,6 +1,6 @@
-# Origin UI label select status comp-220
+# Origin UI Select (Example 220)
 
-1 published Origin UI label select status comp-220 examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui mode toggle
+# shadcn/ui Mode Toggle
 
-1 published shadcn/ui mode toggle examples with complete pinned source and MIT attribution.
+Configure or demonstrate shared interface theme values.
 
 ## Installation
 

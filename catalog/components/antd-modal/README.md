@@ -1,6 +1,6 @@
-# Ant Design modal
+# Ant Design Modal
 
-23 published Ant Design modal examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block savings progress
+# shadcn/ui Savings Progress (React Aria)
 
-8 published shadcn/ui aria blocks block savings progress examples with complete pinned source and MIT attribution.
+Compose a savings progress interface from related information and controls.
 
 ## Installation
 

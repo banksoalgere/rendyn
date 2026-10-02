@@ -1,6 +1,6 @@
-# Chakra UI rating
+# Chakra UI Rating
 
-13 published Chakra UI rating examples with complete pinned source and MIT attribution.
+Choose or display a rating on a bounded scale.
 
 ## Installation
 

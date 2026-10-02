@@ -1,6 +1,6 @@
 # HeroUI Input
 
-22 published HeroUI input examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

@@ -4,11 +4,12 @@ import { pathToFileURL } from 'node:url';
 import { librariesSchema, type LibraryConfig } from './lib/catalog-import/library-config.js';
 import { transformLibraryFile, validateLibraryImports } from './lib/catalog-import/library-files.js';
 import { assertStandardMitLicense } from './lib/catalog-import/license.js';
-import { buildMetadata } from './lib/catalog-import/metadata.js';
+import { buildLibraryLabels } from './lib/catalog-import/library-labels.js';
 import { createComponentManifest } from './lib/catalog-import/component-manifest.js';
 import { writeComponentSource } from './lib/catalog-import/component-source.js';
 import { fetchText, invariant, MAX_MARKDOWN_BYTES, safeOutputPath, sha256 } from './lib/catalog-import/security.js';
 import { parseCatalogIndex } from '../packages/catalog/src/schema.js';
+import { assignPublicSlugs } from '../packages/catalog/src/public-slugs.js';
 import type { CatalogComponentSummary, CatalogFile, CatalogSource } from '../packages/catalog/src/types.js';
 import type { RegistryDetail } from './lib/catalog-import/schemas.js';
 
@@ -109,16 +110,17 @@ export async function runLibraryImports() {
       if (config.provider === 'heroui') files.push({ path: heroThemePath, type: 'style', content: heroThemeCss,
         sha256: sha256(heroThemeCss), transformation: 'Authored scoped mapping to official HeroUI semantic tokens.' });
       validateLibraryImports(files, dependencies);
-      const detail: RegistryDetail = { slug: component.slug, name: component.name, description: component.description,
+      const labels = buildLibraryLabels(config, component, files);
+      const detail: RegistryDetail = { slug: component.slug, name: labels.name, description: labels.description,
         category: 'blocks', published_at: config.snapshotDate, updated_at: config.snapshotDate,
         dependencies, internal: [], files: [], page_url: component.pageUrl,
         detail_url: `${config.repository}/blob/${config.commit}/${component.files[0].upstreamPath}`,
         markdown_url: `${baseUrl}${component.files[0].upstreamPath}`, source_url: config.repository, raw_url: baseUrl };
-      const documentation = `# ${component.name}\n\n${component.description}\n\n## Installation\n\n${config.setup.map(step => `- ${step}`).join('\n')}\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: ${component.pageUrl}\nPinned source: ${detail.detail_url}\n`;
+      const documentation = `# ${labels.name}\n\n${labels.description}\n\n## Installation\n\n${config.setup.map(step => `- ${step}`).join('\n')}\n\n- Copy every returned file and preserve the MIT licence notice.\n- Render the returned preview.tsx example, or integrate the example into your existing provider.\n\nUpstream: ${component.pageUrl}\nPinned source: ${detail.detail_url}\n`;
       const summary: CatalogComponentSummary = { id: `${config.id}:${component.slug}`, sourceId: config.id, slug,
-        name: component.name, description: component.description, category: 'blocks', publishedAt: config.snapshotDate,
+        name: labels.name, description: labels.description, category: 'blocks', publishedAt: config.snapshotDate,
         updatedAt: config.snapshotDate, dependencies, internalDependencies: [],
-        metadata: buildMetadata(detail, documentation), previewPath: `/preview/blocks/${slug}`,
+        metadata: labels.metadata, previewPath: `/preview/blocks/${slug}`,
         manifestPath: `components/${slug}/component.json`,
         integrity: `sha256:${sha256(JSON.stringify(files.map(({ path, sha256: hash }) => ({ path, sha256: hash }))))}` };
       const manifest = createComponentManifest(summary, detail, documentation, files, source);
@@ -134,15 +136,19 @@ export async function runLibraryImports() {
         await writeFile(target, file.content);
       }
       summaries.push(summary);
-      previews.push({ sourceId: config.id, slug, name: component.name, description: component.description, category: 'blocks', previewKey, examples: registeredExamples });
+      previews.push({ sourceId: config.id, slug, name: labels.name, description: labels.description, category: 'blocks', previewKey, examples: registeredExamples });
 
     }
     console.log(`Imported ${config.components.length} verified MIT entries from ${config.name}`);
   }
   const all = [...catalog.components, ...summaries];
   invariant(new Set(all.map(component => component.slug)).size === all.length, 'Duplicate catalogue slugs');
+  const publicSlugs = JSON.parse(await readFile(resolve(catalogRoot, 'public-slugs.json'), 'utf8'));
+  await writeFile(resolve(catalogRoot, 'public-slugs.json'), JSON.stringify(assignPublicSlugs(all, publicSlugs), null, 2) + '\n');
   await writeFile(indexPath, JSON.stringify({ ...catalog, generatedAt: importedAt, sources: [...catalog.sources, ...sources],
-    categories: catalog.categories.map(category => ({ ...category, count: all.filter(c => c.category === category.slug).length })), components: all }, null, 2) + '\n');
+    categories: catalog.categories.map(category => ({ ...category,
+      ...(category.slug === 'blocks' ? { name: 'Components & blocks', description: 'Individual interface controls and composed product patterns.' } : {}),
+      count: all.filter(c => c.category === category.slug).length })), components: all }, null, 2) + '\n');
   await writeFile(resolve(outputRoot,'apps/preview/generated/library-summary.json'),JSON.stringify(configs.map(config=>({id:config.id,name:config.name,repository:config.repository,snapshotDate:config.snapshotDate,familyCount:config.components.length,exampleCount:config.components.reduce((n,c)=>n+(c.examples?.length??1),0)})),null,2)+'\n');
   const registryPath = resolve(outputRoot, 'apps/preview/generated/external-registry.ts');
   const registry = await readFile(registryPath, 'utf8');

@@ -1,6 +1,6 @@
-# Material UI material getting started templates crud dashboard hooks use dialogs
+# Material UI Material Getting Started Templates Crud Dashboard Hooks Use Dialogs
 
-3 published Material UI material getting started templates crud dashboard hooks use dialogs examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

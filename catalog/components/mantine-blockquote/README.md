@@ -1,6 +1,6 @@
-# Mantine blockquote
+# Mantine Blockquote
 
-2 published Mantine blockquote examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

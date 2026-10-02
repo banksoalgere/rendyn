@@ -1,6 +1,6 @@
-# Origin UI badge chip status comp-420
+# Origin UI Badge (Example 420)
 
-1 published Origin UI badge chip status comp-420 examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block login 05
+# shadcn/ui Login 05 (Radix)
 
-8 published shadcn/ui radix blocks block login 05 examples with complete pinned source and MIT attribution.
+Collect the information needed to sign in to an account.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI checkbox label radix comp-137
+# Origin UI Checkbox (Example 137)
 
-1 published Origin UI checkbox label radix comp-137 examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine month picker input
+# Mantine Month Picker Input
 
-19 published Mantine month picker input examples with complete pinned source and MIT attribution.
+Choose a date or date range from date-selection controls.
 
 ## Installation
 

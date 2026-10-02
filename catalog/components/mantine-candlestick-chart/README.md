@@ -1,6 +1,6 @@
-# Mantine candlestick chart
+# Mantine Candlestick Chart
 
-7 published Mantine candlestick chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

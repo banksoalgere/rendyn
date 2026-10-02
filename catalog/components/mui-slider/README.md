@@ -1,6 +1,6 @@
-# Material UI slider
+# Material UI Slider
 
-18 published Material UI slider examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

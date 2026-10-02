@@ -1,6 +1,6 @@
-# Ant Design slider
+# Ant Design Slider
 
-15 published Ant Design slider examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

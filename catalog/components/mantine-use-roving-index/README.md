@@ -1,6 +1,6 @@
-# Mantine use roving index
+# Mantine Use Roving Index
 
-5 published Mantine use roving index examples with complete pinned source and MIT attribution.
+React hook example for roving index.
 
 ## Installation
 

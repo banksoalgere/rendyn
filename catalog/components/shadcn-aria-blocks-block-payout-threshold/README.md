@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block payout threshold
+# shadcn/ui Payout Threshold (React Aria)
 
-8 published shadcn/ui aria blocks block payout threshold examples with complete pinned source and MIT attribution.
+Present payment details, balances, or related payment controls.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI dropdown user profile comp-375
+# Origin UI Dropdown Menu (Example 375)
 
-1 published Origin UI dropdown user profile comp-375 examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

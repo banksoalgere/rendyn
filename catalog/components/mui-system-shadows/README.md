@@ -1,6 +1,6 @@
-# Material UI system shadows
+# Material UI System Shadows
 
-1 published Material UI system shadows examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

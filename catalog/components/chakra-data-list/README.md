@@ -1,6 +1,6 @@
-# Chakra UI data list
+# Chakra UI Data List
 
-7 published Chakra UI data list examples with complete pinned source and MIT attribution.
+Present a collection of related items.
 
 ## Installation
 

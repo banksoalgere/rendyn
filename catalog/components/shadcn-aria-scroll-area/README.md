@@ -1,6 +1,6 @@
-# shadcn/ui aria scroll area
+# shadcn/ui Scroll Area (React Aria)
 
-8 published shadcn/ui aria scroll area examples with complete pinned source and MIT attribution.
+Present content within a scrollable region.
 
 ## Installation
 

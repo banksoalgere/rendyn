@@ -1,6 +1,6 @@
-# Material UI material getting started templates checkout
+# Material UI Material Getting Started Templates Checkout
 
-1 published Material UI material getting started templates checkout examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

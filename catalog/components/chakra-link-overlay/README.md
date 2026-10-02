@@ -1,6 +1,6 @@
-# Chakra UI link overlay
+# Chakra UI Link Overlay
 
-2 published Chakra UI link overlay examples with complete pinned source and MIT attribution.
+Navigate to a page or resource using a link.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine burger
+# Mantine Burger
 
-2 published Mantine burger examples with complete pinned source and MIT attribution.
+Provide links and controls for moving between pages or sections.
 
 ## Installation
 

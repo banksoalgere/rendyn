@@ -1,6 +1,6 @@
-# shadcn/ui toggle
+# shadcn/ui Toggle
 
-6 published shadcn/ui toggle examples with complete pinned source and MIT attribution.
+Change the selected state of an option or control.
 
 ## Installation
 

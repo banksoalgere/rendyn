@@ -1,6 +1,6 @@
-# Material UI tabs
+# Material UI Tabs
 
-21 published Material UI tabs examples with complete pinned source and MIT attribution.
+Switch between related panels without leaving the current view.
 
 ## Installation
 

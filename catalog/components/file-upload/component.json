@@ -28,26 +28,27 @@
   ],
   "metadata": {
     "kind": "block",
-    "family": "upload",
+    "family": "file-upload",
     "tags": [
-      "animated",
       "attachment",
-      "drag",
       "file",
-      "form",
-      "layout",
-      "number",
       "progress",
-      "toggle",
       "upload"
     ],
     "aliases": [
       "file upload",
-      "upload"
+      "file-upload"
     ],
     "interactions": [
+      "click",
       "drag",
-      "type"
+      "hover",
+      "focus",
+      "press",
+      "keyboard",
+      "change",
+      "type",
+      "navigate"
     ],
     "useWhen": [
       "Two file upload patterns: an attachment workspace for mixed files, links, audio and media, plus a progress queue with retry and removal."
@@ -55,8 +56,56 @@
     "notIdealWhen": [
       "You need only a low-level primitive rather than a composed product pattern."
     ],
-    "visualSignature": "upload:animated:attachment:drag:file:form:type",
-    "searchText": "File Upload\nfile upload\nTwo file upload patterns: an attachment workspace for mixed files, links, audio and media, plus a progress queue with retry and removal.\nupload\nanimated\nattachment\ndrag\nfile\nform\nlayout\nnumber\nprogress\ntoggle\ntype\ntitle: \"File Upload\" description: \"Two file upload patterns: an attachment workspace for mixed files, links, audio and media, plus a progress queue with retry and removal.\" category: \"Blocks\" publishedAt: \"2026 06 18\" updatedAt: \"2026 08 20\" documentation: \"https://beui.dev/components/blocks/file upload\" markdown: \"https://beui.dev/components/blocks/file upload.md\" license: \"MIT\" File Upload Two file upload patterns: an attachment workspace for mixed files, links, audio and media, plus a progress queue with retry and removal. Install Attachment Upload A mixed attachment workspace with a dropzone, staggered file and image rows, animated upload, success, failure, retry and removal feedback, shared layout image previews, and an audio waveform. Upload Queue A drag and drop upload queue with progress rows, upload states, retry, and removal. Dependencies clsx lucide react motion react react dom tailwind merge Usage Attachment Upload usage A mixed attachment workspace with a dropzone, staggered file and image rows, animated upload, success, failure, retry and removal feedback, shared layout image previews, and an audio waveform. Upload Queue usage A drag and drop upload queue with progress rows, upload states, retry, and removal. API Reference AttachmentUpload Prop Type Default Required Description value AttachmentUploadItem[] — No — defaultValue AttachmentUploadItem[] — No — onValueChange ((items: AttachmentUploadItem[]) = void) — No — onFilesAdded ((items: AttachmentUploadItem[], files: File[]) = void) — No — onFilesRejected ((files: File[], reason: AttachmentRejectReason) = void) — No — onRemove ((item: AttachmentUploadItem) = void) — No — onRetry ((item: AttachmentUploadItem) = void) — No — playingId string — No — onAudioToggle ((item: AttachmentUploadItem) = void) — No — accept string — No — multiple boolean true No — maxFiles number 12 No — maxFileSize number 500 1024 1024 No — disabled boolean false No — title string Drag and drop or browse files No — description string — No — attachmentsLabel string Attachments No — className string — No — classNames AttachmentUploadClassNames — No — FileUpload Prop Type Default Required Description value FileUploadItem[] — No — defaultValue FileUploadItem[] — No — onValueChange ((items: FileUploadItem[]) = void) — No — onFilesAdded ((items: FileUploadItem[], files: File[]) = void) — No — onRemove ((item: FileUploadItem) = void) — No — onRetry ((item: FileUploadItem) = void) — No — accept string — No — multiple boolean true No — maxFiles number — No — disabled boolean false No — variant \"default\" \\ \"centered\" default No — title string Drop files here No — description string Add files to the upload queue No — browseLabel string Browse No — className string — No — classNames FileUploadClassNames — No — Source Registry detail: https://beui.dev/r/file upload Raw source: https://beui.dev/r/file upload/raw GitHub: https://github.com/starc007/ui components"
+    "visualSignature": "file-upload:attachment:file:progress:upload",
+    "searchText": "File Upload\nfile upload\nTwo file upload patterns: an attachment workspace for mixed files, links, audio and media, plus a progress queue with retry and removal.\nfile-upload\nattachment\nfile\nprogress\nupload\ntitle: \"File Upload\" description: \"Two file upload patterns: an attachment workspace for mixed files, links, audio and media, plus a progress queue with retry and removal.\" category: \"Blocks\" publishedAt: \"2026 06 18\" updatedAt: \"2026 08 20\" documentation: \"https://beui.dev/components/blocks/file upload\" markdown: \"https://beui.dev/components/blocks/file upload.md\" license: \"MIT\" File Upload Two file upload patterns: an attachment workspace for mixed files, links, audio and media, plus a progress queue with retry and removal. Install Attachment Upload A mixed attachment workspace with a dropzone, staggered file and image rows, animated upload, success, failure, retry and removal feedback, shared layout image previews, and an audio waveform. Upload Queue A drag and drop upload queue with progress rows, upload states, retry, and removal. Dependencies clsx lucide react motion react react dom tailwind merge Usage Attachment Upload usage A mixed attachment workspace with a dropzone, staggered file and image rows, animated upload, success, failure, retry and removal feedback, shared layout image previews, and an audio waveform. Upload Queue usage A drag and drop upload queue with progress rows, upload states, retry, and removal. API Reference AttachmentUpload Prop Type Default Required Description value AttachmentUploadItem[] — No — defaultValue AttachmentUploadItem[] — No — onValueChange ((items: AttachmentUploadItem[]) = void) — No — onFilesAdded ((items: AttachmentUploadItem[], files: File[]) = void) — No — onFilesRejected ((files: File[], reason: AttachmentRejectReason) = void) — No — onRemove ((item: AttachmentUploadItem) = void) — No — onRetry ((item: AttachmentUploadItem) = void) — No — playingId string — No — onAudioToggle ((item: AttachmentUploadItem) = void) — No — accept string — No — multiple boolean true No — maxFiles number 12 No — maxFileSize number 500 1024 1024 No — disabled boolean false No — title string Drag and drop or browse files No — description string — No — attachmentsLabel string Attachments No — className string — No — classNames AttachmentUploadClassNames — No — FileUpload Prop Type Default Required Description value FileUploadItem[] — No — defaultValue FileUploadItem[] — No — onValueChange ((items: FileUploadItem[]) = void) — No — onFilesAdded ((items: FileUploadItem[], files: File[]) = void) — No — onRemove ((item: FileUploadItem) = void) — No — onRetry ((item: FileUploadItem) = void) — No — accept string — No — multiple boolean true No — maxFiles number — No — disabled boolean false No — variant \"default\" \\ \"centered\" default No — title string Drop files here No — description string Add files to the upload queue No — browseLabel string Browse No — className string — No — classNames FileUploadClassNames — No — Source Registry detail: https://beui.dev/r/file upload Raw source: https://beui.dev/r/file upload/raw GitHub: https://github.com/starc007/ui components\nabsolute\ncentered\ncolumn\nfixed\ngrid\ninline\nrow\nblur\nbordered\nfilled\nshadow\nfully-rounded\nrounded\nblack\ndestructive\nemerald\nmuted\ntruncated\nanimation\nreduced-motion-variant\nspring\ntransform\ntransition\ndark-mode-variant\ndisabled-state\nfocus-state\nhover-state\nresponsive-variant",
+    "visual": {
+      "evidence": "source",
+      "scope": "component-source",
+      "layout": [
+        "absolute",
+        "centered",
+        "column",
+        "fixed",
+        "grid",
+        "inline",
+        "row"
+      ],
+      "surface": [
+        "blur",
+        "bordered",
+        "filled",
+        "shadow"
+      ],
+      "shape": [
+        "fully-rounded",
+        "rounded"
+      ],
+      "color": [
+        "black",
+        "destructive",
+        "emerald",
+        "muted"
+      ],
+      "typography": [
+        "truncated"
+      ],
+      "motion": [
+        "animation",
+        "reduced-motion-variant",
+        "spring",
+        "transform",
+        "transition"
+      ],
+      "states": [
+        "dark-mode-variant",
+        "disabled-state",
+        "focus-state",
+        "hover-state",
+        "responsive-variant"
+      ]
+    },
+    "exampleCount": 1,
+    "labelStatus": "source-labelled"
   },
   "previewPath": "/preview/blocks/file-upload",
   "manifestPath": "components/file-upload/component.json",

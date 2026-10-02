@@ -1,6 +1,6 @@
-# HeroUI time input
+# HeroUI Time Input
 
-19 published HeroUI time input examples with complete pinned source and MIT attribution.
+Choose or enter a time value.
 
 ## Installation
 

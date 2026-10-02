@@ -1,6 +1,6 @@
-# Mantine bubble chart
+# Mantine Bubble Chart
 
-6 published Mantine bubble chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Ant Design table
+# Ant Design Table
 
-53 published Ant Design table examples with complete pinned source and MIT attribution.
+Display related values in a row and column structure.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine close button
+# Mantine Close Button
 
-2 published Mantine close button examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

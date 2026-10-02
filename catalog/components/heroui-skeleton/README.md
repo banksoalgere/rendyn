@@ -1,6 +1,6 @@
-# HeroUI skeleton
+# HeroUI Skeleton
 
-3 published HeroUI skeleton examples with complete pinned source and MIT attribution.
+Reserve the shape of content while it is loading.
 
 ## Installation
 

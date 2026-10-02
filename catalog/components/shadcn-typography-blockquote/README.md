@@ -1,6 +1,6 @@
-# shadcn/ui typography blockquote
+# shadcn/ui Typography Blockquote
 
-1 published shadcn/ui typography blockquote examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

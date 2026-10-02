@@ -1,6 +1,6 @@
-# HeroUI tooltip
+# HeroUI Tooltip
 
-11 published HeroUI tooltip examples with complete pinned source and MIT attribution.
+Show a brief explanation associated with a control or item.
 
 ## Installation
 

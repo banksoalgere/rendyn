@@ -1,6 +1,6 @@
-# Material UI rating
+# Material UI Rating
 
-7 published Material UI rating examples with complete pinned source and MIT attribution.
+Choose or display a rating on a bounded scale.
 
 ## Installation
 

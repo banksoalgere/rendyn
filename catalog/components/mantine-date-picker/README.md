@@ -1,6 +1,6 @@
-# Mantine date picker
+# Mantine Date Picker
 
-28 published Mantine date picker examples with complete pinned source and MIT attribution.
+Choose a date or date range from date-selection controls.
 
 ## Installation
 

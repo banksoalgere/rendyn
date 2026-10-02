@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block preview 03
+# shadcn/ui Preview 03 (React Aria)
 
-8 published shadcn/ui aria blocks block preview 03 examples with complete pinned source and MIT attribution.
+Compare a collection of interface components or examples.
 
 ## Installation
 

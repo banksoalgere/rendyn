@@ -1,6 +1,6 @@
-# Mantine gauge chart
+# Mantine Gauge Chart
 
-7 published Mantine gauge chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

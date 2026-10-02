@@ -1,6 +1,6 @@
-# Origin UI input label phone comp-46
+# Origin UI Select (Example 46)
 
-1 published Origin UI input label phone comp-46 examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

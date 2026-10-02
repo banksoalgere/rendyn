@@ -1,6 +1,6 @@
-# Origin UI label textarea error comp-64
+# Origin UI Text Area (Example 64)
 
-1 published Origin UI label textarea error comp-64 examples with complete pinned source and MIT attribution.
+Enter text that spans multiple lines.
 
 ## Installation
 

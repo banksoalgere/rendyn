@@ -1,6 +1,6 @@
-# Origin UI notification button info comp-292
+# Origin UI Button (Example 292)
 
-1 published Origin UI notification button info comp-292 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

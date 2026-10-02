@@ -1,6 +1,6 @@
-# Material UI system positions
+# Material UI System Positions
 
-1 published Material UI system positions examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

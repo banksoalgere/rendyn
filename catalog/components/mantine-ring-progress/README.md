@@ -1,6 +1,6 @@
-# Mantine ring progress
+# Mantine Ring Progress
 
-9 published Mantine ring progress examples with complete pinned source and MIT attribution.
+Show how far a task has progressed.
 
 ## Installation
 

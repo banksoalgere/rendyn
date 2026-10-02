@@ -1,6 +1,6 @@
-# shadcn/ui base marker
+# shadcn/ui Marker (Base UI)
 
-8 published shadcn/ui base marker examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

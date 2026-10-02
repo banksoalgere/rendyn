@@ -1,6 +1,6 @@
-# Mantine use mutation observer
+# Mantine Use Mutation Observer
 
-2 published Mantine use mutation observer examples with complete pinned source and MIT attribution.
+React hook example for mutation observer.
 
 ## Installation
 

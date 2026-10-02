@@ -1,6 +1,6 @@
-# Mantine use throttled state
+# Mantine Use Throttled State
 
-1 published Mantine use throttled state examples with complete pinned source and MIT attribution.
+React hook example for throttled state.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI radio card
+# Chakra UI Radio Card
 
-15 published Chakra UI radio card examples with complete pinned source and MIT attribution.
+Choose one option from a set of alternatives.
 
 ## Installation
 

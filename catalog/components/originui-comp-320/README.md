@@ -1,6 +1,6 @@
-# Origin UI dialog modal delete comp-320
+# Origin UI Dialog (Example 320)
 
-1 published Origin UI dialog modal delete comp-320 examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

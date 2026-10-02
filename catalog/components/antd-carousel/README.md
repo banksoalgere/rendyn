@@ -1,6 +1,6 @@
-# Ant Design carousel
+# Ant Design Carousel
 
-7 published Ant Design carousel examples with complete pinned source and MIT attribution.
+Move through a sequence of content items.
 
 ## Installation
 

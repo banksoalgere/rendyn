@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block shipping address
+# shadcn/ui Shipping Address (React Aria)
 
-8 published shadcn/ui aria blocks block shipping address examples with complete pinned source and MIT attribution.
+Collect delivery address details in a form.
 
 ## Installation
 

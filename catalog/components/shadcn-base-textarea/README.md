@@ -1,6 +1,6 @@
-# shadcn/ui base textarea
+# shadcn/ui Textarea (Base UI)
 
-8 published shadcn/ui base textarea examples with complete pinned source and MIT attribution.
+Enter text that spans multiple lines.
 
 ## Installation
 

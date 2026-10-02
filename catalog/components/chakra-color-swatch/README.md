@@ -1,6 +1,6 @@
-# Chakra UI color swatch
+# Chakra UI Color Swatch
 
-7 published Chakra UI color swatch examples with complete pinned source and MIT attribution.
+Choose or inspect a color value.
 
 ## Installation
 

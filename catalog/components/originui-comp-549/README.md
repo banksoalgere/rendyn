@@ -1,6 +1,6 @@
-# Origin UI upload file image comp-549
+# Origin UI File Upload (Example 549)
 
-1 published Origin UI upload file image comp-549 examples with complete pinned source and MIT attribution.
+Select files to attach or upload.
 
 ## Installation
 

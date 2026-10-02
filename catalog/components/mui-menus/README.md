@@ -1,6 +1,6 @@
-# Material UI menus
+# Material UI Menus
 
-16 published Material UI menus examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

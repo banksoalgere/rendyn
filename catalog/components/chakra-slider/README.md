@@ -1,6 +1,6 @@
-# Chakra UI slider
+# Chakra UI Slider
 
-26 published Chakra UI slider examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

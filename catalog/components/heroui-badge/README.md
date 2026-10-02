@@ -1,6 +1,6 @@
-# HeroUI badge
+# HeroUI Badge
 
-10 published HeroUI badge examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

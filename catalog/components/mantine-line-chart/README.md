@@ -1,6 +1,6 @@
-# Mantine line chart
+# Mantine Line Chart
 
-31 published Mantine line chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

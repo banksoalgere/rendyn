@@ -1,6 +1,6 @@
-# Mantine image
+# Mantine Image
 
-4 published Mantine image examples with complete pinned source and MIT attribution.
+Display an image or collection of images.
 
 ## Installation
 

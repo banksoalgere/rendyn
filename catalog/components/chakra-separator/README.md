@@ -1,6 +1,6 @@
-# Chakra UI separator
+# Chakra UI Separator
 
-6 published Chakra UI separator examples with complete pinned source and MIT attribution.
+Visually separate related areas of an interface.
 
 ## Installation
 

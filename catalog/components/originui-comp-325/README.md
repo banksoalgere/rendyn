@@ -1,6 +1,6 @@
-# Origin UI dialog modal signup comp-325
+# Origin UI Dialog (Example 325)
 
-1 published Origin UI dialog modal signup comp-325 examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

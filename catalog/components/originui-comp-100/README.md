@@ -1,6 +1,6 @@
-# Origin UI button menu hamburger comp-100
+# Origin UI Button (Example 100)
 
-1 published Origin UI button menu hamburger comp-100 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

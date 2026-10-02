@@ -1,6 +1,6 @@
-# shadcn/ui base carousel
+# shadcn/ui Carousel (Base UI)
 
-8 published shadcn/ui base carousel examples with complete pinned source and MIT attribution.
+Move through a sequence of content items.
 
 ## Installation
 

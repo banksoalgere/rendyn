@@ -1,6 +1,6 @@
-# Mantine guides
+# Mantine Guides
 
-7 published Mantine guides examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

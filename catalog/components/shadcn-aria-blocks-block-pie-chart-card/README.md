@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block pie chart card
+# shadcn/ui Pie Chart Card (React Aria)
 
-8 published shadcn/ui aria blocks block pie chart card examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

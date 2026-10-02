@@ -1,6 +1,6 @@
-# shadcn/ui typography h4
+# shadcn/ui Typography H4
 
-1 published shadcn/ui typography h4 examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

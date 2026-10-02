@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block signup 01
+# shadcn/ui Signup 01 (React Aria)
 
-8 published shadcn/ui aria blocks block signup 01 examples with complete pinned source and MIT attribution.
+Collect the information needed to create an account.
 
 ## Installation
 

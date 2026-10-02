@@ -1,6 +1,6 @@
-# Origin UI calendar date react daypicker comp-493
+# Origin UI Calendar (Example 493)
 
-1 published Origin UI calendar date react daypicker comp-493 examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI mark
+# Chakra UI Mark
 
-2 published Chakra UI mark examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

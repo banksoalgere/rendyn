@@ -1,6 +1,6 @@
-# Mantine use counter
+# Mantine Use Counter
 
-1 published Mantine use counter examples with complete pinned source and MIT attribution.
+React hook example for counter.
 
 ## Installation
 

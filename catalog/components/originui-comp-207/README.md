@@ -1,6 +1,6 @@
-# Origin UI label select radix comp-207
+# Origin UI Select (Example 207)
 
-1 published Origin UI label select radix comp-207 examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

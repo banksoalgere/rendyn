@@ -1,6 +1,6 @@
-# Ant Design splitter
+# Ant Design Splitter
 
-14 published Ant Design splitter examples with complete pinned source and MIT attribution.
+Let users adjust the space assigned to adjacent panels.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine carousel
+# Mantine Carousel
 
-17 published Mantine carousel examples with complete pinned source and MIT attribution.
+Move through a sequence of content items.
 
 ## Installation
 

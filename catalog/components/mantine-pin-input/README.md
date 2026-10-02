@@ -1,6 +1,6 @@
-# Mantine pin input
+# Mantine Pin Input
 
-4 published Mantine pin input examples with complete pinned source and MIT attribution.
+Enter a short verification code across a group of input slots.
 
 ## Installation
 

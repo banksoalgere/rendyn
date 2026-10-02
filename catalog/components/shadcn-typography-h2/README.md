@@ -1,6 +1,6 @@
-# shadcn/ui typography h2
+# shadcn/ui Typography H2
 
-1 published shadcn/ui typography h2 examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

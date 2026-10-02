@@ -1,6 +1,6 @@
-# Origin UI tree comp-573
+# Origin UI Tree View (Example 573)
 
-1 published Origin UI tree comp-573 examples with complete pinned source and MIT attribution.
+Explore and select items in a hierarchical collection.
 
 ## Installation
 

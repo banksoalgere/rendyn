@@ -1,6 +1,6 @@
-# Chakra UI donut
+# Chakra UI Donut
 
-7 published Chakra UI donut examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Material UI dialogs
+# Material UI Dialogs
 
-12 published Material UI dialogs examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Material UI transfer list
+# Material UI Transfer List
 
-2 published Material UI transfer list examples with complete pinned source and MIT attribution.
+Move selected items between two collections.
 
 ## Installation
 

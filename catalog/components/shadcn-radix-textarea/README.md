@@ -1,6 +1,6 @@
-# shadcn/ui radix textarea
+# shadcn/ui Textarea (Radix)
 
-8 published shadcn/ui radix textarea examples with complete pinned source and MIT attribution.
+Enter text that spans multiple lines.
 
 ## Installation
 

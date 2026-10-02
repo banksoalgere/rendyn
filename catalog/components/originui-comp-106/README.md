@@ -1,6 +1,6 @@
-# Origin UI button toggle group comp-106
+# Origin UI Button (Example 106)
 
-1 published Origin UI button toggle group comp-106 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

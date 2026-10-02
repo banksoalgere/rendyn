@@ -1,6 +1,6 @@
-# Mantine use click outside
+# Mantine Use Click Outside
 
-2 published Mantine use click outside examples with complete pinned source and MIT attribution.
+React hook example for click outside.
 
 ## Installation
 

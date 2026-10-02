@@ -1,6 +1,6 @@
-# Mantine use previous
+# Mantine Use Previous
 
-1 published Mantine use previous examples with complete pinned source and MIT attribution.
+React hook example for previous.
 
 ## Installation
 

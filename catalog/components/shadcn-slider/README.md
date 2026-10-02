@@ -1,6 +1,6 @@
-# shadcn/ui slider
+# shadcn/ui Slider
 
-1 published shadcn/ui slider examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

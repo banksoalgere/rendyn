@@ -1,6 +1,6 @@
-# Origin UI notification error comp-284
+# Origin UI Button (Example 284)
 
-1 published Origin UI notification error comp-284 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

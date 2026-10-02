@@ -1,6 +1,6 @@
-# Origin UI label select timezone comp-218
+# Origin UI Select (Example 218)
 
-1 published Origin UI label select timezone comp-218 examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

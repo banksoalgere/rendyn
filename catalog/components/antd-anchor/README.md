@@ -1,6 +1,6 @@
-# Ant Design anchor
+# Ant Design Anchor
 
-12 published Ant Design anchor examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block recent transactions
+# shadcn/ui Recent Transactions (React Aria)
 
-8 published shadcn/ui aria blocks block recent transactions examples with complete pinned source and MIT attribution.
+Present payment details, balances, or related payment controls.
 
 ## Installation
 

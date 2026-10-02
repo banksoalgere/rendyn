@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block pie chart card
+# shadcn/ui Pie Chart Card (Radix)
 
-8 published shadcn/ui radix blocks block pie chart card examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

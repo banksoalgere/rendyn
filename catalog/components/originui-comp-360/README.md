@@ -1,6 +1,6 @@
-# Origin UI tooltip button kbd comp-360
+# Origin UI Tooltip (Example 360)
 
-1 published Origin UI tooltip button kbd comp-360 examples with complete pinned source and MIT attribution.
+Show a brief explanation associated with a control or item.
 
 ## Installation
 

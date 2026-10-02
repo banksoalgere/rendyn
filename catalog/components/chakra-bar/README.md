@@ -1,6 +1,6 @@
-# Chakra UI bar
+# Chakra UI Bar
 
-31 published Chakra UI bar examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

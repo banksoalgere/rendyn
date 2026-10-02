@@ -1,6 +1,6 @@
-# Chakra UI scatter
+# Chakra UI Scatter
 
-5 published Chakra UI scatter examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

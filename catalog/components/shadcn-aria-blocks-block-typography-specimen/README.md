@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block typography specimen
+# shadcn/ui Typography Specimen (React Aria)
 
-8 published shadcn/ui aria blocks block typography specimen examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

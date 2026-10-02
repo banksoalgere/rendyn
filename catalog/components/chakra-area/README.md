@@ -1,6 +1,6 @@
-# Chakra UI area
+# Chakra UI Area
 
-14 published Chakra UI area examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI button like counter comp-117
+# Origin UI Button (Example 117)
 
-1 published Origin UI button like counter comp-117 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

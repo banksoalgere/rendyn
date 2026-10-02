@@ -1,6 +1,6 @@
-# Material UI badges
+# Material UI Badges
 
-11 published Material UI badges examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

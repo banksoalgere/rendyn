@@ -1,6 +1,6 @@
-# Material UI pagination
+# Material UI Pagination
 
-11 published Material UI pagination examples with complete pinned source and MIT attribution.
+Move between pages of a collection of results.
 
 ## Installation
 

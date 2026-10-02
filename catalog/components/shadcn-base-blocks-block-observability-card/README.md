@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block observability card
+# shadcn/ui Observability Card (Base UI)
 
-8 published shadcn/ui base blocks block observability card examples with complete pinned source and MIT attribution.
+Compose a observability card interface from related information and controls.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine aspect ratio
+# Mantine Aspect Ratio
 
-4 published Mantine aspect ratio examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

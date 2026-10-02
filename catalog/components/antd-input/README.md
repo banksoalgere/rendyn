@@ -1,6 +1,6 @@
 # Ant Design Input
 
-26 published Ant Design input examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

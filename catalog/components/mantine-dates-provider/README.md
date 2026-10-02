@@ -1,6 +1,6 @@
-# Mantine dates provider
+# Mantine Dates Provider
 
-3 published Mantine dates provider examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

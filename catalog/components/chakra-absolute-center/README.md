@@ -1,6 +1,6 @@
-# Chakra UI absolute center
+# Chakra UI Absolute Center
 
-5 published Chakra UI absolute center examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

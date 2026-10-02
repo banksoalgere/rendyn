@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block activate agent dialog
+# shadcn/ui Activate Agent Dialog (React Aria)
 
-8 published shadcn/ui aria blocks block activate agent dialog examples with complete pinned source and MIT attribution.
+Ask for confirmation before completing an important action.
 
 ## Installation
 

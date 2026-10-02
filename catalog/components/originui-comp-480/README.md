@@ -1,6 +1,6 @@
-# Origin UI table tanstack flag comp-480
+# Origin UI Dropdown Menu (Example 480)
 
-1 published Origin UI table tanstack flag comp-480 examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

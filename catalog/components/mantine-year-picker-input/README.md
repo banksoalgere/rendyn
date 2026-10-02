@@ -1,6 +1,6 @@
-# Mantine year picker input
+# Mantine Year Picker Input
 
-17 published Mantine year picker input examples with complete pinned source and MIT attribution.
+Choose a date or date range from date-selection controls.
 
 ## Installation
 

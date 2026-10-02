@@ -1,6 +1,6 @@
-# Origin UI slider label equalizer comp-266
+# Origin UI Slider (Example 266)
 
-1 published Origin UI slider label equalizer comp-266 examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

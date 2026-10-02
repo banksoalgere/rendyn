@@ -1,6 +1,6 @@
-# Chakra UI toggle tip
+# Chakra UI Toggle Tip
 
-6 published Chakra UI toggle tip examples with complete pinned source and MIT attribution.
+Show a brief explanation associated with a control or item.
 
 ## Installation
 

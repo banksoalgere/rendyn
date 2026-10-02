@@ -1,6 +1,6 @@
-# Mantine lightbox
+# Mantine Lightbox
 
-14 published Mantine lightbox examples with complete pinned source and MIT attribution.
+Inspect media in an enlarged overlay.
 
 ## Installation
 

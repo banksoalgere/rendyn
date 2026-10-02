@@ -1,6 +1,6 @@
-# HeroUI listbox
+# HeroUI Listbox
 
-13 published HeroUI listbox examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

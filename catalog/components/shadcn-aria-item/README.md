@@ -1,6 +1,6 @@
-# shadcn/ui aria item
+# shadcn/ui Item (React Aria)
 
-8 published shadcn/ui aria item examples with complete pinned source and MIT attribution.
+Present a collection of related items.
 
 ## Installation
 

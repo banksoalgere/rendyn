@@ -1,6 +1,6 @@
-# Mantine use fullscreen
+# Mantine Use Fullscreen
 
-2 published Mantine use fullscreen examples with complete pinned source and MIT attribution.
+React hook example for fullscreen.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine code highlight
+# Mantine Code Highlight
 
-11 published Mantine code highlight examples with complete pinned source and MIT attribution.
+Display code or a technical snippet.
 
 ## Installation
 

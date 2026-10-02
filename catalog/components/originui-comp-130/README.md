@@ -1,6 +1,6 @@
-# Origin UI button toggle darkmode comp-130
+# Origin UI Toggle (Example 130)
 
-1 published Origin UI button toggle darkmode comp-130 examples with complete pinned source and MIT attribution.
+Change the selected state of an option or control.
 
 ## Installation
 

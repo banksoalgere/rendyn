@@ -1,6 +1,6 @@
-# Mantine indicator
+# Mantine Indicator
 
-8 published Mantine indicator examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

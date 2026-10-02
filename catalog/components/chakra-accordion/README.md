@@ -1,6 +1,6 @@
-# Chakra UI accordion
+# Chakra UI Accordion
 
-15 published Chakra UI accordion examples with complete pinned source and MIT attribution.
+Expand and collapse grouped content such as frequently asked questions.
 
 ## Installation
 

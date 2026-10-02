@@ -1,6 +1,6 @@
-# Ant Design alert
+# Ant Design Alert
 
-15 published Ant Design alert examples with complete pinned source and MIT attribution.
+Display important information, warnings, or errors within the page.
 
 ## Installation
 

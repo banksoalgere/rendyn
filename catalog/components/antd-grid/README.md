@@ -1,6 +1,6 @@
-# Ant Design grid
+# Ant Design Grid
 
-13 published Ant Design grid examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

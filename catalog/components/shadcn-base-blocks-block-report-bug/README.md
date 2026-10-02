@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block report bug
+# shadcn/ui Report Bug (Base UI)
 
-8 published shadcn/ui base blocks block report bug examples with complete pinned source and MIT attribution.
+Collect feedback or a problem report from a user.
 
 ## Installation
 

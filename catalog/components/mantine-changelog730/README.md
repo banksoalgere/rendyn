@@ -1,6 +1,6 @@
-# Mantine changelog730
+# Mantine Changelog730
 
-1 published Mantine changelog730 examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

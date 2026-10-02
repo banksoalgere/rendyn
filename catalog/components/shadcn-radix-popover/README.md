@@ -1,6 +1,6 @@
-# shadcn/ui radix popover
+# shadcn/ui Popover (Radix)
 
-8 published shadcn/ui radix popover examples with complete pinned source and MIT attribution.
+Display contextual content beside its trigger.
 
 ## Installation
 

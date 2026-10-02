@@ -1,6 +1,6 @@
-# shadcn/ui radix sidebar
+# shadcn/ui Sidebar (Radix)
 
-32 published shadcn/ui radix sidebar examples with complete pinned source and MIT attribution.
+Organize application navigation and supporting controls in a side panel.
 
 ## Installation
 

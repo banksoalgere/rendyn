@@ -1,6 +1,6 @@
-# Material UI system screen readers
+# Material UI System Screen Readers
 
-1 published Material UI system screen readers examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

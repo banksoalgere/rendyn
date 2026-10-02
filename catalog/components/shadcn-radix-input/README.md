@@ -1,6 +1,6 @@
-# shadcn/ui radix input
+# shadcn/ui Input (Radix)
 
-8 published shadcn/ui radix input examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

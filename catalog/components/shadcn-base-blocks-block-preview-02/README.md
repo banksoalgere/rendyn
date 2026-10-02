@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block preview 02
+# shadcn/ui Preview 02 (Base UI)
 
-8 published shadcn/ui base blocks block preview 02 examples with complete pinned source and MIT attribution.
+Compare a collection of interface components or examples.
 
 ## Installation
 

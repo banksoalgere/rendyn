@@ -1,6 +1,6 @@
-# Ant Design tooltip
+# Ant Design Tooltip
 
-16 published Ant Design tooltip examples with complete pinned source and MIT attribution.
+Show a brief explanation associated with a control or item.
 
 ## Installation
 

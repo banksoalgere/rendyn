@@ -1,6 +1,6 @@
-# shadcn/ui aria tabs
+# shadcn/ui Tabs (React Aria)
 
-8 published shadcn/ui aria tabs examples with complete pinned source and MIT attribution.
+Switch between related panels without leaving the current view.
 
 ## Installation
 

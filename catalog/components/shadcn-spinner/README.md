@@ -1,6 +1,6 @@
-# shadcn/ui spinner
+# shadcn/ui Spinner
 
-10 published shadcn/ui spinner examples with complete pinned source and MIT attribution.
+Indicate that content or a task is still loading.
 
 ## Installation
 

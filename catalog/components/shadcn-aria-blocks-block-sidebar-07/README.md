@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block sidebar 07
+# shadcn/ui Sidebar 07 (React Aria)
 
-8 published shadcn/ui aria blocks block sidebar 07 examples with complete pinned source and MIT attribution.
+Organize application navigation and supporting controls in a side panel.
 
 ## Installation
 

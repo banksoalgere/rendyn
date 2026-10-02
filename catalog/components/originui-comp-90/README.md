@@ -1,6 +1,6 @@
-# Origin UI button loading comp-90
+# Origin UI Button (Example 90)
 
-1 published Origin UI button loading comp-90 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

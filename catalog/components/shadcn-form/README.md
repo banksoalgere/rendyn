@@ -1,6 +1,6 @@
-# shadcn/ui form
+# shadcn/ui Form
 
-30 published shadcn/ui form examples with complete pinned source and MIT attribution.
+Collect related values through a group of form controls.
 
 ## Installation
 

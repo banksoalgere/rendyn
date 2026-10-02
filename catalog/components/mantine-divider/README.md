@@ -1,6 +1,6 @@
-# Mantine divider
+# Mantine Divider
 
-5 published Mantine divider examples with complete pinned source and MIT attribution.
+Visually separate related areas of an interface.
 
 ## Installation
 

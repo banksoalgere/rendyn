@@ -1,6 +1,6 @@
-# Origin UI label textarea read only comp-76
+# Origin UI Text Area (Example 76)
 
-1 published Origin UI label textarea read only comp-76 examples with complete pinned source and MIT attribution.
+Enter text that spans multiple lines.
 
 ## Installation
 

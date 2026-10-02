@@ -1,6 +1,6 @@
-# shadcn/ui sheet
+# shadcn/ui Sheet
 
-2 published shadcn/ui sheet examples with complete pinned source and MIT attribution.
+Open a panel alongside the current page for details or additional controls.
 
 ## Installation
 

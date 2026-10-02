@@ -1,6 +1,6 @@
-# Origin UI radio label rating comp-157
+# Origin UI Radio Group (Example 157)
 
-1 published Origin UI radio label rating comp-157 examples with complete pinned source and MIT attribution.
+Choose one option from a set of alternatives.
 
 ## Installation
 

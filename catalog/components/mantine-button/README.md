@@ -1,6 +1,6 @@
-# Mantine button
+# Mantine Button
 
-16 published Mantine button examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

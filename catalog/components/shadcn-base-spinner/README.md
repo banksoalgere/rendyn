@@ -1,6 +1,6 @@
-# shadcn/ui base spinner
+# shadcn/ui Spinner (Base UI)
 
-8 published shadcn/ui base spinner examples with complete pinned source and MIT attribution.
+Indicate that content or a task is still loading.
 
 ## Installation
 

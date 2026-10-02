@@ -1,6 +1,6 @@
-# Origin UI calendar date react aria comp-487
+# Origin UI Calendar (Example 487)
 
-1 published Origin UI calendar date react aria comp-487 examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

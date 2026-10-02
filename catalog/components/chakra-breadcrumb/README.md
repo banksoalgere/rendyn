@@ -1,6 +1,6 @@
-# Chakra UI breadcrumb
+# Chakra UI Breadcrumb
 
-9 published Chakra UI breadcrumb examples with complete pinned source and MIT attribution.
+Show the current location within a hierarchy of pages.
 
 ## Installation
 

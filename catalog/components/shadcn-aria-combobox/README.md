@@ -1,6 +1,6 @@
-# shadcn/ui aria combobox
+# shadcn/ui Combobox (React Aria)
 
-8 published shadcn/ui aria combobox examples with complete pinned source and MIT attribution.
+Search and choose a value from a list of available options.
 
 ## Installation
 

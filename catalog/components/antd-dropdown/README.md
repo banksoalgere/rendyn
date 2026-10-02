@@ -1,6 +1,6 @@
-# Ant Design dropdown
+# Ant Design Dropdown
 
-21 published Ant Design dropdown examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

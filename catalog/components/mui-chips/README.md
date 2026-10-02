@@ -1,6 +1,6 @@
-# Material UI chips
+# Material UI Chips
 
-13 published Material UI chips examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

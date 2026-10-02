@@ -1,6 +1,6 @@
-# Material UI alert
+# Material UI Alert
 
-9 published Material UI alert examples with complete pinned source and MIT attribution.
+Display important information, warnings, or errors within the page.
 
 ## Installation
 

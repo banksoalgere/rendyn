@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block signup 02
+# shadcn/ui Signup 02 (Radix)
 
-8 published shadcn/ui radix blocks block signup 02 examples with complete pinned source and MIT attribution.
+Collect the information needed to create an account.
 
 ## Installation
 

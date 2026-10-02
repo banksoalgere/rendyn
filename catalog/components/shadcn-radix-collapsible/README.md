@@ -1,6 +1,6 @@
-# shadcn/ui radix collapsible
+# shadcn/ui Collapsible (Radix)
 
-8 published shadcn/ui radix collapsible examples with complete pinned source and MIT attribution.
+Reveal or hide a section of supporting content.
 
 ## Installation
 

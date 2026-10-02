@@ -1,6 +1,6 @@
-# shadcn/ui base badge
+# shadcn/ui Badge (Base UI)
 
-8 published shadcn/ui base badge examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

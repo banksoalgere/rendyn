@@ -1,6 +1,6 @@
-# Origin UI pagination input comp-465
+# Origin UI Pagination (Example 465)
 
-1 published Origin UI pagination input comp-465 examples with complete pinned source and MIT attribution.
+Move between pages of a collection of results.
 
 ## Installation
 

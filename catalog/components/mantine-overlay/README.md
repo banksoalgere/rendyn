@@ -1,6 +1,6 @@
-# Mantine overlay
+# Mantine Overlay
 
-3 published Mantine overlay examples with complete pinned source and MIT attribution.
+Place a visual layer above the underlying interface.
 
 ## Installation
 

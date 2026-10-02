@@ -1,6 +1,6 @@
-# Origin UI tooltip hover card user comp-364
+# Origin UI Card (Example 364)
 
-1 published Origin UI tooltip hover card user comp-364 examples with complete pinned source and MIT attribution.
+Group related content and actions in a distinct container.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI slider vertical slider label comp-262
+# Origin UI Slider (Example 262)
 
-1 published Origin UI slider vertical slider label comp-262 examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

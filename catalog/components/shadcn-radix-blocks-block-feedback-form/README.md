@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block feedback form
+# shadcn/ui Feedback Form (Radix)
 
-8 published shadcn/ui radix blocks block feedback form examples with complete pinned source and MIT attribution.
+Collect feedback or a problem report from a user.
 
 ## Installation
 

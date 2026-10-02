@@ -1,6 +1,6 @@
-# Chakra UI fieldset
+# Chakra UI Fieldset
 
-4 published Chakra UI fieldset examples with complete pinned source and MIT attribution.
+Collect related values through a group of form controls.
 
 ## Installation
 

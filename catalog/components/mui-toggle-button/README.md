@@ -1,6 +1,6 @@
-# Material UI toggle button
+# Material UI Toggle Button
 
-10 published Material UI toggle button examples with complete pinned source and MIT attribution.
+Change the selected state of an option or control.
 
 ## Installation
 

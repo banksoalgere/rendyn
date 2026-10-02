@@ -1,6 +1,6 @@
 # Origin UI File Input
 
-1 published Origin UI file input examples with complete pinned source and MIT attribution.
+Select files to attach or upload.
 
 ## Installation
 

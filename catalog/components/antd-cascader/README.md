@@ -1,6 +1,6 @@
-# Ant Design cascader
+# Ant Design Cascader
 
-23 published Ant Design cascader examples with complete pinned source and MIT attribution.
+Search and choose a value from a list of available options.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI switch radix comp-176
+# Origin UI Switch (Example 176)
 
-1 published Origin UI switch radix comp-176 examples with complete pinned source and MIT attribution.
+Turn a setting on or off.
 
 ## Installation
 

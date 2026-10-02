@@ -1,6 +1,6 @@
-# shadcn/ui radix scroll area
+# shadcn/ui Scroll Area (Radix)
 
-8 published shadcn/ui radix scroll area examples with complete pinned source and MIT attribution.
+Present content within a scrollable region.
 
 ## Installation
 

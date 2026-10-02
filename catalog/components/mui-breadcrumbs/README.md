@@ -1,6 +1,6 @@
-# Material UI breadcrumbs
+# Material UI Breadcrumbs
 
-8 published Material UI breadcrumbs examples with complete pinned source and MIT attribution.
+Show the current location within a hierarchy of pages.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI input label copy comp-53
+# Origin UI Tooltip (Example 53)
 
-1 published Origin UI input label copy comp-53 examples with complete pinned source and MIT attribution.
+Show a brief explanation associated with a control or item.
 
 ## Installation
 

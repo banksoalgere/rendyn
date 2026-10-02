@@ -1,6 +1,6 @@
-# Mantine theming
+# Mantine Theming
 
-26 published Mantine theming examples with complete pinned source and MIT attribution.
+Configure or demonstrate shared interface theme values.
 
 ## Installation
 

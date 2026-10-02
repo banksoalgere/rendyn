@@ -1,6 +1,6 @@
-# Chakra UI badge
+# Chakra UI Badge
 
-9 published Chakra UI badge examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

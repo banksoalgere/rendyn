@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block notification settings
+# shadcn/ui Notification Settings (React Aria)
 
-8 published shadcn/ui aria blocks block notification settings examples with complete pinned source and MIT attribution.
+Group controls for configuring account or application preferences.
 
 ## Installation
 

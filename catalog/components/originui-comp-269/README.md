@@ -1,6 +1,6 @@
-# Origin UI alert error comp-269
+# Origin UI Alert (Example 269)
 
-1 published Origin UI alert error comp-269 examples with complete pinned source and MIT attribution.
+Display important information, warnings, or errors within the page.
 
 ## Installation
 

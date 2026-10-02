@@ -1,6 +1,6 @@
-# Mantine use toggle
+# Mantine Use Toggle
 
-1 published Mantine use toggle examples with complete pinned source and MIT attribution.
+React hook example for toggle.
 
 ## Installation
 

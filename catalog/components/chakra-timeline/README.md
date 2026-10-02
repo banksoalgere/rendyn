@@ -1,6 +1,6 @@
-# Chakra UI timeline
+# Chakra UI Timeline
 
-6 published Chakra UI timeline examples with complete pinned source and MIT attribution.
+Display events or milestones in sequence.
 
 ## Installation
 

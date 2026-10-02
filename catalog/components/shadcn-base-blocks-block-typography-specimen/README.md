@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block typography specimen
+# shadcn/ui Typography Specimen (Base UI)
 
-8 published shadcn/ui base blocks block typography specimen examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

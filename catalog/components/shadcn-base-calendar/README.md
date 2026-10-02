@@ -1,6 +1,6 @@
-# shadcn/ui base calendar
+# shadcn/ui Calendar (Base UI)
 
-8 published shadcn/ui base calendar examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

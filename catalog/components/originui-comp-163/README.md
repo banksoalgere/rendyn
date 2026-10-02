@@ -1,6 +1,6 @@
-# Origin UI radio label card comp-163
+# Origin UI Radio Group (Example 163)
 
-1 published Origin UI radio label card comp-163 examples with complete pinned source and MIT attribution.
+Choose one option from a set of alternatives.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI tags input
+# Chakra UI Tags Input
 
-23 published Chakra UI tags input examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

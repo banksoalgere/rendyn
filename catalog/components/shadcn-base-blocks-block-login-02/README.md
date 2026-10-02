@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block login 02
+# shadcn/ui Login 02 (Base UI)
 
-8 published shadcn/ui base blocks block login 02 examples with complete pinned source and MIT attribution.
+Collect the information needed to sign in to an account.
 
 ## Installation
 

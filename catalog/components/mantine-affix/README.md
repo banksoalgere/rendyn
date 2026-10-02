@@ -1,6 +1,6 @@
-# Mantine affix
+# Mantine Affix
 
-1 published Mantine affix examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

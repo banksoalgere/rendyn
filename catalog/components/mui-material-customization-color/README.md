@@ -1,6 +1,6 @@
-# Material UI material customization color
+# Material UI Material Customization Color
 
-3 published Material UI material customization color examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# HeroUI link
+# HeroUI Link
 
-11 published HeroUI link examples with complete pinned source and MIT attribution.
+Navigate to a page or resource using a link.
 
 ## Installation
 

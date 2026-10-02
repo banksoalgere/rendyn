@@ -1,6 +1,6 @@
-# Ant Design skeleton
+# Ant Design Skeleton
 
-8 published Ant Design skeleton examples with complete pinned source and MIT attribution.
+Reserve the shape of content while it is loading.
 
 ## Installation
 

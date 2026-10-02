@@ -1,6 +1,6 @@
-# Mantine use in viewport
+# Mantine Use In Viewport
 
-1 published Mantine use in viewport examples with complete pinned source and MIT attribution.
+React hook example for in viewport.
 
 ## Installation
 

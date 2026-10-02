@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block contributions activity
+# shadcn/ui Contributions Activity (Base UI)
 
-8 published shadcn/ui base blocks block contributions activity examples with complete pinned source and MIT attribution.
+Compose a contributions activity interface from related information and controls.
 
 ## Installation
 

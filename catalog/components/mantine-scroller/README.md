@@ -1,6 +1,6 @@
-# Mantine scroller
+# Mantine Scroller
 
-5 published Mantine scroller examples with complete pinned source and MIT attribution.
+Present content within a scrollable region.
 
 ## Installation
 

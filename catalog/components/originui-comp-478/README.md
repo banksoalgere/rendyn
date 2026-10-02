@@ -1,6 +1,6 @@
-# Origin UI table tanstack checkbox comp-478
+# Origin UI Checkbox (Example 478)
 
-1 published Origin UI table tanstack checkbox comp-478 examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

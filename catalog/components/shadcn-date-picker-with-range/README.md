@@ -1,6 +1,6 @@
-# shadcn/ui date picker with range
+# shadcn/ui Date Picker With Range
 
-1 published shadcn/ui date picker with range examples with complete pinned source and MIT attribution.
+Choose a date or date range from date-selection controls.
 
 ## Installation
 

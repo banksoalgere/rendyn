@@ -1,6 +1,6 @@
-# HeroUI alert
+# HeroUI Alert
 
-11 published HeroUI alert examples with complete pinned source and MIT attribution.
+Display important information, warnings, or errors within the page.
 
 ## Installation
 

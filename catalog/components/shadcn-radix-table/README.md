@@ -1,6 +1,6 @@
-# shadcn/ui radix table
+# shadcn/ui Table (Radix)
 
-8 published shadcn/ui radix table examples with complete pinned source and MIT attribution.
+Display related values in a row and column structure.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI calendar range calendar date comp-507
+# Origin UI Calendar (Example 507)
 
-1 published Origin UI calendar range calendar date comp-507 examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

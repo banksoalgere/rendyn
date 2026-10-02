@@ -1,6 +1,6 @@
-# Chakra UI popover
+# Chakra UI Popover
 
-15 published Chakra UI popover examples with complete pinned source and MIT attribution.
+Display contextual content beside its trigger.
 
 ## Installation
 

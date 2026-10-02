@@ -1,6 +1,6 @@
-# shadcn/ui base skeleton
+# shadcn/ui Skeleton (Base UI)
 
-8 published shadcn/ui base skeleton examples with complete pinned source and MIT attribution.
+Reserve the shape of content while it is loading.
 
 ## Installation
 

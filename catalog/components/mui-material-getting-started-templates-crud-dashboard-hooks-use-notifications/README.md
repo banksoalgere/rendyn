@@ -1,6 +1,6 @@
-# Material UI material getting started templates crud dashboard hooks use notifications
+# Material UI Material Getting Started Templates Crud Dashboard Hooks Use Notifications
 
-3 published Material UI material getting started templates crud dashboard hooks use notifications examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

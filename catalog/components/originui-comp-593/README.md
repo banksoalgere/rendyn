@@ -1,6 +1,6 @@
-# Origin UI navbar, navigation comp-593
+# Origin UI Breadcrumbs (Example 593)
 
-1 published Origin UI navbar, navigation comp-593 examples with complete pinned source and MIT attribution.
+Show the current location within a hierarchy of pages.
 
 ## Installation
 

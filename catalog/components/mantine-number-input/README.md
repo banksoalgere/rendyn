@@ -1,6 +1,6 @@
-# Mantine number input
+# Mantine Number Input
 
-21 published Mantine number input examples with complete pinned source and MIT attribution.
+Enter a numeric value using a number field.
 
 ## Installation
 

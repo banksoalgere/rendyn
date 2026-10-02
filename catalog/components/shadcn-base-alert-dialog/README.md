@@ -1,6 +1,6 @@
-# shadcn/ui base alert dialog
+# shadcn/ui Alert Dialog (Base UI)
 
-8 published shadcn/ui base alert dialog examples with complete pinned source and MIT attribution.
+Ask for confirmation before completing an important action.
 
 ## Installation
 

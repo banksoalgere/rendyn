@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block account access
+# shadcn/ui Account Access (React Aria)
 
-8 published shadcn/ui aria blocks block account access examples with complete pinned source and MIT attribution.
+Collect the information needed to sign in to an account.
 
 ## Installation
 

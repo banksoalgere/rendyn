@@ -1,6 +1,6 @@
-# Origin UI label select flag comp-225
+# Origin UI Select (Example 225)
 
-1 published Origin UI label select flag comp-225 examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

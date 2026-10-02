@@ -1,6 +1,6 @@
-# shadcn/ui item
+# shadcn/ui Item
 
-10 published shadcn/ui item examples with complete pinned source and MIT attribution.
+Present a collection of related items.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui popover
+# shadcn/ui Popover
 
-1 published shadcn/ui popover examples with complete pinned source and MIT attribution.
+Display contextual content beside its trigger.
 
 ## Installation
 

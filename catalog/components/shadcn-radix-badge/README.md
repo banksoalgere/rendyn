@@ -1,6 +1,6 @@
-# shadcn/ui radix badge
+# shadcn/ui Badge (Radix)
 
-8 published shadcn/ui radix badge examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

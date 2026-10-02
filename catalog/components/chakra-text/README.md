@@ -1,6 +1,6 @@
-# Chakra UI text
+# Chakra UI Text
 
-7 published Chakra UI text examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

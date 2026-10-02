@@ -1,6 +1,6 @@
-# shadcn/ui radix toggle group
+# shadcn/ui Toggle Group (Radix)
 
-8 published shadcn/ui radix toggle group examples with complete pinned source and MIT attribution.
+Change the selected state of an option or control.
 
 ## Installation
 

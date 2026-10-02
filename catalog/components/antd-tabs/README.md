@@ -1,6 +1,6 @@
-# Ant Design tabs
+# Ant Design Tabs
 
-20 published Ant Design tabs examples with complete pinned source and MIT attribution.
+Switch between related panels without leaving the current view.
 
 ## Installation
 

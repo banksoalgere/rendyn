@@ -1,6 +1,6 @@
-# Mantine pill
+# Mantine Pill
 
-3 published Mantine pill examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

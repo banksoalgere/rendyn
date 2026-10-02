@@ -1,6 +1,6 @@
-# Ant Design pagination
+# Ant Design Pagination
 
-16 published Ant Design pagination examples with complete pinned source and MIT attribution.
+Move between pages of a collection of results.
 
 ## Installation
 

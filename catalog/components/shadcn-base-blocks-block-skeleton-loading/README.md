@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block skeleton loading
+# shadcn/ui Skeleton Loading (Base UI)
 
-8 published shadcn/ui base blocks block skeleton loading examples with complete pinned source and MIT attribution.
+Reserve the shape of content while it is loading.
 
 ## Installation
 

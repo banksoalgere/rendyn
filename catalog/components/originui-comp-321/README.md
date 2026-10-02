@@ -1,6 +1,6 @@
-# Origin UI dialog modal newsletter comp-321
+# Origin UI Dialog (Example 321)
 
-1 published Origin UI dialog modal newsletter comp-321 examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

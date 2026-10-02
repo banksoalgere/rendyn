@@ -1,6 +1,6 @@
-# Material UI no ssr
+# Material UI No Ssr
 
-2 published Material UI no ssr examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

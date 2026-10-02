@@ -1,6 +1,6 @@
-# Chakra UI icon
+# Chakra UI Icon
 
-6 published Chakra UI icon examples with complete pinned source and MIT attribution.
+Represent an interface concept with a compact symbol.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui aria dropdown menu
+# shadcn/ui Dropdown Menu (React Aria)
 
-8 published shadcn/ui aria dropdown menu examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

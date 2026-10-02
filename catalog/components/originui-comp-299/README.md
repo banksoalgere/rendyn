@@ -1,6 +1,6 @@
-# Origin UI notification toast sonner comp-299
+# Origin UI Button (Example 299)
 
-1 published Origin UI notification toast sonner comp-299 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

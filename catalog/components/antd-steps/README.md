@@ -1,6 +1,6 @@
-# Ant Design steps
+# Ant Design Steps
 
-20 published Ant Design steps examples with complete pinned source and MIT attribution.
+Show the current stage within a sequence of steps.
 
 ## Installation
 

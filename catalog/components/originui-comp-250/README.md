@@ -1,6 +1,6 @@
-# Origin UI slider range slider label comp-250
+# Origin UI Slider (Example 250)
 
-1 published Origin UI slider range slider label comp-250 examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Ant Design segmented
+# Ant Design Segmented
 
-16 published Ant Design segmented examples with complete pinned source and MIT attribution.
+Choose between options presented in a compact group.
 
 ## Installation
 

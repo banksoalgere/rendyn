@@ -1,6 +1,6 @@
-# Material UI material integrations routing
+# Material UI Material Integrations Routing
 
-7 published Material UI material integrations routing examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui radix item
+# shadcn/ui Item (Radix)
 
-8 published shadcn/ui radix item examples with complete pinned source and MIT attribution.
+Present a collection of related items.
 
 ## Installation
 

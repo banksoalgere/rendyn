@@ -1,6 +1,6 @@
-# Ant Design watermark
+# Ant Design Watermark
 
-6 published Ant Design watermark examples with complete pinned source and MIT attribution.
+Overlay a repeated identifying mark on content.
 
 ## Installation
 

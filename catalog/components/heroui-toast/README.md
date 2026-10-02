@@ -1,6 +1,6 @@
-# HeroUI toast
+# HeroUI Toast
 
-9 published HeroUI toast examples with complete pinned source and MIT attribution.
+Display a transient notification about an event or action.
 
 ## Installation
 

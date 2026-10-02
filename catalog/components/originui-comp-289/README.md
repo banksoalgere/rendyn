@@ -1,6 +1,6 @@
-# Origin UI notification button warning comp-289
+# Origin UI Button (Example 289)
 
-1 published Origin UI notification button warning comp-289 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

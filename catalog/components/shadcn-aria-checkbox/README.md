@@ -1,6 +1,6 @@
-# shadcn/ui aria checkbox
+# shadcn/ui Checkbox (React Aria)
 
-8 published shadcn/ui aria checkbox examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

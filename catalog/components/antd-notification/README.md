@@ -1,6 +1,6 @@
-# Ant Design notification
+# Ant Design Notification
 
-14 published Ant Design notification examples with complete pinned source and MIT attribution.
+Display a transient notification about an event or action.
 
 ## Installation
 

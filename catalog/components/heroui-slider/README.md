@@ -1,6 +1,6 @@
-# HeroUI slider
+# HeroUI Slider
 
-27 published HeroUI slider examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

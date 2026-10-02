@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block qr connect
+# shadcn/ui QR Connect (Radix)
 
-8 published shadcn/ui radix blocks block qr connect examples with complete pinned source and MIT attribution.
+Display a value in a scannable QR code.
 
 ## Installation
 

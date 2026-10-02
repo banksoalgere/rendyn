@@ -1,5 +1,6 @@
 import { expandedQueryTokens, tokenize } from '../text.js';
 import type { SearchComponent, SearchIndex } from '../types.js';
+import { visualSearchTerms } from '../visual.js';
 
 const componentCache = new WeakMap<SearchComponent, ReturnType<typeof prepareComponent>>();
 const familyCache = new WeakMap<SearchIndex, Set<string>>();
@@ -7,14 +8,16 @@ const vocabularyCache = new WeakMap<SearchIndex, Map<string, number>>();
 const CONTEXT_WORDS = new Set(tokenize("please find show give want need build building use using component components ui react typescript tailwind application website page landing saas b2b clean modern nice restrained minimal simple polished elegant responsive white subtle calm"));
 
 function prepareComponent(component: SearchComponent) {
+  const visual = visualSearchTerms(component.metadata.visual);
   const searchText = [component.name, component.description, ...component.metadata.tags,
-    ...component.metadata.aliases, ...component.metadata.interactions, ...component.metadata.useWhen].join(' ');
+    ...component.metadata.aliases, ...component.metadata.interactions, ...component.metadata.useWhen, ...visual].join(' ');
   return {
     name: new Set(tokenize(`${component.name} ${component.slug}`)),
     description: new Set(tokenize(component.description)),
     metadata: new Set(tokenize([
       ...component.metadata.tags, ...component.metadata.aliases,
       ...component.metadata.interactions, ...component.metadata.useWhen,
+      ...visual,
     ].join(' '))),
     diversity: new Set(tokenize(searchText)),
     searchText: searchText.toLowerCase(),
@@ -78,7 +81,8 @@ export function prepareQuery(query: string, catalog: SearchIndex) {
     const token = tokenize(word)[0];
     if (!token || vocabulary.has(token) || CONTEXT_WORDS.has(token)) return word;
     const corrections = [...nameVocabulary].filter(candidate => nearWord(token, candidate));
-    return corrections.length === 1 ? corrections[0] : word;
+    // A typo correction must not change a normal word into a negation/operator.
+    return corrections.length === 1 && !['not', 'no', 'without', 'avoid', 'exclude'].includes(corrections[0]) ? corrections[0] : word;
   });
   const direct = [...new Set(tokenize(positiveQuery))];
   // Each requested concept contributes once; adding synonyms must not dilute it.

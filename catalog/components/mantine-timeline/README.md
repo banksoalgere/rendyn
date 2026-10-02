@@ -1,6 +1,6 @@
-# Mantine timeline
+# Mantine Timeline
 
-5 published Mantine timeline examples with complete pinned source and MIT attribution.
+Display events or milestones in sequence.
 
 ## Installation
 

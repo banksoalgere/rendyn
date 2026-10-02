@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block transfer funds
+# shadcn/ui Transfer Funds (Radix)
 
-8 published shadcn/ui radix blocks block transfer funds examples with complete pinned source and MIT attribution.
+Present payment details, balances, or related payment controls.
 
 ## Installation
 

@@ -5,7 +5,7 @@ import type { SearchComponent } from '../../../packages/catalog/src/types';
 export const categoryLabels = {
   motion: 'Interaction',
   agents: 'Agent UI',
-  blocks: 'Product blocks',
+  blocks: 'Components & blocks',
 } as const;
 
 export interface CatalogueComponent extends ComponentPreviewData {

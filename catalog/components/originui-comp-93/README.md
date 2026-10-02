@@ -1,6 +1,6 @@
-# Origin UI button kbd comp-93
+# Origin UI Button (Example 93)
 
-1 published Origin UI button kbd comp-93 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

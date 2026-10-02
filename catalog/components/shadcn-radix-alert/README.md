@@ -1,6 +1,6 @@
-# shadcn/ui radix alert
+# shadcn/ui Alert (Radix)
 
-8 published shadcn/ui radix alert examples with complete pinned source and MIT attribution.
+Display important information, warnings, or errors within the page.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block preview
+# shadcn/ui Preview (Base UI)
 
-8 published shadcn/ui base blocks block preview examples with complete pinned source and MIT attribution.
+Compare a collection of interface components or examples.
 
 ## Installation
 

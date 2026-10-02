@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block dashboard 01
+# shadcn/ui Dashboard 01 (React Aria)
 
-8 published shadcn/ui aria blocks block dashboard 01 examples with complete pinned source and MIT attribution.
+Combine application navigation with information and controls in a dashboard layout.
 
 ## Installation
 

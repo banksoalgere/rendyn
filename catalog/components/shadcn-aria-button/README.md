@@ -1,6 +1,6 @@
-# shadcn/ui aria button
+# shadcn/ui Button (React Aria)
 
-8 published shadcn/ui aria button examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

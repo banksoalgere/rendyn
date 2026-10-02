@@ -1,6 +1,6 @@
-# Origin UI timeline vertical timeline comp-536
+# Origin UI Timeline (Example 536)
 
-1 published Origin UI timeline vertical timeline comp-536 examples with complete pinned source and MIT attribution.
+Display events or milestones in sequence.
 
 ## Installation
 

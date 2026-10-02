@@ -1,6 +1,6 @@
-# Origin UI popover tooltip radix comp-386
+# Origin UI Popover (Example 386)
 
-1 published Origin UI popover tooltip radix comp-386 examples with complete pinned source and MIT attribution.
+Display contextual content beside its trigger.
 
 ## Installation
 

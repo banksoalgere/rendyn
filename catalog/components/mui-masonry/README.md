@@ -1,6 +1,6 @@
-# Material UI masonry
+# Material UI Masonry
 
-9 published Material UI masonry examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

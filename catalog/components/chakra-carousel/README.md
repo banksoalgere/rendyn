@@ -1,6 +1,6 @@
-# Chakra UI carousel
+# Chakra UI Carousel
 
-18 published Chakra UI carousel examples with complete pinned source and MIT attribution.
+Move through a sequence of content items.
 
 ## Installation
 

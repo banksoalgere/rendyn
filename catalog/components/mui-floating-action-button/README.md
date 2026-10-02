@@ -1,6 +1,6 @@
-# Material UI floating action button
+# Material UI Floating Action Button
 
-4 published Material UI floating action button examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

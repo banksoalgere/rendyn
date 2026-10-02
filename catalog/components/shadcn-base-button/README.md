@@ -1,6 +1,6 @@
-# shadcn/ui base button
+# shadcn/ui Button (Base UI)
 
-8 published shadcn/ui base button examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

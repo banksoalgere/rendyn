@@ -1,6 +1,6 @@
-# shadcn/ui radix component example
+# shadcn/ui Component Example (Radix)
 
-8 published shadcn/ui radix component example examples with complete pinned source and MIT attribution.
+Compare a collection of interface components or examples.
 
 ## Installation
 

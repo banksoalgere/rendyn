@@ -1,6 +1,6 @@
-# Chakra UI wrap
+# Chakra UI Wrap
 
-6 published Chakra UI wrap examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

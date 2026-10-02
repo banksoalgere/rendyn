@@ -1,6 +1,6 @@
-# shadcn/ui radix field
+# shadcn/ui Field (Radix)
 
-8 published shadcn/ui radix field examples with complete pinned source and MIT attribution.
+Collect related values through a group of form controls.
 
 ## Installation
 

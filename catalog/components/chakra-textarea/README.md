@@ -1,6 +1,6 @@
-# Chakra UI textarea
+# Chakra UI Textarea
 
-13 published Chakra UI textarea examples with complete pinned source and MIT attribution.
+Enter text that spans multiple lines.
 
 ## Installation
 

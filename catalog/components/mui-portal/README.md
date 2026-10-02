@@ -1,6 +1,6 @@
-# Material UI portal
+# Material UI Portal
 
-1 published Material UI portal examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

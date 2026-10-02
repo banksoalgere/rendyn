@@ -1,6 +1,6 @@
-# shadcn/ui aria pagination
+# shadcn/ui Pagination (React Aria)
 
-8 published shadcn/ui aria pagination examples with complete pinned source and MIT attribution.
+Move between pages of a collection of results.
 
 ## Installation
 

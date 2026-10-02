@@ -1,6 +1,6 @@
-# Origin UI tabs radix comp-438
+# Origin UI Tabs (Example 438)
 
-1 published Origin UI tabs radix comp-438 examples with complete pinned source and MIT attribution.
+Switch between related panels without leaving the current view.
 
 ## Installation
 

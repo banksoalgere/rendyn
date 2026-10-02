@@ -1,6 +1,6 @@
-# Material UI system getting started the sx prop
+# Material UI System Getting Started The Sx Prop
 
-3 published Material UI system getting started the sx prop examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Material UI drawers
+# Material UI Drawers
 
-11 published Material UI drawers examples with complete pinned source and MIT attribution.
+Open a panel alongside the current page for details or additional controls.
 
 ## Installation
 

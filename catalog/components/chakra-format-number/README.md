@@ -1,6 +1,6 @@
-# Chakra UI format number
+# Chakra UI Format Number
 
-6 published Chakra UI format number examples with complete pinned source and MIT attribution.
+Display a key metric or numeric summary.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI spinner
+# Chakra UI Spinner
 
-11 published Chakra UI spinner examples with complete pinned source and MIT attribution.
+Indicate that content or a task is still loading.
 
 ## Installation
 

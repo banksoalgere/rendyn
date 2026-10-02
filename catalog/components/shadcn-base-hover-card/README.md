@@ -1,6 +1,6 @@
-# shadcn/ui base hover card
+# shadcn/ui Hover Card (Base UI)
 
-8 published shadcn/ui base hover card examples with complete pinned source and MIT attribution.
+Preview supporting content alongside a trigger.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block bar visualizer
+# shadcn/ui Bar Visualizer (React Aria)
 
-8 published shadcn/ui aria blocks block bar visualizer examples with complete pinned source and MIT attribution.
+Compose a bar visualizer interface from related information and controls.
 
 ## Installation
 

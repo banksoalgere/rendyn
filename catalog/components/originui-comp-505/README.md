@@ -1,6 +1,6 @@
-# Origin UI calendar date time comp-505
+# Origin UI Calendar (Example 505)
 
-1 published Origin UI calendar date time comp-505 examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

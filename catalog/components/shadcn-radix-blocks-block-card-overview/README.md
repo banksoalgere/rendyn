@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block card overview
+# shadcn/ui Card Overview (Radix)
 
-8 published shadcn/ui radix blocks block card overview examples with complete pinned source and MIT attribution.
+Compose a card overview interface from related information and controls.
 
 ## Installation
 

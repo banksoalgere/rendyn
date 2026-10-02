@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block social links
+# shadcn/ui Social Links (React Aria)
 
-8 published shadcn/ui aria blocks block social links examples with complete pinned source and MIT attribution.
+Compose a social links interface from related information and controls.
 
 ## Installation
 

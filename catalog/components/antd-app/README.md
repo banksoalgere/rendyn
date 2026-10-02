@@ -1,6 +1,6 @@
-# Ant Design app
+# Ant Design App
 
-2 published Ant Design app examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

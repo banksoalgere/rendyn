@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block release catalog
+# shadcn/ui Release Catalog (Base UI)
 
-8 published shadcn/ui base blocks block release catalog examples with complete pinned source and MIT attribution.
+Compose a release catalog interface from related information and controls.
 
 ## Installation
 

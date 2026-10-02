@@ -1,6 +1,6 @@
-# Mantine use scroll direction
+# Mantine Use Scroll Direction
 
-1 published Mantine use scroll direction examples with complete pinned source and MIT attribution.
+React hook example for scroll direction.
 
 ## Installation
 

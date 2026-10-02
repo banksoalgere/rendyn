@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block login 01
+# shadcn/ui Login 01 (React Aria)
 
-8 published shadcn/ui aria blocks block login 01 examples with complete pinned source and MIT attribution.
+Collect the information needed to sign in to an account.
 
 ## Installation
 

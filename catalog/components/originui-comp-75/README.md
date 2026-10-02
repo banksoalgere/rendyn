@@ -1,6 +1,6 @@
-# Origin UI label textarea comp-75
+# Origin UI Text Area (Example 75)
 
-1 published Origin UI label textarea comp-75 examples with complete pinned source and MIT attribution.
+Enter text that spans multiple lines.
 
 ## Installation
 

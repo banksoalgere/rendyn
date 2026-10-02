@@ -1,6 +1,6 @@
-# Chakra UI radar
+# Chakra UI Radar
 
-8 published Chakra UI radar examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine pills input
+# Mantine Pills Input
 
-3 published Mantine pills input examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

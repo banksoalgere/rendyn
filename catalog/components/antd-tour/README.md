@@ -1,6 +1,6 @@
-# Ant Design tour
+# Ant Design Tour
 
-9 published Ant Design tour examples with complete pinned source and MIT attribution.
+Guide users through a sequence of interface features.
 
 ## Installation
 

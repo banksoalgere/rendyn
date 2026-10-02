@@ -1,6 +1,6 @@
-# shadcn/ui aria alert
+# shadcn/ui Alert (React Aria)
 
-8 published shadcn/ui aria alert examples with complete pinned source and MIT attribution.
+Display important information, warnings, or errors within the page.
 
 ## Installation
 

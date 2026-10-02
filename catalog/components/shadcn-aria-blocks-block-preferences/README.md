@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block preferences
+# shadcn/ui Preferences (React Aria)
 
-8 published shadcn/ui aria blocks block preferences examples with complete pinned source and MIT attribution.
+Group controls for configuring account or application preferences.
 
 ## Installation
 

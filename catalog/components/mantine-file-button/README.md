@@ -1,6 +1,6 @@
-# Mantine file button
+# Mantine File Button
 
-3 published Mantine file button examples with complete pinned source and MIT attribution.
+Select files to attach or upload.
 
 ## Installation
 

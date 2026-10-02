@@ -1,6 +1,6 @@
-# shadcn/ui aria aspect ratio
+# shadcn/ui Aspect Ratio (React Aria)
 
-8 published shadcn/ui aria aspect ratio examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

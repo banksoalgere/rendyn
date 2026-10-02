@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block contributors
+# shadcn/ui Contributors (Radix)
 
-8 published shadcn/ui radix blocks block contributors examples with complete pinned source and MIT attribution.
+Compose a contributors interface from related information and controls.
 
 ## Installation
 

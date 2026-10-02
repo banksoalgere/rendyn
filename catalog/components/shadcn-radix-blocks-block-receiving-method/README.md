@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block receiving method
+# shadcn/ui Receiving Method (Radix)
 
-8 published shadcn/ui radix blocks block receiving method examples with complete pinned source and MIT attribution.
+Present payment details, balances, or related payment controls.
 
 ## Installation
 

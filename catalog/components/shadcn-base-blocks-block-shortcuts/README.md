@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block shortcuts
+# shadcn/ui Shortcuts (Base UI)
 
-8 published shadcn/ui base blocks block shortcuts examples with complete pinned source and MIT attribution.
+Display a key or keyboard shortcut hint.
 
 ## Installation
 

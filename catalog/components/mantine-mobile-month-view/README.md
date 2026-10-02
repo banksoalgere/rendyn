@@ -1,6 +1,6 @@
-# Mantine mobile month view
+# Mantine Mobile Month View
 
-11 published Mantine mobile month view examples with complete pinned source and MIT attribution.
+Display appointments or resources in a time-based layout.
 
 ## Installation
 

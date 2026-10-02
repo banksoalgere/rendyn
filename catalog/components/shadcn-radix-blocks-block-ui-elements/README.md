@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block ui elements
+# shadcn/ui UI Elements (Radix)
 
-8 published shadcn/ui radix blocks block ui elements examples with complete pinned source and MIT attribution.
+Compose a ui elements interface from related information and controls.
 
 ## Installation
 

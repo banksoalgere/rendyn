@@ -1,6 +1,6 @@
-# Chakra UI sparkline
+# Chakra UI Sparkline
 
-8 published Chakra UI sparkline examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

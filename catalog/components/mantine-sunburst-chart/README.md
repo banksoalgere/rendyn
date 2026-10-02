@@ -1,6 +1,6 @@
-# Mantine sunburst chart
+# Mantine Sunburst Chart
 
-7 published Mantine sunburst chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

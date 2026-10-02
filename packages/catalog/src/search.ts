@@ -1,6 +1,7 @@
 import { selectDiverseCandidates } from "./search/diversity.js";
 import { componentTokens, prepareQuery } from './search/prepared.js';
 import { matchesIntent, searchIntent } from './search/intent.js';
+import { discoveryLabels } from './types.js';
 import {
   buildCandidate,
   requestedComponentFamilies,
@@ -45,6 +46,7 @@ function toSearchResult(candidate: Candidate, rank: number): SearchResult {
     useWhen: candidate.component.metadata.useWhen,
     notIdealWhen: candidate.component.metadata.notIdealWhen,
     previewPath: candidate.component.previewPath,
+    labels: discoveryLabels(candidate.component.metadata),
   };
 }
 

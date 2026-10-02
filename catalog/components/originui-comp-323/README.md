@@ -1,6 +1,6 @@
-# Origin UI dialog modal rating comp-323
+# Origin UI Dialog (Example 323)
 
-1 published Origin UI dialog modal rating comp-323 examples with complete pinned source and MIT attribution.
+Display a focused interaction in an overlay above the current page.
 
 ## Installation
 

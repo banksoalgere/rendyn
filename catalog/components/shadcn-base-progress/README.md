@@ -1,6 +1,6 @@
-# shadcn/ui base progress
+# shadcn/ui Progress (Base UI)
 
-8 published shadcn/ui base progress examples with complete pinned source and MIT attribution.
+Show how far a task has progressed.
 
 ## Installation
 

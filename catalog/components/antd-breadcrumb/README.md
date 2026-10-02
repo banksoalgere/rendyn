@@ -1,6 +1,6 @@
-# Ant Design breadcrumb
+# Ant Design Breadcrumb
 
-9 published Ant Design breadcrumb examples with complete pinned source and MIT attribution.
+Show the current location within a hierarchy of pages.
 
 ## Installation
 

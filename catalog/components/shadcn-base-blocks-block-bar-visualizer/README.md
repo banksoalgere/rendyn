@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block bar visualizer
+# shadcn/ui Bar Visualizer (Base UI)
 
-8 published shadcn/ui base blocks block bar visualizer examples with complete pinned source and MIT attribution.
+Compose a bar visualizer interface from related information and controls.
 
 ## Installation
 

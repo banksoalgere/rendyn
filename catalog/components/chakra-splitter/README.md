@@ -1,6 +1,6 @@
-# Chakra UI splitter
+# Chakra UI Splitter
 
-21 published Chakra UI splitter examples with complete pinned source and MIT attribution.
+Let users adjust the space assigned to adjacent panels.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui aria sheet
+# shadcn/ui Sheet (React Aria)
 
-8 published shadcn/ui aria sheet examples with complete pinned source and MIT attribution.
+Open a panel alongside the current page for details or additional controls.
 
 ## Installation
 

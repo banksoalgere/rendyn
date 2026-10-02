@@ -1,6 +1,6 @@
-# Mantine native select
+# Mantine Native Select
 
-10 published Mantine native select examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

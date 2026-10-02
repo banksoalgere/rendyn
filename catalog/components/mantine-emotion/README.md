@@ -1,6 +1,6 @@
-# Mantine emotion
+# Mantine Emotion
 
-7 published Mantine emotion examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

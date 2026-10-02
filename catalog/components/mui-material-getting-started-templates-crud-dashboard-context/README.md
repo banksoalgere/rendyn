@@ -1,6 +1,6 @@
-# Material UI material getting started templates crud dashboard context
+# Material UI Material Getting Started Templates Crud Dashboard Context
 
-1 published Material UI material getting started templates crud dashboard context examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

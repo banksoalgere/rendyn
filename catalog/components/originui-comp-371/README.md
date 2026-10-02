@@ -1,6 +1,6 @@
-# Origin UI dropdown checkbox radix comp-371
+# Origin UI Dropdown Menu (Example 371)
 
-1 published Origin UI dropdown checkbox radix comp-371 examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

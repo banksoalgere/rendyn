@@ -1,6 +1,6 @@
-# shadcn/ui aria progress
+# shadcn/ui Progress (React Aria)
 
-8 published shadcn/ui aria progress examples with complete pinned source and MIT attribution.
+Show how far a task has progressed.
 
 ## Installation
 

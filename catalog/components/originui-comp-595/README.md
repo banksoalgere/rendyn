@@ -1,6 +1,6 @@
-# Origin UI navbar, navigation comp-595
+# Origin UI Button (Example 595)
 
-1 published Origin UI navbar, navigation comp-595 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

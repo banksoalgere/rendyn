@@ -1,6 +1,6 @@
-# Mantine tree
+# Mantine Tree
 
-18 published Mantine tree examples with complete pinned source and MIT attribution.
+Explore and select items in a hierarchical collection.
 
 ## Installation
 

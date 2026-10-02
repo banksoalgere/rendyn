@@ -1,6 +1,6 @@
-# Material UI radio buttons
+# Material UI Radio Buttons
 
-10 published Material UI radio buttons examples with complete pinned source and MIT attribution.
+Choose one option from a set of alternatives.
 
 ## Installation
 

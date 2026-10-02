@@ -1,6 +1,6 @@
-# Mantine segmented control
+# Mantine Segmented Control
 
-10 published Mantine segmented control examples with complete pinned source and MIT attribution.
+Choose between options presented in a compact group.
 
 ## Installation
 

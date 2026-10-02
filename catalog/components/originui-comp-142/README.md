@@ -1,6 +1,6 @@
-# Origin UI checkbox label collapsible comp-142
+# Origin UI Checkbox (Example 142)
 
-1 published Origin UI checkbox label collapsible comp-142 examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

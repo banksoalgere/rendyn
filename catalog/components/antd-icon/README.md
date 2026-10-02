@@ -1,6 +1,6 @@
-# Ant Design icon
+# Ant Design Icon
 
-5 published Ant Design icon examples with complete pinned source and MIT attribution.
+Represent an interface concept with a compact symbol.
 
 ## Installation
 

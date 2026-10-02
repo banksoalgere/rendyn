@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block live waveform
+# shadcn/ui Live Waveform (Base UI)
 
-8 published shadcn/ui base blocks block live waveform examples with complete pinned source and MIT attribution.
+Compose a live waveform interface from related information and controls.
 
 ## Installation
 

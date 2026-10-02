@@ -1,6 +1,6 @@
-# Origin UI dropdown checkbox radio comp-374
+# Origin UI Dropdown Menu (Example 374)
 
-1 published Origin UI dropdown checkbox radio comp-374 examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Origin UI button disabled comp-79
+# Origin UI Button (Example 79)
 
-1 published Origin UI button disabled comp-79 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

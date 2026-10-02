@@ -1,6 +1,6 @@
-# shadcn/ui aria native select
+# shadcn/ui Native Select (React Aria)
 
-8 published shadcn/ui aria native select examples with complete pinned source and MIT attribution.
+Choose a value from a list of options.
 
 ## Installation
 

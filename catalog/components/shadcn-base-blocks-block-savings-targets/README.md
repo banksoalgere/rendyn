@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block savings targets
+# shadcn/ui Savings Targets (Base UI)
 
-8 published shadcn/ui base blocks block savings targets examples with complete pinned source and MIT attribution.
+Compose a savings targets interface from related information and controls.
 
 ## Installation
 

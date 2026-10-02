@@ -1,6 +1,6 @@
-# Mantine use scroll spy
+# Mantine Use Scroll Spy
 
-2 published Mantine use scroll spy examples with complete pinned source and MIT attribution.
+React hook example for scroll spy.
 
 ## Installation
 

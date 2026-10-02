@@ -1,6 +1,6 @@
-# shadcn/ui base command
+# shadcn/ui Command (Base UI)
 
-8 published shadcn/ui base command examples with complete pinned source and MIT attribution.
+Find commands and actions in a searchable command menu.
 
 ## Installation
 

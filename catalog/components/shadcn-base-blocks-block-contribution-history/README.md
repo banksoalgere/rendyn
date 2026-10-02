@@ -1,6 +1,6 @@
-# shadcn/ui base blocks block contribution history
+# shadcn/ui Contribution History (Base UI)
 
-8 published shadcn/ui base blocks block contribution history examples with complete pinned source and MIT attribution.
+Compose a contribution history interface from related information and controls.
 
 ## Installation
 

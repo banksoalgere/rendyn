@@ -1,6 +1,6 @@
-# Mantine kdb
+# Mantine Kdb
 
-1 published Mantine kdb examples with complete pinned source and MIT attribution.
+Display a key or keyboard shortcut hint.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Material UI transitions
+# Material UI Transitions
 
-7 published Material UI transitions examples with complete pinned source and MIT attribution.
+Demonstrate a motion or transition treatment.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI loader
+# Chakra UI Loader
 
-3 published Chakra UI loader examples with complete pinned source and MIT attribution.
+Indicate that content or a task is still loading.
 
 ## Installation
 

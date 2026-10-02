@@ -1,6 +1,6 @@
-# Origin UI popover notification radix comp-382
+# Origin UI Popover (Example 382)
 
-1 published Origin UI popover notification radix comp-382 examples with complete pinned source and MIT attribution.
+Display contextual content beside its trigger.
 
 ## Installation
 

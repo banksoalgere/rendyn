@@ -11,7 +11,7 @@ export function registerCatalogNavigationTools(
   server.registerTool(
     "list_categories",
     {
-      description: "Discover the catalogue: motion contains individual components including buttons, bento grids and hero video; agents contains AI interfaces; blocks contains composed UI. Categories describe packaging, not page sections. Search across all categories first.",
+      description: "Discover the catalogue: motion contains individual components including buttons, bento grids and hero video; agents contains AI interfaces; blocks contains library controls and composed product patterns. Use each result’s kind and family labels to distinguish primitives from blocks. Search across all categories first.",
       annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
       inputSchema: z.object({}),
     },
@@ -21,7 +21,7 @@ export function registerCatalogNavigationTools(
           ...category,
           ...(category.slug === 'motion' ? { name: 'Components & motion', description: 'Individual UI pieces, from buttons and accordions to bento grids and hero video. This is not a motion-only filter.' } : {}),
         })),
-        suggested_workflow: ['Search one UI need without a category filter.', 'Compare the preview links, or request include_previews=true.', 'Call get_component with a returned id to receive its source and setup instructions.'],
+        suggested_workflow: ['Search one UI need without a category filter.', 'Compare purpose, family, interactions and visual labels; visual evidence comes from bundled source and may cover multiple variants. Then inspect preview links, or request include_previews=true.', 'Call get_component with a returned id to receive its source and setup instructions.'],
       })],
     }),
   );

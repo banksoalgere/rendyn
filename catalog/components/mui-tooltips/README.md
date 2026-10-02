@@ -1,6 +1,6 @@
-# Material UI tooltips
+# Material UI Tooltips
 
-16 published Material UI tooltips examples with complete pinned source and MIT attribution.
+Show a brief explanation associated with a control or item.
 
 ## Installation
 

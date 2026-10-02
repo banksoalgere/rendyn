@@ -1,6 +1,6 @@
-# shadcn/ui base radio group
+# shadcn/ui Radio Group (Base UI)
 
-8 published shadcn/ui base radio group examples with complete pinned source and MIT attribution.
+Choose one option from a set of alternatives.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# HeroUI number input
+# HeroUI Number Input
 
-24 published HeroUI number input examples with complete pinned source and MIT attribution.
+Enter a numeric value using a number field.
 
 ## Installation
 

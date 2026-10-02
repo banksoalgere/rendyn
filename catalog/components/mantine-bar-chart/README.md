@@ -1,6 +1,6 @@
-# Mantine bar chart
+# Mantine Bar Chart
 
-35 published Mantine bar chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

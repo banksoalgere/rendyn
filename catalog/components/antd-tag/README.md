@@ -1,6 +1,6 @@
-# Ant Design tag
+# Ant Design Tag
 
-12 published Ant Design tag examples with complete pinned source and MIT attribution.
+Display a compact label, count, or status alongside content.
 
 ## Installation
 

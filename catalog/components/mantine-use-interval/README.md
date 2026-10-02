@@ -1,6 +1,6 @@
-# Mantine use interval
+# Mantine Use Interval
 
-1 published Mantine use interval examples with complete pinned source and MIT attribution.
+React hook example for interval.
 
 ## Installation
 

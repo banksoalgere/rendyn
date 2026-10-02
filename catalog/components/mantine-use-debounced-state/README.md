@@ -1,6 +1,6 @@
-# Mantine use debounced state
+# Mantine Use Debounced State
 
-2 published Mantine use debounced state examples with complete pinned source and MIT attribution.
+React hook example for debounced state.
 
 ## Installation
 

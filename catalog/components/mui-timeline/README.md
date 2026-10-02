@@ -1,6 +1,6 @@
-# Material UI timeline
+# Material UI Timeline
 
-11 published Material UI timeline examples with complete pinned source and MIT attribution.
+Display events or milestones in sequence.
 
 ## Installation
 

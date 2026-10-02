@@ -1,6 +1,6 @@
-# Ant Design empty
+# Ant Design Empty
 
-6 published Ant Design empty examples with complete pinned source and MIT attribution.
+Explain why content is absent and provide relevant next steps.
 
 ## Installation
 

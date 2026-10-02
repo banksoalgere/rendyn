@@ -1,6 +1,6 @@
-# Origin UI checkbox label login comp-138
+# Origin UI Checkbox (Example 138)
 
-1 published Origin UI checkbox label login comp-138 examples with complete pinned source and MIT attribution.
+Choose whether an option is selected.
 
 ## Installation
 

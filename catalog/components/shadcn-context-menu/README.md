@@ -1,6 +1,6 @@
-# shadcn/ui context menu
+# shadcn/ui Context Menu
 
-1 published shadcn/ui context menu examples with complete pinned source and MIT attribution.
+Show actions associated with the selected item or context.
 
 ## Installation
 

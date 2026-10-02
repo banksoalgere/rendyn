@@ -1,6 +1,6 @@
-# shadcn/ui aria toggle group
+# shadcn/ui Toggle Group (React Aria)
 
-8 published shadcn/ui aria toggle group examples with complete pinned source and MIT attribution.
+Change the selected state of an option or control.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Chakra UI segmented control
+# Chakra UI Segmented Control
 
-11 published Chakra UI segmented control examples with complete pinned source and MIT attribution.
+Choose between options presented in a compact group.
 
 ## Installation
 

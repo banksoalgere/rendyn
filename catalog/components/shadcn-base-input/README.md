@@ -1,6 +1,6 @@
-# shadcn/ui base input
+# shadcn/ui Input (Base UI)
 
-8 published shadcn/ui base input examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui separator
+# shadcn/ui Separator
 
-1 published shadcn/ui separator examples with complete pinned source and MIT attribution.
+Visually separate related areas of an interface.
 
 ## Installation
 

@@ -80,9 +80,18 @@ function containsTerm(text: string, term: string): boolean {
 
 function detectFamily(detail: RegistryDetail): string {
   const identity = `${detail.name} ${detail.slug.replaceAll("-", " ")}`.toLowerCase();
-  return FAMILY_TERMS.find((term) => containsTerm(identity, term))
+  const namedFamilies: Array<[RegExp, string]> = [
+    [/\bcommand palette\b/, 'command'], [/\b(?:file upload|dropzone)\b/, 'file-upload'],
+    [/\bcolor picker\b/, 'color-picker'], [/\bpassword input\b/, 'password-input'],
+    [/\bnumber input\b/, 'number-input'], [/\bdate picker\b/, 'date-picker'],
+    [/\b(?:not found|404)\b/, 'error-page'], [/\bcode block\b/, 'code'],
+  ];
+  const namedFamily = namedFamilies.find(([pattern]) => pattern.test(identity))?.[1];
+  if (namedFamily) return namedFamily;
+  const family = FAMILY_TERMS.find((term) => containsTerm(identity, term))
     ?? FAMILY_TERMS.find((term) => containsTerm(detail.description.toLowerCase(), term))
     ?? detail.slug;
+  return family === 'modal' ? 'dialog' : family;
 }
 
 function buildAliases(detail: RegistryDetail, family: string): string[] {
@@ -105,10 +114,9 @@ export function buildMetadata(detail: RegistryDetail, markdown: string): Catalog
     detail.name,
     detail.slug,
     detail.description,
-    plainDocumentation,
   ].join(" ").toLowerCase();
-  const tags = TAG_VOCABULARY.filter((tag) => searchableText.includes(tag));
-  const interactions = INTERACTION_VOCABULARY.filter((term) => searchableText.includes(term));
+  const tags = TAG_VOCABULARY.filter((tag) => containsTerm(searchableText, tag));
+  const interactions = INTERACTION_VOCABULARY.filter((term) => containsTerm(searchableText, term));
   const family = detectFamily(detail);
   const aliases = buildAliases(detail, family);
 

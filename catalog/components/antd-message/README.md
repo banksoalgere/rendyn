@@ -1,6 +1,6 @@
-# Ant Design message
+# Ant Design Message
 
-11 published Ant Design message examples with complete pinned source and MIT attribution.
+Display a transient notification about an event or action.
 
 ## Installation
 

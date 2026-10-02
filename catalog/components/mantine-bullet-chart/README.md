@@ -1,6 +1,6 @@
-# Mantine bullet chart
+# Mantine Bullet Chart
 
-7 published Mantine bullet chart examples with complete pinned source and MIT attribution.
+Visualize values, comparisons, or changes in a dataset.
 
 ## Installation
 

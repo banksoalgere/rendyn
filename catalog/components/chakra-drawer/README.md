@@ -1,6 +1,6 @@
-# Chakra UI drawer
+# Chakra UI Drawer
 
-11 published Chakra UI drawer examples with complete pinned source and MIT attribution.
+Open a panel alongside the current page for details or additional controls.
 
 ## Installation
 

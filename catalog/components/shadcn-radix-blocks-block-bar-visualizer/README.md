@@ -1,6 +1,6 @@
-# shadcn/ui radix blocks block bar visualizer
+# shadcn/ui Bar Visualizer (Radix)
 
-8 published shadcn/ui radix blocks block bar visualizer examples with complete pinned source and MIT attribution.
+Compose a bar visualizer interface from related information and controls.
 
 ## Installation
 

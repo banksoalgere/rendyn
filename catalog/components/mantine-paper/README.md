@@ -1,6 +1,6 @@
-# Mantine paper
+# Mantine Paper
 
-1 published Mantine paper examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

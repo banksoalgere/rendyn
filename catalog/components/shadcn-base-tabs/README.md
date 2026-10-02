@@ -1,6 +1,6 @@
-# shadcn/ui base tabs
+# shadcn/ui Tabs (Base UI)
 
-8 published shadcn/ui base tabs examples with complete pinned source and MIT attribution.
+Switch between related panels without leaving the current view.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui aria popover
+# shadcn/ui Popover (React Aria)
 
-8 published shadcn/ui aria popover examples with complete pinned source and MIT attribution.
+Display contextual content beside its trigger.
 
 ## Installation
 

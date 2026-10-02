@@ -1,6 +1,6 @@
-# Material UI material
+# Material UI Material
 
-1 published Material UI material examples with complete pinned source and MIT attribution.
+Compare a collection of interface components or examples.
 
 ## Installation
 

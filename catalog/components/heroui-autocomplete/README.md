@@ -1,6 +1,6 @@
-# HeroUI autocomplete
+# HeroUI Autocomplete
 
-32 published HeroUI autocomplete examples with complete pinned source and MIT attribution.
+Search and choose a value from a list of available options.
 
 ## Installation
 

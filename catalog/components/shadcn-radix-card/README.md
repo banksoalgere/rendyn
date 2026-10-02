@@ -1,6 +1,6 @@
-# shadcn/ui radix card
+# shadcn/ui Card (Radix)
 
-8 published shadcn/ui radix card examples with complete pinned source and MIT attribution.
+Group related content and actions in a distinct container.
 
 ## Installation
 

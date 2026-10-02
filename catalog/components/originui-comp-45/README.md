@@ -1,6 +1,6 @@
-# Origin UI input label otp comp-45
+# Origin UI Text Input (Example 45)
 
-1 published Origin UI input label otp comp-45 examples with complete pinned source and MIT attribution.
+Enter a value in a text field.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# shadcn/ui radix tabs
+# shadcn/ui Tabs (Radix)
 
-8 published shadcn/ui radix tabs examples with complete pinned source and MIT attribution.
+Switch between related panels without leaving the current view.
 
 ## Installation
 

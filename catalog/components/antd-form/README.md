@@ -1,6 +1,6 @@
-# Ant Design form
+# Ant Design Form
 
-44 published Ant Design form examples with complete pinned source and MIT attribution.
+Collect related values through a group of form controls.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Mantine use intersection
+# Mantine Use Intersection
 
-1 published Mantine use intersection examples with complete pinned source and MIT attribution.
+React hook example for intersection.
 
 ## Installation
 

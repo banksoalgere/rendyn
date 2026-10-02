@@ -1,6 +1,6 @@
-# Chakra UI presence
+# Chakra UI Presence
 
-6 published Chakra UI presence examples with complete pinned source and MIT attribution.
+Demonstrate a motion or transition treatment.
 
 ## Installation
 

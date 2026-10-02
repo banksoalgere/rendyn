@@ -1,6 +1,6 @@
-# Ant Design time picker
+# Ant Design Time Picker
 
-17 published Ant Design time picker examples with complete pinned source and MIT attribution.
+Choose or enter a time value.
 
 ## Installation
 

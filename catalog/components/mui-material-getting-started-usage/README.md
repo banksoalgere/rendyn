@@ -1,6 +1,6 @@
-# Material UI material getting started usage
+# Material UI Material Getting Started Usage
 
-1 published Material UI material getting started usage examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

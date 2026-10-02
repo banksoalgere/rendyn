@@ -1,6 +1,6 @@
-# shadcn/ui aria slider
+# shadcn/ui Slider (React Aria)
 
-8 published shadcn/ui aria slider examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

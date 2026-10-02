@@ -1,6 +1,6 @@
-# shadcn/ui radix slider
+# shadcn/ui Slider (Radix)
 
-8 published shadcn/ui radix slider examples with complete pinned source and MIT attribution.
+Choose a numeric value or range along a track.
 
 ## Installation
 

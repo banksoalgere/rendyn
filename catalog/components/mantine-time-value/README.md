@@ -1,6 +1,6 @@
-# Mantine time value
+# Mantine Time Value
 
-4 published Mantine time value examples with complete pinned source and MIT attribution.
+Choose or enter a time value.
 
 ## Installation
 

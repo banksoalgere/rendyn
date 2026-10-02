@@ -1,6 +1,6 @@
-# Mantine use validated state
+# Mantine Use Validated State
 
-1 published Mantine use validated state examples with complete pinned source and MIT attribution.
+React hook example for validated state.
 
 ## Installation
 

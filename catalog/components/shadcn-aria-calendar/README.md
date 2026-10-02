@@ -1,6 +1,6 @@
-# shadcn/ui aria calendar
+# shadcn/ui Calendar (React Aria)
 
-8 published shadcn/ui aria calendar examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

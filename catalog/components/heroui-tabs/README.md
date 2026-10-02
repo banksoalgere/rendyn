@@ -1,6 +1,6 @@
-# HeroUI tabs
+# HeroUI Tabs
 
-14 published HeroUI tabs examples with complete pinned source and MIT attribution.
+Switch between related panels without leaving the current view.
 
 ## Installation
 

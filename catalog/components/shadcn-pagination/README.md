@@ -1,6 +1,6 @@
-# shadcn/ui pagination
+# shadcn/ui Pagination
 
-1 published shadcn/ui pagination examples with complete pinned source and MIT attribution.
+Move between pages of a collection of results.
 
 ## Installation
 

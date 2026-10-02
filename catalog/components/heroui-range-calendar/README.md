@@ -1,6 +1,6 @@
-# HeroUI range calendar
+# HeroUI Range Calendar
 
-16 published HeroUI range calendar examples with complete pinned source and MIT attribution.
+Display dates in a calendar layout.
 
 ## Installation
 

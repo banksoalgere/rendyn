@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block contributions activity
+# shadcn/ui Contributions Activity (React Aria)
 
-8 published shadcn/ui aria blocks block contributions activity examples with complete pinned source and MIT attribution.
+Compose a contributions activity interface from related information and controls.
 
 ## Installation
 

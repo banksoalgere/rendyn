@@ -1,6 +1,6 @@
-# Mantine inline date time picker
+# Mantine Inline Date Time Picker
 
-5 published Mantine inline date time picker examples with complete pinned source and MIT attribution.
+Choose a date or date range from date-selection controls.
 
 ## Installation
 

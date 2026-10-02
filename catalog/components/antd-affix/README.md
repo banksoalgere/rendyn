@@ -1,6 +1,6 @@
-# Ant Design affix
+# Ant Design Affix
 
-4 published Ant Design affix examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Material UI menubar
+# Material UI Menubar
 
-7 published Material UI menubar examples with complete pinned source and MIT attribution.
+Open a menu of actions from a trigger control.
 
 ## Installation
 

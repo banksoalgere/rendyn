@@ -1,6 +1,6 @@
-# shadcn/ui label
+# shadcn/ui Label
 
-1 published shadcn/ui label examples with complete pinned source and MIT attribution.
+Identify a control or describe the value it accepts.
 
 ## Installation
 

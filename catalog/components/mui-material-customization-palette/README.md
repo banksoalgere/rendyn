@@ -1,6 +1,6 @@
-# Material UI material customization palette
+# Material UI Material Customization Palette
 
-12 published Material UI material customization palette examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 

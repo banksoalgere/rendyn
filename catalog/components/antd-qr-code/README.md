@@ -1,6 +1,6 @@
-# Ant Design qr code
+# Ant Design QR Code
 
-11 published Ant Design qr code examples with complete pinned source and MIT attribution.
+Display a value in a scannable QR code.
 
 ## Installation
 

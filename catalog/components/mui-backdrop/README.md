@@ -1,6 +1,6 @@
-# Material UI backdrop
+# Material UI Backdrop
 
-1 published Material UI backdrop examples with complete pinned source and MIT attribution.
+Place a visual layer above the underlying interface.
 
 ## Installation
 

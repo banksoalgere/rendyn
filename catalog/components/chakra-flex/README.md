@@ -1,6 +1,6 @@
-# Chakra UI flex
+# Chakra UI Flex
 
-9 published Chakra UI flex examples with complete pinned source and MIT attribution.
+Arrange and align interface content.
 
 ## Installation
 

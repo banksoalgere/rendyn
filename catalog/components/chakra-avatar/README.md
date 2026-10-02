@@ -1,6 +1,6 @@
-# Chakra UI avatar
+# Chakra UI Avatar
 
-17 published Chakra UI avatar examples with complete pinned source and MIT attribution.
+Represent a person or account with an image or initials.
 
 ## Installation
 

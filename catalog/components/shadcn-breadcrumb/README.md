@@ -1,6 +1,6 @@
-# shadcn/ui breadcrumb
+# shadcn/ui Breadcrumb
 
-6 published shadcn/ui breadcrumb examples with complete pinned source and MIT attribution.
+Show the current location within a hierarchy of pages.
 
 ## Installation
 

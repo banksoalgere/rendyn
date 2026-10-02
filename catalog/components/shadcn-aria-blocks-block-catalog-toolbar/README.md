@@ -1,6 +1,6 @@
-# shadcn/ui aria blocks block catalog toolbar
+# shadcn/ui Catalog Toolbar (React Aria)
 
-8 published shadcn/ui aria blocks block catalog toolbar examples with complete pinned source and MIT attribution.
+Compose a catalog toolbar interface from related information and controls.
 
 ## Installation
 

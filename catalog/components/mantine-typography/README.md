@@ -1,6 +1,6 @@
-# Mantine typography
+# Mantine Typography
 
-2 published Mantine typography examples with complete pinned source and MIT attribution.
+Present text with an appropriate hierarchy and emphasis.
 
 ## Installation
 

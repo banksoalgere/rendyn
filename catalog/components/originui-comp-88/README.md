@@ -1,6 +1,6 @@
-# Origin UI button dropdown comp-88
+# Origin UI Button (Example 88)
 
-1 published Origin UI button dropdown comp-88 examples with complete pinned source and MIT attribution.
+Trigger an action from a button control.
 
 ## Installation
 

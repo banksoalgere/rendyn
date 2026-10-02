@@ -1,6 +1,6 @@
-# Mantine radio group
+# Mantine Radio Group
 
-1 published Mantine radio group examples with complete pinned source and MIT attribution.
+Choose one option from a set of alternatives.
 
 ## Installation
 

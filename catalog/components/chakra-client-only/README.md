@@ -1,6 +1,6 @@
-# Chakra UI client only
+# Chakra UI Client Only
 
-3 published Chakra UI client only examples with complete pinned source and MIT attribution.
+Demonstrate a supporting interface utility.
 
 ## Installation
 
