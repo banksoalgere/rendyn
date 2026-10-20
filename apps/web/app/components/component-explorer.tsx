@@ -131,7 +131,7 @@ export function ComponentExplorer({
               {isFeatured ? 'A small selection to get you started.' : `${results.total} ${results.total === 1 ? 'match' : 'matches'}${results.total ? ` · ${results.start + 1}–${results.start + results.components.length} shown` : ''}`}
             </p>
           </div>
-          {isFiltered && <button className={styles.reset} data-analytics-action="clear-search" onClick={() => updateFilters('', 'all')} type="button">Reset filters <span aria-hidden="true">↗</span></button>}
+          {isFiltered && <button className={styles.reset} data-analytics-action="clear-search" onClick={() => updateFilters('', 'all')} type="button">Reset filters</button>}
         </div>
 
         <div className={styles.componentGrid} aria-label="Component results">
@@ -139,15 +139,12 @@ export function ComponentExplorer({
             <article className={styles.componentLink} key={component.publicSlug}>
               <div className={styles.cardToolbar}>
                 <span>{categoryLabels[component.category]}{filters.query.trim() && results.page === 1 && index === 0 && <span className={styles.bestMatch}>Best match</span>}</span>
-                <a href={`/components/${component.publicSlug}`} aria-label={`Open ${component.name} details`}>
-                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M14 4h6v6M20 4l-8 8M10 4H4v16h16v-6" /></svg>
-                </a>
               </div>
               <div className={styles.cardPreview}>
                 <ComponentPreview component={component} size="card" priority={index === 0} />
               </div>
               <div className={styles.cardInfo}>
-                <h3><a href={`/components/${component.publicSlug}`}>{component.name} <span aria-hidden="true">↗</span></a></h3>
+                <h3><a href={`/components/${component.publicSlug}`}>{component.name}</a></h3>
                 <p>{component.description}</p>
               </div>
             </article>
@@ -156,9 +153,9 @@ export function ComponentExplorer({
 
         {results.pageCount > 1 && (
           <nav className={styles.pagination} aria-label="Component pages">
-            {results.page > 1 && <a href={catalogueHref({ ...filters, page: results.page - 1 })} rel="prev">← Previous</a>}
+            {results.page > 1 && <a href={catalogueHref({ ...filters, page: results.page - 1 })} rel="prev">Previous</a>}
             <span>Page {results.page} of {results.pageCount}</span>
-            {results.page < results.pageCount && <a href={catalogueHref({ ...filters, page: results.page + 1 })} rel="next">{isFeatured ? 'Explore more' : 'Next'} <span aria-hidden="true">→</span></a>}
+            {results.page < results.pageCount && <a href={catalogueHref({ ...filters, page: results.page + 1 })} rel="next">{isFeatured ? 'Explore more' : 'Next'}</a>}
           </nav>
         )}
 

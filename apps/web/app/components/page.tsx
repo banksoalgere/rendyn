@@ -73,7 +73,7 @@ export default async function ComponentsPage({ searchParams }: ComponentsPagePro
           },
         }).replace(/</g, '\\u003c') }}
       />
-      <div className={styles.headerShell}><SiteHeader activeSection="catalogue" /></div>
+      <div className={styles.headerShell}><SiteHeader activeSection="catalogue" showArrows={false} /></div>
       <section className={styles.hero}>
         <p className={styles.eyebrow}>React · TypeScript · Tailwind</p>
         <h1>Find your next<br /><span>React component.</span></h1>
@@ -92,7 +92,7 @@ export default async function ComponentsPage({ searchParams }: ComponentsPagePro
           <h2>From preview to your project.</h2>
           <p>Get the source, or connect Claude Code, Codex or Cursor.</p>
         </div>
-        <a className="button" href="/pricing">Get started <span aria-hidden="true">→</span></a>
+        <a className="button" href="/pricing">Get started</a>
       </section>
       <SiteFooter />
     </main>

@@ -120,7 +120,7 @@ export default function Home() {
             <a href={`/components?category=${category}`} key={category}>
               <strong>{catalogueEntries.filter((entry) => entry.category === category).length}</strong>
               <div><h3>{label}</h3><p>{description}</p></div>
-             
+
             </a>
           ))}
         </div>
