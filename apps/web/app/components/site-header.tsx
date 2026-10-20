@@ -8,7 +8,7 @@ const navigation = [
   { href: '/components', id: 'catalogue', label: 'Components' },
   { href: '/mcp', id: 'mcp', label: 'MCP' },
   { href: '/#how-it-works', id: 'how-it-works', label: 'How it works' },
-  { href: '/pricing', id: 'pricing', label: 'Pricing' },
+  { href: '/pricing', id: 'pricing', label: 'Free access' },
   { href: '/guides', id: 'resources', label: 'Guides' },
 ];
 
@@ -44,8 +44,8 @@ export function SiteHeader({ activeSection }: SiteHeaderProps = {}) {
         ))}
       </nav>
       <div className={styles.actions}>
-        <a className={styles.signIn} href="/login?next=%2Faccount">Sign in</a>
-        <a className={styles.trial} href="/pricing">Start trial <span aria-hidden="true">↗</span></a>
+        <a className={styles.signIn} href="/login?next=%2Fapp%2Fmcp">Sign in</a>
+        <a className={styles.trial} href="/login?next=%2Fapp%2Fmcp">Connect to MCP <span aria-hidden="true">↗</span></a>
         <MobileMenu groups={mobileGroups} />
       </div>
     </header>
