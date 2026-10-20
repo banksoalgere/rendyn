@@ -22,7 +22,7 @@ const primaryLinks = [
 ] as const;
 
 
-export function MobileMenu({ groups }: { groups: MobileComponentGroup[] }) {
+export function MobileMenu({ groups, showArrows = true }: { groups: MobileComponentGroup[]; showArrows?: boolean }) {
   const [open, setOpen] = useState(false);
   const [activeGroupId, setActiveGroupId] = useState('motion');
   const activeGroup = groups.find((group) => group.id === activeGroupId) ?? groups[0];
@@ -66,7 +66,7 @@ export function MobileMenu({ groups }: { groups: MobileComponentGroup[] }) {
             {primaryLinks.map((link) => (
               <a href={link.href} key={link.href} onClick={closeMenu}>
                 <strong>{link.label}</strong>
-                <b aria-hidden="true">→</b>
+                {showArrows && <b aria-hidden="true">→</b>}
               </a>
             ))}
           </nav>
@@ -99,13 +99,13 @@ export function MobileMenu({ groups }: { groups: MobileComponentGroup[] }) {
               {activeGroup.components.map(({ publicSlug, name }) => (
                 <a href={`/components/${publicSlug}`} key={publicSlug} onClick={closeMenu}>
                   <strong>{name}</strong>
-                  <b aria-hidden="true">↗</b>
+                  {showArrows && <b aria-hidden="true">↗</b>}
                 </a>
               ))}
             </div>
             <a className="mobile-menu__catalogue-footer" href="/components" onClick={closeMenu}>
               <span><strong>Browse components</strong><small>Preview every component</small></span>
-              <b aria-hidden="true">→</b>
+              {showArrows && <b aria-hidden="true">→</b>}
             </a>
           </section>
 

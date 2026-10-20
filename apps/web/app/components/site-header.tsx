@@ -26,9 +26,10 @@ const mobileGroups: MobileComponentGroup[] = [
 
 interface SiteHeaderProps {
   activeSection?: NavigationId;
+  showArrows?: boolean;
 }
 
-export function SiteHeader({ activeSection }: SiteHeaderProps = {}) {
+export function SiteHeader({ activeSection, showArrows = true }: SiteHeaderProps = {}) {
   return (
     <header className={styles.header}>
       <Brand />
@@ -45,8 +46,8 @@ export function SiteHeader({ activeSection }: SiteHeaderProps = {}) {
       </nav>
       <div className={styles.actions}>
         <a className={styles.signIn} href="/login?next=%2Fapp%2Fmcp">Sign in</a>
-        <a className={styles.trial} href="/login?next=%2Fapp%2Fmcp">Connect to MCP <span aria-hidden="true">↗</span></a>
-        <MobileMenu groups={mobileGroups} />
+        <a className={styles.trial} href="/login?next=%2Fapp%2Fmcp">Connect to MCP {showArrows && <span aria-hidden="true">↗</span>}</a>
+        <MobileMenu groups={mobileGroups} showArrows={showArrows} />
       </div>
     </header>
   );

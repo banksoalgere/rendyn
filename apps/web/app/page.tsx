@@ -37,13 +37,13 @@ const steps = [
 ];
 
 const featuredComponents = [
-  { slug: 'shader-background', copy: 'Animated colour and texture for a more expressive page.', hint: 'Try the shader controls' },
-  { slug: 'magicui-globe', copy: 'A rotating globe that brings a global story to life.', hint: 'Drag to rotate' },
-  { slug: 'morphing-modal', copy: 'A compact trigger that opens into a fluid, animated dialog.', hint: 'Click to open' },
-  { slug: 'dock', copy: 'A playful navigation dock that responds to your pointer.', hint: 'Hover over the icons' },
-].flatMap(({ slug, copy, hint }) => {
+  { slug: 'magicui-animated-beam', copy: 'Flowing connections that bring integrations to life.' },
+  { slug: 'magicui-globe', copy: 'A rotating globe that brings a global story to life.' },
+  { slug: 'morphing-modal', copy: 'A compact trigger that opens into a fluid, animated dialog.' },
+  { slug: 'tabs', copy: 'Smooth transitions between neatly organised views.' },
+].flatMap(({ slug, copy }) => {
   const entry = catalogueEntries.find((component) => component.slug === slug);
-  return entry ? [{ ...getComponentPreview(entry), copy, hint }] : [];
+  return entry ? [{ ...getComponentPreview(entry), copy }] : [];
 });
 
 const collectionStats = [
@@ -59,15 +59,15 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeStructuredData).replace(/</g, '\\u003c') }}
       />
-      <SiteHeader activeSection="product" />
+      <SiteHeader activeSection="product" showArrows={false} />
       <section className={styles.hero} id="top">
         <div className={styles.copy}>
           <span className={styles.eyebrow}><i aria-hidden="true" /> React UI components for AI coding agents</span>
           <h1>Give your agent<br />taste.</h1>
           <p>Free components. Full source. Ready for your AI agent through MCP.</p>
           <div className={styles.actions}>
-            <a className={styles.primary} href="/login?next=%2Fapp%2Fmcp">Connect to MCP <span aria-hidden="true">↗</span></a>
-            <a className={styles.textLink} href="/components">Browse components <span aria-hidden="true">→</span></a>
+            <a className={styles.primary} href="/login?next=%2Fapp%2Fmcp">Connect to MCP</a>
+            <a className={styles.textLink} href="/components">Browse components</a>
           </div>
         </div>
         <HorizonWall componentCount={catalogueEntries.length} />
@@ -87,7 +87,7 @@ export default function Home() {
           <span className={styles.kicker}>The playground</span>
           <h2 id="playground-heading">Good design is<br />in the interaction.</h2>
           <p>Try a few favourites. Explore the states, feel the transitions, and find the details that belong in your next project.</p>
-          <a className={styles.textLink} href="/components">Browse components <span aria-hidden="true">↗</span></a>
+          <a className={styles.textLink} href="/components">Browse components</a>
         </div>
         <div className={styles.showcase}>
           <HomeDemo examples={demoExamples} />
@@ -106,22 +106,21 @@ export default function Home() {
                 <ComponentPreview component={component} size="card" example="homepage" />
               </div>
               <div className={styles.componentCaption}>
-                <div><h3><a href={`/components/${component.publicSlug}`}>{component.name} <span aria-hidden="true">↗</span></a></h3><p>{component.copy}</p></div>
-                <span className={styles.componentHint}>{component.hint}</span>
+                <div><h3><a href={`/components/${component.publicSlug}`}>{component.name}</a></h3><p>{component.copy}</p></div>
               </div>
             </article>
           ))}
         </div>
         <div className={styles.collectionActions}>
-          <a className={styles.primary} href="/login?next=%2Fapp%2Fmcp">Connect to MCP <span aria-hidden="true">↗</span></a>
-          <a className={styles.textLink} href="/components">Browse components <span aria-hidden="true">→</span></a>
+          <a className={styles.primary} href="/login?next=%2Fapp%2Fmcp">Connect to MCP</a>
+          <a className={styles.textLink} href="/components">Browse components</a>
         </div>
         <div className={styles.collectionStats}>
           {collectionStats.map(({ category, label, description }) => (
             <a href={`/components?category=${category}`} key={category}>
               <strong>{catalogueEntries.filter((entry) => entry.category === category).length}</strong>
               <div><h3>{label}</h3><p>{description}</p></div>
-              <span aria-hidden="true">↗</span>
+             
             </a>
           ))}
         </div>
@@ -130,7 +129,7 @@ export default function Home() {
       <section className={styles.workflow} id="how-it-works">
         <div className={styles.sectionHeading}>
           <div><span className={styles.kicker}>From inspiration to implementation</span><h2>Less starting over.<br />More making it yours.</h2></div>
-          <a className={styles.textLink} href="/components">Take a look around <span aria-hidden="true">↗</span></a>
+          <a className={styles.textLink} href="/components">Take a look around</a>
         </div>
         <div className={styles.steps}>
           {steps.map((step) => (
@@ -147,7 +146,7 @@ export default function Home() {
         <div id="docs">
           <h2>Great UI.<br />In your editor.</h2>
           <p>Give your agent components, previews and source through MCP.</p>
-          <a className={styles.primary} href="/login?next=%2Fapp%2Fmcp">Connect to MCP <span aria-hidden="true">↗</span></a>
+          <a className={styles.primary} href="/login?next=%2Fapp%2Fmcp">Connect to MCP</a>
         </div>
         <ul className={styles.tools} aria-label="MCP-compatible coding agents">
           {codingAgents.map((agent) => (
@@ -159,8 +158,10 @@ export default function Home() {
       <section className={styles.closing} id="get-started">
         <span className={styles.kicker}>Your next great interface starts here</span>
         <h2>Make something<br />worth clicking.</h2>
-        <a className={styles.primary} href="/login?next=%2Fapp%2Fmcp">Connect to MCP <span aria-hidden="true">↗</span></a>
-        <a className={styles.textLink} href="/components">Browse components <span aria-hidden="true">→</span></a>
+        <div className={styles.actions}>
+          <a className={styles.primary} href="/login?next=%2Fapp%2Fmcp">Connect to MCP</a>
+          <a className={styles.textLink} href="/components">Browse components</a>
+        </div>
         <p>{catalogueEntries.length} components. Endless possibilities.</p>
       </section>
       <SiteFooter />
