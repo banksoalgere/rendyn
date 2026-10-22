@@ -1,100 +1,24 @@
-import type Stripe from 'stripe';
 import { NextResponse } from 'next/server';
 import { isSameOriginRequest, safeReturnTo } from '@/lib/auth/inputs';
-import { getBillingConfig, isBillingPlanCode } from '@/lib/billing/config';
-import { checkoutSession, TrialAlreadyUsed } from '@/lib/billing/checkout-attempt';
-import { createClient } from '@/lib/supabase/server';
+import { isBillingPlanCode } from '@/lib/billing/config';
 
-function pricingRedirect(request: Request, error: string) {
-  const url = new URL('/pricing', request.url);
-  url.searchParams.set('error', error);
-  return NextResponse.redirect(url, { status: 303 });
-}
-
+// Retain the old form boundary, but never create a new paid checkout.
 export async function POST(request: Request) {
   if (!isSameOriginRequest(request)) {
     return Response.json({ error: 'invalid_origin' }, { status: 403 });
   }
-
-  let planCode: FormDataEntryValue | null;
-  let returnTo = '/account';
+  let formData: FormData;
   try {
-    const formData = await request.formData();
-    planCode = formData.get('plan');
-    const returnValue = formData.get('return_to');
-    returnTo = safeReturnTo(typeof returnValue === 'string' ? returnValue : null, '/account');
+    formData = await request.formData();
   } catch {
     return Response.json({ error: 'invalid_request' }, { status: 400 });
   }
-  if (!isBillingPlanCode(planCode)) {
+  if (!isBillingPlanCode(formData.get('plan'))) {
     return Response.json({ error: 'invalid_plan' }, { status: 400 });
   }
-
-  const supabase = await createClient();
-  if (!supabase) return pricingRedirect(request, 'configuration');
-
-  try {
-    const { data: claimsData } = await supabase.auth.getClaims();
-    const userId = claimsData?.claims?.sub;
-    const email = claimsData?.claims?.email;
-    if (typeof userId !== 'string') {
-      const login = new URL('/login', request.url);
-      const pricing = new URL('/pricing', request.url);
-      pricing.searchParams.set('next', returnTo);
-      login.searchParams.set('next', `${pricing.pathname}${pricing.search}`);
-      return NextResponse.redirect(login, { status: 303 });
-    }
-
-    const { data: subscriptions, error: subscriptionError } = await supabase
-      .from('subscriptions')
-      .select('id')
-      .eq('provider', 'stripe')
-      .limit(1);
-    if (subscriptionError) throw new Error(`Subscription lookup failed: ${subscriptionError.code}`);
-
-    const existing = subscriptions ?? [];
-    if (existing.length > 0) {
-      return pricingRedirect(request, 'trial_used');
-    }
-
-    const billing = getBillingConfig();
-    const selectedPlan = billing.plans[planCode];
-    const subscriptionData: Stripe.Checkout.SessionCreateParams.SubscriptionData = {
-      metadata: { rendyn_user_id: userId, rendyn_plan_code: planCode },
-      trial_period_days: 7,
-    };
-    const lineItem: Stripe.Checkout.SessionCreateParams.LineItem = {
-      price: selectedPlan.priceId,
-      quantity: selectedPlan.team ? 2 : 1,
-      ...(selectedPlan.team ? {
-        adjustable_quantity: { enabled: true, minimum: 2, maximum: 100 },
-      } : {}),
-    };
-
-    const successUrl = new URL(returnTo, request.url);
-    successUrl.searchParams.set('billing', 'success');
-    const cancelUrl = new URL('/pricing', request.url);
-    cancelUrl.searchParams.set('billing', 'cancelled');
-    cancelUrl.searchParams.set('next', returnTo);
-    const session = await checkoutSession(userId, {
-      mode: 'subscription',
-      client_reference_id: userId,
-      // Managed Payments selects the available payment methods and checkout text.
-      // Keep payment collection mandatory without overriding those settings.
-      payment_method_collection: 'always',
-      line_items: [lineItem],
-      subscription_data: subscriptionData,
-      metadata: { rendyn_user_id: userId, rendyn_plan_code: planCode },
-      success_url: successUrl.toString(),
-      cancel_url: cancelUrl.toString(),
-      ...(typeof email === 'string' ? { customer_email: email } : {}),
-    });
-
-    if (!session.url) throw new Error('Stripe Checkout did not return a URL');
-    return NextResponse.redirect(session.url, { status: 303 });
-  } catch (error) {
-    if (error instanceof TrialAlreadyUsed) return pricingRedirect(request, 'trial_used');
-    console.error('billing_checkout_failed', error instanceof Error ? error.message : 'unknown_error');
-    return pricingRedirect(request, 'checkout');
-  }
+  const returnValue = formData.get('return_to');
+  const returnTo = safeReturnTo(typeof returnValue === 'string' ? returnValue : null, '/mcp');
+  return NextResponse.redirect(new URL(returnTo, request.url), {
+    status: 303, headers: { 'Cache-Control': 'private, no-store' },
+  });
 }

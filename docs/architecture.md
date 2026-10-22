@@ -16,7 +16,7 @@ Native Cloudflare Worker / MCP resource server ---> OpenAI Embeddings (optional)
       +----> internal Next.js previews
       |
       +----> Supabase Auth + Postgres
-              users, subscriptions, paid access ledger
+              OAuth users; legacy subscriptions remain for billing management
 ```
 
 ## Code boundaries
@@ -26,7 +26,7 @@ The repository keeps orchestration thin and puts behavior behind explicit module
 - `packages/catalog` owns catalog types, runtime schemas, safe path resolution, indexed lookup, pagination, search, and validated filesystem/snapshot loading. Every catalog or embedding JSON file is validated before use.
 - `apps/api/src/routes` owns HTTP transport only. Shared catalog response shaping lives in `catalog-presenter.ts`, so HTTP and MCP return the same public representation.
 - `apps/api/src/mcp.ts` only creates the MCP server. Each tool lives under `apps/api/src/mcp-tools`, grouped into search, source retrieval, and catalogue navigation.
-- `apps/api/src/entitlements.ts` owns trial-or-paid access claims and validates complete RPC responses before returning them to a route or MCP tool.
+- `apps/api/src/entitlements.ts` returns a free, non-expiring source grant for authenticated MCP callers. It does not query or mutate subscriptions.
 - `scripts/import-catalog.ts` coordinates the beUI base import and the Magic UI/Kibo UI adapters. Fetch limits, URL/path policy, external schemas, metadata extraction, concurrency, pinned-repository handling, licence checks, and component assembly live in focused import modules.
 - `apps/web/app/page.tsx` composes independent landing-page sections from `apps/web/app/components`. It stays an independent deployable package while its source is versioned with the rest of the monorepo.
 
@@ -40,7 +40,7 @@ Start with these files when tracing a request:
 2. `apps/api/src/routes` or `apps/api/src/mcp-tools` validates the incoming request.
 3. `apps/api/src/catalog-service.ts` chooses semantic search or its lexical fallback.
 4. `packages/catalog/src/search.ts` is the ranking pipeline. Its `search/scoring.ts` and `search/diversity.ts` modules own scoring and result variety; `packages/catalog/src/store.ts` reads validated catalogue data.
-5. `apps/api/src/entitlements.ts` claims access before complete source is returned.
+5. `apps/api/src/auth.ts` verifies MCP tokens; `server.ts` enforces required scopes. Public HTTP source retrieval only resolves validated catalogue entries.
 
 For catalogue updates, start at `scripts/import-catalog.ts`. `import-beui.ts` rebuilds the base snapshot; `import-external-sources.ts` applies the reviewed Magic UI and Kibo UI adapters; `component-source.ts` verifies beUI input; and `component-manifest.ts` builds shared catalogue records.
 
@@ -52,13 +52,13 @@ This changes when the data actually demands it. A move to pgvector or a hosted s
 
 ## Why Supabase remains the backend of record
 
-Supabase solves the stateful commercial concerns cleanly:
+Supabase provides the account and authorization boundary:
 
 - OAuth 2.1/OIDC authorization-code flow with PKCE for MCP browser login
 - dynamic client registration for compatible MCP hosts
 - asymmetric JWTs that the MCP service validates locally through JWKS
 - row-level security for account data
-- PostgreSQL transactions for subscription and component-access accounting
+- Legacy subscription records for existing billing management; free access does not depend on them
 
 The MCP service is a protected resource server. It validates access tokens but never issues or refreshes them.
 
@@ -81,7 +81,7 @@ The official MCP TypeScript SDK v2 provides the current Streamable HTTP protocol
 
 ## Why a separate preview renderer
 
-Preview code is executable UI, while the API handles bearer-token entitlements. Keeping them separate means:
+Preview code is executable UI, while the MCP API handles bearer-token authentication. Keeping them separate means:
 
 - preview and MCP routes never receive Supabase service credentials;
 - the preview service can have a stricter CSP and independent scaling;
@@ -90,8 +90,10 @@ Preview code is executable UI, while the API handles bearer-token entitlements. 
 
 The importer copies only the pinned component runtime, selected preview modules, shared libraries, CSS, and required public assets. It excludes marketing pages, documentation applications, tests, build files, MCP servers, and any registry item without source at the pinned commit.
 
-## Commercial access model
+## Free access model
 
-Public catalogue pages, metadata and previews remain browseable. Complete source delivery and every MCP tool require an authenticated subscription in either `trialing` or `active` state with a future access boundary.
+Catalogue pages, interactive previews, source files and installation instructions are public. Website browsing and copying need no account, including the guest workspace. Source routes only resolve known catalogue entries and retain manifest, path and licence validation.
 
-Stripe Checkout collects a payment card when the user starts a seven-day full-access trial. The first subscription charge is due on day 8 unless the user cancels beforehand. Signed Stripe webhooks are authoritative: the website Worker verifies the raw request body, then a service-role-only database function records the newest provider event and ignores out-of-order delivery. Trialing access uses `trial_end`; active access uses the subscription item's `current_period_end`. The MCP Worker holds no Stripe or Supabase service-role secret.
+MCP is free with no expiry date. Every MCP request still requires a verified OAuth token and the configured scopes. The consent page and decision endpoint require sign-in, validate identifiers and registered callbacks, and preserve explicit approval or denial. They do not query billing entitlements.
+
+New paid checkout is disabled. The signature-verified Stripe webhook and self-service billing portal remain for existing subscriptions. Making access free does not cancel those subscriptions automatically. The MCP Worker holds no Stripe or Supabase service-role secret.

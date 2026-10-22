@@ -15,14 +15,14 @@ export interface MobileComponentGroup {
 const primaryLinks = [
   { href: '/components', label: 'Browse components' },
   { href: '/#how-it-works', label: 'How it works' },
-  { href: '/pricing', label: 'Pricing' },
+  { href: '/mcp', label: 'MCP for your agent' },
+  { href: '/pricing', label: 'Free access' },
   { href: '/#for-teams', label: 'For teams' },
   { href: '/guides', label: 'Guides' },
 ] as const;
 
-const SIGN_UP_HREF = '/pricing';
 
-export function MobileMenu({ groups }: { groups: MobileComponentGroup[] }) {
+export function MobileMenu({ groups, showArrows = true }: { groups: MobileComponentGroup[]; showArrows?: boolean }) {
   const [open, setOpen] = useState(false);
   const [activeGroupId, setActiveGroupId] = useState('motion');
   const activeGroup = groups.find((group) => group.id === activeGroupId) ?? groups[0];
@@ -66,7 +66,7 @@ export function MobileMenu({ groups }: { groups: MobileComponentGroup[] }) {
             {primaryLinks.map((link) => (
               <a href={link.href} key={link.href} onClick={closeMenu}>
                 <strong>{link.label}</strong>
-                <b aria-hidden="true">→</b>
+                {showArrows && <b aria-hidden="true">→</b>}
               </a>
             ))}
           </nav>
@@ -99,19 +99,19 @@ export function MobileMenu({ groups }: { groups: MobileComponentGroup[] }) {
               {activeGroup.components.map(({ publicSlug, name }) => (
                 <a href={`/components/${publicSlug}`} key={publicSlug} onClick={closeMenu}>
                   <strong>{name}</strong>
-                  <b aria-hidden="true">↗</b>
+                  {showArrows && <b aria-hidden="true">↗</b>}
                 </a>
               ))}
             </div>
             <a className="mobile-menu__catalogue-footer" href="/components" onClick={closeMenu}>
-              <span><strong>Browse complete catalogue</strong><small>Preview every component</small></span>
-              <b aria-hidden="true">→</b>
+              <span><strong>Browse components</strong><small>Preview every component</small></span>
+              {showArrows && <b aria-hidden="true">→</b>}
             </a>
           </section>
 
           <div className="mobile-menu__actions">
-            <a href="/login?next=%2Faccount" onClick={closeMenu}>Sign in</a>
-            <a className="button" href={SIGN_UP_HREF} onClick={closeMenu}>Start 7-day trial</a>
+            <a href="/login?next=%2Fapp%2Fmcp" onClick={closeMenu}>Sign in</a>
+            <a className="button" href="/login?next=%2Fapp%2Fmcp" onClick={closeMenu}>Connect to MCP</a>
           </div>
         </div>
       </Drawer>

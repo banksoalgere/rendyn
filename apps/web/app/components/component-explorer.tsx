@@ -3,10 +3,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   catalogueHref, categoryLabels, createCatalogueSearchIndex, getCatalogueFilters,
-  getCataloguePage, MAX_SEARCH_LENGTH, type CatalogueComponent, type CatalogueFilters,
+  searchCatalogue, MAX_SEARCH_LENGTH, type CatalogueComponent, type CatalogueFilters,
 } from '../../lib/catalogue-search';
 import { trackSearch } from '../../lib/analytics';
-import { ComponentPreview } from './component-preview';
+import { CatalogueBrowser } from './catalogue-browser';
 import styles from './components.module.css';
 
 export type { CatalogueComponent } from '../../lib/catalogue-search';
@@ -18,7 +18,6 @@ interface ComponentExplorerProps {
   initialPage?: number;
 }
 
-const suggestedSearches = ['Buttons', 'Navigation', 'AI chat', 'Data tables'];
 
 export function ComponentExplorer({
   components, initialCategory, initialQuery = '', initialPage = 1,
@@ -29,10 +28,14 @@ export function ComponentExplorer({
   const explorerRef = useRef<HTMLElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const searchIndex = useMemo(() => createCatalogueSearchIndex(components), [components]);
-  const results = useMemo(() => getCataloguePage(searchIndex, filters), [searchIndex, filters]);
+  const matches = useMemo(() => searchCatalogue(searchIndex, filters.query, filters.category), [searchIndex, filters]);
+  const results = {
+    total: matches.length,
+    otherCategoryMatches: matches.length === 0 && filters.category !== 'all'
+      ? searchCatalogue(searchIndex, filters.query, 'all').length : 0,
+  };
   const isFiltered = Boolean(filters.query.trim()) || filters.category !== 'all';
-  const isFeatured = !isFiltered && results.page === 1;
-  const currentHref = catalogueHref({ ...filters, page: results.page });
+  const currentHref = catalogueHref({ ...filters, page: 1 });
 
   function updateFilters(query: string, category: CatalogueFilters['category']) {
     const explorer = explorerRef.current;
@@ -75,6 +78,7 @@ export function ComponentExplorer({
   return (
     <section className={styles.explorer} aria-label="Interactive component catalogue" ref={explorerRef}>
       <div className={styles.controlBar}>
+        <h1 className={styles.libraryTitle}>Component library</h1>
         <form action="/components" method="get" role="search" className={styles.search} onSubmit={(event) => {
           event.preventDefault();
           window.history.replaceState(window.history.state, '', currentHref);
@@ -99,13 +103,6 @@ export function ComponentExplorer({
           <button className={styles.searchSubmit} type="submit">Search</button>
         </form>
 
-        <div className={styles.suggestions} aria-label="Suggested searches">
-          <span>Try</span>
-          {suggestedSearches.map((query) => (
-            <button key={query} type="button" onClick={() => updateFilters(query, 'all')}>{query}</button>
-          ))}
-        </div>
-
         <div aria-label="Filter by category" className={styles.categoryDock} role="group">
           <button data-analytics-action="filter-all" aria-pressed={filters.category === 'all'} onClick={() => updateFilters(filters.query, 'all')} type="button">All</button>
           {Object.entries(categoryLabels).map(([value, label]) => (
@@ -123,47 +120,22 @@ export function ComponentExplorer({
       <div className={styles.results} id="component-results">
         <div className={styles.resultsHeading}>
           <div>
-            <h2>{isFeatured ? 'A few favourites' : filters.query.trim() ? 'Search results' : filters.category === 'all' ? 'More to explore' : categoryLabels[filters.category]}</h2>
-            <p role="status" aria-live="polite" aria-atomic="true">
-              {isFeatured ? 'A small selection to get you started.' : `${results.total} ${results.total === 1 ? 'match' : 'matches'}${results.total ? ` · ${results.start + 1}–${results.start + results.components.length} shown` : ''}`}
-            </p>
+            <p role="status" aria-live="polite">{results.total} components · Select a file to preview it.</p>
           </div>
-          {isFiltered && <button className={styles.reset} data-analytics-action="clear-search" onClick={() => updateFilters('', 'all')} type="button">Reset filters <span aria-hidden="true">↗</span></button>}
+          {isFiltered && <button className={styles.reset} data-analytics-action="clear-search" onClick={() => updateFilters('', 'all')} type="button">Reset filters</button>}
         </div>
 
-        <div className={styles.componentGrid} aria-label="Component results">
-          {results.components.map((component, index) => (
-            <article className={styles.componentLink} key={component.publicSlug}>
-              <div className={styles.cardToolbar}>
-                <span>{categoryLabels[component.category]}</span>
-                <a href={`/components/${component.publicSlug}`} aria-label={`Open ${component.name} details`}>
-                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M14 4h6v6M20 4l-8 8M10 4H4v16h16v-6" /></svg>
-                </a>
-              </div>
-              <div className={styles.cardPreview}>
-                <ComponentPreview component={component} size="card" priority={index === 0} />
-              </div>
-              <div className={styles.cardInfo}>
-                <h3><a href={`/components/${component.publicSlug}`}>{component.name} <span aria-hidden="true">↗</span></a></h3>
-                <p>{component.description}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        {results.pageCount > 1 && (
-          <nav className={styles.pagination} aria-label="Component pages">
-            {results.page > 1 && <a href={catalogueHref({ ...filters, page: results.page - 1 })} rel="prev">← Previous</a>}
-            <span>Page {results.page} of {results.pageCount}</span>
-            {results.page < results.pageCount && <a href={catalogueHref({ ...filters, page: results.page + 1 })} rel="next">{isFeatured ? 'Explore more' : 'Next'} <span aria-hidden="true">→</span></a>}
-          </nav>
-        )}
+        <CatalogueBrowser components={matches} />
 
         {results.total === 0 && (
           <div className={styles.emptyState}>
             <h3>No components found</h3>
-            <p>Try a shorter search, such as “button”, “chat” or “table”.</p>
-            <button data-analytics-action="clear-search" onClick={() => updateFilters('', 'all')} type="button">Clear search and filters</button>
+            <p>{results.otherCategoryMatches
+              ? `${results.otherCategoryMatches} ${results.otherCategoryMatches === 1 ? 'match is' : 'matches are'} available in other categories.`
+              : 'Try a component name or a single interaction, such as “approval before an agent acts”. Some patterns are not in the collection yet.'}</p>
+            {results.otherCategoryMatches > 0
+              ? <button onClick={() => updateFilters(filters.query, 'all')} type="button">Search all categories</button>
+              : <button data-analytics-action="clear-search" onClick={() => updateFilters('', 'all')} type="button">Clear search and filters</button>}
           </div>
         )}
       </div>

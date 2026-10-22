@@ -12,9 +12,7 @@ export async function GET(request: Request, { params }: {
   if (!findCatalogueEntry(componentSlug)) return errorResponse('Component not found.', 404);
   try {
     const access = await getCodeAccess();
-    if (!access.signedIn) return errorResponse('Log in to get this component free.', 401);
-
-    // Verify the session on the server before loading source. No subscription is required.
+    // Only catalogue entries can resolve source files; website source is public.
     const { getComponentCode } = await import('../../../../../lib/component-code.server');
     const code = await getComponentCode(componentSlug);
     if (!code) return errorResponse('Component not found.', 404);

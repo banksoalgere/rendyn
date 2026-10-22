@@ -5,11 +5,11 @@ import styles from './site-shell.module.css';
 const footerGroups = [
   {
     title: 'Product',
-    links: [['Overview', '/'], ['Components', '/components'], ['How it works', '/#how-it-works'], ['Pricing', '/pricing']],
+    links: [['Overview', '/'], ['Components', '/components'], ['Component MCP server', '/mcp'], ['How it works', '/#how-it-works'], ['Free access', '/pricing']],
   },
   {
     title: 'Explore',
-    links: [['Agent interfaces', '/components?category=agents'], ['Interaction', '/components?category=motion'], ['Product blocks', '/components?category=blocks']],
+    links: [['AI agent UI', '/collections/ai-agent-ui'], ['Animated React components', '/collections/animated-react-components'], ['All interaction components', '/components?category=motion'], ['Product blocks', '/components?category=blocks']],
   },
   {
     title: 'Resources',
@@ -33,14 +33,14 @@ const footerGroups = [
 
 export function FinalCallToAction() {
   return (
-    <section className="final-cta grid-field" id="start-trial">
+    <section className="final-cta grid-field" id="connect-mcp">
       <div className="final-cta-card">
         <p className="eyebrow">Your agent&apos;s design upgrade</p>
-        <h2>Build your best<br />interface yet.</h2>
-        <p>Start with seven days of full access, then keep giving every feature polished components, complete code and the context to choose well.</p>
+        <h2>Give your agent<br />taste.</h2>
+        <p>The best way to use Rendyn is through MCP. Give your agent the catalogue, previews and complete source, right where you build. Free, with no card needed.</p>
         <div>
-          <a className="button" href="/components">Browse the catalogue <span aria-hidden="true">↗</span></a>
-          <a className="button button--cream" href="/pricing">Start 7-day trial</a>
+          <a className="button" href="/components">Browse components <span aria-hidden="true">↗</span></a>
+          <a className="button button--cream" href="/login?next=%2Fapp%2Fmcp">Connect to MCP</a>
         </div>
       </div>
     </section>

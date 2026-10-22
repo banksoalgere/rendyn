@@ -24,7 +24,9 @@ await writeFile(resolve(temporary, 'wrangler.json'), JSON.stringify(config));
 const child = spawn(process.execPath, [resolve(root, 'apps/api/node_modules/wrangler/bin/wrangler.js'),
   'dev', '--local', '--ip', '127.0.0.1', '--port', String(port), '--inspector-port', '0',
   '--config', resolve(temporary, 'wrangler.json')], {
-  cwd: root, env: { ...process.env, WRANGLER_SEND_METRICS: 'false', WRANGLER_LOG_PATH: temporary },
+  cwd: root, env: { ...process.env, WRANGLER_SEND_METRICS: 'false', WRANGLER_LOG_PATH: temporary,
+    // Use the explicit fixture bindings rather than unrelated local website URLs.
+    CLOUDFLARE_LOAD_DEV_VARS_FROM_DOT_ENV: 'false' },
   stdio: ['ignore', 'pipe', 'pipe'],
 });
 let logs = '';

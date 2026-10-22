@@ -91,6 +91,19 @@ export default defineConfig(async () => {
       : undefined,
     plugins: [
       previewAlias(),
+      {
+        name: 'rendyn-motion-bundle',
+        configEnvironment(name) {
+          if (name !== 'client') return;
+          // The navigation drawer shares Motion with many demos. Keep its
+          // runtime together instead of fetching a dozen small shared chunks.
+          return { build: { rolldownOptions: { output: { codeSplitting: { groups: [{
+            name: 'motion-runtime',
+            test: /\/node_modules\/(?:framer-motion|motion-dom|motion-utils|motion)\//,
+            priority: 20,
+          }] } } } } };
+        },
+      },
       vinext(),
       sites(),
       cloudflare({

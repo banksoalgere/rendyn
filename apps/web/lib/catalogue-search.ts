@@ -11,6 +11,7 @@ export interface CatalogueComponent extends ComponentPreviewData {
   description: string;
   tags: string[];
   aliases?: string[];
+  family?: string;
 }
 
 export interface CatalogueFilters {

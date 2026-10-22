@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { catalogueEntries, type CatalogueEntry } from './catalogue';
+import { getComponentEditorial } from './component-editorial';
 
 export const siteOrigin = 'https://rendyn.dev';
 export const siteName = 'Rendyn';
@@ -35,7 +36,7 @@ export function pageMetadata(title: string, description: string, path: string): 
 const componentSearchNames: Record<string, string> = {
   marquee: 'Marquee with Pause on Hover',
   'magicui-marquee': 'Infinite Media Marquee',
-  'kibo-marquee': 'Draggable Marquee',
+  'kibo-marquee': 'React Fast Marquee',
   combobox: 'Grouped Combobox',
   'kibo-combobox': 'Autocomplete Combobox',
   'file-tree': 'Keyboard File Tree',
@@ -49,10 +50,11 @@ const componentSearchNames: Record<string, string> = {
 };
 
 export function componentMetadata(component: CatalogueEntry): Metadata {
+  const editorial = getComponentEditorial(component.slug);
   const name = componentSearchNames[component.slug] ?? component.name;
   return pageMetadata(
-    `${name} React Component | Rendyn`,
-    `Try the ${name} React component. Explore its live preview, usage and dependencies, then adapt it with your AI coding agent.`,
+    editorial?.title ?? `${name} React Component | Rendyn`,
+    editorial?.description ?? `Try the ${name} React component. Explore its live preview, usage and dependencies, then adapt it with your AI coding agent.`,
     `/components/${component.publicSlug}`,
   );
 }

@@ -35,7 +35,7 @@ export async function buildApp(
 
   registerPublicRoutes(app, { config, store, catalog, previewMedia });
   registerOAuthRoutes(app, config);
-  registerSourceRoute(app, { store, catalog, entitlements, tokenVerifier });
+  registerSourceRoute(app, { store, catalog });
 
   const mcpHandler = createMcpHandler(() =>
     buildMcpServer({ config, catalog, entitlements, previewMedia }),
@@ -48,14 +48,6 @@ export async function buildApp(
   app.all("/mcp", async (context: Context) => {
     const auth = await authGate(context.req.raw);
     if (auth instanceof Response) return auth;
-    const access = await entitlements.subscriptionAccess(auth.token);
-    if (!access.allowed) {
-      return jsonError(context, 402, "subscription_required", {
-        ...access,
-        checkout_url: "https://rendyn.dev/pricing",
-        message: "Start a 7-day Rendyn trial or restore a paid subscription to use MCP tools.",
-      });
-    }
     return mcpHandler.fetch(context.req.raw, {
       authInfo: auth,
       parsedBody: context.get("parsedBody"),

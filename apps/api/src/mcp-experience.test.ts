@@ -6,8 +6,7 @@ import { SupabaseTokenVerifier } from './auth.js';
 
 const { rpc } = vi.hoisted(() => ({ rpc: vi.fn() }));
 vi.mock('@supabase/supabase-js', () => ({ createClient: () => ({ rpc }) }));
-const subscription = { allowed:true, plan_code:'pro_monthly', subscription_status:'trialing', trial_end:'2099-01-01T00:00:00Z', current_period_end:'2099-01-01T00:00:00Z', cancel_at_period_end:false };
-const grant = { allowed:true, newly_unlocked:false, plan_code:'pro_monthly', subscription_status:'trialing', access_ends_at:'2099-01-01T00:00:00Z' };
+const grant = { allowed:true, newly_unlocked:false, plan_code:'free', subscription_status:null, access_ends_at:null };
 
 function payload(result: CallToolResult) {
   const text = result.content.find(item => item.type === 'text');
@@ -22,7 +21,8 @@ describe('MCP discovery to source workflow', () => {
     app = await buildNodeApp(readConfig({ NODE_ENV:'test', SUPABASE_URL:'https://example.supabase.co', SUPABASE_ANON_KEY:'test-public-key-not-a-real-secret' }));
   });
   beforeEach(() => {
-    rpc.mockReset().mockImplementation(async (name: string) => ({ data:[name === 'get_subscription_access' ? subscription : grant], error:null }));
+    vi.spyOn(Date, 'now').mockReturnValue(Date.parse('2026-11-02T00:00:00.000Z'));
+    rpc.mockReset().mockRejectedValue(new Error('Subscription database unavailable'));
     vi.spyOn(SupabaseTokenVerifier.prototype, 'verifyAccessToken').mockImplementation(async token => ({ token, clientId:'test-user', scopes:['openid'], expiresAt:4102444800 }));
   });
   afterEach(async () => {
@@ -47,7 +47,7 @@ describe('MCP discovery to source workflow', () => {
     const client = await connect();
     const tools = (await client.listTools()).tools;
     expect(tools.filter(tool => tool.name !== 'get_component').every(tool => tool.annotations?.readOnlyHint)).toBe(true);
-    expect(tools.find(tool => tool.name === 'get_component')?.annotations?.readOnlyHint).toBe(false);
+    expect(tools.find(tool => tool.name === 'get_component')?.annotations?.readOnlyHint).toBe(true);
     const categories = payload(await client.callTool({name:'list_categories',arguments:{}}));
     expect(categories.suggested_workflow).toHaveLength(3);
     expect(categories.categories.find((category: {slug:string}) => category.slug==='motion').description).toContain('not a motion-only filter');
@@ -94,23 +94,13 @@ describe('MCP discovery to source workflow', () => {
     expect(invented.isError).toBe(true);
     expect(payload(invented).message).toContain('returned id');
   });
-  it('keeps source private when the entitlement contract is malformed', async () => {
+  it('retrieves free source even when billing is unavailable', async () => {
     const client = await connect();
-    // The retired quota contract must never be accepted as a subscription grant.
-    rpc.mockImplementation(async name => ({data:[name==='get_subscription_access' ? subscription : {allowed:true,newly_unlocked:true,grant_type:'paid',signup_bonus_remaining:4,monthly_remaining:4}],error:null}));
     const result = await client.callTool({name:'get_component',arguments:{id:'button'}});
-    expect(result.isError).toBe(true);
-    expect(payload(result).error).toBe('access_check_unavailable');
-    expect(payload(result)).not.toHaveProperty('component');
-    expect(payload(result).message).toContain('do not start another checkout');
-  });
-  it('does not return source when the grant denies access', async () => {
-    const client = await connect();
-    rpc.mockImplementation(async name => ({data:[name==='get_subscription_access' ? subscription : {...grant,allowed:false}],error:null}));
-    const result = await client.callTool({name:'get_component',arguments:{id:'button'}});
-    expect(result.isError).toBe(true);
-    expect(payload(result).error).toBe('subscription_required');
-    expect(payload(result)).not.toHaveProperty('component');
+    expect(result.isError).not.toBe(true);
+    expect(payload(result).entitlement).toEqual(grant);
+    expect(payload(result).component.files.length).toBeGreaterThan(0);
+    expect(rpc).not.toHaveBeenCalled();
   });
   it('returns visual previews only when requested', async () => {
     const client = await connect();

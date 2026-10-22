@@ -11,7 +11,7 @@ import styles from './auth.module.css';
 
 // Input focus and code slots follow the catalogue's beUI Input / OTP Input.
 // Keep native editing, paste and one-time-code autofill on one real input.
-export function EmailSignInForm({ configured, returnTo }: { configured: boolean; returnTo: string }) {
+export function EmailSignInForm({ configured, returnTo, title = 'Log in to Rendyn' }: { configured: boolean; returnTo: string; title?: string }) {
   const [expanded, setExpanded] = useState(false);
   const [email, setEmail] = useState('');
   const [sentTo, setSentTo] = useState<string>();
@@ -100,7 +100,7 @@ export function EmailSignInForm({ configured, returnTo }: { configured: boolean;
         </motion.div>
       ) : (
         <motion.div key="email" initial={false} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={transition}>
-          <h1 id="login-title">Log in to Rendyn</h1>
+          <h1 id="login-title">{title}</h1>
           <GoogleSignInButton configured={configured} returnTo={returnTo} />
           <div className={styles.loginDivider}>or</div>
           <button aria-controls="email-login-fields" aria-expanded={expanded} className={styles.emailButton} disabled={!configured || pending} onClick={() => setExpanded(!expanded)} type="button"><MailIcon />Log in with email</button>

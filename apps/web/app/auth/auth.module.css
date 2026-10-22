@@ -2,7 +2,7 @@
   align-items: center;
   background-color: var(--paper);
   background-image:
-    radial-gradient(ellipse at 50% 0%, #6547c408, transparent 65%);
+    radial-gradient(ellipse at 50% 0%, #20212408, transparent 65%);
   background-size: 100% 100%;
   display: flex;
   justify-content: center;
@@ -56,6 +56,59 @@
 }
 
 .consentCard { max-width: 620px; }
+
+/* Quiet login; focus and slot styling inspired by the catalogue Input / OTP Input. */
+.loginPage {
+  align-items: center;
+  background: var(--paper);
+  display: flex;
+  justify-content: center;
+  min-height: 100svh;
+  padding: 72px 24px;
+}
+.loginCard { max-width: 324px; width: 100%; }
+.loginCard h1 { font-size: 28px; font-weight: 500; letter-spacing: -.045em; line-height: 1.2; margin: 0 0 28px; text-align: center; }
+.loginBrand { align-items: center; display: flex; font-size: 16px; font-weight: 550; gap: 9px; justify-content: center; letter-spacing: -.03em; margin-bottom: 27px; }
+.loginBrandMark { align-items: center; background: var(--accent); border-radius: 8px; color: var(--paper); display: flex; font-size: 18px; font-weight: 550; height: 30px; justify-content: center; width: 28px; }
+.loginCard .googleButton, .loginCard .primaryButton { border-radius: 13px; gap: 11px; min-height: 50px; transition: background .18s, transform .18s; }
+.loginCard .googleButton { background: #fff; border: 1px solid #dedbe4; color: #302839; box-shadow: 0 2px 3px #0000000c; }
+.loginCard .googleButton:hover:not(:disabled) { background: #f5f3f8; transform: translateY(-1px); }
+.loginCard .primaryButton:hover:not(:disabled) { background: var(--button-hover); transform: translateY(-1px); }
+.loginCard .primaryButton svg { transition: transform .2s; }
+.loginCard .primaryButton:hover:not(:disabled) svg { transform: translateX(3px); }
+.loginDivider { align-items: center; color: var(--muted); display: flex; font-size: 12px; gap: 14px; margin: 20px 0 10px; }
+.loginDivider::before, .loginDivider::after { background: var(--line); content: ''; flex: 1; height: 1px; }
+.emailButton { align-items: center; background: transparent; border: 0; border-radius: 12px; color: var(--muted); cursor: pointer; display: flex; font: 500 14px var(--font-rendyn-sans), sans-serif; gap: 9px; justify-content: center; min-height: 44px; transition: color .18s, background .18s; width: 100%; }
+.emailButton:hover:not(:disabled) { background: var(--surface-subtle); color: var(--ink); }
+.emailButton:disabled { cursor: not-allowed; opacity: .55; }
+.emailButton:focus-visible, .changeEmail:focus-visible, .resendRow button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.emailReveal { overflow: hidden; }
+.emailForm { display: grid; gap: 11px; padding-top: 15px; }
+.emailForm label { font-size: 14px; }
+.emailForm input:not(.codeInput) { background: var(--surface-subtle); border: 1px solid var(--line-strong); border-radius: 13px; color: var(--ink); font: inherit; font-size: 16px; min-height: 50px; min-width: 0; padding: 0 14px; transition: border-color .2s, box-shadow .2s; width: 100%; }
+.emailForm input:not(.codeInput):focus { border-color: var(--accent); outline: none; box-shadow: inset 0 0 0 1px var(--accent); }
+.emailForm input::placeholder { color: var(--muted); }
+.emailForm .finePrint, .emailForm .error { margin: 0; }
+.changeEmail { background: transparent; border: 0; color: var(--muted); cursor: pointer; font-size: 13px; min-height: 40px; padding: 0; margin-bottom: 15px; }
+.inboxMark { align-items: center; background: var(--surface-subtle); border: 1px solid var(--line); border-radius: 13px; display: flex; height: 44px; justify-content: center; margin: 0 auto 20px; width: 44px; }
+.loginCard:has(.codeIntro) h1 { margin-bottom: 12px; }
+.codeIntro { color: var(--muted); font-size: 14px; line-height: 1.6; margin: 0 0 12px; text-align: center; }
+.codeIntro strong { color: var(--ink); display: block; font-weight: 500; overflow-wrap: anywhere; }
+.codeField { position: relative; }
+.codeInput { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; opacity: 0; cursor: text; font-size: 16px; }
+.codeSlots { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 6px; pointer-events: none; }
+.codeSlots span { align-items: center; background: var(--surface-subtle); border: 1px solid var(--line); border-radius: 12px; color: var(--muted); display: flex; font-size: 24px; font-variant-numeric: tabular-nums; height: 56px; justify-content: center; transition: border-color .2s, background .2s; }
+.codeSlots span[data-filled='true'] { color: var(--ink); border-color: var(--line-strong); }
+.codeField:focus-within .codeSlots { border-radius: 12px; outline: 2px solid var(--accent); outline-offset: 4px; }
+.codeInput[aria-invalid='true'] + .codeSlots span { border-color: var(--negative); }
+.codeInput:disabled + .codeSlots { opacity: .55; }
+.resendRow { margin: 20px 0 0; text-align: center; }
+.resendRow button { background: transparent; border: 0; color: var(--ink); cursor: pointer; font-size: 13px; min-height: 40px; padding: 0 8px; }
+.resendRow button:disabled { color: var(--muted); cursor: default; }
+@media (prefers-reduced-motion: reduce) {
+  .loginCard *, .loginCard *::before, .loginCard *::after { transition: none !important; }
+  .loginCard .googleButton:hover:not(:disabled), .loginCard .primaryButton:hover:not(:disabled), .loginCard .primaryButton:hover:not(:disabled) svg { transform: none; }
+}
 
 .eyebrow {
   color: var(--accent);
@@ -199,7 +252,7 @@
 .securityNote { color: var(--muted); font-size: 12px; line-height: 1.55; margin: 22px 0 0; }
 
 @media (max-width: 540px) {
-  .page { align-items: flex-start; background-size: 100% 100%; padding: 92px 12px 24px; background-image: radial-gradient(ellipse at 50% 0%, #6547c408, transparent 65%); }
+  .page { align-items: flex-start; background-size: 100% 100%; padding: 92px 12px 24px; background-image: radial-gradient(ellipse at 50% 0%, #20212408, transparent 65%); }
   .topbar { padding: 20px 16px; }
   .backLink { font-size: 11px; }
   .card { padding: 28px 22px; border-radius: 20px; box-shadow: 0 24px 70px #2021240d; }

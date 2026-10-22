@@ -14,8 +14,8 @@ export function registerGetComponentTool(
     "get_component",
     {
       description:
-        "Return a complete component implementation for a trialing or paid subscriber: every source file, dependency, install instruction, integrity hash, and license notice.",
-      annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: true, openWorldHint: false },
+        "Return a complete component implementation for a free authenticated user: every source file, dependency, install instruction, integrity hash, and license notice.",
+      annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
       inputSchema: z.object({
         id: z.string().trim().max(160).regex(COMPONENT_ID_PATTERN).describe('Use the exact id or slug returned by search_components or browse_category.'),
       }),
@@ -46,23 +46,11 @@ export function registerGetComponentTool(
           isError: true,
           content: [textContent({
             error: 'access_check_unavailable',
-            message: 'Rendyn could not verify source access. Retry once. If it persists, check your account; do not start another checkout for an existing subscription.',
+            message: 'Rendyn could not verify source access. Retry once. If it persists, reconnect your free Rendyn account.',
             account_url: 'https://rendyn.dev/account',
           })],
         };
       }
-      if (!entitlement.allowed) {
-        return {
-          isError: true,
-          content: [textContent({
-            error: "subscription_required",
-            message: "Start a 7-day Rendyn trial or restore a paid subscription to get component source.",
-            checkout_url: "https://rendyn.dev/pricing",
-            entitlement,
-          })],
-        };
-      }
-
       const licenseText = await catalog.store.readLicenseText(component);
       return {
         content: [textContent({

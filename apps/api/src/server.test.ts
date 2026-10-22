@@ -42,15 +42,15 @@ describe("HTTP API", () => {
     });
   });
 
-  it("requires authentication before source retrieval", async () => {
+  it("returns component source and licence without authentication", async () => {
     const response = await app.request("http://localhost/api/components/button/source", {
       headers: requestHeaders,
     });
 
-    expect(response.status).toBe(401);
-    await expect(response.json()).resolves.toMatchObject({
-      error: "authentication_required",
-    });
+    expect(response.status).toBe(200);
+    const payload = await response.json();
+    expect(payload.component.files.length).toBeGreaterThan(0);
+    expect(payload.component.license.spdx).toBe('MIT');
   });
 
   it("requires bearer authentication before any MCP request is dispatched", async () => {

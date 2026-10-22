@@ -201,7 +201,7 @@ export default function CodexDesignGuide() {
               <span>Rendyn</span>
               <strong>Give Codex better interface ingredients.</strong>
               <p>Curated components, visual previews, fit notes, and complete source.</p>
-              <Link href="/components">Explore the catalogue <ArrowIcon /></Link>
+              <Link href="/components">Browse components <ArrowIcon /></Link>
             </div>
           </aside>
 
@@ -540,7 +540,7 @@ Definition of done
                   <span>Component catalogue</span>
                   <h3>Explore components by product intent</h3>
                   <p>Move from a product outcome to a focused, defensible component choice.</p>
-                  <i>Browse the component catalogue ↗</i>
+                  <i>Browse components ↗</i>
                 </Link>
                 <Link href="/#intelligence">
                   <span>Example output</span>

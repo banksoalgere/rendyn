@@ -6,8 +6,9 @@ import styles from './site-shell.module.css';
 const navigation = [
   { href: '/', id: 'product', label: 'Overview' },
   { href: '/components', id: 'catalogue', label: 'Components' },
+  { href: '/mcp', id: 'mcp', label: 'MCP' },
   { href: '/#how-it-works', id: 'how-it-works', label: 'How it works' },
-  { href: '/pricing', id: 'pricing', label: 'Pricing' },
+  { href: '/pricing', id: 'pricing', label: 'Free access' },
   { href: '/guides', id: 'resources', label: 'Guides' },
 ];
 
@@ -25,9 +26,10 @@ const mobileGroups: MobileComponentGroup[] = [
 
 interface SiteHeaderProps {
   activeSection?: NavigationId;
+  showArrows?: boolean;
 }
 
-export function SiteHeader({ activeSection }: SiteHeaderProps = {}) {
+export function SiteHeader({ activeSection, showArrows = true }: SiteHeaderProps = {}) {
   return (
     <header className={styles.header}>
       <Brand />
@@ -43,9 +45,9 @@ export function SiteHeader({ activeSection }: SiteHeaderProps = {}) {
         ))}
       </nav>
       <div className={styles.actions}>
-        <a className={styles.signIn} href="/login?next=%2Faccount">Sign in</a>
-        <a className={styles.trial} href="/pricing">Start trial <span aria-hidden="true">↗</span></a>
-        <MobileMenu groups={mobileGroups} />
+        <a className={styles.signIn} href="/login?next=%2Fapp%2Fmcp">Sign in</a>
+        <a className={styles.trial} href="/login?next=%2Fapp%2Fmcp">Connect to MCP {showArrows && <span aria-hidden="true">↗</span>}</a>
+        <MobileMenu groups={mobileGroups} showArrows={showArrows} />
       </div>
     </header>
   );

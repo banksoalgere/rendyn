@@ -189,7 +189,7 @@ export function ProductMenu() {
         </Tabs>
 
         <a className="product-menu__footer" href="/components" onClick={() => setOpen(false)}>
-          <span><strong>Browse the complete catalogue</strong><small>Preview components and find the right fit</small></span>
+          <span><strong>Browse components</strong><small>Preview components and find the right fit</small></span>
           <b aria-hidden="true">→</b>
         </a>
       </MorphPopoverContent>

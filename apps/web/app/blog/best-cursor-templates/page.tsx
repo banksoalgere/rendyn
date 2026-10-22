@@ -5,10 +5,13 @@ import '../../styles/cursor-templates.css';
 import { GuideHeading } from '../../components/guide-heading';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext can hydrate next/link from a second React context; native anchors avoid that runtime failure. */
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import bentoGridPreview from '../../../../../catalog/previews/delivery/magicui-bento-grid.png';
+import styles from './templates.module.css';
 
-const pageTitle = '7 Best Cursor Templates for Websites in 2026';
+const pageTitle = 'Cursor Website Templates: 7 Useful Starters (2026)';
 const pageDescription =
-  'Compare seven Cursor website templates and starter approaches for SaaS, content, full-stack apps, and polished UI, with practical selection criteria.';
+  'Compare Cursor website templates for landing pages, SaaS dashboards and React apps, with starter trade-offs and practical component-based build recipes.';
 const articleUrl = 'https://rendyn.dev/blog/best-cursor-templates';
 
 export const metadata: Metadata = {
@@ -18,6 +21,9 @@ export const metadata: Metadata = {
     'cursor templates',
     'Cursor website templates',
     'website templates for Cursor',
+    'Cursor landing page templates',
+    'Cursor dashboard templates',
+    'React starter for Cursor',
   ],
   authors: [{ name: 'Rendyn' }],
   creator: 'Rendyn',
@@ -31,7 +37,7 @@ export const metadata: Metadata = {
     description: pageDescription,
     siteName: 'Rendyn',
     publishedTime: '2026-08-29T00:00:00.000Z',
-    modifiedTime: '2026-08-29T00:00:00.000Z',
+    modifiedTime: '2026-09-29T00:00:00.000Z',
     authors: ['Rendyn'],
     images: [],
   },
@@ -54,9 +60,9 @@ const articleSchema = {
   headline: pageTitle,
   description: pageDescription,
   datePublished: '2026-08-29',
-  dateModified: '2026-08-29',
+  dateModified: '2026-09-29',
   inLanguage: 'en',
-  keywords: ['cursor templates', 'Cursor website templates'],
+  keywords: ['Cursor website templates', 'Cursor landing page templates', 'Cursor dashboard templates'],
   author: {
     '@type': 'Organization',
     name: 'Rendyn editorial',
@@ -267,7 +273,9 @@ const contents = [
   ['what-counts', 'What counts as a template'],
   ['how-we-chose', 'How we chose'],
   ['comparison', 'Quick comparison'],
+  ['website-starting-points', 'Landing page or dashboard?'],
   ['reviews', 'Seven detailed reviews'],
+  ['component-builds', 'Two component build recipes'],
   ['adapt-template', 'Make a template Cursor-ready'],
   ['avoid', 'What to avoid'],
   ['faq', 'Frequently asked questions'],
@@ -314,7 +322,7 @@ function TemplateHero() {
         </div>
       </div>
       <div className="cursor-templates-hero-footer">
-        <span>Editorial field guide · August 2026</span>
+        <span>Editorial field guide · September 2026</span>
         <span>Independent selection · No affiliate links</span>
       </div>
     </div>
@@ -351,21 +359,21 @@ export default function BestCursorTemplatesPage() {
                 <span>Rendyn</span>
                 <strong>Give Cursor a stronger visual vocabulary.</strong>
                 <p>Browse polished, source-available interface components by product intent.</p>
-                <a href="/components">Explore the catalogue <ExternalArrow /></a>
+                <a href="/components">Browse components <ExternalArrow /></a>
               </div>
             </aside>
 
             <div className="cursor-templates-body guide-reading-body">
               <section id="quick-answer">
                 <p className="cursor-templates-lede">
-                  <strong>Our quick answer:</strong> Vercel Templates is the best overall place to start because it offers inspectable repositories across the widest range of website jobs. Choose the Next.js SaaS Starter for a working application foundation, Supabase&apos;s official Next.js template for auth and data, and shadcn/ui Blocks when you already have a codebase and only need a well-formed page pattern.
+                  <strong>Our quick answer:</strong> for a Cursor landing page template, start with a small marketing repository from Vercel Templates, a Tailwind Plus visual template, or an Astro theme for a content-led site. For a SaaS dashboard, inspect the Next.js SaaS Starter or Supabase&apos;s Next.js quickstart. For UI work inside an existing React app, add individual blocks and components that fit its design system.
                 </p>
                 <div className="cursor-templates-note">
                   <span>Important distinction</span>
                   <p>
                     Cursor&apos;s official Marketplace distributes plugins—rules, skills, agents, commands, MCP servers, and hooks. It is not a catalogue of ready-made websites. For a website, you typically open or clone a normal source repository in Cursor and then add project guidance.
                   </p>
-                  <a href="https://prod.cursor.com/docs/plugins" rel="external">Read the Cursor plugin documentation <ExternalArrow /></a>
+                  <a href="https://cursor.com/docs/plugins" rel="external">Read the Cursor plugin documentation <ExternalArrow /></a>
                 </div>
               </section>
 
@@ -395,14 +403,14 @@ export default function BestCursorTemplatesPage() {
                 <p>
                   The strongest setup usually combines all three: a small starter that matches your runtime, a visual system with enough character to guide future work, and concise repository instructions. Cursor&apos;s current documentation places project rules in <code>.cursor/rules</code> as <code>.mdc</code> files and also supports <code>AGENTS.md</code> for plain-language instructions.
                 </p>
-                <a className="cursor-templates-source-link" href="https://prod.cursor.com/docs/rules" rel="external">See current Cursor Rules guidance <ExternalArrow /></a>
+                <a className="cursor-templates-source-link" href="https://cursor.com/docs/rules" rel="external">See current Cursor Rules guidance <ExternalArrow /></a>
               </section>
 
               <section id="how-we-chose">
                 <span className="cursor-templates-section-number">02 · Method</span>
                 <h2>How we chose the best options</h2>
                 <p>
-                  We reviewed the live source pages and documentation on August 29, 2026. We did not rank by the number of features or by whether a resource used “AI” in its marketing. Each option had to offer real code, a credible path to local development, and a clear reason to exist.
+                  We refreshed the linked documentation and public catalogues on September 29, 2026. These are editorial recommendations by use case, not a benchmark of every starter or a promise of faster delivery. Inspect each repository, live demo and licence before choosing; paid source was not tested for this guide.
                 </p>
                 <div className="cursor-templates-criteria-list">
                   <div><span>01</span><p><strong>Source ownership</strong>Can you inspect and safely change the code?</p></div>
@@ -439,6 +447,30 @@ export default function BestCursorTemplatesPage() {
                     </tbody>
                   </table>
                 </div>
+              </section>
+
+              <section id="website-starting-points">
+                <span className="cursor-templates-section-number">Choose by website job</span>
+                <h2>Cursor landing page templates and dashboard starters solve different jobs</h2>
+                <p>A landing page needs a clear story, credible product evidence and a working next step. A dashboard needs navigation, data states and authorized actions. Compare the parts you will actually use before inheriting a complete SaaS boilerplate.</p>
+                <div className="cursor-templates-definition-grid">
+                  <article>
+                    <span>Marketing website</span>
+                    <h3>Landing page or portfolio</h3>
+                    <p>Choose Vercel&apos;s marketing starters or a visual template such as <a href="https://tailwindcss.com/plus/templates/radiant/preview" rel="external">Tailwind Plus Radiant</a>. Astro Themes is another option for blogs, portfolios and documentation. Check mobile navigation, real CTA destinations and how you will edit content.</p>
+                  </article>
+                  <article>
+                    <span>Product application</span>
+                    <h3>SaaS or admin dashboard</h3>
+                    <p>The Next.js SaaS Starter supplies an application foundation. Supabase&apos;s quickstart helps with accounts and data. In an existing React app, shadcn/ui sidebar blocks can supply a shell; you still implement loading, empty and error states around your data.</p>
+                  </article>
+                  <article>
+                    <span>Small custom build</span>
+                    <h3>React UI from a blank base</h3>
+                    <p>Use the <a href="https://nextjs.org/docs/app/api-reference/cli/create-next-app" rel="external">official create-next-app scaffold</a> if no theme matches your scope. It gives you framework conventions rather than a finished design. Keep your existing framework when the project already has one.</p>
+                  </article>
+                </div>
+                <p>For a free Cursor website template, check the selected repository&apos;s licence and service requirements. A free clone can still require paid hosting, email or payment services. For a paid template, verify that the source format and permitted use fit your product before purchase.</p>
               </section>
 
               <section id="reviews">
@@ -483,6 +515,31 @@ export default function BestCursorTemplatesPage() {
                     </article>
                   ))}
                 </div>
+              </section>
+
+              <section id="component-builds">
+                <span className="cursor-templates-section-number">From starter to useful UI</span>
+                <h2>Two website build recipes with real Rendyn components</h2>
+                <p>Rendyn provides reusable React components, previews and source access. These recipes combine existing components inside your chosen starter; they are not downloadable full-site templates. Review each component&apos;s dependencies, upstream attribution and source-access terms on its detail page.</p>
+                <div className={styles.recipes}>
+                  <article>
+                    <h3>1. A SaaS landing page that demonstrates the product</h3>
+                    <p>Begin with a marketing starter and plain, readable hero copy. Use a <a href="/components/bento-grid">Bento Grid</a> for three concrete product capabilities. Add a <a href="/components/hero-video-dialog">Hero Video Dialog</a> only when you have a real demo to show. An <a href="/components/orbiting-circles">Orbiting Circles</a> visual can illustrate supported integrations; use genuine names and retain a readable static presentation when motion is reduced.</p>
+                    <p>Replace stock testimonials and fabricated metrics with product evidence. Check that feature links work with touch and keyboard input, not just hover. A <a href="/components/marquee">Marquee</a> is an optional treatment for a logo strip, not a requirement for explaining your offer.</p>
+                    <figure className={styles.preview}>
+                      <Image src={bentoGridPreview} alt="Bento Grid catalogue demo showing feature cards for files, notifications, integrations and a calendar" width={640} height={400} unoptimized />
+                      <figcaption>Example component: <a href="/components/bento-grid">Bento Grid</a>, imported from Magic UI. The catalogue demo contains sample copy and logos; replace them with your own verified product content.</figcaption>
+                    </figure>
+                    <div className="cursor-templates-prompt-card"><span>A landing-page brief for Cursor</span><p>Keep this starter&apos;s routing and design tokens. Build a hero with one primary action, three Bento Grid feature cards and a real product-demo link. Use only supplied claims and assets. Keep feature links visible on mobile and keyboard focus. Check the page at 390px and desktop width, including reduced motion.</p></div>
+                  </article>
+                  <article>
+                    <h3>2. A dashboard for managing customer work</h3>
+                    <p>Keep the starter&apos;s account and authorization flow. A <a href="/components/table">Virtualized Data Table</a> can organize records; a <a href="/components/command-palette">Command Palette</a> can expose actions and navigation. Use <a href="/components/kanban">Kanban</a> when work really moves through statuses, or a <a href="/components/dropzone">Dropzone</a> when the flow requires file selection.</p>
+                    <p>These are interface pieces. Your server must authorize record changes, persist board moves and validate uploaded files. Decide what the UI shows while data is loading, when no records match, and when a save fails before connecting the happy path.</p>
+                    <div className="cursor-templates-prompt-card"><span>A dashboard brief for Cursor</span><p>Adapt the existing dashboard shell. Add the selected table and Command Palette using our current tokens and data boundaries. Start with clearly labelled fixtures, loading, empty and failure states. Map actions to existing authorized routes. Report which interactions are still simulated before adding persistence.</p></div>
+                  </article>
+                </div>
+                <p>For the broader visual workflow, continue with <a href="/guides/how-to-build-a-good-looking-website-with-cursor">building a good-looking website with Cursor</a>. If the brief is about agent access to the catalogue, use the <a href="/mcp">Rendyn MCP workflow</a>.</p>
               </section>
 
               <section id="adapt-template">
@@ -544,6 +601,14 @@ export default function BestCursorTemplatesPage() {
                     <summary>Which option is best for a landing page?<span aria-hidden="true">+</span></summary>
                     <p>Start with Vercel Templates for range, Tailwind Plus when you want a premium visual system, Astro Themes for content-led performance, or shadcn/ui Blocks when the landing page must fit an existing React product.</p>
                   </details>
+                  <details>
+                    <summary>Can I use a Cursor dashboard template without its backend?<span aria-hidden="true">+</span></summary>
+                    <p>Yes, if its licence permits adaptation, but trace what the UI depends on first. Keep your existing API and account system, remove unused demo integrations, and connect actions through your own validation and authorization. A sidebar or data table supplies UI; it does not supply your business rules.</p>
+                  </details>
+                  <details>
+                    <summary>Does Rendyn offer complete Cursor website templates?<span aria-hidden="true">+</span></summary>
+                    <p>Rendyn offers component building blocks with previews and source access. Choose a starter for routing and application structure, then use the catalogue to assemble the interface. The landing-page and dashboard recipes above show how those layers fit together.</p>
+                  </details>
                 </div>
               </section>
 
@@ -567,7 +632,7 @@ export default function BestCursorTemplatesPage() {
                     <div><span>02</span><p><strong>Morphing search</strong><small>Alternative · compact discovery</small></p><i>Compare</i></div>
                     <div><span>03</span><p><strong>Expandable action bar</strong><small>Alternative · persistent actions</small></p><i>Compare</i></div>
                   </div>
-                  <div className="cursor-templates-product-footer"><span aria-hidden="true">Source + dependencies + usage context</span><a href="/components">Explore the catalogue <ExternalArrow /></a></div>
+                  <div className="cursor-templates-product-footer"><span aria-hidden="true">Source + dependencies + usage context</span><a href="/components">Browse components <ExternalArrow /></a></div>
                 </div>
               </section>
 
@@ -575,7 +640,7 @@ export default function BestCursorTemplatesPage() {
                 <span className="cursor-templates-section-number">Continue reading</span>
                 <h2 id="cursor-templates-related-heading">Related guides and references</h2>
                 <div className="cursor-templates-related-grid">
-                  <a href="https://prod.cursor.com/docs/rules" rel="external">
+                  <a href="https://cursor.com/docs/rules" rel="external">
                     <span>Cursor documentation</span>
                     <strong>Set up scoped project rules and AGENTS.md</strong>
                     <i aria-hidden="true">↗</i>
@@ -596,10 +661,10 @@ export default function BestCursorTemplatesPage() {
               <section className="cursor-templates-sources" aria-labelledby="sources-heading">
                 <span className="cursor-templates-section-number">Sources</span>
                 <h2 id="sources-heading">Primary sources checked</h2>
-                <p>Feature and format claims were verified against official product documentation or the resource&apos;s own live catalogue. No placement in this guide was paid.</p>
+                <p>Public documentation and catalogue descriptions were checked on September 29, 2026. The recipes are suggested compositions of Rendyn&apos;s existing components, not measured builds or performance benchmarks. No placement in this guide was paid.</p>
                 <ul>
-                  <li><a href="https://prod.cursor.com/docs/rules" rel="external">Cursor Rules documentation <ExternalArrow /></a></li>
-                  <li><a href="https://prod.cursor.com/docs/plugins" rel="external">Cursor Plugins and Marketplace documentation <ExternalArrow /></a></li>
+                  <li><a href="https://cursor.com/docs/rules" rel="external">Cursor Rules documentation <ExternalArrow /></a></li>
+                  <li><a href="https://cursor.com/docs/plugins" rel="external">Cursor Plugins and Marketplace documentation <ExternalArrow /></a></li>
                   <li><a href="https://vercel.com/templates?framework=next.js" rel="external">Vercel Templates <ExternalArrow /></a></li>
                   <li><a href="https://vercel.com/templates/next.js/next-js-saas-starter" rel="external">Next.js SaaS Starter <ExternalArrow /></a></li>
                   <li><a href="https://supabase.com/docs/guides/getting-started/quickstarts/nextjs" rel="external">Supabase Next.js quickstart <ExternalArrow /></a></li>

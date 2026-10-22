@@ -1,94 +1,93 @@
 /* Keep discovery focused: one search field and six live previews per page. */
 .page { background: var(--paper); color: var(--ink); min-height: 100vh; }
 .headerShell { border-bottom: 1px solid var(--line); }
-.hero { max-width: 800px; margin: auto; padding: 44px 24px 22px; text-align: center; }
+.hero { max-width: 800px; margin: auto; padding: 64px 24px 32px; text-align: center; }
 .eyebrow { font: 500 11px var(--font-rendyn-sans), sans-serif; text-transform: uppercase; letter-spacing: .12em; margin: 0; color: var(--muted); }
 .hero h1 { font-size: clamp(40px, 5vw, 56px); line-height: 1.08; font-weight: 500; letter-spacing: -.055em; margin: 16px 0; }
 .hero h1 span { color: var(--accent); }
 .hero > p:last-child { font-size: 16px; line-height: 1.6; color: var(--muted); margin: 0; }
 .explorer { padding: 0 32px 56px; max-width: 1240px; margin: auto; }
 .controlBar { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 12px 0 0; }
-.search { display: flex; align-items: center; gap: 14px; background: var(--card); border: 1px solid var(--line-strong); border-radius: 14px; padding: 8px 8px 8px 20px; width: 100%; max-width: 720px; box-shadow: 0 8px 32px #0000000a; transition: border-color 160ms ease, box-shadow 160ms ease; }
-.search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--mint); }
+.search { display: flex; align-items: center; gap: 14px; background: transparent; border: 0; border-bottom: 1px solid var(--line-strong); padding: 8px 0; width: 100%; max-width: 720px; transition: border-color 160ms ease; }
+.search:focus-within { border-color: var(--accent); outline: 2px solid var(--accent); outline-offset: 4px; }
 .search > svg { flex: 0 0 20px; width: 20px; height: 20px; color: var(--muted); }
 .search input[type='search'] { min-width: 0; width: 100%; min-height: 44px; background: none; border: 0; outline: 0; font: inherit; font-size: 16px; color: var(--ink); }
 .search input::placeholder { color: var(--muted); }
-.search kbd { white-space: nowrap; font: 11px var(--font-geist-mono), monospace; color: var(--muted); border: 1px solid var(--line); border-radius: 5px; padding: 4px 6px; }
+.search kbd { white-space: nowrap; font: 11px var(--font-geist-mono), monospace; color: var(--muted); padding: 4px 6px; }
 .searchSubmit { min-height: 44px; border: 0; border-radius: 9px; padding: 0 22px; background: var(--button-bg); color: var(--button-ink); font: 500 14px var(--font-rendyn-sans), sans-serif; cursor: pointer; }
 .searchSubmit:hover { background: var(--button-hover); }
 .suggestions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px 8px; color: var(--muted); font-size: 12px; }
-.suggestions button { min-height: 36px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 7px; background: transparent; color: var(--muted); font: inherit; cursor: pointer; }
-.suggestions button:hover { background: var(--mint); color: var(--accent); border-color: var(--line-strong); }
+.suggestions button { min-height: 36px; padding: 6px 10px; border: 0; background: transparent; color: var(--muted); font: inherit; cursor: pointer; }
+.suggestions button:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
 .categoryDock { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 16px 0 0; padding-bottom: 20px; width: 100%; border-bottom: 1px solid var(--line); }
-.categoryDock button { border: 1px solid transparent; background: transparent; color: var(--muted); padding: 10px 16px; min-height: 44px; border-radius: 9px; white-space: nowrap; font: 500 13px var(--font-rendyn-sans), sans-serif; cursor: pointer; transition: background 160ms ease, color 160ms ease; }
-.categoryDock button:hover { color: var(--ink); background: var(--card); }
-.categoryDock button[aria-pressed='true'] { background: var(--mint); color: var(--accent); border-color: var(--line-strong); }
+.categoryDock button { border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--muted); padding: 10px 16px; min-height: 44px; white-space: nowrap; font: 500 13px var(--font-rendyn-sans), sans-serif; cursor: pointer; transition: background 160ms ease, color 160ms ease; }
+.categoryDock button:hover { color: var(--ink); }
+.categoryDock button[aria-pressed='true'] { color: var(--accent); border-bottom-color: currentColor; }
 .explorer button:focus-visible, .explorer a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .resultsHeading { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 28px 0 20px; }
 .resultsHeading h2 { margin: 0 0 6px; font-size: 20px; font-weight: 500; letter-spacing: -.03em; }
 .resultsHeading p { margin: 0; font-size: 13px; color: var(--muted); }
 .reset { flex-shrink: 0; min-height: 44px; background: none; border: 0; padding: 6px 0 6px 12px; color: var(--muted); font: inherit; font-size: 12px; cursor: pointer; }
 .reset:hover { color: var(--accent); }
-.reset span { padding-left: 6px; }
-.componentGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.componentLink { min-width: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--card); transition: border-color 180ms ease, box-shadow 180ms ease; }
-.componentLink:focus-within { border-color: var(--line-strong); }
-.cardToolbar { display: flex; align-items: center; justify-content: space-between; padding: 2px 8px 2px 16px; gap: 12px; }
+.componentGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 28px; }
+.componentLink { min-width: 0; }
+.cardToolbar { padding: 0 0 12px; }
 .cardToolbar > span { color: var(--muted); font-size: 11px; font-weight: 500; }
-.cardToolbar a { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 8px; color: var(--muted); }
-.cardToolbar a:hover { color: var(--accent); background: var(--mint); }
-.cardToolbar svg { width: 15px; height: 15px; }
-.cardPreview { position: relative; height: 240px; margin: 0 6px; background: #f5f4f8; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
+.cardPreview { position: relative; height: 360px; overflow: hidden; }
 .cardPreview > div { border-radius: inherit; }
-.cardInfo { padding: 18px; }
+.cardInfo { padding: 18px 0 0; }
 .cardInfo h3 { font-size: 16px; line-height: 1.3; font-weight: 500; letter-spacing: -.025em; margin: 0; }
 .cardInfo h3 a { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-radius: 3px; }
-.cardInfo h3 span { font-size: 16px; color: var(--muted); }
 .cardInfo h3 a:hover { color: var(--accent); }
 .cardInfo p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: 12px; line-height: 1.6; color: var(--muted); margin: 8px 0 0; min-height: 38px; }
-.emptyState { text-align: center; border: 1px dashed var(--line); border-radius: 14px; background: var(--card); padding: 56px 20px; }
+.emptyState { text-align: center; padding: 56px 20px; }
 .emptyState h3 { font-size: 22px; font-weight: 500; margin: 0; }
 .emptyState p { color: var(--muted); font-size: 14px; line-height: 1.6; margin: 12px 0 24px; }
 .emptyState button { border: 1px solid var(--line); border-radius: 9px; padding: 12px 20px; background: var(--button-bg); color: var(--button-ink); font: inherit; cursor: pointer; }
 .pagination { display: flex; justify-content: center; align-items: center; gap: 24px; padding-top: 32px; font-size: 13px; }
 .pagination > span { color: var(--muted); }
-.pagination a { display: inline-flex; align-items: center; gap: 16px; min-height: 44px; border: 1px solid var(--line-strong); border-radius: 9px; background: var(--card); padding: 10px 16px; }
-.pagination a:hover { background: var(--mint); color: var(--accent); }
-.catalogueCta { display: flex; align-items: center; justify-content: space-between; gap: 24px; max-width: 1176px; margin: 0 auto 64px; padding: 32px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface-subtle); }
+.pagination a { display: inline-flex; align-items: center; gap: 16px; min-height: 44px; padding: 10px 16px; }
+.pagination a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+.catalogueCta { display: flex; align-items: center; justify-content: space-between; gap: 24px; max-width: 1176px; margin: 0 auto 64px; padding: 48px 0; border-top: 1px solid var(--line); }
 .catalogueCta h2 { font-size: 24px; font-weight: 500; letter-spacing: -.04em; line-height: 1.2; margin: 0 0 10px; }
 .catalogueCta p { font-size: 14px; line-height: 1.6; color: var(--muted); margin: 0; }
 .catalogueCta > a { flex-shrink: 0; }
 .visuallyHidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-@media (hover: hover) {
-  .componentLink:hover { border-color: var(--line-strong); box-shadow: 0 6px 24px #0000000a; }
-}
 @media (max-width: 1240px) {
   .catalogueCta { margin-inline: 32px; }
-}
-@media (max-width: 900px) {
-  .componentGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 600px) {
   .hero { padding: 40px 16px 22px; }
   .hero > p:last-child { font-size: 14px; }
   .explorer { padding: 0 16px 40px; }
-  .search { gap: 10px; padding-left: 14px; }
+  .search { gap: 10px; }
   .search kbd { display: none; }
   .searchSubmit { padding-inline: 14px; }
   .suggestions { gap: 4px; font-size: 11px; }
   .suggestions button { min-height: 44px; padding-inline: 8px; }
   .categoryDock { gap: 2px; margin-top: 12px; padding-bottom: 16px; }
   .categoryDock button { padding-inline: 10px; font-size: 12px; }
-  .componentGrid { grid-template-columns: 1fr; gap: 16px; }
-  .cardPreview { height: 250px; }
-  .cardToolbar a { width: 44px; height: 44px; }
+  .componentGrid { grid-template-columns: 1fr; gap: 32px; }
+  .cardPreview { height: 300px; }
   .resultsHeading { padding-block: 22px 18px; }
   .resultsHeading h2 { font-size: 18px; }
   .resultsHeading p { font-size: 12px; }
   .pagination { gap: 12px; font-size: 12px; }
   .pagination a { gap: 8px; padding-inline: 12px; }
-  .catalogueCta { margin: 0 16px 40px; padding: 24px; flex-direction: column; align-items: flex-start; }
+  .catalogueCta { margin: 0 16px 40px; padding: 32px 0; flex-direction: column; align-items: flex-start; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .componentLink, .search, .categoryDock button { transition: none; }
+  .search, .categoryDock button { transition: none; }
 }
+
+/* The catalogue is the page itself, with one compact header above both panes. */
+.explorer { max-width: none; padding: 0 32px; }
+.controlBar { display: grid; grid-template-columns: 250px minmax(240px, 640px) 1fr; align-items: center; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.libraryTitle { margin: 0; font-size: 21px; font-weight: 550; letter-spacing: -.03em; }
+.search { max-width: none; }
+.categoryDock { justify-content: flex-end; margin: 0; padding: 0; border: 0; }
+.categoryDock button { padding-inline: 10px; }
+.resultsHeading { padding: 12px 0; min-height: 44px; }
+.resultsHeading p { font-size: 12px; }
+@media (max-width: 1150px) { .controlBar { grid-template-columns: 220px minmax(0, 1fr); } .categoryDock { grid-column: 1 / -1; justify-content: flex-start; } }
+@media (max-width: 600px) { .explorer { padding: 0 16px; } .controlBar { grid-template-columns: 1fr; gap: 12px; } .categoryDock { gap: 0; } .categoryDock button { padding: 6px 8px; } }

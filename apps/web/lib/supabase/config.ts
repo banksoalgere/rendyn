@@ -18,8 +18,8 @@ function isSecureSupabaseUrl(value: string): boolean {
   }
 }
 
+// Direct references let the bundler include these public values in browser code.
 export function getSupabasePublicConfig(env: Record<string, string | undefined> = {
-  // Bundlers only inline direct public-variable references in browser code.
   NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY,
 }): SupabasePublicConfig | null {
