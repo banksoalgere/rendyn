@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { useCallback, useEffect, useRef, useState, type ReactNode, type CSSProperties } from 'react';
+import { createPortal } from 'react-dom';
 import type { ComponentPreviewData } from '../../lib/component-preview';
 import { isPreviewReadyMessage, PREVIEW_READY_REQUEST } from '../../lib/preview-ready';
 import styles from './component-preview.module.css';
 
-const homePreviewIds = new Set(['cylinder-carousel', 'shader-background', 'dock', 'magicui-animated-beam', 'magicui-globe', 'morphing-modal', 'tabs', 'approval-card']);
+const homePreviewIds = new Set(['cylinder-carousel', 'shader-background', 'dock', 'magicui-animated-beam', 'magicui-globe', 'morphing-modal', 'tabs']);
 let homeDocument: Promise<string> | undefined;
 
 function loadHomeDocument() {
@@ -18,17 +19,18 @@ function loadHomeDocument() {
   return homeDocument;
 }
 
-interface ComponentPreviewProps {
+export interface ComponentPreviewProps {
   component: ComponentPreviewData;
   size?: 'card' | 'hero' | 'full';
   example?: string;
   dark?: boolean;
   priority?: boolean;
   compact?: boolean;
+  compactContent?: ReactNode;
 }
 
 /** One isolated, automatically interactive preview for every catalogue surface. */
-export function ComponentPreview({ component, size = 'full', example, dark = false, priority = false, compact = false }: ComponentPreviewProps) {
+export function ComponentPreview({ component, size = 'full', example, dark = false, priority = false, compact = false, compactContent }: ComponentPreviewProps) {
   const container = useRef<HTMLDivElement>(null);
   const frame = useRef<HTMLIFrameElement>(null);
   const visible = useRef(true);
@@ -42,6 +44,7 @@ export function ComponentPreview({ component, size = 'full', example, dark = fal
   const useCompact = compact && homePreviewIds.has(component.previewId);
   const [previewDocument, setPreviewDocument] = useState<string | null>(null);
   const [documentFailed, setDocumentFailed] = useState(false);
+  const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
     if (!active || !useCompact) return;
@@ -53,9 +56,36 @@ export function ComponentPreview({ component, size = 'full', example, dark = fal
     return () => { cancelled = true; };
   }, [active, useCompact]);
 
-  function requestReadiness() {
+  const requestReadiness = useCallback(() => {
+    if (useCompact && previewDocument) {
+      const doc = frame.current?.contentDocument;
+      if (!doc?.body || !doc.documentElement || !doc.getElementById('preview')) return;
+      // Share already loaded font faces across documents without downloads.
+      document.fonts.forEach(font => doc.fonts.add(font));
+      const parentStyles = getComputedStyle(document.body);
+      for (const name of ['--font-rendyn-sans', '--font-geist-mono']) {
+        doc.body.style.setProperty(name, parentStyles.getPropertyValue(name));
+      }
+      doc.body.style.fontFamily = parentStyles.getPropertyValue('--font-rendyn-sans');
+      doc.documentElement.classList.toggle('dark', dark);
+      doc.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+      doc.documentElement.dataset.previewPaused = String(!visible.current);
+      setPortalRoot(doc.getElementById('preview'));
+      return;
+    }
     frame.current?.contentWindow?.postMessage({ type: PREVIEW_READY_REQUEST }, window.location.origin);
-  }
+  }, [useCompact, previewDocument, dark]);
+
+  useEffect(() => {
+    if (!portalRoot) return;
+    let cancelled = false;
+    let paint = requestAnimationFrame(() => {
+      void portalRoot.ownerDocument.fonts.ready.then(() => {
+        paint = requestAnimationFrame(() => { if (!cancelled) setReadySource(source); });
+      });
+    });
+    return () => { cancelled = true; cancelAnimationFrame(paint); };
+  }, [portalRoot, source]);
 
   useEffect(() => {
     const onReady = (event: MessageEvent<unknown>) => {
@@ -69,7 +99,7 @@ export function ComponentPreview({ component, size = 'full', example, dark = fal
     // readiness after our listener is attached so that signal cannot be lost.
     requestReadiness();
     return () => window.removeEventListener('message', onReady);
-  }, [source]);
+  }, [source, requestReadiness]);
 
   useEffect(() => {
     const element = container.current;
@@ -89,6 +119,8 @@ export function ComponentPreview({ component, size = 'full', example, dark = fal
     if (!element) return;
     let nearby = false;
     const update = () => {
+      const root = useCompact ? frame.current?.contentDocument?.documentElement : null;
+      if (root) root.dataset.previewPaused = String(!nearby);
       frame.current?.contentWindow?.postMessage({ type: 'rendyn:preview-visibility', visible: nearby }, window.location.origin);
       if (size === 'full') return;
       // Load once on approach; scrolling away must preserve the document and demo state.
@@ -110,7 +142,7 @@ export function ComponentPreview({ component, size = 'full', example, dark = fal
       window.removeEventListener('focus', update);
       document.removeEventListener('focusin', update);
     };
-  }, [size]);
+  }, [size, useCompact]);
 
   return (
     <div
@@ -142,6 +174,7 @@ export function ComponentPreview({ component, size = 'full', example, dark = fal
           aria-hidden={!ready}
         />
       )}
+      {portalRoot && compactContent && createPortal(compactContent, portalRoot)}
     </div>
   );
 }

@@ -1,3 +1,8 @@
+import codexLogo from '../public/agent-logos/codex.svg?raw';
+import claudeLogo from '../public/agent-logos/claude-code.svg?raw';
+import cursorLogo from '../public/agent-logos/cursor.svg?raw';
+import clineLogo from '../public/agent-logos/cline.svg?raw';
+import windsurfLogo from '../public/agent-logos/windsurf.svg?raw';
 import './globals.css';
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
 
@@ -8,18 +13,18 @@ import { HomeDemo } from './components/home-demo';
 import { catalogueEntries } from '../lib/catalogue';
 import { getComponentPreview } from '../lib/component-preview';
 import styles from './home.module.css';
-import { ComponentPreview } from './components/component-preview';
+import { HomeComponentPreview as ComponentPreview } from './components/home-component-preview';
 import { HorizonWall } from './components/horizon-wall';
 import { homeDescription, homeStructuredData, homeTitle, pageMetadata } from '../lib/seo';
 
 export const metadata: Metadata = pageMetadata(homeTitle, homeDescription, '/');
 
 const codingAgents = [
-  { name: 'Codex', logo: '/agent-logos/codex.svg' },
-  { name: 'Claude Code', logo: '/agent-logos/claude-code.svg' },
-  { name: 'Cursor', logo: '/agent-logos/cursor.svg' },
-  { name: 'Cline', logo: '/agent-logos/cline.svg' },
-  { name: 'Windsurf', logo: '/agent-logos/windsurf.svg' },
+  { name: 'Codex', logo: codexLogo },
+  { name: 'Claude Code', logo: claudeLogo },
+  { name: 'Cursor', logo: cursorLogo },
+  { name: 'Cline', logo: clineLogo },
+  { name: 'Windsurf', logo: windsurfLogo },
   { name: 'GitHub Copilot', logo: '/agent-logos/github-copilot.svg' },
   { name: 'Gemini CLI', logo: '/agent-logos/gemini-cli.svg' },
   { name: 'OpenCode', logo: '/agent-logos/opencode.svg' },
@@ -77,7 +82,7 @@ export default function Home() {
         <p>A little more design.<br /><strong>In the tools you already love.</strong></p>
         <div>
           {codingAgents.slice(0, 5).map((agent) => (
-            <span key={agent.name}><img src={agent.logo} alt="" />{agent.name}</span>
+            <span key={agent.name}><i aria-hidden="true" dangerouslySetInnerHTML={{ __html: agent.logo }} />{agent.name}</span>
           ))}
         </div>
       </section>

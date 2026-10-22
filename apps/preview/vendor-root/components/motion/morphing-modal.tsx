@@ -5,7 +5,7 @@ import {
   motion,
   useReducedMotion,
 } from "motion/react";
-import { type ReactNode, useEffect } from "react";
+import { type ReactNode, useEffect, useRef } from "react";
 import { EASE_OUT, SPRING_PANEL } from "@/lib/ease";
 import { PresenceGate } from "@/lib/presence-gate";
 import { cn } from "@/lib/utils";
@@ -27,6 +27,7 @@ export function MorphingModal({
   placement = "bottom",
   className,
 }: MorphingModalProps) {
+  const anchor = useRef<HTMLSpanElement>(null);
   const open = viewId !== null;
   const reduce = useReducedMotion();
   const enterY = reduce ? 0 : placement === "bottom" ? 40 : 20;
@@ -34,10 +35,12 @@ export function MorphingModal({
 
   useEffect(() => {
     if (!open) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    const body = anchor.current?.ownerDocument.body;
+    if (!body) return;
+    const prev = body.style.overflow;
+    body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = prev;
+      body.style.overflow = prev;
     };
   }, [open]);
 
@@ -49,6 +52,8 @@ export function MorphingModal({
   // the exit rather than when it ends — `open` is already false for those
   // frames. See tests/fixed-overlay-edge-sampling.test.tsx.
   return (
+    <>
+    <span ref={anchor} hidden />
     <AnimatePresence initial={false}>
       {open ? (
         <PresenceGate key="backdrop">
@@ -156,5 +161,6 @@ export function MorphingModal({
         </PresenceGate>
       ) : null}
     </AnimatePresence>
+    </>
   );
 }

@@ -101,6 +101,14 @@ export default defineConfig(async () => {
             name: 'motion-runtime',
             test: /\/node_modules\/(?:framer-motion|motion-dom|motion-utils|motion)\//,
             priority: 20,
+          }, {
+            name: 'home-ui',
+            test: /\/(?:app\/components\/(?:mobile-menu|website-analytics|horizon-wall|component-preview)\.tsx|lib\/(?:analytics|analytics-privacy|preview-ready)\.ts)$/,
+            priority: 30,
+          }, {
+            name: 'home-demos',
+            test: /\/(?:app\/components\/(?:home-demo|home-component-preview)\.tsx|home-previews\/entry\.tsx)$/,
+            priority: 30,
           }] } } } } };
         },
       },

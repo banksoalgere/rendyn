@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import type { ComponentPreviewData } from '../../lib/component-preview';
-import { ComponentPreview } from './component-preview';
+import { HomeComponentPreview as ComponentPreview } from './home-component-preview';
 import styles from './home-demo.module.css';
 
 export function HomeDemo({ examples }: { examples: ComponentPreviewData[] }) {

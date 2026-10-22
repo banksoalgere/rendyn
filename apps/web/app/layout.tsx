@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import './fonts.css';
 import { homeDescription, homeTitle, siteOrigin } from '../lib/seo';
 import { WebsiteAnalytics } from './components/website-analytics';
 
@@ -8,13 +9,6 @@ const dmSans = localFont({
   weight: '100 1000',
   display: 'swap',
   variable: '--font-rendyn-sans',
-});
-
-const geistMono = localFont({
-  src: '../public/fonts/geist-mono-latin.woff2',
-  weight: '100 900',
-  display: 'swap',
-  variable: '--font-geist-mono',
 });
 
 export const metadata: Metadata = {
@@ -50,7 +44,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         data-theme="white"
-        className={`${dmSans.variable} ${geistMono.variable} antialiased`}
+        className={`${dmSans.variable} antialiased`}
       >
         {children}
         <WebsiteAnalytics />
