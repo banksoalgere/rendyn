@@ -97,4 +97,9 @@
 .content:has(.catalogue) { max-width: none; padding: 24px 24px 0; }
 .body:has(.catalogue) { background: var(--paper); }
 .body:has(.catalogue) > .topbar, .body:has(.catalogue) > .promotion { display: none; }
-@media (max-width: 760px) { .catalogue { grid-template-columns: 1fr; } .content:has(.catalogue) { padding: 20px 16px 0; } }
+@media (max-width: 760px) {
+  .catalogue { grid-template-columns: 1fr; }
+  .content:has(.catalogue) { padding: 20px 16px 32px; }
+  /* Keep iOS from zooming the page when search receives focus. */
+  .search input { font-size: 16px; min-height: 44px; }
+}

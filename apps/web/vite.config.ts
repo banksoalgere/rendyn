@@ -103,8 +103,10 @@ export default defineConfig(async () => {
             priority: 20,
           }, {
             name: 'home-ui',
-            test: /\/(?:app\/components\/(?:mobile-menu|website-analytics|horizon-wall|component-preview)\.tsx|lib\/(?:analytics|analytics-privacy|preview-ready)\.ts)$/,
-            priority: 30,
+            // These are shared by the landing page and catalogue. Keeping them
+            // together avoids separate runtime, tree, default-demo and CSS fetches.
+            test: /\/(?:app\/components\/(?:library\/.*|(?:mobile-menu|website-analytics|horizon-wall|component-preview|preview-error-boundary|component-explorer|catalogue-browser|catalogue-component-preview)\.tsx)|lib\/(?:analytics|analytics-privacy|preview-ready)\.ts|preview\/vendor-root\/(?:lib\/utils\.ts|components\/magicui\/animated-beam\.tsx|components\/external-previews\/magicui\/upstream\/animated-beam-demo\.tsx)|node_modules\/(?:scheduler\/.*|react-dom\/(?:client|index|cjs\/react-dom(?:-client)?\.production)\.js)|node_modules\/lucide-react\/dist\/esm\/(?:createLucideIcon|Icon|shared\/utils)\.m?js)$/,
+            priority: 40,
           }, {
             name: 'home-demos',
             test: /\/(?:app\/components\/(?:home-demo|home-component-preview)\.tsx|home-previews\/entry\.tsx)$/,

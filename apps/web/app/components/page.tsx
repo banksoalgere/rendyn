@@ -72,7 +72,7 @@ export default async function ComponentsPage({ searchParams }: ComponentsPagePro
           },
         }).replace(/</g, '\\u003c') }}
       />
-      <div className={styles.headerShell}><SiteHeader activeSection="catalogue" showArrows={false} /></div>
+      <div className={styles.headerShell}><SiteHeader activeSection="catalogue" /></div>
       <ComponentExplorer
         components={catalogueComponents}
         initialCategory={filters.category}

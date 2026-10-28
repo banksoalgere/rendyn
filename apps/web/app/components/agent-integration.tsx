@@ -14,7 +14,7 @@ export function AgentIntegration() {
           The best way to use Rendyn is through MCP. Your agent can find components,
           compare previews and bring complete source into your project. It&apos;s all free.
         </p>
-        <a className="button button--light" href="/login?next=%2Fapp%2Fmcp">Connect to MCP <span aria-hidden="true">↗</span></a>
+        <a className="button button--light" href="/login?next=%2Fapp%2Fmcp">Connect to MCP</a>
       </div>
 
       <div className="agent-console" aria-label="Example Rendyn tool response">

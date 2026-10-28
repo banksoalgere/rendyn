@@ -5,7 +5,7 @@ import styles from './site-shell.module.css';
 const footerGroups = [
   {
     title: 'Product',
-    links: [['Overview', '/'], ['Components', '/components'], ['Component MCP server', '/mcp'], ['How it works', '/#how-it-works'], ['Free access', '/pricing']],
+    links: [['Overview', '/'], ['Components', '/components'], ['How it works', '/#how-it-works'], ['Free access', '/pricing']],
   },
   {
     title: 'Explore',

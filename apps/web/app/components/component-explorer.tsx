@@ -120,7 +120,7 @@ export function ComponentExplorer({
       <div className={styles.results} id="component-results">
         <div className={styles.resultsHeading}>
           <div>
-            <p role="status" aria-live="polite">{results.total} components · Select a file to preview it.</p>
+            <p role="status" aria-live="polite">{results.total} components · Choose a component to preview.</p>
           </div>
           {isFiltered && <button className={styles.reset} data-analytics-action="clear-search" onClick={() => updateFilters('', 'all')} type="button">Reset filters</button>}
         </div>
