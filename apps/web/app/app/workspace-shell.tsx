@@ -76,7 +76,7 @@ export function WorkspaceShell({ userId, email, children }: {
       </aside>
       <div className={styles.body}>
         <header className={styles.topbar}><span>Your component workspace</span><span className={styles.accessBadge}>Everything is free</span></header>
-        <div className={styles.promotion}><span className={styles.promotionDot} /><p><strong>Give your agent taste.</strong> MCP is the best way to use Rendyn. Free source and previews, inside your project.</p><a href="/app/mcp">Connect to MCP <span aria-hidden="true">↗</span></a></div>
+        <div className={styles.promotion}><span className={styles.promotionDot} /><p><strong>Give your agent taste.</strong> MCP is the best way to use Rendyn. Free source and previews, inside your project.</p><a href="/app/mcp">Connect to MCP</a></div>
         <main id="workspace-content" className={styles.content}>{message && <p className={styles.notice} role="alert">{message}</p>}{children}</main>
       </div>
     </div>

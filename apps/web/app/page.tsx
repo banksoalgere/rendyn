@@ -30,7 +30,7 @@ const codingAgents = [
   { name: 'OpenCode', logo: '/agent-logos/opencode.svg' },
 ];
 
-const demoExamples = ['cylinder-carousel', 'shader-background', 'dock'].flatMap((slug) => {
+const demoExamples = ['cylinder-carousel', 'shader-background', 'expandable-control'].flatMap((slug) => {
   const entry = catalogueEntries.find((component) => component.slug === slug);
   return entry ? [getComponentPreview(entry)] : [];
 });
@@ -64,7 +64,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeStructuredData).replace(/</g, '\\u003c') }}
       />
-      <SiteHeader activeSection="product" showArrows={false} />
+      <SiteHeader activeSection="product" />
       <section className={styles.hero} id="top">
         <div className={styles.copy}>
           <span className={styles.eyebrow}><i aria-hidden="true" /> React UI components for AI coding agents</span>

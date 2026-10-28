@@ -9,7 +9,6 @@ const publicRoutes = [
   '/components',
   '/pricing',
   '/guides',
-  '/mcp',
   '/collections/ai-agent-ui',
   '/collections/animated-react-components',
   ...guides.map((guide) => guide.href),

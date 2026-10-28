@@ -27,7 +27,7 @@ describe('public search metadata', () => {
     const urls = sitemap().map(({ url }) => url);
     const expectedPaths = [
       '/', '/components', '/pricing', '/guides',
-      '/mcp', '/collections/ai-agent-ui', '/collections/animated-react-components',
+      '/collections/ai-agent-ui', '/collections/animated-react-components',
       ...guides.map(({ href }) => href),
       ...catalogueEntries.map(({ publicSlug }) => `/components/${publicSlug}`),
     ];

@@ -25,7 +25,7 @@ export default function PricingPlans() {
     <h2>{option.name}</h2>
     <p className={styles.planDescription}>{option.description}</p>
     <p className={styles.freePrice}><strong>$0</strong><span>Free. No subscription.</span></p>
-    <a className={styles.planAction} href={option.href}>{option.action} <span aria-hidden="true">↗</span></a>
+    <a className={styles.planAction} href={option.href}>{option.action}</a>
     <ul className={styles.planFeatures}>{option.features.map(feature => <li key={feature}><span aria-hidden="true">✓</span>{feature}</li>)}</ul>
     <p className={styles.accessNote}>{option.recommended ? 'A free account is only needed for MCP.' : 'No sign-up. No card. Just code.'}</p>
   </article>)}</div>;

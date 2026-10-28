@@ -1,4 +1,5 @@
 .browser { display: grid; grid-template-columns: 280px minmax(0, 1fr); height: calc(100dvh - 230px); min-height: 520px; background: transparent; text-align: left; }
+.mobilePicker { display: none; }
 .sidebar { display: flex; flex-direction: column; min-height: 0; min-width: 0; border-right: 1px solid var(--line); background: transparent; }
 .heading { display: flex; justify-content: space-between; padding: 18px 16px; font-size: 12px; font-weight: 600; }
 .heading span { color: var(--muted); font-weight: 400; }
@@ -21,8 +22,14 @@
 .browser a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 @media (max-width: 900px) { .browser { grid-template-columns: 220px minmax(0, 1fr); } }
 @media (max-width: 600px) {
-  .browser { grid-template-columns: 1fr; height: auto; }
-  .sidebar { height: 240px; border-right: 0; border-bottom: 1px solid var(--line); }
-  .canvas { height: 420px; flex: none; }
-  .toolbar, .description { padding: 16px; }
+  .browser { display: block; height: auto; min-height: 0; }
+  .sidebar { display: none; }
+  .mobilePicker { display: grid; gap: 8px; padding: 4px 0 16px; border-bottom: 1px solid var(--line); }
+  .mobilePicker label { font-size: 12px; color: var(--muted); }
+  .mobilePicker select { width: 100%; min-width: 0; min-height: 48px; padding: 10px 36px 10px 12px; border: 1px solid var(--line-strong); border-radius: 8px; background: var(--paper); color: var(--ink); font: inherit; font-size: 16px; }
+  .mobilePicker select:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .canvas { height: clamp(300px, 48svh, 420px); min-height: 0; flex: none; }
+  .toolbar { padding: 16px 0; flex-wrap: wrap; gap: 12px; }
+  .toolbar > div { flex-basis: 60%; }
+  .description { padding: 16px 0; max-height: none; overflow: visible; }
 }

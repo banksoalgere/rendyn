@@ -1,12 +1,10 @@
 import { Brand } from './brand';
-import { MobileMenu, type MobileComponentGroup } from './mobile-menu';
-import { catalogueEntries } from '../../lib/catalogue';
+import { MobileMenu } from './mobile-menu';
 import styles from './site-shell.module.css';
 
 const navigation = [
   { href: '/', id: 'product', label: 'Overview' },
   { href: '/components', id: 'catalogue', label: 'Components' },
-  { href: '/mcp', id: 'mcp', label: 'MCP' },
   { href: '/#how-it-works', id: 'how-it-works', label: 'How it works' },
   { href: '/pricing', id: 'pricing', label: 'Free access' },
   { href: '/guides', id: 'resources', label: 'Guides' },
@@ -14,22 +12,11 @@ const navigation = [
 
 type NavigationId = (typeof navigation)[number]['id'];
 
-const mobileGroups: MobileComponentGroup[] = [
-  { id: 'motion', label: 'Interaction', detail: 'Interaction and animation' },
-  { id: 'agents', label: 'Agent UI', detail: 'Interfaces for AI products' },
-  { id: 'blocks', label: 'Product blocks', detail: 'Complete product patterns' },
-].map((group) => ({
-  ...group,
-  components: catalogueEntries.filter((entry) => entry.category === group.id)
-    .map(({ publicSlug, name }) => ({ publicSlug, name })),
-}));
-
 interface SiteHeaderProps {
   activeSection?: NavigationId;
-  showArrows?: boolean;
 }
 
-export function SiteHeader({ activeSection, showArrows = true }: SiteHeaderProps = {}) {
+export function SiteHeader({ activeSection }: SiteHeaderProps = {}) {
   return (
     <header className={styles.header}>
       <Brand />
@@ -46,8 +33,8 @@ export function SiteHeader({ activeSection, showArrows = true }: SiteHeaderProps
       </nav>
       <div className={styles.actions}>
         <a className={styles.signIn} href="/login?next=%2Fapp%2Fmcp">Sign in</a>
-        <a className={styles.trial} href="/login?next=%2Fapp%2Fmcp">Connect to MCP {showArrows && <span aria-hidden="true">↗</span>}</a>
-        <MobileMenu groups={mobileGroups} showArrows={showArrows} />
+        <a className={styles.trial} href="/login?next=%2Fapp%2Fmcp">Connect to MCP</a>
+        <MobileMenu activeSection={activeSection} />
       </div>
     </header>
   );

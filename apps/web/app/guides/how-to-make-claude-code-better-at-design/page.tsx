@@ -294,7 +294,7 @@ Adapt it to our existing tokens and approval API; preserve server authorization.
 Verify the decision states, keyboard focus and mobile layout in the browser.`}</code></pre>
               </div>
               <p>
-                Rendyn MCP is free and requires a free account and OAuth. Website previews and source are free without login. Follow the <a href="/mcp#claude-code">Claude Code MCP setup and retrieval walkthrough</a> for connection instructions, the four available tools and dependency examples.
+                Rendyn MCP is free and requires a free account and OAuth. Website previews and source are free without login. Follow the <a href="/login?next=%2Fapp%2Fmcp">MCP connection setup</a> to connect Claude Code to your Rendyn account.
               </p>
             </section>
 
@@ -373,7 +373,7 @@ Verify the decision states, keyboard focus and mobile layout in the browser.`}</
               <div className="guide-related-grid">
                 <Link href="/components"><span>Component strategy</span><h3>Choose UI components by product intent</h3><p>Move from a product outcome to a focused, defensible component choice.</p><i aria-hidden="true">↗</i></Link>
                 <Link href="/#intelligence"><span>Agent-ready UI</span><h3>What a complete component handoff includes</h3><p>See the previews, reasoning, states and source files that make a result usable.</p><i aria-hidden="true">↗</i></Link>
-                <a href="/mcp#claude-code"><span>MCP workflow</span><h3>Connect Claude to component source</h3><p>Set up Rendyn, compare previews and retrieve the files your implementation needs.</p><i aria-hidden="true">↗</i></a>
+                <a href="/login?next=%2Fapp%2Fmcp"><span>MCP workflow</span><h3>Connect Claude to component source</h3><p>Set up Rendyn, compare previews and retrieve the files your implementation needs.</p><i aria-hidden="true">↗</i></a>
               </div>
             </section>
 

@@ -6,7 +6,7 @@ import type { ComponentPreviewData } from '../../lib/component-preview';
 import { isPreviewReadyMessage, PREVIEW_READY_REQUEST } from '../../lib/preview-ready';
 import styles from './component-preview.module.css';
 
-const homePreviewIds = new Set(['cylinder-carousel', 'shader-background', 'dock', 'magicui-animated-beam', 'magicui-globe', 'morphing-modal', 'tabs']);
+const homePreviewIds = new Set(['cylinder-carousel', 'shader-background', 'expandable-control', 'magicui-animated-beam', 'magicui-globe', 'morphing-modal', 'tabs']);
 let homeDocument: Promise<string> | undefined;
 
 function loadHomeDocument() {

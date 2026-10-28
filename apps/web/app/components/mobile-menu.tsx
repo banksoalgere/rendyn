@@ -1,33 +1,34 @@
 'use client';
 
-/* eslint-disable @next/next/no-html-link-for-pages -- Vinext's next/link shim can hydrate from a second React context. */
-
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { Menu, X } from 'lucide-react';
 import { Drawer } from '@/components/motion/drawer';
-
-export interface MobileComponentGroup {
-  id: string;
-  label: string;
-  detail: string;
-  components: { publicSlug: string; name: string }[];
-}
+import { Brand } from './brand';
 
 const primaryLinks = [
-  { href: '/components', label: 'Browse components' },
-  { href: '/#how-it-works', label: 'How it works' },
-  { href: '/mcp', label: 'MCP for your agent' },
-  { href: '/pricing', label: 'Free access' },
-  { href: '/#for-teams', label: 'For teams' },
-  { href: '/guides', label: 'Guides' },
+  { href: '/components', id: 'catalogue', label: 'Components', description: 'Explore the full library' },
 ] as const;
 
+const exploreLinks = [
+  { href: '/#how-it-works', id: 'how-it-works', label: 'How it works' },
+  { href: '/pricing', id: 'pricing', label: 'Free access' },
+  { href: '/#for-teams', id: 'teams', label: 'For teams' },
+  { href: '/guides', id: 'resources', label: 'Guides' },
+] as const;
 
-export function MobileMenu({ groups, showArrows = true }: { groups: MobileComponentGroup[]; showArrows?: boolean }) {
+export function MobileMenu({ activeSection }: { activeSection?: string }) {
   const [open, setOpen] = useState(false);
-  const [activeGroupId, setActiveGroupId] = useState('motion');
-  const activeGroup = groups.find((group) => group.id === activeGroupId) ?? groups[0];
+  const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null);
   const closeMenu = () => setOpen(false);
-  if (!activeGroup) return null;
+
+  useEffect(() => {
+    if (!open) return;
+    const desktop = window.matchMedia('(min-width: 951px)');
+    const closeOnDesktop = () => { if (desktop.matches) setOpen(false); };
+    desktop.addEventListener('change', closeOnDesktop);
+    return () => desktop.removeEventListener('change', closeOnDesktop);
+  }, [open]);
 
   return (
     <div className="mobile-menu">
@@ -36,85 +37,56 @@ export function MobileMenu({ groups, showArrows = true }: { groups: MobileCompon
         aria-expanded={open}
         aria-label="Open site menu"
         className="mobile-menu__trigger"
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          // Keep the existing drawer outside sticky, blurred page headers.
+          setPortalTarget(document.body);
+          setOpen(true);
+        }}
         type="button"
       >
         <span>Menu</span>
-        <svg aria-hidden="true" viewBox="0 0 18 18">
-          <path d="M3 5.25h12M3 9h12M3 12.75h12" />
-        </svg>
+        <Menu aria-hidden="true" />
       </button>
 
-      <Drawer
-        ariaLabel="Site menu"
-        backdropClassName="mobile-menu__backdrop"
-        className="mobile-menu__drawer"
-        id="mobile-site-menu"
-        onOpenChange={setOpen}
-        open={open}
-        side="right"
-      >
-        <div className="mobile-menu__header">
-          <span><b>Rendyn</b><small>Navigation</small></span>
-          <button aria-label="Close site menu" onClick={closeMenu} type="button">
-            <svg aria-hidden="true" viewBox="0 0 18 18"><path d="m4.5 4.5 9 9m0-9-9 9" /></svg>
-          </button>
-        </div>
+      {portalTarget && createPortal(
+        <Drawer
+          ariaLabel="Site menu"
+          backdropClassName="mobile-menu__backdrop"
+          className="mobile-menu__drawer"
+          id="mobile-site-menu"
+          onOpenChange={setOpen}
+          open={open}
+          side="right"
+        >
+          <div className="mobile-menu__header">
+            <Brand />
+            <button aria-label="Close site menu" onClick={closeMenu} type="button">
+              <X aria-hidden="true" />
+            </button>
+          </div>
 
-        <div className="mobile-menu__body">
-          <nav aria-label="Primary navigation" className="mobile-menu__links">
-            {primaryLinks.map((link) => (
-              <a href={link.href} key={link.href} onClick={closeMenu}>
-                <strong>{link.label}</strong>
-                {showArrows && <b aria-hidden="true">→</b>}
-              </a>
-            ))}
-          </nav>
-
-          <section aria-labelledby="mobile-catalogue-title" className="mobile-menu__catalogue">
-            <div className="mobile-menu__catalogue-heading">
-              <span><b>Product</b><strong id="mobile-catalogue-title">Component catalogue</strong></span>
-              <small>{groups.reduce((count, group) => count + group.components.length, 0)} components</small>
-            </div>
-
-            <div aria-label="Filter components by category" className="mobile-menu__filters">
-              {groups.map((group) => (
-                <button
-                  aria-pressed={group.id === activeGroup.id}
-                  key={group.id}
-                  onClick={() => setActiveGroupId(group.id)}
-                  type="button"
-                >
-                  <span>{group.label}</span>
-                  <b>{group.components.length}</b>
-                </button>
-              ))}
-            </div>
-
-            <div className="mobile-menu__category-copy">
-              <strong>{activeGroup.label}</strong>
-              <span>{activeGroup.detail}</span>
-            </div>
-            <div className="mobile-menu__components">
-              {activeGroup.components.map(({ publicSlug, name }) => (
-                <a href={`/components/${publicSlug}`} key={publicSlug} onClick={closeMenu}>
-                  <strong>{name}</strong>
-                  {showArrows && <b aria-hidden="true">↗</b>}
+          <div className="mobile-menu__body">
+            <nav aria-label="Main pages" className="mobile-menu__links">
+              {primaryLinks.map(link => (
+                <a aria-current={activeSection === link.id ? 'page' : undefined} href={link.href} key={link.href} onClick={closeMenu}>
+                  <span><strong>{link.label}</strong><small>{link.description}</small></span>
                 </a>
               ))}
-            </div>
-            <a className="mobile-menu__catalogue-footer" href="/components" onClick={closeMenu}>
-              <span><strong>Browse components</strong><small>Preview every component</small></span>
-              {showArrows && <b aria-hidden="true">→</b>}
-            </a>
-          </section>
+            </nav>
+            <nav aria-label="Explore Rendyn" className="mobile-menu__explore">
+              {exploreLinks.map(link => (
+                <a aria-current={activeSection === link.id ? 'page' : undefined} href={link.href} key={link.href} onClick={closeMenu}>{link.label}</a>
+              ))}
+            </nav>
+          </div>
 
           <div className="mobile-menu__actions">
-            <a href="/login?next=%2Fapp%2Fmcp" onClick={closeMenu}>Sign in</a>
             <a className="button" href="/login?next=%2Fapp%2Fmcp" onClick={closeMenu}>Connect to MCP</a>
+            <a className="mobile-menu__sign-in" href="/login?next=%2Fapp%2Fmcp" onClick={closeMenu}>Sign in to your account</a>
           </div>
-        </div>
-      </Drawer>
+        </Drawer>,
+        portalTarget,
+      )}
     </div>
   );
 }

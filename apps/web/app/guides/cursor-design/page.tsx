@@ -245,7 +245,7 @@ export default function CursorDesignGuide() {
               <div className={`${styles.asideCta} guide-callout`}>
                 <span>Rendyn</span>
                 <strong>From interface intent to production-ready source.</strong>
-                <a href="/login?next=%2Fapp%2Fmcp">Connect to MCP <Arrow /></a>
+                <a href="/login?next=%2Fapp%2Fmcp">Connect to MCP</a>
               </div>
             </div>
           </aside>

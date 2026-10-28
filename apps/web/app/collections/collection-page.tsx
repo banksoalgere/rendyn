@@ -143,7 +143,7 @@ export function CollectionPage({ collection }: { collection: CollectionContent }
           <ul>{collection.sources.map((source) => <li key={source.href}><a href={source.href}>{source.label} <span aria-hidden="true">↗</span></a><span>{source.description}</span></li>)}</ul>
         </aside>
 
-        <p className={styles.inlineLink}>Prefer choosing components with your coding agent? <a href="/mcp">Connect to MCP</a> to search and retrieve implementation context.</p>
+        <p className={styles.inlineLink}>Prefer choosing components with your coding agent? <a href="/login?next=%2Fapp%2Fmcp">Connect to MCP</a> to search and retrieve implementation context.</p>
         <section className={styles.explore} aria-label="Keep exploring">
           <div><p className={styles.kicker}>Keep exploring</p><h2>{collection.related.label}</h2><p>{collection.related.description}</p><a href={collection.related.href}>Explore the collection <span aria-hidden="true">↗</span></a></div>
           <div><p className={styles.kicker}>Choose your next component</p><h2>Try it in the catalogue</h2><p>Inspect the live preview, usage, dependencies and upstream attribution before adapting it to your app.</p><a href={collection.catalogueHref}>{collection.catalogueLabel} <span aria-hidden="true">↗</span></a><a className={styles.pricingLink} href="/pricing">See source access and pricing</a></div>
