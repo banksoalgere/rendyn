@@ -10,13 +10,12 @@
     "dev:preview": "pnpm --filter @rendyn/preview dev",
     "start:api": "pnpm --filter @rendyn/api start",
     "catalog:import": "tsx scripts/import-catalog.ts",
-    "catalog:import:libraries": "tsx scripts/import-catalog.ts --libraries",
     "catalog:embed": "tsx scripts/embed-catalog.ts",
     "catalog:screenshots": "tsx scripts/capture-previews.ts && pnpm catalog:images",
     "catalog:verify": "tsx scripts/verify-catalog.ts",
     "catalog:worker:generate": "tsx scripts/generate-worker-catalog.ts",
     "catalog:worker:verify": "tsx scripts/generate-worker-catalog.ts --check",
-    "cloudflare:build:web": "pnpm release:check && pnpm verify:web-config && pnpm --filter @rendyn/web build",
+    "cloudflare:build:web": "pnpm release:check && pnpm verify:web-config && pnpm --filter @rendyn/web build && pnpm verify:web-build",
     "cloudflare:deploy:web": "pnpm --filter @rendyn/web run deploy",
     "cloudflare:deploy:web:dry-run": "pnpm --filter @rendyn/web deploy:dry-run",
     "cloudflare:deploy:mcp": "pnpm --filter @rendyn/api deploy",
@@ -29,8 +28,8 @@
     "catalog:images:verify": "tsx scripts/verify-preview-images.ts",
     "release:check": "pnpm check && pnpm --filter @rendyn/web lint && pnpm test:worker",
     "verify:web-config": "tsx scripts/verify-release-config.ts",
-    "test:worker": "node scripts/verify-worker-runtime.mjs",
-    "catalog:label": "tsx scripts/label-catalog.ts"
+    "verify:web-build": "tsx scripts/verify-built-web-config.ts",
+    "test:worker": "node scripts/verify-worker-runtime.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.5.8",

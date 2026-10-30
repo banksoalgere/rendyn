@@ -21,12 +21,10 @@ const STOP_WORDS = new Set([
   "this",
   "to",
   "with",
-  "my", "your", "its", "me", "i", "we", "our", "can", "should", "would", "could",
 ]);
 
 const SYNONYMS: Record<string, string[]> = {
   accordion: ["collapse", "expand", "disclosure", "faq"],
-  approval: ["approve", "permission", "consent", "confirm", "confirmation", "authorize"],
   ai: ["agent", "assistant", "chat", "llm"],
   auth: ["login", "signup", "sign-in", "authentication"],
   button: ["cta", "action", "control", "press", "click"],
@@ -50,13 +48,11 @@ const SYNONYMS: Record<string, string[]> = {
 };
 
 function stem(token: string): string {
-  if (/^(sort|sorting|sorted|sortable)$/.test(token)) return 'sort';
-  if (/^(filter|filtering|filtered|filterable)$/.test(token)) return 'filter';
   if (/^(animate|animated|animating|animation|animations)$/.test(token)) return 'animation';
-  if (token.length > 6 && token.endsWith("ing")) return token.slice(0, -3);
+  if (token.length > 5 && token.endsWith("ing")) return token.slice(0, -3);
   if (token.length > 4 && token.endsWith("ies")) return `${token.slice(0, -3)}y`;
   if (token.length > 4 && token.endsWith("ed")) return token.slice(0, -2);
-  if (token.length > 3 && token.endsWith("s") && !token.endsWith("ss") && !token.endsWith("us")) return token.slice(0, -1);
+  if (token.length > 3 && token.endsWith("s")) return token.slice(0, -1);
   return token;
 }
 

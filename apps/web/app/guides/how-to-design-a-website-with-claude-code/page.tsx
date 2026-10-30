@@ -231,8 +231,8 @@ export default function ClaudeCodeWebsiteDesignGuide() {
               <BrandMark />
               <p className="article-cta-title">Give Claude Code better building blocks.</p>
               <p>Search polished components by product intent, compare visual options, then get the complete source.</p>
-              <Link className="button" href="/pricing">Start Rendyn trial <span aria-hidden="true">↗</span></Link>
-              <Link href="/components">Browse the component catalogue <span aria-hidden="true">→</span></Link>
+              <Link className="button" href="/login?next=%2Fapp%2Fmcp">Connect to MCP</Link>
+              <Link href="/components">Browse components <span aria-hidden="true">→</span></Link>
             </aside>
           </div>
         </header>
@@ -360,7 +360,7 @@ export default function ClaudeCodeWebsiteDesignGuide() {
                   <div><span>02</span><strong>Compare the fit</strong><i>Ranked visual options</i></div>
                   <div><span>03</span><strong>Keep the code</strong><i>Complete editable source</i></div>
                 </div>
-                <Link className="button" href="/components">Explore Rendyn components <span aria-hidden="true">→</span></Link>
+                <Link className="button" href="/components">Browse components <span aria-hidden="true">→</span></Link>
               </div>
             </section>
 
@@ -426,7 +426,7 @@ export default function ClaudeCodeWebsiteDesignGuide() {
               <BrandMark />
               <p className="sidebar-cta-title">Better choices in, better interfaces out.</p>
               <p>Give your coding agent polished component options and complete code.</p>
-              <Link className="button" href="/pricing">Start 7-day trial <span aria-hidden="true">↗</span></Link>
+              <Link className="button" href="/login?next=%2Fapp%2Fmcp">Connect to MCP</Link>
             </div>
           </aside>
         </div>

@@ -17,6 +17,7 @@ import { getComponentExamples } from '../../../../preview/presentation/examples'
 import { getComponentPreview } from '../../../lib/component-preview';
 import { componentEditorialUpdatedAt, getComponentEditorial } from '../../../lib/component-editorial';
 import { ComponentUsage } from './component-usage';
+import { McpCallToAction } from './mcp-call-to-action';
 import styles from './component-page.module.css';
 
 const siteUrl = siteOrigin;
@@ -135,6 +136,8 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
             </div>
           </header>
 
+          <McpCallToAction />
+
           <PreviewWorkbench
             component={getComponentPreview(component)}
             examples={getComponentExamples(component.category, component.slug)}
@@ -160,8 +163,8 @@ export default async function ComponentPage({ params }: ComponentPageProps) {
           </section>
 
           <footer className={styles.articleFooter}>
-            <a href="/components"><span aria-hidden="true">←</span> Browse all {catalogueEntries.length} components</a>
-            <a href="/pricing">Start 7-day trial <span aria-hidden="true">→</span></a>
+            <a href="/components"><span aria-hidden="true">←</span> Browse components</a>
+            <a href="/login?next=%2Fapp%2Fmcp">Connect to MCP <span aria-hidden="true">→</span></a>
           </footer>
         </article>
 

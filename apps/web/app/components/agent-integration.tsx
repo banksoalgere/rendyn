@@ -9,12 +9,12 @@ export function AgentIntegration() {
     <section className="agent-section section-shell" id="docs">
       <div className="agent-copy">
         <p className="eyebrow">Works with the agents you already use</p>
-        <h2>One connection.<br />A design upgrade for every build.</h2>
+        <h2>Give your agent<br />taste.</h2>
         <p>
-          Rendyn joins your agent&apos;s existing workflow and supplies component choices,
-          product-aware reasoning and complete implementation code.
+          The best way to use Rendyn is through MCP. Your agent can find components,
+          compare previews and bring complete source into your project. It&apos;s all free.
         </p>
-        <a className="button button--light" href="/pricing">Start 7-day trial <span aria-hidden="true">↗</span></a>
+        <a className="button button--light" href="/login?next=%2Fapp%2Fmcp">Connect to MCP</a>
       </div>
 
       <div className="agent-console" aria-label="Example Rendyn tool response">

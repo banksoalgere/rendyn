@@ -4,7 +4,6 @@ import '../../globals.css';
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { firstQueryValue, safeAuthorizationId, safeOAuthRedirect } from '@/lib/auth/inputs';
-import { getSubscriptionAccess } from '@/lib/billing/access';
 import { createClient } from '@/lib/supabase/server';
 import styles from '../../auth/auth.module.css';
 
@@ -68,40 +67,6 @@ export default async function ConsentPage({ searchParams }: ConsentPageProps) {
 
   if (!hasAuthenticatedUser) {
     redirect(`/login?next=${encodeURIComponent(consentPath)}`);
-  }
-
-  let hasSubscriptionAccess = false;
-  try {
-    hasSubscriptionAccess = (await getSubscriptionAccess(supabase)).allowed;
-  } catch {
-    return <ConsentFailure message="Subscription status is temporarily unavailable." />;
-  }
-
-  if (!hasSubscriptionAccess) {
-    return (
-      <main className={styles.page}>
-        <header className={styles.topbar}>
-          <a className={styles.brand} href="/" aria-label="Rendyn home">
-            <BrandMark className={styles.brandMark} />
-            <span>Rendyn</span>
-          </a>
-          <a className={styles.backLink} href="/account">Your account</a>
-        </header>
-        <section className={`${styles.card} ${styles.consentCard}`}>
-          <p className={styles.eyebrow}>Subscription required</p>
-          <h1>Start your trial before connecting.</h1>
-          <p className={styles.intro}>
-            Rendyn MCP is available during a seven-day full-access trial and with a paid subscription. A card is collected now and the first charge is on day 8 unless you cancel before the trial ends.
-          </p>
-          <a
-            className={styles.primaryButton}
-            href={`/pricing?next=${encodeURIComponent(consentPath)}`}
-          >
-            Start 7-day trial
-          </a>
-        </section>
-      </main>
-    );
   }
 
   let authorizationResponse;

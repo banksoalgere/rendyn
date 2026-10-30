@@ -91,6 +91,29 @@ export default defineConfig(async () => {
       : undefined,
     plugins: [
       previewAlias(),
+      {
+        name: 'rendyn-motion-bundle',
+        configEnvironment(name) {
+          if (name !== 'client') return;
+          // The navigation drawer shares Motion with many demos. Keep its
+          // runtime together instead of fetching a dozen small shared chunks.
+          return { build: { rolldownOptions: { output: { codeSplitting: { groups: [{
+            name: 'motion-runtime',
+            test: /\/node_modules\/(?:framer-motion|motion-dom|motion-utils|motion)\//,
+            priority: 20,
+          }, {
+            name: 'home-ui',
+            // These are shared by the landing page and catalogue. Keeping them
+            // together avoids separate runtime, tree, default-demo and CSS fetches.
+            test: /\/(?:app\/components\/(?:library\/.*|(?:mobile-menu|website-analytics|horizon-wall|component-preview|preview-error-boundary|component-explorer|catalogue-browser|catalogue-component-preview)\.tsx)|lib\/(?:analytics|analytics-privacy|preview-ready)\.ts|preview\/vendor-root\/(?:lib\/utils\.ts|components\/magicui\/animated-beam\.tsx|components\/external-previews\/magicui\/upstream\/animated-beam-demo\.tsx)|node_modules\/(?:scheduler\/.*|react-dom\/(?:client|index|cjs\/react-dom(?:-client)?\.production)\.js)|node_modules\/lucide-react\/dist\/esm\/(?:createLucideIcon|Icon|shared\/utils)\.m?js)$/,
+            priority: 40,
+          }, {
+            name: 'home-demos',
+            test: /\/(?:app\/components\/(?:home-demo|home-component-preview)\.tsx|home-previews\/entry\.tsx)$/,
+            priority: 30,
+          }] } } } } };
+        },
+      },
       vinext(),
       sites(),
       cloudflare({

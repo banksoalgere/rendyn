@@ -1,17 +1,16 @@
 import { componentTokens, prepareSearchIndex, type PreparedQuery } from './prepared.js';
 import type {
-  SearchComponent,
-  SearchIndex,
+  CatalogComponentSummary,
+  CatalogIndex,
   EmbeddingIndex,
 } from "../types.js";
 
 export interface Candidate {
-  component: SearchComponent;
+  component: CatalogComponentSummary;
   score: number;
   lexicalScore: number;
   vectorScore: number | null;
   reasons: string[];
-  coverage: number;
 }
 
 interface ScoringOptions {
@@ -64,7 +63,7 @@ function tokenOverlap(query: PreparedQuery, candidateTokens: Set<string>): numbe
 }
 
 function buildLexicalCandidate(
-  component: SearchComponent,
+  component: CatalogComponentSummary,
   query: PreparedQuery,
 ): Candidate {
   const normalizedQuery = query.normalized;
@@ -76,12 +75,9 @@ function buildLexicalCandidate(
   const nameScore = tokenOverlap(query, prepared.name);
   const descriptionScore = tokenOverlap(query, prepared.description);
   const metadataScore = tokenOverlap(query, prepared.metadata);
-  const coverage = tokenOverlap(query, new Set([...prepared.name, ...prepared.description, ...prepared.metadata]));
   const namedPattern = prepared.lowerName.split(/\W+/).filter(Boolean).length > 1
     && ` ${normalizedQuery.replace(/[^a-z0-9]+/g, " ")} `.includes(` ${prepared.lowerName.replace(/[^a-z0-9]+/g, " ")} `);
-  // Purpose words should rank the same regardless of plurals, context words or
-  // their order. Named patterns retain the separate exact/name phrase boost.
-  const phraseMatch = query.terms.length === 1 && prepared.searchText.includes(normalizedQuery);
+  const phraseMatch = prepared.searchText.includes(normalizedQuery);
   const score = clampScore(
     (exactNameMatch ? LEXICAL_WEIGHTS.exactName : 0) +
       nameScore * LEXICAL_WEIGHTS.name +
@@ -98,7 +94,7 @@ function buildLexicalCandidate(
   if (descriptionScore > 0.2) reasons.push("description matches the intended behavior");
   if (metadataScore > 0.2) reasons.push("use case and interaction metadata match");
 
-  return { component, score, lexicalScore: score, vectorScore: null, reasons, coverage };
+  return { component, score, lexicalScore: score, vectorScore: null, reasons };
 }
 
 function addSemanticScore(candidate: Candidate, options: ScoringOptions): Candidate {
@@ -121,7 +117,7 @@ function addSemanticScore(candidate: Candidate, options: ScoringOptions): Candid
 }
 
 export function buildCandidate(
-  component: SearchComponent,
+  component: CatalogComponentSummary,
   query: PreparedQuery,
   options: ScoringOptions,
 ): Candidate {
@@ -132,7 +128,7 @@ export function buildCandidate(
   return candidate;
 }
 
-export function requestedComponentFamilies(catalog: SearchIndex, query: PreparedQuery): Set<string> {
+export function requestedComponentFamilies(catalog: CatalogIndex, query: PreparedQuery): Set<string> {
   const knownFamilies = prepareSearchIndex(catalog);
   const normalized = ` ${query.normalized.replace(/[^a-z0-9]+/g, ' ')} `;
   const named = catalog.components.filter(component => {
@@ -140,11 +136,6 @@ export function requestedComponentFamilies(catalog: SearchIndex, query: Prepared
     return name.includes(' ') && normalized.includes(` ${name} `);
   });
   if (named.length) return new Set(named.map(component => component.metadata.family));
-  const compoundMatches = [...knownFamilies].filter(family => {
-    const words = family.split('-');
-    return words.length > 1 && words.every(word => query.direct.includes(word));
-  });
-  if (compoundMatches.length) return new Set(compoundMatches);
   const directMatches = query.direct.filter((token) => knownFamilies.has(token));
   const matches = directMatches.length > 0
     ? directMatches

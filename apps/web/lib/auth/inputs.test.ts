@@ -19,7 +19,7 @@ describe('authentication input boundaries', () => {
     '/\\attacker.example/callback',
     '/account\nset-cookie:bad',
   ])('rejects unsafe return path %s', (value) => {
-    expect(safeReturnTo(value)).toBe('/account');
+    expect(safeReturnTo(value)).toBe('/app');
   });
 
   it('accepts bounded opaque authorization identifiers', () => {

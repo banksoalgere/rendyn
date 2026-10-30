@@ -1,11 +1,8 @@
 import catalog from '../../../catalog/index.json';
-import pinnedPublicSlugs from '../../../catalog/public-slugs.json';
-import { assignPublicSlugs } from '../../../packages/catalog/src/public-slugs';
-import { toSearchComponent, type SearchComponent } from '../../../packages/catalog/src/types';
 
 export const catalogueCategoryLabels = {
   agents: 'Agent UI',
-  blocks: 'Components & blocks',
+  blocks: 'Product blocks',
   motion: 'Interaction',
 } as const;
 
@@ -17,7 +14,16 @@ export interface CatalogueEntry extends CatalogComponent {
   categoryLabel: string;
   previewId: string;
   publicSlug: string;
-  search: SearchComponent;
+}
+
+function slugify(value: string) {
+  return value
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }
 
 function sanitisePublicText(value: string) {
@@ -27,10 +33,18 @@ function sanitisePublicText(value: string) {
     .replace(/\b(?:beUI|Magic UI|Kibo UI)\b/gi, 'the catalogue');
 }
 
-const publicSlugs = assignPublicSlugs(catalog.components, pinnedPublicSlugs);
+const usedSlugs = new Set<string>();
 
-export const catalogueEntries: CatalogueEntry[] = catalog.components.map((component) => {
-  const publicSlug = publicSlugs[component.id];
+export const catalogueEntries: CatalogueEntry[] = catalog.components.map((component, index) => {
+  const baseSlug = slugify(component.name) || `component-${index + 1}`;
+  let publicSlug = baseSlug;
+  let alternative = 2;
+
+  while (usedSlugs.has(publicSlug)) {
+    publicSlug = `${baseSlug}-example-${alternative}`;
+    alternative += 1;
+  }
+  usedSlugs.add(publicSlug);
 
   const category = component.category as CatalogueCategory;
   return {
@@ -45,7 +59,6 @@ export const catalogueEntries: CatalogueEntry[] = catalog.components.map((compon
     },
     previewId: component.slug,
     publicSlug,
-    search: toSearchComponent({ ...component, category }),
   };
 });
 

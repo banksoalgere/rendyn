@@ -1,11 +1,9 @@
 import type { ComponentPreviewData } from './component-preview';
-import { MAX_QUERY_LENGTH, rankCatalog } from '../../../packages/catalog/src/search';
-import type { SearchComponent } from '../../../packages/catalog/src/types';
 
 export const categoryLabels = {
   motion: 'Interaction',
   agents: 'Agent UI',
-  blocks: 'Components & blocks',
+  blocks: 'Product blocks',
 } as const;
 
 export interface CatalogueComponent extends ComponentPreviewData {
@@ -13,7 +11,7 @@ export interface CatalogueComponent extends ComponentPreviewData {
   description: string;
   tags: string[];
   aliases?: string[];
-  search: SearchComponent;
+  family?: string;
 }
 
 export interface CatalogueFilters {
@@ -23,7 +21,7 @@ export interface CatalogueFilters {
 }
 
 export const CATALOGUE_PAGE_SIZE = 6;
-export const MAX_SEARCH_LENGTH = MAX_QUERY_LENGTH;
+export const MAX_SEARCH_LENGTH = 120;
 
 type SearchParameters = Record<string, string | string[] | undefined>;
 
@@ -49,24 +47,56 @@ export function catalogueHref({ query, category, page }: CatalogueFilters): stri
   return `/components${search ? `?${search}` : ''}`;
 }
 
+function normalize(value: string): string {
+  return value.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
+function tokens(value: string): string[] {
+  return normalize(value).split(/\s+/).filter(Boolean)
+    .map((word) => word.length > 3 && !word.endsWith('ss') ? word.replace(/s$/, '') : word);
+}
+
+// Normalize once per catalogue, rather than once per component on every keystroke.
 export function createCatalogueSearchIndex(components: CatalogueComponent[]) {
-  return {
-    components,
-    catalog: { components: components.map(component => component.search) },
-    bySlug: new Map(components.map(component => [component.search.slug, component])),
-  };
+  return components.map((component) => ({
+    component,
+    name: tokens(component.name),
+    keywords: tokens([...component.tags, ...(component.aliases ?? [])].join(' ')),
+    description: tokens(component.description),
+    category: tokens(`${component.category} ${categoryLabels[component.category]}`),
+  }));
 }
 
 type SearchIndex = ReturnType<typeof createCatalogueSearchIndex>;
+const queryStopWords = new Set(['a', 'an', 'the', 'with', 'for', 'and', 'react', 'typescript', 'tailwind', 'css', 'ui', 'component']);
+
+function matchScore(words: string[], term: string, weight: number): number {
+  if (words.includes(term)) return weight;
+  return term.length >= 3 && words.some((word) => word.startsWith(term)) ? weight / 2 : 0;
+}
 
 export function searchCatalogue(index: SearchIndex, query: string, category: CatalogueFilters['category']) {
-  if (!query.trim()) return index.components.filter(component => category === 'all' || component.category === category);
-  return rankCatalog(index.catalog, query.slice(0, MAX_SEARCH_LENGTH), {
-    category: category === 'all' ? undefined : category,
-  }).flatMap(result => {
-    const component = index.bySlug.get(result.slug);
-    return component ? [component] : [];
-  });
+  const terms = [...new Set(tokens(query.slice(0, MAX_SEARCH_LENGTH)).filter((term) => !queryStopWords.has(term)))];
+  const candidates = index.filter(({ component }) => category === 'all' || component.category === category);
+  if (terms.length === 0) return candidates.map(({ component }) => component);
+
+  return candidates.map((entry) => {
+    const scores = terms.map((term) => Math.max(
+      matchScore(entry.name, term, 12),
+      matchScore(entry.keywords, term, 6),
+      matchScore(entry.description, term, 2),
+      matchScore(entry.category, term, 1),
+    ));
+    // All words must match, but can appear in different fields or a different order.
+    const score = scores.every((value) => value > 0)
+      ? scores.reduce((total, value) => total + value, 0)
+        + (entry.name.join(' ') === terms.join(' ') ? 24 : 0)
+      : 0;
+    return { component: entry.component, score };
+  }).filter(({ score }) => score > 0)
+    .sort((left, right) => right.score - left.score)
+    .map(({ component }) => component);
 }
 
 export function getCataloguePage(index: SearchIndex, filters: CatalogueFilters) {
@@ -74,7 +104,5 @@ export function getCataloguePage(index: SearchIndex, filters: CatalogueFilters) 
   const pageCount = Math.max(1, Math.ceil(matches.length / CATALOGUE_PAGE_SIZE));
   const page = Math.min(filters.page, pageCount);
   const start = (page - 1) * CATALOGUE_PAGE_SIZE;
-  const otherCategoryMatches = matches.length === 0 && filters.category !== 'all'
-    ? searchCatalogue(index, filters.query, 'all').length : 0;
-  return { components: matches.slice(start, start + CATALOGUE_PAGE_SIZE), total: matches.length, page, pageCount, start, otherCategoryMatches };
+  return { components: matches.slice(start, start + CATALOGUE_PAGE_SIZE), total: matches.length, page, pageCount, start };
 }

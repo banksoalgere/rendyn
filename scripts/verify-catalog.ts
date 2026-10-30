@@ -1,56 +1,21 @@
 import { createHash } from "node:crypto";
-import { readFile } from 'node:fs/promises';
 import { resolve } from "node:path";
 import { CatalogStore } from "@rendyn/catalog";
-import { loadLibraryConfigs } from './import-libraries.js';
-import { assertStandardMitLicense } from './lib/catalog-import/license.js';
-import { assignPublicSlugs, publicSlugMapSchema } from '../packages/catalog/src/public-slugs.js';
 
 const catalogRoot = resolve(process.env.CATALOG_IMPORT_ROOT ?? resolve(import.meta.dirname, '..'), 'catalog');
 const store = await CatalogStore.load(catalogRoot);
-const publicSlugs = publicSlugMapSchema.parse(JSON.parse(await readFile(resolve(catalogRoot, 'public-slugs.json'), 'utf8')));
-if (JSON.stringify(assignPublicSlugs(store.index.components, publicSlugs)) !== JSON.stringify(publicSlugs)) {
-  throw new Error('Missing pinned public component URLs');
+
+if (store.index.components.length !== 189) {
+  throw new Error(`Expected 189 components, found ${store.index.components.length}`);
 }
 
-const libraryConfigs = await loadLibraryConfigs();
-const expectedCount = 189 + libraryConfigs.reduce((count, config) => count + config.components.length, 0);
-if (store.index.components.length !== expectedCount) {
-  throw new Error(`Expected ${expectedCount} reviewed components, found ${store.index.components.length}`);
-}
-
-if (store.index.sources.map((source) => source.id).join(",") !== ['beui', 'magicui', 'kibo', ...libraryConfigs.map(c => c.id)].join(',')) {
+if (store.index.sources.map((source) => source.id).join(",") !== "beui,magicui,kibo") {
   throw new Error("Catalogue sources do not match the reviewed import set");
-}
-
-for (const config of libraryConfigs) {
-  const components = store.index.components.filter(component => component.sourceId === config.id);
-  if (components.map(c => c.slug).sort().join(',') !== config.components.map(c => `${config.id}-${c.slug}`).sort().join(',')) {
-    throw new Error(`Reviewed library component set differs: ${config.id}`);
-  }
-  const source = store.index.sources.find(source => source.id === config.id);
-  if (source?.commit !== config.commit) throw new Error(`Unreviewed library revision: ${config.id}`);
-  const license = await readFile(resolve(catalogRoot, 'source', config.id, 'LICENSE'), 'utf8');
-  assertStandardMitLicense(license, config.license);
-  for (const reviewed of config.components) {
-    const manifest = await store.get(`${config.id}-${reviewed.slug}`);
-    if (!manifest) throw new Error(`Missing reviewed component: ${reviewed.slug}`);
-    for (const file of reviewed.files) {
-      const imported = manifest.files.find(candidate => candidate.path === file.path);
-      if (imported?.upstreamPath !== file.upstreamPath || imported.upstreamSha256 !== file.sha256) {
-        throw new Error(`Unreviewed upstream file: ${config.id}/${file.path}`);
-      }
-    }
-  }
 }
 
 for (const summary of store.index.components) {
   const manifest = await store.get(summary.slug);
   if (!manifest) throw new Error(`Missing component manifest: ${summary.slug}`);
-  if (manifest.name !== summary.name || manifest.description !== summary.description
-    || JSON.stringify(manifest.metadata) !== JSON.stringify(summary.metadata)) {
-    throw new Error(`Catalogue labels differ between discovery and source retrieval: ${summary.slug}`);
-  }
   for (const file of manifest.files) {
     const hash = createHash("sha256").update(file.content).digest("hex");
     if (hash !== file.sha256) {

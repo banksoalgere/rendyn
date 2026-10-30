@@ -29,7 +29,7 @@ interface LoginPageProps {
 
 export default async function LoginPage({ searchParams }: LoginPageProps) {
   const query = await searchParams;
-  const returnTo = safeReturnTo(firstQueryValue(query.next));
+  const returnTo = safeReturnTo(firstQueryValue(query.next), '/app/mcp');
   const configured = Boolean(getSupabasePublicConfig());
   const supabase = await createClient();
   let signedIn = false;
@@ -63,7 +63,8 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
           </p>
         ) : null}
 
-        <EmailSignInForm configured={configured} returnTo={returnTo} />
+        <EmailSignInForm configured={configured} returnTo={returnTo} title={returnTo.startsWith('/app/mcp') || returnTo.startsWith('/oauth/') ? 'Give your agent taste.' : undefined} />
+        <p className={styles.finePrint}>Create a free account or sign in to connect MCP. No card or subscription needed. Browsing and copying components needs no account.</p>
       </section>
     </main>
   );

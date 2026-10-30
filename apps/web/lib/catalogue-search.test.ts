@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
 import { catalogueEntries } from './catalogue';
-import { searchCatalog } from '../../../packages/catalog/src/search';
 import {
   catalogueHref, createCatalogueSearchIndex, getCatalogueFilters, getCataloguePage,
   MAX_SEARCH_LENGTH, searchCatalogue, type CatalogueComponent,
@@ -10,30 +9,10 @@ const components: CatalogueComponent[] = catalogueEntries.map((component) => ({
   ...component,
   tags: component.metadata.tags,
   aliases: component.metadata.aliases,
-  search: component.search,
 }));
 const index = createCatalogueSearchIndex(components);
 
 describe('catalogue discovery', () => {
-  it.each([
-    'keyboard-first command menu for a dense admin tool',
-    'human approval before an AI agent publishes changes',
-    'dashboard table for reviewing user status and roles',
-    'calm primary CTA button with subtle hover feedback',
-    'AI chat', 'commmand palete', 'approv', 'table data', 'button',
-  ])('uses the same shortlist as the MCP for %s', query => {
-    const expected = searchCatalog({ components: components.map(component => component.search) }, query);
-    expect(expected.length).toBeGreaterThan(0);
-    expect(searchCatalogue(index, query, 'all').slice(0, 5).map(component => component.search.id))
-      .toEqual(expected.map(component => component.id));
-  });
-
-  it('offers to remove a mismatched category without silently replacing it', () => {
-    const page = getCataloguePage(index, { query: 'bento grid', category: 'blocks', page: 1 });
-    expect(page.total).toBe(0);
-    expect(page.otherCategoryMatches).toBeGreaterThan(0);
-    expect(searchCatalogue(index, 'bento grid', 'all')[0].name).toBe('Bento Grid');
-  });
   it('ranks exact names ahead of components that only mention the same word', () => {
     const results = searchCatalogue(index, 'button', 'all');
     expect(results[0].name).toBe('Button');

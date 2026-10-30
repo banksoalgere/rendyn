@@ -30,7 +30,7 @@ function StudyPreview({ kind }: { kind: Study }) {
     case 'dock':
       return <div className={styles.dock}>{['⌂', '▱', '✳', '⚙'].map((icon) => <span key={icon}>{icon}</span>)}</div>;
     case 'command':
-      return <><div className={styles.search}>⌕ <span>Search…</span><kbd>⌘ K</kbd></div><div className={styles.command}><span>New project</span><span>⌘ N</span></div><div className={styles.command}><span>Find a component</span><span>↵</span></div><div className={styles.command}><span>Your collection</span><span>↗</span></div></>;
+      return <><div className={styles.search}>⌕ <span>Search…</span><kbd>⌘ K</kbd></div><div className={styles.command}><span>New project</span><span>⌘ N</span></div><div className={styles.command}><span>Find a component</span></div><div className={styles.command}><span>Your collection</span></div></>;
     case 'progress':
       return <div className={styles.progress}>72%</div>;
     case 'chart':

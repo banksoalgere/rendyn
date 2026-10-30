@@ -359,7 +359,7 @@ export default function BestCursorTemplatesPage() {
                 <span>Rendyn</span>
                 <strong>Give Cursor a stronger visual vocabulary.</strong>
                 <p>Browse polished, source-available interface components by product intent.</p>
-                <a href="/components">Explore the catalogue <ExternalArrow /></a>
+                <a href="/components">Browse components <ExternalArrow /></a>
               </div>
             </aside>
 
@@ -539,7 +539,7 @@ export default function BestCursorTemplatesPage() {
                     <div className="cursor-templates-prompt-card"><span>A dashboard brief for Cursor</span><p>Adapt the existing dashboard shell. Add the selected table and Command Palette using our current tokens and data boundaries. Start with clearly labelled fixtures, loading, empty and failure states. Map actions to existing authorized routes. Report which interactions are still simulated before adding persistence.</p></div>
                   </article>
                 </div>
-                <p>For the broader visual workflow, continue with <a href="/guides/how-to-build-a-good-looking-website-with-cursor">building a good-looking website with Cursor</a>. If the brief is about agent access to the catalogue, use the <a href="/mcp">Rendyn MCP workflow</a>.</p>
+                <p>For the broader visual workflow, continue with <a href="/guides/how-to-build-a-good-looking-website-with-cursor">building a good-looking website with Cursor</a>. If the brief is about agent access to the catalogue, use the <a href="/login?next=%2Fapp%2Fmcp">Rendyn MCP workflow</a>.</p>
               </section>
 
               <section id="adapt-template">
@@ -632,7 +632,7 @@ export default function BestCursorTemplatesPage() {
                     <div><span>02</span><p><strong>Morphing search</strong><small>Alternative · compact discovery</small></p><i>Compare</i></div>
                     <div><span>03</span><p><strong>Expandable action bar</strong><small>Alternative · persistent actions</small></p><i>Compare</i></div>
                   </div>
-                  <div className="cursor-templates-product-footer"><span aria-hidden="true">Source + dependencies + usage context</span><a href="/components">Explore the catalogue <ExternalArrow /></a></div>
+                  <div className="cursor-templates-product-footer"><span aria-hidden="true">Source + dependencies + usage context</span><a href="/components">Browse components <ExternalArrow /></a></div>
                 </div>
               </section>
 

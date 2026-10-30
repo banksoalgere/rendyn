@@ -29,7 +29,17 @@
     "kind": "agent-ui",
     "family": "agent-activity",
     "tags": [
-      "agent"
+      "action",
+      "agent",
+      "context",
+      "data",
+      "form",
+      "message",
+      "number",
+      "progress",
+      "search",
+      "streaming",
+      "text"
     ],
     "aliases": [
       "agent activity",
@@ -38,8 +48,7 @@
       "llm interface"
     ],
     "interactions": [
-      "click",
-      "navigate"
+      "type"
     ],
     "useWhen": [
       "One adaptive activity stream for reasoning, searches, tool calls, structured execution traces, or a chronological mix."
@@ -47,48 +56,8 @@
     "notIdealWhen": [
       "The interface does not communicate model, assistant, or agent activity."
     ],
-    "visualSignature": "agent-activity:agent",
-    "searchText": "Agent Activity\nagent activity\nOne adaptive activity stream for reasoning, searches, tool calls, structured execution traces, or a chronological mix.\nagent-activity\nai interface\nllm interface\nagent\ntitle: \"Agent Activity\" description: \"One adaptive activity stream for reasoning, searches, tool calls, structured execution traces, or a chronological mix.\" category: \"AI Agents\" publishedAt: \"2026 08 01\" updatedAt: \"2026 08 19\" documentation: \"https://beui.dev/components/agents/agent activity\" markdown: \"https://beui.dev/components/agents/agent activity.md\" license: \"MIT\" Agent Activity One adaptive activity stream for reasoning, searches, tool calls, structured execution traces, or a chronological mix. Install Dependencies clsx lucide react motion react tailwind merge Usage Streaming Text usage Streams freeform reasoning text into the capped viewport and keeps the completed log available behind a timed disclosure. Reasoning Steps usage Shows completed, active, and pending reasoning steps with optional trailing metadata. Web Search usage Presents a search query, progressively rendered result rows, and an overflow count. Tool Calls usage Summarizes read, edit, and run events with monospace targets and optional line change counts. Mixed Activity usage Streams reasoning, search, and tool events in one chronological run while the viewport smoothly follows new work. Agent Trace usage Streams messages and structured actions into a compact execution ledger, then summarizes the completed run by tool call and message counts. API Reference AgentActivity Prop Type Default Required Description items AgentActivityItem[] — Yes Chronological activity entries. Append or update items as events stream. contentType \"step\" \\ \"search\" \\ \"text\" \\ \"mixed\" \\ \"tool\" \\ \"trace\" — No Expected activity kind before the first streamed item arrives. status \"complete\" \\ \"working\" working No Current run phase. Active runs always stay expanded. duration number 0 No Elapsed run time, in seconds. Used by the step only summary. open boolean — No Controlled expanded state used after the run completes. defaultOpen boolean false No Initial expanded state used after the run completes. onOpenChange ((open: boolean) = void) — No Called when the completed activity disclosure changes state. collapseOnComplete boolean true No Collapse the disclosure when status changes from working to complete. activeLabel ReactNode — No Optional label shown while the run is active. summary ReactNode — No Optional completed summary. Derived from the item types by default. renderWorkingStatus ((context: { label: ReactNode; duration: number; }) = ReactNode) — No Optional renderer for the contents of the active status row. renderCompletedStatus ((context: { summary: ReactNode; duration: number; }) = ReactNode) — No Optional renderer for the contents before the built in disclosure chevron. maxHeight number 208 No Maximum visible activity height before the stream begins gliding. className string — No — contentClassName string — No — Source Registry detail: https://beui.dev/r/agent activity Raw source: https://beui.dev/r/agent activity/raw GitHub: https://github.com/starc007/ui components\nabsolute\ncentered\ngrid\ninline\nrow\nscrollable\nfilled\nfully-rounded\nrounded\nemerald\nmuted\nrose\nmonospace\ntruncated\nanimation\nreduced-motion-variant\nspring\ntransition\nfocus-state\nhover-state",
-    "visual": {
-      "evidence": "source",
-      "scope": "component-source",
-      "layout": [
-        "absolute",
-        "centered",
-        "grid",
-        "inline",
-        "row",
-        "scrollable"
-      ],
-      "surface": [
-        "filled"
-      ],
-      "shape": [
-        "fully-rounded",
-        "rounded"
-      ],
-      "color": [
-        "emerald",
-        "muted",
-        "rose"
-      ],
-      "typography": [
-        "monospace",
-        "truncated"
-      ],
-      "motion": [
-        "animation",
-        "reduced-motion-variant",
-        "spring",
-        "transition"
-      ],
-      "states": [
-        "focus-state",
-        "hover-state"
-      ]
-    },
-    "exampleCount": 1,
-    "labelStatus": "source-labelled"
+    "visualSignature": "agent-activity:action:agent:context:data:form:type",
+    "searchText": "Agent Activity\nagent activity\nOne adaptive activity stream for reasoning, searches, tool calls, structured execution traces, or a chronological mix.\nagent-activity\nai interface\nllm interface\naction\nagent\ncontext\ndata\nform\nmessage\nnumber\nprogress\nsearch\nstreaming\ntext\ntype\ntitle: \"Agent Activity\" description: \"One adaptive activity stream for reasoning, searches, tool calls, structured execution traces, or a chronological mix.\" category: \"AI Agents\" publishedAt: \"2026 08 01\" updatedAt: \"2026 08 19\" documentation: \"https://beui.dev/components/agents/agent activity\" markdown: \"https://beui.dev/components/agents/agent activity.md\" license: \"MIT\" Agent Activity One adaptive activity stream for reasoning, searches, tool calls, structured execution traces, or a chronological mix. Install Dependencies clsx lucide react motion react tailwind merge Usage Streaming Text usage Streams freeform reasoning text into the capped viewport and keeps the completed log available behind a timed disclosure. Reasoning Steps usage Shows completed, active, and pending reasoning steps with optional trailing metadata. Web Search usage Presents a search query, progressively rendered result rows, and an overflow count. Tool Calls usage Summarizes read, edit, and run events with monospace targets and optional line change counts. Mixed Activity usage Streams reasoning, search, and tool events in one chronological run while the viewport smoothly follows new work. Agent Trace usage Streams messages and structured actions into a compact execution ledger, then summarizes the completed run by tool call and message counts. API Reference AgentActivity Prop Type Default Required Description items AgentActivityItem[] — Yes Chronological activity entries. Append or update items as events stream. contentType \"step\" \\ \"search\" \\ \"text\" \\ \"mixed\" \\ \"tool\" \\ \"trace\" — No Expected activity kind before the first streamed item arrives. status \"complete\" \\ \"working\" working No Current run phase. Active runs always stay expanded. duration number 0 No Elapsed run time, in seconds. Used by the step only summary. open boolean — No Controlled expanded state used after the run completes. defaultOpen boolean false No Initial expanded state used after the run completes. onOpenChange ((open: boolean) = void) — No Called when the completed activity disclosure changes state. collapseOnComplete boolean true No Collapse the disclosure when status changes from working to complete. activeLabel ReactNode — No Optional label shown while the run is active. summary ReactNode — No Optional completed summary. Derived from the item types by default. renderWorkingStatus ((context: { label: ReactNode; duration: number; }) = ReactNode) — No Optional renderer for the contents of the active status row. renderCompletedStatus ((context: { summary: ReactNode; duration: number; }) = ReactNode) — No Optional renderer for the contents before the built in disclosure chevron. maxHeight number 208 No Maximum visible activity height before the stream begins gliding. className string — No — contentClassName string — No — Source Registry detail: https://beui.dev/r/agent activity Raw source: https://beui.dev/r/agent activity/raw GitHub: https://github.com/starc007/ui components"
   },
   "previewPath": "/preview/agents/agent-activity",
   "manifestPath": "components/agent-activity/component.json",

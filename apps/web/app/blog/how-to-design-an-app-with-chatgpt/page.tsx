@@ -235,7 +235,7 @@ export default function ChatGPTAppDesignArticle() {
               <div className="chatgpt-app-side-cta guide-callout">
                 <span>Building in code?</span>
                 <strong>Give your agent stronger interface choices.</strong>
-                <a href="/components">Explore Rendyn <i aria-hidden="true">↗</i></a>
+                <a href="/components">Browse components <i aria-hidden="true">↗</i></a>
               </div>
             </aside>
 
@@ -489,7 +489,7 @@ export default function ChatGPTAppDesignArticle() {
                 visual previews, product context, complete source, and install guidance.
               </p>
               <div>
-                <a className="button" href="/components">Browse the catalogue <span aria-hidden="true">↗</span></a>
+                <a className="button" href="/components">Browse components <span aria-hidden="true">↗</span></a>
                 <a className="button button--ghost" href="/#how-it-works">See what agents get</a>
               </div>
             </section>

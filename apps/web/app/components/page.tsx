@@ -4,7 +4,6 @@ import type { Metadata } from 'next';
 import { catalogueEntries } from '../../lib/catalogue';
 import { getComponentPreview } from '../../lib/component-preview';
 import { catalogueHref, createCatalogueSearchIndex, getCatalogueFilters, getCataloguePage } from '../../lib/catalogue-search';
-import { SiteFooter } from '../components/site-footer';
 import { SiteHeader } from '../components/site-header';
 import { ComponentExplorer, type CatalogueComponent } from './component-explorer';
 import styles from './components.module.css';
@@ -35,8 +34,8 @@ const catalogueComponents: CatalogueComponent[] = [...catalogueEntries].sort((le
   description: component.description,
   ...getComponentPreview(component),
   tags: component.metadata.tags,
+  family: component.metadata.family,
   aliases: component.metadata.aliases,
-  search: component.search,
 }));
 
 const searchIndex = createCatalogueSearchIndex(catalogueComponents);
@@ -74,12 +73,6 @@ export default async function ComponentsPage({ searchParams }: ComponentsPagePro
         }).replace(/</g, '\\u003c') }}
       />
       <div className={styles.headerShell}><SiteHeader activeSection="catalogue" /></div>
-      <section className={styles.hero}>
-        <p className={styles.eyebrow}>React · TypeScript · Tailwind</p>
-        <h1>Find your next<br /><span>React component.</span></h1>
-        <p>Search for what you need. Try it live. Make it yours.</p>
-      </section>
-
       <ComponentExplorer
         components={catalogueComponents}
         initialCategory={filters.category}
@@ -87,14 +80,6 @@ export default async function ComponentsPage({ searchParams }: ComponentsPagePro
         initialPage={results.page}
       />
 
-      <section className={styles.catalogueCta}>
-        <div>
-          <h2>From preview to your project.</h2>
-          <p>Get the source, or connect Claude Code, Codex or Cursor.</p>
-        </div>
-        <a className="button" href="/pricing">Get started <span aria-hidden="true">→</span></a>
-      </section>
-      <SiteFooter />
     </main>
   );
 }

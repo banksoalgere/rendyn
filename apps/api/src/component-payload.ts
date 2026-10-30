@@ -1,20 +1,23 @@
 import type { CatalogComponent } from "@rendyn/catalog";
-import { discoveryLabels } from '@rendyn/catalog';
+import { componentSetup } from './component-setup.js';
 
 export function componentPayload(component: CatalogComponent, previewUrl: string, licenseText: string) {
+  const { searchText: _searchText, ...metadata } = component.metadata;
+  const setup = componentSetup(component);
   return {
     id: component.id,
     slug: component.slug,
     name: component.name,
     description: component.description,
     category: component.category,
-    metadata: { ...discoveryLabels(component.metadata), useWhen: component.metadata.useWhen,
-      notIdealWhen: component.metadata.notIdealWhen, visualSignature: component.metadata.visualSignature },
+    metadata,
     preview_url: previewUrl,
-    dependencies: component.dependencies,
+    dependencies: setup.dependencies,
     internal_dependencies: component.internalDependencies,
     files: component.files,
-    install: component.install,
+    install: setup.install,
+    entrypoints: setup.entrypoints,
+    required_project_imports: setup.required_project_imports,
     integrity: component.integrity,
     source: {
       repository: component.source.repository,

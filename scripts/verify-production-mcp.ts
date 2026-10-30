@@ -167,9 +167,8 @@ try {
   if (!Array.isArray(componentRecord.files) || componentRecord.files.length < 1) {
     throw new Error("get_component returned no source files");
   }
-  const license = componentRecord.license;
-  if (!license || typeof license !== 'object' || !('text' in license)
-    || typeof license.text !== 'string' || !license.text.includes('MIT License')) {
+  const license = componentRecord.license as Record<string, unknown> | undefined;
+  if (typeof license?.text !== "string" || !license.text.includes("MIT License")) {
     throw new Error("get_component omitted its MIT licence text");
   }
   if (entitlementRecord.allowed !== true) throw new Error("get_component entitlement was not allowed");

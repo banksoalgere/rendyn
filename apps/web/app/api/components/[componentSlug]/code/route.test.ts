@@ -1,6 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-
-const { createClient, getUser } = vi.hoisted(() => ({ createClient: vi.fn(), getUser: vi.fn() }));
+const { createClient } = vi.hoisted(() => ({ createClient: vi.fn() }));
 vi.mock('../../../../../lib/supabase/server', () => ({ createClient }));
 import { GET } from './route';
 
@@ -8,45 +7,27 @@ const request = (slug = 'tooltip') => GET(new Request(`https://rendyn.dev/api/co
   params: Promise.resolve({ componentSlug: slug }),
 });
 
-describe('component code access', () => {
+describe('public component source', () => {
   beforeEach(() => {
     vi.resetAllMocks();
-    createClient.mockResolvedValue({ auth: { getUser } });
-    getUser.mockResolvedValue({ data: { user: null }, error: null });
+    createClient.mockRejectedValue(new Error('Authentication unavailable'));
   });
-  it('blocks source for a signed-out visitor', async () => {
-    const response = await request();
-    expect(response.status).toBe(401);
-    expect(await response.json()).not.toHaveProperty('files');
-    expect(response.headers.get('Cache-Control')).toBe('private, no-store');
-  });
-  it('rejects invalid sessions even if a user object is returned', async () => {
-    getUser.mockResolvedValue({ data: { user: { id: 'user' } }, error: new Error('Invalid session') });
-    expect((await request()).status).toBe(503);
-  });
-  it('returns editable source for a verified signed-in user without requiring billing', async () => {
-    getUser.mockResolvedValue({ data: { user: { id: 'user' } }, error: null });
+  it('returns editable source, install instructions and licence without authentication or billing', async () => {
     const response = await request();
     expect(response.status).toBe(200);
     const code = await response.json();
-    expect(code.signedIn).toBe(true);
+    expect(code.allowed).toBe(true);
+    expect(code).not.toHaveProperty('signedIn');
     expect(code.files.some((file: { path: string }) => file.path === 'components/motion/tooltip.tsx')).toBe(true);
+    expect(code.install.instructions.length).toBeGreaterThan(0);
     expect(code.license).toContain('Permission is hereby granted');
+    expect(createClient).not.toHaveBeenCalled();
     expect(response.headers.get('Cache-Control')).toBe('private, no-store');
-    expect(response.headers.get('Vary')).toBe('Cookie');
   });
-  it('fails closed during an authentication outage', async () => {
-    getUser.mockRejectedValue(new Error('Unavailable'));
-    const response = await request();
-    expect(response.status).toBe(503);
+  it.each(['../tooltip', 'not-a-real-component', '%2e%2e%2ftooltip'])('rejects unknown or unsafe source paths: %s', async slug => {
+    const response = await request(slug);
+    expect(response.status).toBe(404);
     expect(await response.json()).not.toHaveProperty('files');
-  });
-  it('fails closed without authentication configuration', async () => {
-    createClient.mockResolvedValue(null);
-    expect((await request()).status).toBe(503);
-  });
-  it('rejects unrecognised component slugs', async () => {
-    expect((await request('../tooltip')).status).toBe(404);
-    expect(getUser).not.toHaveBeenCalled();
+    expect(createClient).not.toHaveBeenCalled();
   });
 });
