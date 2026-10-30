@@ -1,21 +1,17 @@
-import libraries from '../../../sources/libraries.json';
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { resolveCatalogPath } from "./path.js";
 import { CatalogStore } from "./store.js";
 
-const expectedCatalogueCount = 189 + libraries.reduce((n,c)=>n+c.components.length,0);
-
 describe("catalog data boundary", () => {
   it("loads and validates the checked-in catalogue", async () => {
     const store = await CatalogStore.load(resolve(import.meta.dirname, "../../../catalog"));
 
-    expect(store.index.components).toHaveLength(expectedCatalogueCount);
+    expect(store.index.components).toHaveLength(189);
     expect(store.index.sources.map((source) => source.id)).toEqual([
       "beui",
       "magicui",
       "kibo",
-      "shadcn", "originui", "mui", "mantine", "antd", "chakra", "heroui",
     ]);
     expect(store.hasCategory("motion")).toBe(true);
     expect(store.hasCategory("unknown")).toBe(false);

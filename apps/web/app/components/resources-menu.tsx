@@ -8,7 +8,7 @@ import {
 } from '@/components/motion/popover-morph';
 
 const resources = [
-  { href: '/components', label: 'Component guide', detail: 'Browse the catalogue' },
+  { href: '/components', label: 'Component guide', detail: 'Browse components' },
   { href: '#how-it-works', label: 'Agent workflows', detail: 'How Rendyn fits your flow' },
   { href: '#docs', label: 'Documentation', detail: 'Connect your coding agent' },
 ];

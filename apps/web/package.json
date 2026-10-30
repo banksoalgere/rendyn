@@ -6,8 +6,8 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "vinext dev",
-    "build": "vinext build",
+    "dev": "node scripts/build-home-previews.mjs && vinext dev",
+    "build": "node scripts/build-home-previews.mjs && vinext build",
     "deploy:dry-run": "wrangler deploy --dry-run --keep-vars --config dist/server/wrangler.json",
     "deploy": "wrangler deploy --keep-vars --config dist/server/wrangler.json",
     "start": "vinext start",
@@ -23,7 +23,8 @@
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "stripe": "22.4.0",
-    "tailwind-merge": "^3.6.0"
+    "tailwind-merge": "^3.6.0",
+    "lucide-react": "1.35.0"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "1.56.0",

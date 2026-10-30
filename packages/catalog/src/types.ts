@@ -1,6 +1,3 @@
-import type { CatalogVisual } from './visual.js';
-export type { CatalogVisual } from './visual.js';
-
 export type CatalogCategorySlug = "motion" | "agents" | "blocks";
 
 export interface CatalogSource {
@@ -33,9 +30,6 @@ export interface CatalogMetadata {
   useWhen: string[];
   notIdealWhen: string[];
   visualSignature: string;
-  visual?: CatalogVisual;
-  exampleCount?: number;
-  labelStatus?: 'source-labelled' | 'needs-review';
   searchText: string;
 }
 
@@ -86,28 +80,6 @@ export interface CatalogComponent extends CatalogComponentSummary {
   documentation: string;
 }
 
-/** Public search data shared by the browser and MCP; never includes source or documentation. */
-export type SearchComponent = Pick<CatalogComponentSummary,
-  'id' | 'sourceId' | 'slug' | 'name' | 'description' | 'category' | 'previewPath'
-> & { metadata: Omit<CatalogMetadata, 'searchText'> };
-
-export interface SearchIndex {
-  components: SearchComponent[];
-}
-
-export function toSearchComponent(component: CatalogComponentSummary): SearchComponent {
-  const { id, sourceId, slug, name, description, category, previewPath } = component;
-  const { family, kind, tags, aliases, interactions, useWhen, notIdealWhen, visualSignature, visual, exampleCount, labelStatus } = component.metadata;
-  return { id, sourceId, slug, name, description, category, previewPath,
-    metadata: { family, kind, tags, aliases, interactions, useWhen, notIdealWhen, visualSignature, visual, exampleCount, labelStatus } };
-}
-
-/** Compact labels shared by discovery and source retrieval; excludes indexing text. */
-export function discoveryLabels(metadata: CatalogMetadata | SearchComponent['metadata']) {
-  const { kind, family, tags, aliases, interactions, visual, exampleCount, labelStatus } = metadata;
-  return { kind, family, tags, aliases, interactions, visual, exampleCount, labelStatus };
-}
-
 export interface CatalogIndex {
   schemaVersion: 2;
   generatedAt: string;
@@ -138,7 +110,6 @@ export interface SearchResult {
   useWhen: string[];
   notIdealWhen: string[];
   previewPath: string;
-  labels: ReturnType<typeof discoveryLabels>;
 }
 
 export interface BrowsePage {

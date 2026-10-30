@@ -213,7 +213,7 @@ export default function VibeCodingTemplatesPage() {
             <div className="editorial-side-cta">
               <span>Need a smaller starting point?</span>
               <strong>Give your coding agent a curated component catalogue.</strong>
-              <a href="/components">Explore Rendyn <span aria-hidden="true">↗</span></a>
+              <a href="/components">Browse components <span aria-hidden="true">↗</span></a>
             </div>
           </aside>
 
@@ -418,7 +418,7 @@ export default function VibeCodingTemplatesPage() {
               <p className="eyebrow">Start with stronger ingredients</p>
               <h2>Your coding agent can move fast without designing from zero.</h2>
               <p>Give it focused visual options, product context, and complete source it can safely adapt inside the codebase you already trust.</p>
-              <div><a className="button" href="/components">Browse the catalogue <span aria-hidden="true">↗</span></a><a className="button button--ghost" href="/pricing">Start 7-day trial</a></div>
+              <div><a className="button" href="/components">Browse components <span aria-hidden="true">↗</span></a><a className="button button--ghost" href="/login?next=%2Fapp%2Fmcp">Connect to MCP</a></div>
             </section>
           </div>
         </div>

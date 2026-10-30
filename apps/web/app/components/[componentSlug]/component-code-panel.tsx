@@ -3,11 +3,10 @@
 import { useEffect, useRef, useState } from 'react';
 import type { ComponentCode } from '../../../lib/component-code';
 import { isCodeAccess, type CodeAccess } from '../../../lib/code-access';
-import { readCodeAccess } from '../../../lib/code-access.client';
 import styles from './component-page.module.css';
 import { trackCopy } from '../../../lib/analytics';
 
-type State = { status: 'loading' | 'signed-out' | 'error' } | { status: 'ready'; code: ComponentCode & CodeAccess };
+type State = { status: 'loading' | 'error' } | { status: 'ready'; code: ComponentCode & CodeAccess };
 
 export function ComponentCodePanel({ slug }: { slug: string }) {
   const [state, setState] = useState<State>({ status: 'loading' });
@@ -22,10 +21,9 @@ export function ComponentCodePanel({ slug }: { slug: string }) {
       credentials: 'same-origin', cache: 'no-store', signal: controller.signal,
     }).then(async (response) => {
       if (controller.signal.aborted) return;
-      if (response.status === 401) { setState({ status: 'signed-out' }); return; }
       if (!response.ok) throw new Error('Source request failed');
       const code: ComponentCode & CodeAccess = await response.json();
-      if (!code.files?.length || !isCodeAccess(code) || !code.signedIn) throw new Error('Source is empty');
+      if (!code.files?.length || !isCodeAccess(code) || !code.allowed) throw new Error('Source is empty');
       if (!controller.signal.aborted) { setState({ status: 'ready', code }); }
     }).catch(() => {
       if (!controller.signal.aborted) setState({ status: 'error' });
@@ -40,12 +38,6 @@ export function ComponentCodePanel({ slug }: { slug: string }) {
   }, []);
 
   if (state.status === 'loading') return <div className={styles.codeMessage} role="status">Loading component code…</div>;
-  if (state.status === 'signed-out') return <div className={styles.codeMessage}>
-    <span className={styles.codeMark} aria-hidden="true">{'</>'}</span>
-    <h2>Get this component free.</h2>
-    <p>Log in to unlock every component’s source code, dependencies, and examples. Free, with no subscription required.</p>
-    <a className={styles.codeSignIn} href={`/login?next=${encodeURIComponent(`/components/${slug}?tab=code#preview`)}`}>Log in to get this component free <span aria-hidden="true">↗</span></a>
-  </div>;
   if (state.status === 'error') return <div className={styles.codeMessage}>
     <p role="alert">We couldn’t load the code. Please try again.</p>
     <button type="button" className={styles.copyButton} onClick={() => { setState({ status: 'loading' }); setAttempt((value) => value + 1); }}>Try again</button>
@@ -59,8 +51,6 @@ export function ComponentCodePanel({ slug }: { slug: string }) {
     setCopying(true);
     setCopyStatus('');
     try {
-      const access = await readCodeAccess();
-      if (!access.signedIn) { setState({ status: 'signed-out' }); return; }
       await navigator.clipboard.writeText(file.content);
       trackCopy('code', slug);
       setCopyStatus('Copied');

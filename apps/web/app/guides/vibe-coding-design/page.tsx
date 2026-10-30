@@ -219,7 +219,7 @@ export default function VibeCodingDesignPage() {
               <span aria-hidden="true">R</span>
               <strong>Give your agent better visual choices.</strong>
               <p>Search polished components with previews, context and complete code.</p>
-              <a href="/components">Explore Rendyn <span aria-hidden="true">↗</span></a>
+              <a href="/components">Browse components <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </aside>
@@ -437,7 +437,7 @@ export default function VibeCodingDesignPage() {
           <p className="eyebrow">Better inputs. Better interfaces.</p>
           <h2 id="vcd-cta-title">Give your coding agent<br />something good to choose.</h2>
           <p>Rendyn pairs visual previews with component context and complete code, so an agent can compare real options before it builds.</p>
-          <div><a className="button" href="/components">Explore the catalogue <span aria-hidden="true">↗</span></a><a className="button button--cream" href="/#docs">See how it works</a></div>
+          <div><a className="button" href="/components">Browse components <span aria-hidden="true">↗</span></a><a className="button button--cream" href="/#docs">See how it works</a></div>
         </div>
       </section>
 

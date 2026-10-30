@@ -15,6 +15,5 @@ export function getComponentExamples(category: string, slug: string) {
   ];
   if (local?.examples?.length) return local.examples.map(({ slug, name, previewKey, description }) => ({ slug, name, previewKey, description }));
   const external = externalRegistry.find((item) => item.category === category && item.slug === slug);
-  if (external && 'examples' in external && external.examples?.length) return external.examples.map(example => ({...example,description:undefined}));
   return [{ slug: 'default', name: 'Default', previewKey: external?.previewKey ?? `${category}/${slug}`, description: undefined }];
 }

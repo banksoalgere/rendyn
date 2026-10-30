@@ -25,18 +25,13 @@
 .trust strong { color: var(--ink); font-weight: 400; }
 .trust > div { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .trust span { display: flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 500; white-space: nowrap; }
-.trust img { height: 21px; width: 21px; object-fit: contain; filter: brightness(0) opacity(.8); }
+.trust i, .trust svg { height: 21px; width: 21px; object-fit: contain; }
 .playground, .collection, .workflow, .connect { max-width: 1200px; margin: auto; }
 .playground { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: 80px; padding-top: 100px; }
 .playground > div { min-width: 0; }
 .playground > div > p { color: var(--muted); font-size: 16px; line-height: 1.75; max-width: 360px; margin: 25px 0 18px; }
 .showcase {
   color: var(--ink);
-  padding: 16px;
-  border: 1px solid var(--line);
-  border-radius: 26px;
-  background: var(--surface-subtle);
-  box-shadow: 0 20px 60px #2021240a;
 }
 .collection { padding-top: 110px; }
 .sectionHeading { display: flex; align-items: end; justify-content: space-between; gap: 48px; margin-bottom: 40px; }
@@ -53,21 +48,20 @@
 .collectionStats a > strong { font-size: 42px; line-height: 1; font-weight: 450; letter-spacing: -.06em; }
 .collectionStats h3 { font-size: 15px; font-weight: 500; margin: 0 0 6px; }
 .collectionStats p { font-size: 12px; color: var(--muted); margin: 0; }
-.collectionStats a > span { margin-left: auto; color: var(--muted); }
 .collectionStats a:hover { color: var(--accent); }
 .workflow { padding: 100px 0; }
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px; margin-top: 54px; }
-.steps article { position: relative; border-top: 1px solid var(--line); padding-top: 26px; }
-.steps article > span { display: inline-grid; place-items: center; width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 12px; background: var(--mint); color: var(--accent); font: 12px var(--font-geist-mono), monospace; }
+.steps { --step-gap: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--step-gap); margin-top: 54px; }
+.steps article { position: relative; padding-top: 16px; }
+.stepPath { display: block; position: relative; width: calc(100% + var(--step-gap)); height: 1px; background: var(--line); }
+.stepPath::before { content: ''; position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--ink); top: -5px; left: 0; }
+.steps article:last-child .stepPath { background: transparent; }
 .steps h3 { font-size: 21px; font-weight: 500; letter-spacing: -.03em; margin: 24px 0 12px; }
 .steps p { color: var(--muted); font-size: 16px; line-height: 1.7; margin: 0; max-width: 330px; }
 .connect { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 60px; border: 1px solid var(--line); border-radius: 24px; padding: 52px; background: var(--surface-subtle); }
 .connect h2 { font-size: clamp(35px, 3.4vw, 46px); }
 .connect p { color: var(--muted); font-size: 16px; line-height: 1.7; margin: 24px 0; max-width: 440px; }
-.tools { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-.tools > div { min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 15px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); padding: 25px 8px 18px; }
-.tools img { width: 30px; height: 30px; object-fit: contain; filter: brightness(0) opacity(.8); }
-.tools span { font-size: 12px; text-align: center; }
+.tools { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; margin: 0; padding: 0; list-style: none; }
+.tools li { padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 16px; color: var(--ink); }
 .closing { max-width: 1200px; margin: 88px auto; padding: 72px 24px; text-align: center; border: 1px solid var(--line); border-radius: 26px; background: linear-gradient(180deg, var(--card), var(--surface-subtle)); position: relative; }
 .closing h2 { font-size: clamp(52px, 6vw, 80px); line-height: 1.03; margin: 24px 0 30px; }
 .closing p { font-size: 12px; color: var(--muted); margin: 22px 0 0; }
@@ -92,7 +86,7 @@
   .collectionStats p { display: none; }
   .connect { grid-template-columns: 1fr; gap: 34px; }
   .tools { max-width: 620px; }
-  .steps { gap: 32px; }
+  .steps { --step-gap: 32px; }
 }
 @media (max-width: 760px) {
   .copy { padding-top: 38px; }
@@ -113,16 +107,16 @@
   .collectionStats p { display: block; }
   .collectionStats a > strong { min-width: 64px; }
   .steps { grid-template-columns: 1fr; gap: 30px; margin-top: 36px; }
-  .steps article { padding: 26px 0 0 56px; }
-  .steps article > span { position: absolute; left: 0; top: 28px; }
+  .steps article { padding: 0 0 0 32px; }
+  .stepPath { position: absolute; left: 5px; top: 12px; width: 1px; height: calc(100% + 30px); }
+  .stepPath::before { left: -5px; top: 0; }
   .steps h3 { margin-top: 0; }
   .steps p { max-width: none; }
   .workflow { padding: 64px 0; }
   .connect { padding: 30px 24px; }
   .closing { margin-block: 56px; padding-block: 48px; }
   .tools { gap: 8px; }
-  .tools > div { padding: 18px 4px 14px; }
-  .tools img { width: 24px; height: 24px; }
+  .tools li { padding-block: 14px; }
 }
 @media (max-width: 420px) {
   .copy { padding-inline: 20px; }
@@ -135,3 +129,19 @@
   .tools { grid-template-columns: repeat(2, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) { .primary { transition: none; } .primary:hover { transform: none; } }
+
+.componentGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 24px; }
+.componentFeature { min-width: 0; }
+.componentCanvas { height: 400px; overflow: hidden; border-radius: 16px; }
+.componentCaption { display: flex; align-items: start; justify-content: space-between; gap: 20px; padding-top: 20px; }
+.componentCaption h3 { margin: 0 0 8px; font-size: 20px; font-weight: 500; letter-spacing: -.03em; }
+.componentCaption h3 span { margin-left: 8px; color: var(--muted); }
+.componentCaption p { margin: 0; max-width: 340px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.collectionActions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px; margin-top: 40px; }
+@media (max-width: 1000px) {
+  .componentCaption { flex-direction: column; gap: 8px; }
+}
+@media (max-width: 700px) {
+  .componentGrid { grid-template-columns: 1fr; gap: 32px; }
+  .componentCanvas { height: 340px; }
+}

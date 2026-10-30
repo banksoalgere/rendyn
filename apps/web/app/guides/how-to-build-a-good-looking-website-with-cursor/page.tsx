@@ -146,7 +146,7 @@ export default function CursorWebsiteDesignGuide() {
               <span>Give your agent better ingredients</span>
               <p className="article-side-cta-title">Start with stronger UI choices.</p>
               <p>Explore polished components with previews, fit reasoning and complete source.</p>
-              <a href="/components">Browse the catalogue <span aria-hidden="true">↗</span></a>
+              <a href="/components">Browse components <span aria-hidden="true">↗</span></a>
             </div>
           </aside>
 

@@ -4,7 +4,6 @@ import {
   safeAuthorizationId,
   safeOAuthRedirect,
 } from '@/lib/auth/inputs';
-import { getSubscriptionAccess } from '@/lib/billing/access';
 import { createClient } from '@/lib/supabase/server';
 
 const privateHeaders = {
@@ -58,18 +57,6 @@ export async function POST(request: Request) {
         `/oauth/consent?authorization_id=${encodeURIComponent(authorizationId)}`,
       );
       return NextResponse.redirect(login, { status: 303, headers: privateHeaders });
-    }
-
-    if (decision === 'approve') {
-      const subscription = await getSubscriptionAccess(supabase);
-      if (!subscription.allowed) {
-        const pricing = new URL('/pricing', request.url);
-        pricing.searchParams.set(
-          'next',
-          `/oauth/consent?authorization_id=${encodeURIComponent(authorizationId)}`,
-        );
-        return NextResponse.redirect(pricing, { status: 303, headers: privateHeaders });
-      }
     }
 
     const result = decision === 'approve'

@@ -1,4 +1,4 @@
-const DEFAULT_RETURN_TO = '/account';
+const DEFAULT_RETURN_TO = '/app';
 const MAX_RETURN_TO_LENGTH = 2_048;
 const MAX_AUTHORIZATION_ID_LENGTH = 512;
 

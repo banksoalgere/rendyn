@@ -228,7 +228,7 @@ export default function CursorDesignGuide() {
             <span className={styles.miniMark} aria-hidden="true">R</span>
             <h2>Start with better building blocks.</h2>
             <p>Give Cursor a small, relevant set of polished components instead of another blank canvas.</p>
-            <a href="/components">Explore Rendyn <Arrow /></a>
+            <a href="/components">Browse components <Arrow /></a>
             <small>React · TypeScript · complete source</small>
           </aside>
         </section>
@@ -245,7 +245,7 @@ export default function CursorDesignGuide() {
               <div className={`${styles.asideCta} guide-callout`}>
                 <span>Rendyn</span>
                 <strong>From interface intent to production-ready source.</strong>
-                <a href="/pricing">Start 7-day trial <Arrow /></a>
+                <a href="/login?next=%2Fapp%2Fmcp">Connect to MCP</a>
               </div>
             </div>
           </aside>
@@ -498,7 +498,7 @@ export default function CursorDesignGuide() {
         <p>Put the Cursor design workflow to work</p>
         <h2 id="final-cta-title">Give Cursor better<br />design context.</h2>
         <span>Rendyn helps Cursor find, compare, and implement polished interface components with the context to choose well.</span>
-        <div><a href="/components">Browse the catalogue <Arrow /></a><a href="/pricing">Start 7-day trial</a></div>
+        <div><a href="/components">Browse components <Arrow /></a><a href="/login?next=%2Fapp%2Fmcp">Connect to MCP</a></div>
       </section>
 
 

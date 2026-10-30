@@ -22,13 +22,14 @@ Seven Magic UI registry records are deliberately excluded because their files ar
 - Deterministic lexical search, with optional hosted OpenAI query embeddings when a matching generated embedding snapshot is present. No vector database is required.
 - Public search, category browsing, component metadata, interactive previews, and numbered visual contact sheets.
 - Complete source retrieval with dependencies, install instructions, content hashes, source revision, and the full MIT notice.
-- Card-backed Stripe Checkout with a seven-day full-access trial, first charge on day 8, signed webhook synchronization, and a self-service billing portal.
-- Trial-or-paid enforcement before every MCP tool and complete source response. Public catalogue discovery and previews remain browseable.
+- Free public component source, previews and installation instructions without sign-up.
+- Free MCP access with a verified OAuth account, required scopes and explicit client consent. No payment or expiry date.
+- New paid checkout is disabled. Signature-verified webhooks and the billing portal remain available for managing existing subscriptions; those subscriptions are not automatically cancelled.
 - A pinned multi-source importer that rejects registry drift, modified MIT grants, Commons Clause input, unsafe paths, missing source, and unreviewed transformations.
 
 ## Why this backend
 
-The catalogue is versioned data in Git, not a database table. With 189 items, loading the index in memory and calculating exact cosine similarity is faster, simpler, and easier to audit than operating a vector database. Supabase is used where a database is genuinely useful: OAuth identities, subscription state, and atomic entitlement accounting. Hono and the official MCP TypeScript SDK provide the remote HTTP service; Next.js hosts the internal interactive previews.
+The catalogue is versioned data in Git, not a database table. With 189 items, loading the index in memory and calculating exact cosine similarity is faster, simpler, and easier to audit than operating a vector database. Supabase is used where a database is genuinely useful: OAuth identities and legacy subscription state. Free component and MCP access does not query or mutate billing entitlements. Hono and the official MCP TypeScript SDK provide the remote HTTP service; Next.js hosts the internal interactive previews.
 
 See [Architecture](docs/architecture.md) for the full decision record.
 
@@ -44,7 +45,7 @@ pnpm dev
 
 The API runs on `http://localhost:8787`; the internal preview renderer runs on `http://localhost:3100`.
 
-Before authenticated source retrieval works, fill the Supabase variables in `.env`. For deployed MCP login, enable Supabase's OAuth 2.1 Server and dynamic client registration, configure an asymmetric signing key, and point its authorization path at the consent screen described in [OAuth setup](docs/oauth-setup.md).
+Public source retrieval needs no authentication configuration. Before MCP login works, fill the Supabase variables in `.env`. For deployed MCP login, enable Supabase's OAuth 2.1 Server and dynamic client registration, configure an asymmetric signing key, and point its authorization path at the consent screen described in [OAuth setup](docs/oauth-setup.md).
 
 To create the semantic component index:
 
@@ -70,7 +71,7 @@ Updating any source is intentionally manual: review its new commit, registry or 
 
 The website is public at `https://rendyn.dev`, and the native Cloudflare MCP service is live at `https://mcp.rendyn.dev/mcp`. Production health, catalogue search, preview media, protected-resource discovery, Google provider configuration, ES256 signing, and dynamic client registration are live.
 
-The production release includes the seven-day trial and paid-access boundary. These remain before authenticated MCP access can be called fully verified:
+The free-access changes described above are local source changes until both the website and MCP Workers are deployed. Release verification still needs:
 
 - complete one real hosted MCP authorization/tool run from a signed-in account
 - edge rate limits, analytics, and alerts

@@ -58,7 +58,7 @@ delivery.
 
 Apply migration `20260921111026_harden_billing_attempts_and_events.sql` through the normal migration pipeline before releasing the billing routes. It adds server-only checkout attempts and webhook event leases; it does not modify existing subscriptions.
 
-Configure `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` for the website. The release guard validates this login configuration without printing values. Code access requires a verified login; no guest-copy signing secret is needed. Both Workers now use the shared tests, catalogue integrity, delivery-image and lint gates. Builds do not run type checks.
+Configure `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` for the website. The release guard validates this login configuration without printing values. After building, it also checks the actual browser bundles contain the intended public settings, so dynamic environment lookups cannot silently break sign-in. Code access requires a verified login; no guest-copy signing secret is needed. Both Workers now use the shared tests, catalogue integrity, delivery-image and lint gates. Builds do not run type checks.
 
 An uncertain Checkout creation is replayed with its original parameters and key. If its session ID was never recorded and its fixed expiry has passed, the route fails closed rather than risking a second trial. Reconcile that attempt with Stripe and record the verified session ID using an approved server-side operation before retrying. Never clear an unresolved attempt blindly.
 
