@@ -26,7 +26,7 @@ The initial unauthenticated request returns `401` with a `WWW-Authenticate` chal
 
 ### `search_components`
 
-Inputs: `query`, optional `limit` (1–5), optional `category`. Returns JSON plus cached component preview images when available.
+Provide a `query` and optionally a `category`. Omit `limit` for up to five ranked results, or pass an integer from 1 to 5 to set the maximum. Set `include_previews` to `true` to include cached preview images when available. Use `browse_category` to explore larger lists.
 
 ### `get_component`
 

@@ -17,11 +17,14 @@ export function registerSearchComponentsTool(
     "search_components",
     {
       description:
-        "Find UI components for a design brief, such as 'a calm CTA button with hover feedback' or 'an FAQ accordion'. Search one UI need at a time; omit category unless you need a strict filter. Returns ranked matches, preview links and the next retrieval call. No match means the catalogue may not cover that need. Set include_previews=true to see images after narrowing your choices.",
+        "Find UI components for a design brief, such as 'a calm CTA button with hover feedback' or 'an FAQ accordion'. Search one UI need at a time; omit category unless you need a strict filter. Returns ranked matches, preview links and the next retrieval call. No match means the catalogue may not cover that need. Set include_previews=true to see images after narrowing your choices. Omit limit to get up to five results. Use browse_category for larger lists.",
       annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
       inputSchema: z.object({
         query: z.string().trim().min(2).max(500),
-        limit: z.number().int().min(1).max(5).default(5),
+        limit: z.number().int().min(1)
+          .max(5, { error: "Omit limit or use an integer from 1 to 5. Use browse_category for larger lists." })
+          .default(5)
+          .describe("Optional result count from 1 to 5. Omit to use the default of 5."),
         category: z.enum(["motion", "agents", "blocks"]).optional(),
         include_previews: z.boolean().default(false),
       }),
