@@ -52,6 +52,31 @@ describe('MCP discovery to source workflow', () => {
     expect(categories.suggested_workflow).toHaveLength(3);
     expect(categories.categories.find((category: {slug:string}) => category.slug==='motion').description).toContain('not a motion-only filter');
   });
+  it('advertises the search limit and gives callers a valid retry when they exceed it', async () => {
+    const client = await connect();
+    const searchTool = (await client.listTools()).tools.find(tool => tool.name === 'search_components');
+    expect(searchTool?.description).toContain('Omit limit');
+    expect(searchTool?.inputSchema.required).not.toContain('limit');
+    expect(searchTool?.inputSchema.properties?.limit).toMatchObject({
+      type: 'integer',
+      minimum: 1,
+      maximum: 5,
+      default: 5,
+      description: expect.stringContaining('from 1 to 5'),
+    });
+
+    const query = 'animated button';
+    const rejected = await client.callTool({ name: 'search_components', arguments: { query, limit: 10 } });
+    expect(rejected.isError).toBe(true);
+    expect(rejected.content[0]).toMatchObject({
+      type: 'text',
+      text: expect.stringContaining('Omit limit or use an integer from 1 to 5.'),
+    });
+
+    const retry = await client.callTool({ name: 'search_components', arguments: { query } });
+    expect(retry.isError).not.toBe(true);
+    expect(payload(retry).results).toHaveLength(5);
+  });
   it('finds the intended component, then follows its retrieval call to complete source', async () => {
     const client = await connect();
     const result = await client.callTool({name:'search_components',arguments:{query:'A responsive bento grid for presenting product features on a minimal white landing page'}});
